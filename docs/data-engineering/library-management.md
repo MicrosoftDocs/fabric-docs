@@ -17,7 +17,7 @@ A library is a reusable package of code — such as a Python package from PyPI, 
 
 ## Summary of library management best practices
 
-The following scenarios describe best practices when using libraries in Microsoft Fabric.
+The following scenarios describe best practices when using libraries in Fabric.
 
 ### Environment publishing modes (Quick vs Full)
 
@@ -200,4 +200,4 @@ The preceding code cell uses lakehouse storage as an example. In the notebook ex
 
 ## Related content
 
-- [Create, configure, and use an environment in Microsoft Fabric](create-and-use-environment.md)
+- [Create, configure, and use an environment in Fabric](create-and-use-environment.md)

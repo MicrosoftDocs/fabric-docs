@@ -12,9 +12,9 @@ ms.update-cycle: 180-days
 
 # Connect AI Agents to Fabric API for GraphQL with a local Model Context Protocol (MCP) server
 
-Imagine asking GitHub Copilot "Show me all sales from last quarter" and having it automatically query your Fabric data warehouse, understand the schema, and return results—all without writing a single line of GraphQL. This tutorial shows you how to make that possible.
+Imagine asking GitHub Copilot "Show me all sales from last quarter" and having it automatically query your warehouse in Fabric, understand the schema, and return results—all without writing a single line of GraphQL. This tutorial shows you how to make that possible.
 
-In this tutorial, you build a local GraphQL MCP server that acts as a bridge between AI agents and your Microsoft Fabric data. By the end, you have a working development server that enables AI assistants like GitHub Copilot, Claude, and other AI agents to naturally query your Fabric data using conversational language.
+In this tutorial, you build a local GraphQL MCP server that acts as a bridge between AI agents and your Fabric data. By the end, you have a working development server that enables AI assistants like GitHub Copilot, Claude, and other AI agents to naturally query your Fabric data using conversational language.
 
 **What you'll accomplish:**
 1. Set up authentication so your GraphQL MCP server can securely access Fabric
@@ -26,7 +26,7 @@ In this tutorial, you build a local GraphQL MCP server that acts as a bridge bet
 
 The Model Context Protocol (MCP) is a standard for connecting AI assistants to the systems where data lives, including content repositories, business tools, and development environments. Its aim is to help frontier models produce better, more relevant responses. Think of MCP like a USB-C port for AI applications. Just as USB-C provides a standardized way to connect your devices to various peripherals and accessories, MCP provides a standardized way to connect AI models to external data sources and tools.
 
-Major AI platforms including OpenAI, Microsoft Copilot Studio, and Microsoft Foundry adopted MCP as a standard way to integrate AI agents with external systems. This makes MCP an ideal choice for connecting AI agents to your Microsoft Fabric data.
+Major AI platforms including OpenAI, Microsoft Copilot Studio, and Microsoft Foundry adopted MCP as a standard way to integrate AI agents with external systems. This makes MCP an ideal choice for connecting AI agents to your Fabric data.
 
 ## Why GraphQL is ideal for MCP
 
@@ -37,7 +37,7 @@ GraphQL is well-suited for MCP integrations because:
 - **Type safety**: Strong typing helps AI agents understand data formats and constraints
 - **Efficient data fetching**: Reduces over-fetching and under-fetching of data
 
-Microsoft Fabric's API for GraphQL makes it easy to expose your Fabric lakehouses, Data Warehouses, and databases to AI agents through a standardized GraphQL interface. While API for GraphQL already provides powerful querying capabilities, setting up a connection for AI agents might not be as straightforward as it could be. 
+Fabric's API for GraphQL makes it easy to expose your Fabric lakehouses, warehouses, and databases to AI agents through a standardized GraphQL interface. While API for GraphQL already provides powerful querying capabilities, setting up a connection for AI agents might not be as straightforward as it could be.
 
 With a simple local GraphQL MCP server, developers can use AI agents to discover their Fabric data structure, understand what's available, and query it by using natural language – all through the standardized MCP interface. Conveniently, you don't need to define a separate MCP tool in the server for each GraphQL type, query, or mutation. The GraphQL MCP server introspects the GraphQL schema empowering AI agents to understand all available types and operations from the get-go.
 
@@ -45,7 +45,7 @@ With a simple local GraphQL MCP server, developers can use AI agents to discover
 
 Before you begin this tutorial, make sure you have:
 
-- A Microsoft Fabric workspace with appropriate permissions. A workspace admin role is needed to [configure service principals](#step-1-configure-service-principal-access) and [enable introspection](#step-2-enable-graphql-introspection-requires-workspace-admin).
+- A Fabric workspace with appropriate permissions. A workspace admin role is needed to [configure service principals](#step-1-configure-service-principal-access) and [enable introspection](#step-2-enable-graphql-introspection-requires-workspace-admin).
 - An API for GraphQL item created and configured. See [Create and add data to an API for GraphQL](get-started-api-graphql.md) or [Create GraphQL API from your SQL database in the Fabric portal.](../database/sql/graphql-api.md)
 - [Node.js](https://nodejs.org/download/) installed on your development machine (includes npm)
 - [Visual Studio Code](https://code.visualstudio.com/download) installed on your development machine
@@ -84,7 +84,7 @@ As you complete the setup, capture these three values for the [GraphQL MCP serve
 > [!IMPORTANT]
 > Introspection must be enabled for the GraphQL MCP server to work. This is disabled by default in Fabric for security reasons. **Only workspace admins can enable introspection.** If you're not an admin, ask your workspace admin to complete this step.
 
-Follow the complete guide at [Microsoft Fabric API for GraphQL Introspection and Schema Export](api-graphql-introspection-schema-export.md) to:
+Follow the complete guide at [Fabric API for GraphQL Introspection and Schema Export](api-graphql-introspection-schema-export.md) to:
 
 - Enable introspection in your API settings
 - Understand how introspection queries work
@@ -311,7 +311,7 @@ This returns a list of all types in your GraphQL schema.
    ```
 1. In Copilot chat, first ask to introspect the schema then try asking a pertinent question related to the introspected data in natural language, for example:
 
-:::image type="content" source="media/api-graphql-local-model-context-protocol/api-graphql-local-model-context-protocol.png" alt-text="Screenshot: Retrieving a list of customers using the introspected Microsoft Fabric GraphQL API schema in VS Code with GitHub Copilot and local MCP Server." lightbox="media/api-graphql-local-model-context-protocol/api-graphql-local-model-context-protocol.png":::
+:::image type="content" source="media/api-graphql-local-model-context-protocol/api-graphql-local-model-context-protocol.png" alt-text="Screenshot: Retrieving a list of customers using the introspected Fabric GraphQL API schema in VS Code with GitHub Copilot and local MCP Server." lightbox="media/api-graphql-local-model-context-protocol/api-graphql-local-model-context-protocol.png":::
 
 ### Cursor IDE
 
@@ -383,8 +383,8 @@ While the local GraphQL MCP server should be implemented for development purpose
 
 - [Model Context Protocol documentation](https://modelcontextprotocol.io/introduction)
 - [GitHub repository with complete code samples](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-engineering/GraphQL/MCP)
-- [Microsoft Fabric API for GraphQL overview](api-graphql-overview.md)
+- [Fabric API for GraphQL overview](api-graphql-overview.md)
 - [Connect applications to Fabric API for GraphQL](connect-apps-api-graphql.md)
 - [Create and add data to an API for GraphQL](get-started-api-graphql.md)
-- [Microsoft Fabric API for GraphQL FAQ](graphql-faq.yml)
+- [Fabric API for GraphQL FAQ](graphql-faq.yml)
 - [Integrate Azure API Management with Fabric API for GraphQL](api-graphql-azure-api-management.md)

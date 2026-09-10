@@ -38,7 +38,7 @@ Use a shallow clone when you need a fast, storage-efficient copy for short-lived
 A shallow clone is storage-efficient because the source and clone share the same OneLake data files. After the clone exists, updates that you make to the clone create new files for the clone and don't change the source table.
 
 > [!NOTE]
-> Only `SHALLOW CLONE` is supported in open-source Delta Lake and Microsoft Fabric. `DEEP CLONE` is not available.
+> Only `SHALLOW CLONE` is supported in open-source Delta Lake and Fabric. `DEEP CLONE` is not available.
 
 ## Syntax
 

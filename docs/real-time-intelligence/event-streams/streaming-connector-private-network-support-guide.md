@@ -2,8 +2,8 @@
 title: Eventstream streaming connector virtual network and on-premises support guide
 description: Learn how to create and manage Streaming virtual network data gateways, connect streaming source’s network to the Azure virtual network and then add data source in private network into Eventstream.
 ms.reviewer: spelluru
-ms.author: xujiang1
-author: xujxu
+ms.author: spelluru
+author: spelluru
 ms.topic: how-to
 ms.custom: sfi-image-nochange, sfi-ropc-nochange
 ms.date: 01/27/2026

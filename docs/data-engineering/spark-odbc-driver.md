@@ -1,4 +1,4 @@
-﻿---
+---
 title: Microsoft ODBC Driver for Microsoft Fabric Data Engineering
 description: Learn how to connect, query, and manage Spark workloads in Microsoft Fabric using the Microsoft ODBC Driver for Microsoft Fabric Data Engineering.
 author: ms-arali
@@ -14,7 +14,7 @@ ai-usage: ai-assisted
 
 ODBC (Open Database Connectivity) is a widely adopted standard that enables client applications to connect to and work with data from databases and big data platforms.
 
-The Microsoft ODBC Driver for Fabric Data Engineering lets you connect, query, and manage Spark workloads in Microsoft Fabric with the reliability and simplicity of the ODBC standard. Built on Microsoft Fabric's Livy APIs, the driver provides secure and flexible Spark SQL connectivity to your .NET, Python, and other ODBC-compatible applications and BI tools.
+The Microsoft ODBC Driver for Fabric Data Engineering lets you connect, query, and manage Spark workloads in Fabric with the reliability and simplicity of the ODBC standard. Built on Fabric's Livy APIs, the driver provides secure and flexible Spark SQL connectivity to your .NET, Python, and other ODBC-compatible applications and BI tools.
 
 ## Key features
 
@@ -26,22 +26,22 @@ The Microsoft ODBC Driver for Fabric Data Engineering lets you connect, query, a
 - **Large table support**: Optimized handling for large result sets with configurable page sizes
 - **Async prefetch**: Background data loading for improved performance
 - **Proxy support**: HTTP proxy configuration for enterprise environments
-- **Multi-schema Lakehouse support**: Connect to specific schema within a Lakehouse
-- **OneLake integration**: Access Lakehouse data stored in Microsoft OneLake, including tables across multiple schemas, through a unified ODBC interface without separate storage configuration
+- **Multi-schema lakehouse support**: Connect to specific schema within a lakehouse
+- **OneLake integration**: Access lakehouse data stored in OneLake, including tables across multiple schemas, through a unified ODBC interface without separate storage configuration
 - **Environment items support**: Attach Fabric environment items during job execution to apply workspace libraries, Spark properties, and variables to each session
 - **Custom Spark configuration**: Pass Spark configuration properties directly through the connection string to tune session behavior
 
 > [!NOTE]
-> In open-source Apache Spark, database and schema are used synonymously. For example, running `SHOW SCHEMAS` or `SHOW DATABASES` in a Fabric Notebook returns the same result — a list of all schemas in the Lakehouse.
+> In open-source Apache Spark, database and schema are used synonymously. For example, running `SHOW SCHEMAS` or `SHOW DATABASES` in a Fabric notebook returns the same result — a list of all schemas in the lakehouse.
 
 ## Prerequisites
 
 Before using the Microsoft ODBC Driver for Microsoft Fabric Data Engineering, ensure you have:
 
 - **Operating System**: Windows 10/11 or Windows Server 2016+
-- **Microsoft Fabric Access**: Access to a Microsoft Fabric workspace
+- **Fabric Access**: Access to a Fabric workspace
 - **Microsoft Entra ID credentials**: Appropriate credentials for authentication
-- **Workspace and Lakehouse IDs**: GUID identifiers for your Fabric workspace and lakehouse
+- **Workspace and lakehouse IDs**: GUID identifiers for your Fabric workspace and lakehouse
 - **Azure CLI** (optional): Required for Azure CLI authentication method
 
 ## Download and MSI installation
@@ -75,7 +75,7 @@ After installation, verify the driver is registered:
 3. Verify "Microsoft ODBC Driver for Microsoft Fabric Data Engineering" is listed
 
 ## Quick start example
-This example demonstrates how to connect to Microsoft Fabric and execute a query using the Microsoft ODBC Driver for Microsoft Fabric Data Engineering. Before running this code, ensure you have completed the prerequisites and installed the driver.
+This example demonstrates how to connect to Fabric and execute a query using the Microsoft ODBC Driver for Microsoft Fabric Data Engineering. Before running this code, ensure you have completed the prerequisites and installed the driver.
 
 ### Python example
 
@@ -142,8 +142,8 @@ DRIVER={Microsoft ODBC Driver for Microsoft Fabric Data Engineering};<parameter1
 | Component | Description | Example |
 |-----------|-------------|---------|
 | DRIVER | ODBC driver identifier | `{Microsoft ODBC Driver for Microsoft Fabric Data Engineering}` |
-| WorkspaceId | Microsoft Fabric workspace identifier (GUID) | `xxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx` |
-| LakehouseId | Microsoft Fabric lakehouse identifier (GUID) | `xxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx` |
+| WorkspaceId | Fabric workspace identifier (GUID) | `xxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx` |
+| LakehouseId | Fabric lakehouse identifier (GUID) | `xxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx` |
 | AuthFlow | Authentication method | `AZURE_CLI`, `INTERACTIVE`, `CLIENT_CREDENTIAL`, `CLIENT_CERTIFICATE`, `ACCESS_TOKEN` |
 
 ### Example connection strings
@@ -297,8 +297,8 @@ These parameters must be present in every connection string:
 
 | Parameter | Type | Description | Example |
 |-----------|------|-------------|---------|
-| WorkspaceId | UUID | Microsoft Fabric workspace identifier | `4bbf89a8-...` |
-| LakehouseId | UUID | Microsoft Fabric lakehouse identifier | `d8faa650-...` |
+| WorkspaceId | UUID | Fabric workspace identifier | `4bbf89a8-...` |
+| LakehouseId | UUID | Fabric lakehouse identifier | `d8faa650-...` |
 | AuthFlow | String | Authentication flow type | `AZURE_CLI` |
 
 ### Optional parameters
@@ -664,10 +664,10 @@ The following sections describe common problems and their solutions:
 
 #### Connection failures
 
-**Problem**: Can't connect to Microsoft Fabric
+**Problem**: Can't connect to Fabric
 
 **Solutions**:
-1. Verify Workspace ID and Lakehouse ID are correct GUIDs
+1. Verify workspace ID and lakehouse ID are correct GUIDs
 2. Check Azure CLI authentication: `az account show`
 3. Ensure you have appropriate Fabric workspace permissions
 4. Check network connectivity and proxy settings
@@ -723,6 +723,7 @@ To enable ODBC tracing:
 
 ## Related content
 
+* [Microsoft ODBC Driver for Microsoft Fabric Data Engineering on Linux](./spark-odbc-driver-linux.md)
 * [Apache Spark Runtimes in Fabric](./runtime.md)
 * [Fabric Runtime 1.3](./runtime-1-3.md)
 * [What is the Livy API for Data Engineering](./api-livy-overview.md)

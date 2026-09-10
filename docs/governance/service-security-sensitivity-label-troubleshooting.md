@@ -4,7 +4,7 @@ description: Find guidance for resolving common issues related to sensitivity la
 author: msmimart
 ms.author: mimart
 ms.topic: troubleshooting-general
-ms.date: 01/06/2026
+ms.date: 07/13/2026
 LocalizationGroup: Data from files
 ---
 
@@ -22,7 +22,7 @@ LocalizationGroup: Data from files
 
 * If your organization uses Azure Information Protection sensitivity labels, they need to be migrated to the Microsoft Purview Information Protection Unified Labeling platform in order for them to be used in Power BI. [Learn more about migrating sensitivity labels](/azure/information-protection/configure-policy-migrate-labels).
 * Before enabling sensitivity labels on your tenant, make sure that sensitivity labels have been defined and published for relevant users and groups. See [Create and configure sensitivity labels and their policies for detail](/microsoft-365/compliance/create-sensitivity-labels).
-* Customers in China must enable rights management for the tenant and add the Microsoft Purview Information Protection Sync Service service principle, as described in steps 1 and 2 under [Configure Azure Information Protection for customers in China](/microsoft-365/admin/services-in-china/parity-between-azure-information-protection?view=o365-21vianet&preserve-view=true).
+* Customers in China must enable rights management for the tenant and add the Microsoft Purview Information Protection Sync Service service principal, as described in steps 1 and 2 under [Configure Azure Information Protection for customers in China](/microsoft-365/admin/services-in-china/parity-between-azure-information-protection?view=o365-21vianet&preserve-view=true).
 * Using sensitivity labels in Desktop requires the Desktop December 2020 release and later.
 
 ## General problems with sensitivity labels
@@ -131,7 +131,7 @@ To successfully connect from Fabric or Power BI (including Power BI Desktop) to 
 Sensitivity labels are supported in the following sovereign clouds:
 
 * [US Government](/power-bi/enterprise/service-govus-overview): GCC, GCC High, DoD
-* China: Customers in China must enable rights management for the tenant and add the Microsoft Purview Information Protection Sync Service service principle, as described in steps 1 and 2 under [Configure Azure Information Protection for customers in China](/microsoft-365/admin/services-in-china/parity-between-azure-information-protection#configure-aip-for-customers-in-china).
+* China: Customers in China must enable rights management for the tenant and add the Microsoft Purview Information Protection Sync Service service principal, as described in steps 1 and 2 under [Configure Azure Information Protection for customers in China](/microsoft-365/admin/services-in-china/parity-between-azure-information-protection#configure-aip-for-customers-in-china).
 
 ## Sensitivity label support in template apps
 
@@ -202,6 +202,23 @@ The **Automatically apply sensitivity labels to downstream content** setting con
 * Inheritance from data sources is supported only for semantic models with enhanced metadata. See [Using enhanced dataset metadata](/power-bi/connect-data/desktop-enhanced-dataset-metadata) for more information.
 * Inheritance from data sources is supported only for semantic models using the Import data connectivity mode. Live connection and DirectQuery connectivity isn't supported.
 * Inheritance from data sources isn't supported in connections via gateways or Azure Virtual Network (VNet). This means that inheritance from an Excel file located on a local machine won't work, because this requires a gateway.
+
+## Label inheritance upon update and relationship changes
+
+### A sensitivity label isn't applied when I modify an existing item
+
+Label inheritance upon update follows the same core rules as other automatic labeling capabilities: automatically applied labels never overwrite manually applied labels, and a less restrictive label never overwrites a more restrictive label. In addition:
+
+* For non-Power BI Fabric items, default label application on update currently supports only when you change attributes like name and description through the item's flyout menu. Changes made in the experience interface don't trigger default labeling.
+* You must publish the label for the item owner. If the item owner isn't authorized to apply the label, inheritance doesn't take place.
+
+### A label isn't inherited when I connect an item to a new data source or establish a new lineage relationship
+
+* Label inheritance from data sources currently supports only Power BI semantic models. Connecting a non-Power BI Fabric item to a labeled data source doesn't trigger data source label inheritance.
+* Inheritance from data sources doesn't support connections via gateways or Azure Virtual Networks (VNets).
+* If [fully automated downstream inheritance](../admin/service-admin-portal-information-protection.md) isn't enabled, you must consent to label propagation when a new lineage relationship is established.
+
+For more information, see [Sensitivity label inheritance upon update and relationship changes](service-security-sensitivity-label-inheritance-upon-update.md).
 
 ## Problems setting and removing sensitivity labels using Power BI REST APIs
 

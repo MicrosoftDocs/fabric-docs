@@ -1,6 +1,6 @@
 ---
 title: Text Formatting Functions
-description: Learn about text formatting functions in plan (preview) and how to use them to manipulate, format, and transform text values in sheet.
+description: Learn about text formatting functions in planning and how to use them to manipulate, format, and transform text values in sheet.
 ms.date: 06/03/2026
 ms.topic: reference
 ms.search.form: Text formatting functions
@@ -9,9 +9,7 @@ ms.search.form: Text formatting functions
 
 # Text formatting functions
 
-In plan (preview), text formatting functions help you manipulate, format, and transform text values in the planning sheet. These functions can be used to combine text, extract characters, change letter casing, format values as text, clean text data, and create dynamic text-based calculations for reports and business scenarios.
-
-[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
+In planning, text formatting functions help you manipulate, format, and transform text values in the planning sheet. These functions can be used to combine text, extract characters, change letter casing, format values as text, clean text data, and create dynamic text-based calculations for reports and business scenarios.
 
 > [!Note]
 >

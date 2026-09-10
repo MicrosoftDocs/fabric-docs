@@ -79,7 +79,7 @@ Use this option carefully. `overwriteSchema` is destructive to the schema contra
 
 ## Use column mapping for rename and drop operations
 
-Column mapping lets Delta track columns by name in table metadata instead of relying only on physical column order. In practice, this capability enables column rename and drop operations without rewriting all existing data files.
+Column mapping lets Delta track columns by name in table metadata instead of relying only on physical column order. In practice, this capability enables column rename and drop operations without rewriting all existing data files. For a deeper look at column mapping modes, migration, and protocol impact, see [Column mapping for Delta tables](delta-lake-column-mapping.md).
 
 Enable column mapping on the table before you need rename or drop operations.
 

@@ -93,7 +93,7 @@ The following diagram shows how Real-Time Intelligence in Fabric ingests streami
 
 [Fabric IQ](../iq/overview.md) provides a shared business context layer across your data estate. It maps data in Lakehouses, Warehouses, Eventhouses, and semantic models to a unified ontology.
 
-[Fabric Ontology](../iq/ontology/overview.md) is a shared, machine-understandable vocabulary of your business that defines the key entities (for example, Customer, Product, or Plane), their relationships, properties, business rules, and possible actions while maintaining all terms in the language of the business. It brings together a live, connected representation of how your business operates, mapped directly to the underlying data in OneLake. This model lets users and agents see not just tables, but also relationships like "Customers place Orders for Products," "Flights have Segments and Crews," and "Delayed shipments impact Revenue." This data-centric context is critical for any AI that's expected to make decisions or analyses about the business.
+[Ontology in Fabric](../iq/ontology/overview.md) is a shared, machine-understandable vocabulary of your business that defines the key entities (for example, Customer, Product, or Plane), their relationships, properties, business rules, and possible actions while maintaining all terms in the language of the business. It brings together a live, connected representation of how your business operates, mapped directly to the underlying data in OneLake. This model lets users and agents see not just tables, but also relationships like "Customers place Orders for Products," "Flights have Segments and Crews," and "Delayed shipments impact Revenue." This data-centric context is critical for any AI that's expected to make decisions or analyses about the business.
 
 When you define an ontology element (such as an entity "Flight" with properties like Status or Delay), you [map it to the table and fields](../iq/ontology/how-to-bind-data.md) in an Eventhouse, Lakehouse, or Warehouse that contain that information, without copying or moving the data. After the data lands in OneLake, it becomes part of the live ontology.
 
@@ -103,7 +103,7 @@ This semantic layer enables consistent analytics, AI reasoning, and automation.
 
 ### Explore connected data with graph models
 
-[Graph models](../graph/graph-database.md) provide a connected network of ontology-defined entities and relationships. They enable multi-hop reasoning, impact analysis, and advanced algorithms such as shortest path and community detection. This integration lets AI agents and analytics tools query complex relationships efficiently. It offers real-time insights into dependencies and cascading effects that traditional relational models struggle to handle. You can interrogate graph models by using [GraphQL queries](../graph/gql-language-guide.md) through [Fabric APIs](../graph/gql-query-api.md).
+[Graph models](../graph/graph-database.md) provide a connected network of ontology-defined entities and relationships. They enable multihop reasoning, impact analysis, and advanced algorithms such as shortest path and community detection. This integration lets AI agents and analytics tools query complex relationships efficiently. It offers real-time insights into dependencies and cascading effects that traditional relational models struggle to handle. You can query graph models by using [GQL queries](../graph/gql-language-guide.md) through [Fabric APIs](../graph/gql-query-api.md).
 
 ## Related content
 

@@ -3,7 +3,7 @@ title: Include file for the available data destinations in Dataflow Gen2
 description: Include file for the available data destinations in Dataflow Gen2
 ms.reviewer: jeluitwi
 ms.topic: include
-ms.date: 03/12/2026
+ms.date: 07/21/2026
 ---
 * Azure SQL databases
 * Azure Data Explorer (Kusto)
@@ -15,3 +15,4 @@ ms.date: 03/12/2026
 * Fabric SQL database
 * SharePoint Files
 * Snowflake database
+* PostgreSQL database

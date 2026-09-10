@@ -11,13 +11,13 @@ ai-usage: ai-assisted
 
 **Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
 
-In high-concurrency environments, Spark jobs from notebooks, Spark Job Definitions, and pipelines compete for the same capacity resources. Without clear visibility, it can be hard to determine whether delays come from workspace limits, capacity saturation, or cross-workspace contention.
+In high-concurrency environments, Spark jobs from notebooks, Spark job definitions, and pipelines compete for the same capacity resources. Without clear visibility, it can be hard to determine whether delays come from workspace limits, capacity saturation, or cross-workspace contention.
 
 This monitoring experience helps you understand job state and capacity pressure from submission through execution so you can identify bottlenecks faster. It provides two views: a workspace-level view for teams investigating their own jobs, and a capacity-level view for administrators balancing many workspaces on a shared capacity.
 
 ## Understanding job concurrency and queuing
 
-When Spark workloads (such as notebooks, Spark Job Definitions, or Livy jobs) are throttled or queued, this experience helps you determine whether you're hitting:
+When Spark workloads (such as notebooks, Spark job definitions, or Livy jobs) are throttled or queued, this experience helps you determine whether you're hitting:
 
 - **Maximum compute limits:** Limits based on the Fabric capacity SKU, or the max CU limits configured for autoscale billing.
 - **CU saturation:** Current capacity consumption by active jobs in the workspace.
@@ -103,7 +103,7 @@ To review usage across a capacity:
 
 ## Related content
 
-- Learn about [Concurrency limits and queueing in Apache Spark for Microsoft Fabric](spark-job-concurrency-and-queueing.md).
+- Learn about [Concurrency limits and queueing in Apache Spark for Fabric](spark-job-concurrency-and-queueing.md).
 - [Get started with Data Engineering and Data Science admin settings for your Fabric capacity](capacity-settings-overview.md).
-- [Spark workspace administration settings in Microsoft Fabric](workspace-admin-settings.md).
+- [Spark workspace administration settings in Fabric](workspace-admin-settings.md).
 - Learn about [Apache Spark compute for Fabric](spark-compute.md).

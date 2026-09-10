@@ -1,5 +1,10 @@
 {
     "redirections": [
+      {
+        "source_path_from_root": "/docs/data-factory/decision-guide-data-transformation.md",
+        "redirect_url": "/fabric/data-factory/dataflow-gen2-cost-performance-benchmarks",
+        "redirect_document_id": true
+      },
       { "source_path_from_root": "/docs/data-factory/providing-user-documentation.md",
         "redirect_url": "https://aka.ms/DataFactoryConnectorCertification",
         "redirect_document_id": false
@@ -226,11 +231,6 @@
       {
         "source_path_from_root": "/docs/data-factory/known-issue-gen1-admin-switch.md",
         "redirect_url": "/fabric/get-started/known-issues/known-issue-597-dataflow-gen1-admin-switch-affects-dataflow-gen2",
-        "redirect_document_id": false
-      },
-      {
-        "source_path_from_root": "/docs/data-factory/pipeline-canvas-experience.md",
-        "redirect_url": "/fabric/data-factory/pipeline-overview",
         "redirect_document_id": false
       },
       {

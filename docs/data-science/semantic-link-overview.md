@@ -1,8 +1,8 @@
 ---
 title: What is semantic link?
-description: Get an overview of semantic link, which lets you connect semantic models to Synapse Data Science in Microsoft Fabric.
-ms.reviewer: ruxu
-reviewer: ruixinxu
+description: Get an overview of semantic link, which lets you connect semantic models to Fabric Data Science.
+ms.reviewer: scottpolly
+reviewer: s-polly
 ms.topic: overview
 ms.date: 03/03/2026
 ms.search.form: semantic link
@@ -31,11 +31,11 @@ Semantic link helps you preserve domain knowledge about data semantics in a stan
 
 ## Semantic link data flow
 
-The semantic link data flow starts with semantic models that contain data and semantic information. Semantic link bridges the gap between Power BI and the Synapse Data Science experience.
+The semantic link data flow starts with semantic models that contain data and semantic information. Semantic link bridges the gap between Power BI and the Data Science workload.
 
-:::image type="content" source="media/semantic-link-overview/data-flow-with-semantic-link.png" alt-text="A diagram that shows data flow from Power BI to notebooks in Synapse Data Science and back to Power BI." border="false":::
+:::image type="content" source="media/semantic-link-overview/data-flow-with-semantic-link.png" alt-text="A diagram that shows data flow from Power BI to notebooks in Data Science and back to Power BI." border="false":::
 
-Semantic link allows you to use semantic models from Power BI in the Synapse Data Science experience to perform tasks such as in-depth statistical analysis and predictive modeling with machine learning techniques. You can store the output of your data science work into [OneLake](../onelake/onelake-overview.md) by using Apache Spark, and ingest the stored output into Power BI by using [Direct Lake](../fundamentals/direct-lake-overview.md).
+By using semantic link, you can use semantic models from Power BI in the Data Science workload to perform tasks such as in-depth statistical analysis and predictive modeling by using machine learning techniques. You can store the output of your data science work into [OneLake](../onelake/onelake-overview.md) by using Apache Spark, and ingest the stored output into Power BI by using [Direct Lake](../fundamentals/direct-lake-overview.md).
 
 ## Power BI connectivity
 
@@ -48,7 +48,7 @@ A semantic model serves as a single [tabular object model](/analysis-services/to
 
 Semantic information in data includes Power BI [data categories](/power-bi/transform-model/desktop-data-categorization) such as address and postal code, relationships between tables, and hierarchical information.
 
-These data categories comprise metadata that semantic link propagates into the Synapse Data Science environment to enable new experiences and maintain data lineage.
+These data categories comprise metadata that semantic link propagates into the Data Science environment to enable new experiences and maintain data lineage.
 
 Some example applications of semantic link include:
 
@@ -62,7 +62,7 @@ Semantic link facilitates seamless collaboration between data scientists and bus
 
 ## FabricDataFrame data structure
 
-[FabricDataFrame](/python/api/semantic-link-sempy/sempy.fabric.fabricdataframe) is the primary data structure that semantic link uses to propagate semantic information from semantic models into the Synapse Data Science environment.
+[FabricDataFrame](/python/api/semantic-link-sempy/sempy.fabric.fabricdataframe) is the primary data structure that semantic link uses to propagate semantic information from semantic models into the Data Science environment.
 
 :::image type="content" source="media/semantic-link-overview/semantic-link-overview-fabric-dataframes.png" alt-text="A diagram that shows data flow from connectors to semantic models to FabricDataFrame to semantic functions." lightbox="media/semantic-link-overview/semantic-link-overview-fabric-dataframes.png" border="false":::
 

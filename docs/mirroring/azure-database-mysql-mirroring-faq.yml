@@ -71,7 +71,7 @@ sections:
       - question: |
           Can Azure Database for MySQL be virtual network integrated or only accessible through a Private Endpoint? 
         answer: 
-          Yes, to access an Azure Database for MySQL that doesn't support public connectivity you can [create a virtual network data gateway](/data-integration/vnet/create-data-gateways).
+          We only support connecting via public access or Private Link/private endpoint connectivity. Virtual network-enabled Azure Database for MySQL servers aren't supported for Fabric Mirroring at this time.
 
       - question: |
           What steps does restarting the Mirroring include? 
@@ -101,7 +101,7 @@ sections:
       - question: |
           What happens to Mirroring during an HA failover for my Azure Database for MySQL? 
         answer: 
-          Mirroring will continue transparently after an HA failover, as MySQL binary log replication handles failover scenarios automatically.
+          High Availability (HA) configuration isn't supported for Fabric Mirroring at this time.
   - name: Security
     questions:
       - question: |

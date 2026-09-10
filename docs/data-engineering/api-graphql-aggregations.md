@@ -46,7 +46,7 @@ These queries are ideal for building dashboards, generating reports, and powerin
 ## Prerequisites
 
 Before using GraphQL aggregations, ensure you have:
-- A Microsoft Fabric workspace with appropriate permissions
+- A Fabric workspace with appropriate permissions
 - A lakehouse or warehouse with tables containing the data you want to aggregate
 - An API for GraphQL endpoint configured for your Fabric items
 - Basic familiarity with GraphQL query syntax
@@ -64,7 +64,7 @@ Before using GraphQL aggregations, ensure you have:
 
 ## Example scenario: E-commerce data in Fabric
 
-For this guide, we use a fictional e-commerce dataset stored in your Microsoft Fabric lakehouse or warehouse. This scenario demonstrates how you might analyze retail data using GraphQL aggregations.
+For this guide, we use a fictional e-commerce dataset stored in your lakehouse or warehouse in Fabric. This scenario demonstrates how you might analyze retail data using GraphQL aggregations.
 
 In this example, product data belongs to categories, with each `Product` containing fields like price and rating (numeric values perfect for aggregation), and a relationship to `Category`. When you expose these tables through Fabric's API for GraphQL, the generated schema might look like:
 
@@ -119,7 +119,7 @@ The exact functions available depend on the implementation, but common aggregati
 In GraphQL aggregations, you specify the function name and target field, as shown in the examples `count(field: id)`, `sum(field: price)`, etc. Each function returns an object allowing you to select one or more fields it was applied to.
 
 > [!NOTE]
-> In Microsoft Fabric's API for GraphQL, aggregation operations like `count`, `sum`, `avg`, `min`, and `max` currently work only on **numeric** or quantitative fields (integers, floats). You can't use them on text or date fields directly. For example, you can't calculate the "average" of a string field. Support for performing aggregates on other data types (such as text concatenation or lexicographical min/max) might be added in future updates to Fabric.
+> In Fabric's API for GraphQL, aggregation operations like `count`, `sum`, `avg`, `min`, and `max` currently work only on **numeric** or quantitative fields (integers, floats). You can't use them on text or date fields directly. For example, you can't calculate the "average" of a string field. Support for performing aggregates on other data types (such as text concatenation or lexicographical min/max) might be added in future updates to Fabric.
 
 ## Aggregation query basics
 
@@ -430,7 +430,7 @@ The result returns a single value with the only category with more than two prod
 
 ## Restrictions and best practices
 
-When you use aggregations in Microsoft Fabric's API for GraphQL, there are important rules and limitations to consider. By following these best practices and understanding these restrictions, you can build effective GraphQL aggregation queries that yield powerful insights while ensuring predictable results, especially when working with large datasets or implementing pagination.
+When you use aggregations in Fabric's API for GraphQL, there are important rules and limitations to consider. By following these best practices and understanding these restrictions, you can build effective GraphQL aggregation queries that yield powerful insights while ensuring predictable results, especially when working with large datasets or implementing pagination.
 
 The aggregation feature is useful for reporting and analytics use cases, but it does require careful structuring of queries. Always double-check that your `groupBy` fields align with your selected output fields, add sorting for predictable order especially when paginating, and use distinct and aggregate functions appropriately for the data types.
 

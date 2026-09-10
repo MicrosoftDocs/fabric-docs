@@ -13,9 +13,9 @@ ai-usage: ai-assisted
 
 Typically, queries sent to a Direct Lake semantic model are handled from an in-memory cache of the columns sourced from Delta tables. The underlying storage for a Delta table is one or more Parquet files in OneLake. Parquet files organize data by column rather than by row. Semantic models load entire columns from Delta tables into memory as queries require them.
 
-Direct Lake on OneLake isn't coupled with the SQL endpoint. This architecture offers tighter integration with OneLake features such as OneLake security and more efficient DAX query plans because, for example, checking for SQL based security isn't required. DirectQuery fallback isn't supported by Direct Lake on OneLake.
+Direct Lake on OneLake isn't coupled with the SQL analytics endpoint. This architecture offers tighter integration with OneLake features such as OneLake security and more efficient DAX query plans because, for example, checking for SQL based security isn't required. DirectQuery fallback isn't supported by Direct Lake on OneLake.
 
-With Direct Lake on SQL endpoints, a DAX query might use *DirectQuery fallback*, which involves seamlessly switching to [DirectQuery mode](/power-bi/connect-data/service-dataset-modes-understand). DirectQuery fallback retrieves data directly from the [SQL analytics endpoint of the lakehouse](../data-engineering/lakehouse-sql-analytics-endpoint.md) or the warehouse. For example, fallback occurs when SQL based security is detected in the SQL endpoint. In this case, a DirectQuery operation sends a query to the SQL analytics endpoint. Fallback operations might result in slower query performance.
+With Direct Lake on SQL analytics endpoints, a DAX query might use *DirectQuery fallback*, which involves seamlessly switching to [DirectQuery mode](/power-bi/connect-data/service-dataset-modes-understand). DirectQuery fallback retrieves data directly from the [SQL analytics endpoint of the lakehouse](../data-engineering/lakehouse-sql-analytics-endpoint.md) or the warehouse. For example, fallback occurs when SQL based security is detected in the SQL analytics endpoints. In this case, a DirectQuery operation sends a query to the SQL analytics endpoint. Fallback operations might result in slower query performance.
 
 The following sections describe Direct Lake concepts and features, including column loading, framing, automatic updates, and DirectQuery fallback.
 
@@ -66,19 +66,27 @@ The diagram depicts the following processes and features.
 
 It's not always desirable to have data representing the latest state of any Delta table when a transcoding operation takes place. Consider that framing can help you provide consistent query results in environments where data in Delta tables is transient. Data can be transient for several reasons, such as when long-running extract, transform, and load (ETL) processes occur.
 
-You can refresh a Direct Lake semantic model manually, automatically, or programmatically. For more information, see [Refresh Direct Lake semantic models](direct-lake-manage.md#refresh-direct-lake-semantic-models).
-
+You can refresh a Direct Lake semantic model manually, automatically, or programmatically.
 
 ## Automatic updates
 
-The semantic model includes a setting that automatically updates Direct Lake tables. It's enabled by default. This setting ensures that data changes in OneLake automatically appear in the Direct Lake semantic model. Disable automatic updates when you want to control data changes by framing, which the previous section explains. For more information, see [Manage Direct Lake semantic models](direct-lake-manage.md#automatic-updates).
+Direct Lake semantic models have a model-level setting named **Keep your Direct Lake data up to date** that performs automatic updates of Direct Lake tables. It's enabled by default. It ensures that data changes in OneLake are automatically reflected in the Direct Lake semantic model. You can find the setting in the Fabric portal, in the **Refresh** section of the semantic model settings.
+
+When the setting is enabled, the semantic model performs a [framing](#framing) operation whenever data modifications in the underlying Delta tables are detected. The framing operation is scoped to only the tables where data modifications are detected.
+
+We recommend that you leave the setting on, especially when you have a small or medium-sized semantic model. It's especially useful when you have low-latency reporting requirements and Delta tables are modified regularly.
+
+In some situations, you might want to disable automatic updates. For example, you might need to allow completion of data preparation jobs or an extract, transform, and load (ETL) process before exposing any new data to consumers of the semantic model. When disabled, you can trigger a refresh manually in the Fabric portal, on a [refresh schedule](/power-bi/connect-data/refresh-data#configure-scheduled-refresh), or programmatically by using the [Power BI REST API](/power-bi/connect-data/asynchronous-refresh) or the [Tabular Object Model (TOM)](/analysis-services/tom/tom-pbi-datasets#refreshing-models-with-tom).
+
+> [!IMPORTANT]
+> Power BI suspends automatic updates when a *non-recoverable error* is encountered during a refresh. A non-recoverable error can occur, for example, when a refresh fails after several attempts. If your automatic updates stop, verify that the semantic model can be refreshed successfully. Power BI automatically resumes automatic updates after a subsequent on-demand refresh completes without errors.
 
 > [!TIP]
 > You can set up [automatic page refresh](/power-bi/create-reports/desktop-automatic-page-refresh) in your Power BI reports. This feature automatically refreshes a specific report page, provided that the report connects to a Direct Lake semantic model (or other types of semantic model).
 
 ## DirectQuery fallback
 
-When you use Direct Lake on SQL endpoints, a query sent to a Direct Lake semantic model can fall back to [DirectQuery mode](/power-bi/connect-data/service-dataset-modes-understand). In this mode, the table no longer operates in Direct Lake mode. It retrieves data directly from the SQL analytics endpoint of the lakehouse or warehouse. Such queries always return the latest data because they're not constrained to the point in time of the last framing operation. However, fallback operations might result in slower query performance.
+When you use Direct Lake on SQL analytics endpoints, a query sent to a Direct Lake semantic model can fall back to [DirectQuery mode](/power-bi/connect-data/service-dataset-modes-understand). In this mode, the table no longer operates in Direct Lake mode. It retrieves data directly from the SQL analytics endpoint of the lakehouse or warehouse. Such queries always return the latest data because they're not constrained to the point in time of the last framing operation. However, fallback operations might result in slower query performance.
 
 > [!IMPORTANT]
 > If possible, always design your solution or size your capacity to avoid DirectQuery fallback. That's because it might result in slower query performance.
@@ -103,7 +111,7 @@ A single table that exceeds any guardrail limit prevents Direct Lake mode for th
 
 ### Control fallback with DirectLakeBehavior
 
-When Direct Lake conditions aren't met, the behavior of your semantic models depends on the **DirectLakeBehavior** setting. This setting only applies to Direct Lake on SQL endpoints.
+When Direct Lake conditions aren't met, the behavior of your semantic models depends on the **DirectLakeBehavior** setting. This setting only applies to Direct Lake on SQL analytics endpoints.
 
 Set the **DirectLakeBehavior** property to one of the following three values:
 
@@ -153,8 +161,8 @@ Use this table to identify the fix for each fallback scenario:
 | Table is based on a SQL view | Materialize the view as a delta table, or accept DirectQuery performance for that table. |
 | Table doesn't exist | Verify the delta table exists in the lakehouse or warehouse. Check for schema drift or deleted tables. |
 | Transient error | Retry the query. If persistent, check capacity health and refresh the semantic model. |
-| OLS defined at SQL endpoint | Move object-level security to the semantic model, or accept DirectQuery fallback. |
-| RLS or DDM defined at SQL endpoint | Move row-level security to the semantic model, or accept DirectQuery fallback. |
+| OLS defined at SQL analytics endpoint | Move object-level security to the semantic model, or accept DirectQuery fallback. |
+| RLS or DDM defined at SQL analytics endpoint | Move row-level security to the semantic model, or accept DirectQuery fallback. |
 | Delta table exceeds guardrails | Run `OPTIMIZE` and `VACUUM` on the delta table to reduce parquet files and row groups. If the table still exceeds limits, upgrade to a higher Fabric SKU. |
 | Capacity under memory pressure | Reduce concurrent workloads, optimize other models, or upgrade the capacity SKU. |
 

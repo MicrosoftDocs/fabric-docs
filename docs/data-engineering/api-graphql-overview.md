@@ -43,20 +43,20 @@ For application developers, GraphQL means faster development with less infrastru
 ## Who should use API for GraphQL
 
 Fabric's API for GraphQL is designed for:
-- **Application developers** building data-driven web and mobile applications that consume Fabric lakehouse and warehouse data
+- **Application developers** building data-driven web and mobile applications that consume lakehouse and warehouse data in Fabric
 - **Data engineers** exposing Fabric data to downstream applications through modern, flexible APIs without writing custom backend code
 - **Integration developers** connecting Fabric data to custom applications and automated workflows
 - **BI developers** creating custom analytics applications that complement Power BI with Fabric data
 - **Data scientists** exposing Fabric data and machine learning insights through programmatic APIs
 
-If you're working within the Microsoft Fabric unified analytics platform and need to make lakehouse, warehouse, or SQL database data accessible to applications, the GraphQL API provides an efficient, developer-friendly way to query exactly the data you need.
+If you're working within the Fabric unified analytics platform and need to make lakehouse, warehouse, or SQL database data accessible to applications, the GraphQL API provides an efficient, developer-friendly way to query exactly the data you need.
 
 > [!TIP]
 > Want to integrate Fabric GraphQL APIs with AI agents? Try the [Build a local GraphQL MCP server for AI agents](api-graphql-local-model-context-protocol.md) tutorial to connect AI agents to your Fabric data using the Model Context Protocol.
 
 ## Expose data through the API for GraphQL
 
-Exposing data sources to a GraphQL item in Microsoft Fabric is straightforward and can be accomplished in minutes using the Fabric portal's visual interface. The process involves:
+Exposing data sources to a GraphQL item in Fabric is straightforward and can be accomplished in minutes using the Fabric portal's visual interface. The process involves:
 
 1. **Create a GraphQL API item** in your Fabric workspace
 1. **Connect your data sources** by selecting from available lakehouses, warehouses, or databases
@@ -72,14 +72,14 @@ For step-by-step instructions, see [Create an API for GraphQL in Fabric and add 
 
 Currently the following supported data sources are exposed through the Fabric API for GraphQL:
 
-- Microsoft Fabric Data Warehouse
-- Microsoft Fabric SQL database
-- Microsoft Fabric Lakehouse via SQL Analytics Endpoint
-- Microsoft Fabric Mirrored Databases via SQL Analytics Endpoint, including:
+- Fabric Data Warehouse
+- SQL database in Fabric
+- Fabric Lakehouse via SQL Analytics Endpoint
+- Fabric Mirrored Databases via SQL Analytics Endpoint, including:
   - Azure SQL Database
   - Azure SQL Managed Instance
   - Azure Cosmos DB
-  - Microsoft Fabric SQL Database
+  - SQL database in Fabric
   - Azure Databricks
   - Snowflake
   - Open mirrored databases
@@ -87,7 +87,7 @@ Currently the following supported data sources are exposed through the Fabric AP
 
 ## Features
 
-Microsoft Fabric API for GraphQL provides comprehensive capabilities that streamline data access for applications. From automatic code generation to performance monitoring, these features enable you to build robust data APIs with minimal configuration.
+Fabric API for GraphQL provides comprehensive capabilities that streamline data access for applications. From automatic code generation to performance monitoring, these features enable you to build robust data APIs with minimal configuration.
 
 ### Automatic schema generation
 - **Schema discovery**: Automatically discovers and maps data source schemas to GraphQL types

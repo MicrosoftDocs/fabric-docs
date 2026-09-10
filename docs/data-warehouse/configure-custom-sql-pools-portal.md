@@ -4,6 +4,7 @@ description: Learn how to use the Fabric portal to configure custom SQL pools.
 ms.reviewer: brmyers
 ms.date: 03/11/2026
 ms.topic: quickstart
+ms.search.form: Warehouse Custom SQL pools
 ---
 
 # Configure custom SQL pools in the Fabric portal

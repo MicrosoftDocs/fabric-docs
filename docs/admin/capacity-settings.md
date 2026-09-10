@@ -1,8 +1,8 @@
 ---
 title: Manage your Fabric capacity
 description: Learn how to manage your Microsoft Fabric capacity and understand that different settings that are available to you.
-author: julcsc
-ms.author: juliacawthra
+author: msmimart
+ms.author: mimart
 ms.topic: how-to
 ms.date: 03/06/2026
 ai-usage: ai-assisted
@@ -26,13 +26,13 @@ The capacity settings page shows a list of all the capacities in your [tenant](.
 * **Power BI Premium** - A capacity that was bought as part of a Power BI Premium subscription. These capacities use P SKUs.
 
    >[!NOTE]
-   >Power BI capacities are transitioning to Fabric. For more information, see [Power BI Premium transition to Fabric](/power-bi/enterprise/service-premium-faq#power-bi-premium-transition-to-microsoft-fabric).
+   >Power BI Premium per-capacity (P SKU) subscriptions are retiring. To keep your Power BI workloads running, migrate to Microsoft Fabric capacity (F SKUs). For an end-to-end view of the migration, see [Power BI Premium to Microsoft Fabric migration overview](/power-bi/support/premium-migration-overview). For answers to common questions, see the [Power BI Premium to Microsoft Fabric migration FAQ](/power-bi/support/premium-migration-faq).
 
 * **Power BI Embedded** - A capacity that was bought as part of a Power BI Embedded subscription. These capacities use A or EM SKUs.
 * **Trial** - A [Fabric trial](../fundamentals/fabric-trial.md) capacity. These capacities use Trial SKUs.
 * **Fabric capacity** - A Fabric capacity. These capacities use F SKUs.
 
-The rest of this article is divided to sections based on the different capacity types. To view the settings of your capacity, select the tab that matches your capacity type. If there's no tab to select, the section applies to all capacity types.
+The rest of this article is divided into sections based on the different capacity types. To view the settings of your capacity, select the tab that matches your capacity type. If there's no tab to select, the section applies to all capacity types.
 
 ## Manage your capacity
 
@@ -320,7 +320,7 @@ This table summarizes the actions you can take in the details section.
 
 >[!NOTE]
 >* Some of the features in the table are only available if they are enabled in the tenant.
->* Trail capacities only have some of the settings listed in the table
+>* Trial capacities only have some of the settings listed in the table.
 
 | Details setting name                 | Description |
 |--------------------------------------|-------------|
@@ -367,7 +367,7 @@ To optimize performance and prevent memory-related errors, administrators can ad
 4. Locate the **Semantic models** section.
 5. Adjust the **Max memory (%)** slider to allocate more memory as needed.
 
-> [NOTE]
+> [!NOTE]
 > Increasing memory allocation may help resolve issues such as model loading failures or performance bottlenecks. For more context on SKU limitations, see [Semantic model SKU limitation](../enterprise/powerbi/service-premium-what-is.md#semantic-model-sku-limitation).
 
 ## Related content

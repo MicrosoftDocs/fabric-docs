@@ -2,7 +2,7 @@
 title: Fast copy in Dataflow Gen2
 description: Learn about the fast copy feature in Dataflow Gen2 in Data Factory for Microsoft Fabric.
 ms.topic: how-to
-ms.date: 09/15/2025
+ms.date: 08/13/2026
 ms.reviewer: yexu
 ms.custom: dataflows, sfi-image-nochange
 ai-usage: ai-assisted
@@ -155,6 +155,14 @@ To use the fast copy engine and improve your Dataflow Gen2 performance, you can 
 
       :::image type="content" source="media/dataflows-gen2-fast-copy/fast-copy-result-transform.png" alt-text="Screenshot showing the results of the transform steps." lightbox="media/dataflows-gen2-fast-copy/fast-copy-result-transform.png":::
 
+## How fast copy runtime and cost are calculated
+
+Fast copy accelerates ingestion by running the copy job in parallel across multiple compute cores. Dataflow Gen2 automatically balances each fast copy scenario to determine how many cores to allocate, based on factors like data size, source type, and throughput. You don't configure or manage this core allocation. Dataflow tunes it for you to move the data as quickly as possible.
+
+Because the work runs across multiple cores in parallel, the runtime used for billing reflects the total time spent across all allocated cores, not the wall-clock duration of the refresh. When fast copy runs on several cores at once, the combined core time is higher than the elapsed time you see in the refresh history. This is why a copy that finishes quickly in wall-clock time can still reflect meaningful compute usage: the speedup comes from spreading the work across more cores, and the billed duration accounts for all of them.
+
+For how this runtime maps to Capacity Unit (CU) consumption, see [Dataflow Gen2 pricing](pricing-dataflows-gen2.md).
+
 ## Known limitations
 
 Here are the current limitations for fast copy:
@@ -167,3 +175,4 @@ Here are the current limitations for fast copy:
 
 - [Dataflow Gen2 Overview](dataflows-gen2-overview.md)
 - [Monitor Dataflow Gen2](dataflows-gen2-monitor.md)
+- [Dataflow Gen2 cost and performance benchmarks](dataflow-gen2-cost-performance-benchmarks.md)

@@ -48,6 +48,9 @@ Follow these steps to create a relationship type and bind data to it:
 
     :::image type="content" source="media/how-to-create-relationship-types/add-relationship-2.png" alt-text="Screenshot of the Add new relationship options.":::
 
+    >[!NOTE]
+    >Due to a known issue affecting duplicate relationship names, ensure relationship names are unique.
+
 1. The relationship type is created and appears in the configuration canvas. Select it on the canvas to open the relationship details configuration.
 
     :::image type="content" source="media/how-to-create-relationship-types/add-relationship-3.png" alt-text="Screenshot of the created relationship on the canvas." lightbox="media/how-to-create-relationship-types/add-relationship-3.png":::

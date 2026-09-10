@@ -2,7 +2,7 @@
 title: "Quickstart: Get data into OneLake"
 description: Learn how to bring data into OneLake by uploading a sample CSV file to a lakehouse and by creating a OneLake shortcut to reuse that data from a second lakehouse.
 ms.topic: quickstart
-ms.date: 05/27/2026
+ms.date: 07/15/2026
 ai-usage: ai-assisted
 #customer intent: As a Fabric user, I want to add data to OneLake quickly so that I can explore it from any Fabric engine.
 ---
@@ -37,12 +37,17 @@ When you create a Fabric item, such as a lakehouse, warehouse, or eventhouse, th
 
 In this quickstart, you use `Dim_Products.csv` from a publicly available Fabric sample semantic model. It's a small table of product information from a sample coffee retailer.
 
+Download the sample data:
+
 1. Open a browser and go to <https://fabrictutorialdata.blob.core.windows.net/sampledata/Coffee/Dim_Products.csv>.
 1. When prompted, save the file as `Dim_Products.csv` to a folder on your computer.
 
-In this section, you upload `Dim_Products.csv` to **Files** so that you have raw source data sitting in OneLake. The **Files** area of a lakehouse is a general-purpose storage zone in OneLake. Think of it as the landing zone for raw data in whatever format it arrives. You can drop in CSV, JSON, Parquet, images, logs, or anything else without having to define a schema first.
+Next, upload `Dim_Products.csv` to **Files** so that you have raw source data sitting in OneLake. The **Files** area of a lakehouse is a general-purpose storage zone in OneLake. Think of it as the landing zone for raw data in whatever format it arrives. You can drop in CSV, JSON, Parquet, images, logs, or anything else without having to define a schema first.
 
-1. In the Lakehouse explorer, hover over **Files**, select the more options (**...**) menu, and then select **Upload** > **Upload files**.
+1. In the Lakehouse menu, select **Get data** > **Upload files**.
+
+   :::image type="content" source="./media/quickstart-get-data/upload-files.png" alt-text="Screenshot of the Fabric portal that shows using the get data menu to upload files.":::
+
 1. In the **Upload files** pane, select the folder icon and browse to `Dim_Products.csv` on your computer.
 1. Select **Upload**, then close the upload pane.
 1. Select the **Files** folder to see its contents and confirm that `Dim_Products.csv` appears.
@@ -58,6 +63,9 @@ Fabric standardizes on Delta Lake as the table format in OneLake. When you load 
 
 1. In the Lakehouse explorer, open the **Files** folder.
 1. Hover over the `Dim_Products.csv` file and select the more options (**...**) menu, then select **Load to Tables** > **New table**.
+
+   :::image type="content" source="./media/quickstart-get-data/new-table.png" alt-text="A screenshot of the Fabric portal that shows loading a file to a new table.":::
+
 1. In the **Load to table** dialog, enter `dim_products` for the table name, keep the defaults, and select **Load**.
 1. After the load finishes, expand **Tables** and select `dim_products` to preview the rows. The raw CSV in **Files** is unchanged, and `dim_products` is a new Delta table built from it.
 
@@ -92,6 +100,11 @@ If you don't plan to continue to the other OneLake quickstarts, delete the lakeh
 1. Select the more options (**...**) menu next to the lakehouse, select **Delete**, and confirm the deletion.
 
 Deleting the lakehouses also removes the contents within them: the uploaded file, the `dim_products` Delta table, and the shortcut.
+
+## Next step
+
+> [!div class="nextstepaction"]
+> [Query and consume OneLake data across Fabric](quickstart-consume-data.md)
 
 ## Related content
 

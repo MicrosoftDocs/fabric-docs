@@ -59,7 +59,7 @@ This unified approach to security means users don't have to maintain separate pe
 
 You can apply sensitivity labels to OneLake items just like you would to a document, and those labels enforce encryption or access restrictions even if the data is exported to Excel or another tool. Likewise, data loss prevention (DLP) policies can detect sensitive data uploads or downloads from OneLake and prevent or alert on potential data leaks.
 
-For more information, see [Get started securing your data in OneLake](security/get-started-onelake-security.md).
+For more information, see [Get started securing your data in OneLake](security/get-started-security.md).
 
 ## One copy of data
 
@@ -77,11 +77,12 @@ For more information on how to use shortcuts, see [OneLake shortcuts](onelake-sh
 
 ### Mirroring
 
-Mirroring in Fabric is a low-cost, low-latency solution that continuously replicates data from various systems into OneLake. You can securely connect to an external data source and automatically mirror (copy) selected databases or tables into OneLake’s open format, keeping them in sync in near real-time. The mirrored data is stored as Delta Parquet in OneLake, so it’s immediately ready for analysis by any Fabric engine.
+Mirroring in Fabric makes an external database or catalog available through OneLake without requiring you to build and operate data movement pipelines. Mirroring always adds the source catalog metadata to Fabric. How it makes the underlying data available depends on the source.
 
-Mirroring supports sources like Azure SQL Database, Azure Cosmos DB, Azure Database for PostgreSQL, Azure Databricks (Unity Catalog), Snowflake, and more. Changes in the source are continuously propagated, so your OneLake copy stays up-to-date without manual ETL jobs. You can run analytics, AI, or Power BI reports on fresh data without directly querying the production source.
+- **Database mirroring** continuously replicates data from an operational database into OneLake as analytics-ready Delta tables.
+- **Metadata mirroring** synchronizes an external catalog and uses shortcuts to access its open-format data in place without copying it.
 
-For more information, see [What is mirroring in Fabric?](../mirroring/overview.md)
+For guidance on choosing between shortcuts and mirroring and using them together, see [Unify data with OneLake shortcuts and mirroring](unify-data.md). For mirroring concepts and supported sources, see [What is mirroring in Fabric?](../mirroring/overview.md)
 
 ### Collaborate in multiple analytical engines
 
@@ -140,7 +141,7 @@ For more information, see [OneLake diagnostics](onelake-diagnostics-overview.md)
 
 ## Related content
 
-* [Get started with OneLake data](quickstart-get-data.md)
+* [Quickstart: Get data into OneLake](quickstart-get-data.md)
+* [OneLake patterns and foundational capabilities](architecture-patterns.md)
+* [Unify data with OneLake shortcuts and mirroring](unify-data.md)
 * [OneLake file explorer for Windows](onelake-file-explorer.md)
-* [OneLake shortcuts](onelake-shortcuts.md)
-* [OneLake access and APIs](onelake-access-api.md)

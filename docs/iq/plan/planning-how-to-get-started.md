@@ -8,33 +8,31 @@ ms.search.form: Getting Started with Planning Sheets
 
 # Create a planning sheet
 
-This article describes how to get started with your first planning sheet in plan.
-
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
+This article describes how to get started with your first planning sheet inside planning in Fabric.
 
 ## Prerequisites
 
 Before you set up planning sheets, make sure you have the following prerequisites:
 
-* The overall [prerequisites for plan (preview)](overview-prerequisites.md), including the required tenant and capacity settings.
+* The overall [prerequisites for planning in Fabric](overview-prerequisites.md), including the required tenant and capacity settings.
 
 * Data in a [Power BI semantic model](../../data-warehouse/semantic-models.md), and a [connection to your semantic model](planning-how-to-create-semantic-model-connection.md).
 
 > [!NOTE]
-> The preview of plan in Fabric IQ is now accessible to organizations worldwide in Microsoft Fabric as part of the Microsoft Fabric SKU. This SKU includes new meters. Meters are currently available but aren't currently billed.
+> Planning in Fabric IQ is now available to organizations worldwide as part of the Microsoft Fabric SKU. New billing meters have also been introduced and are now available for billing.
 
 ## Create plan item
 
-1. From your Fabric workspace, select **New item** > **Plan (preview)**.
+1. From your Fabric workspace, select **New item** > **Plan**.
 
-    :::image type="content" source="media/planning-how-to-get-started/new-plan-1.png" alt-text="Screenshot of creating a new plan (preview) item." lightbox="media/planning-how-to-get-started/new-plan-1.png":::
+    :::image type="content" source="media/planning-how-to-get-started/new-plan-1.png" alt-text="Screenshot of creating a new plan item." lightbox="media/planning-how-to-get-started/new-plan-1.png":::
 
 1. On **New Plan**, enter a name for your plan, and then select **Create**.
 
     :::image type="content" source="media/planning-how-to-get-started/new-plan-2.png" alt-text="Screenshot of providing name and location details for a new plan.":::
 
     > [!NOTE]
-    > When you create a planning item, you also automatically create a Fabric SQL database in your workspace. This database stores your plan report's metadata.
+    > When you create a plan item, you also automatically create a Fabric SQL database in your workspace. This database stores your plan report's metadata.
 
 ## Create your planning sheet
 
@@ -55,6 +53,9 @@ In this section, you add the semantic model connection that you created earlier 
 1. Under **Select a Connection**, connect to your semantic model connection.
 
     :::image type="content" source="media/planning-how-to-get-started/semantic-model-connection.png" alt-text="Screenshot of connecting to a semantic model." lightbox="media/planning-how-to-get-started/semantic-model-connection.png":::
+
+> [!NOTE]
+> Only connections with the **Power BI Semantic Model** connection type that the current user has access to appear in this dropdown.
 
 1. Select the semantic model, and then select **Add**.
 

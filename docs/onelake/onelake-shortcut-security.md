@@ -6,7 +6,8 @@ ms.reviewer: aamerril # Product team ms alias(es)
 # ms.author: Do not use - assigned by folder in docfx file
 ms.search.form: Shortcuts
 ms.topic: concept-article
-ms.date: 06/02/2026
+ms.date: 07/31/2026
+ai-usage: ai-assisted
 #customer intent: As a security engineer, I want to understand security for OneLake shortcuts so that I can secure access to my data using roles and permissions.
 ---
 
@@ -54,22 +55,22 @@ This table shows the permissions needed for each shortcut action.
 
 ## OneLake security
 
-[OneLake security](./security/get-started-onelake-security.md) enables you to apply role-based access control (RBAC) to your data stored in OneLake. You can define security roles that grant read access to specific tables and folders within a Fabric item, and assign them to users or groups. The access permissions determine what users can do across all engines in Fabric, ensuring consistent access control.
+[OneLake security](./security/data-access-control-model.md) enables you to apply role-based access control (RBAC) to your data stored in OneLake. You can define security roles that grant read access to specific tables and folders within a Fabric item, and assign them to users or groups. The access permissions determine what users can do across all engines in Fabric, ensuring consistent access control.
 
-Users in the Admin, Member, and Contributor roles have full access to read data from a shortcut regardless of the defined OneLake data access roles. However, they still need access on both the shortcut path and target path as mentioned in [Workspace roles](./security/get-started-security.md#workspace-permissions).
+OneLake security roles don't restrict shortcut data access for users in the Admin, Member, and Contributor workspace roles. These users must still have access to both the shortcut path and the target path, as described in [Workspace roles](./security/get-started-security.md#grant-access-with-workspace-roles). They must also have Read access to the target path to create or update a shortcut.
 
-Users in the Viewer role or users that had a lakehouse shared with them directly have access restricted based on if the user has access through a OneLake data access role. For more information on the access control model with shortcuts, see [Data access control model in OneLake.](./security/data-access-control-model.md#shortcuts)
+Users in the Viewer role, or users with [item Read permissions](./security/get-started-security.md#share-items-and-set-item-level-permissions), have access determined by their OneLake security roles. To perform shortcut operations, these users need the corresponding OneLake security permission in addition to Fabric Read permission.
 
-Users in Viewer roles can create shortcuts if they have ReadWrite permissions on the path where the shortcut is created.
-
-The following table illustrates the necessary permissions to perform shortcut operations.
+The following table shows the combined permissions required for each shortcut operation:
 
 | **Shortcut operation** | **Permission on shortcut path** | **Permission on target path** |
 |---|---|---|---|---|
-| **Create** | Fabric Read *and* OneLake security ReadWrite | OneLake security Read  |
-| **Read (GET/LIST shortcuts)** | Fabric Read *and* OneLake security Read | N/A |
-| **Update** | Fabric Read *and* OneLake security ReadWrite | OneLake security Read (on the new target) |
-| **Delete** | Fabric Read *and* OneLake security ReadWrite | N/A |
+| **Create** | Fabric Read *plus* OneLake security ReadWrite | OneLake security Read  |
+| **Read (GET/LIST shortcuts)** | Fabric Read *plus* OneLake security Read | N/A |
+| **Update** | Fabric Read *plus* OneLake security ReadWrite | OneLake security Read (on the new target) |
+| **Delete** | Fabric Read *plus* OneLake security ReadWrite | N/A |
+
+For more information on the access control model with shortcuts, see [Data access control model in OneLake](./security/data-access-control-model.md#shortcuts).
 
 ## <span id="shortcut-auth-models"></span> Shortcut authentication models
 
@@ -77,7 +78,8 @@ OneLake shortcuts use two authentication models: passthrough and delegated. The 
 
 | Shortcut type | Authentication model | Details |
 |---|---|---|
-| **OneLake to OneLake** | Passthrough or delegated | Passthrough is the default. To use delegated authentication instead, choose **Delegated identity** as the connection method when [creating the shortcut](shortcuts/create-onelake-shortcut.md#authentication). |
+| **Same-tenant OneLake to OneLake** | Passthrough or delegated | Passthrough is the default. To use delegated authentication instead, choose **Delegated identity** when [creating the shortcut](shortcuts/create-onelake-shortcut.md). |
+| **Cross-tenant OneLake to OneLake** | Delegated only | Configure an organizational account or service principal in the producer's tenant when [creating the cross-tenant shortcut](shortcuts/create-cross-tenant-onelake-shortcut.md). |
 | **External (multicloud)** | Delegated only | Users can access external data without direct access to the external system. Configure OneLake security on the shortcut to control what data in the external system can be accessed. |
 
 ### Passthrough authentication
@@ -90,6 +92,8 @@ In the passthrough model, the shortcut accesses data in the target location by p
 
 In the delegated model, the shortcut accesses data by using an intermediate credential, such as another user's identity, a service principal, or an account key. Delegated shortcuts allow permission management to be separated or "delegated" to another team or downstream user to manage. All delegated shortcuts in OneLake can have OneLake security roles defined for them.
 
+Use delegated authentication when the default passthrough behavior doesn't match the access pattern you want for your data. For example, a delegated shortcut can use a fixed connection identity that represents a business unit instead of requiring each downstream user to have access to the source data. The business unit can manage [OneLake security](./security/get-started-onelake-security.md) access for its users while honoring the security controls applied to the connection identity.
+
 Shortcuts to external systems like Amazon S3 or Google Cloud Storage always use delegated authentication. Shortcuts to internal OneLake targets can use delegated authentication if it's configured at the time of shortcut creation.
 
 :::image type="content" source=".\media\onelake-shortcut-security\delegated-mode.png" alt-text="Diagram showing the delegated identity used to access the data in the shortcut target." lightbox=".\media\onelake-shortcut-security\delegated-mode.png":::
@@ -97,6 +101,8 @@ Shortcuts to external systems like Amazon S3 or Google Cloud Storage always use 
 #### Delegated OneLake shortcuts
 
 Delegated OneLake shortcuts use a configured connection identity instead of the signed-in user's identity. When accessing a delegated shortcut, the calling user sees the intersection of their security and the security that applies to the delegated identity. The following table outlines example scenarios.
+
+For same-tenant OneLake shortcuts, delegated authentication is optional. If you don't select it, the shortcut uses passthrough authentication. Cross-tenant OneLake shortcuts always use delegated authentication. The configured connection identity needs access to the target data. To switch an existing shortcut between passthrough and delegated authentication, delete and recreate the shortcut with the desired authentication method.
 
 | **Permission on shortcut path (consumer)** | **Permission on target path (producer)** | **Resulting access** |
 |---|---|---|
@@ -106,13 +112,15 @@ Delegated OneLake shortcuts use a configured connection identity instead of the 
 
 The following security considerations apply to delegated shortcuts:
 
-- Column-level security (CLS) is supported for the shortcut target with delegated shortcuts. CLS works on both the target and the shortcut itself.
-- Row-level security (RLS) isn't supported for delegated shortcuts.
-- In addition to OneLake security access to the target path, accessing external shortcuts via Spark or direct API calls also requires read permissions on the item containing the external shortcut path.
+- A user can only be in a single OneLake security role with CLS on the consumer side, if the producer side also has RLS.
+- Column-level security (CLS) is supported for both the producer and consumer of a delegated shortcut.
+- Row-level security (RLS) is supported for the producer side of a delegated shortcut, but you can't set it on the consumer side.
+- In addition to OneLake security access to the producer path, accessing external shortcuts via Spark or direct API calls also requires read permissions on the item containing the external shortcut path.
 
 ## Related content
 
 * [What are shortcuts?](./onelake-shortcuts.md)
-* [Create a OneLake shortcut](shortcuts/create-onelake-shortcut.md)
+* [Create a same-tenant OneLake shortcut](shortcuts/create-onelake-shortcut.md)
+* [Create a cross-tenant OneLake shortcut](shortcuts/create-cross-tenant-onelake-shortcut.md)
 * [Use OneLake shortcuts REST APIs](onelake-shortcuts-rest-api.md)
 * [Data Access Control Model in OneLake.](./security/data-access-control-model.md#shortcuts)

@@ -3,7 +3,7 @@ title: Connector overview
 description: Learn about the available data connectors for Data Factory in Microsoft Fabric.
 ms.reviewer: jianleishen
 ms.topic: overview
-ms.date: 02/27/2026
+ms.date: 07/21/2026
 ms.search.form: product-data-factory
 ms.custom: connectors
 ---
@@ -36,7 +36,7 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | [ADPAnalytics (Beta)](/power-query/connectors/adp-analytics) | ✓/− |  |  |
 | [Amazon Athena](connector-amazon-athena-overview.md) | ✓/− |  |  |
 | [Amazon OpenSearch Service (Beta)](/power-query/connectors/amazon-opensearch-service) | ✓/− |  |  |
-| [Amazon RDS For Oracle](connector-amazon-rds-for-oracle-overview.md) |  | ✓/− | ✓/− |
+| [Amazon RDS for Oracle](connector-amazon-rds-for-oracle-overview.md) |  | ✓/− | ✓/− |
 | [Amazon RDS for SQL Server](connector-amazon-rds-for-sql-server-overview.md) |  | ✓/− | ✓/− |
 | [Amazon Redshift](connector-amazon-redshift-overview.md) | ✓/− | ✓/− |  |
 | [Amazon S3](connector-amazon-s3-overview.md) |  | ✓/✓ | ✓/✓ |
@@ -121,7 +121,7 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | [Google Cloud Storage](connector-google-cloud-storage-overview.md) |  | ✓/✓ | ✓/✓ |
 | [Google Sheets](connector-google-sheets-overview.md) | ✓/− |  |  |
 | [Greenplum for Pipeline](connector-greenplum-for-pipeline-overview.md) |  | ✓/− | ✓/− |
-| [Hadoop Distributed File System (Hdfs)](connector-hdfs-for-pipeline-overview.md) |  | ✓/− | ✓/− |
+| [Hadoop Distributed File System (HDFS)](connector-hdfs-for-pipeline-overview.md) |  | ✓/− | ✓/− |
 | HDInsight Interactive Query | ✓/− |  |  |
 | Hexagon PPM Smart API | ✓/− |  |  |
 | [Hive LLAP](connector-hive-llap-overview.md) | ✓/− |  |  |
@@ -172,7 +172,7 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | [Planview OKR (Beta)](/power-query/connectors/planview-okr#load-data-from-planview-okr-in-power-query-online) | ✓/− |  |  |
 | Planview Portfolios | ✓/− |  |  |
 | Planview ProjectPlace | ✓/− |  |  |
-| [PostgreSQL database](connector-postgresql-overview.md) | ✓/− | ✓/✓ | ✓/✓ |
+| [PostgreSQL database](connector-postgresql-overview.md) | ✓/✓ | ✓/✓ | ✓/✓ |
 | Power BI dataflows (Legacy) | ✓/− |  |  |
 | [Presto](connector-presto-overview.md) |  | ✓/− | ✓/− |
 | Product Insights (Beta) | ✓/− |  |  |
@@ -238,7 +238,7 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | Zoho Creator | ✓/− |  |  |
 | Zucchetti HR Infinity (Beta) | ✓/− |  |  |
 
-## Support TLS 1.3
+## TLS 1.3 support
 
 Transport Layer Security (TLS) is a widely adopted security protocol that's designed to secure connections and communications between servers and clients. The following connectors support TLS 1.3 for Data Factory:
 

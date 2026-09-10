@@ -11,8 +11,6 @@ ai-usage: ai-assisted
 
 You might find the notes feature of your planning sheets to be useful for contextual explanation and documentation. For example, with notes you can help interpret data, justify values, and improve decision-making. Planning enables data-level annotation, meaning that you can document insights at granular levels such as rows, columns, or individual cells.
 
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
-
 ## Prerequisite
 
 Before you can add notes, ensure that you have access to a planning sheet.

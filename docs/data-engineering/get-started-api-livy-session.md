@@ -205,7 +205,7 @@ can access on behalf of the authenticated user. Two are required; the rest are o
 
 | Scope | Description |
 |-------|-------------|
-| `Code.AccessFabric.All` | Allows getting access tokens to Microsoft Fabric. Required for all Livy API operations. |
+| `Code.AccessFabric.All` | Allows getting access tokens to Fabric. Required for all Livy API operations. |
 | `Code.AccessStorage.All` | Allows getting access tokens to OneLake and Azure storage. Required for reading and writing data in lakehouses. |
 
 ### Optional Code.* scopes
@@ -288,7 +288,7 @@ Add these scopes only if your Spark jobs need to access the corresponding Azure 
 
 ### Integration with Fabric Environments
 
-By default, this Livy API session runs against the default starter pool for the workspace. Alternatively you can use Fabric Environments [Create, configure, and use an environment in Microsoft Fabric](/fabric/data-engineering/create-and-use-environment) to customize the Spark pool that the Livy API session uses for these Spark jobs. To use a Fabric Environment, update the prior notebook cell with this json payload.
+By default, this Livy API session runs against the default starter pool for the workspace. Alternatively you can use Fabric Environments [Create, configure, and use an environment in Fabric](/fabric/data-engineering/create-and-use-environment) to customize the Spark pool that the Livy API session uses for these Spark jobs. To use a Fabric Environment, update the prior notebook cell with this json payload.
 
 ```python
 create_livy_session = requests.post(livy_base_url, headers = headers, json = {

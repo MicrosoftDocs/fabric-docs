@@ -28,7 +28,7 @@ Tables and matrices show detailed data in rows and columns so you can review, co
 
 ## Embed planning and PowerTable sheets
 
-Build reports from the data you enter in your planning and PowerTable sheets for integrated insights. For more information about real-time planning and reporting, see [Visualize simulations, budgets, and forecasts](./intelligence-how-to-visualize-planning-data.md).
+Build reports from the data you enter in your planning and PowerTable sheets for integrated insights. For more information about real-time planning and reporting, see [Visualize simulations, budgets, and forecasts](./infobridge-concept-blend-measures.md).
 
 > [!NOTE]
 > To use planning or PowerTable sheets in intelligence sheets, you must create them within the same plan.

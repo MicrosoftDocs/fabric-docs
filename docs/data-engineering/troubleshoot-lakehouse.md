@@ -1,21 +1,21 @@
 ---
 title: Troubleshoot Lakehouse Errors in Data Engineering
-description: Troubleshoot common Lakehouse issues in Data Engineering in Microsoft Fabric.
+description: Troubleshoot common lakehouse issues in Data Engineering in Microsoft Fabric.
 ms.reviewer: vallariolson
 ms.date: 02/09/2026
 ms.topic: troubleshooting
 ---
 
-# Troubleshoot Lakehouse issues for Microsoft Fabric Data Engineering
+# Troubleshoot lakehouse issues for Microsoft Fabric Data Engineering
 
-This article provides guidance for troubleshooting common issues you might encounter when working with Lakehouse in Microsoft Fabric.
+This article provides guidance for troubleshooting common issues you might encounter when working with lakehouses in Microsoft Fabric.
 
 >[!NOTE]
 > Code examples in this article use placeholder names like `your_table_name`, `your_lakehouse`, and `commonly_filtered_column`. Replace these placeholders with your actual table, lakehouse, and column names before running the code.
 
 ## Error messages and resolution categories
 
-Use this reference table to quickly identify common Microsoft Fabric Lakehouse error messages and navigate to their troubleshooting solutions.
+Use this reference table to quickly identify common lakehouse error messages and navigate to their troubleshooting solutions.
 
 | Errors | Resolution category |
 |-------|---------------------------|
@@ -33,7 +33,7 @@ Use this reference table to quickly identify common Microsoft Fabric Lakehouse e
 
 ## Delta Table Schema Errors
 
-This section addresses schema compatibility issues and type mismatches when working with Delta tables in Lakehouse.
+This section addresses schema compatibility issues and type mismatches when working with Delta tables in lakehouses.
 
 ### Error: [DELTA_FAILED_TO_MERGE_FIELDS] Failed to Merge Fields
 
@@ -91,7 +91,7 @@ source_df = (source_df
 source_df.write.format("delta").mode("append").saveAsTable("your_table")
 ```
 
-The [Lakehouse and Delta Tables documentation](lakehouse-and-delta-tables.md) explains how Delta enforces strict schema consistency.
+The [Lakehouse and Delta tables documentation](lakehouse-and-delta-tables.md) explains how Delta enforces strict schema consistency.
 
 **Fix 2: Use Explicit Schema Definitions**
 
@@ -115,7 +115,7 @@ This preventive approach is especially useful when ingesting data from external 
 
 **Fix 3: Fix Schema Mismatches in MERGE Operations**
 
-When performing upsert operations with MERGE statements, ensure both source and target have matching field types. This operation writes to the target table, so you need at least Contributor role on the Lakehouse.
+When you perform upsert operations by using MERGE statements, ensure both source and target have matching field types. This operation writes to the target table, so you need at least Contributor role on the lakehouse.
 
 ```python
 from delta.tables import DeltaTable
@@ -172,7 +172,7 @@ Follow one or more of these approaches to recover from corrupted schema metadata
 
 **Fix 1: Inspect and Repair Transaction Log**
 
-Check the Delta transaction log for corruption using the [Lakehouse and Delta Tables guide](lakehouse-and-delta-tables.md):
+Check the Delta transaction log for corruption by using the [Lakehouse and Delta tables guide](lakehouse-and-delta-tables.md):
 
 ```python
 from notebookutils import mssparkutils
@@ -271,7 +271,7 @@ This approach prevents inconsistent write patterns that can lead to schema deser
 
 ## Error: Naming Conflicts
 
-This section helps you resolve issues related to duplicate object names in your Lakehouse.
+This section helps you resolve problems related to duplicate object names in your lakehouse.
 
 ### Error: Table or View Already Exists
 
@@ -296,7 +296,7 @@ The following situations commonly lead to naming conflicts:
 
 #### What Happened
 
-The table, materialized view, or schema you're attempting to create already exists in the Lakehouse. Delta Lake prevents duplicate object names within the same namespace to avoid data conflicts and ambiguity.
+The table, materialized view, or schema you're trying to create already exists in the lakehouse. Delta Lake prevents duplicate object names within the same namespace to avoid data conflicts and ambiguity.
 
 #### How to Fix the Error
 
@@ -341,7 +341,7 @@ else:
     df.write.format("delta").mode("append").option("mergeSchema", "true").saveAsTable("your_table_name")
 ```
 
-For more information on schema management, see [Lakehouse schemas documentation](lakehouse-schemas.md). To configure table properties for optimal maintenance and performance, see [configuration best practices](../fundamentals/table-maintenance-optimization.md#configuration-best-practices).
+For more information on schema management, see [Lakehouse schemas documentation](lakehouse-schemas.md). To configure table properties for optimal maintenance and performance, see [configuration best practices](../fundamentals/table-maintenance-optimization.md#cross-workload-guidance).
 
 
 ### Error: Invalid Column Names
@@ -443,7 +443,7 @@ for i, column in enumerate(source_df.columns):
 
 For more information on schema management, see [Lakehouse schemas documentation](lakehouse-schemas.md).
 
-## Delta Table Metadata and Transaction Log Errors
+## Delta table metadata and transaction log errors
 
 This section addresses issues with Delta table transaction logs and metadata integrity.
 
@@ -477,7 +477,7 @@ Use one or more of these methods to restore or recreate the Delta table's transa
 
 **Fix 1: Validate Delta Table Structure and Recreate if Needed**
 
-Check if the `_delta_log` directory exists using the [Lakehouse and Delta Tables documentation](lakehouse-and-delta-tables.md):
+Check if the `_delta_log` directory exists by using the [Lakehouse and Delta tables documentation](lakehouse-and-delta-tables.md):
 
 ```python
 from notebookutils import mssparkutils
@@ -550,7 +550,7 @@ Follow one or more of these steps to verify table structure and restore missing 
 
 **Fix 1: Verify Delta Table Structure and Path**
 
-Check that the table location contains proper Delta metadata using the [Lakehouse and Delta Tables documentation](lakehouse-and-delta-tables.md):
+Check that the table location contains proper Delta metadata by using the [Lakehouse and Delta tables documentation](lakehouse-and-delta-tables.md):
 
 ```python
 from notebookutils import mssparkutils
@@ -582,7 +582,7 @@ If `_delta_log` is missing, the directory is not a Delta table and needs to be c
 
 If metadata is missing or corrupted, recreate the Delta table using the [Work with Delta Lake Tables training module](/training/modules/work-delta-lake-tables-fabric/). Choose one of the following approaches (not both). These operations require Contributor role or higher.
 
-Option 1: Read Parquet and recreate as Delta table**
+**Option 1: Read Parquet and recreate as Delta table_**
 
 This approach reads the data files and writes a new Delta table, which may reorder or compact the underlying files:
 
@@ -600,7 +600,7 @@ df.write.format("delta").mode("overwrite").option("overwriteSchema", "true").sav
 spark.sql("DESCRIBE DETAIL your_table_name").show()
 ```
 
-Option 2: Convert in-place using CONVERT TO DELTA**
+**Option 2: Convert in-place using CONVERT TO DELTA**
 
 This approach preserves existing Parquet files and adds Delta transaction log metadata:
 
@@ -659,7 +659,7 @@ Use one or more of these maintenance operations to create checkpoints and improv
 
 **Fix 1: Run OPTIMIZE to Trigger Checkpointing**
 
-The recommended way to address checkpoint issues is to run `OPTIMIZE`, which compacts small files and triggers a checkpoint. This operation requires Contributor role or higher. The [Lakehouse and Delta Tables documentation](lakehouse-and-delta-tables.md) explains checkpoint management:
+The recommended way to address checkpoint problems is to run `OPTIMIZE`, which compacts small files and triggers a checkpoint. This operation requires Contributor role or higher. The [Lakehouse and Delta tables documentation](lakehouse-and-delta-tables.md) explains checkpoint management:
 
 ```sql
 -- First, list all tables in your lakehouse to find exact table names
@@ -730,7 +730,7 @@ See [table maintenance and optimization](../fundamentals/table-maintenance-optim
 
 ## Table Not Found Errors
 
-This section helps you resolve issues when tables cannot be located in your Lakehouse.
+This section helps you resolve problems when you can't locate tables in your lakehouse.
 
 ### Error: Table Was Not Found in Lakehouse
 
@@ -763,7 +763,7 @@ Use one or more of these methods to locate the table and ensure proper registrat
 
 **Fix 1: Verify Table Exists and Check Table Name Case**
 
-Use the [Lakehouse and Delta Tables](lakehouse-and-delta-tables.md) interface to verify the table exists. In a Spark notebook, list all available tables:
+Use the [Lakehouse and Delta tables](lakehouse-and-delta-tables.md) interface to verify the table exists. In a Spark notebook, list all available tables:
 
 ```python
 # List all tables in the current lakehouse
@@ -788,7 +788,7 @@ df.write.format("delta").mode("overwrite").option("overwriteSchema", "true").sav
 ```
 
 >[!NOTE]
-> Fabric Lakehouse only supports managed tables. External tables with `CREATE TABLE ... LOCATION` aren't supported. To access Delta tables in other storage locations, use Shortcuts instead.
+> Lakehouses support only managed tables. External tables with `CREATE TABLE ... LOCATION` aren't supported. To access Delta tables in other storage locations, use shortcuts instead.
 
 If you suspect the table exists but isn't showing up, try refreshing your lakehouse view or restarting your Spark session to clear any caching issues.
 
@@ -808,11 +808,11 @@ The [Delta Lake table format interoperability documentation](../fundamentals/del
 
 ## File and Path Errors
 
-This section addresses issues related to file paths, missing files, and storage location problems in Lakehouse.
+This section addresses problems related to file paths, missing files, and storage location problems in lakehouses.
 
 ### Error: Path Not Found During Table Operations
 
-This error occurs when the system cannot locate the specified Lakehouse path or Delta table.
+This error occurs when the system can't locate the specified lakehouse path or Delta table.
 
 **Error Messages:**
 - The path `<NAME>` for targeted Delta table was not found. Please check that the targeted table is valid.
@@ -828,15 +828,15 @@ The following are common reasons for path not found errors:
 - Running a notebook that references a table path using ABFSS format with typos in workspace or lakehouse IDs, or malformed ABFSS paths
 - Attempting to read data from a lakehouse that has been renamed or deleted since the connection was configured
 - The Delta table path is invalid, unavailable, or permissions are insufficient
-- Notebook not attached to the correct Lakehouse
+- Notebook not attached to the correct lakehouse
 
 #### What Happened
 
-This error appears when trying to access a Lakehouse path or Delta table that the system cannot find during operations such as loading table schema, refreshing path, or listing tables. This typically occurs due to incorrect path formatting, missing permissions, or the table/path no longer existing at the specified location.
+This error appears when you try to access a lakehouse path or Delta table that the system can't find during operations such as loading table schema, refreshing path, or listing tables. This error typically occurs due to incorrect path formatting, missing permissions, or the table or path no longer existing at the specified location.
 
 #### How to Fix the Error
 
-Follow one or more of these steps to verify and correct path references in your Lakehouse operations.
+To verify and correct path references in your lakehouse operations, follow these steps:
 
 **Fix 1: Verify Path Formatting**
 
@@ -850,14 +850,14 @@ abfss://<workspace_id>@onelake.dfs.fabric.microsoft.com/<lakehouse_id>/Tables/
 
 **Fix 2: Confirm Access Rights and Lakehouse Existence**
 
-1. Verify you have at least Viewer role on both the workspace and Lakehouse
-2. In the Fabric portal, ensure the Lakehouse still exists and hasn't been deleted, renamed, or moved
-3. If using a notebook, verify it's attached to the correct Lakehouse with valid workspace and lakehouse IDs
+1. Verify you have at least the Viewer role on both the workspace and lakehouse.
+1. In the Fabric portal, ensure the lakehouse still exists and wasn't deleted, renamed, or moved.
+1. If you're using a notebook, verify it's attached to the correct lakehouse with valid workspace and lakehouse IDs.
 4. Check that changes in permissions haven't revoked your access
 
 ### Error: Artifact Is Not Found in Workspace During List Tables
 
-This error occurs when the system cannot locate a Lakehouse artifact, often due to naming or path issues.
+This error occurs when the system can't locate a lakehouse item, often due to naming or path problems.
 
 **Error Messages:**
 - Artifact is Not Found in Workspace During List Tables
@@ -868,19 +868,19 @@ This issue typically occurs when you are attempting to list tables in a lakehous
 
 #### Common Causes
 
-The following are common causes of artifact not found errors:
+The following causes commonly lead to item not found errors:
 - Calling the List Tables API for a lakehouse that has spaces or special characters in its name (especially problematic with schema-enabled lakehouses)
-- Running Spark code that tries to access a lakehouse artifact using an incorrect workspace or lakehouse identifier
+- Running Spark code that tries to access a lakehouse item by using an incorrect workspace or lakehouse identifier
 - Incorrect API paths or malformed workspace/lakehouse IDs in API calls or abfss paths
-- The artifact may have been deleted, renamed, or moved
+- The item may have been deleted, renamed, or moved
 
 #### What Happened
 
-The system cannot locate the specified Lakehouse artifact in the workspace, often due to naming issues, incorrect paths, or synchronization problems.
+The system can't locate the specified lakehouse item in the workspace, often due to naming problems, incorrect paths, or synchronization problems.
 
 #### How to Fix the Error
 
-Use one or more of these methods to resolve artifact location issues and restore access to your Lakehouse tables.
+Use one or more of these methods to resolve item location issues and restore access to your lakehouse tables.
 
 **Fix 1: Remove Invalid Characters from Names**
 
@@ -898,7 +898,7 @@ Use one or more of these methods to resolve artifact location issues and restore
 **Fix 3: Sync SQL Analytics Endpoint**
 
 1. If tables exist in storage but not in metadata, use the API or admin tools to explicitly sync or refresh the SQL analytics endpoint
-2. Navigate to the Lakehouse settings and trigger a manual sync
+2. Navigate to the lakehouse settings and trigger a manual sync
 3. This resolves issues where tables are physically present but not appearing in lists or queries
 4. Wait a few minutes after sync before retrying the operation
 
@@ -923,26 +923,26 @@ The following situations commonly cause CSV file not found errors:
 
 #### What Happened
 
-Microsoft Fabric cannot locate CSV files in the expected location during data ingestion or Delta table creation operations. This error typically happens during file upload processes, notebook operations, or when attempting to load data from the lakehouse Files section.
+Fabric can't find CSV files in the expected location during data ingestion or Delta table creation operations. This error typically happens during file upload processes, notebook operations, or when you attempt to load data from the lakehouse **Files** section.
 
 #### How to Fix the Error
 
-Follow one or more of these steps to ensure files are in the correct location and accessible to your Lakehouse operations.
+Follow one or more of these steps to ensure files are in the correct location and accessible to your lakehouse operations.
 
 **Fix 1: Verify File Location in Lakehouse Explorer**
 
-Ensure your CSV files are uploaded to the correct location using the [Lakehouse explorer](navigate-lakehouse-explorer.md). CSV files should be placed in the **Files** section of your lakehouse, not the Tables section. The Tables area contains managed Delta tables, while the Files area is for raw data files.
+Ensure you upload your CSV files to the correct location by using the [Lakehouse explorer](navigate-lakehouse-explorer.md). Place CSV files in the **Files** section of your lakehouse, not the **Tables** section. The **Tables** area contains managed Delta tables, while the **Files** area is for raw data files.
 
 Navigate to your lakehouse and check:
 - Files are under `/Files/` directory (e.g., `/Files/data/yourfile.csv`)
 - Files don't appear in the "Unidentified Area" (which means they're not registered in the metastore)
-- Upload completed successfully and files are visible in the lakehouse explorer
+- Upload completed successfully and files are visible in the Lakehouse explorer
 
 Follow the [lakehouse tutorial](tutorial-build-lakehouse.md) for proper file organization and upload procedures.
 
 **Fix 2: Use Correct File Path in Spark Operations**
 
-When referencing files in notebooks or Spark jobs, use the correct ABFS path format. You can obtain the exact path by right-clicking the file in Lakehouse Explorer and selecting **Copy ABFS path**. Example paths:
+When you reference files in notebooks or Spark jobs, use the correct ABFS path format. You can get the exact path by right-clicking the file in Lakehouse explorer and selecting **Copy ABFS path**. Example paths:
 
 ```python
 # Read CSV from Files section
@@ -960,45 +960,45 @@ Understanding [how to access files in Fabric lakehouse using notebooks](lakehous
 
 ## File Upload Errors
 
-This section addresses issues that occur when uploading files to a Lakehouse through the UI or programmatically.
+This section addresses problems that occur when uploading files to a lakehouse through the UI or programmatically.
 
 ### Error: Error Sending Request - Failed to Fetch During File Upload
 
-This error occurs when the browser or application cannot complete the file upload request to the Lakehouse.
+This error occurs when the browser or application can't complete the file upload request to the lakehouse.
 
 **Error Messages:**
 - Error Sending Request: Failed to Fetch During File Upload
 
 #### Scenario
 
-This issue typically occurs when you upload files from your local machine or OneDrive through the Lakehouse home page in the Fabric portal.
+This problem typically occurs when you upload files from your local machine or OneDrive through the lakehouse home page in the Fabric portal.
 
 #### Common Causes
 
 The following situations commonly prevent file uploads:
-- Attempting to upload files through the lakehouse explorer interface without Contributor or Owner permissions
+- Attempting to upload files through the Lakehouse explorer interface without Contributor or Owner permissions
 - Uploading large files while browser extensions (ad blockers or VPNs) interfere with the upload request
 - Browser/network issues including cache problems or firewall/proxy blocking API calls
 - File size or storage quota limits exceeded
 
 #### What Happened
 
-The browser or application cannot complete the file upload request to the Lakehouse, often due to permission restrictions, network issues, or UI limitations.
+The browser or application cannot complete the file upload request to the lakehouse, often due to permission restrictions, network issues, or UI limitations.
 
 #### How to Fix the Error
 
-Try one or more of these solutions to successfully upload files to your Lakehouse.
+Try one or more of these solutions to successfully upload files to your lakehouse.
 
 **Fix 1: Verify and Update Permissions**
 
-1. Ensure you have at least Contributor or Owner access on the Lakehouse
+1. Ensure you have at least Contributor or Owner access on the lakehouse
 2. Have an admin re-grant permissions if needed
 3. Sometimes permissions can become unsynchronized and require re-assignment
 4. Check workspace settings to confirm your role assignment
 
 **Fix 2: Use Spark Notebook Workaround**
 
-If UI upload doesn't work due to permission or policy restrictions, use a Fabric Notebook with Spark code to write files directly to the Lakehouse. This operation requires Contributor role or higher:
+If UI upload doesn't work due to permission or policy restrictions, use a Fabric notebook with Spark code to write files directly to the lakehouse. This operation requires Contributor role or higher:
 
 > [!CAUTION]
 > Setting `overwrite=True` permanently replaces any existing file at the target path without confirmation. Verify the file path and confirm you don't need the existing data before running this command.
@@ -1027,7 +1027,7 @@ For additional guidance, see [Troubleshoot the Lakehouse connector](../data-fact
 
 ## Lakehouse Operation and Data Copy Errors
 
-This section helps you resolve failures in data copy operations and pipeline activities involving Lakehouse.
+This section helps you resolve failures in data copy operations and pipeline activities involving lakehouses.
 
 ### Error: Lakehouse Data Copy Operation Failed
 
@@ -1061,7 +1061,7 @@ Apply one or more of these troubleshooting steps to identify and resolve network
 
 1. Test connectivity to the source and destination endpoints from your network
 2. Check organizational firewall rules and ensure required URLs and ports are allowed
-3. Verify that [Microsoft Fabric networking requirements](../security/security-overview.md) are met
+3. Verify that [Fabric networking requirements](../security/security-overview.md) are met
 4. For on-premises data sources, ensure the [data gateway](/data-integration/gateway/service-gateway-onprem) is installed and running
 5. Test with a small data copy operation first to isolate network vs. data volume issues
 6. Ensure SSL/TLS certificates are valid and not expired
@@ -1074,7 +1074,7 @@ For authentication and private endpoint issues:
 2. Break large copy operations into smaller chunks to avoid timeouts
 3. Refresh authentication tokens periodically for operations exceeding token lifetime
 4. Verify service principal credentials or managed identity permissions are valid
-5. Navigate to Workspace Settings > Network security and ensure proper private endpoint configuration
+5. Navigate to **Workspace settings** > **Network security** and ensure proper private endpoint configuration
 6. Verify that virtual network rules allow traffic from pipeline runtime environments
 7. Check [managed virtual network](../security/security-managed-vnets-fabric-overview.md) settings in the data integration runtime
 
@@ -1088,7 +1088,7 @@ For authentication and private endpoint issues:
 
 ## Internal Server and Processing Errors
 
-This section addresses unexpected service-side failures and internal errors in Microsoft Fabric.
+This section addresses unexpected service-side failures and internal errors in Fabric.
 
 ### Error: Internal Server Error (500) / Job Execution Failures
 
@@ -1113,7 +1113,7 @@ The following situations can trigger internal server errors:
 
 #### What Happened
 
-The Microsoft Fabric service encountered an unexpected internal error while processing your request, job, or operation. These errors typically indicate a problem on the service side rather than a configuration issue.
+The Fabric service encountered an unexpected internal error while processing your request, job, or operation. These errors typically indicate a problem on the service side rather than a configuration issue.
 
 #### How to Fix the Error
 
@@ -1122,7 +1122,7 @@ Since these errors are typically service-side issues, try one or more of these r
 **Fix 1: Retry and Check Service Health**
 
 1. Wait a few minutes and retry the operation (many 500 errors are transient)
-2. Check [Azure Service Health](https://portal.azure.com/#blade/Microsoft_Azure_Health/AzureHealthBrowseBlade/serviceIssues) for known issues affecting Microsoft Fabric
+2. Check [Azure Service Health](https://portal.azure.com/#blade/Microsoft_Azure_Health/AzureHealthBrowseBlade/serviceIssues) for known issues affecting Fabric
 3. Implement retry logic with exponential backoff in automated processes
 
 **Fix 2: Simplify the Operation**
@@ -1133,19 +1133,19 @@ If the error persists:
 3. Test with a minimal subset of data to isolate the issue
 4. Avoid concurrent operations on the same resources
 5. Disable complex features (e.g., complex transformations) temporarily to identify the trigger
-6. Check table health and file fragmentation using OPTIMIZE DRY RUN to identify potential issues (see [identify table health](../fundamentals/table-maintenance-optimization.md#identify-table-health))
+6. Check table health and file fragmentation to identify potential issues (see [identify table health](../fundamentals/table-maintenance-optimization.md#inspect-average-file-size))
 
 **Fix 3: Clear Cache and Restart Sessions**
 
 1. Clear browser cache and cookies if using the web interface
 2. Stop and restart Spark sessions in notebooks
 3. Restart pipeline runs rather than resuming from a failed state
-4. Delete and recreate temporary artifacts that may be corrupted
+4. Delete and recreate temporary items that may be corrupted
 5. Sign out and sign back in to refresh authentication and session state
 
 ## Materialized Lake Views Errors
 
-This section addresses errors specific to creating and managing materialized views in Lakehouse.
+This section addresses errors specific to creating and managing materialized views in lakehouses.
 
 ### Error: An Error Occurred While Processing Your Request
 
@@ -1156,20 +1156,20 @@ This error occurs during materialized view operations when the system encounters
 
 #### Scenario
 
-This issue typically occurs when you are working with Materialized Lake Views (MLVs) in a Fabric Lakehouse and attempt to inspect their lineage.
+This issue typically occurs when you are working with materialized lake views (MLVs) in a lakehouse in Fabric and attempt to inspect their lineage.
 
 #### Common Causes
 
 The following situations can cause errors when viewing materialized view lineage:
-- Opening a Fabric workspace and navigating to a Lakehouse, then selecting Materialized lake views and attempting to view lineage information when workspace or capacity is experiencing high load or throttling
-- Clicking on the lineage view for a recently created or modified Materialized Lake View where lineage metadata is still being computed
+- Opening a Fabric workspace and navigating to a lakehouse, then selecting **Materialized lake views** and attempting to view lineage information when workspace or capacity is experiencing high load or throttling
+- Clicking on the lineage view for a recently created or modified materialized lake view where lineage metadata is still being computed
 - Creating a materialized view over source tables that are located in a different workspace than the materialized view itself
 - Complex lineage graph with too many dependencies causing processing delays
 - Permissions issue preventing access to lineage metadata
 
 #### What Happened
 
-This error occurs when attempting to retrieve or view the lineage information for Materialized Lake Views in Microsoft Fabric. The lineage feature tracks data dependencies and flow between artifacts, but the system cannot process the request to display this information.
+This error occurs when attempting to retrieve or view the lineage information for materialized lake views in Fabric. The lineage feature tracks data dependencies and flow between items, but the system cannot process the request to display this information.
 
 #### How to Fix the Error
 
@@ -1179,35 +1179,35 @@ Use one or more of these troubleshooting steps to resolve lineage viewing issues
 
 Ensure you have the appropriate permissions to view lineage information:
 
-1. Verify you have at least **Viewer** role in the workspace containing the Materialized Lake View
-2. Check that you have permissions to view the source and target artifacts in the lineage graph
-3. Navigate to Workspace Settings > Manage access and confirm your role
+1. Verify you have at least **Viewer** role in the workspace containing the materialized lake view
+2. Check that you have permissions to view the source and target items in the lineage graph
+3. Navigate to **Workspace settings** > **Manage access** and confirm your role
 4. If using a service principal, ensure it has the necessary permissions to read metadata
 
 **Fix 2: Simplify Lineage View**
 
-If the Materialized Lake View has complex dependencies:
+If the materialized lake view has complex dependencies:
 
 1. Try viewing lineage for individual source tables instead of the entire view
-2. Use the lineage filters to focus on specific time periods or artifact types
-3. Check lineage for related but simpler artifacts first to verify the feature is working
+2. Use the lineage filters to focus on specific time periods or item types
+3. Check lineage for related but simpler items first to verify the feature is working
 
 **Fix 3: Check Workspace and Capacity Status**
 
-1. Use the [Fabric Capacity Metrics app](../enterprise/capacity-planning-troubleshoot-consumption.md) to verify the capacity is not throttled or overloaded
+1. Use the [Microsoft Fabric Capacity Metrics app](../enterprise/capacity-planning-troubleshoot-consumption.md) to verify the capacity is not throttled or overloaded
 2. Check if other workspace operations are working correctly to isolate the issue
-3. Verify the workspace is assigned to an active Fabric capacity (Workspace Settings > License Info)
+3. Verify the workspace is assigned to an active Fabric capacity (**Workspace settings** > **License Info**)
 4. If capacity is overloaded, wait until utilization decreases or scale up the capacity
 
-For more information on lineage in Microsoft Fabric, see [Lineage in Microsoft Fabric](../governance/lineage.md).
+For more information on lineage in Fabric, see [Lineage in Fabric](../governance/lineage.md).
 
 ## Power BI Integration Errors
 
-This section addresses errors that occur when integrating Power BI with Lakehouse data sources.
+This section addresses errors that occur when integrating Power BI with lakehouse data sources.
 
 ### Error: Power BI Entity Not Found at Lakehouse Refresh
 
-This error occurs when Power BI cannot locate the referenced Lakehouse entity during a refresh operation.
+This error occurs when Power BI cannot locate the referenced lakehouse entity during a refresh operation.
 
 **Error Messages:**
 - Power BI Entity Not Found at Lakehouse Refresh
@@ -1221,54 +1221,54 @@ This issue typically occurs when you are refreshing a Power BI semantic model co
 #### Common Causes
 
 The following situations commonly cause entity not found errors:
-- Triggering a scheduled refresh for a Power BI dataset after the underlying lakehouse table has been renamed or deleted since the Power BI connection was configured
+- Triggering a scheduled refresh for a Power BI semantic model after the underlying lakehouse table has been renamed or deleted since the Power BI connection was configured
 - Opening a Power BI report that references lakehouse entities that no longer exist in the workspace
-- Incorrect table or dataset name in the Power BI connection string
+- Incorrect table or semantic model name in the Power BI connection string
 - Table was dropped and recreated with a different schema or ID
 
 #### What Happened
 
-Power BI cannot locate the Lakehouse entity (table or dataset) during a refresh operation. The referenced entity may have been renamed, deleted, or moved since the Power BI connection was originally configured.
+Power BI cannot locate the lakehouse entity (table or semantic model) during a refresh operation. The referenced entity may have been renamed, deleted, or moved since the Power BI connection was originally configured.
 
 #### How to Fix the Error
 
-Follow one or more of these steps to restore the connection between Power BI and your Lakehouse entities.
+Follow one or more of these steps to restore the connection between Power BI and your lakehouse entities.
 
 **Fix 1: Verify Entity Existence and Connections**
 
 1. In the Fabric portal, confirm the expected tables/datasets exist and are accessible in the target workspace
 2. Ensure the workspace and lakehouse connections are correct
 3. Verify that no tables have been renamed or deleted since the initial configuration
-4. Check that the connection string or data source path points to the correct Lakehouse
-5. Re-establish connections if the Lakehouse has been moved or renamed
+4. Check that the connection string or data source path points to the correct lakehouse
+5. Re-establish connections if the lakehouse has been moved or renamed
 
 **Fix 2: Update Power BI Data Source Settings**
 
 For Power BI Desktop:
-1. Open the PBIX file
+1. Open the .pbix file
 2. Go to File > Options and settings > Data source settings
-3. Verify the Lakehouse path and table names are correct
+3. Verify the lakehouse path and table names are correct
 4. Edit the connection to point to the correct entity
 5. Refresh the data source to test the connection
 
 For Power BI Service:
-1. Navigate to the dataset settings in Power BI Service
+1. Navigate to the semantic model settings in Power BI Service
 2. Expand the Data source credentials section
-3. Update the connection string with the correct Lakehouse and table names
+3. Update the connection string with the correct lakehouse and table names
 4. Test the connection before attempting a full refresh
 
 **Fix 3: Sync Direct Lake Semantic Models**
 
 For Direct Lake mode:
-1. Navigate to SQL Analytics Endpoint > Default semantic model settings
+1. Navigate to SQL analytics endpoint > Default semantic model settings
 2. Enable "Sync the default model"
 3. If "Keep Direct Lake data up to date" is disabled, data will only update on manual or scheduled refresh
 4. Manually trigger a sync to refresh the semantic model metadata
-5. Verify table and schema changes in the Lakehouse are reflected in the semantic model
+5. Verify table and schema changes in the lakehouse are reflected in the semantic model
 
 ### Error: Power BI Not Authorized at Lakehouse Refresh
 
-This error indicates that Power BI lacks the necessary permissions to access Lakehouse data during refresh.
+This error indicates that Power BI lacks the necessary permissions to access lakehouse data during refresh.
 
 **Error Messages:**
 - Power BI Not Authorized at Lakehouse Refresh
@@ -1277,36 +1277,36 @@ This error indicates that Power BI lacks the necessary permissions to access Lak
 
 #### Scenario
 
-This issue typically occurs when you are refreshing Power BI reports or datasets connected to lakehouse data.
+This issue typically occurs when you are refreshing Power BI reports or semantic models connected to lakehouse data.
 
 #### Common Causes
 
 The following permission issues commonly prevent Power BI refresh:
-- Triggering a Power BI dataset refresh using Direct Lake mode when credentials are outdated or missing
+- Triggering a Power BI semantic model refresh using Direct Lake mode when credentials are outdated or missing
 - Attempting to refresh a semantic model where the service principal or user account lacks Read permissions on the lakehouse despite being workspace admins
 - Data source credentials are expired or incorrect in Power BI Desktop
 - Workspace role is insufficient (need Contributor or higher for data access)
 
 #### What Happened
 
-Power BI cannot access the Lakehouse entity during a refresh operation due to insufficient permissions. The user or service principal performing the refresh lacks the necessary access rights to read data from the Lakehouse.
+Power BI cannot access the lakehouse entity during a refresh operation due to insufficient permissions. The user or service principal performing the refresh lacks the necessary access rights to read data from the lakehouse.
 
 #### How to Fix the Error
 
-Apply one or more of these permission fixes to enable Power BI to access your Lakehouse data during refresh.
+Apply one or more of these permission fixes to enable Power BI to access your lakehouse data during refresh.
 
 **Fix 1: Check Dataset and Data Source Permissions**
 
 1. In Power BI service, verify your user has direct data access, not just workspace privileges
-2. For Dataflows Gen2, ensure you're authorized for the target Data Warehouse/Lakehouse with specific roles or policies
-3. Open the PBIX file, go to File > Options and settings > Data source settings
+2. For dataflows Gen2, ensure you're authorized for the target Data Warehouse/Lakehouse with specific roles or policies
+3. Open the .pbix file, go to File > Options and settings > Data source settings
 4. Edit or refresh credentials and test the connection
-5. Verify the account being used has the necessary permissions on the Lakehouse
+5. Verify the account being used has the necessary permissions on the lakehouse
 
 **Fix 2: Grant Lakehouse Access Permissions**
 
 Ensure the user or service principal has appropriate permissions:
-1. Navigate to the Lakehouse > Manage permissions
+1. Navigate to the lakehouse > Manage permissions
 2. Add the user or service principal with at least **Read** permission
 3. For SQL queries: Grant "Read all data using SQL" (**ReadData** permission)
 4. For Spark access: Grant "Read all data using Apache Spark" (**ReadAll** permission)
@@ -1326,7 +1326,7 @@ For service principal authentication:
 ## Related content
 - [What is a lakehouse?](lakehouse-overview.md)
 - [Lakehouse table maintenance](lakehouse-table-maintenance.md)
-- [Delta Lake in Microsoft Fabric](lakehouse-and-delta-tables.md)
+- [Delta Lake in Fabric](lakehouse-and-delta-tables.md)
 - [Fabric Capacity Planning and Troubleshooting](../enterprise/capacity-planning-troubleshoot-errors.md)
 - [Work with Delta Lake Tables Training Module](/training/modules/work-delta-lake-tables-fabric/)
 - [Lakehouse Tutorial](tutorial-build-lakehouse.md)

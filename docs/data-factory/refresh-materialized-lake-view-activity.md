@@ -71,12 +71,13 @@ Include the activity in a broader pipeline that ingests, transforms, and publish
 
 ## Known limitations
 
-The Refresh Materialized Lake View activity doesn't currently support service principal name (SPN) or workspace identity authentication. If you use SPN or workspace identity for automated or service-based access, you might encounter limitations when configuring or running this activity.
+- The Refresh Materialized Lake View activity doesn't currently support service principal name (SPN) or workspace identity authentication. If you use SPN or workspace identity for automated or service-based access, you might encounter limitations when configuring or running this activity.
+- The Refresh Materialized Lake View activity currently refreshes all MLVs in a selected lakehouse. Selective refresh of an individual MLV isn't yet supported.
 
 ## Related content
 
 - [Activity overview](activity-overview.md)
 - [Lakehouse Maintenance activity](lakehouse-maintenance-activity.md)
-- [Refresh SQL Endpoint activity](refresh-sql-endpoint-activity.md)
+- [Refresh SQL analytics endpoint activity](refresh-sql-endpoint-activity.md)
 - [Materialized lake views overview](/fabric/data-engineering/materialized-lake-views/overview-materialized-lake-view)
 - [Refresh materialized lake views in a Lakehouse](/fabric/data-engineering/materialized-lake-views/refresh-materialized-lake-view)

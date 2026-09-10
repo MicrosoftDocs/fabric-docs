@@ -70,5 +70,5 @@ Before you start, you must have:
 
 ## Related content
 
-- [Transform data with Apache Spark and query with SQL](onelake-onecopy-quickstart.md)
+- [Query and consume OneLake data](quickstart-consume-data.md)
 

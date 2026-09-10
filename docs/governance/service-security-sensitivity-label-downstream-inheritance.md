@@ -4,7 +4,7 @@ description: Learn how sensitivity labels can be propagated to downstream conten
 author: msmimart
 ms.author: mimart
 ms.topic: concept-article
-ms.date: 01/06/2026
+ms.date: 07/13/2026
 LocalizationGroup: Data from files
 ---
 
@@ -12,7 +12,7 @@ LocalizationGroup: Data from files
 
 When a sensitivity label is applied to a semantic model or report in the Power BI service, it's possible to have the label trickle down and be applied to content that's built from that semantic model or report. For semantic models, this means other semantic models, reports, and dashboards. For reports, this means dashboards. This capability is called downstream inheritance.
 
-Downstream inheritance is a critical link in Power BI’s end-to-end information protection solution. Together with [inheritance from data sources](service-security-sensitivity-label-inheritance-from-data-sources.md), [inheritance upon creation of new content](/power-bi/enterprise/service-security-sensitivity-label-overview#sensitivity-label-inheritance-upon-creation-of-new-content), [inheritance upon export to file](/power-bi/enterprise/service-security-sensitivity-label-overview#sensitivity-labels-and-protection-on-exported-data), and other capabilities for applying sensitivity labels, downstream inheritance helps ensure that sensitive data remains protected throughout its journey through Power BI, from data source to point of consumption.
+Downstream inheritance is a critical link in Power BI's end-to-end information protection solution. Together with [inheritance from data sources](service-security-sensitivity-label-inheritance-from-data-sources.md), [inheritance upon update and relationship changes](service-security-sensitivity-label-inheritance-upon-update.md), [inheritance upon creation of new content](/power-bi/enterprise/service-security-sensitivity-label-overview#sensitivity-label-inheritance-upon-creation-of-new-content), [inheritance upon export to file](/power-bi/enterprise/service-security-sensitivity-label-overview#sensitivity-labels-and-protection-on-exported-data), and other capabilities for applying sensitivity labels, downstream inheritance helps ensure that sensitive data remains protected throughout its journey through Power BI, from data source to point of consumption.
 
 Downstream inheritance is illustrated using [lineage view](/power-bi/collaborate-share/service-data-lineage). When a label is applied to the semantic model *Customer profitability*, that label filters down and gets applied to the semantic model's downstream content: the reports that are built using that semantic model, and, in this case, a dashboard that's built from visuals from one of those reports.
 
@@ -82,9 +82,11 @@ is enabled). To change the downstream inheritance setting, [go to the tenant set
 
 ### Downstream inheritance between semantic models and reports published from *.pbix* files
 
-When you publish a *.pbix* file that has a sensitivity label, the label that's inherited by the semantic model and report created in the service is considered to be automatically or manually applied depending on whether the label on the *.pbix* file was automatically or manually applied. This has implications for subsequent downstream inheritance from the semantic model to its associated report. If the label on the *.pbix* file was automatically applied, then later, after publishing, if the label on the semantic model is changed, the associated report inherits the change. If, however, the label on the *.pbix* file was manually applied, then if the label on the semantic model is changed, the label on its associated report **is not** be overwritten, as it's considered to be manually applied. This is in keeping with the rule that downstream inheritance never overwrites a manually applied label.
+When you publish a *.pbix* file that has a sensitivity label, the label that's inherited by the semantic model and report created in the service is considered to be automatically or manually applied depending on whether the label on the *.pbix* file was automatically or manually applied. This has implications for subsequent downstream inheritance from the semantic model to its associated report. If the label on the *.pbix* file was automatically applied, then later, after publishing, if the label on the semantic model is changed, the associated report inherits the change. If, however, the label on the *.pbix* file was manually applied, then if the label on the semantic model is changed, the label on its associated report **is not** overwritten, as it's considered to be manually applied. This is in keeping with the rule that downstream inheritance never overwrites a manually applied label.
 
 ## Related content
 
+* [Sensitivity label inheritance upon update and relationship changes](service-security-sensitivity-label-inheritance-upon-update.md)
+* [Sensitivity label inheritance from data sources](service-security-sensitivity-label-inheritance-from-data-sources.md)
 * [Sensitivity label overview](/power-bi/enterprise/service-security-sensitivity-label-overview)
 * [Label change enforcement](/power-bi/enterprise/service-security-sensitivity-label-change-enforcement)

@@ -146,7 +146,7 @@ For more information to operationalize dbt with your warehouse, see [Transform d
 
 Important things to consider when using dbt-fabric adapter:
 
-- Review [the current limitations in Microsoft Fabric data warehousing](limitations.md).
+- Review [the current limitations in Microsoft Fabric Data Warehouse](limitations.md).
 
 - Fabric supports Microsoft Entra ID (formerly Azure Active Directory) authentication for user principals, user identities, and service principals. The recommended authentication mode to interactively work on warehouse is CLI (command-line interfaces) and use service principals for automation.
 
@@ -168,4 +168,3 @@ Important things to consider when using dbt-fabric adapter:
 - [What is Fabric Data Warehouse?](data-warehousing.md)
 - [Tutorial: Create a Warehouse in Microsoft Fabric](tutorial-create-warehouse.md)
 - [Tutorial: Transform data using a stored procedure](tutorial-transform-data.md)
-- [Source Control with Warehouse](source-control.md)

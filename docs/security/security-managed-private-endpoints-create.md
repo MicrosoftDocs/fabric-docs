@@ -3,12 +3,15 @@ title: Create and use managed private endpoints in Microsoft Fabric
 description: Learn how to create and use managed private endpoints in Microsoft Fabric.
 author: msmimart
 ms.author: mimart
+contributors:
+  - cvitale
 ms.topic: how-to
 ms.custom: sfi-image-nochange, sfi-ropc-nochange
-ms.date: 06/20/2025
+ms.date: 08/20/2026
+ai-usage: ai-assisted
 ---
 
-# Create and  use managed private endpoints
+# Create and use managed private endpoints
 
 Users with admin permissions to a Microsoft Fabric workspace can create, view, and delete managed private endpoints from the Fabric portal through the workspace settings.
 
@@ -63,6 +66,45 @@ Taking SQL server as an example, users can navigate to the Azure portal and sear
 
 1. When the status changes to *approved*, the endpoint can be used in notebooks or Spark job definitions to access the data stored in the data source from Fabric workspace.
 
+## Create a managed private endpoint for Azure API Management
+
+The Fabric portal doesn't currently support creating a managed private endpoint for Azure API Management. Use the Fabric REST API instead.
+
+> [!IMPORTANT]
+> API Management supports inbound private endpoints for the Developer, Basic, Standard, Standard v2, Premium, and Premium v2 tiers. In the classic tiers, private endpoints aren't supported for API Management instances injected into an internal or external virtual network. For more information, see [Connect privately to API Management by using an inbound private endpoint](/azure/api-management/private-endpoint).
+
+1. Get a Microsoft Entra access token for the Fabric service. For more information, see the [Fabric API quickstart](/rest/api/fabric/articles/get-started/fabric-api-quickstart#get-token).
+
+1. Send the following request. Replace the placeholders with your workspace ID and API Management resource information.
+
+    ```http
+    POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/managedPrivateEndpoints
+    Authorization: Bearer {accessToken}
+    Content-Type: application/json
+    ```
+
+    ```json
+    {
+      "name": "mpe-apim-gateway",
+      "targetPrivateLinkResourceId": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.ApiManagement/service/{apimName}",
+      "targetSubresourceType": "gateway",
+      "requestMessage": "Please approve the managed private endpoint for the API Management gateway.",
+      "targetFQDNs": [
+        "{apimName}.azure-api.net"
+      ]
+    }
+    ```
+
+    Only the API Management **Gateway** subresource supports inbound Private Link connections.
+
+1. In the Azure portal, open the API Management instance and select **Network** > **Inbound private endpoint connections**.
+
+1. In the list of private endpoint connections, open the context menu (**...**) for the pending connection, and then select **Approve**. You don't need to open the Fabric-managed private endpoint resource to approve the connection.
+
+1. Refresh the **Network security** section of the Fabric workspace settings and verify that the connection status is **Approved**.
+
+If the managed private endpoint has a provisioning state of **Failed**, create a support request so that the service team can investigate the provisioning error.
+
 ## Use managed private endpoints in Fabric
 
 Microsoft Fabric notebooks support seamless interaction with data sources behind secured networks using managed private endpoints for data exploration and processing. Within a notebook, users can quickly read data from their protected data sources (and write data back to) their lakehouses in various file formats.
@@ -82,6 +124,9 @@ This guide provides code samples to help you get started in your own notebooks t
 1. Once the data source administrator of the SQL server approves the new private endpoint connection request, you should be able to use the newly created Managed Private Endpoint.
 
 ### Connect to the data source from notebooks
+
+> [!NOTE]
+> When you connect to Azure Storage, create and approve a managed private endpoint for each storage endpoint that your notebook uses. For example, create a managed private endpoint for the `blob` subresource to access a Blob Storage endpoint (`<storage-account-name>.blob.core.windows.net`). Create a managed private endpoint for the `dfs` subresource to access an Azure Data Lake Storage endpoint (`<storage-account-name>.dfs.core.windows.net`). If your notebook uses both endpoints, create and approve a managed private endpoint for each subresource.
 
 1. Sign into the [Microsoft Fabric portal](https://app.fabric.microsoft.com).
 
@@ -146,6 +191,7 @@ Ensure resource ID format is followed as shown in the following table.
 | Azure Data Explorer (Kusto) | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Kusto/clusters/{cluster-name}|
 | Azure Machine Learning | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.MachineLearningServices/workspaces/{workspace-name}|
 | Microsoft Purview | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Purview/accounts/{account-name}|
+| Azure API Management (REST API only) | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.ApiManagement/service/{service-name}|
 | Azure Search | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Search/searchServices/{service-name}|
 | Azure SQL Database | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Sql/servers/{server-name}|
 | Azure SQL Database (Azure SQL Managed Instance) | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Sql/managedInstances/{instance-name}|

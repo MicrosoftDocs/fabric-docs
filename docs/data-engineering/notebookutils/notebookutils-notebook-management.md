@@ -8,9 +8,9 @@ ms.date: 03/31/2025
 ai-usage: ai-assisted
 ---
 
-# Manage notebook artifacts with NotebookUtils
+# Manage notebook items with NotebookUtils
 
-Use `notebookutils.notebook` to manage notebook items programmatically in Microsoft Fabric. You can create, retrieve, update, delete, and list notebook artifacts to automate deployment, lifecycle management, and CI/CD workflows.
+Use `notebookutils.notebook` to manage notebook items programmatically in Microsoft Fabric. You can create, retrieve, update, delete, and list notebook items to automate deployment, lifecycle management, and CI/CD workflows.
 
 > [!NOTE]
 > These APIs are supported only in Fabric notebooks, not in Azure Synapse. You must have appropriate permissions in the target workspace for each operation.
@@ -29,7 +29,7 @@ The following table lists the available notebook management methods:
 
 ## Create a notebook
 
-Use `notebookutils.notebook.create()` to create a new notebook artifact in the current workspace or a specified workspace.
+Use `notebookutils.notebook.create()` to create a new notebook item in the current workspace or a specified workspace.
 
 > [!NOTE]
 > Workflow examples in this article that read or write `.ipynb` files use Python for file I/O. The core `notebookutils.notebook` APIs are available in Python, PySpark, Scala, and R unless otherwise noted.

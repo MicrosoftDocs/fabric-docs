@@ -10,14 +10,14 @@ ms.custom: FY25Q1-Linter, sfi-image-nochange
 
 # T-SQL support in Microsoft Fabric notebooks
 
-The T-SQL notebook feature in Microsoft Fabric lets you write and run T-SQL code within a notebook. You can use T-SQL notebooks to manage complex queries and write better markdown documentation. It also allows direct execution of T-SQL on connected warehouse or SQL analytics endpoint. By adding a Data Warehouse or SQL analytics endpoint to a notebook, T-SQL developers can run queries directly on the connected endpoint. BI analysts can also perform cross-database queries to gather insights from multiple warehouses and SQL analytics endpoints.
+The T-SQL notebook feature in Fabric lets you write and run T-SQL code within a notebook. You can use T-SQL notebooks to manage complex queries and write better markdown documentation. It also allows direct execution of T-SQL on connected warehouse or SQL analytics endpoint. By adding a warehouse or SQL analytics endpoint to a notebook, T-SQL developers can run queries directly on the connected endpoint. BI analysts can also perform cross-database queries to gather insights from multiple warehouses and SQL analytics endpoints.
 
 Most of the existing notebook functionalities are available for T-SQL notebooks. These include charting query results, coauthoring notebooks, scheduling regular executions, and triggering execution within Data Integration pipelines.
 
 In this article, you learn how to:
 
 - Create a T-SQL notebook
-- Add a Data Warehouse or SQL analytics endpoint to a notebook
+- Add a warehouse or SQL analytics endpoint to a notebook
 - Create and run T-SQL code in a notebook
 - Use the charting features to graphically represent query outcomes
 - Save the query as a view or a table
@@ -36,13 +36,13 @@ To get started with this experience, you can create a T-SQL notebook in the foll
 
    :::image type="content" source="media\tsql-notebook\create-tsql-notebook-from-editor.png" alt-text="Screenshot of open notebook from DW SQL editor." lightbox="media\tsql-notebook\create-tsql-notebook-from-editor.png":::
 
-Once the notebook is created, T-SQL is set as the default language. You can add data warehouse or SQL analytics endpoints from the current workspace into your notebook.
+Once the notebook is created, T-SQL is set as the default language. You can add warehouse or SQL analytics endpoints from the current workspace into your notebook.
 
 ## Add a Data Warehouse or SQL analytics endpoint into a notebook
 
 To add a Data Warehouse or SQL analytics endpoint into a notebook, from the notebook editor, select **+ Data sources** button and select **Warehouses**. From the **data-hub** panel, select the data warehouse or SQL analytics endpoint you want to connect to.
 
-:::image type="content" source="media\tsql-notebook\add-warehouse.png" alt-text="Screenshot of adding data warehouse or sql-endpoint into the notebook." lightbox="media\tsql-notebook\add-warehouse.png":::
+:::image type="content" source="media\tsql-notebook\add-warehouse.png" alt-text="Screenshot of adding warehouse or sql-endpoint into the notebook." lightbox="media\tsql-notebook\add-warehouse.png":::
 
 ### Set a primary warehouse
 
@@ -162,6 +162,6 @@ Historical queries can take up to 15 minutes to appear in list depending on the 
 
 For more information about Fabric notebooks, see the following articles.
 
-- [What is data warehousing in Microsoft Fabric?](../data-warehouse/data-warehousing.md)
+- [What is Fabric Data Warehouse?](../data-warehouse/data-warehousing.md)
 - Questions? Try asking the [Fabric Community](https://community.fabric.microsoft.com/).
 - Suggestions? [Contribute ideas to improve Fabric](https://ideas.fabric.microsoft.com/).

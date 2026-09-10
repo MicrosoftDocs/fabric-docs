@@ -77,11 +77,11 @@ To effectively test early access releases, follow these steps:
 Create a dedicated workspace for testing the early access channel:
 
 1. Create a new workspace or designate an existing test environment.
-1. Create an Environment item and set these properties to use early access.
+1. Create an environment item and set these properties to use early access.
 
     :::image type="content" source="media\mrs\enable-release-channel-in-environment.jpg" alt-text="Screenshot showing properties required to change the release channel." lightbox="media\mrs\enable-release-channel-in-environment.jpg":::
 
-1. In your notebook or Spark Job Definition, refer to the Environment item you created.
+1. In your notebook or Spark job definition, refer to the environment item you created.
 1. When the session starts, validate the usage of the early access release channel by using the following command.
 
     :::image type="content" source="media\mrs\verify-usage-of-release-channel-in-session.jpg" alt-text="Screenshot showing early access release channel in use in the current session." lightbox="media\mrs\verify-usage-of-release-channel-in-session.jpg":::
@@ -113,9 +113,9 @@ If you suspect a failure is caused by the early access release:
 
 To stay informed about changes in each release channel:
 
-1. **Identify your VHD (Virtual Hard Disk) image**. To find the VHD ID of the runtime image you're running:
-   - Check Spark UI or cluster information in your session (like `spark.conf.get("spark.synapse.vhd.id", "")`)
-   - Look for VHD ID in cluster logs
+1. **Identify your VHD (Virtual Hard Disk) image**. To find the VHD name of the runtime image you're running:
+   - Check Spark UI or cluster information in your session (like `spark.conf.get("spark.synapse.vhd.name", "")`).
+   - Look for the VHD name (which should look like *.vhd) in cluster logs.
    - Use this information when reporting issues to support
 
 1. **Review release notes**. Monitor the [Spark Runtime Releases and Updates](https://github.com/microsoft/synapse-spark-runtime) repository for detailed release notes. Release notes are published per release channel, so you can easily compare changes. Each release includes documented changes to libraries, components, and improvements.

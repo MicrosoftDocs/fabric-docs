@@ -19,7 +19,7 @@ This article covers both ways to interact with Copilot in notebooks: the **chat 
 
 For an overview of Copilot capabilities in Data Science and Data Engineering, see [Overview of Copilot for Data Engineering and Data Science](./copilot-notebooks-overview.md).
 
-When you open a notebook, Copilot automatically uses notebook context such as your workspace, attached Lakehouse, available schemas, tables, and files, existing notebook code, and runtime.
+When you open a notebook, Copilot automatically uses notebook context such as your workspace, attached lakehouse, available schemas, tables, and files, existing notebook code, and runtime.
 
 Copilot supports notebook-wide, multi-step code generation, refactoring, summarization, and validation across entire workflows, not just single cells or isolated prompts. It can coordinate changes across multiple cells in a session, helping you build and optimize end-to-end pipelines without losing context.
 
@@ -36,7 +36,7 @@ You don't need to install anything or start a session. Copilot is ready to use a
 To use Copilot in Fabric notebooks:
 
 1. Create a new notebook or open an existing one.
-1. Attach a Lakehouse to provide schema and data context.
+1. Attach a lakehouse to provide schema and data context.
 1. Select the **Copilot** button on the notebook ribbon.
 
     :::image type="content" source="media/copilot-notebooks-chat-pane/copilot-ribbon-button.png" alt-text="Screenshot showing the Copilot button on the ribbon." lightbox="media/copilot-notebooks-chat-pane/copilot-ribbon-button.png":::
@@ -59,7 +59,7 @@ The following walkthrough shows one example of an end-to-end Copilot flow, from 
 
     :::image type="content" source="media/copilot-notebooks-chat-pane/copilot-profile-running.png" alt-text="Screenshot of Copilot searching the attached Lakehouse for schemas and tables." lightbox="media/copilot-notebooks-chat-pane/copilot-profile-running.png":::
 
-1. Copilot finds the dimension_customer table in the default Lakehouse and requests permission to add a new code cell.
+1. Copilot finds the dimension_customer table in the default lakehouse and requests permission to add a new code cell.
 
     :::image type="content" source="media/copilot-notebooks-chat-pane/copilot-profile-allow.png" alt-text="Screenshot of Copilot finding the dimension_customer table and requesting permission to add a code cell." lightbox="media/copilot-notebooks-chat-pane/copilot-profile-allow.png":::
 

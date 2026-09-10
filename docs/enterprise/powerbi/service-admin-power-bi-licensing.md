@@ -63,13 +63,13 @@ Users can get a license in two ways: from an administrator or by using self-serv
 > If you're ready to make a purchase, use these links to find up-to-date pricing information:
 >
 > - [Power BI Pricing & product comparison](https://powerbi.microsoft.com/pricing/)
-> - [Pricing options for Fabric](/fabric/enterprise/buy-subscription)
+> - [Pricing options for Fabric](/fabric/enterprise/buy-capacity)
 
 ### Purchase options
 
 Choose the option that best fits your organization's needs:
 
-1. **Purchase a Fabric subscription** - [Purchase a Fabric subscription](/fabric/enterprise/buy-subscription) that includes Power BI. If you're ready to purchase, your options include bulk purchasing for your organization or enabling your users to upgrade their own licenses. After you purchase a Fabric subscription, [enable Fabric for your organization](/fabric/admin/fabric-switch).
+1. **Buy Fabric capacity** - [Buy Fabric capacity](/fabric/enterprise/buy-capacity) that includes Power BI. If you're ready to purchase, your options include bulk purchasing for your organization or enabling your users to upgrade their own licenses. After you buy Fabric capacity, [enable Fabric for your organization](/fabric/admin/fabric-switch).
 
 1. **Purchase Power BI licenses** - Power BI Pro is included in Microsoft 365 E5. Otherwise, you can purchase Pro or PPU licenses from the [Microsoft pricing site](https://powerbi.microsoft.com/pricing/), through Microsoft 365, or through a Microsoft partner. After your purchase, you can assign licenses to individual users or use self-service.
 
@@ -195,7 +195,10 @@ To share Power BI content with external users:
 - **The sharer** needs a Power BI Pro or Premium Per User (PPU) license to share content outside the organization.
 - **The external guest user** needs one of the following:
   - A Power BI Pro or PPU license (either from their own organization or assigned by your organization), OR
-  - Only a Fabric (Free) license if the content is hosted in a Premium capacity (P SKU) or Fabric capacity (F64 or greater).
+  - A Fabric (Free) license, if the content is hosted in a Microsoft Fabric capacity of F64 or larger.
+
+> [!NOTE]
+> Power BI Premium per-capacity (P SKU) subscriptions are being retired. To keep your Power BI workloads running, migrate to Microsoft Fabric capacity (F SKUs). For an end-to-end view of the migration, see [Power BI Premium to Microsoft Fabric migration overview](/power-bi/support/premium-migration-overview). For answers to common questions, see the [Power BI Premium to Microsoft Fabric migration FAQ](/power-bi/support/premium-migration-faq).
 
 For more information about guest user access, see [Distribute Power BI content to external guest users with Microsoft Entra B2B](service-admin-entra-b2b.md).
 

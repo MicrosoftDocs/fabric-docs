@@ -13,15 +13,15 @@ ms.search.form: lakehouse load to delta lake tables
 In the Fabric portal, you can use **Load to tables** from the [Lakehouse home page](lakehouse-overview.md) to turn CSV or Parquet files into Delta tables.
 
 > [!NOTE]
-> In the current **Load to tables** flow, you can't define a custom column schema (for example, explicit column names and data types) from the Lakehouse home page. Use a notebook when you need explicit column schema control. 
+> In the current **Load to tables** flow, you can't define a custom column schema (for example, explicit column names and data types) from the lakehouse home page. Use a notebook when you need explicit column schema control.
 
 ## What you can do in the Fabric portal
 
-In the Fabric portal, the Lakehouse home page supports the following actions when you use **Load to tables**:
+In the Fabric portal, the lakehouse home page supports the following actions when you use **Load to tables**:
 
 - Start from either a single file or a folder.
 - Load into either a new table or an existing table.
-- Load **CSV** or **Parquet** data and keep output in Delta format with V-Order optimization.
+- Load **CSV** or **Parquet** data and keep output in Delta format with V-order optimization.
 
 For field-by-field behavior (including when options like **File type**, **Append**/**Overwrite**, **Column header**, and **Separator** appear), see [Fields by load path](#fields-by-load-path).
 
@@ -43,7 +43,7 @@ Use the following table to quickly identify which fields appear for each load sc
 
 | Field | When you see it | What to enter or select | Validation and behavior |
 |---|---|---|---|
-| **Schema** (dropdown) | New table and existing table paths | Destination Lakehouse schema namespace | Select the namespace where the table is created or updated. |
+| **Schema** (dropdown) | New table and existing table paths | Destination lakehouse schema namespace | Select the namespace where the table is created or updated. |
 | **New table name** | New table paths only | Name for the destination Delta table | Use alphanumeric characters and underscores (`_`) only, up to 256 characters. Dashes (`-`) and spaces aren't allowed. |
 | **Load mode** (**Append** or **Overwrite**) | Existing table paths only | How to load into the selected existing table | Choose **Append** to add rows, or **Overwrite** to replace existing data. |
 | **File type** | Folder paths only | Folder load format (**CSV** or **Parquet**) | All files in one folder load action must match the selected file type. |
@@ -55,5 +55,5 @@ After required fields are set for your path, select **Load**.
 
 ## Related content
 
-- [Delta Lake in Microsoft Fabric overview](../fundamentals/delta-lake-overview.md)
+- [Delta Lake in Fabric overview](../fundamentals/delta-lake-overview.md)
 - [CSV file upload to Delta tables for Power BI reporting](get-started-csv-upload.md)

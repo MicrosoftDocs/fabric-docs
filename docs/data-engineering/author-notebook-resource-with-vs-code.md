@@ -9,7 +9,7 @@ ms.search.form: VSCodeExtension
 
 # Access and manage Microsoft Fabric notebook resources in Visual Studio Code
 
-Microsoft Fabric notebooks now support a feature called *notebook resources*. With this feature, you can store code modules in .py format and other data files, such as .csv or image files, in a resource folder. You can access all these resource files from the notebook as a local file system. This article shows you how to use this feature in Visual Studio (VS) Code, with the VS Code extension for Fabric Data Engineering.
+Fabric notebooks now support a feature called *notebook resources*. With this feature, you can store code modules in .py format and other data files, such as .csv or image files, in a resource folder. You can access all these resource files from the notebook as a local file system. This article shows you how to use this feature in Visual Studio (VS) Code, with the VS Code extension for Fabric Data Engineering.
 
 For information about the extension, including how to install it, see [What is the Fabric Data Engineering VS Code extension?](setup-vs-code-extension.md)
 
@@ -50,6 +50,6 @@ The following screenshot shows the **util.py** file moved to the **_backup** sub
 
 ## Related content
 
-- [Create and manage Microsoft Fabric notebooks inside Visual Studio Code for the Web](author-notebook-with-vs-code.md)
+- [Create and manage Fabric notebooks inside Visual Studio Code for the Web](author-notebook-with-vs-code.md)
 - [Create and manage Apache Spark job definitions in Visual Studio Code](author-sjd-with-vs-code.md)
-- [Explore Microsoft Fabric lakehouses in Visual Studio Code](explore-lakehouse-with-vs-code.md)
+- [Explore Fabric lakehouses in Visual Studio Code](explore-lakehouse-with-vs-code.md)

@@ -1,6 +1,6 @@
 ---
-title: Python programming model for Fabric User data functions
-description: Overview of the Fabric User data functions programming model for Python.
+title: Python programming model for Fabric user data function
+description: Overview of the Fabric user data function programming model for Python.
 ms.reviewer: sumuth
 ms.topic: overview
 ms.custom: freshness-kr
@@ -9,9 +9,9 @@ ms.search.form: Write new user data functions items
 ai-usage: ai-assisted
 ---
 
-# Fabric User data functions programming model overview
+# Fabric user data function programming model overview
 
-The Fabric User data functions programming model defines the patterns and concepts for authoring functions in Fabric. 
+The Fabric user data function programming model defines the patterns and concepts for authoring functions in Fabric.
 
 The `fabric-user-data-functions` SDK implements this programming model, providing the necessary functionality to author and publish runnable functions. The SDK also allows you to seamlessly integrate with other items in the Fabric ecosystem, such as Fabric data sources. [This library is publicly available in PyPI](https://pypi.org/project/fabric-user-data-functions/) and is pre-installed in your user data functions items.
 
@@ -22,7 +22,7 @@ This article explains how to use the SDK to build functions that can be invoked 
 
 ## Getting started with the SDK
 
-This section introduces the core components of the User Data Functions SDK and explains how to structure your functions. You learn about the required imports, decorators, and the types of input and output data your functions can handle.
+This section introduces the core components of the user data functions SDK and explains how to structure your functions. You learn about the required imports, decorators, and the types of input and output data your functions can handle.
 
 ### User data functions SDK
 
@@ -128,7 +128,7 @@ The supported output data types are:
 
 ### Syntax requirements and limitations
 
-When writing User Data Functions, you must follow specific syntax rules to ensure your functions work correctly.
+When writing user data functions, follow specific syntax rules to ensure your functions work correctly.
 
 #### Parameter naming
 
@@ -277,7 +277,7 @@ def read_from_sql_db(demosqldatabase: fn.FabricSqlConnection)-> list:
 
 ### Generic connections for Fabric items or Azure resources
 
-The SDK supports generic connections that allow you to create connections to Fabric items or Azure resources using your User Data Functions item owner identity. This feature generates a Microsoft Entra ID token with the item owner's identity and a provided audience type. This token is used to authenticate with Fabric items or Azure resources that support that audience type. This approach provides a similar programming experience to using managed connections objects from the [Manage Connections feature](./connect-to-data-sources.md) but only for the provided audience type in the connection. 
+The SDK supports generic connections that you can use to create connections to Fabric items or Azure resources by using your user data functions item owner identity. This feature generates a Microsoft Entra ID token with the item owner's identity and a provided audience type. Use this token to authenticate with Fabric items or Azure resources that support that audience type. This approach provides a similar programming experience to using managed connections objects from the [Manage Connections feature](./connect-to-data-sources.md) but only for the provided audience type in the connection.
 
 This feature uses the `@udf.generic_connection()` decorator with the following parameters:
 
@@ -288,23 +288,23 @@ This feature uses the `@udf.generic_connection()` decorator with the following p
 
 
 
-#### Connect to Fabric Cosmos DB container using a generic connection
-Generic connections support native Fabric Cosmos DB items by using the `CosmosDB` audience type. The included User Data Functions SDK provides a helper method called `get_cosmos_client` that fetches a singleton Cosmos DB client for every invocation.
+#### Connect to Cosmos DB in Fabric container using a generic connection
+Generic connections support native Cosmos DB databases in Fabric by using the `CosmosDB` audience type. The included user data functions SDK provides a helper method called `get_cosmos_client` that fetches a singleton Cosmos DB client for every invocation.
 
-You can connect to a [Fabric Cosmos DB item](../../database/cosmos-db/overview.md) using a generic connection by following these steps:
+You can connect to a [Cosmos DB database in Fabric](../../database/cosmos-db/overview.md) using a generic connection by following these steps:
 1. Go to the Fabric portal, find your workspace, and open your user data functions item. Select **Library management**, search for the `azure-cosmos` library, and install it. For more information, see [Manage libraries](./how-to-manage-libraries.md).
 
-1. Go to your **Fabric Cosmos DB item** settings.
+1. Go to your **Cosmos DB in Fabric item** settings.
 
-    :::image type="content" source="..\media\user-data-functions-python-programming-model\cosmos-db-connection-1.png" alt-text="Screenshot showing the Fabric Cosmos DB settings button location." lightbox="..\media\user-data-functions-python-programming-model\cosmos-db-connection-1.png":::
+    :::image type="content" source="..\media\user-data-functions-python-programming-model\cosmos-db-connection-1.png" alt-text="Screenshot showing the Cosmos DB in Fabric settings button location." lightbox="..\media\user-data-functions-python-programming-model\cosmos-db-connection-1.png":::
 
-1. Retrieve your **Fabric Cosmos DB endpoint URL**.
+1. Retrieve your **Cosmos DB in Fabric endpoint URL**.
 
-    :::image type="content" source="..\media\user-data-functions-python-programming-model\cosmos-db-connection-2.png" alt-text="Screenshot showing the Fabric Cosmos DB endpoint URL." lightbox="..\media\user-data-functions-python-programming-model\cosmos-db-connection-2.png":::
+    :::image type="content" source="..\media\user-data-functions-python-programming-model\cosmos-db-connection-2.png" alt-text="Screenshot showing the Cosmos DB in Fabric endpoint URL." lightbox="..\media\user-data-functions-python-programming-model\cosmos-db-connection-2.png":::
 
-1. Go to your **User Data Functions item**. Use the following sample code to connect to your Fabric Cosmos DB container and run a read query using the Cosmos DB sample dataset. Replace the values of the following variables:
-    - `COSMOS_DB_URI` with your Fabric Cosmos DB endpoint.
-    - `DB_NAME` with the name of your Fabric Cosmos DB item.
+1. Go to your **user data functions item**. Use the following sample code to connect to your Cosmos DB in Fabric container and run a read query using the Cosmos DB sample dataset. Replace the values of the following variables:
+    - `COSMOS_DB_URI` with your Cosmos DB in Fabric endpoint.
+    - `DB_NAME` with the name of your Cosmos DB database item.
 
     ```python
     from fabric.functions.cosmosdb import get_cosmos_client
@@ -341,10 +341,10 @@ You can connect to a [Fabric Cosmos DB item](../../database/cosmos-db/overview.m
 1. **Test or run this function** by providing a category name, such as `Accessory` in the invocation parameters.
 
 >[!NOTE]
-> You can also use these steps to connect to an Azure Cosmos DB database using the account URL and database names. The User Data Functions owner account would need access permissions to that Azure Cosmos DB account.
+> You can also use these steps to connect to an Azure Cosmos DB database using the account URL and database names. The user data functions owner account needs access permissions to that Azure Cosmos DB account.
 
 #### Connect to Azure Key Vault using a generic connection
-Generic connections support connecting to an Azure Key Vault by using the `KeyVault` audience type. This type of connection requires that the Fabric User Data Functions owner has permissions to connect to the Azure Key Vault. You can use this connection to retrieve keys, secrets, or certificates by name.
+Generic connections support connecting to an Azure Key Vault by using the `KeyVault` audience type. This type of connection requires that the Fabric user data functions owner has permissions to connect to the Azure Key Vault. You can use this connection to retrieve keys, secrets, or certificates by name.
 
 You can connect to [Azure Key Vault](/azure/key-vault/general/basic-concepts) to retrieve a client secret to call an API using a generic connection by following these steps:
 
@@ -354,7 +354,7 @@ You can connect to [Azure Key Vault](/azure/key-vault/general/basic-concepts) to
 
     :::image type="content" source="..\media\user-data-functions-python-programming-model\key-vault-connection-1.png" alt-text="Screenshot showing the Azure Key Vault endpoint URL and values." lightbox="..\media\user-data-functions-python-programming-model\key-vault-connection-1.png":::
 
-1. Go back to your **Fabric User Data Functions item** and use this sample. In this sample, we retrieve a secret from Azure Key Vault to connect to a public API. Replace the value of the following variables:
+1. Go back to your **Fabric user data functions item** and use this sample. In this sample, you retrieve a secret from Azure Key Vault to connect to a public API. Replace the value of the following variables:
     - `KEY_VAULT_URL` with the `Vault URI` you retrieved in the previous step. 
     - `KEY_VAULT_SECRET_NAME` with the name of your secret.
     - `API_URL` variable with the URL of the API you'd like to connect to. This sample assumes that you're connecting to a public API that accepts GET requests and takes the following parameters `api-key` and `request-body`. 
@@ -406,7 +406,7 @@ The programming model defines advanced patterns that give you greater control ov
 - Integrate with Fabric variable libraries for centralized configuration management
 
 > [!NOTE]
-> User Data Functions has service limits for request size, execution timeout, and response size. For details on these limits and how they're enforced, see [Service details and limitations](user-data-functions-service-limits.md).
+> User data functions have service limits for request size, execution timeout, and response size. For details on these limits and how they're enforced, see [Service details and limitations](user-data-functions-service-limits.md).
 
 ### Get invocation properties using `UserDataFunctionContext`
 
@@ -460,7 +460,7 @@ The `UserThrownError` class constructor takes two parameters:
 
 ### Get variables from Fabric variable libraries
 
-A [Fabric variable library](../../cicd/variable-library/variable-library-overview.md) in Microsoft Fabric is a centralized repository for managing variables that can be used across different items within a workspace. It allows developers to customize and share item configurations efficiently. If you don't have a variable library yet, see [Create and manage variable libraries](../../cicd/variable-library/get-started-variable-libraries.md).
+A [variable library](../../cicd/variable-library/variable-library-overview.md) in Fabric is a centralized repository for managing variables that you can use across different items within a workspace. It allows developers to customize and share item configurations efficiently. If you don't have a variable library yet, see [Create and manage variable libraries](../../cicd/variable-library/get-started-variable-libraries.md).
 
 To use a variable library in your functions, you add a connection to it from your user data functions item. Variable libraries appear in the OneLake catalog alongside data sources like SQL databases and lakehouses.
 
@@ -474,7 +474,7 @@ Follow these steps to use variable libraries in your functions:
 
 #### Example
 
-In this example we simulate a configuration scenario for a production and a development environment. This function sets a storage path depending on the selected environment using a value retrieved from the Variable Library. The Variable Library contains a variable called `ENV` where users can set a value of `dev` or `prod`.
+In this example, you simulate a configuration scenario for a production and a development environment. This function sets a storage path depending on the selected environment by using a value retrieved from the variable library. The variable library contains a variable called `ENV` where users can set a value of `dev` or `prod`.
 
 ```python
 @udf.connection(argName="varLib", alias="<My Variable Library Alias>")
@@ -509,5 +509,5 @@ def get_storage_path(dataset: str, varLib: fn.FabricVariablesClient) -> str:
 
 ## Related content
 - [Reference API documentation](/python/api/fabric-user-data-functions/fabric.functions)
-- [Create a Fabric User data functions item](./create-user-data-functions-portal.md)
+- [Create a Fabric user data function item](./create-user-data-functions-portal.md)
 - [User data functions samples](https://github.com/microsoft/fabric-user-data-functions-samples)

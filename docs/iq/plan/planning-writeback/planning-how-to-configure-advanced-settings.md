@@ -10,8 +10,6 @@ ms.topic: how-to
 
 In **Writeback Settings**, the **Advanced** tab lets you configure validation rules and rename writeback columns. These settings control which data is written back and how the destination stores it.
 
-[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
-
 ## Validate writeback columns
 
 In **Advanced**, enforce validation rules before writeback. Use a null check or a formula-based condition.

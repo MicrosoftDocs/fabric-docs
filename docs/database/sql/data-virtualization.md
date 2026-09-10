@@ -3,7 +3,7 @@ title: Data Virtualization in SQL Database
 description: Learn more about data virtualization in SQL database in Microsoft Fabric.
 ms.reviewer: hudequei
 ms.date: 10/22/2025
-ms.topic: concept-article
+ms.topic: how-to
 ms.update-cycle: 180-days
 ms.search.form: Ingesting data into SQL database
 ---
@@ -67,11 +67,11 @@ To create a Fabric Lakehouse data source, you need to provide workspace ID, tena
 
 ## Examples
 
-The following sample scripts use a Fabric Lakehouse named `Cold_Lake` that hosts Contoso store and customer data in parquet and csv files. 
+The following sample scripts use a Fabric Lakehouse named `Cold_Lake` that hosts Contoso store and customer data in Parquet and CSV files. 
 
 :::image type="content" source="media/data-virtualization/onelake-contoso.png" alt-text="Screenshot of the sample Lakehouse named Cold _ Lake." lightbox="media/data-virtualization/onelake-contoso.png":::
 
-### A. Query a parquet file with OPENROWSET
+### A. Query a Parquet file with OPENROWSET
 
 The following example demonstrates the use of `OPENROWSET` to retrieve sample data from a Parquet file. 
 
@@ -178,9 +178,9 @@ FROM OPENROWSET(
 ) AS customer_dataset; 
 ``` 
 
-### D. Create external table for parquet
+### D. Create external table for Parquet
 
-The following sample demonstrates how to set up an external file format, then create an external table specifically for parquet data. 
+The following sample demonstrates how to set up an external file format, then create an external table specifically for Parquet data. 
 
 ```sql
 CREATE EXTERNAL FILE FORMAT Parquetff WITH (FORMAT_TYPE=PARQUET); 
@@ -292,7 +292,7 @@ For more information, see [sp_describe_first_result_set()](/sql/relational-datab
 
 Fabric SQL database also makes available `filename()` and `filepath()` functions for folder and file exploration, and dynamic query creation, which can also be used for virtual columns in combination with OPENROWSET to data files across multiple subfolders. 
 
-The following example lists all the parquet files and its location.
+The following example lists all the Parquet files and their locations.
 
 ```sql
 SELECT 

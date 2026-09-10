@@ -1,17 +1,18 @@
 ---
 title: Use the end-to-end AI samples
-description: Understand the capabilities of the Synapse Data Science experience and examples of how machine learning models can address your common business problems.
+description: Understand the capabilities of the Fabric Data Science workload and examples of how machine learning models can address your common business problems.
 ms.author: lagayhar
-ms.reviewer: ruxu 
+ms.reviewer: scottpolly
 ms.topic: how-to
-ms.date: 12/23/2025
+ms.date: 08/31/2026
+ai-usage: ai-assisted
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
 ---
 
 # Use end-to-end AI samples in Microsoft Fabric
 
-The [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] software as a service (SaaS) experience is part of [!INCLUDE [product-name](../includes/product-name.md)]. It can help machine learning professionals build, deploy, and operationalize their machine learning models. The [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] software operates in a single analytics platform, but collaborates with other key roles at the same time. This article describes the capabilities of the [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] experience, and how machine learning models can address common business problems.
+The [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] software as a service (SaaS) workload is part of [!INCLUDE [product-name](../includes/product-name.md)]. It helps machine learning professionals build, deploy, and operationalize their machine learning models. The [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] software operates in a single analytics platform, but it collaborates with other key roles at the same time. This article describes the capabilities of the [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] workload, and how machine learning models can address common business problems.
 
 ## Install Python libraries
 

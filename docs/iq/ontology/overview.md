@@ -10,7 +10,7 @@ ms.search.form: Ontology Overview
 
 The *ontology (preview)* item (part of the [Fabric IQ (preview) workload](../overview.md)) digitally represents the enterprise vocabulary and semantic layer that unifies meaning across domains and OneLake sources. It defines enterprise concepts as *entity types* (like *Customer*), *properties* (like a Customer's *name* and *email*), and *relationships* (like *Customer places Order*), while clarifying the constraints of these terms. After defining your ontology, bind the entity type definitions to real data, so downstream tools can share the same language. Both humans and AI agents can use this language for cross-domain reasoning and decision-ready actions.
 
-Ontology provides a scaled, secure, and governed shared business model used across teams, agents, and workflows in Fabric IQ. It provides a shared context layer that can be consumed by Fabric agents and Real-Time Intelligence components for consistent reasoning and actions. Ontology works well in situations where you need cross-domain consistency, governance, or AI agent grounding, and you want to reason across processes.
+Ontology in Fabric provides a scaled, secure, and governed shared business model used across teams, agents, and workflows in Fabric IQ. It provides a shared context layer that can be consumed by Fabric agents and Real-Time Intelligence components for consistent reasoning and actions. Ontology works well in situations where you need cross-domain consistency, governance, or AI agent grounding, and you want to reason across processes.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
@@ -57,10 +57,9 @@ After you define an ontology, you can [bind it to your data](how-to-bind-data.md
 
 ### Ontology graph
 
->[!IMPORTANT]
->Ontology's graph feature relies on [Graph in Microsoft Fabric](../../graph/overview.md), so you must enable the Graph setting for your tenant. For more information, see [Ontology (preview) required tenant settings](overview-tenant-settings.md).
+The *ontology graph* is a queryable instance graph built from your data bindings and relationship definitions, provided within ontology by [Graph in Microsoft Fabric](../../graph/overview.md). You can see the graph in the [entity type details](how-to-view-entity-type-details.md). 
 
-The *ontology graph* is a queryable instance graph built from your data bindings and relationship definitions. You can see it in the [entity type details](how-to-view-entity-type-details.md). In the graph, nodes are entity instances, and edges are links (either asserted or derived) with metadata attributes. Each node or edge keeps data source lineage and follows a scheduled data refresh. Graphs enable visual exploration of business context, execution of graph algorithms (like paths, centrality, and communities), and rule‑driven inferences. Graphs improve semantics by making relationships first‑class, so context is explicit, queryable, and governed (not buried in join logic).
+In the graph, nodes are entity instances, and edges are links (either asserted or derived) with metadata attributes. Each node or edge keeps data source lineage and follows a scheduled data refresh. Graphs enable visual exploration of business context, execution of graph algorithms (like paths, centrality, and communities), and rule‑driven inferences. Graphs improve semantics by making relationships first‑class, so context is explicit, queryable, and governed (not buried in join logic).
 
 [!INCLUDE [refresh-graph-model](includes/refresh-graph-model.md)]
 

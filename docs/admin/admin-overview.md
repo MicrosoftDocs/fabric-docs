@@ -51,7 +51,7 @@ Fabric admins use a combination of the Fabric admin portal and related admin too
 * **[PowerShell cmdlets](/powershell/power-bi/overview)**
   * Manage workspaces and other aspects of Fabric using scripts
 
-* **[Administrative APIs and SDK](/rest/api/fabric/articles/using-fabric-apis)**
+* **[Administrative APIs and SDK](/rest/api/fabric/articles/get-started/using-fabric-apis)**
   * Build custom admin tools
 
 ### Admin roles
@@ -102,7 +102,7 @@ Fabric has two types of licenses that control how users and capacities can opera
 
 * [Per user license](../enterprise/licenses.md#per-user-licenses) - Per user licenses allow users to work in Fabric.
 
-To purchase licenses, you must be a Billing administrator. Billing administrators can [buy licenses](../enterprise/buy-subscription.md) and control them with tools such as capacity [pause and resume](../enterprise/pause-resume.md) and [scale](../enterprise/scale-capacity.md).
+To purchase licenses, you must be a Billing administrator. Billing administrators can [buy licenses](../enterprise/buy-capacity.md) and control them with tools such as capacity [pause and resume](../enterprise/pause-resume.md) and [scale](../enterprise/scale-capacity.md).
 
 After you purchase licenses, use the Microsoft 365 admin center, PowerShell, or the Azure portal to view and manage those licenses.
 

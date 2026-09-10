@@ -65,7 +65,7 @@ To set up your gateway:
 
 ## Create a connection for your on-premises data source
 
-1. Go to the [admin portal](https://app.powerbi.com) and select the settings button (the gear icon) at the top right of the page. Then choose **Manage connections and gateways** from the dropdown menu.
+1. Go to the [Fabric portal](https://app.powerbi.com) and select the settings button (the gear icon) at the top right of the page. Then choose **Manage connections and gateways** from the dropdown menu.
 
    :::image type="content" source="media/how-to-access-on-premises-data/manage-connections-gateways.png" alt-text="Screenshot showing the Settings menu with Manage connections and gateways highlighted.":::
 
@@ -140,11 +140,11 @@ This example shows how to connect a [Copy job](what-is-copy-job.md#supported-con
 
 1. [Create an on-premises data gateway to connect to your source.](#create-an-on-premises-data-gateway)
 
-1. Go to your workspace and create a new **Copy job.**
+1. Go to your workspace and create a new **Copy job**.
 
    :::image type="content" source="media/how-to-access-on-premises-data/create-copy-job.png" lightbox="media/how-to-access-on-premises-data/create-copy-job.png" alt-text="Screenshot showing the new item menu in the Microsoft Fabric workspace with Copy job highlighted.":::
 
-1. In the Copy job wizard, on the Choose data source page, go to **New sources**, and select your source. In this example, we're using SQL Server database.
+1. In the Copy job wizard, on the **Choose data source** page, go to **New sources**, and select your source. In this example, use a SQL Server database.
 
    :::image type="content" source="media/how-to-access-on-premises-data/copy-job-choose-data-source.png" lightbox="media/how-to-access-on-premises-data/copy-job-choose-data-source.png" alt-text="Screenshot of the Copy job wizard with a new source selected.":::
 

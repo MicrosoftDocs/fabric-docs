@@ -10,8 +10,6 @@ ms.topic: how-to
 
 Data input rows and columns allow planning sheet authors to extend a sheet by entering values directly within the matrix. These inputs support planning, forecasting, and operational scenarios where certain values must be captured manually or adjusted within the sheet.
 
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
-
 Using data input rows and columns, you can capture business inputs that aren't available in the underlying dataset. You can also make manual adjustments to these inputs, while maintaining the sheet's hierarchy, totals, and calculations.
 
 ## When to use data input rows and columns

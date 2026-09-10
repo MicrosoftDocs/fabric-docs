@@ -10,8 +10,6 @@ ms.topic: how-to
 
 Data security and integrity are essential in collaborative environments where multiple users work on a shared database. PowerTable sheets address your security requirements by enabling you to configure permissions for rows and columns at a granular level.
 
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
-
 In this article, you learn how to set row and column access control permissions for your PowerTable app to ensure database security. You perform the following actions:
 
 * Use the **Manage Access** menu to set row and column permissions, allowing or restricting specific users from performing certain actions (add, update, or delete).

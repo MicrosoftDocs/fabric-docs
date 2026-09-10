@@ -2,7 +2,7 @@
 title: Differences between Dataflow Gen1 and Dataflow Gen2
 description: Compare differences between Dataflow Gen1 and Gen2 in Data Factory for Microsoft Fabric.
 ms.topic: overview
-ms.date: 11/19/2025
+ms.date: 8/13/2026
 ms.reviewer: jeluitwi
 ms.search.form: DataflowGen2 Overview
 ms.custom: dataflows
@@ -29,7 +29,7 @@ With dataflows, you can:
 
 ## Dataflow features
 
-Here's the features that are available between Dataflow Gen2 and Gen1:
+Here's a comparison of features between Dataflow Gen2 and Gen1:
 
 | Feature |   Dataflow Gen2 |  Dataflow Gen1 |
 |--------|---|---|
@@ -99,7 +99,7 @@ To learn more about connecting dataflows with pipelines, see [dataflow activitie
 
 ### High-performance computing
 
-Dataflow Gen2 uses advanced compute Fabric SQL Compute engines to handle large amounts of data efficiently. To make this work, Dataflow Gen2 creates both Lakehouse and Warehouse items in your workspace and uses them to store and access data, improving performance for all your dataflows.
+Dataflow Gen2 uses advanced Fabric SQL compute engines to handle large amounts of data efficiently. To make this work, Dataflow Gen2 creates both Lakehouse and Warehouse items in your workspace and uses them to store and access data, improving performance for all your dataflows.
 
 ### Find and reuse recent data sources
 
@@ -128,7 +128,7 @@ Dataflow Gen2 requires a Fabric capacity, a Fabric trial capacity, or a Power BI
 
 ## Moving from Dataflow Gen1 to Gen2
 
-If you already have dataflows built with Gen1, don't worry – you can easily migrate them to Gen2. We've got several options to help you make the switch:
+If you already have dataflows built with Gen1, you can easily migrate them to Gen2. Several options help you make the switch:
 
 - [Export and import your queries](#export-and-import-your-queries)
 - [Copy and paste in Power Query](#copy-and-paste-in-power-query)
@@ -157,3 +157,4 @@ Ready to learn more? Check out these helpful resources:
 - [Monitor your dataflows](dataflows-gen2-monitor.md) - Track refresh history and performance
 - [Save drafts as you work](dataflows-gen2-save-draft.md) - Learn about the autosave feature
 - [Migrate from Gen1 to Gen2](move-dataflow-gen1-to-dataflow-gen2.md) - Step-by-step migration guide
+- [Dataflow Gen2 cost and performance benchmarks](dataflow-gen2-cost-performance-benchmarks.md) - Compare CU cost and execution time across capabilities.

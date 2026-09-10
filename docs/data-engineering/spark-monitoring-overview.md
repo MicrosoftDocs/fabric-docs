@@ -13,7 +13,7 @@ Microsoft Fabric Spark monitoring is designed to offer a web-UI based experience
 
 ## Monitor hub
 
-The Monitor hub serves as a centralized portal for browsing Spark activities across items. At a glance, you can view in-progress Spark applications triggered from Notebooks, Spark Job Definitions, and Pipelines. You can also search and filter Spark applications based on different criteria and drill down to view more Spark execution details of a Spark application. From the Fabric portal, select **Monitor** from the navigation pane to open the Monitor hub.
+The Monitor hub serves as a centralized portal for browsing Spark activities across items. At a glance, you can view in-progress Spark applications triggered from notebooks, Spark job definitions, and pipelines. You can also search and filter Spark applications based on different criteria and drill down to view more Spark execution details of a Spark application. From the Fabric portal, select **Monitor** from the navigation pane to open the Monitor hub.
 
 ## Item recent runs
 
@@ -21,7 +21,7 @@ When working on specific items, the item Recent Runs feature allows you to brows
 
 ## Notebook contextual monitoring
 
-Notebook Contextual Monitoring offers the capability of authoring, monitoring, and debugging Spark jobs within a single place. You can monitor Spark job progress, view Spark execution tasks and executors, and access Spark logs within a Notebook at the Notebook cell level. The Spark advisor is also built into Notebook to offer real-time advice on code and cell Spark execution and perform error analysis.
+Notebook Contextual Monitoring offers the capability of authoring, monitoring, and debugging Spark jobs within a single place. You can monitor Spark job progress, view Spark execution tasks and executors, and access Spark logs within a notebook at the notebook cell level. The Spark advisor is also built into notebook to offer real-time advice on code and cell Spark execution and perform error analysis.
 
 ## Spark job definition inline monitoring
 
@@ -29,7 +29,7 @@ The Spark job definition Inline Monitoring feature allows you to view Spark job 
 
 ## Pipeline Spark activity inline monitoring
 
-For Pipeline Spark Activity Inline Monitoring, deep links have been built into the Notebook and Spark job definition activities within the Pipeline. You can view Spark application execution details, the respective Notebook and Spark job definition snapshot, and access Spark logs for troubleshooting. If the Spark activities fail, the inline error message is also available within Pipeline Spark activities.
+For Pipeline Spark Activity Inline Monitoring, deep links have been built into the notebook and Spark job definition activities within the pipeline. You can view Spark application execution details, the respective notebook and Spark job definition snapshot, and access Spark logs for troubleshooting. If the Spark activities fail, the inline error message is also available within Pipeline Spark activities.
 
 ## Related content
 

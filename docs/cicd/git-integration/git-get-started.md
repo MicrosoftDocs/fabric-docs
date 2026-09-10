@@ -10,7 +10,7 @@ ms.search.form: Connect to a Git repo, Update from Git, Commit changes to Git, I
 
 # Get started with Git integration
 
-This article walks you through the following basic tasks in Microsoft Fabric's Git integration tool:
+This article walks you through the following basic tasks in Fabric's Git integration tool:
 
 - [Connect to a Git repo](#connect-a-workspace-to-a-git-repo)
 - [Commit changes](#commit-changes-to-git)
@@ -117,7 +117,7 @@ Select **Connect and sync**.
 
 During the initial sync, if either the workspace or Git branch is empty, content is copied from the nonempty location to the empty one. If both the workspace and Git branch have content, you're asked which direction the sync should go. For more information on this initial sync, see [Connect and sync](git-integration-process.md#connect-and-sync).
 
-After you connect, the Workspace displays information about source control that allows the user to view the connected branch, the status of each item in the branch and the time of the last sync.
+After you connect, the workspace displays information about source control that you can use to view the connected branch, the status of each item in the branch, and the time of the last sync.
 
 :::image type="content" source="./media/git-get-started/git-sync-information.png" alt-text="Screenshot of source control icon and other Git information.":::
 
@@ -164,6 +164,11 @@ After the changes are committed, the items that were committed are removed from 
 :::image type="content" source="./media/git-get-started/no-changes.png" alt-text="Screenshot of source control window stating that there are no changes to commit.":::
 
 After the commit is completed successfully, the status of the selected items changes from **Uncommitted** to **Synced**.
+
+> [!NOTE]
+> You can also commit changes to Git from the compare experience. For supported items, the
+> preview file-level commit capability lets you commit specific files within an item. For more
+> information, see [Compare and commit changes](./granular-compare.md).
 
 ### [Commit to standalone branch](#tab/stand-alone)
 Commit to standalone branch is a Git integration feature that lets you create a fresh branch and commit your current changes to it in one single action. In other words, instead of committing to the connected branch, you can branch off on the fly: the system will spin up a new Git branch and save your work there without requiring you to leave or switch from your original branch. 
@@ -237,7 +242,7 @@ To update a workspace, follow these steps:
 
  :::image type="content" source="./media/git-get-started/update-2.png" alt-text="Screenshot of confirmation dialog.":::
 
-After it updates successfully, the list of items is removed, and the workspace points to the new workspace that it's synced to.
+After it updates successfully, the list of items is removed, and the workspace is fully synced with the connected Git branch.
 
 :::image type="content" source="./media/git-get-started/no-updates.png" alt-text="Screenshot of source control window stating that you successfully updated the workspace.":::
 
@@ -253,6 +258,8 @@ Only a workspace admin can disconnect a workspace from a Git Repo. If you're not
 1. Select **Disconnect** again to confirm.
 
 
+## Permissions
+The actions you can take on a workspace depend on the permissions you have in both the workspace and the Git repo. For a more detailed discussion of permissions, see [Permissions](./git-integration-process.md#permissions).
 
 
 

@@ -35,7 +35,7 @@ It fits into a reactive, event-driven architecture where data flows continuously
 
     When a rule condition is satisfied, Activator can trigger:
 
-  - pipelines, notebooks, dataflows, User Data Functions (UDFs), spark job definitions, copy jobs (preview), or publish a business event (preview) in Fabric.
+  - pipelines, notebooks, dataflows, User Data Functions (UDFs), spark job definitions, copy jobs, or publish a business event (preview) in Fabric.
   
   - External actions via Power Automate.
   
@@ -69,7 +69,7 @@ Deploy activator instances for each workspace and bind them to specific data sou
 | Spark Job Definition | Activator can trigger spark job execution. |
 | User Data Function   | Activator can trigger User Data Function (UDF) execution. |
 | Dataflow             | Activator can trigger dataflow execution when a rule condition is met. |
-| Copy job (preview)   | Activator can trigger copy job execution when a rule condition is met. |
+| Copy job   | Activator can trigger copy job execution when a rule condition is met. |
 | Publish business event (preview) | Activator can trigger publishing of a business event when a rule condition is met. |
 
 ### Activator as an orchestrator
@@ -101,7 +101,7 @@ Events ingested into Activator originate from:
 - Fabric events. For example, Fabric workspace item events are discrete Fabric events that occur when changes are made to your Fabric Workspace. These changes include creating, updating, or deleting a Fabric item.
 - Azure events. For example, Azure Blob Storage events are triggered when a client creates, replaces, or deletes a blob.
 - Business Events. You can set alerts directly on business events to automate actions when specific business conditions occur.
-- Fabric Ontology business entities (preview). Rules can be defined on ontology business entities to initiate alerts and automated actions, enabling operational decision-making based on modeled data.
+- Ontology in Fabric business entities (preview). Rules can be defined on ontology business entities to initiate alerts and automated actions, enabling operational decision-making based on modeled data.
 - Power BI report. In this case, events are periodic observations based on the refresh schedule of a Power BI semantic model (formerly known as a dataset). These observations might occur daily or weekly, forming a slow-moving eventstream. Activator also integrates with the Power BI service to notify users when a new row appears in a table visual in a published report, enabling rules to monitor visual-level changes and trigger notifications or downstream actions.
 - Fabric Real-Time dashboard.
 
@@ -149,7 +149,7 @@ When a rule’s conditions are met and an action is initiated, the rule is activ
 - Fabric spark jobs (for batch/streaming jobs).
 - Fabric dataflows (for data movement and transformation).
 - Fabric User Data Functions (for custom business logic with code).
-- Fabric copy jobs (preview) (for copying data between sources and destinations).
+- Fabric copy jobs (for copying data between sources and destinations).
 - Publish business event (preview) (for triggering downstream processes that consume business events).
 - Power Automate flows (for business process integration).
 - Teams notifications (using template-based messaging).

@@ -3,7 +3,7 @@ title: Fabric AI Prompt in Dataflow Gen2
 description: Learn how to use Fabric AI Functions Prompt in Dataflow Gen2.
 ms.reviewer: miescobar
 ms.topic: concept-article
-ms.date: 03/15/2026
+ms.date: 07/14/2026
 ms.custom: dataflows
 ai-usage: ai-assisted
 ms.collection: ce-skilling-ai-copilot
@@ -27,7 +27,7 @@ In the dialog, enter your prompt and choose which columns to include as context.
 :::image type="content" source="media/dataflow-gen2-ai-functions/dialog.png" alt-text="Screenshot of AI Prompt dialog in Dataflow Gen2 (CI/CD)." lightbox="media/dataflow-gen2-ai-functions/dialog.png":::
 
 >[!TIP]
->Learn how to craft more effective prompts to get higher-quality responses by following [OpenAI's prompting tips for gpt-4.1](https://cookbook.openai.com/examples/gpt4-1_prompting_guide#2-long-context).
+>Learn how to craft more effective prompts to get higher-quality responses by following [OpenAI's GPT-5 prompting guide](https://developers.openai.com/cookbook/examples/gpt-5/gpt-5_prompting_guide).
 
 ## Considerations and limitations
 

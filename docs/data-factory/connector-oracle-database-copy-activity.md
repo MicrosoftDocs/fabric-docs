@@ -126,11 +126,11 @@ Under **Advanced**, you can specify the following fields:
 
 ### Mapping
 
-For **Mapping** tab configuration, go to [Configure your mappings under mapping tab](copy-data-activity.md#configure-your-mappings-under-mapping-tab).
+For **Mapping** tab configuration, go to [Configure your mappings under mapping tab](copy-data-activity.md#configure-your-mappings-under-the-mapping-tab).
 
 #### Edit destination data types
 
-For the **Mapping** tab configuration, if you apply Oracle as your destination and the destination table is auto-created, except the configuration in [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab), you can edit the type for your destination columns. After selecting **Import schemas**, you can specify the column type in your destination. For more information about the mapping rules, go to [Data type mapping for Oracle database](#data-type-mapping-for-oracle-database).
+For the **Mapping** tab configuration, if you apply Oracle as your destination and the destination table is auto-created, except the configuration in [Mapping](copy-data-activity.md#configure-your-mappings-under-the-mapping-tab), you can edit the type for your destination columns. After selecting **Import schemas**, you can specify the column type in your destination. For more information about the mapping rules, go to [Data type mapping for Oracle database](#data-type-mapping-for-oracle-database).
 
 For example, you can set the type of the *VAL2* column to TIMESTAMP and adjust its scale as needed when mapping it to the destination.
 
@@ -138,7 +138,7 @@ For example, you can set the type of the *VAL2* column to TIMESTAMP and adjust i
 
 ### Settings
 
-For **Settings** tab configuration, see [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
+For **Settings** tab configuration, see [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-the-settings-tab).
 
 ## Data type mapping for Oracle database
 

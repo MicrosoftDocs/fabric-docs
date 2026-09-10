@@ -71,13 +71,13 @@ The following table describes the available properties.
 | `rootWorkspaceName` | String | The workspace name of the root notebook in a reference run. | Reference runs only |
 | `activityId` | String | The Livy job ID for the current activity. | All contexts |
 | `hcReplId` | String | The REPL ID in High Concurrency Mode. | High concurrency mode only |
-| `clusterId` | String | The identity of the Synapse Spark cluster. | All contexts |
+| `clusterId` | String | The identity of the Azure Synapse Spark cluster. | All contexts |
 | `poolName` | String | The name of the Spark pool being used. | All contexts |
 | `environmentId` | String | The environment ID where the job is running. | All contexts |
 | `environmentWorkspaceId` | String | The workspace ID of the environment. | All contexts |
 | `userId` | String | The user ID of the current user. | All contexts |
 | `userName` | String | The user name of the current user. | All contexts |
-| `currentKernel` | String | The name of the current notebook kernel. | Python Notebook only |
+| `currentKernel` | String | The name of the current notebook kernel. | Python notebook only |
 | `productType` | String | The product type identifier (for example, `Fabric`). | All contexts |
 
 ## Usage examples

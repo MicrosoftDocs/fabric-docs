@@ -1,8 +1,7 @@
 ---
 title: Configure SharePoint Online File (Preview) in a copy activity
 description: This article explains how to copy data using SharePoint Online File.
-author: jianleishen
-ms.author: jianleishen
+ms.reviewer: tinglee
 ms.topic: how-to
 ms.date: 01/27/2026
 ms.custom:
@@ -145,11 +144,11 @@ Under **Advanced**, you can specify the following fields:
 
 ### Mapping
 
-For **Mapping** tab configuration, go to [Configure your mappings under mapping tab](copy-data-activity.md#configure-your-mappings-under-mapping-tab).
+For **Mapping** tab configuration, go to [Configure your mappings under mapping tab](copy-data-activity.md#configure-your-mappings-under-the-mapping-tab).
 
 ### Settings
 
-For **Settings** tab configuration, go to [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
+For **Settings** tab configuration, go to [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-the-settings-tab).
 
 ## Table summary
 

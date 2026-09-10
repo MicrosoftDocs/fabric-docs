@@ -4,7 +4,7 @@ description: Learn how billing, capacity usage, and consumption rates work for A
 ms.reviewer: singhrana
 reviewer: ranadeepsingh
 ms.topic: concept-article
-ms.date: 06/10/2026
+ms.date: 08/03/2026
 ms.search.form: AI Functions
 ai-usage: ai-assisted
 ---
@@ -14,7 +14,7 @@ ai-usage: ai-assisted
 AI Functions use the built-in Fabric-hosted large language model (LLM) endpoint to transform and enrich your data without separate endpoint setup. This article explains the billing meter, consumption rates, and usage monitoring options for that built-in endpoint.
 
 > [!IMPORTANT]
-> This article applies to AI Functions that use the built-in Fabric LLM endpoint. You can configure a custom Azure OpenAI, Microsoft Foundry, or OpenAI-compatible endpoint for pandas and PySpark AI Functions. When you do, billing is governed by that endpoint and your configuration. For setup details, see [Customize AI Functions with pandas](./pandas/configuration.md) and [Customize AI Functions with PySpark](./pyspark/configuration.md).
+> This article applies to AI Functions that use the built-in Fabric LLM endpoint. For pandas and PySpark, you can bring your own model through a custom Azure OpenAI, Microsoft Foundry, or OpenAI-compatible endpoint. Fabric doesn't charge for model calls to your custom endpoint. Your LLM provider charges for token usage, and Fabric compute charges still apply. For setup details, see [Customize AI Functions with pandas](./pandas/configuration.md) and [Customize AI Functions with PySpark](./pyspark/configuration.md).
 
 ## Billing meter
 
@@ -22,7 +22,8 @@ AI function calls through the built-in Fabric LLM endpoint are billed to your Fa
 
 | Usage | Billing meter or operation |
 |---|---|
-| AI function model calls | Copilot and AI meter, reported as **AI Functions**. |
+| Model calls through the built-in Fabric LLM endpoint | Copilot and AI meter, reported as **AI Functions**. |
+| Model calls through a custom endpoint | No model-call charge from Fabric. Your LLM provider bills token usage. |
 | Spark compute that runs a notebook or Spark job | Spark billing meter. |
 | Dataflow Gen2 compute that runs transformations | Dataflow Gen2 usage. |
 | Warehouse or SQL analytics endpoint query compute | Data Warehouse or SQL analytics endpoint usage. |
@@ -89,13 +90,10 @@ Unless you configure a different model, Python AI Functions for pandas and PySpa
 
 ### Language models
 
-| **Model** | **Deployment Name** | **Context Window (Tokens)** | **Input (Per 1,000 Tokens)** | **Cached Input (Per 1,000 Tokens)** | **Output (Per 1,000 Tokens)** | **Retirement Date** |
-| --- | --- | --- | --- | --- | --- | --- |
-| gpt-5.1-2025-11-13 | `gpt-5.1` | 400,000<br>Max output: 128,000 | 42.02 CU seconds | 4.20 CU seconds | 336.13 CU seconds | |
-| gpt-5-mini-2025-08-07 | `gpt-5-mini` | 400,000<br>Max output: 128,000 | 8.40 CU seconds | 0.84 CU seconds | 67.23 CU seconds | |
-| gpt-4.1-mini-2025-04-14 | `gpt-4.1-mini` | 128,000<br>Max output: 32,768 | 13.45 CU seconds | 3.36 CU seconds | 53.78 CU seconds | June 30, 2026 |
-| gpt-5-2025-08-07 | `gpt-5` | 400,000<br>Max output: 128,000 | 42.02 CU seconds | 4.20 CU seconds | 336.13 CU seconds | June 11, 2026 |
-| gpt-4.1-2025-04-14 | `gpt-4.1` | 128,000<br>Max output: 32,768 | 67.23 CU seconds | 16.81 CU seconds | 268.91 CU seconds | June 11, 2026 |
+| **Model** | **Deployment Name** | **Context Window (Tokens)** | **Input (Per 1,000 Tokens)** | **Cached Input (Per 1,000 Tokens)** | **Output (Per 1,000 Tokens)** |
+| --- | --- | --- | --- | --- | --- |
+| gpt-5.1-2025-11-13 | `gpt-5.1` | 400,000<br>Max output: 128,000 | 42.02 CU seconds | 4.20 CU seconds | 336.13 CU seconds |
+| gpt-5-mini-2025-08-07 | `gpt-5-mini` | 400,000<br>Max output: 128,000 | 8.40 CU seconds | 0.84 CU seconds | 67.23 CU seconds |
 
 ### Embedding models
 
@@ -106,8 +104,6 @@ Unless you configure a different model, Python AI Functions for pandas and PySpa
 Consumption rates are subject to change. For the full consumption rate list and rate-change policy, see [Consumption rate](../ai-services/ai-services-overview.md#consumption-rate) in Foundry Tools in Fabric.
 
 ## Model migration guidance
-
-The older GPT-4.1 model series is being retired. If you have pinned Python AI Functions pipelines to `gpt-4.1`, migrate them to `gpt-5.1`. If you pinned pipelines to `gpt-4.1-mini`, migrate them to `gpt-5-mini`.
 
 For more sophisticated transformations, you can configure `gpt-5.1` or tune `reasoning_effort` to use more compute for higher-quality results. For setup details, see [Customize AI Functions with pandas](./pandas/configuration.md) and [Customize AI Functions with PySpark](./pyspark/configuration.md).
 

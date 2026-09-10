@@ -1,10 +1,10 @@
 ---
-title: Cross-Workload Table Maintenance and Optimization
-description: Learn how to optimize Delta tables for different consumption scenarios in Microsoft Fabric, including guidance for Spark, SQL analytics endpoint, Power BI Direct Lake, and Warehouse.
+title: Cross-Workload Table Maintenance and Optimization in Microsoft Fabric
+description: Learn how to maintain and optimize Delta tables across Spark, SQL analytics endpoint, Power BI Direct Lake, Warehouse, and Mirroring workloads in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: dacoelho, milescole
-ms.date: 06/15/2026
+ms.date: 08/25/2026
 ms.topic: concept-article
 ms.custom:
   - fabric-cat
@@ -13,477 +13,231 @@ ai-usage: ai-assisted
 
 # Cross-workload table maintenance and optimization in Microsoft Fabric
 
-Delta tables in Microsoft Fabric serve multiple consumption engines, each with different performance characteristics and optimization requirements. This guide provides a comprehensive framework for understanding how tables written by one engine are consumed by others, and how to optimize table maintenance strategies accordingly.
+Delta tables in Microsoft Fabric can serve Spark, SQL analytics endpoint, Power BI Direct Lake, Warehouse, and other Fabric experiences from data stored in OneLake. Optimal cross-workload performance depends on two factors:
 
-Understanding the relationship between write patterns and read performance across different engines is essential for building efficient data platforms. The goal is to ensure that data producers create table layouts that optimize read performance for downstream consumers, whether those consumers use Spark, SQL analytics endpoint, Power BI Direct Lake, or Warehouse.
+- The workload that creates and maintains the table.
+- The engines that consume the table.
 
-## Write and read scenario matrix
+Lakehouse tables are commonly managed by Spark, [Fabric pipeline Copy activity](../data-factory/copy-data-activity.md), or [Dataflow Gen2](../data-factory/dataflows-gen2-overview.md). Spark is the most common writer and provides the broadest layout and maintenance controls. Warehouse and database mirroring manage their physical layouts automatically. Mirrored catalogs retain the layout managed in the source system. Consumer requirements are generally compatible, but [Power BI Direct Lake](direct-lake-overview.md) has additional [storage requirements](direct-lake-understand-storage.md#what-affects-direct-lake-query-performance) for optimal performance.
 
-The following table summarizes the expected performance characteristics for common write and read combinations, along with recommended optimization strategies. Use this matrix to identify your scenario and understand the relevant guidance.
+Use one shared table whenever its requirements are compatible. For the exceptions that justify another table, see [When to create another table](#when-to-create-another-table).
 
-| Write method | Read engine | Expected gaps | Recommended strategy |
+## Understand layout ownership
+
+Start by identifying which workload owns the physical table layout. The controls in the following table are the key controls relevant to cross-workload table layout and maintenance, not an exhaustive list of each engine's capabilities.
+
+| Data store | Writer or ingestion method | Layout and maintenance ownership | Key controls |
 | --- | --- | --- | --- |
-| Spark batch | Spark | No gaps | [Default Spark write configurations](#spark-write-patterns) are sufficient |
-| Spark batch | SQL analytics endpoint | No gaps | [Enable auto-compaction and optimize-write](#spark-write-patterns) |
-| Spark streaming | Spark | Small files possible | [Auto-compaction and optimize-write](#spark-write-patterns) with [scheduled OPTIMIZE](#optimize-command) |
-| Spark streaming | SQL analytics endpoint | Small files and checkpoints | [Auto-compaction, optimize-write](#spark-write-patterns), [split medallion layers](#medallion-architecture-recommendations) |
-| Warehouse | Spark | No gaps | [System-managed optimization](#warehouse-write-patterns) handles layout |
-| Warehouse | SQL analytics endpoint | No gaps | [System-managed optimization](#warehouse-write-patterns) handles layout |
+| Lakehouse | Spark | User-managed | **File sizing**: [adaptive target file size](../data-engineering/tune-file-size.md#adaptive-target-file-size) and [file-level compaction targets](../data-engineering/table-compaction.md#file-level-compaction-targets). <br>**Write and maintenance**: [deletion vectors](../data-engineering/delta-lake-deletion-vectors.md), [auto compaction](../data-engineering/table-compaction.md#auto-compaction), [optimize write](../data-engineering/tune-file-size.md#optimize-write), [`OPTIMIZE`](../data-engineering/table-compaction.md#optimize-command), and [`VACUUM`](../data-engineering/delta-lake-vacuum.md). <br>**Data organization**: [liquid clustering](../data-engineering/liquid-clustering.md), [partitioning](../data-engineering/delta-lake-partitioning.md), [Z-Order](../data-engineering/table-compaction.md#optimize-with-z-order), and [V-Order](../data-engineering/delta-optimization-and-v-order.md). |
+| Lakehouse | Fabric pipeline Copy activity or Dataflow Gen2 | The service writes the data; the lakehouse owner maintains the table | Destination-specific write settings. Run compatible maintenance separately by using Spark, [Lakehouse maintenance](../data-engineering/lakehouse-table-maintenance.md), or a [pipeline maintenance activity](../data-factory/lakehouse-maintenance-activity.md). |
+| Warehouse | Fabric Data Warehouse, Fabric pipeline Copy activity, or Dataflow Gen2 | Warehouse-managed | [Data clustering](../data-warehouse/data-clustering.md) and the [warehouse-level V-Order setting](../data-warehouse/disable-v-order.md). |
+| Mirrored item | Mirroring service | Depends on the [mirroring type](../mirroring/overview.md) | Database mirroring uses a system-managed V-Ordered Delta layout with no direct layout controls. Mirrored catalogs retain the source file layout, which you can optimize in the source system when supported. |
 
-## Optimal file layouts by engine
+## Cross-workload guidance
 
-Different consumption engines have different optimal file layouts. Understanding these targets helps you configure write operations and maintenance jobs appropriately.
+The following table summarizes the recommended approach by producer and consumer.
 
-### Guidance for SQL analytics endpoint and Fabric Data Warehouse
+| Producer | Consumer | Recommended approach |
+| --- | --- | --- |
+| Lakehouse: Spark writer | Spark | Use [Fabric Spark runtime 2.0](../data-engineering/runtime-2-0.md) or later defaults and enable [auto compaction](../data-engineering/table-compaction.md#auto-compaction). Consider [liquid clustering](../data-engineering/liquid-clustering.md) when measured predicates benefit from improved [file skipping](../data-engineering/delta-lake-file-skipping.md). |
+| Lakehouse: Spark writer | SQL analytics endpoint | Use the same layout recommended for Spark. Don't set a static target file size, arbitrary row limit, or [V-Order](../data-engineering/delta-optimization-and-v-order.md) solely for SQL analytics endpoint performance. |
+| Lakehouse: Spark writer | Power BI Direct Lake | Use the same layout recommended for Spark and additionally enable [V-Order](../data-engineering/delta-optimization-and-v-order.md), or use the [`readHeavyForPBI` resource profile](../data-engineering/configure-resource-profile-configurations.md#available-resource-profiles). |
+| Lakehouse: Fabric pipeline or Dataflow Gen2 writer | Spark, SQL analytics endpoint, or Power BI Direct Lake | Monitor the resulting file layout and schedule compatible lakehouse maintenance separately. Some destination modes, such as Dataflow Gen2 incremental refresh, impose maintenance restrictions. |
+| Warehouse | Fabric Data Warehouse or Spark | Use the system-managed layout. Fabric Data Warehouse [automatically manages compaction and other maintenance](../data-warehouse/guidelines-warehouse-performance.md). Use [data clustering](../data-warehouse/data-clustering.md) to improve file skipping for workloads with recurring selective predicates. |
+| Warehouse | Power BI Direct Lake | Keep the [default Warehouse V-Order setting](../data-warehouse/guidelines-warehouse-performance.md#v-order-in-fabric-data-warehouse). Use [data clustering](../data-warehouse/data-clustering.md) when it benefits shared query patterns. |
+| Mirroring | Spark, SQL analytics endpoint, or Power BI Direct Lake | For database mirroring, use the system-managed V-Ordered Delta layout. For mirrored catalogs, optimize the underlying files in the source system when supported. See [What is Mirroring in Fabric?](../mirroring/overview.md). |
 
-For optimal performance with the SQL analytics endpoint and Warehouse, use the following settings:
+## Optimize Lakehouse tables
 
-- **Target file size**: Maximum 4 GB per file
-- **Row group size**: About 2 million rows per row group
-- **V-Order**: Improves read performance by 10%
+Lakehouse Delta tables require an explicit maintenance strategy regardless of whether Spark, Pipeline Copy activity, or Dataflow Gen2 writes them. Spark is the primary example in this section because it provides the broadest layout and maintenance controls in Fabric.
 
-A warehouse uses these criteria to discover compaction candidates:
+> [!IMPORTANT]
+> Table maintenance is critical for optimal write and read performance across engines. Even append-only workloads that initially perform well without maintenance can accumulate excessive small files, which affect Spark, SQL analytics endpoint, Direct Lake, and external data readers. See [Compacting Delta tables](../data-engineering/table-compaction.md) for automatic and manual compaction methods.
 
-- Table file overhead is more than 10%
-- Table logically deleted rows are more than 10%
-- Table size is larger than 1,024 rows
+### Use the Spark runtime defaults
 
-During compaction execution, the process selects candidates based on these criteria:
+When Spark writes the table, use [Fabric Spark runtime 2.0](../data-engineering/runtime-2-0.md) or later defaults:
 
-- Any file is smaller than 25% of the ideal size (based on row count)
-- Any file has more than 20% deleted rows
+- Keep [adaptive target file size](../data-engineering/tune-file-size.md#adaptive-target-file-size) enabled. It automatically selects a target for each table from 128 MB to 1 GB.
+- Keep [file-level compaction targets](../data-engineering/table-compaction.md#file-level-compaction-targets) enabled to avoid rewriting files that met an earlier adaptive target.
+- Keep [deletion vectors](../data-engineering/delta-lake-deletion-vectors.md) enabled.
+- Don't impose an arbitrary maximum row count per file. Row width varies, so a row limit can create excessive small files for narrow tables.
 
-### Spark
+In Fabric Spark runtime 1.3, [adaptive target file size](../data-engineering/tune-file-size.md#adaptive-target-file-size), [file-level compaction targets](../data-engineering/table-compaction.md#file-level-compaction-targets), and [deletion vectors](../data-engineering/delta-lake-deletion-vectors.md) are available as opt-in settings.
 
-Spark is robust when reading various file sizes. For optimal performance:
+When Pipeline Copy activity or Dataflow Gen2 writes the table, inspect the resulting file layout and schedule maintenance separately. Don't assume that these writers apply Spark runtime defaults.
 
-- **Target file size**: 128 MB to 1 GB depending on table size
-- **Row group size**: 1 million to 2 million rows per row group
-- **V-Order**: Not required for Spark read performance (can add 15-33% write overhead)
+- Fabric pipelines can orchestrate a [Lakehouse maintenance activity](../data-factory/lakehouse-maintenance-activity.md) after writes.
 
-Spark reads benefit from [adaptive target file size](../data-engineering/tune-file-size.md#adaptive-target-file-size), which automatically adjusts based on table size:
+> [!IMPORTANT]
+> Dataflow Gen2 lakehouse destinations that use incremental refresh don't support [`OPTIMIZE`](../data-engineering/table-compaction.md#optimize-command) or [`REORG TABLE`](../data-engineering/delta-lake-deletion-vectors.md#use-reorg-purge-to-remove-accumulated-deletion-vectors). Follow the [Dataflow Gen2 incremental refresh limitations](../data-factory/dataflow-gen2-incremental-refresh.md#lakehouse-support-comes-with-additional-caveats).
 
-- Tables under 10 GB: 128 MB target
-- Tables over 10 TB: Up to 1 GB target
+### Prevent and compact small files
+
+For Spark-written tables, prefer [auto compaction](../data-engineering/table-compaction.md#auto-compaction). This feature evaluates table fragmentation after writes and runs compaction only when needed. It eliminates the need for a separate table-health check before maintenance runs.
+
+Use the following guidance for exceptions and complementary features:
+
+| Scenario | Recommended approach |
+| --- | --- |
+| Spark-written table | Enable [auto compaction](../data-engineering/table-compaction.md#auto-compaction) as the default maintenance strategy. |
+| Streaming or microbatch writes | Enable [auto compaction](../data-engineering/table-compaction.md#auto-compaction) and [optimize write](../data-engineering/tune-file-size.md#optimize-write) to reduce small-file accumulation. |
+| Workloads with strict write-latency requirements | Schedule [`OPTIMIZE`](../data-engineering/table-compaction.md#choose-between-auto-compaction-and-scheduled-optimize) separately instead of running synchronous [auto compaction](../data-engineering/table-compaction.md#auto-compaction). |
+| Existing table with accumulated small files | Run a one-time [`OPTIMIZE`](../data-engineering/table-compaction.md#optimize-command), then enable [auto compaction](../data-engineering/table-compaction.md#auto-compaction) for ongoing maintenance. |
+| Tables with frequent updates, deletes, or merges | Keep [deletion vectors](../data-engineering/delta-lake-deletion-vectors.md) and [auto compaction](../data-engineering/table-compaction.md#auto-compaction) enabled. |
+
+[`OPTIMIZE`](../data-engineering/table-compaction.md#optimize-command) compacts files and automatically purges a file's deletion vectors when more than 5% of its records are referenced by deletion vectors. Use [`REORG TABLE ... APPLY (PURGE)`](../data-engineering/delta-lake-deletion-vectors.md#use-reorg-purge-to-remove-accumulated-deletion-vectors) only when you must physically purge records below that threshold or meet a specific compliance requirement.
+
+> [!NOTE]
+> [Auto compaction](../data-engineering/table-compaction.md#auto-compaction) purges [deletion vectors](../data-engineering/delta-lake-deletion-vectors.md) only when the partition also meets its small-file trigger. If a workload performs updates or deletes without generating small files, periodically run [`OPTIMIZE`](../data-engineering/table-compaction.md#optimize-command) to purge qualifying deletion vectors. Use [`REORG TABLE ... APPLY (PURGE)`](../data-engineering/delta-lake-deletion-vectors.md#use-reorg-purge-to-remove-accumulated-deletion-vectors) when you must force a physical purge.
+
+Run [`VACUUM`](../data-engineering/delta-lake-vacuum.md) on a separate schedule to remove unreferenced files after the retention period. `VACUUM` reclaims storage but doesn't improve the active file layout.
+
+> [!WARNING]
+> Don't shorten the [`VACUUM`](../data-engineering/delta-lake-vacuum.md#default-retention-period) retention period without evaluating time-travel requirements and concurrent readers or writers. Removing files too early can make required table versions unavailable.
+
+### Organize data for file skipping
+
+Use [liquid clustering](../data-engineering/liquid-clustering.md) when recurring filter or processing patterns benefit from improved [file skipping](../data-engineering/delta-lake-file-skipping.md). Liquid clustered tables require [`OPTIMIZE`](../data-engineering/liquid-clustering.md#apply-clustering-with-optimize)or [auto compaction](../data-engineering/table-compaction.md#auto-compaction) to organize newly written data.
+
+Avoid partitioning by default. Use it when a specific requirement justifies the operational tradeoffs, such as isolating concurrent writers that update, delete, or merge data across disjoint partitions. For more information, see [When to use partitioning](../data-engineering/delta-lake-partitioning.md#when-to-use-partitioning).
+
+For existing partitioned tables, consider [Z-Order](../data-engineering/table-compaction.md#optimize-with-z-order) when selective predicates commonly filter on the same columns within a partition.
+
+## Optimize Warehouse-managed tables
+
+Fabric Data Warehouse manages the physical Delta table layout regardless of the ingestion method.
+
+Use the strategic controls that Warehouse exposes to tune the data layout:
+
+- Apply [data clustering](../data-warehouse/data-clustering.md) to large tables when queries repeatedly use selective predicates on the same columns.
+- Keep [V-Order](../data-warehouse/guidelines-warehouse-performance.md#v-order-in-fabric-data-warehouse) enabled for read-oriented and mixed workloads. V-Order is enabled by default.
+- Consider [disabling V-Order](../data-warehouse/disable-v-order.md) for write-intensive warehouse workloads.
+
+> [!WARNING]
+> [Disabling V-Order](../data-warehouse/disable-v-order.md) is a warehouse-level, irreversible operation. Test the complete read and write workload before disabling it.
+
+For complete Warehouse guidance, see [Performance guidelines in Fabric Data Warehouse](../data-warehouse/guidelines-warehouse-performance.md).
+
+## Optimize mirrored data
+
+Your ability to improve the physical layout depends on whether Fabric replicates the data or references source files:
+
+- **[Database mirroring](../mirroring/overview.md#how-does-database-mirroring-work)**: Fabric replicates source data into Delta tables in OneLake and manages the V-Ordered file layout and maintenance. You can't directly configure target file size, deletion-vector cleanup, liquid clustering, partitioning, or V-Order on the mirrored destination.
+- **Mirrored catalogs**: Fabric synchronizes metadata and uses [OneLake shortcuts](../onelake/onelake-shortcuts.md) to reference source data in place. Fabric doesn't rewrite or maintain these files. Improve the physical layout and cleanup in the source system when its supported features allow it. Those changes are visible through the shortcuts without creating another copy in Fabric.
+
+For database-mirrored data:
+
+- Use selective predicates and avoid unnecessary columns in Spark and SQL queries.
+- Design Power BI semantic models and DAX measures for efficient [Direct Lake consumption](direct-lake-understand-storage.md).
+
+For mirrored catalogs:
+
+- Use the source platform's supported table-maintenance and layout features.
+- Evaluate the source file and row-group distribution for the Fabric consumers that query the shortcuts.
+- For [Direct Lake](direct-lake-overview.md), evaluate creating an additional dimensionally modeled, [V-Ordered](../data-engineering/delta-optimization-and-v-order.md) serving layer when the source layout can't meet performance requirements.
+
+For mirroring concepts, types, and supported sources, see [What is Mirroring in Fabric?](../mirroring/overview.md) and [How metadata mirroring works](../mirroring/overview.md#how-does-metadata-mirroring-work).
+
+## Apply consumer-specific optimization
+
+Spark and SQL analytics endpoint perform well on the same adaptive lakehouse layout. Use [adaptive target file size](../data-engineering/tune-file-size.md#adaptive-target-file-size), prevent excessive small files, and apply [liquid clustering](../data-engineering/liquid-clustering.md) when measured predicates benefit from improved [file skipping](../data-engineering/delta-lake-file-skipping.md). Don't enable [V-Order](../data-engineering/delta-optimization-and-v-order.md) solely for Spark or SQL analytics endpoint performance. For engine-specific details, see [SQL analytics endpoint performance considerations](../data-engineering/sql-analytics-endpoint-performance.md).
 
 ### Power BI Direct Lake
 
-For optimal Direct Lake performance:
+Direct Lake uses the same underlying Delta tables but adds recommendations related to transcoding and [incremental framing](direct-lake-understand-storage.md#incremental-framing):
 
-- **Target row group size**: 8 million or more rows per row group for best performance
-- **V-Order**: Critical for 40-60% improvement in cold-cache queries
-- **File count**: Minimize file count to reduce transcoding overhead
-- **Consistent file sizes**: Important for predictable query performance
+- **File and row-group layout**: Avoid small [row groups](direct-lake-understand-storage.md#row-group-size) and uneven row group distribution, this creates more VertiPaq column segments and increases transcoding overhead.
+- **V-Order**: Follow the producer-specific recommendation in the [cross-workload guidance](#cross-workload-guidance). For Spark-written tables primarily consumed through Direct Lake, enable [V-Order](../data-engineering/delta-optimization-and-v-order.md) or use the [`readHeavyForPBI` resource profile](../data-engineering/configure-resource-profile-configurations.md#available-resource-profiles).
+- **Update patterns**: Prefer [append-friendly update patterns](direct-lake-understand-storage.md#delta-table-update-patterns) where possible to preserve existing Parquet files and support incremental framing.
 
-Direct Lake semantic models perform best when:
+> [!NOTE]
+> Direct Lake generally performs best with row groups between 1 million and 16 million rows. Evaluate row-group distribution and Direct Lake performance before changing a supported producer setting.
 
-- Column data is V-Ordered for VertiPaq-compatible compression
-- Row groups are large enough for efficient dictionary merging
-- Deletion vectors are minimized through regular compaction
+For Spark-written tables, `spark.sql.parquet.native.writer.maxRowGroupRowCount` sets the maximum rows per row group when the [native execution engine](../data-engineering/native-execution-engine-overview.md) writes the Parquet files. The default value is `0`, which doesn't impose a maximum. If analysis shows that row-group sizing is affecting Direct Lake performance, set a tested limit before writing or rewriting the table. For example:
 
-For more information, see [Understand Direct Lake query performance](direct-lake-understand-storage.md).
+```python
+spark.conf.set("spark.sql.parquet.native.writer.maxRowGroupRowCount", 8_000_000)
+```
 
-### Mirroring
+Don't set the limit solely to reach a specific row count. Row width, compression, file distribution, and capacity parallelism also affect performance. Use [Delta Analyzer](direct-lake-understand-storage.md#analyzing-delta-table-updates) to evaluate the resulting layout.
 
-Mirroring automatically sizes files based on table volume:
+For detailed guidance on framing, transcoding, row groups, update patterns, and [Delta Analyzer](direct-lake-understand-storage.md#analyzing-delta-table-updates), see [Understand Direct Lake query performance](direct-lake-understand-storage.md).
 
-| Table size | Rows per row group | Rows per file |
+## Apply the guidance to medallion layers
+
+Bronze, Silver, and Gold describe data purpose and refinement. They don't determine whether layout is user-managed or system-managed, and they don't require separate copies for each consumer.
+
+| Layer | Primary goal | Cross-workload guidance |
 | --- | --- | --- |
-| Small (up to 10 GB) | 2 million | 10 million |
-| Medium (10 GB to 2.56 TB) | 4 million | 60 million |
-| Large (over 2.56 TB) | 8 million | 80 million |
+| Bronze (landing) | Preserve source fidelity and ingestion throughput | Prioritize write throughput while maintaining Spark-written tables with [auto compaction](../data-engineering/table-compaction.md#auto-compaction). Avoid Power BI Direct Lake semantic models on raw Bronze tables unless the model and data shape are intentionally designed for that use. |
+| Silver (curated) | Provide validated, conformed data for reuse | Reuse the table across compatible Fabric consumers. For Spark-written lakehouse tables, enable [V-Order](../data-engineering/delta-optimization-and-v-order.md) only when Direct Lake is a primary consumer. |
+| Gold (serving) | Serve business-ready dimensions, facts, aggregates, and analytics models | Prefer this layer for [Direct Lake semantic models](direct-lake-overview.md). Reuse the table across compatible consumers and apply the producer-specific controls described in this article. |
 
-## Write patterns and configurations
+## Resolve layout and maintenance issues
 
-### Spark write patterns
+Use producer-aware remediation. Apply Spark maintenance commands to lakehouse tables when the destination mode supports those operations. Treat the signals as indicators rather than universal thresholds, and validate them against the table's write pattern and consumer performance.
 
-Spark writes use the following default configurations:
-
-| Configuration | Default value | Description |
-| --- | --- | --- |
-| `spark.microsoft.delta.optimizeWrite.fileSize` | 128 MB | Target file size for optimized writes |
-| `spark.databricks.delta.optimizeWrite.enabled` | Varies by profile | Enables automatic file coalescing |
-| `spark.databricks.delta.autoCompact.enabled` | Disabled | Enables post-write compaction |
-| `spark.sql.files.maxRecordsPerFile` | Unlimited | Maximum records per file |
-
-To configure Spark writes for downstream SQL consumption:
-
-```python
-# Enable optimize write for better file layout
-spark.conf.set('spark.databricks.delta.optimizeWrite.enabled', 'true')
-
-# Enable auto-compaction for automatic maintenance
-spark.conf.set('spark.databricks.delta.autoCompact.enabled', 'true')
-```
-
-For more information on resource profiles and their defaults, see [Configure resource profile configurations](../data-engineering/configure-resource-profile-configurations.md).
-
-### Warehouse write patterns
-
-Warehouse automatically optimizes data layout during writes:
-
-- V-Order is enabled by default for read optimization.
-- Automatic compaction runs as a background process.
-- Checkpoint management is handled automatically.
-
-The Warehouse produces files optimized for SQL consumption without manual intervention. Tables written by the Warehouse are inherently optimized for both SQL analytics endpoint and Warehouse reads.
-
-## Table maintenance operations
-
-### OPTIMIZE command
-
-The `OPTIMIZE` command consolidates small files into larger files:
-
-```sql
--- Basic optimization
-OPTIMIZE schema_name.table_name
-
--- Optimization with V-Order for Power BI consumption
-OPTIMIZE schema_name.table_name VORDER
-
--- Optimization with Z-Order for specific query patterns
-OPTIMIZE schema_name.table_name ZORDER BY (column1, column2)
-```
-
-> [!IMPORTANT]
-> The `OPTIMIZE` command is a Spark SQL command. You must run it in Spark environments such as notebooks, Spark job definitions, or the Lakehouse Maintenance interface. The SQL analytics endpoint and Warehouse SQL query editor don't support this command. 
-> For a tutorial on using a data pipeline and the `sys.sp_get_table_health_metrics` T-SQL stored procedure to determine when a table needs the `OPTIMIZE` command, see [Optimize Lakehouse tables based on health checks](../data-warehouse/tutorial-conditional-lakehouse-optimization.md).
-
-For more information, see [Table compaction](../data-engineering/table-compaction.md).
-
-### Auto compaction
-
-Auto compaction automatically evaluates partition health after each write operation and triggers synchronous optimization when file fragmentation is detected:
-
-```python
-# Enable at session level
-spark.conf.set('spark.databricks.delta.autoCompact.enabled', 'true')
-
-# Enable at table level
-spark.sql("""
-    ALTER TABLE schema_name.table_name 
-    SET TBLPROPERTIES ('delta.autoOptimize.autoCompact' = 'true')
-""")
-```
-
-Use auto compaction for ingestion pipelines with frequent small writes (streaming or microbatch) to avoid manual scheduling and keep files compacted automatically.
-
-Auto compaction and optimize write typically produce the best results when used together. Optimize write reduces the number of small files written, and auto compaction handles the remaining fragmentation.
-
-For more information, see [Auto compaction](../data-engineering/table-compaction.md#auto-compaction).
-
-### Optimize write
-
-Optimize write reduces small-file overhead by performing pre-write compaction, which generates fewer, larger files:
-
-```python
-# Enable at session level
-spark.conf.set('spark.databricks.delta.optimizeWrite.enabled', 'true')
-
-# Enable at table level
-spark.sql("""
-    ALTER TABLE schema_name.table_name 
-    SET TBLPROPERTIES ('delta.autoOptimize.optimizeWrite' = 'true')
-""")
-```
-
-Optimize write is beneficial for:
-
-- Partitioned tables
-- Tables with frequent small inserts
-- Operations that touch many files (`MERGE`, `UPDATE`, `DELETE`)
-
-Pre-write compaction (optimize write) is generally less costly than post-write compaction (optimize). For more information, see [Optimize write](../data-engineering/tune-file-size.md#optimize-write).
-
-### VACUUM command
-
-The `VACUUM` command removes old files that a Delta table log no longer references:
-
-```sql
--- Remove files older than the default retention period (7 days)
-VACUUM schema_name.table_name
-
--- Remove files older than specified hours
-VACUUM schema_name.table_name RETAIN 168 HOURS
-```
-
-The default retention period is seven days. Setting shorter retention periods affects Delta's time travel capabilities and can cause issues with concurrent readers or writers.
-
-For more information, see [Run table maintenance from Lakehouse](../data-engineering/lakehouse-table-maintenance.md#run-table-maintenance-from-lakehouse).
-
-## V-Order optimization
-
-V-Order is a write-time optimization that applies VertiPaq-compatible sorting, encoding, and compression to Parquet files:
-
-- **Power BI Direct Lake**: 40-60% improvement in cold-cache queries
-- **SQL analytics endpoint and Warehouse**: Approximately 10% read performance improvement
-- **Spark**: No inherent read benefit; 15-33% slower writes
-
-### When to enable V-Order
-
-V-Order provides the most benefit for:
-
-- Gold-layer tables serving Power BI Direct Lake
-- Tables frequently queried through SQL analytics endpoint
-- Read-heavy workloads where write performance is less critical
-
-### When to avoid V-Order
-
-Consider disabling V-Order for:
-
-- Bronze-layer tables focused on ingestion speed
-- Spark-to-Spark pipelines where SQL and Power BI don't consume the data
-- Write-heavy workloads where data latency is critical
-
-### Configure V-Order
-
-V-Order is disabled by default in new Fabric workspaces. To enable:
-
-```python
-# Enable at session level (default for all writes)
-spark.conf.set('spark.sql.parquet.vorder.default', 'true')
-
-# Enable at table level
-spark.sql("""
-    ALTER TABLE schema_name.table_name 
-    SET TBLPROPERTIES ('delta.parquet.vorder.enabled' = 'true')
-""")
-```
-
-To selectively apply V-Order based on Direct Lake consumption, consider automating V-Order enablement for tables used in Direct Lake semantic models. Tables not consumed by Direct Lake can remain without V-Order for better write performance.
-
-For more information, see [Delta Lake table optimization and V-Order](../data-engineering/delta-optimization-and-v-order.md).
-
-## Liquid Clustering and Z-Order
-
-### Liquid Clustering
-
-Liquid Clustering is the recommended approach for data organization. Unlike traditional partitioning, Liquid Clustering:
-
-- Adapts to changing query patterns
-- Requires `OPTIMIZE` to apply clustering
-- Provides better file skipping for filtered queries
-
-Enable Liquid Clustering at table creation:
-
-```sql
-CREATE TABLE schema_name.table_name (
-    id INT,
-    category STRING,
-    created_date DATE
-) CLUSTER BY (category)
-```
-
-### Z-Order
-
-Z-Order colocates related data in the same files, so you get better query performance on filter predicates.
-
-```sql
-OPTIMIZE schema_name.table_name ZORDER BY (column1, column2)
-```
-
-Use Z-Order when:
-
-- Your table is partitioned, because Liquid Clustering doesn't work with partitioned tables.
-- Your queries often filter on two or more columns together.
-- Your predicates are selective enough to benefit from file skipping.
-
-## Medallion architecture recommendations
-
-The medallion architecture (Bronze, Silver, Gold layers) provides a framework for optimizing table maintenance strategies based on the purpose of each layer.
-
-### Bronze layer (landing zone)
-
-Bronze tables focus on write performance and low-latency ingestion:
-
-- **Optimization priority**: Ingestion speed over read performance
-- **Partitioning**: Acceptable but discouraged for new implementations
-- **Small files**: Acceptable as the focus is on ingestion speed
-- **V-Order**: Not recommended (adds write overhead)
-- **Auto-compaction**: Enable to reduce small files, but can be sacrificed for ingestion speed
-- **Deletion vectors**: Enable for tables with merge patterns
-
-Bronze tables should not be served directly to SQL analytics endpoint or Power BI Direct Lake consumers.
-
-### Silver layer (curated zone)
-
-Silver tables balance write and read performance:
-
-- **Optimization priority**: Balance between ingestion and query performance
-- **File sizes**: Moderate (128-256 MB) to support both write and read operations
-- **V-Order**: Optional; enable if SQL analytics endpoint or Power BI consumption is significant
-- **Liquid Clustering or Z-Order**: Recommended to enhance query performance
-- **Auto-compaction and optimize-write**: Enable based on downstream requirements
-- **Deletion vectors**: Enable for tables with frequent updates
-- **Scheduled OPTIMIZE**: Run aggressively to maintain file layout
-
-### Gold layer (serving zone)
-
-Gold tables prioritize read performance for end-user consumption:
-
-- **Optimization priority**: Read performance for analytics
-- **File sizes**: Large (400 MB to 1 GB) for optimal SQL and Power BI performance
-- **V-Order**: Required for Power BI Direct Lake; beneficial for SQL analytics endpoint
-- **Liquid Clustering**: Required for optimal file skipping
-- **Optimize-write**: Required for consistent file sizes
-- **Scheduled OPTIMIZE**: Run aggressively to maintain optimal layout
-
-Optimize gold tables differently based on the primary consumption engine:
-
-| Consumption engine | V-Order | Target file size | Row group size |
+| Condition | Signal | Lakehouse table | Warehouse table |
 | --- | --- | --- | --- |
-| SQL analytics endpoint | Yes | 400 MB | 2 million rows |
-| Power BI Direct Lake | Yes | 400 MB to 1 GB | 8+ million rows |
-| Spark | Optional | 128 MB to 1 GB | 1-2 million rows |
+| Excessive small files | File count rises faster than active table size, and files remain below the adaptive target. | With Spark, run a one-time [`OPTIMIZE`](../data-engineering/table-compaction.md#optimize-command) for the existing backlog, then enable [auto compaction](../data-engineering/table-compaction.md#auto-compaction). For Pipeline Copy activity or Dataflow Gen2 writes, schedule supported lakehouse maintenance separately. | No action. Warehouse compaction is automatic. |
+| Legacy oversized files | Files remain much higher than the current adaptive target, and too few files limit scan parallelism. | Rewrite the table by using an overwrite or `CREATE OR REPLACE TABLE AS SELECT` with [adaptive target file size](../data-engineering/tune-file-size.md#understand-evaluation-behavior) enabled. | No action. Warehouse manages file size automatically. |
+| Deletion-vector accumulation | [`DESCRIBE HISTORY` metrics](../data-engineering/delta-lake-describe.md#understand-describe-history-output) show deletion vectors being added or updated faster than compaction removes them, potentially increasing [read overhead](../data-engineering/delta-lake-deletion-vectors.md#read-performance). | Keep [auto compaction](../data-engineering/table-compaction.md#auto-compaction) enabled. If deletion vectors accumulate without triggering small-file compaction, schedule [`OPTIMIZE`](../data-engineering/table-compaction.md#optimize-command). Use [`REORG TABLE ... APPLY (PURGE)`](../data-engineering/delta-lake-deletion-vectors.md#use-reorg-purge-to-remove-accumulated-deletion-vectors) only for explicit purge requirements. | No action. Cleanup is system-managed. |
+| Poor file skipping | Selective predicates scan a large share of the table, or [clustering-quality evaluation](../data-engineering/liquid-clustering.md#evaluate-clustering-quality) shows poor organization. | With Spark, configure [liquid clustering](../data-engineering/liquid-clustering.md) or use [Z-Order](../data-engineering/table-compaction.md#optimize-with-z-order) for an existing partitioned table. | Configure [Warehouse data clustering](../data-warehouse/data-clustering.md). |
+| Direct Lake transcoding overhead | [Delta Analyzer](direct-lake-understand-storage.md#analyzing-delta-table-updates) shows excessive files, small row groups, or broad retranscoding after updates. | Compact small files, review [row groups](direct-lake-understand-storage.md#row-group-size), and apply [V-Order](../data-engineering/delta-optimization-and-v-order.md) to Spark-written tables. Optionally, configure [liquid clustering](../data-engineering/liquid-clustering.md) to improve compression quality within Parquet files. | Keep [V-Order](../data-warehouse/guidelines-warehouse-performance.md#v-order-in-fabric-data-warehouse) enabled and evaluate [data clustering](../data-warehouse/data-clustering.md). |
+| Unreferenced file storage growth | OneLake storage grows faster than active table size after data-changing operations. | Run [`VACUUM`](../data-engineering/delta-lake-vacuum.md) according to retention requirements. | No action. Cleanup is system-managed. |
 
-### Multiple table copies
+For mirrored data, follow the producer-specific remediation in [Optimize mirrored data](#optimize-mirrored-data). Database mirroring is system-managed; for mirrored catalogs, apply supported maintenance in the source platform.
 
-It's acceptable to maintain multiple copies of tables optimized for different consumption patterns:
+For lakehouse tables, Spark-supported inspection options include:
 
-- A Silver table optimized for Spark processing
-- A Gold table optimized for SQL analytics endpoint and Power BI Direct Lake
-- Data pipelines that transform and place the right structure at each layer
+- Run [`DESCRIBE DETAIL`](../data-engineering/delta-lake-describe.md) to inspect file count, total size, and the evaluated `delta.targetFileSize.adaptive` property.
+- Run [`DESCRIBE HISTORY`](../data-engineering/delta-lake-describe.md#use-describe-history) to review write patterns and maintenance history.
+- Use [Delta Analyzer](direct-lake-understand-storage.md#analyzing-delta-table-updates) when you need detailed Direct Lake row group and update-pattern analysis.
 
-Storage is inexpensive relative to compute. Optimizing tables for their consumption patterns provides a better user experience than trying to serve all consumers from a single table layout.
+### Inspect average file size
 
-## Identify table health
-
-Before optimizing tables, assess current table health to understand optimization needs.
-
-### Inspect Parquet files directly
-
-You can browse the table folder in OneLake to inspect the sizes of individual Parquet files. Healthy tables have evenly distributed file sizes. Look for:
-
-- **Consistent file sizes**: Files should be roughly the same size (within 2x of each other).
-- **No extremely small files**: Files under 25 MB indicate fragmentation.
-- **No extremely large files**: Files over 2 GB can reduce parallelism.
-
-Uneven file size distribution often indicates missing compaction or inconsistent write patterns across different jobs.
-
-### OPTIMIZE DRY RUN in Spark SQL
-
-Use the `DRY RUN` option to preview which files are eligible for optimization without executing the compaction:
-
-```sql
--- Preview files eligible for optimization
-OPTIMIZE schema_name.table_name DRY RUN
-```
-
-The command returns a list of files that would be rewritten during optimization. Use this to:
-
-- Assess the scope of optimization before running it.
-- Understand file fragmentation without modifying the table.
-- Estimate optimization time based on the number of files affected.
-
-### File size distribution
-
-Use the following approach to analyze file sizes and distribution:
+Use [`DESCRIBE DETAIL`](../data-engineering/delta-lake-describe.md) to calculate the average file size as an initial indicator of the table layout:
 
 ```python
-from delta.tables import DeltaTable
+details = spark.sql("DESCRIBE DETAIL schema_name.table_name").first()
 
-# Get table details
-details = spark.sql("DESCRIBE DETAIL schema_name.table_name").collect()[0]
-print(f"Table size: {details['sizeInBytes'] / (1024**3):.2f} GB")
-print(f"Number of files: {details['numFiles']}")
+table_size_gb = details["sizeInBytes"] / (1024**3)
+num_files = details["numFiles"]
+avg_file_size_mb = (
+    details["sizeInBytes"] / num_files / (1024**2)
+    if num_files
+    else 0
+)
 
-# Average file size
-avg_file_size_mb = (details['sizeInBytes'] / details['numFiles']) / (1024**2)
+print(f"Table size: {table_size_gb:.2f} GB")
+print(f"Number of files: {num_files}")
 print(f"Average file size: {avg_file_size_mb:.2f} MB")
 ```
 
-The distribution can be skewed, as files close to the head of the table or from a specific partition might not be optimized.
+An average can hide skew between partitions or recent and previously compacted files. If the average indicates a possible layout issue, inspect the individual Parquet files or use [Delta Analyzer](direct-lake-understand-storage.md#analyzing-delta-table-updates) to evaluate the distribution before changing maintenance settings.
 
-You can assess the distribution by running a query that groups by the partitioning or clustering keys of the table.
+## When to create another table
 
-### Determine optimization needs
+Don't create another physical table solely because multiple Fabric engines consume the data.
 
-Based on the consumption engine, compare actual file sizes to target sizes:
+Create another table when it has an independent purpose, such as:
 
-| Engine | Target file size | If files are smaller | If files are larger |
-| --- | --- | --- | --- |
-| SQL analytics endpoint | 400 MB | Run `OPTIMIZE` | Files are acceptable |
-| Power BI Direct Lake | 400 MB to 1 GB | Run `OPTIMIZE VORDER` | Files are acceptable |
-| Spark | 128 MB to 1 GB | Enable auto-compaction | Files are acceptable |
-
-### Table history and transaction log
-
-Review table history to understand write patterns and maintenance frequency:
-
-```sql
--- View table history
-DESCRIBE HISTORY schema_name.table_name
-
--- Check for auto-compaction runs
--- Auto-compaction shows as OPTIMIZE with auto=true in operationParameters
-```
-
-## Configuration best practices
-
-### Use table properties over session configurations
-
-Table properties persist across sessions and ensure consistent behavior across all jobs and writers:
-
-```python
-# Recommended: Set at table level for consistency
-spark.sql("""
-    CREATE TABLE schema_name.optimized_table (
-        id INT,
-        data STRING
-    )
-    TBLPROPERTIES (
-        'delta.autoOptimize.optimizeWrite' = 'true',
-        'delta.autoOptimize.autoCompact' = 'true',
-        'delta.parquet.vorder.enabled' = 'true'
-    )
-""")
-```
-
-Session-level configurations only apply to the current Spark session and can cause inconsistent writes if different sessions use different configurations.
-
-### Enable adaptive target file size
-
-Adaptive target file size automatically adjusts file size targets based on table size:
-
-```python
-spark.conf.set('spark.microsoft.delta.targetFileSize.adaptive.enabled', 'true')
-```
-
-This feature:
-
-- Starts with smaller files (128 MB) for small tables
-- Scales up to 1 GB for tables over 10 TB
-- Automatically re-evaluates during `OPTIMIZE` operations
-
-### Enable file-level compaction targets
-
-Prevent rewriting previously compacted files when target sizes change:
-
-```python
-spark.conf.set('spark.microsoft.delta.optimize.fileLevelTarget.enabled', 'true')
-```
-
-## Summary of recommendations
-
-| Layer | Auto-compaction | Optimize-write | V-Order | Liquid Clustering | Scheduled OPTIMIZE |
-| --- | --- | --- | --- | --- | --- |
-| Bronze | Enable (optional) | Enable | No | No | Optional |
-| Silver | Enable | Enable | Optional | Yes | Aggressive |
-| Gold | Enable | Enable | Yes | Yes | Aggressive |
-
-For specific scenarios, use the following recommendations:
-
-- **Spark-to-Spark**: Focus on file size optimization; V-Order optional.
-- **Spark-to-SQL**: Enable optimize-write and auto-compaction; target 400 MB files with 2 million row groups.
-- **Streaming ingestion**: Enable auto-compaction; schedule additional `OPTIMIZE` jobs for SQL consumers.
-- **Power BI Direct Lake**: Enable V-Order; target 8+ million row groups; run `OPTIMIZE VORDER`.
+- A transformation or aggregation that changes the data's grain or business meaning.
+- Different security, retention, or data-quality requirements.
+- A latency or refresh requirement that the shared table can't meet.
+- A consumer-specific layout whose measured benefit outweighs its storage, processing, lineage, and governance costs.
 
 ## Related content
 
-- [Delta Lake table optimization and V-Order](../data-engineering/delta-optimization-and-v-order.md)
-- [Table compaction](../data-engineering/table-compaction.md)
-- [Tune file size](../data-engineering/tune-file-size.md)
-- [Lakehouse table maintenance](../data-engineering/lakehouse-table-maintenance.md)
+- [Tune the size of Delta table data files](../data-engineering/tune-file-size.md)
+- [Compacting Delta tables](../data-engineering/table-compaction.md)
+- [Deletion vectors for Delta tables](../data-engineering/delta-lake-deletion-vectors.md)
+- [Apply liquid clustering on Delta tables](../data-engineering/liquid-clustering.md)
+- [Partitioning for Delta tables](../data-engineering/delta-lake-partitioning.md)
+- [Optimize Delta Lake tables with V-Order](../data-engineering/delta-optimization-and-v-order.md)
 - [SQL analytics endpoint performance considerations](../data-engineering/sql-analytics-endpoint-performance.md)
-- [Performance guidelines in Fabric Data Warehouse](../data-warehouse/guidelines-warehouse-performance.md)
 - [Understand Direct Lake query performance](direct-lake-understand-storage.md)
+- [Performance guidelines in Fabric Data Warehouse](../data-warehouse/guidelines-warehouse-performance.md)
+- [Data clustering in Fabric Data Warehouse](../data-warehouse/data-clustering.md)
+- [What is Mirroring in Fabric?](../mirroring/overview.md)

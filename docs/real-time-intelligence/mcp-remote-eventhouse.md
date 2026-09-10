@@ -141,6 +141,5 @@ The following screenshot shows the response.
 
 - [What is MCP in Real-Time Intelligence (preview)?](mcp-overview.md)
 - [Get started with the remote MCP server for Activator (preview)](mcp-remote-activator.md)
-- [Get started with the remote MCP server for operations agents (preview)](mcp-remote-operations-agent.md)
 - [Add and manage MCP servers in VS Code](https://code.visualstudio.com/docs/copilot/customization/mcp-servers)
 - [Adding MCP servers for GitHub Copilot CLI](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-mcp-servers)

@@ -75,7 +75,7 @@ If you need targeted guidance for a specific migration task, use these articles:
 
 - [Spark Synapse to Fabric Spark Migration Assistant](synapse-to-fabric-spark-migration-assistant.md)
 - [Migrate Azure Synapse notebooks to Fabric](migrate-synapse-notebooks.md)
-- [Migrate Spark Job Definitions from Azure Synapse to Fabric](migrate-synapse-spark-job-definition.md)
+- [Migrate Spark job definitions from Azure Synapse to Fabric](migrate-synapse-spark-job-definition.md)
 - [Migrate Spark Pools from Azure Synapse to Fabric](migrate-synapse-spark-pools.md)
 - [Migrate Spark configurations from Azure Synapse to Fabric](migrate-synapse-spark-configurations.md)
 - [Migrate Spark Libraries from Azure Synapse to Fabric](migrate-synapse-spark-libraries.md)

@@ -11,11 +11,11 @@ ms.date: 04/10/2026
 
 **Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
 
-The Fabric Livy API lets you submit Spark batch and session jobs from a remote client directly to Fabric Spark compute, without using the Fabric portal. In this article, you create a Lakehouse, authenticate with a Microsoft Entra token, discover the Livy API endpoint, and submit and monitor a Spark session job.
+The Fabric Livy API lets you submit Spark batch and session jobs from a remote client directly to Fabric Spark compute, without using the Fabric portal. In this article, you create a lakehouse, authenticate with a Microsoft Entra token, discover the Livy API endpoint, and submit and monitor a Spark session job.
 
 ## Prerequisites
 
-* Fabric Premium or Trial capacity with a Lakehouse
+* Fabric Premium or Trial capacity with a lakehouse
 
 * Enable the [Tenant Admin Setting](/fabric/admin/about-tenant-settings) for Livy API 
 
@@ -72,7 +72,7 @@ The following Microsoft Entra scope permissions are required to execute Livy API
 |-------|-------------|
 | `Lakehouse.Execute.All` | Execute operations in Fabric lakehouses. |
 | `Lakehouse.Read.All` | Read lakehouse metadata. |
-| `Code.AccessFabric.All` | Allows getting access tokens to Microsoft Fabric. Required for all Livy API operations. |
+| `Code.AccessFabric.All` | Allows getting access tokens to Fabric. Required for all Livy API operations. |
 | `Code.AccessStorage.All` | Allows getting access tokens to OneLake and Azure storage. Required for reading and writing data in lakehouses. |
 
 #### Optional Code.* scopes
@@ -101,7 +101,7 @@ can access on behalf of the authenticated user. Two are required; the rest are o
 
 | Scope | Description |
 |-------|-------------|
-| `Code.AccessFabric.All` | Allows getting access tokens to Microsoft Fabric. Required for all Livy API operations. |
+| `Code.AccessFabric.All` | Allows getting access tokens to Fabric. Required for all Livy API operations. |
 | `Code.AccessStorage.All` | Allows getting access tokens to OneLake and Azure storage. Required for reading and writing data in lakehouses. |
 
 ### Optional Code.* scopes
@@ -120,9 +120,9 @@ Add these scopes only if your Spark jobs need to access the corresponding Azure 
 
 ## How to discover the Fabric Livy API endpoint
 
-A Lakehouse artifact is required to access the Livy endpoint. Once the Lakehouse is created, the Livy API endpoint can be located within the settings panel.
+A lakehouse item is required to access the Livy endpoint. Once the lakehouse is created, the Livy API endpoint can be located within the settings panel.
 
-:::image type="content" source="media/livy-api/Lakehouse-settings-livy-endpoint.png" alt-text="Screenshot showing Livy API endpoints in Lakehouse settings." lightbox="media/livy-api/Lakehouse-settings-livy-endpoint.png":::
+:::image type="content" source="media/livy-api/Lakehouse-settings-livy-endpoint.png" alt-text="Screenshot showing Livy API endpoints in lakehouse settings." lightbox="media/livy-api/Lakehouse-settings-livy-endpoint.png":::
 
 The endpoint of the Livy API would follow this pattern:
 
@@ -165,7 +165,7 @@ Now that setup of the Livy API is complete, you can choose to submit either batc
 
 ### Integration with Fabric Environments
 
-By default, this Livy API session runs against the default starter pool for the workspace. Alternatively you can use Fabric Environments [Create, configure, and use an environment in Microsoft Fabric](/fabric/data-engineering/create-and-use-environment) to customize the Spark pool that the Livy API session uses for these Spark jobs.
+By default, this Livy API session runs against the default starter pool for the workspace. Alternatively you can use Fabric Environments [Create, configure, and use an environment in Fabric](/fabric/data-engineering/create-and-use-environment) to customize the Spark pool that the Livy API session uses for these Spark jobs.
 
 To use a Fabric Environment in a Livy Spark session, update the json to include this payload.
 
@@ -200,7 +200,7 @@ You can use the Monitoring Hub to see your prior Livy API submissions, and debug
 
 * [Apache Livy REST API documentation](https://livy.incubator.apache.org/docs/latest/rest-api.html)
 * [Get Started with Admin settings for your Fabric Capacity](capacity-settings-overview.md)
-* [Apache Spark workspace administration settings in Microsoft Fabric](workspace-admin-settings.md)
+* [Apache Spark workspace administration settings in Fabric](workspace-admin-settings.md)
 * [Register an application with the Microsoft identity platform](/entra/identity-platform/quickstart-register-app)
 * [Microsoft Entra permission and consent overview](/entra/identity-platform/permissions-consent-overview)
 * [Fabric REST API Scopes](/rest/api/fabric/articles/scopes)

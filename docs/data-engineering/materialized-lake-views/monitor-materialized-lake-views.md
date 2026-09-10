@@ -31,7 +31,7 @@ To sort MLV runs, you can select on each column header, such as **Name, Status, 
 
 You can filter MLV runs by Status, Item Type, Start Time, Submitter, and Location using the Filter pane in the upper-right corner.
 
-In case of the MLV runs, your Item Type will be a Lakehouse, and the Job Instance ID corresponds to the scheduled run.
+For MLV runs, your **Item Type** is a lakehouse, and the **Job Instance ID** corresponds to the scheduled run.
 
 ### Search options
 

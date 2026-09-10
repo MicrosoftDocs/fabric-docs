@@ -3,14 +3,12 @@ title: Configure Rules Using Format by Color Scale in Conditional Formatting
 description: Learn how to apply color scale conditional formatting in planning sheets.
 ms.date: 05/15/2026
 ms.topic: how-to
-#customer intent: As a user, apply color scale conditional formatting in Fabric Plan planning sheets.
+#customer intent: As a user, apply color scale conditional formatting in planning sheets.
 ---
 
 # Configure rules using format by color scale
 
 When creating conditional formatting rules, you can choose from three **Format by** options that determine how formatting is applied. This article explains the **Color scale** format option in detail.
-
-[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
 
 ## Prerequisites
 

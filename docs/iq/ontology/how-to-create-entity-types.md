@@ -107,7 +107,7 @@ Untyped properties are useful when:
 An untyped property is always unbound. Once you bind data to an untyped property, it becomes both typed and bound in a single operation.
 
 >[!NOTE]
->Untyped properties don't appear in query results, data previews, or downstream experiences (such as Fabric Graph, SQL endpoint, or KQL) until a data type is assigned through binding. However, untyped properties are included in the entity type definition returned by the API, so programmatic consumers can discover and reference them before binding.
+>Untyped properties don't appear in query results, data previews, or downstream experiences (such as Fabric Graph, SQL analytics endpoint, or KQL) until a data type is assigned through binding. However, untyped properties are included in the entity type definition returned by the API, so programmatic consumers can discover and reference them before binding.
 
 ### Create untyped property
 

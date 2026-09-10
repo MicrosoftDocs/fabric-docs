@@ -21,7 +21,7 @@ In this article, you learn how to:
 - Choose between shortcuts, copy pipelines, and bulk transfer tools for data movement.
 
 > [!TIP]
-> Create your target Lakehouse with schemas enabled. Lakehouse schemas allow you to organize tables into named collections (for example, sales, marketing, hr). The Spark Migration Assistant maps the default Synapse database to the `dbo` schema and additional databases to additional schemas in the same Lakehouse. Schemas are enabled by default when creating a new Lakehouse in the Fabric portal.
+> Create your target lakehouse with schemas enabled. Lakehouse schemas allow you to organize tables into named collections (for example, sales, marketing, hr). The Spark Migration Assistant maps the default Synapse database to the `dbo` schema and additional databases to additional schemas in the same lakehouse. Schemas are enabled by default when creating a new lakehouse in the Fabric portal.
 
 For the full HMS migration guide, see [Migrate Hive Metastore metadata](migrate-synapse-hms-metadata.md).
 
@@ -60,7 +60,7 @@ For the full HMS migration guide, see [Migrate Hive Metastore metadata](migrate-
 
 1. **Run the import notebook** in Fabric to create catalog objects (databases, tables, partitions) in the Lakehouse using Spark's internal catalog API.
 
-1. **Verify.** Check that all imported tables are visible in the Lakehouse Explorer UI's Tables section.
+1. **Verify.** Check that all imported tables are visible in the Lakehouse explorer UI's **Tables** section.
 
 ## Limitations and considerations
 
@@ -70,7 +70,7 @@ For the full HMS migration guide, see [Migrate Hive Metastore metadata](migrate-
 
 - Functions aren't included in the current migration scripts.
 
-- After migration, OneLake shortcuts provide ongoing data access. If Synapse continues writing to the same ADLS Gen2 paths, Fabric sees the updated data through shortcuts automatically (data-level sync). However, new tables or schema changes in the Synapse HMS won't propagate automatically — you must re-run the migration scripts or manually create new tables in the Fabric Lakehouse.
+- After migration, OneLake shortcuts provide ongoing data access. If Synapse continues writing to the same ADLS Gen2 paths, Fabric sees the updated data through shortcuts automatically (data-level sync). However, new tables or schema changes in the Synapse HMS won't propagate automatically — you must re-run the migration scripts or manually create new tables in the lakehouse in Fabric.
 
 - **External Hive Metastore (Azure SQL DB / MySQL):** Some Synapse workspaces use an external HMS backed by Azure SQL Database or Azure Database for MySQL to persist catalog metadata outside the workspace and share it with HDInsight or Databricks. Fabric doesn't support connecting to an external Hive Metastore — it uses the Lakehouse catalog exclusively. If you use an external HMS, you must migrate the metadata into the Fabric Lakehouse catalog. You can do this by querying the external HMS database directly (via JDBC) to export table definitions and then recreating them in Fabric using Spark SQL or the HMS import notebooks. Note that external HMS support in Synapse is deprecated after Spark 3.4.
 
@@ -79,7 +79,7 @@ For the full HMS migration guide, see [Migrate Hive Metastore metadata](migrate-
 
 ## Data migration options
 
-You have data in ADLS Gen2 linked to your Synapse workspace that you need to make accessible in Fabric Lakehouse without unnecessary data duplication. Choose from the following approaches.
+You have data in ADLS Gen2 linked to your Synapse workspace that you need to make accessible in a lakehouse in Fabric without unnecessary data duplication. Choose from the following approaches.
 
 - **OneLake Shortcuts (recommended, zero-copy):** Create shortcuts in Fabric Lakehouse pointing to your existing ADLS Gen2 paths. Delta format data in the Tables section auto-registers in the Lakehouse catalog. CSV/JSON/Parquet data goes in the Files section. No data movement required.
 

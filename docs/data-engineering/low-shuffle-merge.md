@@ -12,7 +12,7 @@ ms.author: milescole
 
 # Low shuffle merge optimization on Delta tables
 
-Delta Lake [MERGE command](https://docs.delta.io/latest/delta-update.html#upsert-into-a-table-using-merge) allows users to update a delta table with advanced conditions. It can update data from a source table, view or DataFrame into a target table by using `MERGE` command. However, the current algorithm isn't fully optimized for handling *unmodified* rows. With the low shuffle merge optimization, unmodified rows are excluded from an expensive shuffling operation that is needed for updating matched rows.
+Delta Lake [MERGE command](https://docs.delta.io/latest/delta-update.html#upsert-into-a-table-using-merge) allows users to update a Delta table with advanced conditions. It can update data from a source table, view or DataFrame into a target table by using `MERGE` command. However, the current algorithm isn't fully optimized for handling *unmodified* rows. With the low shuffle merge optimization, unmodified rows are excluded from an expensive shuffling operation that is needed for updating matched rows.
 
 > [!NOTE]
 > Low shuffle merge is available and enabled by default in all Fabric Spark runtimes to dramatically improve the performance of `MERGE` operations.

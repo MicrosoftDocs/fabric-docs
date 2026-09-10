@@ -17,7 +17,7 @@ Each value-set is created as a collection of pointers to the default variables v
 Value-sets are uniquely named within the library and can be renamed, reordered (only through git or the [update with definition API](/rest/api/fabric/core/items/update-item-definition?tabs=HTTP)), or deleted (with safeguards to prevent deletion of the active set without reassignment). The system tracks changes and enforces size limits to ensure performance, and any modification to value-sets is validated before saving. This structure enables robust configuration management, allowing developers to automate deployments and maintain consistency across multiple environments and stages. 
 
 ## Structure and Implementation of Value Sets
-The Variable Library item’s definition is structured to support multiple value sets. In the item’s schema (its JSON definition), all variables and their default values are listed in a primary section (often called the "Default values" file in Git). Each additional value set is stored as a separate entity (or file) containing only the variables that differ from the default. In other words, if a variable’s value in a given value set is the same as the default, it isn’t explicitly repeated in that value set’s definition. 
+The variable library item's definition supports multiple value sets. In the item's schema (its JSON definition), a primary section lists all variables and their default values. This section is often called the "Default values" file in Git. Each extra value set is stored as a separate entity (or file) containing only the variables that differ from the default. If a variable's value in a given value set is the same as the default, it isn't explicitly repeated in that value set's definition. 
 
 - **Default Value Set:** Always present and contains every variable’s baseline value (along with metadata like name and type). The default values file enumerates all variables with their default (primary) values.
 
@@ -26,7 +26,7 @@ The Variable Library item’s definition is structured to support multiple value
 Example: If you have a variable ConnectionString with default value "dev-server", and you create a "Production" value set overriding this to "prod-server", the Default definition will have ConnectionString = "dev-server", and the "Production" value set’s file will contain ConnectionString = "prod-server" (and nothing for variables that remain unchanged). This approach keeps value set definitions lean and highlights only the differences.
 
 ### Source Control Representation 
-In Fabric’s Git integration, the above schema translates to multiple files under the Variable Library’s folder. By design, each value set is serialized to its own JSON file (named after the value set) containing its overrides, separate from the default values file. For example, a VL item "MyVars" might have:
+In Fabric's Git integration, the preceding schema translates to multiple files under the variable library's folder. By design, each value set is serialized to its own JSON file (named after the value set) containing its overrides, separate from the default values file. For example, a VL item "MyVars" might have:
 
 MyVars_Default.json – all variables’ default values.
 MyVars_Prod.json – only variables with values differing for "Prod" stage.

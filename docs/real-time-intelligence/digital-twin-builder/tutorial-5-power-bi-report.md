@@ -11,20 +11,21 @@ In this step of the tutorial, create a Power BI report using the [Power BI deskt
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
-You can create Power BI reports and dashboards with your digital twin builder ontology data by accessing the SQL endpoint of the lakehouse associated with your digital twin builder (preview) item. The SQL endpoint contains the [domain layer](../digital-twin-builder/concept-modeling.md) of data, which exposes a set of views that directly reflect the logical structure and relationship types defined in the domain ontology. You can use that domain layer as a data source for Power BI, which allows you to select entity types and entity type properties for use in reports.
+You can create Power BI reports and dashboards with your digital twin builder ontology data by accessing the SQL analytics endpoint of the lakehouse associated with your digital twin builder (preview) item. The SQL analytics endpoint contains the [domain layer](../digital-twin-builder/concept-modeling.md) of data, which exposes a set of views that directly reflect the logical structure and relationship types defined in the domain ontology. You can use that domain layer as a data source for Power BI, which allows you to select entity types and entity type properties for use in reports.
 
-In this tutorial step, import digital twin builder domain layer data from the SQL endpoint to a new report in Power BI Desktop. Then, create a report with two pages: one with time series data visuals for the *Condenser* entity instances, and one that showcases relationship instances between *MaintenanceRequest* entity instances and their associated *Distiller* and *Technician* entity instances.
+In this tutorial step, import digital twin builder domain layer data from the SQL analytics endpoint to a new report in Power BI Desktop. Then, create a report with two pages: one with time series data visuals for the *Condenser* entity instances, and one that showcases relationship instances between *MaintenanceRequest* entity instances and their associated *Distiller* and *Technician* entity instances.
 
 ## Create Power BI report and import data
 
 In this section, access your digital twin builder (preview) data through the domain layer in SQL, and import it into a new Power BI report.
 
-1. In Fabric, open the SQL analytics endpoint for the lakehouse associated with your digital twin builder item. The SQL endpoint has the same name as your digital twin builder item with a *dtdm* extension, so for this tutorial it's called *TutorialDTBdtdm*.
+1. In Fabric, open the SQL analytics endpoint for the lakehouse associated with your digital twin builder item. The SQL analytics endpoint has the same name as your digital twin builder item with a *dtdm* extension, so for this tutorial it's called *TutorialDTBdtdm*.
 
-    :::image type="content" source="media/tutorial/sql-endpoint.png" alt-text="Screenshot of selecting the SQL endpoint.":::
-1. In the SQL endpoint explorer, select the settings icon (shaped like a gear) from the left side of the ribbon across the top, and open the **SQL endpoint** tab.
+    :::image type="content" source="media/tutorial/sql-endpoint.png" alt-text="Screenshot of selecting the SQL analytics endpoint.":::
 
-    Copy the **SQL connection string** and the name of the SQL endpoint, *TutorialDTBdtdm*. You need these values to connect to the SQL endpoint in Power BI Desktop.
+1. In the SQL analytics endpoint explorer, select the settings icon (shaped like a gear) from the left side of the ribbon across the top, and open the **SQL endpoint** tab.
+
+    Copy the **SQL connection string** and the name of the SQL analytics endpoint, *TutorialDTBdtdm*. You need these values to connect to the SQL analytics endpoint in Power BI Desktop.
 
     :::image type="content" source="media/tutorial/sql-copy.png" alt-text="Screenshot of copying the SQL values.":::
 
@@ -41,11 +42,11 @@ In this section, access your digital twin builder (preview) data through the dom
 
     :::image type="content" source="media/tutorial/power-bi-data-source.png" alt-text="Screenshot of selecting the SQL Server data source.":::
 
-1. In the **Server** field, paste the SQL connection string. In the **Database** field, paste the SQL endpoint name. Select **Import** and then **OK**.
+1. In the **Server** field, paste the SQL connection string. In the **Database** field, paste the SQL analytics endpoint name. Select **Import** and then **OK**.
 
     :::image type="content" source="media/tutorial/power-bi-connect.png" alt-text="Screenshot of entering the SQL values in Power BI Desktop." lightbox="media/tutorial/power-bi-connect.png":::
 
-1. In the **Navigator** pane that opens, select these tables: **dom.Condenser_property**, **dom.Condenser_timeseries**, **dom.Distiller_property**, **dom.MaintenanceRequest_property**, **dom.relationships**, and **dom.Technician_property**. Then select **Load**. This action creates connections to your lakehouse SQL endpoint.
+1. In the **Navigator** pane that opens, select these tables: **dom.Condenser_property**, **dom.Condenser_timeseries**, **dom.Distiller_property**, **dom.MaintenanceRequest_property**, **dom.relationships**, and **dom.Technician_property**. Then select **Load**. This action creates connections to your lakehouse SQL analytics endpoint.
 
     :::image type="content" source="media/tutorial/power-bi-navigator.png" alt-text="Screenshot of selecting the properties in the Navigator." lightbox="media/tutorial/power-bi-navigator-crop.png":::
 

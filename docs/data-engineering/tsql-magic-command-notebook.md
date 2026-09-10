@@ -11,9 +11,9 @@ ms.date: 07/28/2025
 
 The mix of T-SQL and Python in modern data workflows offers a powerful and flexible approach that blends the strengths of both languages. SQL remains the most efficient and readable way to query, filter, and join structured data, while Python excels at data transformation, statistical analysis, machine learning, and visualization. By combining T-SQL and Python, data engineers can use the best of both worlds, enabling them to build robust pipelines that are efficient, maintainable, and capable of handling complex data processing tasks.
 
-In Microsoft Fabric Python notebooks, we introduced a new feature called T-SQL magic command. This feature allows you to run T-SQL code directly in Python notebooks with full syntax highlighting and code completion. This means you can write T-SQL code in a Python notebook, and it will be executed as if it were a T-SQL cell. This feature is useful for data engineers who want to use the power of T-SQL while still using the flexibility of Python notebooks.
+In Fabric Python notebooks, we introduced a new feature called T-SQL magic command. This feature allows you to run T-SQL code directly in Python notebooks with full syntax highlighting and code completion. This means you can write T-SQL code in a Python notebook, and it will be executed as if it were a T-SQL cell. This feature is useful for data engineers who want to use the power of T-SQL while still using the flexibility of Python notebooks.
 
-In this article, we explore the T-SQL magic command in Microsoft Fabric notebooks. We cover how to enable this command, specify which warehouse to use, and how to bind the results of T-SQL queries to Python variables.
+In this article, we explore the T-SQL magic command in Fabric notebooks. We cover how to enable this command, specify which warehouse to use, and how to bind the results of T-SQL queries to Python variables.
 
 This feature is available for Fabric Python notebooks. You need to set the language to **Python** in the notebook, and the cell type to **T-SQL**.
 
@@ -23,10 +23,10 @@ This feature is available for Fabric Python notebooks. You need to set the langu
 
 To enable the T-SQL magic command in your Fabric notebook, you need to set the `%%tsql` magic command at the beginning of your cell. This command indicates the code in that cell should be treated as T-SQL code.
 
-In this example, we're using the T-SQL magic command to query a Fabric Data Warehouse. The command takes the following parameters:
+In this example, we're using the T-SQL magic command to query a warehouse in Fabric. The command takes the following parameters:
 
-* The `-artifact` parameter specifies the name of the data warehouse to use. The T-SQL code in the cell is executed against the specified data warehouse in Fabric.
-* The `-type` parameter specifies the type of the Fabric item. For Fabric Data Warehouse, use `Warehouse`.
+* The `-artifact` parameter specifies the name of the warehouse to use. The T-SQL code in the cell is executed against the specified warehouse in Fabric.
+* The `-type` parameter specifies the type of the Fabric item. For warehouses in Fabric, use `Warehouse`.
 * The `-bind` parameter specifies the name of the variable to bind the results of the T-SQL query to. In the following example, the results of the query are stored in a Python variable called `df1`. If you need to apply any transformation to the df1 variable, you can do so using Python code in the next cell. The `-bind` parameter is optional, but it's recommended to bind the results of the T-SQL query to a Python variable. This parameter allows you to easily manipulate and analyze the results using Python code.
 * The `-workspace` parameter is optional and is used if the warehouse is located in a different workspace. Without this parameter, the notebook uses the current workspace.
 
@@ -42,13 +42,13 @@ SELECT TOP (10) [GeographyID],
 FROM [dw1].[dbo].[Geography]
 ```
 
-:::image type="content" source="media\use-python-experience-on-notebook\tsql-magic-command-data-warehouse.png" alt-text="Screenshot showing tsql magic command with data warehouse." lightbox="media\use-python-experience-on-notebook\tsql-magic-command-data-warehouse.png":::
+:::image type="content" source="media\use-python-experience-on-notebook\tsql-magic-command-data-warehouse.png" alt-text="Screenshot showing tsql magic command with the warehouse parameter." lightbox="media\use-python-experience-on-notebook\tsql-magic-command-data-warehouse.png":::
 
 If both the `-artifact` and `-type` parameters are skipped, the notebook uses the default warehouse item in the current notebook. 
 
 ## Using T-SQL magic command to query SQL database
 
-You can also use the T-SQL magic command to query a SQL database in Fabric. The syntax is similar to querying a data warehouse, but the `-type` parameter must be set to `SQLDatabase`. The `-bind` parameter specifies the name of the variable to bind the results of the T-SQL query to. 
+You can also use the T-SQL magic command to query a SQL database in Fabric. The syntax is similar to querying a warehouse, but the `-type` parameter must be set to `SQLDatabase`. The `-bind` parameter specifies the name of the variable to bind the results of the T-SQL query to.
 
 In the following example, the result of the query is stored in a Python variable called `df2`.
 
@@ -70,7 +70,7 @@ SELECT TOP (10) [AddressID]
 
 ## Using T-SQL magic command to query lakehouse SQL analytics endpoint
 
-You can also use the T-SQL magic command to query a SQL analytics endpoint. The syntax is similar to querying a data warehouse, but the `-type` parameter must be set to `Lakehouse`. The `-bind` parameter specifies the name of the variable to bind the results of the T-SQL query to.
+You can also use the T-SQL magic command to query a SQL analytics endpoint. The syntax is similar to querying a warehouse, but the `-type` parameter must be set to `Lakehouse`. The `-bind` parameter specifies the name of the variable to bind the results of the T-SQL query to.
 
 In the following example, the result of the query is stored in a Python variable called `df3`.
 

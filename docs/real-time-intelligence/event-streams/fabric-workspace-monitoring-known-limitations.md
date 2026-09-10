@@ -1,20 +1,20 @@
 ---
-title: Eventstream Workspace Monitoring Limits
+title: Eventstream Workspace Monitoring Known Limitations (preview)
 description: Eventstream monitoring known issues include periodic node updates, outdated artifact names, and missing diagnostic logs. Find workarounds to keep your data flowing.
 #customer intent: As a Fabric admin, I want to understand the known limitations of Eventstream workspace monitoring so that I can set expectations for my team
 author: spelluru
 ms.author: spelluru
 ms.reviewer: spelluru
-ms.date: 04/21/2026
+ms.date: 08/24/2026
 ms.topic: article
+ai-usage: ai-assisted
 ---
 
-# Eventstream workspace monitoring - known limitations (preview)
+# Eventstream workspace monitoring known limitations (preview)
 
-**Eventstream workspace monitoring** is in preview and has a few known limitations that affect how monitoring data is collected, displayed, and queried.
+**Eventstream workspace monitoring (preview)** has a few known limitations that affect how monitoring data is collected, displayed, and queried.
 
-> [!NOTE]
-> Eventstream workspace monitoring is currently in preview. 
+[!INCLUDE [Eventstream workspace monitoring preview notice](includes/eventstream-workspace-monitoring-preview.md)]
 
 ## Node status updates are periodic, not real-time
 

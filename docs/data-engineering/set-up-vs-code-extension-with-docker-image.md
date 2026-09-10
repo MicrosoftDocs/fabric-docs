@@ -13,7 +13,10 @@ To use the Fabric Data Engineering Visual Studio (VS) Code extension, certain pr
 
 The Data Engineering VS Code extension seamlessly integrates with Docker containers, providing a consistent development environment across different platforms. This feature allows you to work with supported Fabric items, such as notebooks, within a containerized environment that is isolated from your local machine. The containerized environment ensures that all necessary dependencies are installed and configured correctly. It allows you to focus on developing your notebooks without concerns about the environment setup.
 
-Synapse provides a Docker image to support the VS Code extension. The Docker image includes all the necessary dependencies like the Java Development Kit (JDK), Conda, and the Jupyter extension for VS Code. This image is hosted on the [Microsoft Artifact Registry](https://mcr.microsoft.com/product/msfabric/synapsevscode/fabric-synapse-vscode/about). To help you get started quickly, a sample with the [devcontainer.json](https://github.com/microsoft/SynapseVSCode/blob/main/samples/.devcontainer/devcontainer.json) file can be used to open the Data Engineering VS Code extension in a container as described in the next sections.
+The Data Engineering VS Code extension seamlessly integrates with Docker containers, providing a consistent development environment across different platforms. By using this feature, you can work with supported Fabric items, such as notebooks, within a containerized environment that's isolated from your local machine. The containerized environment ensures that all necessary dependencies are installed and configured correctly. You can focus on developing your notebooks without concerns about the environment setup.
+
+Data Engineering provides a Docker image to support the VS Code extension. The Docker image includes all the necessary dependencies like the Java Development Kit (JDK), Conda, and the Jupyter extension for VS Code. Microsoft hosts this image on the [Microsoft Artifact Registry](https://mcr.microsoft.com/product/msfabric/synapsevscode/fabric-synapse-vscode/about). To help you get started quickly, use a sample with the [devcontainer.json](https://github.com/microsoft/SynapseVSCode/blob/main/samples/.devcontainer/devcontainer.json) file to open the Data Engineering VS Code extension in a container as described in the next sections.
+
 
 ## Prerequisites
 
@@ -44,5 +47,5 @@ The following prerequisites should be met to use the Docker containers with the 
 
 ## Related content
 
-- [Access and manage Microsoft Fabric notebook resources in Visual Studio Code](author-notebook-resource-with-vs-code.md)
-- [Create and manage Microsoft Fabric notebooks in Visual Studio Code](author-notebook-with-vs-code.md)
+- [Access and manage Fabric notebook resources in Visual Studio Code](author-notebook-resource-with-vs-code.md)
+- [Create and manage Fabric notebooks in Visual Studio Code](author-notebook-with-vs-code.md)

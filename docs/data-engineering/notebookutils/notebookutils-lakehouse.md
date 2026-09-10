@@ -10,12 +10,12 @@ ai-usage: ai-assisted
 
 # NotebookUtils lakehouse utilities
 
-Use `notebookutils.lakehouse` to manage Lakehouse items programmatically in Fabric notebooks. You can create, get, update, delete, and list Lakehouses directly from notebook code.
+Use `notebookutils.lakehouse` to manage lakehouse items programmatically in Fabric notebooks. You can create, get, update, delete, and list lakehouses directly from notebook code.
 
-The Lakehouse utilities are available in Python, PySpark, Scala, and R notebooks. The examples on this page use Python as the primary language, with Scala and R equivalents shown for key methods.
+The lakehouse utilities are available in Python, PySpark, Scala, and R notebooks. The examples on this page use Python as the primary language, with Scala and R equivalents shown for key methods.
 
 > [!NOTE]
-> Lakehouse utilities are only supported in Microsoft Fabric. They aren't available in Azure Synapse Analytics.
+> Lakehouse utilities are only supported in Fabric. They aren't available in Azure Synapse Analytics.
 
 To display the available methods and their descriptions, call `notebookutils.lakehouse.help()`.
 
@@ -25,14 +25,14 @@ The following table summarizes the available methods:
 
 | Method | Description | Returns |
 |---|---|---|
-| `create` | Creates a new Lakehouse, with optional schema support. | `Artifact` object with properties: `id`, `displayName`, `description`, and `workspaceId`. |
-| `get` | Retrieves a Lakehouse by name. | `Artifact` object with basic metadata. |
-| `getWithProperties` | Retrieves a Lakehouse with extended properties. | `Artifact` object with extended metadata and connection details. |
-| `update` | Updates an existing Lakehouse name or description. | Updated `Artifact` object. |
-| `delete` | Deletes a Lakehouse. | `Boolean`. `True` if successful; otherwise, `False`. |
-| `list` | Lists Lakehouses in a workspace. | Array of `Artifact` objects. |
-| `listTables` | Lists tables in a Lakehouse. | Array of `Table` objects. |
-| `loadTable` | Starts a load operation for a Lakehouse table. | `Boolean`. `True` if successful; otherwise, `False`. |
+| `create` | Creates a new lakehouse, with optional schema support. | `Artifact` object with properties: `id`, `displayName`, `description`, and `workspaceId`. |
+| `get` | Retrieves a lakehouse by name. | `Artifact` object with basic metadata. |
+| `getWithProperties` | Retrieves a lakehouse with extended properties. | `Artifact` object with extended metadata and connection details. |
+| `update` | Updates an existing lakehouse name or description. | Updated `Artifact` object. |
+| `delete` | Deletes a lakehouse. | `Boolean`. `True` if successful; otherwise, `False`. |
+| `list` | Lists lakehouses in a workspace. | Array of `Artifact` objects. |
+| `listTables` | Lists tables in a lakehouse. | Array of `Table` objects. |
+| `loadTable` | Starts a load operation for a lakehouse table. | `Boolean`. `True` if successful; otherwise, `False`. |
 
 ```python
 # Method signatures
@@ -48,17 +48,17 @@ notebookutils.lakehouse.loadTable(loadOption: Object, table: String, lakehouse: 
 
 All methods accept an optional `workspaceId` parameter. When omitted, the operation targets the current workspace. Specify a workspace ID for cross-workspace access. You must have appropriate permissions in the target workspace.
 
-## Create a Lakehouse
+## Create a lakehouse
 
-Use `notebookutils.lakehouse.create()` to create a new Lakehouse in the current workspace or a specified workspace. Lakehouse names must be unique within a workspace.
+Use `notebookutils.lakehouse.create()` to create a new lakehouse in the current workspace or a specified workspace. Lakehouse names must be unique within a workspace.
 
 ### Parameters
 
 | Parameter | Type | Required | Description |
 |---|---|---|---|
-| `name` | String | Yes | Display name of the Lakehouse. Must be unique within the workspace. |
-| `description` | String | No | A text description for the Lakehouse. |
-| `definition` | Object | No | Structured definition object for the Lakehouse. Pass `{"enableSchemas": True}` or the equivalent object form for your language to enable schema support. |
+| `name` | String | Yes | Display name of the lakehouse. Must be unique within the workspace. |
+| `description` | String | No | A text description for the lakehouse. |
+| `definition` | Object | No | Structured definition object for the lakehouse. Pass `{"enableSchemas": True}` or the equivalent object form for your language to enable schema support. |
 | `workspaceId` | String | No | Target workspace ID. Defaults to the current workspace. |
 
 ### Create a basic Lakehouse
@@ -86,9 +86,9 @@ artifact <- notebookutils.lakehouse.create("lakehouse_name", "Description of the
 > [!NOTE]
 > Pass `definition` as a structured object for your notebook language, such as a Python dictionary, a Scala `Map`, or an R list.
 
-### Create a Lakehouse with schema support
+### Create a lakehouse with schema support
 
-When you enable schema support, the Lakehouse supports multiple schemas for organizing tables. Pass `{"enableSchemas": True}` as the `definition` parameter:
+When you enable schema support, the lakehouse supports multiple schemas for organizing tables. Pass `{"enableSchemas": True}` as the `definition` parameter:
 
 ### [Python](#tab/python)
 
@@ -180,9 +180,9 @@ print(paste("Created lakehouse in workspace:", workspace_id))
 
 ---
 
-### Batch create Lakehouses
+### Batch create lakehouses
 
-You can create multiple Lakehouses in a loop to provision environments for different teams or projects:
+You can create multiple lakehouses in a loop to provision environments for different teams or projects:
 
 ```python
 departments = ["Sales", "Marketing", "Finance", "Operations"]
@@ -200,17 +200,17 @@ print(f"Created {len(created_lakehouses)} lakehouses")
 ```
 
 > [!TIP]
-> Use descriptive names that reflect the Lakehouse purpose and consider naming conventions for environment separation (dev, test, prod).
+> Use descriptive names that reflect the lakehouse purpose. Consider naming conventions for environment separation, such as dev, test, and prod.
 
-## Get a Lakehouse
+## Get a lakehouse
 
-Use `notebookutils.lakehouse.get()` to retrieve a Lakehouse by name. If you omit the name, NotebookUtils uses the current default Lakehouse.
+Use `notebookutils.lakehouse.get()` to retrieve a lakehouse by name. If you omit the name, NotebookUtils uses the current default lakehouse.
 
 ### Parameters
 
 | Parameter | Type | Required | Description |
 |---|---|---|---|
-| `name` | String | No | Name of the Lakehouse to retrieve. Defaults to the current Lakehouse when omitted. |
+| `name` | String | No | Name of the lakehouse to retrieve. Defaults to the current lakehouse when omitted. |
 | `workspaceId` | String | No | Target workspace ID. Defaults to the current workspace. |
 
 ### [Python](#tab/python)
@@ -239,7 +239,7 @@ print(paste("Lakehouse Name:", artifact$displayName))
 
 ---
 
-### Get a Lakehouse with extended properties
+### Get a lakehouse with extended properties
 
 Use `notebookutils.lakehouse.getWithProperties()` when you need extended properties beyond basic metadata, such as connection strings or configuration details:
 
@@ -272,7 +272,7 @@ print(artifact$properties)
 
 ---
 
-### Get a Lakehouse from another workspace
+### Get a lakehouse from another workspace
 
 ### [Python](#tab/python)
 
@@ -303,19 +303,19 @@ print(paste("Retrieved:", artifact$displayName, "from workspace", workspace_id))
 
 ---
 
-## Update a Lakehouse
+## Update a lakehouse
 
-Use `notebookutils.lakehouse.update()` to update the name or description of an existing Lakehouse.
+Use `notebookutils.lakehouse.update()` to update the name or description of an existing lakehouse.
 
 > [!IMPORTANT]
-> Renaming a Lakehouse can break downstream dependencies such as notebooks, pipelines, or shortcuts that reference the original name. Coordinate renames with your team before applying them.
+> Renaming a lakehouse can break downstream dependencies such as notebooks, pipelines, or shortcuts that reference the original name. Coordinate renames with your team before applying them.
 
 ### Parameters
 
 | Parameter | Type | Required | Description |
 |---|---|---|---|
-| `name` | String | Yes | Current name of the Lakehouse. |
-| `newName` | String | Yes | New name for the Lakehouse. |
+| `name` | String | Yes | Current name of the lakehouse. |
+| `newName` | String | Yes | New name for the lakehouse. |
 | `description` | String | No | Updated description. |
 | `workspaceId` | String | No | Target workspace ID. Defaults to the current workspace. |
 
@@ -346,18 +346,18 @@ updated_artifact <- notebookutils.lakehouse.update("old_name", "new_name", "Upda
 
 ---
 
-## Delete a Lakehouse
+## Delete a lakehouse
 
-Use `notebookutils.lakehouse.delete()` to permanently remove a Lakehouse from a workspace.
+Use `notebookutils.lakehouse.delete()` to permanently remove a lakehouse from a workspace.
 
 > [!CAUTION]
-> Deletion is permanent and can't be undone. Verify the Lakehouse name before deleting and check for dependent notebooks, pipelines, or workflows that reference it.
+> Deletion is permanent and can't be undone. Verify the lakehouse name before deleting and check for dependent notebooks, pipelines, or workflows that reference it.
 
 ### Parameters
 
 | Parameter | Type | Required | Description |
 |---|---|---|---|
-| `name` | String | Yes | Name of the Lakehouse to delete. |
+| `name` | String | Yes | Name of the lakehouse to delete. |
 | `workspaceId` | String | No | Target workspace ID. Defaults to the current workspace. |
 
 ### [Python](#tab/python)
@@ -385,9 +385,9 @@ is_deleted <- notebookutils.lakehouse.delete("lakehouse_name", "optional_workspa
 
 ---
 
-## List Lakehouses
+## List lakehouses
 
-Use `notebookutils.lakehouse.list()` to enumerate Lakehouses in a workspace.
+Use `notebookutils.lakehouse.list()` to enumerate lakehouses in a workspace.
 
 ### Parameters
 
@@ -425,13 +425,13 @@ artifacts_list <- notebookutils.lakehouse.list("optional_workspace_id")
 
 ## List tables
 
-Use `notebookutils.lakehouse.listTables()` to list all tables in a Lakehouse.
+Use `notebookutils.lakehouse.listTables()` to list all tables in a lakehouse.
 
 ### Parameters
 
 | Parameter | Type | Required | Description |
 |---|---|---|---|
-| `lakehouse` | String | No | Name of the Lakehouse. Defaults to the current Lakehouse when omitted. |
+| `lakehouse` | String | No | Name of the lakehouse. Defaults to the current lakehouse when omitted. |
 | `workspaceId` | String | No | Target workspace ID. Defaults to the current workspace. |
 | `maxResults` | Int | No | Maximum number of items to return. Defaults to 1000. |
 
@@ -457,7 +457,7 @@ tables <- notebookutils.lakehouse.listTables("lakehouse_name", "optional_workspa
 
 ## Load table
 
-Use `notebookutils.lakehouse.loadTable()` to load data from files into a Lakehouse table.
+Use `notebookutils.lakehouse.loadTable()` to load data from files into a lakehouse table.
 
 ### Parameters
 
@@ -465,14 +465,14 @@ Use `notebookutils.lakehouse.loadTable()` to load data from files into a Lakehou
 |---|---|---|---|
 | `loadOption` | Object | Yes | Structured load options that specify the file path, mode, format, and other load settings. |
 | `table` | String | Yes | Name of the target table. |
-| `lakehouse` | String | No | Name of the Lakehouse. Defaults to the current Lakehouse when omitted. |
+| `lakehouse` | String | No | Name of the lakehouse. Defaults to the current lakehouse when omitted. |
 | `workspaceId` | String | No | Target workspace ID. Defaults to the current workspace. |
 
 The `loadOption` object supports the following keys:
 
 | Key | Description |
 |---|---|
-| `relativePath` | Path to the source file relative to the Lakehouse root (for example, `Files/myFile.csv`). |
+| `relativePath` | Path to the source file relative to the lakehouse root (for example, `Files/myFile.csv`). |
 | `pathType` | Type of path. Use `File` for a single file. |
 | `mode` | Load mode, such as `Overwrite` or `Append`. |
 | `recursive` | Set to `True` to include files in subfolders. |

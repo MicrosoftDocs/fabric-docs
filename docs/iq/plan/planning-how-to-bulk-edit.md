@@ -10,8 +10,6 @@ ms.topic: how-to
 
 Use *bulk edit* to update multiple values in a planning sheet at the same time. Apply the same value across categories, dimensions, hierarchy levels, or data input types.
 
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
-
 Use bulk edit operations to:
 
 * Allocate costs or revenue across multiple fields.

@@ -10,8 +10,6 @@ ms.topic: how-to
 
 Use transformation commands on the **Transform** ribbon to create calculated measures, dimensions, split columns, and conditional columns. These transformations enrich bridge data without modifying the source report and cascade to downstream reports.
 
-[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
-
 ## Open transformation commands
 
 After creating a bridge, open the **Transform** tab to access data transformation options.

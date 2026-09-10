@@ -1,6 +1,6 @@
 ---
 title: Financial Functions
-description: Learn about financial functions in plan (preview) and how to use them to perform financial calculations.
+description: Learn about financial functions in planning and how to use them to perform financial calculations.
 ms.date: 06/04/2026
 ms.topic: reference
 ms.search.form: Financial functions
@@ -10,8 +10,6 @@ ms.search.form: Financial functions
 # Financial functions
 
 Financial functions let you perform financial calculations in reports. These functions are commonly used to calculate loan payments, evaluate financial scenarios, and support budgeting and forecasting activities.
-
-[!INCLUDE [Fabric feature-preview-note](../../../../includes/feature-preview-note.md)]
 
 ## PMT
 

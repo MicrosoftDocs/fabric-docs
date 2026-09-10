@@ -98,7 +98,7 @@ To disable Autoscale, follow these steps:
 
 * [What is Power BI Premium?](service-premium-what-is.md)
 
-* [Power BI Premium FAQ](service-premium-faq.yml)
+* [Power BI Premium operations FAQ](service-premium-faq.yml)
 
 * [Power BI Premium Per User FAQ](service-premium-per-user-faq.yml)
 

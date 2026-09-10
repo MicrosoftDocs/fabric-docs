@@ -106,6 +106,7 @@ In order to minimize the amount of time it takes to execute your notebook job, y
 
 ## Known issues
 - Using Service Principal to run a notebook that contains Semantic Link code has functional limitations and supports only a subset of semantic link features. See the [supported semantic link functions](../data-science/semantic-link-service-principal-support.md#supported-semantic-link-functions) for details. To use other capabilities, you're recommended to [manually authenticate semantic link with a service principal](../data-science/semantic-link-service-principal-support.md#manually-authenticate-semantic-link-with-a-service-principal).
+- The Notebook activity doesn't support calling notebooks across regions.
 
 ## Related content
 

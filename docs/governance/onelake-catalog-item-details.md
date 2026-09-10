@@ -56,7 +56,7 @@ For data items like semantic models and lakehouses, the **Tables** section displ
 In the OneLake catalog explorer, you can view and interact with semantic models based on your permissions and whether the model is set to be discoverable.
 
 * **Discoverable**: These are semantic models that have been made [discoverable](/power-bi/collaborate-share/service-discovery) by their owner. Discoverable semantic models make it easier for users across the organization to find relevant data assets. While you can see the semantic model and its metadata, you can't see the owner details, view underlying data, or build content on top of the semantic model. You need to **request access** (Build permission) to access the semantic model's full information and capabilities.
-* **Read-only Permission**: If someone shares a report or semantic model with you but doesn’t grant Build [permission](/power-bi/connect-data/service-datasets-permissions), you might have read-only access, which limits your ability to view and interact with the semantic model. To create content or perform more actions, you need at least Build permission.
+* **Read-only Permission**: If someone shares a report or semantic model with you but doesn't grant Build [permission](/power-bi/connect-data/service-datasets-permissions), you might have read-only access, which limits your ability to view and interact with the semantic model. To create content or perform more actions, you need at least Build permission.
 * **Build Permission**: If you have [Build permission](/power-bi/connect-data/service-datasets-build-permissions) on a semantic model, you can create new reports based on it, connect to it from Excel, and export its data.
 
 ####  Export semantic model data
@@ -156,7 +156,7 @@ This section covers actions unique to Semantic Models, SQL Analytics Endpoints, 
 | **SQL Analytics Endpoint, Warehouse, Warehouse Snapshot** | **Open in Visual Studio Code** | Shows the server connection information to [connect the SQL database](/fabric/database/sql/connect) server externally and offers to directly open VS Code. | Specific menu option |
 | | **Open in SSMS** | Shows the server connection information to [connect the SQL database](/fabric/database/sql/connect) server externally in SQL Server Management Studio. | Specific menu option |
 | | **Explore this data** |  A lightweight tool for quick, ad-hoc data analysis. [Explore the data](/power-bi/consumer/explore-data-service) allows you to create matrix/visual pairs without building a full report. | **Explore this data** button |
-| | **Copy SQL connection string** | Copies the connection string needed to connect to the SQL endpoint from external tools. | Specific menu option |
+| | **Copy SQL connection string** | Copies the connection string needed to connect from external tools. | Specific menu option |
 | | **Analyze in Excel** | Creates an [Excel workbook](/power-bi/collaborate-share/service-analyze-in-excel) containing the item, allowing you to analyze it using PivotTables, Pivot Charts, and other Excel features. | **Analyze in Excel** button |
 | **SQL DB** | **Refresh Git sync status** | Refreshes the synchronization status with the connected Git repository. | Specific menu option |
 | | **Open Performance summary** | Opens the [Performance Dashboard](/fabric/database/sql/performance-dashboard) to view database performance metrics, identify performance bottlenecks and find solutions to performance issues.| Specific menu option |

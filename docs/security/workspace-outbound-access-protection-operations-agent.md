@@ -120,7 +120,7 @@ Look for these items in the Activity Log:
 
 This section contains common questions about how OAP affects the operations agent during preview.
 
-### Will my agent stop working as soon as my admin enables outbound access protection?
+### Does my agent stop working as soon as my admin enables outbound access protection?
 
 No. The agent's reasoning, rules, and internal logging continue to operate. OAP blocks only outbound actions that aren't on the workspace allowlist. The agent surfaces those blocks through a banner and, when available, a Teams notification.
 

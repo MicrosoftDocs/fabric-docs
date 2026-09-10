@@ -33,7 +33,7 @@ To create or manage the Spark pool associated with your workspace:
 
 1. Go to your workspace, and select **Workspace settings**.
 
-   :::image type="content" source="media\configure-starter-pools\data-engineering-menu.png" alt-text="Screenshot showing where to select Data Engineering in the Workspace settings menu." lightbox="media\configure-starter-pools\data-engineering-menu.png":::
+   :::image type="content" source="media\configure-starter-pools\data-engineering-menu.png" alt-text="Screenshot showing where to select Data Engineering in the workspace settings menu." lightbox="media\configure-starter-pools\data-engineering-menu.png":::
 
 1. Select the **Data Engineering/Science** option to expand the menu, then select **Spark settings**.
 
@@ -63,7 +63,7 @@ To create or manage the Spark pool associated with your workspace:
 > [!TIP]
 > After you create a custom Spark pool, library deployment timing depends on the publishing mode in the attached environment. Quick mode publishes in about 5 seconds and installs libraries at session start. Full mode takes 3 to 6 minutes to publish and deploys libraries as part of session startup (1 to 3 minutes). For the fastest experience, configure the pool as a [custom live pool](custom-live-pools-overview.md) with Full mode to achieve approximately 5-second session starts.
 
-Custom pools have a default autopause duration of 2 minutes after inactivity.When autopause is reached, the session expires and the cluster deallocates. Billing applies only while compute is actively used. Custom Spark pools in Microsoft Fabric currently support a maximum node limit of 200, so make sure your minimum and maximum autoscale values remain within this limit.
+Custom pools have a default autopause duration of 2 minutes after inactivity.When autopause is reached, the session expires and the cluster deallocates. Billing applies only while compute is actively used. Custom Spark pools in Fabric currently support a maximum node limit of 200, so make sure your minimum and maximum autoscale values remain within this limit.
 
 ## Node size options
 
@@ -80,5 +80,5 @@ When you set up a custom Spark pool, you choose from the following node sizes:
 ## Related content
 
 - Learn more from the Apache Spark [public documentation](https://spark.apache.org/docs/latest/configuration.html).
-- Get started with [Spark workspace administration settings in Microsoft Fabric](workspace-admin-settings.md).
+- Get started with [Spark workspace administration settings in Fabric](workspace-admin-settings.md).
 - [Manage libraries in Fabric environments](environment-manage-library.md)

@@ -96,7 +96,7 @@ The request body for acquiring a high concurrency session includes the following
 
 Note the following about the request parameters:
 
-- The `artifactName` (Lakehouse) is used to surface HC jobs in the monitoring hub as `HC_<LakehouseName>_<LIVY_SESSION_ID>`.
+- The `artifactName` (lakehouse) is used to surface HC jobs in the monitoring hub as `HC_<LakehouseName>_<LIVY_SESSION_ID>`.
 - The `sessionTag` is a hint for packing. It isn't a strict lock. Rapid concurrent POST requests with the same `sessionTag` might create multiple Livy sessions.
 - The API is nonidempotent by default. Multiple POST requests can yield distinct HC IDs and REPLs.
 

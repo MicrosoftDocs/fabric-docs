@@ -7,13 +7,18 @@ ms.custom:
   - ai-gen-docs-bap
   - ai-gen-description
   - ai-seo-date:08/07/2025
-ms.date: 08/07/2025
+ms.date: 08/05/2026
 ms.search.form: Schema Registry
+ai-usage: ai-assisted
 ---
 
 # Create and manage event schema sets in Microsoft Fabric
 
 In this article, you learn how to create and manage event schema sets in Microsoft Fabric Real-Time Intelligence. Event schema sets help you organize and standardize data structures (schemas) for your real-time analytics workflows, making it easier to process and analyze streaming data consistently.
+
+## Prerequisites
+
+To create an event schema set, you need the **Admin**, **Member**, or **Contributor** role on the workspace. Users with the **Viewer** role can view an existing schema set but can't create or modify one. For more information, see [Permissions](schema-registry-overview.md#permissions).
 
 ## Create a schema set
 

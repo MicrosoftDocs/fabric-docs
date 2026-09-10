@@ -11,7 +11,7 @@ ai-usage: ai-assisted
 
 Use the Delta Lake `VACUUM` command to permanently remove data files that are no longer referenced by a Delta table and that are older than your retention threshold.
 
-In Microsoft Fabric, `VACUUM` helps you clean up stale files in Microsoft OneLake after updates, deletes, merges, and compaction operations. It reduces storage consumption, removes obsolete files that Fabric no longer needs for the active table state, and reclaims space after maintenance operations such as `OPTIMIZE`.
+In Fabric, `VACUUM` helps you clean up stale files in OneLake after updates, deletes, merges, and compaction operations. It reduces storage consumption, removes obsolete files that Fabric no longer needs for the active table state, and reclaims space after maintenance operations such as `OPTIMIZE`.
 
 `VACUUM` follows the same core Delta Lake concepts that you might know from open-source Delta Lake, but you run it in Fabric Spark experiences such as notebooks, Spark job definitions, and the Lakehouse **Maintenance** UI.
 
@@ -45,7 +45,7 @@ Run `VACUUM` when you want to:
 - Spark job definitions
 - The Lakehouse **Maintenance** UI and pipeline-based maintenance workflows
 
-Don't run `VACUUM` in the SQL analytics endpoint or the Warehouse SQL editor. Those experiences don't support Spark Delta maintenance commands.
+Don't run `VACUUM` in the SQL analytics endpoint or the warehouse SQL editor. Those experiences don't support Spark Delta maintenance commands.
 
 If you want a portal-based workflow, see [Lakehouse table maintenance](lakehouse-table-maintenance.md).
 

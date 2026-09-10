@@ -90,19 +90,23 @@ In both reports, you can filter, drill through to get more details and initiate 
 
 ## Take actions to improve the governance posture
 
-The recommended actions section displays cards suggesting actions you can take to improve the governance posture of the data. When you select a card, you see an insight highlighting the issue, an explanation of why the issue revealed by the insight matters, and a list of steps about how to address the issue.
+The recommended actions section displays cards suggesting actions you can take to improve the governance posture of the data. When you select a card, you see an insight highlighting the issue, an explanation of why the issue revealed by the insight matters, and a list of steps about how to address the issue. Data owner recommended actions in the **My items** section also include the ability to view all entities associated with a recommended action, including items, workspaces, and more, and open any of them with a single click.
 
 Recommended actions for Fabric admins: 
 
 :::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-tab-recommended-actions-admins.png" alt-text="Screenshot showing the recommended action section for admins." lightbox="./media/onelake-catalog-govern/onelake-catalog-govern-tab-recommended-actions-admins.png":::
 
+Example of recommended action card for Fabric admins:
+
+:::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-tab-recommended-actions-admins-example.png" alt-text="Screenshot showing an example of a recommended action card." lightbox="./media/onelake-catalog-govern/onelake-catalog-govern-tab-recommended-actions-admins-example.png":::
+
 Recommended actions for data owners: 
 
 :::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-tab-recommended-actions.png" alt-text="Screenshot showing the recommended action section for data owners." lightbox="./media/onelake-catalog-govern/onelake-catalog-govern-tab-recommended-actions.png":::
 
-Example of recommended action card:
+Example of recommended action page for data owners:
 
-:::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-tab-recommended-actions-admins-example.png" alt-text="Screenshot showing an example of a recommended action card." lightbox="./media/onelake-catalog-govern/onelake-catalog-govern-tab-recommended-actions-admins-example.png":::
+:::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-tab-recommended-actions-my-items.png" alt-text="Screenshot showing an example of a recommended action page in My items: instantly review all related entities and open each one directly." lightbox="./media/onelake-catalog-govern/onelake-catalog-govern-tab-recommended-actions-my-items.png":::
 
 The recommended actions vary depending on what the insights reveal.
 

@@ -11,7 +11,7 @@ ai-usage: ai-assisted
 
 # Configure Resource Profile Configurations in Microsoft Fabric
 
-Resource profiles in Microsoft Fabric let you apply predefined Spark configuration sets for common workload patterns such as read-heavy and write-heavy processing.
+Resource profiles in Fabric let you apply predefined Spark configuration sets for common workload patterns such as read-heavy and write-heavy processing.
 
 Profiles reduce manual Spark tuning and provide a faster path to predictable performance.
 
@@ -89,4 +89,4 @@ If your workload is read-optimized (for example, interactive queries or Power BI
 
 ## Related content
 
-- [Native Execution Engine in Microsoft Fabric](./native-execution-engine-overview.md)
+- [Native Execution Engine in Fabric](./native-execution-engine-overview.md)

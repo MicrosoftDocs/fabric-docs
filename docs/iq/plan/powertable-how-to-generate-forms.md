@@ -10,8 +10,6 @@ ms.topic: how-to
 
 *Forms* allow you to collect data from users and write them directly to your database.
 
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
-
 Forms can be used for various scenarios, such as capturing expense reports, collecting survey responses, running polls or quizzes, gathering customer feedback, registering event attendees, managing internal requests, or onboarding new users. Their structured layout and configurable fields make data collection easier and streamline workflows for both individuals and teams.
 
 In this article, you learn how to quickly generate forms from your table to collect user inputs, store them in your PowerTable app, and write them back to the database.

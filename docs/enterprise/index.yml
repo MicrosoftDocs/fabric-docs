@@ -23,8 +23,8 @@ landingContent:
             url: licenses.md
       - linkListType: how-to-guide
         links:
-          - text: Buy a Fabric subscription
-            url: buy-subscription.md
+          - text: Buy Fabric capacity in Azure
+            url: buy-capacity.md
 
   - title: Capacity operation
     linkLists:

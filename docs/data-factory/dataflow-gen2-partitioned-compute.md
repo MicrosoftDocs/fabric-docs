@@ -3,8 +3,9 @@ title: Use partitioned compute in Dataflow Gen2 (Preview)
 description: Overview on how to use partitioned compute for parallel processing in Dataflow Gen2 with CI/CD.
 ms.reviewer: miescobar
 ms.topic: how-to
-ms.date: 04/13/2026
+ms.date: 08/09/2026
 ms.custom: dataflows
+ai-usage: ai-assisted
 ---
 
 # Use partitioned compute in Dataflow Gen2 (Preview)
@@ -80,4 +81,9 @@ You can use the [Table.PartitionKey](/powerquery-m/table-partitionkey) function 
 
 - **Supported transformations**: Partitioned compute only supports a subset of transformations. The performance might vary depending on your source and set of transformations used.
 
-- **Billing**: Billing for the dataflow run is based on capacity unit (CU) consumption.
+- **Billing**: You're billed for the dataflow run based on capacity unit (CU) consumption. Running partitions in parallel shortens the overall (wall-clock) time to complete the run, while Dataflow Gen2 calculates CU consumption from the combined compute of every partition. Each partition is charged for its own processing duration. As a result, a partitioned run can consume a similar or greater amount of CU than a sequential run of the same workload, even though it finishes in less time. For the full rate model, see [Dataflow Gen2 pricing](pricing-dataflows-gen2.md).
+
+## Related content
+
+- [Dataflow Gen2 cost and performance benchmarks](dataflow-gen2-cost-performance-benchmarks.md)
+- [Dataflow Gen2 pricing](pricing-dataflows-gen2.md)

@@ -192,7 +192,7 @@ To get started:
 
 ## Development of queries and mutations
 
-The following examples demonstrate GraphQL query and mutation syntax using the AdventureWorks sample data. These examples assume you're working with a Fabric Data Warehouse that supports write operations (mutations). Data sources accessed via SQL Analytics Endpoints (like Lakehouses and mirrored databases) are read-only and only support queries, not mutations.
+The following examples demonstrate GraphQL query and mutation syntax using the AdventureWorks sample data. These examples assume you're working with a warehouse in Fabric that supports write operations (mutations). Data sources accessed via SQL Analytics Endpoints (like lakehouses and mirrored databases) are read-only and only support queries, not mutations.
 
 Review this short GraphQL schema excerpt from AdventureWorks. It defines a `Product` type with queries to read a single product or list all products, and mutations to create, update, or delete products, supporting all CRUDL (create, read, update, delete, list) use cases.
 

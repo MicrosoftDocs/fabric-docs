@@ -27,4 +27,4 @@ Authorized engines are configured by a workspace Admin or Member by granting the
 
 * [OneLake security integrations reference](./onelake-security-integrations-reference.md)
 * [OneLake security integrations guide](./onelake-security-integrations-external-engines.md)
-* [OneLake security data access control model](./data-access-control-model.md)
+* [How OneLake security controls data access](./data-access-control-model.md)

@@ -36,7 +36,7 @@ Mount operations support several authentication methods. Choose the method based
 
 ### Microsoft Entra token (default and recommended)
 
-Microsoft Entra token authentication uses the identity of the notebook executor, either a user or service principal. It doesn't require explicit credentials in the mount call, which makes it the most secure option. Use this option for Lakehouse mounting and Fabric workspace storage.
+Microsoft Entra token authentication uses the identity of the notebook executor, either a user or service principal. It doesn't require explicit credentials in the mount call, which makes it the most secure option. Use this option for lakehouse mounting and Fabric workspace storage.
 
 ```python
 # Mount using Microsoft Entra token (no credentials needed)
@@ -167,7 +167,7 @@ notebookutils.fs.mount(
 
 ## Mount a Lakehouse
 
-Lakehouse mounting only supports Microsoft Entra token authentication. Sample code for mounting a Lakehouse to */<mount_name>*:
+Lakehouse mounting only supports Microsoft Entra token authentication. Sample code for mounting a lakehouse to */<mount_name>*:
 
 ```python
 notebookutils.fs.mount( 

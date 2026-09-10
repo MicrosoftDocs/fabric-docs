@@ -4,6 +4,7 @@ description: Learn more about the pause and resume capacity for Fabric Data Ware
 ms.reviewer: sosivara
 ms.date: 04/06/2025
 ms.topic: concept-article
+ms.search.form: Warehouse Pause Resume
 ---
 
 # Pause and resume in Fabric Data Warehouse

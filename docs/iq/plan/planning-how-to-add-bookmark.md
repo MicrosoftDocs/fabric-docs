@@ -11,8 +11,6 @@ ai-usage: ai-assisted
 
 Bookmarks in planning sheets allow you to save and revisit specific report states. These states can include filters, sorting, layouts, hierarchy expansions, and other configurations. You can create and manage bookmarks to save and quickly access specific views.
 
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
-
 ## Prerequisite
 
 * You have access to the planning sheet with the required dataset.

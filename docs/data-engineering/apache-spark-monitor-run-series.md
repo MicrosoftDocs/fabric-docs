@@ -21,7 +21,7 @@ The run series feature visually represents the duration trend for each Spark app
 
 You can access the monitor run series feature from the **Monitoring hub's historical view**:
 
-1. Open the Microsoft Fabric portal and go to **Monitoring hub** menu.
+1. Open the Fabric portal and go to **Monitoring hub** menu.
 2. Open your Spark job definition or notebook and expand its **More options** drop-down list and then select **Historical runs**.
 3. Select the job you want to view and expand **More options**, then select **Monitor run series**.
 
@@ -29,7 +29,7 @@ You can access the monitor run series feature from the **Monitoring hub's histor
 
 You can access the monitor run series feature from the notebook or Spark job definition's **Recent runs** panel:
 
-1. Open the Microsoft Fabric homepage and select a workspace where you want to view the job.
+1. Open the Fabric homepage and select a workspace where you want to view the job.
 2. Selecting **Spark job definition** or **Notebook item context** menu shows the recent run option.
 3. Select **Recent runs**.
 4. select an application and expand its **More options** drop-down list and then select **Monitor run series**.

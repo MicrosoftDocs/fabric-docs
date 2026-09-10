@@ -10,7 +10,7 @@ ai-usage: ai-assisted
 
 # Create, configure, and use an environment in Fabric
 
-A Microsoft Fabric environment is a workspace item that defines Spark session configuration for notebooks and Spark job definitions. Use an environment to choose a Spark runtime, configure compute settings, manage libraries, and manage small resource files that notebooks can access.
+A Fabric environment is a workspace item that defines Spark session configuration for notebooks and Spark job definitions. Use an environment to choose a Spark runtime, configure compute settings, manage libraries, and manage small resource files that notebooks can access.
 
 This article presents an overview of how to create, configure, and use an environment.
 
@@ -22,7 +22,7 @@ Use an environment item when you need reusable, governed defaults for teams:
 
 - Define Spark compute and libraries once, and apply them consistently across notebooks and Spark job definitions.
 - Set an environment as workspace default so users inherit shared configuration through **Workspace default**.
-- Version and operate environment settings as a single artifact.
+- Version and operate environment settings as a single item.
 
 ## Workspace-level environments
 

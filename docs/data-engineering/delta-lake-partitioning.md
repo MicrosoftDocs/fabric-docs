@@ -156,5 +156,5 @@ For a complete guide to conflict types and resolution strategies, see [Concurren
 - [Z-Order](delta-lake-z-order.md)
 - [Table compaction](table-compaction.md)
 - [File skipping](delta-lake-file-skipping.md)
-- [V-Order](delta-optimization-and-v-order.md)
+- [V-order](delta-optimization-and-v-order.md)
 - [Delta table maintenance](delta-lake-table-maintenance.md)

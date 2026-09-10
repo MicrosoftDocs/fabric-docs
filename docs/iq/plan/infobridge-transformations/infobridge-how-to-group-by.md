@@ -12,8 +12,6 @@ Use Group by transformations to summarize data and calculate aggregated metrics 
 
 For example, Group by can calculate metrics such as average salary by region, total sales by quarter, or minimum experience by department.
 
-[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
-
 ## Sample data
 
 The following sample data set is used for the examples in this article.

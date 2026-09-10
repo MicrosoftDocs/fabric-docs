@@ -3,14 +3,14 @@ title: Overview of Materialized Lake Views
 description: Learn about the features, availability, and limitations of materialized lake views in Microsoft Fabric.
 ms.reviewer: bsankaran, sairamyeturi, nijelsf, hgowrisankar
 ms.topic: overview
-ms.date: 07/08/2026
+ms.date: 07/20/2026
 ai-usage: ai-assisted
 # customer intent: As a data engineer, I want to understand what materialized lake views are in Microsoft Fabric so that I can use them for building a medallion architecture.
 ---
 
 # What are materialized lake views in Microsoft Fabric?
 
-In Microsoft Fabric, a materialized lake view persists and refreshes automatically. You define it in Spark SQL or PySpark. It simplifies multistage Lakehouse transformations - typically the bronze-to-silver-to-gold medallion architecture - by expressing them as declarative statements rather than custom Spark jobs. After you materialize an MLV, it acts like a standard Lakehouse table in terms of storage, access patterns, and security. You can query it through any Fabric engine with the same permissions and governance model. Fabric tracks dependencies between MLVs, orchestrates refreshes in the correct order, and enforces data quality constraints at every stage. This feature enables data engineers to build reliable, maintainable pipelines with less code and operational overhead.
+In Microsoft Fabric, a materialized lake view persists and refreshes automatically. You define it in Spark SQL or PySpark. It simplifies multistage lakehouse transformations - typically the bronze-to-silver-to-gold medallion architecture - by expressing them as declarative statements rather than custom Spark jobs. After you materialize an MLV, it acts like a standard lakehouse table in terms of storage, access patterns, and security. You can query it through any Fabric engine with the same permissions and governance model. Fabric tracks dependencies between MLVs, orchestrates refreshes in the correct order, and enforces data quality constraints at every stage. This feature enables data engineers to build reliable, maintainable pipelines with less code and operational overhead.
 
 ## When to use materialized lake views
 
@@ -28,12 +28,9 @@ Materialized lake views aren't the right choice for every scenario. Consider alt
 - **Non-SQL logic** such as ML inference, API calls, or complex Python processing - use Spark notebooks instead
 - **High-frequency streaming data** that requires subsecond updates - consider [Real-Time Intelligence](../../real-time-intelligence/overview.md) instead
 
-> [!NOTE]
-> This feature is currently unavailable in the South Central US region.
-
 ## Get started with materialized lake views
 
-To create a materialized lake view in Microsoft Fabric, see [Get started with materialized lake views](get-started-with-materialized-lake-views.md). For a complete walkthrough that builds a medallion architecture, see [Tutorial: Build a medallion architecture with materialized lake views](tutorial.md).
+To create a materialized lake view in Fabric, see [Get started with materialized lake views](get-started-with-materialized-lake-views.md). For a complete walkthrough that builds a medallion architecture, see [Tutorial: Build a medallion architecture with materialized lake views](tutorial.md).
 
 ## How do materialized lake views work?
 
@@ -58,6 +55,37 @@ Materialized lake views support two authoring approaches:
 
   > [!NOTE]
   > PySpark-authored views currently perform full refresh only.
+
+## Ingest OneLake files directly into a materialized lake view
+
+A materialized lake view can ingest raw files directly from OneLake into a managed Delta table, without an intermediate `COPY`, pipeline, or notebook load step. This capability makes a file-backed materialized lake view a natural **bronze** layer for a medallion architecture. Point the file-backed materialized lake view at a physical OneLake folder or a OneLake folder shortcut, and downstream silver and gold materialized lake views can build on it with the same lineage, scheduling, and data quality that table-based materialized lake views already use.
+
+To create a file-backed materialized lake view, use the `USING OneLake_Files` clause instead of an `AS SELECT` query, and describe the source with `OPTIONS`:
+
+```sql
+CREATE MATERIALIZED LAKE VIEW bronze.raw_orders
+USING OneLake_Files
+OPTIONS (
+    'format' = 'csv',
+    'path'   = 'abfss://<workspace>@<host>/<lakehouse>/Files/orders/',
+    'header' = 'true'
+)
+TBLPROPERTIES (
+    'schema_mode'  = 'DYNAMIC',
+    'refresh_mode' = 'APPEND_ONLY'
+);
+```
+
+A file-backed materialized lake view has the following characteristics:
+
+- **Supported file formats**: The file-backed materialized lake view supports CSV and Parquet files.
+- **Folder shortcuts as a source**: A OneLake folder shortcut can be the source. Creation includes files available through nested folders. Managed refresh discovers additions at the shortcut root but not additions under nested shortcut folders.
+- **Schema handling**: `DYNAMIC` adds newly discovered columns and supplies `NULL` when a file omits an established column. `FIXED` pins the schema at creation time and rejects schema drift.
+- **File lineage**: Each row carries a `__filepath__` column that records the source file it came from.
+- **Medallion-ready**: Reference the file-backed materialized lake view from downstream silver and gold materialized lake views so that a change at the source flows through the whole pipeline.
+- **Run monitoring**: Each managed run reports the number of files processed and rows added, so you can verify that Fabric materialized the new source files.
+
+For the full file-ingestion syntax and options, see [Spark SQL reference for materialized lake views](create-materialized-lake-view.md). To trace files through the pipeline, see [Manage Fabric materialized lake views lineage](view-lineage.md).
 
 ## Key capabilities
 

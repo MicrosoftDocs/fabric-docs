@@ -17,7 +17,7 @@ As Delta tables grow, write activity changes the physical layout of the table. R
 
 ## Use OPTIMIZE for bin compaction
 
-Use `OPTIMIZE` when your Delta table has accumulated many small files and you want to consolidate them into fewer, larger files. This operation improves read performance by reducing file-management overhead and making scans more efficient. `OPTIMIZE` also supports other arguments and features such as `VORDER`. For full syntax, options, and examples, see [Table compaction](table-compaction.md) and [V-Order](delta-optimization-and-v-order.md).
+Use `OPTIMIZE` when your Delta table has accumulated many small files and you want to consolidate them into fewer, larger files. This operation improves read performance by reducing file-management overhead and making scans more efficient. `OPTIMIZE` also supports other arguments and features such as `VORDER`. For full syntax, options, and examples, see [Table compaction](table-compaction.md) and [V-order](delta-optimization-and-v-order.md).
 
 # [Spark SQL](#tab/sparksql)
 
@@ -113,7 +113,7 @@ Delta Lake also supports automatic compaction after writes so tables can stay he
 
 ## Run maintenance from the lakehouse UI
 
-If you prefer a UI-based workflow, you can run maintenance actions directly from the lakehouse explorer, see [Lakehouse table maintenance](lakehouse-table-maintenance.md).
+If you prefer a UI-based workflow, you can run maintenance actions directly from the Lakehouse explorer, see [Lakehouse table maintenance](lakehouse-table-maintenance.md).
 
 ## Follow a practical maintenance cadence
 
@@ -162,5 +162,5 @@ display(deltaTable.history())
 - [File skipping](delta-lake-file-skipping.md)
 - [Automated statistics for Delta tables](automated-table-statistics.md)
 - [Lakehouse table maintenance](lakehouse-table-maintenance.md)
-- [V-Order](delta-optimization-and-v-order.md)
+- [V-order](delta-optimization-and-v-order.md)
 - [Delta Lake interoperability](../fundamentals/delta-lake-interoperability.md)

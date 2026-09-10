@@ -11,9 +11,9 @@ ai-usage: ai-assisted
 
 # What is Copy job in Data Factory for Microsoft Fabric?
 
-Copy Job is the go-to solution in Microsoft Fabric Data Factory for simplified data movement from many sources to many destinations — no pipelines required. With native support for multiple delivery styles, including bulk copy, incremental copy, and change data capture (CDC) replication, Copy job offers the flexibility to handle a wide range of data movement scenarios — all through an intuitive, easy-to-use experience. Whether you’re new to data integration or just want a faster way to get your data where it needs to go, Copy job offers a flexible and user-friendly solution.
+Copy job is the go-to solution in Microsoft Fabric Data Factory for simplified data movement from many sources to many destinations - no pipelines required. With native support for multiple delivery styles, including bulk copy, incremental copy, and change data capture (CDC) replication, Copy job offers the flexibility to handle a wide range of data movement scenarios - all through an intuitive, easy-to-use experience. Whether you're new to data integration or just want a faster way to get your data where it needs to go, Copy job offers a flexible and user-friendly solution.
 
-## Advantages 
+## Advantages
 
 Some advantages of the Copy job over other data movement methods include:
 
@@ -35,11 +35,11 @@ You can choose how your data is copied from source to destination:
 - **Full copy**: Every time the job runs, it copies all data from your source to your destination. 
 - **Incremental copy**: The first run copies everything, and subsequent runs only move new or changed data since the last run.
 
-### Incremental copy (CDC, Watermark) 
+### Incremental copy (CDC, Watermark)
 
 In incremental copy, every run after the initial full copy (called a "subsequent load") transfers only certain changes. Copy job automatically tracks and manages the state of the last successful run, so it knows what data to copy next. Copy job supports watermark-based incremental copy (such as ROWVERSION, datetime, date, string interpreted as datetime, and integer columns) and CDC-based incremental copy when CDC is enabled on the source.
 
-If a copy job fails, you don’t need to worry about data loss. Copy job always resumes from the end of the last successful run. A failure doesn't change the state managed by Copy job. You can also reset incremental copy back to a full copy at any time — either for the entire job or per table.
+If a copy job fails, you don't need to worry about data loss. The copy job always resumes from the end of the last successful run. A failure doesn't change the state managed by the copy job. You can also reset incremental copy back to a full copy at any time - either for the entire job or per table.
 
 #### When to use CDC vs. watermark-based incremental copy
 
@@ -61,7 +61,7 @@ You can copy subsets of data from your tables using database queries, which unlo
 
 This capability supports both full and incremental copies on table subsets based on your custom queries, which lets you flexibly select and filter data before loading. Your data ingestion becomes more efficient, precise, and tailored to your needs.
 
-### Update methods (Append, Overwrite, Merge, SCD Type 2) 
+### Update methods (Append, Overwrite, Merge, SCD Type 2)
 
 You can also decide how data is written to your destination:
 
@@ -76,17 +76,17 @@ See more details for [SCD Type 2 in CDC Copy job](/fabric/data-factory/cdc-copy-
 
 ### Automatic table creation and truncation on destination
 
-Copy job can automatically create tables in the destination if they don’t already exist. If the destination tables are already available, you can simply select them as your target. With flexible column mapping options, you can easily define how to map schemas from the source tables to the destination tables.
+Copy job can automatically create tables in the destination if they don't already exist. If the destination tables are already available, you can simply select them as your target. By using flexible column mapping options, you can easily define how to map schemas from the source tables to the destination tables.  
 
-You can also optionally truncate destination data before the full load, ensuring their source and destination are fully synchronized without duplicates.
+You can also optionally truncate destination data before the full load, ensuring your source and destination are fully synchronized without duplicates.
 
-By default, Copy job does not delete any data in destination. When you enable this option:
+By default, Copy job doesn't delete any data in destination. When you enable this option:
 
 - The first run of incremental copy will truncate all data in the destination before loading the full dataset.
 - Subsequent incremental copies will continue to append or merge data without affecting existing records.
-- If customers later reset incremental copy to full copy, enabling this option will again clear the destination before loading.
+- If you later reset incremental copy to full copy, enabling this option again clears the destination before loading.  
 
-This approach ensures that your destination remains clean, fully synchronized, and free of duplicates, providing a reliable foundation for their data ingestion solution.
+This approach ensures that your destination remains clean, fully synchronized, and free of duplicates, providing a reliable foundation for your data ingestion solution.
 
 [!INCLUDE [copy-job-auto-table-creation-truncate-connectors](includes/copy-job-auto-table-creation-truncate-connectors.md)]
 
@@ -118,7 +118,7 @@ You have full flexibility to decide when a copy job runs — it can **run once**
 
 With support for **multiple schedules** in copy job, you gain even greater control. A single copy job can have multiple schedules—for example, one running daily at 6 AM and another running weekly on Sundays. All schedules can be managed directly within the same copy job, making orchestration simpler, cleaner, and more efficient. 
 
-If you use the copy job activity in a pipeline, you can also take advantage of the pipeline’s orchestration and trigger capabilities. For example, you can use **event triggers** to start a copy job activity when specific events occur, such as new files arriving in a data lake or changes in a database. 
+If you use the copy job activity in a pipeline, you can also take advantage of the pipeline's orchestration and trigger capabilities. For example, you can use **event triggers** to start a copy job activity when specific events occur, such as new files arriving in a data lake or changes in a database. 
 
 See more details for [copy job activity](/fabric/data-factory/copy-job-activity).
 
@@ -130,11 +130,11 @@ You can use Copy job to move data from any source to any destination, whether yo
 See more details to [Secure your data movement with Copy Job and Virtual Network Data Gateway](/fabric/data-factory/copy-job-with-virtual-network-data-gateway).
 
 
-### Operationalization（GIT/CICD, Variable library） 
+### Operationalization (GIT/CICD, Variable library)
 
 You can use source control, continuous integration, continuous deployment, and a collaborative environment to run successful data analytics projects with Copy job.  
 
-Additionally, with Variable library support, you can parameterize connections in Copy Job. This powerful capability streamlines CI/CD by externalizing connection values, enabling you to deploy the same Copy Job across multiple environments while the Variable library injects the correct connection for each stage. 
+Additionally, with Variable library support, you can parameterize connections in Copy job. This powerful capability streamlines CI/CD by externalizing connection values, enabling you to deploy the same Copy job across multiple environments while the Variable library injects the correct connection for each stage. 
 
 See more details in [CI/CD for Copy job](/fabric/data-factory/cicd-copy-job).
 

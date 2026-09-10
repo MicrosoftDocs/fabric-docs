@@ -2,7 +2,7 @@
 title: 'Tutorial: Create, evaluate, and score a fraud detection model'
 description: This tutorial shows the data science workflow for building a model that detects credit card fraud.
 ms.author: lagayhar
-ms.reviewer: ruxu
+ms.reviewer: scottpolly
 ms.topic: tutorial
 ms.custom: sfi-image-nochange
 ms.date: 02/28/2026
@@ -11,7 +11,7 @@ ms.date: 02/28/2026
 
 # Tutorial: Create, evaluate, and score a fraud detection model
 
-This tutorial presents an end-to-end example of a [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] workflow, in [!INCLUDE [product-name](../includes/product-name.md)]. The scenario builds a fraud detection model with machine learning algorithms trained on historical data. It then uses the model to detect future fraudulent transactions.
+This tutorial presents an end-to-end example of a [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] workflow. The scenario builds a fraud detection model by using machine learning algorithms trained on historical data. It then uses the model to detect future fraudulent transactions.
 
 This tutorial covers these steps:
 
@@ -132,7 +132,7 @@ if not IS_CUSTOM_DATA:
 
 The experiment tracking process saves all relevant experiment-related information for every experiment that you run. Sometimes, you can't obtain better results when you run a specific experiment. In those cases, stop the experiment and try a new one.
 
-The Synapse Data Science experience in [!INCLUDE [product-name](../includes/product-name.md)] includes an autologging feature. This feature reduces the amount of code needed to automatically log the parameters, metrics, and items of a machine learning model during training. The feature extends the MLflow autologging capabilities. It has deep integration in the Data Science experience.
+[!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] includes an autologging feature. This feature reduces the amount of code needed to automatically log the parameters, metrics, and items of a machine learning model during training. The feature extends the MLflow autologging capabilities. It has deep integration in the Data Science workload.
 
 By using autologging, you can easily track and compare the performance of different models and experiments, without the need for manual tracking. For more information, see [Autologging in Microsoft Fabric](https://aka.ms/fabric-autologging).
 

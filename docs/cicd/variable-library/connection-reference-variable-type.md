@@ -18,7 +18,7 @@ A connection reference variable is a workspace variable that stores the ID of an
 ## How to use
 A connection reference variable can be used just like other variables in a variable library.
 
-1. Sign in to Microsoft Fabric
+1. Sign in to Fabric.
 2. Navigate to your workspace and variable library
 3. At the top, select **+ New Variable**
 4. Provide a name for the variable, select **connection reference** for the type, and then click the **...** to select a value
@@ -37,7 +37,7 @@ A connection reference variable's value is a static pointer to a connection obje
 
  ConnectionID = aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb
 
- This ID uniquely identifies the referenced connection. The static reference doesn't automatically adjust to different deployment environments. It requires the target connection to exist at the time of selection and remains pointed to that specific connection unless manually changed.
+ This ID uniquely identifies the referenced connection. The static reference doesn't automatically adjust to different pipeline stages. It requires the target connection to exist at the time of selection and remains pointed to that specific connection unless manually changed.
 
 Keep in mind the following when working with connection references:
 
@@ -49,7 +49,7 @@ Keep in mind the following when working with connection references:
 - Only connections with at least read permissions are available for selection.
 
 ## Representation in Git and APIs
-A Connection reference is an advanced variable type whose value schema stores the connectionId (and the platform resolves/display metadata). The authoring payload includes:
+A connection reference is an advanced variable type whose value schema stores the connectionId (and the platform resolves/display metadata). The authoring payload includes:
 
 - name: the displayName of the connection reference variable
 - note: optional, can be used for description or other notes.
@@ -97,7 +97,7 @@ print(connection_id)
 ```
 This code does the following:
 
-- Resolves a Connection Reference variable from a Fabric Variable Library
+- Resolves a connection reference variable from a variable library in Fabric.
 - Retrieves the connection metadata object
 - Extracts the connectionId
 - Prints the ID so it can be used in code or API calls.
@@ -105,7 +105,7 @@ This code does the following:
 ## Limitations
 The following limitations apply to connection reference variables:
 
-- Built-in Connections in Notebooks are not supported since the connection_id for the Notebook connection isn't the same one.
+- Notebooks don't support built-in connections because the `connection_id` for the notebook connection isn't the same one.
 
 
 ## Related content

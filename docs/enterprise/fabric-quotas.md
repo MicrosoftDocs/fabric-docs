@@ -49,7 +49,7 @@ You need three parameters to make the call:
 
 * `location` - The name of the Azure region. If you don't know the name of your region, you can use the [Region - List By Service](/rest/api/apimanagement/region/list-by-service) API to find it.
 
-* `subscriptionId` - The ID of the target subscription. The value must be an UUID.
+* `subscriptionId` - The ID of the target subscription. The value must be a UUID.
 
 * `api-version` - The API version to use for this operation. The only supported version is `2023-11-01`
 
@@ -119,7 +119,7 @@ You need four parameters to make the call:
 
 * `resourceGroupName`- The name of the resource group. The name is case insensitive.
 
-* `subscriptionId` - The ID of the target subscription. The value must be an UUID.
+* `subscriptionId` - The ID of the target subscription. The value must be a UUID.
 
 * `api-version` - The API version to use for this operation. The only supported version is `2023-11-01`
 
@@ -151,4 +151,4 @@ To create a support request for an increase to your quota, follow these steps:
 
 * [Microsoft Fabric licenses](licenses.md)
 
-* [Buy a Microsoft Fabric subscription](buy-subscription.md)
+* [Buy Fabric capacity in Azure](buy-capacity.md)

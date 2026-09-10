@@ -10,11 +10,11 @@ ms.date: 06/19/2025
 
 **Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
 
-When you create Microsoft Fabric from the Azure portal, it's automatically added to the Fabric tenant that's associated with the subscription used to create the capacity. With the simplified setup in Microsoft Fabric, there's no need to link the capacity to the Fabric tenant. Because the newly created capacity will be listed in the admin settings pane. This configuration provides a faster experience for admins to start setting up the capacity for their enterprise analytics teams.
+When you create Fabric from the Azure portal, it's automatically added to the Fabric tenant that's associated with the subscription used to create the capacity. With the simplified setup in Fabric, there's no need to link the capacity to the Fabric tenant. Because the newly created capacity will be listed in the admin settings pane. This configuration provides a faster experience for admins to start setting up the capacity for their enterprise analytics teams.
 
 To make changes to the Data Engineering/Science settings in a capacity, you must have admin role for that capacity. To learn more about the roles that you can assign to users in a capacity, see [Roles in capacities](../admin/roles.md).
 
-Use the following steps to manage the Data Engineering/Science settings for Microsoft Fabric capacity:
+Use the following steps to manage the Data Engineering/Science settings for Fabric capacity:
 
 1. Select the **Settings** option to open the setting pane for your Fabric account. Select **Admin portal** under Governance and insights section.
 
@@ -44,7 +44,7 @@ This feature provides centralized governance for compute usage, ensuring tighter
 
 ## Admin control: Job-level bursting switch
 
-Microsoft Fabric supports **3× bursting** for Spark VCores, allowing a single job to temporarily use more compute cores than the base capacity provides. This improves job performance during bursts of activity by allowing full capacity utilization.
+Fabric supports **3× bursting** for Spark VCores, allowing a single job to temporarily use more compute cores than the base capacity provides. This improves job performance during bursts of activity by allowing full capacity utilization.
 
 As a capacity admin, you can now control this behavior by using the **"Disable job-level bursting"** switch available in the Admin Portal:
 
@@ -102,7 +102,7 @@ As a capacity admin, you can now control this behavior by using the **"Disable j
    - The **Pool Selection** dropdown in workspace settings
    - The **Environment Compute Settings** page in workspaces
 
-   :::image type="content" source="media\capacity-settings-management\capacity-pools-workspace-pool-options.png" alt-text="Screenshot showing the capacity pools listed in Workspace settings." lightbox="media\capacity-settings-management\capacity-pools-workspace-pool-options.png":::
+   :::image type="content" source="media\capacity-settings-management\capacity-pools-workspace-pool-options.png" alt-text="Screenshot showing the capacity pools listed in workspace settings." lightbox="media\capacity-settings-management\capacity-pools-workspace-pool-options.png":::
 
    :::image type="content" source="media\capacity-settings-management\capacity-pools-environment-compute-options.png" alt-text="Screenshot showing the capacity pools listed in Environment settings." lightbox="media\capacity-settings-management\capacity-pools-environment-compute-options.png":::
 

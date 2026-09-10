@@ -40,7 +40,7 @@ Whether you're troubleshooting performance issues or conducting custom diagnosti
 - Spark event log copy: Export event logs to OneLake or Azure Data Storage.
 
 
-## Sample Notebook
+## Sample notebook
 
 You can use the provided sample notebook [(sample ipynb file)](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-engineering/SparkMonitoring/JobInsightSample/JobInsight_SampleNotebook.ipynb) to get started. The notebook includes:
 

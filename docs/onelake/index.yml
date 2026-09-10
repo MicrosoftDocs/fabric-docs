@@ -32,6 +32,10 @@ landingContent:
             url: ../governance/onelake-catalog-overview.md
           - text: OneLake access and APIs
             url: onelake-access-api.md
+      - linkListType: architecture
+        links:
+          - text: OneLake patterns and foundational capabilities
+            url: architecture-patterns.md
       - linkListType: deploy
         links:
           - text: Implement medallion lakehouse architecture

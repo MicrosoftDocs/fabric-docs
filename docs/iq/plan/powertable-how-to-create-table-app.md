@@ -18,8 +18,6 @@ To create a table app using PowerTable, use one of these four approaches:
 
 In this article, you learn how to create a table app by importing an Excel or CSV file.
 
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
-
 ## Prerequisites
 
 Before you begin, make sure that you have the following prerequisites in place:

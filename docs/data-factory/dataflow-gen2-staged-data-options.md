@@ -39,6 +39,8 @@ When this option is on, Dataflow Gen2 uses an optimized data movement path for q
 
 In the default path, data flows from the staging Warehouse to the Lakehouse with extra serialization and network hops. The optimized path reduces those hops, which can substantially shorten refresh time for staging-heavy dataflows that land in a Lakehouse.
 
+For a measured example of the refresh-time and CU-consumption impact of this option, see [Scenario 3: Optimized copy to Lakehouse](dataflow-gen2-cost-performance-benchmarks.md#scenario-3-optimized-copy-to-lakehouse) in the Dataflow Gen2 cost and performance benchmarks.
+
 ### When to use it
 
 Turn this on when you stage queries that ultimately land in a Fabric Lakehouse data destination. Staging is most useful when:
@@ -82,6 +84,7 @@ For details on the destination-level option, see [Enable V-Order compression on 
 
 ## Related content
 
+- [Dataflow Gen2 cost and performance benchmarks](dataflow-gen2-cost-performance-benchmarks.md)
 - [Best practices for getting the best performance with Dataflow Gen2](dataflow-gen2-performance-best-practices.md)
 - [Dataflow Gen2 data destinations and managed settings](dataflow-gen2-data-destinations-and-managed-settings.md)
 - [Delta Lake table optimization and V-Order](../data-engineering/delta-optimization-and-v-order.md)

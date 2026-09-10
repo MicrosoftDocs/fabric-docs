@@ -124,7 +124,7 @@ Set via `spark.fabric.resourceProfile.readHeavyForPBIAutoUpdate`:
 }
 ```
 
-Use this profile when your data is primarily consumed by Power BI. V-Order is enabled for optimal DirectLake performance, and a larger bin size produces fewer, larger files suited to analytical reads.
+Use this profile when your data is primarily consumed by Power BI. V-order is enabled for optimal Direct Lake performance, and a larger bin size produces fewer, larger files suited to analytical reads.
 
 #### Write-heavy workloads
 
@@ -138,7 +138,7 @@ Set via `spark.fabric.resourceProfile.writeHeavyAutoUpdate`:
 }
 ```
 
-Use this profile when your workload is write-intensive (for example, high-volume ingestion or ETL). V-Order is disabled to reduce write overhead, and optimized write with partitioning is enabled for efficient file layout.
+Use this profile when your workload is write-intensive (for example, high-volume ingestion or ETL). V-order is disabled to reduce write overhead, and optimized write with partitioning is enabled for efficient file layout.
 
 ### How auto-update works
 
@@ -156,8 +156,8 @@ When a resource profile with auto-update is applied:
 | Setting | Applied properties | When to use |
 |---|---|---|
 | `spark.fabric.resourceProfile.readHeavyForSparkAutoUpdate` | Optimize write enabled, partitioned write, 128 MB bin size | Read-heavy Spark analytics |
-| `spark.fabric.resourceProfile.readHeavyForPBIAutoUpdate` | V-Order enabled, optimize write, 1 GB bin size | Read-heavy Power BI/DirectLake |
-| `spark.fabric.resourceProfile.writeHeavyAutoUpdate` | V-Order disabled, optimize write, 128 MB bin size, partitioned | Write-heavy ingestion and ETL |
+| `spark.fabric.resourceProfile.readHeavyForPBIAutoUpdate` | V-order enabled, optimize write, 1 GB bin size | Read-heavy Power BI/DirectLake |
+| `spark.fabric.resourceProfile.writeHeavyAutoUpdate` | V-order disabled, optimize write, 128 MB bin size, partitioned | Write-heavy ingestion and ETL |
 
 ## Related content
 

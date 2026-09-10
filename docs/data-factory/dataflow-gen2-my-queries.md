@@ -37,7 +37,7 @@ After the query is saved, a second notification shows the query name used in My 
 
 ## Import a query from My queries
 
-1. Open the [**Recents & My Queries** module in the modern **Get data** experience](get-data-dataflow-gen2.md#recent-data-preview).
+1. Open the [**Recents & My Queries** module in the modern **Get data** experience](get-data-dataflow-gen2.md#use-recent-data-in-dataflow-gen2).
 1. Select the **My queries** filter pill.
 
    ![Screenshot of the My queries filter in the Dataflow Gen2 modern Get data experience.](media/dataflow-gen2-my-queries/my-queries-filter.png)

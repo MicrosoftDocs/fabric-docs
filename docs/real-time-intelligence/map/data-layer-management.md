@@ -69,7 +69,6 @@ Delete a data layer to permanently remove it from the map. The following steps s
   :::image type="content" source="media/layers/data-layer-management/data-layer-delete.png" lightbox="media/layers/data-layer-management/data-layer-delete.png" alt-text="Screenshot of delete data layer.":::
 
 1. The layer is removed from both the map and the **Data layers** list.
-  :::image type="content" source="media/layers/data-layer-management/data-layer-after-delete.png" lightbox="media/layers/data-layer-management/data-layer-after-delete.png" alt-text="Screenshot showing results after deleting the data layer.":::
 
 ## Next steps
 

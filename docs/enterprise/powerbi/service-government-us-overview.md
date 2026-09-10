@@ -84,7 +84,7 @@ Authentication, identity, and administration for Power BI depend on connectivity
 | OAuth 2.0 connections | **All**: preview.powerbi.com |
 | Service telemetry | **All**: dc.services.visualstudio.us |
 | Informational messages (optional) | **All**: arc.msn.com |
-| SharePoint web part integration with Power BI | **All**: api.powerbi.com |
+| SharePoint web part integration with Power BI | **GCC**: api.powerbigov.us<br>**GCC High**: api.high.powerbigov.us<br>**DoD**: api.mil.powerbigov.us |
 
 ## Connect government and global Azure cloud services
 

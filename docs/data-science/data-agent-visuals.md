@@ -14,7 +14,7 @@ ai-usage: ai-assisted
 
 # Get visual responses from a Fabric data agent (preview)
 
-The Fabric data agent can return interactive visual responses, such as charts and graphs, in addition to text and table-based answers. Visual responses help you quickly identify trends, patterns, and outliers in your data without leaving the conversational interface.
+The Fabric data agent can return interactive visual responses, such as charts and graphs, in addition to text and table-based answers. Visual responses help you quickly identify trends, patterns, and outliers in your data without leaving the conversational interface. These visuals are generated using Fabric Visuals, the same visualization foundation used in Fabric apps and increasingly across the Fabric platform. As a result, the charts you receive in a data agent conversation are built on the same technology that powers visuals across other Fabric experiences, helping deliver a more consistent and familiar experience.
 
 [!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
@@ -59,12 +59,12 @@ The following visual types are currently supported:
    - Stacked area chart
 
 ## Customization
-Agent instructions can be used to guide the agent's use of visuals. For example, you can instruct the agent to always include a visual for certain types of questions, or to prefer specific chart types for certain data patterns. For more information on agent instructions, see [Best practices for configuring data agents](data-agent-configuration-best-practices.md).
+Use agent instructions to guide the agent's use of visuals. For example, you can instruct the agent to always include a visual for certain types of questions, or to prefer specific chart types for certain data patterns. For more information, see [Data agent instructions](data-agent-configurations.md#data-agent-instructions).
 
 The colors, font sizes, title, and labels are preset and currently can't be customized.
 
 > [!TIP]
-> Visuals are enabled by default. To avoid generating visuals or specify the behavior, you can use agent instructions to instruct the agent to avoid using visuals. For more information on agent instructions, see [Best practices for configuring data agents](data-agent-configuration-best-practices.md).
+> Visuals are enabled by default. To avoid generating visuals or specify the behavior, use agent instructions to instruct the agent to avoid using visuals. For more information, see [Data agent instructions](data-agent-configurations.md#data-agent-instructions).
 
 ## Limitations
 
@@ -81,4 +81,4 @@ The colors, font sizes, title, and labels are preset and currently can't be cust
 - [Data agent configurations](data-agent-configurations.md)
 - [Consume a data agent from Microsoft 365 Copilot](data-agent-microsoft-365-copilot.md)
 - [How to create a Fabric data agent](how-to-create-data-agent.md)
-- [Best practices for configuring data agents](data-agent-configuration-best-practices.md)
+- [Best practices for improving data agent query generation](data-agent-configuration-best-practices.md)

@@ -35,9 +35,9 @@ Notebook execution can be triggered in three ways, each with a different securit
 
 ### Automate execution via APIs
 
-You can also execute notebooks on demand through the [Job Scheduler API](/rest/api/fabric/core/job-scheduler). API-triggered runs support parameterized execution, session configuration (such as compute vCores and Spark settings), environment and runtime selection, and choosing the target Fabric Lakehouse. You can monitor run status and cancel job instances through the same API. Runs return an exit value that external schedulers and Fabric pipelines can read to enable conditional orchestration and downstream signaling.
+You can also execute notebooks on demand through the [Job Scheduler API](/rest/api/fabric/core/job-scheduler). API-triggered runs support parameterized execution, session configuration (such as compute vCores and Spark settings), environment and runtime selection, and choosing the target lakehouse in Fabric. You can monitor run status and cancel job instances through the same API. Runs return an exit value that external schedulers and Fabric pipelines can read to enable conditional orchestration and downstream signaling.
 
-The Items REST API and the Job Scheduler API both support service principal authentication for secure unattended automation and CI/CD. Note that some downstream services (such as T-SQL endpoints) don't support service principals and require a user principal.
+The Items REST API and the Job Scheduler API both support service principal authentication for secure unattended automation and CI/CD. Note that some downstream services (such as SQL analytics endpoints) don't support service principals and require a user principal.
 
 These execution options provide flexibility for different scenarios, but you must understand which identity runs your notebook. The security context affects data access permissions, API call authorization, and resource availability.
 
@@ -64,7 +64,7 @@ Like other standard Fabric item creation processes, you can easily create a new 
 For step-by-step notebook creation guidance in specific workflows, see:
 
 - [Explore the data in your lakehouse with a notebook](lakehouse-notebook-explore.md#open-or-create-a-notebook-from-a-lakehouse) for creating a notebook from a lakehouse context in the Fabric portal.
-- [Author notebooks in Microsoft Fabric with Visual Studio Code](author-notebook-with-vs-code.md#create-a-notebook) for creating notebooks from VS Code.
+- [Author notebooks in Fabric with Visual Studio Code](author-notebook-with-vs-code.md#create-a-notebook) for creating notebooks from VS Code.
 - [Public APIs for notebooks](/rest/api/fabric/core/items) for creating and managing notebooks through the Items REST API (CRUD operations).
 - [Execute notebooks via Job Scheduler API](/rest/api/fabric/core/job-scheduler) for on-demand notebook execution with parameterization, session configuration, environment and Lakehouse selection, run monitoring, and cancellation.
 
@@ -158,12 +158,7 @@ Environment Resources Folder is a shared repository designed to streamline colla
 - You can also operate on the files/folders same with the Built-in resources folder. 
 - The Environment resource path is automatically mounted to the notebook cluster. You can use the relative path **/env** to access the environment resources.
 
-Fabric Environments support two library publishing modes that affect how libraries are delivered to your notebook sessions:
-
-- **Quick mode** publishes in about 5 seconds and installs libraries when your notebook session starts. Quick mode can override library versions published through Full mode, but only for the current session.
-- **Full mode** creates a stable, reproducible library snapshot. Publishing typically takes 3 to 6 minutes, and session startup adds 1 to 3 minutes for dependency deployment. Using Full mode with a [custom live pool](custom-live-pools-overview.md) can bring session start times back to approximately 5 seconds while maintaining the stable snapshot.
-
-For details on each mode, see [Manage libraries in Fabric environments](environment-manage-library.md#select-publish-mode-for-libraries).
+Fabric environments support two library publishing modes, Quick and Full, that affect how libraries are delivered to your notebook sessions. Quick mode installs libraries at session start for fast iteration, while Full mode creates a stable, reproducible snapshot. For details on each mode, including publish times, supported library sources, and how the modes interact, see [Manage libraries in Fabric environments](environment-manage-library.md#select-publish-mode-for-libraries).
 
 ### Use environment libraries in notebooks
 
@@ -171,7 +166,7 @@ Choose a library publishing mode based on your workflow:
 
 - **Quick mode for iterative development**: Use Quick mode when you're actively experimenting in notebooks and need fast library iteration. Libraries install at session start with minimal publish time.
 - **Full mode for reproducibility**: Use Full mode when you need consistent library versions across collaborators, scheduled runs, or pipeline jobs. The snapshot ensures every session starts with the same dependencies.
-- **Full mode with a custom live pool for fast and stable sessions**: When both fast session startup and reproducibility matter, configure Full mode with a [custom live pool](custom-live-pools-overview.md). This combination achieves approximately 5-second session starts while preserving the stable library snapshot.
+- **Full mode with a custom live pool for fast and stable sessions**: When both fast session startup and reproducibility matter, configure Full mode with a [custom live pool](custom-live-pools-overview.md). This combination gives you fast session starts while preserving the stable library snapshot.
 
 > [!NOTE]
 > Reading/writing with a relative path is not functioning in a [High concurrency session](../data-engineering/configure-high-concurrency-session-notebooks.md).
@@ -202,7 +197,7 @@ When you open a notebook, you enter the coediting mode by default, and every not
 
 ### Use Copilot in notebooks
 
-Copilot is immediately context-aware of the workspace, attached Lakehouse schemas, tables, and files, the notebook's structure, and the current runtime state. You don't need to start a session for Copilot to begin helping you. Copilot supports multi-step, notebook-wide code generation, refactoring, summarization, and validation across entire workflows, so you can work across cells without losing context.
+Copilot is immediately context-aware of the workspace, attached lakehouse schemas, tables, and files, the notebook's structure, and the current runtime state. You don't need to start a session for Copilot to begin helping you. Copilot supports multi-step, notebook-wide code generation, refactoring, summarization, and validation across entire workflows, so you can work across cells without losing context.
 
 ### Performance insights from Copilot
 
@@ -281,10 +276,10 @@ Version history allows you to easily version your live notebook changes. It supp
 
       :::image type="content" source="media\how-to-use-notebook\create-new-version.png" alt-text="Screenshot showing how to create new version." lightbox="media\how-to-use-notebook\create-new-version.png":::
 
-   - System checkpoint: These checkpoints are created automatically every 5 minutes based on editing time interval by Notebook system, ensuring that your work is consistently saved and versioned. You can find the modification records from all the contributors in the system checkpoint timeline list.
+   - System checkpoint: These checkpoints are created automatically every 5 minutes based on editing time interval by notebook system, ensuring that your work is consistently saved and versioned. You can find the modification records from all the contributors in the system checkpoint timeline list.
    :::image type="content" source="media\how-to-use-notebook\expand-system-checkpoint.png" alt-text="Screenshot showing expand checkpoint list." lightbox="media\how-to-use-notebook\expand-system-checkpoint.png":::
 
-1. Multi-Source Checkpointing for Notebook
+1. Multi-Source Checkpointing for notebook
    
    Fabric notebooks seamlessly integrate with Git, deployment pipelines, and Visual Studio Code. Each saved version is automatically captured in the notebook’s version history. Versions may originate from direct edits within the notebook, Git synchronizations, deployment pipeline activities, or publishing via VS Code. The source of each version is clearly labeled in version history to provide full traceability.
  
@@ -319,7 +314,7 @@ When you share a notebook, you assign permissions to users. Based on those permi
 
 ### Permissions and access
 
-Permissions can be set at the workspace or notebook level in Microsoft Fabric. They determine which modes a user can access:
+Permissions can be set at the workspace or notebook level in Fabric. They determine which modes a user can access:
 
 - Permissions limit the set of available modes.
 - They don't automatically select a mode for the user.

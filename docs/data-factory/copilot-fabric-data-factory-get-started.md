@@ -2,7 +2,7 @@
 title: How to Get Started with Microsoft Copilot in Fabric in the Data Factory Workload
 description: Learn how to get started with Microsoft Copilot in Fabric in the Data Factory workload to use natural language for creating data integration solutions.
 ms.reviewer: maghan, sngun
-ms.date: 09/02/2025
+ms.date: 08/31/2026
 ms.topic: how-to
 ms.collection:
   - ce-skilling-ai-copilot
@@ -28,9 +28,10 @@ Before your business can start using Copilot capabilities in Fabric, your admini
 
 To use Copilot in the Data Factory workload, you need:
 
-- A Microsoft Fabric license
-- A workspace with a Fabric capacity
-- Copilot enabled in your tenant
+- A paid Fabric capacity (F2 or higher, or P1 or higher). Copilot isn't supported on trial SKUs.
+- A workspace assigned to that Fabric capacity.
+- Copilot enabled by your Fabric administrator. For more information, see [Enable Copilot in Fabric](../fundamentals/copilot-fabric-overview.md#enable-copilot).
+- If your tenant or capacity is outside the US or EU, your administrator must also enable the tenant setting that allows data to be processed outside your capacity's geographic region.
 
 ## Get started with Copilot for Dataflow Gen2
 
@@ -40,10 +41,11 @@ Use the following steps to get started with Copilot for Dataflow Gen2:
 
 1. On the Home tab in Dataflow Gen2, select the **Copilot** button.
 
-1. In the bottom left of the Copilot pane, select the starter prompt icon, then the **Get data from** option.
+1. In the bottom left of the Copilot pane, select the **Get data from** option.
+
+1. Enter or select the **Send message** icon.
 
 1. In the **Get data** window, search for OData and select the **OData** connector.
-
 1. In the Connect to data source for the OData connector, input the following text into the URL field:
 
    ```http

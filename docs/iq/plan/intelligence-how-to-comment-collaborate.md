@@ -1,5 +1,5 @@
 ---
-title: Comment and Collaborate
+title: Comment and Collaborate in Intelligence Sheet
 description: Learn how to perform collaborative commenting in intelligence sheets with cell, row, and column-level threaded conversations, task assignments, and mentions.
 ms.date: 03/31/2026
 ms.topic: how-to
@@ -7,11 +7,9 @@ ai-usage: ai-assisted
 #customer intent: As a user, I want to understand how to collaborate on reports with comments.
 ---
 
-# Collaborate on reports with comments
+# Collaborate with comments in intelligence sheet
 
 Comments are collaborative threads that facilitate conversations directly from within your report. The intelligence sheet provides a context-aware commenting solution with support for cell, row, and column-level threaded conversations. Key features include `@mentions`, email notifications, and task assignments.
-
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
 ## Add comments
 

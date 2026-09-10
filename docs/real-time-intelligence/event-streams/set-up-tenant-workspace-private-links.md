@@ -90,7 +90,7 @@ Currently, when tenant or workspace level private link is enabled, you can only 
 | **Destinations**      | **Fabric destinations**| Lakehouse               | Yes          |
 |                       |                        | Eventhouse (preprocessing mode)         | Yes          |
 |                       |                        | Eventhouse (direct ingestion mode)     | No           |
-|                       |                        | Data Activator          | No           |
+|                       |                        | Activator               | No           |
 |                       |                        | Custom Endpoint         | No           |
 
 ## Related content

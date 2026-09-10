@@ -36,7 +36,7 @@ Do steps from one of the following sections, which opens a side panel where you 
     - Select the **Set alert** button.
     - Select **ellipsis (...)**, and select **Set alert**.
 
-    :::image type="content" source="./media/set-alerts-fabric-workspace-item-events/fabric-workspace.png" alt-text="Screenshot that shows the Azure events page with Set alert pages for Azure blob storage events." lightbox="./media/set-alerts-fabric-workspace-item-events/fabric-workspace.png":::    
+        :::image type="content" source="./media/set-alerts-fabric-workspace-item-events/fabric-workspace.png" alt-text="Screenshot that shows the Azure events page with Set alert pages for Azure blob storage events." lightbox="./media/set-alerts-fabric-workspace-item-events/fabric-workspace.png":::    
 
 ### Use the event detail page
 

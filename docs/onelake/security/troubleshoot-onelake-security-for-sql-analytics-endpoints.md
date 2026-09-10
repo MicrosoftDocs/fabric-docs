@@ -364,4 +364,4 @@ No. When switching to user identity mode, existing SQL roles are deleted and can
 
 - [OneLake security for SQL analytics endpoints](./sql-analytics-endpoint-onelake-security.md)
 - [Best practices to secure data in OneLake](./best-practices-secure-data-in-onelake.md)
-- [OneLake security access control model](./data-access-control-model.md)
+- [How OneLake security controls data access](./data-access-control-model.md)

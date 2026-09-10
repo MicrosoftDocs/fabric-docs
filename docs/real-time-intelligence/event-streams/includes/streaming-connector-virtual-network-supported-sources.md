@@ -1,8 +1,8 @@
 ---
 title: Streaming Connector virtual network and on-premises Supported Sources
 description: This file has the list of sources supported by Streaming Connector virtual network and on-premises.
-ms.author: xujiang1
-author: xujxu
+ms.author: spelluru
+author: spelluru
 ms.topic: include
 ms.service: fabric
 ms.subservice: rti-eventstream

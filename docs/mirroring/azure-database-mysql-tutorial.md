@@ -16,6 +16,8 @@ In this section, you learn how to create a mirrored Azure Database for MySQL, wh
 
 - Create or use an existing Azure Database for MySQL.
   - If you don't have an Azure Database for MySQL, [create a new server](/azure/mysql/flexible-server/quickstart-create-server-portal).
+>[!NOTE]
+> Fabric Mirroring supports Azure Database for MySQL version 8.0 only. MySQL 8.4 isn't supported at this time.
   - As a tutorial, use a copy of one of your existing databases or any existing test or development database that you can recover quickly from a backup. If you want to use a database from an existing backup, see [Restore a database from a backup in Azure Database for MySQL](/azure/mysql/flexible-server/how-to-restore-server-portal).
 - An existing capacity for Fabric. If you don't have one, [start a Fabric trial](../fundamentals/fabric-trial.md).
 - The Fabric capacity must be active and running. A paused or deleted capacity also stops Mirroring and no data is replicated.
@@ -23,7 +25,8 @@ In this section, you learn how to create a mirrored Azure Database for MySQL, wh
   - [Service principals can use Fabric APIs](../admin/service-admin-portal-developer.md#service-principals-can-use-fabric-apis)
   - [Users can access data stored in OneLake with apps external to Fabric](../admin/tenant-settings-index.md#onelake-settings)
 - You need a member or admin role in your workspace when creating a mirrored database from the Fabric portal. During creation, the managed identity of Azure Database for MySQL is automatically granted "Read and write" permission on the mirrored database. Users with the contributor role don't have the Reshare permission necessary to complete this step.
-- If your server isn't publicly accessible and doesn't [allow public access](/azure/mysql/flexible-server/concepts-networking) to connect to it, you can [create a virtual network data gateway](/data-integration/vnet/create-data-gateways) or [set up on-premises data gateway](/data-integration/gateway/service-gateway-onprem) to mirror the data. Make sure the Azure Virtual Network or the gateway machine's network can connect to the Azure Database for MySQL and is allowed by the firewall rule.
+- If your server isn't publicly accessible and doesn't [allow public access](/azure/mysql/flexible-server/concepts-networking) to connect to it, use Private Link/private endpoint connectivity for Fabric Mirroring. Virtual network data gateway and VNET-enabled Azure Database for MySQL servers aren't supported for Fabric Mirroring at this time.
+- High Availability (HA) configuration isn't supported for Fabric Mirroring at this time.
 - Fabric Mirroring isn't supported on a Read Replica, or on a Primary server where a Read Replica exists.
 
 ## Prepare your Azure Database for MySQL
@@ -49,7 +52,7 @@ The following steps guide you through the process of creating the connection to 
    - **Database**: Enter the name of the database to replicate.
    - **Connection**: Select "Create new connection" or reuse an existing connection.
    - **Connection name**: An automatic name is provided. You can change it.
-   - **Data gateway**: Select the default (none) or the name of virtual network data gateway / on-premises data gateway you set up according to your scenario.
+   - **Data gateway**: Select the default (none). Virtual network data gateway and VNET data gateway aren't supported for Azure Database for MySQL mirroring at this time.
    - **Authentication kind**: Basic (MySQL Authentication)
    - Leave **Use encrypted connection** checkbox selected, and **This connection can be used with on-premises data gateway and VNET data gateway** unselected.
 1. Select **Connect**. If all the credentials are correct, the connection is tested and saved. If the credentials aren't correct, the creation fails with errors.

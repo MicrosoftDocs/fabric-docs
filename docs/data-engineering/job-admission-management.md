@@ -12,9 +12,9 @@ ai-usage: ai-assisted
 
 Fabric Spark uses optimistic job admission to decide whether a job can start immediately. The decision is based on the job's minimum core requirement and currently available Spark VCores in the connected Fabric capacity.
 
-This behavior applies to interactive and batch jobs from notebooks, lakehouses, and Spark Job Definitions. Jobs start with their minimum node setting, and can scale toward their configured maximum if capacity remains available.
+This behavior applies to interactive and batch jobs from notebooks, lakehouses, and Spark job definitions. Jobs start with their minimum node setting, and can scale toward their configured maximum if capacity remains available.
 
-For more information, see [Concurrency limits and queueing in Microsoft Fabric Spark](spark-job-concurrency-and-queueing.md).
+For more information, see [Concurrency limits and queueing in Fabric Spark](spark-job-concurrency-and-queueing.md).
 
 ## How optimistic job admission works
 
@@ -59,6 +59,6 @@ When autoscale is enabled, jobs start at their minimum node configuration. Durin
 
 ## Related content
 
-- Get started with [Spark workspace administration settings in Microsoft Fabric](workspace-admin-settings.md).
+- Get started with [Spark workspace administration settings in Fabric](workspace-admin-settings.md).
 - Learn about [Apache Spark compute for Fabric](spark-compute.md) for data engineering and data science.
-- Learn more about [concurrency limits and queueing in Microsoft Fabric Spark](spark-job-concurrency-and-queueing.md).
+- Learn more about [concurrency limits and queueing in Fabric Spark](spark-job-concurrency-and-queueing.md).

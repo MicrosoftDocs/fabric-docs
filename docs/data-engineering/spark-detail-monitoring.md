@@ -43,7 +43,7 @@ In the application monitoring page, click the Properties icon in the top-right c
 
 The **Logs** tab provides access to full logs for Livy, Prelaunch, and Driver processes. 
 - Use the left panel to select the type of logs you want to view. 
-- Search by keyword or filter logs by status, Notebook, or Lakehouse (for high-concurrency sessions). 
+- Search by keyword or filter logs by status, notebook, or lakehouse (for high-concurrency sessions).
 - Click Download log to save logs locally. 
 
 :::image type="content" source="media\spark-detail-monitoring\logs.png" alt-text="Screenshot showing the logs for spark application." lightbox="media\spark-detail-monitoring\logs.png":::
@@ -63,15 +63,15 @@ The Data tab allows you to copy or download input/output file information and vi
 
 ## Item snapshots tab
 
-The **Item snapshots** tab lets you browse items associated with the Spark application, including Notebooks, Spark job definitions, and Pipelines. 
+The **Item snapshots** tab lets you browse items associated with the Spark application, including notebooks, Spark job definitions, and pipelines. 
 
 Snapshots include:
 - Notebook code and parameter values at execution time. 
 - Spark job definition settings and parameters at submission time. 
 
-The Item snapshots tab allows you to browse and view items associated with the Apache Spark application, including Notebooks, Spark job definition, and/or Pipelines. The item snapshots page displays the snapshot of the code and parameter values at the time of execution for Notebooks. It also shows the snapshot of all settings and parameters at the time of submission for Spark job definitions. If the Apache Spark application is triggered by a pipeline, the related item tab also presents the corresponding pipeline and the Spark activity.     
+The item snapshots tab allows you to browse and view items associated with the Apache Spark application, including notebooks, Spark job definition, and/or pipelines. The item snapshots page displays the snapshot of the code and parameter values at the time of execution for notebooks. It also shows the snapshot of all settings and parameters at the time of submission for Spark job definitions. If the Apache Spark application is triggered by a pipeline, the related item tab also presents the corresponding pipeline and the Spark activity.
 
-From the Item snapshots page, you can:
+From the item snapshots page, you can:
 
 - Browse related items in a hierarchical tree. 
 - Use the **More actions** (...) menu for each item. 
@@ -88,6 +88,6 @@ The **Diagnostics** panel provides real-time recommendations and error analysis 
 
 ## Related content
 
-After viewing details of an Apache Spark application, you can also monitor Spark job progress directly beneath the Notebook cell. For more, see:
+After viewing details of an Apache Spark application, you can also monitor Spark job progress directly beneath the notebook cell. For more, see:
 
 - [Notebook contextual monitoring and debugging](spark-monitor-debug.md)

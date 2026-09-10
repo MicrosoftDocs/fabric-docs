@@ -2,18 +2,16 @@
 title: Migrate SQL Server to SQL Database in Microsoft Fabric Using Fabric Migration Assistant
 description: Learn how the Fabric Migration Assistant migrates schema and data from SQL Server–based sources to a SQL database in Microsoft Fabric.
 ms.reviewer: randolphwest, subasak, niball, antho
-ms.date: 04/07/2026
+ms.date: 08/24/2026
 ms.topic: concept-article
 ms.search.form: SQL Database migration assistant
 ---
 
-# Fabric Migration Assistant for SQL database (Preview)
+# Fabric Migration Assistant for SQL database 
 
 **Applies to**: [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 
 The Fabric Migration Assistant for SQL database is a Fabric guided migration experience that helps you move databases from an on-premises SQL Server instance to a SQL database in Microsoft Fabric.
-
-[!INCLUDE [feature-preview](../../includes/feature-preview-note.md)]
 
 Currently, the Migration Assistant imports schema metadata from a DACPAC file generated from the source database, analyzes compatibility with SQL database in Fabric, and guides you through supported fixes before copying data into the target database. For step-by-step migration instructions, see [Migrate to SQL database in Fabric with the Migration Assistant by using DACPAC](migrate-with-migration-assistant-using-dacpac.md).
 
@@ -34,11 +32,12 @@ Currently, the Migration Assistant for SQL database can import the schema from a
 
 Migration using the Fabric Migration Assistant follows a guided, multistep workflow.
 
-1. Copy schema - Import schema metadata from the source database by using a DACPAC file.
-1. Fix script errors - Review schema objects that failed compatibility checks and apply supported fixes.
-1. Prepare for copy - Prepare the target database for data movement to reduce copy failures and improve performance.
-1. Copy data - Use a Fabric Data Factory copy job to move data from the source SQL Server database.
-1. Finalize copy - Re-enable constraints, triggers, and indexes to bring the database to its final state.
+1. **Copy schema** - Import schema metadata from the source database by using a DACPAC file.
+1. **Validate schema** (optional) - Validate the uploaded DACPAC without creating a new database. This step helps you identify objects that are expected to migrate, require updates, or aren't expected to migrate.
+1. **Fix script errors** - Review schema objects that failed compatibility checks and apply supported fixes.
+1. **Prepare for copy** - Prepare the target database for data movement to reduce copy failures and improve performance.
+1. **Copy data** - Use a Fabric Data Factory copy job to move data from the source SQL Server database.
+1. **Finalize copy** - Re-enable constraints, triggers, and indexes to bring the database to its final state.
 
 ## Schema compatibility and fixes
 
@@ -61,7 +60,6 @@ When you migrate data from an on-premises SQL Server instance to a SQL database 
 
 - The maximum supported size for a DACPAC file upload is 20 MB.
 - Only on-premises data gateways are supported. Virtual network data gateways aren't supported.
-- Private link isn't supported.
 
 ## Troubleshooting
 

@@ -26,15 +26,15 @@ For HMS considerations, refer to [differences between Azure Synapse Spark and Fa
 
 Follow these key steps for migration:
 * Step 1: Export metadata from source HMS
-* Step 2: Import metadata into Fabric lakehouse
+* Step 2: Import metadata into lakehouse in Fabric
 * Post-migration steps: Validate content
 
 > [!NOTE]
-> Scripts only copy Spark catalog objects to Fabric lakehouse. Assumption is that the data is already copied (for example, from warehouse location to ADLS Gen2) or available for managed and external tables (for example, via shortcuts—preferred) into the Fabric lakehouse. 
+> Scripts only copy Spark catalog objects to the lakehouse in Fabric. Assumption is that the data is already copied (for example, from warehouse location to ADLS Gen2) or available for managed and external tables (for example, via shortcuts—preferred) into the lakehouse in Fabric.
 
 ### Step 1: Export metadata from source HMS
 
-The focus of Step 1 is on exporting the metadata from source HMS to the Files section of your Fabric lakehouse. This process is as follows:
+The focus of Step 1 is on exporting the metadata from source HMS to the Files section of your lakehouse in Fabric. This process is as follows:
 
 * **1.1) Import HMS metadata export notebook** into your Azure Synapse workspace. [This notebook](https://github.com/microsoft/fabric-migration/tree/main/data-engineering/spark-catalog/hms) queries and exports HMS metadata of databases, tables, and partitions to an intermediate directory in OneLake (functions not included yet). Spark internal catalog API is used in this script to read catalog objects.
   
@@ -61,9 +61,9 @@ The focus of Step 1 is on exporting the metadata from source HMS to the Files se
 
   :::image type="content" source="media\migrate-synapse\migrate-hms-metadata-export-api.png" alt-text="Screenshot showing HMS export in OneLake." lightbox="media/migrate-synapse/migrate-hms-metadata-export-api.png":::
 
-### Step 2: Import metadata into Fabric lakehouse
+### Step 2: Import metadata into lakehouse in Fabric
 
-Step 2 is when the actual metadata is imported from intermediate storage into the Fabric lakehouse. The output of this step is to have all HMS metadata (databases, tables, and partitions) migrated. This process is as follows:
+Step 2 is when the actual metadata is imported from intermediate storage into the lakehouse in Fabric. The output of this step is to have all HMS metadata (databases, tables, and partitions) migrated. This process is as follows:
 
 * **2.1) Create a shortcut within the “Files” section** of the lakehouse. This shortcut needs to point to the source Spark warehouse directory and is used later to do the replacement for Spark managed tables. See shortcut examples pointing to Spark warehouse directory:
 
@@ -138,7 +138,7 @@ Alternatively, all imported tables are visible within the Lakehouse explorer UI 
 ### Other considerations
 
 -	Scalability: The solution here's using internal Spark catalog API to do import/export, but it isn't connecting directly to HMS to get catalog objects, so the solution couldn't scale well if the catalog is large. You would need to change the export logic using HMS DB.
--	Data accuracy: There's no isolation guarantee, which means that if the Spark compute engine is doing concurrent modifications to the metastore while the migration notebook is running, inconsistent data can be introduced in Fabric lakehouse.
+-	Data accuracy: There's no isolation guarantee, which means that if the Spark compute engine is doing concurrent modifications to the metastore while the migration notebook is running, inconsistent data can be introduced in lakehouse in Fabric.
 
 ## Related content
 

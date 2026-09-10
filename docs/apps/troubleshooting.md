@@ -3,7 +3,7 @@ title: Troubleshoot Fabric Apps
 description: Common issues and solutions for Microsoft Fabric Apps, including deployment failures, authentication problems, database errors, and CLI issues.
 ms.reviewer: mksuni
 ms.topic: troubleshooting
-ms.date: 06/02/2026
+ms.date: 08/18/2026
 ai-usage: ai-generated
 ---
 
@@ -27,23 +27,6 @@ Reauthenticate and retry the deployment:
 npx rayfin login
 npx rayfin up
 ```
-
-### Database apply reports destructive changes
-
-**Symptom:** Running `npx rayfin up db apply` blocks with a warning about data loss.
-
-**Cause:** The CLI detected schema changes that could delete data (dropping columns, renaming tables).
-
-**Solution:**
-
-Review the listed operations carefully. If you accept the data loss, use `--force`:
-
-```bash
-npx rayfin up db apply --force
-```
-
-> [!CAUTION]
-> Using `--force` can cause permanent data loss. Verify the operations before proceeding.
 
 ### Static deploy exceeds size limit
 
@@ -189,7 +172,7 @@ npm install
 npx rayfin --version
 ```
 
-### CLI global vs local version mismatch 
+### CLI global and local version mismatch
 
 **Symptom:** CLI commands fail with unexpected errors across projects.
 
@@ -234,6 +217,39 @@ services:
 ```
 
 ## Database issues
+
+### Database schema apply fails
+
+**Symptom:** Running `npx rayfin up db apply` or `npx rayfin up db apply --force` fails.
+
+**Cause:** The schema in the remote database and the schema defined in the app code are out of sync. The app code is the source of truth for a Fabric app.
+
+**Don't modify** the remote database schema through the Fabric portal, SQL Server Management Studio (SSMS), the SQL Server extension for Visual Studio Code, or other SQL tools. The following changes to columns in a data entity aren't supported:
+
+- Renaming a column.
+- Changing a column's data type.
+- Removing a column.
+
+Adding a column is supported. Removing or altering an existing column can break the app and its deployment to Fabric.
+
+**Solution:**
+
+1. Revert any manual changes to the remote database schema so that it matches the schema in the app code.
+1. If a coding agent made an unsupported schema change in the app code, instruct the agent to revert that change.
+1. Run the schema apply command again:
+
+   ```bash
+   npx rayfin up db apply
+   ```
+
+   For a column rename, `--force` might allow the schema update to complete:
+
+   ```bash
+   npx rayfin up db apply --force
+   ```
+
+   > [!CAUTION]
+   > Using `--force` can cause permanent data loss. Review the proposed operations and confirm that you accept the data-loss risk before proceeding.
 
 ### Connection refused
 

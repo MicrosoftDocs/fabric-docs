@@ -7,7 +7,7 @@ ms.date: 02/21/2026
 ai-usage: ai-assisted
 ---
 
-# Lakehouse tutorial: Create a semantic model and build a report
+# Lakehouse tutorial: Create a semantic model and create a report
 
 In this section of the tutorial, you create a semantic model from your lakehouse data and define the relationships between fact and dimension tables. With the data model in place, you can build Power BI reports.
 
@@ -103,11 +103,11 @@ To create reports that combine data from multiple tables, you define relationshi
 
    :::image type="content" source="media\tutorial-lakehouse-build-report\new-report-relationships.png" alt-text="Screenshot of a New report screen showing multiple table relationships." lightbox="media\tutorial-lakehouse-build-report\new-report-relationships.png":::
 
-## Build a report
+## Create a report
 
 With the semantic model and relationships in place, your data model is ready for reporting. From the semantic model, select **New report** in the ribbon to open the Power BI report canvas where you can create visualizations using your data.
 
-To learn more about creating reports, see [Create reports on semantic models in Microsoft Fabric](../data-warehouse/create-reports.md).
+To learn more about creating reports, see [Create reports on semantic models in Fabric](../data-warehouse/create-reports.md).
 
 ## Next step
 

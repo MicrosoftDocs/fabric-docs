@@ -23,7 +23,7 @@ User data functions support two types of libraries:
 
 To add a public library from PyPI:
 
-1. Sign in to [Microsoft Fabric](https://app.fabric.microsoft.com).
+1. Sign in to [Fabric](https://app.fabric.microsoft.com).
 
 1. Open the user data functions item you want to update.
 

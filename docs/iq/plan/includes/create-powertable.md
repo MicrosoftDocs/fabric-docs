@@ -15,7 +15,7 @@ ms.date: 06/24/2026
 
     :::image type="content" source="../media/includes/create-new-app.png" alt-text="Screenshot of the Create a New App button." lightbox="../media/includes/create-new-app.png":::
 
-1. **Select a Connection:** Choose a Fabric SQL connection if available. If there are no connections, create one by selecting [**Create Connection**](../planning-how-to-create-database-connection.md).
+1. **Select a Connection:** Choose a Fabric SQL connection if available. If there are no connections, create one by selecting [Create Connection](../planning-how-to-create-database-connection.md).
 
     :::image type="content" source="../media/includes/connect.png" alt-text="Screenshot of selecting the SQL connection.":::
 

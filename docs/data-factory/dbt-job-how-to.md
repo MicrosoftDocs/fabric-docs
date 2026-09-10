@@ -1,7 +1,7 @@
 ---
 title: How to create a new dbt job in Microsoft Fabric (preview)
 description: This article guides you through how to create a dbt job, execute it, and view the results.
-ms.reviewer: akurnala
+ms.reviewer: akurnala, meghasony
 ms.topic: how-to
 ms.date: 11/20/2025
 ms.search.form: dbt-job-tutorials
@@ -35,6 +35,9 @@ Fabric supports the following core dbt commands directly from the dbt job interf
 [!INCLUDE [Supported commands for dbt jobs](includes/dbt-job-supported-commands.md)]
 
 You can also selectively run or exclude specific models by using [selectors](dbt-job-configure.md#advanced-selector-configuration).
+
+> [!NOTE]
+> Running `dbt docs generate` creates documentation artifacts in the `target` folder of the run output in OneLake. Microsoft Fabric generates and stores these artifacts but doesn't currently render documentation within the Fabric experience. To view the generated documentation, download the artifacts and use standard dbt documentation workflows such as `dbt docs serve`. Support for rendering documentation directly within Fabric is planned for a future release.
 
 ## Create a dbt job
 

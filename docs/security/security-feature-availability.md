@@ -24,7 +24,7 @@ The following table shows the support status for each Fabric item. A check mark 
 | Workload | Item type | Workspace private links | Customer managed keys | Outbound access protection |
 |--|--|:--:|:--:|:--:|
 | **Data Engineering** | Lakehouse | ✓ | ✓ | ✓ |
-|  | Lakehouse SQL Endpoint | ✓ | ✓ | ✓ |
+|  | Lakehouse SQL analytics endpoint | ✓ | ✓ | ✓ |
 |  | Notebook | ✓ | ✓ | ✓ |
 |  | Spark Job Definition | ✓ | ✓ | ✓ |
 |  | Environment | ✓ | ✓ | ✓ |
@@ -44,7 +44,7 @@ The following table shows the support status for each Fabric item. A check mark 
 | **Data Science** | ML Model | ✓ | ✓ | ✓ |
 |  | Experiment | ✓ | ✓ | ✓ |
 |  | Data Agent | ✓ | - | Preview |
-| **Data Warehouse** | SQL Endpoint | ✓ | ✓ | ✓ |
+| **Data Warehouse** | SQL analytics endpoint | ✓ | ✓ | ✓ |
 |  | Warehouse | ✓ | ✓ | ✓ |
 |  | Warehouse with EDPE | - | - | - |
 | **Developer Experience** | API for GraphQL | - | ✓ | - |
@@ -55,6 +55,7 @@ The following table shows the support status for each Fabric item. A check mark 
 |  | Share item | - | - | - |
 | **Fabric IQ** | Graph model  | - | - | Preview |
 |  | Graph queryset | - | - | Preview |
+|  | Operations agent | - | - | Preview |
 | **Industry Solutions** | Healthcare data solutions | - | ✓ | - |
 |  | Sustainability Solution | - | ✓ | - |
 |  | Retail Solution | - | ✓ | - |
@@ -96,8 +97,7 @@ The following table shows the support status for each Fabric item. A check mark 
 |  | Anomaly detector  | - | - | - |
 |  | Digital Twin Builder | - | - | - | 
 |  | Event Schema Set  | - | - | - |
-|  | Map | - | - | - |
-|  | Operations Agent | - | - | Preview |
+|  | Map | - | - | Preview |
 
 ## Related links
 

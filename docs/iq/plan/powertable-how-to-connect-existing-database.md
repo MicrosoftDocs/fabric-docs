@@ -12,8 +12,6 @@ Connect your existing database tables to PowerTable to manage both transactiona
 
 The following steps explain the process.
 
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
-
 ## Prerequisites
 
 Before you begin, make sure that you have the following prerequisites in place:

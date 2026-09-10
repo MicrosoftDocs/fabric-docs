@@ -1,25 +1,19 @@
 ---
-title: Prerequisites for Plan (Preview)
-description: This article lists the prerequisites for using plan (preview).
+title: Prerequisites for Planning
+description: This article lists the prerequisites for using planning in Fabric.
 ms.topic: overview
-ms.date: 06/13/2026
+ms.date: 07/28/2026
 ai-usage: ai-assisted
-#customer intent: As a user, I want to know the prerequisites for using Plan.
+#customer intent: As a user, I want to know the prerequisites for using planning.
 ---
 
-# Prerequisites for plan (preview)
+# Prerequisites for planning in Fabric
 
-This article lists all the required prerequisites, tenant settings, and capacity settings that must be configured to use plan (preview).
-
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
+This article lists all the required prerequisites, tenant settings, and capacity settings that must be configured to use planning in Fabric.
 
 ## Tenant settings
 
 [Fabric administrators](../../admin/roles.md) can grant access to these settings in the [admin portal](../../admin/admin-center.md) under [Tenant settings](../../admin/tenant-settings-index.md).
-
-1. Enable **Users can create Plan (preview) items**. This setting is required to create plan (preview) items.
-
-   :::image type="content" source="media/overview-prerequisites/enable-plan.png" alt-text="Screenshot of enabling plan for organizational users." lightbox="media/overview-prerequisites/enable-plan.png":::
 
 1. Under [Integration settings](../../admin/tenant-settings-index.md#integration-settings), enable **Allow XMLA endpoints and Analyze in Excel with on-premises semantic models**.
 
@@ -35,12 +29,12 @@ This article lists all the required prerequisites, tenant settings, and capacity
 
 ## Capacity settings
 
-* Semantic models used in plan must be hosted on supported capacities, such as
+* Semantic models used in planning must be hosted on supported capacities, such as
 
    * **Power BI Premium capacities (P1, P2, and higher)**
    * **Microsoft Fabric capacities (F SKUs)**
 
-* Plan scenarios that rely on XMLA endpoints and embed tokens require supported **Microsoft Fabric capacities (F SKUs)** or **Power BI Premium capacities (P1–P5)**. Power BI Pro and Power BI Premium Per User (PPU) aren't supported for these scenarios. Some lower-capacity SKUs can also have XMLA and memory limitations that prevent supported usage.
+* Planning scenarios that rely on XMLA endpoints and embed tokens require supported **Microsoft Fabric capacities (F SKUs)** or **Power BI Premium capacities (P1–P5)**. Power BI Pro and Power BI Premium Per User (PPU) aren't supported for these scenarios. Some lower-capacity SKUs can also have XMLA and memory limitations that prevent supported usage.
 
 * In the Power BI Admin portal, under **Capacity settings**, ensure that the **XMLA Endpoint** setting is configured as **Read Only** or **Read Write**.
 
@@ -58,4 +52,4 @@ The following list contains optional database connections that you can configure
 * Create and configure a writeback destination if you want to write back the plan data. For more information, see [Create a writeback destination](planning-writeback/planning-how-to-persist-data.md#create-a-writeback-destination).
 
 > [!NOTE]
-> During plan (preview) item creation, a Fabric SQL database is automatically created in your workspace. This database stores your plan report's metadata.
+> During plan item creation, a Fabric SQL database is automatically created in your workspace. This database stores your plan report's metadata.

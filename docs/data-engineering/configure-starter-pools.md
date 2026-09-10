@@ -37,7 +37,7 @@ To manage the starter pool associated with your workspace:
 
 1. Go to your workspace, and select **Workspace settings**.
 
-   :::image type="content" source="media\configure-starter-pools\data-engineering-menu.png" alt-text="Screenshot showing where to select Data Engineering in the Workspace settings menu." lightbox="media\configure-starter-pools\data-engineering-menu.png":::
+   :::image type="content" source="media\configure-starter-pools\data-engineering-menu.png" alt-text="Screenshot showing where to select Data Engineering in the workspace settings menu." lightbox="media\configure-starter-pools\data-engineering-menu.png":::
 
 1. Expand **Data Engineering/Science** in the left pane and then select **Spark settings**.
 
@@ -78,4 +78,4 @@ The following table shows default and maximum starter pool node limits by SKU.
 ## Related content
 
 - Learn more from the Apache Spark [public documentation](https://spark.apache.org/docs/latest/configuration.html).
-- Get started with [Spark workspace administration settings in Microsoft Fabric](workspace-admin-settings.md).
+- Get started with [Spark workspace administration settings in Fabric](workspace-admin-settings.md).

@@ -21,12 +21,12 @@ The high-level steps in module 1 are:
 ## Prerequisites
 
 - A [!INCLUDE [product-name](../includes/product-name.md)] tenant account with an active subscription. If you don't have one, you can [try Microsoft Fabric for free](/fabric/fundamentals/fabric-trial).
-- A [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace. [Learn how to create a workspace.](../fundamentals/create-workspaces.md)
+- A [!INCLUDE [product-name](../includes/product-name.md)] enabled workspace. [Learn how to create a workspace.](../fundamentals/create-workspaces.md)
 - Access to [Power BI](https://msit.powerbi.com/home).
 
 ## Create a Copy job
 
-1. Sign into [Power BI](https://msit.powerbi.com/home).
+1. Sign in to [Power BI](https://msit.powerbi.com/home).
 
 1. Select the default Power BI icon at the bottom left of the screen, and select **Fabric**.
 

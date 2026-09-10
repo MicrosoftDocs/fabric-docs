@@ -271,7 +271,7 @@ When integrating APIM with Fabric API for GraphQL, follow these recommendations:
 
 ## Summary
 
-Integrating Microsoft Fabric API for GraphQL with Azure API Management brings together Fabric's powerful data capabilities with APIM's enterprise-grade API gateway features. This combination provides:
+Integrating Fabric API for GraphQL with Azure API Management brings together Fabric's powerful data capabilities with APIM's enterprise-grade API gateway features. This combination provides:
 
 - **Enhanced security**: Managed identity authentication, threat protection, and policy-based access control
 - **Improved scalability**: Response caching, rate limiting, and load distribution across multiple backends

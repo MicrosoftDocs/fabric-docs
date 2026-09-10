@@ -66,11 +66,11 @@ Under **Advanced** settings in the **Destination** tab, the following Parquet fo
 
 ### Mapping
 
-For the **Mapping** tab configuration, if you don't apply Parquet format as your destination data store, go to [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab).
+For the **Mapping** tab configuration, if you don't apply Parquet format as your destination data store, go to [Mapping](copy-data-activity.md#configure-your-mappings-under-the-mapping-tab).
 
 #### Edit destination data types
 
-When copying data to the destination connector in Parquet format, except the configuration in [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab), you can specify certain destination column types after enabling Advanced Parquet type settings. You can also configure the IsNullable option to specify whether each Parquet destination column allows null values. The default value for IsNullable is `true`.
+When copying data to the destination connector in Parquet format, except the configuration in [Mapping](copy-data-activity.md#configure-your-mappings-under-the-mapping-tab), you can specify certain destination column types after enabling Advanced Parquet type settings. You can also configure the IsNullable option to specify whether each Parquet destination column allows null values. The default value for IsNullable is `true`.
 
 The following mappings are used from interim data types supported for editing by the service internally to Parquet data types.
 

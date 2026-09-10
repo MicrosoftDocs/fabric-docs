@@ -94,7 +94,7 @@ If your destination data store and format meet the criteria described in this se
 
 #### Staged copy from Snowflake
 
-When your destination data store or format isn't natively compatible with the Snowflake COPY command, use staged copy. You can choose workspace staging copy, or external staging copy with an interim Azure Blob storage instance. The staged copy feature also provides you with better throughput. The service exports data from Snowflake into staging storage, then copies the data to destination, and finally cleans up your temporary data from the staging storage. For more information about staged copy, see this [article](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
+When your destination data store or format isn't natively compatible with the Snowflake COPY command, use staged copy. You can choose workspace staging copy, or external staging copy with an interim Azure Blob storage instance. The staged copy feature also provides you with better throughput. The service exports data from Snowflake into staging storage, then copies the data to destination, and finally cleans up your temporary data from the staging storage. For more information about staged copy, see this [article](copy-data-activity.md#configure-your-other-settings-under-the-settings-tab).
 
 - **Workspace staging copy**
 
@@ -192,7 +192,7 @@ If your source data store and format meet the criteria described in this section
 
 #### Staged copy to Snowflake
 
-When your source data store or format isn't natively compatible with the Snowflake COPY command, as mentioned in the last section, use staged copy. You can choose workspace staging copy, or external staging copy with an interim Azure Blob storage instance. The staged copy feature also provides you with better throughput. The service automatically converts the data to meet the data format requirements of Snowflake. It then invokes the COPY command to load data into Snowflake. Finally, it cleans up your temporary data from the blob storage. For more information about staged copy, see this [article](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
+When your source data store or format isn't natively compatible with the Snowflake COPY command, as mentioned in the last section, use staged copy. You can choose workspace staging copy, or external staging copy with an interim Azure Blob storage instance. The staged copy feature also provides you with better throughput. The service automatically converts the data to meet the data format requirements of Snowflake. It then invokes the COPY command to load data into Snowflake. Finally, it cleans up your temporary data from the blob storage. For more information about staged copy, see this [article](copy-data-activity.md#configure-your-other-settings-under-the-settings-tab).
 
 - **Workspace staging copy**
 
@@ -215,11 +215,11 @@ When your source data store or format isn't natively compatible with the Snowfla
 
 ### Mapping
 
-For **Mapping** tab configuration, go to [Configure your mappings under mapping tab](copy-data-activity.md#configure-your-mappings-under-mapping-tab).
+For **Mapping** tab configuration, go to [Configure your mappings under mapping tab](copy-data-activity.md#configure-your-mappings-under-the-mapping-tab).
 
 #### Edit destination data types
 
-For the **Mapping** tab configuration, when Snowflake is used as the destination  and the destination table is auto-created, except the configuration in [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab), you can edit the type for your destination columns. After selecting **Import schemas**, you can specify the column type in your destination. For more information about the mapping rules, go to [Data type mapping for Snowflake](#data-type-mapping-for-snowflake).
+For the **Mapping** tab configuration, when Snowflake is used as the destination  and the destination table is auto-created, except the configuration in [Mapping](copy-data-activity.md#configure-your-mappings-under-the-mapping-tab), you can edit the type for your destination columns. After selecting **Import schemas**, you can specify the column type in your destination. For more information about the mapping rules, go to [Data type mapping for Snowflake](#data-type-mapping-for-snowflake).
 
 For example, you can set the type of the *decimal* column to NUMBER and adjust its precision and scale as needed when mapping it to the destination.
 
@@ -227,7 +227,7 @@ For example, you can set the type of the *decimal* column to NUMBER and adjust i
 
 ### Settings
 
-For **Settings** tab configuration, go to [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
+For **Settings** tab configuration, go to [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-the-settings-tab).
 
 ## Data type mapping for Snowflake
 

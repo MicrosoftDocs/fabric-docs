@@ -22,11 +22,11 @@ ai-usage: ai-assisted
 > [!IMPORTANT]
 > Copilot for Data Engineering and Data Science is in [preview](../fundamentals/preview.md).
 
-Copilot in Microsoft Fabric is your AI partner for turning data into insights faster, with less friction.
+Copilot in Fabric is your AI partner for turning data into insights faster, with less friction.
 
 Available across Fabric workloads, each Copilot experience is tailored to the task at hand. This article focuses on the Data Science and Data Engineering notebook experience.
 
-In notebooks, Copilot helps you move from data to working code without breaking your flow. It understands your notebook context, including attached Lakehouses, workspace tables and files, and loaded dataframes, to suggest relevant code, explain results, and troubleshoot issues so you can turn questions into trusted insights faster.
+In notebooks, Copilot helps you move from data to working code without breaking your flow. It understands your notebook context, including attached lakehouses, workspace tables and files, and loaded dataframes, to suggest relevant code, explain results, and troubleshoot issues so you can turn questions into trusted insights faster.
 
 For information about Copilot in other workloads, see [Overview of Copilot in Fabric and Power BI](../fundamentals/copilot-fabric-overview.md).
 
@@ -55,7 +55,7 @@ For failure diagnostics and recovery workflows, see [Diagnose notebook failures 
 When you open a notebook, Copilot automatically understands:
 
 - The current workspace
-- The attached Lakehouse
+- The attached lakehouse
 - Available schemas, tables, and files
 - The notebook's structure and existing code
 - The execution environment
@@ -111,14 +111,14 @@ For more information about failure diagnostics, see [Diagnose notebook failures]
 ## Known limitations
 
 - Copilot features in the Data Science and Data Engineering experience are currently scoped to notebooks. Copilot can also read Power BI semantic models through semantic link integration.
-- Copilot context awareness is optimized for Lakehouse scenarios. If you're working with other data sources such as SQL databases, Copilot might not fully recognize the connection context and could default to Lakehouse-oriented suggestions. Specify the data source explicitly in your prompts for the best results.
+- Copilot context awareness is optimized for lakehouse scenarios. If you're working with other data sources such as SQL databases, Copilot might not fully recognize the connection context and could default to lakehouse-oriented suggestions. Specify the data source explicitly in your prompts for the best results.
 - If your tenant is configured with private link, the Copilot chat pane doesn't work. Inline code suggestions and quick actions might still work, but chat interactions fail to load.
 - Code generation with fast-moving or recently released libraries might include inaccuracies or fabrications.
 - AI-generated content might be inaccurate. Always review Copilot suggestions before applying them.
 
 ### Copilot button is disabled in notebooks
 
-In some cases, the Copilot button in Fabric Notebooks may appear disabled (grayed out). This indicates that Copilot is not currently available in your environment due to configuration, capacity, or regional requirements not being met.
+In some cases, the Copilot button in Fabric notebooks may appear disabled (grayed out). This indicates that Copilot is not currently available in your environment due to configuration, capacity, or regional requirements not being met.
 
 Copilot relies on several prerequisites across tenant settings, capacity, workspace configuration, and regional availability. If any of these requirements are not satisfied, the Copilot entry point will be disabled.
 
@@ -131,7 +131,7 @@ Use the table below to identify the cause and take appropriate action.
 | 1 | Tenant admin has not enabled Copilot. The "Users can use Copilot and other features powered by Azure OpenAI" tenant setting is turned off. | Contact your Fabric/Power BI tenant admin → **Admin Portal** → **Tenant settings** → Enable **"Copilot and Azure OpenAI Service"**. |
 | 2 | Capacity SKU does not meet the minimum requirement. Copilot requires a paid Fabric capacity (F2 or higher) or Power BI Premium (P1 or higher). Trial capacities are also supported. | Upgrade your capacity to F2+ or start a Fabric trial at [Fabric Trial](https://www.microsoft.com/microsoft-fabric/getting-started). |
 | 3 | Cross-geo data processing not enabled. Your capacity is in a region where Azure OpenAI is not natively available, and the cross-geo setting is off. | **Admin Portal** → **Tenant settings** → Enable **"Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance"**. |
-| 4 | Workspace not assigned to an eligible capacity. The workspace containing the notebook is not attached to a capacity that supports Copilot. | Move the workspace to an eligible capacity (F2+ / P1+ / Trial). |
+| 4 | workspace not assigned to an eligible capacity. The workspace containing the notebook is not attached to a capacity that supports Copilot. | Move the workspace to an eligible capacity (F2+ / P1+ / Trial). |
 | 5 | Copilot not yet available in your region. Azure OpenAI regional availability may limit Copilot in certain geos. | Check [Copilot available regions](/fabric/get-started/copilot-fabric-overview#available-regions) and consider enabling cross-geo processing. |
 
 > [!TIP]

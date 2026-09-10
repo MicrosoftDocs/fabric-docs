@@ -22,11 +22,7 @@ This article explains how to install, configure, and update [Skills for Fabric](
 
 The following prerequisites apply to both the Fabric collection and the Power BI plug-in:
 
-- **An AI coding tool**, such as [GitHub Copilot CLI](https://docs.github.com/copilot/how-tos/use-copilot-for-common-tasks/use-copilot-in-the-cli), [Claude Code](https://docs.anthropic.com/claude/docs/claude-code), [Visual Studio Code](https://code.visualstudio.com/), Cursor, Windsurf, or another `AGENTS.md` compatible tool.
-- **[Node.js](https://nodejs.org/)**: Required for the standalone GitHub Copilot CLI, which installs as an npm package (`npm install -g @github/copilot`). For full setup steps, see [Set up GitHub Copilot CLI](https://docs.github.com/copilot/how-tos/set-up/set-up-for-self).
-- **[PowerShell 7](/powershell/scripting/install/installing-powershell)**: Required for GitHub Copilot CLI. Verify with `pwsh --version`.
-- **[Git](https://git-scm.com/downloads)**: Required to clone skill repositories for tools that don't use the plugin marketplace.
-- **[Azure CLI](/cli/azure/install-azure-cli)**: Most Fabric operations require Azure authentication. After installing, sign in with `az login`.
+[!INCLUDE [skills-for-fabric-prereqs](includes/skills-for-fabric-prereqs.md)]
 
 The Power BI plug-in (`powerbi-authoring`) has these extra prerequisites:
 
@@ -39,31 +35,31 @@ Both GitHub Copilot CLI and Claude Code use the same plugin marketplace workflow
 
 1. Add the Skills for Fabric marketplace:
 
-   ```bash
+   ```PowerShell
    /plugin marketplace add microsoft/skills-for-fabric
    ```
 
 1. Install the Fabric collection. For focused bundles, see [Installation bundles](#installation-bundles).
 
-   ```bash
+   ```PowerShell
    /plugin install fabric-skills@fabric-collection
    ```
 
 1. Install the Power BI plug-in. This bundle is separate from `fabric-skills`.
 
-   ```bash
+   ```PowerShell
    /plugin install powerbi-authoring@fabric-collection
    ```
 
 1. Quit and restart your tool to load the skills:
 
-   ```bash
+   ```PowerShell
    /quit
    ```
 
 1. Verify the installation:
 
-   ```bash
+   ```PowerShell
    /skills
    ```
 
@@ -85,7 +81,7 @@ A bundle is a preconfigured group of skills packaged for the plugin marketplace.
 
 You can filter the full bundle by workload in GitHub Copilot CLI or Claude Code using the following commands:
 
-```bash
+```PowerShell
 /plugin install fabric-skills@fabric-collection --filter "sqldw-*"
 /plugin install fabric-skills@fabric-collection --filter "spark-*"
 /plugin install fabric-skills@fabric-collection --filter "eventhouse-*"
@@ -146,7 +142,7 @@ to pick up customers to maximize tips. When done, launch the app.
 
 GitHub Copilot CLI and Claude Code check for plug-in updates automatically when you install or reinstall a bundle. To manually refresh a bundle, uninstall and reinstall it:
 
-```bash
+```PowerShell
 /plugin uninstall fabric-skills@fabric-collection
 /plugin install fabric-skills@fabric-collection
 ```

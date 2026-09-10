@@ -1,16 +1,16 @@
 ---
-title: What is Data engineering in Microsoft Fabric?
-description: Learn about Data engineering core concepts in Microsoft Fabric and the analytics functionality it offers.
+title: What is Fabric Data Engineering?
+description: Learn about Data Engineering core concepts in Microsoft Fabric and the analytics functionality it offers.
 ms.reviewer: avinandac
 ms.topic: overview
 ms.date: 06/04/2025
 ---
 
-# What is Data engineering in Microsoft Fabric?
+# What is Microsoft Fabric Data Engineering?
 
-Data engineering in Microsoft Fabric enables users to design, build, and maintain infrastructures and systems that enable their organizations to collect, store, process, and analyze large volumes of data.
+Microsoft Fabric Data Engineering enables users to design, build, and maintain infrastructures and systems that enable their organizations to collect, store, process, and analyze large volumes of data.
 
-Microsoft Fabric provides various data engineering capabilities to ensure that your data is easily accessible, well-organized, and of high-quality. To access the data engineering homepage, select **Workloads** from the navigation pane, then select the **Data Engineering** tile. From the data engineering homepage, you can:
+Fabric provides various data engineering capabilities to ensure that your data is easily accessible, well-organized, and of high-quality. To access the data engineering homepage, select **Workloads** from the navigation pane, then select the **Data Engineering** tile. From the data engineering homepage, you can:
 
 - Create and manage your data using a lakehouse
 
@@ -38,14 +38,14 @@ Notebooks are an interactive computing environment that allows users to create a
 
 Pipelines are a series of steps that can collect, process, and transform data from its raw form to a format that you can use for analysis and decision-making. They're a critical component of data engineering, as they provide a way to move data from its source to its destination in a reliable, scalable, and efficient way.
 
-You can use Data Engineering in Microsoft Fabric free of charge when you sign up for the [Fabric trial](../fundamentals/fabric-trial.md). You can also buy a [Microsoft Fabric capacity](../enterprise/buy-subscription.md) or a [Fabric reserved capacity](/azure/cost-management-billing/reservations/fabric-capacity)
+You can use Data Engineering free of charge when you sign up for the [Fabric trial](../fundamentals/fabric-trial.md). You can also buy a [Fabric capacity](../enterprise/buy-subscription.md) or a [Fabric reserved capacity](/azure/cost-management-billing/reservations/fabric-capacity)
 
 ## Related content
 
 Get started with Data Engineering:
 
-- To learn more about lakehouses, see [What is a lakehouse in Microsoft Fabric?](lakehouse-overview.md)
-- To get started with a lakehouse, see [Create a lakehouse in Microsoft Fabric](create-lakehouse.md).
+- To learn more about lakehouses, see [What is a lakehouse in Fabric?](lakehouse-overview.md)
+- To get started with a lakehouse, see [Create a lakehouse in Fabric](create-lakehouse.md).
 - To learn more about Apache Spark job definitions, see [What is an Apache Spark job definition?](spark-job-definition.md)
 - To get started with an Apache Spark job definition, see [How to create an Apache Spark job definition in Fabric](create-spark-job-definition.md).
 - To learn more about notebooks, see [Author and execute the notebook](author-execute-notebook.md).

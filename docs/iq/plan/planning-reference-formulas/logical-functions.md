@@ -1,6 +1,6 @@
 ---
 title: Logical Functions
-description: Learn about logical functions in plan (preview) and how to use them to evaluate conditions and return results based on logical expressions. 
+description: Learn about logical functions in planning and how to use them to evaluate conditions and return results based on logical expressions.
 ms.date: 05/08/2026
 ms.topic: reference
 ms.search.form: Logical functions
@@ -10,8 +10,6 @@ ms.search.form: Logical functions
 # Logical functions
 
 Apply logical functions to test conditions and return *TRUE* or *FALSE* results. These functions are commonly used to evaluate expressions, validate data, and build conditional logic in reports.
-
-[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
 
 ## AND
 

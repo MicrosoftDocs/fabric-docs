@@ -6,7 +6,7 @@ ms.author: daknappe
 ms.reviewer: yuturchi, arthii
 ms.custom: admin-portal
 ms.topic: concept-article
-ms.date: 03/06/2026
+ms.date: 07/28/2026
 ai-usage: ai-assisted
 ---
 
@@ -23,9 +23,9 @@ The following table compares workspace retention and item-level soft-delete and 
 | Feature | Collaborative workspace retention | My workspace retention | Item retention |
 | --- | --- | --- | --- |
 | **Applies when** | User deletes a collaborative workspace | *My workspace* is deleted | User deletes a [supported item](#supported-item-types) |
-| **Default retention state** | Enabled | Enabled | Disabled |
+| **Default retention state** | Enabled | Enabled | Enabled |
 | **Can an admin disable retention?** | No | No | Yes |
-| **Minimum retention period** | 7 days | 30 days (fixed) | 7 days (when enabled) |
+| **Minimum retention period** | 7 days | 30 days (fixed) | 3 days (when enabled) |
 | **Maximum retention period** | 90 days | 30 days (fixed) | 90 days |
 
 > [!NOTE]
@@ -39,13 +39,18 @@ The retention period for personal workspaces (*My workspaces*) is fixed at 30 da
 
 The default retention period for collaborative workspaces is seven days. You can change the retention period (from 7 to 90 days) by using the **Define workspace retention period** tenant setting in the admin portal.
 
+Changing this setting also applies to collaborative workspaces that are already deleted. Fabric calculates the remaining retention from the current setting value rather than from the value that was in effect when the workspace was deleted. Decreasing the retention period can make an already deleted workspace eligible for immediate permanent deletion. For more information, see [How changing the retention period affects workspaces that are already deleted](workspace-retention.md#how-changing-the-retention-period-affects-already-deleted-workspaces).
+
 During the retention period, you can restore a deleted workspace or permanently delete it before the retention period expires. For step-by-step instructions, see [Set up and manage workspace retention](workspace-retention.md).
 
 ## Item soft-delete and recovery
 
+> [!NOTE]
+> Item recovery is now enabled by default, with a retention period of three days. This default applies to tenants that never explicitly configured the **Fabric Item Recovery** setting and to newly created tenants. Fabric preserves settings that an admin explicitly configured, whether item recovery was explicitly turned on or off.
+
 Fabric supports soft-delete and recovery for individual items within workspaces. When you delete a supported item, it enters a retention period during which workspace contributors, members, and admins can recover it. This feature provides an additional layer of data protection at the item level.
 
-By default, item recovery is turned off. You can turn on item recovery and set up the retention period (from 7 to 90 days) by using the **Fabric Item Recovery** tenant setting in the admin portal.
+You can change the retention period (from 3 to 90 days) or turn item recovery off by using the **Fabric Item Recovery** tenant setting in the admin portal.
 
 For step-by-step instructions on setting up item recovery and restoring or permanently deleting items, see [Recover or permanently delete items](item-recovery.md).
 
@@ -81,7 +86,7 @@ The following item types support soft-delete and recovery:
 - Warehouse
 - Warehouse snapshot
 
-For supported item types only, when you turn on the [Item Recovery setting](item-recovery.md#set-up-the-retention-period-for-deleted-items) and someone deletes an item in a workspace through the Fabric UI or API, Fabric moves the item to a soft-deleted state. You can't recover unsupported item types because Fabric irreversibly deletes them.
+For supported item types only, when the [Item Recovery setting](item-recovery.md#set-up-the-retention-period-for-deleted-items) is on and someone deletes an item in a workspace through the Fabric UI or API, Fabric moves the item to a soft-deleted state. You can't recover unsupported item types because Fabric irreversibly deletes them.
 
 Fabric plans to add support for more item types.
 
@@ -129,7 +134,7 @@ When you recover a warehouse, Fabric restores all the metadata and data, but Fab
 
 ## Billing during the retention period
 
-During the retention period, soft-deleted items continue to incur OneLake storage costs, which are billed at the same rate as active data. In addition, soft-deleted items might consume small amounts of Capacity Units (CUs) from workload background maintenance activity.
+Item recovery doesn't introduce a separate billing meter. During the retention period, soft-deleted items continue to incur standard OneLake storage costs, which are billed at the same rate as active data. In addition, soft-deleted items might consume small amounts of Capacity Units (CUs) from workload background maintenance activity. For more information, see [OneLake compute and storage consumption](../onelake/onelake-consumption.md).
 
 To stop incurring costs for a soft-deleted item, permanently delete it before the retention period expires. For more information, see [Recover or permanently delete items](item-recovery.md).
 

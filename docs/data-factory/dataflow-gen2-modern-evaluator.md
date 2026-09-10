@@ -3,7 +3,7 @@ title: Modern Evaluator for Dataflow Gen2 with CI/CD
 description: Boost Dataflow Gen2 with CI/CD performance with the Modern Evaluator—faster query execution, scalable workflows, and support for top connectors.
 ms.reviewer: miescobar
 ms.topic: how-to
-ms.date: 3/1/2026
+ms.date: 8/13/2026
 ms.custom: dataflows
 ---
 
@@ -214,3 +214,8 @@ The Modern Query Evaluation Engine supports a variety of data connectors. Ensure
 </details>
 
 If a dataflow uses connectors not in this list, those queries continue to run with the standard (legacy) engine.
+
+## Related content
+
+- [Dataflow Gen2 cost and performance benchmarks](dataflow-gen2-cost-performance-benchmarks.md)
+- [Dataflow Gen2 pricing](pricing-dataflows-gen2.md)

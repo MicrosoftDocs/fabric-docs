@@ -38,7 +38,7 @@ To export a notebook from Azure Synapse:
     * Choose a destination folder and provide a name for the exported notebook file. 
 4.	Once the export is complete, you should have the notebook file available for upload.
 
-:::image type="content" source="media\migrate-synapse\migrate-notebooks-export.png" alt-text="Screenshot showing Synapse Notebook export." lightbox="media/migrate-synapse/migrate-notebooks-export.png":::
+:::image type="content" source="media\migrate-synapse\migrate-notebooks-export.png" alt-text="Screenshot showing Synapse notebook export." lightbox="media/migrate-synapse/migrate-notebooks-export.png":::
 
 To import the exported notebook in Fabric:
 
@@ -48,7 +48,7 @@ To import the exported notebook in Fabric:
     * Select **Import notebook.** You can import one or more existing notebooks from your local computer to a Fabric workspace.
     * Browse for the .ipynb notebook files that you downloaded from Azure Synapse Analytics.
     * Select the notebook files and click **Upload.**
-1.	**Open and use the Notebook**: Once the import is completed, you can open and use the notebook in your Fabric workspace.
+1.	**Open and use the notebook**: Once the import is completed, you can open and use the notebook in your Fabric workspace.
 
 Once the notebook is imported, validate notebook dependencies:
 * Ensure using the same Spark version.

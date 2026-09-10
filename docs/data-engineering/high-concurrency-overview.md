@@ -39,7 +39,7 @@ The diagram highlights three core characteristics of high concurrency mode:
 Session sharing applies when these conditions are met:
 
 - Sessions are within a single-user boundary.
-- Sessions use the same default Lakehouse configuration.
+- Sessions use the same default lakehouse configuration.
 - Sessions use the same Spark compute settings.
 
 If any requirement differs, Fabric starts a separate Spark session.
@@ -110,6 +110,6 @@ Increasing the session sharing limit enables:
 
 ## Related content
 
-- [Apache Spark compute in Microsoft Fabric](spark-compute.md)
+- [Apache Spark compute in Fabric](spark-compute.md)
 - To get started with high concurrency mode in notebooks, see [Configure high concurrency mode for Fabric notebooks](configure-high-concurrency-session-notebooks.md).
-- For Lakehouse load and preview behavior, see [High concurrency mode for Lakehouse operations in Microsoft Fabric](high-concurrency-for-lakehouse-operations.md).
+- For Lakehouse load and preview behavior, see [High concurrency mode for Lakehouse operations in Fabric](high-concurrency-for-lakehouse-operations.md).

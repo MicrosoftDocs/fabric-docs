@@ -9,7 +9,7 @@ ms.date: 11/20/2024
 
 # Notebook visualization in Microsoft Fabric
 
-Microsoft Fabric is an integrated analytics service that accelerates time to insights across data warehouses and big data systems. Data visualization in notebooks is a key feature that allows you to gain insight into your data, helping users identify patterns, trends, and outliers with ease.
+Microsoft Fabric is an integrated analytics service that accelerates time to insights across warehouses and big data systems. Data visualization in notebooks is a key feature that allows you to gain insight into your data, helping users identify patterns, trends, and outliers with ease.
 
 When working with Apache Spark in Fabric, you have built-in options for visualizing data, including Fabric notebook chart features and access to popular open-source libraries.
 
@@ -89,7 +89,7 @@ Key Enhancements:
    |Legend |Show Legend | Enable/disable the legend. |
    |Legend |Position | Customize the position of legend.|
    |Other |Series group | Use this configuration to determine the groups for the aggregation. |
-   |Other |Aggregation | Use this method to aggregate data in your visualization. |
+  |Other |Aggregation | Use this method to aggregate data in your visualization. |
    |Other |Stacked | Configure the display style of result. |
    |Other |Missing and NULL values | Configure how missing or NULL chart values are displayed. |
 

@@ -10,8 +10,6 @@ ms.topic: how-to
 
 Create row-level forecasts to predict outcomes at a detailed level, such as by region or product line. After you create a forecast measure, you can generate forecasts at the row level by inserting a forecast row.
 
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
-
 This article explains how to create and configure forecast rows.
 
 > [!NOTE]

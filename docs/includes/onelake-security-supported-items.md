@@ -10,5 +10,6 @@ ms.date: 04/20/2026
 | Fabric item | Supported permissions |
 | ---- | --- |
 | Lakehouse | Read, ReadWrite |
-| Azure Databricks Mirrored Catalog | Read |
-| Mirrored Databases | Read |
+| Azure Databricks mirrored catalog | Read |
+| Mirrored databases | Read |
+| Mirrored catalogs | Read |

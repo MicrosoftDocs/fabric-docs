@@ -8,13 +8,13 @@ ms.search.form: Lakehouse query explorer
 ai-usage: ai-assisted
 ---
 
-# Query data by using the Lakehouse query explorer
+# Query data by using the lakehouse query explorer
 
-The Lakehouse query explorer is an integrated query editor embedded directly inside the Fabric Lakehouse explorer. You can write and run Spark SQL queries against your lakehouse data without leaving the explorer. You don't need to switch to the SQL analytics endpoint or create a notebook for quick data exploration.
+The lakehouse query explorer is an integrated query editor embedded directly inside the Lakehouse explorer. You can write and run Spark SQL queries against your lakehouse data without leaving the explorer. You don't need to switch to the SQL analytics endpoint or create a notebook for quick data exploration.
 
-The query explorer uses Apache Spark as the execution engine by leveraging the Lakehouse Livy Endpoint. You get the same SQL dialect as Spark notebooks, support for read and write operations, and the ability to query large datasets efficiently.
+The query explorer uses Apache Spark as the execution engine by leveraging the lakehouse Livy endpoint. You get the same SQL dialect as Spark notebooks, support for read and write operations, and the ability to query large datasets efficiently.
 
-:::image type="content" source="media\lakehouse-overview\lakehouse-query-explorer.gif" alt-text="Animation of the Lakehouse query explorer in action." lightbox="media\lakehouse-overview\lakehouse-query-explorer.gif":::
+:::image type="content" source="media\lakehouse-overview\lakehouse-query-explorer.gif" alt-text="Animation of the lakehouse query explorer in action." lightbox="media\lakehouse-overview\lakehouse-query-explorer.gif":::
 
 ## Open the query explorer
 
@@ -125,7 +125,7 @@ There are two ways to create a view:
 
 ## Related content
 
-- [Navigate the Fabric Lakehouse explorer](navigate-lakehouse-explorer.md)
+- [Navigate the Lakehouse explorer](navigate-lakehouse-explorer.md)
 - [What is a lakehouse?](lakehouse-overview.md)
 - [Lakehouse SQL analytics endpoint](lakehouse-sql-analytics-endpoint.md)
 - [Explore data with a lakehouse notebook](lakehouse-notebook-explore.md)

@@ -83,7 +83,7 @@ This is how the query view looks when you execute this request:
 
 ## Related content
 
-- [What is Microsoft Fabric API for GraphQL?](api-graphql-overview.md)
+- [What is Fabric API for GraphQL?](api-graphql-overview.md)
 - [Create an API for GraphQL in Fabric and add data](get-started-api-graphql.md)
 - [Manage relationships in Fabric API for GraphQL](manage-relationships-graphql.md)
 - [API for GraphQL editor](api-graphql-editor.md)

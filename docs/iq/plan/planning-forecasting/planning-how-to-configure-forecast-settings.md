@@ -9,8 +9,6 @@ ms.topic: how-to
 
 Keep forecasts aligned with reporting cycles by editing the forecast period, managing closed periods, configuring aggregation, and defining how actuals update forecast results.
 
-[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
-
 ## Prerequisites
 
 * A forecast measure must be created in the planning sheet.

@@ -21,8 +21,6 @@ Anomaly detection in Real-Time hub helps you automatically identify unusual patt
 
 1. Select **Anomaly detection events** from the list.
 
-    :::image type="content" source="media/explore-anomaly-detection/anomaly-detection-events.png" alt-text="Screenshot that shows the selection of anomaly detection events on the Fabric events page.":::
-
 1. In the **Anomaly detection events** page, select an event to view its details or select **Set alert** to set an alert for the event.
 
     :::image type="content" source="media/explore-anomaly-detection/anomaly-details-page.png" alt-text="Screenshot that shows the detail page for OneLake events.":::

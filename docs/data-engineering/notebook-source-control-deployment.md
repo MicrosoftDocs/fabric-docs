@@ -96,7 +96,7 @@ The Git settings panel lets you control how notebooks interact with source contr
 
 Lakehouse Auto-Binding lets Fabric resolve the correct default lakehouse for each Git-connected workspace. This reduces manual rebinding when you move notebooks across development, test, and production workspaces.
 
-Enable this feature from Notebook settings. After you enable it, Fabric creates `notebook-settings.json` in the repository and manages this file automatically. Don't edit this file manually.
+Enable this feature from notebook settings. After you enable it, Fabric creates `notebook-settings.json` in the repository and manages this file automatically. Don't edit this file manually.
 
 :::image type="content" source="media\notebook-source-control-deployment\notebook-git-binding.png" alt-text="Screenshot of notebook git-binding." lightbox="media\notebook-source-control-deployment\notebook-git-binding.png":::
 

@@ -66,7 +66,7 @@ GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|spark
 | Name | In | Required | Type | Description |
 | --- | --- | --- | --- | --- |
 | workspaceId | path | True | string uuid | The workspace ID. |
-| itemId | path | True | string uuid | The item ID of the notebook or Spark job definition or Lakehouse. |
+| itemId | path | True | string uuid | The item ID of the notebook or Spark job definition or lakehouse. |
 | livyId | path | True | string uuid | The Livy session ID. |
 | appId | path | True | string | The Spark application ID, like application_1111111111111_0001. |
 | attemptId | path | False | int | The attempt ID of that application ID. If not specified, the ID of last attempt is used. |
@@ -138,7 +138,7 @@ GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|spark
 | Name | In | Required | Type | Description |
 | --- | --- | --- | --- | --- |
 | workspaceId | path | True | string uuid | The workspace ID. |
-| itemId | path | True | string uuid | The item ID of the notebook or Spark job definition or Lakehouse. |
+| itemId | path | True | string uuid | The item ID of the notebook or Spark job definition or lakehouse. |
 | livyId | path | True | string uuid | The Livy session ID. |
 | appId | path | True | string | The Spark application ID, like application_1111111111111_0001. |
 | attemptId | path | False | int | The attempt ID of that application ID. If not specified, the ID of last attempt is used. |

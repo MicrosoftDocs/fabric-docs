@@ -3,7 +3,7 @@ title: What Is MCP in Real-Time Intelligence?
 description: Learn about Model Context Protocol (MCP) in Real-Time Intelligence. MCP enables AI agents to interact with eventhouses and Activator by using natural language.
 ms.reviewer: sharmaanshul
 ms.topic: overview 
-ms.date: 07/08/2026
+ms.date: 08/03/2026
 ms.search.form: MCP, RTI, AI
 ms.collection: ce-skilling-ai-copilot
 ai-usage: ai-assisted
@@ -41,7 +41,7 @@ Microsoft hosts remote MCP servers and exposes them as HTTP endpoints. You confi
 | ------ | ----------- | ------------ |
 | **Eventhouse MCP server** | Enables AI agents to query eventhouses by using natural language | Schema discovery, KQL query generation, data sampling, translation of natural language to KQL (the *NL2KQL* framework) |
 | **Activator MCP server** | Enables AI agents to interact with Fabric Activator | Creation of monitoring rules, management of alerts, triggered actions |
-| **Operations agent MCP server** | Enables AI agents to configure and operate an operations agent by using natural language | Goal configuration, playbook generation, monitoring management |
+| **Operations agent MCP server** | Enables AI agents to configure and operate an operations agent by using natural language | Instruction configuration, playbook generation, monitoring management |
 
 - **MCP host**: The environment where the AI model (like GPT-4, Claude, or Gemini) runs.
 - **MCP client**: An intermediary service that forwards the AI model's requests to MCP servers, like GitHub Copilot, Cline, or Claude Desktop.
@@ -51,7 +51,6 @@ For more information, see:
 
 - [Get started with the remote MCP server for eventhouses](mcp-remote-eventhouse.md)
 - [Get started with the remote MCP server for Activator](mcp-remote-activator.md)
-- [Get started with the remote MCP server for operations agents](mcp-remote-operations-agent.md)
 
 ## When to use local vs. remote servers
 
@@ -109,5 +108,4 @@ The MCP server might be installed with, be used with, and share data with client
 - [Get started with the local MCP server for Real-Time Intelligence](mcp-local-server.md)
 - [Get started with the remote MCP server for eventhouses](mcp-remote-eventhouse.md)
 - [Get started with the remote MCP server for Activator](mcp-remote-activator.md)
-- [Get started with the remote MCP server for operations agents](mcp-remote-operations-agent.md)
 - [Model Context Protocol (MCP) overview](https://modelcontextprotocol.io/introduction)
