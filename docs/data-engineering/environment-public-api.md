@@ -236,7 +236,7 @@ By specifying the full library file name with the type suffix, you can delete on
 
 #### Remove an external library
 
-Use the [Remove external library](/rest/api/fabric/environment/staging/remove-external-library) API to remove a single public (external) library. The request body requires **both** the library `name` and its exact `version`; a request that omits the version (or the name) is rejected.
+Use the [Remove external library](/rest/api/fabric/environment/staging/remove-external-library) API to remove a single public (external) library. The request body requires **both** the library `name` and its exact `version`. The API rejects a request that omits the version or the name.
 
 - Sample request
 

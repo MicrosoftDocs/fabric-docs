@@ -72,7 +72,7 @@ The colors, font sizes, title, and labels are preset and currently can't be cust
 - Visuals currently support up to 200 rows of data. When a query returns more than 200 rows, only the first 200 are charted, so the visualization represents a truncated result set.
 - Chart types are limited to the [Supported visual types](#supported-visual-types).
 - The colors, font sizes, title, and labels are preset and currently can't be customized.
-- These visuals are currently only supported in the data agent experience in Fabric and not in other clients like SDK, M365 Copilot, Teams, or Foundry. This limitation applies to the *rendered* chart image; the underlying visualization specification (chart type, axes, and aggregated data) is emitted in the assistant run's steps, so a client can reconstruct the chart from that specification.
+- These visuals are currently only supported in the data agent experience in Fabric and not in other clients like SDK, M365 Copilot, Teams, or Foundry. This limitation applies to the *rendered* chart image. The underlying visualization specification (chart type, axes, and aggregated data) is emitted in the assistant run's steps, so a client can reconstruct the chart from that specification.
     - When you consume a Fabric data agent through Microsoft 365 Copilot, you can use code interpreter to generate visualizations from the results returned by the data agent.
 
 ## Related content

@@ -86,7 +86,7 @@ Currently the following supported data sources are exposed through the Fabric AP
 - Azure SQL database
 
 > [!NOTE]
-> Every object (table or view) you expose through the API for GraphQL must have a primary key. A keyless object, such as an aggregate view without a key, can't be exposed and fails schema generation. When you bind to a SQL database in Fabric, the object's schema must first be available on the database's SQL analytics endpoint.
+> Every object (table or view) you expose through the API for GraphQL must have a primary key. You can't expose a keyless object, such as an aggregate view without a key. Schema generation fails for a keyless object. When you bind to a SQL database in Fabric, the object's schema must first be available on the database's SQL analytics endpoint.
 
 ## Features
 

@@ -20,7 +20,7 @@ When you select **Save** in the graph model editor, graph in Microsoft Fabric pe
 Because save and ingestion are a single operation, every save refreshes your graph data. Save your model whenever you add or modify node types, edge types, or mappings.
 
 > [!NOTE]
-> A graph model created and defined entirely through the REST API is schema-complete but isn't queryable until it's opened once in the graph model editor in the Fabric portal. The portal provisions the internal loading infrastructure on first open; until then, a refresh fails because the required internal configuration doesn't yet exist. After the one-time portal initialization, you can refresh and query the graph normally.
+> A graph model that you create and define entirely through the REST API is schema-complete but isn't queryable until you open it once in the graph model editor in the Fabric portal. The portal provisions the internal loading infrastructure on first open. Until then, a refresh fails because the required internal configuration doesn't exist. After the one-time portal initialization, you can refresh and query the graph normally.
 
 ## Refresh graph data manually
 

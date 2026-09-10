@@ -589,7 +589,7 @@ Retry-After: 60
 - **Service principal authentication** isn't supported.
 - **"Get Item"** and **"List Item Access Details"** don't return the correct information if you filter on dataflow item type.
 - When you don't specify the type, the API returns the **Dataflow Gen2 (CI/CD, preview)**—the new Dataflow Gen2 with CI/CD and Git support.
-- A data destination (writing a query's output to a lakehouse or warehouse table) can't be authored through the definition API. Add the destination in the portal by using **Add data destination**; a dataflow defined purely through the API can stage and transform data but doesn't persist to a destination.
+- You can't author a data destination (writing a query's output to a lakehouse or warehouse table) through the definition API. Add the destination in the portal by using **Add data destination**; a dataflow defined purely through the API can stage and transform data but doesn't persist to a destination.
 - You can invoke **Run APIs**, but the actual run never succeeds.
 
 ## Related content

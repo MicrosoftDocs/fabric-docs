@@ -79,7 +79,7 @@ The query editor supports the use of T-SQL.
     This query returns the top 10 bike stations with the most bikes, sorted in descending order.
 
     > [!NOTE]
-    > The query editor detects T-SQL automatically. If you run T-SQL against a KQL database **programmatically** through the Kusto query API, send the request to the `/v1/rest/query` endpoint and set `properties.Options.query_language` to `Sql` in the request body. Otherwise the service parses the query as KQL and a leading `SELECT` fails with a syntax error.
+    > The query editor automatically detects T-SQL. If you run T-SQL against a KQL database **programmatically** through the Kusto query API, send the request to the `/v1/rest/query` endpoint and set `properties.Options.query_language` to `Sql` in the request body. Otherwise, the service parses the query as KQL and a leading `SELECT` results in a syntax error.
 
     | BikepointID | Timestamp | No_Bikes |
     |--|--|--|
