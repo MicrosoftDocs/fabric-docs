@@ -16,7 +16,7 @@ This article outlines the steps to create an Anaplan connection.
 
 ## Supported authentication types
 
-The Anaplan connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+The Anaplan connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
@@ -24,7 +24,7 @@ The Anaplan connector supports the following authentication types for copy and D
 |Organizational account| n/a | √ |
 
 ## Set up your connection for Dataflow Gen2
-You can connect Dataflow Gen2 in Microsoft Fabric to Anaplan using Power Query connectors. Follow these steps to create your connection:
+You can connect dataflow Gen2 in Fabric to Anaplan by using Power Query connectors. Follow these steps to create your connection:
 
 1. Check [capabilities](#capabilities) to make sure your scenario is supported.
 1. [Complete prerequisites for Anaplan](#prerequisites).
@@ -54,7 +54,7 @@ You can connect Dataflow Gen2 in Microsoft Fabric to Anaplan using Power Query c
 
 ## Set up your connection in a pipeline
 
-Data Factory in Microsoft Fabric doesn't currently support Anaplan in pipelines.
+Data Factory doesn't currently support Anaplan in pipelines.
 
 ## Related content
 

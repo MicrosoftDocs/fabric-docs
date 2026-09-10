@@ -16,15 +16,15 @@ This article outlines the steps to create a Delta Sharing connection.
 
 ## Supported authentication types
 
-The Delta Sharing connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+The Delta Sharing connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
 |Key| n/a | √ |
 |OAuth (OIDC)| n/a | √ |
 
-## Set up your connection for Dataflow Gen2
-You can connect Dataflow Gen2 in Microsoft Fabric to Delta Sharing using Power Query connectors. Follow these steps to create your connection:
+## Set up your connection for dataflow Gen2
+You can connect dataflow Gen2 in Fabric to Delta Sharing by using Power Query connectors. Follow these steps to create your connection:
 
 1. Check [capabilities](#capabilities) to make sure your scenario is supported.
 1. [Complete prerequisites for Delta Sharing](#prerequisites).
@@ -54,9 +54,9 @@ You can connect Dataflow Gen2 in Microsoft Fabric to Delta Sharing using Power Q
 
 ## Set up your connection in a pipeline
 
-Data Factory in Microsoft Fabric doesn't currently support Delta Sharing in pipelines.
+Data Factory doesn't currently support Delta Sharing in pipelines.
 
 ## Related content
 
-- [Delta Lake in Microsoft Fabric overview](../fundamentals/delta-lake-overview.md)
+- [Delta Lake in Fabric overview](../fundamentals/delta-lake-overview.md)
 - [For more information about this connector, see the Delta Sharing connector documentation.](/power-query/connectors/delta-sharing)

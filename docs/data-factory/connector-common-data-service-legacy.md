@@ -16,14 +16,14 @@ This article outlines the steps to create a Common Data Service (Legacy) connect
 
 ## Supported authentication types
 
-The Common Data Service (Legacy) connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+The Common Data Service (Legacy) connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
 |Organizational account| n/a | √ |
 
-## Set up your connection for Dataflow Gen2
-You can connect Dataflow Gen2 to Common Data Service (Legacy) in Microsoft Fabric using Power Query connectors. Follow these steps to create your connection:
+## Set up your connection for dataflow Gen2
+You can connect dataflow Gen2 to Common Data Service (Legacy) in Fabric by using Power Query connectors. Follow these steps to create your connection:
 
 1. Check [capabilities](#capabilities) to make sure your scenario is supported.
 1. [Complete prerequisites for Common Data Service (Legacy)](#prerequisites).
@@ -54,7 +54,7 @@ You can connect Dataflow Gen2 to Common Data Service (Legacy) in Microsoft Fabri
 
 ## Set up your connection in a pipeline
 
-Data Factory in Microsoft Fabric doesn't currently support Common Data Service (Legacy) in pipelines.
+Data Factory doesn't currently support Common Data Service (Legacy) in pipelines.
 
 ## Related content
 
