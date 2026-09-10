@@ -1,6 +1,6 @@
 ---
 title: Orchestrate Azure Data Factory Pipeline with Apache Airflow Job
-description: Learn to run data factory pipeline in Apache Airflow Job.
+description: Learn to run data factory pipeline with Apache Airflow jobs.
 ms.reviewer: abnarain
 ms.topic: tutorial
 ms.custom:
@@ -9,21 +9,21 @@ ms.custom:
 ms.date: 12/18/2024
 ---
 
-# Tutorial: Orchestrate an Azure Data Factory (ADF) Pipeline with Apache Airflow Job.
+# Tutorial: Orchestrate an Azure Data Factory (ADF) pipeline with Apache Airflow jobs
 
 [!INCLUDE[apache-airflow-note](includes/apache-airflow-note.md)]
 
-In this tutorial, you'll build an Apache Airflow DAG to orchestrate the ADF pipeline with the Apache Airflow Job.
+In this tutorial, you'll build an Apache Airflow DAG to orchestrate the ADF pipeline with the Apache Airflow job.
 
 ## Prerequisites
 
 To get started, you must complete the following prerequisites:
 
-- [Create the "Apache Airflow Job" in the workspace.](../data-factory/create-apache-airflow-jobs.md).
+- [Create the Apache Airflow job in the workspace.](../data-factory/create-apache-airflow-jobs.md).
 
 - [Create the pipeline in Azure Data Factory](/azure/data-factory/tutorial-copy-data-portal).
 
-- [Create the Service Principal](/entra/identity-platform/howto-create-service-principal-portal).
+- [Create the service principal](/entra/identity-platform/howto-create-service-principal-portal).
 
 - To run Azure Data Factory (ADF) pipeline, you add the service principal as a `contributor` to the ADF instance where you're running the pipeline.
 
@@ -75,7 +75,7 @@ with DAG(
 
 3. Click on "Save," to save the file.
 
-   :::image type="content" source="media/apache-airflow-jobs/click-on-save-icon.png" lightbox="media/apache-airflow-jobs/click-on-save-icon.png" alt-text="Screenshot presents how to save DAG file in Microsoft Fabric.":::
+   :::image type="content" source="media/apache-airflow-jobs/click-on-save-icon.png" lightbox="media/apache-airflow-jobs/click-on-save-icon.png" alt-text="Screenshot presents how to save DAG file in Fabric.":::
 
 ## Create an Apache Airflow connection to connect with Azure Data Factory
 
@@ -96,4 +96,4 @@ The saved dag files are loaded in the Apache Airflow UI. You can monitor them by
 
 ## Related Content
 
-Quickstart: [Create an Apache Airflow Job](../data-factory/create-apache-airflow-jobs.md)
+Quickstart: [Create an Apache Airflow job](../data-factory/create-apache-airflow-jobs.md)

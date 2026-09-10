@@ -46,13 +46,13 @@ For more information, see the [data transformation activities](transform-data.md
 
 Data transformation activity | Compute environment
 ---------------------------- | -------------------
-[Copy data](copy-data-activity.md) | Compute manager by Microsoft Fabric
-[Dataflow Gen2](dataflows-gen2-overview.md) | Compute manager by Microsoft Fabric
-[Delete data](delete-data-activity.md) | Compute manager by Microsoft Fabric
-[Fabric Notebook](notebook-activity.md) | Apache Spark clusters managed by Microsoft Fabric
-[HDInsight activity](azure-hdinsight-activity.md) | Apache Spark clusters managed by Microsoft Fabric
-[Spark Job Definition](spark-job-definition-activity.md) | Apache Spark clusters managed by Microsoft Fabric
-[Stored Procedure](stored-procedure-activity.md) | Azure SQL, Azure Synapse Analytics, or SQL Server
+[Copy data](copy-data-activity.md) | Compute manager by Fabric
+[Dataflow Gen2](dataflows-gen2-overview.md) | Compute manager by Fabric
+[Delete data](delete-data-activity.md) | Compute manager by Fabric
+[Fabric notebook](notebook-activity.md) | Apache Spark clusters managed by Fabric
+[HDInsight activity](azure-hdinsight-activity.md) | Apache Spark clusters managed by Fabric
+[Spark job definition](spark-job-definition-activity.md) | Apache Spark clusters managed by Fabric
+[Stored procedure](stored-procedure-activity.md) | Azure SQL, Azure Synapse Analytics, or SQL Server
 [SQL script](script-activity.md) | Azure SQL, Azure Synapse Analytics, or SQL Server
 
 ## Control flow activities
@@ -71,20 +71,20 @@ Control activity | Description
 [Filter](filter-activity.md) | Apply a filter expression to an input array.
 [ForEach](foreach-activity.md) | ForEach Activity defines a repeating control flow in your pipeline. This activity is used to iterate over a collection and executes specified activities in a loop. The loop implementation of this activity is similar to the Foreach looping structure in programming languages.
 [Functions activity](functions-activity.md) | Executes an Azure Function.
-[Get metadata](get-metadata-activity.md) | GetMetadata activity can be used to retrieve metadata of any data in a Data Factory or Synapse pipeline.
+[Get metadata](get-metadata-activity.md) | GetMetadata activity can be used to retrieve metadata of any data in a Data Factory or Azure Synapse pipeline.
 [If condition](if-condition-activity.md) | The If Condition can be used to branch based on condition that evaluates to true or false. The If Condition activity provides the same functionality that an if statement provides in programming languages. It evaluates a set of activities when the condition evaluates to `true` and another set of activities when the condition evaluates to `false`.
-[Invoke pipeline](invoke-pipeline-activity.md) | Execute Pipeline activity allows a Data Factory or Synapse pipeline to invoke another pipeline.
+[Invoke pipeline](invoke-pipeline-activity.md) | Execute Pipeline activity allows a Data Factory or Azure Synapse pipeline to invoke another pipeline.
 [KQL activity](kql-activity.md) | Executes a KQL script against a Kusto instance.
-[Lakehouse maintenance activity](lakehouse-maintenance-activity.md) | Perform routine table maintenance on a Lakehouse from a Microsoft Fabric pipeline.
-[Lookup Activity](lookup-activity.md) | Lookup Activity can be used to read or look up a record/ table name/ value from any external source. This output can further be referenced by succeeding activities.
-[Refresh Materialized Lake View activity](refresh-materialized-lake-view-activity.md) | Refreshes a materialized lake view in a Lakehouse to reflect the latest data.
-[Refresh SQL analytics endpoint activity](refresh-sql-endpoint-activity.md) | Refreshes a Lakehouse SQL analytics endpoint to reflect the latest data.
-[Set Variable](set-variable-activity.md) | Set the value of an existing variable.
+[Lakehouse maintenance activity](lakehouse-maintenance-activity.md) | Perform routine table maintenance on a lakehouse from a Fabric pipeline.
+[Lookup activity](lookup-activity.md) | Lookup Activity can be used to read or look up a record/ table name/ value from any external source. This output can further be referenced by succeeding activities.
+[Refresh materialized lake view activity](refresh-materialized-lake-view-activity.md) | Refreshes a materialized lake view in a lakehouse to reflect the latest data.
+[Refresh SQL analytics endpoint activity](refresh-sql-endpoint-activity.md) | Refreshes a lakehouse SQL analytics endpoint to reflect the latest data.
+[Set variable](set-variable-activity.md) | Set the value of an existing variable.
 [Switch activity](switch-activity.md) | Implements a switch expression that allows multiple subsequent activities for each potential result of the expression.
 [Teams activity](teams-activity.md) | Posts a message in a Teams channel or group chat.
-[Until activity](until-activity.md) | Implements Do-Until loop that is similar to Do-Until looping structure in programming languages. It executes a set of activities in a loop until the condition associated with the activity evaluates to true. You can specify a timeout value for the until activity.
-[Wait activity](wait-activity.md) | When you use a Wait activity in a pipeline, the pipeline waits for the specified time before continuing with execution of subsequent activities.
-[Web activity](web-activity.md) | Web Activity can be used to call a custom REST endpoint from a pipeline.
+[Until activity](until-activity.md) | Implements do-until loop that is similar to do-until looping structure in programming languages. It executes a set of activities in a loop until the condition associated with the activity evaluates to true. You can specify a timeout value for the until activity.
+[Wait activity](wait-activity.md) | When you use a wait activity in a pipeline, the pipeline waits for the specified time before continuing with execution of subsequent activities.
+[Web activity](web-activity.md) | Web activity can be used to call a custom REST endpoint from a pipeline.
 [Webhook activity](webhook-activity.md) | Using the webhook activity, call an endpoint, and pass a callback URL. The pipeline run waits for the callback to be invoked before proceeding to the next activity.
 
 ## Adding activities to a pipeline with the [!INCLUDE [product-name](../includes/product-name.md)] UI
@@ -92,7 +92,7 @@ Control activity | Description
 Here's how to add and configure activities in your pipeline:
 
 1. Create a new pipeline in your workspace.
-1. Go to the Activities tab and browse through the available activities. Scroll right to see all options, then select an activity to add it to the pipeline editor.
+1. Go to the **Activities** tab and browse through the available activities. Scroll right to see all options, then select an activity to add it to the pipeline editor.
 1. When you add an activity and select it on the canvas, you'll see its **General** settings in the properties pane below.
 1. Each activity has other configuration options on other tabs in the properties pane.
 
@@ -156,7 +156,7 @@ An inactive activity behaves differently in a pipeline.
 
 Deactivation is a powerful tool for pipeline developers. It allows developers to "comment out" part of the code, without permanently deleting the activities. It shines in following scenarios:
 
-- When developing a pipeline, developer can add place holder inactive activities before filling all the required fields. For instance, I need a Copy activity from SQL Server to Data warehouse, but I haven't set up all the connections yet. So I use an _inactive_ copy activity as the place holder for iterative development process.
+- When developing a pipeline, developer can add place holder inactive activities before filling all the required fields. For instance, I need a Copy activity from SQL Server to warehouse, but I haven't set up all the connections yet. So I use an _inactive_ copy activity as the place holder for iterative development process.
 - After deployment, developer can comment out certain activities that are constantly causing troubles to avoid costly retries. For instance, my on-premises SQL server is having network connection issues, and I know my copy activities fail for certain. I may want to deactivate the copy activity, to avoid retry requests from flooding the brittle system.
 
 > [!NOTE]

@@ -16,14 +16,14 @@ This article outlines the steps to create an Amazon Athena connection.
 
 ## Supported authentication types
 
-The Amazon Athena connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+The Amazon Athena connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
-|Authentication type |Copy |Dataflow Gen2 |
+|Authentication type |Copy |dataflow Gen2 |
 |:---|:---|:---|
 |Organizational account| n/a | √ |
 
 ## Set up your connection for Dataflow Gen2
-You can connect Dataflow Gen2 in Microsoft Fabric to Amazon Athena using Power Query connectors. Follow these steps to create your connection:
+You can connect dataflow Gen2 in Fabric to Amazon Athena using Power Query connectors. Follow these steps to create your connection:
 
 1. Check [capabilities](#capabilities) to make sure your scenario is supported.
 1. [Complete prerequisites for Amazon Athena](#prerequisites).
@@ -53,7 +53,7 @@ You can connect Dataflow Gen2 in Microsoft Fabric to Amazon Athena using Power Q
 
 ## Set up your connection in a pipeline
 
-Data Factory in Microsoft Fabric doesn't currently support Amazon Athena in pipelines.
+Fabric Data Factory doesn't currently support Amazon Athena in pipelines.
 
 ## Related content
 
