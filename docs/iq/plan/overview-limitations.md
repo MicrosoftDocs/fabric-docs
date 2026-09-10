@@ -65,7 +65,7 @@ Group By supports a maximum of 5 million rows. Group By isn't supported when the
 
 ### Insight row limit
 
-Insight supports a maximum of 5 million rows. Insight isn't supported when the total number of rows exceeds 5 million.
+Insight supports up to 5 million rows. Insight isn't supported when the total number of rows exceeds 5 million.
 
 ### Find and Replace row limit
 
