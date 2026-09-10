@@ -11,11 +11,11 @@ ai-usage: ai-assisted
 
 # Set up your Azure Data Explorer connection
 
-This article outlines the steps to create an Azure Data Explorer connection for pipelines and Dataflow Gen2 in Microsoft Fabric.
+This article outlines the steps to create an Azure Data Explorer connection for pipelines and dataflow Gen2 in Fabric.
 
 ## Supported authentication types
 
-The Azure Data Explorer connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+The Azure Data Explorer connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
@@ -23,7 +23,7 @@ The Azure Data Explorer connector supports the following authentication types fo
 |Organizational account| √ | |
 
 ## Set up your connection for Dataflow Gen2
-You can connect Dataflow Gen2 to Azure Data Explorer in Microsoft Fabric using Power Query connectors. Follow these steps to create your connection:
+You can connect dataflow Gen2 to Azure Data Explorer in Fabric using Power Query connectors. Follow these steps to create your connection:
 
 1. Check [capabilities](#capabilities) to make sure your scenario is supported.
 1. [Complete prerequisites for Azure Data Explorer](#prerequisites).

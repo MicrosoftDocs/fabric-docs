@@ -12,17 +12,17 @@ ai-usage: ai-assisted
 
 # Set up your Azure Analysis Services connection
 
-You can connect Dataflow Gen2 to Azure Analysis Services in Microsoft Fabric using Power Query connectors. Follow these steps to create your connection:
+You can connect dataflow Gen2 to Azure Analysis Services in Fabric by using Power Query connectors. Follow these steps to create your connection:
 
 1. Check [capabilities](#capabilities) to make sure your scenario is supported.
 1. [Complete prerequisites for Azure Analysis Services](#prerequisites).
-1. [Get data in Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric).
+1. [Get data in Data Factory](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric).
 1. [Connect to Azure Analysis Services](#connect-to-azure-analysis-services).
 
 
 ## Supported authentication types
 
-The Access database connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+The Access database connector supports the following authentication types for copy and dataflow Gen2.
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|

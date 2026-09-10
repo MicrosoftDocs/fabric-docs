@@ -13,11 +13,11 @@ ai-usage: ai-assisted
 
 # Set up your Azure Data Lake Storage Gen2 connection
 
-This article outlines the steps to create an Azure Date Lake Storage Gen2 connection for pipelines and Dataflow Gen2 in Microsoft Fabric.
+This article outlines the steps to create an Azure Data Lake Storage Gen2 connection for pipelines and dataflow Gen2 in Fabric.
 
 ## Supported authentication types
 
-The Azure Date Lake Storage Gen2 connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+The Azure Data Lake Storage Gen2 connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
@@ -25,10 +25,10 @@ The Azure Date Lake Storage Gen2 connector supports the following authentication
 |Organizational account| √| √|
 |Service Principal|√||
 |Shared Access Signature (SAS)| √| √|
-|Workspace Identity| √|√|
+|Workspace identity| √|√|
 
 ## Set up your connection for Dataflow Gen2
-You can connect Dataflow Gen2 to Azure Data Lake Storage Gen2 in Microsoft Fabric using Power Query connectors. Follow these steps to create your connection:
+You can connect dataflow Gen2 to Azure Data Lake Storage Gen2 in Fabric using Power Query connectors. Follow these steps to create your connection:
 
 1. Check [capabilities](#capabilities), [limitations, and considerations](#limitations-and-considerations) to make sure your scenario is supported.
 1. [Complete prerequisites for Azure Data Lake Storage Gen2](#prerequisites).
@@ -107,9 +107,9 @@ For specific instructions to set up your connection in a pipeline, follow these 
 
    - [Key](connector-azure-data-lake-storage-gen2.md#key-authentication)
    - [Organizational account](connector-azure-data-lake-storage-gen2.md#oauth2-authentication)
-   - [Shared Access Signature](connector-azure-data-lake-storage-gen2.md#shared-access-signature-authentication)
-   - [Service Principal](connector-azure-data-lake-storage-gen2.md#service-principal-authentication)
-   - [Workspace Identity](connector-azure-data-lake-storage-gen2.md#workspace-identity-authentication)
+   - [Shared access signature](connector-azure-data-lake-storage-gen2.md#shared-access-signature-authentication)
+   - [Service principal](connector-azure-data-lake-storage-gen2.md#service-principal-authentication)
+   - [Workspace identity](connector-azure-data-lake-storage-gen2.md#workspace-identity-authentication)
 
    :::image type="content" source="media/connector-azure-data-lake-storage-gen2/authentication-method.png" alt-text="Screenshot showing the authentication method for Azure Data Lake Storage Gen2.":::
 
@@ -126,7 +126,7 @@ For specific instructions to set up your connection in a pipeline, follow these 
 1. In **Connect to data source**, enter the URL to your Azure Data Lake Storage Gen2 account. Refer to [Limitations](/power-query/connectors/data-lake-storage#limitations) to determine the URL to use.
 
 1. Select whether you want to use the file system view or the Common Data Model folder view.
-1. If needed, select the on-premises data gateway in **Data gateway** (only supported in Dataflow Gen1, Dataflow Gen2, and Semantic Models). 
+1. If needed, select the on-premises data gateway in **Data gateway** (only supported in dataflow Gen1, dataflow Gen2, and semantic models).
 
 1. Select **Sign in** to sign into the Azure Data Lake Storage Gen2 account. You are redirected to your organization's sign-in page. Follow the prompts to sign in to the account.
 1. After you've successfully signed in, select **Next**.
@@ -137,9 +137,9 @@ The Azure Data Lake Storage Gen2 connector supports the following authentication
 
 - [Key](connector-azure-data-lake-storage-gen2.md#key-authentication)
 - [Organizational account](connector-azure-data-lake-storage-gen2.md#oauth2-authentication)
-- [Shared Access Signature](connector-azure-data-lake-storage-gen2.md#shared-access-signature-authentication)
-- [Service Principal](connector-azure-data-lake-storage-gen2.md#service-principal-authentication)
-- [Workspace Identity](connector-azure-data-lake-storage-gen2.md#workspace-identity-authentication)
+- [Shared access signature](connector-azure-data-lake-storage-gen2.md#shared-access-signature-authentication)
+- [Service principal](connector-azure-data-lake-storage-gen2.md#service-principal-authentication)
+- [Workspace identity](connector-azure-data-lake-storage-gen2.md#workspace-identity-authentication)
 
 ### Key authentication
 
