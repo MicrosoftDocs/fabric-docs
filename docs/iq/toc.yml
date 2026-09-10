@@ -107,6 +107,8 @@ items:
       href: plan/planning-tutorial/powertable/tutorial-7-get-started-with-powertable.md
     - name: Set up approvals, access controls, and automations
       href: plan/planning-tutorial/powertable/tutorial-8-set-up-approvals-access-controls-automations.md
+    - name: Introduction to intelligence sheets
+      href: plan/planning-tutorial/intelligence/tutorial-9-introduction-to-intelligence-sheets.md
   - name: Get started
     items:
     - name: Prerequisites
