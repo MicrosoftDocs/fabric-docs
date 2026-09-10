@@ -101,6 +101,8 @@ items:
       href: plan/planning-tutorial/planning/tutorial-4-measure-model.md
     - name: Build a P&L row model
       href: plan/planning-tutorial/planning/tutorial-5-row-model.md
+    - name: Multidimensional allocation with cubes
+      href: plan/planning-tutorial/planning/tutorial-6-cube.md
     - name: Get started with PowerTable
       href: plan/planning-tutorial/powertable/tutorial-7-get-started-with-powertable.md
     - name: Set up approvals, access controls, and automations
