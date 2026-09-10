@@ -9,9 +9,9 @@ ms.custom: copy-job
 ai-usage: ai-generated
 ---
 
-# Change data capture from Oracle database using Copy job (Preview)
+# Change data capture from Oracle database using copy job (Preview)
 
-This tutorial describes how to use change data capture (CDC) in Copy job to efficiently replicate data changes from an Oracle database to a destination. Oracle CDC leverages LogMiner, a built-in Oracle Database utility that reads online and archived redo log files to capture data changes. This ensures your destination data stays up to date automatically.
+This tutorial describes how to use change data capture (CDC) in copy job to efficiently replicate data changes from an Oracle database to a destination. Oracle CDC leverages LogMiner, a built-in Oracle Database utility that reads online and archived redo log files to capture data changes. This ensures your destination data stays up to date automatically.
 
 ## Prerequisites
 
@@ -23,7 +23,7 @@ Before you begin, ensure you have the following:
 - **Database-level supplemental logging** must be enabled (minimum supplemental logging at a minimum).
 - **Table-level supplemental logging** must be enabled on each table you want to capture changes from.
 - A database user with the required privileges to access LogMiner and read redo logs (see [Enable CDC via LogMiner on Oracle](#enable-cdc-via-logminer-on-oracle) for details).
-- Archived redo logs must be retained for a period longer than the interval between scheduled Copy job runs to avoid data loss.
+- Archived redo logs must be retained for a period longer than the interval between scheduled copy job runs to avoid data loss.
 
 For more information about Oracle LogMiner and supplemental logging, see the official Oracle documentation:
 - [Using LogMiner to Analyze Redo Log Files](https://docs.oracle.com/en/database/oracle/oracle-database/19/sutil/oracle-logminer-utility.html)
@@ -31,8 +31,8 @@ For more information about Oracle LogMiner and supplemental logging, see the off
 - [Managing Archived Redo Log Files](https://docs.oracle.com/en/database/oracle/oracle-database/19/admin/managing-archived-redo-log-files.html)
 
 **Fabric requirements:**
-- A Fabric workspace with the necessary permissions to create a Copy job.
-- A destination data store supported by Copy job for CDC replication.
+- A Fabric workspace with the necessary permissions to create a copy job.
+- A destination data store supported by copy job for CDC replication.
 - An on‑premises data gateway running version 3000.310 or later, configured to connect to your Oracle database.
 
 > [!TIP]
@@ -167,7 +167,7 @@ Create a dedicated database user for LogMiner CDC operations and grant the requi
 
    Repeat this command for each source table.
 
-1. Verify that the user that the Oracle connection uses has the `FLASHBACK ANY TABLE` privilege. The Copy job requires this privilege to capture a consistent snapshot during the initial full load.
+1. Verify that the user that the Oracle connection uses has the `FLASHBACK ANY TABLE` privilege. The copy job requires this privilege to capture a consistent snapshot during the initial full load.
 
    ```sql
    SELECT GRANTEE, PRIVILEGE
@@ -186,20 +186,20 @@ Create a dedicated database user for LogMiner CDC operations and grant the requi
 > - LogMiner reads redo log files to capture INSERT, UPDATE, and DELETE operations.
 > - Database-level supplemental logging must be enabled before table-level supplemental logging.
 > - Archived redo logs consume additional disk space. Configure an appropriate retention policy to balance storage costs and CDC requirements.
-> - Ensure that the redo log retention period is longer than your scheduled Copy job interval to prevent change data loss.
+> - Ensure that the redo log retention period is longer than your scheduled copy job interval to prevent change data loss.
 
 For more information about Oracle LogMiner, see the official [Oracle Documentation - Using LogMiner to Analyze Redo Log Files](https://docs.oracle.com/en/database/oracle/oracle-database/19/sutil/oracle-logminer-utility.html).
 
-## Create a Copy job with Oracle database CDC
+## Create a copy job with Oracle database CDC
 
 > [!NOTE]
-> -  The following steps are very similar to what you have done in [Use Copy job to ingest data from Azure SQL DB via CDC to another Azure SQL DB](cdc-copy-job.md#how-to-get-started)
+> -  The following steps are very similar to what you have done in [Use copy job to ingest data from Azure SQL DB via CDC to another Azure SQL DB](cdc-copy-job.md#how-to-get-started)
 
-Complete the following steps to create a new Copy job to ingest data from Oracle database via CDC to a destination:
+Complete the following steps to create a new copy job to ingest data from Oracle database via CDC to a destination:
 
-1. Select **+ New Item**, choose the **Copy job** icon, name your Copy job, and select **Create**.
+1. Select **+ New Item**, choose the **Copy job** icon, name your copy job, and select **Create**.
 
-   :::image type="content" source="media/copy-job/create-new-copy-job.png" alt-text="Screenshot showing where to navigate to the Data Factory home page and create a new Copy job.":::
+   :::image type="content" source="media/copy-job/create-new-copy-job.png" alt-text="Screenshot showing where to navigate to the Data Factory home page and create a new copy job.":::
 
 1. Choose the data store to copy data from. In this example, choose **Oracle database**.
 
@@ -213,11 +213,11 @@ Complete the following steps to create a new Copy job to ingest data from Oracle
    Tables without CDC enabled:
    :::image type="content" source="media/copy-job/none-cdc-table-icon.png" alt-text="Screenshot showing none cdc table icon.":::
 
-   :::image type="content" source="media/copy-job/select-cdc-tables.png" alt-text="Screenshot showing where to select cdc tables for the Copy job.":::
+   :::image type="content" source="media/copy-job/select-cdc-tables.png" alt-text="Screenshot showing where to select cdc tables for the copy job.":::
 
 1. Select your destination store. Choose a destination that supports CDC merge or upsert operations for optimal CDC replication.
 
-   :::image type="content" source="media/copy-job/select-destination-store.png" alt-text="Screenshot showing where to select the destination store for the Copy job.":::
+   :::image type="content" source="media/copy-job/select-destination-store.png" alt-text="Screenshot showing where to select the destination store for the copy job.":::
 
 1. Select **Incremental copy** and you'll see no Incremental column for each table is required to be input to track changes. The default **Update method** should be set to **Merge**, and the required key columns will match the primary key defined in the source store by default.
 
@@ -235,11 +235,11 @@ Complete the following steps to create a new Copy job to ingest data from Oracle
 
 1. Update your source tables in Oracle by inserting, updating, or deleting rows.
 
-1. Run the Copy job again to capture and replicate all changes, including inserted, updated, and deleted rows, to the destination.
+1. Run the copy job again to capture and replicate all changes, including inserted, updated, and deleted rows, to the destination.
 
 ## Next steps
 
-- [Change data capture (CDC) in Copy job](cdc-copy-job.md)
-- [What is the Copy job in Data Factory](what-is-copy-job.md)
-- [How to monitor a Copy job](monitor-copy-job.md)
+- [Change data capture (CDC) in copy job](cdc-copy-job.md)
+- [What is the copy job in Data Factory](what-is-copy-job.md)
+- [How to monitor a copy job](monitor-copy-job.md)
 - [Oracle database connector overview](connector-oracle-database-overview.md)
