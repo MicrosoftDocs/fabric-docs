@@ -95,7 +95,7 @@ Multiple record operations aren't supported in subsequent automation actions. Su
 
 Create Record, Update Record, Delete Record, and Form Submission database triggers support writeback of a maximum of 10 records per trigger type. If a user writes back more than 10 records, automation jobs aren't triggered for any of the records. The system doesn't partially execute the automation for the first 10 records.
 
-### Scrollbar row limit
+### Scroll bar row limit
 
 Scroll bar supports up to 5 million rows. Scroll bar isn't supported when the total number of rows exceeds 5 million. Users can navigate the table only through pagination.
 
