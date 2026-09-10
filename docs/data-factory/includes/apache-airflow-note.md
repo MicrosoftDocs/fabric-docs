@@ -6,6 +6,6 @@ ms.topic: include
 ---
 
 > [!NOTE]
-> Apache Airflow job is powered by [Apache Airflow](https://airflow.apache.org/).
+> Apache Airflow jobs in Fabric are powered by [Apache Airflow](https://airflow.apache.org/).
 >
-> Currently, private networks and virtual networks aren't supported with Fabric Apache Airflow jobs.
+> Currently, private networks and virtual networks aren't supported with Apache Airflow jobs.

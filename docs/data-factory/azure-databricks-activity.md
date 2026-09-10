@@ -9,7 +9,7 @@ ms.custom: pipelines
 
 # Transform data by running an Azure Databricks activity
 
-The Azure Databricks activity in Data Factory for Microsoft Fabric allows you to orchestrate the following Azure Databricks jobs:
+The Azure Databricks activity in Fabric Data Factory allows you to orchestrate the following Azure Databricks jobs:
 
 - Notebook
 - Jar
@@ -109,11 +109,11 @@ Under the **Settings** tab, you can choose the **Python** radio button to run a 
 
 :::image type="content" source="media/azure-databricks-activity/databricks-activity-python.png" alt-text="Screenshot showing the Python type of the Azure Databricks activity.":::
 
-#### Orchestrating the Job type in Azure Databricks activity:
+#### Orchestrating the job type in Azure Databricks activity:
 
-Under the **Settings** tab, you can choose the **Job** radio button to run a Databricks Job. You need to specify Job using the drop-down to be executed on Azure Databricks and any optional Job parameters to be passed. You can run Serverless jobs with this option. 
+Under the **Settings** tab, you can choose the **Job** radio button to run a Databricks job. You need to specify job using the drop-down to be executed on Azure Databricks and any optional job parameters to be passed. You can run Serverless jobs with this option.
 
-:::image type="content" source="media/azure-databricks-activity/databricks-activity-job.png" alt-text="Screenshot showing the Job type of the Azure Databricks activity.":::
+:::image type="content" source="media/azure-databricks-activity/databricks-activity-job.png" alt-text="Screenshot showing the job type of the Azure Databricks activity.":::
 
 ## Supported Libraries for the Azure Databricks activity
 
