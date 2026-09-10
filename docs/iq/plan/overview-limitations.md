@@ -73,7 +73,7 @@ Find and Replace supports up to 5 million rows. Find and Replace isn't supported
 
 ### Snapshot limitations
 
-Snapshot export in Gantt supports up to 100,000 rows, and you can create up to five snapshots per table.
+Snapshot export in Gantt supports up to 100,000 rows, and you can create up to 5 snapshots per table.
 
 ### Automation Find Action record limit
 
@@ -93,7 +93,7 @@ Multiple record operations aren't supported in subsequent automation actions. Su
 
 ### Automation database trigger writeback limit
 
-Create Record, Update Record, Delete Record, and Form Submission database triggers support writeback of a maximum of 10 records per trigger type. If a user writes back more than 10 records, automation jobs aren't triggered for any of the records. The system doesn't partially execute the automation for the first 10 records.
+Create Record, Update Record, Delete Record, and Form Submission database triggers support writeback of up to 10 records per trigger type. If a user writes back more than 10 records, automation jobs aren't triggered for any of the records. The system doesn't partially execute the automation for the first 10 records.
 
 ### Scroll bar row limit
 
