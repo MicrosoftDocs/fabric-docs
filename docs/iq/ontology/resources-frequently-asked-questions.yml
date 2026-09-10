@@ -20,13 +20,13 @@ sections:
       - question: Does ontology (preview) support importing from industry-specific database templates from Azure Synapse?
         answer: No, import from industry-specific templates isn't currently available.
 
-      - question: What's the difference between ontology (preview) and Graph in Microsoft Fabric?
+      - question: What's the difference between ontology (preview) and graph in Microsoft Fabric?
         answer: |
-          While ontology (preview) integrates with [Graph in Microsoft Fabric](../../graph/overview.md), they are distinct items that serve different purposes.
+          While ontology (preview) integrates with [graph in Microsoft Fabric](../../graph/overview.md), they are distinct items that serve different purposes.
           
           Ontology provides a semantic layer for your enterprise vocabulary that unifies meaning across domains and OneLake sources. It defines entity types, relationships, properties, rules, and constraints, and binds them to real data so that downstream tools share the same language. [Graph in Microsoft Fabric](../../graph/overview.md) is a graph solution that offers native graph storage and compute for nodes, edges, and traversals over connected data. It's good for path finding, dependency analysis, and graph algorithms.
           
-          Ontology (preview) works together with Graph today. Ontology declares which things connect and why, and you can use Graph to view your entity instances to learn more about the instantiated ontology and see patterns in the [entity type details](how-to-view-entity-type-details.md).
+          Ontology (preview) works together with graph today. Ontology declares which things connect and why, and you can use graph to view your entity instances to learn more about the instantiated ontology and see patterns in the [entity type details](how-to-view-entity-type-details.md).
           
           For more about these items in Fabric IQ, see [What is Fabric IQ (preview)?](../overview.md#iq-as-a-workload-in-fabric)
 
