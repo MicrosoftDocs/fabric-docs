@@ -17,7 +17,7 @@ This article outlines the steps to create a Databricks connection.
 
 ## Supported authentication types
 
-The Databricks connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+The Databricks connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
@@ -25,8 +25,8 @@ The Databricks connector supports the following authentication types for copy an
 |Personal Access Token| n/a | √ |
 |OAuth (OIDC)| n/a | √ |
 
-## Set up your connection for Dataflow Gen2
-You can connect Dataflow Gen2 to Databricks in Microsoft Fabric using Power Query connectors. Follow these steps to create your connection:
+## Set up your connection for dataflow Gen2
+You can connect dataflow Gen2 to Databricks in Fabric using Power Query connectors. Follow these steps to create your connection:
 
 1. Check [capabilities](#capabilities) to make sure your scenario is supported.
 1. [Complete prerequisites for Databricks](#prerequisites).
@@ -51,7 +51,7 @@ You can connect Dataflow Gen2 to Databricks in Microsoft Fabric using Power Quer
 
 ## Set up your connection in a pipeline
 
-Data Factory in Microsoft Fabric doesn't currently support the Databricks connector in pipelines.
+Data Factory doesn't currently support the Databricks connector in pipelines.
 
 ## Related content
 
