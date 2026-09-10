@@ -36,7 +36,7 @@ You can configure checkbox column properties similar to other data input columns
 
 ## Modify column properties
 
-After inserting a checkbox column in a sheet, you can [modify] (how-to-insert-data-input-columns.md#modify-column-properties) its properties and change its initial configuration.
+After inserting a checkbox column in a sheet, you can [modify](how-to-insert-data-input-columns.md#modify-column-properties) its properties and change its initial configuration.
 
 ## Common use case of checkbox columns
 

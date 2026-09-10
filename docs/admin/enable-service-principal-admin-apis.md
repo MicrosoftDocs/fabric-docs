@@ -116,7 +116,7 @@ An app using service principal authentication that calls read-only admin APIs **
 
 The **Service principals can access admin APIs used for updates** setting applies to Fabric admin APIs, such as the [Workspaces - Restore Workspace API](/rest/api/fabric/admin/workspaces/restore-workspace?tabs=HTTP). 
 
-To find out if a specific Fabric admin API supports service principal authentication, check the API's documentation in the [Fabric REST API reference](/rest/api/fabric/articles/using-fabric-apis). Look for the "Microsoft Entra supported identities" section, which indicates whether service principal authentication is supported.
+To find out if a specific Fabric admin API supports service principal authentication, check the API's documentation in the [Fabric REST API reference](/rest/api/fabric/articles/get-started/using-fabric-apis). Look for the "Microsoft Entra supported identities" section, which indicates whether service principal authentication is supported.
 
 ## Considerations and limitations
 
@@ -126,7 +126,7 @@ To find out if a specific Fabric admin API supports service principal authentica
 
 ## Related content
 
-* [Fabric REST API reference](/rest/api/fabric/articles/using-fabric-apis)
+* [Fabric REST API reference](/rest/api/fabric/articles/get-started/using-fabric-apis)
 * [DSPM for AI considerations](/purview/dspm-for-ai-considerations#prerequisites-for-fabric-data-risk-assessments)
 * [Metadata scanning overview](../governance/metadata-scanning-overview.md)
 * [Set up metadata scanning](./metadata-scanning-setup.md)
