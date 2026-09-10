@@ -101,7 +101,7 @@ Scroll bar supports up to 5 million rows. Scroll bar isn't supported when the to
 
 ### Gantt and Resource Layout row limit
 
-Gantt and Resource Layout support a maximum of 30,000 rows. Gantt and Resource Layout aren't supported when the total number of rows exceeds 30,000.
+Gantt and Resource Layout support up to 30,000 rows. Gantt and Resource Layout aren't supported when the total number of rows exceeds 30,000.
 
 ## Workspace permissions
 
