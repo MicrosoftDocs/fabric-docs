@@ -29,7 +29,7 @@ Fabric capacity overview events provide summary-level information related to you
 At the top of the detail page, you see the following two actions.
 
 - **Create eventstream** - lets you create an eventstream based on events from the selected Fabric capacity.
-- **Set alert** - lets you set an alert when an operation is done for a Fabric capacity, such as a state change.
+- **Set alert** - sets an alert when an operation is done for a Fabric capacity, such as a state change. You can start from an alert template for common capacity alerts, or create a custom alert from scratch.
 
 ## See what's using this category
 
