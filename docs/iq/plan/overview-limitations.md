@@ -73,7 +73,7 @@ Find and Replace supports up to 5 million rows. Find and Replace isn't supported
 
 ### Snapshot limitations
 
-Snapshot export in Gantt supports a maximum of 100,000 rows, and you can create up to 5 snapshots per table.
+Snapshot export in Gantt supports up to 100,000 rows, and you can create up to five snapshots per table.
 
 ### Automation Find Action record limit
 
