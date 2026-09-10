@@ -119,6 +119,8 @@ items:
       href: plan/planning-how-to-create-database-connection.md
     - name: Create a planning sheet
       href: plan/planning-how-to-get-started.md
+    - name: Get started with PowerTable sheets
+      href: plan/powertable-how-to-create-table-app.md
     - name: Get started with intelligence sheets
       href: plan/intelligence-how-to-get-started.md
     - name: Get started with reporting
@@ -413,14 +415,12 @@ items:
       items:
         - name: Create a table app
           items:
-            - name: Import Excel or CSV file
-              href: plan/powertable-how-to-create-table-app.md
-            - name: Connect to a semantic model
-              href: plan/powertable-how-to-connect-semantic-model.md
-            - name: Connect to a database
-              href: plan/powertable-how-to-connect-existing-database.md
             - name: Enter table data manually
               href: plan/powertable-how-to-enter-table-data-manually.md
+            - name: Connect to a database
+              href: plan/powertable-how-to-connect-existing-database.md
+            - name: Connect to a semantic model
+              href: plan/powertable-how-to-connect-semantic-model.md
             - name: PowerTable sheets creation FAQ
               href: plan/resources/powertable-sheets-creation-faq.md
         - name: Update table data
