@@ -762,8 +762,8 @@ To audit OneLake data access and storage operations, use [OneLake diagnostics](.
 | Update workspace IP firewall rules | :::no-loc text="SetFolderFirewallRules"::: | Update workspace IP firewall rules |
 | Enabled external data share access for inbound access restricted workspaces | :::no-loc text="ExternalDataSharesBypassForWorkspaceEnabled"::: | |
 | Disabled external data share access for inbound access restricted workspaces | :::no-loc text="ExternalDataSharesBypassForWorkspaceDisabled"::: | |
-| Updated Git connection settings | :::no-loc text="GitConnectionSettingsUpdated"::: | Updated Git connection settings | |
-| Branch workspace configuration updated | :::no-loc text="GitBranchWorkspaceConfigured"::: | Branch workspace configuration updated
+| Updated Git connection settings | :::no-loc text="GitConnectionSettingsUpdated"::: | Updated Git connection settings |
+| Branch workspace configuration updated | :::no-loc text="GitBranchWorkspaceConfigured"::: | Branch workspace configuration updated |
 
 ## Considerations and limitations
 
