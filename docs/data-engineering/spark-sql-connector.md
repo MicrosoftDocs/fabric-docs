@@ -3,12 +3,11 @@ title: Spark connector for SQL databases
 description: Learn how to use Spark Connector to connect to Azure SQL databases from Microsoft Fabric Spark Runtime
 ms.reviewer: arali
 ms.topic: how-to
-ms.date: 10/01/2025
+ms.date: 09/01/2026
+ai-usage: ai-assisted
 ---
 
-# Spark connector for SQL databases (Preview)
-
-[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
+# Spark connector for SQL databases
 
 The Spark connector for SQL databases is a high-performance library that lets you read from and write to SQL Server, Azure SQL databases, and SQL databases in Fabric. The connector offers the following capabilities:
 
@@ -44,6 +43,9 @@ For a SQL database in Fabric:
 
 In this section, we provide code examples to demonstrate how to use the Spark connector for SQL databases effectively. These examples cover various scenarios, including reading from and writing to SQL tables, and configuring the connector options.
 
+> [!NOTE]
+> Before a bulk write, all incoming Spark data must fit the target SQL data types. When you overwrite or create a table, the connector maps Spark `TimestampType` and `TimestampNTZType` values to SQL `datetime2` instead of `datetime`. Spark timestamp types support up to six digits of fractional-second precision, but SQL `datetime` supports three, which can cause a mismatch.
+
 ### Supported options
 
 The minimal required option is `url` as `"jdbc:sqlserver://<server>:<port>;database=<database>;"` or set `spark.mssql.connector.default.url`.
@@ -71,7 +73,11 @@ Other [Bulk API options](/sql/connect/jdbc/using-bulk-copy-with-the-jdbc-driver?
 
 ### Write and read example
 
-The following code shows how to write and read data by using the `mssql("<schema>.<table>")` method with automatic Microsoft Entra ID authentication.
+The following code uses automatic Microsoft Entra ID authentication to demonstrate these operations:
+
+- Write a DataFrame: `df.write.option("...", "...").mssql("<schema>.<table>")`.
+- Read a table: `spark.read.option("...", "...").mssql("<schema>.<table>")`.
+- Run a custom query: `spark.read.option("...", "...").option("query", "<your-custom-query>").mssql()`.
 
 > [!TIP]
 > Data is created inline for demonstration purposes. In a production scenario, you would typically read data from an existing source or create a more complex `DataFrame`.
@@ -86,6 +92,7 @@ column_header = ["Name", "Age"]
 df = spark.createDataFrame(row_data, column_header)
 df.write.mode("overwrite").option("url", url).mssql("dbo.publicExample")
 spark.read.option("url", url).mssql("dbo.publicExample").show()
+spark.read.option("url", url).option("query", "SELECT * FROM dbo.publicExample WHERE Age = 3").mssql().show() # Read with a custom query
 
 url = "jdbc:sqlserver://<server>:<port>;database=<database2>;" # different database
 df.write.mode("overwrite").option("url", url).mssql("dbo.tableInDatabase2") # default url is updated
@@ -100,7 +107,7 @@ import org.apache.spark.sql.Row
 import org.apache.spark.sql.types._
 val url = "jdbc:sqlserver://<server>:<port>;database=<database>;"
 val row_data = Seq(
-  Row("Alice", 2),
+  Row("Alice", 1),
   Row("Bob", 2),
   Row("Charlie", 3)
 )
@@ -111,6 +118,7 @@ val schema = List(
 val df = spark.createDataFrame(spark.sparkContext.parallelize(row_data), StructType(schema))
 df.write.mode("overwrite").option("url", url).mssql("dbo.publicExample")
 spark.read.option("url", url).mssql("dbo.publicExample").show
+spark.read.option("url", url).option("query", "SELECT * FROM dbo.publicExample WHERE Age = 3").mssql().show // Read with a custom query
 
 val url = "jdbc:sqlserver://<server>:<port>;database=<database2>;" // different database
 df.write.mode("overwrite").option("url", url).mssql("dbo.tableInDatabase2") // default url is updated
@@ -144,6 +152,7 @@ token = credential.get_token(scope).token
 
 df.write.mode("overwrite").option("url", url).option("accesstoken", token).mssql("dbo.publicExample")
 spark.read.option("accesstoken", token).mssql("dbo.publicExample").show()
+spark.read.option("accesstoken", token).option("query", "SELECT * FROM dbo.publicExample WHERE Age = 3").mssql().show() # Read with a custom query
 ```
 
 # [User/Password](#tab/userandpassword)
@@ -156,6 +165,7 @@ column_header = ["Name", "Age"]
 df = spark.createDataFrame(row_data, column_header)
 df.write.mode("overwrite").option("url", url).option("user", "").option("password", "").mssql("dbo.publicExample")
 spark.read.option("user", "").option("password", "").mssql("dbo.publicExample").show()
+spark.read.option("user", "").option("password", "").option("query", "SELECT * FROM dbo.publicExample WHERE Age = 3").mssql().show() # Read with a custom query
 ```
 
 ---
@@ -171,13 +181,26 @@ This connector supports the options defined here: [Spark Save functions](https:/
 * **Overwrite**: If the destination table exists, the table is dropped, recreated, and new data is appended. 
   
     > [!NOTE]
-    > When you use `overwrite`, the original table schema (especially MSSQL-exclusive data types) and table indices are lost and replaced by the schema inferred from your Spark DataFrame. To avoid losing schema and indices, use `.option("truncate", true)` instead of `overwrite`.
+    > When you use `overwrite`, you lose the original table schema (especially MSSQL-exclusive data types) and table indices. The schema is replaced by the schema inferred from your Spark DataFrame. To avoid losing the schema and indices, add `.option("truncate", true)`.
 
 * **Append**: If the destination table exists, new data is appended to it. Otherwise, a new table is created with data.
 
 ## Troubleshoot
 
 When the process finishes, the output of your Spark read operation appears in the cell's output area. Errors from `com.microsoft.sqlserver.jdbc.SQLServerException` come directly from SQL Server. You can find detailed error information in the Spark application logs.
+
+Bulk writes require incoming data to fit the target SQL data types. If the data doesn't fit, you might receive this error:
+
+```text
+Caused by: com.microsoft.sqlserver.jdbc.SQLServerException: The service has encountered an error processing your request. Please try again. Error code 4815.
+```
+
+For example, this error can occur when the target SQL table uses `datetime`, but an incoming Spark `TimestampType` value, such as `2025-01-01 10:30:00.123456`, has more precision than `datetime` supports.
+
+To resolve the error, use one of these approaches:
+
+- Cast, truncate, or transform the incoming data to fit the target SQL data type. For example, truncate the value to three digits of fractional-second precision: `2025-01-01 10:30:00.123000`.
+- Allow the connector to recreate the table schema by setting `.option("truncate", false)`. The connector maps the Spark timestamp type to SQL `datetime2`.
 
 ## Related content
 

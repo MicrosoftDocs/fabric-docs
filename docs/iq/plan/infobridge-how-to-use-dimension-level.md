@@ -1,5 +1,5 @@
 ---
-title: Use dimension level in Infobridge
+title: Use Dimension Level in Infobridge
 description: Learn how dimension level in a row model changes the measures available to Infobridge queries and how to reset the configuration.
 ms.topic: how-to
 ms.date: 08/18/2026

@@ -79,7 +79,7 @@ Permissions can be combined to permit a client to perform multiple operations wi
 
 Examples of valid permission settings include `rw`, `rd`, `rl`, `wd`, `wl`, and `rl`. You can't specify a permission more than once.
 
-To ensure parity with existing Azure Storage tools, OneLake uses the same permission format as Azure Storage. OneLake evaluates the permissions granted to a SAS in `signedPermissions`, the permissions of the signing identity in Fabric, and any [OneLake security roles](./security/get-started-onelake-security.md), if applicable.
+To ensure parity with existing Azure Storage tools, OneLake uses the same permission format as Azure Storage. OneLake evaluates the permissions granted to a SAS in `signedPermissions`, the permissions of the signing identity in Fabric, and any [OneLake security roles](./security/data-access-control-model.md), if applicable.
 
 Remember that some operations, such as setting permissions or deleting workspaces, generally aren't permitted on OneLake via Azure Storage APIs. Granting that permission (`sp=op`) doesn't allow a OneLake SAS to perform those operations.
 
@@ -287,5 +287,5 @@ For the full Python SDK setup, authentication, and client patterns, see the [Azu
 
 - [Create a user delegation SAS](/rest/api/storageservices/create-user-delegation-sas)
 - [Request a user delegation key](/rest/api/storageservices/get-user-delegation-key)
-- [Get started with OneLake data access roles](security/get-started-onelake-security.md)
+- [OneLake security roles, permissions, and scopes](security/data-access-control-model.md)
 

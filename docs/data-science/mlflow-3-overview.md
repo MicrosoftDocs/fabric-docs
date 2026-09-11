@@ -1,8 +1,8 @@
 ---
 title: MLflow 3 in Fabric Data Science
 description: Learn how MLflow 3 works in Microsoft Fabric, including the LoggedModel entity, generative AI tracing, and migration from MLflow 2.x.
-author: ruixinxu
-ms.author: ruxu
+author: s-polly
+ms.author: scottpolly
 ms.reviewer: cruiseli
 ms.topic: concept-article
 ms.date: 05/15/2026

@@ -4,7 +4,7 @@ description: Learn how to buy Microsoft Fabric capacity through an Azure subscri
 author: dknappettmsft
 ms.author: daknappe
 ms.topic: how-to
-ms.date: 08/04/2026
+ms.date: 08/27/2026
 ai-usage: ai-assisted
 
 #customer intent: As an administrator or an executive, I want to learn how to buy Microsoft Fabric capacity so that I can start working in the Microsoft Fabric platform.
@@ -18,6 +18,8 @@ Fabric capacity comes as Azure F SKUs, which you buy through an Azure subscripti
 
 The rest of this article shows you how to buy an F SKU directly through the Azure portal or through a CSP.
 
+Buying capacity provides the compute resources for Fabric. To enable users in your tenant to create Fabric items, see [Enable Microsoft Fabric for your organization](../admin/fabric-switch.md).
+
 > [!TIP]
 > The [Fabric Analyst in a Day (FAIAD)](https://aka.ms/LearnFAIAD) workshop is a free, hands-on training for analysts who work with Power BI and Fabric. You get hands-on experience analyzing data and building reports in Fabric. It covers key concepts such as working with lakehouses, creating reports, and analyzing data in the Fabric environment.
 
@@ -29,7 +31,7 @@ To buy Fabric capacity, you need:
    - Microsoft Fabric free
    - Power BI
 
-- An Azure subscription
+- An Azure subscription associated with the Microsoft Entra tenant where you want to provision the capacity. If you don't have a subscription, see [Create an additional Azure subscription](/azure/cost-management-billing/manage/create-subscription).
 
 - Permission on an Azure subscription to create a capacity. As a best practice, create a custom role scoped to the following [Azure role-based access control](/azure/role-based-access-control/overview) (Azure RBAC) permissions:
 
@@ -41,6 +43,12 @@ To buy Fabric capacity, you need:
    ```
 
    You can also use the built-in Owner or Contributor roles, but these roles are privileged roles that grant more permission than necessary.
+
+- The `Microsoft.Fabric` resource provider registered in the Azure subscription. Registration is required before you provision your first capacity. For registration steps, see [Register resource provider](/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider).
+
+- A supported Azure region for the Fabric workloads that you plan to use. Review [Fabric region availability](../admin/region-availability.md) before you select a region.
+
+- Enough available Fabric capacity unit (CU) quota in the Azure subscription and region for the SKU that you want to buy. For example, an F64 capacity requires 64 available CUs. If the available quota is too low, request an increase before you create the capacity. For instructions, see [Microsoft Fabric capacity quotas](fabric-quotas.md).
 
 ## Buy an Azure capacity SKU for Fabric
 
@@ -64,9 +72,9 @@ To buy an Azure capacity SKU for Fabric in the Azure portal, follow these steps:
 
     * **Size** - Select your capacity size. Capacities come in different stock keeping units (SKUs), and Fabric measures them by capacity units (CUs). View a detailed list of Fabric capacities in [Capacities](licenses.md#capacity).
 
-    * **Fabric capacity administrator** - Select the [admin](../admin/microsoft-fabric-admin.md#capacity-admin-roles) for this capacity.
-        * The capacity administrator must belong to the tenant where you provision the capacity.
-        * Business to business (B2B) users can't be capacity administrators.
+    * **Fabric capacity administrator** - Select the [admin](../admin/roles.md#capacity-admin-roles) for this capacity.
+       * The capacity administrator must belong to the tenant where you provision the capacity.
+       * Business to business (B2B) users can't be capacity administrators.
 
 1. Select **Next: Tags** and if necessary, enter a name and a value for your capacity.
 
@@ -83,6 +91,8 @@ Buying through a CSP doesn't change how Fabric works. After the capacity is avai
 ## Related content
 
 * [Understand Microsoft Fabric licenses and capacity](licenses.md)
+
+* [Enable Microsoft Fabric for your organization](../admin/fabric-switch.md)
 
 * [Manage your capacity](/power-bi/enterprise/service-admin-premium-manage#manage-capacity)
 

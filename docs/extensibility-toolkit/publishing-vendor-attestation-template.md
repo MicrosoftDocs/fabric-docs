@@ -41,7 +41,8 @@ Microsoft must be notified promptly prior to releasing any changes if the change
 
 ### Vendor Information
 
-
+|Description|Required or Optional|
+|-----|-----|
 | Company Name: | (Required) |
 | Company Website: | (Required)  |
 | Address: | (Required)  |
@@ -53,7 +54,8 @@ Microsoft must be notified promptly prior to releasing any changes if the change
 
 ### Primary Contact
 
-
+|Description|Required or Optional|
+|-----|-----|
 | Name: | (Required)  |
 | Title: | (Required)  |
 | Email: | (Required / Email Alias OK) |
@@ -78,7 +80,8 @@ The following sections documents details, exceptions, or variances regarding the
 
 ### Workload Information
 
-
+|Description|Required or Optional|
+|-----|-----|
 | Workload Version: | (Required)  |
 | Workload Name: | (Required)  |
 | Release Date: | (Required / Email Alias OK) |

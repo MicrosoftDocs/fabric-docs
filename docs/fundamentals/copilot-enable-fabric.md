@@ -5,7 +5,7 @@ author: SnehaGunda
 ms.author: sngun
 ms.reviewer: shlindsay
 ms.topic: how-to
-ms.date: 05/22/2026
+ms.date: 08/10/2026
 ms.update-cycle: 180-days
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
@@ -57,11 +57,15 @@ You can choose to enable Copilot for only select security groups. Copilot in Fab
 
    * Enable the [Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance](../admin/service-admin-portal-copilot.md#data-sent-to-azure-openai-can-be-processed-outside-your-capacitys-geographic-region-compliance-boundary-or-national-cloud-instance) setting.
 
+   * Enable the [Users can use Copilot, AI Agents, and other AI experiences powered by OpenAI as a Microsoft subprocessor](copilot-openai-subprocessor.md#enable-the-use-of-openai-operated-models) setting.
+
+   * Enable the [Data sent to OpenAI as a Microsoft subprocessor can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance](copilot-openai-subprocessor.md#data-residency-considerations-for-openai) setting.
+
 1. Optionally, apply each setting to specific security groups rather than the entire organization.
 
    :::image type="content" source="media/copilot-enable-fabric/enable-copilot.png" alt-text="Screenshot of the Fabric admin portal with the Copilot tenant setting toggle highlighted.":::
 
-For more information about these settings, see [Copilot tenant settings](../admin/service-admin-portal-copilot.md).
+For more information about these settings, see [Copilot tenant settings](../admin/service-admin-portal-copilot.md) and [OpenAI as a subprocessor in Microsoft Fabric](copilot-openai-subprocessor.md).
 
 ## Configure delegated capacity settings
 
@@ -72,6 +76,10 @@ If the Copilot tenant settings are [delegated to capacity administrators](../adm
 1. In the delegated tenant settings, enable the **Users can use Copilot and other features powered by Azure OpenAI** setting.
 
 1. Enable the **Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance** setting.
+
+1. Enable the **Users can use Copilot, AI Agents, and other AI experiences powered by OpenAI as a Microsoft subprocessor** setting.
+
+1. Enable the **Data sent to OpenAI as a Microsoft subprocessor can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance** setting.
 
 1. Optionally, apply each setting to specific security groups.
 
@@ -97,6 +105,7 @@ Copilot usage in Power BI Desktop counts against the Fabric capacity assigned to
 
 - [What is Microsoft Fabric?](microsoft-fabric-overview.md)
 - [Copilot in Fabric: FAQ](copilot-faq-fabric.yml)
+- [OpenAI as a subprocessor in Microsoft Fabric](copilot-openai-subprocessor.md)
 - [Foundry Tools in Fabric (preview)](../data-science/ai-services/ai-services-overview.md)
 - [Copilot tenant settings](../admin/service-admin-portal-copilot.md)
 - [Copilot in Power BI](/power-bi/create-reports/copilot-introduction)

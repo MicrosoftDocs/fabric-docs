@@ -1,4 +1,4 @@
----
+﻿---
 title: Customize a map
 description: Learn how to customize a map in Microsoft Fabric Real-Time Intelligence.
 ms.reviewer: smunk, sipa
@@ -9,296 +9,372 @@ ms.search.form: Customize the map
 
 # Customize a map
 
-Microsoft Fabric Maps offers a comprehensive set of options for customizing the map and display. By default, the map style is set to Grayscale Light, but you can easily change the map style, and toggle the visibility of various map elements. More customization options include adding interactive controls, setting the initial map view, and selecting a display language that best suits the needs of the map's audience.
+Microsoft Fabric Maps provides two levels of customization. **Base map settings** control the overall appearance and behavior of the map, including the basemap style, map elements, interactive controls, initial view, and localization. These settings apply to the entire map and affect all layers. **Layer settings** control how individual datasets are rendered, including colors, labels, symbols, clustering, and data-driven styling. Changes to layer settings affect only the selected layer, making it possible to customize each dataset independently.
 
 ## Prerequisites
 
 * A [workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity)
 * A [map](create-map.md) with editing permissions and connected data sources, either geoJson files in lakehouse, or KQL databases.
 
-## Change Map settings
+## Configure basemap settings
 
-The Map visual in Microsoft Fabric offers a comprehensive set of options for customizing the map and display. By default, the map style is set to Grayscale Light, but you can easily change the map style, and toggle the visibility of various map elements. More customization options include adding interactive controls such as zoom, scale, pitch, compass, and world wrap, setting the initial map view, and selecting a display language that best suits the needs of the map's audience.
+Map settings control the overall appearance and behavior of the map. You can choose a basemap style, configure the initial map view, show or hide map elements such as labels and boundaries, enable interactive controls, and select the display language for map labels.
+
+Changes made to map settings apply to the entire map and affect all layers displayed on it.
 
 :::image type="content" source="media/customize-map/ribbon-map-setting.png" lightbox="media/customize-map/ribbon-map-setting.png" alt-text="Screenshot of ribbon map settings.":::
 
-The following screenshot displays a map using the "Road" style, centered around the state of Washington in the United States.
+There are five different categories of basemap settings:
 
-:::image type="content" source="media/customize-map/map-setting-section-1.png" lightbox="media/customize-map/map-setting-section-1.png" alt-text="Screenshot of map setting section 1.":::
+* Style
+* Initial map view
+* Map elements
+* Controls
+* Localization
 
-The following screenshot displays the same map as in the previous example, but with labels and administrative borders hidden. Additionally, all map controls—such as zoom, pitch, compass, and scale—are enabled.
+### Style
 
-:::image type="content" source="media/customize-map/map-setting-section-2.png" lightbox="media/customize-map/map-setting-section-2.png" alt-text="Screenshot of map setting section 2.":::
+The map style determines the appearance of the basemap and provides geographic context for the data displayed on the map. Choose from a range of built-in styles, such as road, satellite, grayscale, and high-contrast themes, to match your visualization needs and improve readability for your audience.
 
-The following table describes the available map settings and their corresponding properties.
+:::image type="content" source="media/customize-map/base-map-style.png" lightbox="media/customize-map/base-map-style.png" alt-text="A screenshot showing the Basemap configuration panel's list of initial map view settings available for the basemap.":::
 
-| Section | Property | Description |
-|--|--|--|
-| Style | Map style | Supports the following built-in [map styles](/azure/azure-maps/supported-map-styles):<br><ul><li>Road</li><li>Satellite</li><li>Hybrid</li><li>Grayscale (Light)</li><li>Grayscale (Dark)</li><li>Night</li><li>High Contrast (Light)</li><li>High Contrast (Dark)</li><li>Blank</li><li>Blank (Accessible)</li></ul><br>Default = *Grayscale (Light)* |
-| | Background color | Configure background color when the map style is set to *Blank* or *Blank (accessible)*. |
-| Initial map view | Latitude | The latitude coordinate defines the center point of your preferred map view. The value must be set between -90 and 90 degrees. |
-| | Longitude | The longitude coordinate defines the center point of your preferred map view. The value must be set between -180 and 180 degrees. |
-| | Zoom level | The initial zoom level for the preferred map view should be set between 1 and 22. Default = *1*|
-| | Pitch | Pitch controls the viewing angle of the map relative to the horizon. The value must be between 0 and 60 degrees. Default = *0* |
-| | Compass | The compass setting allows users to rotate the map view, with values ranging from -180 to 180 degrees. Default = *0* |
-| Map elements | Labels | Toggle the visibility of map labels such as road names, city names, and country/region names. Default = *on* |
-| | Country/Region border | Toggle the visibility of Country/Region borders on the map. Default = *on* |
-| | Administrative district border | Toggle visibility of borders for first-level administrative areas, such as states or provinces. Default = *on* |
-| | Admin district 2 border | Toggle visibility of borders for second-level administrative areas, such as counties. Default = *on* |
-| | Road details | Toggle visibility of detailed street layouts in populated areas. Default = *on* |
-| | Building footprints | Toggle visibility of building footprints at higher zoom levels. Default = *on* |
-| Controls | Zoom control | Toggle visibility of the zoom control on the map, enabling users to adjust the zoom level interactively. Default = *off* |
-| | Pitch control | Toggle visibility of the pitch control on the map, enabling users to adjust the viewing angle. Default = *off* |
-| | Compass control | Toggle visibility of the compass control on the map, enabling users to adjust the rotation of map. Default = *off* |
-| | Scale control | Toggle visibility of the scale bar on the map. Currently, only metric units are supported. Default = *off* |
-| | World wrap  | The world wrap control enables seamless horizontal panning across the globe. Default = *on* |
-| Localization | Display language | Set the language for map labels. By default, it follows the Fabric user's language setting. For more information on supported languages, see [Localization support in Azure Maps](/azure/azure-maps/supported-languages?pivots=service-previous)|
+| Property | Description |
+| -------- | ----------- |
+| Map style | Sets the visual style of the basemap. Valid values: [Road, Satellite, Hybrid, Grayscale (Light), Grayscale (Dark), Night, High Contrast (Light), High Contrast (Dark), Blank, Blank (Accessible)](/azure/azure-maps/supported-map-styles). Default = *Grayscale (Light)*. |
+| Background color | Sets the basemap background color. Available when **Map style** is set to **Blank** or **Blank (Accessible)**. |
 
-## Customize geometry data
+### Initial map view
 
-Spatial data is typically represented as points, lines, or polygons. Map offers various visual effects to emphasize business-relevant patterns, relationships, and spatial distributions. The following sections detail how to configure properties for each visual effect type to enhance map readability and analytical value.
+The initial map view defines the default location and perspective shown when the map first loads. Configure the starting center point, zoom level, pitch, and rotation to focus viewers on the most relevant geographic area and present the map from the desired viewpoint.
 
-### General settings
+:::image type="content" source="media/customize-map/base-map-initial-map-view.png" lightbox="media/customize-map/base-map-initial-map-view.png" alt-text="A screenshot showing the basemap configuration panel's initial map view settings which includes latitude and longitude, zoom level, pitch, and compass.":::
 
-The following table describes the general settings for data layers.
+| Property | Description |
+| -------- | ----------- |
+| Latitude | Sets the center latitude of the initial map view. Valid values: -90 to 90. |
+| Longitude | Sets the center longitude of the initial map view. Valid values: -180 to 180. |
+| Zoom level | Sets the initial zoom level of the map view. Valid values: 1 to 22. Default = *1*. |
+| Pitch | Sets the viewing angle of the map relative to the horizon. Valid values: 0 to 60 degrees. Default = *0*. |
+| Compass | Sets the initial map rotation. Valid values: -180 to 180 degrees. Default = *0*. |
 
-| Setting | Description |
-|--|--|
-| Layer color | Defines the base color applied to this data layer.  |
-| Tooltips | Specifies which more data properties should be displayed when hovering over map geometries. These properties provide contextual information about the spatial features shown on the map.|
-| Zoom level | Defines the range of zoom levels at which map geometries are visible.<br>Note: This setting isn't supported when using PMTiles as the data source. |
+### Map elements
 
-### Data label settings
+Map elements provide extra geographic context by displaying labels, boundaries, roads, and building footprints. You can show or hide individual elements to reduce visual clutter, emphasize specific data layers, or create a map that is tailored to your audience and scenario.
 
-When enabled, data labels display text derived from the chosen fields in your dataset, allowing each map point to show relevant information directly on the visual.
+:::image type="content" source="media/customize-map/base-map-elements.png" lightbox="media/customize-map/base-map-elements.png" alt-text="A screenshot showing the basemap configuration panel's map elements with toggle options for Labels, Country Region border, Administrative district border, Admin district 2 border, Road details, and Building footprints, each showing on or off status.":::
 
-The following examples illustrate data labels on maps with various geometries including point, line, and polygon.
+| Property | Description |
+| ---------| ----------- |
+| Labels | Toggle the visibility of map labels such as road names, city names, and country/region names. Default = *on* |
+| Country/Region border | Toggle the visibility of country/region borders on the map. Default = *on* |
+| Administrative district border | Toggle visibility of borders for first-level administrative areas, such as states or provinces. Default = *on* |
+| Admin district 2 border | Toggle visibility of borders for second-level administrative areas, such as counties. Default = *on* |
+| Road details | Toggle visibility of detailed street layouts in populated areas. Default = *on* |
+| Building footprints | Toggle visibility of building footprints at higher zoom levels. Default = *on* |
 
-This example uses point geometry to display public schools, with data labels indicating school names:
+### Controls
 
-:::image type="content" source="media/customize-map/data-labels-points.png" lightbox="media/customize-map/data-labels-points.png" alt-text="Screenshot showing a Fabric Map created using point geometry to show public schools, displaying the school name in the data label.":::
+Map controls add interactive tools that help users navigate and explore the map. Enable controls such as zoom, pitch, compass, and scale to allow viewers to adjust the map view and better understand the data being displayed.
 
-This example uses line geometry to display National Forest System trails, with data labels indicating trail name:
+:::image type="content" source="media/customize-map/base-map-controls.png" lightbox="media/customize-map/base-map-controls.png" alt-text="A screenshot of the Map controls section in the basemap configuration panel, showing toggle settings for Zoom control, Pitch control, Compass control, Scale control, Traffic control, and World wrap, along with the current enabled or disabled state of each map control.":::
 
-:::image type="content" source="media/customize-map/data-labels-lines.png" lightbox="media/customize-map/data-labels-lines.png" alt-text="Screenshot of a Fabric Map using line geometry to depict trails in a national forest, with each trail labeled by its official name.":::
+| Property | Description |
+| -------- | ----------- |
+| Zoom control | Shows or hides the zoom control so users can adjust zoom interactively. Default = *on*. |
+| Pitch control | Shows or hides the pitch control so users can adjust viewing angle interactively. Default = *on*. |
+| Compass control | Shows or hides the compass control so users can adjust map rotation interactively. Default = *on*. |
+| Scale control | Shows or hides the scale bar. Valid values: Metric units only. Default = *on*. |
+| Traffic control | Shows or hides the traffic toggle button for real-time traffic flow. Default = *on*. |
+| World wrap | Enables or disables seamless horizontal panning across the globe. Default = *on*. |
 
-This example uses polygons that represent areas previously affected by forest fires in California, with each polygon labeled using the official fire name:
+The following image shows a map with the Traffic toggle set to off.
 
-:::image type="content" source="media/customize-map/data-labels-polygons.png" lightbox="media/customize-map/data-labels-polygons.png" alt-text="Screenshot of a Fabric Map displaying polygons that represent areas previously affected by forest fires in California, with each polygon labeled using the official fire name.":::
+:::image type="content" source="media/customize-map/traffic-off.png" lightbox="media/customize-map/traffic-off.png" alt-text="A screenshot of a Fabric Maps map with the traffic control set to off.":::
 
-The following table describes the general settings for data labels.
+The following image shows a map with the Traffic toggle set to on.
 
-| Setting            | Description                                                                                       |
-|--------------------|---------------------------------------------------------------------------------------------------|
-| Enable data labels | A toggle switch used to enable/disable data labels for the selected layer.                        |
-| Data labels        | A drop-down list showing available fields from the selected data source.                          |
-| Font weight        | Sets the font weight: **Regular**, **Medium**, or **Bold**.                                       |
-| Text color         | The text color of the data label. |
-| Text size          | The text size of the data label. Valid text sizes range from 8-48. Default=12.                    |
-| Text stroke color  | The text stroke color of the data label.  |
-| Text stroke width  | The text stroke width of the data label. Valid text sizes range from 0-10. Default=1.             |
-| Label position     | Sets the position of the data label relative to the element it's tied to. This setting is available for the following geometry types:<br><br><ul><li><strong>Line layers:</strong> Choose the label position at the top, bottom, or center of the line geometry.</li><li><strong>Polygon layers:</strong> The label is positioned at the center of the polygon area by default.</li> <li><strong>Point layers:</strong> Choose the label position around the point geometry, including top center, bottom center, top left, top right, bottom left, or bottom right.</li></ul>  |
-| Data label overlap | Controls whether data labels can overlap map symbols. |
+:::image type="content" source="media/customize-map/traffic-on.png" lightbox="media/customize-map/traffic-on.png" alt-text="A screenshot of a Fabric Maps map with the traffic control displayed.":::
 
-### Point settings
+### Localization
 
-#### Bubble layer
+Localization settings control how geographic information is presented to users. Configure the display language used for map labels and select the map view that determines how country/region and disputed boundary information appears on the map. These settings help ensure the map aligns with the language and regional conventions expected by your audience.
 
-A bubble visual displays individual data points as circles on a geographic map. Each bubble's size, color, and opacity can be customized to represent attributes such as magnitude, category, or intensity. This visualization is ideal for highlighting differences across locations, helping users compare values and spot patterns or outliers in spatial datasets. Bubble layers are especially useful for mapping quantitative data like population, sales volume, or event frequency.
+:::image type="content" source="media/customize-map/base-map-localization.png" lightbox="media/customize-map/base-map-localization.png" alt-text="A screenshot of the Localization section in the basemap configuration panel, showing the Language setting configured to follow the Fabric user language preference and the Map view setting set to Auto, allowing customization of map language and geopolitical boundary display.":::
 
-The following screenshot shows EV charging station locations across Washington State. A bubble layer is used to represent the data, which consists of point features. Each station is visualized as a bubble, with size and opacity customized to reflect station-specific attributes.
+| Property | Description |
+| -------- | ----------- |
+| Display language | Sets the language used for map labels. The list includes the countries or regions supported by Fabric Maps. Default = *Default*, which means map labels use the language configured for the Fabric user. For more information, see [Localization support in Azure Maps](/azure/azure-maps/supported-languages?pivots=service-previous). |
+| Map view | Sets which geopolitically disputed map content (including borders and labels) is displayed. Default = *Auto*. For more information, see [Azure Maps supported views](/azure/azure-maps/supported-languages?pivots=service-latest#azure-maps-supported-views). |
 
-:::image type="content" source="media/customize-map/bubble-visual.png" lightbox="media/customize-map/bubble-visual.png" alt-text="Screenshot of bubble visual with basic setting.":::
+## Configure layer settings
 
-The following table outlines the available bubble visual settings along with their descriptions.
+Layer settings control how the selected data layer is rendered. The available settings depend on the layer's geometry type and, for point geometry, the selected point layer type. Changes to layer settings affect only the selected layer and don't modify the basemap settings.
 
-| Setting | Description |
-|--|--|
-| Opacity | Controls the opacity of point features on the map. Valid range: 0% (fully transparent) to 100% (fully opaque). |
-| Stroke width | The numeric value that determines how thick the border of each bubble appears on the map, measured in pixels. Valid values: 0-10. |
-| Stroke color | Specifies the color used for the border of each bubble. This helps distinguish bubbles from the map background and can be used to emphasize or categorize data points. |
-| Size | Configure how bubble sizes are displayed on the map:<br> <ul><li>**Fixed Size:** Select a consistent bubble size using a slider ranging from *1px to 50px*. Default = *8px*.</li><li>**Data-Driven Size:** Bubble size adjusts dynamically based on a numeric data property, allowing the size to reflect the magnitude of the underlying data. Only numeric properties are supported.</li></ul> |
-| Enable clustering | Groups nearby data points into clusters to reduce visual clutter and improve map readability. Default = *off* |
-| Cluster size | Configure size of clustered bubble, Support **fixed value**, users can configure clustered bubble size from 1px to 50px. Default = *16px*|
-| Aggregate by | The "Aggregate by" property allows users to select a numeric data field from a dropdown list to group and categorize bubble data. This feature is only applicable when working with numeric properties and is typically used to summarize or visualize aggregated values across spatial features. |
-| Aggregation | Select a method for summarizing data based on the chosen numeric property. Available options include:<br><ul><li>**Sum** – Adds all values together</li><li>**Average** – Calculates the mean of values</li><li>**Minimum** – Displays the smallest value in the group</li><li>**Maximum** – Displays the largest value in the group</li><li>**Count** – Tallies the number of data points in the group</li></ul> |
-| Data-driven styling | Colors are driven by the selected data field and apply only to predefined markers. Custom markers don't support data-driven color styling. For more information, see [Data-driven styling for map layers](#data-driven-styling-for-map-layers). |
+Fabric Maps automatically determines the geometry type from the data source. The supported geometry types are **point**, **line**, and **polygon**. Point layers can use one of three layer types: **bubble**, **marker**, or **heatmap**.
 
-##### Enable clustering
+There are three groups of layer settings:
 
-The following screenshot displays taxi pick-up location statistics in New York City. Enabling clustering based on the average trip distance can provide aggregated insights into which areas typically generate longer trips.
+* [Geometry type settings](#geometry-type-settings): Control the appearance and behavior of the selected point, line, or polygon layer.
+* [Data label settings](#data-label-settings): Control the text displayed for features in the selected layer.
+* [Visibility settings](#visibility-settings): Control when features appear and which properties are available in tooltips.
 
-:::image type="content" source="media/customize-map/bubble-visual-clustering.png" lightbox="media/customize-map/bubble-visual-clustering.png" alt-text="Screenshot of bubble visual with clustering enabled.":::
+> [!NOTE]
+> GeoJSON multigeometries, such as `MultiPoint`, `MultiLineString`, and `MultiPolygon`, use the settings for their corresponding geometry family: point, line, or polygon.
 
-When using the zoom control to zoom in, more granular clustering visuals appear.
+### Geometry type settings
 
-:::image type="content" source="media/customize-map/bubble-visual-clustering-zoom-in.png" lightbox="media/customize-map/bubble-visual-clustering-zoom-in.png" alt-text="A zoomed in version of the previous example.":::
+Geometry type settings are specific to the geometry type automatically selected from the input data. The settings available in the **Layer settings** pane vary by geometry type.
 
-#### Marker layer
+#### Polygon settings
 
-Markers let you replace standard point bubbles with meaningful icons so point data is easier to interpret and better aligned with business context.
+Polygon layers display areas such as boundaries, zones, or service areas. You can change the fill appearance and optionally apply data-driven colors or 3D extrusion.
 
-With a marker, points can be rendered using either built‑in Fluent icons or custom icons stored in a Lakehouse. This makes it possible to visually distinguish different types of locations, assets, or events at a glance, instead of relying only on color or size variations.
-
-Markers are especially useful when points represent well‑known entities—such as facilities, vehicles, devices, or incident types—where an icon conveys meaning more effectively than a generic shape.
-
-:::image type="content" source="media/customize-map/custom-markers.png" lightbox="media/customize-map/custom-markers.png" alt-text="A screenshot of a map displaying custom markers for public school locations in a suburban area. Each school is represented by a purple icon resembling a school building, with school names labeled next to the markers. The right panel lists marker customization options such as symbol, stroke color, size, rotation, opacity, and marker anchor.":::
-
-##### Custom markers
-
-To use custom images as a marker, browse files in a Lakehouse and select supported image formats such as **SVG**, **PNG**, or **JPG**. Once selected, the image is applied directly as the symbol used to represent point data on the map.
-
-:::image type="content" source="media/customize-map/create-custom-marker.png" lightbox="media/customize-map/create-custom-marker.png" alt-text="Screenshot showing the process of selecting a custom marker icon for locations on a map. The main focus is a panel displaying various icon options, including a create button at the bottom.":::
-
-> [!TIP]
-> For custom marker images that may need to scale at different zoom levels, **SVG** works best. SVG icons are vector‑based, so they resize cleanly without losing sharpness, keeping markers crisp and readable at any size. **PNG** and **JPG** are raster formats and can appear blurry or pixelated when scaled up, which can reduce map clarity—especially on high‑resolution displays or when zooming in. Custom marker images must be 1 MB or smaller.
-
-##### Marker settings
-
-Markers support a range of styling options, including size, color, stroke, opacity, rotation, and placement. These options help ensure markers remain readable at different zoom levels and integrate cleanly with the overall map design.
+:::image type="content" source="media/customize-map/polygon-visual-basic.png" lightbox="media/customize-map/polygon-visual-basic.png" alt-text="A screenshot of Fabric Maps displaying California historic fire perimeters as red polygons with metadata on year, cause, and acreage for each fire event.":::
 
 | Setting | Description |
-|---------|-------------|
-| Symbol | Specifies the icon used to represent each point on the map. This can be a standard bubble or a custom marker icon. |
-| Stroke color | Specifies the color of the marker border. This helps distinguish markers from the basemap and can be used to emphasize or categorize data points. |
-| Stroke width | Specifies the thickness of the marker border in pixels. Valid values range from 0 to 10. |
-| Data-driven styling | Colors are driven by the selected data field and apply only to predefined markers. Custom markers don't support data-driven color styling. For more information, see [Data-driven styling for map layers](#data-driven-styling-for-map-layers). |
-| Size | Controls the overall size of the marker on the map, helping balance visibility and visual density. Valid values range from 12px to 72px. |
-| Rotation | Rotates the marker icon to indicate orientation or direction when applicable. |
-| Opacity | Controls the transparency of point features on the map. Valid values range from 0% (fully transparent) to 100% (fully opaque). |
-| Marker overlap | Allows markers to overlap with each other and with other map elements when enabled. |
-| Marker anchor | Determines which point of the icon is anchored to the marker's geographic position on the map. |
-| Rotation alignment to map | Aligns the marker with the map's rotation, allowing the marker to rotate as the map view rotates. Rotation values range from –180 to 180 degrees. Default is 0. |
-| Pitch alignment to map | Aligns the marker with the map's pitch (viewing angle relative to the horizon). Pitch values range from 0 to 60 degrees. Default is 0. |
-| Enable clustering | Groups nearby data points into clusters to reduce visual clutter and improve map readability. Default = *off* |
-| Aggregate by | The "Aggregate by" property allows users to select a numeric data field from a dropdown list to group and categorize data. This feature is only applicable when working with numeric properties and is typically used to summarize or visualize aggregated values across spatial features. |
-| Aggregation | Select a method for summarizing data based on the chosen numeric property. Available options include:<br><ul><li>**Sum** – Adds all values together</li><li>**Average** – Calculates the mean of values</li><li>**Minimum** – Displays the smallest value in the group</li><li>**Maximum** – Displays the largest value in the group</li><li>**Count** – Tallies the number of data points in the group</li></ul> |
+| ------- | ----------- |
+| Fill color | Sets the fill color for polygon features. When **Enable data-driven styling** is off, select one color for all polygon features. When data-driven styling is enabled and a valid data field is selected in **Color by**, select a color palette or customize colors for the selected values. |
+| Fill opacity | Sets the opacity of polygon features. Valid values: 0% (fully transparent) to 100% (fully opaque). |
+| Enable data-driven styling | Enables color-based polygon styling using data values. Choose **Category** to assign colors to distinct values or **Value range** to apply colors across a numeric scale instead of using a single fill color. Default = *off*. For more information, see [Data-driven styling for map layers](#data-driven-styling-for-map-layers). |
+| Color by | Sets the data property whose values determine polygon color. Available when **Enable data-driven styling** is on. |
+| Style by | Specifies how values in the **Color by** field are mapped to colors. Choose **Category** to assign a distinct color to each unique value, or **Value range** to map numeric values using a continuous color gradient. Available when a valid field is selected in **Color by**. |
+| Choose a method | Specifies how numeric values are mapped to colors when **Style by** is set to **Value range**. Valid values: **Gradient**, which maps values across a continuous color range; and **Steps**, which groups values into discrete ranges with separate colors. Available when **Style by** is set to **Value range**. |
+| Enable extrusion | Enables 3D polygon extrusion using a height source. Default = *off*. When enabled, **Height** and **Use original height** appear. For more information, see [Enable extrusion](#enable-extrusion). |
+| Height | Sets the numeric data property used for extrusion height. Available when **Enable extrusion** is on. |
+| Use original height | Uses the original height value from the data source for extrusion instead of a selected property. Available when **Enable extrusion** is on. |
 
-#### Heat map layer
-
-Heat maps, or point density maps, use color gradients to visualize where data points are most concentrated. They highlight high-density areas ("hot spots") and make spatial patterns easier to detect. This method is especially effective for large datasets, converting raw data into a smooth, continuous surface that reveals both absolute and relative densities across geographic regions.
-
-:::image type="content" source="media/customize-map/heatmap-visual-default.png" lightbox="media/customize-map/heatmap-visual-default.png" alt-text="Screenshot of heatmap visual with default setting.":::
-
-The following table describes the available heat map visual settings.
-
-| Setting | Description |
-|--|--|
-| Color gradient | The color theme for displaying hot spots of the data |
-| Opacity | The opacity of heat map visual. Valid values range from 1% to 100%. Default = *100%* |
-|  Intensity | Adjusts the multiplier applied to each data point's weight to control heatmap intensity. Valid values range from 1% to 100%. Default = *1%* |
-| Radius | Specifies the pixel radius used to render each data point in the heat map layer. This determines how far the influence of each point spreads visually. Valid values range from 1 to 100. Default = *30*|
-| Weight | Set the weight of each point using a numeric data property. Default = *1* |
-| Enable clustering | Groups nearby data points into clusters to reduce visual clutter and improve map readability. Default = *off* |
-
-##### Apply weight
-
-The following screenshot illustrates a taxi trip heat map of New York City. Each trip is represented as a data point, with the fare_amount used as a weight, meaning areas with higher fares contribute more intensity to the heat map. To enhance readability, lower opacity is applied, allowing the map and overlapping data to remain visible.
-
-:::image type="content" source="media/customize-map/heatmap-visual-with-weight.png" lightbox="media/customize-map/heatmap-visual-with-weight.png" alt-text="Screenshot of heatmap visual with weight property configured.":::
-
-##### Enable clustering
-
-The following screenshot illustrates a clustered heat map that visualizes spatial data density. By fine-tuning parameters such as radius and intensity, the map more effectively reveals patterns that are obscured by overlapping data points.
-
-:::image type="content" source="media/customize-map/heatmap-visual-clustering.png" lightbox="media/customize-map/heatmap-visual-clustering.png" alt-text="Screenshot of heatmap visual enable clustering.":::
-
-### Line settings
-
-#### Line layer
-
-Line layers are used to visualize linear geographic features such as roads, paths, routes, or boundaries on a map. It connects a series of coordinates to form lines, which can be styled with various attributes like color, stroke width. This type of visual is especially useful for representing movement, direction, or connections between locations, and is commonly applied in scenarios like route planning, infrastructure mapping, or network visualization.
-
-The following screenshot shows national forest trails near Mount Rainier.
-
-:::image type="content" source="media/customize-map/line-visual-basic.png" lightbox="media/customize-map/line-visual-basic.png" alt-text="Screenshot of line visual basic.":::
-
-The following table describes the available line visual setting and description.
-
-| Setting | Description |
-|--|--|
-| Stroke opacity | The opacity of line features. Valid values range from 1% to 100%. Default = *100%* |
-| Stroke width | The width of lines measured in pixels. Valid values: 0-10. Default = *3px* |
-| Data-driven styling | Colors are driven by the selected data field and apply only to predefined markers. For more information, see [Data-driven styling for map layers](#data-driven-styling-for-map-layers). |
-
-### Polygon settings
-
-#### Polygon layer
-
-Polygon layers are used to visualize areas or regions by connecting multiple geographic coordinates to form enclosed shapes. These polygons can represent boundaries such as city limits, zones, or regions of interest. You can customize the appearance of these shapes using attributes like layer color, and opacity. This visual is useful for highlighting specific geographic areas and analyzing spatial relationships or coverage.
-
-The following screenshot displays a historical fire perimeters map of California, showing the geographic extent of past wildfires using red polygons. Each polygon represents a distinct fire event and includes metadata such as the year, cause, and GIS-calculated acreage. This visualization enables users to quickly identify fire-prone areas, analyze historical fire patterns, and support wildfire mitigation and land management planning.
-
-:::image type="content" source="media/customize-map/polygon-visual-basic.png" lightbox="media/customize-map/polygon-visual-basic.png" alt-text="Screenshot of polygon visual with basic setting that shows a historic fire perimeters map of California.":::
-
-The following table describes the available polygon visual setting and description.
-
-| Setting | Description |
-|--|--|
-| Fill opacity | The opacity of polygon features on the map. Valid range: 0% (fully transparent) to 100% (fully opaque). Default = *60%* |
-| Data-driven styling | Colors are driven by the selected data field and apply only to predefined markers. For more information, see [Data-driven styling for map layers](#data-driven-styling-for-map-layers). |
-| Enable extrusion | This property allows polygons to be rendered in 3D by applying height based on a numeric field. It enhances spatial visualization by adding depth and volume to flat shapes. Default = *off*.|
-| Height | Specifies the numeric data field used to determine the vertical extrusion of each polygon. This option is only accessible when the **Enable extrusion** setting is active. |
+> [!NOTE]
+> The **Fill color** setting appears first when data-driven styling is off. When data-driven styling is enabled, it appears after the data-driven styling settings and provides color palette or color-swatch options.
 
 ##### Enable extrusion
 
-The following screenshot presents a 3D map visualization of the Seattle area, showcasing building extrusion. Each building is rendered with varying heights based on its actual elevation data, creating a realistic urban landscape.
+The following screenshot shows polygon features rendered with 3D extrusion. The extrusion height is based on the configured height source.
 
-:::image type="content" source="media/customize-map/polygon-visual-enable-extrusion.png" lightbox="media/customize-map/polygon-visual-enable-extrusion.png" alt-text="Screenshot of a map visual of the Seattle area, demonstrating the polygon visual with extrusions enable.":::
+:::image type="content" source="media/customize-map/polygon-visual-enable-extrusion.png" lightbox="media/customize-map/polygon-visual-enable-extrusion.png" alt-text="A screenshot of a 3D Fabric Map of Seattle area showing building extrusions with varied heights based on elevation data, creating a realistic urban landscape.":::
+
+#### Line settings
+
+Line layers display linear features such as roads, paths, routes, and boundaries.
+
+:::image type="content" source="media/customize-map/line-visual-basic.png" lightbox="media/customize-map/line-visual-basic.png" alt-text="A screenshot of Fabric Maps displaying National Forest trails near Mount Rainier rendered as line features with color and stroke width styling.":::
+
+| Setting | Description |
+| ------- | ----------- |
+| Stroke opacity | Sets the opacity of line features. Valid values: 1% to 100%. |
+| Stroke width | Sets the width of line features in pixels. |
+| Enable data-driven styling | Enables color-based line styling using data values. Choose **Category** to assign distinct colors to values or **Value range** to apply colors across a numeric scale instead of using a single line color. Default = *off*. For more information, see [Data-driven styling for map layers](#data-driven-styling-for-map-layers). |
+| Color by | Sets the data property whose values determine line color. Available when **Enable data-driven styling** is on. |
+| Style by | Specifies how the numeric field selected in **Color by** is mapped to colors. Choose **Category** to assign distinct colors to values or **Value range** to map values across a continuous color range. Available when a numeric field is selected in **Color by**. |
+| Choose a method | Specifies how numeric values are mapped to colors when **Style by** is set to **Value range**. Valid values: **Gradient**, which maps values across a continuous color range; and **Steps**, which groups values into discrete ranges with separate colors. Available when **Style by** is set to **Value range**. |
+| Fill color | Sets the line color. When **Enable data-driven styling** is off, select one color for all line features. When data-driven styling is enabled and a valid data field is selected in **Color by**, select a color palette or customize colors for the selected values. |
+
+> [!NOTE]
+> When categorical styling is enabled, up to 100 distinct values are assigned unique colors. Additional values are grouped as **Others** and displayed in gray.
+
+#### Point settings
+
+Point layers display individual locations or events. Select a point **Layer type** to choose how the point data is rendered:
+
+* **Bubble** displays points as circles.
+* **Marker** displays points as built-in icons or custom images.
+* **Heatmap** displays point density using a color gradient.
+
+##### Bubble layer
+
+Bubble layers display points as circles. Use size, color, opacity, and clustering to show differences between locations or to reduce visual clutter.
+
+:::image type="content" source="media/customize-map/bubble-visual.png" lightbox="media/customize-map/bubble-visual.png" alt-text="A screenshot of Fabric Maps showing EV charging station locations across Washington state represented as bubbles.":::
+
+| Setting | Description |
+| ------- | ----------- |
+| Fill color | Sets the fill color of bubble features. When **Enable data-driven styling** is off, select one color for all bubble features. When data-driven styling is enabled and a valid data field is selected in **Color by**, select a color palette or customize colors for the selected values. |
+| Stroke color | Sets the border color of bubble features. |
+| Stroke width | Sets the border width in pixels. |
+| Opacity | Sets the opacity of bubble features. Valid values: 0% (fully transparent) to 100% (fully opaque). |
+| Size | Sets how bubble size is determined: **Fixed size** or **By data**. |
+| Fixed size | Sets one fixed bubble size for all points. Available when **Size** is set to **Fixed size**. |
+| By data | Scales bubble size using a numeric data property. Available when **Size** is set to **By data**. |
+| Enable data-driven styling | Enables bubble color styling by selected data values using either **Category** or **Value range** styling modes instead of one fixed bubble color. Default = *off*. For more information, see [Data-driven styling for map layers](#data-driven-styling-for-map-layers). |
+| Color by | Sets the data property whose values determine bubble color. Available when **Enable data-driven styling** is on. |
+| Style by | Specifies how values in the **Color by** field are mapped to colors. Choose **Category** to assign a distinct color to each unique value, or **Value range** to map numeric values using a continuous color gradient. Available when a valid field is selected in **Color by**. |
+| Choose a method | Specifies how numeric values are mapped to colors when **Style by** is set to **Value range**. Valid values: **Gradient**, which maps values across a continuous color range; and **Steps**, which groups values into discrete ranges with separate colors. Available when **Style by** is set to **Value range**. |
+| Enable clustering | Groups nearby points into clusters to reduce visual clutter. Default = *off*. When enabled, **Cluster size** and **Aggregate by** appear. |
+| Cluster size | Sets the size of clustered points. Available when **Enable clustering** is on. |
+| Aggregate by | Sets the numeric data property used to summarize points in each cluster. Available when **Enable clustering** is on. |
+
+###### Bubble clustering
+
+The following screenshots show bubble points grouped into clusters. Zooming in reveals more granular clusters and individual points.
+
+:::image type="content" source="media/customize-map/bubble-visual-clustering.png" lightbox="media/customize-map/bubble-visual-clustering.png" alt-text="A screenshot of Fabric Maps showing New York City alternate fuel locations with clustering enabled.":::
+
+:::image type="content" source="media/customize-map/bubble-visual-clustering-zoom-in.png" lightbox="media/customize-map/bubble-visual-clustering-zoom-in.png" alt-text="A screenshot of Fabric Maps showing a zoomed-in view of the New York City alt fuel locations, showing more granular clustering patterns at higher zoom level.":::
+
+##### Marker layer
+
+Marker layers display points as icons. You can use a built-in Fluent icon or a custom image stored in a Lakehouse.
+
+:::image type="content" source="media/customize-map/custom-markers.png" lightbox="media/customize-map/custom-markers.png" alt-text="A screenshot of Fabric Maps showing public school locations in a suburban area with custom purple school building markers and labels. Settings panel on the right displays marker customization options including symbol, stroke color, size, rotation, opacity, and marker anchor.":::
+
+| Setting | Description |
+| ------- | ----------- |
+| Symbol | Sets the icon used to represent each point. |
+| Fill color | Sets the fill color of supported built-in symbols. When **Enable data-driven styling** is off, select one color for all supported symbols. When data-driven styling is enabled and a valid data field is selected in **Color by**, select a color palette or customize colors for the selected values. This setting might not apply to custom images. |
+| Stroke color | Sets the border color of the marker. |
+| Stroke width | Sets the border width in pixels. |
+| Enable data-driven styling | Enables marker color styling by selected data values using either **Category** or **Value range** styling modes instead of one fixed marker color. Default = *off*. Custom images might not support data-driven color styling. For more information, see [Data-driven styling for map layers](#data-driven-styling-for-map-layers). |
+| Color by | Sets the data property whose values determine marker color. Available when **Enable data-driven styling** is on. |
+| Style by | Specifies how values in the **Color by** field are mapped to colors. Choose **Category** to assign a distinct color to each unique value, or **Value range** to map numeric values using a continuous color gradient. Available when a valid field is selected in **Color by**. |
+| Choose a method | Specifies how numeric values are mapped to colors when **Style by** is set to **Value range**. Valid values: **Gradient**, which maps values across a continuous color range; and **Steps**, which groups values into discrete ranges with separate colors. Available when **Style by** is set to **Value range**. |
+| Size | Sets the marker size. |
+| Rotation | Sets how marker rotation is determined: **Fixed rotation** or **By data**. |
+| Fixed rotation | Sets one fixed marker rotation value. Available when **Rotation** is set to **Fixed rotation**. |
+| By data | Sets marker rotation from a selected data property. Available when **Rotation** is set to **By data**. |
+| Opacity | Sets the opacity of marker features. Valid values: 0% (fully transparent) to 100% (fully opaque). |
+| Marker overlap | Enables or disables overlap between markers and other map elements. |
+| Marker anchor | Sets which point on the icon is anchored to the feature's geographic position. |
+| Rotation alignment to map | Sets whether the marker rotates with map orientation. |
+| Pitch alignment to map | Sets whether the marker follows map pitch. |
+| Enable clustering | Groups nearby points into clusters to reduce visual clutter. Default = *off*. When enabled, **Cluster size** and **Aggregate by** appear. |
+| Cluster size | Sets the size of clustered markers. Available when **Enable clustering** is on. |
+| Aggregate by | Sets the numeric data property used to summarize points in each cluster. Available when **Enable clustering** is on. |
+
+> [!IMPORTANT]
+>
+> The built-in **Airplane** and **Arrow** marker icons are updated (as of August 2026) so that their default orientation at **0° rotation** points **north**. This change aligns the marker artwork with the standard map rotation convention used by Fabric Maps.
+>
+> If your map uses the **Airplane** or **Arrow** marker icons together with a rotation field or custom rotation values, the marker orientation might appear different after upgrading. Review and, if necessary, adjust any fixed rotation values or rotation logic to preserve the intended visual appearance.
+>
+> This change only affects the built-in **Airplane** and **Arrow** marker icons. All other built-in marker icons are unaffected.
+
+###### Custom markers
+
+To use a custom image as a marker, browse the files in a Lakehouse and select a supported image format such as **SVG**, **PNG**, or **JPG**. After you select the image, Fabric Maps uses it as the symbol for point data.
+
+:::image type="content" source="media/customize-map/create-custom-marker.png" lightbox="media/customize-map/create-custom-marker.png" alt-text="A screenshot of the Fabric Maps customization panel displaying various icon options for custom marker selection with a create button at the bottom.":::
+
+> [!TIP]
+> **SVG** works best for custom marker images that need to scale across zoom levels. SVG icons are vector-based and resize without losing sharpness, keeping markers crisp and readable at different sizes. **PNG** and **JPG** are raster formats and might appear blurry or pixelated when scaled up. Custom marker images must be 1 MB or smaller.
+
+##### Heatmap layer
+
+Heatmap layers use color gradients to show the density of point features. Use intensity, radius, and weight to control how each point contributes to the heatmap.
+
+:::image type="content" source="media/customize-map/heatmap-visual-default.png" lightbox="media/customize-map/heatmap-visual-default.png" alt-text="A screenshot of Fabric Maps displaying a heat map visualization with default color gradient showing data point density and spatial concentration.":::
+
+| Setting | Description |
+| ------- | ----------- |
+| Color gradient | Sets the color gradient used to represent point density. Select one gradient for the layer to map low-to-high density values. |
+| Opacity | Sets the opacity of the heatmap. |
+| Intensity | Sets the multiplier applied to each point's weight. |
+| Radius | Sets the pixel radius used to render each point's influence. |
+| Weight | Sets each point's contribution using a numeric data property. Default = *1* when no property is specified. |
+| Enable clustering | Groups nearby points into clusters to reduce visual clutter. Default = *off*. When enabled, **Cluster size** and **Aggregate by** appear. |
+| Cluster size | Sets the size of clustered heatmap points. Available when **Enable clustering** is on. |
+| Aggregate by | Sets the numeric data property used to summarize points in each cluster. Available when **Enable clustering** is on. |
+
+###### Apply weight
+
+The following screenshot shows a heatmap in which a numeric property contributes different amounts of intensity to each point.
+
+:::image type="content" source="media/customize-map/heatmap-visual-with-weight.png" lightbox="media/customize-map/heatmap-visual-with-weight.png" alt-text="A screenshot of Fabric Maps of New York City taxi trips displayed as heat map with fare amount used as weight variable, lower opacity applied for visibility.":::
+
+###### Clustered heatmap
+
+The following screenshot shows a clustered heatmap with adjusted radius and intensity settings.
+
+:::image type="content" source="media/customize-map/heatmap-visual-clustering.png" lightbox="media/customize-map/heatmap-visual-clustering.png" alt-text="A screenshot of Fabric Maps displaying a clustered heat map visualization with adjusted radius and intensity parameters revealing spatial data density patterns.":::
+
+### Data label settings
+
+Data labels display text from a selected data property directly on the map. To display labels, turn on **Enable data labels** and then configure the label properties.
+
+The following examples show data labels on point, line, and polygon layers.
+
+:::image type="content" source="media/customize-map/data-labels-points.png" lightbox="media/customize-map/data-labels-points.png" alt-text="Screenshot of Fabric Maps displaying public school locations as points with school names shown as data labels on the map.":::
+
+:::image type="content" source="media/customize-map/data-labels-lines.png" lightbox="media/customize-map/data-labels-lines.png" alt-text="Screenshot of Fabric Maps showing National Forest System trails as lines with each trail labeled by its official name.":::
+
+:::image type="content" source="media/customize-map/data-labels-polygons.png" lightbox="media/customize-map/data-labels-polygons.png" alt-text="A screenshot of Fabric Maps displaying polygons representing historic fire perimeter areas with each labeled using the official fire name.":::
+
+| Setting | Description |
+| ------- | ----------- |
+| Enable data labels | Shows or hides data labels for the selected layer. When enabled, the remaining data-label settings appear. |
+| Data labels | Sets the data property whose values appear as labels. Available when **Enable data labels** is on. |
+| Font weight | Sets label weight. Valid values: **Regular**, **Medium**, **Bold**. Available when **Enable data labels** is on. |
+| Text color | Sets the label text color. Available when **Enable data labels** is on. |
+| Text size | Sets label text size. Valid values: 8 to 48. Default = *12*. Available when **Enable data labels** is on. |
+| Text stroke color | Sets the text outline color. Available when **Enable data labels** is on. |
+| Text stroke width | Sets the text outline width. Valid values: 0 to 10. Default = *1*. Available when **Enable data labels** is on. |
+| Label position | Sets label position relative to the associated feature. For line layers, choose top, bottom, or center. For polygon layers, labels are centered by default. For point layers, choose top center, bottom center, top left, top right, bottom left, or bottom right. Available when **Enable data labels** is on. |
+| Data label overlap | Sets whether labels can overlap map symbols. Available when **Enable data labels** is on. |
+
+### Visibility settings
+
+Visibility settings control when a layer is displayed and which data properties are available when users hover over its features.
+
+| Setting | Description |
+| ------- | ----------- |
+| Zoom level | Sets the zoom range in which the layer is displayed. Data appears when zoom is greater than or equal to `minZoom` and less than `maxZoom` (for example, `maxZoom` 23 displays through zoom level 22; `minZoom` 0 displays from zoom level 0). Not supported when using PMTiles as the data source. |
+| Tooltips | Sets which data properties are shown when a user hovers over a map feature. |
 
 ## Data-driven styling for map layers
 
-Data‑driven styling lets you control how map layers are colored based on values in the underlying data, rather than using a single fixed color. By applying visual rules to layer properties, you can highlight patterns, trends, and outliers directly on the map and present data with clear business meaning.
-Data‑driven styling is supported for the following vector layer types:
+Data-driven styling lets you control how vector layers are colored based on property values in your dataset, instead of applying one fixed color to all features. This approach helps highlight patterns, trends, and outliers directly on the map.
 
-* [Line](#line-layer)
-* [Polygon](#polygon-layer)
+Data-driven styling is supported for the following layer types:
+
+* [Line](#line-settings)
+* [Polygon](#polygon-settings)
 * [Bubble](#bubble-layer)
 * [Marker](#marker-layer)
 
-Fabric Maps supports the **Color by category** data‑driven styling mode for layer properties, as described in the following table.
+In the **Layer settings** pane, configure data-driven color styling through:
 
-| Styling mode | Description | Supported data types | Typical use cases |
-|-------------|-------------|----------------------|-------------------|
-| **Color by category** | Assigns a distinct color to each unique value in a selected property. This mode emphasizes differences between discrete categories and displays a corresponding legend on the map. | Text or categorical fields | Status classification (for example, *Active*, *Inactive*), asset types, regions, ownership, or any field with a limited set of distinct values. |
+* **Color by**: Selects the data property used for color mapping.
+* **Style by**: Selects the styling mode (**Category** or **Value range**).
+* **Choose a method**: Available when **Style by** is set to **Value range** and lets you choose **Steps** or **Gradient**.
 
-A corresponding data legend is displayed on the map to help viewers understand how values map to colors.
+| Styling mode | Description | Supported data types | Available methods | Typical use cases |
+| ------------ | ----------- | -------------------- | ----------------- | ----------------- |
+| **Category** | Assigns a distinct color to each unique value in the selected property and displays a discrete legend. | Text or categorical fields | Not applicable | Status values (for example, *Active* and *Inactive*), asset types, regions, ownership, or other discrete classifications. |
+| **Value range** | Assigns colors based on numeric value intervals and displays a range-based legend. | Numeric fields | **Steps** or **Gradient** | Altitude, speed, temperature, utilization, risk score, and other continuous measures. |
 
 ### Use data‑driven styling on a map layer
-
-You enable and configure data‑driven styling from the Layer settings pane while editing a map.
-
-#### Enable data‑driven styling
 
 1. Open the map in **Edit** mode.
 1. Select a vector data layer (line, polygon, bubble, or marker).
 1. In the **Layer settings** pane, select **Enable data‑driven styling**.
 
-    :::image type="content" source="media/customize-map/data-driven-styling.png" lightbox="media/customize-map/data-driven-styling.png" alt-text="A screenshot showing a Fabric Maps visualization showing a map with multiple colored polygons representing car parks. The right panel displays customization options for the Car Parks layer, including fill opacity, data-driven styling, color by the number of car park spaces.":::
+    :::image type="content" source="media/customize-map/data-driven-styling.png" lightbox="media/customize-map/data-driven-styling.png" alt-text="Screenshot of the Layer Settings pane showing data-driven styling enabled with fields for Color by, Style by, and method selection.":::
 
-1. In the **Color by** field, select a data property to drive the styling.
+1. In **Color by**, select the property that drives color.
+1. In **Style by**, select one of the following options:
+   * **Category**
+   * **Value range**
+1. If you select **Value range**, in **Choose a method**, select either **Steps** or **Gradient**.
 
-#### Configure the styling mode
+### Configure value range methods
 
-* **Color by category**
-  * Choose a categorical property.
-  * Select a built‑in color palette or customize individual category colors using the color picker.
+When you set **Style by** to **Value range**, use one of these methods:
 
-    :::image type="content" source="media/customize-map/customize-category-colors.png" alt-text="A screenshot showing a Fabric Maps customization panel showing the Color by option with a dropdown menu displaying different categories, each with corresponding color swatches ranging from dark red to teal, used to assign distinct colors to each category in data-driven styling.":::
+* **Steps**: Divides the numeric domain into discrete buckets, where each bucket gets a distinct color. Use this method when you want explicit class breaks.
+* **Gradient**: Applies a continuous color ramp across the numeric domain. Use this method when you want smooth visual transitions between low and high values.
 
-    Select the color next to a category name to assign a custom color to that category:
+### Rotate markers by data field
 
-    :::image type="content" source="media/customize-map/customize-individual-category-colors.png" alt-text="A screenshot showing a Fabric Maps customization panel displaying a Color by dropdown menu with category options. Each category has an associated color swatch ranging from dark red through orange to teal. A color picker interface appears above showing a gradient from light red to dark red with a hue slider and hex color input field. Users can select any category name to open the color picker and assign a custom color to that specific category for data-driven styling on the map.":::
+Marker layers support data-driven rotation, which is useful for directional data such as heading, bearing, or wind direction.
 
-  * The map displays a legend in the **Data layer** pane showing each category and its assigned color.
+1. Select a **Marker** layer.
+1. In **Rotation**, select **By data**.
+1. In **Rotation property**, select a numeric field.
 
-    :::image type="content" source="media/customize-map/data-layer-legend.png" alt-text="A screenshot showing a Fabric Maps layer settings panel displaying color-by-category data-driven styling options. A dropdown menu shows category names with color swatches, ranging from dark red through purple to teal. Each category has an assigned color used to differentiate distinct values on the map legend. The panel demonstrates custom colors for individual categories in geographic data visualization.":::
-
-  * The map displays a legend in the **Data layer** pane showing each category and its assigned color.
+Use data values in the range **0 to 360** so markers rotate correctly.
 
 ### Additional behavior and considerations
 
-* Legends collapse automatically when more than 10 items are shown; select **Show more** to expand.
-* A maximum of 100 categories is supported. Additional values appear as **Other**.
-* Data‑driven styling works with other layer features such as **filters**, **labels**, and **built‑in marker layers**.
-* Existing layers that used series grouping are automatically upgraded to **Color by category**, preserving existing color assignments.
+* The **Data layer** pane displays a color legend for both **Category** and **Value range** styles.
+* For **Category** styling, the legend automatically collapses when more than 10 items are shown; select **Show more** to expand.
+* For **Category** styling, the legend supports up to 100 categories. Additional values appear as **Other**.
+* For marker layers, data-driven color styling is supported for built-in marker symbols, except when using gradient-based color styling. Custom marker images don't support data-driven color styling.
+* Data-driven styling works with other layer features such as **filters** and **labels**. Due to a current limitation, legends for PMTiles-based layers don't update when filters are applied and continue to display values for the unfiltered dataset.

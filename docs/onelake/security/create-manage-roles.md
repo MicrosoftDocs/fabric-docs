@@ -3,7 +3,7 @@ title: 'OneLake security roles: create and manage'
 description: Learn how to create, edit, and delete OneLake security roles, assign members, and apply row-level and column-level security to control data access.
 ms.reviewer: aamerril
 ms.topic: how-to
-ms.date: 07/27/2026
+ms.date: 08/28/2026
 ai-usage: ai-assisted
 #customer intent: As a Fabric user, I want to learn how to create and manage OneLake security roles so that I can control access to specific folders in my lakehouse and ensure data security.
 ---
@@ -40,6 +40,9 @@ Use the following steps to create a OneLake security role.
    | **Type of role** | OneLake security only supports **Grant** role types. |
    | **Select Grant permissions** | Choose the permissions you want to grant. **Read** is selected at a minimum, and you can add **ReadWrite** for some item types. |
 
+   > [!NOTE]
+   > You can apply row-level security (RLS) and column-level security (CLS) only to roles that grant **Read** permission. For roles that grant **ReadWrite**, the RLS and CLS options are unavailable.
+
 1. Select **Next**.
 
 1. **Add data to your role**. Define the scope of the role by selecting the data to include.
@@ -64,6 +67,9 @@ Use the following steps to create a OneLake security role.
 1. Select **Next**.
 
 1. **Add members to your role**. Manually enter the names or email addresses of the users that you want to include in the role. Or, select **Advanced configuration** and follow the steps in [Assign virtual members](#assign-virtual-members).
+
+   > [!IMPORTANT]
+   > Before you add users to a role with restricted access, verify that the DefaultReader role doesn't already grant them broader access. To restrict their access, remove them from the DefaultReader role, or modify or remove the DefaultReader role.
 
 1. Select **Create**.
 

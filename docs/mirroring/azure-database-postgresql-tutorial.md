@@ -119,7 +119,7 @@ The following steps guide you through the process of creating the connection to 
 1. Now that your data is up and running, there are various analytics scenarios available across all of Fabric.
 
 > [!IMPORTANT]
-> Any granular security established in the source database must be reconfigured in the mirrored database in Microsoft Fabric. See [SQL granular permissions in Microsoft Fabric](../data-warehouse/sql-granular-permissions.md).
+> Any granular security established in the source database must be reconfigured in the mirrored database in Microsoft Fabric. See [SQL granular permissions in Fabric Data Warehouse](../data-warehouse/sql-granular-permissions.md).
 
 ## Monitor Fabric mirroring
 

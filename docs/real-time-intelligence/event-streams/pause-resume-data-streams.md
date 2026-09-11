@@ -82,7 +82,7 @@ Here's a detailed table of the nodes that support pause and resume functionality
 | Confluent Kafka                                           | Source        | YES                       | - When streaming was last stopped           |
 | Apache Kafka                                              | Source        | YES                       | - When streaming was last stopped           |
 | Amazon MSK Kafka                                          | Source        | YES                       | - When streaming was last stopped           |
-| Custom endpoint (i.e., Custom App in standard capability) | Source        | NO                        |                                             |
+| Custom endpoint | Source        | No                        |                                             |
 | Fabric Workspace events source                            | Source        | NO                        |                                             |
 | Fabric OneLake events                                     | Source        | NO                        |                                             |
 | Fabric Job events                                         | Source        | NO                        |                                             |
@@ -93,7 +93,7 @@ Here's a detailed table of the nodes that support pause and resume functionality
 | Solace PubSub+ (preview)                                  | Source        | YES                       | - When streaming was last stopped           |
 | Lakehouse                                                 | Destination   | YES                       | - When streaming was last stopped<br>- Now<br>- Custom time |
 | Eventhouse (Event processing before ingestion)            | Destination   | YES                       | - When streaming was last stopped<br>- Now<br>- Custom time |
-| Custom endpoint (i.e., Custom App in standard capability) | Destination   | NO                        |                                             |
+| Custom endpoint | Destination   | NO                        |                                             |
 | Eventhouse (Direct Ingestion)                             | Destination   | NO                        |                                             |
 | Fabric Activator (preview)                                | Destination   | YES                       | - When streaming was last stopped<br>- Now<br>- Custom time                                          |
 | Derived stream                                            | Destination   | YES                       | - When streaming was last stopped<br>- Now<br>- Custom time                                              |

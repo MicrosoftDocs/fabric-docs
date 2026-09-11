@@ -2,7 +2,7 @@
 title: Serve real-time predictions with ML model endpoints (Preview)
 description: Learn how to serve real-time predictions seamlessly from ML models with secure, scalable, and fully managed online endpoints.
 ms.author: lagayhar
-ms.reviewer: ruxu
+ms.reviewer: scottpolly
 ms.topic: how-to
 ms.date: 07/27/2026
 ms.search.form: ML model endpoints

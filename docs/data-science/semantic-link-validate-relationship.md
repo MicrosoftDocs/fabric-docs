@@ -3,8 +3,8 @@ title: Explore and validate relationships in Power BI semantic models and pandas
 description: Use the Python SemPy semantic link modules to explore and validate relationships in Power BI semantic models and pandas DataFrames.
 ms.author: scottpolly
 author: s-polly
-ms.reviewer: ruxu
-reviewer: ruixinxu
+ms.reviewer: scottpolly
+reviewer: s-polly
 ms.topic: how-to
 ms.date: 09/28/2025
 ms.search.form: semantic link

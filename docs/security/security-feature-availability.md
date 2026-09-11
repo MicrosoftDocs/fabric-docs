@@ -24,7 +24,7 @@ The following table shows the support status for each Fabric item. A check mark 
 | Workload | Item type | Workspace private links | Customer managed keys | Outbound access protection |
 |--|--|:--:|:--:|:--:|
 | **Data Engineering** | Lakehouse | ✓ | ✓ | ✓ |
-|  | Lakehouse SQL Endpoint | ✓ | ✓ | ✓ |
+|  | Lakehouse SQL analytics endpoint | ✓ | ✓ | ✓ |
 |  | Notebook | ✓ | ✓ | ✓ |
 |  | Spark Job Definition | ✓ | ✓ | ✓ |
 |  | Environment | ✓ | ✓ | ✓ |
@@ -44,7 +44,7 @@ The following table shows the support status for each Fabric item. A check mark 
 | **Data Science** | ML Model | ✓ | ✓ | ✓ |
 |  | Experiment | ✓ | ✓ | ✓ |
 |  | Data Agent | ✓ | - | Preview |
-| **Data Warehouse** | SQL Endpoint | ✓ | ✓ | ✓ |
+| **Data Warehouse** | SQL analytics endpoint | ✓ | ✓ | ✓ |
 |  | Warehouse | ✓ | ✓ | ✓ |
 |  | Warehouse with EDPE | - | - | - |
 | **Developer Experience** | API for GraphQL | - | ✓ | - |

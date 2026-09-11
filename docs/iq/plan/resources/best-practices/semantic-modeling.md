@@ -1,10 +1,11 @@
 ---
-title: Semantic Model Best Practices for Fabric Plan
-description: Semantic modeling best practices for planning show how dimension-driven design overcomes fact table limits. Explore ten planning cases you can apply today.
+title: Semantic Model Best Practices for Planning
+description: Semantic modeling best practices for planning in Fabric show how dimension-driven design overcomes fact table limits. Explore ten planning cases you can apply today.
 ms.date: 08/03/2026
 ms.topic: best-practice
 ---
-# Semantic modeling best practices for planning
+
+# Semantic modeling best practices for planning in Fabric
 
 Planning solutions built on semantic models often rely on the fact table to determine which rows appear in the planning grid. While this approach works for reporting, it does not support planning future periods or business scenarios that are not represented in historical data.
 
@@ -60,7 +61,7 @@ The following structures form the foundation of this approach:
 * Scenario tables model scenarios as data instead of separate sets of measures. Each scenario stores metadata such as the scenario type and the planning window.
 * Date tables span the entire planning horizon instead of being limited by transaction history. They also support fiscal and retail calendars when required.
 
-Maintain these tables in PowerTable sheets in Plan for Microsoft Fabric. Business users can update planning combinations, scenario metadata, and planning windows without modifying the semantic model.
+Maintain these tables in PowerTable sheets in planning in Fabric. Business users can update planning combinations, scenario metadata, and planning windows without modifying the semantic model.
 
 After you add these tables to the semantic model, DAX enforces the planning rules by determining:
 

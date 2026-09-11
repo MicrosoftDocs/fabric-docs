@@ -95,4 +95,4 @@ The following list describes the limitations for Dataflow Gen2 in Data Factory i
 ## Related content
 
 - [Service level outages](https://support.fabric.microsoft.com)
-- [Get your questions answered by the Data Factory community](https://community.fabric.microsoft.com/t5/Data-Factory-preview-Community/ct-p/datafactory)
+- [Data Factory forums | Microsoft Fabric Community](https://community.fabric.microsoft.com/category/datafactory)

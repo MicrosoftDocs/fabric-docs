@@ -1,6 +1,6 @@
 ---
 title: Manage Inserted Rows in a Planning Sheet
-description: Learn how to manage inserted rows in a planning sheet in Fabric Plan. 
+description: Learn how to manage inserted rows in a planning sheet within planning in Fabric.
 ms.date: 08/20/2026
 ms.topic: how-to
 #customer intent: As a user, I want to understand how to manage inserted rows.
@@ -8,7 +8,7 @@ ms.topic: how-to
 
 # Manage inserted rows
 
-In Plan, you can manage inserted rows, including calculated, static, template, and data input rows. Icons identify each row type, so you can distinguish calculated, aggregated, data input, and template rows. This article explains how to use **Manage Rows** to search, filter, show, and hide inserted rows.
+In planning, you can manage inserted rows, including calculated, static, template, and data input rows. Icons identify each row type, so you can distinguish calculated, aggregated, data input, and template rows. This article explains how to use **Manage Rows** to search, filter, show, and hide inserted rows.
 
 To manage an inserted row:
 

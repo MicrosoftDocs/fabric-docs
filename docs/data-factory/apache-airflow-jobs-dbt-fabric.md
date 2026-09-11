@@ -16,15 +16,15 @@ ai-usage: ai-assisted
 
 When you combine dbt with Apache Airflow, you get the best of both worlds. dbt handles the transformations while Airflow manages scheduling, orchestration, and task management. This approach creates efficient and robust pipelines that lead to faster, more insightful data-driven decisions.
 
-This tutorial shows you how to create an Apache Airflow DAG that uses dbt to transform data stored in Microsoft Fabric Data Warehouse.
+This tutorial shows you how to create an Apache Airflow DAG that uses dbt to transform data stored in Fabric Data Warehouse.
 
 ## Prerequisites
 
 Before you begin, complete these prerequisites:
 
-- To authenticate with Fabric Data Warehouse, use either a [service principal](/entra/identity-platform/howto-create-service-principal-portal) or [workspace identity](apache-airflow-jobs-workspace-identity.md). If you use a service principal, add it as the `Contributor` in the workspace where you create data warehouse.
+- To authenticate with Data Warehouse, use either a [service principal](/entra/identity-platform/howto-create-service-principal-portal) or [workspace identity](apache-airflow-jobs-workspace-identity.md). If you use a service principal, add it as the `Contributor` in the workspace where you create data warehouse.
 
-- If you don't have one, [Create a Fabric warehouse](../data-warehouse/create-warehouse.md). Ingest the sample data into the warehouse using a pipeline. For this tutorial, we use the **NYC Taxi-Green** sample.
+- If you don't have one, [Create a warehouse in Fabric](../data-warehouse/create-warehouse.md). Ingest the sample data into the warehouse using a pipeline. For this tutorial, we use the **NYC Taxi-Green** sample.
 
 - [Create the "Apache Airflow Job" in the workspace.](../data-factory/create-apache-airflow-jobs.md)
 
@@ -183,7 +183,7 @@ Follow these steps to set up your dbt transformation:
    :::image type="content" source="media/apache-airflow-jobs/monitor-directed-acyclic-graph.png" lightbox="media/apache-airflow-jobs/monitor-directed-acyclic-graph.png" alt-text="Screenshot of monitoring the dbt dag.":::
    :::image type="content" source="media/apache-airflow-jobs/dag-run-success.png" lightbox="media/apache-airflow-jobs/dag-run-success.png" alt-text="Screenshot of a successful dag run.":::
 
-1. After a successful run, validate your data by checking the new table named 'nyc_trip_count.sql' in your Fabric data warehouse.
+1. After a successful run, validate your data by checking the new table named 'nyc_trip_count.sql' in your warehouse in Fabric.
    :::image type="content" source="media/apache-airflow-jobs/dbt-successful.png" lightbox="media/apache-airflow-jobs/dbt-successful.png" alt-text="Screenshot of a successful dbt dag.":::
 
 ## Related content

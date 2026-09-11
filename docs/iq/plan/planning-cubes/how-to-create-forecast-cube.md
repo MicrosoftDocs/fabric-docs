@@ -1,5 +1,5 @@
 ---
-title: Multidimensional Forecasting with Cube Measures in Fabric Plan
+title: Multidimensional Forecasting with Cube Measures in Planning
 description: Multidimensional forecasting links data across dimensions in one unified model. Discover how to configure forecast cubes and allocate targets to any granularity.
 ms.date: 08/04/2026
 ms.topic: how-to
@@ -65,7 +65,7 @@ In this example,
 
     :::image type="content" source="../media/planning-cubes/how-to-create-forecast-cube/forecast-cube-created-from-sheets-data-pane.png" alt-text="Screenshot of the forecast cube created and appearing in the From Sheets section of the Data pane." lightbox="../media/planning-cubes/how-to-create-forecast-cube/forecast-cube-created-from-sheets-data-pane.png":::
 
-1. Enable **Column Subtotal** in the **Planning** ribbon and enter the forecast total value for 2026. Plan automatically distributes the value equally among child rows and columns. Select the distribution icon to choose an alternate distribution method.
+1. Enable **Column Subtotal** in the **Planning** ribbon and enter the forecast total value for 2026. Planning automatically distributes the value equally among child rows and columns. Select the distribution icon to choose an alternate distribution method.
 
     In the following steps, you use bidirectional cube updates to modify the forecast in a different planning sheet at a different granularity. The cube automatically aggregates the updates and propagates them back to the *Global Target Revenue* planning sheet.
 
@@ -94,7 +94,7 @@ After you configure a cube measure, you can use it in other planning based on th
 
     :::image type="content" source="../media/planning-cubes/how-to-create-forecast-cube/insert-cube-measure-option.png" alt-text="Screenshot of importing a forecast cube using the Insert as Measure option." lightbox="../media/planning-cubes/how-to-create-forecast-cube/insert-cube-measure-option.png":::
 
-1. Plan distributes forecast values equally to breakdown dimensions such as *sales channel*, *product family*, and *product*. Select the distribution icon to choose an alternate distribution method.
+1. Planning distributes forecast values equally to breakdown dimensions such as *sales channel*, *product family*, and *product*. Select the distribution icon to choose an alternate distribution method.
 
     :::image type="content" source="../media/planning-cubes/how-to-create-forecast-cube/redistribute-cube-value.png" alt-text="Screenshot of selecting a different distribution method to allocate forecast values to breakdown dimensions." lightbox="../media/planning-cubes/how-to-create-forecast-cube/redistribute-cube-value.png":::
 

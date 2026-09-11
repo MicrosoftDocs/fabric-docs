@@ -50,7 +50,7 @@ Many organizations benefit from using both together: Lakehouses for ingestion an
 
 A mirrored database in Fabric is a continuously replicated copy of an external operational database, such as Azure SQL Database, SQL Server, Azure Cosmos DB, or Snowflake. Fabric stores mirrored data in OneLake in Delta Lake format.
 
-Mirroring synchronizes source changes into Fabric in near real time without requiring traditional extract, transform, load pipelines. After replication, the data becomes [immediately queryable](../mirroring/explore.md) through SQL endpoints and is available across Fabric workloads, including Power BI, Spark notebooks, and pipelines.
+Mirroring synchronizes source changes into Fabric in near real time without requiring traditional extract, transform, load pipelines. After replication, the data becomes [immediately queryable](../mirroring/explore.md) through SQL analytics endpoints and is available across Fabric workloads, including Power BI, Spark notebooks, and pipelines.
 
 This architecture supports hybrid transactional and analytical processing (HTAP) scenarios, where you analyze operational data while maintaining source system integrity. If the source data is already stored in a location accessible through OneLake shortcuts (such as Azure Data Lake Storage or another Fabric workspace), consider using shortcuts for zero-copy access instead of mirroring. Mirroring is best suited for operational databases that require continuous change data capture, while shortcuts are ideal when you need live, read-only access without replication.
 

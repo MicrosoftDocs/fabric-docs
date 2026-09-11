@@ -71,6 +71,8 @@ The following table explains the steps in Stage 1:
 
 After completing these steps, you should have a list of the top capacity-consuming items on your capacity and an understanding of what operations (refreshes, queries, and so on) are driving their usage. Next, you can choose to narrow the analysis to a specific time to see when these items consume the most resources. If your interest is only in the aggregate usage (for example, a consistently heavy semantic model overall), you might proceed to Stage 3. Otherwise, continue to Stage 2 to drill into specific timeframes.
 
+To monitor per-operation CU consumption by workspace, item, workload, or identity, see [Explore Fabric capacity operation events](../real-time-hub/explore-fabric-capacity-operation-events.md).
+
 ## Stage 2: Drill down by date or time for specific usage patterns
 
 This stage is **optional** but useful if you want to pinpoint capacity usage during a particular period (for example, during a surge or at the time a notification was triggered). Here, we filter the visuals to a specific date, and even drill down to hourly data, to see which items were consuming the most CUs at those times. The Metrics app's **Multimetric ribbon** chart allows you to select a date (and drill further into hours) which in turn filters the **Items** matrix to that scope. By doing this, you can answer questions like "What was using the most capacity yesterday afternoon?" or "Which items were the top consumers during peak hours?"
@@ -125,3 +127,4 @@ You proactively identified which items in your Fabric capacity are the largest c
 - [Troubleshooting guide: Diagnose and resolve "Capacity limit exceeded" errors](capacity-planning-troubleshoot-errors.md)
 - [Troubleshooting guide: Diagnose and resolve slowness due to capacity throttling](capacity-planning-troubleshoot-throttling.md)
 - [Microsoft Fabric Capacity Metrics app](metrics-app.md)
+- [Explore Fabric capacity operation events](../real-time-hub/explore-fabric-capacity-operation-events.md)

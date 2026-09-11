@@ -3,8 +3,8 @@ title: Accelerate Data Prep with Data Wrangler
 description: Learn how to use Data Wrangler in Microsoft Fabric to explore data and generate transformation code. Launch from notebooks, apply cleaning operations, and export pandas functions.
 ms.author: scottpolly
 author: s-polly
-ms.reviewer: ruxu
-reviewer: ruixinxu
+ms.reviewer: scottpolly
+reviewer: s-polly
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 04/22/2026

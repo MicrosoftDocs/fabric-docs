@@ -5,8 +5,8 @@ ms.topic: overview
 ms.author: scottpolly
 author: s-polly
 ms.date: 03/16/2026
-reviewer: ruixinxu
-ms.reviewer: ruxu
+reviewer: s-polly
+ms.reviewer: scottpolly
 ---
 
 # Automated ML in Fabric

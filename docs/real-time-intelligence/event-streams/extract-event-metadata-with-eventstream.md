@@ -133,7 +133,7 @@ This section walks through a complete scenario using the IoT Hub source connecto
 
 1. Open your Eventstream or the Real-Time hub in Fabric.
 1. Select **Add source** (in Eventstream) or **Add data** (in Real-Time hub) > **Azure IoT Hub**.
-1. In the source configuration, select **Extended features** to enable the enhanced connector.
+1. In the source configuration, select **Extended features** to preserve all IoT Hub message header properties.
 1. Complete the connection configuration details.
 1. Select **Add** to start ingesting events with full metadata. See more detailed step in [Add Azure IoT Hub source to Eventstream](./add-source-azure-iot-hub.md).
 

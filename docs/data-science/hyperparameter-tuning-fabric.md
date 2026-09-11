@@ -4,8 +4,8 @@ description: Identify the best combination of hyperparameters for your chosen cl
 ms.topic: overview
 ms.author: scottpolly
 author: s-polly
-ms.reviewer: ruxu
-reviewer: ruixinxu
+ms.reviewer: scottpolly
+reviewer: s-polly
 ms.date: 02/23/2026
 ---
 

@@ -1,9 +1,11 @@
 ---
 title: Secure Your Data Factory in Microsoft Fabric Deployment
 description: Learn how to secure Data Factory in Microsoft Fabric, with best practices for protecting your deployment.
-ms.topic: concept-article
+author: msmbaldwin
+ms.author: mbaldwin
+ms.topic: best-practice
 ms.custom: horz-security
-ms.date: 08/12/2025
+ms.date: 08/13/2026
 ai-usage: ai-assisted
 ---
 
@@ -13,6 +15,8 @@ Data Factory in Microsoft Fabric provides capabilities to ingest, prepare, and t
 
 This article provides guidance on how to best secure your Data Factory in Microsoft Fabric deployment.
 
+[!INCLUDE [Security horizontal Zero Trust statement](~/../reusable-content/ce-skilling/azure/includes/security/zero-trust-security-horizontal.md)]
+
 ## Network security
 
 Data Factory in Microsoft Fabric requires secure network configurations to protect your data as it moves between various sources and destinations.
@@ -21,9 +25,9 @@ Data Factory in Microsoft Fabric requires secure network configurations to prote
 
 - **Implement VNet data gateway**: For Azure data sources behind private endpoints, use the VNet data gateway to securely connect without the overhead of managing gateway infrastructure. See [Virtual network data gateway](/data-integration/vnet/overview?toc=/fabric/data-factory/toc.json).
 
-- **Implement service tags**: Use Azure service tags to enable secure connectivity to data sources in Azure virtual networks without configuring data gateways. This simplifies network security rule management while maintaining secure access. See [Service tags](/fabric/security/security-service-tags).
+- **Implement service tags**: Use Azure service tags to enable secure connectivity to data sources in Azure virtual networks without configuring data gateways. Service tags simplify network security rule management while maintaining secure access. See [Service tags](/fabric/security/security-service-tags).
 
-- **Configure private links for Fabric access**: Enable private links at the tenant level to ensure traffic to your Fabric resources travels through Microsoft's private network backbone instead of the public internet. This provides an extra layer of security for accessing your Data Factory. See [Private links for secure access to Fabric](/fabric/security/security-private-links-overview).
+- **Configure private links for Fabric access**: Enable private links at the tenant level so traffic to your Fabric resources travels through Microsoft's private network backbone instead of the public internet. Private links add an extra layer of security for accessing your Data Factory. See [Private links for secure access to Fabric](/fabric/security/security-private-links-overview).
 
 ## Identity and access management
 
@@ -31,33 +35,31 @@ Properly managing identities and access controls is essential for securing your 
 
 - **Implement workspace roles**: Assign appropriate workspace roles based on the principle of least privilege, ensuring users have only the permissions needed for their specific responsibilities. See [Workspace roles](/fabric/fundamentals/roles-workspaces).
 
-- **Configure Microsoft Entra conditional access**: Set up conditional access policies to control access to your Data Factory resources based on identity, location, device compliance, and risk detection. This adds an extra security layer beyond standard authentication. See [Microsoft Entra conditional access](/fabric/security/security-conditional-access).
+- **Configure Microsoft Entra conditional access**: Set up conditional access policies to control access to your Data Factory resources based on identity, location, device compliance, and risk detection. Conditional access adds a security layer beyond standard authentication. See [Microsoft Entra conditional access](/fabric/security/security-conditional-access).
 
-- **Enforce multi-factor authentication**: Using Microsoft Entra condiditional access, require multifactor authentication for all users accessing Data Factory in Microsoft Fabric to prevent unauthorized access through compromised credentials. See [Microsoft Entra conditional access](/fabric/security/security-conditional-access) and [plan a conditional access deployment](/entra/identity/conditional-access/plan-conditional-access).
+- **Enforce multifactor authentication**: Require multifactor authentication for all users who access Data Factory in Microsoft Fabric to block access through compromised credentials. See [plan a conditional access deployment](/entra/identity/conditional-access/plan-conditional-access).
 
-- **Use workspace identities for trusted access**: Configure workspace identities to establish secure connections between Data Factory and its connections with firewall rules. This enables access to firewall-protected data sources without compromising security. See the [workspace identity overview](../security/workspace-identity.md) and [trusted workspace access](/fabric/security/security-trusted-workspace-access) for more information.
+- **Use workspace identities for trusted access**: Configure workspace identities to establish secure connections between Data Factory and its connections with firewall rules. Workspace identities enable access to firewall-protected data sources without compromising security. See [workspace identity overview](../security/workspace-identity.md) and [trusted workspace access](/fabric/security/security-trusted-workspace-access).
 
-- **Manage data-source access**: After you add a cloud data source, the access list for the data source controls only who is allowed to use the data source in items that include data from the data source. See [Data source management](/fabric/data-factory/data-source-management#manage-users)
+- **Manage data-source access**: After you add a cloud data source, review and restrict its access list so that only intended users can use the data source in items that include its data. See [Data source management](/fabric/data-factory/data-source-management#manage-users).
 
-- **Implement row-level security**: Apply row-level security to control data access at a granular level on semantic models so users can only view data relevant to their role. See [Row-level security](/fabric/security/service-admin-row-level-security).
+- **Separate workloads across workspaces**: Separate different workloads between workspaces and use roles like **Member** and **Viewer** to control access based on least privilege. For example, create a workspace for data engineering that prepares data and a separate workspace for reporting or AI training. By using the Viewer role, consumers can access data from the data engineering workspace without the ability to modify it. See [Roles in workspaces](../fundamentals/roles-workspaces.md).
 
 ## Data protection
 
 Protecting data throughout its lifecycle in Data Factory is crucial for maintaining confidentiality and integrity.
 
-- **Apply sensitivity labels**: Use Microsoft Purview Information Protection sensitivity labels to classify and protect sensitive data as it flows through Data Factory pipelines. These labels persist with the data even when exported to supported formats. See [Information protection labels](/fabric/governance/information-protection).
+- **Apply sensitivity labels**: Use Microsoft Purview Information Protection sensitivity labels to classify and protect sensitive data in your Data Factory items. See [Information protection labels](/fabric/governance/information-protection).
 
-- **Configure data loss prevention**: Implement data loss prevention policies to identify, monitor, and protect sensitive data in your Data Factory pipelines. This helps prevent inadvertent sharing or exfiltration of sensitive information. See [Data loss prevention](/purview/dlp-powerbi-get-started).
-
-- **Secure credentials in Azure Key Vault**: Store data source credentials in Azure Key Vault instead of embedding them directly in connection strings or pipeline configurations. This centralizes and secures sensitive connection information. See [Azure Key Vault reference](azure-key-vault-reference-configure.md).
+- **Secure credentials in Azure Key Vault**: Store data source credentials in Azure Key Vault instead of embedding them directly in connection strings or pipeline configurations. Azure Key Vault centralizes and secures sensitive connection information. See [Azure Key Vault reference](azure-key-vault-reference-configure.md).
 
 ## Logging and monitoring
 
 Comprehensive logging and monitoring are essential for maintaining visibility into Data Factory operations and detecting potential security issues.
 
-- **Configure audit logging**: Enable and regularly review audit logs to track user activities, including pipeline creation, modification, and execution. This provides visibility into who is accessing your Data Factory resources and what changes are being made. See [Track user activities](/fabric/admin/track-user-activities) and [Manage audit log retention policies](/purview/audit-log-retention-policies).
+- **Configure audit logging**: Enable and regularly review audit logs to track user activities, including pipeline creation, modification, and execution. Audit logs give you visibility into who accesses your Data Factory resources and what they change. See [Track user activities](/fabric/admin/track-user-activities) and [Manage audit log retention policies](/purview/audit-log-retention-policies).
 
-- **Monitor pipeline executions**: Use the Monitoring hub to track pipeline executions, ensuring data flows are working as expected and identifying any failures or security anomalies that might indicate compromise. See [Monitor pipeline runs](/fabric/data-factory/monitor-pipeline-runs).
+- **Monitor pipeline executions**: Use the Monitoring hub to track pipeline executions, confirm data flows work as expected, and identify failures or security anomalies that might indicate compromise. See [Monitor pipeline runs](/fabric/data-factory/monitor-pipeline-runs).
 
 - **Set up notifications**: Send notifications from your pipelines through Outlook or Teams activities to inform stakeholders of critical events, such as pipeline failures. See [Outlook activity](/fabric/data-factory/outlook-activity) and [Teams activity](/fabric/data-factory/teams-activity).
 
@@ -65,9 +67,7 @@ Comprehensive logging and monitoring are essential for maintaining visibility in
 
 Ensuring compliance and proper governance for your Data Factory deployment helps maintain security and meet regulatory requirements.
 
-- **Implement information protection**: Use Microsoft Purview Information Protection to classify, label, and protect sensitive data as it moves through your Data Factory pipelines. This ensures data is handled according to its sensitivity level. See [Information protection labels](/fabric/governance/information-protection).
-
-- **Integrate with Microsoft Defender for Cloud Apps**: Configure integration with Microsoft Defender for Cloud Apps to gain enhanced visibility and control over Data Factory operations, helping detect and respond to threats. See [Microsoft Defender for Cloud Apps controls](/fabric/governance/service-security-using-defender-for-cloud-apps-controls).
+- **Govern your items with the OneLake catalog**: Use the Govern tab in the OneLake catalog to assess governance status, sensitivity label coverage, and endorsement across your Data Factory items, so you can identify unprotected or noncompliant content. See [Govern your Fabric data with the OneLake catalog](/fabric/governance/onelake-catalog-govern).
 
 - **Use content endorsement**: Implement content endorsement to clearly identify trusted and validated Data Factory items, reducing the risk of using unofficial or unsecured resources. See [Content endorsement](/fabric/governance/endorsement-overview).
 
@@ -75,22 +75,14 @@ Ensuring compliance and proper governance for your Data Factory deployment helps
 
 ## Backup and recovery
 
-Implementing robust backup and recovery procedures ensures business continuity and data availability.
+Back up your pipeline definitions and plan for recovery to maintain business continuity and data availability.
 
-- **Integrate Git to manage pipeline and dataflow development**: Git provides version control system that allows developers to track changes in their codebase (or JSON code definitions, in the case of pipelines) and collaborate with others in a centralized repository where code changes are stored and managed. See [Git integration with Data Factory pipelines](cicd-pipelines.md#git-integration-with-data-factory-pipelines) and [Git integration with Dataflow Gen2](dataflow-gen2-cicd-and-git-integration.md).
+- **Integrate Git to manage pipeline and dataflow development**: Use Git source control to track changes to your pipeline JSON definitions and collaborate with others in a centralized repository. See [Git integration with Data Factory pipelines](cicd-pipelines.md#git-integration-with-data-factory-pipelines) and [Git integration with Dataflow Gen2](dataflow-gen2-cicd-and-git-integration.md).
 
-- **Verify data resilience**: Understand Microsoft Fabric's data resilience capabilities to ensure your data remains available during service disruptions. See [Reliability in Microsoft Fabric](/azure/reliability/reliability-fabric).
+- **Plan for disaster recovery**: Develop and test disaster recovery procedures specific to your Data Factory deployment, and review Fabric's platform resilience so you can set realistic recovery expectations. See [Experience-specific disaster recovery guidance](/fabric/security/experience-specific-guidance#data-factory) and [Reliability in Microsoft Fabric](/azure/reliability/reliability-fabric).
 
-- **Plan for disaster recovery**: Develop and test disaster recovery procedures specific to your Data Factory deployment to minimize downtime and data loss if there's a significant outage. See [Security in Microsoft Fabric](/fabric/security/experience-specific-guidance#data-factory).
-
-## Workspace role assignment
-
-Separate different workloads between workspaces and use roles like **Member** and **Viewer** to control access. For example, create a workspace for data engineering that prepares data, and a separate workspace for reporting or AI training. With the Viewer role, consumers can access data from the data engineering workspace without the ability to modify it. For more details on workspace roles, see [Roles in workspaces](../fundamentals/roles-workspaces.md).
-
-## Learn more
+## Related content
 
 - [Security in Microsoft Fabric](/fabric/security/security-overview)
 - [Microsoft Fabric end-to-end security scenario](/fabric/security/security-scenario)
-- [Microsoft Cloud Security Benchmark – Microsoft Fabric](/security/benchmark/azure/baselines/fabric-security-baseline)
 - [Data Factory in Microsoft Fabric](/fabric/data-factory/data-factory-overview)
-  See also: [Azure Security Documentation](/azure/security/).

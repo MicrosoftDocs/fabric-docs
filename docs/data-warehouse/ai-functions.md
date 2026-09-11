@@ -2,7 +2,7 @@
 title: AI Functions (Preview)
 description: This tutorial explains how to use AI functions to perform advanced text processing without leaving your warehouse in Microsoft Fabric.
 ms.reviewer: jovanpop
-ms.date: 07/10/2026
+ms.date: 08/17/2026
 ms.topic: how-to 
 ai-usage: ai-assisted
 ---
@@ -15,28 +15,28 @@ ai-usage: ai-assisted
 
 Fabric Data Warehouse and SQL analytics endpoint provide built-in AI functions that you can use to analyze, classify, summarize, and transform text directly within SQL queries. By using these functions, you can perform advanced text processing without leaving your data environment. In this tutorial, learn how to use AI functions to transform text.
 
-| Function               | Purpose           | Syntax Example                               |
-| ---------------------- | ----------------- | -------------------------------------------- |
-| [`AI_ANALYZE_SENTIMENT`](/sql/t-sql/functions/ai-analyze-sentiment-transact-sql?view=fabric&preserve-view=true) | Detect sentiment of input text | `AI_ANALYZE_SENTIMENT(<text>)`               |
-| [`AI_CLASSIFY`](/sql/t-sql/functions/ai-classify-transact-sql?view=fabric&preserve-view=true)          | Classify text based on provided labels | `AI_CLASSIFY(<text>, <class1>, <class2>, ...)` |
-| [`AI_EXTRACT`](/sql/t-sql/functions/ai-extract-transact-sql?view=fabric&preserve-view=true)           | Extract entities as JSON properties  | `AI_EXTRACT(<text>, <class1>, <class2>, ...)`  |
-| [`AI_SUMMARIZE`](/sql/t-sql/functions/ai-summarize-transact-sql?view=fabric&preserve-view=true)         | Summarize text    | `AI_SUMMARIZE(<text>)`                       |
-| [`AI_GENERATE_RESPONSE`](/sql/t-sql/functions/ai-generate-response-transact-sql?view=fabric&preserve-view=true) | Generate response based on prompt | `AI_GENERATE_RESPONSE(<prompt>, <data>)`     |
-| [`AI_TRANSLATE`](/sql/t-sql/functions/ai-translate-transact-sql?view=fabric&preserve-view=true)         | Translate input text to the specified target language    | `AI_TRANSLATE(<text>, <lang_code>)`               |
-| [`AI_FIX_GRAMMAR`](/sql/t-sql/functions/ai-fix-grammar-transact-sql?view=fabric&preserve-view=true)       | Fix grammar in the text       | `AI_FIX_GRAMMAR(<text>)`                     |
+| Function               | Purpose             | Syntax Example                               |
+| ---------------------- | ------------------- | -------------------------------------------- |
+| [`AI_ANALYZE_SENTIMENT`](#analyze-sentiment) | Detect sentiment of input text | `AI_ANALYZE_SENTIMENT(<text>)`               |
+| [`AI_CLASSIFY`](#classify-text)              | Classify text based on provided labels | `AI_CLASSIFY(<text>, <class1>, <class2>, ...)` |
+| [`AI_EXTRACT`](#extract-entities-from-text)  | Extract entities as JSON properties  | `AI_EXTRACT(<text>, <class1>, <class2>, ...)`  |
+| [`AI_SUMMARIZE`](#summarize-text)            | Summarize text    | `AI_SUMMARIZE(<text>)`                       |
+| [`AI_GENERATE_RESPONSE`](#generate-response) | Generate response based on prompt | `AI_GENERATE_RESPONSE(<prompt>[, <data>])`     |
+| [`AI_TRANSLATE`](#translate-text)            | Translate input text to the specified target language    | `AI_TRANSLATE(<text>, <lang_code>)`               |
+| [`AI_FIX_GRAMMAR`](#fix-grammar)             | Fix grammar in the text       | `AI_FIX_GRAMMAR(<text>)`                     |
 
 These functions call external AI APIs to process text, which can affect query performance. To optimize efficiency, avoid applying repetitive text transformations within `SELECT` queries on the same dataset. Instead, precompute and materialize the results of AI functions as separate columns or in staging tables.
 
 > [!WARNING]
 > The functions return `NULL` if the AI model can't process the text. Common reasons include:
 > - Responsible AI rules block inappropriate content in the input text.
-> - Input text exceeds token limits. The current model supports up to 15 KB of text.
+> - Input text exceeds token limits. The current model supports up to 99 KB of text.
 
 Typical processing speed of AI functions is 20-100 rows per second. If you experience slower performance, report the problematic query as an issue.
 
 ## Prerequisites
 
-- To use AI Functions with the built-in AI endpoint in Fabric, your administrator needs to enable [the tenant switch for Copilot and other features that are powered by Azure OpenAI](../../docs/admin/service-admin-portal-copilot.md).
+- To use AI functions with the built-in AI endpoint in Fabric, your administrator needs to enable [the tenant switch for Copilot and other features that are powered by Azure OpenAI](../../docs/admin/service-admin-portal-copilot.md).
 - Depending on your location, you might need to enable a tenant setting for cross-geo processing. Learn more about [available regions for Azure OpenAI Service](../../docs/fundamentals/copilot-fabric-overview.md#available-regions-for-azure-openai-service).
 - You need a paid Fabric capacity (F2 or higher, or any P edition).
 - You can use AI functions only in [supported regions](../fundamentals/copilot-fabric-overview.md#available-regions-for-azure-openai-service). 
@@ -143,6 +143,37 @@ SELECT AI_FIX_GRAMMAR('Th room are clean and staff were nice') AS fixed_text;
 **Expected result:** 'The rooms are clean, and the staff were nice.'
 
 For more information, see [AI_FIX_GRAMMAR (Transact-SQL)](/sql/t-sql/functions/ai-fix-grammar-transact-sql?view=fabric&preserve-view=true).
+
+## Handling errors
+
+AI functions return `NULL` when an error occurs while processing text. Errors can be caused by [Responsible AI](https://www.microsoft.com/ai/tools-practices) safety checks detecting disallowed content, input exceeding token limits, transient service issues, or other processing failures.
+
+By default, AI functions use a best-effort execution model and return `NULL` for failed requests. This behavior is designed to prevent errors affecting individual rows from failing an entire query. When processing thousands of rows through an external large language model (LLM), a failure on a single value should not prevent successful results from being returned for the remaining rows. This behavior also ensures that successfully processed requests aren't lost and don't need to be repeated.
+
+Inspect rows that returned `NULL`, determine the reason for the failure, and retry only those specific values.
+
+You can override the default behavior by specifying an `ON ERROR` clause in each function call:
+
+- `NULL ON ERROR` (default) returns `NULL` when the function can't process a value.
+- `ERROR ON ERROR` causes the entire query to fail if an error occurs in any function call.
+- `DEFAULT <value> ON ERROR` returns the specified default value instead of `NULL` when an error occurs.
+
+The following example demonstrates the available error-handling options:
+
+```sql
+SELECT
+    *,
+    AI_FIX_GRAMMAR(review_text NULL ON ERROR) AS fixed_text,
+    AI_EXTRACT(review_text, 'sentiment', 'problem' ERROR ON ERROR) AS info*
+    AI_CLASSIFY(review_text, 'service', 'dirt', 'food' DEFAULT 'Other' ON ERROR) AS classification
+FROM hotel_reviews;
+```
+
+In this example:
+
+- `AI_FIX_GRAMMAR` returns `NULL` for values that it can't process. Because returning `NULL` is the default error-handling behavior, the `NULL ON ERROR` clause is optional.
+- `AI_EXTRACT` fails the entire query if any cell encounters an error.
+- `AI_CLASSIFY` returns `Other` for cells that it can't classify.
 
 ## Remarks
 

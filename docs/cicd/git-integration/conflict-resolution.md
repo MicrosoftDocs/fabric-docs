@@ -13,7 +13,7 @@ A conflict occurs when changes are made *to the same item* in both the workspace
 
 :::image type="content" source="./media/conflict-resolution/conflict-status-workspace.png" alt-text="Screenshot of a report with a Git status that says conflict.":::
 
-When you select **Update** when there are conflicts, a message notifies you that you need to resolve the conflicts before you can update.
+When you select **Update** when there are conflicts, you see the **Resolve Conflicts** button.
 
 :::image type="content" source="./media/conflict-resolution/source-control-resolve-conflict.png" alt-text="Screenshot of error message from source control tab informing about conflicts.":::
 
@@ -26,7 +26,7 @@ There are three ways to resolve a conflict:
 
 ## Resolve conflict in UI
 
-Select **Update all** to see a list of all the items that have conflicts. You can then select which version to keep for each item. For each conflicted item, you can choose to accept the incoming changes from the Git repository or keep the current version that's in the workspace.
+Select **Resolve Conflicts** to see a list of all the items that have conflicts. You can then select which version to keep for each item. For each conflicted item, you can choose to accept the incoming changes from the Git repository or keep the current version that's in the workspace.
 
 :::image type="content" source="./media/conflict-resolution/conflict-resolution.png" alt-text="Screenshot of UI to select which version of a conflicted item to keep.":::
 
@@ -36,6 +36,8 @@ Select **Update all** to see a list of all the items that have conflicts. You ca
 > Accepting incoming changes will override the current item in the workspace.
 
 - Choose **Keep current content** to keep the version currently in the workspace. After the update is complete, the Git status becomes *uncommitted changes* as the changes in the workspace aren't yet committed to the branch.
+
+- You can also open the [compare and commit changes](./granular-compare.md) dialog to compare the different versions of a conflicted item side by side. Reviewing the changes this way helps you decide which version to keep before you resolve the conflict.
 
 ## Revert to a previous state
 

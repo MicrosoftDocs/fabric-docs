@@ -2,7 +2,7 @@
 title: 'Tutorial: Use R to predict churn'
 description: This tutorial shows a data science workflow in R, with an end-to-end example of building a model to predict churn.
 ms.author: lagayhar
-ms.reviewer: ruxu
+ms.reviewer: scottpolly
 ms.topic: tutorial
 ms.date: 07/11/2025
 ms.custom: dev-focus

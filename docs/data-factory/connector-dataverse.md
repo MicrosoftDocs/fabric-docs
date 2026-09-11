@@ -15,15 +15,15 @@ This article outlines the steps to create a Dataverse connection.
 
 ## Supported authentication types
 
-The Dataverse connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+The Dataverse connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
 |Organizational account| √ | √ |
 |Service principal| √ | √ |
 
-## Set up your connection for Dataflow Gen2
-You can connect Dataflow Gen2 to Dataverse in Microsoft Fabric using Power Query connectors. Follow these steps to create your connection:
+## Set up your connection for dataflow Gen2
+You can connect dataflow Gen2 to Dataverse in Fabric by using Power Query connectors. Follow these steps to create your connection:
 
 1. Check [capabilities](#capabilities), [limitations, and considerations](#limitations-and-considerations) to make sure your scenario is supported.
 1. [Complete prerequisites for Dataverse](#prerequisites).

@@ -31,33 +31,33 @@ For more information on connecting to your [!INCLUDE [fabric-dw](includes/fabric
     ```sql
     CREATE TABLE dbo.fact_sale
     (
-    	SaleKey bigint,
-    	CityKey int,
-    	CustomerKey int,
-    	BillToCustomerKey int,
-    	StockItemKey int,
-    	InvoiceDateKey datetime2(6),
-    	DeliveryDateKey datetime2(6),
-    	SalespersonKey int,
-    	WWIInvoiceID int,
-    	Description varchar(max),
-    	Package varchar(100),
-    	Quantity int,
-    	UnitPrice numeric(18,2),
-    	TaxRate numeric(18,3),
-    	TotalExcludingTax numeric(18,2),
-    	TaxAmount numeric(18,2),
-    	Profit numeric(18,2),
-    	TotalIncludingTax numeric(18,2),
-    	TotalDryItems int,
-    	TotalChillerItems int,
-    	LineageKey int
+        SaleKey bigint,
+        CityKey int,
+        CustomerKey int,
+        BillToCustomerKey int,
+        StockItemKey int,
+        InvoiceDateKey datetime2(6),
+        DeliveryDateKey datetime2(6),
+        SalespersonKey int,
+        WWIInvoiceID int,
+        Description varchar(max),
+        Package varchar(100),
+        Quantity int,
+        UnitPrice numeric(18,2),
+        TaxRate numeric(18,3),
+        TotalExcludingTax numeric(18,2),
+        TaxAmount numeric(18,2),
+        Profit numeric(18,2),
+        TotalIncludingTax numeric(18,2),
+        TotalDryItems int,
+        TotalChillerItems int,
+        LineageKey int
     )
     ```
 
 1. Select **Run** to create the table.
 
-To learn more about supported table creation in Warehouse in Microsoft Fabric, see [Tables in data warehousing in Microsoft Fabric](tables.md) and [Data types in Microsoft Fabric](data-types.md).
+To learn more about supported table creation in Warehouse in Microsoft Fabric, see [Tables in Fabric Data Warehouse](tables.md) and [Data types in Microsoft Fabric](data-types.md).
 
 <a id="create-a-new-table-in-the-sql-query-editor-from-a-file"></a>
 
@@ -77,3 +77,7 @@ The **CTAS** (Create Table As Select) statement creates a new table and populate
 
 > [!div class="nextstepaction"]
 > [Ingest data into your Warehouse](ingest-data-into-table.md)
+
+## Related content
+
+- [IDENTITY columns in Fabric Data Warehouse](identity.md)

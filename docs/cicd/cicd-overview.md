@@ -35,7 +35,7 @@ The following enterprise reference architecture shows how these layers fit toget
 
 ## Fabric REST APIs: the foundation
 
-All Fabric CI/CD capabilities build on the [Fabric REST APIs](/rest/api/fabric/articles/using-fabric-apis), which provide programmatic access to core operations: item create, read, update, and delete, item definitions, capacity, workspace and access management, and job scheduling. Every higher-level experience, from Git integration to deployment pipelines, uses these APIs, so anything you do in the portal you can also automate.
+All Fabric CI/CD capabilities build on the [Fabric REST APIs](/rest/api/fabric/articles/get-started/using-fabric-apis), which provide programmatic access to core operations: item create, read, update, and delete, item definitions, capacity, workspace and access management, and job scheduling. Every higher-level experience, from Git integration to deployment pipelines, uses these APIs, so anything you do in the portal you can also automate.
 
 ## Fabric integration and delivery
 
@@ -89,7 +89,7 @@ For infrastructure as code, use the [Terraform provider for Fabric](https://regi
 * [Git integration](./git-integration/intro-to-git-integration.md)
 * [Deployment pipelines](./deployment-pipelines/intro-to-deployment-pipelines.md)
 * [Variable library](./variable-library/variable-library-overview.md)
-* [Fabric REST APIs](/rest/api/fabric/articles/using-fabric-apis)
+* [Fabric REST APIs](/rest/api/fabric/articles/get-started/using-fabric-apis)
 * [Fabric CLI](/rest/api/fabric/articles/fabric-command-line-interface)
 * [Terraform provider for Fabric](https://registry.terraform.io/providers/microsoft/fabric/latest/docs)
 * [fabric-cicd](https://microsoft.github.io/fabric-cicd/)

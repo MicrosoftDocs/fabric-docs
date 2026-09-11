@@ -82,7 +82,7 @@ To be able to work with those APIs, the workload backend needs to exchange token
 * For writing to a lakehouse file: `https://storage.azure.com/user_impersonation`  
 
 > [!NOTE]
-> You can find scopes needed for each Fabric API in [this reference article](/rest/api/fabric/articles/using-fabric-apis).
+> You can find scopes needed for each Fabric API in [this reference article](/rest/api/fabric/articles/get-started/using-fabric-apis).
 
 The scopes mentioned earlier need to be configured on the workload application under **API permissions**.
 

@@ -188,5 +188,5 @@ You can still query audit events for SQL analytics endpoints by using the T-SQL 
 
 ## Related content
 
-- [Security for data warehousing in Microsoft Fabric](security.md)
+- [Security in Fabric Data Warehouse](security.md)
 - [Security in Microsoft Fabric](../security/security-overview.md)

@@ -1,6 +1,6 @@
 ---
-title: Row Model Concept for Driver-based Planning
-description: Learn about the concept of row model as Plan's agile driver framework that turns every planning sheet row into a driver.
+title: Row Model Concept for Driver-Based Planning
+description: Learn about the concept of row model as planning's agile driver framework that turns every planning sheet row into a driver.
 #customer intent: As a finance business user, I want to understand how every row becomes a driver so that I can build driver-based planning without help from IT.
 ms.date: 08/06/2026
 ms.topic: concept-article
@@ -8,7 +8,7 @@ ms.topic: concept-article
 
 # Row model - the agile driver framework
 
-Row model is Plan's agile driver framework for building driver-based planning models. It transforms the rows in a planning sheet into dynamic planning elements called **drivers**. Instead of depending on a complex semantic model or prebuilt measures, a row model lets you build planning logic directly in the planning layer.
+Row model is planning's agile driver framework for building driver-based planning models. It transforms the rows in a planning sheet into dynamic planning elements called **drivers**. Instead of depending on a complex semantic model or prebuilt measures, a row model lets you build planning logic directly in the planning layer.
 
 A row model uses a single row hierarchy, where each member in the hierarchy becomes a potential driver. Typical row hierarchies include:
 

@@ -3,7 +3,7 @@ title: Custom live pools for Fabric Data Engineering overview
 description: Learn about custom live pools in Microsoft Fabric, which provide fast, predictable Spark session startup for enterprise analytics workloads.
 ms.reviewer: saravi
 ms.topic: concept-article
-ms.date: 03/18/2026
+ms.date: 08/24/2026
 ai-usage: ai-assisted
 ---
 
@@ -88,10 +88,15 @@ Workspace role assignments control access to custom live pool configuration and 
 
 | Role | Permissions |
 |--|--|
-| Viewer or Member | Read-only access to pool status and configuration |
-| Admin | Full configuration, save, and publish permissions |
+| Viewer or Contributor | Read-only access to custom live pool status and configuration |
+| Member | Create, update, save, and publish custom live pool configurations for existing custom Spark pools when a workspace admin enables **Customize compute configuration for items** |
+| Admin | Create and manage custom Spark pools, enable item-level compute customization, and create, update, save, and publish custom live pool configurations |
 
-B2B guest users must be assigned an explicit workspace role to interact with custom live pools.
+Custom live pools use the existing **Customize compute configuration for items** workspace setting. They don't have a separate delegation setting. When a workspace admin turns on the existing setting, Members can manage environment-level compute and custom live pool configurations. The setting doesn't allow Members to create custom Spark pools or change workspace-level Spark settings.
+
+For configuration steps, see [Use the existing compute customization setting](custom-live-pools-configure.md#use-the-existing-compute-customization-setting).
+
+You must assign an explicit workspace role to B2B guest users for them to interact with custom live pools. Assign the **Member** or **Admin** role if they need to create or update a live pool configuration.
 
 ## Limitations
 

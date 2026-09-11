@@ -1,6 +1,6 @@
 ---
 title: Dynamic Data Masking in Fabric Data Warehouse
-description: Learn about the dynamic data masking data protection feature in Fabric data warehousing.
+description: Learn about the dynamic data masking data protection feature in Fabric Data Warehouse.
 ms.reviewer: dhsundar
 ms.date: 06/25/2026
 ms.topic: concept-article
@@ -80,10 +80,10 @@ Properly manage object-level security with [SQL granular permissions](sql-granul
 
 ## Related content
 
-- [Workspace roles in Fabric data warehousing](workspace-roles.md)
-- [Column-level security in Fabric data warehousing](column-level-security.md)
-- [Row-level security in Fabric data warehousing](row-level-security.md)
-- [Security for data warehousing in Microsoft Fabric](security.md)
+- [Workspace roles in Fabric Data Warehouse](workspace-roles.md)
+- [Column-level security in Fabric Data Warehouse](column-level-security.md)
+- [Row-level security in Fabric Data Warehouse](row-level-security.md)
+- [Security in Fabric Data Warehouse](security.md)
 
 ## Next step
 

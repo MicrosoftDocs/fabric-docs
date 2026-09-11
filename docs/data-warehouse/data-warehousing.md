@@ -92,6 +92,6 @@ For migration guidance across Microsoft Fabric, review the tools and links in [M
 - [Lakehouse SQL analytics endpoint use cases](../data-engineering/lakehouse-sql-analytics-endpoint-use-cases.md)
 - [Create a Warehouse in Microsoft Fabric](create-warehouse.md)
 - [Create a lakehouse in Microsoft Fabric](../data-engineering/create-lakehouse.md)
-- [Create reports on data warehousing in Microsoft Fabric](create-reports.md)
+- [Create reports on Fabric Data Warehouse](create-reports.md)
 - [Development and deployment](development-deployment.md)
 - [OneLake security for SQL analytics endpoints](../onelake/sql-analytics-endpoint-onelake-security.md)

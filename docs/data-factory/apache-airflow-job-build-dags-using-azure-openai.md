@@ -3,7 +3,7 @@ title: Use Azure OpenAI in Apache Airflow Job
 description: Learn to generate Apache Airflow DAGs by transforming whiteboard sketches into DAG code using Azure OpenAI.
 ms.reviewer: abnarain
 ms.topic: how-to
-ms.date: 11/18/2024
+ms.date: 08/31/2026
 ms.custom: airflows, sfi-image-nochange
 ms.collection: ce-skilling-ai-copilot
 ms.update-cycle: 180-days
@@ -15,42 +15,45 @@ Apache Airflow Jobs in Microsoft Fabric provides cloud-native experience for dat
 
 Now, with the `gpt-4o` AI model in Azure, we're pushing the limits of what you can do with Apache Airflow Jobs and making it possible for you to create Apache Airflow DAGs from just your whiteboard sketch idea. This feature is useful for data engineers and data scientists who want to quickly prototype and visualize their data workflows.
 
-In this article, you create an end to end workflow that downloads the sketch stored in your Lakehouse, use `gpt-4o` to turn it into Apache Airflow DAG and load it into Apache Airflow Jobs for execution. 
+In this article, you create an end to end workflow that downloads the sketch stored in your lakehouse, use `gpt-4o` to turn it into Apache Airflow DAG and load it into Apache Airflow Jobs for execution.
 
 ## Prerequisites
+
 Before you create the solution, ensure the following prerequisites are set up in Azure and Fabric:
 
-- [An **Azure OpenAI** account with an API key and a deployed gpt-4o model.](/azure/ai-services/openai/quickstart?tabs=command-line%2Cjavascript-keyless%2Ctypescript-keyless%2Cpython-new&pivots=programming-language-python)
-- [Create a Microsoft Entra ID app](/azure/active-directory/develop/quickstart-register-app) if you don't have one.
-- Add your Service principal as a "Contributor" in your Microsoft Fabric workspace.
-:::image type="content" source="media/apache-airflow-jobs/manage-access.png" lightbox="media/apache-airflow-jobs/manage-access.png" alt-text="Screenshot to add service principal as a contributor.":::
-- [Create the "Apache Airflow Job" in the workspace.](../data-factory/create-apache-airflow-jobs.md)
-- A diagram of what you want your Apache Airflow DAG to look like or save the given image in [step 1](#step-1-upload-the-image-to-fabric-lakehouse) to your local machine.
-- Add the following python packages in `requirements.txt` present in your Apache Airflow Job environment.
+- [An **Azure OpenAI** account with an API key and a deployed gpt-4o model.](/azure/foundry/openai/how-to/responses?tabs=python&pivots=programming-language-pytho)
+- [Create a Microsoft Entra ID app](/entra/identity-platform/quickstart-register-app) if you don't have one.
+- Add your service principal as a "Contributor" in your Fabric workspace.
+  :::image type="content" source="media/apache-airflow-jobs/manage-access.png" lightbox="media/apache-airflow-jobs/manage-access.png" alt-text="Screenshot to add service principal as a contributor.":::
+- [Create the Apache Airflow job in the workspace.](../data-factory/create-apache-airflow-jobs.md)
+- A diagram of what you want your Apache Airflow DAG to look like or save the given image in [step 1](#step-1-upload-the-image-to-a-lakehouse) to your local machine.
+- Add the following python packages in `requirements.txt` present in your Apache Airflow job environment.
    ```bash
    azure-storage-file-datalake
    Pillow
    ```
 
-### Step 1: Upload the image to Fabric Lakehouse
+### Step 1: Upload the image to a lakehouse
 
-Before you can analyze the image, you need to upload it to your Lakehouse. 
+Before you can analyze the image, you need to upload it to your lakehouse.
 :::image type="content" source="media/apache-airflow-jobs/airflow-dag-diagram.png" lightbox="media/apache-airflow-jobs/airflow-dag-diagram.png" alt-text="Screenshot represents DAG diagram of Apache Airflow.":::
 
-1. Upload the file from your local machine to the Lakehouse's `Files` folder.
-:::image type="content" source="media/apache-airflow-jobs/airflow-upload-lakehouse.png" lightbox="media/apache-airflow-jobs/airflow-upload-lakehouse.png" alt-text="Screenshot represents file upload to Fabric Lakehouse.":::
+1. Upload the file from your local machine to the lakehouse's `Files` folder.
+:::image type="content" source="media/apache-airflow-jobs/airflow-upload-lakehouse.png" lightbox="media/apache-airflow-jobs/airflow-upload-lakehouse.png" alt-text="Screenshot represents file upload to lakehouse in Fabric.":::
 
-2. Copy the storage account name of your Fabric Lakehouse, it is used in the Apache Airflow connection to authenticate with the Lakehouse.
-:::image type="content" source="media/apache-airflow-jobs/airflow-lakehouse-name.png" lightbox="media/apache-airflow-jobs/airflow-lakehouse-name.png" alt-text="Screenshot represents Fabric Lakehouse name.":::
+2. Copy the storage account name of your lakehouse, it is used in the Apache Airflow connection to authenticate with the lakehouse.
+:::image type="content" source="media/apache-airflow-jobs/airflow-lakehouse-name.png" lightbox="media/apache-airflow-jobs/airflow-lakehouse-name.png" alt-text="Screenshot represents lakehouse in Fabric name.":::
 
-### Step 2: Set up Environment Variables to authenticate with Lakehouse and Azure OpenAI.
+### Step 2: Set up environment variables to authenticate with lakehouse and Azure OpenAI.
 
-> Note: This tutorial is based on Airflow version 2.6.3.
+> [!NOTE]
+> This tutorial is based on Airflow version 2.6.3
 
 :::image type="content" source="media/apache-airflow-jobs/rename-add-environment-variables.png" lightbox="media/apache-airflow-jobs/rename-add-environment-variables.png" alt-text="Screenshot to add environment variables in apache airflow job.":::
 
-#### Credentials for Lakehouse Rest APIs. 
-We're going to use the Lakehouse Rest APIs to download the image from the Lakehouse. To authenticate with the Lakehouse Rest APIs, you need to set the following environment variables in Apache Airflow Job.
+#### Credentials for lakehouse REST APIs
+
+Use the lakehouse REST APIs to download the image from the lakehouse. To authenticate with the lakehouse REST APIs, set the following environment variables in Apache Airflow job.
 - `FABRIC_CLIENT_ID`: The client ID of the Microsoft Entra ID app.
 - `FABRIC_CLIENT_SECRET`: The client secret of the Microsoft Entra ID app.
 - `FABRIC_TENANT_ID`: The tenant ID of the Microsoft Entra ID app.
@@ -58,14 +61,14 @@ We're going to use the Lakehouse Rest APIs to download the image from the Lakeho
 #### Credentials for Azure OpenAI
 We use the `gpt-4o` model deployment in Azure OpenAI to analyze the whiteboard sketch of the pipeline and convert it into an Apache Airflow DAG. To connect to the Azure OpenAI API, store the API key and endpoint in environment variables:
 - `OPENAI_API_KEY`: Enter your Azure OpenAI API key.
-- `OPENAI_API_ENDPOINT`: Enter the endpoint URL for your deployed `gpt-4o` model. For example, `https://ai-contosoai6211465843515213.openai.azure.com/openai/deployments/gpt-4o/chat/completions?api-version=2024-02-15-preview`.
+- `OPENAI_API_ENDPOINT`: Enter the endpoint URL for your deployed `gpt-4o` model. For example, `https://ai-contosoai6211465843515213.openai.azure.com/openai/deployments/gpt-4o/chat/completions?api-version=2025-04-01-preview`.
 
 ### Step 3: Create an Apache Airflow DAG to generate DAGs from sketches
 
 With all prerequisites complete, you're ready to set up the Azure OpenAI DAG Generator workflow.
 
 #### How the Azure OpenAI DAG Generator works
-1. Download the sketch from your Lakehouse: The image is encoded in base64 format and sent to Azure OpenAI.
+1. Download the sketch from your lakehouse: The image is encoded in base64 format and sent to Azure OpenAI.
 2. Generate DAG Code using Azure OpenAI: The workflow uses the `gpt-4o` model to generate the DAG code from the sketch and given system prompt.
 3. Azure OpenAI interprets the input image and system prompt, generating python code that represents an Apache Airflow DAG. The response includes this code as part of the API output.
 4. The generated DAG code is retrieved from the API response and written to a Python file in the `dags` directory. Before you use the file, configure the connections required by the operators in the Apache Airflow and the file is immediately ready for use in the Apache Airflow Jobs interface.
@@ -127,10 +130,10 @@ Now, follow the steps to implement the workflow:
        @task
        def fetch_image_from_lakehouse(workspace_name: str, file_path: str):
            """
-           Downloads an image from Fabric Lakehouse and encodes it as a Base64 string.
+           Downloads an image from a lakehouse and encodes it as a Base64 string.
            
-           :param workspace_name: Name of the workspace where your Lakehouse is located.
-           :param file_path: Relative file path stored in the Fabric Lakehouse.
+           :param workspace_name: Name of the workspace where your lakehouse is located.
+           :param file_path: Relative file path stored in the lakehouse.
            :return: Dictionary containing the encoded image as a Base64 string.
            """
            account_url = f"https://{yourStorageAccountName}.dfs.fabric.microsoft.com"
@@ -261,7 +264,7 @@ Now, follow the steps to implement the workflow:
                generate_dag_code_from_openai(
                    fetch_image_from_lakehouse(
                        workspace_name="airflow-dag-images", # Your Fabric Workspace
-                       file_path="lakehouse_ai.Lakehouse/Files/airflow-dag-diagram.png" # Path to the image file located in the Lakehouse
+                       file_path="lakehouse_ai.Lakehouse/Files/airflow-dag-diagram.png" # Path to the image file located in the lakehouse
                    ),
                    "{{ params.system_prompt }}"
                )
@@ -294,5 +297,5 @@ Explore more use cases by modifying the system prompt or input sketch. This solu
 
 ## Related content
 
-[Quickstart: Create an Apache Airflow Job](../data-factory/create-apache-airflow-jobs.md)
-[Enable Azure Key Vault as Secret Backend](../data-factory/apache-airflow-jobs-enable-azure-key-vault.md)
+- [Quickstart: Create an Apache Airflow job](../data-factory/create-apache-airflow-jobs.md)
+- [Enable Azure Key Vault as Secret Backend](../data-factory/apache-airflow-jobs-enable-azure-key-vault.md)

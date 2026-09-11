@@ -9,7 +9,7 @@ ms.date: 06/17/2026
 ms.topic: how-to
 ---
 
-# Workspace outbound access protection for graph (preview)
+# Workspace outbound access protection for graph
 
 Workspace outbound access protection helps safeguard your data by controlling outbound connections from graph in Microsoft Fabric items in your workspace to external data sources. When you enable this feature, items can't make outbound connections unless you explicitly grant access through approved data connection rules. 
 

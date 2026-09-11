@@ -1,19 +1,19 @@
 ---
 title: Use Foundry Tools in Fabric
 description: Overview of using Foundry Tools in Fabric.
-ms.author: lagayhar
-author: lgayhardt
+ms.author: singhrana
+author: ranadeepsingh
 ms.reviewer: singhrana
 reviewer: ranadeepsingh
 ms.topic: overview
 ms.custom:
   - references_regions
-ms.date: 08/03/2026
+ms.date: 09/02/2026
 ms.update-cycle: 180-days
 ms.search.form: 
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
-ai.usage: ai-assisted
+ai-usage: ai-assisted
 ---
 
 # Foundry Tools in Fabric (preview)
@@ -56,12 +56,16 @@ Fabric provides two options to use Foundry Tools:
 - Named entity recognition: identifies known entities and general named entities in the input text
 - Entity linking: identifies and disambiguates the identity of entities found in text
 
+The REST examples use API version `2024-11-01` for most Language capabilities. Text PII detection uses API and model version `2026-05-01`, the latest generally available versions for that capability. For currently published versions, see the [Azure AI Language model lifecycle](/azure/ai-services/language-service/concepts/model-lifecycle).
+
 ### [Translator](https://azure.microsoft.com/products/ai-services/translator/)
 
 [REST API](how-to-use-text-translator.md), [SynapseML](how-to-use-text-translator.md)
 
 - Translate: Translates text
 - Transliterate: Converts text in one language, in one script, to another script.
+
+The Fabric REST examples use Translator Text API v3.0 for translation and API version `2026-06-06` for transliteration and supported-language retrieval. SynapseML continues to use v3.0. API version `2026-06-06` has a breaking request and response schema, and its translation operation isn't currently available through the prebuilt Fabric endpoint. For migration details, see [Migrate to Translator Text API 2026-06-06](/azure/ai-services/translator/text-translation/how-to/migrate-to-2026-06-06).
 
 ## Available regions
 

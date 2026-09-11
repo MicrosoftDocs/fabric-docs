@@ -3,8 +3,8 @@ title: Autologging in Fabric Data Science
 description: Automatically capture machine learning metrics and parameters by using autologging with MLflow.
 ms.author: scottpolly
 author: s-polly
-ms.reviewer: ruxu
-reviewer: ruixinxu
+ms.reviewer: scottpolly
+reviewer: s-polly
 ms.topic: concept-article
 ms.custom: dev-focus
 ms.date: 05/15/2026

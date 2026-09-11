@@ -51,7 +51,7 @@ When you create a data input measure, define one or more breakdown dimensions to
 
     :::image type="content" source="../media/planning-cubes/how-to-create-cube/cube-created-data-pane.png" alt-text="Screenshot of cube measure created in the From Sheets section of the data pane." lightbox="../media/planning-cubes/how-to-create-cube/cube-created-data-pane.png":::
 
-1. Enter a value at the grand total level. In this example, you copy the *Operating Expense Actual* value to use the cube to allocate this value across additional dimensions. Plan automatically distributes the value equally among child rows and columns. Select the distribution icon to choose an alternate distribution method.
+1. Enter a value at the grand total level. In this example, you copy the *Operating Expense Actual* value to use the cube to allocate this value across additional dimensions. Planning automatically distributes the value equally among child rows and columns. Select the distribution icon to choose an alternate distribution method.
 
     :::image type="content" source="../media/planning-cubes/how-to-create-cube/enter-distribute-expense-total-value.png" alt-text="Screenshot of entering an expense value and changing the distribution from equal to measure-based." lightbox="../media/planning-cubes/how-to-create-cube/enter-distribute-expense-total-value.png":::
 
@@ -71,7 +71,7 @@ After you configure a cube measure, you can use it in other planning sheets with
 * You enter data for the cube measure.
 * You import the cube measure into the product-level plan.
 
-The values you enter in the region-level planning sheet allocate to the product dimensions based on the weights of the reference measure. When you import the cube into the product-level planning sheet, Plan automatically populates the entered values.
+The values you enter in the region-level planning sheet allocate to the product dimensions based on the weights of the reference measure. When you import the cube into the product-level planning sheet, planning automatically populates the entered values.
 
 > [!IMPORTANT]
 > When importing a cube measure, the column dimensions in the second sheet must match those of the original sheet.
@@ -86,7 +86,7 @@ The values you enter in the region-level planning sheet allocate to the product 
 
     :::image type="content" source="../media/planning-cubes/how-to-create-cube/allocate-expense-breakdown-dimensions.png" alt-text="Screenshot of inserting the cube meaure into the product level planning sheet with values allocated to the product dimensions." lightbox="../media/planning-cubes/how-to-create-cube/allocate-expense-breakdown-dimensions.png":::
 
-1. Plan distributes cube measure values equally to breakdown dimensions such as *city*, *sales channel*, *product family*, and *product*. Select the distribution icon to choose an alternate distribution method.
+1. Planning distributes cube measure values equally to breakdown dimensions such as *city*, *sales channel*, *product family*, and *product*. Select the distribution icon to choose an alternate distribution method.
 
     > [!NOTE]
     > Redistributing imported cube values affects only the unrelated dimensions and preserves existing allocations.
@@ -110,7 +110,7 @@ Cubes support bi-directional updates between planning sheets of different granul
 
 :::image type="content" source="../media/planning-cubes/how-to-create-cube/update-region-level-expense-value.png" alt-text="Screenshot of updating the grand total expense value at region level for China." lightbox="../media/planning-cubes/how-to-create-cube/update-region-level-expense-value.png":::
 
-The cube allocates the updated value to the additional dimensions in the product-level planning sheet. Plan automatically recomputes calculated measures, such as *Gross Margin*, to reflect updates to cube values.
+The cube allocates the updated value to the additional dimensions in the product-level planning sheet. Planning automatically recomputes calculated measures, such as *Gross Margin*, to reflect updates to cube values.
 
 :::image type="content" source="../media/planning-cubes/how-to-create-cube/updated-value-allocated-product-level.png" alt-text="Screenshot of updated value propagated to the product level planning sheet and automatically allocated across the hierarchy." lightbox="../media/planning-cubes/how-to-create-cube/updated-value-allocated-product-level.png":::
 

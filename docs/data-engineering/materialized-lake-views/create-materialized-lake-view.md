@@ -98,6 +98,90 @@ ON p.productID = o.productID
 >
 > Use notebooks to author and iterate on your materialized lake view definitions. Let lineage and scheduled refresh handle ordering, execution, and retries — for reliable, repeatable data with less code to maintain.
 
+## Ingest files with `USING OneLake_Files`
+
+In addition to defining a materialized lake view from tables with `AS select_statement`, you can define one that ingests raw files (CSV or Parquet) directly from OneLake. A *file-ingesting* view uses a `USING OneLake_Files` clause that points to a physical OneLake folder or a OneLake folder shortcut instead of an `AS SELECT` query. This design makes it a natural **bronze** layer for a medallion architecture.
+
+The following table shows which syntax applies to each authoring style:
+
+| Aspect | Table-based materialized lake view | File-based materialized lake view |
+|---|---|---|
+| **Source** | Tables or other materialized lake views | A physical OneLake folder or OneLake folder shortcut |
+| **Definition** | `AS select_statement` | `USING OneLake_Files` + `OPTIONS` |
+| **Formats** | Any queryable table | CSV, Parquet |
+| **Schema** | Derived from the `SELECT` | `schema_mode` = `DYNAMIC` or `FIXED` |
+| **Source lineage** | Upstream tables/views | Source folder, plus a `__filepath__` column per row |
+| **Typical layer** | Silver, gold | Bronze |
+| **Data quality constraints** | Supported | Apply in a downstream table-based view |
+
+### Syntax
+
+```sql
+CREATE [OR REPLACE] MATERIALIZED LAKE VIEW [IF NOT EXISTS] [workspace.lakehouse.schema].MLV_Identifier
+USING OneLake_Files
+OPTIONS (
+    'format' = 'csv' | 'parquet',
+    'path'   = 'abfss://<workspace>@<host>/<lakehouse>/Files/<folder>/',
+    ['header' = 'true' | 'false',]
+    ['delimiter' = '<char>']
+)
+[TBLPROPERTIES (
+    'schema_mode'  = 'DYNAMIC' | 'FIXED',
+    'refresh_mode' = 'APPEND_ONLY' | 'FULL' | 'MIRROR'
+)]
+```
+
+> [!NOTE]
+> A file-ingesting materialized lake view has **no `AS SELECT` clause** — the source is the folder named in `OPTIONS`. To transform the ingested data, create a downstream table-based materialized lake view that selects from this view.
+
+### OPTIONS reference
+
+| Option | Applies to | Description |
+|---|---|---|
+| `format` | CSV, Parquet | Source file format. Supported values are `csv` and `parquet`. |
+| `path` | CSV, Parquet | Physical OneLake folder or OneLake folder shortcut (`abfss://…`) that contains the source files. The service recursively ingests files in nested subfolders when you create the view. |
+| `header` | CSV | Indicates whether the first row of each file contains column names. Defaults to `false`. |
+| `delimiter` | CSV | Field delimiter character (for example, `,` or `|`). Defaults to a comma. |
+
+> [!NOTE]
+> For CSV, only `header` and `delimiter` are currently supported. Additional parsing options (such as `nullValue`, `quote`, and `escape`) aren't yet available.
+
+### TBLPROPERTIES reference
+
+| Property | Values | Description |
+|---|---|---|
+| `schema_mode` | `DYNAMIC` (default), `FIXED` | `DYNAMIC` adds newly discovered columns and writes `NULL` when a file doesn't contain an established column. `FIXED` pins the schema at creation and rejects subsequent drift. |
+| `refresh_mode` | `APPEND_ONLY`, `FULL`, `MIRROR` | `APPEND_ONLY` adds rows from new files without removing rows for deleted files. `FULL` reprocesses the current folder as a complete snapshot. `MIRROR` keeps the materialized result aligned with file additions and deletions in the source folder. |
+
+### Example
+
+The following example ingests a folder of CSV files with a header row into a bronze view. Each row also gets a `__filepath__` column that records the source file it was read from.
+
+```sql
+CREATE MATERIALIZED LAKE VIEW bronze.raw_orders
+USING OneLake_Files
+OPTIONS (
+    'format' = 'csv',
+    'path'   = 'abfss://SalesWorkspace@onelake.dfs.fabric.microsoft.com/SalesLake.Lakehouse/Files/orders/',
+    'header' = 'true'
+)
+TBLPROPERTIES (
+    'schema_mode'  = 'DYNAMIC',
+    'refresh_mode' = 'APPEND_ONLY'
+);
+```
+
+You can then build downstream silver and gold materialized lake views that select from `bronze.raw_orders`; Fabric records the dependency and refreshes them in order. To trace files through the pipeline, see [Manage Fabric materialized lake views lineage](./view-lineage.md#view-lineage-for-file-ingestion).
+
+> [!NOTE]
+> When you use `FIXED` schema and the source folder contains multiple files with **different** schemas at the time of the initial `CREATE`, the view fails because it can't reconcile a single fixed schema. Point `FIXED` views at files that share one schema, or use `DYNAMIC`. This is a known restriction, similar to fixed-schema behavior in shortcut transformations.
+
+> [!IMPORTANT]
+> Source paths containing a raw space or `%20` aren't currently accepted. You can use a OneLake folder shortcut as the source: creation ingests files available at the shortcut root and in nested folders. Managed refresh discovers new files added at the shortcut root, but doesn't recursively discover new files added under nested shortcut folders.
+
+> [!TIP]
+> To reprocess the entire source folder on demand, run `REFRESH MATERIALIZED LAKE VIEW <name> FULL;`. As with table-based views, don't orchestrate ongoing refresh from a notebook — use [Lineage](./view-lineage.md) and [Scheduled refresh](./schedule-lineage-run.md) to pick up new files automatically.
+
 ## Get a list of materialized lake views
 
 To get the list of all materialized lake views in a schema, use the following syntax:

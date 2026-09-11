@@ -1,103 +1,116 @@
 ---
-title: Migrate to IDENTITY Columns in Fabric Data Warehouse
-description: Learn how to migrate from legacy systems to IDENTITY columns to Fabric Data Warehouse
+title: Migrate IDENTITY columns to Fabric Data Warehouse
+description: Learn how to migrate IDENTITY columns to Fabric Data Warehouse.
 ms.reviewer: procha
-ms.date: 11/04/2025
+ms.date: 08/18/2026
 ms.topic: how-to
+ai-usage: ai-assisted
 ---
 
-# Migrate to IDENTITY columns in Fabric Data Warehouse
+# Migrate IDENTITY columns to Fabric Data Warehouse
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
-You can migrate tables to Fabric Data Warehouse with surrogate key columns after adapting to the differences in the `IDENTITY` implementation in Fabric Data Warehouse. This article outlines a robust migration strategy to help you bridge this gap and successfully move your schema and data into Fabric Data Warehouse.
+This article describes how to use [SET IDENTITY_INSERT](/sql/t-sql/statements/set-identity-insert-transact-sql?view=fabric&preserve-view=true) and [DBCC CHECKIDENT](/sql/t-sql/database-console-commands/dbcc-checkident-transact-sql?view=fabric&preserve-view=true) to preserve existing identity values during migration from SQL Server, Azure SQL Database, or Azure Synapse Analytics, and ensure referential integrity.
 
-[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
+## Key differences from other platforms
 
-Migrating databases to Fabric Data Warehouse presents unique challenges for organizations that rely on existing surrogate columns, such as `IDENTITY` or `SEQUENCE` functions in the SQL Database Engine:
+Before migrating, understand these differences in the `IDENTITY` implementation in Fabric Data Warehouse:
 
-- Unlike traditional SQL Server environments, Fabric Data Warehouse uses a distributed model for generating identity values, which ensures uniqueness but doesn't guarantee sequential order.
-    - `IDENTITY` in Fabric Data Warehouse does not support `IDENTITY_INSERT`. You cannot directly insert existing values. 
-    - `IDENTITY` in Fabric Data Warehouse does not support configuring the `SEED` or `INCREMENT`. `IDENTITY` values are unique and automatically managed.
-- Only the **bigint** data type is supported for `IDENTITY` columns in Fabric Data Warehouse. 
+- `IDENTITY` columns support only the **bigint** data type.
+- `SEED` and `INCREMENT` parameters aren't supported. The system manages values internally.
+- Values are guaranteed unique but not necessarily sequential. Gaps can occur because of the distributed compute architecture.
 - Fabric Data Warehouse doesn't enforce key constraints.
 
-## Step-by-step migration process
+## Migration strategy
 
-To illustrate the approach described in this article, consider two tables: a `Customers` table, and an `Orders` table. The `Orders` table references the `Customers` table using the `CustomerID` column.
+By using `IDENTITY_INSERT` support, you can migrate identity values directly into Fabric Data Warehouse tables that use `IDENTITY` columns:
 
-:::image type="content" source="media/migrate-identity-columns/customers-orders-tables.png" alt-text="Entity-Relationship diagram showing two tables: 'Customers' and 'Orders.'" lightbox="media/migrate-identity-columns/customers-orders-tables.png":::
+1. Create destination tables in Fabric Data Warehouse with `IDENTITY` columns.
+1. Use `SET IDENTITY_INSERT ON` to insert historical data with the original identity values preserved.
+1. Run `DBCC CHECKIDENT` with `RESEED` to realign the identity range after migration.
+1. Update foreign key references if needed.
 
-To migrate these tables from the source into Fabric Data Warehouse tables that use `IDENTITY` columns, we need to rehydrate the destination table with new IDs and update the referenced table. We can achieve that by using the following strategy: 
+This approach preserves the original identity values, maintains referential integrity across tables, and allows Fabric Data Warehouse to resume generating unique values after migration.
 
-1. Load data from source tables into staging tables in Fabric Data Warehouse that don't use `IDENTITY` columns.
-1. Load data from staging tables into final tables that use an `IDENTITY` column, but copy the original data of the ID column from the staging table into a new, temporary column in the final tables.
-1. `UPDATE` references in related tables.
+## Example: Migrate tables with IDENTITY columns
 
-## Example: migrate data from tables that use IDENTITY columns to Fabric Data Warehouse
+The following example migrates an `Orders` table from a source platform to Fabric Data Warehouse while preserving identity values.
 
-The next steps describe how this strategy can be accomplished using `IDENTITY` columns in Fabric Data Warehouse. 
+### Step 1: Create a destination table with an IDENTITY column
 
-### Step 1: Load source data into staging tables
-
-Begin by creating staging tables in Fabric Data Warehouse that mirror the schema of your source tables, but create the staging tables with `IDENTITY` columns. 
-
-Load your source data into these staging tables, including the original identity values.
-
-### Step 2: Insert data into destination tables and map legacy IDENTITY values
-
-Next, insert data from the staging tables into the destination tables in your warehouse. 
-
-The destination table should use `IDENTITY` on the key column. 
-
-During this step, map the original identity values from the staging table to a new column in the destination table.
-
-:::image type="content" source="media/migrate-identity-columns/migrate-to-staging-table.png" alt-text="Diagram showing a data migration from 'Customers (Staging)' to 'Customers (Final)' tables." lightbox="media/migrate-identity-columns/migrate-to-staging-table.png":::
-
-For example, when migrating a `Customers` table, you could use a statement like:
+Create the destination table in Fabric Data Warehouse. The primary key column uses `IDENTITY`:
 
 ```sql
--- Pseudo code: replace ... with your own column list
-INSERT INTO dbo.Customers (Name, Email, ... , LegacyCustomerID)
-SELECT s.Name, s.Email, ..., s.CustomerID
-FROM dbo.Staging_Customers AS s;
+CREATE TABLE dbo.Orders (
+    OrderID BIGINT IDENTITY,
+    OrderDate DATE,
+    CustomerID BIGINT,
+    TotalAmount DECIMAL(18, 2)
+);
 ```
 
-This approach preserves the original identity value in the `LegacyCustomerID` column for use in subsequent steps. 
+### Step 2: Migrate data with IDENTITY_INSERT
 
-Repeat this step for all tables in your warehouse that use `IDENTITY` columns.
-
-### Step 3: Update foreign key relationships using legacy identity values
-
-For tables with foreign keys referencing an `IDENTITY` column, join the staging version of the referenced table using the temporary legacy ID column to obtain the new Fabric Data Warehouse-generated IDs.
-
-:::image type="content" source="media/migrate-identity-columns/update-references.png" alt-text="Data flow diagram showing migration from 'Orders (Staging)' to 'Orders (Final)', with customer linkage from 'Customers (Final)'." lightbox="media/migrate-identity-columns/update-references.png":::
-
-For example, when migrating an `Orders` table that references Customers:
+Use `SET IDENTITY_INSERT` to insert historical data with the original identity values. This method preserves existing IDs so relationships between tables remain intact.
 
 ```sql
-INSERT INTO dbo.Orders (OrderDate, ... , CustomerID)
-SELECT o.OrderDate, ..., c.CustomerID
-FROM dbo.Staging_Orders AS o
-INNER JOIN dbo.Customers AS c
-ON o.CustomerID = c.LegacyCustomerID; 
+-- Migrate Orders with original IDs
+SET IDENTITY_INSERT dbo.Orders ON;
+
+INSERT INTO dbo.Orders (OrderID, OrderDate, CustomerID, TotalAmount)
+VALUES (101, '2025-01-15', 1, 5000.00),
+       (102, '2025-02-20', 2, 3200.00),
+       (103, '2025-03-10', 1, 7800.00),
+       (104, '2025-04-05', 3, 1500.00);
+
+SET IDENTITY_INSERT dbo.Orders OFF;
 ```
 
-This approach ensures that relationships between tables are preserved even as new `IDENTITY` produces new IDs moving forward. 
-
-### Step 4 (Optional): Clean up temporary columns
-
-After confirming that all relationships are correctly mapped and data integrity is maintained, if desired, you can drop the legacy ID columns from your destination tables:
+For larger datasets, you can use `COPY INTO` with `IDENTITY_INSERT`:
 
 ```sql
-ALTER TABLE Orders 
-DROP COLUMN LegacyCustomerID;
+COPY INTO dbo.Orders (OrderID 1, OrderDate 2, CustomerID 3, TotalAmount 4)
+FROM 'https://storage.blob.core.windows.net/migration/orders.csv'
+WITH (
+    FILE_TYPE = 'CSV',
+    IDENTITY_INSERT = 'ON'
+);
 ```
 
-Optionally, keep the columns like `LegacyCustomerID` in the final table for future audits, lineage, or troubleshooting reasons.
+### Step 3: Reseed identity columns
+
+After migrating data, run `DBCC CHECKIDENT` with `RESEED` on each table. This operation scans all used identity ranges and adjusts the next value to avoid collisions with migrated data:
+
+```sql
+DBCC CHECKIDENT('dbo.Orders', RESEED);
+```
+
+### Step 4: Verify the migration and test new inserts
+
+Confirm that the migrated data is intact and that new inserts receive automatically generated values that don't overlap with migrated values:
+
+```sql
+-- Verify migrated data
+SELECT * FROM dbo.Orders ORDER BY OrderID;
+
+-- Insert a row that receives an automatically generated ID
+INSERT INTO dbo.Orders (OrderDate, CustomerID, TotalAmount)
+VALUES ('2025-05-01', 1, 2500.00);
+
+-- Verify that new IDs don't overlap with migrated data
+SELECT * FROM dbo.Orders ORDER BY OrderID;
+```
+
+## Best practices
+
+- **Always reseed after migration.** Run `DBCC CHECKIDENT('table_name', RESEED)` after every table migration to prevent identity value collisions.
+- **Use COPY INTO for large datasets.** For bulk migration of large tables, `COPY INTO` with `IDENTITY_INSERT ON` provides better performance than row-by-row `INSERT` statements.
+- **Validate referential integrity.** After migration, verify that foreign key values in child tables reference valid rows in parent tables.
 
 ## Related content
 
-- [Tutorial: Using IDENTITY Columns in T-SQL to Create Surrogate Keys in Fabric Data Warehouse](tutorial-identity.md)
-- [Understanding IDENTITY columns in Fabric Data Warehouse](identity.md)
-- [Create tables in the Warehouse in Microsoft Fabric](create-table.md)
+- [IDENTITY columns in Fabric Data Warehouse](identity.md)
+- [SET IDENTITY_INSERT (Transact-SQL)](/sql/t-sql/statements/set-identity-insert-transact-sql?view=fabric&preserve-view=true)
+- [DBCC CHECKIDENT (Transact-SQL)](/sql/t-sql/database-console-commands/dbcc-checkident-transact-sql?view=fabric&preserve-view=true)
+- [Tutorial: Use IDENTITY columns in Fabric Data Warehouse](tutorial-identity.md)

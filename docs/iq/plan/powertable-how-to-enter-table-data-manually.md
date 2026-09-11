@@ -1,7 +1,7 @@
 ---
 title: Build a Table App Using PowerTable by Entering Data Manually
 description: Learn how to use PowerTable to create a collaborative table app with live synchronization by entering data manually.
-ms.date: 04/10/2026
+ms.date: 09/10/2026
 ms.topic: how-to
 #customer intent: As a user, I want step-by-step instructions to create a table app using PowerTable by entering data manually.
 ---
@@ -10,12 +10,17 @@ ms.topic: how-to
 
 This article explains how to create a table app using PowerTable by entering the data manually from scratch. You'll enter data to create a table in a database, then write back any subsequent changes to the same database using the PowerTable sheet.
 
+> [!NOTE]
+> * You can also create a table by uploading data from an Excel or CSV file. For more information, see [Create a table app with PowerTable sheets](powertable-how-to-create-table-app.md).
+> * To connect an existing database table to a PowerTable sheet and create a table app, see [Connect to a database](powertable-how-to-connect-existing-database.md).
+> * To learn how to connect to a semantic model, see [Connect to a semantic model](powertable-how-to-connect-semantic-model.md).
+
 ## Prerequisites
 
 Before you begin, make sure that you have the following prerequisites in place:
 
 * Connections established to the [Fabric SQL database](planning-how-to-create-database-connection.md) and the [semantic model](planning-how-to-create-semantic-model-connection.md) that contain the data for your PowerTable.
-* [A Plan item](planning-how-to-get-started.md#create-plan-item) created in your Fabric workspace.
+* [A plan item](planning-how-to-get-started.md#create-plan-item) created in your Fabric workspace.
 
 [!INCLUDE [new PowerTable sheet](includes/create-powertable.md)]
 

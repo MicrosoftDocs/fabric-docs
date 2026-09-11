@@ -143,10 +143,6 @@ To estimate the storage impact of a retention period change, consider:
 - Plan retention period changes during low-activity periods when possible so that there's no user impact.
 - The retention period is set at the warehouse level. If you need different retention periods for different datasets, consider organizing them into separate warehouses. Individual table-level retention settings aren't currently supported.
 
-## Dropped item retention
-
-[Dropped item retention](../admin/item-recovery.md) preserves warehouses and their associated tables, schemas, snapshots, permissions, and saved queries for a configurable period after they're dropped or deleted. This feature ensures that accidental deletions don't result in permanent data loss or business-impacting outages. Dropped item retention guarantees a minimum retention period of seven calendar days and has a separate tenant-level retention configuration. You can [configure the dropped item retention period in the **Item Recovery** tenant setting](../admin/item-recovery.md#set-up-the-retention-period-for-deleted-items).
-
 ## Limitations
 
 - Specify the retention period in whole days. Fractional values aren't supported.
@@ -154,6 +150,12 @@ To estimate the storage impact of a retention period change, consider:
 - Pausing the [!INCLUDE [product-name](../includes/product-name.md)] capacity affects garbage cleanup activity. The process doesn't remove historical data that's older than the current data retention settings while the capacity is paused. The cleanup activities catch up once the capacity resumes.
 - The retention setting applies only to warehouses. The SQL analytics endpoint of the Lakehouse isn't supported.
 - Query Insights and SQL audit logs aren't subject to this data retention policy and are managed separately.
+
+## Dropped item retention
+
+[Dropped item retention](../admin/item-recovery.md) preserves warehouses and their associated tables, schemas, snapshots, permissions, and saved queries for a configurable period after they're dropped or deleted. This feature ensures that accidental deletions don't result in permanent data loss or business-impacting outages.
+
+Dropped item retention is turned on by default, guarantees a minimum retention period of three calendar days, and has a separate tenant-level retention configuration. You can [configure the dropped item retention period in the **Item Recovery** tenant setting](../admin/item-recovery.md#set-up-the-retention-period-for-deleted-items).
 
 ## Next step
 

@@ -1,5 +1,5 @@
 ---
-ms.date: 07/17/2026
+ms.date: 08/28/2026
 ms.topic: include
 ---
 
@@ -12,7 +12,7 @@ ms.topic: include
 | [Azure SQL Database](../azure-sql-database.md) | [Database mirroring](../overview.md#how-does-database-mirroring-work) | [Tutorial: Azure SQL Database](../azure-sql-database-tutorial.md) |
 | [Azure SQL Managed Instance](../azure-sql-managed-instance.md) | [Database mirroring](../overview.md#how-does-database-mirroring-work) | [Tutorial: Azure SQL Managed Instance](../azure-sql-managed-instance-tutorial.md) |
 | [Dremio catalog (preview)](../catalog-mirroring/dremio.md) | [Metadata mirroring](../overview.md#how-does-metadata-mirroring-work) | [Tutorial: Dremio (preview)](../catalog-mirroring/dremio-tutorial.md) |
-| [Google BigQuery (preview)](../google-bigquery.md) | [Database mirroring](../overview.md#how-does-database-mirroring-work) | [Tutorial: Google BigQuery](../google-bigquery-tutorial.md) |
+| [Google BigQuery](../google-bigquery.md) | [Database mirroring](../overview.md#how-does-database-mirroring-work) | [Tutorial: Google BigQuery](../google-bigquery-tutorial.md) |
 | [Oracle](../oracle.md) | [Database mirroring](../overview.md#how-does-database-mirroring-work) | [Tutorial: Oracle](../oracle-tutorial.md) |
 | [SAP](../sap.md) | [Database mirroring](../overview.md#how-does-database-mirroring-work) | [Tutorial: SAP Datasphere](../sap-datasphere-tutorial.md) |
 | [SharePoint List (preview)](../sharepoint-list.md) | [Database mirroring](../overview.md#how-does-database-mirroring-work) | [Tutorial: SharePoint List (preview)](../sharepoint-list-tutorial.md) |

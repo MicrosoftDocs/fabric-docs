@@ -1,5 +1,5 @@
 ---
-title: Insert Multi-select Relationship Columns in PowerTable Sheet
+title: Insert Multi-Select Relationship Columns in PowerTable Sheet
 description: Add a multi-select relationship column in PowerTable to create many-to-many lookups between tables. Follow step-by-step instructions to configure.
 ms.date: 08/06/2026
 ms.topic: how-to

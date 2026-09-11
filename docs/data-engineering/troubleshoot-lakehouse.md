@@ -341,7 +341,7 @@ else:
     df.write.format("delta").mode("append").option("mergeSchema", "true").saveAsTable("your_table_name")
 ```
 
-For more information on schema management, see [Lakehouse schemas documentation](lakehouse-schemas.md). To configure table properties for optimal maintenance and performance, see [configuration best practices](../fundamentals/table-maintenance-optimization.md#configuration-best-practices).
+For more information on schema management, see [Lakehouse schemas documentation](lakehouse-schemas.md). To configure table properties for optimal maintenance and performance, see [configuration best practices](../fundamentals/table-maintenance-optimization.md#cross-workload-guidance).
 
 
 ### Error: Invalid Column Names
@@ -582,7 +582,7 @@ If `_delta_log` is missing, the directory is not a Delta table and needs to be c
 
 If metadata is missing or corrupted, recreate the Delta table using the [Work with Delta Lake Tables training module](/training/modules/work-delta-lake-tables-fabric/). Choose one of the following approaches (not both). These operations require Contributor role or higher.
 
-Option 1: Read Parquet and recreate as Delta table**
+**Option 1: Read Parquet and recreate as Delta table_**
 
 This approach reads the data files and writes a new Delta table, which may reorder or compact the underlying files:
 
@@ -600,7 +600,7 @@ df.write.format("delta").mode("overwrite").option("overwriteSchema", "true").sav
 spark.sql("DESCRIBE DETAIL your_table_name").show()
 ```
 
-Option 2: Convert in-place using CONVERT TO DELTA**
+**Option 2: Convert in-place using CONVERT TO DELTA**
 
 This approach preserves existing Parquet files and adds Delta transaction log metadata:
 
@@ -1133,7 +1133,7 @@ If the error persists:
 3. Test with a minimal subset of data to isolate the issue
 4. Avoid concurrent operations on the same resources
 5. Disable complex features (e.g., complex transformations) temporarily to identify the trigger
-6. Check table health and file fragmentation using OPTIMIZE DRY RUN to identify potential issues (see [identify table health](../fundamentals/table-maintenance-optimization.md#identify-table-health))
+6. Check table health and file fragmentation to identify potential issues (see [identify table health](../fundamentals/table-maintenance-optimization.md#inspect-average-file-size))
 
 **Fix 3: Clear Cache and Restart Sessions**
 

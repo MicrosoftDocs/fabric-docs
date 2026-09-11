@@ -2,11 +2,11 @@
 title: Use R for Apache Spark
 description: Overview of developing Spark applications using the R language.
 ms.author: lagayhar
-ms.reviewer: ruxu
+ms.reviewer: lagayhar 
 ms.topic: overview
-ms.date: 08/26/2025
+ms.date: 09/02/2026
 ms.search.form: R Language
-ai.usage: ai-assisted
+ai-usage: ai-assisted
 ---
 
 # Use R for Apache Spark
@@ -45,16 +45,15 @@ Learn more in [R library management](./r-library-management.md).
 
 ## Notebook utilities
 
-Microsoft Spark Utilities (MSSparkUtils) is a built-in package that helps you perform common tasks. Use MSSparkUtils to work with file systems, get environment variables, chain notebooks together, and work with secrets. MSSparkUtils supports R notebooks.
+NotebookUtils (formerly MSSparkUtils) is a built-in package that helps you perform common tasks. Use NotebookUtils to work with file systems, get environment variables, chain notebooks together, and work with secrets. NotebookUtils supports R notebooks.
 
-To get started, run the following commands:
+To get started, run the following command:
 
 ```r
-library(notebookutils)
-mssparkutils.fs.help()
+notebookutils.fs.help()
 ```
 
-Learn more in [Use Microsoft Spark Utilities](../data-engineering/microsoft-spark-utilities.md).
+Learn more in [Use NotebookUtils](../data-engineering/notebook-utilities.md).
 
 ## Use SparkR
 

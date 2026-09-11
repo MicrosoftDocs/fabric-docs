@@ -4,8 +4,8 @@ description: Perform the same classification task with and without SynapseML to 
 ms.topic: how-to
 ms.author: scottpolly
 author: s-polly
-ms.reviewer: ruxu
-reviewer: ruixinxu
+ms.reviewer: scottpolly
+reviewer: s-polly
 ms.date: 05/13/2026
 ai-usage: ai-assisted
 ---

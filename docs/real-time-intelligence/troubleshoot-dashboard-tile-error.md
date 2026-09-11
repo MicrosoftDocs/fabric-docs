@@ -7,20 +7,20 @@ ms.date: 06/21/2026
 #customer intent: I want to learn how to troubleshoot errors in my dashboard tiles in Real-Time Intelligence.
 ---
 
-# Troubleshoot Real-Time Dashboard Tile Errors
+# Troubleshoot Real-Time Dashboard visual errors
 
-When you work with Real-Time Dashboards, a tile might display an error instead of a visual. These errors are categorized to help you understand the type of issue and determine next steps.
+When you work with Real-Time Dashboards, a visual might display an error instead of the expected content. These errors are categorized to help you understand the type of issue and determine next steps.
 Each error type indicates a different stage in the query, data retrieval, or rendering process where the failure occurred.
 
-:::image type="content" source="media\troubleshoot-dashboard-tile-error\error-tiles.png" alt-text="Screenshot of different tile error types examples.":::
+:::image type="content" source="media\troubleshoot-dashboard-tile-error\error-tiles.png" alt-text="Screenshot of different visual error types examples.":::
 
 ## Understand tile error types
 
-The following section describes common tile error categories, what they mean, and general ways to address them.
+The following section describes common visual error categories, what they mean, and general ways to address them.
 
 ### Access denied
 
-The tile can't access or retrieve data from the underlying data source. This error occurs when the user lacks permission to access the data source.
+The visual can't access or retrieve data from the underlying data source. This error occurs when the user lacks permission to access the data source.
 
 **What to do:**
 
@@ -30,7 +30,7 @@ The tile can't access or retrieve data from the underlying data source. This err
 
 ### Syntax error
 
-The query used in the tile contains invalid syntax and can't be parsed. This error occurs after editing a query or when creating a new tile. 
+The query used in the visual contains invalid syntax and can't be parsed. This error occurs after editing a query or when creating a new visual. 
 
 **What to do:**
 

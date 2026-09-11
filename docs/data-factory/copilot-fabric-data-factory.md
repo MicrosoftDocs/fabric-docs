@@ -1,8 +1,8 @@
 ---
 title: Microsoft Copilot in Fabric in the Data Factory Workload Overview
-description: Learn how Microsoft Copilot in Fabric
+description: Learn how Microsoft Copilot in Fabric in the Data Factory workload uses natural language to help you build and troubleshoot data integration solutions.
 ms.reviewer: maghan, sngun
-ms.date: 09/02/2025
+ms.date: 08/31/2026
 ms.topic: overview
 ms.collection:
   - ce-skilling-ai-copilot
@@ -15,7 +15,7 @@ ai-usage: ai-assisted
 
 This article provides an overview of Copilot in the Data Factory workload, including its features and benefits. Microsoft Copilot in the Data Factory workload is an AI-enhanced toolset that empowers customers to use natural language to articulate their requirements for creating data integration solutions using [Dataflow Gen2](../data-factory/dataflows-gen2-overview.md). The Copilot in the Data Factory workload operates like a subject-matter expert (SME) collaborating with you to design your data flows, supporting both citizen and professional data wranglers in streamlining their workflows.
 
-Before your business can start using Copilot capabilities in Fabric, your administrator must enable Copilot in Microsoft Fabric (see [Copilot Fabric Overview](../fundamentals/copilot-fabric-overview.md#enable-copilot).
+Before your business can start using Copilot capabilities in Fabric, your administrator must enable Copilot in Microsoft Fabric. For more information, see [Copilot Fabric Overview](../fundamentals/copilot-fabric-overview.md#enable-copilot).
 
 [!INCLUDE [copilot-note-include](../includes/copilot-note-include.md)]
 
@@ -29,16 +29,18 @@ Copilot in the Data Factory workload offers different capabilities depending on 
 
 **With Dataflow Gen2, you can:**
 
-- Generate new transformation steps for an existing query
-- Provide a summary of the query and the applied steps
-- Generate a new query that might include sample data or a reference to an existing query
+- [Get data from sources](copilot-fabric-data-factory-get-started.md#get-started-with-copilot-for-dataflow-gen2) by describing what you need in natural language
+- [Generate new transformation steps](copilot-fabric-data-factory-get-started.md#use-ai-to-generate-data-transformation-queries) for an existing query
+- Provide a [summary of the query and the applied steps](copilot-fabric-data-factory-get-started.md#get-started-with-copilot-for-dataflow-gen2)
+- [Generate a new query](copilot-fabric-data-factory-get-started.md#get-started-with-copilot-for-dataflow-gen2) that might include sample data or a reference to an existing query
+- [Undo the last applied step](copilot-fabric-data-factory-get-started.md#get-started-with-copilot-for-dataflow-gen2)
 
 **With pipelines, you can:**
 
-- **Pipeline Generation**: Using natural language, you can describe your desired pipeline, and Copilot understands the intent and generates the necessary pipeline activities
-- **Error message assistant**: Troubleshoot pipeline issues with clear error explanation capability and actionable troubleshooting guidance
-- **Summarize Pipeline**: Explain your complex pipeline with a summary of content and relations of activities within the Pipeline
-- **Build expressions**: Generate and explain pipeline expressions using Copilot's intuitive chat interface.
+- **[Pipeline Generation](copilot-fabric-data-factory-get-started.md#generate-a-pipeline-with-copilot)**: Using natural language, you can describe your desired pipeline, and Copilot understands the intent and generates the necessary pipeline activities
+- **[Error message assistant](copilot-fabric-data-factory-get-started.md#troubleshoot-pipeline-errors-with-copilot)**: Troubleshoot pipeline issues with clear error explanation capability and actionable troubleshooting guidance
+- **[Summarize Pipeline](copilot-fabric-data-factory-get-started.md#summarize-a-pipeline-with-copilot)**: Explain your complex pipeline with a summary of content and relations of activities within the Pipeline
+- **[Build expressions](copilot-fabric-data-factory-get-started.md#use-copilot-in-expression-builder-to-generate-and-explain-pipeline-expressions)**: Generate and explain pipeline expressions using Copilot's intuitive chat interface.
 
 ## Best practices for using Copilot in the Data Factory workload
 
@@ -46,7 +48,7 @@ To get the most out of Copilot in the Data Factory workload:
 
 - Be specific and clear in your natural language requests
 - Start with simple transformations and build complexity gradually
-- Use the "Explain my current query" feature to understand the generated code
+- Use the ["Explain my current query"](copilot-fabric-data-factory-get-started.md#get-started-with-copilot-for-dataflow-gen2) feature to understand the generated code
 - Use the undo functionality to revert changes when needed
 - Review the generated steps in the Applied steps list for accuracy
 - Use starter prompts to get familiar with Copilot's capabilities
@@ -98,4 +100,3 @@ Here are the current limitations of Copilot in the Data Factory workload:
 - [Get started with Copilot in Fabric in the Data Factory workload](copilot-fabric-data-factory-get-started.md)
 - [Copilot pipeline expressions builder](expression-language.md#build-pipeline-expressions-with-copilot)
 - [Privacy, security, and responsible use of Copilot in Fabric in the Data Factory workload](../fundamentals/copilot-data-factory-privacy-security.md)
-

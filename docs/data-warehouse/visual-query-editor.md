@@ -88,4 +88,4 @@ For more information on cross-warehouse querying, see [Cross-warehouse querying]
 
 - [Query the SQL analytics endpoint or Warehouse in Microsoft Fabric](query-warehouse.md)
 - [Query using the SQL query editor](sql-query-editor.md)
-- [Query insights in Fabric data warehousing](query-insights.md)
+- [Query insights in Fabric Data Warehouse](query-insights.md)

@@ -1,11 +1,11 @@
 ---
-title: Row-Level Security in Fabric Data Warehousing
-description: Learn about row-level security in tables in Fabric data warehousing.
+title: Row-Level Security in Fabric Data Warehouse
+description: Learn about row-level security in tables in Fabric Data Warehouse.
 ms.reviewer: dhsundar
 ms.date: 08/01/2024
 ms.topic: concept-article
 ---
-# Row-level security in Fabric data warehousing
+# Row-level security in Fabric Data Warehouse
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
@@ -168,11 +168,11 @@ GO
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Implement row-level security in Fabric Data Warehousing](tutorial-row-level-security.md)
+> [Implement row-level security in Fabric Data Warehouse](tutorial-row-level-security.md)
 
 ## Related content
 
-- [Security for data warehousing in Microsoft Fabric](security.md)
+- [Security in Fabric Data Warehouse](security.md)
 - [Share your data and manage permissions](share-warehouse-manage-permissions.md)
-- [Column-level security in Fabric data warehousing](column-level-security.md)
-- [Dynamic data masking in Fabric data warehousing](dynamic-data-masking.md)
+- [Column-level security in Fabric Data Warehouse](column-level-security.md)
+- [Dynamic data masking in Fabric Data Warehouse](dynamic-data-masking.md)

@@ -121,8 +121,6 @@
                 "data-factory/**/*.yml": "whhender",
                 "data-science/**/*.md": "scottpolly",
                 "data-science/**/*.yml": "scottpolly",
-                "data-science/ai-functions/*.md": "jburchel",
-                "data-science/ai-functions/*.yml": "jburchel",
                 "data-warehouse/**/*.md": "wiassaf",
                 "data-warehouse/**/*.yml": "wiassaf",
                 "database/**/*.md": "wiassaf",

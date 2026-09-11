@@ -1,6 +1,6 @@
 ---
 title: Arithmetic Functions
-description: Learn about arithmetic functions in Plan and how to use them to perform common arithmetic operations and calculations.
+description: Learn about arithmetic functions in planning and how to use them to perform common arithmetic operations and calculations.
 ms.date: 06/04/2026
 ms.topic: reference
 ms.search.form: Arithmetic functions
@@ -11,7 +11,7 @@ ms.search.form: Arithmetic functions
 
 Arithmetic functions let you perform common mathematical operations and numerical calculations in reports. These functions are commonly used to calculate totals, percentages, remainders, powers, and differences between values.
 
-In Plan, arithmetic functions help you create calculations for scenarios such as variance analysis, percentage calculations, aggregations, and other day-to-day business computations.
+In planning, arithmetic functions help you create calculations for scenarios such as variance analysis, percentage calculations, aggregations, and other day-to-day business computations.
 
 ## ABS
 
@@ -224,7 +224,7 @@ Returns the result after subtracting the specified values.
 SUBTRACT(Sales, Sales Plan)
 ```
 
-In this example, the *Sales Variance* measure is created using the SUBTRACT function, which returns the result of subtracting the values in *Sales Plan* from *Sales*.
+In this example, the *Sales Variance* measure is created using the SUBTRACT function, which returns the result of subtracting the values in *Sales plan* from *Sales*.
 
 :::image type="content" source="../../media/planning-reference-formulas/math-functions/arithmetic-functions/subtract.png" alt-text="Screenshot of SUBTRACT function." lightbox="../../media/planning-reference-formulas/math-functions/arithmetic-functions/subtract.png":::
 

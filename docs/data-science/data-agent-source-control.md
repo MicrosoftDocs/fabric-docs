@@ -5,7 +5,7 @@ ms.author: scottpolly
 author: s-polly
 ms.reviewer: amjafari
 ms.topic: concept-article
-ms.date: 08/8/2025
+ms.date: 08/27/2026
 ---
 
 # Source Control, CI/CD, and ALM for Fabric data agent
@@ -90,11 +90,13 @@ Inside the **config** folder, the **publish_info.json** contains the publishing 
 
 The **draft folder** contains the configuration files corresponding to the draft version of the data agent and the **published folder** contains the configuration files for the published version of the data agent. The **draft folder** contains:
 
-- **Data source folders** where there's one folder for each data source used by the data agent.
+- **Data source folders** where there's one folder for each data source used by the data agent. Each folder name starts with a prefix that identifies the data source type, followed by the name of the data source. For example:
   - **Lakehouse or warehouse data sources**: Folder names start with `lakehouse-tables-` or `warehouse-tables-`, followed by the name of the lakehouse or warehouse.
   - **Semantic model data sources**: Folder names start with `semantic-model-`, followed by the name of the semantic model.
   - **KQL database data sources**: Folder names start with `kusto-`, followed by the name of KQL database.
   - **Ontology data sources**: Folder names start with `ontology-`, followed by the name of the ontology.
+
+  Other supported data sources, such as SQL database in Fabric, mirrored databases, graph models, and Azure AI Search, follow the same naming pattern. For the full list of supported data sources, see [Add and configure data sources in Fabric data agent](./data-agent-add-datasources.md).
 
 :::image type="content" source="./media/data-agent-cicd/git-config-draft.png" alt-text="Screenshot showing the draft folder." lightbox="./media/data-agent-cicd/git-config-draft.png":::
 
@@ -123,7 +125,7 @@ The **datasource.json** defines the configuration for that data source, includin
 
 The **fewshots.json** stores example queries for the data source. Each entry includes:
   - `id` as the unique identifier for the example query.
-  - `question`, which refers t the natural language question.
+  - `question`, which refers to the natural language question.
   - `query` shows the query text, which may be SQL or KQL depending on the data source type.
 
 :::image type="content" source="./media/data-agent-cicd/git-configure-lakehouse-few-shots.png" alt-text="Screenshot showing the few shots." lightbox="./media/data-agent-cicd/git-configure-lakehouse-few-shots.png":::

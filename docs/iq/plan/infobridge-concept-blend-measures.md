@@ -1,5 +1,5 @@
 ---
-title: Visualize Budgets, Forecasts, and Simulations in Fabric Plan
+title: Visualize Budgets, Forecasts, and Simulations in Planning in Fabric
 description: Visualize simulations, budgets, and forecasts on live data. Learn how to embed planning sheets and see charts update in real time.
 ms.date: 08/05/2026
 ms.topic: concept-article
@@ -70,15 +70,15 @@ Blend data from multiple sources by combining dimensions and measures from exter
 
 Frequently asked questions about embedding planning sheets and visualizing budgets, forecasts, and simulations in intelligence sheets.
 
-### Why is the Planning visualization option grayed out until a Planning Sheet exists in the workspace?
+### Why is the Planning visualization option grayed out until a planning sheet exists in the workspace?
 
-The planning visual embeds an existing planning sheet onto the intelligence canvas, so the Plan app needs at least one planning sheet.
+The planning visual embeds an existing planning sheet onto the intelligence canvas, so the plan item needs at least one planning sheet.
 
-### What happens if there's more than one Planning Sheet in the workspace when embedding?
+### What happens if there's more than one planning sheet in the workspace when embedding?
 
 The sheet picker, **Select an Existing Planning Sheet**, lists every planning sheet available, and you can choose the correct one.
 
-### Once the Planning Sheet is embedded, is it a live, editable copy or a static snapshot?
+### Once the planning sheet is embedded, is it a live, editable copy or a static snapshot?
 
 It's live and editable. Adjusting any cell value in the embedded planning sheet updates charts, KPI cards, table, and matrix visuals in an intelligence sheet.
 

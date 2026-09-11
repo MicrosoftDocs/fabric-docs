@@ -31,7 +31,7 @@ Before the data consumer creates the shortcut, have the following prerequisites:
 * **Workspace role** in the producer tenant.
   * The data producer grants the organizational account or service principal the **Viewer** workspace role in the workspace that contains the source data.
 * **OneLake security role** in the producer tenant.
-  * The data producer assigns the organizational account or service principal to a OneLake security role that grants **Read** permission to the shared tables or folders. For more information, see [OneLake security](../security/get-started-onelake-security.md).
+  * The data producer assigns the organizational account or service principal to a OneLake security role that grants **Read** permission to the shared tables or folders. For more information, see [OneLake security](../security/data-access-control-model.md).
 
 ## Create a cross-tenant shortcut
 

@@ -21,7 +21,7 @@ This guide helps you establish data security in your mirrored Azure SQL Database
 1. Fabric needs to connect to the Azure SQL database. For this purpose, create a dedicated database user with limited permissions, to follow the principle of least privilege. Create either a login with a strong password and connected user, or a contained database user with a strong password. For a tutorial, see [Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Database](../mirroring/azure-sql-database-tutorial.md).
 
 > [!IMPORTANT]
-> If the source tables have granular security such as row-level security, column-level security, or data masking configured, the tables will be mirrored without the granular security. The granular security must be reconfigured in the mirrored database in Microsoft Fabric. For more information, see [Get started with OneLake security (preview)](../onelake/security/get-started-onelake-security.md) and [SQL granular permissions in Microsoft Fabric](../data-warehouse/sql-granular-permissions.md).
+> If the source tables have granular security such as row-level security, column-level security, or data masking configured, the tables will be mirrored without the granular security. The granular security must be reconfigured in the mirrored database in Microsoft Fabric. For more information, see [Get started with OneLake security (preview)](../onelake/security/get-started-onelake-security.md) and [SQL granular permissions in Fabric Data Warehouse](../data-warehouse/sql-granular-permissions.md).
 
 ## Data protection features
 
@@ -37,4 +37,4 @@ You can also mask sensitive data from non-admins using dynamic data masking:
 ## Related content
 
 - [What is Mirroring in Fabric?](../mirroring/overview.md)
-- [SQL granular permissions in Microsoft Fabric](../data-warehouse/sql-granular-permissions.md)
+- [SQL granular permissions in Fabric Data Warehouse](../data-warehouse/sql-granular-permissions.md)

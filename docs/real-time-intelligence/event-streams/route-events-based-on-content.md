@@ -11,7 +11,7 @@ ms.search.form: Source and Destination
 
 This article shows you how to route events based on content in Microsoft Fabric eventstreams.
 
-You can use the no-code editor in the Microsoft Fabric eventstreams main canvas to create complex stream processing logic without writing any code. This feature makes it easier to tailor, transform, and manage your data streams. After setting your stream processing operations, you can send your data streams to different destinations according to the specific schema and stream data.
+Use the no-code editor in the Microsoft Fabric eventstreams main canvas to create complex stream processing logic without writing any code. This feature makes it easier to tailor, transform, and manage your data streams. After setting your stream processing operations, you can send your data streams to different destinations according to the specific schema and stream data.
 
 
 
@@ -31,7 +31,7 @@ Here's the list of operations supported for real-time data processing:
 
 - **Union**: Connect two or more data streams with shared fields of the same name and data type into one data stream. Fields that don't match are dropped.
 
-- **Join**: Combine data from two streams based on a matching condition between them.
+- **Join**: Combine data from two streams based on a matching condition between them. You can also join a stream with reference data to enrich events. For more information, see [Enrich events with reference data](enrich-events-with-reference-data.md).
 
 ## Supported destinations
 
@@ -56,5 +56,6 @@ To transform and route your data stream based on content, follow the steps in [E
 ## Related content
 
 - [New capabilities in Microsoft Fabric eventstreams](overview.md)
+- [Enrich events with reference data](enrich-events-with-reference-data.md)
 - [Edit and publish an eventstream](edit-publish.md)
 - [Create default and derived eventstreams](create-default-derived-streams.md)

@@ -56,7 +56,7 @@ This example creates a table with two columns:
 CREATE TABLE MyTable (col1 int, col2 int );
 ```
 
-Fabric Data Warehouse supports [IDENTITY columns (Preview)](identity.md) in tables to automatically insert an incrementing number sequence.
+Fabric Data Warehouse supports [IDENTITY columns](identity.md) in tables to automatically insert an incrementing number sequence. To get started, see [Use IDENTITY columns in Fabric Data Warehouse](tutorial-identity.md).
 
 ### Schema names
 

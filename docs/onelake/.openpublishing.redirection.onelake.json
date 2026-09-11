@@ -27,22 +27,22 @@
         },
         {
             "source_path_from_root": "/docs/onelake/security/how-to-common-data-architectures.md",
-            "redirect_url": "/fabric/onelake/security/get-started-onelake-security",
+            "redirect_url": "/fabric/onelake/security/get-started-security",
             "redirect_document_id": false
         },
         {
             "source_path_from_root": "/docs/onelake/security/how-to-secure-data-onelake-for-data-science.md",
-            "redirect_url": "/fabric/onelake/security/get-started-onelake-security",
+            "redirect_url": "/fabric/onelake/security/get-started-security",
             "redirect_document_id": false
         },
         {
             "source_path_from_root": "/docs/onelake/security/how-to-secure-data-onelake-for-data-warehousing.md",
-            "redirect_url": "/fabric/onelake/security/get-started-onelake-security",
+            "redirect_url": "/fabric/onelake/security/get-started-security",
             "redirect_document_id": false
         },
         {
             "source_path_from_root": "/docs/onelake/security/get-started-data-access-roles.md",
-            "redirect_url": "/fabric/onelake/security/get-started-onelake-security",
+            "redirect_url": "/fabric/onelake/security/get-started-security",
             "redirect_document_id": false
         },
         {
@@ -116,18 +116,23 @@
             "redirect_document_id": false
         },
         {
+            "source_path_from_root": "/docs/onelake/security/get-started-onelake-security.md",
+            "redirect_url": "/fabric/onelake/security/data-access-control-model",
+            "redirect_document_id": false
+        },
+        {
             "source_path_from_root": "/docs/onelake/security/row-level-security.md",
-            "redirect_url": "/fabric/onelake/security/table-column-row-security#row-level-security",
+            "redirect_url": "/fabric/onelake/security/table-column-row-security",
             "redirect_document_id": false
         },
         {
             "source_path_from_root": "/docs/onelake/security/column-level-security.md",
-            "redirect_url": "/fabric/onelake/security/table-column-row-security#column-level-security",
+            "redirect_url": "/fabric/onelake/security/table-column-row-security",
             "redirect_document_id": false
         },
         {
             "source_path_from_root": "/docs/onelake/security/table-folder-security.md",
-            "redirect_url": "/fabric/onelake/security/table-column-row-security#table-and-folder-security",
+            "redirect_url": "/fabric/onelake/security/table-column-row-security",
             "redirect_document_id": false
         }
     ]

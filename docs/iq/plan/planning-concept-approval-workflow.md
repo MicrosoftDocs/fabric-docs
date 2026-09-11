@@ -1,5 +1,5 @@
 ---
-title: Approval Workflows in Fabric Plan
+title: Approval Workflows in Planning
 description: Approval workflows help organizations control planning changes through structured review and approval processes. Learn how approval levels, notifications, status tracking, and rejection handling support governed planning.
 ms.date: 08/19/2026
 ms.topic: concept-article

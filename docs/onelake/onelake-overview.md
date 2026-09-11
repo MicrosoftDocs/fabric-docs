@@ -59,7 +59,7 @@ This unified approach to security means users don't have to maintain separate pe
 
 You can apply sensitivity labels to OneLake items just like you would to a document, and those labels enforce encryption or access restrictions even if the data is exported to Excel or another tool. Likewise, data loss prevention (DLP) policies can detect sensitive data uploads or downloads from OneLake and prevent or alert on potential data leaks.
 
-For more information, see [Get started securing your data in OneLake](security/get-started-onelake-security.md).
+For more information, see [Get started securing your data in OneLake](security/get-started-security.md).
 
 ## One copy of data
 

@@ -2,7 +2,7 @@
 title: Migrate SQL Server to SQL Database in Fabric by using the Fabric Migration Assistant
 description: Learn how the Fabric Migration Assistant migrates schema and data from SQL Server–based sources to a SQL database in Microsoft Fabric using a DACPAC file.
 ms.reviewer: randolphwest, subasak, niball, antho
-ms.date: 08/03/2026
+ms.date: 08/25/2026
 ms.topic: how-to
 ---
 # Migrate to SQL database in Fabric with the Migration Assistant by using DACPAC
@@ -10,8 +10,6 @@ ms.topic: how-to
 **Applies to**: [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 
 The Fabric Migration Assistant can import schema metadata from a DACPAC file and guide you through copying data into the target SQL database in Fabric.
-
-[!INCLUDE [feature-preview](../../includes/feature-preview-note.md)]
 
 ## Prerequisites
 
@@ -44,17 +42,17 @@ After registering an on-premises data gateway, create a Fabric SQL connection an
 
 After you configure the on-premises data gateway and create the Fabric SQL connection, you're ready to start the Migration Assistant.
 
-:::image type="content" source="media/migrate-with-migration-assistant/choose-source.png" alt-text="Screenshot showing SQL Server (Preview) as the migration source." lightbox="media/migrate-with-migration-assistant/choose-source.png":::
+:::image type="content" source="media/migrate-with-migration-assistant/choose-source.png" alt-text="Screenshot showing SQL Server as the migration source." lightbox="media/migrate-with-migration-assistant/choose-source.png":::
 
 1. In the Fabric portal, go to your workspace. From the toolbar, select **Migrate** to launch the Migration Assistant.
-1. In the **Migrate to Fabric** pane, under **Migrate to a database**, select **SQL Server (Preview)**.
+1. In the **Migrate to Fabric** pane, under **Migrate to a database**, select **SQL Server**.
 1. On the **Overview** page, review the **What to expect when you migrate** information, and select **Next**.
 
 ### Step 1: Copy schema
 
 On **Select the source**, upload the DACPAC file from the source SQL Server environment.
 
-:::image type="content" source="media/migrate-with-migration-assistant/upload-file.png" alt-text="Screenshot showing how to upload a DACPAC file." lightbox="media/migrate-with-migration-assistant/upload-file.png":::
+   :::image type="content" source="media/migrate-with-migration-assistant/validation-results.png" alt-text="Screenshot showing how to upload a DACPAC file." lightbox="media/migrate-with-migration-assistant/validation-results.png":::
 
 When this step finishes:
 
@@ -65,7 +63,7 @@ When this step finishes:
 
 1. On **Select the source**, after you upload the DACPAC file, select **Validate** to check DACPAC compatibility with Fabric SQL Database before you configure a destination.
 
-   :::image type="content" source="media/migrate-with-migration-assistant/validation-results.png" alt-text="Screenshot showing results after running the Validate Function." lightbox="media/migrate-with-migration-assistant/validation-results.png":::
+   :::image type="content" source="media/migrate-with-migration-assistant/upload-file.png" alt-text="Screenshot showing results after running the Validate Function." lightbox="media/migrate-with-migration-assistant/upload-file.png":::
 
 1. Review the Object Validation Summary to identify objects that are expected to migrate, require updates, or aren't expected to migrate.
 1. Fix compatibility problems before you proceed with migration.
@@ -149,5 +147,5 @@ After you complete the migration:
 
 ## Related content
 
-- [Fabric Migration Assistant for SQL database (Preview)](migration-assistant.md)
+- [Fabric Migration Assistant for SQL database](migration-assistant.md)
 - [Microsoft Fabric Migration Overview](../../fundamentals/migration.md)

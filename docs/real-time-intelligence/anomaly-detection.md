@@ -4,23 +4,16 @@ description: Learn how to set up and configure anomaly detection for your real-t
 ms.reviewer: tessarhurr, hzargari-ms
 ms.topic: how-to
 ms.subservice: rti-anomaly-detector
-ms.date: 07/14/2026
+ms.date: 08/12/2026
 ms.search.form: Anomaly Detection How To
 ai-usage: ai-assisted
 ---
 
 # Anomaly detection in Real-Time Intelligence (Preview)
 
-This article explains how to set up anomaly detection in Real-Time Intelligence to automatically identify unusual patterns and outliers in your Eventhouse tables. The system provides recommended models and allows you to set up continuous monitoring with automated actions.
+Anomaly detection in Real-Time Intelligence helps you detect unusual patterns and outliers in eventhouse tables without copying data. Use it when you need to spot unexpected behavior in streaming or historical data and respond before it affects downstream operations.
 
-Key capabilities include:
-
-- **Model recommendations**: Suggests the best algorithms and parameters for your data.
-- **Interactive anomaly exploration**: Visualize detected anomalies and adjust model sensitivity.
-- **Continuous monitoring**: Set up real-time anomaly detection with automated notifications.
-- **Reanalysis with new data**: Update your models as new data arrives to improve accuracy.
-
-Anomaly detection runs natively on Eventhouse tables without copying data, operating directly over live datasets for real-time analysis. Analysis and continuous monitoring execute in place within Eventhouse, which minimizes data movement.
+In this article, you enable required features, start anomaly detection from one of the supported entry points, and configure analysis settings. You then review recommended models, publish continuous monitoring, and set up alerts for future anomalies.
 
 Anomaly detection also supports Eventhouse shortcut tables, so you can analyze data without first copying or moving it into a dedicated Eventhouse table. You can create anomaly detectors directly on supported shortcut tables and use the same analysis, model recommendations, and continuous monitoring experiences available for native Eventhouse data sources. This support extends anomaly detection to external and federated data sources that are already connected through Eventhouse shortcuts, so you can move from connecting data to detecting issues with less setup and duplication.
 
@@ -105,7 +98,7 @@ You can start anomaly detection in **three** ways:
 
 ### View existing anomaly detection configurations
 
-Before you create a new anomaly detector, check whether an anomaly detection configuration already exists for the data source you selected. This view gives you quick visibility into how anomaly detection is currently set up for that data source. It helps you avoid duplicate work and better understand how others use the data.
+Before you create a new anomaly detector, check whether a configuration already exists for the data source you selected. This view helps you avoid duplicate work and understand how others already monitor that data.
 
 1. In your list of data sources, select the ellipsis **(...)** for the data source you want to analyze, and then select **Existing anomaly detector**.
 
@@ -119,7 +112,7 @@ Before you create a new anomaly detector, check whether an anomaly detection con
 
     :::image type="content" source="media/anomaly-detection/existing-configuration-details.png" alt-text="Screenshot of the details view for an existing anomaly detection configuration." lightbox="media/anomaly-detection/existing-configuration-details.png":::
 
-This experience helps you move quickly from exploration to action, without leaving the context of your data source.
+This experience helps you move from exploration to action without leaving the context of your data source.
 
 ### Configure input columns for analysis
 
@@ -158,29 +151,32 @@ During analysis, the system:
 
 ### Review recommended models and anomalies
 
-After the analysis finishes, review the results and explore the detected anomalies.
+After the analysis finishes, select a recommended model to view the detected anomalies and explore the results.
 
-1. Open the anomaly detection results by selecting the notification you received or by going back to the table and selecting **View anomaly results**.
+1. Open the anomaly detection results by selecting the notification you received or by going back to the configuration pane.
+
+1. Select a recommended model to review its performance and optionally adjust confidence settings. Save your selection.
+
+    :::image type="content" source="media/anomaly-detection/analysis-and-models.png" alt-text="Screenshot of the recommended model selection." lightbox="media/anomaly-detection/analysis-and-models.png":::
 
 1. The results page provides the following insights:
-    - A **visualization** of your data with anomalies clearly highlighted.
-    - A list of **recommended algorithms**, ranked by their effectiveness for your data.
-    - **Sensitivity settings** to adjust the detection thresholds.
-    - A detailed table of **detected anomalies** within the selected time range.
+    - **Detector results:** A visualization of your data with anomalies clearly highlighted.
+    - **Anomaly events:** A detailed table of detected anomalies within the selected time range.
 
-1. Use the model selector to compare the performance of different recommended algorithms and choose the one that best fits your needs.
+    :::image type="content" source="media/anomaly-detection/model-results.png" alt-text="Screenshot of the detector results visualization and table." lightbox="media/anomaly-detection/model-results.png":::
 
-1. Adjust the **sensitivity** settings to refine the anomaly detection results:
-    - Options include low, medium, and high confidence levels.
-    - Experiment with these settings to balance between detecting more anomalies and reducing false positives.
+1. Use the visuals and tables to explore detected anomalies and understand data patterns. You can also open the anomaly analysis context in a Fabric notebook to investigate results with KQL, SQL analytics endpoint, Python, or Spark.
 
-1. Interact with the visuals and tables to gain deeper insights into the detected anomalies and understand the patterns in your data. You can also open the anomaly analysis context in a Fabric notebook to further explore data and detected anomalies using KQL, SQL, Python, or Spark, enabling advanced transformations and machine learning on the same data foundation.
+1. **Publish** your configuration to start continuous monitoring on your data. Once published, the anomaly detector tracks anomaly detection events for that configuration on an ongoing basis, without duplicating the dataset.
 
-1. **Save** the anomaly detector to preserve your configuration and revisit it later.
+    :::image type="content" source="media/anomaly-detection/publish-set-alert.png" alt-text="Screenshot of the publish and set alert options in the upper ribbon." lightbox="media/anomaly-detection/publish-set-alert.png":::
 
-1. **Publish** the detected anomalies to the Real-Time Hub to enable continuous monitoring of incoming live data under Fabric governance, without duplicating the dataset. You can also configure downstream actions, such as sending alerts to Activator.
+After you publish, you have two options for acting on anomaly events:
 
-By reviewing and fine-tuning the results, you can ensure that your anomaly detection setup is optimized for your specific use case.
+- **Set an alert directly on this configuration.** In the upper ribbon of the anomaly detection item, select the alert option to get notified whenever this specific configuration detects an anomaly. For more information, see [Set alerts on anomaly detection events](../real-time-hub/set-alerts-anomaly-detection.md).
+- **Route anomaly events to a different downstream destination.** If you want to send anomaly detection events to a destination such as an eventstream or Activator, go to **Real-Time hub** and use Fabric events to configure that routing. For more information, see [Explore anomaly detection events](../real-time-hub/explore-anomaly-detection.md).
+
+Review and fine-tune results so your anomaly detection setup matches your use case.
 
 ### Reanalyze anomaly detection models with new data
 
@@ -190,20 +186,25 @@ Follow these steps to reanalyze the model with new data:
 
 1. Go to your anomaly detection item.
 1. In the **Edit** panel, modify any of the previously filled-out fields as needed.
-1. Select **Run analysis**. This action starts a new analysis based on your updated inputs.
+1. Select **Re-analyze my data**. This action starts a new analysis based on your updated inputs.
 
 > [!WARNING]
 > Reanalyzing updates the model used by existing monitoring rules, which might affect downstream actions.
 
 ### Explore anomaly detection events and set alerts
 
-After publishing your anomaly detection results, you can explore the detected anomalies in the Real-Time Hub and set up alerts to notify you of future anomalies.
+After you publish your anomaly detection configuration, there are two ways to act on the anomaly events it generates:
 
-Anomaly events can also be connected to Fabric data agents to enable automated reasoning and actions across both live and historical event data. Agents can consume anomaly events and orchestrate downstream workflows, complementing Activator-based alerts.
+- **Set an alert on the configuration.** From the anomaly detection item, set an alert directly on the configuration you're monitoring to get notified when it detects an anomaly.
+- **Send anomaly events to a different downstream destination.** Go to **Real-Time hub** and use Fabric events to route anomaly detection events to a destination such as an eventstream or Activator. For more information, see [Explore anomaly detection events](../real-time-hub/explore-anomaly-detection.md).
 
-### Query anomaly results with SQL Endpoint
+You can also connect anomaly events to Fabric data agents to enable automated reasoning and actions across live and historical event data. Data agents can consume anomaly events and orchestrate downstream workflows that complement Activator-based alerts.
 
-Eventhouse provides a managed SQL Endpoint aligned with the Eventhouse data model and Fabric governance. You can query anomaly detector outputs and related tables or views via SQL for downstream analytics and integrations. To find the SQL Endpoint connection details, navigate to your Eventhouse item in the Fabric workspace.
+<a id="query-anomaly-results-with-sql-endpoint"></a>
+
+### Query anomaly results with SQL analytics endpoint
+
+Eventhouse provides a managed SQL analytics endpoint aligned with the Eventhouse data model and Fabric governance. You can query anomaly detector outputs and related tables or views with SQL for downstream analytics and integrations. To find SQL analytics endpoint connection details, go to your Eventhouse item in your Fabric workspace.
 
 For more information, see:
 
@@ -234,11 +235,11 @@ To avoid problems:
 - Allow each query to complete before starting a new one.
 - If performance seems slow or unresponsive, reduce the number of concurrent queries.
 
-For more information, see [Python Plugin](/kusto/query/python-plugin?view=microsoft-fabric&preserve-view=true).
+For more information, see [Python plugin](/kusto/query/python-plugin?view=microsoft-fabric&preserve-view=true).
 
 ## Wait times for enabling the Python plugin
 
-When you start data analysis, the anomaly detector automatically enables the Python plugin on your Eventhouse. Enabling the plugin can take up to one hour. Once enabled, the analysis starts automatically.
+If the Python plugin isn't already enabled, the anomaly detector tries to enable it automatically when you start data analysis. In that case, enabling the plugin can take up to one hour. Once enabled, the analysis starts automatically.
 
 For more information, see [Enable Python plugin in Real-Time Intelligence](python-plugin.md).
 

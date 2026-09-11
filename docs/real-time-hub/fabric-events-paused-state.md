@@ -10,7 +10,7 @@ ai-usage: ai-assisted
 
 # Paused event configurations in Real-Time hub
 
-When you configure a consumer (such as an Activator alert or eventstream) to receive Azure or Fabric events through Real-Time hub, the configuration can enter a **Paused** state if the system detects a condition that prevents event delivery. 
+When you configure a consumer (such as an Activator rule or Eventstream) to receive Azure or Fabric events through Real-Time hub, the configuration can enter a **Paused** state if the system detects a condition that prevents event delivery. After you resolve the underlying condition, the configuration resumes automatically. It might take a couple of hours for the system to detect the change and resume event delivery.
 
 ## Discovering paused configurations
 
@@ -28,16 +28,17 @@ The following table lists the reasons a configuration can be paused and the step
 
 | Reason | Description | Mitigation |
 |--------|-------------|------------|
-| Event ingestion is paused because the owner doesn't have sufficient permissions. | The owner of the event configuration has lost the subscribe permission on the source item. Permissions are assessed both during creation and for the lifetime of the event configuration. | Delete and recreate the configuration with a user that has sufficient subscribe permissions. For details on required permissions per event type, see [Subscribe permissions for Azure and Fabric events](fabric-events-subscribe-permission.md). |
-| Event ingestion is paused because the network configuration for source workspace blocks events to destination workspace. | The source workspace (the workspace where the events originate) has [workspace-level private links](/fabric/security/security-workspace-level-private-links-overview) configured to block public access, and there's no private link established from the consumer's network to the source workspace. | Allow public access on the source workspace, or establish a private link from the consumer's network to the source workspace, then delete and recreate the consumer configuration. For more information, see [Private links for Azure and Fabric Events](private-links-real-time-events.md). |
+| Event ingestion is paused because the owner doesn't have sufficient permissions. | The owner of the event configuration lost the subscribe permission on the source item. The system checks permissions both during creation and for the lifetime of the event configuration. | Restore the subscribe permission for the owner, or assign the configuration to a user that has sufficient subscribe permissions. After you resolve the condition, the configuration resumes automatically, but it might take a couple of hours. For details on required permissions per event type, see [Subscribe permissions for Azure and Fabric events](fabric-events-subscribe-permission.md). |
+| Event ingestion is paused because the network configuration for source workspace blocks events to destination workspace. | The source workspace (the workspace where the events originate) has [workspace-level private links](/fabric/security/security-workspace-level-private-links-overview) configured to block public access, and there's no private link established from the consumer's network to the source workspace. | Allow public access on the source workspace, or establish a private link from the consumer's network to the source workspace. After you resolve the condition, the configuration resumes automatically, but it might take a couple of hours. For more information, see [Workspace private links for Azure and Fabric events](workspace-private-links-real-time-events.md). |
 | The owner of the event configuration is no longer available. | The user account that owns the event configuration has been deleted or disabled. | Delete and recreate the configuration with an active user that has sufficient permissions. |
 
 
 > [!NOTE]
-> For tenant-level private links, when the **Block Public Internet Access** setting is enabled, Azure events (such as Azure Blob Storage events) aren't paused — the events are dropped at the Azure source and never reach Fabric. To discover dropped events in this scenario, investigate the [metrics](/azure/event-grid/monitor-event-delivery) and [diagnostic logs](/azure/event-grid/enable-diagnostic-logs-topic) for the Azure resource (such as the Azure Storage account) in the Azure portal. For more information, see [Private links for Azure and Fabric Events](private-links-real-time-events.md).
+> For tenant-level private links, when the **Block Public Internet Access** setting is enabled, Azure events (such as Azure Blob Storage events) aren't paused — the events are dropped at the Azure source and never reach Fabric. To discover dropped events in this scenario, investigate the [metrics](/azure/event-grid/monitor-event-delivery) and [diagnostic logs](/azure/event-grid/enable-diagnostic-logs-topic) for the Azure resource (such as the Azure Storage account) in the Azure portal. For more information, see [Tenant private links for Azure and Fabric events](private-links-real-time-events.md).
 
 ## Related content
 
 - [Subscribe permissions for Azure and Fabric events](fabric-events-subscribe-permission.md)
-- [Private links for Azure and Fabric Events](private-links-real-time-events.md)
+- [Tenant private links for Azure and Fabric events](private-links-real-time-events.md)
+- [Workspace private links for Azure and Fabric events](workspace-private-links-real-time-events.md)
 - [Introduction to Azure and Fabric events](fabric-events-overview.md)

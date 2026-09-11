@@ -2,7 +2,7 @@
 title: 'Tutorial: Create, evaluate, and score a fraud detection model'
 description: This tutorial shows the data science workflow for building a model that detects credit card fraud.
 ms.author: lagayhar
-ms.reviewer: ruxu
+ms.reviewer: scottpolly
 ms.topic: tutorial
 ms.custom: sfi-image-nochange
 ms.date: 02/28/2026

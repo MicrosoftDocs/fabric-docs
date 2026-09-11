@@ -1,8 +1,8 @@
 ---
 title: Manage MLflow models across workspaces and platforms
 description: Learn how to build MLOps workflows across Fabric workspaces and bring existing machine learning models into Fabric by using cross-workspace logging.
-author: ruixinxu
-ms.author: ruxu
+author: s-polly
+ms.author: scottpolly
 ms.reviewer: mopeez
 ms.topic: how-to
 ms.date: 05/15/2026

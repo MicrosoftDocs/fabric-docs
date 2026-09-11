@@ -265,6 +265,6 @@ Here are common errors you might see when using Copy activity with any connector
 
 Check out these other resources:
 
-- [Fabric blog](https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/bg-p/fbc_fabricupdatesblogs)
-- [Data Factory community](https://community.fabric.microsoft.com/t5/Data-Factory-preview-Community/ct-p/datafactory)
+- [Fabric blog](https://community.fabric.microsoft.com/category/fabricupdatesblogs/blog/fbc_fabricupdatesblogs)
+- [Data Factory forums | Microsoft Fabric Community](https://community.fabric.microsoft.com/category/datafactory)
 - [Share your feature ideas](https://ideas.fabric.microsoft.com/)

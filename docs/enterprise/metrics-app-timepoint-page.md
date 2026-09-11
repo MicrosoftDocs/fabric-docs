@@ -125,3 +125,4 @@ You can change the overages visual scale to display 10 minutes, 60 minutes and 2
 ## Related content
 
 * [Understand the metrics app compute page?](metrics-app-compute-page.md)
+* [Explore Fabric capacity operation events](../real-time-hub/explore-fabric-capacity-operation-events.md)

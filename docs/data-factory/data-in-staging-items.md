@@ -22,7 +22,7 @@ Beyond providing intermediate storage, staging unlocks a set of ELT patterns bui
 The pattern matters because once data is staged, downstream queries can:
 
 - Run against an indexed, queryable copy without hitting the source again.
-- Fold filters, joins, and aggregations back to the staging SQL endpoint instead of executing in the mashup engine.
+- Fold filters, joins, and aggregations back to the staging SQL analytics endpoint instead of executing in the mashup engine.
 - Branch into multiple parallel transformations or destinations from a single materialized result.
 
 ### Common use cases
@@ -32,10 +32,10 @@ The following patterns are typically layered on top of a staged source query.
 | Use case | Description |
 |---|---|
 | **Shape staged data into analytics models** | Referenced queries shape staged data into fact and dimension tables, summaries, rollups, or KPIs through deduplication, group-by, and key generation. |
-| **Fold-down compute pushdown** | Referenced queries written against staged data fold their joins, filters, and group-by operations to the staging SQL endpoint, pushing compute to the warehouse engine instead of the mashup engine. This is often the single biggest performance win staging enables. |
+| **Fold-down compute pushdown** | Referenced queries written against staged data fold their joins, filters, and group-by operations to the staging SQL analytics endpoint, pushing compute to the warehouse engine instead of the mashup engine. This is often the single biggest performance win staging enables. |
 | **Data quality and audit branch** | Referenced queries validate or inspect staged data (null checks, constraint validation, row counts) without rereading the source. |
 | **Fan-out to multiple destinations** | Multiple referenced queries each load a different destination from the same staged source (for example, one Lakehouse and one Warehouse). |
-| **Stage-then-merge** | Each source is staged in its own query, then a downstream referenced query merges or joins the staged results, folding the join back to the staging SQL endpoint. |
+| **Stage-then-merge** | Each source is staged in its own query, then a downstream referenced query merges or joins the staged results, folding the join back to the staging SQL analytics endpoint. |
 
 ### When staging isn't the right fit
 

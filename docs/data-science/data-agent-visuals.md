@@ -59,12 +59,12 @@ The following visual types are currently supported:
    - Stacked area chart
 
 ## Customization
-Agent instructions can be used to guide the agent's use of visuals. For example, you can instruct the agent to always include a visual for certain types of questions, or to prefer specific chart types for certain data patterns. For more information on agent instructions, see [Best practices for configuring data agents](data-agent-configuration-best-practices.md).
+Use agent instructions to guide the agent's use of visuals. For example, you can instruct the agent to always include a visual for certain types of questions, or to prefer specific chart types for certain data patterns. For more information, see [Data agent instructions](data-agent-configurations.md#data-agent-instructions).
 
 The colors, font sizes, title, and labels are preset and currently can't be customized.
 
 > [!TIP]
-> Visuals are enabled by default. To avoid generating visuals or specify the behavior, you can use agent instructions to instruct the agent to avoid using visuals. For more information on agent instructions, see [Best practices for configuring data agents](data-agent-configuration-best-practices.md).
+> Visuals are enabled by default. To avoid generating visuals or specify the behavior, use agent instructions to instruct the agent to avoid using visuals. For more information, see [Data agent instructions](data-agent-configurations.md#data-agent-instructions).
 
 ## Limitations
 
@@ -81,4 +81,4 @@ The colors, font sizes, title, and labels are preset and currently can't be cust
 - [Data agent configurations](data-agent-configurations.md)
 - [Consume a data agent from Microsoft 365 Copilot](data-agent-microsoft-365-copilot.md)
 - [How to create a Fabric data agent](how-to-create-data-agent.md)
-- [Best practices for configuring data agents](data-agent-configuration-best-practices.md)
+- [Best practices for improving data agent query generation](data-agent-configuration-best-practices.md)

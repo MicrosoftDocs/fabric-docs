@@ -1,6 +1,6 @@
 ---
 title: Conditional Statements
-description: Learn about conditional statement functions in Plan and how to use them to perform calculations based on specified conditions. 
+description: Learn about conditional statement functions in planning and how to use them to perform calculations based on specified conditions.
 ms.date: 05/08/2026
 ms.topic: reference
 ms.search.form: Conditional statements
@@ -11,7 +11,7 @@ ms.search.form: Conditional statements
 
 Conditional statements let you perform calculations based on specified conditions. These functions evaluate expressions and return different values depending on whether the conditions are true or false. They are commonly used to apply business logic, categorize data, filter results, and handle exceptions.
 
-In Plan, conditional statements help you create dynamic calculations that adapt to different scenarios, such as applying thresholds, categorizing data, or managing error conditions.
+In planning, conditional statements help you create dynamic calculations that adapt to different scenarios, such as applying thresholds, categorizing data, or managing error conditions.
 
 ## AVERAGEIF
 
