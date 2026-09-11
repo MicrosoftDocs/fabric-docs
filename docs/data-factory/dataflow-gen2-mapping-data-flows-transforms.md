@@ -2,7 +2,7 @@
 title: Mapping Data Flow Transforms in Dataflow Gen2 (Preview)
 description: Learn about mapping data flow transforms in Dataflow Gen2, which enable you to author, execute, and monitor Spark-based data transformations in Data Factory in Microsoft Fabric.
 ms.topic: concept-article
-ms.date: 06/30/2026
+ms.date: 09/11/2026
 ms.reviewer: krirukm
 ms.search.form: DataflowGen2
 ms.custom: dataflows
@@ -194,7 +194,8 @@ For interactive authoring and data preview:
 
 :::image type="content" source="media/dataflow-gen2-mapping-data-flows-transforms/select-data-flow-debug.png" alt-text="Screenshot of the mapping data flow transform canvas with Data flow debug mode enabled." lightbox="media/dataflow-gen2-mapping-data-flows-transforms/select-data-flow-debug.png":::
 
-> [!NOTE]  
+> [!NOTE] 
+> Before starting a Data flow debug session, ensure that at least one pipeline exists in the same workspace as the Dataflow Gen2 item. Otherwise, the debug session won't start.
 > Debug sessions might take several minutes to initialize depending on Spark runtime availability.
 
 ### Add a source

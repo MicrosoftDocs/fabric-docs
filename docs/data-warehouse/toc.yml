@@ -133,7 +133,7 @@ items:
             href: analyze-range-bands.md
           - name: Create an IDENTITY column
             href: tutorial-identity.md
-          - name: How to write inline scalar UDFs
+          - name: Create inline scalar UDFs
             href: how-to-inline-udf.md
   - name: Dimensional modeling
     items:
@@ -240,6 +240,8 @@ items:
             displayName: Query using time travel
   - name: Monitor and manage
     items:
+      - name: Data Warehouse operations skill
+        href: skills-for-data-warehouse-operations.md
       - name: Manage performance
         items:
           - name: Data clustering
