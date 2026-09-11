@@ -109,6 +109,8 @@ items:
       href: plan/planning-tutorial/powertable/tutorial-8-set-up-approvals-access-controls-automations.md
     - name: Introduction to intelligence sheets
       href: plan/planning-tutorial/intelligence/tutorial-9-introduction-to-intelligence-sheets.md
+    - name: Build a P&L intelligence sheet
+      href: plan/planning-tutorial/intelligence/tutorial-10-build-profit-and-loss-intelligence.md
   - name: Get started
     items:
     - name: Prerequisites
