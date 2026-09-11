@@ -87,10 +87,10 @@ For the full catalog of available skills across all Fabric workloads, see [GitHu
 
 ## Develop a SQL database
 
-Use the `sqldb-authoring-cli` skill when the task changes database state. To author or update database objects with GitHub Copilot, always include the target workspace, database, environment, object, expected schema, constraints, and whether the assistant should generate a script only or execute it after your review. For schema changes or data changes, you can ask for `TRY...CATCH` to handle errors and perform a rollback of the transaction.
+Use the `sqldb-authoring-cli` skill when the task changes the database state. To author or update database objects with GitHub Copilot, always include the target workspace, database, environment, object, expected schema, constraints, and whether the assistant should generate a script only or execute it after your review. For schema changes or data changes, you can ask for `TRY...CATCH` to handle errors and perform a rollback of the transaction.
 
 > [!TIP]
-> Begin with a read-only request to generate T-SQL statements, then review any generated T-SQL statement before execution.
+> Begin with a read-only request to generate T-SQL statements, and then review any generated T-SQL statement before execution.
 
 For example, these sample prompts can be used to create and load a table with sample data.
 
