@@ -268,10 +268,13 @@ items:
             href: v-order.md
           - name: How to
             items:
-              - name: Use data clustering in Fabric Data Warehouse
-                href: tutorial-data-clustering.md
+              - name: Correlate capacity metrics and query insights
+                href: correlate-capacity-metrics-query-insights.md
               - name: Optimize Lakehouse tables based on health checks
                 href: tutorial-conditional-lakehouse-optimization.md
+              - name: Use data clustering in Fabric Data Warehouse
+                href: tutorial-data-clustering.md
+              
       - name: Monitor the warehouse
         items:
           - name: Monitoring overview
