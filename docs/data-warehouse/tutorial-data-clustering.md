@@ -2,8 +2,9 @@
 title: "Tutorial: Use Data Clustering in Fabric Data Warehouse"
 description: This tutorial explains how to use data clustering for better query performance in Fabric Data Warehouse.
 ms.reviewer: procha
-ms.date: 11/11/2025
+ms.date: 09/11/2026
 ms.topic: tutorial
+ai-usage: ai-assisted
 ---
 # Use data clustering in Fabric Data Warehouse (Preview)
 
@@ -132,9 +133,60 @@ Both queries have a row count of 6 and similar submit times. The `Clustered` que
 > [!NOTE]
 > This is a small table, with approximately 76 million rows and 2GB of data volume. Even though this query returns only six rows on its aggregation (one for each year in the range), it scans approximately 8.3 million rows in the date range provided before results are aggregated. Actual production data with larger data volumes can provide more significant results. Your results might vary based on the capacity size, cached results, or concurrency during the queries.
 
+## Choose clustering columns from your workload
+
+For production tables, use observed query patterns instead of guessing which columns to cluster. The operations capability of the [`sqldw-cli` skill](skills-for-data-warehouse-operations.md) analyzes Query Insights history, ranks recurring query patterns by remote data scanned, and identifies columns used in `WHERE` predicates.
+
+Before you start, [install Skills for Fabric](../fundamentals/skills-for-fabric-install.md), make sure the warehouse has recent query activity, and confirm that you have the Contributor workspace role or higher. Then, open GitHub Copilot CLI and use a prompt like this one:
+
+```copilot-prompt
+Use the sqldw-cli skill to recommend clustering columns for
+<workspace-name>/<warehouse-name> based on the last seven days of workload.
+Rank candidates by total remote data scanned, consider columns used in WHERE
+predicates, and explain each column's cardinality and data type suitability.
+Use read-only diagnostics.
+```
+
+The skill identifies the query patterns with the greatest scan impact, extracts the tables and filter columns from those queries, and ranks the clustering candidates. Review the recommendations with these guidelines:
+
+- Prefer columns that repeatedly filter large tables and use mid-to-high cardinality values, such as dates or identifiers.
+- Favor columns used in selective range or equality predicates in the `WHERE` clause.
+- Don't select columns only because they appear in equality join conditions. These conditions don't benefit from data clustering.
+- Use no more than four clustering columns, and don't add more columns than the workload requires.
+
+For example, consider an e-commerce warehouse where `Sales.SalesOrder` contains 1.5 billion rows and `Sales.OrderLine` contains 6 billion rows. After analyzing recurring queries, the skill might return these recommendations:
+
+:::image type="content" source="media/tutorial-data-clustering/workload-clustering-column-recommendations.png" alt-text="Table of clustering recommendations. SalesOrder uses OrderDate based on 428 query runs and 38 terabytes of remote data scanned. OrderLine uses ShipDate based on 612 query runs and 52 terabytes scanned." lightbox="media/tutorial-data-clustering/workload-clustering-column-recommendations.png":::
+
+The date columns are strong candidates because they filter the largest tables, support common range predicates, and provide more file-skipping opportunities than low-cardinality columns such as `OrderStatus` or `SalesRegion`.
+
+The `sqldw-cli` operations capability is read-only. It recommends columns but doesn't create or replace tables. After you review the recommendation, use CTAS to create a clustered copy of the table:
+
+```sql
+CREATE TABLE Sales.SalesOrder_clustered
+WITH (CLUSTER BY (OrderDate))
+AS
+SELECT * FROM Sales.SalesOrder;
+```
+
+Compare the clustered and nonclustered workloads to verify the effect. After you validate the clustered table, rename the original table and then rename the clustered table to the original name:
+
+```sql
+EXEC sp_rename 'Sales.SalesOrder', 'SalesOrder_old';
+EXEC sp_rename 'Sales.SalesOrder_clustered', 'SalesOrder';
+```
+
+The original table remains available as `Sales.SalesOrder_old` for rollback. Verify dependent workloads and the new table before you remove the original table. When you no longer need the rollback copy, drop it:
+
+```sql
+DROP TABLE Sales.SalesOrder_old;
+```
+
 ## Related content
 
 - [Data Clustering in Fabric Data Warehouse](data-clustering.md)
 - [Query insights in Fabric Data Warehouse](query-insights.md)
 - [Monitor Fabric Data Warehouse](monitoring-overview.md)
 - [Use query labels in Fabric Data Warehouse](query-label.md)
+- [Warehouse operations skill sqldw-cli](skills-for-data-warehouse-operations.md)
+- [Install Skills for Fabric](../fundamentals/skills-for-fabric-install.md)
