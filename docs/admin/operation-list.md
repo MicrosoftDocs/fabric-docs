@@ -133,6 +133,7 @@ To audit OneLake data access and storage operations, use [OneLake diagnostics](.
 | Create subfolder | :::no-loc text="CreateSubfolder"::: |   |
 | Create task flow | :::no-loc text="CreateTaskFlow"::: |   |
 | Create virtual network data   gateway proxy | :::no-loc text="CreateVirtualNetworkDataGatewayProxy"::: | Create HTTP proxy for virtual network data gateway |
+| Created MirroredStorage | :::no-loc text="CreatedMirroredStorage"::: | OneLake operation. Generated when a user or service principal creates a Fabric MirroredStorage item, linking an external storage source to a workspace as OneLake shortcuts. |
 | Created Power BI app | :::no-loc text="CreateApp"::: |   |
 | Created Power BI dashboard | :::no-loc text="CreateDashboard"::: |   |
 | Created Power BI dataflow | :::no-loc text="CreateDataflow"::: |   |
@@ -694,6 +695,7 @@ To audit OneLake data access and storage operations, use [OneLake diagnostics](.
 | Update the current set of DLP policies applied on the Tenant | :::no-loc text="UpdateTenantDlpPolicies"::: | Update the current set of DLP policies applied on the Tenant |
 | Update virtual network data   gateway proxy | :::no-loc text="UpdateVirtualNetworkDataGatewayProxy"::: | Update HTTP proxy for virtual network data gateway |
 | Update workspace role | :::no-loc text="UpdateWorkspaceRoleViaAdminApi"::: | Update workspace role |
+| Updated MirroredStorage definition | :::no-loc text="UpdatedMirroredStorageDefinition"::: | OneLake operation. Generated when a user or service principal modifies the mirroring scope of an existing MirroredStorage item, changing which external paths are exposed in OneLake. |
 | Updated Power BI access request settings | :::no-loc text="UpdateAccessRequestSettings"::: |  |
 | Updated Power BI app | :::no-loc text="UpdateApp"::: |  |
 | Updated Power BI dataflow | :::no-loc text="UpdateDataflow"::: |  |
