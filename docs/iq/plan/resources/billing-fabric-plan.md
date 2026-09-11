@@ -27,7 +27,7 @@ Planning in Fabric defines three user roles with different capabilities and capa
 * **Stakeholder**: Enters and approves data, collaborates with business users, creates scenarios, builds reports and dashboards, performs analysis, and manages reference data applications.
 * **Viewer**: Accesses plan items, dashboards, and reports in read-only mode with support for filtering, sorting, and bookmarks.
 
-For more information, see [Roles in planning in Fabric (preview)](../overview-roles.md).
+For more information, see [Roles in planning in Fabric](../overview-roles.md).
 
 ## Role-based billing
 
