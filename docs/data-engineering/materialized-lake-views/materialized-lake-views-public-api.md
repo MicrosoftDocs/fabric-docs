@@ -3,7 +3,7 @@ title: Manage Fabric materialized lake views with public APIs
 description: Learn how to use Fabric REST APIs to schedule, run, and manage materialized lake views.
 ms.topic: reference
 ms.reviewer: rkottackal
-ms.date: 07/01/2026
+ms.date: 09/08/2026
 ms.search.form: MLV REST API
 ---
 
@@ -68,6 +68,9 @@ Each example shows the HTTP method, endpoint URL, and sample request/response pa
 ### Create Refresh Schedule for MLV
 
 Create a schedule for periodic lineage refresh. To refresh only a subset of the lineage, provide the 'mlvExecutionDefinitionId' in `executionData`. For more information, see [Create Refresh Materialized Lake Views Schedule](/rest/api/fabric/lakehouse/background-jobs/create-refresh-materialized-lake-views-schedule) and [Get MLV Execution Definition](#get-mlv-execution-definition).
+
+> [!NOTE]
+> Materialized lake view refresh schedules use a minimum effective interval of five minutes. To reduce overlapping refreshes and unnecessary compute usage, Fabric can automatically adjust shorter schedule intervals to five minutes.
 
 **Sample request without MLV Execution Definition**:
 
