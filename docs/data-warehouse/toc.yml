@@ -1,5 +1,5 @@
 items:
-  - name: Data Warehousing documentation
+  - name: Data Warehouse documentation
     href: index.yml
   - name: Overview
     href: data-warehousing.md
@@ -133,6 +133,8 @@ items:
             href: analyze-range-bands.md
           - name: Create an IDENTITY column
             href: tutorial-identity.md
+          - name: Create inline scalar UDFs
+            href: how-to-inline-udf.md
   - name: Dimensional modeling
     items:
       - name: Overview
@@ -167,7 +169,7 @@ items:
     items:
       - name: Collaborate, share, and manage security
         items:
-          - name: Data warehousing security
+          - name: Data Warehouse security
             href: security.md
           - name: Entra ID authentication
             href: entra-id-authentication.md
@@ -238,6 +240,8 @@ items:
             displayName: Query using time travel
   - name: Monitor and manage
     items:
+      - name: Data Warehouse operations skill
+        href: skills-for-data-warehouse-operations.md
       - name: Manage performance
         items:
           - name: Data clustering
@@ -264,10 +268,13 @@ items:
             href: v-order.md
           - name: How to
             items:
-              - name: Use data clustering in Fabric Data Warehouse
-                href: tutorial-data-clustering.md
+              - name: Correlate capacity metrics and query insights
+                href: correlate-capacity-metrics-query-insights.md
               - name: Optimize Lakehouse tables based on health checks
                 href: tutorial-conditional-lakehouse-optimization.md
+              - name: Use data clustering in Fabric Data Warehouse
+                href: tutorial-data-clustering.md
+              
       - name: Monitor the warehouse
         items:
           - name: Monitoring overview

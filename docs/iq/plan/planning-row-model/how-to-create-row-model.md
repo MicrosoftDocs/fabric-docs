@@ -1,5 +1,5 @@
 ---
-title: Create Row Model using Model Builder
+title: Create Row Model Using Model Builder
 description: Row-based modeling turns simple planning data into powerful driver logic. See how to enable Model Builder, add rows in bulk, and configure each driver in minutes.
 #customer intent: As a financial planner, I want to create a row-based model in a planning sheet, so that I can organize rows into driver hierarchies that reflect my business structure.
 ms.date: 08/12/2026

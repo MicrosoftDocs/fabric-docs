@@ -1,15 +1,15 @@
 ---
 title: 'Time Intelligence Functions: Time-Based Aggregations'
-description: Learn how to use time-based aggregation functions in Plan to analyze measure values across custom date ranges. Calculate rolling averages, moving sums, and aggregated metrics using AGGREGATE, MOVINGAVERAGE, and MOVINGSUM.
+description: Learn how to use time-based aggregation functions in planning to analyze measure values across custom date ranges. Calculate rolling averages, moving sums, and aggregated metrics using AGGREGATE, MOVINGAVERAGE, and MOVINGSUM.
 ms.date: 08/19/2026
 ms.topic: reference
 ms.search.form: Time Intelligence functions
-customer intent: Learn how to use Time Intelligence functions in Plan to aggregate measure values over specified date ranges, calculate rolling averages and sums, and perform statistical aggregations using AGGREGATE, MOVINGAVERAGE, and MOVINGSUM.
+customer intent: Learn how to use Time Intelligence functions in planning to aggregate measure values over specified date ranges, calculate rolling averages and sums, and perform statistical aggregations using AGGREGATE, MOVINGAVERAGE, and MOVINGSUM.
 ---
 
 # Time-based aggregations
 
-Plan supports time-based aggregation functions that help you analyze measure values across a specified time period. These functions enable you to calculate rolling values and perform aggregations over date ranges.
+Planning supports time-based aggregation functions that help you analyze measure values across a specified time period. These functions enable you to calculate rolling values and perform aggregations over date ranges.
 
 ## AGGREGATE
 

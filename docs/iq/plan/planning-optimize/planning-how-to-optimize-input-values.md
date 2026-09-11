@@ -1,5 +1,5 @@
 ---
-title: Use Optimize to Meet Target Key Performance Indicators in Fabric Plan
+title: Use Optimize to Meet Target Key Performance Indicators in Planning
 description: Optimize recalculates data input measures to meet a target value for a result measure. Use it for budgets and forecasts to speed up scenario planning.
 ms.date: 08/12/2026
 ms.topic: how-to

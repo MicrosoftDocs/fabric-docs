@@ -3,8 +3,8 @@ title: Machine learning model
 description: Learn how to create, track, and manage machine learning models in Microsoft Fabric. Compare model versions, apply tags, and deploy models for scoring and inferencing.
 ms.author: scottpolly
 author: s-polly
-ms.reviewer: ruxu
-reviewer: ruixinxu
+ms.reviewer: scottpolly
+reviewer: s-polly
 ms.topic: concept-article
 ms.date: 05/15/2026
 ms.search.form: Create New Model, Model Comparison

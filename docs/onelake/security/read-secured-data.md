@@ -3,7 +3,7 @@ title: Read data secured with OneLake security
 description: Learn which engines can read data secured with OneLake security and the requirements for accessing tables that use row-level and column-level security.
 ms.reviewer: aamerril
 ms.topic: how-to
-ms.date: 07/27/2026
+ms.date: 08/28/2026
 ai-usage: ai-assisted
 #customer intent: As a data consumer, I want to understand how to read tables secured with OneLake security so that I can query the data I'm allowed to see.
 ---
@@ -30,14 +30,14 @@ The following table lists which engines support RLS and CLS filtering:
 | Lakehouse | Yes | GA |
 | [Semantic models using Direct Lake on OneLake mode](../../fundamentals/direct-lake-develop.md) | Yes | GA |
 | [Spark notebooks](../../data-engineering/spark-onelake-security.md) | Yes | GA |
-| [SQL analytics endpoint in **user's identity access mode**](./sql-analytics-endpoint-onelake-security.md#how-to-change-the-onelake-access-mode) | Yes | GA |
+| [SQL analytics endpoint in **user's identity access mode**](./sql-analytics-endpoint-onelake-security.md#change-the-onelake-access-mode) | Yes | GA |
 | [Authorized third-party engines](./onelake-security-integrations-overview.md) | Yes (when the engine implements it) | Public preview |
 
 ## Engine-specific requirements
 
 Some engines require extra configuration before they can read secured data:
 
-* **SQL analytics endpoint:** [Change the SQL analytics endpoint to user's identity access mode](./sql-analytics-endpoint-onelake-security.md#how-to-change-the-onelake-access-mode) so it can read secured data.
+* **SQL analytics endpoint:** [Change the SQL analytics endpoint to user's identity access mode](./sql-analytics-endpoint-onelake-security.md#change-the-onelake-access-mode) so it can read secured data.
 * **Semantic models:** The semantic model must use [Direct Lake on OneLake](../../fundamentals/direct-lake-develop.md).
 * **Authorized third-party engines:** The engine must be configured as an [authorized engine](./onelake-security-integrations-overview.md) to enforce OneLake security at query time.
 

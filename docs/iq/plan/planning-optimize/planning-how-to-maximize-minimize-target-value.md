@@ -1,6 +1,6 @@
 ---
-title: Maximize or Minimize a Target Value in Fabric Plan
-description: Learn how to maximize or minimize a target value by using Optimize in Fabric Plan.
+title: Maximize or Minimize a Target Value in Planning
+description: Learn how to maximize or minimize a target value by using Optimize in planning in Fabric.
 ms.topic: how-to
 ms.date: 07/29/2026
 ---

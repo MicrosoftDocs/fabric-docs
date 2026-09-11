@@ -43,6 +43,8 @@ items:
     href: deploy-github-actions.md
   - name: Manage dev and prod environments
     href: dev-prod-workflow.md
+  - name: Author and share app templates
+    href: author-templates.md
 - name: Reference
   items:
   - name: CLI command reference

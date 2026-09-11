@@ -145,7 +145,7 @@ Under the **Home** tab, you can add new visuals, markdown boxes, alerts, data so
 
 :::image type="content" source="media/real-time-dashboard/home-tab.png" alt-text="Screenshot of the toolbar options under the Home tab." lightbox="media/real-time-dashboard/home-tab.png":::
 
-Under the **Manage** tab, you can manage [parameters](dashboard-parameters.md), base queries, configure [Refresh setting](#enable-live-refresh), and manage data sources.
+Under the **Manage** tab, you can manage [parameters](dashboard-parameters-manage.md), base queries, configure [Refresh setting](#enable-live-refresh), and manage data sources.
 
 :::image type="content" source="media/real-time-dashboard/manage-tab.png" alt-text="Screenshot of the toolbar options under the Manage tab." lightbox="media/real-time-dashboard/manage-tab.png":::
 
@@ -289,7 +289,7 @@ Pages are optional containers for tiles. Use pages to organize tiles into logica
 
 ## Use parameters
 
-Parameters significantly improve dashboard rendering performance, and enable you to use filter values as early as possible in the query. Filtering is enabled when you include the parameter in the query associated with your tiles. For more information about how to set up and use different kinds of parameters, see [Use parameters in Real-Time Dashboards](dashboard-parameters.md).
+Parameters significantly improve dashboard rendering performance, and enable you to use filter values as early as possible in the query. Filtering is enabled when you include the parameter in the query associated with your tiles. For more information about how to set up and use different kinds of parameters, see [Use parameters in Real-Time Dashboard queries](dashboard-parameters.md).
 
 ## Tile legend
 
@@ -493,7 +493,7 @@ You can update an existing dashboard or restore a previous version by using the 
 
 ## Related content
 
-* [Use parameters in Real-Time Dashboards](dashboard-parameters.md)
+* [Use parameters in Real-Time Dashboard queries](dashboard-parameters.md)
 * [Real-Time Dashboard-specific visuals](dashboard-visuals.md)
 * [Apply conditional formatting in Real-Time Dashboard visuals](dashboard-conditional-formatting.md)
 * [Create [!INCLUDE [fabric-activator](includes/fabric-activator.md)] alerts from a Real-Time Dashboard](data-activator/activator-get-data-real-time-dashboard.md)

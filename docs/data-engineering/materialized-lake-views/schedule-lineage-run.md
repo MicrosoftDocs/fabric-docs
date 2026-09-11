@@ -3,7 +3,7 @@ title: "Schedule a Materialized Lake View Refresh"
 description: Learn how to schedule a materialized lake view refresh
 ms.topic: how-to
 ms.reviewer: bsankaran, sairamyeturi, nijelsf, hgowrisankar
-ms.date: 07/30/2026
+ms.date: 09/08/2026
 ai-usage: ai-assisted
 ---
 
@@ -28,6 +28,9 @@ Before you create a schedule, consider what drives your refresh timing:
 | **When do end users need fresh data?** | Align time-based schedules with reporting SLAs — for example, schedule a refresh 30 minutes before a morning dashboard review. |
 | **Do you have independent lineages?** | If your Lakehouse has materialized lake views with separate source tables, schedule them at different cadences so one doesn't block the other. |
 | **What is the current capacity load?** | Start with a longer interval on a time-based schedule and tighten it as you observe capacity usage in your capacity metrics app. |
+
+> [!NOTE]
+> Materialized lake view refresh schedules use a minimum effective interval of five minutes. To reduce overlapping refreshes and unnecessary compute usage, Fabric can automatically adjust shorter schedule intervals to five minutes.
 
 ## Create a refresh configuration
 
@@ -63,9 +66,12 @@ Before you create a schedule, consider what drives your refresh timing:
         [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
         
         > [!NOTE]
+        > 
         > Only OneLake events, Notebook, and Pipeline job events are supported as event sources.
-        > Private Link support isn't currently included in the preview scope.
+        > 
         > Event-triggered refreshes depend on the auto-created "FMLV Refresh" Notebook and Activator items. Modifying or deleting these items might cause event-triggered refreshes to stop working as expected.
+        > 
+        > Private link support isn't currently included in the preview scope for event triggered refreshes.
 
 1. Select **Save**.
 
@@ -151,7 +157,7 @@ You can also trigger a one-time refresh without creating a schedule:
 
 1. Under **Select materialized lake view dependency**, choose an execution mode:
 
-    - **Refresh without dependant lineage** — Refreshes only the selected views without their upstream dependencies.
+    - **Refresh without dependent lineage** — Refreshes only the selected views without their upstream dependencies.
     - **Refresh with dependant lineage** — Refreshes the selected views along with their upstream dependencies within the current lakehouse.
     - **Refresh with extended lineage** — Includes upstream lakehouses in the refresh. A lakehouse tree appears to select which lakehouses to include.
 

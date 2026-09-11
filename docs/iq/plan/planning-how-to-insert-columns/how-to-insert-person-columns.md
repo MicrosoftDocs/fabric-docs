@@ -8,7 +8,7 @@ ms.topic: how-to
 
 # Insert person columns in planning sheet
 
-In Plan, use the **Person** input column to assign users to specific rows in the planning sheet.
+In planning, use the **Person** input column to assign users to specific rows in the planning sheet.
 
 ## Create a person input column
 

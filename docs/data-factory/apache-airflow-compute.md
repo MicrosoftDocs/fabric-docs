@@ -13,7 +13,7 @@ This guide explains how Apache Airflow pools work in Microsoft Fabric. You'll le
 
 ## Apache Airflow pool types
 
-Microsoft Fabric offers two types of Apache Airflow pools:
+Fabric offers two types of Apache Airflow pools:
 
 - **Starter pools**: Good for development, testing, or jobs that run occasionally.
 - **Custom pools**: Designed for production workloads that need to run all the time.
@@ -67,11 +67,11 @@ To run Apache Airflow custom pools, make sure your Fabric capacity is large enou
 
 ## Capacity units and pricing
 
-Microsoft Fabric measures compute usage in **Capacity Units (CUs)**. All workloads, including Apache Airflow, use CUs.
+Fabric measures compute usage in **Capacity Units (CUs)**. All workloads, including Apache Airflow, use CUs.
 
-For specifics about CUs and the pricing model for Apache Airflow pools, see [Apache Airflow job pricing for Data Factory in Microsoft Fabric](pricing-apache-airflow-job.md).
+For specifics about CUs and the pricing model for Apache Airflow pools, see [Apache Airflow job pricing for Data Factory](pricing-apache-airflow-job.md).
 
-For pricing specifics in your region, see [Microsoft Fabric pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/).
+For pricing specifics in your region, see [Fabric pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/).
 
 
 > [!TIP]
@@ -102,7 +102,7 @@ When you plan your Apache Airflow pool setup, keep these best practices and cost
   - Pick a pool size that matches your workload. Use small pools for lighter jobs and large pools for heavier or more parallel jobs. Autoscaling helps you handle spikes without overpaying when things are slow.
 
 - **Monitor CU usage**
-  - Use the Fabric Capacity Metrics App to track your Apache Airflow job's CU usage. This helps you understand peak and average usage, and plan your capacity.
+  - Use the Microsoft Fabric Capacity Metrics app to track your Apache Airflow job's CU usage. This helps you understand peak and average usage, and plan your capacity.
 
 - **Set autoscaling limits**
   - If you use autoscaling, set a maximum number of extra nodes that fit your capacity. For example, with F8 (8 CUs), don't let autoscaling add 3 large nodes (which would require ~3×1.3 = 3.9 CUs extra + 10 base = ~13.9 CUs total), which is more nodes than your capacity can handle. Cap the scale-out such that Total CUs (base + extras) ≤ your capacity size. This prevents performance issues or over-utilization.  
@@ -110,7 +110,7 @@ When you plan your Apache Airflow pool setup, keep these best practices and cost
 ## Related content
 
 - [Get started with Apache Airflow jobs](create-apache-airflow-jobs.md)
-- [Apache Airflow Job workspace settings - Microsoft Fabric | Microsoft Learn](apache-airflow-jobs-workspace-settings.md)
+- [Apache Airflow Job workspace settings - Fabric | Microsoft Learn](apache-airflow-jobs-workspace-settings.md)
 - [Pricing for Apache Airflow jobs](pricing-apache-airflow-job.md)
-- [Microsoft Fabric pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric)
-- [Plan your Microsoft Fabric capacity size](../enterprise/plan-capacity.md)
+- [Fabric pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric)
+- [Plan your Fabric capacity size](../enterprise/plan-capacity.md)

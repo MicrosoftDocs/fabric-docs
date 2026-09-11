@@ -1,5 +1,5 @@
 ---
-title: Error codes and resolutions
+title: Error Codes and Resolutions
 description: Reference for error codes and resolutions.
 ms.date: 07/30/2026
 ms.topic: reference
@@ -11,7 +11,7 @@ This article describes the user-facing error codes and explains how to resolve t
 
 | Error code | Activity | Error title | Resolution |
 |------------|----------|-------------|------------|
-| GEN_DB_010 | Creating report | SQL database capacity limit reached | The SQL database has reached its capacity limit, so a new Plan item can't be created. Delete or archive unused Plan items to free capacity. If additional capacity is required, upgrade the SQL database capacity tier or redistribute workloads across multiple capacities. |
+| GEN_DB_010 | Creating report | SQL database capacity limit reached | The SQL database has reached its capacity limit, so a new plan item can't be created. Delete or archive unused plan items to free capacity. If additional capacity is required, upgrade the SQL database capacity tier or redistribute workloads across multiple capacities. |
 | GEN_DB_008 | Re-opening report | Plan creation failed – guest user setup incomplete | The required Microsoft Entra B2B guest user hasn't been provisioned in the application database. Ask a workspace administrator in the host tenant to run `CREATE USER [guest_user_email] FROM EXTERNAL PROVIDER` in the application database. After the user is provisioned, try creating the plan again. |
 | GEN_DB_007 | Re-opening report | Application database not found | The item references an application database that no longer exists in OneLake. Recreate the item to continue. |
 | GEN_DB_011 | Re-opening report | Application database schema not found | The required application database schema is missing. Recreate the item to restore functionality. |

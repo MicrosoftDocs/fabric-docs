@@ -2,7 +2,7 @@
 title: Use Python for Apache Spark
 description: Learn to develop Spark applications in Microsoft Fabric, using Python to analyze data through Spark batch job definitions or with interactive Fabric notebooks.
 ms.author: lagayhar
-ms.reviewer: ruxu
+ms.reviewer: scottpolly
 ms.topic: overview
 ms.date: 07/27/2026
 ms.search.form: Python Language

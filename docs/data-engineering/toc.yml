@@ -890,6 +890,8 @@ items:
         href: ./materialized-lake-views/create-materialized-lake-view-pyspark.md
     - name: Data quality in materialized lake views
       href: ./materialized-lake-views/data-quality.md
+    - name: Notebook utilities (preview)
+      href: ./materialized-lake-views/materialized-lake-views-notebook-utility.md
   - name: Manage
     items:  
     - name: Optimal refresh for materialized lake views

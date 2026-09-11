@@ -2,7 +2,7 @@
 title: 'Tutorial: create, evaluate, and score a churn prediction model'
 description: This tutorial describes a data science workflow with an end-to-end example of building a model to predict churn.
 ms.author: lagayhar
-ms.reviewer: ruxu
+ms.reviewer: scottpolly
 ms.topic: tutorial
 ms.custom: sfi-image-nochange
 ms.date: 02/28/2026

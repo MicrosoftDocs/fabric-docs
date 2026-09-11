@@ -21,7 +21,7 @@ Alex's team builds notebooks, data pipelines, semantic models, and reports in a 
 
 ### The Challenge
 
-Alex's notebooks use the `%%configure` magic command to attach to a specific lakehouse. This command means the notebook definitions contain **hardcoded GUIDs** — workspace IDs, lakehouse IDs, and SQL endpoint IDs — that are **different in each environment**.
+Alex's notebooks use the `%%configure` magic command to attach to a specific lakehouse. This command means the notebook definitions contain **hardcoded GUIDs** — workspace IDs, lakehouse IDs, and SQL analytics endpoint IDs — that are **different in each environment**.
 
 ### What Alex Expects
 
@@ -603,17 +603,19 @@ find_replace:
 - **`$items.Lakehouse.DemoLakehouse.$id`** is a dynamic token that looks up the lakehouse named `DemoLakehouse` in the target workspace and returns its ID.
 - **Pattern:** `$items.<ItemType>.<ItemName>.$id`
 
-#### Entry 3 — SQL Endpoint ID Replacement (Dynamic Notation)
+<a id="entry-3--sql-endpoint-id-replacement-dynamic-notation"></a>
+
+#### Entry 3 — SQL analytics endpoint ID Replacement (Dynamic Notation)
 
 ```yaml
-- find_value: "91280ad0-b76e-4c98-a656-95d8f09a5e28" # DEV SQL Endpoint GUID
+- find_value: "91280ad0-b76e-4c98-a656-95d8f09a5e28" # DEV SQL analytics endpoint GUID
  replace_value:
  test: $items.Lakehouse.DemoLakehouse.$sqlendpointid # Resolved dynamically at deploy time
  prod: $items.Lakehouse.DemoLakehouse.$sqlendpointid # Resolved dynamically at deploy time
 ```
 
-- Instead of hardcoding the SQL endpoint GUID for each environment (e.g., `204fd20c-e34c-4bef-9dce-4ecf53b0e878` for TEST or `29bda5ec-ebc7-466e-a618-ef5bbea75e13` for PROD), this entry uses **dynamic notation** — `$items.Lakehouse.DemoLakehouse.$sqlendpointid`.
-- The `fabric-cicd` package resolves this at deployment time by looking up the SQL endpoint ID of the `DemoLakehouse` lakehouse in the **target workspace**. This eliminates the need to manually find and maintain SQL endpoint GUIDs across environments.
+- Instead of hardcoding the SQL analytics endpoint GUID for each environment (e.g., `204fd20c-e34c-4bef-9dce-4ecf53b0e878` for TEST or `29bda5ec-ebc7-466e-a618-ef5bbea75e13` for PROD), this entry uses **dynamic notation** — `$items.Lakehouse.DemoLakehouse.$sqlendpointid`.
+- The `fabric-cicd` package resolves this at deployment time by looking up the SQL analytics endpoint ID of the `DemoLakehouse` lakehouse in the **target workspace**. This eliminates the need to manually find and maintain SQL analytics endpoint GUIDs across environments.
 
 ---
 
@@ -746,7 +748,7 @@ Open the `IngestApiData` notebook in the **TEST** Fabric workspace and verify:
  |---|---|---|
  | Workspace ID | TEST workspace ID | ~~DEV workspace ID~~ |
  | DemoLakehouse ID | TEST lakehouse ID | ~~DEV lakehouse ID~~ |
- | SQL Endpoint ID | TEST SQL Endpoint ID (resolved dynamically) | ~~DEV SQL Endpoint ID (`91280ad0-...`)~~ |
+ | SQL analytics endpoint ID | TEST SQL analytics endpoint ID (resolved dynamically) | ~~DEV SQL analytics endpoint ID (`91280ad0-...`)~~ |
 
 > ✅ **Success!** The `%%configure` cell now points to TEST lakehouses, and the new development work has been cleanly promoted.
 
@@ -762,7 +764,7 @@ Open the `IngestApiData` notebook in the **TEST** Fabric workspace and verify:
 | Pipeline doesn't trigger on merge | Path filter mismatch | Ensure your Fabric items are inside the `fabric/` directory in the repo |
 | `ModuleNotFoundError: fabric_cicd` | Package not installed | Ensure the `pip install fabric-cicd` step is present and succeeds |
 | Approval notification not received | Environment not configured | Verify the ADO Environment name matches `target_env` exactly (case-sensitive) |
-| SQL Endpoint GUID not replaced | Dynamic notation misconfigured | Ensure `$items.Lakehouse.<name>.$sqlendpointid` syntax is correct and the lakehouse exists in the target workspace |
+| SQL analytics endpoint GUID not replaced | Dynamic notation misconfigured | Ensure `$items.Lakehouse.<name>.$sqlendpointid` syntax is correct and the lakehouse exists in the target workspace |
 | `os.environ` key error | Variable group not linked to pipeline | Authorize the pipeline to access `fabric_cicd_group_non_sensitive` |
 | Feature flag errors for shortcuts | `fabric-cicd` version too old | Upgrade `fabric-cicd` to the latest version: `pip install fabric-cicd --upgrade` |
 

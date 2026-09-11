@@ -73,7 +73,7 @@ The following system views provide answers to these questions:
 - [queryinsights.sql_pool_insights](/sql/relational-databases/system-views/queryinsights-sql-pool-insights-transact-sql?view=fabric&preserve-view=true)
   - Returns information about warehouse resource allocation, configuration changes, and pressure.
 
-- [queryinsights.external_api_call_stats](/sql/relational-database/system-views/queryinsights-external-api-call-stats-transact-sql?view=fabric&preserve-view=true)
+- [queryinsights.external_api_call_stats](/sql/relational-databases/system-views/queryinsights-external-api-call-stats-transact-sql?view=fabric&preserve-view=true)
   - Returns function-level diagnostics for queries that call external APIs through AI functions. The view contains one row for each distinct external function used by a query.
 
 ## Where can you see query insights?
@@ -171,7 +171,7 @@ ORDER BY median_total_elapsed_time_ms DESC;
 - [queryinsights.long_running_queries](/sql/relational-databases/system-views/queryinsights-long-running-queries-transact-sql?view=fabric&preserve-view=true)
 - [queryinsights.frequently_run_queries](/sql/relational-databases/system-views/queryinsights-frequently-run-queries-transact-sql?view=fabric&preserve-view=true)
 - [queryinsights.sql_pool_insights](/sql/relational-databases/system-views/queryinsights-sql-pool-insights-transact-sql?view=fabric&preserve-view=true)
-- [queryinsights.external_api_call_stats](/sql/relational-database/system-views/queryinsights-external-api-call-stats-transact-sql?view=fabric&preserve-view=true)
+- [queryinsights.external_api_call_stats](/sql/relational-databases/system-views/queryinsights-external-api-call-stats-transact-sql?view=fabric&preserve-view=true)
 
 ## Related content
 

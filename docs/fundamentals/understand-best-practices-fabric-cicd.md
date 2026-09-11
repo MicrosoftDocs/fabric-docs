@@ -895,33 +895,33 @@ find_replace:
     file_path: "/definition/expressions.tmdl"
 ```
 
-The parameterization support in `fabric-cicd` supports more than simple *find-and-replace* operations. `fabric-cicd` also supports parameterization by using regular expressions and dynamic variables. To demonstrate these advanced parameterization capabilities, examine a common scenario in which a semantic model connects to the SQL endpoint of a lakehouse in the same workspace. This scenario requires parameterization because each semantic model requires a unique data-source path to reference the SQL endpoint for the lakehouse in the same workspace.
+The parameterization support in `fabric-cicd` supports more than simple *find-and-replace* operations. `fabric-cicd` also supports parameterization by using regular expressions and dynamic variables. To demonstrate these advanced parameterization capabilities, examine a common scenario in which a semantic model connects to the SQL analytics endpoint of a lakehouse in the same workspace. This scenario requires parameterization because each semantic model requires a unique data-source path to reference the SQL analytics endpoint for the lakehouse in the same workspace.
 
-The item definition for a semantic model includes an `expressions.tmdl` file that typically contains data-source paths and Power Query code that connects to its data source. The `expressions.tmdl` file for a semantic model that uses the DirectLake on SQL model includes a call to the `SQL.Database` function that accepts two parameters. The first parameter is for the SQL endpoint server path, and the second parameter references the target lakehouse.
+The item definition for a semantic model includes an `expressions.tmdl` file that typically contains data-source paths and Power Query code that connects to its data source. The `expressions.tmdl` file for a semantic model that uses the DirectLake on SQL model includes a call to the `SQL.Database` function that accepts two parameters. The first parameter is for the SQL analytics endpoint server path, and the second parameter references the target lakehouse.
 
 ```text
-Sql.Database(<SQL Endpoint Connect String>, "c2c2c2c2-dddd-eeee-ffff-a3a3a3a3a3a3")
+Sql.Database(<SQL analytics endpoint Connect String>, "c2c2c2c2-dddd-eeee-ffff-a3a3a3a3a3a3")
 ```
 
 The second parameter passed to `SQL.Database` identifies the target lakehouse. For this lakehouse parameter, you can pass either the lakehouse ID or the lakehouse display name. Using the lakehouse ID is problematic because it's always different across workspaces, requiring additional parameterization. Instead, pass the lakehouse name. The lakehouse name stays the same across all environments, eliminating the need for parameterization.
 
 ```text
-Sql.Database(<SQL Endpoint Connect String>, "sales")
+Sql.Database(<SQL analytics endpoint Connect String>, "sales")
 ```
 
-The first parameter passed to `Sql.Database` is the SQL endpoint connection string, which ends with `.datawarehouse.fabric.microsoft.com`. The first part of the SQL endpoint connection string is always unique to a specific workspace. This means the SQL endpoint connection string requires parameterization.
+The first parameter passed to `Sql.Database` is the SQL analytics endpoint connection string, which ends with `.datawarehouse.fabric.microsoft.com`. The first part of the SQL analytics endpoint connection string is always unique to a specific workspace. This means the SQL analytics endpoint connection string requires parameterization.
 
 ```text
 Sql.Database("<workspace-unique-path>.datawarehouse.fabric.microsoft.com",
 ```
 
-`fabric-cicd` supports parameterization by using regular expressions to identify *capture zones* used in find and replace operations. The following regular expression demonstrates defining a capture zone for the SQL endpoint connection string.
+`fabric-cicd` supports parameterization by using regular expressions to identify *capture zones* used in find and replace operations. The following regular expression demonstrates defining a capture zone for the SQL analytics endpoint connection string.
 
 ```text
 Sql\.Database\(\s*"([^"]*datawarehouse\.fabric\.microsoft\.com[^"]*)"\s*,
 ```
 
-Once you have created the regular expression with a capture zone to replace the SQL endpoint connection string, you can use it in a `find_replace` operation as long as you add an `is_regex` key with a value set to `true`.
+Once you have created the regular expression with a capture zone to replace the SQL analytics endpoint connection string, you can use it in a `find_replace` operation as long as you add an `is_regex` key with a value set to `true`.
 
 ```yaml
 find_replace:
@@ -1166,7 +1166,7 @@ Now compare this to a call to **Get Lakehouse**, which uses a URL targeting the 
 https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/lakehouses/{lakehouseId}
 ```
 
-A call to **Get Lakehouse** returns a JSON response with a `properties` element containing additional properties that are specific to lakehouses. The following JSON listing shows the custom lakehouse properties that include data-source paths used to access lakehouse data through OneLake or its SQL endpoint.
+A call to **Get Lakehouse** returns a JSON response with a `properties` element containing additional properties that are specific to lakehouses. The following JSON listing shows the custom lakehouse properties that include data-source paths used to access lakehouse data through OneLake or its SQL analytics endpoint.
 
 ```json
 {
@@ -1199,7 +1199,7 @@ In this article, you learn when to use Fabric bulk import and export APIs, how t
 
 ### How do Fabric bulk import and export APIs support backup, restore, clone, and migration?
 
-Fabric REST APIs, such as [Create Item API](/rest/api/fabric/core/items/create-item?tabs=HTTP), [Update Item Definition API](/rest/api/fabric/core/items/update-item-definition?tabs=HTTP), and [Get Item Definition API](/rest/api/fabric/core/items/get-item-definition?tabs=HTTP), support CRUD operations that use item definitions. These single-item APIs process one item definition per call. The [Bulk Import Item Definitions API](/rest/api/fabric/core/items/bulk-import-item-definitions%28beta%29?tabs=HTTP) and [Bulk Export Item Definitions API](/rest/api/fabric/core/items/bulk-export-item-definitions%28beta%29?tabs=HTTP), which entered public preview in March 2026, extend that model by sending multiple item definitions in a single API call for batch processing.
+Fabric REST APIs, such as [Create Item API](/rest/api/fabric/core/items/create-item?tabs=HTTP), [Update Item Definition API](/rest/api/fabric/core/items/update-item-definition?tabs=HTTP), and [Get Item Definition API](/rest/api/fabric/core/items/get-item-definition?tabs=HTTP), support CRUD operations that use item definitions. These single-item APIs process one item definition per call. The [Bulk Import Item Definitions API](/rest/api/fabric/core/items/bulk-import-item-definitions?tabs=HTTP) and [Bulk Export Item Definitions API](/rest/api/fabric/core/items/bulk-export-item-definitions?tabs=HTTP), which entered public preview in March 2026, extend that model by sending multiple item definitions in a single API call for batch processing.
 
 Use the following scenario map to choose the correct bulk import and export workflow:
 
@@ -1254,7 +1254,7 @@ Bulk import and export APIs don't automatically handle these tasks:
 
 - Export or import unsupported workspace item types. When export mode is `All`, Fabric skips unsupported item types instead of returning them in the JSON package.
 - Populate data containers, run notebooks or pipelines, activate value sets for variable libraries, or create shortcuts. These tasks require separate post-deploy orchestration or Fabric REST API calls.
-- Resolve release-time parameterization dependencies, such as retrieving a new lakehouse SQL endpoint before a dependent semantic model import. These dependencies require sequencing imports or retrieving values before importing a dependent item.
+- Resolve release-time parameterization dependencies, such as retrieving a new lakehouse SQL analytics endpoint before a dependent semantic model import. These dependencies require sequencing imports or retrieving values before importing a dependent item.
 
 #### Migrate Fabric items across Microsoft Entra ID tenants
 
@@ -1473,11 +1473,11 @@ Use this decision table when choosing between `fabric-cicd` and the bulk import 
 
 You can configure `fabric-cicd` with post-deploy actions that call Fabric REST APIs. For example, post-deploy actions can activate a value set after creating a variable library or create shortcuts after creating a lakehouse. `fabric-cicd` also supports orphan control to delete items when Git no longer contains their source item definition. With the bulk import and export APIs, these post-deploy actions require custom calls to Fabric REST APIs.
 
-The `fabric-cicd` library also supports dynamic variables. For example, use the parameterization support in `fabric-cicd` to update the datasource path for a semantic model by using a dynamic lakehouse variable that exposes a property named `$sqlendpoint`. The `fabric-cicd` library enables dynamic variables for a lakehouse by calling the [Get Lakehouse API](/rest/api/fabric/lakehouse/items/get-lakehouse?tabs=HTTP) as a post-deploy action to cache the SQL endpoint server path.
+The `fabric-cicd` library also supports dynamic variables. For example, use the parameterization support in `fabric-cicd` to update the datasource path for a semantic model by using a dynamic lakehouse variable that exposes a property named `$sqlendpoint`. The `fabric-cicd` library enables dynamic variables for a lakehouse by calling the [Get Lakehouse API](/rest/api/fabric/lakehouse/items/get-lakehouse?tabs=HTTP) as a post-deploy action to cache the SQL analytics endpoint server path.
 
-With the bulk import and export APIs, dynamic lakehouse variable deployment requires handling timing dependencies directly. A semantic model definition might need the lakehouse SQL endpoint path before import, but the endpoint isn't available until after the lakehouse exists. In that case, a single Bulk Import Item Definitions call can't import the lakehouse and semantic model. The release process must import them in separate batches.
+With the bulk import and export APIs, dynamic lakehouse variable deployment requires handling timing dependencies directly. A semantic model definition might need the lakehouse SQL analytics endpoint path before import, but the endpoint isn't available until after the lakehouse exists. In that case, a single Bulk Import Item Definitions call can't import the lakehouse and semantic model. The release process must import them in separate batches.
 
-The following diagram shows an example of deploying a Fabric solution with a lakehouse and a dependent semantic model. The first call to Bulk Import Item Definitions imports the first batch of items, which includes the lakehouse. After the first Bulk Import Item Definitions call creates the lakehouse, the release process calls the Get Lakehouse API to retrieve the server path for its SQL endpoint. The release process then uses the SQL endpoint server path to update the semantic model definition for the call to Bulk Import Item Definitions, which imports the second batch of items.
+The following diagram shows an example of deploying a Fabric solution with a lakehouse and a dependent semantic model. The first call to Bulk Import Item Definitions imports the first batch of items, which includes the lakehouse. After the first Bulk Import Item Definitions call creates the lakehouse, the release process calls the Get Lakehouse API to retrieve the server path for its SQL analytics endpoint. The release process then uses the SQL analytics endpoint server path to update the semantic model definition for the call to Bulk Import Item Definitions, which imports the second batch of items.
 
 :::image type="complex" source="media/fabric-cicd-best-practices/bulk-image-09.png" alt-text="Diagram that shows a two-batch Fabric deployment with Get Lakehouse between Bulk Import Item Definitions calls." border="false":::
 The deployment uses two JSON files. The product-sales-spark-v1.0.json file contains item definitions for a variable library, lakehouse, and notebook. The product-sales-analysis-v1.0.json file contains item definitions for a semantic model and report. The deploy operation imports the first JSON file into the tenant workspace, calls the Get Lakehouse API, and then imports the second JSON file into the same tenant workspace.

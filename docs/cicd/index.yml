@@ -98,4 +98,4 @@ landingContent:
       - linkListType: reference
         links:
           - text: Fabric REST APIs
-            url: /rest/api/fabric/articles/using-fabric-apis
+            url: /rest/api/fabric/articles/get-started/using-fabric-apis

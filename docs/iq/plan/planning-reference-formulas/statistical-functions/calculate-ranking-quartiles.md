@@ -1,15 +1,15 @@
 ---
 title: 'Statistical Functions: Calculate Ranking and Quartiles'
-description: Learn about statistical functions in Plan and use them to rank values and calculate quartiles to analyze the relative position and distribution of numerical data.
+description: Learn about statistical functions in planning and use them to rank values and calculate quartiles to analyze the relative position and distribution of numerical data.
 ms.date: 08/19/2026
 ms.topic: reference
 ms.search.form: Statistical functions
-#customer intent: As a user, I want to know about statistical functions in Plan and use them to rank values and calculate quartiles to analyze numerical data.
+#customer intent: As a user, I want to know about statistical functions in planning and use them to rank values and calculate quartiles to analyze numerical data.
 ---
 
 # Calculate ranking and quartiles
 
-Plan provides functions to rank values and calculate quartiles in a dataset. Use the functions in this section to determine the relative position of values and analyze the distribution of numerical data.
+Planning provides functions to rank values and calculate quartiles in a dataset. Use the functions in this section to determine the relative position of values and analyze the distribution of numerical data.
 
 ## QUARTILEINC
 

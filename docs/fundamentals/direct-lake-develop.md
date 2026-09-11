@@ -24,7 +24,7 @@ Use **Direct Lake on OneLake** when...
 * You use Delta tables from other Fabric data sources, not just a lakehouse or warehouse.
 * You need composite modeling with Import or DirectQuery tables.
 * You want to use [OneLake security](../onelake/security/get-started-onelake-security.md).
-* You need modeling features like calculated tables that reference Direct Lake tables (preview).
+* You need modeling features like calculated columns or calculated tables that reference Direct Lake tables (preview).
 * You want consistent Direct Lake behavior without DirectQuery fallback (`DirectLakeOnly` mode). 
 
 Use **Direct Lake on SQL** when...

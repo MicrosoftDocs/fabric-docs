@@ -1,15 +1,15 @@
 ---
 title: 'Statistical Functions: Calculate Measures of Central Tendency'
-description: Learn about statistical functions in Plan and use them to calculate measures of central tendency, such as the median and mode, to summarize and analyze numerical data.
+description: Learn about statistical functions in planning and use them to calculate measures of central tendency, such as the median and mode, to summarize and analyze numerical data.
 ms.date: 08/19/2026
 ms.topic: reference
 ms.search.form: Statistical functions
-#customer intent: As a user, I want to know about statistical functions in Plan and use them to calculate measures of central tendency in numerical data.
+#customer intent: As a user, I want to know about statistical functions in planning and use them to calculate measures of central tendency in numerical data.
 ---
 
 # Calculate measures of central tendency
 
-Plan provides functions to identify the central or most representative value in a dataset. Use the functions in this section to calculate statistical measures such as the median and mode, to summarize and analyze numerical data.
+Planning provides functions to identify the central or most representative value in a dataset. Use the functions in this section to calculate statistical measures such as the median and mode, to summarize and analyze numerical data.
 
 ## MEDIAN
 

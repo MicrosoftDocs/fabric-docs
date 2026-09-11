@@ -280,4 +280,4 @@ Currently, the connector with JDBC batch insert strategies:
 
 - [Spark connector for Fabric Data Warehouse](spark-data-warehouse-connector.md)
 - [Apache Spark runtimes in Fabric](runtime.md)
-- [Security for data warehousing in Fabric](../data-warehouse/security.md)
+- [Security in Fabric Data Warehouse](../data-warehouse/security.md)

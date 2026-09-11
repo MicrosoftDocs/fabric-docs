@@ -183,7 +183,7 @@ An *ontology* is an item where you can define entity types, relationships, prope
 
 #### Plan
 
-A *plan* is a unified no-code platform for collaborative planning, reporting, analytics, data integration, and management. For more information, see [What is plan?](../iq/plan/overview.md)
+A *plan* is a unified no-code platform for collaborative planning, reporting, analytics, data integration, and management. For more information, see [What is planning in Fabric?](../iq/plan/overview.md)
 
 ---
 

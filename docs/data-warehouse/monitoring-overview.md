@@ -2,9 +2,10 @@
 title: Monitoring in Fabric Data Warehouse Overview
 description: Learn about the solutions and methods to monitor query activity in your Fabric warehouse.
 ms.reviewer: rakrish75
-ms.date: 04/06/2025
+ms.date: 09/03/2026
 ms.topic: overview
 ms.search.form: Monitoring # This article's title should not change. If so, contact engineering.
+ai-usage: ai-assisted
 ---
 # Monitor Fabric Data Warehouse
 
@@ -28,16 +29,20 @@ Users are provided a one-stop view of their running and completed queries in an 
 
 ## Query insights
 
-Query Insights provides historical query data for completed, failed, canceled queries along with aggregated insights to help you tune your query performance. For more information, see [Query insights in Fabric data warehousing](query-insights.md).
+Query Insights provides historical query data for completed, failed, canceled queries along with aggregated insights to help you tune your query performance. For more information, see [Query insights in Fabric Data Warehouse](query-insights.md).
 
 ## Dynamic management views (DMVs)
 
 Users can get insights about their live connections, sessions, and requests by querying a set of dynamic management views (DMVs) with T-SQL. For more information, see [Monitor connections, sessions, and requests using DMVs](monitor-using-dmv.md).
 
+## Skills for Fabric
+
+Use the [Data Warehouse operations skill](skills-for-data-warehouse-operations.md) to ask an AI coding tool to investigate failures, query performance, capacity spikes, SQL pool pressure, and lakehouse table health. The skill runs read-only diagnostics and bases its guidance on current Fabric monitoring data.
+
 ## Related content
 
 - [Billing and utilization reporting in Fabric Data Warehouse](usage-reporting.md)
 - [Monitor your running and completed T-SQL queries using Data Warehouse Monitor](monitor.md)
-- [Query insights in Fabric data warehousing](query-insights.md)
+- [Query insights in Fabric Data Warehouse](query-insights.md)
 - [Monitor connections, sessions, and requests using DMVs](monitor-using-dmv.md)
-
+- [Data Warehouse operations skill](skills-for-data-warehouse-operations.md)

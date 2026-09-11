@@ -1,15 +1,15 @@
 ---
 title: 'Statistical Functions: Calculate Variance and Standard Deviation'
-description: Learn about statistical functions in Plan and use them to calculate population and sample variance and standard deviation to analyze data variability and distribution.
+description: Learn about statistical functions in planning and use them to calculate population and sample variance and standard deviation to analyze data variability and distribution.
 ms.date: 08/19/2026
 ms.topic: reference
 ms.search.form: Statistical functions
-#customer intent: As a user, I want to know about statistical functions in Plan and use them to calculate variance and standard deviation to analyze data variability and distribution.
+#customer intent: As a user, I want to know about statistical functions in planning and use them to calculate variance and standard deviation to analyze data variability and distribution.
 ---
 
 # Calculate variance and standard deviation
 
-Plan provides functions to calculate variance and standard deviation in a dataset. Use the functions in this section to measure how widely values are spread around the mean, making it easier to analyze data variability and distribution.
+Planning provides functions to calculate variance and standard deviation in a dataset. Use the functions in this section to measure how widely values are spread around the mean, making it easier to analyze data variability and distribution.
 
 ## VARS
 

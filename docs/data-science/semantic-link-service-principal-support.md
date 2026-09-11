@@ -1,8 +1,8 @@
 ---
 title: Service Principal support for Semantic Link
 description: How to use Service Principal for Semantic Link.
-ms.reviewer: ruxu
-reviewer: ruixinxu
+ms.reviewer: scottpolly
+reviewer: s-polly
 ms.topic: how-to
 ms.date: 09/01/2025
 ms.search.form: Semantic Link, service principal, SPN

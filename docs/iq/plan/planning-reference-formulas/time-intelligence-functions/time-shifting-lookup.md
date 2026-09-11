@@ -1,15 +1,15 @@
 ---
 title: 'Time Intelligence Functions: Time Shifting and Lookup'
-description: Learn how to use time shifting and lookup functions in Plan to retrieve values from different time periods. Compare historical and future data, shift dates across periods, and access measure values using SHIFT and VALUEAT.
+description: Learn how to use time shifting and lookup functions in planning to retrieve values from different time periods. Compare historical and future data, shift dates across periods, and access measure values using SHIFT and VALUEAT.
 ms.date: 08/19/2026
 ms.topic: reference
 ms.search.form: Time Intelligence functions
-customer intent: Learn how to use Time Intelligence functions in Plan to shift dates across months, quarters, and years, retrieve measure values from previous or future periods, and perform comparative and trend analysis using SHIFT and VALUEAT.
+customer intent: Learn how to use Time Intelligence functions in planning to shift dates across months, quarters, and years, retrieve measure values from previous or future periods, and perform comparative and trend analysis using SHIFT and VALUEAT.
 ---
 
 # Time shifting and lookup
 
-Plan supports time shifting and lookup functions that retrieve values from different time periods. These functions help you shift between time periods and access measure values for comparative and trend analysis.
+Planning supports time shifting and lookup functions that retrieve values from different time periods. These functions help you shift between time periods and access measure values for comparative and trend analysis.
 
 ## SHIFT
 

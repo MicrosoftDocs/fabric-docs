@@ -149,9 +149,7 @@ items:
     href: ./security/get-started-security.md
   - name: Configure data access
     items:
-    - name: OneLake security
-      href: ./security/get-started-onelake-security.md
-    - name: Data access control model
+    - name: Data access control overview
       href: ./security/data-access-control-model.md
     - name: Create and manage roles
       href: ./security/create-manage-roles.md

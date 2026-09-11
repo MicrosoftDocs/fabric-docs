@@ -4,8 +4,8 @@ description: Install a different version of SynapseML in a Microsoft Fabric note
 ms.topic: how-to
 ms.author: scottpolly
 author: s-polly
-ms.reviewer: ruxu
-reviewer: ruixinxu
+ms.reviewer: scottpolly
+reviewer: s-polly
 ms.date: 05/14/2026
 ai-usage: ai-assisted
 ---

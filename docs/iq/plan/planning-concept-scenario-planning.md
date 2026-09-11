@@ -1,5 +1,5 @@
 ---
-title: Scenario planning in Microsoft Fabric
+title: Scenario Planning in Microsoft Fabric
 description: "Learn how to use scenarios to create, evaluate, compare, and apply alternative planning outcomes without changing the committed Base plan."
 ms.topic: concept-article
 ms.date: 08/19/2026

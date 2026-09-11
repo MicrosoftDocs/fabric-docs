@@ -1,6 +1,6 @@
 ---
-title: Destinations Supported by Fabric Eventstreams (Enhanced)
-description: This file has the list of destinations supported by Fabric eventstreams with enhanced capabilities.
+title: Destinations Supported by Fabric Eventstreams
+description: This file has the list of destinations supported by Fabric eventstreams.
 ms.reviewer: xujiang1
 ms.topic: include
 ms.date: 05/21/2024

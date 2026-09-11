@@ -7,7 +7,7 @@ ms.reviewer: yicw, mesrivas,liud
 ms.topic: concept-article
 ms.search.form: product-trident, Manage your workspace
 #customer intent: As a report creator, I need to know about workspaces so that I can create collections of artifacts that are related.
-ms.date: 04/28/2026
+ms.date: 07/28/2026
 
 ---
 
@@ -151,11 +151,11 @@ deletion will fail.
 
 To remove the workspace, you can return to the workspace page and select the **View Deployment Pipeline** button. This will direct you to the relevant pipeline, where you can unassign the workspace and then remove it.
 
-For more information, see [Remove a workspace from a deployment pipeline](../cicd/deployment-pipelines/assign-pipeline.md#remove-a-workspace-in-a-deployment-pipeline)
+For more information, see [Remove a workspace from a deployment pipeline](../cicd/deployment-pipelines/assign-pipeline.md#remove-a-workspace-in-a-deployment-pipeline).
 
 ## Workspace recycle bin (preview)
 
-Each workspace has a recycle bin that shows items in a retention period. When a [supported item type](../admin/retention-recovery.md#supported-item-types) is deleted and the **Item Recovery** tenant setting is turned on, the item moves to the recycle bin instead of being permanently deleted.
+Each workspace has a recycle bin that shows items in a retention period. When you delete a [supported item type](../admin/retention-recovery.md#supported-item-types) and turn on the **Item Recovery** tenant setting, the item moves to the recycle bin instead of being permanently deleted. The **Item Recovery** tenant setting is turned on by default.
 
 To open the recycle bin, select **Recycle bin** from the workspace navigation. From the recycle bin, you can:
 
@@ -164,7 +164,7 @@ To open the recycle bin, select **Recycle bin** from the workspace navigation. F
 
 :::image type="content" source="media/workspaces/workspace-recycle-bin.png" alt-text="Screenshot of the Workspace recycle bin in the Fabric portal, showing the Restore and Delete permanently buttons in the toolbar along with a list of deleted items." lightbox="media/workspaces/workspace-recycle-bin.png":::
 
-Items remain in the recycle bin for the duration of the retention period configured by the tenant admin (7 to 90 days). At the end of the retention period, items are permanently deleted automatically.
+Items remain in the recycle bin for the duration of the retention period configured by the tenant admin (3 to 90 days). At the end of the retention period, the system automatically permanently deletes items.
 
 For more information, see [Recover or permanently delete items](../admin/item-recovery.md).
 

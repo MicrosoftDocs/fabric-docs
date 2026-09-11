@@ -4,8 +4,8 @@ description: Use SynapseML on Apache Spark for multivariate anomaly detection wi
 ms.topic: how-to
 ms.author: scottpolly
 author: s-polly
-ms.reviewer: ruxu
-reviewer: ruixinxu
+ms.reviewer: scottpolly
+reviewer: s-polly
 ms.date: 07/23/2026
 ---
 # Multivariate anomaly detection with isolation forest

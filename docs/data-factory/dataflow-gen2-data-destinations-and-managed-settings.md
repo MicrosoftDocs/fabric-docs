@@ -17,7 +17,7 @@ The following list contains the supported data destinations:
 [!INCLUDE [dataflow-gen2-data-destinations](includes/dataflow-gen2-data-destinations.md)]
 
 > [!NOTE]
->To load your data to the Fabric Warehouse, you can use the Azure Synapse Analytics (SQL DW) connector by getting the SQL connection string. More information: [Connectivity to data warehousing in Microsoft Fabric](../data-warehouse/connectivity.md)
+> To load your data to Fabric Data Warehouse, you can use the Azure Synapse Analytics (SQL DW) connector by getting the SQL connection string. For more information, see [Connectivity to Fabric Data Warehouse](../data-warehouse/connectivity.md).
 
 ## Entry points
 
@@ -275,7 +275,7 @@ You can set this option to **False** in edge cases where:
 * You don't query the Lakehouse through the SQL analytics endpoint and don't need the metadata sync.
 * You see significantly longer refresh times caused by a large delta log backlog on the destination Lakehouse, and you want to skip the synchronization step until the backlog is addressed (for example, through table maintenance and vacuuming).
 
-When the option is set to **False**, the SQL analytics endpoint metadata isn't refreshed by the dataflow, and downstream SQL endpoint consumers may see stale data until the next sync (manual or scheduled) occurs.
+When the option is set to **False**, the SQL analytics endpoint metadata isn't refreshed by the dataflow, and downstream SQL analytics endpoint consumers may see stale data until the next sync (manual or scheduled) occurs.
 
 ### Enable V-Order compression on a Lakehouse destination
 

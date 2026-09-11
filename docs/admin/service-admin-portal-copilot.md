@@ -1,25 +1,25 @@
 ﻿---
 title: Copilot and Agent admin settings
-description: Learn how administrators can configure Copilot and Agent admin settings in Fabric. Control Azure OpenAI access, data processing regions, storage policies, and Copilot capacities.
+description: Learn how administrators can configure Copilot and Agent admin settings in Fabric. Control AI access, data processing regions, storage policies, and Copilot capacities.
 author: snehagunda
 ms.author: sngun
 ms.reviewer: guptamaya
 ms.custom:
   - tenant-setting
 ms.topic: how-to
-ms.date: 05/22/2026
+ms.date: 08/11/2026
 ms.update-cycle: 180-days
 LocalizationGroup: Administration
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ai-usage: ai-assisted
 
-#customer intent: As a Fabric administrator, I want to configure Copilot and Azure OpenAI Service tenant settings so that I can control how users in my organization access Copilot features and how data is processed.
+#customer intent: As a Fabric administrator, I want to configure Copilot and AI tenant settings so that I can control how users in my organization access Copilot features and how data is processed.
 ---
 
 # Copilot and Agent tenant settings
 
-Copilot in Fabric and Agent settings are controlled by the **Copilot and Azure OpenAI Service** tenant settings group. There are multiple settings governing user access and data processing policies, and some of them are enabled by default whereas others require the Fabric administrator to enable them.
+Copilot in Fabric and Agent settings are controlled by the **Copilot and AI** tenant settings group. There are multiple settings governing user access and data processing policies, and some of them are enabled by default whereas others require the Fabric administrator to enable them.
 
 For information about how to get to the Fabric tenant settings, see [About tenant settings - How to get to the tenant settings](./about-tenant-settings.md#how-to-get-to-the-tenant-settings).
 
@@ -30,9 +30,10 @@ For information about how to get to the Fabric tenant settings, see [About tenan
 
 **Settings disabled by default**
 
+* [Users can use Copilot, AI Agents and other AI experiences powered by OpenAI as a Microsoft Subprocessor](#copilot-with-openai-subprocessor)
+* [Data sent to OpenAI as a Microsoft Subprocessor can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance](#data-sent-to-openai-as-a-microsoft-subprocessor-can-be-processed-outside-your-capacitys-geographic-region-compliance-boundary-or-national-cloud-instance)
 * [Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance](#data-sent-to-azure-openai-can-be-processed-outside-your-capacitys-geographic-region-compliance-boundary-or-national-cloud-instance)
 * [Data sent to Azure OpenAI can be stored outside your capacity's geographic region, compliance boundary, or national cloud instance](#data-sent-to-azure-openai-can-be-stored-outside-your-capacitys-geographic-region-compliance-boundary-or-national-cloud-instance)
-* [Conversation history stored outside your capacity's geographic region, compliance boundary, or national cloud instance](#conversation-history)
 * [Users can access a standalone, cross-item Copilot in Power BI experience (preview)](#stand-alone-experience)
 * [Only show approved items in the standalone Copilot in Power BI experience (preview)](#limit-to-approved)
 
@@ -50,6 +51,17 @@ This setting can be managed at both the tenant and the capacity levels. When thi
 
 **Default:** Enabled
 
+<a id="copilot-with-openai-subprocessor"></a>
+## Users can use Copilot, AI Agents and other AI experiences powered by OpenAI as a Microsoft Subprocessor
+
+When this setting is enabled, users can access Copilot, AI Agents, and other AI experiences powered by OpenAI-operated models.
+
+:::image type="content" source="../fundamentals/media/copilot-enable-fabric/openai-model-provider-setting.png" alt-text="Screenshot of the tenant setting to enable the use of OpenAI as a Microsoft subprocessor." lightbox="../fundamentals/media/copilot-enable-fabric/openai-model-provider-setting.png":::
+
+This setting can be managed at both the tenant and the capacity levels. For more information about data processing commitments, availability limitations, and compliance exclusions, see [OpenAI as a subprocessor in Microsoft Fabric](../fundamentals/copilot-openai-subprocessor.md).
+
+**Default:** Disabled
+
 ## Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance
 
 This setting is only applicable for customers who want to use Copilot and AI features in Fabric powered by Azure OpenAI, and whose capacity's geographic region is outside of the EU data boundary and the US. When this setting is enabled, service background jobs may execute across geographic boundaries at no charge to the tenant capacity to support end user experiences.
@@ -62,6 +74,18 @@ For more information, see [Available regions](../fundamentals/copilot-fabric-ove
 
 **Default:** Disabled
 
+## Data sent to OpenAI as a Microsoft Subprocessor can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance
+
+This setting is only applicable for customers who want to use Copilot and AI features in Fabric powered by OpenAI-operated models, and whose capacity's geographic region is outside of the EU data boundary and the US. When this setting is enabled, service background jobs may execute across geographic boundaries at no charge to the tenant capacity to support end user experiences.
+
+The following screenshot shows how to configure this setting:
+
+:::image type="content" source="../fundamentals/media/copilot-enable-fabric/openai-cross-region-processing-setting.png" alt-text="Screenshot of the tenant setting for data processing outside the capacity's region with OpenAI as a Microsoft subprocessor." lightbox="../fundamentals/media/copilot-enable-fabric/openai-cross-region-processing-setting.png":::
+
+For more information, see [OpenAI as a subprocessor in Microsoft Fabric](../fundamentals/copilot-openai-subprocessor.md).
+
+**Default:** Disabled
+
 ## Data sent to Azure OpenAI can be stored outside your capacity's geographic region, compliance boundary, or national cloud instance
 
 This setting is only applicable for customers who want to use Copilot in notebooks and data agents in Fabric powered by Azure OpenAI, and whose capacity's geographic region is outside of the EU data boundary and the US. The following screenshot shows how to configure this setting:
@@ -71,9 +95,6 @@ This setting is only applicable for customers who want to use Copilot in noteboo
 For more information, see [Available regions](../fundamentals/copilot-fabric-overview.md#available-regions).
 
 **Default:** Disabled
-
-<a id="conversation-history"></a>
-## Conversation history stored outside your capacity's geographic region, compliance boundary, or national cloud instance
 
 This setting is only applicable for customers who want to use [Copilot in notebooks](../data-engineering/copilot-notebooks-overview.md) and Fabric [data agents](../data-science/concept-data-agent.md) powered by Azure OpenAI, and whose capacity's geographic region is outside of the EU data boundary and the US.
 
@@ -122,4 +143,5 @@ This setting is applicable in the standalone Copilot in Power BI as well as the 
 ## Related content
 
 * [Copilot in Fabric and Power BI overview](../fundamentals/copilot-fabric-overview.md)
+* [OpenAI as a subprocessor in Microsoft Fabric](../fundamentals/copilot-openai-subprocessor.md)
 * [About tenant settings](about-tenant-settings.md)

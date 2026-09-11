@@ -45,7 +45,7 @@ Typical flow:
 
 1. Prepare a target table in your warehouse.
 1. Prepare a source file (for example CSV) with column order that matches the target, or use a format file.
-1. Run `bcp ... in` with your warehouse SQL endpoint and database.
+1. Run `bcp ... in` with your warehouse SQL connection string and database.
 1. Tune options such as batch size and delimiters based on file size and format.
 
 Example:
@@ -56,7 +56,7 @@ bcp dbo.Sales in sales.csv -S <workspace-endpoint> -d <database> -G -U <user@dom
 
 Useful options from bcp documentation:
 
-- `-S` sets the SQL endpoint or the [warehouse connection string](how-to-connect.md#find-the-warehouse-connection-string).
+- `-S` sets the [warehouse connection string](how-to-connect.md#find-the-warehouse-connection-string).
 - `-d` sets the destination database.
 - `-G` uses Microsoft Entra authentication. This is the only supported authentication option for this preview scenario.
 - `-U` specifies your Microsoft Entra user principal name for interactive sign-in patterns.

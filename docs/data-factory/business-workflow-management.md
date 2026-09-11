@@ -12,7 +12,7 @@ ai-usage: ai-assisted
 
 Business workflows often extend beyond pure data movement or transformation. Many real-world processes require human approvals, conditional decision points, notifications, and integration with external systems.
 
-In Microsoft Fabric Data Factory, you can model these end-to-end business workflows by using pipelines together with workflow-oriented activities such as Approvals, Web, and notification activities. This article introduces how Fabric Data Factory pipelines support business workflow management and when to use them.
+In Fabric Data Factory, you can model these end-to-end business workflows by using pipelines together with workflow-oriented activities such as Approvals, Web, and notification activities. This article introduces how Data Factory pipelines support business workflow management and when to use them.
 
 ## What is business workflow management?
 

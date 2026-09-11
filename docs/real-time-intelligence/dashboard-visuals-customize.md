@@ -5,7 +5,8 @@ ms.reviewer: gabil, mbar
 ms.topic: how-to
 ms.subservice: rti-dashboard
 ms.custom:
-ms.date: 07/08/2026
+ms.date: 08/23/2026
+ai-usage: ai-assisted
 ---
 
 # Customize Real-Time Dashboard visuals
@@ -98,65 +99,6 @@ To configure data series colors:
 
 When you assign colors intentionally, viewers can interpret visuals at a glance without needing to read legends or labels. Consider using colors that align with your organization's standards or that naturally convey the meaning of each series, such as red for critical states or green for healthy metrics.
 
-## Time series visual (Preview)
-
-Use the Time series visual to display time-based data across multiple measures and categories. It plots numeric values over time, making it easier to identify trends, patterns, and anomalies.
-
-### Create a Time series visual
-
-> [!IMPORTANT]
-> Ensure your data includes a timestamp column and at least one numeric value column to visualize trends over time.
-
-To create and configure a Time series visual in your Real-Time Dashboard:
-
-1. In the top menu, select **Viewing** and toggle to **Editing** mode.
-
-1. Select the **Edit** icon on the visual you want to customize.
-
-1. In the **Visual formatting** pane, open **Visual type** and select **Time series**.
-
-    :::image type="content" source="media/customize-dashboard-visuals/visual-type-list.png" alt-text="Screenshot of the Visualization pane showing the Time series option." lightbox="media/customize-dashboard-visuals/visual-type-list.png":::
-
-1. In the **Data** section, configure the following properties:
-
-    * **Time column (X-axis)**: Select the timestamp column that represents time intervals on the horizontal axis.
-
-    * **Measured data (Y-axis)**: Select one or more numeric fields to plot over time on the vertical axis.
-
-    * **Entities and Measures** (optional): Select categorical fields to group your data into multiple series.
-
-    :::image type="content" source="media/customize-dashboard-visuals/configuration.png" alt-text="Screenshot of the time series configuration pane." lightbox="media/customize-dashboard-visuals/configuration.png":::
-
-1. Use the **Entities and Measures** panel to control which data appears:
-    * Search for a specific series by name.
-    * Expand or collapse groups in the entity hierarchy.
-    * Select or clear checkboxes to show or hide series.
-    * Reorder series to control display and legend order.
-
-    This selection doesn't modify the underlying query.
-
-1. Adjust the time range using the timeline controls:
-   * Drag the time slider to zoom in or out on specific intervals.
-   * Enter start and end times to define a precise range.
-
-   When multiple measures are displayed, all charts remain synchronized to the selected time range.
-
-    :::image type="content" source="media/customize-dashboard-visuals/timeline.png" alt-text="Screenshot of the timeline controls in a Time series chart." lightbox="media/customize-dashboard-visuals/timeline.png":::
-
-1. Customize your chart further by configuring properties such as:
-    * **Y-axis scaling:**
-        * Global (shared scale across charts)
-        * Separate (independent scales per chart)
-        * Adaptive (reduces the impact of outliers)
-
-    * **Colors:** Assign colors from a palette or per series.
-
-    * **Axis scale:** Switch between linear and logarithmic scale for different data distributions.
-
-    * **Zoom behavior:** Enable pan and zoom for interactive exploration.
-
-1. Select **Done** to save your settings and return to the dashboard.
-
 ## KPI visualization
 
 A KPI tile displays a single query-based numeric value as a visual indicator. It helps you quickly assess the health or status of a metric. Use KPI tiles for monitoring scenarios where you need to answer questions like: *"Is this value healthy or problematic?" "Is it above or below a baseline target?"*
@@ -220,32 +162,10 @@ KPI tiles adapt their layout based on tile size:
 | Medium (4×4 to 6×6) | Value, label, unit, threshold color, and baseline marker. |
 | Large (7×7 and above) | Full rendering with threshold bands, tick marks, and scale labels. |
 
-## Embed images
-
-You can embed images in your dashboard tiles by using Markdown text.
-
-For more information on GitHub Flavored Markdown, see [GitHub Flavored Markdown Spec](https://github.github.com/gfm/).
-
-1. Open a [Real-Time Dashboard](dashboard-real-time-create.md#create-a-new-dashboard).
-1. In the top menu, select **Add markdown** to open a markdown tile.
-
-    :::image type="content" source="media/customize-dashboard-visuals/add-tile.png" alt-text="Screenshot of the Home menu in a Real-Time Dashboard. The option titled Add markdown is highlighted." lightbox="media/customize-dashboard-visuals/add-tile.png":::
-
-1. In the query pane, paste the URL of an image located in an image hosting service by using the following syntax:
-
-    ```md
-    ![](URL)
-    ```
-
-    The image renders in the tile's preview.
-
-    :::image type="content" source="media/customize-dashboard-visuals/embed-image.png" alt-text="Screenshot of dashboard query pane showing image syntax in markdown text." lightbox="media/customize-dashboard-visuals/embed-image.png":::
-
-1. In the top menu, select **Done** to save the tile.
-
-For more information on image syntax in GitHub Flavored Markdown, see [Images](https://github.github.com/gfm/#images).
-
 ## Related content
 
+* [Real-Time Dashboard visual customization properties gallery](dashboard-visual-gallery.md)
+* [Add a Markdown visual to a Real-Time Dashboard](dashboard-markdown-visual.md)
+* [Time series analysis in Real-Time Dashboard](dashboard-time-series.md)
 * [Apply conditional formatting to Real-Time Dashboard visuals](dashboard-conditional-formatting.md)
 * [Troubleshoot Real-Time Dashboard visual errors](troubleshoot-dashboard-tile-error.md)

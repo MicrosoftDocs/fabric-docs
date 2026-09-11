@@ -2,7 +2,7 @@
 title: 'Tutorial: Create, evaluate, and score a machine fault detection model'
 description: This tutorial shows the data engineering and data science workflow for building a system that predicts mechanical failures.
 ms.author: lagayhar
-ms.reviewer: ruxu
+ms.reviewer: scottpolly
 ms.topic: tutorial
 ms.date: 02/28/2026
 #customer intent: As a data scientist, I want to build a machine fault detection model so I can predict mechanical failures.

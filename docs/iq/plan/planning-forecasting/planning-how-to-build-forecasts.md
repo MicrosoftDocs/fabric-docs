@@ -31,7 +31,7 @@ In this article, you learn to:
 Configure forecasts using historical actuals as the starting point for future periods. This approach carries forward historical trends and values to provide a baseline for forecasting, which you can adjust in response to expected business changes.
 
 1. In the **Model** ribbon, select **Forecast**.
-1. The default measure name is set to *Forecast.* Set a custom name if required, and then select the future period to forecast. Plan automatically populates the forecast period based on the existing data. Select **Next** to configure closed periods.
+1. The default measure name is set to *Forecast.* Set a custom name if required, and then select the future period to forecast. The plan automatically populates the forecast period based on the existing data. Select **Next** to configure closed periods.
 
     :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/forecast-measure-name-period-selection.jpg" alt-text="Screenshot of entering the forecast measure name and selecting the forecast period." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/forecast-measure-name-period-selection.jpg":::
 
@@ -49,13 +49,13 @@ Configure forecasts using historical actuals as the starting point for future pe
 
     * Configure **Copy from** with the measure that contains the source values.
     * Set **Operation** to **Period Range**.
-    * Define the periods to copy by specifying the **Source Range** as the historical period and the **Target Range** as the future period. Plan copies the values from the source range to the corresponding periods in the target range to initialize the forecast.
+    * Define the periods to copy by specifying the **Source Range** as the historical period and the **Target Range** as the future period. Planning copies the values from the source range to the corresponding periods in the target range to initialize the forecast.
 
     In this example, you initialize the 2026 *Budget* with the 2025 *Actuals*.
 
     :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/open-period-prefill-period-range.png" alt-text="Screenshot of prefill option for data input open periods with the period range option to copy values from 2025 to the 2026 forecast." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/open-period-prefill-period-range.png":::
 
-    After saving the configuration, Plan creates the *Budget* measure as a time extension for 2026. Notice that *Actuals* aren't available for the forecast period.
+    After you save the configuration, the plan creates the *Budget* measure as a time extension for 2026. Notice that *Actuals* aren't available for the forecast period.
 
     * The *Budget* measure is locked for 2023, 2024, and 2025 and populated with *Actuals* according to the configuration in Step 3.
     * The 2026 *Budget* remains available for forecasting.
@@ -66,7 +66,7 @@ Configure forecasts using historical actuals as the starting point for future pe
 
     :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/period-settings-hide-closed-periods.png" alt-text="Screenshot of options to display a specific forecasting period and hide closed periods." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/period-settings-hide-closed-periods.png":::
 
-    In Step 3, you selected **Period Range** to initialize the open forecast periods. Based on this configuration, Plan creates the 2026 *Budget* by copying the corresponding *Actuals* values from 2025. This provides an initial forecast for 2026 using the values from the selected historical period.
+    In Step 3, you selected **Period Range** to initialize the open forecast periods. Based on this configuration, planning creates the 2026 *Budget* by copying the corresponding *Actuals* values from 2025. This provides an initial forecast for 2026 using the values from the selected historical period.
 
     :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/period-range-forecast-prefill-historical-data.png" alt-text="Screenshot of initializing a forecast using the period range option and copying historical values from the corresponding past period." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/period-range-forecast-prefill-historical-data.png":::
 
@@ -138,7 +138,7 @@ Lock values entered in a planning sheet to prevent further edits and preserve ap
 Statistical forecasting uses historical data and statistical models to identify patterns and trends, and generates forecasts without manual input. For more information about Predict, see [Generating statistical forecasts](./planning-how-to-generate-statistical-forecasts-using-predict-feature.md).
 
 1. Before using **Predict**, in the **Model** ribbon, go to **Period** to display historical data from 2023 and 2024. Hide closed forecasts to focus on historical data and the periods available for forecasting.
-1. Predict works on any hierarchy level. In this example, select the grand total *Forecast,* then select **Predict** on the **Model** ribbon. Plan displays the selected row and measure.
+1. Predict works on any hierarchy level. In this example, select the grand total *Forecast,* then select **Predict** on the **Model** ribbon. THe plan displays the selected row and measure.
 
     :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/predict-pane-selected-measure-forecast-row.png" alt-text="Screenshot of the Predict side pane showing the selected measure and forecast row." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/predict-pane-selected-measure-forecast-row.png":::
 

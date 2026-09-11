@@ -1,17 +1,17 @@
 ---
 title: Refresh Power BI semantic model with Apache Airflow Job
-description: Learn to refresh Power BI semantic model with Apache Airflow Job.
+description: Learn to refresh Power BI semantic model with Apache Airflow job.
 ms.reviewer: abnarain
 ms.topic: tutorial
 ms.custom: airflows, sfi-image-nochange
 ms.date: 04/24/2026
 ---
 
-# Tutorial: Refresh Power BI Semantic Model with Apache Airflow Job
+# Tutorial: Refresh a Power BI semantic model with Apache Airflow jobs
 
 [!INCLUDE[apache-airflow-note](includes/apache-airflow-note.md)]
 
-This tutorial shows how to automate Power BI semantic model refreshes using Apache Airflow in Data Factory in Microsoft Fabric. You configure a connection, create a DAG (Directed Acyclic Graph), and schedule automatic refreshes so your reports and dashboards always reflect current data.
+This tutorial shows how to automate Power BI semantic model refreshes using Apache Airflow in Fabric Data Factory. You configure a connection, create a DAG (Directed Acyclic Graph), and schedule automatic refreshes so your reports and dashboards always reflect current data.
 
 ## Prerequisites
 
@@ -21,14 +21,14 @@ To get started, you must complete the following prerequisites:
 
 - Your tenant-level admin must enable ["Service principals can call Fabric public APIs"](../admin/service-admin-portal-developer.md#service-principals-can-call-fabric-public-apis):
 
-  1. Go to the Admin Portal of Microsoft Fabric and navigate to Tenant Settings.
+  1. Go to the admin portal of Fabric and navigate to Tenant Settings.
   2. Under Developer Settings, expand the "Service principals can call Fabric public APIs" section.
   3. Toggle the "Enabled" button and choose either "The entire organization" or "Specific security groups."
   4. Select Apply.
 
 - Create the [Service Principal](/entra/identity-platform/howto-create-service-principal-portal). You need to add your service principal as the Contributor in your Power BI workspace.
 
-- [Create the "Apache Airflow Job" in the workspace.](../data-factory/create-apache-airflow-jobs.md)
+- [Create the Apache Airflow job in the workspace.](../data-factory/create-apache-airflow-jobs.md)
 
 - [Create a semantic model in Power BI](https://docs.databricks.com/en/getting-started/data-pipeline-get-started.html)
 
@@ -94,7 +94,7 @@ with DAG(
 
 3. Select **Save** to save the file.
 
-   :::image type="content" source="media/apache-airflow-jobs/click-on-save-icon.png" lightbox="media/apache-airflow-jobs/click-on-save-icon.png" alt-text="Screenshot presents how to save DAG file in Microsoft Fabric.":::
+   :::image type="content" source="media/apache-airflow-jobs/click-on-save-icon.png" lightbox="media/apache-airflow-jobs/click-on-save-icon.png" alt-text="Screenshot presents how to save DAG file in Fabric.":::
 
 ## Create a plugin file for Power BI (Optional)
 
@@ -135,4 +135,4 @@ After you click on save, files are automatically loaded into the Apache Airflow 
 
 ## Related Content
 
-[Quickstart: Create an Apache Airflow Job](../data-factory/create-apache-airflow-jobs.md)
+[Quickstart: Create an Apache Airflow job](../data-factory/create-apache-airflow-jobs.md)

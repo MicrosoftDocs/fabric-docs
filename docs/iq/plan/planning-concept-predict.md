@@ -1,6 +1,6 @@
 ---
 title: Statistical Forecasting Algorithms in Predict
-description: Learn about the forecasting algorithms, statistical models, model orders, and forecasting parameters available in the Predict feature in Fabric Plan.
+description: Learn about the forecasting algorithms, statistical models, model orders, and forecasting parameters available in the Predict feature in planning in Fabric.
 ms.date: 08/07/2026
 ms.topic: concept-article
 ---
@@ -17,7 +17,7 @@ A **statistical model** is the mathematical representation of a historical time 
 
 A **model order** is a set of parameters that defines the structure and complexity of a statistical model. It tells the algorithm how many components or parameters are included in the model.
 
-The following table lists the forecast algorithms, statistical models, and model orders available in Fabric Plan.
+The following table lists the forecast algorithms, statistical models, and model orders available in planning in Fabric.
 
 | Forecast Algorithm | Statistical Model | Model Order |
 |--------------------|-------------------|-------------|

@@ -1,5 +1,5 @@
 ---
-title: Duplicate a query in Infobridge
+title: Duplicate a Query in Infobridge
 description: Learn how to duplicate an existing query in Infobridge.
 ms.topic: how-to
 ms.date: 08/26/2026

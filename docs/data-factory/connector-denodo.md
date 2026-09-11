@@ -16,7 +16,7 @@ This article outlines the steps to create a Denodo connection.
 
 ## Supported authentication types
 
-The Denodo connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+The Denodo connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
@@ -24,8 +24,8 @@ The Denodo connector supports the following authentication types for copy and Da
 |Windows| n/a | √ |
 |Organizational account| n/a | √ |
 
-## Set up your connection for Dataflow Gen2
-You can connect Dataflow Gen2 in Microsoft Fabric to Denodo using Power Query connectors. Follow these steps to create your connection:
+## Set up your connection for dataflow Gen2
+You can connect dataflow Gen2 in Fabric to Denodo using Power Query connectors. Follow these steps to create your connection:
 
 1. Check [capabilities](#capabilities) to make sure your scenario is supported.
 1. [Complete prerequisites for Denodo](#prerequisites).
@@ -50,7 +50,7 @@ You can connect Dataflow Gen2 in Microsoft Fabric to Denodo using Power Query co
 
 ## Set up your connection in a pipeline
 
-Data Factory in Microsoft Fabric doesn't currently support Denodo in pipelines.
+Data Factory doesn't currently support Denodo in pipelines.
 
 ## Related content
 

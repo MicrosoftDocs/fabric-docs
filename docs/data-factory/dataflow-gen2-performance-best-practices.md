@@ -146,7 +146,7 @@ In this case, consider splitting your dataflow into two separate dataflows: one 
 
 In this scenario, you're using dataflow connectors to consume data from your dataflow, and you want to optimize your data integration processes. Dataflow connectors can provide a convenient way to access and consume data.
 
-In this case, consider using data destinations instead of dataflow connectors for consuming data from your dataflow. Data destinations, such as Lakehouses and Warehouses, are designed to efficiently store and serve data, allowing you to apply their capabilities for downstream consumption. A major benefit of using data destinations is that they often serve more generic ways of connecting to data, such as the SQL endpoint or use the Direct Lake capabilities, which can significantly improve performance and reduce resource consumption.
+In this case, consider using data destinations instead of dataflow connectors for consuming data from your dataflow. Data destinations, such as Lakehouses and Warehouses, are designed to efficiently store and serve data, allowing you to apply their capabilities for downstream consumption. A major benefit of using data destinations is that they often serve more generic ways of connecting to data, such as the SQL analytics endpoint or use the Direct Lake capabilities, which can significantly improve performance and reduce resource consumption.
 
 ### Consideration 9: Enable the Modern Evaluator for improved query execution performance
 

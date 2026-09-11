@@ -123,9 +123,9 @@ The organization can follow these steps to apply a cube-driven planning model:
 
     Enter each assumption at the level most relevant to the business:
     
-    * Revenue Plan > Product × City
-    * Cost Plan > Region × Brand
-    * Marketing Plan > Brand
+    * Revenue plan > Product × City
+    * Cost plan > Region × Brand
+    * Marketing plan > Brand
     
     Each input reflects how the business actually plans, not an artificial lowest level.
 

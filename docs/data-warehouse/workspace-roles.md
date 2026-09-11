@@ -21,11 +21,11 @@ Assigning users to the various workspace roles provides the following capabiliti
 |**Admin**|Grants the user CONTROL access for each [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] within the workspace, providing them with full read/write permissions and the ability to manage granular user SQL permissions.<br/><br/>Allows the user to see workspace-scoped session and to [monitor connections and requests in DMVs via TSQL](monitor-using-dmv.md).|
 |**Member**|Grants the user CONTROL access for each [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] within the workspace, providing them with full read/write permissions and the ability to manage granular user SQL permissions.|
 |**Contributor**|Grants the user CONTROL access for each [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] within the workspace, providing them with full read/write permissions and the ability to manage granular user SQL permissions.|
-|**Viewer**|Grants the user CONNECT and ReadData permissions for each [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] within the workspace. Viewers have SQL permissions to read data from tables/views using T-SQL. For more information, see [SQL granular permissions in Microsoft Fabric](sql-granular-permissions.md).|
+|**Viewer**|Grants the user CONNECT and ReadData permissions for each [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] within the workspace. Viewers have SQL permissions to read data from tables/views using T-SQL. For more information, see [SQL granular permissions in Fabric Data Warehouse](sql-granular-permissions.md).|
 
 ## Related content
 
-- [Security for data warehousing in Microsoft Fabric](security.md)
-- [SQL granular permissions in Microsoft Fabric](sql-granular-permissions.md)
-- [Row-level security in Fabric data warehousing](row-level-security.md)
-- [Column-level security in Fabric data warehousing](column-level-security.md)
+- [Security in Fabric Data Warehouse](security.md)
+- [SQL granular permissions in Fabric Data Warehouse](sql-granular-permissions.md)
+- [Row-level security in Fabric Data Warehouse](row-level-security.md)
+- [Column-level security in Fabric Data Warehouse](column-level-security.md)

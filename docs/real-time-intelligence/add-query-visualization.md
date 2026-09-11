@@ -60,4 +60,4 @@ If you've created a visual using the [render operator](/kusto/query/render-opera
 ## Related content
 
 * [Customize Real-Time Dashboard visuals](dashboard-visuals-customize.md)
-* [Use parameters in Real-Time Dashboards](dashboard-parameters.md)
+* [Use parameters in Real-Time Dashboard queries](dashboard-parameters.md)

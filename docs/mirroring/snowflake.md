@@ -72,7 +72,7 @@ For more information, see Snowflake documentation on [Access Control Privileges 
 
 > [!IMPORTANT]
 > Any granular security established in the source Snowflake warehouse must be re-configured in the mirrored database in Microsoft Fabric.
-> For more information, see [SQL granular permissions in Microsoft Fabric](../data-warehouse/sql-granular-permissions.md).
+> For more information, see [SQL granular permissions in Fabric Data Warehouse](../data-warehouse/sql-granular-permissions.md).
 
 **Supported authentication methods**
 

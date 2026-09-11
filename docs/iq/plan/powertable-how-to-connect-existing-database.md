@@ -17,7 +17,7 @@ The following steps explain the process.
 Before you begin, make sure that you have the following prerequisites in place:
 
 * Connections established to the [Fabric SQL database](planning-how-to-create-database-connection.md) and the [semantic model](planning-how-to-create-semantic-model-connection.md) that contain the data for your PowerTable.
-* [A Plan item](planning-how-to-get-started.md#create-plan-item) created in your Fabric workspace.
+* [A plan item](planning-how-to-get-started.md#create-plan-item) created in your Fabric workspace.
 
 [!INCLUDE [new PowerTable sheet](includes/create-powertable.md)]
 
