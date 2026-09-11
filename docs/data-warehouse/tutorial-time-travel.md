@@ -101,6 +101,9 @@ In this task, learn how to create a view of the top 10 customers by sales. You w
 
 1. Return to the `Time Travel Now` query, and then replace `YOUR_TIMESTAMP` with the timestamp you copied to the clipboard.
 
+   > [!IMPORTANT]
+   > The `FOR TIMESTAMP AS OF` literal accepts at most three digits of fractional seconds (the `yyyy-MM-ddTHH:mm:ss[.fff]` format). If the value you copied has more than three fractional-second digits (for example, `2024-05-02T20:44:13.7700000`), trim it to milliseconds (`2024-05-02T20:44:13.770`). A higher-precision literal fails with a conversion error. For details, see [Time travel limitations](time-travel.md#limitations).
+
 1. Run the query, and notice that the second top `CustomerKey` value is 49 for `Tailspin Toys (Muir, MI)`.
 
 1. Modify the timestamp value to an earlier time _by subtracting one minute_ from the timestamp.

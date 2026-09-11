@@ -19,6 +19,9 @@ When you select **Save** in the graph model editor, graph in Microsoft Fabric pe
 
 Because save and ingestion are a single operation, every save refreshes your graph data. Save your model whenever you add or modify node types, edge types, or mappings.
 
+> [!NOTE]
+> A graph model that you create and define entirely through the REST API is schema-complete but isn't queryable until you open it once in the graph model editor in the Fabric portal. The portal provisions the internal loading infrastructure on first open. Until then, a refresh fails because the required internal configuration doesn't exist. After the one-time portal initialization, you can refresh and query the graph normally.
+
 ## Refresh graph data manually
 
 If the data in your underlying lakehouse changes but your graph model stays the same, you can manually pull in the latest data by selecting **Save** in the graph model editor. Even when the model configuration didn't change, the save operation reingests data from OneLake and rebuilds the queryable graph.
