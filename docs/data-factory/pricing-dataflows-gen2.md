@@ -2,7 +2,7 @@
 title: Pricing for Dataflow Gen2
 description: This article provides details of the pricing model of Dataflow Gen2 for Data Factory in Microsoft Fabric.
 ms.reviewer: susabat
-ms.date: 08/13/2026
+ms.date: 09/10/2026
 ms.topic: concept-article
 ms.custom:
   - dataflows
@@ -28,7 +28,7 @@ When you refresh or publish a Dataflow Gen2 item, Fabric Capacity Units are cons
 - Standard Compute: You're charged for it based on the query evaluation time across all your Dataflow queries that run through the Mashup engine.
 - High Scale Dataflow Compute: You're charged when staging is enabled, based on Lakehouse (Staging storage) and Warehouse (Storage Compute) SQL engine consumption duration.
 - Fast Copy: You're charged when fast copy connectors are enabled and can be used in the Dataflow, based on copy job duration. Fast Copy runs in parallel across multiple cores, so this duration is the total time spent across all the cores the copy job uses, not the wall-clock time of the refresh.
-- Spark Compute: You're charged based on Spark execution duration and Spark core usage when MDF transforms are executed during pipeline runs. MDF transform workloads in Dataflow Gen2 are currently executed through the Fabric Pipeline Dataflow activity.
+- Spark Compute: MDF transforms use Spark Compute when executed through the Fabric Pipeline Dataflow activity. Pricing for MDF transforms is being finalized, and customers aren't currently charged for MDF transform compute. This article will be updated before billing begins.
 
 ## Dataflow Gen2 pricing model
 
@@ -60,7 +60,7 @@ At the end of each run, Dataflow Gen2 adds up the CU usage from each engine and 
 | Standard Compute (non CI/CD) | Based on each mashup engine query execution duration in seconds. | 16 CU | Per Dataflow Gen2 item |
 | High Scale Dataflows Compute | Based on Lakehouse/Warehouse SQL engine execution (with staging enabled) duration in seconds. | 6 CU | Per workspace |
 | Data movement | Based on Fast Copy run duration, measured as the aggregate core time in seconds summed across all the cores the copy job uses. Dataflow automatically balances how many cores each fast copy scenario uses. | 1.5 CU | Per Dataflow Gen2 item |
-| Mapping Data Flow Transforms Compute (Preview) | Based on MDF transform execution duration in seconds using Spark-backed compute within Dataflow Gen2. | 1.5 CU per Spark core-hour<br /><br />Example: An 8-core Spark cluster consumes 12 CU for each hour of execution (8 × 1.5 CU). | Per Dataflow Gen2 item |
+| Mapping Data Flow Transforms Compute (Preview) | MDF transforms use Spark-backed compute within Dataflow Gen2. | Not currently billed. Pricing for MDF transforms is being finalized, and this article will be updated before billing begins. | Not applicable during preview |
 
 ## Virtual network data gateway pricing with Dataflow Gen2
 
