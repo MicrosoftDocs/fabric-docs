@@ -25,7 +25,7 @@ In the **Run maintenance commands** dialog, choose options based on your goal.
 As a general practice, run maintenance after major ingestion or update activity, or when you observe many small files and slower read performance.
 
 > [!NOTE]
-> **Orchestrate with pipelines**: For recurring maintenance jobs, use the [Lakehouse Maintenance activity (Preview)](../data-factory/lakehouse-maintenance-activity.md) in Fabric Data Factory pipelines. It exposes the same options (OPTIMIZE with optional V-order, VACUUM) and integrates with other pipeline steps through dependencies, triggers, and parameters—so you can chain maintenance with data loads and follow up with a [Refresh SQL Endpoint activity](../data-factory/refresh-sql-endpoint-activity.md) in the same pipeline.
+> **Orchestrate with pipelines**: For recurring maintenance jobs, use the [Lakehouse Maintenance activity (Preview)](../data-factory/lakehouse-maintenance-activity.md) in Fabric Data Factory pipelines. It exposes the same options (OPTIMIZE with optional V-order, VACUUM) and integrates with other pipeline steps through dependencies, triggers, and parameters—so you can chain maintenance with data loads and follow up with a [Refresh SQL analytics endpoint activity](../data-factory/refresh-sql-endpoint-activity.md) in the same pipeline.
 
 1. From your Fabric account, navigate to the desired lakehouse.
 1. In Lakehouse explorer, under **Tables**, right-click the target table (or use the ellipsis).

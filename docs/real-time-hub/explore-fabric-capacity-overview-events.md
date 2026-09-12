@@ -29,7 +29,7 @@ Fabric capacity overview events provide summary-level information related to you
 At the top of the detail page, you see the following two actions.
 
 - **Create eventstream** - lets you create an eventstream based on events from the selected Fabric capacity.
-- **Set alert** - lets you set an alert when an operation is done for a Fabric capacity, such as a state change.
+- **Set alert** - sets an alert when an operation is done for a Fabric capacity, such as a state change. You can start from an alert template for common capacity alerts, or create a custom alert from scratch.
 
 ## See what's using this category
 
@@ -49,7 +49,7 @@ Fabric supports the following capacity overview events:
 | Event type name | Description |
 | --------------- | ----------- |
 | Microsoft.Fabric.Capacity.Summary | Fabric emits this event every 30 seconds to summarize capacity usage across workloads during the interval. |
-| Microsoft.Fabric.Capacity.State | Fabric emits this event when a capacity’s state changes, including throttling-related conditions such as when a capacity becomes overloaded, or when a capacity is paused or resumed. Use this event to set alerts on throttling. |
+| Microsoft.Fabric.Capacity.State | Fabric emits this event when a capacity's state changes, including throttling-related conditions such as when a capacity becomes overloaded, or when a capacity is paused or resumed. Use this event to set alerts on throttling. |
 
 ### Schemas
 
@@ -108,7 +108,7 @@ The `data` object has the following properties for Summary events:
 > | CDSA              | Dataflow/VNET              | Background operations related to dataflow refresh and virtual network gateways.                                          |
 > | Dataflows         | Dataflow                   | Background operations related to running queries for dataflows Gen 2.                                           |
 > | DI                | Data Integration           | Background operations across different item types for data movement, activity runs, and orchestration.           |
-> | DMS               | Warehouse                  | Background operations across warehouses related to queries and SQL endpoints.                                   |
+> | DMS               | Warehouse                  | Background operations across warehouses related to queries and SQL analytics endpoints.                                   |
 > | ES                | Eventstream                | Background operations related to eventstream data and traffic generated per hour.                               |
 > | FuncSet           | User Data Functions        | Interactive and background operations for user data function related to read, write, and executions.            |
 > | GeoIntel          | Map                        | Generating and managing map tiles and creating custom tilesets for geospatial visualization.                    |
@@ -129,7 +129,7 @@ The `data` object has the following properties for State events:
 #### State events schema
 
 > [!NOTE]
-> The state table summarizes key changes relating to the capacity’s state. This summary includes the capacity being created, becoming overloaded (throttling) or being paused. Other changes to the capacity like scaling up/ scaling down or renaming the capacity aren't considered as state changes (you can find this information in the summary table).
+> The state table summarizes key changes relating to the capacity's state. This summary includes the capacity being created, becoming overloaded (throttling) or being paused. Other changes to the capacity like scaling up/ scaling down or renaming the capacity aren't considered as state changes (you can find this information in the summary table).
 >
 > State events only emit on a change in status. For example, if your capacity has a status of "NotOverloaded," it doesn't report again until that status changes, such as when the capacity is paused or becomes overloaded. This behavior might mean there are many days or weeks between state events emitting. It also means the states table can remain blank depending on when you start collecting data. For an active capacity, you can consider a blank states table to be equivalent to "NotOverloaded."
 >

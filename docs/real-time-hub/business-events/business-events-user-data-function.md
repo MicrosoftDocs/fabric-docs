@@ -91,7 +91,7 @@ def generate_sale_summary_event(
 
     Workflow: 
 
-        1. Connect to the Lakehouse SQL endpoint. 
+        1. Connect to the Lakehouse SQL analytics endpoint. 
         2. Query the fact_sale table filtering by customerKey, saleKey, and salesPersonKey. 
         3. Aggregate the results by StockItemKey, summing quantities and totals. 
         4. Generate a business event with the sale summary details. 
@@ -104,7 +104,7 @@ def generate_sale_summary_event(
             $1,234.56" 
     ''' 
 
-    # Connect to the Lakehouse SQL Endpoint 
+    # Connect to the Lakehouse SQL analytics endpoint 
 
     connection = myLakehouse.connectToSql() 
     cursor = connection.cursor() 

@@ -14,7 +14,7 @@ ai-usage: ai-assisted
 You can connect to Excel workbooks in Dataflow Gen2 using the Excel connector provided by Data Factory in [!INCLUDE [product-name](../includes/product-name.md)].
 
 ## Set up your connection for Dataflow Gen2
-You can connect Dataflow Gen2 to an Excel workbook in Microsoft Fabric using Power Query connectors. Follow these steps to create your connection:
+You can connect dataflow Gen2 to an Excel workbook in Fabric using Power Query connectors. Follow these steps to create your connection:
 
 1. Check [capabilities](#capabilities), [limitations, and considerations](#limitations-and-considerations) to make sure your scenario is supported.
 1. [Complete prerequisites for Excel workbook](#prerequisites).

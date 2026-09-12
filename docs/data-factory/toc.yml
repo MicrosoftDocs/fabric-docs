@@ -1225,7 +1225,7 @@
                 href: outlook-activity.md
               - name: Refresh Materialized Lake View activity
                 href: refresh-materialized-lake-view-activity.md
-              - name: Refresh SQL Endpoint activity
+              - name: Refresh SQL analytics endpoint activity
                 href: refresh-sql-endpoint-activity.md
               - name: Semantic model refresh activity
                 href: semantic-model-refresh-activity.md

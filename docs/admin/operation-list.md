@@ -133,6 +133,7 @@ To audit OneLake data access and storage operations, use [OneLake diagnostics](.
 | Create subfolder | :::no-loc text="CreateSubfolder"::: |   |
 | Create task flow | :::no-loc text="CreateTaskFlow"::: |   |
 | Create virtual network data   gateway proxy | :::no-loc text="CreateVirtualNetworkDataGatewayProxy"::: | Create HTTP proxy for virtual network data gateway |
+| Created MirroredStorage | :::no-loc text="CreatedMirroredStorage"::: | OneLake operation. Generated when a user or service principal creates a Fabric MirroredStorage item, linking an external storage source to a workspace as OneLake shortcuts. |
 | Created Power BI app | :::no-loc text="CreateApp"::: |   |
 | Created Power BI dashboard | :::no-loc text="CreateDashboard"::: |   |
 | Created Power BI dataflow | :::no-loc text="CreateDataflow"::: |   |
@@ -389,6 +390,8 @@ To audit OneLake data access and storage operations, use [OneLake diagnostics](.
 | Get delegated domain tenant   setting overrides | :::no-loc text="GetDomainDelegatedTenantSettingOverridesViaAdminApi"::: | Get domain delegated tenant setting overrides |
 | Get delegated workspace tenant   setting overrides | :::no-loc text="GetWorkspaceDelegatedTenantSettingOverridesViaAdminApi"::: | Get workspace delegated tenant setting overrides |
 | Get list of users part of the datasource share policy | :::no-loc text="GetDatasourceSharePrincipalsPolicy"::: | Retrieve the datasource share principals that are part of policy set by the tenant  |
+| Get on-demand billing limits | :::no-loc text="GetOnDemandBillingLimits"::: | Generated when a capacity admin opens the On-demand billing page and the current billing categories and their 24-hour compute limits are returned for a Fabric capacity. |
+| Get on-demand billing quota | :::no-loc text="GetOnDemandBillingQuota"::: | Generated when the On-demand billing experience loads and the subscription-level on-demand billing quota usage and limits are retrieved. |
 | Get query text from secured   telemetry store via Lockbox | :::no-loc text="GetQueryTextTelemetryViaLockbox"::: | Retrieved query text from secured telemetry store via Azure   Lockbox |
 | Get refresh history via lockbox | :::no-loc text="GetRefreshHistoryViaLockbox"::: |   |
 | Get single connection by ID | :::no-loc text="GetConnection"::: | Get single connection by ID |
@@ -571,7 +574,7 @@ To audit OneLake data access and storage operations, use [OneLake diagnostics](.
 | Retrieved status of Power BI gateway cluster datasource | :::no-loc text="GetGatewayClusterDatasourceStatus"::: |   |
 | Retrieved status of Power BI gateway cluster | :::no-loc text="GetGatewayClusterStatus"::: |   |
 | Retrieved upstream dataflows from Power BI dataflow | :::no-loc text="GetDataflowUpstreamDataflowsAsAdmin"::: |   |
-| Retry lakehouse SQL analytics endpoint creation for a Lakehouse | :::no-loc text="RetryLakehouseSqlEndpointCreation"::: | Retry SQL endpoint creation for a Lakehouse  |
+| Retry lakehouse SQL analytics endpoint creation for a Lakehouse | :::no-loc text="RetryLakehouseSqlEndpointCreation"::: | Retry SQL analytics endpoint creation for a Lakehouse  |
 | Revoke an external data share | :::no-loc text="RevokeExternalDataShare"::: | Revoke an external data share |
 | Revoked consent to tenant relocation | :::no-loc text="TenantRelocationConsentRevoked"::: | Tenant relocation consent revoked. |
 | Rotate Tenant Key | :::no-loc text="RotateTenantKey"::: |   |
@@ -685,12 +688,14 @@ To audit OneLake data access and storage operations, use [OneLake diagnostics](.
 | Update list of users part of the datasource share policy | :::no-loc text="UpdateDatasourceSharePrincipalsPolicy"::: | Set the datasource share principals that are part of policy set by the tenant |
 | Update mounted warehouse settings | :::no-loc text="UpdateMountedWarehouseSettings"::: | Generated when mounted warehouse settings are updated |
 | Update mounted warehouse | :::no-loc text="UpdateMountedWarehouse"::: | Generated when mounted warehouse is updated |
+| Update on-demand billing limits | :::no-loc text="UpdateOnDemandBillingLimits"::: | Generated when a capacity admin enables or disables a billing category, or changes its 24-hour compute limit, on a Fabric capacity. One audit event is emitted per billing category. |
 | Update source in GraphQL artifact | :::no-loc text="UpdateSourceGraphQL"::: | Update source in GraphQL item |
 | Update subfolder | :::no-loc text="UpdateSubfolder"::: |  |
 | Update task flow | :::no-loc text="UpdateTaskFlow"::: |  |
 | Update the current set of DLP policies applied on the Tenant | :::no-loc text="UpdateTenantDlpPolicies"::: | Update the current set of DLP policies applied on the Tenant |
 | Update virtual network data   gateway proxy | :::no-loc text="UpdateVirtualNetworkDataGatewayProxy"::: | Update HTTP proxy for virtual network data gateway |
 | Update workspace role | :::no-loc text="UpdateWorkspaceRoleViaAdminApi"::: | Update workspace role |
+| Updated MirroredStorage definition | :::no-loc text="UpdatedMirroredStorageDefinition"::: | OneLake operation. Generated when a user or service principal modifies the mirroring scope of an existing MirroredStorage item, changing which external paths are exposed in OneLake. |
 | Updated Power BI access request settings | :::no-loc text="UpdateAccessRequestSettings"::: |  |
 | Updated Power BI app | :::no-loc text="UpdateApp"::: |  |
 | Updated Power BI dataflow | :::no-loc text="UpdateDataflow"::: |  |
@@ -771,7 +776,7 @@ When capacity ID and capacity name aren't available in the audit logs, you can v
 > [!IMPORTANT]
 > **Starting July 7, 2025**, As part of our ongoing efforts to simplify audit logging and ensure consistency across Fabric, we're **standardizing redundant item operations** into a single set of unified operations. This migration aligns warehouse, warehouse, and SQL Analytics Endpoint lakehouse actions under common names used across the Fabric platform.
 
-### What’s Changing?
+### What's Changing?
 
 | Friendly Name | Old Operation Name | New Operation Name |
 |---------------|--------------------|---------------------|

@@ -99,10 +99,18 @@ items:
       href: plan/planning-tutorial/planning/tutorial-3-forecasting-writeback.md
     - name: Build a P&L measure model
       href: plan/planning-tutorial/planning/tutorial-4-measure-model.md
+    - name: Build a P&L row model
+      href: plan/planning-tutorial/planning/tutorial-5-row-model.md
+    - name: Multidimensional allocation with cubes
+      href: plan/planning-tutorial/planning/tutorial-6-cube.md
     - name: Get started with PowerTable
       href: plan/planning-tutorial/powertable/tutorial-7-get-started-with-powertable.md
     - name: Set up approvals, access controls, and automations
       href: plan/planning-tutorial/powertable/tutorial-8-set-up-approvals-access-controls-automations.md
+    - name: Introduction to intelligence sheets
+      href: plan/planning-tutorial/intelligence/tutorial-9-introduction-to-intelligence-sheets.md
+    - name: Build a P&L intelligence sheet
+      href: plan/planning-tutorial/intelligence/tutorial-10-build-profit-and-loss-intelligence.md
   - name: Get started
     items:
     - name: Prerequisites
@@ -113,6 +121,8 @@ items:
       href: plan/planning-how-to-create-database-connection.md
     - name: Create a planning sheet
       href: plan/planning-how-to-get-started.md
+    - name: Get started with PowerTable sheets
+      href: plan/powertable-how-to-create-table-app.md
     - name: Get started with intelligence sheets
       href: plan/intelligence-how-to-get-started.md
     - name: Get started with reporting
@@ -407,14 +417,12 @@ items:
       items:
         - name: Create a table app
           items:
-            - name: Import Excel or CSV file
-              href: plan/powertable-how-to-create-table-app.md
-            - name: Connect to a semantic model
-              href: plan/powertable-how-to-connect-semantic-model.md
-            - name: Connect to a database
-              href: plan/powertable-how-to-connect-existing-database.md
             - name: Enter table data manually
               href: plan/powertable-how-to-enter-table-data-manually.md
+            - name: Connect to a database
+              href: plan/powertable-how-to-connect-existing-database.md
+            - name: Connect to a semantic model
+              href: plan/powertable-how-to-connect-semantic-model.md
             - name: PowerTable sheets creation FAQ
               href: plan/resources/powertable-sheets-creation-faq.md
         - name: Update table data

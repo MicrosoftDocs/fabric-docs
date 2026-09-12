@@ -16,14 +16,14 @@ This article outlines the steps to create a CloudBluePSA connection.
 
 ## Supported authentication types
 
-The CloudBluePSA connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+The CloudBluePSA connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
 |Account key| n/a | √ |
 
-## Set up your connection for Dataflow Gen2
-You can connect Dataflow Gen2 to CloudBluePSA in Microsoft Fabric using Power Query connectors. Follow these steps to create your connection:
+## Set up your connection for dataflow Gen2
+You can connect dataflow Gen2 to CloudBluePSA in Fabric by using Power Query connectors. Follow these steps to create your connection:
 
 1. [Complete prerequisites for CloudBluePSA (Beta)](#prerequisites).
 1. [Get data in Fabric](#get-data).
@@ -47,7 +47,7 @@ You can connect Dataflow Gen2 to CloudBluePSA in Microsoft Fabric using Power Qu
 
 ## Set up your connection in a pipeline
 
-Data Factory in Microsoft Fabric doesn't currently support CloudBluePSA in pipelines.
+Data Factory doesn't currently support CloudBluePSA in pipelines.
 
 ## Related content
 

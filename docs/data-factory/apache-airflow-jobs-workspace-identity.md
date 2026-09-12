@@ -1,42 +1,42 @@
 ---
 title: Workspace Identity in Apache airflow jobs
-description: Use Fabric connections with workspace identity in Apache Airflow Jobs to authenticate to Microsoft Fabric lakehouses, pipelines, and warehouses without managing credentials.
+description: Use Fabric connections with workspace identity in Apache Airflow jobs to authenticate to Microsoft Fabric lakehouses, pipelines, and warehouses without managing credentials.
 ms.reviewer: noelleli
 ms.topic: how-to
 ms.custom: airflows, build-2026
 ms.date: 09/02/2026
 ---
 
-# Use workspace identity to authenticate Apache Airflow Jobs to Fabric services
+# Use workspace identity to authenticate Apache Airflow jobs to Fabric services
 
-Workspace identity for Apache Airflow Jobs enables your Airflow DAGs to authenticate to Fabric services, including lakehouses, pipelines, and warehouses. Workspace identity is a managed identity associated with the Fabric workspace that eliminates the need to configure credentials or connection strings manually.
+Workspace identity for Apache Airflow jobs enables your Airflow DAGs to authenticate to Fabric services, including lakehouses, pipelines, and warehouses. Workspace identity is a managed identity associated with the Fabric workspace that eliminates the need to configure credentials or connection strings manually.
 
 You will be able to run Fabric items including: 
 - Notebooks
-- dbt Jobs
-- Copy Jobs
+- dbt jobs
+- Copy jobs
 - Spark job definitions
 - Pipelines
-- Semantic Model Refresh
+- Semantic model refresh
 - User data functions
 
-When workspace identity is enabled, Airflow Jobs authenticate automatically using the workspace identity. 
+When workspace identity is enabled, Airflow jobs authenticate automatically using the workspace identity.
 
 > [!NOTE]
 > If you were previously using SPN authentication, you will need to update your DAG to use your Fabric connection with workspace identity.
-> To use workspace identity in Airflow Jobs, ensure that you enable [Service Principals can call Public APIs](/fabric/admin/service-admin-portal-developer#service-principals-can-call-fabric-public-apis) at the tenant level.
+> To use workspace identity in Airflow jobs, ensure that you enable [Service Principals can call Public APIs](/fabric/admin/service-admin-portal-developer#service-principals-can-call-fabric-public-apis) at the tenant level.
 
 ## Prerequisites
 
 Before you begin, make sure you have the following prerequisites:
 
 - A [Fabric workspace](/fabric/fundamentals/workspaces)
-- An existing [Apache Airflow Job](/fabric/data-factory/apache-airflow-jobs-concepts) artifact.
+- An existing [Apache Airflow job](/fabric/data-factory/apache-airflow-jobs-concepts) item.
 - [Workspace identity](workspace-identity.md) enabled on your workspace with Contributor or higher role.
 
 ## Set up workspace identity permissions for an Airflow job
 
-Before you can use workspace identity with Airflow Jobs, enable it on your workspace and grant the appropriate permissions.
+Before you can use workspace identity with Airflow jobs, enable it on your workspace and grant the appropriate permissions.
 
 1. Open your Fabric workspace and select **Settings** > **Workspace identity**.
 1. Enable the workspace identity if it isn't already enabled.
@@ -59,34 +59,34 @@ Create a Fabric connection to define how your Airflow DAGs authenticate to Fabri
 1. Complete the remaining connection fields and select **Create**.
 
 > [!IMPORTANT]
-> You must select the **Allow Code-First Artifacts** checkbox during connection creation. Apache Airflow is a code-first artifact, and this setting can't be changed after the connection is created.
+> You must select the **Allow Code-First Artifacts** checkbox during connection creation. Apache Airflow is a code-first item, and this setting can't be changed after the connection is created.
 
-## Enable Fabric connections on an Airflow Job
+## Enable Fabric connections on an Airflow job
 
 > [Note]
 > Fabric connections are enabled by default unless the Apache airflow job has git sync or an override of reserved environment variables. 
 
-To enable Fabric connections on your Airflow Job:
+To enable Fabric connections on your Airflow job:
 
-1. Navigate to your Airflow Job artifact in your Fabric workspace.
-1. Open the artifact settings.
+1. Navigate to your Airflow job item in your Fabric workspace.
+1. Open the item settings.
 1. Enable the **Fabric Connections** toggle.
 
-    :::image type="content" source="media/apache-airflow-jobs-workspace-identity/enable-fabric-connections-settings.png" alt-text="Screenshot of the Apache Airflow Job environment configuration settings page showing the Enable Fabric connections checkbox selected." lightbox="media/apache-airflow-jobs-workspace-identity/enable-fabric-connections-settings.png":::
+    :::image type="content" source="media/apache-airflow-jobs-workspace-identity/enable-fabric-connections-settings.png" alt-text="Screenshot of the Apache Airflow job environment configuration settings page showing the Enable Fabric connections checkbox selected." lightbox="media/apache-airflow-jobs-workspace-identity/enable-fabric-connections-settings.png":::
 
 1. Select **Apply**.
 
 Once enabled, your Airflow DAGs can access Fabric resources using the workspace identity without any additional credential configuration.
 
-## Add connections to your Airflow Job
+## Add connections to your Airflow job
 
-After you create a Fabric connection and enable the **Fabric Connections** toggle, add connections to your Airflow Job.
+After you create a Fabric connection and enable the **Fabric Connections** toggle, add connections to your Airflow job.
 
-1. Open your Airflow Job artifact.
+1. Open your Airflow job item.
 1. Find the connection you created in the **All available connections** list.
-1. Select **+** next to the connection to add it to your Airflow Job.
+1. Select **+** next to the connection to add it to your Airflow job.
 
-    :::image type="content" source="media/apache-airflow-jobs-workspace-identity/add-connections-to-airflow-job.png" alt-text="Screenshot of the Airflow Job Connections panel showing the All available connections list with the add button highlighted next to a connection." lightbox="media/apache-airflow-jobs-workspace-identity/add-connections-to-airflow-job.png":::
+    :::image type="content" source="media/apache-airflow-jobs-workspace-identity/add-connections-to-airflow-job.png" alt-text="Screenshot of the Airflow job Connections panel showing the All available connections list with the add button highlighted next to a connection." lightbox="media/apache-airflow-jobs-workspace-identity/add-connections-to-airflow-job.png":::
 
 The connection is now available for use in your DAGs.
 
@@ -94,15 +94,15 @@ The connection is now available for use in your DAGs.
 
 To use a Fabric connection in a DAG:
 
-1. Open or create a DAG in your Airflow Job.
+1. Open or create a DAG in your Airflow job.
 1. In the DAG editor, right-click and select **Run Fabric Artifact**.
 
-   :::image type="content" source="media/apache-airflow-jobs-workspace-identity/run-fabric-artifact-context-menu.png" alt-text="Screenshot of the DAG editor showing the right-click context menu with the Run Fabric Artifact option highlighted." lightbox="media/apache-airflow-jobs-workspace-identity/run-fabric-artifact-context-menu.png":::
+   :::image type="content" source="media/apache-airflow-jobs-workspace-identity/run-fabric-artifact-context-menu.png" alt-text="Screenshot of the DAG editor showing the right-click context menu with the Run Fabric item option highlighted." lightbox="media/apache-airflow-jobs-workspace-identity/run-fabric-artifact-context-menu.png":::
 
-1. Select the Fabric connection you added to the Airflow Job.
+1. Select the Fabric connection you added to the Airflow job.
 1. Complete the remaining fields in the form and select **Insert** to add the code block to your DAG.
 
-   :::image type="content" source="media/apache-airflow-jobs-workspace-identity/run-fabric-artifact-dialog.png" alt-text="Screenshot of the Run Fabric Artifact dialog showing fields for Fabric connection, Workspace, Artifact Type, Artifact, Timeout, and the Insert button." lightbox="media/apache-airflow-jobs-workspace-identity/run-fabric-artifact-dialog.png":::
+   :::image type="content" source="media/apache-airflow-jobs-workspace-identity/run-fabric-artifact-dialog.png" alt-text="Screenshot of the Run Fabric item dialog showing fields for Fabric connection, workspace, item Type, item, Timeout, and the Insert button." lightbox="media/apache-airflow-jobs-workspace-identity/run-fabric-artifact-dialog.png":::
 
 1. Select **Run DAG** to execute the DAG.
 
@@ -113,43 +113,43 @@ After you run a DAG that uses a Fabric connection with workspace identity, you c
 1. After running a DAG, select **Monitor DAG** to view the run status.
 1. Use the **Open log** or **Open task** buttons on the tasks view to inspect task-level details.
 
-## How workspace identity authentication works in Airflow Jobs
+## How workspace identity authentication works in Airflow jobs
 
-Workspace identity uses the managed identity associated with the Fabric workspace to authenticate Apache Airflow Jobs to Fabric services. When the **Fabric Connections** toggle is enabled on an Airflow Job, the runtime automatically acquires a Microsoft Entra token using the workspace identity. Access is governed by the workspace role assigned to the identity — the same permissions that apply to users apply equally to workspace identities, service principals, and B2B guest users operating within the workspace.
+Workspace identity uses the managed identity associated with the Fabric workspace to authenticate Apache Airflow jobs to Fabric services. When the **Fabric Connections** toggle is enabled on an Airflow job, the runtime automatically acquires a Microsoft Entra token using the workspace identity. Access is governed by the workspace role assigned to the identity — the same permissions that apply to users apply equally to workspace identities, service principals, and B2B guest users operating within the workspace.
 
 The following Fabric services are supported:
 
 - Lakehouses
 - Warehouses
 - Notebooks
-- dbt Jobs
-- Copy Jobs
+- dbt jobs
+- Copy jobs
 - Spark job definitions
 - Pipelines
-- Semantic Model Refresh
+- Semantic model Refresh
 - User data functions
 
-## Known limitations for workspace identity in Apache Airflow Jobs
+## Known limitations for workspace identity in Apache Airflow jobs
 
-Workspace identity for Apache Airflow Jobs has the following limitations during public preview:
+Workspace identity for Apache Airflow jobs has the following limitations during public preview:
 
 - **Private link support** isn't available in public preview. Full private link support is planned for a future release.
 - **Government and sovereign cloud support** will be available when Fabric supports it in those clouds.
-- **Reserved environment variables** — When the **Fabric Connections** toggle is enabled, the following environment variables are reserved and can't be overridden: `AZURE_CLIENT_ID`, `AZURE_TENANT_ID`, and `AZURE_AUTHORITY_HOST`. Attempts to set these variables in the Airflow Job settings fail.
+- **Reserved environment variables** — When the **Fabric Connections** toggle is enabled, the following environment variables are reserved and can't be overridden: `AZURE_CLIENT_ID`, `AZURE_TENANT_ID`, and `AZURE_AUTHORITY_HOST`. Attempts to set these variables in the Airflow job settings fail.
 - Fabric connections with workspace identity can't be used when the Airflow job has git sync enabled. 
 
-## Troubleshoot workspace identity in Apache Airflow Jobs
+## Troubleshoot workspace identity in Apache Airflow jobs
 
-Use the following guidance to troubleshoot common issues with workspace identity in Apache Airflow Jobs.
+Use the following guidance to troubleshoot common issues with workspace identity in Apache Airflow jobs.
 
-### Workspace identity doesn't appear in artifact settings
+### Workspace identity doesn't appear in item settings
 
 Confirm the `ApacheAirflowJob_FabricConnectionSupport` feature switch is enabled on your tenant.
 
 ### Authentication failures when accessing Fabric resources
 
 - Verify the workspace managed identity has the appropriate role on the target resource.
-- Confirm the **Fabric Connections** toggle is enabled on the Airflow Job artifact.
+- Confirm the **Fabric Connections** toggle is enabled on the Airflow job item.
 
 ### Access denied errors
 
@@ -158,5 +158,5 @@ Confirm the `ApacheAirflowJob_FabricConnectionSupport` feature switch is enabled
 
 ## Related content
 
-- [What is Apache Airflow Job?](apache-airflow-jobs-concepts.md)
-- [Apache Airflow Job workspace settings](apache-airflow-jobs-workspace-settings.md)
+- [What is Apache Airflow job?](apache-airflow-jobs-concepts.md)
+- [Apache Airflow job workspace settings](apache-airflow-jobs-workspace-settings.md)

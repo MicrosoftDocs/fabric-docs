@@ -5,7 +5,7 @@ ms.author: scottpolly
 author: s-polly
 ms.reviewer: midesa
 ms.topic: concept-article
-ms.date: 08/25/2026
+ms.date: 08/31/2026
 ai-usage: ai-assisted
 ---
 
@@ -96,7 +96,20 @@ For SQL data sources, schema object descriptions provide business context for ta
 
 To learn how to add and manage descriptions, see [Add schema object descriptions (Preview)](data-agent-schema-object-descriptions.md).
 
+## Topics (Preview)
+
+Topics provide large, topic-based instructions to NL2SQL. The data agent searches the instructions for content relevant to a user's question and sends only the matching sections to the NL2SQL tool.
+
+Use topics when your instructions are large, can be organized by subject, and apply only when a question relates to that subject. Use data source instructions instead for context and rules that you must send whenever the agent queries the data source.
+
+> [!NOTE]
+> Topics are available only for SQL data sources when your data agent uses the [preview runtime](data-agent-runtime.md#preview-runtime).
+
+:::image type="content" source="media/data-agent-topics/data-agent-topics.png" alt-text="Screenshot of the Data source topics editor showing Markdown topic instructions and an outline." lightbox="media/data-agent-topics/data-agent-topics.png":::
+
+To learn how to organize and add topic-based instructions, see [Use topics in a Fabric data agent (preview)](data-agent-topics.md).
+
 ## Next steps
 
 - [Data agent concept](concept-data-agent.md)
-- [Data agent scenario](data-agent-scenario.md)
+- [Add and configure data sources in a Fabric data agent](data-agent-add-datasources.md)
