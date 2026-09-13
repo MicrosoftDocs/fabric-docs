@@ -80,9 +80,8 @@ $ctx = New-AzStorageContext -StorageAccountName "onelake" -UseConnectedAccount -
 $workspaceName = "your-workspace-name"
 $blobPath = "your-lakehouse.Lakehouse/Files/deleted-file.parquet"
 
-Get-AzStorageBlob -Container $workspaceName -Context $ctx -Blob $blobPath -IncludeDeleted |
-    Where-Object { $_.IsDeleted } |
-    Restore-AzStorageBlob
+$deletedItems = Get-AzDataLakeGen2DeletedItem -Context $ctx -FileSystem $workspaceName -Path $blobPath
+$deletedItems | Restore-AzDataLakeGen2DeletedItem
 ```
 
 For more PowerShell examples, see [Restore soft-deleted blobs and directories by using PowerShell](/azure/storage/blobs/soft-delete-blob-manage#restore-soft-deleted-blobs-and-directories-by-using-powershell).
