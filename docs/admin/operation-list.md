@@ -133,6 +133,7 @@ To audit OneLake data access and storage operations, use [OneLake diagnostics](.
 | Create subfolder | :::no-loc text="CreateSubfolder"::: |   |
 | Create task flow | :::no-loc text="CreateTaskFlow"::: |   |
 | Create virtual network data   gateway proxy | :::no-loc text="CreateVirtualNetworkDataGatewayProxy"::: | Create HTTP proxy for virtual network data gateway |
+| Created AWS Databricks Catalog | :::no-loc text="CreatedAWSDatabricksCatalog"::: | OneLake operation. Generated when a Fabric AWS Databricks Catalog item is created, capturing the bound AWS Databricks workspace ConnectionId and the initial MirroredScope (catalogs/schemas/tables selected for mirroring). |
 | Created MirroredStorage | :::no-loc text="CreatedMirroredStorage"::: | OneLake operation. Generated when a user or service principal creates a Fabric MirroredStorage item, linking an external storage source to a workspace as OneLake shortcuts. |
 | Created Power BI app | :::no-loc text="CreateApp"::: |   |
 | Created Power BI dashboard | :::no-loc text="CreateDashboard"::: |   |
@@ -482,6 +483,7 @@ To audit OneLake data access and storage operations, use [OneLake diagnostics](.
 | Refresh Lakehouse Data | :::no-loc text="RefreshLakehouseData"::: |   |
 | Refresh Sql Analytics Endpoint Lakehouse Metadata | :::no-loc text="RefreshSqlAnalyticsEndpointLakehouseMetadata"::: | Refreshed metadata for a lakehouse SQL analytics endpoint. Previously named *Refreshed metadata for a default warehouse* (Operation name: :::no-loc text="*RefreshDefaultWarehouseMetadata*":::)  |
 | Refresh mounted warehouse metadata | :::no-loc text="RefreshMountedWarehouseMetadata"::: | Generated when mounted warehouse metadata is refreshed  |
+| Refreshed AWS Databricks Catalog shortcuts | :::no-loc text="RefreshedAWSDatabricksCatalogShortcuts"::: | OneLake operation. Generated when the refresh-catalog-metadata operation re-syncs the already-mirrored shortcuts against the underlying AWS Databricks Unity Catalog. |
 | Refreshed current value of Power BI metric | :::no-loc text="RefreshGoalCurrentValue"::: |   |
 | Refreshed target value of Power BI metric | :::no-loc text="RefreshGoalTargetValue"::: |   |
 | Register workload development   instance | :::no-loc text="ExtensibilityRegisterDevInstance"::: | Register a development instance of a workload |
@@ -695,6 +697,7 @@ To audit OneLake data access and storage operations, use [OneLake diagnostics](.
 | Update the current set of DLP policies applied on the Tenant | :::no-loc text="UpdateTenantDlpPolicies"::: | Update the current set of DLP policies applied on the Tenant |
 | Update virtual network data   gateway proxy | :::no-loc text="UpdateVirtualNetworkDataGatewayProxy"::: | Update HTTP proxy for virtual network data gateway |
 | Update workspace role | :::no-loc text="UpdateWorkspaceRoleViaAdminApi"::: | Update workspace role |
+| Updated AWS Databricks Catalog Definition | :::no-loc text="UpdatedAWSDatabricksCatalogDefinition"::: | OneLake operation. Generated when the item's Databricks workspace connection or mirrored scope (catalogs/schemas/tables) is updated via the update-item-definition API. |
 | Updated MirroredStorage definition | :::no-loc text="UpdatedMirroredStorageDefinition"::: | OneLake operation. Generated when a user or service principal modifies the mirroring scope of an existing MirroredStorage item, changing which external paths are exposed in OneLake. |
 | Updated Power BI access request settings | :::no-loc text="UpdateAccessRequestSettings"::: |  |
 | Updated Power BI app | :::no-loc text="UpdateApp"::: |  |
