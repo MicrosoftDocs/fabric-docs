@@ -17,9 +17,11 @@ items:
         href: create-table.md
       - name: 3. Ingest data
         href: ingest-data-into-table.md
-      - name: 4. Query the warehouse
+      - name: 4. Validate data
+        href: validate-data.md
+      - name: 5. Query the warehouse
         href: query-warehouse.md
-      - name: 5. Create reports
+      - name: 6. Create reports
         href: create-reports.md
   - name: Tutorials
     items:

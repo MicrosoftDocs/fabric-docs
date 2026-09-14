@@ -54,7 +54,7 @@ Since the CSV file in this example includes a header row, we need to skip it by 
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Query data in your Warehouse](query-warehouse.md)
+> [Validate data in your Warehouse table](validate-data.md)
 
 ## Related content
 
