@@ -39,7 +39,7 @@ The following table shows the support status for each Fabric item. A check mark 
 |  | Vnet data gateway | ✓ | - | ✓ |
 |  | On-premises data gateway: Pipeline/Copy Job | ✓ | - | ✓ |
 |  | On-premises data gateway: Dataflow Gen2 | -| - | ✓ |
-|  | Data Workflow | - | - | - |
+|  | Data Workflow (previously Airflow) | - | - | - |
 |  | Data Build Tool job | - | - | - |
 | **Data Science** | ML Model | ✓ | ✓ | ✓ |
 |  | Experiment | ✓ | ✓ | ✓ |
