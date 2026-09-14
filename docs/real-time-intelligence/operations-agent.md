@@ -127,7 +127,7 @@ To access the activity log, select **Activity log** in the side navigation pane.
 
 :::image type="content" source="media/operations-agent/activity-log.png" alt-text="Screenshot of the activity log." lightbox="media/operations-agent/activity-log.png":::
 
-In the **Operation details page** you can view the operation details and status.
+In the **Operation details** page, you can view the operation details and status.
 
 :::image type="content" source="media/operations-agent/activity-log-details.png" alt-text="Screenshot of the operation details page." lightbox="media/operations-agent/activity-log-details.png":::
 
