@@ -145,6 +145,13 @@ Horizontal tabs let you switch between multiple open items. Use the following sh
 
 The previous limit of 10 open items has been increased to 20. You can now keep up to 20 resources active at once. This is especially useful for complex workflows that require multiple pipelines, notebooks, or reports.
 
+### Multitasking across browser tab 
+
+Fabric now helps you multitask by carrying your current work into additional browser tabs. When you open Fabric in another tab using the same browser profile, your open items, tab order, pinned items, and tab groups are available there. 
+Any items inherited into the new browser tab count toward the 20 concurrent open item limit. If you use multiple browser tabs for separate tasks, we recommend closing items that you no longer need to avoid hitting this limit. Your multitasking context is retained in the same browser profile. It isn't carried over when you use a different browser, browser profile, or device. 
+
+Note : Context carryover is currently applied automatically. Based on customer feedback we’ve received since launching this feature, we're working on rolling out a setting that will let you choose whether opening Fabric in another browser tab carries over your existing context or starts with a clean context. 
+
 ## Maximize editing space with focus mode
 
 Focus mode helps developers create a distraction-free workspace by hiding the navigation sidebar and object explorer. It maximizes the editor pane by expanding it to use the full monitor area, removing side panels and navigation layers to reduce distractions, and enabling writers to focus and work more productively without UI clutter.
