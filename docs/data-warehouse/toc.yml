@@ -39,17 +39,19 @@ items:
         href: tutorial-transform-data.md
       - name: 6. Time travel with T-SQL
         href: tutorial-time-travel.md
-      - name: 7. Create queries with visual query builder
+      - name: 7. Use AI functions to analyze data
+        href: tutorial-ai-functions.md
+      - name: 8. Create queries with visual query builder
         href: tutorial-visual-query.md
-      - name: 8. Analyze data in a notebook
+      - name: 9. Analyze data in a notebook
         href: tutorial-analyze-data-notebook.md
-      - name: 9. Create a cross-warehouse query
+      - name: 10. Create a cross-warehouse query
         href: tutorial-sql-cross-warehouse-query-editor.md
-      - name: 10. Create a semantic model and report
+      - name: 11. Create a semantic model and report
         href: tutorial-power-bi-report.md
-      - name: 11. Generate a report from OneLake catalog
+      - name: 12. Generate a report from OneLake catalog
         href: tutorial-build-report-onelake-data-hub.md
-      - name: 12. Clean up tutorial resources
+      - name: 13. Clean up tutorial resources
         href: tutorial-clean-up.md
   - name: Connect to the warehouse
     items:
