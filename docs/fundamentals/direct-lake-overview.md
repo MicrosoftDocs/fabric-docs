@@ -3,7 +3,7 @@ title: "Direct Lake overview"
 description: "Learn about Direct Lake storage mode in Microsoft Fabric and when you should use it."
 author: kgremban
 ms.author: kgremban
-ms.date: 06/15/2026
+ms.date: 09/02/2026
 ms.topic: concept-article
 ms.custom: fabric-cat
 ai-usage: ai-assisted
@@ -71,7 +71,9 @@ Use the following comparisons to understand the data sources and capabilities su
 
 ### Supported Fabric data sources
 
-The following table shows high-level data source support for each Direct Lake option.
+**Engine support:** For Direct Lake on OneLake, the Analysis Services engine supports any Fabric item whose OneLake storage resolves to valid Delta tables, either natively or through shortcuts. You can create models for other compatible items programmatically by using an XMLA-compliant tool or a Fabric notebook. For more information, see [Create the model](direct-lake-develop.md#create-the-model).
+
+**Creation experience support:** The following table shows end-to-end support through these experiences for each Direct Lake option.
 
 | Fabric data source | Direct Lake on OneLake | Direct Lake on SQL |
 | -- | -- | -- |
@@ -97,7 +99,8 @@ The following table compares Direct Lake storage mode to Import and DirectQuery 
 | Capability | Direct Lake on OneLake | Direct Lake on SQL endpoints | Import | DirectQuery |
 | -- | -- | -- | -- | -- |
 | Licensing | Fabric capacity subscription (SKUs) only | Fabric capacity subscription (SKUs) only | Any Fabric or Power BI license (including Microsoft Fabric Free licenses) | Any Fabric or Power BI license (including Microsoft Fabric Free licenses) |
-| Data source | Supported Fabric data sources with Delta tables, as listed in [Supported Fabric data sources](#supported-fabric-data-sources) | A single supported Fabric data source with a SQL analytics endpoint, as listed in [Supported Fabric data sources](#supported-fabric-data-sources) | Any connector | Any connector that supports DirectQuery mode |
+| Data source | One or more Fabric items whose OneLake storage resolves to valid Delta tables, either natively or through shortcuts | A single supported Fabric data source with a SQL analytics endpoint, as listed in [Supported Fabric data sources](#supported-fabric-data-sources) | Any connector | Any connector that supports DirectQuery mode |
+| Connect to SQL analytics endpoint views | No | Yes – but will automatically fall back to DirectQuery mode | Yes | Yes |
 | Composite models | Yes - can combine with Import storage mode tables in Power BI web modeling and DirectQuery tables with XMLA tools. | No <sup>1</sup> | Yes – can combine with DirectQuery, Dual, and Direct Lake storage mode tables | Yes – can combine with import, Dual, and Direct Lake storage mode tables |
 | Single sign-on (SSO) | Yes | Yes | Not applicable | Yes |
 | Calculated tables | Yes (preview) – calculated tables are supported for Direct Lake on OneLake; see [considerations and limitations](#considerations-and-limitations). | No – except [calculation groups](/power-bi/transform-model/calculation-groups), [what-if parameters](/power-bi/transform-model/desktop-what-if), and [field parameters](/power-bi/create-reports/power-bi-field-parameters), which implicitly create calculated tables | Yes | No – calculated tables use Import storage mode even when they refer to other tables in DirectQuery mode |

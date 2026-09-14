@@ -4,7 +4,7 @@ description: "Learn about how to develop Direct Lake semantic models."
 author: kgremban
 ms.author: kgremban
 ms.reviewer: monicacl
-ms.date: 04/23/2025
+ms.date: 09/02/2026
 ms.topic: concept-article
 ms.custom: fabric-cat
 ai-usage: ai-assisted
@@ -21,7 +21,7 @@ Direct Lake storage mode has two forms. Use the following guidance to choose the
 Use **Direct Lake on OneLake** when...
 
 * You generally expect faster query performance.
-* You use a [supported Fabric data source](direct-lake-overview.md#supported-fabric-data-sources) with Delta tables.
+* You use one or more Fabric items whose OneLake storage resolves to valid Delta tables, either natively or through shortcuts.
 * You need composite modeling with Import or DirectQuery tables.
 * You want to use [OneLake security](../onelake/security/get-started-onelake-security.md).
 * You need modeling features like calculated columns or calculated tables that reference Direct Lake tables (preview).
