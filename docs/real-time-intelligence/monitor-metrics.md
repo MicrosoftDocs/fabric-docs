@@ -94,6 +94,11 @@ The following list describes the dimensions reported in the `IngestionResult` me
 
 You can find sample queries in the [fabric-samples](https://github.com/microsoft/fabric-samples) GitHub repository.
 
+## Templates
+
+You can explore and visualize the logs using Real-Time dashboards built-in templates by following the [Visualize workspace monitoring](../fundamentals/sample-gallery-workspace-monitoring.md?tabs=built-in-templates.md) guide.
+
+
 ## Related content
 
 * [Enable monitoring in your workspace](../fundamentals/enable-workspace-monitoring.md)

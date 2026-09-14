@@ -71,6 +71,9 @@ To change the runtime version at the workspace level, go to **Workspace Settings
 
 :::image type="content" source="media\mrs\runtime-2.png" alt-text="Screenshot showing where to select runtime version for workspace settings." lightbox="media\mrs\runtime-2.png":::
 
+> [!NOTE]
+> To set the workspace-level runtime programmatically, use the [Spark Workspace Settings REST API](/rest/api/fabric/spark/workspace-settings). The default runtime is the nested `environment.runtimeVersion` field (for example, `1.3`) of the workspace Spark settings object, not a top-level property.
+
 After you make this change, all system-created items within the workspace, including lakehouses, Spark job descriptions, and notebooks, use the newly selected workspace-level runtime version starting from the next Spark Session. If you're currently using a notebook with an existing session for a job or any lakehouse-related activity, that Spark session continues as is. However, starting from the next session or job, the selected runtime version applies.
 
 To change the runtime at the `Environment` item level, create a new **Environment** item or open an existing one. Under the **Runtime** dropdown, select your desired runtime version from the available options, select `Save`, and then `Publish` your changes. Next, you can use this `Environment` item with your `Notebook` or `Spark Job Definition`.
