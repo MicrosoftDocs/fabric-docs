@@ -111,6 +111,8 @@ items:
       href: plan/planning-tutorial/intelligence/tutorial-9-introduction-to-intelligence-sheets.md
     - name: Build a P&L intelligence sheet
       href: plan/planning-tutorial/intelligence/tutorial-10-build-profit-and-loss-intelligence.md
+    - name: Create a planning sheet, PowerTable, and canvas integration
+      href: plan/planning-tutorial/intelligence/tutorial-11-planning-sheet-powertable-canvas.md
   - name: Get started
     items:
     - name: Prerequisites
