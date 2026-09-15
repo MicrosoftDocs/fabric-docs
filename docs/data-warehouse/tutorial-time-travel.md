@@ -116,7 +116,7 @@ In this task, learn how to create a view of the top 10 customers by sales. You w
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Create a query with the visual query builder in a Warehouse](tutorial-visual-query.md)
+> [Tutorial: Use AI functions to query data in a Warehouse](tutorial-ai-functions.md)
 
 ## Related content
 
