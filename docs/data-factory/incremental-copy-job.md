@@ -1,9 +1,9 @@
 ---
 title: Incremental copy in Copy job
 description: Learn how incremental copy works in Copy job, including supported watermark column types, how NULL watermark values are handled, and how to reset incremental copy.
-ms.reviewer: yexu
+ms.reviewer: ukchrist
 ms.topic: how-to
-ms.date: 04/24/2026
+ms.date: 09/15/2026
 ms.search.form: copy-job-tutorials
 ms.custom: copy-job
 ai-usage: ai-assisted
@@ -104,7 +104,7 @@ This approach only works when the underlying values are comparable, such as nume
 
 Watermark-based incremental copy detects new or changed rows by comparing values in the watermark column across runs. Because NULL values can't be compared in this way, they're handled as follows:
 
-- **Initial full load**: Rows with a NULL value in the watermark column are included. The initial run copies the complete dataset, regardless of watermark values.
+- **Initial full load**: Use the property **Null handling for incremental column** in the **Advanced settings** tab to configure whether to skip or include rows with NULL values in the incremental column. If set to **Skip null rows**, such rows will not be copied in the initial load. If set to **Include null rows (full loads only)**, the initial run copies the complete dataset, regardless of watermark values.
 - **Subsequent incremental loads**: Rows with a NULL value in the watermark column are excluded. Only rows whose watermark value is greater than the last recorded watermark are copied, and NULL values can't satisfy that comparison. As a result, any row that's inserted or updated with a NULL watermark value after the initial load isn't picked up by later incremental runs.
 - **Column availability in the dropdown**: When you select the incremental column in Copy job, columns that aren't valid for watermark-based tracking might not appear in the dropdown. Make sure the column type is one of the [supported watermark column types](#supported-watermark-column-types) and that the column is accessible to the connection you're using.
 
