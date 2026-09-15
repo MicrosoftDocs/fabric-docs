@@ -31,8 +31,7 @@ To identify a specific line on your bill, find its meter group in the following 
 | `Anomaly Detector Queries` | Real-Time Intelligence | Anomaly detection queries against eventhouse data. |
 | `Apache Airflow job` | Data Factory | Apache Airflow job runs. |
 | `API for GraphQL Query` | Developer and API | GraphQL API query execution. |
-| `autoscale for Data Warehouse` | Data Warehouse | Autoscale compute for warehouses. |
-| `autoscale for Spark` | Data Engineering | Autoscale compute for Spark. |
+| `Autoscale for Spark` | Data Engineering | Autoscale compute for Spark. |
 | `Capacity Overage` | Capacity management | Carryforward (overage) consumption above your capacity. |
 | `Compute Pool` | Capacity management | The base provisioned capacity available to your workloads. |
 | `Copilot and AI` | Data Science and AI | Copilot and generative AI features across workloads. |
