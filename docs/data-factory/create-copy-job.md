@@ -1,8 +1,8 @@
 ---
 title: How to Create a Copy Job in Data Factory
 description: This article guides you through how to create a copy job, execute it, and view the results.
-ms.reviewer: yexu
-ms.date: 07/27/2026
+ms.reviewer: ukchrist
+ms.date: 09/15/2026
 ms.topic: how-to
 ms.custom:
   - copy-job, sfi-image-nochange
@@ -48,7 +48,7 @@ Follow these steps to set up a Copy job that moves data from a database:
 
    :::image type="content" source="media/copy-job/update-method2.png" lightbox ="media/copy-job/update-method2.png" alt-text="Screenshot showing how to update method.":::
 
-1. (Optional) Configure **table or column mapping** to rename tables or columns in the destination, or apply data type conversions. By default, data is copied with the same table name, column name, and data type as the source.
+1. (Optional) Configure **table or column mapping** to rename tables or columns in the destination, or apply data type conversions. By default, data is copied with the same table name, column name, and data type as the source. When copying data which contains timestamp values without time-zone information into a Fabric Lakehouse, you can map such columns to the **timestamp_ntz** data type.
 
    :::image type="content" source="media/copy-job/specify-mappings.png" lightbox ="media/copy-job/specify-mappings.png" alt-text="Screenshot showing where to specify table mappings.":::
 
