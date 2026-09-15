@@ -70,6 +70,14 @@ The following examples show the kinds of prompts you can use today. Each one sta
 
 You can also follow up on any data answer with a natural-language request like *"draft an email to my team with this,"* *"turn that into a one-page brief,"* or *"summarize this for the next leadership review."* Cowork chains the next skill on top of the data answer it just produced, so the data context, the source report, and your intent stay in one conversation.
 
+## Sensitivity labels
+
+Cowork honors the sensitivity labels applied to Power BI reports and semantic models used in a conversation. The conversation's sensitivity label reflects the most restrictive label on any content used to answer, including Power BI content.
+
+Content that you create from the conversation inherits the conversation's sensitivity label. This behavior applies to subsequent items created by Cowork, including emails, meeting invites, and files.
+
+For more information, see [Sensitivity labels in Power BI](../../enterprise/powerbi/service-security-sensitivity-label-overview.md).
+
 ## Current limitations
 
 The Fabric IQ plugin has the following limitations. These limitations apply to the current preview and are expected to change as the plugin evolves.
@@ -89,9 +97,7 @@ The plugin doesn't currently support grounding on:
 > [!IMPORTANT]
 > Cowork doesn't include citations back to the source Power BI report or semantic model in its data answers today. If you plan to share a number from a Cowork response in an email, document, or meeting, open the source report yourself to confirm the value before you act on it.
 
-Sensitivity labels on the underlying data apply and are respected. When you create new content, such as an email, document, or meeting invite, the sensitivity label from the grounding Power BI item is applied to the new item.
-
-To learn more, see [Sensitivity labels in Power BI](../../enterprise/powerbi/service-security-sensitivity-label-overview.md).
+- **Data loss prevention:** Data loss prevention (DLP) isn't currently supported in Cowork. Review [Microsoft Purview support for Microsoft 365 Copilot Cowork](/purview/ai-copilot-cowork) for the current list of supported data security and compliance capabilities.
 
 <!-- TODO_REVIEWER: Confirm whether the "tenant admin can't disable the plugin today" limitation should be called out here for customers, or whether it should stay internal until the admin control ships. Removed from public copy for now. -->
 
