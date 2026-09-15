@@ -17,9 +17,9 @@ There are three ways to give feedback about Microsoft Fabric, *in-product feedba
 
 ### In-product feedback
 
-Give in-product feedback by selecting the **Feedback** button next to your profile picture in the Microsoft Fabric portal.
+Give in-product feedback by selecting the **Help improve Fabric (preview)** button next to your profile picture in the Microsoft Fabric portal.
 
-:::image type="content" source="media/feedback/feedback-button.png" alt-text="Screenshot of the Microsoft Fabric feedback button.":::
+:::image type="content" source="media/feedback/feedback-button.png" alt-text="Screenshot of Fabric home with the Help improve Fabric button highlighted next to the account manager." lightbox="media/feedback/feedback-button.png":::
 
 ### In-product surveys
 
