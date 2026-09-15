@@ -6,7 +6,7 @@ author: s-polly
 ms.reviewer: shradha
 reviewer: shradha
 ms.topic: how-to
-ms.date: 08/21/2026
+ms.date: 08/31/2026
 ms.search.form: Data Agent
 ai-usage: ai-assisted
 ---
@@ -108,6 +108,7 @@ Data Agent connects directly to your Azure AI Search index using a resource URL.
 | Data Source Instructions | ✅ Yes | Provide table descriptions, join logic, key column details, and business terminology to NL2SQL. |
 | Data Source Description | ✅ Yes | Description that helps the agent determine whether this data source is relevant to the user's question. |
 | [Schema Object Descriptions (Preview)](data-agent-schema-object-descriptions.md) | ✅ Yes | Provide business context for tables, columns, and other schema elements to improve SQL query generation. Available only on the [preview runtime](data-agent-runtime.md#preview-runtime). |
+| [Topics (Preview)](data-agent-topics.md) | ✅ Yes | Provide up to 1 million characters of topic-based instructions. The data agent retrieves relevant sections for NL2SQL. Available only on the [preview runtime](data-agent-runtime.md#preview-runtime). |
 | Example Queries | ✅ Yes | Supply natural-language/SQL pairs so the agent can learn complex query patterns. Top examples are automatically retrieved via vector similarity. |
 
 # [Eventhouse](#tab/kql)
@@ -118,6 +119,7 @@ Data Agent connects directly to your Azure AI Search index using a resource URL.
 | Agent Instructions | ✅ Yes | Guide the agent on when and how to route questions to this source. |
 | Data Source Instructions | ✅ Yes | Provide context about tables, MVs, Functions, and Shortcuts to NL2KQL. |
 | Data Source Description | ✅ Yes | Description that helps the agent determine whether this data source is relevant to the user's question. |
+| Topics | ❌ No | Topics are supported only for SQL data sources that use NL2SQL on the preview runtime. |
 | Example Queries | ✅ Yes | Supply natural-language/KQL pairs to teach the agent complex aggregation and join patterns. |
 
 
@@ -129,6 +131,7 @@ Data Agent connects directly to your Azure AI Search index using a resource URL.
 | Agent Instructions | ✅ Yes | Guide the agent on when to choose the semantic model to answer questions. |
 | Data Source Instructions | ❌ No* | Instructions are managed through **Prep for AI** (AI Instructions and Verified Answers) on the semantic model side. Data Agent honors them when present. |
 | Data Source Description | ❌ No | Semantic Models do not support data source descriptions. |
+| Topics | ❌ No | Topics are supported only for SQL data sources that use NL2SQL on the preview runtime. |
 | Example Queries | ❌ No* | Not currently supported for semantic models. Use Verified Answers in Prep for AI to include example DAX queries. |
 
 *\*Semantic models are primarily configured through [Prep for AI in Power BI](/power-bi/create-reports/copilot-prepare-data-ai), which offers AI Data Schemas, AI Instructions, and Verified Answers.*
@@ -142,6 +145,7 @@ Data Agent connects directly to your Azure AI Search index using a resource URL.
 | Agent Instructions | ✅ Yes | Guide the agent on when and how to route questions to this source. |
 | Data Source Instructions | ✅ Yes | Passed to the NL2GQL engine to guide query generation. |
 | Data Source Description | ✅ Yes | Description that helps the agent determine whether this data source is relevant to the user's question. |
+| Topics | ❌ No | Topics are supported only for SQL data sources that use NL2SQL on the preview runtime. |
 | Example Queries | ✅ Yes | Passed to NL2GQL to teach complex graph traversal patterns. |
 
 # [Ontology (preview)](#tab/Ontology)
@@ -153,6 +157,7 @@ Data Agent connects directly to your Azure AI Search index using a resource URL.
 | Agent Instructions | ✅ Yes | Guide the agent on when to choose the semantic model to answer questions. |
 | Data Source Instructions | ❌ No | Not supported for ontology data sources. |
 | Data Source Description | ✅ Yes | Description that helps the agent determine whether this data source is relevant to the user's question. |
+| Topics | ❌ No | Topics are supported only for SQL data sources that use NL2SQL on the preview runtime. |
 | Example Queries | ❌ No | Not supported for ontology data sources. |
 
 # [Unstructured Data (preview)](#tab/unstructured-data)
@@ -164,6 +169,7 @@ Data Agent connects directly to your Azure AI Search index using a resource URL.
 | Number of Documents | Control how many documents are retrieved per query (recommended: 3–20). |
 | Context / Description | Describe the index contents, key fields, and usage guidance to help routing. |
 | Agent Instructions | Guide how the agent interprets search results and composes the final answer. |
+| Topics | Not supported. Topics are available only for SQL data sources that use NL2SQL on the preview runtime. |
 
 ---
 

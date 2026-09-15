@@ -43,7 +43,7 @@ Skills for Fabric apply this pattern to Microsoft Fabric. Each skill packages th
 1. **User intent.** You write a natural-language prompt that describes what you want to accomplish.
 1. **AI tool.** Your AI coding tool receives the prompt and matches it against the installed skills.
 1. **Skills layer.** The matching `SKILL.md` provides workload-specific instructions, including REST API endpoints, query syntax, and authentication patterns.
-1. **Fabric APIs.** The AI tool calls Fabric REST APIs, SQL endpoints, KQL, or other Fabric surfaces with the right parameters.
+1. **Fabric APIs.** The AI tool calls Fabric REST APIs, SQL analytics endpoints, KQL, or other Fabric surfaces with the right parameters.
 1. **Deployed.** Fabric resources are created or modified end-to-end, with the workload's best practices applied automatically.
 
 Skills differ from [Model Context Protocol (MCP)](../real-time-intelligence/mcp-overview.md) servers. Skills teach the AI assistant *what to do*. MCP servers *do it*. Skills provide the expertise and MCP servers provide the data connection. They both work best together. The following table summarizes the key differences:
@@ -73,6 +73,8 @@ The following table lists realistic intents across three audiences. In each case
 | **Citizen developer or business user** | "I have CSV files. Build me an interactive dashboard." | Ingests and models the data, then generates a local Python dashboard you can run. |
 | **Citizen developer or business user** | "Show me total revenue by product for last quarter." | Writes and runs the warehouse query, and returns the results. |
 | **Citizen developer or business user** | "Document my entire Fabric workspace." | Scans the workspace and produces structured documentation in Markdown. |
+
+For a detailed Data Warehouse example, see how the [`sqldw-cli` operations skill](../data-warehouse/skills-for-data-warehouse-operations.md) guides read-only investigations of failures, query performance, capacity spikes, SQL pool pressure, and lakehouse table health.
 
 ## Compatible AI tools
 
@@ -115,6 +117,7 @@ For more information, see the [MCP servers guide](https://github.com/microsoft/s
 
 - [Install Skills for Fabric](skills-for-fabric-install.md)
 - [Discover available Skills for Fabric](skills-for-fabric-discover.md)
+- [Data Warehouse operations skill](../data-warehouse/skills-for-data-warehouse-operations.md)
 - [Skills for Fabric on GitHub](https://github.com/microsoft/skills-for-fabric)
 - [What is the Fabric MCP server?](/rest/api/fabric/articles/mcp-servers/what-is-fabric-mcp-server)
 - [Build AI agents for Real-Time Intelligence](../real-time-intelligence/ai-agents-eventhouse.md)

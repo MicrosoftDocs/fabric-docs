@@ -92,7 +92,7 @@ You can find the consumption rates for Dataflows Gen2 in [Dataflow Gen2 pricing 
 | Operation                                        | Description                                                        | Item          | Azure billing meter         | Type       |
 | ------------------------------------------------ | ------------------------------------------------------------------ | ------------- | --------------------------- | ---------- |
 | Dataflow Gen2 Run Queries                           | Compute cost associated with dataflow Gen2 evaluation operation       | Dataflow Gen2 | Dataflows Standard Compute Capacity Usage CU | Background |
-| High Scale Dataflow Compute - SQL Endpoint Query | Usage related to the dataflow Gen2 staging warehouse SQL endpoint  | Warehouse     | High Scale Dataflow Compute Capacity Usage CU | Background |
+| High Scale Dataflow Compute - SQL Endpoint Query | Usage related to the dataflow Gen2 staging warehouse SQL analytics endpoint  | Warehouse     | High Scale Dataflow Compute Capacity Usage CU | Background |
 
 #### Pipelines
 

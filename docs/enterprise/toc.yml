@@ -51,6 +51,8 @@ items:
       href: /fabric/real-time-hub/create-streams-fabric-capacity-operation-events?context=/fabric/context/context-enterprise
     - name: Set alerts on capacity overview events
       href: /fabric/real-time-hub/set-alerts-fabric-capacity-overview-events?context=/fabric/context/context-enterprise
+    - name: Create custom alerts on capacity overview events
+      href: /fabric/real-time-hub/set-custom-alerts-fabric-capacity-overview-events?context=/fabric/context/context-enterprise
     - name: Set alerts on Fabric capacity operation events
       href: /fabric/real-time-hub/set-alerts-fabric-capacity-operation-events?context=/fabric/context/context-enterprise
     - name: Monitor capacity health tutorial

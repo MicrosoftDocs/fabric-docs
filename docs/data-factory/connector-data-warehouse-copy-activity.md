@@ -1,6 +1,6 @@
 ---
-title: Configure Data Warehouse in a Copy Activity
-description: This article explains how to copy data using Data Warehouse.
+title: Configure a warehouse in a copy activity
+description: This article explains how to copy data by using a warehouse.
 ms.reviewer: jianleishen
 ms.topic: how-to
 ms.date: 02/13/2026
@@ -10,9 +10,9 @@ ms.custom:
   - connectors
 ---
 
-# Configure Data Warehouse in a copy activity
+# Configure a warehouse in a copy activity
 
-This article outlines how to use the copy activity in a pipeline to copy data from and to a Data Warehouse.
+This article outlines how to use the copy activity in a pipeline to copy data from and to a warehouse.
 
 ## Supported configuration
 
@@ -30,7 +30,7 @@ For the **General** tab configuration, select the copy activity, then select the
 
 ### Source
 
-The following properties are supported for Data Warehouse as **Source** in a copy activity.
+The following properties are supported for a warehouse as a **Source** in a copy activity.
 
 The following properties are **required**:
 
@@ -53,7 +53,7 @@ Under **Advanced**, you can specify the following fields:
 
 - **Query timeout (minutes)**: Timeout for query command execution, with a default of 120 minutes. If this property is set, the allowed values are in the format of a timespan, such as "02:00:00" (120 minutes).
 - **Isolation level**: Specify the transaction locking behavior for the SQL source.
-- **Partition option**: Specify the data partitioning options used to load data from Data Warehouse. You can select **None** or **Dynamic range**.
+- **Partition option**: Specify the data partitioning options used to load data from a warehouse. Select **None** or **Dynamic range**.
 
   If you select **Dynamic range**, the range partition parameter(`?AdfDynamicRangePartitionCondition`) is needed when using query with parallel enabled. Sample query: `SELECT * FROM <TableName> WHERE ?AdfDynamicRangePartitionCondition`.
 
@@ -69,7 +69,7 @@ Under **Advanced**, you can specify the following fields:
 
 ### Destination
 
-The following properties are supported for Data Warehouse as **Destination** in a copy activity.
+The following properties are supported for a warehouse as a **Destination** in a copy activity.
 
 :::image type="content" source="./media/connector-data-warehouse/destination.png" alt-text="Screenshot showing destination tab and the list of properties.":::
 
@@ -82,7 +82,7 @@ The following properties are **required**:
 
   - **Insert**: Append all data into destination table.
   - **Upsert**: Update the destination table’s values when key columns match, and insert a new row when no row matches in the destination.
-    - **Key columns**: Choose which column is used to determine if a row from the source matches a row from the destination. A drop-down listing all destination columns. You can select one or more columns to be treated as key columns while writing into Warehouse Table. Key columns must have unique values in the source data. All the key columns should exist in both destination table and source data (or be provided through column mapping).
+    - **Key columns**: Choose which column is used to determine if a row from the source matches a row from the destination. A drop-down lists all destination columns. Select one or more columns to be treated as key columns while writing into a warehouse table. Key columns must have unique values in the source data. All the key columns should exist in both destination table and source data (or be provided through column mapping).
 
       :::image type="content" source="./media/connector-data-warehouse/write-behavior-upsert.png" alt-text="Screenshot of the upsert write behavior.":::
 
@@ -92,13 +92,13 @@ Under **Advanced**, you can specify the following fields:
 
     :::image type="content" source="./media/connector-data-warehouse/default-values.png" alt-text="Screenshot showing default values of copy command settings.":::
 
-- **Pre-copy script**: Specify a SQL query to run before writing data into Data Warehouse in each run. Use this property to clean up the preloaded data.
+- **Pre-copy script**: Specify a SQL query to run before writing data into a warehouse in each run. Use this property to clean up the preloaded data.
 - **Write batch timeout**: The wait time for the batch insert operation to finish before it times out. The allowed values are in the format of a timespan. The default value is "00:30:00" (30 minutes).
 - **Disable performance metrics analytics**: The service collects metrics for copy performance optimization and recommendations. If you're concerned with this behavior, turn off this feature.
 
 #### Direct copy
 
-The COPY statement is the primary way to ingest data into Warehouse tables. Data Warehouse COPY command directly supports **Azure Blob Storage** and **Azure Data Lake Storage Gen2** as source data stores. If your source data meets the criteria described in this section, use COPY command to copy directly from the source data store to Data Warehouse. 
+The COPY statement is the primary way to ingest data into warehouse tables. The COPY command for a warehouse directly supports **Azure Blob Storage** and **Azure Data Lake Storage Gen2** as source data stores. If your source data meets the criteria described in this section, use the COPY command to copy directly from the source data store to a warehouse.
 
 1. The source data and format contain the following types and authentication methods:
 
@@ -114,7 +114,7 @@ The COPY statement is the primary way to ingest data into Warehouse tables. Data
 1. The following Format settings can be set:<br>
    1. For **Parquet**: **Compression type** can be **None**, **snappy**, or **gzip**.
    1. For **DelimitedText**:
-      1. **Row delimiter**: When copying delimited text to Data Warehouse via direct COPY command, specify the row delimiter explicitly (\r; \n; or \r\n). Only when the row delimiter of the source file is \r\n, the default value (\r, \n, or \r\n) works. Otherwise, enable staging for your scenario. 
+      1. **Row delimiter**: When copying delimited text to a warehouse via the direct COPY command, specify the row delimiter explicitly (\r; \n; or \r\n). Only when the row delimiter of the source file is \r\n does the default value (\r, \n, or \r\n) work. Otherwise, enable staging for your scenario.
       1. **Null value** is left as default or set to **empty string ("")**.
       1. **Encoding** is left as default or set to **UTF-8** or **UTF-16**.
       1. **Skip line count** is left as default or set to 0.
@@ -123,13 +123,13 @@ The COPY statement is the primary way to ingest data into Warehouse tables. Data
 1. If your source is a folder, you must select **Recursively** checkbox.
 1. **Start time (UTC)** and **End time (UTC)** in **Filter by last modified**, **Prefix**, **Enable partition discovery**, and **Additional columns** aren't specified.
 
-To learn how to ingest data into your Data Warehouse using the COPY command, see this [article](../data-warehouse/ingest-data-copy.md).
+To learn how to ingest data into your warehouse using the COPY command, see this [article](../data-warehouse/ingest-data-copy.md).
 
-If your source data store and format isn't originally supported by a COPY command, use the Staged copy by using the COPY command feature instead. It automatically converts the data into a COPY command compatible format, then calls a COPY command to load data into Data Warehouse.
+If a COPY command doesn't originally support your source data store and format, use the Staged copy by using the COPY command feature. This feature automatically converts the data into a COPY command compatible format, and then calls a COPY command to load data into a warehouse.
 
 #### Staged copy
 
-When your source data is not natively compatible with COPY command, enable data copying via an interim staging storage. In this case, the service automatically converts the data to meet the data format requirements of COPY command. Then it invokes COPY command to load data into Data Warehouse. Finally, it cleans up your temporary data from the storage. For more information about staged copy, see this [article](copy-data-activity.md#configure-your-other-settings-under-the-settings-tab). 
+When your source data isn't natively compatible with the COPY command, enable data copying through an interim staging storage. In this case, the service automatically converts the data to meet the data format requirements of the COPY command. Then it invokes the COPY command to load data into a warehouse. Finally, it cleans up your temporary data from the storage. For more information about staged copy, see [Configure your other settings under the Settings tab](copy-data-activity.md#configure-your-other-settings-under-the-settings-tab).
 
 To use staged copy, go to **Settings** tab and select **Enable staging**. You can choose **Workspace** to use auto-created staging storage within Fabric. For **External**, Azure Blob Storage and Azure Data Lake Storage Gen2 are supported as the external staging storage. You need to create an Azure Blob Storage or Azure Data Lake Storage Gen2 connection first, and then select the connection from the drop-down list to use the staging storage. These storage options support multiple authentication types. The following table summarizes the supported options:
 
@@ -141,13 +141,13 @@ To use staged copy, go to **Settings** tab and select **Enable staging**. You ca
   > [!NOTE]
   > - When you use organizational account authentication for your staging linked service, learn the needed configurations for [Azure Blob Storage](connector-azure-blob-storage.md#organizational-account-authentication) and [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2.md#oauth2-authentication) respectively.
   > - If your staged Azure Blob Storage or Azure Data Lake Storage Gen2 is behind a firewall, you should use your workspace identity to bypass the firewall. Learn the needed configurations in this [article](/sql/t-sql/statements/copy-into-transact-sql).
-  > - You need to ensure the IP range of the Data Warehouse has been allowed correctly from the staging storage.
+  > - Ensure the IP range of the warehouse is allowed correctly from the staging storage.
 
 ### Mapping
 
-For the **Mapping** tab configuration, if you don't apply Data Warehouse with auto create table as your destination, select the copy activity, then select the [Mapping](copy-data-activity.md#configure-your-mappings-under-the-mapping-tab) tab.
+For the **Mapping** tab configuration, if you don't use a warehouse with auto create table as your destination, select the copy activity, and then select the [Mapping](copy-data-activity.md#configure-your-mappings-under-the-mapping-tab) tab.
 
-If you apply Data Warehouse with auto create table as your destination, except the configuration in [Mapping](copy-data-activity.md#configure-your-mappings-under-the-mapping-tab), you can edit the type for your destination columns. After selecting **Import schemas**, you can specify the column type in your destination.
+If you use a warehouse with auto create table as your destination, except the configuration in [Mapping](copy-data-activity.md#configure-your-mappings-under-the-mapping-tab), you can edit the type for your destination columns. After selecting **Import schemas**, you can specify the column type in your destination.
 
 For example, the type for *ID* column in source is int, and you can change it to float type when mapping to the destination column.
 
@@ -161,18 +161,18 @@ For the **Settings** tab configuration, select the copy activity, then select th
 
 ## Table summary
 
-The following tables contain more information about a copy activity in Data Warehouse.
+The following tables contain more information about a copy activity in a warehouse.
 
 ### Source information
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
 |**Workspace data store type**|The section to select your workspace data store type.|**Data Warehouse** |Yes|type|
-|**Data Warehouse** |The Data Warehouse that you want to use.|\<your data warehouse>|Yes|endpoint<br>itemId|
-|**Use query** |The way to read data from Data Warehouse. |• Tables<br>• Query<br>• Stored procedure|No|*(under `typeProperties` -> `source`)*<br>• typeProperties:<br>&emsp;schema<br>&emsp;table<br>• sqlReaderQuery<br>• sqlReaderStoredProcedureName|
+|**Data Warehouse** |The warehouse that you want to use.|\<your warehouse>|Yes|endpoint<br>itemId|
+|**Use query** |The way to read data from a warehouse. |• Tables<br>• Query<br>• Stored procedure|No|*(under `typeProperties` -> `source`)*<br>• typeProperties:<br>&emsp;schema<br>&emsp;table<br>• sqlReaderQuery<br>• sqlReaderStoredProcedureName|
 |**Query timeout (minutes)**|Timeout for query command execution, with a default of 120 minutes. If this property is set, the allowed values are in the format of a timespan, such as "02:00:00" (120 minutes).|timespan |No |queryTimeout|
 |**Isolation level** |The transaction locking behavior for source. |• None<br>• Snapshot|No |isolationLevel|
-|**Partition option**|The data partitioning options used to load data from Data Warehouse.|• None<br>• Dynamic range|No|partitionOption|
+|**Partition option**|The data partitioning options used to load data from a warehouse.|• None<br>• Dynamic range|No|partitionOption|
 |**Partition column name**|The name of the source column **in integer or date/datetime type** (`int`, `smallint`, `bigint`, `date`, `smalldatetime`, `datetime`, `datetime2`, or `datetimeoffset`) that is used by range partitioning for parallel copy. If not specified, the index or the primary key of the table is detected automatically and used as the partition column.|\<partition column name>|No|partitionColumnName|
 |**Partition upper bound**|The maximum value of the partition column for partition range splitting. This value is used to decide the partition stride, not for filtering the rows in table. All rows in the table or query result are partitioned and copied.|\<partition upper bound>|No|partitionUpperBound|
 |**Partition lower bound**|The minimum value of the partition column for partition range splitting. This value is used to decide the partition stride, not for filtering the rows in table. All rows in the table or query result are partitioned and copied.|\<partition lower bound>|No|partitionLowerBound|
@@ -183,17 +183,17 @@ The following tables contain more information about a copy activity in Data Ware
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
 |**Workspace data store type**|The section to select your workspace data store type.|**Data Warehouse**  |Yes|type|
-|**Data Warehouse** |The Data Warehouse that you want to use.|\<your data warehouse>|Yes|endpoint<br>itemId|
+|**Data Warehouse** |The warehouse that you want to use.|\<your warehouse>|Yes|endpoint<br>itemId|
 |**Table option**|Whether to automatically create the destination table if none exists based on the source schema.|• Use existing<br>• Auto create table|No|tableOption:<br><br>• autoCreate|
 |**Table** |The destination table to write data.|\<name of your destination table>|Yes|schema <br> table|
 |**Write behavior**| Specify how to write data to the destination. | • Insert (default) <br>• Upsert | Yes | writeBehavior:<br>• Insert <br>• Upsert |
 |**Key columns**| Choose which column is used to determine if a row from the source matches a row from the destination. | \<your key columns> <br>(the default is destination schema) | No | upsertSettings:<br>• keys|
 |**Copy command settings**|The copy command property settings. Contains the default value settings.|Default value:<br>• Column<br> • Value|No |copyCommandSettings:<br>defaultValues:<br>• columnName<br>• defaultValue|
-|**Pre-copy script** |A SQL query to run before writing data into Data Warehouse in each run. Use this property to clean up the preloaded data.|\<pre-copy script>|No|preCopyScript|
+|**Pre-copy script** |A SQL query to run before writing data into a warehouse in each run. Use this property to clean up the preloaded data.|\<pre-copy script>|No|preCopyScript|
 |**Write batch timeout** |The wait time for the batch insert operation to finish before it times out. The allowed values are in the format of a timespan. The default value is "00:30:00" (30 minutes).| timespan |No |writeBatchTimeout|
 |**Disable performance metrics analytics**|The service collects metrics for copy performance optimization and recommendations, which introduce additional master DB access.|select or unselect|No|disableMetricsCollection:<br> true or false|
 
-### Using Fabric Warehouse as a sink with staging enabled
+### Use a warehouse as a destination with staging enabled
 If the staging storage location has a firewall enabled, access issues may occur.
 #### Workarounds
 - **Different Regions**:  

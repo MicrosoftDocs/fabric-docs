@@ -197,6 +197,8 @@ items:
       href: set-alerts-anomaly-detection.md
     - name: Set alerts on Fabric capacity overview events
       href: set-alerts-fabric-capacity-overview-events.md  
+    - name: Create custom alerts on Fabric capacity overview events
+      href: set-custom-alerts-fabric-capacity-overview-events.md
     - name: Set alerts on Fabric capacity operation events
       href: set-alerts-fabric-capacity-operation-events.md
     - name: Set alerts on Fabric workspace item events

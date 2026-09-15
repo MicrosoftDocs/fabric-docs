@@ -13,9 +13,9 @@ ai-usage: ai-assisted
 
 Typically, queries sent to a Direct Lake semantic model are handled from an in-memory cache of the columns sourced from Delta tables. The underlying storage for a Delta table is one or more Parquet files in OneLake. Parquet files organize data by column rather than by row. Semantic models load entire columns from Delta tables into memory as queries require them.
 
-Direct Lake on OneLake isn't coupled with the SQL endpoint. This architecture offers tighter integration with OneLake features such as OneLake security and more efficient DAX query plans because, for example, checking for SQL based security isn't required. DirectQuery fallback isn't supported by Direct Lake on OneLake.
+Direct Lake on OneLake isn't coupled with the SQL analytics endpoint. This architecture offers tighter integration with OneLake features such as OneLake security and more efficient DAX query plans because, for example, checking for SQL based security isn't required. DirectQuery fallback isn't supported by Direct Lake on OneLake.
 
-With Direct Lake on SQL endpoints, a DAX query might use *DirectQuery fallback*, which involves seamlessly switching to [DirectQuery mode](/power-bi/connect-data/service-dataset-modes-understand). DirectQuery fallback retrieves data directly from the [SQL analytics endpoint of the lakehouse](../data-engineering/lakehouse-sql-analytics-endpoint.md) or the warehouse. For example, fallback occurs when SQL based security is detected in the SQL endpoint. In this case, a DirectQuery operation sends a query to the SQL analytics endpoint. Fallback operations might result in slower query performance.
+With Direct Lake on SQL analytics endpoints, a DAX query might use *DirectQuery fallback*, which involves seamlessly switching to [DirectQuery mode](/power-bi/connect-data/service-dataset-modes-understand). DirectQuery fallback retrieves data directly from the [SQL analytics endpoint of the lakehouse](../data-engineering/lakehouse-sql-analytics-endpoint.md) or the warehouse. For example, fallback occurs when SQL based security is detected in the SQL analytics endpoints. In this case, a DirectQuery operation sends a query to the SQL analytics endpoint. Fallback operations might result in slower query performance.
 
 The following sections describe Direct Lake concepts and features, including column loading, framing, automatic updates, and DirectQuery fallback.
 
@@ -86,7 +86,7 @@ In some situations, you might want to disable automatic updates. For example, yo
 
 ## DirectQuery fallback
 
-When you use Direct Lake on SQL endpoints, a query sent to a Direct Lake semantic model can fall back to [DirectQuery mode](/power-bi/connect-data/service-dataset-modes-understand). In this mode, the table no longer operates in Direct Lake mode. It retrieves data directly from the SQL analytics endpoint of the lakehouse or warehouse. Such queries always return the latest data because they're not constrained to the point in time of the last framing operation. However, fallback operations might result in slower query performance.
+When you use Direct Lake on SQL analytics endpoints, a query sent to a Direct Lake semantic model can fall back to [DirectQuery mode](/power-bi/connect-data/service-dataset-modes-understand). In this mode, the table no longer operates in Direct Lake mode. It retrieves data directly from the SQL analytics endpoint of the lakehouse or warehouse. Such queries always return the latest data because they're not constrained to the point in time of the last framing operation. However, fallback operations might result in slower query performance.
 
 > [!IMPORTANT]
 > If possible, always design your solution or size your capacity to avoid DirectQuery fallback. That's because it might result in slower query performance.
@@ -111,7 +111,7 @@ A single table that exceeds any guardrail limit prevents Direct Lake mode for th
 
 ### Control fallback with DirectLakeBehavior
 
-When Direct Lake conditions aren't met, the behavior of your semantic models depends on the **DirectLakeBehavior** setting. This setting only applies to Direct Lake on SQL endpoints.
+When Direct Lake conditions aren't met, the behavior of your semantic models depends on the **DirectLakeBehavior** setting. This setting only applies to Direct Lake on SQL analytics endpoints.
 
 Set the **DirectLakeBehavior** property to one of the following three values:
 
@@ -161,8 +161,8 @@ Use this table to identify the fix for each fallback scenario:
 | Table is based on a SQL view | Materialize the view as a delta table, or accept DirectQuery performance for that table. |
 | Table doesn't exist | Verify the delta table exists in the lakehouse or warehouse. Check for schema drift or deleted tables. |
 | Transient error | Retry the query. If persistent, check capacity health and refresh the semantic model. |
-| OLS defined at SQL endpoint | Move object-level security to the semantic model, or accept DirectQuery fallback. |
-| RLS or DDM defined at SQL endpoint | Move row-level security to the semantic model, or accept DirectQuery fallback. |
+| OLS defined at SQL analytics endpoint | Move object-level security to the semantic model, or accept DirectQuery fallback. |
+| RLS or DDM defined at SQL analytics endpoint | Move row-level security to the semantic model, or accept DirectQuery fallback. |
 | Delta table exceeds guardrails | Run `OPTIMIZE` and `VACUUM` on the delta table to reduce parquet files and row groups. If the table still exceeds limits, upgrade to a higher Fabric SKU. |
 | Capacity under memory pressure | Reduce concurrent workloads, optimize other models, or upgrade the capacity SKU. |
 

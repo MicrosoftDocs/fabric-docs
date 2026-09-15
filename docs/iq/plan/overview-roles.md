@@ -1,7 +1,7 @@
 ---
-title: User Roles in Planning
-description: Learn about user roles and actions in planning in Fabric, including capabilities of each role and how to upgrade roles.
-ms.date: 06/23/2026
+title: User Roles in Plan
+description: Learn about user roles and actions in plan, including capabilities of each role and how to upgrade roles.
+ms.date: 08/24/2026
 ms.topic: overview
 ---
 
@@ -22,7 +22,7 @@ Planning supports three roles:
 Role permission matrix:
 
 | Workload | Viewer | Stakeholder | Planner |
-|----------|:------:|:-----------:|:-------:|
+| ---------- | :------: | :-----------: | :-------: |
 | **Planning**<br>Budgets, forecasts, scenarios, allocations | Read | Contribute | Create |
 | **PowerTable**<br>Reference and master data management | Read | Create | Create |
 | **Intelligence**<br>Reports, dashboards, and analysis | Read | Create | Create |
@@ -60,11 +60,11 @@ Examples:
 | Enter data, write back values, participate in approvals, or collaborate | Stakeholder             |
 | Edit plan items or perform authoring operations                     | Planner                 |
 
-With this dynamic model, administrators don't need to manually manage role assignments.
+With this dynamic model, administrators don't need to manually assign roles. However, they can control which users can upgrade to **Planner** and **Stakeholder** sessions. To learn more, see [Control session upgrades](#control-session-upgrades).
 
 ## Upgrade roles
 
-Upgrade your planning role by performing an action that requires Planner or Stakeholder permissions, or upgrade the role manually.
+Upgrade your planning role by performing an action that requires Planner or Stakeholder permissions.
 
 ### Check current role
 
@@ -79,17 +79,82 @@ Planning roles operate through time-bound sessions. Planning creates a session w
 Each session remains active for 30 days. When you perform an action that requires a higher privilege level, planning automatically creates a new session for the upgraded role.
 Role sessions help organizations implement least-privilege access while letting you transition between planning responsibilities.
 
-### Upgrade prompts
+## Control session upgrades
 
-Administrators can control whether planning prompts users before a role upgrade occurs. To display upgrade notifications, in **Workspace settings**, go to **Plan**, and enable **Prompt on Session Upgrade**.
+Administrators can control which users can upgrade to **Planner** and **Stakeholder** sessions. They can also configure whether users receive a warning when creating or upgrading a session could result in capacity oversubscription.
+
+The following tenant settings are available:
+
+- [**Users can upgrade to a Planner session**](#users-can-upgrade-to-a-planner-session)
+- [**Users can upgrade to a Stakeholder session**](#users-can-upgrade-to-a-stakeholder-session)
+- [**Show Oversubscription Warning**](#show-oversubscription-warning)
+
+
+:::image type="content" source="media/overview-roles/plan-session-upgrade-settings.png" alt-text="Screenshot of Plan settings page showing three enabled tenant settings for Planner session, Stakeholder session, and Oversubscription Warning." lightbox="media/overview-roles/plan-session-upgrade-settings.png":::
 
 > [!NOTE]
-> Creating a new plan item automatically upgrades your session to Planner. Because item creation requires Planner capabilities, no warning or confirmation prompt appears.
+> **Capacity-level override**: All three settings are configured at the tenant level and can be overridden at the capacity level for individual capacities by using **Delegated Tenant Settings**. This feature allows capacity administrators to apply different plan settings to specific capacities based on their governance and capacity requirements.
 
-* **Prompt enabled**: When enabled, you receive a notification before planning upgrades the role and can choose whether to proceed.
-* **Prompt disabled**: When disabled, role upgrades occur automatically when you perform a qualifying action. Upgrade prompts are disabled by default.
+### Users can upgrade to a Planner session
 
-### Role lifecycle
+This setting controls whether users can upgrade to a Planner session.
+
+Planners can create plan items, connect semantic models, build planning sheets, and publish planning applications.
+
+Administrators can:
+
+* Enable or disable Planner session upgrades.
+* Apply the setting to:
+  * **The entire organization**: All users in the organization can upgrade to a Planner session.
+  * **Specific security groups**: Only users who belong to the selected security groups can upgrade to a Planner session.
+
+> [!IMPORTANT]
+> Planner access also includes Stakeholder access. If Planner access is enabled for the entire organization, all users in the organization can also upgrade to a Stakeholder session.
+
+### Users can upgrade to a Stakeholder session
+
+This setting controls whether users can upgrade to a Stakeholder session.
+
+Stakeholders can enter data, write back changes, and collaborate on published plan items in Reading view.
+
+Administrators can:
+
+* Enable or disable Stakeholder session upgrades.
+* Apply the setting to:
+  * **The entire organization**: All users in the organization can upgrade to a Stakeholder session.
+  * **Specific security groups**: Only users who belong to the selected security groups can upgrade to a Stakeholder session.
+
+#### Stakeholder access requirements
+
+To upgrade to a Stakeholder session, users must either
+
+* Belong to a security group configured for Stakeholder access, or
+* Already have Planner access.
+
+Users who don't have either type of access can't create or edit plan items, enter data, write back changes, or collaborate. They can only access plan items in Reading view.
+
+### Show Oversubscription Warning
+
+This setting controls whether users receive a warning when creating or upgrading a session could result in capacity oversubscription.
+
+Administrators can:
+
+* Enable the setting to show an oversubscription warning when applicable.
+* Disable the setting to prevent the warning from being displayed.
+
+When enabled, the warning appears before users create or upgrade a session that is likely to cause capacity oversubscription. The warning helps users understand the potential capacity impact before they proceed.
+
+> [!NOTE]
+> This setting applies to the entire organization.
+
+### Relationship between Planner and Stakeholder access
+
+
+* Planner access includes Stakeholder access. Users with Planner access can also upgrade to a Stakeholder session.
+* If the administrator enables Planner access for the entire organization, it also allows all users to upgrade to a Stakeholder session.
+* Administrators can grant Stakeholder access independently to specific users or security groups.
+
+## Role lifecycle
 
 **Role upgrades:** Planning assigns roles dynamically based on user actions through time‑bound sessions. Role upgrades occur when you perform valid planning actions. You can upgrade roles only to a higher privilege level:
    * Planning can upgrade a Viewer to a Stakeholder.

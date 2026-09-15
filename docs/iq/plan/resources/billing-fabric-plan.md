@@ -1,15 +1,13 @@
 ---
 title: Planning in Fabric Billing and Pricing Model
-description: Planning in Fabric billing uses an active-session, capacity-based pricing model that aligns costs with actual usage. Learn how role-based and session billing work.
-ms.date: 07/23/2026
+description: The Billing Model for Planning in Fabric uses an active-session, capacity-based pricing model that aligns costs with actual usage. Learn how role-based and session billing work.
+ms.date: 09/11/2026
 ms.topic: concept-article
 ---
 
 # Billing and usage for planning in Fabric
 
-Planning in Fabric uses an active-session, capacity-based pricing model that aligns licensing costs with actual product usage. You pay for a session only when a user actively engages with a plan item, so your organization can avoid fixed per-user license commitments and optimize capacity utilization. A session stays active for 30 days once started.
-
-[!INCLUDE [Fabric feature-preview-note](../../../includes/feature-preview-note.md)]
+Planning in Fabric uses a session-based pricing model where you pay for active 30-day user sessions rather than fixed per-user licenses.
 
 Key benefits include:
 
@@ -19,7 +17,12 @@ Key benefits include:
 * Use eligible Microsoft Azure Consumption Commitment (MACC) credits for Fabric capacity.
 * Avoid license commitment and administration.
 
-## User roles
+> [!NOTE]
+> To understand planning consumption and charges, review the data at the capacity level, as this is the level at which billing is calculated and reported.
+>
+> The workspace name "Planning" shown in the billing data doesn't represent an actual workspace created in your tenant. The reported numbers reflect billed Planner, Stakeholder, and Viewer sessions. To support capacity-level reporting, the workspace and artifact fields are populated with the value "Planning". These fields shouldn't be interpreted as actual workspace or artifact names.
+
+## User roles in Fabric Planning
 
 Planning in Fabric defines three user roles with different capabilities and capacity consumption.
 
@@ -27,37 +30,32 @@ Planning in Fabric defines three user roles with different capabilities and capa
 * **Stakeholder**: Enters and approves data, collaborates with business users, creates scenarios, builds reports and dashboards, performs analysis, and manages reference data applications.
 * **Viewer**: Accesses plan items, dashboards, and reports in read-only mode with support for filtering, sorting, and bookmarks.
 
-For more information, see [Roles in planning in Fabric (preview)](../overview-roles.md).
+For more information, see [Roles in Fabric planning](../overview-roles.md).
 
-## Role-based billing
+## Billing rates
 
-Planning in Fabric uses role-based billing. Capacity consumption depends on your role, and planning bills it per active 30-day session. Billing aligns with business roles at different CU-per-hour rates. Planning also bills automation jobs separately. Additional Microsoft Fabric workloads consume capacity independently.
+Capacity consumption depends on the user's assigned role over a 30-day session.
 
-Use the [Planning in Fabric Capacity Estimator](https://community.fabricplan.com/capacity-pricing/) to estimate capacity requirements for your deployment.
+| User role                                                  | 30 day consumption rate |
+| ---------------------------------------------------------- | ----------------------- |
+| <p>Planner<br>FP\&A analysts, modelers, administrators</p> | 847 CU-hour             |
+| <p>Stakeholder<br>Business users, reviewers, approvers</p> | 168 CU-hour             |
+| <p>Viewer<br>Executives and report consumers</p>           | 37 CU-hour              |
 
-> [!NOTE]
-> Microsoft Fabric services outside planning, such as Fabric SQL, OneLake, Power BI XMLA operations, and other native Fabric workloads consume capacity separately.
->
-> Reserve additional capacity to support these workloads. Consider an estimated **30% capacity buffer**, although actual usage varies by deployment.
+Use the [Fabric Planning Capacity Estimator](https://community.fabricplan.com/capacity-pricing/) to estimate capacity requirements for your deployment.
 
-| User role       |  30 day consumption rate |
-| ----------------- |----------------------- |
-| Planner <br> FP&A analysts, modelers, administrators | 847 CU           |
-| Stakeholder <br> Business users, reviewers, approvers   | 168 CU     |
-| Viewer <br> Executives and report consumers    | 37 CU     |
+## How active sessions work
 
-## Session billing
+* **Trigger**: A session starts when a user opens, creates, or edits a planning item.
+* **Duration**: Once active, a session lasts 30 days (730 hours) and can't end early.
+* **Scope**: Sessions are tracked per unique combination of tenant + user + capacity.
+* **Role Changes**: Upgrading a role prorates the existing session and starts billing at the higher tier. Downgrades take effect only after the current session expires.
 
-A session starts when a user first interacts with a planning workflow. Each unique combination of user, workspace, and tenant has a separate session. When a user switches to a different workspace or tenant, a new session starts automatically.
+## Additional capacity usage
 
-> [!NOTE]
-> If a user downgrades to a lower capacity, their assigned role remains unchanged and continues to be valid until the current 30-day session expires.
+Automation jobs and connected planning workloads consume capacity independently of user sessions. Account for job-based CU consumption and extra capacity for Microsoft Fabric workloads outside planning in Fabric.
 
-* A session remains active for 30 days, regardless of whether you delete or pause the capacity.
-* Billing reflects the highest active role assigned to the user for the tenant and Fabric capacity.
-* Sessions don't renew automatically unless the user starts a new session.
-
-## Job billing
+### Automation jobs and connected planning
 
 Automation jobs in PowerTable and connected planning instances in Infobridge are billed independently of user sessions.
 
@@ -67,6 +65,10 @@ Automation jobs in PowerTable and connected planning instances in Infobridge are
 
 For more information, see [PowerTable automation](../powertable-concept-automation.md) and [connected planning in Infobridge](../infobridge-concept-connected-planning.md).
 
+### Fabric workloads
+
+Microsoft Fabric services outside Fabric planning, such as Fabric SQL, OneLake, Power BI XMLA operations, and other native Fabric workloads consume capacity separately. Reserve extra capacity to support these workloads. Consider an estimated **30% capacity buffer**, although actual usage varies by deployment.
+
 ## FAQs
 
 ### What triggers a billing session?
@@ -75,7 +77,7 @@ A session starts when you open or engage with an existing plan item (in edit mod
 
 ### How long does a session last?
 
-Each session runs for 730 hours—equivalent to a 30-day month.
+Each session runs for 730 hours, equivalent to a 30-day month. Any users assuming the same role, under the same tenant and capacity returning within the 30 day period will not start a new session.
 
 ### Can you stop a session before 30 days?
 
@@ -83,11 +85,11 @@ No. After a session starts, it remains active for the full 30 days, and you can'
 
 ### What happens when a session ends?
 
-When the 30-day period expires, a new session starts the next time you engage with a plan item. The assigned role depends on the action.
+When the 30-day period expires, a new session starts the next time you engage with a planning item. The assigned role depends on the action.
 
 ### What if your role changes mid-session?
 
-You can upgrade your role (for example, from Viewer to Stakeholder or from Stakeholder to Planner) but you can't downgrade your role within an active session. When you upgrade your role, the earlier session closes and is prorated, and billing continues at the higher-tier rate.
+You can upgrade your role (for example, from Viewer to Stakeholder or from Stakeholder to Planner), but you can't downgrade your role within an active session. When you upgrade your role, the earlier session closes and is prorated, and billing continues at the higher-tier rate.
 
 ### What if I work across multiple capacities?
 
@@ -95,23 +97,23 @@ Each unique combination of tenant, user, and capacity creates a separate session
 
 ### What if multiple workspaces share the same capacity?
 
-If you assign the same capacity to multiple workspaces, you're billed at the highest role tier active across all workspaces under that capacity.
+If you assign the same capacity to multiple workspaces, you're billed at the highest role tier active across all workspaces under that capacity. Billing is calculated using the combination of Tenant ID, Capacity ID, User ID, and Session Type. A single user session can involve activity across multiple workspaces and artifacts, so the billing records aren't attributed to a specific workspace.
 
 ### Are automation jobs billed separately?
 
-Yes. Automation jobs are billed at a fixed amount per completed job, regardless of whether a Planner, Stakeholder, or Viewer ran the job. Only successful jobs are billed—failed jobs aren't charged.
+Yes. Automation jobs are billed at a fixed amount per completed job, regardless of whether a Planner, Stakeholder, or Viewer ran the job. Only successful jobs are billed; failed jobs aren't charged.
 
 ### What happens if the Fabric capacity is paused or deleted?
 
-If a capacity is paused or deleted, the billing record for the full session period is written for each active session under that capacity.
+If a capacity is paused or deleted, the remaining CUs for any active 30-day Planner, Stakeholder, Viewer session(s) are summed and added to your Azure Bill. For more information, see [pause and resume your Fabric capacity](../../../enterprise/pause-resume.md).
 
-### What happens if a plan item is deleted mid-session?
+### What happens if a planning item is deleted mid-session?
 
-Active sessions continue to run and are billed through to the end of the 30 days, even if the plan item is deleted.
+Active sessions continue to run and are billed through to the end of the 30 days, even if the planning item is deleted.
 
 ### What if the capacity runs out of credits before the session ends?
 
-Sessions continue to be recorded even if the capacity is exhausted through other workloads. No credits are reserved exclusively for planning—billing continues periodically.
+Sessions continue to be recorded even if the capacity is exhausted through other workloads. Credits aren't reserved exclusively for Fabric planning; billing continues periodically.
 
 ### What if too many users are assigned to a small-capacity SKU?
 

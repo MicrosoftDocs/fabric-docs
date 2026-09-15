@@ -16,14 +16,14 @@ This article outlines the steps to create an Adobe Analytics connection.
 
 ## Supported authentication types
 
-The Adobe Analytics connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+The Adobe Analytics connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
 |Organizational account| n/a | √ |
 
 ## Set up your connection for Dataflow Gen2
-You can connect Dataflow Gen2 in Microsoft Fabric to Adobe Analytics using Power Query connectors. Follow these steps to create your connection:
+You can connect dataflow Gen2 in Fabric to Adobe Analytics using Power Query connectors. Follow these steps to create your connection:
 
 1. Check [capabilities](#capabilities) to make sure your scenario is supported.
 1. [Complete prerequisites for Adobe Analytics](#prerequisites).
@@ -53,7 +53,7 @@ You can connect Dataflow Gen2 in Microsoft Fabric to Adobe Analytics using Power
 
 ## Set up your connection in a pipeline
 
-Data Factory in Microsoft Fabric doesn't currently support Adobe Analytics in pipelines.
+Fabric Data Factory doesn't currently support Adobe Analytics in pipelines.
 
 ## Related content
 

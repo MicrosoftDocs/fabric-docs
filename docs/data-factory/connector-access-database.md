@@ -20,7 +20,7 @@ You can connect your Access database to Microsoft Fabric using Power Query conne
 
 ## Supported authentication types
 
-The Access database connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+The Access database connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|

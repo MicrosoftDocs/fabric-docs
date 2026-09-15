@@ -200,6 +200,8 @@ After you publish your anomaly detection configuration, there are two ways to ac
 
 You can also connect anomaly events to Fabric data agents to enable automated reasoning and actions across live and historical event data. Data agents can consume anomaly events and orchestrate downstream workflows that complement Activator-based alerts.
 
+<a id="query-anomaly-results-with-sql-endpoint"></a>
+
 ### Query anomaly results with SQL analytics endpoint
 
 Eventhouse provides a managed SQL analytics endpoint aligned with the Eventhouse data model and Fabric governance. You can query anomaly detector outputs and related tables or views with SQL for downstream analytics and integrations. To find SQL analytics endpoint connection details, go to your Eventhouse item in your Fabric workspace.

@@ -16,7 +16,7 @@ This article outlines the steps to create an Amazon S3 connection for pipelines 
 
 ## Supported authentication types
 
-The Amazon S3 connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+The Amazon S3 connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|

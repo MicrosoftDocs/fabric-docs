@@ -1,16 +1,16 @@
 ---
-title: "How to: Create scalar user-defined functions"
+title: "Create scalar user-defined functions"
 description: Learn how to create scalar user-defined functions, make functions inlineable, and rewrite calling queries for scalar UDF inlining in Microsoft Fabric Data Warehouse.
 ms.reviewer: srdjanmatin
-ms.date: 09/08/2026
+ms.date: 09/11/2026
 ms.topic: how-to
 # customer intent: Learn how to create scalar user-defined functions, make functions inlineable, and rewrite calling queries for scalar UDF inlining in Microsoft Fabric Data Warehouse.
 ---
-# How to create scalar user-defined functions in Fabric Data Warehouse (preview)
+# Create a scalar user-defined function (preview)
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-Fabric Data Warehouse uses two inlining techniques to run scalar user-defined functions (UDFs) as part of distributed queries:
+Microsoft Fabric Data Warehouse uses two inlining techniques to run scalar user-defined functions (UDFs) as part of distributed queries:
 
 - ExprBlock inlining supports computation-based scalar UDFs that don't reference data in their function bodies, and it supports a wide variety of calling-query shapes.
 - [Scalar UDF inlining in Fabric Data Warehouse (preview)](/sql/relational-databases/user-defined-functions/scalar-udf-inlining?view=fabric&preserve-view=true) has strict requirements for both the function definition and the calling query. For more information about the two techniques and their requirements, see [CREATE FUNCTION](/sql/t-sql/statements/create-function-sql-data-warehouse?view=fabric&preserve-view=true). 

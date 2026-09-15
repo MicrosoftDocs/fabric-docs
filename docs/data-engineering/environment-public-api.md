@@ -234,6 +234,23 @@ By specifying the full library file name with the type suffix, you can delete on
     DELETE https://api.fabric.microsoft.com/v1/workspaces/{{WORKSPACE_ID}}/environments/{{ARTIFACT_ID}}/staging/libraries/samplelibrary.jar
     ```
 
+#### Remove an external library
+
+Use the [Remove external library](/rest/api/fabric/environment/staging/remove-external-library) API to remove a single public (external) library. The request body requires **both** the library `name` and its exact `version`. The API rejects a request that omits the version or the name.
+
+- Sample request
+
+    ```http
+    POST https://api.fabric.microsoft.com/v1/workspaces/{{WORKSPACE_ID}}/environments/{{ARTIFACT_ID}}/staging/libraries/removeExternalLibrary
+    ```
+
+    ```json
+    {
+      "name": "fuzzywuzzy",
+      "version": "0.18.0"
+    }
+    ```
+
 ### Manage staging Spark compute
 
 You can use the update staging Spark compute to manage the Spark compute.

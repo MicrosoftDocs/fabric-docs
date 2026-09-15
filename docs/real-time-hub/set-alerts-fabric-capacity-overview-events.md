@@ -1,14 +1,18 @@
 ---
 title: Set alerts on Fabric capacity overview events in Real-Time hub
-description: This article describes how to set alerts on Fabric capacity overview events in Real-Time hub.
+description: This article describes how to set alerts on Fabric capacity overview events in Real-Time hub by using alert templates.
 ms.reviewer: geguirgu
 ms.topic: how-to
-ms.date: 03/20/2026
+ms.date: 08/26/2026
 ms.custom: references_regions
+ai-usage: ai-assisted
 ---
 
 # Set alerts on Fabric capacity overview events in Real-Time hub
+
 This article describes how to set alerts on Fabric capacity overview events in Real-Time hub.
+
+The **Set capacity alert** dialog offers templates for the most common capacity alerts. When you select a template and fill in its parameters, Fabric [!INCLUDE [fabric-activator](../real-time-intelligence/includes/fabric-activator.md)] pre-fills the events to monitor and the condition to look for, so all you need to do is choose an action.
 
 [!INCLUDE [consume-fabric-events-regions](../real-time-intelligence/event-streams/includes/connectors/consume-fabric-events-regions.md)]
 
@@ -20,13 +24,9 @@ This article describes how to set alerts on Fabric capacity overview events in R
 
 [!INCLUDE [navigate-to-real-time-hub](./includes/navigate-to-real-time-hub.md)]
 
-## Launch the Set alert page
+## Open the Set capacity alert dialog
 
-Do steps from one of the following sections, which opens a side panel where you can configure the following options:
-
-- Events you want to monitor.
-- Conditions you want to look for in the events.
-- Action you want Fabric [!INCLUDE [fabric-activator](../real-time-intelligence/includes/fabric-activator.md)] to take.
+To open the **Set capacity alert** dialog, follow the steps in one of the following sections.
 
 ### Use events list
 
@@ -45,39 +45,68 @@ Do steps from one of the following sections, which opens a side panel where you 
     :::image type="content" source="media/set-alerts-fabric-capacity-overview-events/set-alert-detail-page.png" alt-text="Screenshot that shows the Set alert button on the detail page." lightbox="media/set-alerts-fabric-capacity-overview-events/set-alert-detail-page.png":::
 
 
+## Choose an alert template
+
+The **Set capacity alert** dialog opens with the following templates.
+
+| Template | Use it to |
+| -------- | --------- |
+| **Alert when capacity usage % exceeds a threshold** | Monitor overall utilization of a capacity. |
+| **Alert when a capacity metric exceeds a threshold** | Monitor a specific numeric metric, such as CU milliseconds, a rejection percentage, or carry-forward overage. |
+| **Alert when a capacity changes state** | Monitor state changes, such as a capacity becoming overloaded, paused, or resumed. |
+
+:::image type="content" source="media/set-alerts-fabric-capacity-overview-events/set-capacity-alert-templates.png" alt-text="Screenshot that shows the Set capacity alert dialog with the available alert templates." lightbox="media/set-alerts-fabric-capacity-overview-events/set-capacity-alert-templates.png":::
+
+Select a template to expand it, fill in its parameters, and then select **Continue**. To configure an alert that these templates don't cover, select **Create from scratch**. For more information, see [Create custom alerts on Fabric capacity overview events](set-custom-alerts-fabric-capacity-overview-events.md).
+
+### Alert when capacity usage percentage exceeds a threshold
+
+Use this template to alert when overall utilization of a capacity gets too high. The template tracks `interactiveDelayThresholdPercentage`, which is the closest signal a capacity emits to overall utilization.
+
+1. Select **Alert when capacity usage % exceeds a threshold**.
+1. For **Capacity**, select the Fabric capacity that you want to monitor.
+1. For **Threshold (% usage)**, enter the utilization percentage that triggers the alert. The default value is `80`.
+1. Select **Continue**.
+
+    :::image type="content" source="media/set-alerts-fabric-capacity-overview-events/template-capacity-usage-threshold.png" alt-text="Screenshot that shows the capacity usage percentage template with the capacity and threshold parameters." lightbox="media/set-alerts-fabric-capacity-overview-events/template-capacity-usage-threshold.png":::
+
+### Alert when a capacity metric exceeds a threshold
+
+Use this template to alert on a specific numeric metric emitted by the capacity.
+
+1. Select **Alert when a capacity metric exceeds a threshold**.
+1. For **Capacity**, select the Fabric capacity that you want to monitor.
+1. For **Metric**, select the metric that you want to monitor. For a list of available metrics and their definitions, see [Explore Fabric capacity overview events](explore-fabric-capacity-overview-events.md).
+1. For **Threshold**, enter the value that triggers the alert.
+1. Select **Continue**.
+
+    :::image type="content" source="media/set-alerts-fabric-capacity-overview-events/template-capacity-metric-threshold.png" alt-text="Screenshot that shows the capacity metric template with the capacity, metric, and threshold parameters." lightbox="media/set-alerts-fabric-capacity-overview-events/template-capacity-metric-threshold.png":::
+
+### Alert when a capacity changes state
+
+Use this template to set up an alert for when a capacity changes state, such as when it becomes overloaded, or when it's paused or resumed.
+
+1. Select **Alert when a capacity changes state**.
+1. For **Capacity**, select the Fabric capacity that you want to monitor.
+1. For **Alert when the state changes to**, select **Any state change**, **Overloaded**, **Active**, **Suspended**, or **Deleted**.
+1. Select **Continue**.
+
+    :::image type="content" source="media/set-alerts-fabric-capacity-overview-events/template-capacity-state-change.png" alt-text="Screenshot that shows the capacity state change template with the capacity and state parameters." lightbox="media/set-alerts-fabric-capacity-overview-events/template-capacity-state-change.png":::
+
 [!INCLUDE [rule-details](../real-time-intelligence/data-activator/includes/rule-details.md)]
 
-## Monitor section
+## Review the monitor and condition sections
 
-1. In the **Monitor** section, for **Source**, choose **Select source events**.
+The template fills in the **Monitor** and **Condition** sections for you:
 
-    :::image type="content" source="media/set-alerts-anomaly-detection/select-events.png" alt-text="Screenshot of the Set alert side panel.":::
+- **Monitor** is set to the event type and the capacity that you selected in the template.
+- **Condition** is set to a numeric change condition grouped by `capacityId`. This grouping means you get a single alert when the measure crosses the threshold, instead of a continuous stream of alerts for the whole time that the measure stays above the threshold.
 
-1. In the **Connect data source** wizard, do these steps:
-    1. For **Event types**, select **Microsoft.Fabric.Capacity.Summary**.
-    1. For **Event source**, confirm that **By capacity** is selected.
-    1. For **Capacity**, select the Fabric capacity that you want to monitor.
-    1. Select **Next**.
+Review both sections, and adjust them if you need to.
 
-        > [!IMPORTANT]
-        > Don't set a filter in the connection settings. Instead of filtering events here, you configure a numeric change condition in the next section. A numeric change condition fires only when the measure crosses the threshold, which prevents repeated alerts.
+## Action section
 
-    1. On the **Review + connect** page, review the settings, and select **Save**.
-
-## Condition section
-
-After you connect the data source, configure the condition so that Fabric [!INCLUDE [fabric-activator](../real-time-intelligence/includes/fabric-activator.md)] fires a single alert when the measure crosses the threshold.
-
-> [!IMPORTANT]
-> Capacity overview events fire frequently. If you set an alert that triggers on every event where usage exceeds a threshold, you receive a continuous stream of alerts for the entire duration that usage remains high. To avoid this, group events by Capacity ID and use a **numeric change** condition when you configure the alert rule. A numeric change condition fires a single alert when usage crosses a threshold, and doesn't fire again until usage drops below the threshold and then crosses it again. To configure this, follow these steps.
-
-1. In the **Condition** section, for **Check**, select **On each event grouped by**.
-1. For **Grouping field**, select **capacityId**.
-1. In the **When** field, select the measure that you want to monitor. For a list of available fields and their definitions, see [Explore Fabric capacity overview events](explore-fabric-capacity-overview-events.md).
-1. For the condition, select one of the **numeric change** conditions.
-1. Fill out the remaining fields with threshold values appropriate for your numeric change condition.
-
-[!INCLUDE [rule-action](../real-time-intelligence/data-activator/includes/rule-action.md)]
+In the **Action** section, choose what happens when the alert fires. You can send an email or a Teams message, run a Fabric item such as a pipeline or a notebook, or call a custom action. For step-by-step instructions for each action type, see [Configure actions for Activator rules](../real-time-intelligence/data-activator/rule-actions.md).
 
 [!INCLUDE [rule-save-location](../real-time-intelligence/data-activator/includes/rule-save-location.md)]
        
@@ -91,5 +120,8 @@ After you connect the data source, configure the condition so that Fabric [!INCL
 
 ## Related content
 
+- [Create custom alerts on Fabric capacity overview events](set-custom-alerts-fabric-capacity-overview-events.md)
+- [Explore Fabric capacity overview events](explore-fabric-capacity-overview-events.md)
+- [Configure actions for Activator rules](../real-time-intelligence/data-activator/rule-actions.md)
 - [Set alerts on Azure blob storage events](set-alerts-azure-blob-storage-events.md)
 

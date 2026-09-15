@@ -1,7 +1,7 @@
 ---
 title: Create a Table App by Connecting PowerTable Sheet to a Semantic Model
 description: Learn how to connect a PowerTable sheet to a semantic model and build collaborative table apps with live data synchronization.
-ms.date: 06/28/2026
+ms.date: 09/10/2026
 ms.topic: how-to
 #customer intent: As a user, I want to connect PowerTable sheets to a semantic model so that I can build a collaborative table app using governed data from my existing Power BI or Fabric semantic model.
 ---
@@ -9,6 +9,8 @@ ms.topic: how-to
 # Create table app by connecting to a semantic model
 
 This article describes how to create a table app by connecting the PowerTable sheet to a semantic model. You can save the data table, along with any changes or updates, to your preferred destination database. You can also write back subsequent changes to the same database table.
+
+In this method, the semantic model is the initial input source, and the created database is the destination that stores the data and changes written back from the app.
 
 > [!NOTE]
 > You can also create a table by uploading data from an Excel or CSV file. For more information, see [Create a table app with PowerTable sheets](powertable-how-to-create-table-app.md).

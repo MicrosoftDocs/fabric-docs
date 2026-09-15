@@ -13,11 +13,11 @@ ai-usage: ai-assisted
 
 # Set up your Azure SQL Database connection
 
-This article outlines how to set up a connection to [Azure SQL Database](/azure/azure-sql/database/sql-database-paas-overview) for pipelines and Dataflow Gen2 in Microsoft Fabric.
+This article outlines how to set up a connection to [Azure SQL Database](/azure/azure-sql/database/sql-database-paas-overview) for pipelines and dataflow Gen2 in Fabric.
 
 ## Supported authentication types
 
-The Azure SQL Database connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+The Azure SQL Database connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
@@ -25,8 +25,8 @@ The Azure SQL Database connector supports the following authentication types for
 |Organizational account| √| √|
 |Service Principal|√||
 
-## Set up your connection for Dataflow Gen2
-You can connect Dataflow Gen2 to Azure SQL database from Microsoft Fabric using Power Query connectors. Follow these steps to create your connection:
+## Set up your connection for dataflow Gen2
+You can connect dataflow Gen2 to Azure SQL Database from Fabric using Power Query connectors. Follow these steps to create your connection:
 
 1. Check [capabilities](#capabilities) to make sure your scenario is supported.
 1. [Complete prerequisites for Azure SQL Database](#prerequisites).
@@ -130,7 +130,7 @@ Open **Edit credentials**. You notice the sign in interface. Enter your account 
 
 :::image type="content" source="./media/connector-azure-sql-database/authentication-oauth2.png" alt-text="Screenshot showing OAuth2 authentication method.":::
 
-### Service Principal authentication
+### Service principal authentication
 
 :::image type="content" source="./media/connector-azure-sql-database/authentication-service-principal.png" alt-text="Screenshot showing Service Principal authentication method page.":::
 

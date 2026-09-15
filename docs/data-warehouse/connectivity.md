@@ -2,8 +2,9 @@
 title: Warehouse Connectivity
 description: Learn about connecting to Fabric Data Warehouse, including authentication and best practices.
 ms.reviewer: fresantos, salilkanade, pvenkat
-ms.date: 05/13/2026
+ms.date: 09/09/2026
 ms.topic: concept-article
+ai-usage: ai-assisted
 ms.search.form: Warehouse connectivity # This article's title should not change. If so, contact engineering.
 ms.custom: sfi-image-nochange
 ---
@@ -26,7 +27,11 @@ In [!INCLUDE [product-name](../includes/product-name.md)], the SQL connection st
 
 For more information, see [Microsoft Entra authentication as an alternative to SQL authentication in Microsoft Fabric](entra-id-authentication.md).
 
-The SQL connection string requires TCP port 1433 to be open. TCP 1433 is the standard SQL Server port number. The SQL connection string also respects the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or Lakehouse [!INCLUDE [fabric-se](includes/fabric-se.md)] security model for data access. Users can access data for all objects to which they have permission.
+The SQL connection string requires TCP port 1433 to be open. TCP 1433 is the standard SQL Server port number. [!INCLUDE [fabric-dw](includes/fabric-dw.md)] uses the Microsoft SQL Server Tabular Data Stream (TDS) protocol over TCP port 1433. In environments that use protocol-aware firewalls or application-layer inspection, configure and inspect SQL traffic as Microsoft SQL Server (MSSQL/TDS) traffic rather than HTTPS traffic.
+
+Some firewalls distinguish between TCP port access and application protocol inspection. In these environments, allowing TCP port 1433 alone might not be sufficient if the firewall is configured to expect HTTPS traffic on that port.
+
+The SQL connection string also respects the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or Lakehouse [!INCLUDE [fabric-se](includes/fabric-se.md)] security model for data access. Users can access data for all objects to which they have permission.
 
 For more information about security in the SQL analytics endpoint, see [OneLake security for SQL analytics endpoints](../onelake/sql-analytics-endpoint-onelake-security.md).
 
@@ -48,6 +53,35 @@ Add retries to your applications and ETL jobs to make them more resilient. For m
 To enable connectivity through the firewall, you need to allow Power BI service tags and SQL service tags. For more information, see [Power BI Service Tags](/power-bi/enterprise/service-premium-service-tags) and [Service tags](../security/security-service-tags.md). 
 
 You can't use the Fully Qualified Domain Name (FQDN) of the TDS Endpoint alone. 
+
+> [!IMPORTANT]
+> If your organization uses Azure Firewall application rules or similar protocol-aware firewalls, configure [!INCLUDE [fabric-dw](includes/fabric-dw.md)] traffic as MSSQL/TDS traffic. Configuring SQL traffic as HTTPS traffic on port 1433 can prevent successful connectivity even when network access to the port is allowed.
+
+### Firewall and application-layer inspection considerations
+
+Some enterprise firewall solutions perform application-layer inspection in addition to traditional IP and port filtering.
+
+When you configure firewall policies for [!INCLUDE [fabric-dw](includes/fabric-dw.md)]:
+
+- Allow outbound TCP connectivity on port 1433.
+- Ensure SQL traffic is treated as Microsoft SQL Server (MSSQL/TDS) traffic.
+- Don't configure SQL connections to [!INCLUDE [fabric-dw](includes/fabric-dw.md)] as HTTPS traffic on port 1433.
+- Validate connectivity after firewall policy changes are deployed.
+
+> [!NOTE]
+> Customers using Azure Firewall application rules should configure SQL-aware filtering for SQL traffic. Azure Firewall supports MSSQL protocol handling and SQL FQDN filtering for SQL workloads.
+
+### FQDN-based firewall filtering
+
+Organizations that restrict outbound access using fully qualified domain names (FQDNs) can use firewall rules that allow only approved SQL destinations.
+
+For environments that use Azure Firewall:
+
+- SQL-aware FQDN filtering is supported through MSSQL application rules.
+- FQDN filtering can be used together with port 1433 restrictions to limit outbound SQL connectivity.
+- Ensure all [!INCLUDE [fabric-dw](includes/fabric-dw.md)] endpoints documented in this article are included in the firewall allow list.
+
+For implementation details, see [Configure Azure Firewall application rules with SQL FQDNs](/azure/firewall/sql-fqdn-filtering).
 
 ## Considerations and limitations
 

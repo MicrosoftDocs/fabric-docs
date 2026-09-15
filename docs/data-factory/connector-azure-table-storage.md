@@ -15,15 +15,15 @@ This article outlines the steps to create an Azure Table Storage connection in M
 
 ## Supported authentication types
 
-The Azure Table Storage connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+The Azure Table Storage connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
 |Account key| √ | √ |
 
-## Set up your connection for Dataflow Gen2
+## Set up your connection for dataflow Gen2
 
-You can connect Dataflow Gen2 to Azure Table Storage in Microsoft Fabric using Power Query connectors. Follow these steps to create your connection:
+You can connect dataflow Gen2 to Azure Table Storage in Fabric by using Power Query connectors. Follow these steps to create your connection:
 
 1. Check [capabilities](#capabilities) to make sure your scenario is supported.
 1. [Get data in Fabric](#get-data).

@@ -16,14 +16,14 @@ This article outlines the steps to create a Google Analytics connection.
 
 ## Supported authentication types
 
-The Google Analytics connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+The Google Analytics connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
 |Organizational account| n/a | √ |
 
-## Set up your connection for Dataflow Gen2
-You can connect Dataflow Gen2 in Microsoft Fabric to Google Analytics using Power Query connectors. Follow these steps to create your connection:
+## Set up your connection for dataflow Gen2
+You can connect dataflow Gen2 in Fabric to Google Analytics by using Power Query connectors. Follow these steps to create your connection:
 
 1. Check [capabilities](#capabilities), [limitations, and considerations](#limitations-and-considerations) to make sure your scenario is supported.
 1. [Complete prerequisites for Google Analytics](#prerequisites).
@@ -52,7 +52,7 @@ You can connect Dataflow Gen2 in Microsoft Fabric to Google Analytics using Powe
 
 ## Set up your connection in a pipeline
 
-Data Factory in Microsoft Fabric doesn't currently support Google Analytics data in pipelines.
+Data Factory doesn't currently support Google Analytics data in pipelines.
 
 ## Related content
 

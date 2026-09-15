@@ -24,7 +24,7 @@ The following table shows the support status for each Fabric item. A check mark 
 | Workload | Item type | Workspace private links | Customer managed keys | Outbound access protection |
 |--|--|:--:|:--:|:--:|
 | **Data Engineering** | Lakehouse | ✓ | ✓ | ✓ |
-|  | Lakehouse SQL Endpoint | ✓ | ✓ | ✓ |
+|  | Lakehouse SQL analytics endpoint | ✓ | ✓ | ✓ |
 |  | Notebook | ✓ | ✓ | ✓ |
 |  | Spark Job Definition | ✓ | ✓ | ✓ |
 |  | Environment | ✓ | ✓ | ✓ |
@@ -39,12 +39,12 @@ The following table shows the support status for each Fabric item. A check mark 
 |  | Vnet data gateway | ✓ | - | ✓ |
 |  | On-premises data gateway: Pipeline/Copy Job | ✓ | - | ✓ |
 |  | On-premises data gateway: Dataflow Gen2 | -| - | ✓ |
-|  | Data Workflow | - | - | - |
+|  | Data Workflow (previously Airflow) | - | - | - |
 |  | Data Build Tool job | - | - | - |
 | **Data Science** | ML Model | ✓ | ✓ | ✓ |
 |  | Experiment | ✓ | ✓ | ✓ |
 |  | Data Agent | ✓ | - | Preview |
-| **Data Warehouse** | SQL Endpoint | ✓ | ✓ | ✓ |
+| **Data Warehouse** | SQL analytics endpoint | ✓ | ✓ | ✓ |
 |  | Warehouse | ✓ | ✓ | ✓ |
 |  | Warehouse with EDPE | - | - | - |
 | **Developer Experience** | API for GraphQL | - | ✓ | - |

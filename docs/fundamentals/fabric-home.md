@@ -4,7 +4,7 @@ description: Learn how to quickly find content, search, filter, multitask with t
 author: SnehaGunda
 ms.author: sngun
 ms.topic: overview
-ms.date: 03/27/2026
+ms.date: 09/11/2026
 ai-usage: ai-assisted
 #customer intent: As a new Fabric user, I want to quickly find my content, understand navigation, personalize settings, and get help.
 ---
@@ -143,7 +143,15 @@ Horizontal tabs let you switch between multiple open items. Use the following sh
 
 ### More open items
 
-The previous limit of 10 open items has been increased. You can keep more resources active at once. This is especially useful for complex workflows that require multiple pipelines, notebooks, or reports.
+The previous limit of 10 open items has been increased to 20. You can now keep up to 20 resources active at once. This is especially useful for complex workflows that require multiple pipelines, notebooks, or reports.
+
+### Multitasking across browser tabs 
+
+Fabric now helps you multitask by carrying your current work into additional browser tabs. When you open Fabric in another tab using the same browser profile, your open items, tab order, pinned items, and tab groups are available there. 
+Any items inherited into the new browser tab count toward the 20 concurrent open item limit. If you use multiple browser tabs for separate tasks, we recommend closing items that you no longer need to avoid hitting this limit. Your multitasking context is retained in the same browser profile. It isn't carried over when you use a different browser, browser profile, or device. 
+
+> [!NOTE]
+> Context carryover is currently applied automatically. Based on customer feedback we’ve received since launching this feature, we're working on rolling out a setting that will let you choose whether opening Fabric in another browser tab carries over your existing context or starts with a clean context. 
 
 ## Maximize editing space with focus mode
 
@@ -191,6 +199,8 @@ Select the gear icon in the top bar to open settings. Links shown depend on your
 | Preferences | Set display language, personalize UI behavior, manage notifications, configure item settings (per item type), enable developer mode (where applicable). |
 | Resources and extensions | Manage personal and group storage, Power BI item settings, connections and gateways, embed codes, Azure Analysis Services migrations.|
 | Governance and insights | Access the Admin portal (if permitted) and Microsoft Purview hub (preview) for governance and compliance insights. |
+
+You can also select region-specific English language variants, including English (United States), English (United Kingdom), and English (Canada), from the language settings. Each variant applies its associated date and time format throughout the Fabric experience, making it easier to display dates and times in the format commonly used in your region.
 
 Learn more: [Admin portal](../admin/admin-center.md) • [Microsoft Purview hub (preview)](../governance/use-microsoft-purview-hub.md)
 

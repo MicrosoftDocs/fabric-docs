@@ -599,8 +599,26 @@ items:
                 href: migrate-api-to-eventhouse.md
       - name: Monitor
         items:
-          - name: Eventhouse monitoring
-            href: monitor-eventhouse.md
+          - name: Fabric workspace monitoring for eventhouse
+            items:
+              - name: Eventhouse monitoring
+                href: monitor-eventhouse.md
+              - name: Capacity throttling logs
+                href: monitor-logs-capacity-throttling.md
+              - name: Sub-optimal size logs
+                href: monitor-logs-sub-optimal-size.md
+              - name: Scale-out event logs
+                href: monitor-logs-scaleout-events.md
+              - name: Metrics
+                href: monitor-metrics.md
+              - name: Command logs
+                href: monitor-logs-command.md
+              - name: Data operation logs
+                href: monitor-logs-data-operation.md
+              - name: Ingestion results logs
+                href: monitor-logs-ingestion-results.md
+              - name: Query logs
+                href: monitor-logs-query.md
           - name: Monitor activity by application
             href: monitor-eventhouse-activity-by-application.md
           - name: Metrics
@@ -809,22 +827,22 @@ items:
           href: copilot-generate-dashboard.md
       - name: Create and manage visuals
         items:
-        - name: Customize dashboard visuals
-          href: dashboard-visuals-customize.md
-        - name: Real-Time Dashboard-specific visuals
-          href: dashboard-visuals.md
-        - name: Visuals requiring cloud connection
-          href: dashboard-cloud-connection-visuals.md
-        - name: Time series visual
-          href: dashboard-time-series.md
-        - name: Troubleshoot visual errors
-          href: troubleshoot-dashboard-tile-error.md
-      - name: Customize dashboard
-        items:
         - name: Dashboard visual gallery
           href: dashboard-visual-gallery.md
         - name: Customize dashboard visuals
           href: dashboard-visuals-customize.md
+        - name: Real-Time Dashboard-specific visuals
+          href: dashboard-visuals.md
+        - name: Time series visual
+          href: dashboard-time-series.md
+        - name: Markdown visual
+          href: dashboard-markdown-visual.md
+        - name: Visuals requiring cloud connection
+          href: dashboard-cloud-connection-visuals.md
+        - name: Troubleshoot visual errors
+          href: troubleshoot-dashboard-tile-error.md
+      - name: Customize dashboard
+        items:
         - name: Conditional formatting
           href: dashboard-conditional-formatting.md
         - name: Dashboard parameters
@@ -835,10 +853,6 @@ items:
             href: dashboard-parameters.md
           - name: Configure interactions in Real-Time Dashboards
             href: dashboard-interactions.md
-        - name: Time series visual
-          href: dashboard-time-series.md
-        - name: Markdown visual
-          href: dashboard-markdown-visual.md
       - name: Explore data
         items:
         - name: Explore data with Copilot
@@ -919,6 +933,8 @@ items:
             href: ../real-time-hub/set-alerts-azure-blob-storage-events.md?context=/fabric/context/context-rti&pivots=fabric
           - name: Set alerts on Fabric capacity overview events
             href: ../real-time-hub/set-alerts-fabric-capacity-overview-events.md?context=/fabric/context/context-rti&pivots=fabric
+          - name: Create custom alerts on Fabric capacity overview events
+            href: ../real-time-hub/set-custom-alerts-fabric-capacity-overview-events.md?context=/fabric/context/context-rti&pivots=fabric
           - name: Set alerts on Fabric capacity operation events
             href: ../real-time-hub/set-alerts-fabric-capacity-operation-events.md?context=/fabric/context/context-rti&pivots=fabric
           - name: Set alerts on anomaly detection events

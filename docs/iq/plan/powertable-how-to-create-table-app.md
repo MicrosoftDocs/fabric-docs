@@ -1,7 +1,7 @@
 ---
 title: Create a Table App Using PowerTable by Importing Excel or CSV Files
 description: Learn how to create a no-code table app with PowerTable sheets, by importing Excel sheets to build collaborative data apps with live synchronization.
-ms.date: 06/28/2026
+ms.date: 09/10/2026
 ms.topic: how-to
 ms.search.form: Getting Started with PowerTable Sheet
 #customer intent: As a user, I want step-by-step instructions to build my first PowerTable data app by importing an Excel or CSV file.
@@ -9,14 +9,22 @@ ms.search.form: Getting Started with PowerTable Sheet
 
 # Build a table app using PowerTable by importing an Excel file
 
+PowerTable lets you build no-code table apps in Fabric Plan. It has an Excel-like interface for structured data entry and reference data management.
+
+In this article, you learn how to create a table app with PowerTable sheets.
+
 To create a table app using PowerTable, use one of these four approaches:
 
 * Upload Excel or CSV file to import data
-* Connect to an existing database table
-* Enter data directly into the table app
-* Connect to a semantic model
+* [Connect to an existing database table](powertable-how-to-connect-existing-database.md)
+* [Enter data directly into the table app](powertable-how-to-enter-table-data-manually.md)
+* [Connect to a semantic model](powertable-how-to-connect-semantic-model.md)
 
-In this article, you learn how to create a table app by importing an Excel or CSV file.
+In this article, you use the first method: how to upload an Excel or a CSV file to create a PowerTable sheet.
+
+> [!NOTE]
+> * In the first three methods, the app uses the same underlying database table as both the source and destination. You create a database table and import or enter data into it, or connect to an existing database table. Any changes made through the app are written back to the same table.
+> * In the last method, where you connect to a semantic model, the semantic model is the input source and the database table is the destination for writeback data.
 
 ## Prerequisites
 

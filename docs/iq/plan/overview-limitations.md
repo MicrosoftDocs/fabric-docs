@@ -2,7 +2,7 @@
 title: Known Limitations in Planning
 description: This article lists known issues and limitations present in planning in Fabric.
 ms.topic: concept-article
-ms.date: 08/14/2026
+ms.date: 09/10/2026
 #customer intent: As a user, I want to know the limitations present in planning.
 ---
 
@@ -37,17 +37,71 @@ Don't rename a semantic model that's connected to a plan item. Renaming the sema
 
 Power BI Pro and Power BI Premium Per User (PPU) aren't supported for planning scenarios that use XMLA endpoints and embed tokens. Similarly, lower-capacity SKUs that don't support XMLA endpoints are also unsupported.
 
-## Database-level row-level security (RLS) support
+## PowerTable limitations
+
+### Database-level row-level security (RLS) support
 
 PowerTable doesn't support user-specific database-level row-level security (RLS) when connecting to Fabric SQL tables through a database connection. As a result, users might see rows that differ from the expected RLS-filtered results. This limitation exists because PowerTable executes all database queries by using the identity associated with the database connection that the user configures during sheet creation, rather than the identity of the signed-in PowerTable user.
 
 Blend (From Sheets) doesn't support RLS. All data available in the source sheet is visible regardless of the viewer's RLS permissions.
 
-## PowerTable DMTS connection recovery
+### DMTS connection recovery
 
 If you delete the DMTS connection that you configured for a PowerTable sheet, or if it becomes unavailable, you can't open the sheet to update the connection. The connection recovery screen doesn't appear, and you see the message "DMTS connection is deleted or not found."
 
 To recover, create a new PowerTable sheet by using the **Existing Table** option and configure the same table again.
+
+### Excel export limitations
+
+Excel export (Raw mode) supports up to 20 million cells or 1 million rows, while Excel export (Label mode) supports up to 5 million cells.
+
+### Sort row limit
+
+Sort supports a maximum of 5 million rows. Sort isn't supported when the total number of rows exceeds 5 million.
+
+### Group By row limit
+
+Group By supports a maximum of 5 million rows. Group By isn't supported when the total number of rows exceeds 5 million.
+
+### Insight row limit
+
+Insight supports up to 5 million rows. Insight isn't supported when the total number of rows exceeds 5 million.
+
+### Find and Replace row limit
+
+Find and Replace supports up to 5 million rows. Find and Replace isn't supported when the total number of rows exceeds 5 million.
+
+### Snapshot limitations
+
+Snapshot export in Gantt supports up to 100,000 rows, and you can create up to 5 snapshots per table.
+
+### Automation Find Action record limit
+
+Find Action fetches only the first 1,000 records.
+
+### Automation repeated group iteration limit
+
+A repeating group processes only the first 1,000 items. Additional items beyond this limit aren't processed.
+
+### Cascading automation trigger depth limit
+
+Cascading automation triggers support up to 2 levels, including the initial trigger. Automation chains can't extend beyond two trigger levels, and further cascading triggers aren't executed.
+
+### Multiple record operations in automation
+
+Multiple record operations aren't supported in subsequent automation actions. Subsequent actions support only single-record operations.
+
+### Automation database trigger writeback limit
+
+Create Record, Update Record, Delete Record, and Form Submission database triggers support writeback of up to 10 records per trigger type. If a user writes back more than 10 records, automation jobs aren't triggered for any of the records. The system doesn't partially execute the automation for the first 10 records.
+
+### Scrollbar row limit
+
+Scrollbar supports up to 5 million rows. Scrollbar isn't supported when the total number of rows exceeds 5 million. Users can navigate the table only through pagination.
+
+### Gantt and Resource Layout row limit
+
+Gantt and Resource Layout support up to 30,000 rows. Gantt and Resource Layout aren't supported when the total number of rows exceeds 30,000.
 
 ## Workspace permissions
 
@@ -65,9 +119,7 @@ workspace breaks the plan item, and the item no longer opens.
 
 ## Bulk data input limit
 
-Bulk data input supports a maximum of 1 million rows. Uploading more
-than 1 million rows from an Excel or CSV file isn't supported and might
-cause the upload to fail.
+Bulk data input supports up to 1 million rows. Uploading more than 1 million rows from an Excel or CSV file isn't supported and might cause the upload to fail.
 
 ## Maximum number of sheets per item
 
