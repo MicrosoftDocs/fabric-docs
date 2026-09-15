@@ -66,7 +66,9 @@ In this section, you add the semantic model connection that you created earlier 
    :::image type="content" source="media/planning-how-to-get-started/planning-sheet.png" alt-text="Screenshot of the created planning sheet." lightbox="media/planning-how-to-get-started/planning-sheet.png":::
 
 > [!NOTE]
-> You can't change or remove the semantic model connected to a **Plan** item. To connect to a different semantic model, [create a new **Plan** item](#create-plan-item).
+> Each **Plan** item is associated with a single semantic model. To connect to a different semantic model, [create a new plan item](#create-plan-item).
+> 
+> You can create multiple plan items within the same billing session. All items you create use the same active billing session, regardless of the number of items or use cases. For more information, see [Billing and usage for Fabric Planning](resources/billing-fabric-plan.md#faqs).
 
 
 ## Optional: Connect to a database for collaboration
