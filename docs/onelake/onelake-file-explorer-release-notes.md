@@ -17,7 +17,7 @@ Continue reading for information on major updates to OneLake file explorer.
 
 ### Expanded Cloud Availability
 
-Expanded OneLake File Explorer availability to GCC High
+Expanded OneLake File Explorer availability to GCC High.
 
 ## March 2026 update (v 1.1.0.0)
 
