@@ -1,7 +1,7 @@
 ---
 title: Get Started with Planning Sheets
 description: Learn how to get started with your first planning sheet. The article covers how to create a planning sheet, connect to your semantic model, and perform several tasks.
-ms.date: 04/29/2026
+ms.date: 09/15/2026
 ms.topic: how-to
 ms.search.form: Getting Started with Planning Sheets
 ---
@@ -64,6 +64,10 @@ In this section, you add the semantic model connection that you created earlier 
 1. Add semantic model data into your fields. Now you have your first planning sheet.
   
    :::image type="content" source="media/planning-how-to-get-started/planning-sheet.png" alt-text="Screenshot of the created planning sheet." lightbox="media/planning-how-to-get-started/planning-sheet.png":::
+
+> [!NOTE]
+> You can't change or remove the semantic model connected to a **Plan** item. To connect to a different semantic model, [create a new **Plan** item](#create-plan-item).
+
 
 ## Optional: Connect to a database for collaboration
 
