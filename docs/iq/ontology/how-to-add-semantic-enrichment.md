@@ -146,7 +146,7 @@ After you add these semantic enrichment details, the data agent better relates t
 
 Semantic enrichment improves schema understanding but doesn't currently influence all stages of the Fabric data agent pipeline. When you use a data agent with ontology semantic enrichment, keep the following limitations in mind:
 
-* Data agent does not perform any schema exploration of the ontology
+* Data agent doesn't perform any schema exploration of the ontology.
 * Entity and property descriptions, synonyms, and custom attributes can help the data agent understand ontology concepts during schema exploration and reasoning.
 * Ontology query generation doesn't directly use the metadata. Any benefit comes from the data agent interpreting the ontology schema before query generation.
 
