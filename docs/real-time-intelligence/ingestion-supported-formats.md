@@ -4,7 +4,8 @@ description: Learn about the various data and compression formats supported by R
 ms.reviewer: tzgitlin
 ms.topic: concept-article
 ms.subservice: rti-eventhouse
-ms.date: 11/19/2024
+ms.date: 09/15/2026
+ai-usage: ai-assisted
 ---
 
 # Data formats supported by Real-Time Intelligence
@@ -65,6 +66,15 @@ must be specified as an ingestion property because it can't be inferred.
 >
 > * Some compression formats keep track of the original file extension as part of the compressed stream. This extension is generally ignored for determining the file format. If the file format can't be determined from the (compressed) blob or file name, it must be specified through the `format` ingestion property.
 > * Not to be confused with internal (chunk level) compression codec used by `Parquet`, `AVRO` and `ORC` formats. Internal compression name is usually added to a file name before file format extension, for example: `file1.gz.parquet`, `file1.snappy.avro`, etc.
+
+### ZIP archive error handling
+
+If a ZIP archive is readable but some of its file entries are empty or faulty, set the `archiveBestEffort` [ingestion property](/kusto/ingestion-properties?view=microsoft-fabric&preserve-view=true) to `true` to continue processing the remaining entries instead of failing the ingestion.
+
+> [!NOTE]
+> When `archiveBestEffort` is set to `true`, a successful ingestion doesn't guarantee that every file in the archive was ingested.
+
+This property applies only to individual entries in a readable ZIP archive. It doesn't repair invalid ZIP containers, and it doesn't change the supported compression methods.
 
 ## Related content
 
