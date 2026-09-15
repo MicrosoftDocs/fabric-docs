@@ -1,7 +1,7 @@
 ---
 title: Fabric IQ in Microsoft 365 Copilot Cowork
 description: Learn how the Fabric IQ plugin brings Microsoft Fabric and Power BI data into Microsoft 365 Copilot Cowork, including supported scenarios, limitations, and tenant prerequisites.
-ms.date: 07/10/2026
+ms.date: 09/15/2026
 ms.topic: concept-article
 ai-usage: ai-assisted
 #customer intent: As a Fabric or Power BI user, I want to understand what the Fabric IQ plugin in Microsoft 365 Copilot Cowork does so I can use Power BI and Fabric data inside Cowork chats.
@@ -95,22 +95,24 @@ To learn more, see [Sensitivity labels in Power BI](../../enterprise/powerbi/ser
 
 <!-- TODO_REVIEWER: Confirm whether the "tenant admin can't disable the plugin today" limitation should be called out here for customers, or whether it should stay internal until the admin control ships. Removed from public copy for now. -->
 
+## Tenant settings
+
+Two tenant settings affect this feature: one in the Microsoft 365 admin center and one in the Fabric admin portal.
+
+### Microsoft 365 admin center
+
+- **Fabric data available in M365 Copilot:** This setting controls whether Fabric data appears in Microsoft 365 Copilot experiences, including Cowork. The setting is enabled by default. When an admin turns it off, users don't see Fabric context in Cowork responses. For more information, see [Use Power BI data in Microsoft 365 Copilot Chat](/microsoft-365/copilot/copilot-powerbi-copilot-chat).
+
+### Fabric admin portal
+
+- **Share Fabric data with your Microsoft 365 services:** This setting controls whether Fabric proactively shares metadata without user action. The shared metadata enables Power BI content to appear in Cowork search and the item-attachment menu. When this setting is off, users can still paste report links or name reports in their prompts. For more information, see [Share data with your Microsoft 365 services](../../admin/admin-share-power-bi-metadata-microsoft-365-services.md).
+
 ## Prerequisites
 
-To use the Fabric IQ plugin in Cowork, the following prerequisites must be met.
-
-**User prerequisites**
+To use the Fabric IQ plugin in Cowork:
 
 - You can access Microsoft 365 Copilot Cowork. Cowork uses a usage-based (consumption) billing model, so your organization must have the required Microsoft 365 Copilot licensing and usage-based Cowork billing enabled for your account. For the current licensing and billing requirements, see [Get started with Copilot Cowork](/microsoft-365/copilot/cowork/get-started).
 - You have at least **Read** permission on the Power BI reports and underlying semantic models you want to ask about, in your home Fabric tenant.
-
-**Tenant prerequisites**
-
-A Fabric or Power BI admin must complete the following steps in the Fabric admin portal:
-
-1. Enable **Share Fabric data with your Microsoft 365 services** so that Fabric metadata is available to Microsoft 365. For details on what's shared and how to turn the setting on, see [Share data with your Microsoft 365 services](../../admin/admin-share-power-bi-metadata-microsoft-365-services.md).
-1. If your Fabric tenant and your Microsoft 365 tenant are in different geographic regions, also enable the cross-region toggle on the same tenant setting. For more information, see [Data residency](../../admin/admin-share-power-bi-metadata-microsoft-365-services.md#data-residency).
-1. Enable **Users can use the Power BI Model Context Protocol server endpoint (preview)** so that Cowork can query Power BI semantic models on behalf of signed-in users. For details on the setting, see [Integration tenant settings](../../admin/service-admin-portal-integration.md#users-can-use-the-power-bi-model-context-protocol-server-endpoint-preview).
 
 No additional Fabric capacity, F SKU, or Power BI Premium per user (PPU) license is required for the Fabric IQ plugin itself, beyond what your Power BI content already requires.
 
