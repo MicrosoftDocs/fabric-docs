@@ -33,7 +33,7 @@ The following sections document SynapseML transformers available for Foundry Too
 >
 > - **For text operations at any scale** (sentiment, translation, summarization, classification, extraction): Use [AI Functions](how-to-use-openai-ai-functions.md) which provide DataFrame extensions with minimal code. **PySpark AI Functions are fully distributed** (powered by SynapseML), handling thousands to millions of rows.
 > - **For advanced custom prompts at scale**: Use [Azure OpenAI with SynapseML](how-to-use-openai-synapse-ml.md) which offers the `OpenAIPrompt` transformer when you need unrestricted prompt control beyond AI Functions' validated templates
-> - **For single API calls with full control**: Use [Azure OpenAI with Python SDK](how-to-use-openai-python-sdk.md)
+> - **For direct Python API calls**: Use the [OpenAI Python SDK](how-to-use-openai-python-sdk.md)
 >
 > The services below require bring-your-own-key and are useful for specialized vision, speech, document intelligence, and search scenarios not covered by AI Functions.
 
@@ -122,7 +122,7 @@ The following sections document SynapseML transformers available for Foundry Too
 
 - [AI Functions overview](how-to-use-openai-ai-functions.md) - Simplest approach for text operations with Pandas and PySpark DataFrames
 - [Use Azure OpenAI with SynapseML](how-to-use-openai-synapse-ml.md) - Distributed processing with OpenAIPrompt transformer, no subscription key needed
-- [Use Azure OpenAI with Python SDK](how-to-use-openai-python-sdk.md) - Fine-grained control for single API calls
+- [Use Azure OpenAI with OpenAI Python SDK](how-to-use-openai-python-sdk.md) for the OpenAI package or built-in synchronous and asynchronous OpenAI-compatible clients.
 
 ### SynapseML with Foundry Tools
 

@@ -16,7 +16,7 @@ This article outlines the steps to create a SQL Server database connection.
 
 ## Supported authentication types
 
-The SQL Server database connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+The SQL Server database connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
@@ -27,7 +27,7 @@ The SQL Server database connector supports the following authentication types fo
 |Workspace identity | n/a | √ |
 
 ## Set up your connection for Dataflow Gen2
-You can connect Dataflow Gen2 in Microsoft Fabric to SQL Server database using Power Query connectors. Follow these steps to create your connection:
+You can connect a dataflow Gen2 in Fabric to a SQL Server database using Power Query connectors. Follow these steps to create your connection:
 
 1. Check [capabilities](#capabilities), [limitations, and considerations](#limitations-and-considerations) to make sure your scenario is supported.
 1. [Get data in Fabric](#get-data).

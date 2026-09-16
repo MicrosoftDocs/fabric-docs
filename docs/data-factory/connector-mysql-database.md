@@ -16,7 +16,7 @@ This article outlines the steps to create a MySQL database connection.
 
 ## Supported authentication types
 
-The MySQL database connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+The MySQL database connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
@@ -24,7 +24,7 @@ The MySQL database connector supports the following authentication types for cop
 |Windows| n/a | √ |
 
 ## Set up your connection for Dataflow Gen2
-You can connect Dataflow Gen2 in Microsoft Fabric to MySQL database using Power Query connectors. Follow these steps to create your connection:
+You can connect dataflow Gen2 in Fabric to a MySQL database by using Power Query connectors. Follow these steps to create your connection:
 
 1. Check [capabilities](#capabilities), [limitations, and considerations](#limitations-and-considerations) to make sure your scenario is supported.
 1. [Complete prerequisites for MySQL database](#prerequisites).

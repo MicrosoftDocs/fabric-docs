@@ -60,7 +60,7 @@ Under **Advanced**, you can specify the following fields:
 
     :::image type="content" source="./media/connector-sql-server/isolation-level.png" alt-text="Screenshot showing Isolation level settings.":::
 
-- **Partition option**: Specify the data partitioning options used to load data from SQL server. Allowed values are: **None** (default), **Physical partitions of table**, and **Dynamic range**. When a partition option is enabled (that is, not **None**), the degree of parallelism to concurrently load data from an SQL server is controlled by **Degree of copy parallelism** in copy activity settings tab.
+- **Partition option**: Specify the data partitioning options used to load data from SQL server. Allowed values are: **None** (default), **Physical partitions of table**, and **Dynamic range**. When a partition option is enabled (that is, not **None**), the degree of parallelism to concurrently load data from a SQL server is controlled by **Degree of copy parallelism** in copy activity settings tab.
 
   - **None**: Choose this setting to not use a partition.
   - **Physical partitions of table**: When using a physical partition, the partition column and mechanism are automatically determined based on your physical table definition.
@@ -89,7 +89,7 @@ The following properties are supported for SQL server under the **Destination** 
 
 The following properties are **required**:
 
-- **Connection**: Select an SQL server connection from the connection list. If the connection doesn't exist, then create a new SQL server connection by selecting **New**.
+- **Connection**: Select a SQL server connection from the connection list. If the connection doesn't exist, then create a new SQL server connection by selecting **New**.
 - **Connection type**: Select **SQL server**.
 - **Table option**: You can choose **Use existing** to use the table specified. Or choose **Auto create table** to automatically create a destination table if the table doesn't exist in the source schema, and note that this selection is not supported when stored procedure is used as the write behavior.
 
