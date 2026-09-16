@@ -3,29 +3,37 @@ title:  Fabric decision guide - choose a data store
 description: Review a reference table and scenarios to choose the most suitable data store for your Microsoft Fabric workloads, ensuring optimal performance.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: sngun, scbradl
+ms.reviewer: antho, sngun, scbradl
 ms.topic: concept-article
-ms.date: 09/09/2025
+ms.date: 09/15/2026
 ms.custom:
 - FY25Q1-Linter
 ms.search.form: Choose a Data Store, Databases datastore decision guide
 ---
-
 # Microsoft Fabric decision guide: choose a data store
 
-Use this reference guide and the example scenarios to help you choose a data store for your Microsoft Fabric workloads, all available in a unified storage in the OneLake.
+Use this reference guide and the example scenarios to help you choose a data store for your Microsoft Fabric workloads. All data stores are available in unified storage in the OneLake.
 
 :::image type="complex" source="media/decision-guide-data-store/decision-guide.svg" alt-text="Diagram of a decision guide for choosing the ideal data store in Microsoft Fabric.":::
-The diagram shows a decision guide for selecting a Fabric data store. For streaming event data and high-granularity interactive analytics, use an eventhouse. For AI, NoSQL, and vector search, use Cosmos DB in Fabric. For operational transactional (OLTP) workloads, use SQL database in Fabric. For enterprise data warehousing, SQL-based BI, OLAP, and full SQL transaction support, use Data Warehouse. For big data and machine learning with unstructured or semi-structured data and data engineering, use a lakehouse. All data stores are available in OneLake in open table format by default.
+The diagram shows a decision guide for selecting a Fabric data store. For streaming event data and high-granularity interactive analytics, use an eventhouse. For NoSQL databases, use Cosmos DB in Fabric. For operational transactional (OLTP) workloads, use SQL database in Fabric. To develop AI with vector data types, use SQL database in Fabric or Cosmos DB in Fabric. For enterprise data warehousing, SQL-based BI, OLAP, and full SQL transaction support, use Fabric Data Warehouse. For big data and machine learning with unstructured, semi-structured, or structured data, and data engineering, use a lakehouse. All Fabric data stores are available in OneLake in open table format by default.
 :::image-end:::
 
 | Ideal use case | Microsoft Fabric workload |  Data available in [OneLake](../onelake/onelake-overview.md) in open table format by default |
 |:--|:--|:--|
-| Streaming event data, high granularity (in time, space, detail – JSON/Text) activity data for interactive analytics | [Eventhouse](../real-time-intelligence/eventhouse.md) | Yes | 
- | AI, NoSQL, and vector search | [Cosmos DB in Fabric](../database/cosmos-db/overview.md) | Yes | 
-| Operational transactional database, OLTP database | [SQL database in Fabric](../database/sql/overview.md) | Yes | 
- | Enterprise data warehouse, SQL-based BI, OLAP, [full SQL transaction support](../data-warehouse/transactions.md) | [Data Warehouse](../data-warehouse/data-warehousing.md)| Yes | 
-| Big data and machine learning, un/semi/structured data, [data engineering](../data-engineering/data-engineering-overview.md) | [Lakehouse](../data-engineering/lakehouse-overview.md) | Yes |
+| Streaming event data, high granularity (in time, space, detail – JSON/Text) activity data for interactive analytics | [Eventhouse](../real-time-intelligence/eventhouse.md) | [Available as opt-in](../real-time-intelligence/event-house-onelake-availability.md) | 
+| NoSQL database | [Cosmos DB in Fabric](../database/cosmos-db/overview.md) | Yes | 
+| Operational transactional, OLTP, or normalized database | [SQL database in Fabric](../database/sql/overview.md) | Yes | 
+| Develop AI with vector data types | [SQL database in Fabric](../database/sql/overview.md) or [Cosmos DB in Fabric](../database/cosmos-db/overview.md) | Yes |
+| Enterprise data warehouse, SQL-based BI, OLAP, [full SQL transaction support](../data-warehouse/transactions.md), and [AI functions (preview)](../data-warehouse/ai-functions.md) | [Data Warehouse](../data-warehouse/data-warehousing.md)| Yes |
+| Big data and machine learning, unstructured, semi-structured, or structured data, [data engineering](../data-engineering/data-engineering-overview.md) | [Lakehouse](../data-engineering/lakehouse-overview.md) | Yes |
+
+- For streaming event data and high-granularity interactive analytics, use an eventhouse. 
+- For NoSQL databases, use Cosmos DB in Fabric. 
+- For operational, transactional, OLTP workloads, or normalized relational databases, use SQL database in Fabric. 
+- To develop AI with vector data types, use SQL database in Fabric or Cosmos DB in Fabric. 
+- For enterprise data warehousing, SQL-based BI, OLAP, and full SQL transaction support, use Fabric Data Warehouse. 
+- For big data and machine learning with unstructured, semi-structured, or structured data, and data engineering, use a lakehouse. 
+- All Fabric data stores are available in OneLake in open table format by default, with the exception of a [KQL database in an eventhouse, where OneLake availability is available as an opt-in feature](../real-time-intelligence/event-house-onelake-availability.md).
 
 ## Personas and skillsets
 
@@ -43,15 +51,15 @@ Review these scenarios for help with choosing a data store in Fabric.
 
 ### Scenario 1
 
-Susan, a professional developer, is new to Microsoft Fabric. They're ready to get started cleaning, modeling, and analyzing data but need to decide to build a data warehouse or a lakehouse. After review of the details in the previous table, the primary decision points are the available skill set and the need for multi-table transactions.
+Susan, a professional developer, is new to Microsoft Fabric. They're ready to get started cleaning, modeling, and analyzing data but need to decide whether to build a data warehouse or a lakehouse. After reviewing the details in the previous table, the primary decision points are the available skill set and the need for multi-table transactions.
 
-Susan has spent many years building data warehouses on relational database engines, and is familiar with SQL syntax and functionality. Thinking about the larger team, the primary consumers of this data are also skilled with SQL and SQL analytical tools. Susan decides to use a [**Fabric warehouse**](../data-warehouse/data-warehousing.md), which allows the team to interact primarily with T-SQL, while also allowing any Spark users in the organization to access the data.
+Susan spent many years building data warehouses on relational database engines, and is familiar with SQL syntax and functionality. Thinking about the larger team, the primary consumers of this data are also skilled with SQL and SQL analytical tools. Susan decides to use a [**Fabric warehouse**](../data-warehouse/data-warehousing.md), which allows the team to interact primarily with T-SQL, while also allowing any Spark users in the organization to access the data.
 
-Susan creates a new data warehouse and interacts with it using T-SQL just like her other SQL server databases. Most of the existing T-SQL code she has written to build her warehouse on SQL Server will work on the Fabric data warehouse making the transition easy. If she chooses to, she can even use the same tools that work with her other databases, like SQL Server Management Studio. Using the SQL editor in the Fabric portal, Susan and other team members write analytic queries that reference other data warehouses and Delta tables in lakehouses simply by using three-part names to perform cross-database queries.
+Susan creates a new data warehouse and interacts with it using T-SQL just like her other SQL server databases. Most of the existing T-SQL code she wrote to build her warehouse on SQL Server works in Fabric Data Warehouse, making the transition easy. If she chooses to, she can even use the same tools that work with her other databases, like SQL Server Management Studio. By using the SQL editor in the Fabric portal, Susan and other team members write analytic queries that reference other data warehouses and Delta tables in lakehouses simply by using three-part names to perform cross-database queries.
 
 ### Scenario 2
 
-Rob, a data engineer, needs to store and model several terabytes of data in Fabric. The team has a mix of PySpark and T-SQL skills. Most of the team running T-SQL queries are consumers, and therefore don't need to write INSERT, UPDATE, or DELETE statements. The remaining developers are comfortable working in notebooks, and because the data is stored in Delta, they're able to interact with a similar SQL syntax.
+Rob, a data engineer, needs to store and model several terabytes of data in Fabric. The team has a mix of PySpark and T-SQL skills. Most of the team running T-SQL queries are consumers, and therefore don't need to write `INSERT`, `UPDATE`, or `DELETE` statements. The remaining developers are comfortable working in notebooks, and because the data is stored in Delta, they're able to interact with a similar SQL syntax.
 
 Rob decides to use a [**lakehouse**](../data-engineering/lakehouse-overview.md), which allows the data engineering team to use their diverse skills against the data, while allowing the team members who are highly skilled in T-SQL to consume the data.
 
@@ -59,7 +67,7 @@ Rob decides to use a [**lakehouse**](../data-engineering/lakehouse-overview.md),
 
 Daisy is business analyst experienced with using Power BI to analyze supply chain bottlenecks for a large global retail chain. They need to build a scalable data solution that can handle billions of rows of data and can be used to build dashboards and reports that can be used to make business decisions. The data comes from plants, suppliers, shippers, and other sources in various structured, semi-structured, and unstructured formats.
 
-Daisy decides to use an [**Eventhouse**](../real-time-intelligence/eventhouse.md) because of its scalability, quick response times, advanced analytics capabilities including time series analysis, geospatial functions, and fast direct query mode in Power BI. Queries can be executed using Power BI and KQL to compare between current and previous periods, quickly identify emerging problems, or provide geo-spatial analytics of land and maritime routes.
+Daisy decides to use an [**Eventhouse**](../real-time-intelligence/eventhouse.md) because of its scalability, quick response times, advanced analytics capabilities including time series analysis, geospatial functions, and fast direct query mode in Power BI. She can execute queries by using Power BI and KQL to compare between current and previous periods, quickly identify emerging problems, or provide geo-spatial analytics of land and maritime routes.
 
 ### Scenario 4
 
