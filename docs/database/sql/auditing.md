@@ -116,21 +116,19 @@ For more information, see [Manage SQL database auditing with the REST API](audit
 
 ### Protect sensitive information in audit logs
 
-When dynamic SQL is constructed by concatenating input values directly into the SQL statement, those values become part of the statement text. If the statement is audited, sensitive information included in the statement text may therefore be captured in the audit log.
+When you construct dynamic SQL by concatenating input values directly into the SQL statement, those values become part of the statement text. If you audit the statement, the audit log might capture sensitive information included in the statement text.
 
-To reduce the risk of exposing sensitive information, Microsoft recommends the following practices:
+To reduce the risk of exposing sensitive information, follow these practices:
 
 - **Avoid dynamic SQL for operations that contain sensitive values**
 
-For security-sensitive administrative operations, avoid constructing statements by concatenating sensitive values into dynamic SQL. Where possible, use native SQL statements or other approaches that prevent sensitive values from being embedded directly in the statement text.
+For security-sensitive administrative operations, avoid constructing statements by concatenating sensitive values into dynamic SQL. Where possible, use native SQL statements or other approaches that prevent sensitive values from being embedded directly in the statement text. Examples of security-sensitive operations include `CREATE LOGIN` and `CREATE CREDENTIAL`.
 
-Examples of security-sensitive operations include CREATE LOGIN and CREATE CREDENTIAL.
 
 - **Restrict access to audit logs**
 
-Limit access to audit logs to authorized users and administrators. Audit access is governed by SQL permissions and can vary depending on the platform and audit scope. Follow the principle of least privilege and grant only the permissions required to manage or review audit information. Microsoft documents separate server-level and database-level audit permission models, and Azure SQL Database differs from SQL Server in the availability of server-level permissions.
+Limit access to audit logs to authorized users and administrators. SQL permissions govern audit access and can vary depending on the platform and audit scope. Follow the principle of least privilege and grant only the permissions required to manage or review audit information. Microsoft documents separate server-level and database-level audit permission models, and Azure SQL Database differs from SQL Server in the availability of server-level permissions. Restricting access to audit data helps reduce the risk of unauthorized disclosure when sensitive information is present in recorded audit events.
 
-Restricting access to audit data helps reduce the risk of unauthorized disclosure when sensitive information is present in recorded audit events.
 
 
 ## Related content
