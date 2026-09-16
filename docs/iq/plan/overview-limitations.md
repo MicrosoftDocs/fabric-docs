@@ -2,7 +2,7 @@
 title: Known Limitations in Planning
 description: This article lists known issues and limitations present in planning in Fabric.
 ms.topic: concept-article
-ms.date: 09/10/2026
+ms.date: 09/16/2026
 #customer intent: As a user, I want to know the limitations present in planning.
 ---
 
@@ -24,14 +24,24 @@ Workspaces or tenants that use [private links](../../security/security-private-l
 
 * You must have *Admin* or *Build* permissions on the semantic model.
 * Semantic models in Direct Lake mode require [additional configuration](planning-how-to-create-semantic-model-connection.md#connect-to-a-direct-lake-semantic-model).
+* Direct Lake and DirectQuery semantic models require a gateway connection that uses fixed credentials. Single sign-on (SSO) isn't supported yet.
+* Each plan item connects to one semantic model, and you can't change it after you connect it. If you need to plan against different data sources, you must create separate plan items.
 * Semantic model connections only support OAuth-based and service principal-based authentication.
 * Semantic models published in *My workspace* aren't supported.
 * Composite models aren't supported.
 * If the semantic model contains unsupported Unicode characters, inserting a Data input column in a planning sheet might fail.
+* Don't rename a semantic model that's connected to a plan item. Renaming the semantic model breaks the connection, and the plan item no longer works with the renamed semantic model.
 
-## Semantic model renaming
+### Row-level security (RLS) behavior
 
-Don't rename a semantic model that's connected to a plan item. Renaming the semantic model breaks the connection, and the plan item no longer works with the renamed semantic model.
+* When RLS is configured on the connected semantic model, users without an assigned RLS role see the union of the data defined by all roles. Data that isn't included in any role isn't visible.
+
+## Writeback limitations 
+
+* Planning in Fabric supports writeback only to Fabric SQL databases.
+* Writeback stores planning data separately in Fabric SQL. It doesn't update the connected semantic model.
+* For Long and Wide writeback formats, subsequent writeback replaces existing rows when all dimension columns and values match. To retain previous values as change history, use Long with Changes or Wide with Changes.
+* Deleting a row in a planning sheet doesn't delete the corresponding row from the destination Fabric SQL table. To remove data from the SQL database, you must delete it directly in the database.
 
 ## Capacities supported
 
