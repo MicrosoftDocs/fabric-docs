@@ -8,10 +8,9 @@ ms.reviewer: jianleishen
 ms.custom: has-adal-ref, synapse, connectors
 ---
 
-# Troubleshoot the Snowflake connector in Data Factory and Azure Synapse
+# Troubleshoot the Snowflake connector in Fabric Data Factory and Azure Synapse
 
-
-This article provides suggestions to troubleshoot common problems with the Snowflake connector in Data Factory and Azure Synapse. 
+This article provides suggestions to troubleshoot common problems with the Snowflake connector in Fabric Data Factory and Azure Synapse.
 
 ## Error code: NotAllowToAccessSnowflake
 
@@ -30,7 +29,7 @@ This article provides suggestions to troubleshoot common problems with the Snowf
 - **Symptoms**:<br>
 The copy activity fails with the following error when using Snowflake as source:<br> 
     `Failed to access remote file: access denied. Please check your credentials`<br>
-The copy activity fails with the following error when using Snowflake as sink:<br>
+The copy activity fails with the following error when using Snowflake as data destination:<br>
     `Failure using stage area. Cause: [This request is not authorized to perform this operation. (Status Code: 403; Error Code: AuthorizationFailure)`<br>
 
 - **Cause**: The error pops up by the Snowflake COPY command and is caused by missing access permission on source/sink when execute Snowflake COPY commands. 
@@ -44,5 +43,5 @@ The copy activity fails with the following error when using Snowflake as sink:<b
 
 For more troubleshooting help, try these resources:
 - [Fabric blog](https://community.fabric.microsoft.com/category/fabricupdatesblogs/blog/fbc_fabricupdatesblogs)
-- [Data Factory forums | Microsoft Fabric Community](https://community.fabric.microsoft.com/category/datafactory)
+- [Data Factory forums | Fabric Community](https://community.fabric.microsoft.com/category/datafactory)
 - [Data Factory feature requests](https://ideas.fabric.microsoft.com/)

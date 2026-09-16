@@ -9,20 +9,20 @@ ai-usage: ai-assisted
 ---
 # SQL analytics endpoint performance considerations
 
-The [SQL analytics endpoint](lakehouse-sql-analytics-endpoint.md) enables you to query data in the lakehouse by using T-SQL language and TDS protocol.
+The [SQL analytics endpoint](lakehouse-sql-analytics-endpoint.md) enables you to query data in the lakehouse by using T-SQL language and TDS protocol. It leverages the Fabric Data Warehouse engine.
 
 > [!TIP]
 > For comprehensive cross-workload guidance on optimizing Delta tables for SQL analytics endpoint consumption, including file size and row group recommendations, see [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md).
 
 Every lakehouse has one SQL analytics endpoint. The number of SQL analytics endpoints in a workspace matches the number of [lakehouses](../data-engineering/lakehouse-overview.md) and [mirrored databases](../mirroring/overview.md) provisioned in that one workspace.
 
-A background process is responsible for scanning the lakehouse for changes and keeping the SQL analytics endpoint up-to-date for all the changes committed to lakehouses in a workspace. The Fabric platform transparently manages the sync process. When a change is detected in a lakehouse, a background process updates metadata and the SQL analytics endpoint reflects the changes committed to lakehouse tables. Under normal operating conditions, the lag between a lakehouse and SQL analytics endpoint is less than one minute. The actual length of time can vary from a few seconds to minutes depending on many factors that this article discusses. The background process runs only when the SQL analytics endpoint is active and it halts after 15 minutes of inactivity.
+A background process is responsible for scanning the lakehouse for changes and keeping the SQL analytics endpoint up-to-date for all the changes committed to lakehouses in a workspace. The Fabric platform transparently manages the sync process. When a change is detected in a lakehouse, a background process updates metadata and the SQL analytics endpoint reflects the changes committed to lakehouse tables. Under normal operating conditions, the lag between a lakehouse and SQL analytics endpoint is less than one minute. The actual length of time can vary from a few seconds to minutes depending on many factors that this article discusses. The background process runs while the SQL analytics endpoint is active and stops after 15 minutes without query activity.
 
 ## Guidance
 
 - Automatic metadata discovery tracks changes committed to lakehouses, and is a single instance per Fabric workspace. If you observe increased latency for changes to sync between lakehouses and the SQL analytics endpoint, it could be due to a large number of lakehouses in one workspace. In such a scenario, consider migrating each lakehouse to a separate workspace as this approach allows automatic metadata discovery to scale.
 - Parquet files are immutable by design. When there's an update or a delete operation, a Delta table adds new Parquet files with the changeset, which increases the number of files over time, depending on the frequency of updates and deletes. If you don't schedule maintenance, this pattern eventually creates a read overhead and this condition impacts the time it takes to sync changes to SQL analytics endpoint. To address this issue, schedule regular [lakehouse table maintenance operations](../data-engineering/lakehouse-table-maintenance.md#run-table-maintenance-from-lakehouse).
-- In some scenarios, you might observe that changes committed to a lakehouse aren't visible in the associated SQL analytics endpoint. For example, you might create a new table in lakehouse, but it's not yet listed in the SQL analytics endpoint. Or, you might commit a large number of rows to a table in a lakehouse but this data isn't yet visible in the SQL analytics endpoint. You do have the option to [start on-demand metadata sync](sql-analytics-endpoint-metadata-sync.md#manual-refresh).
+- In some scenarios, you might observe that changes committed to a lakehouse aren't visible in the associated SQL analytics endpoint. For example, you might create a new table in lakehouse, but it's not yet listed in the SQL analytics endpoint. Or, you might commit a large number of rows to a table in a lakehouse but this data isn't yet visible in the SQL analytics endpoint. You can [start on-demand metadata sync](sql-analytics-endpoint-metadata-sync.md#manual-refresh) in the Fabric portal or use the [Refresh SQL analytics endpoint metadata REST API](/rest/api/fabric/sqlendpoint/items/refresh-sql-endpoint-metadata).
 - The automatic sync process doesn't support all Delta features. For more information on the functionality supported by each engine in Fabric, see [Delta Lake table format interoperability](../fundamentals/delta-lake-interoperability.md).
 - If there's an extremely large volume of table changes during the Extract Transform and Load (ETL) processing, an expected delay occurs until all the changes are processed.
 
@@ -34,7 +34,7 @@ For tables written by Spark, use the default settings in Fabric Spark runtime 2.
 
 If you're using Fabric Spark runtime 1.3, enable [adaptive target file size](tune-file-size.md#adaptive-target-file-size) and [file level compaction targets](table-compaction.md#file-level-compaction-targets), which are available as opt-in features.
 
-You don't need V-Order for improved SQL analytics endpoint performance as Spark writes parquet files that are Snappy compressed to reduce both read and write I/O.
+V-Order primarily benefits Power BI Direct Lake and, while it can improve compression for some workloads, generally isn't required or recommended by default for optimal SQL analytics endpoint performance.
 
 Default write settings don't replace table maintenance. Use the following practices to preserve a healthy layout as tables change:
 
@@ -50,15 +50,12 @@ If you don't use auto compaction, to identify tables that need maintenance, use 
 
 ## Partition size considerations
 
-The choice of partition column for a Delta table in a lakehouse also affects the time it takes to sync changes to SQL analytics endpoint. The number and size of partitions of the partition column are important for performance:
+Partition layout affects how long the SQL analytics endpoint takes to discover and sync changes. A large number of partitions or small Parquet files increases metadata scanning overhead. Follow these practices:
 
-- A column with high cardinality (mostly or entirely made of unique values) results in a large number of partitions. A large number of partitions negatively impacts performance of the metadata discovery scan for changes. If the cardinality of a column is high, choose another column for partitioning.
-- The size of each partition can also affect performance. Use a column that results in a partition of at least (or close to) 1 GB. Follow best practices for [Delta tables maintenance](../data-engineering/lakehouse-table-maintenance.md) and [partitioning](../data-engineering/delta-lake-partitioning.md). For a Python script to evaluate partitions, see [Sample script for partition details](#sample-script-for-partition-details).
+- Avoid high-cardinality partition columns, which can create a partition for each unique value. Choose a column that produces partitions close to or greater than 1 GB. For more information, see [Delta Lake table partitioning](../data-engineering/delta-lake-partitioning.md).
+- Batch and streaming ingestion can create small files when changes are frequent or small. Use regular [lakehouse table maintenance](../data-engineering/lakehouse-table-maintenance.md) to compact these files.
 
-A large volume of small-sized parquet files increases the time it takes to sync changes between a lakehouse and its associated SQL analytics endpoint. You might end up with large number of parquet files in a Delta table for one or more reasons:
-
-- If you choose a partition for a Delta table with high number of unique values, the table is partitioned by each unique value and might be over-partitioned. Choose a partition column that doesn't have a high cardinality, and results in individual partitions at least 1 GB each.
-- Batch and streaming data ingestion rates might also result in small files depending on frequency and size of changes being written to a lakehouse. For example, there might be a small volume of changes coming through to the lakehouse, resulting in small parquet files. To address this issue, implement regular [lakehouse table maintenance](../data-engineering/lakehouse-table-maintenance.md).
+To evaluate the size and file count of each partition, use the [sample script for partition details](#sample-script-for-partition-details).
     
 ### Sample script for partition details
 
@@ -112,12 +109,6 @@ You can copy the complete script from the following code block:
     print(f"{partition_name}, Size: {details['size_bytes']:.2f} bytes, Number of files: {details['file_count']}")
 
   ```
-
-### Automatically generated schema in the SQL analytics endpoint of the Lakehouse
-
-For every Delta table in your [Lakehouse](../data-engineering/lakehouse-overview.md), the SQL analytics endpoint automatically generates a table in the appropriate schema. The SQL analytics endpoint engine is based on the Fabric Data Warehouse engine.
-
-For more information, see [SQL analytics endpoint metadata sync](sql-analytics-endpoint-metadata-sync.md). You can also programmatically force a refresh of the automatic metadata scanning by using the [Refresh SQL analytics endpoint metadata REST API](/rest/api/fabric/sqlendpoint/items/refresh-sql-endpoint-metadata). 
 
 ## Related content
 

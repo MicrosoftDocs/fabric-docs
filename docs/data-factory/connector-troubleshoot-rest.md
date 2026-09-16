@@ -1,15 +1,15 @@
 ---
 title: Troubleshoot the REST connector
-description: Learn how to troubleshoot issues with the REST connector in Data Factory in Microsoft Fabric.
+description: Learn how to troubleshoot issues with the REST connector in Fabric Data Factory.
 ms.reviewer: xupzhou
 ms.topic: troubleshooting
 ms.date: 11/15/2023
 ms.custom: connectors
 ---
 
-# Troubleshoot the REST connector in Data Factory in Microsoft Fabric
+# Troubleshoot the REST connector in Fabric Data Factory
 
-This article provides suggestions to troubleshoot common problems with the REST connector in Data Factory in Microsoft Fabric.
+This article provides suggestions to troubleshoot common problems with the REST connector in Data Factory.
 
 ## Error code: RestdestinationCallFailed
 
@@ -37,7 +37,7 @@ This article provides suggestions to troubleshoot common problems with the REST 
 
 - **Symptoms**: The endpoint sometimes receives an unexpected response (400, 401, 403, 500) from the REST connector.
 
-- **Cause**: The REST source connector uses the URL and HTTP method/header/body from the connection/data/copy source as parameters when it constructs an HTTP request. The issue is most likely caused by some mistakes in one or more specified parameters.
+- **Cause**: The REST connector uses the URL and HTTP method/header/body from the connection/data/copy source as parameters when it constructs an HTTP request. The issue is most likely caused by some mistakes in one or more specified parameters.
 
 - **Resolution**: 
     - Use 'curl' in a Command Prompt window to see whether the parameter is the cause (**Accept** and **User-Agent** headers should always be included):
@@ -59,5 +59,5 @@ This article provides suggestions to troubleshoot common problems with the REST 
 For more troubleshooting help, try these resources:
 
 - [Fabric blog](https://community.fabric.microsoft.com/category/fabricupdatesblogs/blog/fbc_fabricupdatesblogs)
-- [Data Factory forums | Microsoft Fabric Community](https://community.fabric.microsoft.com/category/datafactory)
+- [Data Factory forums | Fabric Community](https://community.fabric.microsoft.com/category/datafactory)
 - [Data Factory feature requests ideas](https://ideas.fabric.microsoft.com/)

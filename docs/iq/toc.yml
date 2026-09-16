@@ -546,7 +546,11 @@ items:
           - name: IBCS line and area charts
             href: plan/intelligence-ibcs/how-to-configure-ibcs-line-area-charts.md
           - name: IBCS scatter and bubble charts
-            href: plan/intelligence-ibcs/how-to-configure-ibcs-scatter-bubble-charts.md                
+            href: plan/intelligence-ibcs/how-to-configure-ibcs-scatter-bubble-charts.md
+          - name: IBCS small multiples
+            href: plan/intelligence-ibcs/how-to-configure-ibcs-small-multiples.md
+          - name: IBCS tables
+            href: plan/intelligence-ibcs/how-to-configure-ibcs-tables.md            
         - name: Build financial reports
           href: plan/intelligence-how-to-build-financial-reports.md
         - name: Comment and collaborate

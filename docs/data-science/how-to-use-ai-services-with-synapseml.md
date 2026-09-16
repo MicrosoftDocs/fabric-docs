@@ -23,7 +23,7 @@ Foundry Tools help developers create applications that see, hear, speak, underst
 >
 > - **[AI Functions](ai-services/how-to-use-openai-ai-functions.md)**: The simplest approach using Pandas and PySpark DataFrame extensions with minimal code
 > - **[OpenAI with SynapseML](ai-services/how-to-use-openai-synapse-ml.md)**: Distributed processing with the `OpenAIPrompt` transformer for millions of rows
-> - **[OpenAI Python SDK](ai-services/how-to-use-openai-python-sdk.md)**: Fine-grained control for single API calls
+> - **[OpenAI Python SDK](ai-services/how-to-use-openai-python-sdk.md)**: Direct Python calls through the OpenAI package or Fabric's built-in OpenAI-compatible clients
 >
 > AI Functions can be invoked from pandas or PySpark DataFrames; PySpark runs distributed in Fabric. Import paths differ by engine (pandas: `synapse.ml.aifunc`, PySpark: `synapse.ml.spark.aifunc`).
 >
@@ -482,7 +482,7 @@ display(
 
 - [Use Azure OpenAI with AI Functions](ai-services/how-to-use-openai-ai-functions.md) - Simplest approach for DataFrame operations
 - [Use Azure OpenAI with SynapseML](ai-services/how-to-use-openai-synapse-ml.md) - Distributed processing with OpenAIPrompt
-- [Use Azure OpenAI with Python SDK](ai-services/how-to-use-openai-python-sdk.md) - Fine-grained control for single API calls
+- [Use Azure OpenAI with OpenAI Python SDK](ai-services/how-to-use-openai-python-sdk.md) for the OpenAI package or built-in synchronous and asynchronous OpenAI-compatible clients.
 
 ### SynapseML resources
 

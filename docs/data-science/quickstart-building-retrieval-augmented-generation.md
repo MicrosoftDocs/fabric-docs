@@ -3,9 +3,9 @@ title: How to Use Fabric for Retrieval Augmented Generation
 description: Learn how to build a Retrieval Augmented Generation (RAG) application in Microsoft Fabric using Azure AI Search and OpenAI for enhanced data-driven insights.
 ms.author: lagayhar
 ms.reviewer: scottpolly
-ms.date: 10/01/2025
+ms.date: 09/04/2026
 ms.topic: concept-article
-ai.usage: ai-assisted
+ai-usage: ai-assisted
 ---
 # Build retrieval augmented generation in Fabric
 
@@ -24,7 +24,7 @@ This quickstart shows how to use Fabric to build RAG applications. The main step
 1. Chunk the data by using Spark pools for efficient processing.
 1. Create embeddings by using Fabric's built-in [Azure OpenAI services through SynapseML](ai-services/how-to-use-openai-synapse-ml.md).
 1. Create a vector index by using [Azure AI Search](https://aka.ms/what-is-azure-search).
-1. Generate answers from the retrieved context by using Fabric's built-in [Azure OpenAI through Python SDK](ai-services/how-to-use-openai-python-sdk.md).
+1. Generate answers from the retrieved context by using the [OpenAI Python SDK in Fabric](ai-services/how-to-use-openai-python-sdk.md).
 
 ## Prerequisites
 
@@ -46,8 +46,6 @@ Choose the free tier. It lets you create three indexes and use 50 MB of storage,
 
 :::image type="content" source="media/quickstart-building-retrieval-augmented-generation/azure-ai-search-free-tier.png" alt-text="Screenshot of Azure portal showing the Azure AI Search service creation page with free tier selected, allowing 3 indexes and 50 MB of storage.":::
 
-`%pip install openai==0.28.1`
-
 ```python
 # Set up Azure AI Search credentials
 aisearch_index_name = "" # TODO: Create a new index name: must only contain lowercase, numbers, and dashes
@@ -58,7 +56,7 @@ aisearch_endpoint = "https://<YOUR_AI_SEARCH_SERVICE_NAME>.search.windows.net" #
 **Cell output:**
 `*StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 5, Finished, Available, Finished)*`
 
-After you set up Azure OpenAI and Azure AI Search keys, import the required libraries from [Spark](https://spark.apache.org/), [SynapseML](https://aka.ms/AboutSynapseML), [Azure Search](https://aka.ms/azure-search-libraries), and OpenAI.
+After you configure the Azure AI Search endpoint and key, import the required libraries from [Spark](https://spark.apache.org/), [SynapseML](https://aka.ms/AboutSynapseML), and [Azure AI Search](https://aka.ms/azure-search-libraries). The AI Functions session provides the OpenAI-compatible client and authenticates it with your Fabric identity.
 
 Use the `environment.yaml` in the same folder as this notebook to create, save, and publish a [Fabric environment](https://aka.ms/fabric/create-environment). Select the new environment before running the import cell.
 
@@ -101,10 +99,11 @@ from azure.search.documents.indexes.models import (
 
 from synapse.ml.featurize.text import PageSplitter
 from synapse.ml.services.openai import OpenAIEmbedding
-from synapse.ml.services.openai import OpenAIChatCompletion
+import synapse.ml.aifunc as aifunc
 import ipywidgets as widgets  
 from IPython.display import display as w_display
-import openai
+
+openai_client = aifunc.session.client_sync
 ```
 
 **Cell output:**
@@ -277,7 +276,7 @@ Configure HNSW parameters and create a vector profile. Define a semantic configu
 Although this tutorial focuses on vector search, Azure AI Search also offers text search, filtering, and semantic ranking.
 
 > [!TIP]
-> Skip these details if you prefer. The Python SDK creates a vector index with `Chunk` for retrievable text and `Embedding` from the OpenAI embedding model. Add or remove searchable fields like `ArticleTitle` and `ExtractedPath` to fit your dataset.
+> Skip these details if you prefer. The Azure AI Search Python SDK creates a vector index with `Chunk` for retrievable text and `Embedding` from the OpenAI embedding model. Add or remove searchable fields like `ArticleTitle` and `ExtractedPath` to fit your dataset.
 
 ```python
 index_client = SearchIndexClient(
@@ -452,7 +451,7 @@ import copy, json, os, requests, warnings
 # Implementation of retriever
 
 def get_context_source(retrieve_results, question, topN=3, filter=''):
-        """
+    """
     Retrieve context text and source metadata for a question by running a vector search.
     Parameters:
     retrieve_results (function): Implements one of the retrieval methods with Azure AI Search.
@@ -483,9 +482,12 @@ def get_context_source(retrieve_results, question, topN=3, filter=''):
 # Wrapper for vector search call
  
 def vector_search(question, filter = '', topN = 3): 
-    deployment_id = "text-embedding-ada-002"
+    embedding_model = "text-embedding-ada-002"
 
-    query_embedding = openai.Embedding.create(deployment_id=deployment_id, input=question).data[0].embedding
+    query_embedding = openai_client.embeddings.create(
+        model=embedding_model,
+        input=question,
+    ).data[0].embedding
   
     vector_query = VectorizedQuery(vector=query_embedding, k_nearest_neighbors=topN, fields="Embedding"  )
 
@@ -521,7 +523,7 @@ df_chunks
 | 1 | [-0.011676712, -0.0079745, 0.001480885, -0.021...] | S08/data/set1/a5 | elephant | farther north, in slightly cooler climates, an... | 130 | 0.877915 | None | None | None |
 | 2 | [-0.018319938, -0.013896506, 0.014269567, -0.0...] | S08/data/set1/a5 | elephant | trunk, which pick up the resonant vibrations m... | 132 | 0.867543 | None | None | None |
 
-You need another function to get the response from the OpenAI Chat model. This function combines the user question with the context retrieved from Azure AI Search. This example is basic and doesn't include chat history or memory. First, you initialize the chat client with the chosen model and then perform a chat completion to obtain the response. The messages have a "system" content that can be adjusted to enhance the response's tone, conciseness, and other aspects.
+Define a function that sends the question and retrieved context to the Chat Completions API. The system message tells the model to answer from the supplied reference text. This basic example doesn't retain chat history between questions.
 
 ```python
 def get_answer(question, context):
@@ -548,11 +550,9 @@ def get_answer(question, context):
             "content": question + "\n" + context,
         },
     )
-    response = openai.ChatCompletion.create(
-                deployment_id='gpt-35-turbo-0125', # See the note below for an alternative deployment ID.
-
-        messages= messages,
-        temperature=0,
+    response = openai_client.chat.completions.create(
+        model="gpt-5.1",
+        messages=messages,
     )
 
     return response.choices[0].message.content
@@ -563,7 +563,7 @@ def get_answer(question, context):
 `*StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 20, Finished, Available, Finished)*`
 
 > [!NOTE]
-> For other available deployment_ids, see the [documentation for Python SDK](ai-services/how-to-use-openai-python-sdk.md).
+> For available model deployment names, see [Use Azure OpenAI in Fabric with OpenAI Python SDK](ai-services/how-to-use-openai-python-sdk.md).
 
 ```python
 answer = get_answer(question, retrieved_context)

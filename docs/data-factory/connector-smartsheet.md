@@ -16,14 +16,14 @@ This article outlines the steps to create a Smartsheet connection.
 
 ## Supported authentication types
 
-The Smartsheet connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+The Smartsheet connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
 |Smartsheet account| n/a | √ |
 
 ## Set up your connection for Dataflow Gen2
-You can connect Dataflow Gen2 in Microsoft Fabric to Smartsheet using Power Query connectors. Follow these steps to create your connection:
+You can connect a dataflow Gen2 in Fabric to Smartsheet using Power Query connectors. Follow these steps to create your connection:
 
 1. Check [capabilities](#capabilities) to make sure your scenario is supported.
 1. [Complete prerequisites for Smartsheet](#prerequisites).
@@ -48,7 +48,7 @@ You can connect Dataflow Gen2 in Microsoft Fabric to Smartsheet using Power Quer
 
 ## Set up your connection in a pipeline
 
-Data Factory in Microsoft Fabric doesn't currently support Smartsheet in pipelines.
+Data Factory doesn't currently support Smartsheet in pipelines.
 
 ## Related content
 

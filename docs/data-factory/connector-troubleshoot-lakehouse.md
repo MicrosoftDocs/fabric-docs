@@ -1,15 +1,15 @@
 ---
 title: Troubleshoot the Lakehouse connector
-description: Learn how to troubleshoot issues with the Lakehouse connector in Data Factory in Microsoft Fabric.
+description: Learn how to troubleshoot issues with the Lakehouse connector in Fabric Data Factory.
 ms.reviewer: jianleishen
 ms.topic: troubleshooting
 ms.date: 01/09/2026
 ms.custom: connectors
 ---
 
-# Troubleshoot the Lakehouse connector in Data Factory in Microsoft Fabric
+# Troubleshoot the lakehouse connector in Fabric Data Factory
 
-This article provides suggestions to troubleshoot common problems with the Lakehouse connector in Data Factory in Microsoft Fabric.
+This article provides suggestions to troubleshoot common problems with the lakehouse connector in Data Factory.
 
 ## Error code: LakehouseForbiddenError
 
@@ -24,5 +24,5 @@ This article provides suggestions to troubleshoot common problems with the Lakeh
 For more troubleshooting help, try these resources:
 
 - [Fabric blog](https://community.fabric.microsoft.com/category/fabricupdatesblogs/blog/fbc_fabricupdatesblogs)
-- [Data Factory forums | Microsoft Fabric Community](https://community.fabric.microsoft.com/category/datafactory)
+- [Data Factory forums | Fabric Community](https://community.fabric.microsoft.com/category/datafactory)
 - [Data Factory feature requests ideas](https://ideas.fabric.microsoft.com/)

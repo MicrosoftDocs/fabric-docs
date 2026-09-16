@@ -16,14 +16,14 @@ This article outlines the steps to create a Microsoft Exchange Online connection
 
 ## Supported authentication types
 
-The Microsoft Exchange Online connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+The Microsoft Exchange Online connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
 |Organizational account| n/a | √ |
 
 ## Set up your connection for Dataflow Gen2
-You can connect Dataflow Gen2 in Microsoft Fabric to Microsoft Exchange Online using Power Query connectors. Follow these steps to create your connection:
+You can connect dataflow Gen2 in Fabric to Microsoft Exchange Online using Power Query connectors. Follow these steps to create your connection:
 
 1. Check [capabilities](#capabilities) to make sure your scenario is supported.
 1. [Get data in Fabric](#get-data).
@@ -43,7 +43,7 @@ You can connect Dataflow Gen2 in Microsoft Fabric to Microsoft Exchange Online u
 
 ## Set up your connection in a pipeline
 
-Data Factory in Microsoft Fabric doesn't currently support Microsoft Exchange Online in pipelines.
+Data Factory doesn't currently support Microsoft Exchange Online in pipelines.
 
 ## Related content
 

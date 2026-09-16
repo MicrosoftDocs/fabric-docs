@@ -8,10 +8,10 @@ ms.reviewer: jianleishen
 ms.custom: has-adal-ref, synapse, connectors
 ---
 
-# Troubleshoot the MongoDB connector in Azure Data Factory and Azure Synapse
+# Troubleshoot the MongoDB connector in Fabric Data Factory and Azure Synapse
 
 
-This article provides suggestions to troubleshoot common problems with the MongoDB connector in Azure Data Factory and Azure Synapse.
+This article provides suggestions to troubleshoot common problems with the MongoDB connector in Fabric Data Factory and Azure Synapse.
 
 ## Error code: MongoDbUnsupportedUuidType
 
@@ -28,5 +28,5 @@ This article provides suggestions to troubleshoot common problems with the Mongo
 
 For more troubleshooting help, try these resources:
 - [Fabric blog](https://community.fabric.microsoft.com/category/fabricupdatesblogs/blog/fbc_fabricupdatesblogs)
-- [Data Factory forums | Microsoft Fabric Community](https://community.fabric.microsoft.com/category/datafactory)
+- [Data Factory forums | Fabric Community](https://community.fabric.microsoft.com/category/datafactory)
 - [Data Factory feature requests](https://ideas.fabric.microsoft.com/)

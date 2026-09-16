@@ -10,7 +10,7 @@ ms.custom:
 
 # Copy activity performance and scalability guide
 
-Sometimes you need to perform a large-scale data migration from a data lake or enterprise data warehouse (EDW) to Fabric OneLake. Other times, you want to ingest large amounts of data from different sources into Fabric OneLake for big data analytics. In each case, it's critical to achieve optimal performance and scalability.
+Sometimes you need to perform a large-scale data migration from a data lake or enterprise data warehouse (EDW) to OneLake. Other times, you want to ingest large amounts of data from different sources into OneLake for big data analytics. In each case, it's critical to achieve optimal performance and scalability.
 
 Data Factory pipelines provide a mechanism to ingest data, with the following advantages:
 

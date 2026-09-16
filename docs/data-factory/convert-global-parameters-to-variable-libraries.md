@@ -9,35 +9,35 @@ ai-usage: ai-assisted
 
 # Convert Azure Data Factory global parameters to Fabric Data Factory variable libraries
 
-Microsoft Fabric uses variable libraries in workspaces to define constants across pipelines and other data factory and Fabric items. You can migrate ADF global parameters to Fabric variable libraries with a few manual steps.
+Fabric uses variable libraries in workspaces to define constants across pipelines and other data factory and Fabric items. You can migrate Azure Data Factory global parameters to Fabric variable libraries with a few manual steps.
 
 This guide walks you through the process:
 
-- Export your ADF global parameters
+- Export your Azure Data Factory global parameters
 - Create workspace variables in Fabric
 - Update pipeline expressions
 - Validate behavior
 
 ## Understand the Fabric variable library
 
-The Fabric variable library stores workspace-level values that you can reference across pipelines and activities. It supports types like string, number, and boolean, plus secure values for secrets. You can version variable libraries and deploy them across environments with deployment pipelines.
+The variable library in Fabric stores workspace-level values that you can reference across pipelines and activities. It supports types like string, number, and boolean, plus secure values for secrets. You can version variable libraries and deploy them across environments with deployment pipelines.
 
-Unlike ADF global parameters, Fabric variables offer tighter security, easier reuse, and better governance controls. You can apply them across all Fabric items. For more information, see [Get started with variable libraries](/fabric/cicd/variable-library/get-started-variable-libraries).
+Unlike Azure Data Factory global parameters, Fabric variables offer tighter security, easier reuse, and better governance controls. You can apply them across all Fabric items. For more information, see [Get started with variable libraries](/fabric/cicd/variable-library/get-started-variable-libraries).
 
-## Migrate ADF global parameters to Fabric variable library
+## Migrate Azure Data Factory global parameters to Fabric variable library
 
-1. **Export your ADF global parameters.**
+1. **Export your Azure Data Factory global parameters.**
     1. In [Azure Data Factory Studio](https://adf.azure.com/), go to **Manage** > **Global Parameters**. Record each parameter's name, type, and value.
     1. For large migrations, go to **Manage** > **ARM template** and export ARM templates to extract parameters programmatically. You can find them in the template folder under the **factory** folder, in the file that ends in `ParametersForFactory`
 
 1. **Compare available types.**
 
-   Review your ADF global parameter types (string, int, bool, etc.) and compare them with [Fabric variable library types](/fabric/cicd/variable-library/get-started-variable-libraries#variable-types). Make note of any type differences that may require adjustments during migration.
+   Review your Azure Data Factory global parameter types (string, int, bool, etc.) and compare them with [Fabric variable library types](/fabric/cicd/variable-library/get-started-variable-libraries#variable-types). Make note of any type differences that may require adjustments during migration.
 
 1. **Create a variable library in Fabric.**
     1. In your Fabric workspace, select **+ New Item** and then search for and select **Variable library**.
     1. Create a library (for example, GlobalParams).
-    1. Open your new variable library, select **+New variable** and each ADF global parameter as a variable.
+    1. Open your new variable library, select **+New variable** and each Azure Data Factory global parameter as a variable.
 
     For more information about creating variable libraries, see [Get started with variable libraries](/fabric/cicd/variable-library/get-started-variable-libraries).
 
@@ -55,7 +55,7 @@ Unlike ADF global parameters, Fabric variables offer tighter security, easier re
 
 Here are some migration patterns you might use when converting global parameters to variable libraries:
 
-- **Direct mapping** — Simple ADF parameters like region or tenant name map one-to-one to variable library entries.
+- **Direct mapping** — Simple Azure Data Factory parameters like region or tenant name map one-to-one to variable library entries.
 
 - **Environment-specific libraries** — Instead of one library, create multiple libraries (Global-Dev, Global-Test, Global-Prod). Deployment pipelines can bind the correct library based on environment.
 
