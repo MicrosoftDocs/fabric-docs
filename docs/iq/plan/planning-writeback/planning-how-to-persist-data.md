@@ -1,7 +1,7 @@
 ---
 title: Set Up Writeback to Persist Data
 description: Learn how to write back data from a planning sheet to your database or data platform. Configure destinations and save planning inputs securely. 
-ms.date: 04/27/2026
+ms.date: 09/16/2026
 ms.topic: how-to
 #customer intent: As a user, I want to understand and use writeback effectively.
 ---
@@ -28,21 +28,21 @@ Before you begin, make sure you have the following prerequisites in place:
 
 ## Create a writeback destination
 
-To save data using writeback, first configure a destination.
+To save data by using writeback, first configure a destination.
 
-1. Go to **Writeback > Add Destination**.
-2. Select a database connection.
-3. Select the target database—browse and select the required database from the OneLake catalog.
-4. Enter a **Table Name**.
-5. Enter the **Decimal Precision** to specify the number of digits after the decimal point for numeric columns.
-6. Use **Text Length** to define the maximum length for string columns (for example, length of all string columns = 512) or choose **Custom**.
-7. Select **Add** to create the writeback destination.
+1. Go to **Writeback** > **Add Destination**.
+1. Select a database connection.
+1. Select the target database - browse and select the required database from the OneLake catalog.
+1. Enter a **Table Name**.
+1. Enter the **Decimal Precision** to specify the number of digits after the decimal point for numeric columns.
+1. Use **Text Length** to define the maximum length for string columns (for example, length of all string columns = 512) or choose **Custom**.
+1. Select **Add** to create the writeback destination.
 
 :::image type="content" source="../media/planning-writeback/planning-how-to-persist-data/create-writeback-destination.png" alt-text="Screenshot of creating a writeback destination.":::
 
 ## Manage destinations
 
-To view, update, or reuse configured destinations, go to **Writeback > Manage**.
+To view, update, or reuse configured destinations, go to **Writeback** > **Manage**.
 
 :::image type="content" source="../media/planning-writeback/planning-how-to-persist-data/manage-destination.png" alt-text="Screenshot of writeback destinations configured in the planning sheet." lightbox="../media/planning-writeback/planning-how-to-persist-data/manage-destination.png":::
 
@@ -61,9 +61,9 @@ Configure settings from **Writeback > Settings**.
 
 ### Set the writeback type
 
-Control how data is structured in the writeback table. Go to **Writeback > Settings > Writeback Type**, and select one of the following:
+Control how data is structured in the writeback table. Go to **Writeback > Settings > Writeback Type**, and select one of the following types:
 
-* Select **Long** to store measures as key-value pairs a row-based format.
+* Select **Long** to store measures as key-value pairs in a row-based format.
 * Select **Wide** to store measures in a column-based format.
 * Select **Long with Changes**. This format is the same as long format, but tracks only the changed values written back from the planning sheet.
 * Select **Wide with Changes**. This format is the same as wide format, but tracks only the changed values written back from the planning sheet.
@@ -72,24 +72,29 @@ Control how data is structured in the writeback table. Go to **Writeback > Setti
 
 ## Perform writeback
 
-* Write back scenarios, forecasts, data inputs, and comments to the designated data platform.
+Follow the steps in this section to write back data from your planning sheet to the configured destination and view the writeback log.
 
-    Select **Writeback > Writeback** to trigger a writeback. After completion, a confirmation message is displayed.
+1. Write back scenarios, forecasts, data inputs, and comments to the designated data platform. Select **Writeback** > **Writeback** to trigger a writeback. After completion, a confirmation message is displayed.
 
     :::image type="content" source="../media/planning-writeback/planning-how-to-persist-data/writeback-status.jpg" alt-text="Screenshot of writeback completion notification." lightbox="../media/planning-writeback/planning-how-to-persist-data/writeback-status.jpg":::
 
-* Open the destination database to view the writeback data.
+1. Open the destination database to view the writeback data.
+
+    > [!IMPORTANT]
+    > Authorized database access only
+    > 
+    > Always query your writeback data by using your configured destination database. Don't access or query the internal __fabric_plan_sys_db database, as it's reserved strictly for system operations and app storage.
 
     :::image type="content" source="../media/planning-writeback/planning-how-to-persist-data/writeback-destination-data.png" alt-text="Screenshot of data written back to a Fabric SQL destination." lightbox="../media/planning-writeback/planning-how-to-persist-data/writeback-destination-data.png":::
 
-* After the initial writeback, add or remove row or column dimensions as you build your planning sheet. If the destination structure must change because of these updates, drop and re-create the table with the updated structure before the next writeback.
+1. After the initial writeback, you might need to add or remove row or column dimensions as you build your planning sheet. If the destination structure must change because of these updates, drop and re-create the table with the updated structure before the next writeback.
 
     :::image type="content" source="../media/planning-writeback/planning-how-to-persist-data/writeback-table-mismatch.png" alt-text="Screenshot of destination structure mismatch." lightbox="../media/planning-writeback/planning-how-to-persist-data/writeback-table-mismatch.png":::
 
-* Writeback logs include milestones, payload size, and writeback duration. Select **Writeback > Logs** to view the writeback logs.
+1. Writeback logs include milestones, payload size, and writeback duration. Select **Writeback** > **Logs** to view the writeback logs.
 
     :::image type="content" source="../media/planning-writeback/planning-how-to-persist-data/writeback-logs.jpg" alt-text="Screenshot of writeback logs." lightbox="../media/planning-writeback/planning-how-to-persist-data/writeback-logs.jpg":::
 
-* Select a writeback ID to view detailed information about a specific writeback instance.
+1. Select a writeback ID to view detailed information about a specific writeback instance.
 
     :::image type="content" source="../media/planning-writeback/planning-how-to-persist-data/writeback-detailed-logs.png" alt-text="Screenshot of writeback logs with payload size, milestones, and duration." lightbox="../media/planning-writeback/planning-how-to-persist-data/writeback-detailed-logs.png":::
