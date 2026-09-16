@@ -70,7 +70,7 @@ Add comments to provide more context for the approver.
 
 :::image type="content" source="media/powertable-how-to-review-approval-workflow/add-comments.png" alt-text="Screenshot of adding comments to a cell." lightbox="media/powertable-how-to-review-approval-workflow/add-comments.png":::
 
-The task status is automatically set to **Open**, and an email notification is sent to the assignees. They can reply to the thread to start a conversation.
+The task status is automatically set to **Open**, and a Microsoft Teams notification is sent to the assignees. They can reply to the thread to start a conversation.
 
 ### View comments
 
@@ -130,9 +130,9 @@ Select **Request Changes** and add a comment describing the suggested change. Co
 
 :::image type="content" source="media/powertable-how-to-review-approval-workflow/request-changes.png" alt-text="Screenshot of the button to submit changes to a request." lightbox="media/powertable-how-to-review-approval-workflow/request-changes.png":::
 
-The author receives an email notification, reviews the suggestions, makes the required changes, and [resubmits the request](#re-submit-for-review) for approval.
+The author receives a Microsoft Teams notification, reviews the suggestions, makes the required changes, and [resubmits the request](#re-submit-for-review) for approval.
 
-Both the author and the approver receive email notifications for suggested changes and resubmissions, enabling faster collaboration through a conversation thread.
+Both the author and the approver receive MS Teams notifications for suggested changes and resubmissions, enabling faster collaboration through a conversation thread.
 
 ## Disable approval workflow
 

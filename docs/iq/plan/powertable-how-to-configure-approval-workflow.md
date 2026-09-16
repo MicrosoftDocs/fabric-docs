@@ -16,11 +16,11 @@ To ensure accuracy and correctness, users might need management's approval befor
 
 When a change is submitted, the following actions occur:
 
-1. Approvers receive an email notification with a link to the table.
+1. Approvers receive Microsoft Teams notification with a link to the table.
 1. The changes are highlighted in the table.
 1. Approvers review the changes in the **Approvals** tab and approve, reject, or request changes.
-1. The **author** is notified by email when a request is approved or rejected.
-1. Approvers can also request changes or provide suggestions.
+1. The **author** is notified by Microsoft Teams notification when a request is approved or rejected.
+1. Approvers can also request changes or provide suggestions from the table app.
 1. The author can apply or skip the suggested changes and resubmit the request for review.
 1. Once approved, the changes are synchronized with the source database.
 
@@ -49,15 +49,15 @@ Next, select the approvers who review and approve any changes made to the table.
 
 There are currently two ways to select approvers in PowerTable sheets.
 
-* [User-based approvals](#user-based-approvals): Manually enter the email addresses of approvers or the IDs of Active Directory groups
-* [Rule-based approvals](#rule-based-approvals): Configure a rule-based system to identify the approvers
+* [User-based approvals](#user-based-approvals): Manually enter the email addresses of approvers or the IDs of Microsoft Entra groups.
+* [Rule-based approvals](#rule-based-approvals): Configure a rule-based system to identify the approvers.
 
 #### User-based approvals
 
 User-based approvals is a straightforward method where you manually specify individuals who act as approvers.
 
 1. Choose the option, **Specific users**.
-1. Select specific users in the workspace who are responsible for reviewing and approving the changes. Search for them by entering their names or email addresses.
+1. Select specific users in the workspace who are responsible for reviewing and approving the changes. Search for them by entering their names or email addresses. You can also search for Microsoft Entra groups and add them.
 1. Select **Save**.
 
     :::image type="content" source="media/powertable-how-to-configure-approval-workflow/select-specific-users.png" alt-text="Screenshot of selecting specific users that can approve changes." lightbox="media/powertable-how-to-configure-approval-workflow/select-specific-users.png":::
