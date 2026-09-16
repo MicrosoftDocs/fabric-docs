@@ -28,7 +28,7 @@ From the **Row Access** pane, you can complete the following actions.
 In **Row Access**, under the **Add** section, you can specify who is allowed to add rows to the table:
 * **No one**: Select this option to prevent users from adding new rows to your table.
 * **All users in this workspace**: Select this option to allow everyone in the workspace to add records.
-* **Specific users**: Select this option to allow only certain users to add rows. Enter the email addresses of the users or the Microsoft Entra groups you wish to grant access.
+* **Specific users**: Select this option to allow only certain users to add rows. Enter the email addresses of the users or the Microsoft Entra groups you want to grant access to.
 
 :::image type="content" source="media/powertable-how-to-set-up-access-control/row-access.png" alt-text="Screenshot of granting access to specific users in the Row Access settings." lightbox="media/powertable-how-to-set-up-access-control/row-access.png":::
 
