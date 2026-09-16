@@ -1,22 +1,22 @@
 ---
 title: Troubleshoot the Oracle connector
-titleSuffix: Azure Data Factory & Azure Synapse
-description: Learn how to troubleshoot issues with the Oracle connector in Azure Data Factory and Azure Synapse Analytics.
+titleSuffix: Fabric Data Factory & Azure Synapse
+description: Learn how to troubleshoot issues with the Oracle connector in Fabric Data Factory and Azure Synapse Analytics.
 ms.topic: troubleshooting
 ms.date: 11/07/2024
 ms.reviewer: jianleishen
 ms.custom: has-adal-ref, synapse, connectors
 ---
 
-# Troubleshoot the Oracle connector in Azure Data Factory and Azure Synapse
+# Troubleshoot the Oracle connector in Fabric Data Factory and Azure Synapse
 
-This article provides suggestions to troubleshoot common problems with the Oracle connector in Azure Data Factory and Azure Synapse.
+This article provides suggestions to troubleshoot common problems with the Oracle connector in Fabric Data Factory and Azure Synapse.
 
 ## Error code: ArgumentOutOfRangeException
 
 - **Message**: `Hour, Minute, and Second parameters describe an un-representable DateTime.`
 
-- **Cause**: In Azure Data Factory and Synapse pipelines, DateTime values are supported in the range from 0001-01-01 00:00:00 to 9999-12-31 23:59:59. However, Oracle supports a wider range of DateTime values, such as the BC century or min/sec>59, which leads to failure.
+- **Cause**: In Fabric Data Factory and Azure Synapse pipelines, DateTime values are supported in the range from 0001-01-01 00:00:00 to 9999-12-31 23:59:59. However, Oracle supports a wider range of DateTime values, such as the BC century or min/sec>59, which leads to failure.
 
 - **Recommendation**: 
 
@@ -28,5 +28,5 @@ This article provides suggestions to troubleshoot common problems with the Oracl
 
 For more troubleshooting help, try these resources:
 - [Fabric blog](https://community.fabric.microsoft.com/category/fabricupdatesblogs/blog/fbc_fabricupdatesblogs)
-- [Data Factory forums | Microsoft Fabric Community](https://community.fabric.microsoft.com/category/datafactory)
+- [Data Factory forums | Fabric Community](https://community.fabric.microsoft.com/category/datafactory)
 - [Data Factory feature requests](https://ideas.fabric.microsoft.com/)

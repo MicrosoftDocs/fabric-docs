@@ -15,12 +15,12 @@ ai-usage: ai-assisted
 
 # Get started with Copilot in Fabric in the Data Factory workload
 
-This article shows you how to get started with Microsoft Copilot in Fabric in the Data Factory workload. You can use Copilot to create data integration solutions using natural language prompts in both Dataflow Gen2 and pipelines, and troubleshoot your pipelines with error summaries and recommendations.
+This article shows you how to get started with Microsoft Copilot in Fabric in the Data Factory workload. You can use Copilot to create data integration solutions using natural language prompts in both dataflow Gen2 and pipelines, and troubleshoot your pipelines with error summaries and recommendations.
 
 > [!TIP]  
 > To learn more about Copilot features and capabilities, see [What is Copilot in Fabric in the Data Factory workload?](copilot-fabric-data-factory.md)
 
-Before your business can start using Copilot capabilities in Fabric, your administrator needs to [enable Copilot in Microsoft Fabric](../fundamentals/copilot-fabric-overview.md#enable-copilot).
+Before your business can start using Copilot capabilities in Fabric, your administrator needs to [enable Copilot in Fabric](../fundamentals/copilot-fabric-overview.md#enable-copilot).
 
 [!INCLUDE [copilot-note-include](../includes/copilot-note-include.md)]
 
@@ -33,13 +33,13 @@ To use Copilot in the Data Factory workload, you need:
 - Copilot enabled by your Fabric administrator. For more information, see [Enable Copilot in Fabric](../fundamentals/copilot-fabric-overview.md#enable-copilot).
 - If your tenant or capacity is outside the US or EU, your administrator must also enable the tenant setting that allows data to be processed outside your capacity's geographic region.
 
-## Get started with Copilot for Dataflow Gen2
+## Get started with Copilot for dataflow Gen2
 
-Use the following steps to get started with Copilot for Dataflow Gen2:
+Use the following steps to get started with Copilot for dataflow Gen2:
 
-1. Create a new [Dataflow Gen2](../data-factory/tutorial-end-to-end-dataflow.md).
+1. Create a new [dataflow Gen2](../data-factory/tutorial-end-to-end-dataflow.md).
 
-1. On the Home tab in Dataflow Gen2, select the **Copilot** button.
+1. On the Home tab in the dataflow Gen2, select the **Copilot** button.
 
 1. In the bottom left of the Copilot pane, select the **Get data from** option.
 

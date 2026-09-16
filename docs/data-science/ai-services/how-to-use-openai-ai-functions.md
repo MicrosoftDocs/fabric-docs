@@ -22,7 +22,7 @@ Another key advantage is prebuilt LLM-based transformations exposed as DataFrame
 > [!NOTE]
 > Import paths differ by engine: use `synapse.ml.aifunc` for pandas DataFrames and `synapse.ml.spark.aifunc` for PySpark. PySpark AI Functions distribute across the Fabric Spark cluster for parallel execution, while pandas execution runs on a single node. Choose PySpark when you need to process large-scale datasets.
 
-For setup steps, supported functions, model and provider options, and end-to-end examples, see [Transform and enrich data with AI Functions](../ai-functions/overview.md), which is the main AI Functions reference in Fabric. If you need low-level API control or custom orchestration beyond built-in AI Functions, use [Use Azure OpenAI with Python SDK](how-to-use-openai-python-sdk.md) or [Use Azure OpenAI with SynapseML](how-to-use-openai-synapse-ml.md).
+For setup steps, supported functions, model and provider options, and end-to-end examples, see [Transform and enrich data with AI Functions](../ai-functions/overview.md), which is the main AI Functions reference in Fabric. For direct Python API calls, see [Use Azure OpenAI with OpenAI Python SDK](how-to-use-openai-python-sdk.md). For distributed custom prompts on Spark DataFrames, see [Use Azure OpenAI with SynapseML](how-to-use-openai-synapse-ml.md).
 
 ## Related content
 
@@ -30,6 +30,6 @@ For setup steps, supported functions, model and provider options, and end-to-end
 
 - [Transform and enrich data with AI Functions](../ai-functions/overview.md) for setup, supported functions, and end-to-end examples
 - [Billing for AI Functions](../ai-functions/billing.md) for costs, spending, and runtime usage monitoring
-- [Use Azure OpenAI with Python SDK](how-to-use-openai-python-sdk.md) for fine-grained control over single API calls
+- [Use Azure OpenAI with OpenAI Python SDK](how-to-use-openai-python-sdk.md) for the OpenAI package or built-in synchronous and asynchronous OpenAI-compatible clients
 - [Use Azure OpenAI with SynapseML](how-to-use-openai-synapse-ml.md) for distributed processing with Spark DataFrames
 - [Use Azure OpenAI with REST API](how-to-use-openai-via-rest-api.md) for direct REST API calls to the LLM endpoint

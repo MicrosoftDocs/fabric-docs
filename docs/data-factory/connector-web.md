@@ -16,7 +16,7 @@ This article outlines the steps to create either a Web API or Web page connectio
 
 ## Supported authentication types
 
-Both the Web API and Web page connectors support the following authentication types for copy and Dataflow Gen2 respectively.  
+Both the Web API and Web page connectors support the following authentication types for copy and dataflow Gen2 respectively.
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
@@ -26,7 +26,7 @@ Both the Web API and Web page connectors support the following authentication ty
 |Windows| n/a | √ |
 
 ## Set up your connection for Dataflow Gen2
-You can connect Dataflow Gen2 in Microsoft Fabric to Web using Power Query connectors. Follow these steps to create your connection:
+You can connect a dataflow Gen2 in Fabric to Web using Power Query connectors. Follow these steps to create your connection:
 
 1. Check [capabilities](#capabilities) to make sure your scenario is supported.
 1. [Complete prerequisites for Web](#prerequisites).
@@ -51,7 +51,7 @@ You can connect Dataflow Gen2 in Microsoft Fabric to Web using Power Query conne
 
 ## Set up your connection in a pipeline
 
-Data Factory in Microsoft Fabric doesn't currently support the Web API or Web page connector in pipelines.
+Data Factory doesn't currently support the Web API or Web page connector in pipelines.
 
 ## Related content
 

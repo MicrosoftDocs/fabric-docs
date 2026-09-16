@@ -16,7 +16,7 @@ This article outlines the steps to create an Impala database connection.
 
 ## Supported authentication types
 
-The Impala connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+The Impala connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
@@ -25,7 +25,7 @@ The Impala connector supports the following authentication types for copy and Da
 |Database| n/a | √ |
 
 ## Set up your connection for Dataflow Gen2
-You can connect Dataflow Gen2 in Microsoft Fabric to Impala using Power Query connectors. Follow these steps to create your connection:
+You can connect dataflow Gen2 in Fabric to Impala using Power Query connectors. Follow these steps to create your connection:
 
 1. Check [capabilities](#capabilities), [limitations, and considerations](#limitations-and-considerations) to make sure your scenario is supported.
 1. [Get data in Fabric](#get-data).
@@ -49,7 +49,7 @@ You can connect Dataflow Gen2 in Microsoft Fabric to Impala using Power Query co
 
 ## Set up your connection in a pipeline
 
-Data Factory in Microsoft Fabric doesn't currently support an Impala database in pipelines.
+Data Factory doesn't currently support an Impala database in pipelines.
 
 ## Related content
 

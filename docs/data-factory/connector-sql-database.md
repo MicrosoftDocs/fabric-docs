@@ -11,11 +11,11 @@ ms.custom:
 
 # Set up your SQL database connection
 
-This article outlines the steps to create an SQL database connection.
+This article outlines the steps to create a SQL database connection.
 
 ## Supported authentication types
 
-The SQL database connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+The SQL database connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
@@ -23,7 +23,7 @@ The SQL database connector supports the following authentication types for copy 
 
 ## Set up your connection in a pipeline
 
-To create an SQL database connection in a pipeline, select an existing SQL database under **OneLake** section. 
+To create a SQL database connection in a pipeline, select an existing SQL database under **OneLake** section.
 
 :::image type="content" source="media/connector-sql-database/select-sql-database-in-onelake.png" lightbox="media/connector-sql-database/select-sql-database-in-onelake.png" alt-text="Screenshot of selecting SQL database in OneLake section.":::
 
@@ -36,7 +36,7 @@ You have two ways to browse to this page:
 
 You can select an existing SQL database connection by repeating the above step.
 
-If you have multiple Fabric SQL database connections in **Manage Connections and Gateways**, it navigates to **Connect to data source** pane. You can select an existing connection or create a new connection from the drop-down list.
+If you have multiple SQL database in Fabric connections in **Manage Connections and Gateways**, it navigates to **Connect to data source** pane. You can select an existing connection or create a new connection from the drop-down list.
 
 :::image type="content" source="media/connector-sql-database/connect-to-data-source.png" lightbox="media/connector-sql-database/connect-to-data-source.png" alt-text="Screenshot of the pane to connect to data source.":::
 

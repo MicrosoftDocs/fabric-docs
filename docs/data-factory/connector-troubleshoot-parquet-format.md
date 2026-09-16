@@ -1,15 +1,15 @@
 ---
 title: Troubleshoot the Parquet format connector
-description: Learn how to troubleshoot issues with the Parquet format connector in Data Factory in Microsoft Fabric.
+description: Learn how to troubleshoot issues with the Parquet format connector in Fabric Data Factory.
 ms.reviewer: xupzhou
 ms.topic: troubleshooting
 ms.date: 10/23/2024
 ms.custom: connectors
 ---
 
-# Troubleshoot the Parquet format connector in Data Factory in Microsoft Fabric
+# Troubleshoot the Parquet format connector in Fabric Data Factory
 
-This article provides suggestions to troubleshoot common problems with the Parquet format connector in Data Factory in Microsoft Fabric.
+This article provides suggestions to troubleshoot common problems with the Parquet format connector in Data Factory.
 
 ## Error code: ParquetInvalidFile
 
@@ -163,5 +163,5 @@ This article provides suggestions to troubleshoot common problems with the Parqu
 For more troubleshooting help, try these resources:
 
 - [Fabric blog](https://community.fabric.microsoft.com/category/fabricupdatesblogs/blog/fbc_fabricupdatesblogs)
-- [Data Factory forums | Microsoft Fabric Community](https://community.fabric.microsoft.com/category/datafactory)
+- [Data Factory forums | Fabric Community](https://community.fabric.microsoft.com/category/datafactory)
 - [Data Factory feature requests ideas](https://ideas.fabric.microsoft.com/)

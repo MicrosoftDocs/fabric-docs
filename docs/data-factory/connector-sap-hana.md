@@ -16,7 +16,7 @@ This article outlines the steps to create an SAP HANA database connection.
 
 ## Supported authentication types
 
-The SAP HANA database connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+The SAP HANA database connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
@@ -24,7 +24,7 @@ The SAP HANA database connector supports the following authentication types for 
 |Windows | √ | √ |
 
 ## Set up your connection for Dataflow Gen2
-You can connect Dataflow Gen2 in Microsoft Fabric to SAP HANA database using Power Query connectors. Follow these steps to create your connection:
+You can connect a dataflow Gen2 in Fabric to an SAP HANA database by using Power Query connectors. Follow these steps to create your connection:
 
 1. Check [capabilities](#capabilities), [limitations, and considerations](#limitations-and-considerations) to make sure your scenario is supported.
 1. [Complete prerequisites for SAP HANA database](#prerequisites).

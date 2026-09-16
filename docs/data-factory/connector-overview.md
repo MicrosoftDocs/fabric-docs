@@ -10,18 +10,18 @@ ms.custom: connectors
 
 # Connector overview
 
-Data Factory in Microsoft Fabric connects to many types of data stores using built-in connectors. These connectors help you bring in or transform data with Dataflow Gen2, pipelines, or Copy job. Select the connector you need to get started.
+Data Factory connects to many types of data stores by using built-in connectors. These connectors help you bring in or transform data by using dataflow Gen2, pipelines, or copy jobs. Select the connector you need to get started.
 
 ## Prerequisites
 
 Before setting up a connection, ensure you have:
 
-- A Microsoft Fabric tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
-- A Microsoft Fabric-enabled workspace. [Create a workspace](../fundamentals/create-workspaces.md).
+- A Fabric tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
+- A Fabric-enabled workspace. [Create a workspace](../fundamentals/create-workspaces.md).
 
 ## Supported connectors in Fabric
 
-Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Select a data store to see what it can do and how to set it up.
+Fabric supports these connectors in dataflow Gen2, pipelines, and copy jobs. Select a data store to see what it can do and how to set it up.
 
 >[!TIP]
 > For more detailed copy job feature availability, see [supported features by connector for Copy job](copy-job-connectors.md).
@@ -106,9 +106,9 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | Exasol | ✓/− |  |  |
 | [Excel workbook](/power-query/connectors/excel#connect-to-an-excel-workbook-from-power-query-online) | ✓/− |  |  |
 | [Fabric Data Warehouse](connector-data-warehouse-overview.md) | ✓/✓ | ✓/✓ | ✓/✓ |
-| [Fabric KQL Database](connector-kql-database-overview.md) | ✓/✓ | ✓/✓ |  |
-| [Fabric Lakehouse](connector-lakehouse-overview.md) | ✓/✓ | ✓/✓ | ✓/✓ |
-| [Fabric SQL database (Beta)](connector-sql-database-overview.md) | ✓/✓ | ✓/✓ | ✓/✓ |
+| [KQL database in Fabric](connector-kql-database-overview.md) | ✓/✓ | ✓/✓ |  |
+| [Lakehouse in Fabric](connector-lakehouse-overview.md) | ✓/✓ | ✓/✓ | ✓/✓ |
+| [SQL database in Fabric (Beta)](connector-sql-database-overview.md) | ✓/✓ | ✓/✓ | ✓/✓ |
 | FactSet Analytics | ✓/− |  |  |
 | FactSet RMS (Beta) | ✓/− |  |  |
 | [FHIR](connector-fhir-overview.md) | ✓/− |  |  |
@@ -198,7 +198,7 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | [SharePoint list](connector-sharepoint-list-overview.md) | ✓/− |  |  |
 | [SharePoint Online list](connector-sharepoint-online-list-overview.md) | ✓/− | ✓/− |✓/− |
 | Shortcuts Business Insights (Beta) | ✓/− |  |  |
-| [SingleStore Direct Query Connector](/power-query/connectors/singlestore) | ✓/− |  |  |
+| [SingleStore DirectQuery Connector](/power-query/connectors/singlestore) | ✓/− |  |  |
 | [SIS-CC SDMX (Beta)](/power-query/connectors/sis-cc-sdmx) | ✓/− |  |  |
 | Siteimprove | ✓/− |  |  |
 | [Smartsheet](connector-smartsheet-overview.md) | ✓/− |  |  |

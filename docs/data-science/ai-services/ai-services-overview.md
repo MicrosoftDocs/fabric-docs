@@ -28,7 +28,7 @@ Fabric provides two options to use Foundry Tools:
 
     Fabric seamlessly integrates with Foundry Tools, allowing you to enrich your data with prebuilt AI models without any prerequisite. We recommend this option because you can use your Fabric authentication to access Foundry Tools, and all usages are billed against your Fabric capacity. This option is currently in public preview, with limited Microsoft Foundry tools available.
 
-    Fabric offers [Azure OpenAI Service](/azure/foundry/foundry-models/concepts/models-sold-directly-by-azure?tabs=global-standard-aoai%2Cglobal-standard&pivots=azure-openai), [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/), and [Azure Translator in Foundry Tools](https://azure.microsoft.com/products/ai-services/translator/) by default, with support for both SynapseML and the RESTful API. You can also use the [OpenAI Python Library](https://platform.openai.com/docs/api-reference?lang=python) to access Azure OpenAI service in Fabric. For more information about available models, visit [prebuilt AI models in Fabric](./ai-services-overview.md#prebuilt-ai-models-in-fabric-preview).
+    Fabric offers [Azure OpenAI Service](/azure/foundry/foundry-models/concepts/models-sold-directly-by-azure?tabs=global-standard-aoai%2Cglobal-standard&pivots=azure-openai), [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/), and [Azure Translator in Foundry Tools](https://azure.microsoft.com/products/ai-services/translator/) by default, with support for SynapseML and the REST API. You can also use the [OpenAI Python SDK](how-to-use-openai-python-sdk.md), including built-in synchronous and asynchronous OpenAI-compatible clients that require no installation or authentication setup. For more information, see [Prebuilt AI models in Fabric](#prebuilt-ai-models-in-fabric-preview).
 
 - **Bring your own key (BYOK)**
 
@@ -40,7 +40,7 @@ Fabric provides two options to use Foundry Tools:
 
 ### [Azure OpenAI Service](/azure/foundry/foundry-models/concepts/models-sold-directly-by-azure?tabs=global-standard-aoai%2Cglobal-standard&pivots=azure-openai)
 
-[REST API](how-to-use-openai-via-rest-api.md), [Python SDK](how-to-use-openai-python-sdk.md), [SynapseML](how-to-use-openai-synapse-ml.md), [AI Functions](how-to-use-openai-ai-functions.md)
+[REST API](how-to-use-openai-via-rest-api.md), [OpenAI Python SDK](how-to-use-openai-python-sdk.md), [SynapseML](how-to-use-openai-synapse-ml.md), [AI Functions](how-to-use-openai-ai-functions.md)
 
 - Language models: `gpt-5.1` and `gpt-5-mini` are hosted. [See table for details](#consumption-rate-for-openai-language-models)
 - Text embedding model: `text-embedding-ada-002` is hosted. [See table for details](#consumption-rate-for-openai-embedding-models)
@@ -157,5 +157,5 @@ This separation makes it easier to track and forecast AI-related costs independe
 
 - [Fabric AI Functions](../ai-functions/overview.md) for large scale dataset transformations in Fabric for Pandas or PySpark DataFrames
 - [Use Azure OpenAI with SynapseML](how-to-use-openai-synapse-ml.md) for distributed processing using Spark DataFrames with no overhead
-- [Use Azure OpenAI with Python SDK](how-to-use-openai-python-sdk.md) for pythonic control over single API calls using OpenAI Python SDK
+- [Use Azure OpenAI with OpenAI Python SDK](how-to-use-openai-python-sdk.md) for the OpenAI package or built-in synchronous and asynchronous OpenAI-compatible clients
 - [Use Azure OpenAI with REST API](how-to-use-openai-via-rest-api.md) for direct REST API calls to the LLM endpoint

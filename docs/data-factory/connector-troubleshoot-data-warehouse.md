@@ -1,15 +1,15 @@
 ---
 title: Troubleshoot the Data Warehouse connector
-description: Learn how to troubleshoot issues with the Data Warehouse connector in Data Factory in Microsoft Fabric.
+description: Learn how to troubleshoot issues with the Data Warehouse connector in Fabric Data Factory.
 ms.reviewer: jianleishen
 ms.topic: troubleshooting
 ms.date: 01/09/2026
 ms.custom: connectors
 ---
 
-# Troubleshoot the Data Warehouse connector in Data Factory in Microsoft Fabric
+# Troubleshoot the Data Warehouse connector in Fabric Data Factory
 
-This article provides suggestions to troubleshoot common problems with the Data Warehouse connector in Data Factory in Microsoft Fabric.
+This article provides suggestions to troubleshoot common problems with the Data Warehouse connector in Data Factory.
 
 ## A transport-level error has occurred when receiving results from the server
 
@@ -40,5 +40,5 @@ This article provides suggestions to troubleshoot common problems with the Data 
 For more troubleshooting help, try these resources:
 
 - [Fabric blog](https://community.fabric.microsoft.com/category/fabricupdatesblogs/blog/fbc_fabricupdatesblogs)
-- [Data Factory forums | Microsoft Fabric Community](https://community.fabric.microsoft.com/category/datafactory)
+- [Data Factory forums | Fabric Community](https://community.fabric.microsoft.com/category/datafactory)
 - [Data Factory feature requests ideas](https://ideas.fabric.microsoft.com/)
