@@ -4,7 +4,8 @@ description: Learn about workspace identity in Microsoft Fabric.
 author: msmimart
 ms.author: mimart
 ms.topic: how-to
-ms.date: 08/13/2026
+ms.date: 09/16/2026
+ai-usage: ai-assisted
 ---
 
 # Workspace identity
@@ -18,7 +19,7 @@ When you create a workspace identity, Fabric creates a service principal in Micr
 > [!NOTE]
 > Fabric workspace identity is **generally available**. You can create a workspace identity in any workspace except **My workspace**.
 
-While Fabric workspace identities share some similarities with Azure managed identities, their lifecycle, administration, and governance are different. A workspace identity has an independent lifecycle that is managed entirely in Fabric. A Fabric workspace can optionally be associated with an identity. When the workspace is deleted, the identity gets deleted. The name of the workspace identity is always the same as the name of the workspace it's associated with.
+While Fabric workspace identities share some similarities with Azure managed identities, their lifecycle, administration, and governance are different. A workspace identity has an independent lifecycle that is managed entirely in Fabric. A Fabric workspace can optionally be associated with an identity. When the workspace is permanently deleted, the identity gets deleted. The name of the workspace identity is always the same as the name of the workspace it's associated with.
 
 ## Create and manage a workspace identity
 
@@ -54,7 +55,9 @@ For information, see [Access control](#access-control).
 When an identity is deleted, Fabric items relying on the workspace identity for trusted workspace access or authentication will break. **Deleted workspace identities cannot be restored.**
 
 > [!NOTE]
-> When a workspace is deleted, its workspace identity is deleted as well. If the workspace is restored after deletion, the workspace identity is not restored. If you want the restored workspace to have a workspace identity, you must create a new one.
+> When a workspace is deleted, its workspace identity is deleted as well, but not immediately. Deleting a workspace is a soft delete: the workspace is retained in a *Deleted* state for the duration of the [workspace retention period](../admin/workspace-retention.md), and the workspace identity isn't deleted until the workspace is permanently deleted. For details, see [Deleting the identity](#deleting-the-identity).
+>
+> If the workspace is restored after deletion, the workspace identity is not restored. If you want the restored workspace to have a workspace identity, you must create a new one.
 
 ## How to use workspace identity
 
@@ -130,6 +133,8 @@ To view the audit logs and sign-in logs for this identity:
 
 The application associated with the workspace identity can be seen under **App registrations** in the Azure portal. No modifications should be made there, as this will cause the workspace identity to stop working.
 
+The app registration remains listed as long as the workspace identity exists in Fabric, including while a deleted workspace is in its retention period. For more information, see [Deleting the identity](#deleting-the-identity).
+
 ## Advanced scenarios
 
 The following sections describe scenarios involving workspace identities that might occur.
@@ -138,7 +143,24 @@ The following sections describe scenarios involving workspace identities that mi
 
 The workspace identity can be deleted in the workspace settings. When an identity is deleted, Fabric items relying on the workspace identity for trusted workspace access or authentication will break. Deleted workspace identities can't be restored.
 
-When a workspace is deleted, its workspace identity is deleted as well. If the workspace is restored after deletion, the workspace identity **is not** restored. If you want the restored workspace to have a workspace identity, you must create a new one.
+When a workspace is deleted, its workspace identity is deleted as well, but not at the moment you delete the workspace. Deleting a workspace is a soft delete. Fabric keeps the workspace in a *Deleted* state for the length of the [workspace retention period](../admin/workspace-retention.md) so that an admin can restore it. During the retention period, the workspace identity isn't deprovisioned, and its service principal and app registration remain visible in the Azure portal.
+
+The workspace identity is deprovisioned when the workspace is permanently deleted, which happens in one of the following ways:
+
+* The retention period expires and a background job permanently deletes the workspace.
+* A Fabric admin permanently deletes the workspace during the retention period. For more information, see [Permanently delete a deleted collaborative workspace during the retention period](../admin/workspace-retention.md#permanently-delete-a-deleted-collaborative-workspace-during-the-retention-period).
+
+After permanent deletion starts, the workspace identity moves to the *Deleting* state, and it might take some time before the associated service principal and app registration no longer appear in Microsoft Entra ID.
+
+If you regularly delete workspaces and recreate them with the same name, you might see more than one app registration with that name in your tenant while the deleted workspaces are still in their retention period. To remove a workspace identity without waiting for the retention period to expire, use one of the following options:
+
+* Before you delete the workspace, delete the workspace identity on the **Workspace identity** tab of the workspace settings.
+* Ask a Fabric admin to permanently delete the workspace during the retention period.
+
+> [!WARNING]
+> Don't delete the service principal or app registration of a workspace identity directly in the Azure portal. Fabric can't find the application when it deprovisions the identity, which causes errors and can delay the cleanup of the workspace identity.
+
+If the workspace is restored after deletion, the workspace identity **is not** restored. If you want the restored workspace to have a workspace identity, you must create a new one.
 
 ### Renaming the workspace
 
@@ -157,6 +179,8 @@ When a workspace gets renamed, the workspace identity is also renamed to match t
 * If you migrate a workspace with a workspace identity to a non-Fabric capacity, to a non-F SKU Fabric capacity, or to a trial capacity, the identity isn't disabled or deleted, but Fabric items that rely on trusted workspace access stop working.
 
 * A default of 10,000 workspace identities can be created in a tenant. You can also specify your own maximum in the tenant settings, which becomes the upper limit for Fabric identity creation across your tenant. For more information, see [Define maximum number of Fabric identities in a tenant](../admin/service-admin-portal-developer.md#define-maximum-number-of-fabric-identities-in-a-tenant).
+
+* A workspace identity isn't removed when you delete its workspace. It's removed only after the workspace is permanently deleted. As a result, your tenant can contain more than one app registration with the same name if you delete workspaces and recreate them with the same name. For more information, see [Deleting the identity](#deleting-the-identity).
 
 * Azure Data Lake Storage Gen2 shortcuts in a workspace that has a workspace identity will be capable of trusted service access.
 
