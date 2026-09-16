@@ -13,9 +13,9 @@ ms.date: 03/13/2026
 
 Continue reading for information on major updates to OneLake file explorer.
 
-## Sep 2026 update (v 1.1.1.0)
+## September 2026 update (v 1.1.1.0)
 
-### Expanded Cloud Availability
+### Expanded cloud availability
 
 Expanded OneLake File Explorer availability to GCC High.
 
