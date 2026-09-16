@@ -58,8 +58,11 @@ Fabric IQ MCP respects your existing Fabric permissions. You don't need a worksp
 Use the following endpoint:
 
 ```text
-https://fabriciq.svc.cloud.microsoft/v1/mcp/FabricIQ
+https://fabriciq.svc.cloud.microsoft/v1/mcp/fabriciq
 ```
+
+> [!NOTE]
+> If your organization uses private links, use `https://api.fabric.microsoft.com/v1/mcp/fabriciq` instead.
 
 ## Use the Fabric IQ skill (recommended)
 
@@ -83,7 +86,7 @@ Add the following server configuration:
   "mcpServers": {
     "FabricIQ": {
       "type": "http",
-      "url": "https://fabriciq.svc.cloud.microsoft/v1/mcp/FabricIQ",
+      "url": "https://fabriciq.svc.cloud.microsoft/v1/mcp/fabriciq",
       "tools": ["*"]
     }
   }
