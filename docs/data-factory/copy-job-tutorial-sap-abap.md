@@ -89,7 +89,7 @@ Complete the following steps to create a new Copy job to ingest data from SAP vi
 
 ## Known limitations
 
-- Data type handling: By default, copy job maps SAP data types to the best corresponding data types on the destination. For example, `DATS` columns in SAP are mapped to `Timestamp` in Delta tables in a Fabric Lakehouse. If your data contains invalid values (for example, an arbitrary sequence of 8 characters in such case), which technically is allowed in SAP, copy job fails.
+- Data type handling: By default, the copy job maps SAP data types to the best corresponding data types on the destination. For example, `DATS` columns in SAP map to `Timestamp` in Delta tables in a Fabric Lakehouse. If your data contains invalid values (such as an arbitrary sequence of eight characters), which SAP technically allows, the copy job fails.
 To skip data type conversions and store all columns as `String` in the destination, use the property `lowPrecisionDatatypeMode` in the copy job JSON document:
 ```JSON
                 "typeConversionSettings": {
