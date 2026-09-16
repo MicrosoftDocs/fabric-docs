@@ -5,7 +5,7 @@ author: PM-Sara
 ms.author: svredevoogd
 ms.reviewer: svredevoogd
 ms.topic: concept-article
-ms.date: 09/14/2026
+ms.date: 09/15/2026
 ai-usage: ai-assisted
 ---
 
@@ -51,6 +51,16 @@ Search for Power BI content is still improving. If Copilot doesn't find the expe
 - Apply alternative filters to see different perspectives.
 - Ask about trends, comparisons, or summaries.
 - Combine data answers with context from your files, chats, and emails.
+
+## Sensitivity labels
+
+Copilot honors the sensitivity labels applied to Power BI reports and semantic models used in a conversation. The conversation's sensitivity label reflects the most restrictive label on any content used in the conversation, including Power BI content.
+
+Content that you create from the conversation, such as an exported spreadsheet, inherits the conversation's sensitivity label. Data loss prevention (DLP) policies also apply. If a DLP policy prohibits Copilot from processing content with a specific sensitivity label, Copilot doesn't use Power BI content with that label. For more information, see [Learn about using Microsoft Purview Data Loss Prevention to manage data security and compliance for Microsoft 365 Copilot](/purview/dlp-microsoft365-copilot-location-learn-about).
+
+The following example shows where Copilot Chat displays the conversation sensitivity label and the sensitivity label for a referenced Power BI item.
+
+:::image type="content" source="media/microsoft-365-copilot-overview/power-bi-sensitivity-labels-in-copilot-chat.png" alt-text="Annotated Copilot Chat screen showing a Confidential Internal Only sensitivity label for the conversation and a sensitivity label icon next to the referenced SalesBenchmark Power BI item." lightbox="media/microsoft-365-copilot-overview/power-bi-sensitivity-labels-in-copilot-chat.png":::
 
 ## Tenant settings
 
