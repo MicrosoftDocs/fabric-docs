@@ -16,7 +16,7 @@ This article outlines the steps to create an IBM Db2 database connection.
 
 ## Supported authentication types
 
-The IBM Db2 database connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+The IBM Db2 database connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
@@ -24,7 +24,7 @@ The IBM Db2 database connector supports the following authentication types for c
 |Basic| √ | √ |
 
 ## Set up your connection for Dataflow Gen2
-You can connect Dataflow Gen2 in Microsoft Fabric to IBM Db2 database using Power Query connectors. Follow these steps to create your connection:
+You can connect dataflow Gen2 in Fabric to an IBM Db2 database by using Power Query connectors. Follow these steps to create your connection:
 
 1. Check [capabilities](#capabilities), [limitations, and considerations](#limitations-and-considerations) to make sure your scenario is supported.
 1. [Complete prerequisites for IBM Db2 database](#prerequisites).

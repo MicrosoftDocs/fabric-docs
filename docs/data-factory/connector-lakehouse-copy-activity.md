@@ -1,6 +1,6 @@
 ---
-title: Configure Lakehouse in a copy activity
-description: This article explains how to copy data using Lakehouse.
+title: Configure lakehouse in a copy activity
+description: This article explains how to copy data using a lakehouse.
 ms.reviewer: jianleishen
 ms.topic: how-to
 ms.date: 04/30/2026
@@ -12,17 +12,17 @@ ms.custom:
   - connectors
 ---
 
-# Configure Lakehouse in a copy activity
+# Configure lakehouse in a copy activity
 
-This article outlines how to use the copy activity in a pipeline to copy data from and to the Fabric Lakehouse. By default, data is written to Lakehouse Table in V-Order, and you can go to [Delta Lake table optimization and V-Order](../data-engineering/delta-optimization-and-v-order.md#what-is-v-order) for more information.
+This article outlines how to use the copy activity in a pipeline to copy data from and to the lakehouse. By default, you write data to lakehouse tables in V-order. For more information, see [Delta Lake table optimization and V-order](../data-engineering/delta-optimization-and-v-order.md#what-is-v-order).
 
-This connector supports Lakehouse in the workspace with a private link enabled. For more information on configuration, see [Set up and use private links](../security/security-workspace-level-private-links-set-up.md).
+This connector supports lakehouse in the workspace with a private link enabled. For more information on configuration, see [Set up and use private links](../security/security-workspace-level-private-links-set-up.md).
 
-To support workspace-level private link in the on-premises data gateway (version 3000.286.12 or above), you need to add `*.dfs.fabric.microsoft.com` to the allow list to ensure Lakehouse connector can access Onelake APIs through the network.
+To support workspace-level private link in the on-premises data gateway (version 3000.286.12 or later), you need to add `*.dfs.fabric.microsoft.com` to the allow list to ensure the lakehouse connector can access OneLake APIs through the network.
 
 ## Supported format
 
-Lakehouse supports the following file formats. Refer to each article for format-based settings.
+A lakehouse supports the following file formats. Refer to each article for format-based settings.
 
 - [Avro format](format-avro.md)
 - [Binary format](format-binary.md)
@@ -49,19 +49,19 @@ For the **General** tab configuration, go to [General](activity-overview.md#gene
 
 ### Source
 
-The following properties are supported for Lakehouse under the **Source** tab of a copy activity.
+The **Source** tab of a copy activity supports the following properties for a lakehouse.
 
 :::image type="content" source="./media/connector-lakehouse/lakehouse-source.png" alt-text="Screenshot showing source tab and the list of properties." lightbox="./media/connector-lakehouse/lakehouse-source.png":::
 
 The following properties are **required**:
 
-- **Connection**: Select a Lakehouse connection from the connection list. If no connection exists, then create a new Lakehouse connection. If you apply **Use dynamic content** to specify your Lakehouse, add a parameter and specify the Lakehouse object ID as the parameter value. To get your Lakehouse object ID, open your Lakehouse in your workspace, and the ID is after `/lakehouses/`in your URL.
+- **Connection**: Select a lakehouse connection from the connection list. If no connection exists, create a new lakehouse connection. If you apply **Use dynamic content** to specify your lakehouse, add a parameter and specify the lakehouse ID as the parameter value. To get your lakehouse ID, open your lakehouse in your workspace, and the ID is after `/lakehouses/` in your URL.
 
-    :::image type="content" source="./media/connector-lakehouse/lakehouse-object-id.png" alt-text="Screenshot showing the Lakehouse object ID.":::
+    :::image type="content" source="./media/connector-lakehouse/lakehouse-object-id.png" alt-text="Screenshot showing the lakehouse ID.":::
 
-- **Lakehouse**: Select an existing Lakehouse that you want to use.
+- **Lakehouse**: Select an existing lakehouse that you want to use.
 
-- **Root folder**: Select **Tables** or **Files**, which indicates the virtual view of the managed or unmanaged area in your lake. For more information, refer to [Lakehouse introduction](../data-engineering/lakehouse-overview.md).
+- **Root folder**: Select **Tables** or **Files**, which indicates the virtual view of the managed or unmanaged area in your lake. For more information, see [lakehouse introduction](../data-engineering/lakehouse-overview.md).
 
   - If you select **Tables**:
     - **Use query**: Select from **Table** or **T-SQL Query (Preview)**.
@@ -70,7 +70,7 @@ The following properties are **required**:
 
           :::image type="content" source="./media/connector-lakehouse/table-name.png" alt-text="Screenshot showing table name.":::
 
-          When you apply Lakehouse with schemas in the connection, choose an existing table with a schema from the table list or specify a table with a schema as the source. Or you can select **New** to create a new table with a schema. If you don't specify a schema name, the service will use *dbo* as the default schema.
+          When you apply a lakehouse with schemas in the connection, choose an existing table with a schema from the table list or specify a table with a schema as the source. Or you can select **New** to create a new table with a schema. If you don't specify a schema name, the service uses *dbo* as the default schema.
 
           :::image type="content" source="./media/connector-lakehouse/table-name-with-schema.png" alt-text="Screenshot showing table name with schema.":::  
           
@@ -80,26 +80,26 @@ The following properties are **required**:
           - **Additional columns**: Add additional data columns to the store source files' relative path or static value. Expression is supported for the latter.
 
       - If you select **T-SQL Query (Preview)**:
-        - **T-SQL Query (Preview)**: Specify the custom SQL query to read data through the [Lakehouse SQL analytics endpoint](../data-engineering/lakehouse-sql-analytics-endpoint.md). For example: `SELECT * FROM MyTable`. Note that Lakehouse table query mode does not support workspace-level private links.
+        - **T-SQL Query (Preview)**: Specify the custom SQL query to read data through the [lakehouse SQL analytics endpoint](../data-engineering/lakehouse-sql-analytics-endpoint.md). For example: `SELECT * FROM MyTable`. Note that lakehouse table query mode doesn't support workspace-level private links.
 
           :::image type="content" source="./media/connector-lakehouse/use-query-t-sql-query.png" alt-text="Screenshot showing Use query - T-SQL Query." :::
 
           > [!NOTE]
-          > T-SQL Query (Preview) is supported only when read the Lakehouse via the connection set up in Manage connections and gateways.
+          > T-SQL Query (Preview) is supported only when you read the lakehouse via the connection set up in Manage connections and gateways.
 
         - Under **Advanced**, you can specify the following fields:
           - **Query timeout (minutes)**: Specify the timeout for query command execution, default is 120 minutes.
-          - **Partition option**: Specifies the data partitioning options used to load data from Lakehouse table query mode. You can select **None** (default) or **Dynamic range**.
+          - **Partition option**: Specifies the data partitioning options used to load data from lakehouse table query mode. You can select **None** (default) or **Dynamic range**.
 
             If you select **None**, you choose not to use partition.
 
             If you select **Dynamic range**, when using query with parallel enabled, range partition parameter(`?DfDynamicRangePartitionCondition`) is needed. Sample query: `SELECT * FROM <TableName> WHERE ?DfDynamicRangePartitionCondition`.
               - **Partition column name**: Specify the name of the source column in **integer** type that's used by range partitioning for parallel copy. If not specified, the index or the primary key of the table is auto-detected and used as the partition column.
-                  If you use a query to retrieve the source data, hook `?DfDynamicRangePartitionCondition` in the WHERE clause. For an example, see the [Parallel copy from Lakehouse tables using T-SQL Query (Preview)](#parallel-copy-from-lakehouse-tables-using-t-sql-query) section.
+                  If you use a query to retrieve the source data, hook `?DfDynamicRangePartitionCondition` in the WHERE clause. For an example, see the [Parallel copy from lakehouse tables using T-SQL Query (Preview)](#parallel-copy-from-lakehouse-tables-using-t-sql-query) section.
             
-              - **Partition upper bound**: Specify the maximum value of the partition column for partition range splitting. This value is used to decide the partition stride, not for filtering the rows in table. All rows in the table or query result will be partitioned and copied. If not specified, copy activity auto detect the value. For an example, see the [Parallel copy from Lakehouse tables using T-SQL Query (Preview)](#parallel-copy-from-lakehouse-tables-using-t-sql-query) section.
+              - **Partition upper bound**: Specify the maximum value of the partition column for partition range splitting. This value is used to decide the partition stride, not for filtering the rows in table. All rows in the table or query result are partitioned and copied. If not specified, copy activity auto detects the value. For an example, see the [Parallel copy from lakehouse tables using T-SQL Query (Preview)](#parallel-copy-from-lakehouse-tables-using-t-sql-query) section.
             
-              - **Partition lower bound**: Specify the minimum value of the partition column for partition range splitting. This value is used to decide the partition stride, not for filtering the rows in table. All rows in the table or query result will be partitioned and copied. If not specified, copy activity auto detect the value. For an example, see the [Parallel copy from Lakehouse tables using T-SQL Query (Preview)](#parallel-copy-from-lakehouse-tables-using-t-sql-query) section.
+              - **Partition lower bound**: Specify the minimum value of the partition column for partition range splitting. This value is used to decide the partition stride, not for filtering the rows in table. All rows in the table or query result are partitioned and copied. If not specified, copy activity auto detects the value. For an example, see the [Parallel copy from lakehouse tables using T-SQL Query (Preview)](#parallel-copy-from-lakehouse-tables-using-t-sql-query) section.
               
             
                   :::image type="content" source="./media/connector-lakehouse/dynamic-range.png" alt-text="Screenshot showing the configuration when you select Dynamic range." lightbox="./media/connector-lakehouse/dynamic-range.png":::        
@@ -113,9 +113,9 @@ The following properties are **required**:
       :::image type="content" source="./media/connector-lakehouse/file-path.png" alt-text="Screenshot showing file path." lightbox="./media/connector-lakehouse/file-path.png":::
 
       - **File path**: Select **Browse** to choose the file that you want to copy, or fill in the path manually.
-      - **Wildcard file path**: Specify the folder or file path with wildcard characters under your given Lakehouse unmanaged area (under Files) to filter your source folders or files. Allowed wildcards are: `*` (matches zero or more characters) and `?` (matches zero or single character). Use `^` to escape if your folder or file name has wildcard or this escape character inside.
+      - **Wildcard file path**: Specify the folder or file path with wildcard characters under your given lakehouse unmanaged area (under Files) to filter your source folders or files. Allowed wildcards are: `*` (matches zero or more characters) and `?` (matches zero or single character). Use `^` to escape if your folder or file name has wildcard or this escape character inside.
         - **Wildcard folder path**: The path to the folder under the given container. If you want to use a wildcard to filter the folder, skip this setting and specify that information in the activity source settings.
-        - **Wildcard file name**: The file name under the given Lakehouse unmanaged area (under Files) and folder path.
+        - **Wildcard file name**: The file name under the given lakehouse unmanaged area (under Files) and folder path.
 
           :::image type="content" source="./media/connector-lakehouse/wildcard-paths.png" alt-text="Screenshot showing wildcard file path." lightbox="./media/connector-lakehouse/wildcard-paths.png":::
 
@@ -137,17 +137,17 @@ The following properties are **required**:
 
 ### Destination
 
-The following properties are supported for Lakehouse under the **Destination** tab of a copy activity.
+The **Destination** tab in a copy activity supports the following properties for a lakehouse.
 
 :::image type="content" source="./media/connector-lakehouse/lakehouse-destination.png" alt-text="Screenshot showing destination tab." lightbox="./media/connector-lakehouse/lakehouse-destination.png":::
 
 The following properties are **required**:
 
-- **Connection**: Select a Lakehouse connection from the connection list. If no connection exists, then create a new Lakehouse connection. If you apply **Use dynamic content** to specify your Lakehouse, add a parameter and specify the Lakehouse object ID as the parameter value. To get your Lakehouse object ID, open your Lakehouse in your workspace, and the ID is after `/lakehouses/`in your URL.
+- **Connection**: Select a lakehouse connection from the connection list. If no connection exists, create a new lakehouse connection. If you apply **Use dynamic content** to specify your lakehouse, add a parameter and specify the lakehouse ID as the parameter value. To get your lakehouse ID, open your lakehouse in your workspace, and the ID is after `/lakehouses/` in your URL.
 
-    :::image type="content" source="./media/connector-lakehouse/lakehouse-object-id.png" alt-text="Screenshot showing the Lakehouse object ID.":::
+    :::image type="content" source="./media/connector-lakehouse/lakehouse-object-id.png" alt-text="Screenshot showing the lakehouse ID.":::
 
-- **Root folder**: Select **Tables** or **Files**, which indicates the virtual view of the managed or unmanaged area in your lake. For more information, refer to [Lakehouse introduction](../data-engineering/lakehouse-overview.md).
+- **Root folder**: Select **Tables** or **Files**, which indicates the virtual view of the managed or unmanaged area in your lake. For more information, see [lakehouse introduction](../data-engineering/lakehouse-overview.md).
 
   - If you select **Tables**:
     - **Table**: Choose an existing table from the table list or specify a table name as the destination. Or you can select **New** to create a new table. 
@@ -155,7 +155,7 @@ The following properties are **required**:
       :::image type="content" source="./media/connector-lakehouse/table-name-destination.png" alt-text="Screenshot showing table name in destination.":::
 
 
-      When you apply Lakehouse with schemas in the connection, choose an existing table with a schema from the table list or specify a table with a schema as the destination. Or you can select **New** to create a new table with a schema. If you don't specify a schema name, the service will use *dbo* as the default schema.
+      When you apply a lakehouse with schemas in the connection, choose an existing table with a schema from the table list or specify a table with a schema as the destination. Or select **New** to create a new table with a schema. If you don't specify a schema name, the service uses *dbo* as the default schema.
 
       :::image type="content" source="./media/connector-lakehouse/table-name-with-schema-destination.png" alt-text="Screenshot showing table name with schema in destination.":::  
     
@@ -170,10 +170,10 @@ The following properties are **required**:
           - **Enable Partition**: This selection allows you to create partitions in a folder structure based on one or multiple columns. Each distinct column value (pair) is a new partition. For example, "year=2000/month=01/file".
             - **Partition column name**: Select from the destination columns in schemas mapping. Supported data types are string, integer, boolean, and datetime. Format respects type conversion settings under the **Mapping** tab.
     
-          It supports [Delta Lake time travel](https://docs.delta.io/latest/delta-batch.html#-deltatimetravel). The overwritten table has delta logs for the previous versions, which you can access in your Lakehouse. You can also copy the previous version table from Lakehouse, by specifying **Version** in the copy activity source.
+          It supports [Delta Lake time travel](https://docs.delta.io/latest/delta-batch.html#-deltatimetravel). The overwritten table has delta logs for the previous versions, which you can access in your lakehouse. You can also copy the previous version table from the lakehouse by specifying **Version** in the copy activity source.
 
         - **Upsert**: Insert new values to existing table and update existing values. 
-            - **Key columns**: Choose which column is used to determine if a row from the source matches a row from the destination. A drop-down listing all destination columns. You can select one or more columns to be treated as key columns while writing into Lakehouse Table.  
+            - **Key columns**: Choose which column is used to determine if a row from the source matches a row from the destination. A drop-down lists all destination columns. You can select one or more columns to be treated as key columns while writing into a lakehouse table.
             
             Under **Advanced**, you can enable partition on your target table: 
             - **Enable Partition**: This selection allows you to create partitions in a folder structure based on one or multiple columns. Each distinct column value (pair) is a new partition. For example, "year=2000/month=01/file".
@@ -203,7 +203,7 @@ The following properties are **required**:
           :::image type="content" source="./media/connector-lakehouse/copy-behavior.png" alt-text="Screenshot showing copy behavior." lightbox="./media/connector-lakehouse/copy-behavior.png":::
 
       - **Max concurrent connections**: The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.
-      - **Block size (MB)**: Specify the block size in MB when writing data to Lakehouse. Allowed value is between 4 MB and 100 MB.
+      - **Block size (MB)**: Specify the block size in MB when writing data to a lakehouse. Allowed value is between 4 MB and 100 MB.
       - **Metadata**: Set custom metadata when copying to the destination data store. Each object under the `metadata` array represents an extra column. The `name` defines the metadata key name, and the `value` indicates the data value of that key. If [preserve attributes feature](/azure/data-factory/copy-activity-preserve-metadata#preserve-metadata) is used, the specified metadata will union/overwrite with the source file metadata. The allowed data values are:
         - `$$LASTMODIFIED`: a reserved variable indicates to store the source files' last modified time. Apply to a file-based source with binary format only.
         - Expression
@@ -213,9 +213,9 @@ The following properties are **required**:
 
 ### Mapping
 
-For the **Mapping** tab configuration, if you don't apply Lakehouse table as your destination data store, go to [Mapping](copy-data-activity.md#configure-your-mappings-under-the-mapping-tab). 
+For the **Mapping** tab configuration, if you don't apply a lakehouse table as your destination data store, go to [Mapping](copy-data-activity.md#configure-your-mappings-under-the-mapping-tab).
 
-If you apply Lakehouse table as your destination data store, except the configuration in [Mapping](copy-data-activity.md#configure-your-mappings-under-the-mapping-tab), you can edit the type for your destination columns. After selecting **Import schemas**, you can specify the column type in your destination.
+If you apply a lakehouse table as your destination data store, except the configuration in [Mapping](copy-data-activity.md#configure-your-mappings-under-the-mapping-tab), you can edit the type for your destination columns. After selecting **Import schemas**, you can specify the column type in your destination.
 
 For example, the type for *PersonID* column in source is int, and you can change it to string type when mapping to destination column.
 
@@ -230,13 +230,13 @@ If you choose Binary as your file format, mapping isn't supported.
 
 For the **Settings** tab configuration, go to [Settings](copy-data-activity.md#configure-your-other-settings-under-the-settings-tab).
 
-## Data type mapping for Lakehouse tables
+## Data type mapping for lakehouse tables
 
-The following sections describe data type mappings when copying data from Lakehouse tables. Refer to the subsection corresponding to your source mode for details.
+The following sections describe data type mappings when copying data from lakehouse tables. Refer to the subsection corresponding to your source mode for details.
 
 ### Table
 
-When copying data from Lakehouse tables in Table mode, the following mappings are used from Lakehouse table data types to interim data types used by the service internally.
+When you copy data from lakehouse tables in Table mode, the service uses the following mappings from lakehouse table data types to interim data types.
 
 | Lakehouse table data type | Interim service data type |
 |---------------------|------------------|
@@ -253,7 +253,7 @@ When copying data from Lakehouse tables in Table mode, the following mappings ar
 | date                | Date             |
 | timestamp           | DateTime         |
 
-When copying data to Lakehouse tables in Table mode, the following mappings are used from interim data types used by the service internally to supported delta destination data types.
+When you copy data to lakehouse tables in Table mode, the service uses the following mappings from interim data types to supported delta destination data types.
 
 | Interim service data type | Supported delta destination type |
 |---------------------|------------------|
@@ -279,7 +279,7 @@ When copying data to Lakehouse tables in Table mode, the following mappings are 
 
 ### T-SQL Query (Preview)
 
-When copying data from Lakehouse tables in T-SQL Query (Preview) mode, the following mappings are used from Lakehouse table data types to interim data types used by the service internally.
+When you copy data from lakehouse tables in T-SQL Query (Preview) mode, the service uses the following mappings from lakehouse table data types to interim data types.
 
 | Lakehouse table data type in T-SQL Query (Preview) mode | Interim service data type |
 |---------------------|------------------|
@@ -295,13 +295,13 @@ When copying data from Lakehouse tables in T-SQL Query (Preview) mode, the follo
 | date                | Date             |
 | datetime2           | DateTime         |
 
-## <a name="parallel-copy-from-lakehouse-tables-using-t-sql-query"></a> Parallel copy from Lakehouse tables using T-SQL Query (Preview)
+## <a name="parallel-copy-from-lakehouse-tables-using-t-sql-query"></a> Parallel copy from lakehouse tables using T-SQL Query (Preview)
 
-The Lakehouse tables connector using T-SQL Query (Preview) in copy activity provides built-in data partitioning to copy data in parallel. You can find data partitioning options on the **Source** tab of the copy activity.
+The lakehouse tables connector by using T-SQL Query (Preview) in copy activity provides built-in data partitioning to copy data in parallel. You can find data partitioning options on the **Source** tab of the copy activity.
 
-When you enable partitioned copy, copy activity runs parallel queries against your Lakehouse tables using T-SQL Query (Preview) source to load data by partitions. The parallel degree is controlled by the **Degree of copy parallelism** in the copy activity settings tab. For example, if you set **Degree of copy parallelism** to four, the service concurrently generates and runs four queries based on your specified partition option and settings, and each query retrieves a portion of data from your Lakehouse tables using T-SQL Query (Preview).
+When you enable partitioned copy, copy activity runs parallel queries against your lakehouse tables by using T-SQL Query (Preview) source to load data by partitions. The degree of parallelism is controlled by the **Degree of copy parallelism** in the copy activity settings tab. For example, if you set **Degree of copy parallelism** to four, the service concurrently generates and runs four queries based on your specified partition option and settings. Each query retrieves a portion of data from your lakehouse tables by using T-SQL Query (Preview).
 
-You are suggested to enable parallel copy with data partitioning especially when you load large amount of data from your Lakehouse tables using T-SQL Query (Preview). The following are suggested configurations for different scenarios. When copying data into file-based data store, it's recommended to write to a folder as multiple files (only specify folder name), in which case the performance is better than writing to a single file.
+Enable parallel copy with data partitioning especially when you load large amounts of data from your lakehouse tables by using T-SQL Query (Preview). The following table shows suggested configurations for different scenarios. When copying data into file-based data store, write to a folder as multiple files (only specify folder name). This approach delivers better performance than writing to a single file.
 
 | Scenario                                                     | Suggested settings                                           |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -316,12 +316,12 @@ In the sections below, you will find detailed information on Delta Lake table su
 
 ### Source
 
-[Delta column mapping](https://docs.delta.io/latest/delta-column-mapping.html) is supported when you apply reader version 2 or reader version 3 with `columnMapping` in `readerFeatures` in your Lakehouse table. 
+[Delta column mapping](https://docs.delta.io/latest/delta-column-mapping.html) is supported when you apply reader version 2 or reader version 3 with `columnMapping` in `readerFeatures` in your lakehouse table.
 
-Delta table's column mapping capability allows for more flexible schema evolution, ensuring that changes in table structure do not disrupt data workflows. With column mapping, you can read data from an existing delta Lake table with `delta.columnMapping.mode` set to `name` or `id`.
+Delta table's column mapping capability allows for more flexible schema evolution, ensuring that changes in table structure don't disrupt data workflows. By using column mapping, you can read data from an existing Delta Lake table with `delta.columnMapping.mode` set to `name` or `id`.
 
 [Deletion vectors](https://docs.delta.io/latest/delta-deletion-vectors.html) is supported 
-when you apply reader version 3 with `deletionVectors` in `readerFeatures` in your Lakehouse table. Rows that are soft deleted are marked in deletion vector files and skipped when reading the delta lake table. 
+when you apply reader version 3 with `deletionVectors` in `readerFeatures` in your lakehouse table. Rows that are soft deleted are marked in deletion vector files and skipped when reading the Delta Lake table.
 
 [Change Data Feed](https://docs.delta.io/delta-change-data-feed/) is supported.
 
@@ -329,7 +329,7 @@ when you apply reader version 3 with `deletionVectors` in `readerFeatures` in yo
 
 [Delta column mapping](https://docs.delta.io/latest/delta-column-mapping.html) is supported. This capability allows for more flexible schema evolution, ensuring that changes in table structure do not disrupt data workflows. With column mapping, you can:
 
-- Write data to an existing delta lake table with `delta.columnMapping.mode` set to `name`.
+- Write data to an existing Delta Lake table with `delta.columnMapping.mode` set to `name`.
 - Auto-create a table with `delta.columnMapping.mode` set to `name` when the destination table does not exist and the source columns include special characters and whitespaces.
 - Auto-create a table with `delta.columnMapping.mode` set to `name` when the table action is overwrite and the source dataset columns include special characters and whitespaces.
 
@@ -341,23 +341,23 @@ when you apply reader version 3 with `deletionVectors` in `readerFeatures` in yo
 
 ## Table summary
 
-The following tables contain more information about a copy activity in Lakehouse.
+The following tables contain more information about a copy activity in a lakehouse.
 
 ### Source information
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Connection** |The section to select your connection.|< your Lakehouse connection>|Yes|workspaceId<br>itemId|
+|**Connection** |The section to select your connection.|< your lakehouse connection>|Yes|workspaceId<br>itemId|
 |**Root folder** |The type of the root folder.|• **Tables**<br>• **Files** |No|rootFolder:<br>Tables or Files|
-|**Use query** |The way to read data from Lakehouse. Apply **Table** to read data from the specified table or apply **T-SQL Query (Preview)** to read data using query.|• **Table** <br>• **T-SQL Query (Preview)** |Yes |/|
-|**Table** |The name of the table that you want to read data, or the name of the table with a schema that you want to read data when you apply Lakehouse with schemas as the connection. |\<your table name> |Yes when you select **Tables** in **Root folder** | table  |
+|**Use query** |The way to read data from a lakehouse. Apply **Table** to read data from the specified table or apply **T-SQL Query (Preview)** to read data using query.|• **Table** <br>• **T-SQL Query (Preview)** |Yes |/|
+|**Table** |The name of the table that you want to read data, or the name of the table with a schema that you want to read data when you apply a lakehouse with schemas as the connection. |\<your table name> |Yes when you select **Tables** in **Root folder** | table  |
 | **schema name** | Name of the schema. |< your schema name >  | No | schema |
 | **table name** | Name of the table. | < your table name > | No |table |
 | **T-SQL Query (Preview)** | Use the custom query to read data. An example is `SELECT * FROM MyTable`. | < query > |No | sqlReaderQuery|
 |**Timestamp** | The timestamp to query an older snapshot.| \<timestamp>|No |timestampAsOf |
 |**Version** |The version to query an older snapshot.| \<version>|No |versionAsOf|
 |**Query timeout (minutes)**|The timeout for query command execution, default is 120 minutes.|timespan |No |queryTimeout|
-|**Partition option**|The data partitioning options used to load data from Lakehouse table query mode. |• None<br>• Dynamic range|No|partitionOption|
+|**Partition option**|The data partitioning options used to load data from lakehouse table query mode. |• None<br>• Dynamic range|No|partitionOption|
 |**Partition column name**|The name of the source column in **integer type** that will be used by range partitioning for parallel copy. If not specified, the primary key of the table is auto-detected and used as the partition column.|\<partition column name>|No|partitionColumnName|
 |**Partition upper bound**|The maximum value of the partition column for partition range splitting. This value is used to decide the partition stride, not for filtering the rows in table. All rows in the table or query result will be partitioned and copied.|\<partition upper bound>|No|partitionUpperBound|
 |**Partition lower bound**|The minimum value of the partition column for partition range splitting. This value is used to decide the partition stride, not for filtering the rows in table. All rows in the table or query result will be partitioned and copied.|\<partition lower bound>|No|partitionLowerBound|
@@ -378,13 +378,13 @@ The following tables contain more information about a copy activity in Lakehouse
 
 |Name |Description |Value |Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Connection** |The section to select your connection.|< your Lakehouse connection>|Yes|workspaceId<br>itemId|
+|**Connection** |The section to select your connection.|< your lakehouse connection>|Yes|workspaceId<br>itemId|
 |**Root folder** |The type of the root folder.|• **Tables**<br>• **Files** |Yes | rootFolder:<br>Table or Files|
-|**Table** |The name of the table that you want to write data to. Or the name of the table with a schema that you want to write data to when you apply Lakehouse with schemas as the connection.  |\<your table name> |Yes when you select **Tables** in **Root folder** | table |
+|**Table** |The name of the table that you want to write data to. Or the name of the table with a schema that you want to write data to when you apply a lakehouse with schemas as the connection.  |\<your table name> |Yes when you select **Tables** in **Root folder** | table |
 |**schema name** |The name of the schema. |\<your schema name><br>(the default is *dbo*) |No | schema |
 |**table name** |The name of the table. |\<your table name> |Yes | table |
 |**Table action**| Append new values to an existing table, overwrite the existing data and schema in the table using the new values or insert new values to existing table and update existing values.|• **Append**<br>• **Overwrite**<br>• **Upsert**|No|tableActionOption:<br>• Append<br> • OverwriteSchema <br>• Upsert|
-|**Apply V-Order**| Apply V-Order via copy. Disabling it preserves the original parquet files without applying additional V-Order optimization. For more information, see [Delta Lake table optimization and V-Order](../data-engineering/delta-optimization-and-v-order.md).|Selected (default) or unselected|No|applyVOrder|
+|**Apply V-Order**| Apply V-order via copy. Disabling it preserves the original parquet files without applying additional V-order optimization. For more information, see [Delta Lake table optimization and V-order](../data-engineering/delta-optimization-and-v-order.md).|Selected (default) or unselected|No|applyVOrder|
 |**Enable partitions**|This selection allows you to create partitions in a folder structure based on one or multiple columns. Each distinct column value (pair) is a new partition. For example, "year=2000/month=01/file".| Selected or unselected |No| partitionOption: <br> PartitionByKey or None|
 |**Partition columns**|The destination columns in schemas mapping.| \<your partition columns\> |No| partitionNameList|
 |**Key columns**|Choose which column is used to determine if a row from the source matches a row from the destination.|\<your key columns\>|Yes| keyColumns|
@@ -392,10 +392,10 @@ The following tables contain more information about a copy activity in Lakehouse
 | **File format** | The file format for your destination data. For the information of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.  | / | Yes when you select **Files** in **Root folder** | / |
 |**Copy behavior** | The copy behavior defined when the source is files from a file-based data store.|• **Flatten hierarchy**<br>• **Merge files**<br>• **Preserve hierarchy**<br>• **Add dynamic content** |No |copyBehavior:<br>• FlattenHierarchy<br>• MergeFiles<br>• PreserveHierarchy|
 |**Max concurrent connections**|The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|\<max concurrent connections>|No |maxConcurrentConnections|
-|**Block size (MB)** |The block size in MB used to write data to Lakehouse. Allowed value is between 4 MB and 100 MB.|\<block size\>|No|blockSizeInMB|
+|**Block size (MB)** |The block size in MB used to write data to a lakehouse. Allowed value is between 4 MB and 100 MB.|\<block size\>|No|blockSizeInMB|
 |**Metadata** |The custom metadata set when copying to a destination.|• `$$LASTMODIFIED`<br>• Expression<br>• Static value|No |metadata|
 
 ## Related content
 
-- [Delta Lake in Microsoft Fabric overview](../fundamentals/delta-lake-overview.md)
+- [Delta Lake in Fabric overview](../fundamentals/delta-lake-overview.md)
 - [Lakehouse connector overview](connector-lakehouse-overview.md)
