@@ -1,6 +1,6 @@
 ---
 title: Get Started With Fabric Real-Time Hub
-description: Get started with Fabric Real-Time hub and explore its pages for streaming data, data sources, events, and registered event schemas.
+description: Get started with Fabric Real-Time hub and explore its pages for streaming data, data sources, events, Activator rules, and registered event schemas.
 #customer intent: As a new Fabric user, I want to find and open the Real-Time hub so that I can start streaming and monitoring data.
 author: spelluru
 ms.author: spelluru
@@ -28,7 +28,7 @@ Use the following steps to navigate to Real-Time hub in Microsoft Fabric.
 
 ## Main pages
 
-Real-Time hub organizes streaming data, data sources, and events across several pages. Each page focuses on a specific task, from discovering streams to managing event schemas. Here are the main pages: 
+Real-Time hub organizes streaming data, data sources, events, and Activator rules across several pages. Each page focuses on a specific task, from discovering streams to managing rules and event schemas. Here are the main pages:
 
 ### Streaming data page
 
@@ -57,6 +57,10 @@ On this page, you discover the Fabric events that you can access and subscribe t
 Azure events are system events that Azure services generate, such as changes to blobs in Azure Blob Storage. Like Fabric events, they're produced by the platform rather than defined by you, which lets you bring signals from your Azure resources into Real-Time hub alongside your Fabric data.
 
 On this page, you discover the Azure events that you can access and subscribe to them by creating an eventstream. After you subscribe to an event, you can route it to downstream destinations or configure alerts that send notifications through email, Teams, and other supported channels when an event occurs. For more information, see [Azure events page](azure-events-page.md).
+
+### Rules page (preview)
+
+The **Rules** page brings together all the Activator rules you can access across Fabric. From this page, you can review rule status, start or stop rules, and view recent activation activity. You can also open a rule in Activator to change its conditions or other settings. For more information, see [Manage Activator rules in Real-Time hub (preview)](rules-page.md).
 
 ### Event schema registry page
 
