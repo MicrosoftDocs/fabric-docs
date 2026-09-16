@@ -124,6 +124,7 @@ To reduce the risk of exposing sensitive information, follow these practices:
 
 For security-sensitive administrative operations, avoid constructing statements by concatenating sensitive values into dynamic SQL. Where possible, use native SQL statements or other approaches that prevent sensitive values from being embedded directly in the statement text. Examples of security-sensitive operations include `CREATE LOGIN` and `CREATE CREDENTIAL`.
 
+Dynamic SQL statements that are constructed from user-accessible strings also make your applications vulnerable to [SQL injection attacks](/sql/relational-databases/security/sql-injection?view=fabric&preserve-view=true). SQL injection is an attack in which malicious code is inserted into strings that are later passed to the database for parsing and execution. Any procedure that constructs SQL statements should be reviewed for injection vulnerabilities, because the database engine executes all syntactically valid queries that it receives. Even parameterized data can be manipulated by a skilled and determined attacker.
 
 - **Restrict access to audit logs**
 
