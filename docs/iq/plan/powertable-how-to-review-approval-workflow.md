@@ -132,7 +132,7 @@ Select **Request Changes** and add a comment describing the suggested change. Co
 
 The author receives a Microsoft Teams notification, reviews the suggestions, makes the required changes, and [resubmits the request](#re-submit-for-review) for approval.
 
-Both the author and the approver receive MS Teams notifications for suggested changes and resubmissions, enabling faster collaboration through a conversation thread.
+Both the author and the approver receive Teams notifications for suggested changes and resubmissions, enabling faster collaboration through a conversation thread.
 
 ## Disable approval workflow
 

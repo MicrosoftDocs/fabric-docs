@@ -16,10 +16,10 @@ To ensure accuracy and correctness, users might need management's approval befor
 
 When a change is submitted, the following actions occur:
 
-1. Approvers receive Microsoft Teams notification with a link to the table.
+1. Approvers receive a Microsoft Teams notification with a link to the table.
 1. The changes are highlighted in the table.
 1. Approvers review the changes in the **Approvals** tab and approve, reject, or request changes.
-1. The **author** is notified by Microsoft Teams notification when a request is approved or rejected.
+1. The **author** is notified by a Microsoft Teams notification when a request is approved or rejected.
 1. Approvers can also request changes or provide suggestions from the table app.
 1. The author can apply or skip the suggested changes and resubmit the request for review.
 1. Once approved, the changes are synchronized with the source database.
