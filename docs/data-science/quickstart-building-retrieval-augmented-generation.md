@@ -351,7 +351,7 @@ The following code defines a user-defined function (UDF) `insertToAISearch` that
 ```python
 @udf(returnType=StringType())
 def insertToAISearch(Id, ArticleTitle, ExtractedPath, Chunk, Embedding):
-    url = f"{aisearch_endpoint}/indexes/{aisearch_index_name}/docs/index?api-version=2023-11-01"
+    url = f"{aisearch_endpoint}/indexes/{aisearch_index_name}/docs/index?api-version=2026-04-01"
 
     payload = json.dumps(
         {
