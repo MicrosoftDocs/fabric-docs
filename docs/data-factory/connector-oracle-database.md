@@ -17,7 +17,7 @@ This article outlines the steps to create an Oracle database connection.
 
 ## Supported authentication types
 
-The Oracle database connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+The Oracle database connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
@@ -51,7 +51,7 @@ If you connect to the Oracle database through on-premises gateway, you need to i
 
 ## Set up your connection for Dataflow Gen2
 
-You can connect Dataflow Gen2 in Microsoft Fabric to Oracle database using Power Query connectors. Follow these steps to create your connection:
+You can connect a dataflow Gen2 in Fabric to an Oracle database by using Power Query connectors. Follow these steps to create your connection:
 
 1. Check [capabilities](#capabilities), [limitations, and considerations](#limitations-and-considerations) to make sure your scenario is supported.
 1. [Complete prerequisites for Oracle database](#prerequisites).
