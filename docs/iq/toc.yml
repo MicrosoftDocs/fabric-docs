@@ -611,7 +611,7 @@ items:
   items:
   - name: Fabric IQ MCP
     href: connectors/fabric-iq-mcp.md
-  - name: Microsoft 365 Copilot Chat (Frontier)
+  - name: Copilot Chat (Frontier)
     href: connectors/microsoft-365-copilot-overview.md
-  - name: Cowork (Frontier)
+  - name: Cowork
     href: connectors/cowork-overview.md
