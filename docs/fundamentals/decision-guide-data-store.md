@@ -10,10 +10,9 @@ ms.custom:
 - FY25Q1-Linter
 ms.search.form: Choose a Data Store, Databases datastore decision guide
 ---
-
 # Microsoft Fabric decision guide: choose a data store
 
-Use this reference guide and the example scenarios to help you choose a data store for your Microsoft Fabric workloads. All data stores are available in a unified storage in the OneLake.
+Use this reference guide and the example scenarios to help you choose a data store for your Microsoft Fabric workloads. All data stores are available in unified storage in the OneLake.
 
 :::image type="complex" source="media/decision-guide-data-store/decision-guide.svg" alt-text="Diagram of a decision guide for choosing the ideal data store in Microsoft Fabric.":::
 The diagram shows a decision guide for selecting a Fabric data store. For streaming event data and high-granularity interactive analytics, use an eventhouse. For NoSQL databases, use Cosmos DB in Fabric. For operational transactional (OLTP) workloads, use SQL database in Fabric. To develop AI with vector data types, use SQL database in Fabric or Cosmos DB in Fabric. For enterprise data warehousing, SQL-based BI, OLAP, and full SQL transaction support, use Fabric Data Warehouse. For big data and machine learning with unstructured, semi-structured, or structured data, and data engineering, use a lakehouse. All Fabric data stores are available in OneLake in open table format by default.
@@ -21,7 +20,7 @@ The diagram shows a decision guide for selecting a Fabric data store. For stream
 
 | Ideal use case | Microsoft Fabric workload |  Data available in [OneLake](../onelake/onelake-overview.md) in open table format by default |
 |:--|:--|:--|
-| Streaming event data, high granularity (in time, space, detail – JSON/Text) activity data for interactive analytics | [Eventhouse](../real-time-intelligence/eventhouse.md) | Yes | 
+| Streaming event data, high granularity (in time, space, detail – JSON/Text) activity data for interactive analytics | [Eventhouse](../real-time-intelligence/eventhouse.md) | [Available as opt-in](../real-time-intelligence/event-house-onelake-availability.md) | 
 | NoSQL database | [Cosmos DB in Fabric](../database/cosmos-db/overview.md) | Yes | 
 | Operational transactional, OLTP, or normalized database | [SQL database in Fabric](../database/sql/overview.md) | Yes | 
 | Develop AI with vector data types | [SQL database in Fabric](../database/sql/overview.md) or [Cosmos DB in Fabric](../database/cosmos-db/overview.md) | Yes |
@@ -34,7 +33,7 @@ The diagram shows a decision guide for selecting a Fabric data store. For stream
 - To develop AI with vector data types, use SQL database in Fabric or Cosmos DB in Fabric. 
 - For enterprise data warehousing, SQL-based BI, OLAP, and full SQL transaction support, use Fabric Data Warehouse. 
 - For big data and machine learning with unstructured, semi-structured, or structured data, and data engineering, use a lakehouse. 
-- All Fabric data stores are available in OneLake in open table format by default.
+- All Fabric data stores are available in OneLake in open table format by default, with the exception of a [KQL database in an eventhouse, where OneLake availability is available as an opt-in feature](../real-time-intelligence/event-house-onelake-availability.md).
 
 ## Personas and skillsets
 
