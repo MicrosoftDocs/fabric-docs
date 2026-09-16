@@ -11,7 +11,7 @@ ai-usage: ai-assisted
 
 # Set up your Amazon Redshift connection
 
-You can connect Dataflow Gen2 to Amazon Redshift in Microsoft Fabric using Power Query connectors. Follow these steps to create your connection:
+You can connect dataflow Gen2 to Amazon Redshift in Fabric by using Power Query connectors. Follow these steps to create your connection:
 
 1. Check [capabilities](#capabilities) to make sure your scenario is supported.
 1. [Complete prerequisites for Amazon Redshift](#prerequisites).
@@ -20,7 +20,7 @@ You can connect Dataflow Gen2 to Amazon Redshift in Microsoft Fabric using Power
 
 ## Supported authentication types
 
-The Amazon Redshift connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+The Amazon Redshift connector supports the following authentication types for copy and dataflow Gen2.
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|

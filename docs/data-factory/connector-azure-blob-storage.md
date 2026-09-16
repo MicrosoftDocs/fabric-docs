@@ -17,7 +17,7 @@ ai-usage: ai-assisted
 
 ## Supported authentication types
 
-The Azure Blob Storage connector supports the following authentication types for copy and Dataflow Gen2 respectively.
+The Azure Blob Storage connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
 | Authentication type | Copy | Dataflow Gen2 |
 | --- | :---: | :---: |
@@ -28,7 +28,7 @@ The Azure Blob Storage connector supports the following authentication types for
 | [Service principal](#service-principal-authentication) | √ | √ |
 
 ## Set up your connection for Dataflow Gen2
-You can connect Dataflow Gen2 to Azure Blobs using Power Query connectors. Follow these steps to create your connection:
+You can connect dataflow Gen2 to Azure Blobs by using Power Query connectors. Follow these steps to create your connection:
 
 1. Check [capabilities](#capabilities), [limitations, and considerations](#limitations-and-considerations) to make sure your scenario is supported.
 1. [Complete prerequisites for Azure Blob Storage](#prerequisites).

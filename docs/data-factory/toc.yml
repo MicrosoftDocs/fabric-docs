@@ -1304,6 +1304,8 @@
             href: apache-airflow-jobs-run-azure-data-factory-pipeline.md
           - name: Run Azure Databricks job
             href: apache-airflow-jobs-run-databricks-job.md
+          - name: Run Snowflake job
+            href: apache-airflow-jobs-run-snowflake-query.md
           - name: Refresh Power BI Semantic Model
             href: apache-airflow-jobs-power-bi-semantic-model-refresh.md
           - name: Transform data using dbt

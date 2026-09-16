@@ -17,9 +17,11 @@ items:
         href: create-table.md
       - name: 3. Ingest data
         href: ingest-data-into-table.md
-      - name: 4. Query the warehouse
+      - name: 4. Validate data
+        href: validate-data.md
+      - name: 5. Query the warehouse
         href: query-warehouse.md
-      - name: 5. Create reports
+      - name: 6. Create reports
         href: create-reports.md
   - name: Tutorials
     items:
@@ -37,17 +39,19 @@ items:
         href: tutorial-transform-data.md
       - name: 6. Time travel with T-SQL
         href: tutorial-time-travel.md
-      - name: 7. Create queries with visual query builder
+      - name: 7. Use AI functions to analyze data
+        href: tutorial-ai-functions.md
+      - name: 8. Create queries with visual query builder
         href: tutorial-visual-query.md
-      - name: 8. Analyze data in a notebook
+      - name: 9. Analyze data in a notebook
         href: tutorial-analyze-data-notebook.md
-      - name: 9. Create a cross-warehouse query
+      - name: 10. Create a cross-warehouse query
         href: tutorial-sql-cross-warehouse-query-editor.md
-      - name: 10. Create a semantic model and report
+      - name: 11. Create a semantic model and report
         href: tutorial-power-bi-report.md
-      - name: 11. Generate a report from OneLake catalog
+      - name: 12. Generate a report from OneLake catalog
         href: tutorial-build-report-onelake-data-hub.md
-      - name: 12. Clean up tutorial resources
+      - name: 13. Clean up tutorial resources
         href: tutorial-clean-up.md
   - name: Connect to the warehouse
     items:
@@ -133,7 +137,7 @@ items:
             href: analyze-range-bands.md
           - name: Create an IDENTITY column
             href: tutorial-identity.md
-          - name: How to write inline scalar UDFs
+          - name: Create inline scalar UDFs
             href: how-to-inline-udf.md
   - name: Dimensional modeling
     items:
@@ -240,6 +244,8 @@ items:
             displayName: Query using time travel
   - name: Monitor and manage
     items:
+      - name: Data Warehouse operations skill
+        href: skills-for-data-warehouse-operations.md
       - name: Manage performance
         items:
           - name: Data clustering
@@ -266,10 +272,13 @@ items:
             href: v-order.md
           - name: How to
             items:
-              - name: Use data clustering in Fabric Data Warehouse
-                href: tutorial-data-clustering.md
+              - name: Correlate capacity metrics and query insights
+                href: correlate-capacity-metrics-query-insights.md
               - name: Optimize Lakehouse tables based on health checks
                 href: tutorial-conditional-lakehouse-optimization.md
+              - name: Use data clustering in Fabric Data Warehouse
+                href: tutorial-data-clustering.md
+              
       - name: Monitor the warehouse
         items:
           - name: Monitoring overview

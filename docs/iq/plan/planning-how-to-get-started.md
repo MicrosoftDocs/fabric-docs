@@ -1,7 +1,7 @@
 ---
 title: Get Started with Planning Sheets
 description: Learn how to get started with your first planning sheet. The article covers how to create a planning sheet, connect to your semantic model, and perform several tasks.
-ms.date: 04/29/2026
+ms.date: 09/15/2026
 ms.topic: how-to
 ms.search.form: Getting Started with Planning Sheets
 ---
@@ -54,8 +54,8 @@ In this section, you add the semantic model connection that you created earlier 
 
     :::image type="content" source="media/planning-how-to-get-started/semantic-model-connection.png" alt-text="Screenshot of connecting to a semantic model." lightbox="media/planning-how-to-get-started/semantic-model-connection.png":::
 
-> [!NOTE]
-> Only connections with the **Power BI Semantic Model** connection type that the current user has access to appear in this dropdown.
+    > [!NOTE]
+    > Only connections with the **Power BI Semantic Model** connection type that the current user has access to appear in this dropdown.
 
 1. Select the semantic model, and then select **Add**.
 
@@ -64,6 +64,12 @@ In this section, you add the semantic model connection that you created earlier 
 1. Add semantic model data into your fields. Now you have your first planning sheet.
   
    :::image type="content" source="media/planning-how-to-get-started/planning-sheet.png" alt-text="Screenshot of the created planning sheet." lightbox="media/planning-how-to-get-started/planning-sheet.png":::
+
+> [!NOTE]
+> Each **Plan** item is associated with a single semantic model. To connect to a different semantic model, [create a new plan item](#create-plan-item).
+> 
+> You can create multiple plan items within the same billing session. All items you create use the same active billing session, regardless of the number of items or use cases. For more information, see [Billing and usage for Fabric Planning](resources/billing-fabric-plan.md#faqs).
+
 
 ## Optional: Connect to a database for collaboration
 

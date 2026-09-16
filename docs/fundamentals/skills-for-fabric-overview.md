@@ -74,6 +74,8 @@ The following table lists realistic intents across three audiences. In each case
 | **Citizen developer or business user** | "Show me total revenue by product for last quarter." | Writes and runs the warehouse query, and returns the results. |
 | **Citizen developer or business user** | "Document my entire Fabric workspace." | Scans the workspace and produces structured documentation in Markdown. |
 
+For a detailed Data Warehouse example, see how the [`sqldw-cli` operations skill](../data-warehouse/skills-for-data-warehouse-operations.md) guides read-only investigations of failures, query performance, capacity spikes, SQL pool pressure, and lakehouse table health.
+
 ## Compatible AI tools
 
 Skills for Fabric work with the following AI coding tools:
@@ -115,6 +117,7 @@ For more information, see the [MCP servers guide](https://github.com/microsoft/s
 
 - [Install Skills for Fabric](skills-for-fabric-install.md)
 - [Discover available Skills for Fabric](skills-for-fabric-discover.md)
+- [Data Warehouse operations skill](../data-warehouse/skills-for-data-warehouse-operations.md)
 - [Skills for Fabric on GitHub](https://github.com/microsoft/skills-for-fabric)
 - [What is the Fabric MCP server?](/rest/api/fabric/articles/mcp-servers/what-is-fabric-mcp-server)
 - [Build AI agents for Real-Time Intelligence](../real-time-intelligence/ai-agents-eventhouse.md)

@@ -12,7 +12,7 @@ ai-usage: ai-assisted
 
 [!INCLUDE[apache-airflow-note](includes/apache-airflow-note.md)]
 
-Data Workflows is a capability within Microsoft Fabric that helps you build and manage pipelines. Powered by the Apache Airflow runtime, Data Workflows provides a cloud-based platform for developing, scheduling, and monitoring Python-based data workflows as Directed Acyclic Graphs (DAGs). You can use Apache Airflow in a Software-as-a-Service (SaaS) model for pipeline development and management.
+Data workflows is a capability within Microsoft Fabric that helps you build and manage pipelines. Powered by the Apache Airflow runtime, data workflows provides a cloud-based platform for developing, scheduling, and monitoring Python-based data workflows as Directed Acyclic Graphs (DAGs). You can use Apache Airflow in a Software-as-a-Service (SaaS) model for pipeline development and management.
 
 You can store your workflow files in two locations: Fabric-managed storage or Git-managed storage. This article shows you how to synchronize your code from an existing Git repository.
 
@@ -64,7 +64,7 @@ To verify your repository is synchronized, go to the Apache Airflow UI by select
 
 :::image type="content" source="media/apache-airflow-jobs/monitor-dag-apache-airflow.png" lightbox="media/apache-airflow-jobs/monitor-dag-apache-airflow.png" alt-text="Screenshot showing how to monitor DAGs in Apache Airflow.":::
 
-The code editor isn't supported when you use Git-sync storage. You need to edit your code locally and push the changes to your remote Git repository. Your latest commit is automatically synchronized with Data Workflows, and you can see your updated code in the Apache Airflow UI.
+The code editor isn't supported when you use Git-sync storage. You need to edit your code locally and push the changes to your remote Git repository. Your latest commit is automatically synchronized with data workflows, and you can see your updated code in the Apache Airflow UI.
 
 ## Supported Git repository structure
 
@@ -90,7 +90,7 @@ The code editor isn't supported when you use Git-sync storage. You need to edit 
 ```
 
 > [!NOTE]
-> Data Workflows only synchronizes the `dags` and `plugins` folders from the repository. Make sure your files or subfolders are inside one of these folders.
+> Data workflows only synchronizes the `dags` and `plugins` folders from the repository. Make sure your files or subfolders are inside one of these folders.
 
 ## Related content
 

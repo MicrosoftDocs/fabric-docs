@@ -14,7 +14,7 @@ Microsoft Fabric offers two enterprise-scale, open standard format workloads for
 
 :::image type="content" source="media/decision-guide-lakehouse-warehouse/lakehouse-warehouse-choose.png" alt-text="Diagram that contains decision trees for Lakehouse and Warehouse in Microsoft Fabric." lightbox="media/decision-guide-lakehouse-warehouse/lakehouse-warehouse-choose.png":::
 
-**No Code or Pro Code solutions: How do you want to develop?​**
+**No-code or pro-code solutions: How do you want to develop?​**
 
 - Spark
     - Use **Lakehouse​**
@@ -41,9 +41,9 @@ Microsoft Fabric offers two enterprise-scale, open standard format workloads for
 
 Perform a detailed evaluation of the service to confirm that it meets your needs.
 
-The **Warehouse** item in Fabric Data Warehouse is an enterprise scale data warehouse with open standard format.​
+The **Warehouse** item in Fabric Data Warehouse is an enterprise-scale data warehouse with an open standard format.​
 
-- No knobs performance with minimal set-up and deployment, no configuration of compute or storage needed. ​
+- No-knobs performance with a minimal set-up and deployment, and no configuration of compute or storage needed. ​
 - Simple and intuitive warehouse experiences for both beginner and experienced data professionals (no/pro code)​.
 - Lake-centric warehouse stores data in OneLake in open Delta format with easy data recovery and management​.
 - Fully integrated with all Fabric workloads.
@@ -144,13 +144,13 @@ Recommended use case
    :::column-end:::
    :::column span="1"::: 
  - Data Warehousing for enterprise use
- - Data Warehousing supporting departmental, business unit or self service use
- - Structured data analysis in T-SQL with tables, views, procedures and functions and Advanced SQL support for BI 
+ - Data Warehousing supporting departmental, business unit, or self-service use
+ - Structured data analysis in T-SQL with tables, views, procedures, and functions and Advanced SQL support for BI 
    :::column-end:::
    :::column span="1"::: 
  - Exploring and querying delta tables from the lakehouse
  - Staging Data and Archival Zone for analysis
- - [Medallion lakehouse architecture](../onelake/onelake-medallion-lakehouse-architecture.md) with zones for bronze, silver and gold analysis
+ - [Medallion lakehouse architecture](../onelake/onelake-medallion-lakehouse-architecture.md) with zones for bronze, silver, and gold analysis
  - Pairing with Warehouse for enterprise analytics use cases 
    :::column-end:::
 :::row-end:::

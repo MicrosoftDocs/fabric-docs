@@ -2,7 +2,7 @@
 title: AI Functions (Preview)
 description: This tutorial explains how to use AI functions to perform advanced text processing without leaving your warehouse in Microsoft Fabric.
 ms.reviewer: jovanpop
-ms.date: 08/17/2026
+ms.date: 09/14/2026
 ms.topic: how-to 
 ai-usage: ai-assisted
 ---
@@ -240,6 +240,11 @@ OPENJSON(
 ```
 
 The `AI_EXTRACT` function applies fuzzy contextual rules to identify and extract topics from text without requiring manual parsing or complex regular expressions. This approach simplifies text analysis by using AI-driven semantic understanding rather than rigid pattern matching, making it more robust and adaptable to natural language variations.
+
+## Next step
+
+> [!div class="nextstepaction"]
+> [Tutorial step 7: Use AI functions in a warehouse](tutorial-ai-functions.md)
 
 ## Related content
 

@@ -26,7 +26,7 @@ When the pipeline reaches an approval activity, it:
 
 Before you start, make sure you have:
 
-- A [Microsoft Fabric workspace](/fabric/fundamentals/create-workspaces)
+- A [Fabric workspace](/fabric/fundamentals/create-workspaces)
 - A [pipeline](pipeline-overview.md) in your workspace
 
 ## Add an approval activity to a pipeline

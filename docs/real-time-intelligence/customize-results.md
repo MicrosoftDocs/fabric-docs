@@ -3,7 +3,7 @@ title: Customize results in the KQL Queryset results grid
 description: Learn how to customize results in the KQL Queryset results grid in Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.topic: how-to
-ms.date: 11/19/2024
+ms.date: 08/20/2026
 ms.subservice: rti-kql-query
 ms.search.form: KQL Queryset
 ---
@@ -25,19 +25,24 @@ Expanding cells are useful to view long strings or dynamic fields such as JSON.
 
     :::image type="content" source="media/kusto-query-set/expand-cell.png" alt-text="Screenshot of the KQL Queryset showing the results of a query with an expanded cell to show long strings. The expanded cell is highlighted."  lightbox="media/kusto-query-set/expand-cell.png":::
 
-1. Select on the icon on the top right of the result grid to switch reading pane modes. Choose between the following reading pane modes for expanded view: inline, below pane, and right pane.
+1. Select the icon on the top right of the result grid to switch reading pane modes. Choose between the following reading pane modes for expanded view: inline, below pane, and right pane.
 
     :::image type="content" source="media/kusto-query-set/expanded-view-icon.png" alt-text="Screenshot of the KQL Queryset results pane showing the option to change the view mode of the query results pane."  lightbox="media/kusto-query-set/expanded-view-icon.png":::
+
+> [!NOTE]
+> If a `string` or `dynamic` value is longer than 10,000 characters, the results grid trims the displayed value. You can still query the entire value by using KQL, as long as the value is stored in the engine and the `BigObjectIndexed32` encoding policy is enabled for the column. For more information, see [Large message support (preview)](get-data-overview.md#large-message-support-preview). You can also select **Copy full value** to copy the entire value and paste it into a text editor that supports large strings.
+
+:::image type="content" source="media/kusto-query-set/large-message.png" alt-text="Screenshot of the KQL Queryset results pane showing a trimmed value in the results grid."  lightbox="media/kusto-query-set/large-message.png":::
 
 ## Expand a row
 
 When working with a table with many columns, expand the entire row to be able to easily see an overview of the different columns and their content.
 
-1. Click on the arrow **>** to the left of the row you want to expand.
+1. Select the arrow **>** to the left of the row you want to expand.
 
     :::image type="content" source="media/kusto-query-set/expand-row.png" alt-text="Screenshot of the KQL Queryset results pane showing an expanded row."  lightbox="media/kusto-query-set/expand-row.png":::
 
-1. Within the expanded row, some columns are expanded (arrow pointing down), and some columns are collapsed (arrow pointing right). Click on these arrows to toggle between these two modes.
+1. Within the expanded row, some columns are expanded (arrow pointing down), and some columns are collapsed (arrow pointing right). Select these arrows to toggle between these two modes.
 
 ## Group column by results
 

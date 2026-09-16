@@ -13,15 +13,15 @@ ai-usage: ai-assisted
 
 [Azure Key Vault (AKV)](/azure/key-vault/general/overview) is Microsoft's cloud service for storing secrets, keys, and certificates centrally, so you don't have to hardcode them into your apps. By using Azure Key Vault references in Microsoft Fabric, you can just point to a secret in your vault instead of copying and pasting credentials.
 
-To use Azure Key Vault references in Microsoft Fabric, you:
+To use Azure Key Vault references in Fabric, you:
 
-1. [Create an Azure Key Vault reference in Microsoft Fabric](#create-an-azure-key-vault-reference-in-microsoft-fabric)
+1. [Create an Azure Key Vault reference in Fabric](#create-an-azure-key-vault-reference-in-microsoft-fabric)
 1. [Store your credentials in Azure Key Vault](#store-your-credentials-in-azure-key-vault)
 1. [Use Azure Key Vault reference in connections](#use-azure-key-vault-reference-in-connections)
 
 ## Prerequisites
 
-- A Microsoft Fabric tenant account with an active subscription. [Create an account for free](/fabric/fundamentals/fabric-trial).
+- A Fabric tenant account with an active subscription. [Create an account for free](/fabric/fundamentals/fabric-trial).
 - An [Azure subscription](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - An [Azure Key Vault](/azure/key-vault/secrets/quick-create-portal)
   - Either of the following is true:
@@ -42,7 +42,7 @@ To use Azure Key Vault references in Microsoft Fabric, you:
 1. Under **Reference alias**, enter a name for your reference.
 1. Under **Account Name**, enter the name of the existing Azure Key Vault you want to connect to.
 1. Use OAuth 2.0 to authenticate to connect to your key vault and select **Edit credentials**.
-1. Follow the prompts to sign in with your Azure credentials and grant Microsoft Fabric access to your Azure Key Vault. Make sure you have the [necessary permissions](#prerequisites) to access the Key Vault.
+1. Follow the prompts to sign in with your Azure credentials and grant Fabric access to your Azure Key Vault. Make sure you have the [necessary permissions](#prerequisites) to access the Key Vault.
 1. (Optional) Select the check box to allow on-premises data gateways or virtual network gateways to use this AKV reference.
 1. Select **Create** and check its status to verify if it's online and connected to the key vault.
 
@@ -62,14 +62,14 @@ To store your credentials for [supported connectors](#supported-connectors-and-a
     - Leave the other values as their defaults.
 1. Select **Create**.
 
-You're ready to use this secret in Microsoft Fabric connections.
+You're ready to use this secret in Fabric connections.
 
 For more information about Azure Key Vault secrets, see [secrets in Azure Key Vault](/azure/key-vault/secrets/quick-create-portal#add-a-secret-to-key-vault).
 
 ## Use Azure Key Vault reference in connections
 
 Create connections by using an Azure Key Vault reference through the **Manage Connections and Gateways** settings.
-(Currently, the get data experience in Microsoft Fabric doesn't support creating connections by authenticating with Azure Key Vault references.)
+(Currently, the get data experience in Fabric doesn't support creating connections by authenticating with Azure Key Vault references.)
 
 To create a connection through the **Manage Connections and Gateways** settings:
 
@@ -107,7 +107,7 @@ When Fabric needs to establish a data connection, it dynamically retrieves the s
 
 ## Supported connectors and authentication types
 
-| Supported Connector | Category | Account key | Basic (Username/Password) | Token (Shared Access Signature or Personal Access Token) | Service Principal |
+| Supported connector | Category | Account key | Basic (Username/Password) | Token (Shared Access Signature or Personal Access Token) | Service principal |
 | --- | --- | --- | --- | --- | --- |
 | [:::image type="icon" source="media/data-pipeline-support/blobs-64.png":::<br/>**Azure Blob<br/>Storage**](connector-azure-blob-storage-copy-activity.md) | **Azure** | <!--AKV reference (Account key)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--AKV reference (Basic)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--AKV reference (Token)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--AKV reference (SPN)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |
 | [:::image type="icon" source="media/data-pipeline-support/blobs-64.png":::<br/>**Azure Data Lake<br/>Storage Gen2**](connector-azure-data-lake-storage-gen2-copy-activity.md) | **Azure** |  <!--AKV reference (Account key)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--AKV reference (Basic)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--AKV reference (Token)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--AKV reference (SPN)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |
@@ -126,9 +126,9 @@ When Fabric needs to establish a data connection, it dynamically retrieves the s
 
 ## Limitations and considerations
 
-- Azure Key Vault references work with Cloud and on-premises data gateway connections.  
+- Azure Key Vault references work with cloud and on-premises data gateway connections.
 - Virtual network data gateways connections aren't yet supported.
-- Fabric Lineage view isn't available for AKV references.
+- Fabric lineage view isn't available for AKV references.
 - You can't create AKV references by using a connection from the **Modern Get Data** pane in Fabric items. Instead, [create connections using AKV references through the Manage Connections and Gateways settings](#use-azure-key-vault-reference-in-connections).
 - Azure Key Vault references in Fabric always get the current (latest) version of a secret. Azure Key Vault credential versioning isn't supported.
 

@@ -17,9 +17,9 @@ This article shows you how to access Apache Airflow job logs through the Apache 
 
 To get started, you must complete the following prerequisites:
 
-- Create or use an existing workspace in Microsoft Fabric.
+- Create or use an existing workspace in Fabric.
 
-- [Create or use an existing Apache Airflow job in Microsoft Fabric.](../data-factory/create-apache-airflow-jobs.md)
+- [Create or use an existing Apache Airflow job in Fabric.](../data-factory/create-apache-airflow-jobs.md)
 
 ### Create and Run the Apache Airflow Job
 
