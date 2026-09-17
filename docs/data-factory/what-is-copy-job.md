@@ -1,9 +1,9 @@
 ---
 title: What is Copy job in Data Factory
 description: This article explains the concept of the Copy job and the benefits it provides.
-ms.reviewer: yexu
+ms.reviewer: ukchrist
 ms.topic: how-to
-ms.date: 04/24/2026
+ms.date: 09/17/2026
 ms.search.form: copy-job-tutorials 
 ms.custom: copy-job
 ai-usage: ai-assisted
@@ -103,6 +103,12 @@ Audit columns are additional metadata columns that Copy job can automatically ap
 With audit columns, you get row-level data lineage without custom code, enabling compliance reporting, data quality debugging, and ingestion freshness tracking.
 
 See more details in [Audit columns in Copy job](audit-columns-copy-job.md).
+
+
+### Change data feed
+
+Change data feed for Delta tables allows consumers of those tables to incrementally process data. For destination tables that Copy job creates in a Fabric Lakehouse, you can enable Change data feed (CDF) in the **Write settings** of a Copy job. Select the option **Enable CDF on destination** to turn on Change data feed. This setting applies to all Lakehouse tables that Copy job creates. This setting doesn't change user-created destination tables.
+
 
 ### Performance
 
