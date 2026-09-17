@@ -583,7 +583,7 @@ _Overall, elephants have complex social structures and behaviors that involve va
 Now you know how to prepare (chunk and embed) the CMU QA dataset, build a vector index, retrieve relevant chunks, and generate answers. Use this foundation to create a basic ipywidgets chatbot interface. Run the cell below, enter your question, then select <kbd>Enter</kbd> to get a response. Change the text to ask a new question, then select <kbd>Enter</kbd> again.
 
 > [!Tip]
-> This RAG solution can make mistakes. To improve results, use a currently supported model deployment or refine the system prompt; neither guarantees accurate responses.
+> This RAG solution can make mistakes. To improve results, use a currently supported model deployment or refine the system prompt; neither approach guarantees accurate responses.
 
 ```python
 # Create a text box for input  
