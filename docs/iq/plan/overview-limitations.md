@@ -28,7 +28,7 @@ Workspaces or tenants that use [private links](../../security/security-private-l
 * Each plan item connects to one semantic model, and you can't change it after you connect it. If you need to plan against different data sources, you must create separate plan items.
 * Semantic model connections only support OAuth-based and service principal-based authentication.
 * Semantic models published in *My workspace* aren't supported.
-* Composite models aren't supported.
+* Composite models are supported in Planning. Support for individual configurations depends on the capabilities of the underlying semantic model, including storage modes, data sources, and authentication.
 * If the semantic model contains unsupported Unicode characters, inserting a Data input column in a planning sheet might fail.
 * Don't rename a semantic model that's connected to a plan item. Renaming the semantic model breaks the connection, and the plan item no longer works with the renamed semantic model.
 
@@ -120,7 +120,8 @@ Gantt and Resource Layout support up to 30,000 rows. Gantt and Resource Layout a
 
 ## CI/CD service principal support
 
-Automatic application database creation isn't supported when deploying plan items through CI/CD by using a service principal.
+> [!NOTE]
+> Application database creation for plan items is now supported when using a service principal with deployment pipelines.
 
 ## Workspace renaming
 
