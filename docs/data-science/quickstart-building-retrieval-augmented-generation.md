@@ -1,13 +1,13 @@
 ---
-title: How to Use Fabric for Retrieval Augmented Generation
-description: Learn how to build a Retrieval Augmented Generation (RAG) application in Microsoft Fabric using Azure AI Search and OpenAI for enhanced data-driven insights.
+title: Build retrieval-augmented generation in Microsoft Fabric
+description: Learn how to build a retrieval-augmented generation (RAG) application in Microsoft Fabric using Azure AI Search and Azure OpenAI Service.
 ms.author: lagayhar
 ms.reviewer: scottpolly
 ms.date: 09/04/2026
 ms.topic: concept-article
 ai-usage: ai-assisted
 ---
-# Build retrieval augmented generation in Fabric
+# Build retrieval-augmented generation in Microsoft Fabric
 
 Large language models (LLMs) like OpenAI's ChatGPT are powerful, but they work better for business needs when you customize them with specific business data by using generative AI (GenAI) solutions. Without this customization, LLMs might not deliver results tailored to business and customer requirements.
 
@@ -22,7 +22,7 @@ This quickstart shows how to use Fabric to build RAG applications. The main step
 1. Set up Azure AI Search.
 1. Load and prepare data from the [CMU QA dataset](https://www.cs.cmu.edu/~ark/QA-data/).
 1. Chunk the data by using Spark pools for efficient processing.
-1. Create embeddings by using Fabric's built-in [Azure OpenAI services through SynapseML](ai-services/how-to-use-openai-synapse-ml.md).
+1. Create embeddings by using Fabric's built-in [Azure OpenAI Service through SynapseML](ai-services/how-to-use-openai-synapse-ml.md).
 1. Create a vector index by using [Azure AI Search](https://aka.ms/what-is-azure-search).
 1. Generate answers from the retrieved context by using the [OpenAI Python SDK in Fabric](ai-services/how-to-use-openai-python-sdk.md).
 
@@ -34,7 +34,7 @@ Set up these services to run the notebook.
 - [Add a lakehouse](https://aka.ms/fabric/addlakehouse) to this notebook. Download data from a public blob and store it in the lakehouse.
 - Set up [Azure AI Search](https://aka.ms/azure-ai-search).
 
-## Step 1: Overview of Azure setup
+## Azure setup overview
 
 This tutorial uses Fabric's built-in Azure OpenAI Service, so you don't need keys. Run the next cell to apply the required SynapseML configuration.
 
@@ -109,7 +109,7 @@ openai_client = aifunc.session.client_sync
 **Cell output:**
 `*StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 7, Finished, Available, Finished)*`
 
-## Step 2: Load data into the lakehouse and Spark
+## Load data into the lakehouse and Spark
 
 ### Dataset
 
@@ -199,7 +199,7 @@ display(df_wiki)
 `*SynapseWidget(Synapse.DataFrame, eb3e3dac-90fb-4fd7-9574-e5eba6335aad)*`
 `*SynapseWidget(Synapse.DataFrame, 29a22160-4fb3-437c-a4c9-afa46e6510f1)*`
 
-## Step 3: chunk the text
+## Chunk the text
 
 When you submit large documents to an LLM, the model extracts the most important information to answer queries. Chunking splits large text into smaller sections. In a RAG setup, embedding smaller chunks instead of whole documents lets the retriever return only the most relevant chunks for a query. This approach reduces token usage and gives the model focused context.
 
@@ -244,7 +244,7 @@ display(df_chunks_id)
 `StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 12, Finished, Available, Finished)`
 `SynapseWidget(Synapse.DataFrame, 5cc2055a-96e9-4c7d-8ad6-558b04d847fd)`
 
-## Step 4: Create embeddings
+## Create embeddings
 
 In RAG, embedding adds relevant document chunks to the model's knowledge base. The system selects chunks that match likely user queries, so it retrieves precise information instead of whole documents. Embeddings improve retrieval by giving focused context for accurate answers. This section uses the SynapseML library to generate embeddings for each text chunk.
 
@@ -265,7 +265,7 @@ display(df_embeddings)
 `*StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 13, Finished, Available, Finished)*`
 `*SynapseWidget(Synapse.DataFrame, b3dcfce1-7bd9-419b-b233-d848f5fddb06)*`
 
-## Step 5: create vector index with Azure AI Search
+## Create a vector index with Azure AI Search
 
 In RAG, a vector index quickly retrieves relevant information. It organizes document chunks into a vector space to match queries by similarity instead of only keywords. This approach improves accuracy and relevance.
 
@@ -434,7 +434,7 @@ if unsuccessful_uploads_count > 0:
 `*Number of successful uploads: 172*`
 `*Number of unsuccessful uploads: 0*`
    
-## Step 6: Demonstrate retrieval augmented generation
+## Demonstrate retrieval-augmented generation
 
 After you chunk, embed, and index, use the indexed data to retrieve the most relevant information for user queries. This retrieval lets the system generate accurate responses by using the index structure and embedding similarity scores.
 
@@ -622,4 +622,4 @@ w_display(text, label)
 `*StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 38, Finished, Available, Finished)*`
 `*StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 39, Finished, Available, Finished)*`
 
-This tutorial concludes the process of creating a RAG application in Fabric by using the built-in OpenAI endpoint. Fabric unifies your data so you can build effective generative AI applications.
+This tutorial concludes the process of creating a RAG application in Fabric by using the built-in OpenAI-compatible client. Fabric unifies your data so you can build effective generative AI applications.
