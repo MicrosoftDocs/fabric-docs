@@ -23,6 +23,8 @@ items:
     href: fabric-events-page.md
   - name: Azure events page
     href: azure-events-page.md
+  - name: Rules page (preview)
+    href: rules-page.md
   - name: Event schema registry page
     href: event-schema-registry-page.md
 - name: Tutorials
