@@ -339,7 +339,7 @@ If you have more than 100 connections, use the `continuationToken` query paramet
 
 ### Take ownership or reassign a connection
 
-When a connection's original owner leaves the organization, or you need to move a connection to a different owner, use the role assignment APIs to grant the **Owner** role to a user or service principal. This keeps dependent pipelines, dataflows, and other items running.
+When a connection's original owner leaves the organization, or you need to move a connection to a different owner, use the role assignment APIs to grant the **Owner** role to a user or service principal. This action keeps dependent pipelines, dataflows, and other items running.
 
 To assign an owner, send an HTTP POST to the connection's `roleAssignments` endpoint with the principal and role in the request body:
 
