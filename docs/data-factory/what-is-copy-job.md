@@ -107,7 +107,7 @@ See more details in [Audit columns in Copy job](audit-columns-copy-job.md).
 
 ### Change data feed
 
-Change data feed for Delta tables allows incremental processing by consumers of that tables. For destination tables created by Copy job in a Fabric Lakehouse, Change data feed (CDF) can be enabled in the **Write settings** of a Copy job. Select the option **Enable CDF on destination** to enable Change data feed. This setting is applied to all Lakehouse tables created by that Copy job. User created destination tables are not altered by this setting.
+Change data feed for Delta tables allows consumers of those tables to incrementally process data. For destination tables that Copy job creates in a Fabric Lakehouse, you can enable Change data feed (CDF) in the **Write settings** of a Copy job. Select the option **Enable CDF on destination** to turn on Change data feed. This setting applies to all Lakehouse tables that Copy job creates. This setting doesn't change user-created destination tables.
 
 
 ### Performance
