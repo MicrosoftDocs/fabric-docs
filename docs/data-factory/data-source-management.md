@@ -270,6 +270,96 @@ As a tenant admin, you can limit who can share connections:
 > * Blocking sharing could limit collaboration between users
 > * Existing shared connections stay shared when you turn on the restriction
 
+## Manage connections tenant-wide with the admin APIs
+
+> [!NOTE]
+> The admin connections APIs are in preview. Names, endpoints, and behavior might change before general availability.
+
+Tenant administrators can inventory and govern every connection in the tenant with the admin connections APIs, regardless of who created the connection or which workspace it's used in. The admin endpoints cover all connection types, not just cloud connections. Unlike the connection-owner [List Connections](/rest/api/fabric/core/connections/list-connections) endpoint, which returns only the connections you own or are shared with, the admin endpoints return connections across the whole tenant.
+
+The caller must be a Fabric administrator, or authenticate using a service principal, with the **Tenant.Read.All** or **Tenant.ReadWrite.All** scope.
+
+These APIs help you:
+
+- **Discover and inventory**: list every connection in the tenant and review details such as connector type, authentication type, endpoints, and recency.
+- **Govern ownership**: take ownership of orphaned connections when the original creator leaves the organization, and reassign connections to keep workloads running.
+- **Govern security and compliance**: identify insecure credential types and review endpoint domains against your network policies.
+- **Maintain operational hygiene**: find duplicate or stale connections and delete the ones you no longer need.
+
+| Operation | API |
+| --- | --- |
+| List all connections in the tenant | [Connections - List Connection](/rest/api/fabric/admin/connections/list-connection) |
+| Get a single connection | [Connections - Get Connection](/rest/api/fabric/admin/connections/get-connection) |
+| Delete a connection | [Connections - Delete Connection](/rest/api/fabric/admin/connections/delete-connection) |
+| List the role assignments on a connection | `GET /v1/admin/connections/{connectionId}/roleAssignments` |
+| Add a role assignment (assign an owner) | `POST /v1/admin/connections/{connectionId}/roleAssignments` |
+| Update a role assignment | `PATCH /v1/admin/connections/{connectionId}/roleAssignments/{roleAssignmentId}` |
+| Delete a role assignment | `DELETE /v1/admin/connections/{connectionId}/roleAssignments/{roleAssignmentId}` |
+
+To list every connection in the tenant, send an HTTP GET to the admin connections endpoint, including your token in the `Authorization` header:
+
+```http
+GET https://api.fabric.microsoft.com/v1/admin/connections
+Authorization: Bearer <token>
+```
+
+A successful response returns a `value` array of connection objects. Each object includes identity, connectivity type, connection details (endpoint path and type), privacy level, credential details, and connection recency:
+
+```json
+{
+  "value": [
+    {
+      "id": "6952a7b2-aea3-414f-9d85-6c0fe5d34539",
+      "displayName": "ContosoConnection1",
+      "gatewayId": "8f72eea3-d989-4a5a-aeed-02b3aaa2ddd0",
+      "connectivityType": "ShareableCloud",
+      "connectionDetails": {
+        "type": "Web",
+        "path": "https://www.contoso.com"
+      },
+      "privacyLevel": "Public",
+      "credentialDetails": {
+        "credentialType": "Anonymous",
+        "singleSignOnType": "None",
+        "connectionEncryption": "NotEncrypted",
+        "skipTestConnection": false
+      },
+      "connectionRecency": {
+        "createdDateTime": "2023-05-23T16:22:20Z",
+        "lastBoundDateTime": "2023-05-26T16:22:20Z",
+        "lastCredentialUsedDateTime": "2023-05-27T16:22:20Z"
+      }
+    }
+  ],
+  "continuationToken": "LDEsMTAwMDAwLDA%3D"
+}
+```
+
+If you have more than 100 connections, use the `continuationToken` query parameter on subsequent requests to page through all results.
+
+### Take ownership or reassign a connection
+
+When a connection's original owner leaves the organization, or you need to move a connection to a different owner, use the role assignment APIs to grant the **Owner** role to a user or service principal. This keeps dependent pipelines, dataflows, and other items running.
+
+To assign an owner, send an HTTP POST to the connection's `roleAssignments` endpoint with the principal and role in the request body:
+
+```http
+POST https://api.fabric.microsoft.com/v1/admin/connections/{connectionId}/roleAssignments
+Authorization: Bearer <token>
+Content-Type: application/json
+
+{
+  "principal": {
+    "id": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+    "type": "User"
+  },
+  "role": "Owner"
+}
+```
+
+To review who currently has access to a connection, send an HTTP GET to the same endpoint to list all role assignments. To change an existing assignment, send an HTTP PATCH to `.../roleAssignments/{roleAssignmentId}` with the new `role` value. To remove access, send an HTTP DELETE to `.../roleAssignments/{roleAssignmentId}`.
+
+
 ## Related content
 
 * [Connectors overview](connector-overview.md)
