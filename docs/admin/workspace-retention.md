@@ -73,7 +73,7 @@ While a deleted collaborative workspace is in a retention period, you can perman
 Fabric asks you to confirm the permanent deletion. After you confirm, the workspace and its contents are no longer recoverable.
 
 > [!NOTE]
-> If the workspace has a [workspace identity](../security/workspace-identity.md), Fabric doesn't delete the identity while the workspace is in its retention period. Its service principal and app registration stay visible in the Azure portal until the workspace is permanently deleted. For more information, see [Deleting the identity](../security/workspace-identity.md#deleting-the-identity).
+> If the workspace has a [workspace identity](../security/workspace-identity.md), Fabric doesn't delete the identity while the workspace is in its [retention period](../admin/workspace-retention.md). Its service principal and app registration stay visible in the Azure portal until the workspace is permanently deleted. For more information, see [Deleting the identity](../security/workspace-identity.md#deleting-the-identity).
 
 ## Restore a deleted My workspace as an app workspace
 
