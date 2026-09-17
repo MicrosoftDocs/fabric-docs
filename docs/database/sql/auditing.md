@@ -2,7 +2,7 @@
 title: Auditing for Fabric SQL Database
 description: Learn how to configure and manage auditing for SQL database in Microsoft Fabric using the Fabric portal or the REST API.
 ms.reviewer: srsaluru, wiassaf
-ms.date: 05/21/2026
+ms.date: 09/16/2026
 ms.topic: concept-article
 ms.search.form: SQL database security
 ---
@@ -113,6 +113,24 @@ For more information, see [sys.fn_get_audit_file](/sql/relational-databases/syst
 You can also view and configure SQL database auditing settings programmatically using the Fabric REST API. The REST API enables you to manage auditing consistently across all databases in a workspace using PowerShell scripts.
 
 For more information, see [Manage SQL database auditing with the REST API](auditing-manage-rest-api.md).
+
+### Protect sensitive information in audit logs
+
+When you construct dynamic SQL by concatenating input values directly into the SQL statement, those values become part of the statement text. If you audit the statement, the audit log might capture sensitive information included in the statement text.
+
+To reduce the risk of exposing sensitive information, follow these practices:
+
+- **Avoid dynamic SQL for operations that contain sensitive values**
+
+For security-sensitive administrative operations, avoid constructing statements by concatenating sensitive values into dynamic SQL. Where possible, use native SQL statements or other approaches that prevent sensitive values from being embedded directly in the statement text. Examples of security-sensitive operations include `CREATE LOGIN` and `CREATE CREDENTIAL`.
+
+Dynamic SQL statements that are constructed from user-accessible strings also make your applications vulnerable to [SQL injection attacks](/sql/relational-databases/security/sql-injection?view=fabric&preserve-view=true). SQL injection is an attack in which malicious code is inserted into strings that are later passed to the database for parsing and execution. Any procedure that constructs SQL statements should be reviewed for injection vulnerabilities, because the database engine executes all syntactically valid queries that it receives. Even parameterized data can be manipulated by a skilled and determined attacker.
+
+- **Restrict access to audit logs**
+
+Limit access to audit logs to authorized users and administrators. SQL permissions govern audit access and can vary depending on the platform and audit scope. Follow the principle of least privilege and grant only the permissions required to manage or review audit information. Microsoft documents separate server-level and database-level audit permission models, and Azure SQL Database differs from SQL Server in the availability of server-level permissions. Restricting access to audit data helps reduce the risk of unauthorized disclosure when sensitive information is present in recorded audit events.
+
+
 
 ## Related content
 

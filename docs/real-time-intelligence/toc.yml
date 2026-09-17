@@ -913,6 +913,8 @@ items:
         items:
           - name: Create rules and activations
             href: data-activator/activator-create-activators.md
+          - name: Manage rules in Real-Time hub (preview)
+            href: ../real-time-hub/rules-page.md?context=/fabric/context/context-rti&pivots=fabric
           - name: Configure actions for Activator rules
             href: data-activator/rule-actions.md
           - name: Assign data to Activator objects
