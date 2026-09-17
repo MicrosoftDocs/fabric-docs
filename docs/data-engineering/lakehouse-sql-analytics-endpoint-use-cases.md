@@ -25,7 +25,7 @@ You don't need to create a SQL analytics endpoint in Fabric. A SQL analytics end
 
 ### Automatic metadata discovery
 
-A seamless process reads the Delta logs from the `/Tables` folder and ensures SQL metadata for tables, such as statistics, is always up to date. There's no user action needed, and no need to import, copy data, or set up infrastructure. For more information, see [Automatically generated schema in the SQL analytics endpoint](sql-analytics-endpoint-performance.md#automatically-generated-schema-in-the-sql-analytics-endpoint-of-the-lakehouse).
+A seamless process reads the Delta logs from the `/Tables` folder and ensures SQL metadata for tables, such as statistics, is always up to date. There's no user action needed, and no need to import, copy data, or set up infrastructure. For more information, see [SQL analytics endpoint metadata sync](sql-analytics-endpoint-metadata-sync.md).
 
 ## Scenarios the lakehouse enables for data warehousing
 

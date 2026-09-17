@@ -28,7 +28,7 @@ From the **Row Access** pane, you can complete the following actions.
 In **Row Access**, under the **Add** section, you can specify who is allowed to add rows to the table:
 * **No one**: Select this option to prevent users from adding new rows to your table.
 * **All users in this workspace**: Select this option to allow everyone in the workspace to add records.
-* **Specific users**: Select this option to allow only certain users to add rows. Enter the email addresses of the users or the Active Directory groups you wish to grant access.
+* **Specific users**: Select this option to allow only certain users to add rows. Enter the email addresses of the users or the Microsoft Entra groups you want to grant access to.
 
 :::image type="content" source="media/powertable-how-to-set-up-access-control/row-access.png" alt-text="Screenshot of granting access to specific users in the Row Access settings." lightbox="media/powertable-how-to-set-up-access-control/row-access.png":::
 
@@ -39,8 +39,8 @@ Select **Save** to save and close the window.
 In the **Update** section, you can specify who has permission to update existing rows:
 * **No one**: Choose this option to prevent users from updating rows.
 * **All users in this workspace**: Select this option to allow all workspace users to update records.
-* **Specific users in this workspace**: Choose this option to allow only certain workspace users to update the rows. Enter the user email addresses or the Active Directory group IDs that you want to allow.
-* **Rule-based access**: Select this option to configure rules that specify the conditions under which a user or an Active Directory group can update rows in the table.
+* **Specific users in this workspace**: Choose this option to allow only certain workspace users to update the rows. Enter the user email addresses or the Microsoft Entra group IDs that you want to allow.
+* **Rule-based access**: Select this option to configure rules that specify the conditions under which a user or a Microsoft Entra group can update rows in the table.
 
 :::image type="content" source="media/powertable-how-to-set-up-access-control/update-rows.png" alt-text="Screenshot of setting which users can update existing rows." lightbox="media/powertable-how-to-set-up-access-control/update-rows.png":::
 
@@ -116,7 +116,7 @@ To set up access permissions to the columns,
 
     :::image type="content" source="media/powertable-how-to-set-up-access-control/column-access.png" alt-text="Screenshot of the Column Access settings allowing specific users to edit specific columns." lightbox="media/powertable-how-to-set-up-access-control/column-access.png":::
 
-1. You can add multiple users. You can also enter the email address of an organizational group or an Active Directory list.
+1. You can add multiple users. You can also enter the email address of an organizational group or a Microsoft Entra ID group.
 1. Clear **Allow Edits** to prevent users from editing specific columns, such as sensitive data or critical information that should remain unchanged. As a best practice, keep the **primary key** field locked so that it can't be edited.
 1. Select **Save** to save the settings.
 

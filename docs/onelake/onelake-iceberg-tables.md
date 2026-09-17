@@ -5,7 +5,8 @@ ms.reviewer: mahi # Product team ms alias(es)
 # author: Do not use - assigned by folder in docfx file
 # ms.author: Do not use - assigned by folder in docfx file
 ms.topic: how-to
-ms.date: 7/1/2025
+ms.date: 7/30/2026
+ai-usage: ai-assisted
 #customer intent: As a OneLake user, I want to learn how to use table format virtualization to read Iceberg tables across Fabric workloads, or read Fabric (Delta Lake) tables using Apache Iceberg readers.
 ---
 
@@ -25,7 +26,7 @@ While this article includes guidance for using Iceberg tables with Snowflake, th
 
 To set up the automatic conversion and virtualization of tables from Delta Lake format to Iceberg format, follow these steps.
 
-1.	Make sure your Delta Lake table, or a shortcut to it, is located in the `Tables` section of your data item. The data item may be a lakehouse or another Fabric data item.
+1. Ensure your Delta Lake table, or a shortcut to it, is located in the `Tables` section of your data item. The data item might be a lakehouse or another Fabric data item.
 
     > [!TIP]
     > If your lakehouse is schema-enabled, then your table directory will be located directly within a schema such as `dbo`. If your lakehouse is not schema-enabled, then your table directory will be directly within the `Tables` directory.
@@ -44,13 +45,13 @@ To set up the automatic conversion and virtualization of tables from Delta Lake 
 
     You can see the HTTP path to the latest metadata file of your table by opening the **Properties** view for the `*.metadata.json` file with the highest version number. Take note of this path.
 
-    The path to your data item's `Tables` folder may look like this:
+    The path to your data item's `Tables` folder might look like this:
 
     ```
     https://onelake.dfs.fabric.microsoft.com/83896315-c5ba-4777-8d1c-e4ab3a7016bc/a95f62fa-2826-49f8-b561-a163ba537828/Tables/
     ```
 
-    Within that folder, the relative path to the latest metadata file may look like `dbo/MyTable/metadata/321.metadata.json`.
+    Within that folder, the relative path to the latest metadata file might look like `dbo/MyTable/metadata/321.metadata.json`.
 
     To read your virtual Iceberg table using Snowflake, [follow the steps in this guide](./onelake-iceberg-snowflake.md#read-a-virtual-iceberg-table-from-onelake-using-snowflake-on-azure).
 
@@ -138,6 +139,27 @@ Tables/
 
 Open the conversion log file to see the latest conversion time or failure details. If you don't see a conversion log file, [conversion wasn't attempted](#if-conversion-wasnt-attempted).
 
+### Understand the conversion log and error categories
+
+The `latest_conversion_log.txt` file records the latest conversion attempt. When you virtualize an Iceberg table as Delta Lake, you find this file in the table's `_delta_log/` folder. When you virtualize a Delta Lake table as Iceberg, it's in the table's `metadata/` folder. The file is plain text. When a conversion fails, `latest_conversion_log.txt` contains a structured block similar to the following:
+
+```
+Status:             Failed
+Timestamp (UTC):    2025-07-29T19:04:11Z
+Latest Metadata:    00000000000000000012.metadata.json
+Invocation Id:      6f1c...e2
+Root Activity Id:   9a3d...b7
+Error Code:         <code>
+Error Category:     USER | SYSTEM
+Error Details:      <message>
+```
+
+Use the **Error Category** to decide what to do next:
+
+* **`USER`** means the source table contains something this feature can't convert. **Error Details** describes what to fix. Adjust the source table (see [Limitations and considerations](#limitations-and-considerations)), and then commit a change to the source table. Conversion re-attempts automatically after the next commit.
+
+* **`SYSTEM`** means an internal or transient error occurred, and there's nothing to fix in the source table. To trigger another conversion attempt, commit a change to the source table. If failures persist, contact support and provide the entire `latest_conversion_log.txt` file.
+
 ### If conversion wasn't attempted
 
 If you don't see a conversion log file, then the conversion wasn't attempted. Here are two common reasons why conversion isn't attempted:
@@ -168,13 +190,31 @@ If you see this error, have your Fabric tenant admin double-check that you've en
 
 ## Limitations and considerations
 
-Keep in mind the following temporary limitations when you use this feature: 
+Keep in mind the following limitations when you use this feature. Some limitations apply to both conversion directions. Others are specific to converting **Delta Lake to Iceberg** or **Iceberg to Delta Lake**.
 
-* **Supported Apache Iceberg version**
+### How conversion issues surface
 
-  The table format virtualization feature currently supports [**Apache Iceberg V2**](https://iceberg.apache.org/spec/#version-2-row-level-deletes) today. This means when a Delta Lake table is read by this feature, Iceberg V2 metadata is generated. Original Iceberg tables provided to this feature must be Iceberg V2 in order for conversion to Delta Lake format to occur.
+When a source feature can't be fully translated, one of two things happens. Both outcomes are reported in the conversion log.
 
-  We're working on support for reading [Iceberg V3 tables](https://iceberg.apache.org/spec/#version-3-extended-types-and-capabilities). Stay tuned!
+| Outcome | What happens |
+| --- | --- |
+| **Conversion fails** | No new target metadata is produced. The table keeps its last successfully converted version. |
+| **Feature dropped** | Conversion succeeds, but an unsupported column or partitioning is omitted from the output table format. |
+
+### General limitations
+
+* **Apache Iceberg version support**
+
+  The supported Iceberg version depends on the conversion direction:
+
+  | Conversion direction | Iceberg version behavior |
+  | --- | --- |
+  | Delta Lake to Iceberg | Produces Iceberg V2 metadata. |
+  | Iceberg to Delta Lake | Supports Iceberg V2 source tables. Iceberg V3 source tables are partially supported; see [Iceberg V3 features](#iceberg-v3-features). |
+
+* **Parquet data files only**
+
+  This feature supports only Parquet as the underlying data file format for metadata translation, in both conversion directions.
 
 * **Latest metadata version converted**
 
@@ -186,30 +226,48 @@ Keep in mind the following temporary limitations when you use this feature:
 
 * **Conversion latency and update frequency**
 
-  Generation of table format metadata can take between 5 seconds and 2 minutes. Make sure the updates you make to your source table are less frequent than once per 2 minutes. Otherwise, you may see an inconsistent view of the output table format.
+  Generation of table format metadata can take between 5 seconds and 2 minutes. Ensure the updates you make to your source table are less frequent than once per 2 minutes. Otherwise, you might see an inconsistent view of the output table format.
 
-* **Supported data types**
-  
-  The following Iceberg column data types map to their corresponding Delta Lake types using this feature.
+* **Schema evolution**
 
-  | Iceberg column type | Delta Lake column type | Comments |
-  | --- | --- | --- |
-  | `int` | `integer` |  |
-  | `long` | `long` | See **Type width issue**. |
-  | `float` | `float` | |
-  | `double` | `double` | See **Type width issue**. |
-  | `decimal(P, S)` | `decimal(P, S)` | See **Type width issue**. |
-  | `boolean` | `boolean` | |
-  | `date` | `date` | |
-  | `timestamp` | `timestamp_ntz` | The `timestamp` Iceberg data type doesn't contain time zone information. The `timestamp_ntz` Delta Lake type isn't fully supported across Fabric workloads. We recommend the use of timestamps with time zones included. |
-  | `timestamptz` | `timestamp` | In Snowflake, to use this type, specify `timestamp_ltz` as the column type during Iceberg table creation. [More info on Iceberg data types supported in Snowflake can be found here.](https://docs.snowflake.com/en/user-guide/tables-iceberg-data-types) |
-  | `string` | `string` | |
-  | `binary` | `binary` | |
-  | `time` | N/A | Not supported |
-    
+  In both conversion directions, widening type changes (for example, `int` to `long`) are supported. A narrowing or otherwise incompatible type change causes conversion to fail.
+
+### Delta Lake to Iceberg
+
+These limitations apply when you virtualize a Delta Lake table as Iceberg.
+
+> [!TIP]
+> For the most complete conversion to Iceberg V2, use `IcebergCompatV2` when the source table doesn't use deletion vectors. If the table uses deletion vectors, use `IcebergCompatV3`; OneLake converts them to Iceberg V2 position deletes. Because this feature produces Iceberg V2 metadata, Iceberg V3-only features aren't converted.
+
+The following considerations apply, especially to Delta Lake tables that *aren't* written with an `IcebergCompat` writer feature:
+
+* **Nested `array` and `map` columns** require stable field IDs on their element, key, and value. Without them, the nested collection column is dropped from the Iceberg output (noted in the conversion log). `IcebergCompat` assigns these IDs.
+
+* **Timestamps** must be stored as INT64 microseconds. A table whose timestamps are physically stored as INT96 (legacy) converts, but its timestamp columns can't be read by Iceberg engines. `IcebergCompat` enforces INT64 timestamps.
+
+* **Column renames** — Preserved when the Delta Lake table uses column mapping (`id` or `name` mode), which `IcebergCompat` requires. With column mapping mode `none`, a rename appears as dropping and adding a column.
+
+* **Column types** — Only Iceberg-compatible types are converted; other columns are dropped (noted in the conversion log). For example, `void` has no Iceberg equivalent. `IcebergCompat` restricts the schema to a convertible type set.
+
+* **Partitioning** — Identity and temporal (year, month, day, hour) partitions are converted. Delta Lake has a single table-wide partitioning.
+
+### Iceberg to Delta Lake
+
+These limitations apply when you virtualize an Iceberg table as Delta Lake.
+
+* **Column renames aren't supported.** You can't rename a column in the source Iceberg table. Instead, recreate the table with the new column names. When you recreate the table, remove any leftover metadata files, as described in the **Iceberg table folders must contain only one set of metadata files** limitation.
+
+* **Partition transforms** — Only identity and temporal (year, month, day, hour) transforms are supported. The `bucket[N]`, `truncate[W]`, and `void` transforms are ignored: the table still converts, but without that partitioning. The underlying column is preserved as a regular, non-partition column.
+
+* **Partition evolution** — If the source table's live data files span more than one partition spec, or a previously converted table's partition columns change, conversion is rejected. Delta Lake has a single table-wide partitioning, and converting mixed-spec files would incorrectly produce null partition values for the older files. Keep a single partition spec.
+
+* **Row-level deletes** — Iceberg V2 position deletes and V3 deletion vectors are converted to Delta Lake deletion vectors. Equality deletes cause conversion to fail.
+
+* **Unsupported types** — Types with no Delta Lake equivalent (for example, `time`, and the Iceberg V3 extended types) are dropped; `uuid` is mapped to binary. See [Iceberg V3 features](#iceberg-v3-features).
+
 * **Type width issue**
     
-    If you use Snowflake to write your Iceberg table and the table contains column types `INT64`, `double`, or `Decimal` with precision >= 10, then the resulting virtual Delta Lake table may not be consumable by all Fabric engines. You may see errors such as:
+    If you use Snowflake to write your Iceberg table and the table contains column types `INT64`, `double`, or `Decimal` with precision >= 10, the resulting virtual Delta Lake table might not be consumable by all Fabric engines. You might see errors such as:
      
     ```
     Parquet column cannot be converted in file ... Column: [ColumnA], Expected: decimal(18,4), Found: INT32.
@@ -218,7 +276,7 @@ Keep in mind the following temporary limitations when you use this feature:
     We're working on a fix for this issue.
      
     **Workaround:**
-    If you're using the Lakehouse table preview UI and see this issue, you can resolve this error by switching to the SQL Endpoint view (top right corner, select Lakehouse view, switch to SQL Endpoint) and previewing the table from there. If you then switch back to the Lakehouse view, the table preview should display properly.
+    If you're using the Lakehouse table preview UI and see this issue, you can resolve this error by switching to the SQL analytics endpoint view (top right corner, select Lakehouse view, switch to SQL analytics endpoint) and previewing the table from there. If you then switch back to the Lakehouse view, the table preview should display properly.
     
     If you're running a Spark notebook or job and encounter this issue, you can resolve this error by setting the `spark.sql.parquet.enableVectorizedReader` Spark configuration to `false`. Here's an example PySpark command to run in a Spark notebook:
     
@@ -248,13 +306,100 @@ Keep in mind the following temporary limitations when you use this feature:
 
 * **Metadata changes not immediately reflected**
 
-    If you make metadata changes to your Iceberg table, such as adding a column, deleting a column, renaming a column, or changing a column type, the table may not be reconverted until a data change is made, such as adding a row of data.
+    If you make metadata changes to your Iceberg table, such as adding a column, deleting a column, renaming a column, or changing a column type, the table might not be reconverted until a data change is made, such as adding a row of data.
 
     We're working on a fix that picks up the correct latest metadata file that includes the latest metadata change.
 
     **Workaround:**
 
     After making the schema change to your Iceberg table, add a row of data or make any other change to the data. After that change, you should be able to refresh and see the latest view of your table in Fabric.
+
+#### Iceberg V3 features
+
+This feature produces and reads Iceberg V2 metadata; it doesn't write Iceberg V3 metadata. When the source is an Iceberg V3 table, its features are translated as described in the following table. Dropped columns and other translation notes are recorded in the conversion log.
+
+| Iceberg V3 feature | Supported | Translation behavior |
+| --- | --- | --- |
+| Deletion vectors | Yes | Read and converted to Delta Lake deletion vectors. |
+| Row lineage | No | Row-lineage metadata isn't translated to Delta Lake. The table still converts, and its row data is unchanged. |
+| Default column values | No | A column that has a reader default is dropped. Write defaults aren't translated. |
+| New data types (`variant`, geospatial, nanosecond timestamps, `unknown`) | No | Columns that use new Iceberg V3 data types are dropped. For the full list, see [Supported data types](#supported-data-types). |
+| Multi-argument partition transforms | No | Not supported. |
+| Table encryption keys | No | Not supported. |
+
+> [!IMPORTANT]
+> Even when the conversion drops columns with new Iceberg V3 data types, some Fabric engines can't read a table if the data files use Iceberg V3 types. The data files still carry that type information.
+>
+> **Workaround:** For the broadest compatibility across Fabric, avoid using Iceberg V3 columns in tables you virtualize.
+
+### Supported data types
+
+The following table shows how column data types map between formats. Unless noted, a type is converted in both directions.
+
+| Delta Lake type | Iceberg type | Notes |
+| --- | --- | --- |
+| `string` | `string` | |
+| `integer` | `int` | |
+| `long` | `long` | |
+| `short`, `byte` | `int` | Delta Lake `short` and `byte` widen to Iceberg `int` |
+| `float` | `float` | |
+| `double` | `double` | |
+| `decimal(P, S)` | `decimal(P, S)` | Precision up to 38 |
+| `boolean` | `boolean` | |
+| `binary` | `binary` | |
+| `date` | `date` | |
+| `timestamp` | `timestamptz` | UTC; stored as INT64 microseconds. In Snowflake, specify `timestamp_ltz` to produce this type. |
+| `timestamp_ntz` | `timestamp` | No time zone. `timestamp_ntz` isn't fully supported across all Fabric workloads; prefer time zone-aware timestamps. |
+| `struct`, `array`, `map` | `struct`, `list`, `map` | Delta Lake to Iceberg: nested `array` and `map` require IcebergCompat |
+| `void` | — | Delta Lake only; dropped during conversion |
+| — | `time` | Iceberg only; no Delta Lake equivalent, dropped |
+| — | `uuid` | Iceberg only; mapped to `binary` |
+| — | `variant` | Iceberg only (V3); dropped. See [Iceberg V3 features](#iceberg-v3-features) |
+| — | `geometry`, `geography` | Iceberg only (V3); dropped. See [Iceberg V3 features](#iceberg-v3-features) |
+| — | `timestamp_ns`, `timestamptz_ns` | Iceberg only (V3); dropped. See [Iceberg V3 features](#iceberg-v3-features) |
+| — | `unknown` | Iceberg only (V3); dropped. See [Iceberg V3 features](#iceberg-v3-features) |
+
+For Snowflake-written Iceberg tables, wide `long`, `double`, or `decimal` columns can also be affected by the Type width issue described in the [Iceberg to Delta Lake](#iceberg-to-delta-lake) section.
+
+### Supported partition transforms
+
+| Transform | Iceberg to Delta Lake | Delta Lake to Iceberg |
+| --- | --- | --- |
+| identity | Supported | Supported |
+| year, month, day, hour | Supported | Supported |
+| `bucket[N]` | Ignored (partitioning dropped) | N/A |
+| `truncate[W]` | Ignored (partitioning dropped) | N/A |
+| `void` | Ignored (partitioning dropped) | N/A |
+
+### Schema and partition evolution
+
+| Capability | Iceberg to Delta Lake | Delta Lake to Iceberg | Notes |
+| --- | --- | --- | --- |
+| Add column | Supported | Supported | |
+| Drop column | Supported | Supported | |
+| Rename column | Not supported | Supported | Delta Lake to Iceberg requires column mapping (`id` or `name` mode) |
+| Widening type change | Supported | Supported | For example, `int` to `long` |
+| Narrowing or incompatible type change | Fails | Fails | |
+| Partition evolution (multiple specs) | Fails | N/A | Delta Lake has a single table-wide partitioning |
+
+### Row-level deletes
+
+When you virtualize an Iceberg table as Delta Lake:
+
+| Delete kind | Behavior |
+| --- | --- |
+| Iceberg V2 position deletes | Converted to Delta Lake deletion vectors. |
+| Iceberg V3 deletion vectors | Read and converted to Delta Lake deletion vectors. |
+| Equality deletes | Conversion fails. |
+
+When you virtualize a Delta Lake table as Iceberg:
+
+| Delete kind | Behavior |
+| --- | --- |
+| Delta Lake deletion vectors | Written as Iceberg V2 position deletes. |
+
+
+### Availability and platform limitations
 
 * **Region availability limitation**
 
@@ -282,14 +427,6 @@ Keep in mind the following temporary limitations when you use this feature:
     **Workaround:**
 
     If you have a OneLake shortcut to an Iceberg table in another lakehouse, be sure that the other lakehouse is associated with a capacity in the same region.
-
- * **Certain Iceberg partition transform types are not supported**
-
-    Currently, the [Iceberg partition types](https://iceberg.apache.org/spec/#partition-transforms) ``bucket[N]``, ``truncate[W]``, and ``void`` are not supported.
-
-    If the Iceberg table being converted contains these partition transform types, virtualization to the Delta Lake format will not succeed.
-
-    We're working on an improvement to remove this limitation.
 
 
 ## Related content

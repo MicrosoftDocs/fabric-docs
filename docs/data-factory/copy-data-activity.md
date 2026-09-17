@@ -26,8 +26,8 @@ The Copy activity connects to your data sources and destinations, then moves dat
 
 To get started, you need to complete these prerequisites:
 
-- A Microsoft Fabric tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
-- A Microsoft Fabric-enabled workspace. [Create a workspace](../fundamentals/create-workspaces.md).
+- A Fabric tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
+- A Fabric-enabled workspace. [Create a workspace](../fundamentals/create-workspaces.md).
 
 ## Add a copy activity using copy assistant
 
@@ -74,7 +74,7 @@ Follow these steps to set up your copy activity using copy assistant.
    :::image type="content" source="media/copy-data-activity/connect-to-data-destination.png" alt-text="Screenshot of Connect to data destination." lightbox="media/copy-data-activity/connect-to-data-destination.png":::
 
    > [!NOTE]
-   > You can only use a single on-premises data gateway within the same Copy activity. If both source and sink are on-premises data sources, they need to use the same gateway. To move data between on-premises data sources with different gateways, you need to copy using the first gateway to an intermediate cloud source in one Copy activity. Then you can use another Copy activity to copy it from the intermediate cloud source using the second gateway.
+   > You can only use a single on-premises data gateway within the same Copy activity. If both source and data destination are on-premises data sources, they need to use the same gateway. To move data between on-premises data sources with different gateways, you need to copy using the first gateway to an intermediate cloud source in one Copy activity. Then you can use another Copy activity to copy it from the intermediate cloud source using the second gateway.
 
 ### Review and create your copy activity
 
@@ -204,7 +204,7 @@ Parameters can be used to control the behavior of a pipeline and its activities.
 
     :::image type="content" source="./media/copy-data-activity/select-parameter.png" alt-text="Screenshot showing selecting parameter.":::
 
-1. Specify the ID of your Lakehouse or Data Warehouse. To find the ID, go to your Lakehouse or Data Warehouse in your workspace. The ID appears in the URL after `/lakehouses/` or `/datawarehouses/`.
+1. Specify the ID of your lakehouse or warehouse. To find the ID, go to your lakehouse or warehouse in your workspace. The ID appears in the URL after `/lakehouses/` or `/datawarehouses/`.
 
     - **Lakehouse ID**:
 

@@ -697,7 +697,7 @@ display(result)
 - [Use prebuilt Azure Translator in Foundry Tools in Fabric with REST API](how-to-use-text-translator.md)
 - [Use prebuilt Translator in Fabric with SynapseML](how-to-use-text-translator.md)
 - [Use prebuilt Azure OpenAI in Fabric with REST API](how-to-use-openai-via-rest-api.md)
-- [Use prebuilt Azure OpenAI in Fabric with Python SDK](how-to-use-openai-python-sdk.md)
+- [Use Azure OpenAI with OpenAI Python SDK](how-to-use-openai-python-sdk.md)
 - [Use prebuilt Azure OpenAI in Fabric with SynapseML](how-to-use-openai-synapse-ml.md)
 - [SynapseML GitHub repository](https://github.com/microsoft/SynapseML) - Source code and documentation for SynapseML
 - [Language documentation](/azure/ai-services/language-service/) - Complete reference for Language service

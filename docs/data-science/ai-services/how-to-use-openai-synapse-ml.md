@@ -16,7 +16,7 @@ ai.usage: ai-assisted
 
 # Use Azure OpenAI in Fabric with SynapseML (preview)
 
-This article shows how to use Azure OpenAI in Fabric with [SynapseML](https://github.com/microsoft/SynapseML). SynapseML is an open-source library that enables distributed processing of large datasets with Foundry Tools. For single-row or small dataset scenarios, see [Use Azure OpenAI with Python SDK](how-to-use-openai-python-sdk.md) or [Use Azure OpenAI with AI Functions](how-to-use-openai-ai-functions.md).
+This article shows how to use Azure OpenAI in Fabric with [SynapseML](https://github.com/microsoft/SynapseML). SynapseML is an open-source library that enables distributed processing of large datasets with Foundry Tools. For direct Python API calls, see [Use Azure OpenAI with OpenAI Python SDK](how-to-use-openai-python-sdk.md). For prebuilt transformations on pandas or PySpark DataFrames, see [Use Azure OpenAI with AI Functions](how-to-use-openai-ai-functions.md).
 
 ## Why use SynapseML?
 
@@ -157,5 +157,5 @@ For information about available models and consumption rates, see [Foundry Tools
 ## Related content
 
 - [Use Azure OpenAI with AI Functions](how-to-use-openai-ai-functions.md) for large scale dataset transformations in Fabric for Pandas or PySpark DataFrames
-- [Use Azure OpenAI with Python SDK](how-to-use-openai-python-sdk.md) for pythonic control over single API calls using OpenAI Python SDK
+- [Use Azure OpenAI with OpenAI Python SDK](how-to-use-openai-python-sdk.md) for the OpenAI package or built-in synchronous and asynchronous OpenAI-compatible clients
 - [Use Azure OpenAI with REST API](how-to-use-openai-via-rest-api.md) for direct REST API calls to the LLM endpoint

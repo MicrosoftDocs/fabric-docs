@@ -546,7 +546,11 @@ items:
           - name: IBCS line and area charts
             href: plan/intelligence-ibcs/how-to-configure-ibcs-line-area-charts.md
           - name: IBCS scatter and bubble charts
-            href: plan/intelligence-ibcs/how-to-configure-ibcs-scatter-bubble-charts.md                
+            href: plan/intelligence-ibcs/how-to-configure-ibcs-scatter-bubble-charts.md
+          - name: IBCS small multiples
+            href: plan/intelligence-ibcs/how-to-configure-ibcs-small-multiples.md
+          - name: IBCS tables
+            href: plan/intelligence-ibcs/how-to-configure-ibcs-tables.md            
         - name: Build financial reports
           href: plan/intelligence-how-to-build-financial-reports.md
         - name: Comment and collaborate
@@ -611,7 +615,7 @@ items:
   items:
   - name: Fabric IQ MCP
     href: connectors/fabric-iq-mcp.md
-  - name: Microsoft 365 Copilot Chat (Frontier)
+  - name: Copilot Chat (Frontier)
     href: connectors/microsoft-365-copilot-overview.md
-  - name: Cowork (Frontier)
+  - name: Cowork
     href: connectors/cowork-overview.md

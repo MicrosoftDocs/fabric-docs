@@ -17,7 +17,7 @@ This article outlines the steps to create a SharePoint connection.
 
 ## Supported authentication types
 
-The SharePoint connector supports the following authentication types for copy and Dataflow Gen2 respectively.
+The SharePoint connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
@@ -26,7 +26,7 @@ The SharePoint connector supports the following authentication types for copy an
 |Workspace identity| √ | √ |
 
 ## Set up your connection for Dataflow Gen2
-You can connect Dataflow Gen2 in Microsoft Fabric to SharePoint Online list using Power Query connectors. Follow these steps to create your connection:
+You can connect a dataflow Gen2 in Fabric to a SharePoint Online list by using Power Query connectors. Follow these steps to create your connection:
 
 1. Check [capabilities](#capabilities) to make sure your scenario is supported.
 1. [Get data in Fabric](#get-data).

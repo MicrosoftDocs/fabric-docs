@@ -242,7 +242,6 @@ Snowflake as a data destination has the following known limitations:
 
 * **Dynamic schema is not supported.** If you change the columns in your source query (add, rename, or remove columns), you need to manually reconfigure the destination mapping. Other destinations like Fabric Lakehouse support dynamic schema, but Snowflake doesn't yet.
 * **Default destination only works for new tables.** When using the default destination experience with Snowflake, it creates a new table on the first refresh. However, if you later change the schema of your dataflow, the destination schema isn't updated automatically.
-* **Gateway is not supported.** Snowflake as a data destination is currently only available for cloud-based dataflows. Gateway support is coming soon.  
 
 #### Loading data into the Warehouse
 

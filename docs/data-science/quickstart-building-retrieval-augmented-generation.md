@@ -1,13 +1,13 @@
 ---
-title: How to Use Fabric for Retrieval Augmented Generation
-description: Learn how to build a Retrieval Augmented Generation (RAG) application in Microsoft Fabric using Azure AI Search and OpenAI for enhanced data-driven insights.
+title: Build retrieval-augmented generation in Microsoft Fabric
+description: Learn how to build a retrieval-augmented generation (RAG) application in Microsoft Fabric using Azure AI Search and Azure OpenAI Service.
 ms.author: lagayhar
 ms.reviewer: scottpolly
-ms.date: 10/01/2025
+ms.date: 09/04/2026
 ms.topic: concept-article
-ai.usage: ai-assisted
+ai-usage: ai-assisted
 ---
-# Build retrieval augmented generation in Fabric
+# Build retrieval-augmented generation in Microsoft Fabric
 
 Large language models (LLMs) like OpenAI's ChatGPT are powerful, but they work better for business needs when you customize them with specific business data by using generative AI (GenAI) solutions. Without this customization, LLMs might not deliver results tailored to business and customer requirements.
 
@@ -22,9 +22,9 @@ This quickstart shows how to use Fabric to build RAG applications. The main step
 1. Set up Azure AI Search.
 1. Load and prepare data from the [CMU QA dataset](https://www.cs.cmu.edu/~ark/QA-data/).
 1. Chunk the data by using Spark pools for efficient processing.
-1. Create embeddings by using Fabric's built-in [Azure OpenAI services through SynapseML](ai-services/how-to-use-openai-synapse-ml.md).
+1. Create embeddings by using Fabric's built-in [Azure OpenAI Service through SynapseML](ai-services/how-to-use-openai-synapse-ml.md).
 1. Create a vector index by using [Azure AI Search](https://aka.ms/what-is-azure-search).
-1. Generate answers from the retrieved context by using Fabric's built-in [Azure OpenAI through Python SDK](ai-services/how-to-use-openai-python-sdk.md).
+1. Generate answers from the retrieved context by using the [OpenAI Python SDK in Fabric](ai-services/how-to-use-openai-python-sdk.md).
 
 ## Prerequisites
 
@@ -34,7 +34,7 @@ Set up these services to run the notebook.
 - [Add a lakehouse](https://aka.ms/fabric/addlakehouse) to this notebook. Download data from a public blob and store it in the lakehouse.
 - Set up [Azure AI Search](https://aka.ms/azure-ai-search).
 
-## Step 1: Overview of Azure setup
+## Azure setup overview
 
 This tutorial uses Fabric's built-in Azure OpenAI Service, so you don't need keys. Run the next cell to apply the required SynapseML configuration.
 
@@ -46,8 +46,6 @@ Choose the free tier. It lets you create three indexes and use 50 MB of storage,
 
 :::image type="content" source="media/quickstart-building-retrieval-augmented-generation/azure-ai-search-free-tier.png" alt-text="Screenshot of Azure portal showing the Azure AI Search service creation page with free tier selected, allowing 3 indexes and 50 MB of storage.":::
 
-`%pip install openai==0.28.1`
-
 ```python
 # Set up Azure AI Search credentials
 aisearch_index_name = "" # TODO: Create a new index name: must only contain lowercase, numbers, and dashes
@@ -58,7 +56,7 @@ aisearch_endpoint = "https://<YOUR_AI_SEARCH_SERVICE_NAME>.search.windows.net" #
 **Cell output:**
 `*StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 5, Finished, Available, Finished)*`
 
-After you set up Azure OpenAI and Azure AI Search keys, import the required libraries from [Spark](https://spark.apache.org/), [SynapseML](https://aka.ms/AboutSynapseML), [Azure Search](https://aka.ms/azure-search-libraries), and OpenAI.
+After you configure the Azure AI Search endpoint and key, import the required libraries from [Spark](https://spark.apache.org/), [SynapseML](https://aka.ms/AboutSynapseML), and [Azure AI Search](https://aka.ms/azure-search-libraries). The AI Functions session provides the OpenAI-compatible client and authenticates it with your Fabric identity.
 
 Use the `environment.yaml` in the same folder as this notebook to create, save, and publish a [Fabric environment](https://aka.ms/fabric/create-environment). Select the new environment before running the import cell.
 
@@ -101,16 +99,17 @@ from azure.search.documents.indexes.models import (
 
 from synapse.ml.featurize.text import PageSplitter
 from synapse.ml.services.openai import OpenAIEmbedding
-from synapse.ml.services.openai import OpenAIChatCompletion
+import synapse.ml.aifunc as aifunc
 import ipywidgets as widgets  
 from IPython.display import display as w_display
-import openai
+
+openai_client = aifunc.session.client_sync
 ```
 
 **Cell output:**
 `*StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 7, Finished, Available, Finished)*`
 
-## Step 2: Load data into the lakehouse and Spark
+## Load data into the lakehouse and Spark
 
 ### Dataset
 
@@ -200,7 +199,7 @@ display(df_wiki)
 `*SynapseWidget(Synapse.DataFrame, eb3e3dac-90fb-4fd7-9574-e5eba6335aad)*`
 `*SynapseWidget(Synapse.DataFrame, 29a22160-4fb3-437c-a4c9-afa46e6510f1)*`
 
-## Step 3: chunk the text
+## Chunk the text
 
 When you submit large documents to an LLM, the model extracts the most important information to answer queries. Chunking splits large text into smaller sections. In a RAG setup, embedding smaller chunks instead of whole documents lets the retriever return only the most relevant chunks for a query. This approach reduces token usage and gives the model focused context.
 
@@ -245,7 +244,7 @@ display(df_chunks_id)
 `StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 12, Finished, Available, Finished)`
 `SynapseWidget(Synapse.DataFrame, 5cc2055a-96e9-4c7d-8ad6-558b04d847fd)`
 
-## Step 4: Create embeddings
+## Create embeddings
 
 In RAG, embedding adds relevant document chunks to the model's knowledge base. The system selects chunks that match likely user queries, so it retrieves precise information instead of whole documents. Embeddings improve retrieval by giving focused context for accurate answers. This section uses the SynapseML library to generate embeddings for each text chunk.
 
@@ -266,7 +265,7 @@ display(df_embeddings)
 `*StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 13, Finished, Available, Finished)*`
 `*SynapseWidget(Synapse.DataFrame, b3dcfce1-7bd9-419b-b233-d848f5fddb06)*`
 
-## Step 5: create vector index with Azure AI Search
+## Create a vector index with Azure AI Search
 
 In RAG, a vector index quickly retrieves relevant information. It organizes document chunks into a vector space to match queries by similarity instead of only keywords. This approach improves accuracy and relevance.
 
@@ -277,7 +276,7 @@ Configure HNSW parameters and create a vector profile. Define a semantic configu
 Although this tutorial focuses on vector search, Azure AI Search also offers text search, filtering, and semantic ranking.
 
 > [!TIP]
-> Skip these details if you prefer. The Python SDK creates a vector index with `Chunk` for retrievable text and `Embedding` from the OpenAI embedding model. Add or remove searchable fields like `ArticleTitle` and `ExtractedPath` to fit your dataset.
+> Skip these details if you prefer. The Azure AI Search Python SDK creates a vector index with `Chunk` for retrievable text and `Embedding` from the OpenAI embedding model. Add or remove searchable fields like `ArticleTitle` and `ExtractedPath` to fit your dataset.
 
 ```python
 index_client = SearchIndexClient(
@@ -323,7 +322,7 @@ semantic_config = SemanticConfiguration(
     name="my-semantic-config",
     prioritized_fields=SemanticPrioritizedFields(
         title_field=SemanticField(field_name="ArticleTitle"),
-        prioritized_content_fields=[SemanticField(field_name="Chunk")]
+        content_fields=[SemanticField(field_name="Chunk")]
     )
 )
 
@@ -344,7 +343,6 @@ print(f' {result.name} created')
 
 **Cell output:**
 `StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 14, Finished, Available, Finished)`
-`prioritized_content_fields isn't a known attribute of class <class 'azure.search.documents.indexes._generated.models._models_py3.SemanticPrioritizedFields'> and will be ignored.`
 `demo-portland-tutorial created`
 
 The following code defines a user-defined function (UDF) `insertToAISearch` that inserts data into the Azure AI Search index. It takes `Id`, `ArticleTitle`, `ExtractedPath`, `Chunk`, and `Embedding`, builds the API URL, creates an `upload` JSON payload, sets headers with the API key, sends a POST request, prints the response, and returns Success or the error text. Include those fields in your dataset.
@@ -352,7 +350,7 @@ The following code defines a user-defined function (UDF) `insertToAISearch` that
 ```python
 @udf(returnType=StringType())
 def insertToAISearch(Id, ArticleTitle, ExtractedPath, Chunk, Embedding):
-    url = f"{aisearch_endpoint}/indexes/{aisearch_index_name}/docs/index?api-version=2023-11-01"
+    url = f"{aisearch_endpoint}/indexes/{aisearch_index_name}/docs/index?api-version=2026-04-01"
 
     payload = json.dumps(
         {
@@ -435,7 +433,7 @@ if unsuccessful_uploads_count > 0:
 `*Number of successful uploads: 172*`
 `*Number of unsuccessful uploads: 0*`
    
-## Step 6: Demonstrate retrieval augmented generation
+## Demonstrate retrieval-augmented generation
 
 After you chunk, embed, and index, use the indexed data to retrieve the most relevant information for user queries. This retrieval lets the system generate accurate responses by using the index structure and embedding similarity scores.
 
@@ -452,7 +450,7 @@ import copy, json, os, requests, warnings
 # Implementation of retriever
 
 def get_context_source(retrieve_results, question, topN=3, filter=''):
-        """
+    """
     Retrieve context text and source metadata for a question by running a vector search.
     Parameters:
     retrieve_results (function): Implements one of the retrieval methods with Azure AI Search.
@@ -483,9 +481,12 @@ def get_context_source(retrieve_results, question, topN=3, filter=''):
 # Wrapper for vector search call
  
 def vector_search(question, filter = '', topN = 3): 
-    deployment_id = "text-embedding-ada-002"
+    embedding_model = "text-embedding-ada-002"
 
-    query_embedding = openai.Embedding.create(deployment_id=deployment_id, input=question).data[0].embedding
+    query_embedding = openai_client.embeddings.create(
+        model=embedding_model,
+        input=question,
+    ).data[0].embedding
   
     vector_query = VectorizedQuery(vector=query_embedding, k_nearest_neighbors=topN, fields="Embedding"  )
 
@@ -521,7 +522,7 @@ df_chunks
 | 1 | [-0.011676712, -0.0079745, 0.001480885, -0.021...] | S08/data/set1/a5 | elephant | farther north, in slightly cooler climates, an... | 130 | 0.877915 | None | None | None |
 | 2 | [-0.018319938, -0.013896506, 0.014269567, -0.0...] | S08/data/set1/a5 | elephant | trunk, which pick up the resonant vibrations m... | 132 | 0.867543 | None | None | None |
 
-You need another function to get the response from the OpenAI Chat model. This function combines the user question with the context retrieved from Azure AI Search. This example is basic and doesn't include chat history or memory. First, you initialize the chat client with the chosen model and then perform a chat completion to obtain the response. The messages have a "system" content that can be adjusted to enhance the response's tone, conciseness, and other aspects.
+Define a function that sends the question and retrieved context to the Chat Completions API. The system message tells the model to answer from the supplied reference text. This basic example doesn't retain chat history between questions.
 
 ```python
 def get_answer(question, context):
@@ -548,11 +549,9 @@ def get_answer(question, context):
             "content": question + "\n" + context,
         },
     )
-    response = openai.ChatCompletion.create(
-                deployment_id='gpt-35-turbo-0125', # See the note below for an alternative deployment ID.
-
-        messages= messages,
-        temperature=0,
+    response = openai_client.chat.completions.create(
+        model="gpt-5.1",
+        messages=messages,
     )
 
     return response.choices[0].message.content
@@ -563,7 +562,7 @@ def get_answer(question, context):
 `*StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 20, Finished, Available, Finished)*`
 
 > [!NOTE]
-> For other available deployment_ids, see the [documentation for Python SDK](ai-services/how-to-use-openai-python-sdk.md).
+> For available model deployment names, see [Use Azure OpenAI in Fabric with OpenAI Python SDK](ai-services/how-to-use-openai-python-sdk.md).
 
 ```python
 answer = get_answer(question, retrieved_context)
@@ -584,7 +583,7 @@ _Overall, elephants have complex social structures and behaviors that involve va
 Now you know how to prepare (chunk and embed) the CMU QA dataset, build a vector index, retrieve relevant chunks, and generate answers. Use this foundation to create a basic ipywidgets chatbot interface. Run the cell below, enter your question, then select <kbd>Enter</kbd> to get a response. Change the text to ask a new question, then select <kbd>Enter</kbd> again.
 
 > [!Tip]
-> This RAG solution can make mistakes. You can change the OpenAI model to GPT-4 or modify the system prompt.
+> This RAG solution can make mistakes. To improve results, use a currently supported model deployment or refine the system prompt; neither approach guarantees accurate responses.
 
 ```python
 # Create a text box for input  
@@ -622,4 +621,4 @@ w_display(text, label)
 `*StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 38, Finished, Available, Finished)*`
 `*StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 39, Finished, Available, Finished)*`
 
-This tutorial concludes the process of creating a RAG application in Fabric by using the built-in OpenAI endpoint. Fabric unifies your data so you can build effective generative AI applications.
+This tutorial concludes the process of creating a RAG application in Fabric by using the built-in OpenAI-compatible client. Fabric unifies your data so you can build effective generative AI applications.
