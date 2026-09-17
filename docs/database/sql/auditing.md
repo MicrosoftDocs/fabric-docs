@@ -130,7 +130,7 @@ To reduce the risk of exposing sensitive information, follow these practices:
 
    Limit access to audit logs to authorized users and administrators. Inside the SQL Database Engine, SQL permissions govern audit access and can vary depending on the platform and audit scope. Follow the principle of least privilege and grant only the permissions required to manage or review audit information. Microsoft documents separate server-level and database-level audit permission models, and Azure SQL Database differs from SQL Server in the availability of server-level permissions. Restricting access to audit data helps reduce the risk of unauthorized disclosure when sensitive information is present in recorded audit events.
 
-   Access to audit logs outside of the SQL Database Engine depends on permissions in the configured destination (such as Azure Storage, Log Analytics, or Event Hubs). Follow the principle of least privilege and grant only the permissions required to manage or review audit information.
+   Access to audit logs outside of the SQL Database Engine depends on permissions in the configured destination (such as OneLake). Follow the principle of least privilege and grant only the permissions required to manage or review audit information.
 
 ## Related content
 
