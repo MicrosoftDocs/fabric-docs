@@ -322,7 +322,7 @@ semantic_config = SemanticConfiguration(
     name="my-semantic-config",
     prioritized_fields=SemanticPrioritizedFields(
         title_field=SemanticField(field_name="ArticleTitle"),
-        prioritized_content_fields=[SemanticField(field_name="Chunk")]
+        content_fields=[SemanticField(field_name="Chunk")]
     )
 )
 
@@ -343,7 +343,6 @@ print(f' {result.name} created')
 
 **Cell output:**
 `StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 14, Finished, Available, Finished)`
-`prioritized_content_fields isn't a known attribute of class <class 'azure.search.documents.indexes._generated.models._models_py3.SemanticPrioritizedFields'> and will be ignored.`
 `demo-portland-tutorial created`
 
 The following code defines a user-defined function (UDF) `insertToAISearch` that inserts data into the Azure AI Search index. It takes `Id`, `ArticleTitle`, `ExtractedPath`, `Chunk`, and `Embedding`, builds the API URL, creates an `upload` JSON payload, sets headers with the API key, sends a POST request, prints the response, and returns Success or the error text. Include those fields in your dataset.
@@ -584,7 +583,7 @@ _Overall, elephants have complex social structures and behaviors that involve va
 Now you know how to prepare (chunk and embed) the CMU QA dataset, build a vector index, retrieve relevant chunks, and generate answers. Use this foundation to create a basic ipywidgets chatbot interface. Run the cell below, enter your question, then select <kbd>Enter</kbd> to get a response. Change the text to ask a new question, then select <kbd>Enter</kbd> again.
 
 > [!Tip]
-> This RAG solution can make mistakes. You can change the OpenAI model to GPT-4 or modify the system prompt.
+> This RAG solution can make mistakes. To improve results, use a currently supported model deployment or refine the system prompt; neither guarantees accurate responses.
 
 ```python
 # Create a text box for input  
