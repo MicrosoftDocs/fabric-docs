@@ -277,7 +277,7 @@ As a tenant admin, you can limit who can share connections:
 
 Tenant administrators can inventory and govern every connection in the tenant with the admin connections APIs, regardless of who created the connection or which workspace it's used in. The admin endpoints cover all connection types, not just cloud connections. Unlike the connection-owner [List Connections](/rest/api/fabric/core/connections/list-connections) endpoint, which returns only the connections you own or are shared with, the admin endpoints return connections across the whole tenant.
 
-The caller must be a Fabric administrator, or authenticate using a service principal, with the **Tenant.Read.All** or **Tenant.ReadWrite.All** scope.
+The caller must be a Fabric administrator, or authenticate by using a service principal, with the **Tenant.Read.All** or **Tenant.ReadWrite.All** scope.
 
 These APIs help you:
 
