@@ -19,7 +19,7 @@ When you create a workspace identity, Fabric creates a service principal in Micr
 > [!NOTE]
 > Fabric workspace identity is **generally available**. You can create a workspace identity in any workspace except **My workspace**.
 
-While Fabric workspace identities share some similarities with Azure managed identities, their lifecycle, administration, and governance are different. Fabric manages the independent lifecycle of a workspace identity; you can optionally associate a Fabric workspace with an identity. When you permanently delete the workspace, Fabric deletes the identity. The name of the workspace identity is always the same as the name of the workspace it's associated with.
+While Fabric workspace identities share some similarities with Azure managed identities, their lifecycle, administration, and governance are different. Fabric manages the independent lifecycle of a workspace identity. You can optionally associate a Fabric workspace with an identity. When you permanently delete the workspace, Fabric deletes the identity. The name of the workspace identity is always the same as the name of the workspace it's associated with.
 
 ## Create and manage a workspace identity
 
@@ -143,7 +143,7 @@ The following sections describe scenarios involving workspace identities that mi
 
 The workspace identity can be deleted in the workspace settings. When an identity is deleted, Fabric items relying on the workspace identity for trusted workspace access or authentication will break. Deleted workspace identities can't be restored.
 
-Fabric also deletes its workspace identity, but keeps the workspace in a *Deleted* state for the length of the [workspace retention period](../admin/workspace-retention.md) so that an admin can restore it. During the retention period, Fabric doesn't deprovision the workspace identity, and its service principal and app registration remain visible in the Azure portal.
+Fabric also deletes its workspace identity but keeps the workspace in a *Deleted* state for the length of the [workspace retention period](../admin/workspace-retention.md) so that an admin can restore it. During the retention period, Fabric doesn't deprovision the workspace identity, and its service principal and app registration remain visible in the Azure portal.
 
 Fabric deprovisions the workspace identity when you permanently delete the workspace. This permanent deletion happens in one of the following ways:
 
