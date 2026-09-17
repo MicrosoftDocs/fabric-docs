@@ -3,7 +3,7 @@ title: Upgrade Dataflow Gen1 to Dataflow Gen2 (CI/CD) using the Upgrade Wizard
 description: This article describes how to use the Dataflows Upgrade Wizard to upgrade Power BI Dataflows Gen1 items to Dataflow Gen2 (CI/CD) in Data Factory for Microsoft Fabric.
 ms.reviewer: eranbenayun
 ms.topic: how-to
-ms.date: 08/26/2026
+ms.date: 09/17/2026
 ai-usage: ai-assisted
 ms.custom:
   - template-how-to
@@ -54,19 +54,19 @@ You can start the Dataflows Upgrade Wizard from the workspace item list.
 
    :::image type="content" source="media/migrate-to-dataflow-gen2-using-upgrade-wizard/step-review.png" alt-text="Screenshot of the Review step showing each dataflow with the target type Dataflow Gen2 (CI/CD) and the Upgrade button." lightbox="media/migrate-to-dataflow-gen2-using-upgrade-wizard/step-review.png":::
 
-1. **Monitor.** The wizard shows the progress of the upgrade. When it finishes, **Upgrade Completed** appears, and you can go to the workspace to see the upgraded Dataflow Gen2 (CI/CD) items. If a dataflow failed to upgrade, it's listed with its error. Select **OK** to close the wizard.
+1. **Monitor.** The wizard shows the progress of the upgrade. When it finishes, **Upgrade Completed** appears, and you can go to the workspace to see the upgraded Dataflow Gen2 (CI/CD) items. If a dataflow failed to upgrade, it's listed with its error. To save the assessment and upgrade results as a CSV file, select **Download upgrade report**. Select **OK** to close the wizard.
 
-   :::image type="content" source="media/migrate-to-dataflow-gen2-using-upgrade-wizard/step-monitor.png" alt-text="Screenshot of the Monitor step showing Upgrade Completed after a successful upgrade." lightbox="media/migrate-to-dataflow-gen2-using-upgrade-wizard/step-monitor.png":::
+   :::image type="content" source="media/migrate-to-dataflow-gen2-using-upgrade-wizard/step-monitor.png" alt-text="Screenshot of the Monitor step showing Upgrade Completed, Download upgrade report, and OK." lightbox="media/migrate-to-dataflow-gen2-using-upgrade-wizard/step-monitor.png":::
 
 ## Assessment status
 
-When you select dataflows, the wizard assesses each one and returns one of these statuses:
+In the **Select Dataflows Gen1** step, the wizard assesses the Dataflow Gen1 items in the workspace and returns one of these statuses:
 
 | Status | What it means |
 | --- | --- |
 | **Ready to migrate** | The wizard didn't find anything that needs a manual step before or after the upgrade. |
 | **Needs Attention** | The wizard found one or more reasons that need your attention. The upgrade can proceed. Review the reasons to see what to do before or after the upgrade. |
-| **Upgrade unavailable** | You can't upgrade the dataflow, because you aren't its owner. |
+| **Upgrade unavailable** | You can't upgrade the dataflow until you resolve one or more blocking reasons. |
 
 The **Needs Attention** status might be due to more than one reason. Hover over the indicator next to the status in the **Select Dataflows Gen1** step to see every reason that applies to that dataflow.
 
@@ -91,7 +91,12 @@ The DirectQuery and linked-entity reasons are detection signals rather than proo
 
 ### Upgrade unavailable
 
-The wizard reports **Upgrade unavailable** when you aren't the owner of the dataflow. Only the owner can run the upgrade in the wizard. Ask the owner to run it, or use **Take over** to become the owner and run it yourself.
+The wizard reports **Upgrade unavailable** when it finds a reason that blocks the upgrade.
+
+| Reason | Why upgrade is unavailable | What to do |
+| --- | --- | --- |
+| **Not the owner** | You aren't the owner of the dataflow. | Ask the owner to run the upgrade, or use **Take over** to become the owner and run it yourself. |
+| **Unresolved data source connections** | One or more data source connections couldn't be resolved. | Recreate or rebind the connections before upgrading. |
 
 ## After the upgrade
 
@@ -135,7 +140,7 @@ Dataflow Gen2 uses the Fabric REST API, which doesn't have full parity with the 
 
 ### Government Community Cloud (GCC) environments aren't supported
 
-Fabric Dataflow Gen2 isn't currently available in GCC, so you can't upgrade a Dataflow Gen1 in a GCC environment.
+The Dataflows Upgrade Wizard isn't currently supported in GCC environments.
 
 ### Workspace Viewers can't consume tables from an upgraded dataflow
 
