@@ -96,3 +96,8 @@ In this section, you build a P&L hierarchy from scratch using Row Model Builder,
 1. Select **Back to Home**. Observe that the planning sheet now displays the full P&L hierarchy — *Net Profit* at the root, with *Gross Profit*, *Net Revenue*, *COGS*, and *Operating Expenses* as connected nodes. Expanding any node shows its contributing data source rows.
 
     :::image type="content" source="../../media/planning-tutorial/planning/tutorial-5-row-model/view-profit-loss-hierarchy-planning-sheet.png" alt-text="Screenshot of the planning sheet showing the full profit and loss hierarchy with Net Profit at the root." lightbox="../../media/planning-tutorial/planning/tutorial-5-row-model/view-profit-loss-hierarchy-planning-sheet.png":::
+
+## Next steps
+
+Allocate plans across multiple dimensions in the next tutorial, [Consolidate plans across dimensions using cubes](tutorial-6-cube.md)
+
