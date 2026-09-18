@@ -527,7 +527,7 @@ items:
           href: plan/powertable-how-to-configure-display-formatting-settings.md
     - name: Reference
       items:
-        - name: Supported column and input types
+        - name: Supported column, input, and attachment types
           href: plan/powertable-reference-supported-column-input-types.md
   - name: Intelligence sheets
     items:    

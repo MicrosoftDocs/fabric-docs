@@ -46,7 +46,7 @@ To create a new table and import the Excel or CSV data, follow these steps:
 
 1. Select **New Table**.
 1. Choose the database schema.
-1. Enter a **Table Name**.
+1. Enter a **Table Name**. Currently, table names support English characters only.
 1. Select **Upload File** in the **Import Data** section.
 1. Select the space to upload the CSV or Excel file from your local system.
 
@@ -66,6 +66,10 @@ To create a new table and import the Excel or CSV data, follow these steps:
 ### Configure table
 
 PowerTable sheets automatically detect column properties and rename any unsupported column names to match the supported format. You can review and modify them as needed.
+
+Currently, column names support English characters only. To display non-English column names, scroll to the right in the column configuration table and set the **Display Name** property to Japanese or another non-English label to display localized labels in PowerTable.
+
+If your data contains Japanese or other non-English text, define those columns' input type as `NVARCHAR` so PowerTable supports and renders non-English characters correctly.
 
 :::image type="content" source="media/powertable-how-to-create-table-app/table-configuration.png" alt-text="Screenshot of the table configuration window with field names to configure their properties." lightbox="media/powertable-how-to-create-table-app/table-configuration.png":::
 
