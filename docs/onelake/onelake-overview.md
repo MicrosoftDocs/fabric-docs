@@ -129,7 +129,7 @@ OneLake includes built-in capabilities to keep your data safe and give you visib
 
 ### Disaster recovery and data protection
 
-OneLake automatically protects your data with built-in redundancy. In regions that support availability zones, OneLake uses zone-redundant storage (ZRS) to replicate data across multiple datacenters. In other regions, it uses locally redundant storage (LRS). For additional protection against region-wide outages, you can enable business continuity and disaster recovery (BCDR) on a capacity to geo-replicate your data to a paired Azure region. OneLake also supports soft delete, which retains deleted files so you can recover from accidental deletions. Workspaces start with a 7-day retention period, and a workspace admin can set it to any value from 1 to 365 days or turn soft delete off.
+OneLake automatically protects your data with built-in redundancy. In regions that support availability zones, OneLake uses zone-redundant storage (ZRS) to replicate data across multiple datacenters. In other regions, it uses locally redundant storage (LRS). For additional protection against region-wide outages, you can enable business continuity and disaster recovery (BCDR) on a capacity to geo-replicate your data to a paired Azure region. OneLake also supports soft delete, which retains deleted files for seven days so you can recover from accidental deletions.
 
 For more information, see [Disaster recovery and data protection for OneLake](onelake-disaster-recovery.md).
 
