@@ -1,7 +1,7 @@
 ---
 title: Custom SQL Pools
 description: Learn more about how custom SQL pools relate to workload management in Fabric Data Warehouse.
-ms.reviewer: brmyers, sosivara
+ms.reviewer: twcyril
 ms.date: 09/23/2026
 ms.topic: concept-article
 ms.search.form: Warehouse Custom SQL pools, Optimization # This article's title should not change. If so, contact engineering.
@@ -79,7 +79,7 @@ Fabric Data Warehouse provides three ways to classify requests:
 
 | Classifier type | Description | Configuration |
 | --------------- | ----------- | ------------------------ |
-| Statement type  | Classifies requests into either `SELECT` (query) or non-`SELECT` (all DML and DDL statements) | Creates exactly two custom SQL pools with fixed `SELECT` and `NONSELECT` classifier values. The initial maximum resource percentage is 50% for each pool. You can adjust the percentages, but their sum must be 100% or less. |
+| Statement type  | Classifies requests into either `SELECT` (query) or non-`SELECT` (all DML and DDL statements) |  - Autonomous workload management <BR> - Creates exactly two custom SQL pools with fixed `SELECT` and `NONSELECT` classifier values. The initial maximum resource percentage is 50% for each pool. You can adjust the percentages, but their sum must be 100% or less. |
 | Application name |  - App (or program name) used in the connection string when connecting to the Fabric Warehouse or SQL Analytics Endpoint.<br> - Supports multiple application names per custom SQL pool<br> - 128 characters or less <BR> - Mutually exclusive between custom SQL pools | Custom SQL pools only |
 | Application name regex | -  Regular expression used to match value for the application name.<br> -  Only first value in the list is evaluated for regular expression| Custom SQL pools only |
 
