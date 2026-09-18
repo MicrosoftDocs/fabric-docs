@@ -223,6 +223,8 @@ items:
                 href: plan/planning-forecasting/planning-how-to-manage-rolling-forecasts.md
               - name: Create statistical forecasts
                 href: plan/planning-forecasting/planning-how-to-create-statistical-forecasts.md
+              - name: Distribute deficits
+                href: plan/planning-forecasting/planning-how-to-distribute-deficits.md
               - name: Extend planning time range
                 href: plan/planning-forecasting/planning-how-to-extend-time.md
         - name: Planning tools
