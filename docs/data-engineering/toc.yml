@@ -140,6 +140,8 @@ items:
         href: notebookutils/notebookutils-user-data-function.md
       - name: Variable library utilities
         href: notebookutils/notebookutils-variable-library.md
+      - name: Business event utilities
+        href: notebookutils/notebookutils-business-events.md
     - name: Operations and engineering
       items:
       - name: Run notebooks in high concurrency mode
