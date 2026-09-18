@@ -33,6 +33,8 @@ items:
   items: 
   - name: Transform and enrich data with AI Functions
     href: ./ai-functions/overview.md
+  - name: Fabric Runtime 2.0 setup
+    href: ./ai-functions/runtime-2-0-workarounds.md
   - name: Billing
     href: ./ai-functions/billing.md
   - name: Multimodal AI Functions
