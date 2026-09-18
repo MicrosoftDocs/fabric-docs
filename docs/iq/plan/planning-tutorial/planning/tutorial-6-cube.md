@@ -12,7 +12,7 @@ In this tutorial, you plan sales at the geography level and costs at the product
 
 ## Prerequisites
 
-Before you start this tutorial, ensure you complete the first tutorial: [Introduction to Fabric Planning](./tutorial-0-introduction.md)
+Before you start this tutorial, ensure you complete the first tutorial: [Fabric planning tutorial part 0: Introduction and environment setup](tutorial-0-introduction.md)
 
 ## Create a sales plan
 
