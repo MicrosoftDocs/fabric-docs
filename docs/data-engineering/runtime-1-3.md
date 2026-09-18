@@ -9,11 +9,11 @@ ai-usage: ai-assisted
 #customer intent: As a Microsoft Fabric user I want to learn about Apache Spark-based runtime 1.3 in Fabric.
 ---
 
-# Fabric Runtime 1.3 (GA)
+# Fabric Runtime 1.3 (EOSA)
 
 Fabric runtime offers a seamless integration with Azure. It provides a sophisticated environment for both data engineering and data science projects that use Apache Spark. This article provides an overview of the essential features and components of Fabric Runtime 1.3.
 
-Fabric Runtime 1.3 is a GA runtime version that incorporates the following components and upgrades designed to enhance your data processing capabilities:
+Fabric Runtime 1.3 is in the end of support announced (EOSA) stage. It incorporates the following components and upgrades designed to enhance your data processing capabilities:
 
 - Apache Spark 3.5
 - Operating system: Mariner 2.0 (Azure Linux 2.0)
@@ -24,7 +24,7 @@ Fabric Runtime 1.3 is a GA runtime version that incorporates the following compo
 - R: 4.4.1
 
 > [!IMPORTANT]
-> The early access release channel of Runtime 1.3 includes an upgraded operating system from Mariner 2.0 (Azure Linux 2.0) to Mariner 3.0 (Azure Linux 3.0). Use the [early access release channel](./release-channels.md) to test your workloads against this change before it becomes the default. This validation is critical, especially if your workloads have dependencies on OS-level packages.
+> Fabric runtime release channels let you test upcoming runtime changes early and validate workload compatibility before updates become the default. This approach helps reduce unexpected production disruptions and provides greater control over runtime upgrades. Learn more about [release channels](./release-channels.md).
 
 > [!TIP]
 > Fabric Runtime 1.3 includes support for [the Native Execution Engine](./native-execution-engine-overview.md), which can significantly enhance performance without more costs. To enable the native execution engine across all jobs and notebooks in your environment, navigate to your environment settings, select Spark compute, go to the Acceleration tab, and check Enable native execution engine. After you save and publish, this setting is applied across the environment, so all new jobs and notebooks automatically inherit and benefit from the enhanced performance capabilities.

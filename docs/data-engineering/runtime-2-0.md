@@ -24,13 +24,7 @@ Fabric Runtime 2.0 incorporates the following components and upgrades designed t
 - R: 4.5.2
 
 > [!IMPORTANT]
-> The Fabric team is rolling out an update to Fabric Runtime 2.0. As part of this update, the Python upgrade introduces a breaking change for customers using environment items with python and wheel libraries. Customers see one of the two error messages with notebook or Spark job definition (SJD) execution:
-> - Error: warning: 1 deprecation (since 2.13.0); for details, enable `:setting -deprecation` or `:replay -deprecation` Source: SparkCoreService.
-> - "LibraryManagementError": "An upgrade to the base Spark Python environment has been detected. Please republish the environment.|UserError"
->
-> **Required actions**
->
-> Re-publish your Environment (including the libraries). To do this, remove all libraries, publish the Environment, re-add all the libraries, and publish once more. This process recreates the environment by using the updated Python runtime and resolves the issue.
+> Fabric runtime release channels let you test upcoming runtime changes early and validate workload compatibility before updates become the default. This approach helps reduce unexpected production disruptions and provides greater control over runtime upgrades. Learn more about [release channels](./release-channels.md).
 
 > [!TIP]
 > Fabric Runtime 2.0 includes support for [the Native Execution Engine](./native-execution-engine-overview.md), which can significantly enhance performance without more costs. You can enable the native execution engine at the environment level so that all jobs and notebooks automatically inherit the enhanced performance capabilities.

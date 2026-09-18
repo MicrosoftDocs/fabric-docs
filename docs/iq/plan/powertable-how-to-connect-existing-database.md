@@ -24,12 +24,22 @@ Before you begin, make sure that you have the following prerequisites in place:
 ## Create a table
 
 1. Select **Existing Table** to connect to an existing Fabric SQL database.
+
+    > [!NOTE]
+    > * Currently, table names that contain only English characters display correctly. Tables with non-English characters aren't supported.
+
 1. Choose the database schema and the table name to connect to.
 1. Select **Next**.
 
     :::image type="content" source="media/powertable-how-to-connect-existing-database/select-existing-database.png" alt-text="Screenshot of selecting an existing database." lightbox="media/powertable-how-to-connect-existing-database/select-existing-database.png":::
 
-1. PowerTable sheets automatically detect column properties. Review the table configuration. You can modify the input type and  the primary key if required.
+1. PowerTable sheets automatically detect column properties. Review the table configuration.
+1. Modify the input type and the primary key if needed.
+
+    If your data contains Japanese or other non-English text, define those columns' input type as `NVARCHAR` so PowerTable supports and renders non-English characters correctly.
+
+    Similarly, column names support English characters only. To display non-English column names, scroll to the right in the column configuration table and set the **Display Name** property to Japanese or another non-English label to display localized labels in PowerTable.
+
 1. Select **Finish**.
 
     :::image type="content" source="media/powertable-how-to-connect-existing-database/finish-table.png" alt-text="Screenshot of selecting Finish after configuring the table." lightbox="media/powertable-how-to-connect-existing-database/finish-table.png":::
