@@ -9,9 +9,9 @@ ms.topic: tutorial
 
 In this tutorial, you build and configure a row-based P&L model using the Row Model Builder by defining Net Profit as the root, organizing Gross Revenue, Net Revenue, COGS, and Operating Expenses into a connected hierarchy, and configuring formula and aggregate relationships to see how driver-level inputs roll up to Net Profit in real time.
 
-## Prerequisites
+## Prerequisites 
 
-Before you start this tutorial, ensure you complete the first tutorial: [Introduction to Fabric Planning](./tutorial-0-introduction.md).
+Before you start this tutorial, ensure you complete the first tutorial: [Fabric planning tutorial part 0: Introduction and environment setup](tutorial-0-introduction.md)
 
 ## Configure a row model
 
