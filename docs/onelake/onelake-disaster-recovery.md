@@ -37,9 +37,8 @@ For a comprehensive understanding of the end-to-end experience, see [Reliability
 
 ## Soft delete for OneLake files
 
-OneLake protects your data with soft delete, which retains deleted files for a configurable retention period before permanent removal. This built-in protection helps you recover from accidental deletions or user errors.
+OneLake automatically protects your data with soft delete, which retains deleted files for seven days before permanent removal. This built-in protection helps you recover from accidental deletions or user errors.
 
-All workspaces start with soft delete turned on and a 7-day retention period. A workspace admin can turn soft delete off, or set the retention period to any value from 1 to 365 days.  
 For step-by-step instructions on how to list and restore soft-deleted files, see [Recover deleted files in OneLake](soft-delete.md).
 
 ## Related content
