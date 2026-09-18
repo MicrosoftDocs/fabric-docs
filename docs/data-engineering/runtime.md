@@ -35,7 +35,7 @@ In the following table, you find a comprehensive comparison of key components, i
 
 | Component | [Runtime 1.3](./runtime-1-3.md) | [Runtime 2.0](./runtime-2-0.md) |
 |--|--|--|
-| **Release Stage** | GA | GA |
+| **Release Stage** | EOSA | GA |
 | **Apache Spark version** | 3.5.5 | 4.1 |
 | **Operating System** | Mariner 2.0 | Mariner 3.0 |
 | **Java version** | 11 | 21 |

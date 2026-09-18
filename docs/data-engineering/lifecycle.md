@@ -27,7 +27,7 @@ The following table lists the runtime name and release dates for supported Azure
 | Runtime name                                              | Release stage | End of Support date |
 |-----------------------------------------------------------|---------------|---------------------|
 | [Runtime 2.0 based on Apache Spark 4.1](./runtime-2-0.md) | GA            | August 31, 2028      |
-| [Runtime 1.3 based on Apache Spark 3.5](./runtime-1-3.md) | GA            | September 30, 2026**  |
+| [Runtime 1.3 based on Apache Spark 3.5](./runtime-1-3.md) | EOSA          | September 30, 2026**  |
 
 ** Runtime 1.3 enters Long Term Support (LTS) on October 1, 2026, for a period of six months, extending support through March 2027.
 
