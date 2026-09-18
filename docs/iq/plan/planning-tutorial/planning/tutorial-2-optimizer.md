@@ -98,3 +98,8 @@ In this section, you run the optimizer to find the combination of *Sales Plan* a
    Together, these two adjustments deliver the $12.5M gross profit target.
 
     :::image type="content" source="../../media/planning-tutorial/planning/tutorial-2-optimizer/compare-original-baseline-optimized-values.png" alt-text="Screenshot of comparing the optimized values with the baseline values for Sales Plan and COGS." lightbox="../../media/planning-tutorial/planning/tutorial-2-optimizer/compare-original-baseline-optimized-values.png":::
+
+## Next steps
+
+Create a rolling forecast, use Predict to create a statistical forecast, and write the forecast values to a SQL database in the next tutorial, [Forecasting and writeback](tutorial-3-forecasting-writeback.md)
+
