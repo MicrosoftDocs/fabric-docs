@@ -18,7 +18,7 @@ Semantic enrichment helps AI agents and downstream systems better understand you
 * **Synonyms** that capture alternative names and terms for entity types
 * **Additional metadata** that captures domain-specific attributes as key-value pairs
 
-This metadata improves agent answer correctness, especially for prompts that depend on contextual information like units of measurement, sensitivity levels, or business definitions. For an example of data agent responses before and after semantic enrichment, see the [Example with data agent](#example-with-data-agent) section.
+This metadata improves agent answer correctness, especially for prompts that depend on contextual information like units of measurement, sensitivity levels, or business definitions.
 
 ## Prerequisites
 
@@ -112,47 +112,6 @@ You can modify or remove metadata attributes from entity types, properties, and 
 
 1. Edit the metadata as needed and select **Update**.
 
-## Example with data agent
-
-This section shows how semantic enrichment improves a data agent's performance.
-
-Consider the Lakeshore Retail example scenario used in the [Ontology (preview) tutorial](tutorial-0-introduction.md). Lakeshore Retail is a retail ice cream seller that keeps data on sales and freezer streaming data. The tutorial ontology contains entity types *Store*, *Freezer*, *Products*, and *SaleEvent*. [Part 4 of the tutorial](tutorial-4-create-data-agent.md) shows how to create a data agent that uses this ontology as a data source.
-
-With the basic set of information, the data agent can't answer the following question:
-
-*Which ice cream shops performed best this month and sold the most frozen desserts?*
-
-:::image type="content" source="media/how-to-add-semantic-enrichment/data-agent-before.png" alt-text="Screenshot of data agent responses before semantic enrichment. The data agent can't retrieve the requested information." lightbox="media/how-to-add-semantic-enrichment/data-agent-before.png":::
-
-To help the agent better understand and process the data, use semantic enrichment to add the following details to the ontology:
-
-* **Products (entity type)**
-    - Synonyms: `frozen desserts`, `ice cream items`, `desserts`, `menu items`, `treats`, and `products sold`.
-    - Additional metadata key value pairs: `seasonality: summer`, `shelfPlacement: frozen`, `requiresFreezerTruck: true`.
-    
-    :::image type="content" source="media/how-to-add-semantic-enrichment/example-products.png" alt-text="Screenshot of adding the listed semantic enrichment details to the Products entity type." lightbox="media/how-to-add-semantic-enrichment/example-products.png":::
-
-* **Category (property on Products entity type)**:
-    - Description: `Represents the high-level group or classification`.
-    - Additional metadata key value pairs: `supportSalesReporting: true`, `promotionPriority: high`.
-
-    :::image type="content" source="media/how-to-add-semantic-enrichment/example-category.png" alt-text="Screenshot of adding the listed semantic enrichment details to the Category property." lightbox="media/how-to-add-semantic-enrichment/example-category.png":::
-
-After you add these semantic enrichment details, the data agent better relates the terms in the question to data in the ontology and can answer the question.
-
-:::image type="content" source="media/how-to-add-semantic-enrichment/data-agent-after.png" alt-text="Screenshot of data agent responses after semantic enrichment. The data agent's response is improved." lightbox="media/how-to-add-semantic-enrichment/data-agent-after.png":::
-
-### Data agent limitations
-
-Semantic enrichment improves schema understanding but doesn't currently influence all stages of the Fabric data agent pipeline. When you use a data agent with ontology semantic enrichment, keep the following limitations in mind:
-
-* Data agent doesn't perform any schema exploration of the ontology.
-* Entity and property descriptions, synonyms, and custom attributes can help the data agent understand ontology concepts during schema exploration and reasoning.
-* Ontology query generation doesn't directly use the metadata. Any benefit comes from the data agent interpreting the ontology schema before query generation.
-
-> [!NOTE]
-> Semantic enrichment helps AI experiences understand ontology metadata and business meaning. It doesn't currently modify the ontology query generation process itself, and publicly available data agent experiences don't currently use relationship-level enrichment.
-
 ## Best practices for semantic enrichment
 
 Follow these best practices to maximize the value of semantic enrichment:
@@ -179,6 +138,9 @@ Follow these best practices to maximize the value of semantic enrichment:
 
 ### Optimize for agent performance
 
+>[!NOTE]
+> Data agent doesn't use the semantic enrichment fields.
+
 * Add unit information for numeric properties, such as `unit: celsius` or `unit: USD`.
 * Include sensitivity classifications for properties that contain personal or sensitive data.
 * Provide context about valid ranges or formats.
@@ -192,6 +154,7 @@ Follow these best practices to maximize the value of semantic enrichment:
 
 ## Limitations and considerations
 
+* **Data agent limitation**: Data agent doesn't use the semantic enrichment fields.
 * **Duplicate keys**: Each entity type, property, and relationship type must have unique keys for additional metadata. If you add duplicate keys, you get an error.
 * **Synonyms**: Only entity types support synonyms. Properties and relationship types don't support synonyms.
 
