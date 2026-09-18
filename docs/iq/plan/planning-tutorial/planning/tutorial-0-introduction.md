@@ -163,3 +163,8 @@ Before entering plan data, take a few minutes to get familiar with the ribbons, 
 1. In the footer, select the **Rows and Columns** count to view dimension and measure statistics. Use the zoom slider to adjust the canvas, and select the **Settings** icon to configure rows per page.
 
     :::image type="content" source="../../media/planning-tutorial/planning/tutorial-0-introduction/planning-sheet-interface.png" alt-text="Screenshot of various elements like the toolbar, footer, explorer, and side panes in Fabric planning." lightbox="../../media/planning-tutorial/planning/tutorial-0-introduction/planning-sheet-interface.png":::
+
+## Next steps
+
+You've imported data from a semantic model and created a planning sheet. Allocate values, add comments, and set up an approval workflow in the next tutorial, [Allocation and collaboration](tutorial-1-allocation-collaboration.md)
+
