@@ -8,7 +8,7 @@ ms.date: 09/07/2026
 ms.topic: tutorial
 ---
 
-# Fabric planning tutorial part 4: Build a P&L hierarchy
+# Fabric planning tutorial part 4: Build a P&L hierarchy using measure model builder
 
 In this tutorial, you build and configure a *Measure Model* by organizing native and formula measures into a hierarchical P&L structure. Then, you create two scenarios in the Tree layout and compare them to see the real-time impact of revenue growth and cost restructuring on net profit.
 
@@ -147,3 +147,7 @@ In this section, you compare the best case scenario with the cost restructuring 
     :::image type="content" source="../../media/planning-tutorial/planning/tutorial-4-measure-model/compare-best-case-cost-restructuring-scenarios.png" alt-text="Screenshot of comparing the best case and cost restructuring scenarios with the variances calculated." lightbox="../../media/planning-tutorial/planning/tutorial-4-measure-model/compare-best-case-cost-restructuring-scenarios.png":::
 
 1. Select **Exit Compare** to return to the tree view.
+
+## Next steps
+
+Build a P&L row model in the next tutorial, [Build a P&L hierarchy using row model builder](tutorial-5-row-model.md)
