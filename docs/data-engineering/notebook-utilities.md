@@ -32,6 +32,7 @@ NotebookUtils provides the following modules. Select a module to see detailed do
 | [Session management](notebookutils/notebookutils-session-management.md) | `notebookutils.session` | Stop interactive sessions and restart the Python interpreter. |
 | [User Data Function (UDF) utilities](notebookutils/notebookutils-user-data-function.md) | `notebookutils.udf` | Retrieve and invoke User Data Functions from notebooks. |
 | [Variable library utilities](notebookutils/notebookutils-variable-library.md) | `notebookutils.variableLibrary` | Access centrally managed variables and configuration from Variable Library items. |
+| [Business event utilities](notebookutils/notebookutils-business-events.md) | `notebookutils.businessEvents` | Publish analytical insights, failure detections, and custom business rules as actionable business events. |
 
 To get an overview of all available modules and methods, run:
 
