@@ -223,6 +223,8 @@ items:
                 href: plan/planning-forecasting/planning-how-to-manage-rolling-forecasts.md
               - name: Create statistical forecasts
                 href: plan/planning-forecasting/planning-how-to-create-statistical-forecasts.md
+              - name: Distribute deficits
+                href: plan/planning-forecasting/planning-how-to-distribute-deficits.md
               - name: Extend planning time range
                 href: plan/planning-forecasting/planning-how-to-extend-time.md
         - name: Planning tools
@@ -525,7 +527,7 @@ items:
           href: plan/powertable-how-to-configure-display-formatting-settings.md
     - name: Reference
       items:
-        - name: Supported column and input types
+        - name: Supported column, input, and attachment types
           href: plan/powertable-reference-supported-column-input-types.md
   - name: Intelligence sheets
     items:    

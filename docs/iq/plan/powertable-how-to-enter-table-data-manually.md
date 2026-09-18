@@ -29,7 +29,7 @@ Before you begin, make sure that you have the following prerequisites in place:
 To create a new table in the database and enter the data manually, follow these steps:
 
 1. Select **New Table**.
-1. Choose the database schema and enter a name for the table.
+1. Choose the database schema and enter a name for the table. Currently, table names support English characters only.
 1. Select **Enter Data Manually** in the **Import Data** section.
 1. Select **Next**.
 
@@ -38,6 +38,10 @@ To create a new table in the database and enter the data manually, follow these 
 1. Configure your table by adding the column name, primary key, and other relevant details like length, precision, scale, and so on, wherever applicable.
 
     :::image type="content" source="media/powertable-how-to-enter-table-data-manually/enter-column-name.png" alt-text="Screenshot of entering the first column name." lightbox="media/powertable-how-to-enter-table-data-manually/enter-column-name.png":::
+
+    > [!NOTE]
+    > * Currently, column names support English characters only. To display non-English column names, scroll to the right in the column configuration table and set the **Display Name** property to Japanese or another non-English label to display localized labels in PowerTable.
+    > * If your data contains Japanese or other non-English text, define those columns' input type as `NVARCHAR` so PowerTable supports and renders non-English characters correctly.
 
 1. Select **Add Column** to add a new column. Use the bin icon to delete a column.
 1. Select **Finish** after entering all the column details.

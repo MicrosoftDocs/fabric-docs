@@ -42,6 +42,9 @@ For example, the database field *ProductSubcategoryKey* can be displayed as *Pro
 
 :::image type="content" source="../media/powertable-how-to-configure-columns/how-to-configure-display-column-properties/display-name.png" alt-text="Screenshot of the Display Name text box." lightbox="../media/powertable-how-to-configure-columns/how-to-configure-display-column-properties/display-name.png":::
 
+> [!TIP]
+> PowerTable column names support displaying only English labels. Use the **Display Name** property to specify non-English column names, such as Japanese, so they display non-English labels.
+
 ## Description
 
 Use the **Description** property to provide extra information about a column.
