@@ -45,7 +45,7 @@ The following table summarizes the recommended approach by producer and consumer
 | Lakehouse: Fabric pipeline or Dataflow Gen2 writer | Spark, SQL analytics endpoint, or Power BI Direct Lake | Monitor the resulting file layout and schedule compatible lakehouse maintenance separately. Some destination modes, such as Dataflow Gen2 incremental refresh, impose maintenance restrictions. |
 | Warehouse | Fabric Data Warehouse or Spark | Use the system-managed layout. Fabric Data Warehouse [automatically manages compaction and other maintenance](../data-warehouse/guidelines-warehouse-performance.md). Use [data clustering](../data-warehouse/data-clustering.md) to improve file skipping for workloads with recurring selective predicates. |
 | Warehouse | Power BI Direct Lake | Keep the [default Warehouse V-Order setting](../data-warehouse/guidelines-warehouse-performance.md#v-order-in-fabric-data-warehouse). Use [data clustering](../data-warehouse/data-clustering.md) when it benefits shared query patterns. |
-| Mirroring | Spark, SQL analytics endpoint, or Power BI Direct Lake | For database mirroring, use the system-managed V-Ordered Delta layout. For mirrored catalogs, optimize the underlying files in the source system when supported. See [What is Mirroring in Fabric?](../mirroring/overview.md). |
+| Mirroring | Spark, SQL analytics endpoint, or Power BI Direct Lake | For database mirroring, use the system-managed V-Ordered Delta layout. For mirrored catalogs, optimize the underlying files in the source system when supported. See [What is Mirroring in Fabric?](../mirroring/overview.md) |
 
 ## Optimize Lakehouse tables
 
@@ -74,7 +74,7 @@ When Pipeline Copy activity or Dataflow Gen2 writes the table, inspect the resul
 
 ### Prevent and compact small files
 
-For Spark-written tables, prefer [auto compaction](../data-engineering/table-compaction.md#auto-compaction). This feature evaluates table fragmentation after writes and runs compaction only when needed. It eliminates the need for a separate table-health check before maintenance runs.
+For Spark-written tables, use [auto compaction](../data-engineering/table-compaction.md#auto-compaction). This feature evaluates table fragmentation after writes and runs compaction only when needed. It eliminates the need for a separate table-health check before maintenance runs.
 
 Use the following guidance for exceptions and complementary features:
 
@@ -147,7 +147,7 @@ Spark and SQL analytics endpoint perform well on the same adaptive lakehouse lay
 
 Direct Lake uses the same underlying Delta tables but adds recommendations related to transcoding and [incremental framing](direct-lake-understand-storage.md#incremental-framing):
 
-- **File and row-group layout**: Avoid small [row groups](direct-lake-understand-storage.md#row-group-size) and uneven row group distribution, this creates more VertiPaq column segments and increases transcoding overhead.
+- **File and row-group layout**: Avoid small [row groups](direct-lake-understand-storage.md#row-group-size) and uneven row group distribution. This layout creates more VertiPaq column segments and increases transcoding overhead.
 - **V-Order**: Follow the producer-specific recommendation in the [cross-workload guidance](#cross-workload-guidance). For Spark-written tables primarily consumed through Direct Lake, enable [V-Order](../data-engineering/delta-optimization-and-v-order.md) or use the [`readHeavyForPBI` resource profile](../data-engineering/configure-resource-profile-configurations.md#available-resource-profiles).
 - **Update patterns**: Prefer [append-friendly update patterns](direct-lake-understand-storage.md#delta-table-update-patterns) where possible to preserve existing Parquet files and support incremental framing.
 
@@ -170,7 +170,7 @@ Bronze, Silver, and Gold describe data purpose and refinement. They don't determ
 
 | Layer | Primary goal | Cross-workload guidance |
 | --- | --- | --- |
-| Bronze (landing) | Preserve source fidelity and ingestion throughput | Prioritize write throughput while maintaining Spark-written tables with [auto compaction](../data-engineering/table-compaction.md#auto-compaction). Avoid Power BI Direct Lake semantic models on raw Bronze tables unless the model and data shape are intentionally designed for that use. |
+| Bronze (landing) | Preserve source fidelity and ingestion throughput | Prioritize write throughput while maintaining Spark-written tables with [auto compaction](../data-engineering/table-compaction.md#auto-compaction). Avoid Power BI Direct Lake semantic models on raw Bronze tables unless you intentionally design the model and data shape for that use. |
 | Silver (curated) | Provide validated, conformed data for reuse | Reuse the table across compatible Fabric consumers. For Spark-written lakehouse tables, enable [V-Order](../data-engineering/delta-optimization-and-v-order.md) only when Direct Lake is a primary consumer. |
 | Gold (serving) | Serve business-ready dimensions, facts, aggregates, and analytics models | Prefer this layer for [Direct Lake semantic models](direct-lake-overview.md). Reuse the table across compatible consumers and apply the producer-specific controls described in this article. |
 
