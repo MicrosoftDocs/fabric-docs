@@ -41,7 +41,7 @@ The following table summarizes the recommended approach by producer and consumer
 | Lakehouse: Fabric pipeline or Dataflow Gen2 writer | Spark, SQL analytics endpoint, or Power BI Direct Lake | Monitor the resulting file layout and schedule compatible lakehouse maintenance separately. Some destination modes, such as Dataflow Gen2 incremental refresh, impose maintenance restrictions. |
 | warehouse | Fabric Data Warehouse or Spark | Use the system-managed layout. Fabric Data Warehouse [automatically manages compaction and other maintenance](../data-warehouse/guidelines-warehouse-performance.md). Use [data clustering](../data-warehouse/data-clustering.md) to improve file skipping for workloads with recurring selective predicates. |
 | warehouse | Power BI Direct Lake | Keep the [default warehouse V-Order setting](../data-warehouse/guidelines-warehouse-performance.md#v-order-in-fabric-data-warehouse). Use [data clustering](../data-warehouse/data-clustering.md) when it benefits shared query patterns. |
-| mirroring | Spark, SQL analytics endpoint, or Power BI Direct Lake | For database mirroring, use the system-managed V-Ordered Delta layout. For mirrored catalogs, optimize the underlying files in the source system when supported. See [What is Mirroring in Fabric?](../mirroring/overview.md). |
+| mirroring | Spark, SQL analytics endpoint, or Power BI Direct Lake | For database mirroring, use the system-managed V-Ordered Delta layout. For mirrored catalogs, optimize the underlying files in the source system when supported. See [What is Mirroring in Fabric?](../mirroring/overview.md) |
 
 ## Optimize lakehouse tables
 
@@ -74,7 +74,7 @@ When Pipeline Copy activity or Dataflow Gen2 writes the table, inspect the resul
 
 ### Prevent and compact small files
 
-For Spark-written tables, prefer [auto compaction](../data-engineering/table-compaction.md#auto-compaction). This feature evaluates table fragmentation after writes and runs compaction only when needed. It removes the need for a separate table-health check before maintenance runs.
+For Spark-written tables, use [auto compaction](../data-engineering/table-compaction.md#auto-compaction). This feature evaluates table fragmentation after writes and runs compaction only when needed. It removes the need for a separate table-health check before maintenance runs.
 
 Use the following guidance for exceptions and complementary features:
 
