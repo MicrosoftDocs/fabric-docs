@@ -18,6 +18,9 @@ AI Functions work out of the box with default model settings. Use these settings
 > - This article covers PySpark. For pandas, see [Customize AI Functions with pandas](../pandas/configuration.md).
 > - For all AI Functions, see [AI Functions overview](../overview.md).
 
+> [!IMPORTANT]
+> For Fabric Runtime 2.0 with Spark 4.1, follow the [temporary PySpark setup](../runtime-2-0-workarounds.md#configure-pyspark-ai-functions).
+
 ## Configurations
 
 If you're working with AI Functions in PySpark, you can use the `OpenAIDefaults` class to configure the underlying AI model used by all functions. Settings that can only be applied per function call are specified in the last column of the following table.
