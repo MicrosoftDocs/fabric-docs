@@ -349,6 +349,8 @@ items:
       items:
         - name: Formulas and functions
           items:
+            - name: Overview
+              href: plan/planning-reference-formulas/formulas-overview.md
             - name: Conditional statements
               href: plan/planning-reference-formulas/conditional-statements.md
             - name: Logical functions
@@ -529,6 +531,8 @@ items:
       items:
         - name: Supported column, input, and attachment types
           href: plan/powertable-reference-supported-column-input-types.md
+        - name: Formulas and functions in PowerTable
+          href: plan/powertable-reference-formulas-overview.md
   - name: Intelligence sheets
     items:    
     - name: How-tos
