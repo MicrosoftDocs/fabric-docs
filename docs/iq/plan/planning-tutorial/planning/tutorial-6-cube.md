@@ -117,5 +117,5 @@ In this section, you see the three sheets working live and connected. You update
 
 ## Next steps
 
-Get started with master data management in the next tutorial, [Get started with PowerTable](../tutorial-7-get-started-with-powertable.md)
+Get started with master data management in the next tutorial, [Get started with PowerTable](../powertable/tutorial-7-get-started-with-powertable.md)
 
