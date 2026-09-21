@@ -16,7 +16,7 @@ During the copy job execution, on-premises data gateway connects to the SAP appl
 
 ## Supported capabilities
 
-- **Supported SAP source systems:** The Microsoft Data Integration ABAP Add-On supports **SAP S/4HANA (all versions)** and **SAP ECC 6.0 EhP 8 (based on SAP NetWeaver 7.50)**. SAP ECC 6.0 EhP 7 (based on SAP NetWeaver 7.40) or earlier version isn't supported. Import into unsupported SAP versions may fail with syntax errors.
+- **Supported SAP source systems:** The Microsoft Data Integration ABAP Add-On supports **SAP S/4HANA (all versions)**, **SAP ECC 6.0 EhP 8 (based on SAP NetWeaver 7.50)**, **SAP BW/4HANA (all versions)** and **SAP BW 7.50 (on HANA or any other database)**. SAP systems running on SAP NetWeaver 7.40 or lower, like **ECC 6.0 EhP 7** or earlier aren't supported. Import into unsupported SAP versions may fail with syntax errors.
 
 - **Supported SAP source objects:** Copy job for SAP via ABAP Add-On reads data from SAP sources using ABAP SQL on the SAP application server. It can copy data from **tables (transparent, pool, cluster)**, **views**, and **CDS views**. To extract data from a CDS view, use the SQL view name given in the CDS view definition.
 
