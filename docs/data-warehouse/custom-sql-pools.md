@@ -85,7 +85,7 @@ Fabric Data Warehouse provides three ways to classify requests:
 
 ### Statement type classification
 
-Statement type classification lets you control the compute available to query and data modification workloads separately. When you select **Statement type** as the classifier, Fabric creates one pool for `SELECT` statements and one pool for non-`SELECT` statements, including DML and DDL statements. You can change each pool's maximum resource percentage to protect query performance, limit the resources available to ingestion and data modification workloads, or balance both workload types for your business requirements.
+Statement type classification lets you control the compute available to query and data modification workloads separately. When you select **Statement type** as the classifier, Fabric creates one pool for `SELECT` statements and another pool for non-`SELECT` statements, including DML and DDL statements. You can change each pool's maximum resource percentage to protect query performance, limit the resources available to ingestion and data modification workloads, or balance both workload types to meet your business requirements.
 
 Statement type classification applies to requests that use distributed SQL processing through a warehouse or SQL analytics endpoint. Operations that don't use the distributed SQL path aren't assigned to the `SELECT` or `NONSELECT` pool.
 
