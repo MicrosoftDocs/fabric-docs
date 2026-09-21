@@ -29,6 +29,8 @@ Open mirroring meets your data replication needs if you:
 - Use your own application to write data into the open mirroring landing zone per the [open mirroring landing zone requirements and formats](../mirroring/open-mirroring-landing-zone-format.md).
  - Use one of our existing [open mirroring partners](../mirroring/open-mirroring-partners-ecosystem.md) to help you ingest data.
 
+For guidance on reliable file publication, detection, performance, recovery, and schema changes, see [Open mirroring best practices](open-mirroring-best-practices.md).
+
 ## What analytics experiences are built in?
 
 All types of mirrored databases are an item in **Fabric Data Warehousing** distinct from the **Warehouse** and **SQL analytics endpoint**.
@@ -50,7 +52,7 @@ In addition to the [SQL query editor](../data-warehouse/sql-query-editor.md), th
 
 ## Open mirroring cost considerations
 
-Fabric compute used to replicate your data into Fabric OneLake is free. The Mirroring storage cost is free up to a limit based on capacity. For more information, see [Cost of mirroring](overview.md#cost-of-mirroring) and [Microsoft Fabric Pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/). The compute for querying data using SQL, Power BI, or Spark is charged at regular rates. 
+Fabric compute used to replicate your data into Fabric OneLake is free. The Mirroring storage cost is free up to a limit based on capacity. For more information, see [Cost of mirroring](overview.md#cost-of-mirroring) and [Microsoft Fabric Pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/). The compute for querying data using SQL, Power BI, or Spark is charged at regular rates.
 
 ## Next step
 
