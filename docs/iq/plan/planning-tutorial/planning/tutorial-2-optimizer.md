@@ -104,5 +104,5 @@ In this section, you run the optimizer to find the combination of *Sales Plan* a
 
 ## Next steps
 
-Create a rolling forecast, use Predict to create a statistical forecast, and write the forecast values to a SQL database in the next tutorial, [Forecasting and writeback](tutorial-3-forecasting-writeback.md)
+In the next tutorial, [Forecasting and writeback](tutorial-3-forecasting-writeback.md), create a rolling forecast, use Predict to create a statistical forecast, and write the forecast values to a SQL database.
 

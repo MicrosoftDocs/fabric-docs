@@ -166,5 +166,5 @@ Before entering plan data, take a few minutes to get familiar with the ribbons, 
 
 ## Next steps
 
-You've imported data from a semantic model and created a planning sheet. Allocate values, add comments, and set up an approval workflow in the next tutorial, [Allocation and collaboration](tutorial-1-allocation-collaboration.md)
+You imported data from a semantic model and created a planning sheet. Allocate values, add comments, and set up an approval workflow in the next tutorial, [Allocation and collaboration](tutorial-1-allocation-collaboration.md)
 

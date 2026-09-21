@@ -99,5 +99,5 @@ In this section, you build a P&L hierarchy from scratch using Row Model Builder,
 
 ## Next steps
 
-Allocate plans across multiple dimensions in the next tutorial, [Consolidate plans across dimensions using cubes](tutorial-6-cube.md)
+In the next tutorial, [Consolidate plans across dimensions using cubes](tutorial-6-cube.md), allocate plans across multiple dimensions.
 
