@@ -13,6 +13,9 @@ When you set a target for a calculated result (such as Gross Profit or Net Margi
 
 In this tutorial, you build a Gross Profit sheet, create a formula measure, and run the Optimizer to find the combination of revenue growth and cost reduction that achieves a $12.5M gross profit target.
 
+## Prerequisites 
+Before you start this tutorial, ensure you complete the first tutorial: [Fabric planning tutorial part 0: Introduction and environment setup](tutorial-0-introduction.md)
+
 ## Set up the Gross Profit sheet
 
 In this section, you create a Gross Profit sheet that pulls in the sales plan from another planning sheet and COGS from the semantic model. This sheet is the starting point for running the Optimizer.
@@ -98,3 +101,8 @@ In this section, you run the optimizer to find the combination of *Sales Plan* a
    Together, these two adjustments deliver the $12.5M gross profit target.
 
     :::image type="content" source="../../media/planning-tutorial/planning/tutorial-2-optimizer/compare-original-baseline-optimized-values.png" alt-text="Screenshot of comparing the optimized values with the baseline values for Sales Plan and COGS." lightbox="../../media/planning-tutorial/planning/tutorial-2-optimizer/compare-original-baseline-optimized-values.png":::
+
+## Next steps
+
+In the next tutorial, [Forecasting and writeback](tutorial-3-forecasting-writeback.md), create a rolling forecast, use Predict to create a statistical forecast, and write the forecast values to a SQL database.
+

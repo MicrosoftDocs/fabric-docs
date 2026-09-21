@@ -225,3 +225,8 @@ In this section, you run writeback and confirm that writeback saves forecast dat
 1. Go back to the plan app. In the **Writeback** ribbon, select **Logs**. Review the log details - status, duration, user who performed the writeback, measures written back, and writeback type.
 
     :::image type="content" source="../../media/planning-tutorial/planning/tutorial-3-forecasting-writeback/writeback-logs.png" alt-text="Screenshot of writeback logs screen with details including the job id, duration, status, trigger time and user who initiated the writeback instance." lightbox="../../media/planning-tutorial/planning/tutorial-3-forecasting-writeback/writeback-logs.png":::
+
+## Next steps
+
+Build a P&L measure model, then create and compare scenarios in tree view in the next tutorial, [Build a P&L hierarchy](tutorial-4-measure-model.md)
+
