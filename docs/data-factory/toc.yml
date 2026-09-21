@@ -1354,6 +1354,10 @@
         href: /data-integration/gateway/manage-security-roles?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
       - name: Manage virtual network security roles
         href: /data-integration/vnet/manage-vnet-security-roles?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
+  - name: Governance                                    
+    items:                                              
+      - name: Data connection policies                  
+        href: data-connection-policies.md               
   - name: Troubleshoot
     items: 
       - name: Keyboard shortcuts
