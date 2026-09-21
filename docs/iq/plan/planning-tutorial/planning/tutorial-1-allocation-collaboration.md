@@ -127,3 +127,8 @@ In this section, you configure a two-level approval workflow and verify it by su
 1. In the *Regional Manager* column for the *Asia Pacific* → *Beverages* row, select **Submitted** from the dropdown. The *Finance Director* column automatically updates to **Pending**, confirming the submission has been routed for approval.
 
     :::image type="content" source="../../media/planning-tutorial/planning/tutorial-1-allocation-collaboration/select-submitted-status.png" alt-text="Screenshot of setting the status to submitted for the manager column. The status for the director column automatically changes to pending." lightbox="../../media/planning-tutorial/planning/tutorial-1-allocation-collaboration/select-submitted-status.png":::
+
+## Next steps
+
+Create data input fields, create a calculated measure, and use the Optimizer to achieve a target value in the next tutorial, [Optimize data input measures](tutorial-2-optimizer.md)
+

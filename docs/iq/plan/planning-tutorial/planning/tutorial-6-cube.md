@@ -12,7 +12,7 @@ In this tutorial, you plan sales at the geography level and costs at the product
 
 ## Prerequisites
 
-Before you start this tutorial, ensure you complete the first tutorial: [Introduction to Fabric Planning](./tutorial-0-introduction.md)
+Before you start this tutorial, ensure you complete the first tutorial: [Fabric planning tutorial part 0: Introduction and environment setup](tutorial-0-introduction.md)
 
 ## Create a sales plan
 
@@ -114,3 +114,8 @@ In this section, you see the three sheets working live and connected. You update
 1. Open the *Cost Plan* sheet. Observe that the *Cost Plan* for *Beverages* is updated to 14,174 thousand. A revision made in the consolidated view flows back to the source plan. Planners can work at whichever level is most convenient, and the model stays aligned.
 
     :::image type="content" source="../../media/planning-tutorial/planning/tutorial-6-cube/cost-plan-sheet-updated-beverages-total.png" alt-text="Screenshot of the Cost Plan update from the Profitability sheet being automatically reflected in the Cost Plan sheet." lightbox="../../media/planning-tutorial/planning/tutorial-6-cube/cost-plan-sheet-updated-beverages-total.png":::
+
+## Next steps
+
+Get started with master data management in the next tutorial, [Get started with PowerTable](../powertable/tutorial-7-get-started-with-powertable.md)
+
