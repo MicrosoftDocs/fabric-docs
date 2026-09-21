@@ -565,8 +565,10 @@ items:
           href: plan/intelligence-how-to-start-with-super-filters.md
         - name: Set up context awareness
           href: plan/intelligence-how-to-configure-filter-context.md
+        - name: Reading and editing modes
+          href: plan/intelligence-how-to-switch-reading-editing-mode.md
         - name: Plan projects with Gantt charts
-          href: plan/intelligence-how-to-create-gantt-chart.md
+          href: plan/intelligence-how-to-create-gantt-chart.md        
   - name: Resources
     items:
     - name: Roles
