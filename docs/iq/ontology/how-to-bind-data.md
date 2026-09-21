@@ -1,7 +1,7 @@
 ---
 title: Bind Data
 description: Learn about the data binding process in ontology (preview).
-ms.date: 04/21/2026
+ms.date: 09/21/2026
 ms.topic: how-to
 ---
 
@@ -129,7 +129,6 @@ The configuration page reopens, where you can edit binding details or delete bin
 
 Data binding has the following limitations:
 
-* You can't use lakehouses with OneLake security enabled as data sources for bindings. If a lakehouse has OneLake security enabled, you can't use it as a data source in ontology.
 * Ontology only supports **managed** lakehouse tables (located in the same OneLake directory as the lakehouse), not **external** tables that show in the lakehouse but reside in a different location. 
 * Changing the lakehouse table name after mappings are created may result in problems accessing data in the entity type details.
 * The ontology graph does not support delta tables with column mapping enabled. Column mapping can be enabled manually, or is enabled automatically on lakehouse tables where column names have certain special characters, including `,`, `;`, `{}`, `()`, `\n`, `\t`, `=`, and space. It also happens automatically on the delta tables that store data for import mode semantic model tables.
