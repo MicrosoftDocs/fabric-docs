@@ -1,9 +1,6 @@
 ---
 title: Build a P&L Hierarchy in Fabric Planning
 description: Build a P&L hierarchy in Microsoft Fabric planning by organizing native and formula measures into a measure model. 
-author: deepthy-dileep
-ms.author: DeepthyDileep
-ms.reviewer: DeepthyDileep
 ms.date: 09/07/2026
 ms.topic: tutorial
 ---
