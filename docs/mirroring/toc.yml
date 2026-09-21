@@ -261,6 +261,8 @@ items:
       - name: Open mirroring landing zone
         displayName: Open mirroring landing zone requirements and format
         href: open-mirroring-landing-zone-format.md
+      - name: Open mirroring best practices
+        href: open-mirroring-best-practices.md
       - name: Open mirroring FAQ
         displayName: Frequently asked questions about Open Mirroring
         href: open-mirroring-faq.yml
