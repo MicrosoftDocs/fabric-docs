@@ -658,7 +658,7 @@ During recovery, once the new region and capacity in Fabric are set up, you can 
 
 Ontology Agent users must take proactive steps to prepare for regional disaster recovery. The approach described in this section ensures that, following a regional disaster, your Ontology Agent experience can be restored in a newly created workspace.
 
-Ontology Agent depends on the Ontology item and on any data sources that are connected to the Ontology, such as lakehouses. Ontology Agent sessions in the primary region are not available to customers after a regional disaster, and Ontology Agent sessions are not replicated to the secondary region. Active chat sessions, in-progress actions, and conversation history from the affected region can't be resumed.
+Ontology Agent depends on the Ontology item and on any data sources that are connected to the Ontology, such as lakehouses. Customers can't access Ontology Agent sessions in the primary region after a regional disaster, and Ontology Agent sessions aren't replicated to the secondary region. Active chat sessions, in-progress actions, and conversation history from the affected region can't be resumed.
 
 To recover the Ontology Agent experience during a disaster, configure [Fabric Git integration](../cicd/git-integration/intro-to-git-integration), and [synchronize](../cicd/git-integration/git-integration-process?tabs=Azure,azure-devops#connect-and-sync) the Ontology item with your Azure DevOps (ADO) repository ahead of time.
 
