@@ -1,5 +1,5 @@
 ---
-title: Get visual responses from a Fabric data agent (preview)
+title: Get visual responses from a Fabric data agent
 description: Learn how to get visual responses such as charts and graphs from a Fabric data agent.
 ms.author: scottpolly
 author: s-polly
@@ -12,11 +12,9 @@ ai-usage: ai-assisted
 #customer intent: As an Analyst, I want to get visual responses from a Fabric data agent so that I can explore data insights through charts and graphs.
 ---
 
-# Get visual responses from a Fabric data agent (preview)
+# Get visual responses from a Fabric data agent
 
 The Fabric data agent can return interactive visual responses, such as charts and graphs, in addition to text and table-based answers. Visual responses help you quickly identify trends, patterns, and outliers in your data without leaving the conversational interface. These visuals are generated using Fabric Visuals, the same visualization foundation used in Fabric apps and increasingly across the Fabric platform. As a result, the charts you receive in a data agent conversation are built on the same technology that powers visuals across other Fabric experiences, helping deliver a more consistent and familiar experience.
-
-[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 [!INCLUDE [data-agent-prerequisites](./includes/data-agent-prerequisites.md)]
 
