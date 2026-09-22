@@ -1,6 +1,6 @@
 ---
 title: Auditing data agent interactions in Microsoft Purview (preview)
-description: Learn how to use DSPM for AI to govern AI interactions in Data Agent.
+description: Learn how to use DSPM to govern AI interactions in Data Agent.
 ms.author: scottpolly
 author: s-polly
 ms.reviewer: mayurjain
@@ -10,7 +10,7 @@ ms.date: 04/28/2026
 
 # Audit Logging for Fabric Data Agent with Microsoft Purview (Preview)
 
-Microsoft Purview Data Security Posture Management (DSPM) for AI enables organizations to **monitor, audit, and investigate AI interactions** across Fabric Data Agents and Copilot experiences.
+Microsoft Purview Data Security Posture Management (DSPM) enables organizations to **monitor, audit, and investigate AI interactions** across Fabric Data Agents and Copilot experiences.
 
 With audit logging enabled, **user prompts, AI responses, and interaction metadata** are captured and stored in Microsoft Purview through the Microsoft 365 audit pipeline.
 
@@ -22,14 +22,14 @@ With audit logging enabled, **user prompts, AI responses, and interaction metada
 Ensure the following configurations are enabled before using audit logging:
 
 ### 1. Enable Purview Audit
-- From DSPM for AI (classic) > Overview, in the Get Started section, look to see if auditing is on for your tenant. If not, select Activate Microsoft Purview Audit.
+- From DSPM (classic) > Overview, in the Get Started section, look to see if auditing is on for your tenant. If not, select Activate Microsoft Purview Audit.
 For information on enabling audit, see [Enable Audit Log](/purview/audit-log-enable-disable).
 
-### 2. Enable DSPM for AI Policy
+### 2. Enable DSPM Policy
 - In Microsoft Purview:
   - Enable the policy:
-    **DSPM for AI – Capture interactions for Copilot experiences**
-For more information about one-click policies, see [Considerations for DSPM for AI](/purview/dspm-for-ai-considerations#one-click-policies-from-data-security-posture-management-for-ai)
+    **DSPM – Capture interactions for Copilot experiences**
+For more information about one-click policies, see [Considerations for DSPM](/purview/dspm-for-ai-considerations#one-click-policies-from-data-security-posture-management-for-ai)
 
 ### 3. Enable Fabric Tenant Setting
 - In the Fabric Admin Portal:
@@ -57,11 +57,11 @@ All records are stored in the **Microsoft 365 unified audit log**.
 To review audit logs:
 
 1. Go to **Microsoft Purview Portal**
-2. Navigate to **DSPM for AI**
+2. Navigate to **DSPM**
 3. Open **Activity Explorer**
 4. Look for records labeled **Copilot Interaction**
 
-:::image type="content" source="./media/data-agent-governance/purview-activity-explorer.png" alt-text="Screenshot showing Activity Explorer in Purview DSPM for AI." lightbox="./media/data-agent-governance/purview-activity-explorer.png":::
+:::image type="content" source="./media/data-agent-governance/purview-activity-explorer.png" alt-text="Screenshot showing Activity Explorer in Purview DSPM." lightbox="./media/data-agent-governance/purview-activity-explorer.png":::
 
 Each record represents a single interaction between a user and the Data Agent.
 
@@ -98,4 +98,3 @@ For each interaction, the response returned by the Data Agent including the natu
 Microsoft Purview now offers a combination of entitlement-based (per-user-per-month) and Pay-As-You-Go (PAYG) pricing models. The PAYG model applies to a broader set of Purview capabilities—including Insider Risk Management, Communication Compliance, eDiscovery, and other data security and governance solutions—based on copilot for Power BI usage volume or complexity. Purview Audit logging of Copilot for Power BI activity remains included at no additional cost as part of Microsoft 365 E5 licensing. This flexible pricing structure ensures that organizations only pay for what they use as data flows through AI models, networks, and applications. 
 
 ---
-
