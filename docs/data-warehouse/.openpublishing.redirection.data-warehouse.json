@@ -102,7 +102,7 @@
       },
       {
         "source_path_from_root": "/docs/data-warehouse/pre-post-deployment-scripts.md",
-        "redirect_url": "/fabric/data-warehouse/development-deployment",
+        "redirect_url": "/fabric/data-warehouse/deployment-scripts",
         "redirect_document_id": false
       }
     ]

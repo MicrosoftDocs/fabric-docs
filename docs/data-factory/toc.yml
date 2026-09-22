@@ -1069,6 +1069,10 @@
                 href: dataflow-gen2-data-destinations-validation-rules.md
               - name: Dynamic expression editor for data destinations
                 href: dataflow-gen2-dynamic-expression-editor-data-destinations.md
+              - name: Document builder
+                items:
+                  - name: Excel
+                    href: dataflow-gen2-document-builder-excel.md
               - name: Advanced edit for data destination queries
                 href: dataflow-gen2-advanced-edit-data-destinations.md
               - name: Excel advanced data destination
@@ -1350,6 +1354,10 @@
         href: /data-integration/gateway/manage-security-roles?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
       - name: Manage virtual network security roles
         href: /data-integration/vnet/manage-vnet-security-roles?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
+  - name: Governance                                    
+    items:                                              
+      - name: Data connection policies                  
+        href: data-connection-policies.md               
   - name: Troubleshoot
     items: 
       - name: Keyboard shortcuts

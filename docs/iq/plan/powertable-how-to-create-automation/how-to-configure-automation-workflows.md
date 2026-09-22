@@ -196,7 +196,9 @@ You can create multiple automation workflows for a table. To view the workflows 
 
 ## View run history
 
-Use the **Run History** pane to monitor workflow executions and review the status of each run.
+Use the **Run History** pane to monitor workflow executions and review the status of each run. You can see the users who initiated the automations, when they initiated them, the duration and time of automation, and whether it succeeded or failed.
+
+Failed automations trigger Microsoft Teams notifications for the user who initiated the automation.
 
 Open the required automation workflow and select **Run History**.
 

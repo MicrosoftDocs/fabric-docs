@@ -13,7 +13,7 @@ In planning, you can insert calculated columns or measures directly into your pl
 The Excel-like formula engine supports more than 50 functions, including logical, boolean, and mathematical functions. The formula editor provides capabilities such as syntax assistance, examples, autocomplete, and multiline editing to help you create and troubleshoot formulas efficiently.
 
 > [!NOTE]
-> For more information, see [Formula syntax](../planning-reference-formulas/conditional-statements.md) for a detailed list of supported functions, operators, and identifiers.
+> For more information, see [Formula syntax](../planning-reference-formulas/formulas-overview.md) for a detailed list of supported functions, operators, and identifiers.
 
 In this article, you learn how to insert formula measures and columns and use the formula editor to perform the required calculations with an example.
 

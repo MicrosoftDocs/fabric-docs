@@ -29,7 +29,7 @@ Before you begin, make sure that you have the following prerequisites in place:
 
 1. Select **New Table**.
 1. Choose the database schema.
-1. Enter a **Table Name**.
+1. Enter a **Table Name**. Currently, table names support English characters only.
 1. Choose **Connect To Semantic Model** in **Import Data**.
 1. Select your **Connection** and the required **Semantic Model**.
 1. Select **Next**.
@@ -44,6 +44,9 @@ Before you begin, make sure that you have the following prerequisites in place:
 1. Map and assign your data to the table by selecting the required fields and corresponding values.
 
     :::image type="content" source="media/powertable-how-to-connect-semantic-model/assign-fields.png" alt-text="Screenshot of assigning fields and values." lightbox="media/powertable-how-to-connect-semantic-model/assign-fields.png":::
+
+    > [!NOTE]
+    > Currently, column names support English characters only. To display non-English column names in the table app, configure the display name as mentioned in [the following section](#configure-table).
 
 1. Set the primary key fields by selecting the three dots and selecting primary keys.
 
@@ -60,6 +63,11 @@ Before you begin, make sure that you have the following prerequisites in place:
 ### Configure table
 
 PowerTable sheets automatically detect column properties and rename any unsupported column names to match the supported format. You can review and modify them as needed.
+
+> [!NOTE]
+>
+> * Currently, column names support English characters only. To display non-English column names, scroll to the right in the column configuration table and set the **Display Name** property to Japanese or another non-English label to display localized labels in PowerTable.
+> * If your data contains Japanese or other non-English text, define those columns' input type as `NVARCHAR` so PowerTable supports and renders non-English characters correctly.
 
 :::image type="content" source="media/powertable-how-to-connect-semantic-model/finish-table-from-model.jpg" alt-text="Screenshot of table configuration window after configuring the fields." lightbox="media/powertable-how-to-connect-semantic-model/finish-table-from-model.jpg":::
 
@@ -91,7 +99,6 @@ After the initial load:
 * Changes made in PowerTable don't update the semantic model or its underlying data source.
 
 ### Are there any exceptions to this behavior based on the underlying data source (Lakehouse, Warehouse, or external database) or on the semantic model storage mode?
-
 
 No. The **Save to Database** option always writes data to the configured **Fabric SQL database destination table**, regardless of the semantic model's underlying data source or storage mode.
 

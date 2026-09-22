@@ -223,6 +223,8 @@ items:
                 href: plan/planning-forecasting/planning-how-to-manage-rolling-forecasts.md
               - name: Create statistical forecasts
                 href: plan/planning-forecasting/planning-how-to-create-statistical-forecasts.md
+              - name: Distribute deficits
+                href: plan/planning-forecasting/planning-how-to-distribute-deficits.md
               - name: Extend planning time range
                 href: plan/planning-forecasting/planning-how-to-extend-time.md
         - name: Planning tools
@@ -347,6 +349,8 @@ items:
       items:
         - name: Formulas and functions
           items:
+            - name: Overview
+              href: plan/planning-reference-formulas/formulas-overview.md
             - name: Conditional statements
               href: plan/planning-reference-formulas/conditional-statements.md
             - name: Logical functions
@@ -525,8 +529,10 @@ items:
           href: plan/powertable-how-to-configure-display-formatting-settings.md
     - name: Reference
       items:
-        - name: Supported column and input types
+        - name: Supported column, input, and attachment types
           href: plan/powertable-reference-supported-column-input-types.md
+        - name: Formulas and functions in PowerTable
+          href: plan/powertable-reference-formulas-overview.md
   - name: Intelligence sheets
     items:    
     - name: How-tos
@@ -563,8 +569,10 @@ items:
           href: plan/intelligence-how-to-start-with-super-filters.md
         - name: Set up context awareness
           href: plan/intelligence-how-to-configure-filter-context.md
+        - name: Reading and editing modes
+          href: plan/intelligence-how-to-switch-reading-editing-mode.md
         - name: Plan projects with Gantt charts
-          href: plan/intelligence-how-to-create-gantt-chart.md
+          href: plan/intelligence-how-to-create-gantt-chart.md        
   - name: Resources
     items:
     - name: Roles
