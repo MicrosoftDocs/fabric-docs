@@ -62,4 +62,4 @@ If you don't create a database column, the formula column still persists in the 
 
 ## Related content
 
-For more information about the available formulas and functions, see [Formula Syntax](../planning-reference-formulas/formulas-overview.md).
+For more information about the available formulas and functions, see [Formula Syntax](../powertable-reference-formulas-overview.md).
