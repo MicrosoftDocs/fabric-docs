@@ -2,13 +2,14 @@
 title: Develop and Deploy Cross-Warehouse Dependencies
 description: Learn how to develop and deploy cross-warehouse dependencies in Fabric Data Warehouse using SQL database projects in Visual Studio Code.
 ms.reviewer: pvenkat, randolphwest
-ms.date: 07/30/2026
+ms.date: 08/13/2026
 ms.topic: how-to
 ai-usage: ai-assisted
+ms.search.form: Warehouse Source Control
 ---
 # Develop and deploy cross-warehouse dependencies
 
-In this article, you learn how to model and deploy cross-warehouse dependencies by using SQL database projects in Visual Studio Code. You start from two existing warehouse projects and configure one-way dependencies between them by using database references.
+In this article, you learn how to model and deploy cross-warehouse dependencies by using SQL database projects in Visual Studio Code. You start from two existing warehouse projects and configure one-way dependencies between them by using database references and, where necessary, [pre-deployment and post-deployment scripts](deployment-scripts.md).
 
 This article builds on the concepts in [Develop warehouse projects in Visual Studio Code](develop-warehouse-project.md) and assumes you're already comfortable building and publishing a single warehouse project.
 
@@ -115,11 +116,29 @@ This anti-pattern creates a cycle: Sales view → Marketing view → Sales view 
 
 **Guidance:**
 
-Don't model **mutual dependencies** between warehouses as regular schema-level objects. If you truly need this kind of logic, move **one side** of the dependency into a downstream **semantic model** or **report** that joins the two warehouses at query time.
+Don't model **mutual dependencies** between warehouses as regular schema-level objects. If you truly need this kind of logic, move **one side** of the dependency into:
 
-## Direct cross-warehouse references via database references
+- A **post-deployment script**, or
+- A downstream **semantic model** or **report** that joins the two warehouses at query time.
 
-In this pattern, you model **one-way dependencies** directly in the database projects using **Database References**.
+#### Use pre- and post-deployment scripts for deployment sensitive cross-warehouse logic
+
+Because warehouse deployments are **full schema diff** operations (not partial per-object deployments), treat cross-warehouse items carefully:
+
+If Warehouse A and Warehouse B both need objects that depend on each other:
+- Keep the **core tables and core views** in each warehouse project.
+- Move **bridge views or utility objects** that create cycles into **pre- or post-deployment scripts** in one project. 
+- Ensure those scripts are **idempotent** and safe to rerun.
+         
+Example patterns:
+- **Pre-deployment script**: temporarily drop a cross-warehouse view before applying schema changes that would break it.
+- **Post-deployment script**: recreate or update the cross-warehouse view after both warehouses are deployed.
+
+For more information and examples, see [Pre-deployment and post-deployment scripts for Fabric Data Warehouse](deployment-scripts.md).
+
+## Pattern 1: Direct cross-warehouse references via database references
+
+In this pattern, you model **one-way dependencies** directly in the database projects by using **Database References**.
 
 ### Step 1: Start from two existing warehouse projects
 
@@ -128,16 +147,16 @@ You should already have:
 - `Zava.Sales.Warehouse` → deployed to `ZavaSalesWarehouse`
 - `Zava.Marketing.Warehouse` → deployed to `ZavaMarketingWarehouse`
 
-Each project was created or extracted using the steps in [**Develop warehouse projects in Visual Studio Code**](develop-warehouse-project.md).
+Create or extract each project by using the steps in [Develop warehouse projects in Visual Studio Code](develop-warehouse-project.md).
 
 ### Step 2: Add a database reference from Sales to Marketing
 
 - In Visual Studio Code, open the **Database Projects** view.
 - Right-click the `Zava.Sales.Warehouse` project.
 - Select **Add Database Reference...**.
-- Choose one of:
-   - **Database project in current workspace** (A database project referenced this way must also be open in Visual Studio Code), or
-   - **Data-tier application (.dacpac)** (Assumes you have built if you have a built `.dacpac` for the `Marketing` warehouse).
+- Choose one of the following options:
+   - **Database project in current workspace** (also open the referenced database project in Visual Studio Code), or
+   - **Data-tier application (.dacpac)** (use this option if you built a `.dacpac` for the `Marketing` warehouse).
 - Set the reference options:
   - **Reference type:** Same server, different database.
   - **Database name or variable:** Use a SQLCMD variable, for example `[$(MarketingWarehouseName)]`.
@@ -159,7 +178,7 @@ In the `.sqlproj` file, you should see an entry similar to:
 ```
 
 > [!TIP]
-> Using a SQLCMD variable for the **remote warehouse name** lets you reuse the same project across all your environments, such as Dev/Test/Prod, where the warehouse names might differ.
+> By using a SQLCMD variable for the **remote warehouse name**, you can reuse the same project across all your environments, such as Dev, Test, and Prod.
 
 ### Step 3: Create a cross-warehouse view in Sales
 
@@ -180,7 +199,7 @@ JOIN [$(MarketingWarehouseName)].[dbo].[CustomerEngagement] AS m
 Key points:
 
 - The three-part name `[$(MarketingWarehouseName)].[dbo].[CustomerEngagement]` matches the T-SQL pattern used for cross-warehouse queries in the [Fabric SQL editor](query-warehouse.md).
-- DacFx resolves the external database via the **database reference**.
+- DacFx resolves the external database through the **database reference**.
 
 Build the project to ensure there are **no SQL71501 unresolved reference** errors.
 

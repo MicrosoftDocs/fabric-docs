@@ -2,15 +2,16 @@
 title: Develop Warehouse Projects in Visual Studio Code
 description: Learn how to develop warehouse projects for Fabric Data Warehouse in Visual Studio Code.
 ms.reviewer: pvenkat, randolphwest
-ms.date: 07/10/2026
+ms.date: 08/13/2026
 ms.topic: how-to
+ms.search.form: Warehouse Source Control
 ai-usage: ai-assisted
 ---
 # Develop warehouse projects in Visual Studio Code
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
-Learn how to set up a database project for Fabric Data Warehouse in Visual Studio Code. You'll create a new project, define schema objects, build and validate the project, and publish it to your warehouse.
+Learn how to set up a database project for Fabric Data Warehouse in Visual Studio Code. You create a new project, define schema objects, build and validate the project, and publish it to your warehouse.
 
 [!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
@@ -27,7 +28,7 @@ Before you begin, make sure you:
 
 ## Create a new database project
 
-You can create a database project from scratch or existing warehouse.
+You can create a database project from scratch or from an existing warehouse.
 
 ### Option 1: Create a new database project from the Command Palette in Visual Studio Code
 
@@ -63,10 +64,10 @@ You can create a database project from scratch or existing warehouse.
 
 1. First, create a new connection profile for your warehouse in Visual Studio Code.
     1. Select the **SQL Server** extension in Visual Studio Code from the [Activity Bar](https://code.visualstudio.com/docs/getstarted/userinterface#_basic-layout).
-    1. Provide a **Profile Name**. Choose **Parameters**.
-    1. Provide the **Server name**. In the Fabric portal, in the **Settings** of your warehouse, select **SQL endpoint**, and copy the provided string. This is the server name of your warehouse, and is different from the SQL analytics endpoint. It looks like `<server unique ID>.datawarehouse.fabric.microsoft.com`.
+    1. Enter a **Profile Name**. Choose **Parameters**.
+    1. Enter the **Server name**. In the Fabric portal, in the **Settings** of your warehouse, select **SQL endpoint**, and copy the provided string. This server name is for your warehouse and is different from the SQL analytics endpoint. It looks like `<server unique ID>.datawarehouse.fabric.microsoft.com`.
     1. For **Authentication type**, use **Microsoft Entra ID - Universal with MFA support**. Authenticate with your Microsoft Entra ID.
-    1. Provide other information as default, or desired, and select **Connect**.
+    1. Provide other information as default or desired, and select **Connect**.
 
 1. In Visual Studio Code, choose the **Database Projects** extension icon from the Activity Bar.
 1. Select the options button `...` from the **Database Projects** pane and choose **Create Project From Database** option.
@@ -74,7 +75,7 @@ You can create a database project from scratch or existing warehouse.
     :::image type="content" source="media/develop-warehouse-project/create-project-from-database.png" alt-text="Screenshot from Visual Studio Code showing the Create Project from Database option.":::
 
 1. Choose your warehouse from the existing connection profiles.
-1. Provide a project name and choose a project folder on your workstation.
+1. Enter a project name and choose a project folder on your workstation.
 1. For folder structure, select **Schema/Object Type** (recommended).
 1. For **Include permissions in project**, select **No** (default).
 1. For SDK-style project, select **Yes (recommended)**.
@@ -83,7 +84,7 @@ You can create a database project from scratch or existing warehouse.
 
    :::image type="content" source="media/develop-warehouse-project/extract-project-file.png" alt-text="Screenshot from Visual Studio Code showing the extract project files progress notification.":::
    
-1. Upon successful extract, you'll see the following notification: "Extract project files: Succeeded. Completed".
+1. Upon successful extract, you see the following notification: "Extract project files: Succeeded. Completed".
 1. Select **Yes** to trust the authors of the files in this folder.
 
 ### New database project for your warehouse
@@ -148,7 +149,7 @@ Your project structure looks like this:
 1. Save your `.sqlproj` file. On the prompt to reload your database project, select **Yes**.
 
 > [!IMPORTANT] 
-> The Fabric Data Warehouse team frequently releases new versions of NuGet packages. Since the default version values in the `.sqlproj` file can change over time, be sure to update them in your local project to stay aligned with the latest versions available from the NuGet for [Microsoft.SqlServer.Dacpacs.FabricDw](https://www.nuget.org/packages/Microsoft.SqlServer.Dacpacs.FabricDw).
+> The Fabric Data Warehouse team frequently releases new versions of NuGet packages. Since the default version values in the `.sqlproj` file can change over time, update them in your local project to stay aligned with the latest versions available from the NuGet for [Microsoft.SqlServer.Dacpacs.FabricDw](https://www.nuget.org/packages/Microsoft.SqlServer.Dacpacs.FabricDw).
 
 ## Add or update database objects
 
@@ -162,30 +163,30 @@ Changes made here are only to the database project, and aren't reflected in Micr
 
 ## Build and validate the project
 
-1. Open the database project if not already opened.
-1. Right-click on the project and select **Build** to build the database project.
+1. Open the database project if it's not already open.
+1. Right-click the project and select **Build** to build the database project.
 
    :::image type="content" source="media/develop-warehouse-project/build.png" alt-text="Screenshot from Visual Studio Code showing the option to Build the database project.":::
 
-1. The build should be successful. Fix any errors based on messages provided in the output of build event.
+1. The build should succeed. Fix any errors based on messages provided in the output of the build event.
 
 > [!NOTE]
-> Currently, your Visual Studio Code default terminal must be **PowerShell** for the Build process in the Database Projects extension to succeed. In the **Command Palette**, choose **Terminal: Select Default Profile**, then select **PowerShell**.
+> Currently, your Visual Studio Code default terminal must be **PowerShell** for the build process in the Database Projects extension to succeed. In the **Command Palette**, choose **Terminal: Select Default Profile**, and then select **PowerShell**.
 
 ## Publish to Fabric Data Warehouse
 
-After building your project, publish it to your target warehouse. Publishing creates a script to resolve the difference between the database project and the actual warehouse, and executes a script to make the warehouse match the project. The compiled model of the warehouse schema in a .dacpac file can be deployed to a target warehouse.
+After building your project, publish it to your target warehouse. Publishing creates a script to resolve the difference between the database project and the actual warehouse, and executes a script to make the warehouse match the project. You can deploy the compiled model of the warehouse schema in a .dacpac file to a target warehouse.
 
 1. Right-click on the project and select **Publish**.
 1. Choose **Publish to an existing SQL server**.
 1. For **Select publish profile to load**, the first time you publish, choose **Don't use profile**.
-   - You can save options for publishing your warehouse into a *publish profile*. When you're completed, you're given the option in a Visual Studio Code notification to save the publishing options you just used to a publish profile file. 
-   - You can reuse the publish profile in the future when you publish your project to your warehouse. You might have different profile options for different warehouses, or for different environments in your dev/test/acceptance/production development environments.
+      - Save options for publishing your warehouse into a *publish profile*. A Visual Studio Code notification gives you the option to save the publishing options you used to a publish profile file.  
+   - Reuse the publish profile in the future when you publish your project to your warehouse. You might have different profile options for different warehouses, or for different environments in your dev/test/acceptance/production development environments.
 1. Choose the Fabric Data Warehouse connection profile from the list.
 1. Choose the name of the target warehouse.
 1. In the **Choose action** option, you can either **Generate Script** to review the script before publishing, or publish project to a warehouse. 
-   - The first time you want to deploy changes, you should carefully **Generate Script** and review the resulting T-SQL to be applied to the target warehouse. No changes are made to the target warehouse.
-   - If you choose **Publish**, changes will be written to your target warehouse. 
+         - The first time you want to deploy changes, carefully **Generate Script** and review the resulting T-SQL to apply to the target warehouse. Generating the script makes no changes to the target warehouse.
+   - If you choose **Publish**, the process writes changes to your target warehouse. 
       
    :::image type="content" source="media/develop-warehouse-project/deploy-in-progress.png" alt-text="Screenshot from Visual Studio Code showing the Deploy dacpac: In progress notification.":::
    
@@ -193,9 +194,9 @@ After building your project, publish it to your target warehouse. Publishing cre
 
 ### Important deployment settings for warehouse projects
 
-When deploying database projects to Fabric Data Warehouse, several settings control schema changes and can impact data safety. **Use with caution**.
+When you deploy database projects to Fabric Data Warehouse, several settings control schema changes and can affect data safety. **Use with caution**.
 
- -  `BlockOnPossibleDataLoss`
+ - `BlockOnPossibleDataLoss`
     
     - **What it does:** Prevents deployment if there's a risk of data loss (for example, dropping a column or table that contains data).
     - **Recommendation:** Always set to `True` in production to protect critical data.
@@ -207,15 +208,37 @@ When deploying database projects to Fabric Data Warehouse, several settings cont
     - **Recommendation:** Use in dev/test environments to clean up leftover objects.
     - **Caution:** Using `DropObjectsNotInSource` in production can **delete important objects and data**. Double-check before enabling.
     
+ -  `PreDeploy` for the [pre-deployment script](deployment-scripts.md#sql-project-file-structure-and-syntax)
+    
+    - **What it does**
+        - Executes custom SQL scripts **before** the schema deployment.
+    - **Common uses**  
+        - Archive or backup data before dropping tables
+        - Disable constraints or triggers temporarily
+        - Cleanup legacy objects
+    - **Caution** 
+        - Ensure scripts are **idempotent** and don't introduce schema changes that conflict with deployment.
+
+   > [!TIP]
+   > When a deployment process or query is **idempotent**, you can run the command multiple times without causing logical problems or failures. An idempotent command is also written in a way it can be deployed to multiple databases without needing to predetermine their status.
+
+ -  `PostDeploy` for the [post-deployment script](deployment-scripts.md#sql-project-file-structure-and-syntax)
+    
+    - **What it does:** Executes custom SQL scripts **after** the schema deployment.  
+    - **Common uses:**  
+      - Seed lookup or reference data
+      - Re-enable constraints or triggers
+      - Log deployment history  
+    - **Caution:** Avoid heavy operations on large tables in production. Ensure scripts can safely run multiple times if needed.
 
 > [!IMPORTANT] 
-> Always review deployment settings before publishing. Test in dev or test environments first to prevent unintended data loss.
+> Always review deployment scripts and settings before publishing. Test in dev or test environments first to prevent unintended data loss. For more information and examples, see [Pre-deployment and post-deployment scripts for Fabric Data Warehouse](deployment-scripts.md).
     
 ## Verify publish
 
-Connect to your warehouse and script objects that were changed or verify by running system catalog objects.
+Connect to your warehouse and script objects that changed, or verify by running system catalog objects.
 
-## Related Articles
+## Related content
 
 - [Development and deployment workflows](development-deployment.md)
 - [Develop and deploy cross-warehouse dependencies](cross-warehouse-development-database-projects.md)
