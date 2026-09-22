@@ -654,6 +654,27 @@ During recovery, once the new region and capacity in Fabric are set up, you can 
 > [!NOTE]
 > If the original Ontology item has a lakehouse configured, refer to the [Lakehouse section](#lakehouse) to recover the lakehouse first. After those dependencies are taken care of, connect the newly recovered lakehouse to the newly recovered Ontology item.
 
+#### Ontology Agent
+
+Ontology Agent users must take proactive steps to prepare for regional disaster recovery. The approach described below ensures that, following a regional disaster, your Ontology Agent experience can be restored in a newly created workspace.
+
+Ontology Agent depends on the Ontology item and on any data sources that are connected to the Ontology, such as lakehouses. Ontology Agent sessions in the primary region are not available to customers after a regional disaster, and Ontology Agent sessions are not replicated to the secondary region. Active chat sessions, in-progress actions, and conversation history from the affected region can't be resumed.
+
+To recover the Ontology Agent experience during a disaster, configure [Fabric Git integration](../cicd/git-integration/intro-to-git-integration), and [synchronize](../cicd/git-integration/git-integration-process?tabs=Azure,azure-devops#connect-and-sync) the Ontology item with your Azure DevOps (ADO) repository ahead of time.
+
+During recovery, once the new region and capacity in Fabric are set up, complete the following steps:
+
+1. Create a new workspace in the new capacity.
+2. Connect the new workspace to the same ADO repository that contains the Ontology item.
+3. Use [Git sync](../cicd/git-integration/git-integration-process?tabs=Azure,azure-devops#connect-and-sync) to restore the Ontology item into the new workspace.
+4. Recover any dependent data items, such as lakehouses, by following the guidance for those item types.
+5. Confirm that the recovered data is available in the paired region. For OneLake-backed data, assume that the data is replicated to the paired region, but don't assume ordering of replicated data during recovery.
+6. Connect the newly recovered Ontology item to the recovered data sources.
+7. Start a new Ontology Agent session and validate that the agent can connect to the recovered Ontology item and data sources.
+
+> [!NOTE]
+> Previous Ontology Agent conversations, in-progress actions, and conversation history can't be resumed after regional disaster recovery. Only new conversations started after recovery are supported.
+
 ### Planning
 
 This article describes the recovery procedures for the planning experience in IQ. It outlines the steps required to restore key components, including planning sheets, PowerTable sheets, intelligence sheets, InfoBridge, and related data assets.
