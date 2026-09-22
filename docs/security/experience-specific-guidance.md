@@ -656,7 +656,7 @@ During recovery, once the new region and capacity in Fabric are set up, you can 
 
 #### Ontology Agent
 
-Ontology Agent users must take proactive steps to prepare for regional disaster recovery. The approach described below ensures that, following a regional disaster, your Ontology Agent experience can be restored in a newly created workspace.
+Ontology Agent users must take proactive steps to prepare for regional disaster recovery. The approach described in this section ensures that, following a regional disaster, your Ontology Agent experience can be restored in a newly created workspace.
 
 Ontology Agent depends on the Ontology item and on any data sources that are connected to the Ontology, such as lakehouses. Ontology Agent sessions in the primary region are not available to customers after a regional disaster, and Ontology Agent sessions are not replicated to the secondary region. Active chat sessions, in-progress actions, and conversation history from the affected region can't be resumed.
 
