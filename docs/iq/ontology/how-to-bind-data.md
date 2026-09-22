@@ -29,7 +29,7 @@ Before binding data to your ontology, make sure you have the following prerequis
     * The data contains all required information for it to be modeled. For more information, see [Core concept: Data binding](overview.md#data-binding).
     * The data is in Microsoft Fabric—static data in [OneLake](../../onelake/onelake-overview.md), time series data in OneLake or an [eventhouse](../../real-time-intelligence/eventhouse.md).
     * Time series data is in *columnar* format, meaning it's represented in a table with a row for each timestamped observation. Columns contain time stamps and property values (like temperature or pressure).
-    * Lakehouse tables conform to ontology (preview)'s data binding [limitations](#limitations-and-troubleshooting): They are **managed**, do not have OneLake security enabled, and do not have column mapping enabled.
+    * Lakehouse tables conform to ontology (preview)'s data binding [limitations](#limitations-and-troubleshooting): They are **managed** and do not have column mapping enabled.
 
 ## Key concepts
 

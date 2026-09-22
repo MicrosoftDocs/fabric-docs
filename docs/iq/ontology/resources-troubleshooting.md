@@ -45,9 +45,8 @@ The following table describes common capacity issues with an ontology (preview) 
 The following table describes common issues when binding data to an ontology (preview) item.
 
 | Issue | Recommendation |
-|---|---|
-| Lakehouse not available as data source when creating a binding | Check to make sure **OneLake security** isn't enabled on your lakehouse. Lakehouses with OneLake security enabled aren't supported as data sources for bindings. |
-| Issue with keys while binding relationship types | If you don't see any keys for an entity type, make sure your source and target entity types have keys defined. | 
+| --- | --- |
+| Issue with keys while binding relationship types | If you don't see any keys for an entity type, make sure your source and target entity types have keys defined. |
 
 ## Troubleshoot entity type details
 
