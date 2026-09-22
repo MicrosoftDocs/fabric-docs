@@ -39,7 +39,7 @@ In [!INCLUDE [product-name](../../includes/product-name.md)], the SQL analytics 
 To find the server name for your **Fabric SQL database**:
 
 - Go to the settings of your SQL database item.
-- Or, in the item list, select the `...` menu. Select **Settings** then **Connection strings**. Fabric provides complete connection strings for providers including ADO.NET, JDBC, ODBC, PHP, and Go. To connect using OLE DB, use the server and database values from the ODBC connection string with the latest [Microsoft OLE DB Driver for SQL Server](/sql/connect/oledb/oledb-driver-for-sql-server).
+- Or, in the item list, select the `...` menu. Select **Settings** then **Connection strings**. Fabric provides complete connection strings for providers including ADO.NET, JDBC, ODBC, PHP, and Go. For `mssql-python`, `mssql-django`, and OLE DB, you can use the server and database values from the ODBC connection string.
 - Or, select the **Open in** button and select **SQL Server Management Studio** or **Visual Studio Code**. The server name and database name are displayed.
 
 To find the server name of the **SQL analytics endpoint** of your SQL database:
@@ -135,4 +135,3 @@ For more possibilities to query your data with T-SQL inside Python Notebooks, se
 - [Authentication in SQL database in Microsoft Fabric](authentication.md)
 - [Authorization in SQL database in Microsoft Fabric](authorization.md)
 - [Quickstart: Connect to a SQL database in Fabric with the Microsoft Python Driver for SQL Server](connect-python.md)
-
