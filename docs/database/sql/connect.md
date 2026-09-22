@@ -39,17 +39,13 @@ In [!INCLUDE [product-name](../../includes/product-name.md)], the SQL analytics 
 To find the server name for your **Fabric SQL database**:
 
 - Go to the settings of your SQL database item.
-- Or, in the item list, select the `...` menu. Select **Settings** then **Connection strings**. Fabric provides complete connection strings for providers including ADO.NET, JDBC, ODBC, PHP, and Go.
+- Or, in the item list, select the `...` menu. Select **Settings** then **Connection strings**. Fabric provides complete connection strings for providers including ADO.NET, JDBC, ODBC, PHP, and Go. To connect using OLE DB, use the server and database values from the ODBC connection string with the latest [Microsoft OLE DB Driver for SQL Server](/sql/connect/oledb/oledb-driver-for-sql-server).
 - Or, select the **Open in** button and select **SQL Server Management Studio** or **Visual Studio Code**. The server name and database name are displayed.
 
 To find the server name of the **SQL analytics endpoint** of your SQL database:
 
 - Go to the settings of your SQL database item, then select **Connection strings**.
 - Or, select the `...` menu, then select **SQL endpoint**, then copy the **SQL connection string**. This is the server name.
-
-## Connect using OLE DB
-
-You can connect to your SQL database in Fabric using OLE DB. Make sure you're running the latest [Microsoft OLE DB Driver for SQL Server](/sql/connect/oledb/oledb-driver-for-sql-server).
 
 ## Open in button to connect
 
