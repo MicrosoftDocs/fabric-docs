@@ -126,8 +126,6 @@ Eventstream supports Private Link, enabling secure, real-time data ingestion fro
 
 Unsupported scenarios:
 
-* Custom Endpoint as a source is not supported.
-* Custom Endpoint as a destination is not supported.
 * Eventhouse as a destination (with direct ingestion mode) is not supported.
 * Activator as a destination is not supported.
 
