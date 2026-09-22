@@ -113,6 +113,8 @@ items:
             href: troubleshoot-git-integration.md
           - name: Upgrade warehouse system file version
             href: upgrade-warehouse.md
+          - name: Use pre- and post-deployment scripts
+            href: deployment-scripts.md
   - name: Develop
     items:
       - name: AI functions

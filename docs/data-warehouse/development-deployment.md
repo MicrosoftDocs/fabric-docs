@@ -4,6 +4,7 @@ description: Learn about development and deployment workflows available to devel
 ms.reviewer: pvenkat, randolphwest
 ms.date: 07/30/2026
 ms.topic: concept-article
+ms.search.form: Warehouse Source Control
 ---
 # Development and deployment overview
 
