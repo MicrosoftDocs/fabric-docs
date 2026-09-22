@@ -251,9 +251,9 @@ When enabled, the warning appears before users create or upgrade a session that 
 | Configure event-driven automation. | ✅ |  |
 | Control row and column access permissions. | ✅ |  |
 | Integrate with planning and intelligence. | ✅ |  |
-| Participate in approval workflows. | ✅ |  |
-| Fill data collection forms. | ✅ |  |
-| Update status and contribute project and time entries. | ✅ |  |
+| Participate in approval workflows. | ✅ | ✅ |
+| Fill data collection forms. | ✅ | ✅ |
+| Update status and contribute project and time entries. | ✅ | ✅ |
 
 ### Intelligence
 
