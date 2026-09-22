@@ -2,9 +2,10 @@
 title: "Connect to Your SQL Database"
 description: Learn about options to connect to your SQL database in Microsoft Fabric.
 ms.reviewer: yoleichen, antho, sukkaur, maghan
-ms.date: 03/03/2026
+ms.date: 09/21/2026
 ms.topic: how-to
 ms.search.form: product-databases, Connect to SQL database
+ai-usage: ai-assisted
 ---
 
 # Connect to your SQL database in Microsoft Fabric
@@ -38,7 +39,7 @@ In [!INCLUDE [product-name](../../includes/product-name.md)], the SQL analytics 
 To find the server name for your **Fabric SQL database**:
 
 - Go to the settings of your SQL database item.
-- Or, in the item list, select the `...` menu. Select **Settings** then **Connection strings**. Fabric provides complete connection strings for providers including ADO.NET, JDBC, ODBC, PHP, and Go.
+- In the item list, select the `...` menu. Select **Settings** then **Connection strings**. Fabric provides complete connection strings for providers including ADO.NET, JDBC, ODBC, PHP, and Go. For mssql-python, mssql-django, and OLE DB use the server and database values from the ODBC connection string.
 - Or, select the **Open in** button and select **SQL Server Management Studio** or **Visual Studio Code**. The server name and database name are displayed.
 
 To find the server name of the **SQL analytics endpoint** of your SQL database:
@@ -134,4 +135,3 @@ For more possibilities to query your data with T-SQL inside Python Notebooks, se
 - [Authentication in SQL database in Microsoft Fabric](authentication.md)
 - [Authorization in SQL database in Microsoft Fabric](authorization.md)
 - [Quickstart: Connect to a SQL database in Fabric with the Microsoft Python Driver for SQL Server](connect-python.md)
-
