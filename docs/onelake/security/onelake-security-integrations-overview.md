@@ -1,12 +1,13 @@
 ---
 title: OneLake security integrations overview
-description: Learn how to ingrate your own query engine or application with OneLake security.
+description: Learn how to integrate your own query engine or application with OneLake security.
 ms.reviewer: aamerril # Product team ms alias(es)
 # author: Do not use - assigned by folder in docfx file
 # ms.author: Do not use - assigned by folder in docfx file
 ms.topic: how-to
 ms.custom:
-ms.date: 03/03/2026
+ms.date: 09/01/2026
+ai-usage: ai-assisted
 #customer intent: As a Fabric user, I want to learn how to create and manage OneLake security so that I can control access to specific folders in my lakehouse and ensure data security.
 ---
 
@@ -15,6 +16,13 @@ ms.date: 03/03/2026
 This article describes how to use the **authorized engine** model to allow any engine or application to integrate with OneLake secured data.
 
 OneLake security provides fine-grained access control on data in OneLake, and enforces it everywhere that the data is accessed. OneLake security is designed around a centralized policy definition with controlled, distributed enforcement. Security policies such as role-based permissions, row-level security (RLS), and column-level security (CLS) are authored and stored once in OneLake. Enforcement happens at query time inside the engine that's reading the data. However, not all engines understand how to enforce the access control policies that are defined in OneLake. As a result, OneLake blocks access to data with RLS or CLS policies set on it if the user isn't allowed to see all the data. To allow your own engine or application to enforce OneLake security, configure it as an authorized engine.
+
+## How distributed enforcement works
+
+OneLake provides each authorized engine with a user's effective access, including the tables, rows, and columns that the user can access. The engine applies those permissions in its own query layer. Enforcing policies in the query engine lets the engine use its native query processing, caching, and optimization capabilities while OneLake remains the source of truth for the policy definitions. An engine that can't enforce a user's RLS or CLS permissions can't read the secured table on that user's behalf.
+
+> [!NOTE]
+> For a deeper discussion of the design decisions behind centralized policy definition and distributed enforcement, see [The future of data security is interoperability: A technical look at OneLake security](https://aka.ms/OneLake-Security-Whitepaper).
 
 ## Set up an authorized engine
 
@@ -25,6 +33,6 @@ Authorized engines are configured by a workspace Admin or Member by granting the
 
 ## Related content
 
-* [OneLake security integrations reference](./onelake-security-integrations-reference.md)
-* [OneLake security integrations guide](./onelake-security-integrations-external-engines.md)
-* [How OneLake security controls data access](./data-access-control-model.md)
+- [OneLake security integrations reference](./onelake-security-integrations-reference.md)
+- [OneLake security integrations guide](./onelake-security-integrations-external-engines.md)
+- [How OneLake security controls data access](./data-access-control-model.md)
