@@ -2,9 +2,10 @@
 title: "Connect to Your SQL Database"
 description: Learn about options to connect to your SQL database in Microsoft Fabric.
 ms.reviewer: yoleichen, antho, sukkaur, maghan
-ms.date: 03/03/2026
+ms.date: 09/21/2026
 ms.topic: how-to
 ms.search.form: product-databases, Connect to SQL database
+ai-usage: ai-assisted
 ---
 
 # Connect to your SQL database in Microsoft Fabric
@@ -45,6 +46,10 @@ To find the server name of the **SQL analytics endpoint** of your SQL database:
 
 - Go to the settings of your SQL database item, then select **Connection strings**.
 - Or, select the `...` menu, then select **SQL endpoint**, then copy the **SQL connection string**. This is the server name.
+
+## Connect using OLE DB
+
+You can connect to your SQL database in Fabric using OLE DB. Make sure you're running the latest [Microsoft OLE DB Driver for SQL Server](/sql/connect/oledb/oledb-driver-for-sql-server).
 
 ## Open in button to connect
 
