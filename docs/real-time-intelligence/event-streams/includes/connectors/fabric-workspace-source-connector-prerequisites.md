@@ -19,6 +19,10 @@ Here are the supported Fabric workspace events:
 - Microsoft.Fabric.ItemUpdateFailed
 - Microsoft.Fabric.ItemDeleteSucceeded
 - Microsoft.Fabric.ItemDeleteFailed
+- Microsoft.Fabric.ItemSoftDeleteSucceeded
+- Microsoft.Fabric.ItemSoftDeleteFailed
+- Microsoft.Fabric.ItemRecoverSucceeded
+- Microsoft.Fabric.ItemRecoverFailed
 
 [!INCLUDE [consume-fabric-events-regions](consume-fabric-events-regions.md)]
 [!INCLUDE [deprecated-fabric-workspace-events](deprecated-fabric-workspace-events.md)]
