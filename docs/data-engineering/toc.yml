@@ -196,8 +196,10 @@ items:
         href: author-notebook-with-vs-code.md
       - name: Notebook with VS Code under VFS mode
         href: author-notebook-with-vs-code-vfs-mode.md
-      - name: Fabric Notebook custom agent inside VS Code
+      - name: Fabric notebooks with GitHub Copilot in VS Code
         href: notebook-custom-agent-with-vs-code.md
+      - name: Claude Code and Codex with Fabric notebooks in VS Code
+        href: claudecode-codex-with-vs-code.md
       - name: Notebook resource with VS Code extension
         href: author-notebook-resource-with-vs-code.md
       - name: Spark job definition with VS Code extension

@@ -95,5 +95,5 @@ To enter VFS mode, select the **Open a Remote Window** button in VS Code, then s
 - [Create and manage Spark job definitions in VS Code](author-sjd-with-vs-code.md)
 - [Explore Fabric lakehouses in VS Code](explore-lakehouse-with-vs-code.md)
 - [Access and manage notebook resources in VS Code](author-notebook-resource-with-vs-code.md)
-- [Develop notebooks with the Fabric Notebook custom agent](notebook-custom-agent-with-vs-code.md)
+- [Develop Fabric notebooks with GitHub Copilot in VS Code](notebook-custom-agent-with-vs-code.md)
 - [Use Docker containers with the VS Code extension](set-up-vs-code-extension-with-docker-image.md)

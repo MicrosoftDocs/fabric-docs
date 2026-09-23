@@ -278,6 +278,6 @@ Use the same value for `initialize`, `tools/list`, and `tools/call`. When a newe
 - [Install Skills for Fabric](/fabric/fundamentals/skills-for-fabric-install)
 - [Fabric IQ skill](https://github.com/microsoft/skills-for-fabric/blob/main/skills/fabriciq/SKILL.md)
 - [Fabric MCP Servers overview](/rest/api/fabric/articles/mcp-servers/what-is-fabric-mcp-server)
-- [Fabric IQ in Microsoft 365 Copilot Chat (Frontier)](microsoft-365-copilot-overview.md)
+- [Fabric IQ in Microsoft 365 Copilot Chat](microsoft-365-copilot-overview.md)
 - [Use ontology MCP server](../ontology/how-to-use-ontology-mcp-server.md)
 - [Model Context Protocol specification](https://modelcontextprotocol.io/)

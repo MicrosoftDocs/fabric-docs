@@ -26,6 +26,10 @@ Here are the supported Fabric workspace events:
 - Microsoft.Fabric.ItemUpdateFailed
 - Microsoft.Fabric.ItemDeleteSucceeded
 - Microsoft.Fabric.ItemDeleteFailed
+- Microsoft.Fabric.ItemSoftDeleteSucceeded
+- Microsoft.Fabric.ItemSoftDeleteFailed
+- Microsoft.Fabric.ItemRecoverSucceeded
+- Microsoft.Fabric.ItemRecoverFailed
 
 [!INCLUDE [consume-fabric-events-regions](../real-time-intelligence/event-streams/includes/connectors/consume-fabric-events-regions.md)]
 
@@ -91,4 +95,3 @@ To learn about consuming data streams, see the following articles:
 - [Process data streams](process-data-streams-using-transformations.md)
 - [Analyze data streams](analyze-data-streams-using-kql-table-queries.md)
 - [Set alerts on data streams](set-alerts-data-streams.md)
-
