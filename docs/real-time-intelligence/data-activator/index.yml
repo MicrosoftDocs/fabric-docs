@@ -118,6 +118,8 @@ landingContent:
             url: activator-troubleshooting.md
           - text: Activator throttling
             url: activator-throttling-effects.md
+          - text: Monitor Activator with workspace monitoring
+            url: activator-workspace-monitoring.md
 
   - title: Reference
     linkLists:
