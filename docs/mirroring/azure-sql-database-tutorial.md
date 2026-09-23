@@ -2,7 +2,7 @@
 title: "Tutorial: Configure Microsoft Fabric Mirrored Databases From Azure SQL Database"
 description: Learn how to configure a mirrored database from Azure SQL Database in Microsoft Fabric.
 ms.reviewer: nanikolic, atodalbagi, wiassaf
-ms.date: 11/25/2025
+ms.date: 09/22/2026
 ms.topic: tutorial
 ---
 
@@ -25,6 +25,7 @@ ms.topic: tutorial
     - [Service principals can call Fabric public APIs](../admin/service-admin-portal-developer.md#service-principals-can-use-fabric-apis)
     - [Users can access data stored in OneLake with apps external to Fabric](../admin/tenant-settings-index.md#onelake-settings)
 - You need to have a member or admin role in your workspace when you create a mirrored database from the Fabric portal. During creation, the managed identity of Azure SQL server is automatically granted "Read and write" permission on the mirrored database. Users with the contributor role don't have the Reshare permission necessary to complete this step.
+- If inbound access to OneLake is restricted for your workspace, a workspace admin must add the Azure resource ID of your Azure SQL server to the workspace's Resource Instance Rules. This rule allows the server to write mirrored data to OneLake without relying on its dynamic or shared outbound IP addresses. For setup instructions, see [Manage inbound access to OneLake with Resource Instance Rules](../onelake/onelake-manage-inbound-access-trusted-resources.md).
 - Check your networking requirements for Fabric to access your Azure SQL Database: If your Azure SQL Database is not publicly accessible and doesn't [allow Azure services](/azure/azure-sql/database/network-access-controls-overview#allow-azure-services) to connect to it, you can [create a virtual network data gateway](/data-integration/vnet/create-data-gateways) or [install an on-premises data gateway](/data-integration/gateway/service-gateway-install) to mirror the data. Make sure the Azure Virtual Network or the gateway machine's network can connect to the Azure SQL server via [a private endpoint](/azure/azure-sql/database/private-endpoint-overview?view=azuresql-db&preserve-view=true) or is allowed by the firewall rule.
 
 ### Enable Managed Identity
@@ -191,4 +192,3 @@ For more information and details on the replication states, see [Monitor Fabric 
 - [Mirroring Azure SQL Database](../mirroring/azure-sql-database.md)
 
 - [What is Mirroring in Fabric?](../mirroring/overview.md)
-

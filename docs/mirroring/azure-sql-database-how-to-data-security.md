@@ -2,8 +2,9 @@
 title: "Secure Data in Microsoft Fabric Mirrored Databases From Azure SQL Database"
 description: Learn about how to secure data in mirrored databases from Azure SQL Database in Microsoft Fabric.
 ms.reviewer: sbahadur, nanikolic, atodalbagi, wiassaf
-ms.date: 11/25/2025
+ms.date: 09/22/2026
 ms.topic: how-to
+ai-usage: ai-assisted
 ---
 
 # How to: Secure data Microsoft Fabric mirrored databases from Azure SQL Database
@@ -17,6 +18,8 @@ This guide helps you establish data security in your mirrored Azure SQL Database
 
    > [!NOTE]  
    > Support for User Assigned Managed Identity (UAMI) is currently in preview.
+
+1. If inbound access to OneLake is restricted for your workspace, a workspace admin must add the Azure resource ID of your Azure SQL server to the workspace's Resource Instance Rules. This configuration allows OneLake to verify the server's identity without relying on dynamic or shared outbound IP addresses. For more information, see [Manage inbound access to OneLake with Resource Instance Rules](../onelake/onelake-manage-inbound-access-trusted-resources.md).
 
 1. Fabric needs to connect to the Azure SQL database. For this purpose, create a dedicated database user with limited permissions, to follow the principle of least privilege. Create either a login with a strong password and connected user, or a contained database user with a strong password. For a tutorial, see [Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Database](../mirroring/azure-sql-database-tutorial.md).
 
