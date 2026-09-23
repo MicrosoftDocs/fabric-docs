@@ -11,9 +11,8 @@ ai-usage: ai-assisted
 
 The **Fabric IQ** plugin connects [Microsoft 365 Copilot Cowork](/microsoft-365/copilot/cowork/get-started) to your Microsoft Fabric and Power BI data. When you enable the plugin, a Power BI report isn't the end of a workflow - it's the starting point. You can ground a Cowork chat in trusted business data, then chain that data into the other Cowork skills you already use, like drafting emails, creating documents, or scheduling reviews, without leaving the conversation.
 
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
-
-Microsoft 365 Copilot Cowork is generally available. The Fabric IQ plugin is in preview and available to all Power BI customers who use Cowork.
+> [!IMPORTANT]
+> The Fabric IQ plugin in Microsoft 365 Copilot Cowork is a generally available (GA) feature of Microsoft Fabric.
 
 [Fabric IQ](../overview.md) is the Microsoft Fabric workload that gives analytics, AI agents, and apps a consistent business vocabulary on top of unified OneLake data. The Cowork plugin brings that experience into the everyday flow of Microsoft 365 work, starting with Power BI reports and semantic models.
 
@@ -80,7 +79,7 @@ For more information, see [Sensitivity labels in Power BI](../../enterprise/powe
 
 ## Current limitations
 
-The Fabric IQ plugin has the following limitations. These limitations apply to the current preview and are expected to change as the plugin evolves.
+The Fabric IQ plugin has the following limitations.
 
 **Unsupported artifact types**
 
@@ -134,7 +133,7 @@ Because Cowork queries Power BI as the signed-in user, item permissions and row-
 
 ## Send feedback
 
-The Fabric IQ plugin is in preview, and your feedback helps shape the next releases. To send feedback on a specific answer, use the thumbs-up or thumbs-down control on the Cowork response. Add a short note about what worked or what didn't, and include the report name when you can.
+Your feedback helps improve the Fabric IQ plugin. To send feedback on a specific answer, use the thumbs-up or thumbs-down control on the Cowork response. Add a short note about what worked or what didn't, and include the report name when you can.
 
 ## Related content
 
