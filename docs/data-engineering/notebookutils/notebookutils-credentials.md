@@ -20,7 +20,7 @@ Method availability differs by notebook runtime and API. For example,
 notebooks don't support it, even when they run Python code with PySpark.
 Spark notebooks that use Scala or R don't support it either.
 
-The examples in this article use Python as the primary language. Scala and R
+The following examples use Python as the primary language. Scala and R
 equivalents appear where the notebook runtime and public API support the method.
 
 > [!IMPORTANT]
