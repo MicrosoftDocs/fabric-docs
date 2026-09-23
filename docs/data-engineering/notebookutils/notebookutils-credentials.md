@@ -12,15 +12,15 @@ ai-usage: ai-assisted
 
 You can use the credentials utilities to get access tokens and manage secrets in Azure Key Vault. The `notebookutils.credentials` module integrates with Microsoft Entra ID for token acquisition and Azure Key Vault for secret management, so you can connect to Azure resources securely without exposing credentials in code.
 
-The credentials utilities are available in
+You can use the credentials utilities in
 [Python notebooks](../using-python-experience-on-notebook.md) and Fabric Spark
 notebooks. In Fabric Spark notebooks, you can use PySpark, Scala, or R.
 Method availability differs by notebook runtime and API. For example,
 `putSecret` works only in Python notebooks, which use the Python runtime. Spark
 notebooks don't support it, even when they run Python code with PySpark.
-Spark notebooks using Scala or R don't support it either.
+Spark notebooks that use Scala or R don't support it either.
 
-The examples on this page use Python as the primary language. Scala and R
+The examples in this article use Python as the primary language. Scala and R
 equivalents appear where the notebook runtime and public API support the method.
 
 > [!IMPORTANT]
@@ -284,12 +284,12 @@ notebookutils.credentials.putSecret(
 ### [R](#tab/r)
 
 > [!NOTE]
-> Fabric Spark notebooks using R don't support `putSecret`. Use a notebook that uses the Python runtime.
+> Fabric Spark notebooks that use R don't support `putSecret`. Use a notebook that uses the Python runtime.
 
 ---
 
-You must have appropriate permissions (Set permission) on the Azure Key Vault
-to write secrets. Run the following example only in a notebook that uses the
+To write secrets, you need appropriate permissions (Set permission) on the
+Azure Key Vault. Run the following example only in a notebook that uses the
 Python runtime. Don't run it in a Fabric Spark notebook.
 
 ```python
