@@ -4,7 +4,7 @@ description: Use NotebookUtils credentials utilities to get access tokens and ma
 ms.reviewer: jingzh
 ms.topic: how-to
 ms.custom: sfi-image-nochange
-ms.date: 03/31/2025
+ms.date: 09/23/2026
 ai-usage: ai-assisted
 ---
 
@@ -12,7 +12,16 @@ ai-usage: ai-assisted
 
 You can use the credentials utilities to get access tokens and manage secrets in Azure Key Vault. The `notebookutils.credentials` module integrates with Microsoft Entra ID for token acquisition and Azure Key Vault for secret management, so you can connect to Azure resources securely without exposing credentials in code.
 
-The credentials utilities are available in Python, PySpark, Scala, and R notebooks. The examples on this page use Python as the primary language, with Scala and R equivalents shown where the public API supports them.
+The credentials utilities are available in
+[Python notebooks](../using-python-experience-on-notebook.md) and Fabric Spark
+notebooks. In Fabric Spark notebooks, you can use PySpark, Scala, or R.
+Method availability differs by notebook runtime and API. For example,
+`putSecret` works only in Python notebooks, which use the Python runtime. Spark
+notebooks don't support it, even when they run Python code with PySpark.
+Spark notebooks using Scala or R don't support it either.
+
+The examples on this page use Python as the primary language. Scala and R
+equivalents appear where the notebook runtime and public API support the method.
 
 > [!IMPORTANT]
 > Never hardcode secrets or credentials directly in notebook code. Always use Azure Key Vault to store sensitive values and retrieve them at runtime with `notebookutils.credentials.getSecret`.
@@ -24,7 +33,7 @@ Before you use credentials utilities, be aware of these constraints:
 - **Token expiration** – Tokens expire after a period. For long-running operations, implement refresh logic to request a new token before expiration.
 - **Service principal scope limitations** – When running under a service principal, tokens for the `pbi` audience have restricted scopes compared to user identity.
 - **MSAL for full scope** – If you need the full Fabric service scope under a service principal, use MSAL authentication instead of `getToken`.
-- **Secret redaction** – Notebook outputs automatically redact secret values to prevent accidental exposure.
+- **Secret redaction** – Notebook output attempts to redact the original secret value when code prints or displays it directly. This best-effort safeguard reduces accidental disclosure, including during screen sharing. It isn't a security boundary. After retrieval, authorized notebook code receives plaintext and can process, transform, or disclose the secret or secret-derived content.
 - **Key Vault permissions** – You must have appropriate permissions (Get for reading, Set for writing) on the Azure Key Vault to access or store secrets.
 - **Audience changes** – Token audience scopes might evolve over time. Verify current scopes in the documentation.
 
@@ -56,7 +65,7 @@ The following table lists the available credentials methods:
 |---|---|---|
 | `getToken` | `getToken(audience: String): String` | Returns a Microsoft Entra token for the specified audience. |
 | `getSecret` | `getSecret(akvName: String, secret: String): String` | Returns the value of a secret from the specified Azure Key Vault. |
-| `putSecret` | `putSecret(akvName: String, secretName: String, secretValue: String): String` | Stores a secret in the specified Azure Key Vault. This method isn't available in the public Scala API. |
+| `putSecret` | `putSecret(akvName: String, secretName: String, secretValue: String): String` | Stores a secret in the specified Azure Key Vault. This method works only in notebooks that use the Python runtime. Spark notebooks don't support it, even when they run Python code with PySpark. Spark notebooks using Scala or R don't support it either. |
 | `isValidToken` | `isValidToken(token: String): Boolean` | Checks whether the given token is valid and not expired. This method isn't available in the public Scala API. |
 
 ## Get token
@@ -229,8 +238,10 @@ db_password = notebookutils.credentials.getSecret(vault_url, "db-password")
 connection_string = f"Server={db_host};User={db_user};Password={db_password}"
 ```
 
-> [!NOTE]
-> Notebook outputs automatically redact secret values for security. If you print or display a retrieved secret, the output shows a redacted placeholder instead of the actual value.
+> [!IMPORTANT]
+> After successful retrieval, authorized notebook code receives the secret value as plaintext. Notebook output attempts to redact the original secret value when code prints or displays it directly.
+>
+> This best-effort safeguard reduces accidental disclosure in notebook output, including during screen sharing. It isn't a security boundary and doesn't prevent processing, transformation, or disclosure of secret-derived content.
 
 Use the fully qualified Key Vault URL in the format `https://<vault-name>.vault.azure.net/`. You must have appropriate permissions to access the Key Vault and the individual secrets.
 
@@ -239,7 +250,7 @@ Use the fully qualified Key Vault URL in the format `https://<vault-name>.vault.
 Follow these recommendations when you work with credentials in Fabric notebooks:
 
 - **Store all sensitive values in Azure Key Vault.** Never embed credentials, connection strings, or API keys directly in notebook code.
-- **Don't log secret values.** Rely on the automatic secret redaction in notebook outputs. Avoid writing secrets to files or passing them as notebook parameters.
+- **Don't disclose secret values.** Don't print or log secrets, write them to files, or pass them as notebook parameters. Output redaction attempts to protect the original value in direct notebook output. It doesn't prevent disclosure of secret-derived content.
 - **Use the correct audience key.** Match the audience key to the target Azure resource so the token has only the permissions it needs.
 - **Understand the identity context.** Know whether your notebook runs under user identity or a service principal, because the available token scopes can differ. Test authentication in both interactive and pipeline contexts.
 - **Handle token expiration.** Tokens expire. For long-running operations, implement refresh logic to request a new token before the current one expires.
@@ -248,30 +259,41 @@ Follow these recommendations when you work with credentials in Fabric notebooks:
 
 ## Put secret
 
-`putSecret` stores a secret in the specified Azure Key Vault. If the secret already exists, the value is updated.
+`putSecret` stores or updates a secret in the specified Azure Key Vault.
+It works only in notebooks that use the Python runtime.
 
-### [Python](#tab/python)
+> [!IMPORTANT]
+> Spark notebooks don't support `putSecret`, even when they run Python code with PySpark. Spark notebooks using Scala or R don't support it either. Use a Python notebook, which uses the Python runtime.
+
+### [Python runtime](#tab/python)
 
 ```python
-notebookutils.credentials.putSecret('https://<name>.vault.azure.net/', 'secret name', 'secret value')
+# Run only in a notebook that uses the Python runtime.
+notebookutils.credentials.putSecret(
+    'https://<name>.vault.azure.net/',
+    'secret name',
+    'secret value'
+)
 ```
 
 ### [Scala](#tab/scala)
 
 > [!NOTE]
-> `putSecret` isn't available in the public Scala API. Use Python, PySpark, or R notebooks when you need to write a secret to Azure Key Vault from NotebookUtils.
+> Fabric Spark notebooks using Scala don't support `putSecret`. Use a notebook that uses the Python runtime.
 
 ### [R](#tab/r)
 
-```r
-notebookutils.credentials.putSecret("https://<name>.vault.azure.net/", "secret name", "secret value")
-```
+> [!NOTE]
+> Fabric Spark notebooks using R don't support `putSecret`. Use a notebook that uses the Python runtime.
 
 ---
 
-You must have appropriate permissions (Set permission) on the Azure Key Vault to write secrets.
+You must have appropriate permissions (Set permission) on the Azure Key Vault
+to write secrets. Run the following example only in a notebook that uses the
+Python runtime. Don't run it in a Fabric Spark notebook.
 
 ```python
+# Python runtime only. Fabric Spark notebooks don't support putSecret.
 vault_url = "https://myvault.vault.azure.net/"
 
 notebookutils.credentials.putSecret(vault_url, "api-key", "my-secret-api-key-value")
