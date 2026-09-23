@@ -1,5 +1,5 @@
 ---
-title: "Fabric IQ in Microsoft 365 Copilot Chat (Frontier)"
+title: "Fabric IQ in Microsoft 365 Copilot Chat"
 description: Learn how to ask Microsoft 365 Copilot questions grounded in your Power BI data using Fabric IQ.
 author: PM-Sara
 ms.author: svredevoogd
@@ -9,9 +9,12 @@ ms.date: 09/15/2026
 ai-usage: ai-assisted
 ---
 
-# Fabric IQ in Microsoft 365 Copilot Chat (Frontier)
+# Fabric IQ in Microsoft 365 Copilot Chat
 
 Fabric IQ brings Power BI data answers directly into Microsoft 365 Copilot Chat. Business teams can incorporate data into their decision-making process without switching to Power BI to look up numbers or trends. Users ask natural language questions about their organization's data right where they already work: in Copilot Chat alongside their files, emails, and conversations.
+
+> [!IMPORTANT]
+> Data answering from Power BI content in Microsoft 365 Copilot Chat is a generally available (GA) feature of Microsoft Fabric.
 
 ## How it works
 
@@ -22,7 +25,6 @@ Copilot grounds answers in your Power BI data, but the answers don't stop there.
 ## Prerequisites
 
 - **Microsoft 365 Copilot Premium license:** Required for all users.
-- **Frontier access:** Data answering grounded in Power BI reports is initially only available in Frontier. An admin must include the user in the group that has access to Frontier features. For more information, see [Get started with the Microsoft Copilot Frontier Program](/microsoft-365/admin/manage/get-started-frontier).
 - **Power BI access:** The user must have both permission and licensed access to view the Power BI reports and semantic models they want to ask questions about. The user doesn't need access to Copilot in Fabric.
 
 ## How to ask questions about Power BI data
@@ -64,11 +66,10 @@ The following example shows where Copilot Chat displays the conversation sensiti
 
 ## Tenant settings
 
-Four tenant settings affect this feature: two in the Microsoft 365 admin center and two in the Fabric admin portal.
+Three tenant settings affect this feature: one in the Microsoft 365 admin center and two in the Fabric admin portal.
 
 ### Microsoft 365 admin center
 
-- **Copilot Frontier:** This feature is currently available through Frontier. In the Microsoft 365 admin center, an admin must enroll the users or groups that need access. For more information, see [Get started with the Microsoft Copilot Frontier Program](/microsoft-365/admin/manage/get-started-frontier).
 - **Fabric data available in M365 Copilot:** This setting controls whether Fabric data appears in Microsoft 365 Copilot experiences. The setting is enabled by default. When an admin turns it off, users don't see Fabric context in Copilot responses. For more information, see [Use Power BI data in Microsoft 365 Copilot Chat](/microsoft-365/copilot/copilot-powerbi-copilot-chat).
 
 ### Fabric admin portal
