@@ -30,7 +30,7 @@ On the **View users** page, you can see all of the users with access to selected
 
 ### Manage workspace permissions
 
-Using the ribbon on the **View uers** page, you can manage workspace role assignments across multiple workspaces from a single experience.
+Using the ribbon on the **View users** page, you can manage workspace role assignments across multiple workspaces from a single experience.
 
 - **Add users**: Select this option to add one or more users to the same workspace role across one or more workspaces. For example, you can onboard all new hires to the Viewer role across all relevant workspaces.
 - **Manage access**: Select this to choose between editing roles and removing roles. Like with **add users**, you can perform these actions in bulk across multiple users and workspaces. For example, removing all summer interns from their relevant workspaces.
