@@ -33,7 +33,7 @@ You can access your mirrored Azure Databricks Unity Catalog data in multiple way
 
 ## Metadata sync
 
-When you create a new mirror from Azure Databricks in Fabric, by default, the **Automatically sync future catalog changes for the selected schema** is enabled. The following metadata changes are reflected from your Azure Databricks workspace to Fabric if automatic sync is enabled:
+When you create a new mirror from Azure Databricks in Fabric, the **Automatically sync future catalog changes for the selected schema** option is enabled by default. If you enable automatic sync, the following metadata changes are reflected from your Azure Databricks workspace to Fabric:
 
 - Addition of schemas to a catalog.
 - Deletion of schemas from a catalog.
