@@ -5,7 +5,6 @@ ms.reviewer: emtehran, fipopovi
 ms.date: 02/16/2026
 ms.topic: concept-article
 ms.search.form: Optimization # This article's title should not change. If so, contact engineering.
-ROBOTS: NOINDEX
 ---
 # Result set caching
 
