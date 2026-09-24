@@ -20,7 +20,7 @@ Result set caching is a built-in performance optimization for Fabric Data Wareho
 
 Result set caching works by persisting the final result sets for applicable `SELECT` T-SQL queries, so that subsequent runs that "hit" cache will process just the final result set. This can bypass complex compilation and data processing of the original query and return subsequent queries faster.
 
-Data warehousing scenarios typically involve analytical queries that process large amounts of data to produce a relatively small result. For example, a `SELECT` query that contains multiple joins and performs reads and shuffles on millions of rows of data might result in an aggregation that is only a few rows long. For workloads like reports or dashboards that tend to trigger the same analytical queries repeatedly, the same heavy computation can be triggered multiple times, even though the final result remains the same. Result set caching improves performance in this and similar scenarios for roughly the same cost.
+Data warehousing scenarios typically involve analytical queries that process large amounts of data to produce a relatively small result. For example, a `SELECT` query that contains multiple joins and performs reads and shuffles on millions of rows of data might result in an aggregation that is only a few rows long. For workloads like reports or dashboards that tend to trigger the same analytical queries repeatedly, the same heavy computation can be triggered multiple times, even though the final result remains the same. Result set caching improves performance in this and similar scenarios.
 
 ## Automatic management of cache
 
