@@ -2,7 +2,8 @@
 title: Machine learning tracking system update
 description: Learn how to upgrade the machine learning tracking system
 ms.topic: how-to
-ms.reviewer: ruxu
+ms.reviewer: scottpolly
+reviewer: s-polly
 ms.date: 11/06/2025
 ms.search.form: ML Experiment, ML Model
 ---

@@ -1,6 +1,6 @@
 ---
 title: Vertica connector overview
-description: This article explains the overview of using Vertica.
+description: This article provides an overview of the supported capabilities of the Vertica connector.
 ms.reviewer: jianleishen
 ms.topic: how-to
 ms.date: 09/06/2024

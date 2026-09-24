@@ -66,6 +66,8 @@ The **CPU consumption** graph displays CPU usage (in vCores) along the Y-axis an
 
 The CPU trends shown in this dashboard represent usage by user queries only. They don't include CPU used for provisioning, system maintenance, or other background operations. The Performance Dashboard doesn't directly correlate to Fabric consumption. To track consumption, use the [Microsoft Fabric Capacity Metrics app](../../enterprise/metrics-app.md).
 
+To limit compute utilization for a SQL database, consider [controlling compute usage by configuring a maximum vCore setting](control-compute-usage.md). Configuring a maximum vCore limit for a SQL database can control peak compute usage in shared Fabric capacities, prevent unexpected cost spikes and throttling. You can also apply capacity consumption guardrails to development, test, or early preview workloads.
+
 #### Memory consumption
 
 The **memory consumption** graph displays memory consumption (in megabytes) along the Y-axis and time along the X-axis. The graph displays two series: normal and memory spillover. The normal series shows the sum of memory usage from user queries that didn't spill over to `tempdb` during the time interval. If a query did spill over to `tempdb`, the amount of that spillover is shown as a second, red series on the graph. When you hover over the graph, you see details such as the time interval, memory consumption, number of executions, and memory spillover. 
@@ -110,7 +112,7 @@ The Automatic index tab report shows a history and status of automatically creat
 
 In the **Queries** tab, queries can be opened to troubleshoot the query details. Each query includes details including an execution history and query preview.
 
-To troubleshoot a T-SQL query, open the T-SQL code in the query editor, [SQL Server Management Studio](https://aka.ms/ssms), [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric-sqldb&preserve-view=true). You might also consider the [Copilot Explain and Fix quick action features for SQL database in Fabric](copilot-quick-actions.md).
+To troubleshoot a T-SQL query, open the T-SQL code in the query editor, [SQL Server Management Studio](https://aka.ms/ssms), [the MSSQL extension for Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric-sqldb&preserve-view=true). You might also consider the [Copilot Explain and Fix quick action features for SQL database in Fabric](copilot-quick-actions.md).
 
 :::image type="content" source="media/performance-dashboard/query-details.png" alt-text="Screenshot from the Fabric portal of the query details screen in the Performance dashboard." lightbox="media/performance-dashboard/query-details.png":::
 
@@ -135,6 +137,6 @@ Along with the Query ID and the Query text, metric, and execution count, tabs in
 
 ## Related content
 
-- [Query with the SQL query editor](query-editor.md)
+- [Control compute usage](control-compute-usage.md)
 - [Frequently asked questions for SQL database in Microsoft Fabric](faq.yml)
 - [Billing and utilization reporting for SQL database in Microsoft Fabric](usage-reporting.md)

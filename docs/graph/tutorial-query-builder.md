@@ -1,15 +1,14 @@
 ---
-title: "Tutorial: Query the graph with the query builder"
-description: Learn how to query your graph using the visual query builder in Microsoft Fabric.
+title: "Tutorial: Query the Graph with the Query Builder"
+description: Learn how to query your graph using the visual query builder in Microsoft Fabric, including selecting nodes, edges, and filters.
 ms.topic: tutorial
-ms.date: 02/02/2026
+ms.date: 06/25/2026
 ms.reviewer: wangwilliam
 ms.search.form: Tutorial - Query the graph with the query builder
+ai-usage: ai-assisted
 ---
 
 # Tutorial: Query the graph by using the query builder
-
-[!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
 In this tutorial step, you query your graph by using the visual query builder. The query builder provides an interactive way to explore your graph by selecting nodes and relationships.
 
@@ -17,46 +16,52 @@ You can also query your graph by using GQL, the graph query language. The [next 
 
 ## Switch to query builder mode
 
-Follow these steps to switch to query builder and start querying your graph interactively:
+To switch to query builder and start querying your graph interactively, select **Modes** > **Query** from your graph's home page.
 
-1. Select **Modes** > **Query** from your graph's home page.
+> [!TIP]
+> From this view, you can also create a read-only queryset. This queryset has the same functionalities and it allows you to share your query results.
 
-    > [!TIP]
-    > From this view, you can also create a read-only queryset. This queryset has the same functionalities and it allows you to share your query results.
+:::image type="content" source="./media/tutorial/query-mode.png" alt-text="Screenshot showing result of selecting Query mode." lightbox="./media/tutorial/query-mode.png":::
 
 ## Build a query
 
-Build a query to answer the question: "What products did a specific customer purchase?" This query traverses the graph from Customer through Order to Product. For example, to query customer Carla Adams' purchases, follow these steps:
+Build a query to answer the question: "What products did a specific customer purchase?" This query traverses the graph from `Customer` through `Order` to `Product`. For example, to query customer Carla Adams' purchases, follow these steps:
 
 1. Select **Add a node** to see the available nodes for querying.
 
-    :::image type="content" source="./media/tutorial/select-add-node.png" alt-text="Screenshot showing result of selecting 'Add a node'." lightbox="./media/tutorial/select-add-node.png":::
+    :::image type="content" source="./media/tutorial/select-add-node.png" alt-text="Screenshot showing result of selecting Add a node." lightbox="./media/tutorial/select-add-node.png":::
 
 1. Select the **Customer** node to add it to your query.
+1. On the right side, select the **Components** icon (shaped like a puzzle piece). The **Components** pane shows all nodes and edges and lets you add them to your query.
 
-    :::image type="content" source="./media/tutorial/query-select-customer-node.png" alt-text="Screenshot showing result of selecting the Customer node." lightbox="./media/tutorial/query-select-customer-node.png":::
+    :::image type="content" source="./media/tutorial/components.png" alt-text="Screenshot showing the Components pane." lightbox="./media/tutorial/components.png":::
 
-1. Select the **purchases** edge while the Customer node is selected. The query builder automatically adds the connected **Order** node.
-1. Select the **contains** edge while the **Order** node is selected. The query builder automatically adds the connected **Product** node.
-1. You now have a query pattern: Customer → purchases → Order → contains → Product.
+1. Select the `purchases` edge (while the `Customer` node is selected). The query builder automatically adds the edge and the connected `Order` node.
+1. Select the `contains` edge (while the `Order` node is selected). The query builder automatically adds the edge and the connected `Product` node.
+1. You now have a query pattern: `Customer` → `purchases` → `Order` → `contains` → `Product`.
 
     :::image type="content" source="./media/tutorial/query-nodes-and-edges-selected.png" alt-text="Screenshot showing the query pattern with selected nodes and edges." lightbox="./media/tutorial/query-nodes-and-edges-selected.png":::
 
-1. Apply a filter to the Customer node to focus on a specific customer. For this tutorial, select the Customer node, then select **Add filter**.
+1. Apply a filter to the `Customer` node to focus on a specific customer. Select the Customer node, and then select **Filter**.
 
-1. In the **Filter** popup, configure the filter as shown in the following diagram:
+   :::image type="content" source="./media/tutorial/add-filter.png" alt-text="Screenshot showing how to select Filter on the Customer node." lightbox="./media/tutorial/add-filter.png":::
+
+1. In the **Filter** popup window, configure the filter as follows:
+
+   - **For**: `Customer`
+   - **Where**: `fullName = Carla Adams`
 
     :::image type="content" source="./media/tutorial/query-add-filter.png" alt-text="Screenshot showing completed Add filter popup on the Customer node." lightbox="./media/tutorial/query-add-filter.png":::
 
-1. Select **Apply** to add the filter to the Customer node.
+1. Select **Apply** to add the filter to the `Customer` node.
 
-The query is now set up to find all products purchased by Carla Adams.
+The query is now set to find all products purchased by Carla Adams.
 
 ## Run the query
 
-1. Select **Run query** to run the query and see the results. The query might take a few moments to complete.
+1. Select **Run query** in the top ribbon to run the query and see the results. The query might take a few moments to complete.
 
-1. When the query finishes, collapse the query builder pane to get a better view of the results.
+1. When the query finishes, close the **Components** pane and collapse the query builder pane to get a better view of the results. You should see the products that Carla Adams purchased, displayed as a graph of connected `Customer`, `Order`, and `Product` nodes.
 
     :::image type="content" source="./media/tutorial/query-results.png" alt-text="Screenshot of the visualized query results." lightbox="./media/tutorial/query-results.png":::
 
@@ -80,23 +85,23 @@ You can view your query results in different ways:
 
 ## Save the query
 
-You can save your query by creating a queryset in your workspace. There are several ways to create a queryset in Fabric. This tutorial uses the interface in **Query** mode.
+You can save your query by creating a queryset in your workspace. You can create a queryset in several ways in Fabric. This tutorial uses the interface in **Query** mode.
 
 To create a queryset, follow these steps:
 
-1. In **Query** mode, select **Create queryset**.
+1. In the top ribbon, select **Create queryset**.
 
    :::image type="content" source="./media/tutorial/query-create-queryset.png" alt-text="Screenshot showing the Create queryset option." lightbox="./media/tutorial/query-create-queryset.png":::
 
-1. In the **New graph queryset** dialog, enter a name for your queryset (for example, "GraphQuerySet_1") and set **Location** to your workspace. Then select **Create**.
+1. In the **New Graph queryset** dialog, enter a name for your queryset (for example, *GraphQuerySet_1*) and set **Location** to your workspace. Then select **Create**.
 
    :::image type="content" source="./media/tutorial/query-create-queryset-dialog.png" alt-text="Screenshot showing the New graph queryset dialog." lightbox="./media/tutorial/query-create-queryset-dialog.png":::
 
-1. A new queryset item is created in your workspace, and the current query is saved in it. Select the triple ellipsis (...) next to the queryset name and select **Rename** to give it a meaningful name, such as "CarlaAdams_Purchases".
+1. A new queryset item is created in your workspace, and the current query is saved in it. Select the triple ellipsis (...) next to the query name and select **Rename** to give it a meaningful name, such as *CarlaAdams_Purchases*.
 
    :::image type="content" source="./media/tutorial/queryset-item-created.png" alt-text="Screenshot showing the created queryset item in the workspace." lightbox="./media/tutorial/queryset-item-created.png":::
 
-Querysets let you:
+When you save querysets, you can:
 
 - Rerun queries without recreating them
 - Share queries with teammates who have workspace access

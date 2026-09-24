@@ -11,7 +11,7 @@ ai.usage: ai-assisted
 
 # Tutorial: Analyze functional dependencies in a semantic model
 
-In this tutorial, you build on work by a Power BI analyst that's stored as semantic models (Power BI datasets). By using SemPy (preview) in the Synapse Data Science experience in Microsoft Fabric, you analyze functional dependencies in DataFrame columns. This analysis helps you discover subtle data quality issues to get more accurate insights.
+In this tutorial, you build on work by a Power BI analyst that's stored as semantic models (Power BI datasets). By using SemPy (preview) in the Fabric Data Science workload, you analyze functional dependencies in DataFrame columns. This analysis helps you discover subtle data quality issues to get more accurate insights.
 
 In this tutorial, you learn how to:
 

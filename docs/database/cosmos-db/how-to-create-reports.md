@@ -58,9 +58,9 @@ Before building reports, ensure that mirroring has completed successfully at lea
 
 Once mirroring has completed successfully, configure your semantic model:
 
-1. In the menu bar, select the **Cosmos DB** list and then select **SQL Endpoint** to switch to the SQL analytics endpoint.
+1. In the menu bar, select the **Cosmos DB** list and then select **SQL analytics Endpoint** to switch to the SQL analytics endpoint.
 
-    :::image type="content" source="media/how-to-create-reports/endpoint-selection.png" lightbox="media/how-to-create-reports/endpoint-selection.png" alt-text="Screenshot of the endpoint selection option in the menu bar for a database in Cosmos DB in Fabric.":::
+    :::image type="content" source="media/how-to-create-reports/endpoint-selection.png" lightbox="media/how-to-create-reports/endpoint-selection.png" alt-text="Screenshot of the SQL analytics endpoint selection option in the menu bar for a database in Cosmos DB in Fabric.":::
 
 1. Select the **Reporting** tab.
 
@@ -178,5 +178,5 @@ For more information about limitations when using the Azure Cosmos DB v2 connect
 
 - [Get started with Power BI](/power-bi/fundamentals/service-get-started)
 - [Power BI data refresh](/power-bi/connect-data/refresh-data)
-- [Edit tables for Direct Lake semantic models](../../fundamentals/direct-lake-edit-tables.md)
+- [Develop Direct Lake semantic models](../../fundamentals/direct-lake-develop.md)
 - [Access data from Lakehouse](how-to-access-data-lakehouse.md)

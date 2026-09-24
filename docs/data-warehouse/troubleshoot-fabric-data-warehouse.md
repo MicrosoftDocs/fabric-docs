@@ -45,7 +45,7 @@ A SELECT statement could have completed successfully in the backend and fails wh
 
 1. Use different client tools to rerun the same query.  
     - [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms)
-    - [The mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true)
+    - [The MSSQL extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true)
     - The [SQL query editor](sql-query-editor.md) in the [!INCLUDE [product-name](../includes/product-name.md)] portal
     - The [Visual Query editor](visual-query-editor.md) in the [!INCLUDE [product-name](../includes/product-name.md)] portal
     - SQLCMD utility (for authentication via Microsoft Entra ID (formerly Azure Active Directory) Universal with MFA, use parameters `-G -U`)  
@@ -69,7 +69,8 @@ For more information, see [Best practices to avoid write-write conflicts](transa
 
 ## Related content
 
-- [Query insights in Fabric data warehousing](query-insights.md)
+- [Troubleshoot query blocking in Fabric Data Warehouse](troubleshoot-query-blocking.md)
+- [Query insights in Fabric Data Warehouse](query-insights.md)
 - [Monitor connections, sessions, and requests using DMVs](monitor-using-dmv.md)
 - [What is the Microsoft Fabric Capacity Metrics app?](../enterprise/metrics-app.md)
 - [Limitations of Microsoft Fabric Data Warehouse](limitations.md)

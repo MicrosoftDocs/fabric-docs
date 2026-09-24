@@ -2,7 +2,7 @@
 title: How to Get Started with Microsoft Copilot in Fabric in the Data Factory Workload
 description: Learn how to get started with Microsoft Copilot in Fabric in the Data Factory workload to use natural language for creating data integration solutions.
 ms.reviewer: maghan, sngun
-ms.date: 09/02/2025
+ms.date: 08/31/2026
 ms.topic: how-to
 ms.collection:
   - ce-skilling-ai-copilot
@@ -15,12 +15,12 @@ ai-usage: ai-assisted
 
 # Get started with Copilot in Fabric in the Data Factory workload
 
-This article shows you how to get started with Microsoft Copilot in Fabric in the Data Factory workload. You can use Copilot to create data integration solutions using natural language prompts in both Dataflow Gen2 and pipelines, and troubleshoot your pipelines with error summaries and recommendations.
+This article shows you how to get started with Microsoft Copilot in Fabric in the Data Factory workload. You can use Copilot to create data integration solutions using natural language prompts in both dataflow Gen2 and pipelines, and troubleshoot your pipelines with error summaries and recommendations.
 
 > [!TIP]  
 > To learn more about Copilot features and capabilities, see [What is Copilot in Fabric in the Data Factory workload?](copilot-fabric-data-factory.md)
 
-Before your business can start using Copilot capabilities in Fabric, your administrator needs to [enable Copilot in Microsoft Fabric](../fundamentals/copilot-fabric-overview.md#enable-copilot).
+Before your business can start using Copilot capabilities in Fabric, your administrator needs to [enable Copilot in Fabric](../fundamentals/copilot-fabric-overview.md#enable-copilot).
 
 [!INCLUDE [copilot-note-include](../includes/copilot-note-include.md)]
 
@@ -28,22 +28,24 @@ Before your business can start using Copilot capabilities in Fabric, your admini
 
 To use Copilot in the Data Factory workload, you need:
 
-- A Microsoft Fabric license
-- A workspace with a Fabric capacity
-- Copilot enabled in your tenant
+- A paid Fabric capacity (F2 or higher, or P1 or higher). Copilot isn't supported on trial SKUs.
+- A workspace assigned to that Fabric capacity.
+- Copilot enabled by your Fabric administrator. For more information, see [Enable Copilot in Fabric](../fundamentals/copilot-fabric-overview.md#enable-copilot).
+- If your tenant or capacity is outside the US or EU, your administrator must also enable the tenant setting that allows data to be processed outside your capacity's geographic region.
 
-## Get started with Copilot for Dataflow Gen2
+## Get started with Copilot for dataflow Gen2
 
-Use the following steps to get started with Copilot for Dataflow Gen2:
+Use the following steps to get started with Copilot for dataflow Gen2:
 
-1. Create a new [Dataflow Gen2](../data-factory/tutorial-end-to-end-dataflow.md).
+1. Create a new [dataflow Gen2](../data-factory/tutorial-end-to-end-dataflow.md).
 
-1. On the Home tab in Dataflow Gen2, select the **Copilot** button.
+1. On the Home tab in the dataflow Gen2, select the **Copilot** button.
 
-1. In the bottom left of the Copilot pane, select the starter prompt icon, then the **Get data from** option.
+1. In the bottom left of the Copilot pane, select the **Get data from** option.
+
+1. Enter or select the **Send message** icon.
 
 1. In the **Get data** window, search for OData and select the **OData** connector.
-
 1. In the Connect to data source for the OData connector, input the following text into the URL field:
 
    ```http
@@ -174,7 +176,7 @@ Explain this pipeline error and provide troubleshooting steps: "The pipeline fai
 ## Related content
 
 - [What is Copilot in the Data Factory workload?](copilot-fabric-data-factory.md)
-- [Build pipeline expressions with Copilot](copilot-pipeline-expression-builder.md)
+- [Build pipeline expressions with Copilot](expression-language.md#build-pipeline-expressions-with-copilot)
 - [Expressions and functions for Data Factory](expression-language.md)
 - [Tutorial: Create an end-to-end pipeline](../data-factory/tutorial-end-to-end-pipeline.md)
 - [Tutorial: Create an end-to-end dataflow](../data-factory/tutorial-end-to-end-dataflow.md)

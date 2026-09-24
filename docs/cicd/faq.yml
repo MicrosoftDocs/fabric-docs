@@ -122,10 +122,6 @@ sections:
       - question: What happens to the incremental refresh configuration after deploying dataflows?
         answer: When you have a dataflow that contains semantic models that are configured with [incremental refresh](/power-bi/connect-data/incremental-refresh-overview), the refresh policy isn't copied or overwritten during deployment. After deploying a dataflow that includes a semantic model with incremental refresh to a stage that doesn't include this dataflow, if you have a refresh policy you'll need to reconfigure it in the target stage. If you're deploying a dataflow with incremental refresh to a stage where it already resides, the incremental refresh policy isn't copied. In such cases, if you wish to update the refresh policy in the target stage, you need to do it manually.
 
-  - name: Datamarts
-    questions:
-      - question: Where is my datamart's dataset?
-        answer: Deployment pipelines don't display datasets that belong to datamarts in the pipeline stages. When you're deploying a datamart, its dataset is also deployed. You can view your datamart's dataset in the workspace of the stage it's in.
 
 additionalContent: |
     ## Related content

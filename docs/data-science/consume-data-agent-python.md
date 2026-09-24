@@ -1,23 +1,33 @@
 ---
 title: Consume Fabric data agent from external applications with Python client SDK
 description: Learn how to use Python client SDK to use Microsoft Fabric data agent in VS Code.
+ms.author: scottpolly
+author: s-polly
 ms.reviewer: amjafari 
 ms.topic: how-to
-ms.date: 08/8/2025
+ms.date: 08/27/2026
+ai-usage: ai-assisted
 ---
 
 # Consume a Fabric data agent with the Python client SDK (preview)
 
-This article shows how to use the Python client SDK to add a Fabric data agent to web apps and other clients by using interactive browser authentication. You sign in through a browser with your Microsoft Entra ID credentials, and the data agent runs with your permissions. Adding the data agent to external apps lets you build custom interfaces, embed insights in existing workflows, automate reports, and let users run natural language data queries. This approach gives you data agent capabilities while you keep full control of the user experience and app architecture.
+This article shows how to use the Python client SDK to add a Fabric data agent to web apps and other clients by using interactive browser authentication. You sign in through a browser with your Microsoft Entra ID credentials, and the data agent runs with your permissions. By adding the data agent to external apps, you can build custom interfaces, embed insights in existing workflows, automate reports, and let users run natural language data queries. This approach gives you data agent capabilities while you keep full control of the user experience and app architecture.
 
-[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
+> [!IMPORTANT]
+> The code in this document and the [Fabric Data Agent External Client repository](https://github.com/microsoft/fabric_data_agent_client/tree/main) use the OpenAI Assistants API (`beta.assistants`, `beta.threads`, `beta.threads.runs`), which [OpenAI sunset on August 26, 2026](https://developers.openai.com/api/docs/assistants/migration). Because the Assistants API is no longer available, migrate to the [MCP endpoint](data-agent-mcp-server.md) to keep your integration working.
+
+
+> [!IMPORTANT]
+> When you use Python client SDK to add a Fabric data agent to web apps or other clients, responses returned by Fabric data agents might be sent outside of Fabric's compliance boundary or geographic region. The applicable web app or client's terms and data handling policies govern how these responses are processed and stored.
+
 [!INCLUDE [data-agent-prerequisites](includes/data-agent-prerequisites.md)]
 
 ## Set up your environment in VS Code
 
-1. Clone or download the [Fabric Data Agent External Client repository](https://github.com/microsoft/fabric_data_agent_client/tree/main), then open it in VS Code and run the sample client.
 
-1. Create and activate a Python virtual environment (recommended), then install the required dependencies.
+1. Clone or download the [Fabric Data Agent External Client repository](https://github.com/microsoft/fabric_data_agent_client/tree/main). Then open it in VS Code and run the sample client.
+
+1. Create and activate a Python virtual environment (recommended), and install the required dependencies.
 
       ```bash
    python -m venv .venv
@@ -41,7 +51,7 @@ This article shows how to use the Python client SDK to add a Fabric data agent t
 
 ## Install dependencies
 
-Run this command to install dependencies:
+Run the following command to install dependencies:
 
 ```bash
 pip install -r requirements.txt
@@ -49,7 +59,7 @@ pip install -r requirements.txt
 
 > [!NOTE]
 > - The `azure-identity` package included in `requirements.txt` lets you authenticate with Microsoft Entra ID.
-> - `InteractiveBrowserCredential` from the `azure-identity` package opens a browser so the user can sign in with a Microsoft Entra ID account. Use it for local development or apps that allow interactive sign-in.
+> - `InteractiveBrowserCredential` from the `azure-identity` package opens a browser so you can sign in with a Microsoft Entra ID account. Use it for local development or apps that allow interactive sign-in.
 
 ## Configure the client 
 
@@ -84,26 +94,21 @@ DATA_AGENT_URL = "<your-fabric-data-agent-url>"
 
 ---
 
-See the documentation to find the published data agent URL. Follow the instructions to locate your tenant ID.
-
-## Authenticate
-
-Use the `InteractiveBrowserCredential` class to authenticate with Microsoft Entra ID in a browser.
-
-```python
-from azure.identity import InteractiveBrowserCredential
-from fabric_data_agent_client import FabricDataAgentClient
-credential = InteractiveBrowserCredential()
-```
+To find the published data agent URL, see [Use the Fabric data agent programmatically](data-agent-end-to-end-tutorial.md#use-the-fabric-data-agent-programmatically). To locate your tenant ID, see [Find your Microsoft Entra tenant ID](/entra/fundamentals/how-to-find-tenant).
 
 ## Create the data agent client
 
+Create a `FabricDataAgentClient` with your tenant ID and data agent URL. When the client initializes, it uses `InteractiveBrowserCredential` from the `azure-identity` package to authenticate with Microsoft Entra ID: your default browser opens so you sign in to the tenant that hosts the Fabric data agent.
+
 ```python
-client = FabricDataAgentClient(credential=credential)
+from fabric_data_agent_client import FabricDataAgentClient
+
+client = FabricDataAgentClient(tenant_id=TENANT_ID, data_agent_url=DATA_AGENT_URL)
 ```
+
 > [!NOTE]
-> - The `fabric-data-agent-client` package provides the client SDK for connecting to the Fabric data agent.
-> - The Python client uses interactive browser authentication: when you run the script, your default browser opens so you sign in to the tenant that hosts the Fabric data agent.
+> - `FabricDataAgentClient` comes from the `fabric_data_agent_client.py` script in the cloned repository, not from a separately installed package.
+> - The client uses interactive browser authentication: when you run the script, your default browser opens so you sign in to the tenant that hosts the Fabric data agent.
 
 ## Ask the data agent a question
 

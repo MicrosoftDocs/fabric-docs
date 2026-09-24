@@ -1,0 +1,73 @@
+### YamlMime:Landing
+
+title: Microsoft Fabric Embed documentation
+summary: Learn to use Microsoft Fabric Embed solutions.
+
+metadata:
+  title: Microsoft Fabric Embed documentation
+  description: Learn to use Microsoft Fabric Embed solutions.
+  services: powerbi
+  ms.service: powerbi
+  ms.subservice: powerbi-developer
+  ms.topic: landing-page # Required
+  ms.collection: collection
+  author: billmath
+  ms.author: billmath
+  ms.date: 31/03/2024
+
+# linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
+
+landingContent:
+# Cards and links should be based on top customer tasks or top subjects
+# Start card title with a verb
+
+  # Card (optional)
+  - title: Overview
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: "What is Microsoft Fabric Embed?"
+            url: what-is-fabric-embed.md
+         
+
+  # Card (optional)
+  - title: Get started
+    linkLists:
+      - linkListType: get-started
+        links:
+          - text: "Set up your environment for Microsoft Fabric Embed"
+            url: set-up-fabric-embed-environment.md
+          - text: "Quickstart to Microsoft Fabric Embed"
+            url: quickstart-embed-fabric-item.md
+
+  # Card (optional)
+  - title: Troubleshoot
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: "Troubleshoot Microsoft Fabric Embed"
+            url: troubleshoot-fabric-embed.md
+            
+  # Card (optional)
+  - title: Learn
+    linkLists:
+      - linkListType: learn
+        links:
+          - text: Contribute to Fabric docs
+            url: /contribute/
+      - linkListType: reference
+        links:
+          - text: Community   
+            url: https://community.fabric.microsoft.com/     
+          - text:  Microsoft Learn training
+            url: /training/fabric/
+
+  # Card (optional)
+  - title: Reference
+    linkLists:
+      - linkListType: reference
+        links:
+          - text: "Fabric Embed JavaScript SDK"
+            url: http://go.microsoft.com/fwlink/?linkid=2370290
+
+

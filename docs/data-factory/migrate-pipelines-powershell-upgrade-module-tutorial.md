@@ -4,11 +4,14 @@ description: Use the Microsoft.FabricPipelineUpgrade PowerShell module to upgrad
 ms.reviewer: ssrinivasara
 ms.topic: tutorial
 ms.custom: pipelines
-ms.date: 09/17/2025
+ms.date: 06/11/2026
 ai-usage: ai-assisted
 ---
 
 # Tutorial: Upgrade your Azure Data Factory pipelines to Fabric pipelines using PowerShell
+
+> [!TIP]
+> For most migrations, we recommend the [built-in upgrade experience](/azure/data-factory/how-to-upgrade-your-azure-data-factory-pipelines-to-fabric-data-factory), which provides a guided, no-code migration path directly in the Azure Data Factory UX. Use the PowerShell approach in this tutorial for scripted, bulk, or CI/CD-driven scenarios.
 
 You can migrate your Azure Data Factory (ADF) pipelines to Microsoft Fabric using the Microsoft.FabricPipelineUpgrade PowerShell module. This tutorial provides an example of all the steps to perform the migration with specific instructions, screenshots, and troubleshooting steps. For a more general, concise guide, see [the overview](migrate-pipelines-powershell-upgrade-module-for-azure-data-factory-to-fabric.md).
 
@@ -19,13 +22,7 @@ You can migrate your Azure Data Factory (ADF) pipelines to Microsoft Fabric usin
 
 ## Prerequisites
 
-To get started, be sure you have the following prerequisites:
-
-- **Tenant**: Your ADF and Fabric workspace must be in the same Microsoft Entra ID tenant.
-- **Fabric**: A tenant account with an active Fabric subscription - [Create an account for free](../fundamentals/fabric-trial.md).
-- **Fabric workspace recommendations** (Optional): We recommend using a new [Fabric workspace](../fundamentals/workspaces.md) in the same region as your ADF for upgrades for best performance.
-- **Permissions**: [Read access to the ADF workspace and items](/azure/data-factory/concepts-roles-permissions#scope-of-the-data-factory-contributor-role) you’ll migrate and [Contributor or higher rights in the Fabric workspace](../security/permission-model.md#workspace-roles) you’ll write to.
-- **Network and auth**: Make sure you can sign in to both Azure and Fabric from your machine (interactive or service principal).
+[!INCLUDE [migration-powershell-prerequisites](includes/migration-powershell-prerequisites.md)]
 
 > [!VIDEO https://learn.microsoft.com/_themes/docs.theme/master/en-us/_themes/global/video-embed-one-stream.html?id=46afe4ed-f186-4937-b09f-326dd63bbf5b]
 
@@ -76,7 +73,7 @@ This command loads the pipeline and associated artifacts from your Azure Data Fa
   "result": {
     "importedResources": {
       "type": "AdfSupportFile",
-      "adfName": "testdatafactory,
+      "adfName": "testdatafactory",
       "pipelines": {
         "pipeline1": {
           "name": "pipeline1",
@@ -92,7 +89,6 @@ This command loads the pipeline and associated artifacts from your Azure Data Fa
                   "waitTimeInSeconds": 1
                 }
               }
-            ],
             ],
             "policy": {
               "elapsedTimeMetric": {}
@@ -294,7 +290,7 @@ The **Pipeline** section has similar steps:
 
 These `resolve` steps are instructions for you to map your ADF Linked services to the activities' **source** and **sink** with the corresponding Fabric Connection ID.
 
-### Why does this happen?  
+### Why does this happen?
 
 The upgrader can’t know the Fabric resource ID for a connection or pipeline until those resources exist. So, it provides a tip on how to create the necessary resources and fill out your resolution file.
 
@@ -338,7 +334,7 @@ The upgrader can’t know the Fabric resource ID for a connection or pipeline un
 
 The error says we need to **“add a connection’s ID to your resolutions.”**
 
-### What went wrong?  
+### What went wrong?
 
 The Fabric Upgrader can’t create Fabric connections on its own. You need to help by creating a Fabric connection manually and then telling the upgrader when to use it.
 
@@ -357,9 +353,11 @@ The Fabric Upgrader can’t create Fabric connections on its own. You need to he
 
     ```json
     [
+      {
         "type": "LinkedServiceToConnectionId",
         "key": "BlobStore1",
         "value": "<Fabric Connection ID>"
+      }
     ]
     ```
 

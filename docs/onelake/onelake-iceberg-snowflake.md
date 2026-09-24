@@ -1,7 +1,9 @@
 ---
 title: Use Snowflake with Iceberg tables in OneLake
 description: Learn how to use Snowflake to write Iceberg tables to OneLake and read any Fabric table as an Iceberg-formatted table.
-ms.reviewer: mahi
+ms.reviewer: mahi # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.topic: how-to
 ms.date: 6/30/2025
 #customer intent: As a Snowflake user, I want to learn how to write Iceberg tables to OneLake and/or to read a Fabric (Delta Lake) table as an Iceberg table.
@@ -9,7 +11,7 @@ ms.date: 6/30/2025
 
 # Use Snowflake with Iceberg tables in OneLake
 
-Microsoft OneLake can be used with Snowflake for storage and access of Apache Iceberg tables.
+OneLake can be used with Snowflake for storage and access of Apache Iceberg tables.
 
 Follow this guide to use Snowflake on Azure to: 
 * write Iceberg tables directly to OneLake
@@ -19,7 +21,10 @@ Before getting started, follow the prerequisite steps in this article.
 
 ## Prerequisite
 
-To use Snowflake on Azure to write or read Iceberg tables with OneLake, your Snowflake account's identity in Entra ID needs to be able to communicate with Fabric. Enable the Fabric tenant-level settings that allow service principals to [call Fabric APIs](/rest/api/fabric/articles/identity-support#service-principal-tenant-setting) and to [call OneLake APIs](./security/get-started-security.md#allow-apps-running-outside-of-fabric-to-access-data-via-onelake).
+To use Snowflake on Azure to write or read Iceberg tables with OneLake, your Snowflake account's identity in Entra ID needs to communicate with Fabric. Enable the Fabric tenant-level settings that allow service principals to [call Fabric APIs](/rest/api/fabric/articles/identity-support#service-principal-tenant-setting) and to [call OneLake APIs](./security/get-started-security.md#allow-apps-running-outside-of-fabric-to-access-data).
+
+> [!IMPORTANT]
+> Snowflake reaches OneLake over the public network. Snowflake doesn't yet support connectivity to workspaces protected by private link or other network restrictions.
 
 ## Write an Iceberg table to OneLake using Snowflake on Azure
 
@@ -145,7 +150,7 @@ To use Snowflake on Azure to read a virtual Iceberg table based on a Delta Lake 
 1.	Back in Fabric, open your workspace and select **Manage access**, then **Add people or groups**. Grant the application used by your Snowflake external volume the permissions needed to read data from data items in your workspace.
 
     > [!TIP]
-    > You may instead choose to grant permissions at the data item level, if you wish. [Learn more about OneLake data access.](./security/get-started-security.md#workspace-permissions)
+    > You can instead choose to grant permissions at the data item level, if you wish. [Learn more about OneLake data access.](./security/get-started-security.md#grant-access-with-workspace-roles)
 
 1.	Create the `CATALOG INTEGRATION` object in Snowflake, if you did not previously complete this step. This step is required by Snowflake to reference existing Iceberg tables in storage.
 

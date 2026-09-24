@@ -7,7 +7,7 @@ ms.date: 06/26/2025
 ms.search.form: Apache Spark applications comparison
 ---
 
-# Apache Spark applications comparison (preview)
+# Apache Spark applications comparison
 
 The Spark applications comparison feature allows you to analyze and compare the performance of multiple Spark application runs. By examining trends in duration, input/output data, and other metrics, you can quickly spot regressions, improvements, or anomalies relative to a baseline run.
 
@@ -15,10 +15,10 @@ The Spark applications comparison feature allows you to analyze and compare the 
 
 You can access the Spark applications comparison from the [Monitor run series](apache-spark-monitor-run-series.md#access-the-monitor-run-series-feature) page:
 
-1. Go to the **Monitor run series** page.
-2. Switch to the **Compare runs** tab.
+1. Go to the **Monitor run series** page. From the monitor run series page, you can access the Spark application comparison feature for items—such as Notebooks and Spark Job Definitions—for which you have read access.
+1. Switch to the **Compare runs** tab.
 
-:::image type="content" source="media\spark-comparison-runs\access-the-compare-run-feature.png" alt-text="Screenshot showing access the compare run feature." lightbox="media\spark-comparison-runs\access-the-compare-run-feature.png":::
+    :::image type="content" source="media\spark-comparison-runs\access-the-compare-run-feature.png" alt-text="Screenshot showing access the compare run feature." lightbox="media\spark-comparison-runs\access-the-compare-run-feature.png":::
 
 ## Spark application runs list
 
@@ -31,7 +31,7 @@ You can access the Spark applications comparison from the [Monitor run series](a
 :::image type="content" source="media\spark-comparison-runs\view-spark-application-runs-list.png" alt-text="Screenshot showing view spark application runs list." lightbox="media\spark-comparison-runs\view-spark-application-runs-list.png":::
 
 > [!NOTE]
-> Spark applications comparison currently supports comparing runs within the same artifact (for example, within a single Notebook or Spark Job Definition). Cross-artifact comparisons are not yet supported.
+> Spark applications comparison currently supports comparing runs within the same item (for example, within a single notebook or Spark job definition). Cross-item comparisons are not yet supported.
 
 ## View the compare panel
 
@@ -58,7 +58,7 @@ This enables you to quickly diagnose whether regressions stem from query ineffic
 
 ## Deep dive with Spark L2 monitoring
 
-From the Spark applications comparison view, you can drill down into Spark L2 monitoring pages for any run to access detailed information, including job, query, and task-level insights, logs, and Notebook snapshots.
+From the Spark applications comparison view, you can drill down into Spark L2 monitoring pages for any run to access detailed information, including job, query, and task-level insights, logs, and notebook snapshots.
 
 ## Comparison metrics
 

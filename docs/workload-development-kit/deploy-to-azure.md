@@ -3,7 +3,7 @@ title: Deploy a Fabric Workload to Azure
 description: Learn about the components of a proposed architecture for deploying a Microsoft Fabric workload to Azure.
 ms.reviewer: tadevani
 ms.topic: how-to
-ms.date: 03/14/2025
+ms.date: 04/29/2026
 ---
 
 # Deploy a Fabric workload to Azure

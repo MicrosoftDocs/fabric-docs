@@ -1,0 +1,119 @@
+---
+title: What Is Planning in Fabric?
+description: Learn about planning in Fabric, including its components, core features, and use cases.
+ms.date: 07/28/2026
+ms.topic: overview
+#customer intent: As a user, I want to understand what planning is, including its components, key capabilities, use cases, and why to choose it.
+---
+
+# What is planning in Fabric?
+
+Planning is an Enterprise and Corporate Performance Management (EPM & CPM) solution built directly into Microsoft Fabric. It enables organizations to create, manage, and analyze plans such as budgets, forecasts, and scenarios within the same governed platform used for data, analytics, and AI.
+
+Planning brings together three integrated capabilities in a single unified suite:
+
+* Planning for creating and managing plans such as budgets, forecasts, and scenarios
+* PowerTable for data management and data applications
+* Intelligence for integrated reporting and insights
+
+By planning directly in Microsoft Fabric, planning removes the need for separate planning tools or spreadsheet‑based workflows. Organizations can bring goals, plans, and actual results together on shared semantic models, making it easier to move from manual planning to continuous, data‑driven decisions.
+
+By combining historical data, real-time signals, and future projections in a single environment, planning creates an AI‑ready foundation for smarter decisions.
+
+To learn which regions support planning, see [Region availability for planning](#supported-regions).
+
+> [!NOTE]
+> Planning in Fabric IQ is now available worldwide as part of the Microsoft Fabric SKU. New billing meters have also been introduced and are now available for billing. To learn about planning sheet limitations, see [Known limitations](overview-limitations.md).
+
+## Why use planning?
+
+Traditional enterprise planning typically relies on multiple tools:
+
+* BI platforms for reporting on historical data
+* Separate planning or CPM tools for forecasts and budgets
+* Spreadsheets for modeling and scenario analysis
+
+This fragmented approach introduces data silos, manual reconciliation, delayed insights, and governance challenges.
+
+Planning addresses these challenges by bringing planning directly into Fabric.
+
+Planning allows organizations to:
+
+* Perform enterprise planning, scenario modeling, and what-if analysis
+* Model and integrate budgets and forecasts
+* Automatically write planning results back to a SQL database in Fabric
+* Unify goals, plans, and actuals on a shared semantic model
+* Manage forward-looking reference data
+* Perform variance reporting and analysis
+* Operate entirely within a single, governed Fabric environment
+
+Historical data, real-time signals, and future projections are combined in one platform, using consistent definitions and governed access.
+
+### Unified data foundation
+
+Planning is built on Fabric semantic models, ensuring that planning and analytics share the same trusted business logic.
+
+With planning, organizations can combine:
+
+* Historical data from Fabric analytics
+* Real-time or refreshed operational data
+* Future projections and assumptions
+
+Because plans are stored and governed in Fabric, they remain aligned with enterprise reporting and downstream analytics.
+
+### Designed for business users and the enterprise
+
+Planning is designed to be accessible to business users while meeting enterprise requirements.
+
+These are the benefits for business users:
+
+* Native experience inside Fabric
+* No code/low code interactions
+* Familiar Excel-like interface
+
+These are the benefits for enterprises:
+
+* Centralized governance
+* Security and access controls
+* Scalability for large planning models
+* Alignment with Fabric administration and compliance standards
+
+This balance enables finance teams and business stakeholders to participate directly in planning without heavy IT dependency.
+
+## Core components of planning
+
+Planning consists of four primary components that support end-to-end planning workflows.
+
+### Planning sheets
+
+Planning sheets are used for budgeting, forecasting, and scenario modeling. They allow users to define assumptions, inputs, and calculated outcomes in a familiar, spreadsheet‑like experience.
+
+### PowerTable sheets
+
+PowerTable sheets enable structured planning at scale. They support large, dimensional planning models aligned with Fabric data structures and semantic models.
+
+### Intelligence sheets
+
+Intelligence sheets provide analytical insights and automated variance analysis over planning data. They help users understand variances, trends, and forward‑looking implications.
+
+### Infobridge
+
+Infobridge connects and integrates data across systems, ensuring planning data stays aligned with Fabric workloads and source systems.
+
+Planning extends Microsoft Fabric beyond analytics into enterprise decision intelligence. By embedding planning directly into Fabric, organizations can unify data, analytics, and planning in a single platform, reducing manual effort, improving alignment, and enabling proactive, AI-assisted decision-making.
+
+## Supported regions
+
+Planning is available in all Microsoft Fabric supported regions. For more information, see [Fabric region availability](../../admin/region-availability.md).
+
+## Prerequisites for planning
+
+For more information about prerequisites for using planning, see [Prerequisites for planning in Fabric](overview-prerequisites.md). Prerequisites include tenant settings, capacity settings, semantic model connection owner permissions, and database connections.
+
+## Next steps
+
+Explore the components of planning in more detail:
+* [Planning sheets](planning-overview.md)
+* [PowerTable sheets](powertable-overview.md)
+* [Intelligence sheets](intelligence-overview.md)
+* [Infobridge](infobridge-overview.md)

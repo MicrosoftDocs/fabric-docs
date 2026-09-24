@@ -5,8 +5,9 @@ ms.reviewer: aksdi
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.subservice: rti-eventhouse
-ms.date: 12/17/2025
+ms.date: 08/19/2026
 ms.search.form: Get data in a KQL Database
+ai-usage: ai-assisted
 ---
 
 # Get data from Eventstream
@@ -19,7 +20,7 @@ To get data from a new eventstream, see [Get data from a new eventstream](event-
 
 > [!WARNING]
 >
-> * Data preview from an eventstream with large sample events (10 MB or larger) isn't supported in the Get Data wizard. Use small sample events (about 1 MB each) to configure the data connection.
+> * The **Get Data** wizard doesn't support data preview from an eventstream with large sample events (10 MB or larger). Use small sample events (about 1 MB each) to configure the data connection.
 
 ## Prerequisites
 
@@ -90,6 +91,15 @@ Optional:
 * Select **</>** to open the command viewer to view and copy the automatic commands generated from your inputs. You can also open the commands in a queryset.
 
 * Select the pencil icon to [Edit columns](#edit-columns).
+
+* Select **Allow large values** to ingest `string` or `dynamic` columns with cell values up to 32 MB. This checkbox is automatically selected if a large value is detected in the first 1,000 rows of data. For more information, see [Large message support (preview)](get-data-overview.md#large-message-support-preview).
+
+    > [!NOTE]
+    > Schema inference in the Get Data wizard is based on scanning the first 1,000 records in the preview data. AVRO, Parquet, and TXT formats aren't scanned for large messages during this configuration wizard. For these formats, you must manually select **Allow large values** if you expect `string` or `dynamic` values to exceed 1 MB per cell.
+    > Large Message Support isn't supported for shortcuts (external tables), tables with Query acceleration over OneLake shortcuts. 
+    > OneLake data availability for tables with large value columns depends on the target size limits.
+
+:::image type="content" source="media/get-data-eventstream/eventstream-wizard.png" alt-text="Screenshot of the allow large values option highlighted." lightbox="media/get-data-eventstream/eventstream-wizard.png":::
 
 [!INCLUDE [get-data-edit-columns](includes/get-data-edit-columns.md)]
 

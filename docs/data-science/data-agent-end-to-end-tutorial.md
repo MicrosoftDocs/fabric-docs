@@ -1,9 +1,11 @@
-﻿---
+---
 title: Fabric data agent scenario (preview)
 description: Learn how to configure a Fabric data agent on the AdventureWorks dataset.
+ms.author: scottpolly
+author: s-polly
 ms.reviewer: amjafari
 ms.topic: tutorial
-ms.date: 09/24/2025
+ms.date: 05/12/2026
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
 ai-usage: ai-assisted
@@ -11,7 +13,7 @@ ai-usage: ai-assisted
 
 # Fabric data agent example with the AdventureWorks dataset (preview)
 
-This article shows how to set up a data agent in Microsoft Fabric using a lakehouse as the example data source. We first create and populate a lakehouse, then create a Fabric data agent and add the lakehouse to it. If you already have a Power BI semantic model (with the necessary read/write permissions), a warehouse, a KQL database, or an ontology, follow the same steps and select that source instead. Although this walkthrough uses a lakehouse, the pattern is the same for other sources—only the data source selection differs.
+This article shows how to set up a data agent in Microsoft Fabric using a lakehouse as the example data source. We first create and populate a lakehouse, then create a Fabric data agent and add the lakehouse to it. If you already have a Power BI semantic model, ensure you have Read permission to interact with it through a data agent (Write permission is only required to modify the semantic model or use capabilities such as Prep for AI). For a warehouse, a KQL database, or an ontology, follow the same steps and select that source instead. Although this walkthrough uses a lakehouse, the pattern is the same for other sources; only the data source selection differs.
 
 [!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
@@ -91,6 +93,12 @@ Once the lakehouse is added as a data source, the **Explorer** pane on the left 
 - `factresellersales`
 
 :::image type="content" source="./media/data-agent-scenario/get-started.png" alt-text="Screenshot showing where you can select tables for AI." lightbox="./media/data-agent-scenario/get-started.png":::
+
+### Permissions for semantic models in data agents
+
+Users only need Read permission on a Power BI semantic model to add it to a data agent and ask questions through the agent. Workspace access (Member role) and Build permission aren't required for interaction via data agents. Write permission is needed only for modifying the semantic model or using capabilities such as Prep for AI.
+
+This permissions change applies only to interactions through data agents. Other access patterns (for example, Analyze in Excel or direct report authorship) follow standard Power BI permissions.
 
 ## Provide instructions
 
@@ -174,21 +182,7 @@ The **Publish data agent** box opens, as shown in this screenshot:
 
 :::image type="content" source="./media/data-agent-scenario/publish-data-agent.png" alt-text="Screenshot showing the publish data agent feature." lightbox="./media/data-agent-scenario/publish-data-agent.png":::
 
-In this box, select **Publish** to publish the Fabric data agent. The published URL for the Fabric data agent appears, as shown in this screenshot:
-
-:::image type="content" source="./media/data-agent-scenario/fabric-notebook-data-agent-published-url-value.png" alt-text="Screenshot showing the published URL." lightbox="./media/data-agent-scenario/fabric-notebook-data-agent-published-url-value.png":::
-
-## Use the Fabric data agent in Copilot in Power BI
-
-You can use the Copilot in Power BI to interact with the Fabric data agent after you publish it. With Copilot in Power BI, you can directly consume the data agent and other items (for example, reports, or semantic models) without needing to switch between them.
-
-Select the **Copilot** button on the left navigation pane, to open the Copilot in Power BI. Next, select **Add items for better results** in the text box at the bottom, to add the data agent. Select **Data agents** in the window that opens. You can only see the data agents that you have permission to access. Choose the data agent you want and select **Confirm**. This example shows how to work with a single data agent, but you can add more items - for example, other data agents, reports, or semantic models. The following screenshot illustrates the steps with a single data agent:
-
-:::image type="content" source="./media/data-agent-scenario/copilot-in-powerbi-add-agent.png" alt-text="Screenshot showing the Copilot button and button to add items such as Data Agents." lightbox="./media/data-agent-scenario/copilot-in-powerbi-add-agent.png":::
-
-Now that you added the data agent to the Copilot in Power BI, you can ask any questions related to your Fabric data agent, as shown in the following screenshot:
-
-:::image type="content" source="./media/data-agent-scenario/copilot-in-powerbi-chat.png" alt-text="Screenshot showing the Copilot answering a question." lightbox="./media/data-agent-scenario/copilot-in-powerbi-chat.png":::
+In this box, select **Publish** to publish the Fabric data agent. Once published, data agent can be consumed as a model context protocol (MCP) server.
 
 ## Use the Fabric data agent programmatically
 
@@ -218,102 +212,60 @@ If you haven't published the Fabric data agent before, you can publish it follow
 %pip install "synapseml==1.0.5"  # Required for synapse.ml.mlflow (update version as needed)
 %pip install pandas tqdm  # Skip if already available in the Fabric runtime
 ```
+> [!IMPORTANT]
+> Since OpenAI retired the Assistants API, applications should use the MCP endpoint for agent interactions. Unlike the Assistants API, the MCP endpoint doesn't provide built-in conversation management, so callers must orchestrate multi-turn interactions by maintaining conversation state and supplying relevant context across requests.
+
+### Query the data agent from Python
+
+The following example connects to the MCP endpoint, discovers the tool, sends a question, and prints the answer. It reuses the `credential` from the [Authenticate to Fabric](fabric-data-agent-sdk.md#authenticate-to-fabric) step and uses the [MCP Python SDK](https://pypi.org/project/mcp/). Install the SDK first:
 
 ```python
-import typing as t
-import time
-import uuid
-
-# OpenAI SDK internals
-from openai import OpenAI
-from openai._models import FinalRequestOptions
-from openai._types import Omit
-from openai._utils import is_given
-
-# SynapseML helper for env config
-from synapse.ml.mlflow import get_mlflow_env_config
-
-# Removed unused imports: requests, json, pprint, APIStatusError, SynapseTokenProvider
- 
-base_url = "https://<generic published base URL value>"
-question = "What data sources do you have access to?"
-
-configs = get_mlflow_env_config()
-
-# Create OpenAI Client
-class FabricOpenAI(OpenAI):
-    def __init__(
-        self,
-        api_version: str ="2024-05-01-preview",
-        **kwargs: t.Any,
-    ) -> None:
-        self.api_version = api_version
-        default_query = kwargs.pop("default_query", {})
-        default_query["api-version"] = self.api_version
-        super().__init__(
-            api_key="",
-            base_url=base_url,
-            default_query=default_query,
-            **kwargs,
-        )
-    
-    def _prepare_options(self, options: FinalRequestOptions) -> None:
-        headers: dict[str, str | Omit] = (
-            {**options.headers} if is_given(options.headers) else {}
-        )
-        options.headers = headers
-        headers["Authorization"] = f"Bearer {configs.driver_aad_token}"
-        if "Accept" not in headers:
-            headers["Accept"] = "application/json"
-        if "ActivityId" not in headers:
-            correlation_id = str(uuid.uuid4())
-            headers["ActivityId"] = correlation_id
-
-        return super()._prepare_options(options)
-
-# Pretty printing helper
-def pretty_print(messages):
-    print("---Conversation---")
-    for m in messages:
-        print(f"{m.role}: {m.content[0].text.value}")
-    print()
-
-fabric_client = FabricOpenAI()
-# Create assistant
-assistant = fabric_client.beta.assistants.create(model="not used")
-# Create thread
-thread = fabric_client.beta.threads.create()
-# Create message on thread
-message = fabric_client.beta.threads.messages.create(thread_id=thread.id, role="user", content=question)
-# Create run
-run = fabric_client.beta.threads.runs.create(thread_id=thread.id, assistant_id=assistant.id)
-
-# Wait for run to complete (avoid indefinite loop)
-terminal_states = {"completed", "failed", "cancelled", "requires_action"}
-poll_interval = 2
-timeout_seconds = 300  # Adjust based on expected workload
-start_time = time.time()
-
-while run.status not in terminal_states:
-    if time.time() - start_time > timeout_seconds:
-        raise TimeoutError(f"Run polling exceeded {timeout_seconds} seconds (last status={run.status})")
-    run = fabric_client.beta.threads.runs.retrieve(
-        thread_id=thread.id,
-        run_id=run.id,
-    )
-    print(run.status)
-    time.sleep(poll_interval)
-
-if run.status != "completed":
-    print(f"Run finished with status: {run.status}")
-
-# Print messages
-response = fabric_client.beta.threads.messages.list(thread_id=thread.id, order="asc")
-pretty_print(response)
-
-# Delete thread
-fabric_client.beta.threads.delete(thread_id=thread.id)
+%pip install mcp
 ```
+
+```python
+import asyncio
+
+from mcp import ClientSession
+from mcp.client.streamable_http import streamablehttp_client
+
+workspace_id = "<your-workspace-id>"
+data_agent_id = "<your-data-agent-id>"
+question = "<your question>"
+
+mcp_url = (
+    f"https://api.fabric.microsoft.com/v1/mcp/workspaces/{workspace_id}"
+    f"/dataagents/{data_agent_id}/agent"
+)
+
+
+def get_auth_headers():
+    token = credential.get_token("https://api.fabric.microsoft.com/.default")
+    return {"Authorization": f"Bearer {token.token}"}
+
+
+async def query_data_agent(question):
+    headers = get_auth_headers()
+
+    async with streamablehttp_client(mcp_url, headers=headers) as (read, write, _):
+        async with ClientSession(read, write) as session:
+            await session.initialize()
+
+            # The data agent exposes a single tool. Discover it, then call it.
+            tools = await session.list_tools()
+            tool = tools.tools[0]
+            question_arg = next(iter(tool.inputSchema["properties"]))
+
+            result = await session.call_tool(tool.name, {question_arg: question})
+
+            answers = [block.text for block in result.content if block.type == "text"]
+            return "\n".join(answers)
+
+
+answer = asyncio.run(query_data_agent(question))
+print(answer)
+```
+
 
 ## Related content
 

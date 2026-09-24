@@ -1,0 +1,37 @@
+### YamlMime:FAQ
+metadata:
+  title: Query acceleration in Fabric Data Warehouse Frequently Asked Questions
+  description: This article lists answers to frequently asked questions about query acceleration in Fabric Data Warehouse.
+  ms.reviewer: nnikolic, marakiketema
+  ms.topic: faq
+  ms.date: 07/31/2026
+
+title: Query acceleration in Fabric Data Warehouse Frequently Asked Questions
+
+summary: |
+  This article lists answers to frequently asked questions about query acceleration in Fabric Data Warehouse.
+
+sections:
+  - name: Query acceleration FAQ
+    questions:
+      - question: Does query acceleration require application changes?
+        answer: No. Query acceleration operates within Fabric Data Warehouse and doesn't require application changes, query rewrites, schema changes, reformatting, data movement, or additional infrastructure to manage.
+
+      - question: Does it accelerate every query?
+        answer: No. Only eligible operations and workloads are accelerated. Some parts of a query might qualify for query acceleration, and some might not. However, when query acceleration is active, all queries are billed under a query acceleration meter. For more information, see [Billing and utilization reporting in Fabric Data Warehouse](usage-reporting.md).
+
+      - question: How is query acceleration for Fabric Data Warehouse billed?
+        answer: |
+          Query acceleration uses the same business model as the rest of Fabric and is billed using **Capacity Units (CU)**. Query acceleration uses a separate meter. This meter consumes CUs at a higher rate than standard Fabric Data Warehouse workloads. Once enabled, all queries are billed through the Query acceleration meter.
+
+      - question: How does query acceleration differ from traditional scaling?
+        answer: |
+          Traditional approaches to improving analytics performance often involve strategies to increase compute resources, add more CPU cores, rewrite queries, or create additional aggregates or optimization structures.
+
+          Query acceleration introduces another dimension of optimization by using specialized hardware to process eligible operations more efficiently. Rather than replacing CPUs, accelerators complement them.
+
+      - question: Does query acceleration work with Power BI?
+        answer: Yes. Power BI scenarios that generate SQL (Direct Query) against Fabric Data Warehouse can benefit when eligible queries are accelerated.
+
+      - question: Does query acceleration improve the performance of DAX?
+        answer: Query acceleration accelerates eligible SQL execution within Fabric Data Warehouse. DAX itself is not accelerated directly. Benefits may be observed when DAX queries generate eligible warehouse SQL operations.

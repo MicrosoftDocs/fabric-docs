@@ -3,14 +3,18 @@ title: Work with customer data in Microsoft Fabric
 description: Learn about how to work with customer data in Microsoft Fabric.
 ms.topic: concept-article
 ms.custom: sfi-ropc-nochange
-ms.date: 05/21/2024
+ms.date: 04/29/2026
 #customer intent:
 ---
 
 # Work with customer data in Fabric
 
-[Microsoft Fabric OneLake](../onelake/index.yml) is a unified, logical data lake for the entire organization, designed to be the single place for all analytics data. It comes automatically with every Microsoft Fabric tenant and is built on top of Azure Data Lake Storage (ADLS) Gen2. OneLake supports any type of file, structured or unstructured, and stores all tabular data in Delta Parquet format. It allows for collaboration across different business groups by providing a single data lake that is governed by default with distributed ownership for collaboration within a tenant's boundaries. Workspaces within a tenant enable different parts of the organization to distribute ownership and access policies, and all data in OneLake can be accessed through data items such as [Lakehouses and Warehouses](../data-warehouse/data-warehousing.md).
+[Microsoft Fabric OneLake](../onelake/index.yml) is a unified, logical data lake for the entire organization, designed to be the single place for all analytics data. It comes automatically with every Microsoft Fabric tenant and is built on top of Azure Data Lake Storage (ADLS) Gen2. OneLake supports any type of file, structured or unstructured, and stores all tabular data in Delta Parquet format. It allows for collaboration across different business groups by providing a single data lake that is governed by default with distributed ownership for collaboration within a tenant's boundaries. OneLake also supports cross-tenant data sharing, enabling governed access to shared datasets across Microsoft Entra tenant boundaries. Workspaces within a tenant enable different parts of the organization to distribute ownership and access policies, and all data in OneLake can be accessed through data items such as [Lakehouses and Warehouses](../data-warehouse/data-warehousing.md).
 In terms of data stores, OneLake serves as the common storage location for ingestion, transformation, real-time insights, and Business Intelligence visualizations. It centralizes the different Fabric services and is the storage for data items consumed by all workloads in Fabric.
+
+### OneLake shortcuts
+
+OneLake shortcuts are embedded references that point to data in external storage systems (such as Azure Data Lake Storage, Amazon S3, or Google Cloud Storage) or in other Fabric workspaces and tenants. Shortcuts provide zero-copy access to data without ETL or data migration, making referenced data appear as part of the local OneLake namespace. Workload developers can read shortcut-referenced data by using the same ADLS Gen2 REST APIs used for native OneLake data.
 
 [Microsoft Fabric Eventhouse](/fabric/real-time-intelligence/eventhouse) provides a scalable solution for handling and analyzing large volumes of data, particularly in real-time analytics scenarios. Eventhouses efficiently manage real-time data streams, allowing organizations to ingest, process, and analyze data in near real-time. They're ideal for scenarios requiring timely insights and are the preferred engine for semistructured and free text analysis. An Eventhouse is a workspace of databases that can be shared across projects, optimizing performance, and cost by managing multiple databases at once. Eventhouses support data from multiple sources and formats, automatically indexing and partitioning data based on ingestion time.
 
@@ -26,6 +30,8 @@ You can use Azure SQL Database to access table data from Warehouse items. In thi
 
 Make sure that you configure your Microsoft Entra ID app according to your development needs.
 
+For cross-tenant data sharing scenarios, the consuming application must authenticate against the source tenant's Microsoft Entra ID. Confirm that the application's registration includes the appropriate delegated scopes for the source tenant, and that the data owner has granted OneLake permissions to the external identity.
+
 ### Authentication 
 
 Before you can begin using the Fabric REST APIs or other services, such as Azure Storage and Azure SQL Database, on behalf of the user, you need to authenticate using a token. This token can be obtained through a token exchange process.
@@ -37,7 +43,7 @@ The Fabric Workload Development Kit SDK provides a method for acquiring an acces
 If you decide to use SQL to access your customer data, the access token must be obtained with the scope `https://database.windows.net//user_impersonation` to use Azure SQL Database and the Microsoft.Data.SqlClient namespace. The access token must be used as written, with two forward slashes before `user_impersonation`, to be validated by the SQLConnection class.
 For more examples of token authentication, see the Microsoft Fabric Developer kit sample.
 
-More details on how to obtain a token can be found in the [Microsoft Fabric Workload Development REST API documentation](https://go.microsoft.com/fwlink/?linkid=2271986).
+For more information about how to get a token, see the [Microsoft Fabric Workload Development REST API documentation](/rest/api/fabric/articles/).
 
 ### Read metadata
 
@@ -59,12 +65,12 @@ Another useful endpoint is the [Get Warehouse API](/rest/api/fabric/warehouse/it
     }
 ```
 
-Here, the "ConnectionInfo" property is the Fully Qualified Domain Name (FQDN) of the Warehouse SQL Server. With this FQDN, you can establish an SQL connection. For more information, see [Connectivity to Data Warehousing in Microsoft Fabric](../data-warehouse/connectivity.md).
+Here, the "ConnectionInfo" property is the Fully Qualified Domain Name (FQDN) of the Warehouse SQL Server. With this FQDN, you can establish an SQL connection. For more information, see [Connectivity to Data Warehouse in Microsoft Fabric](../data-warehouse/connectivity.md).
 For implementation examples, see the [Microsoft Fabric Workload Development Kit](./index.yml).
 
 ### Reading data
 
-Once you authenticate, you can connect to OneLake using [Azure Data Lake Storage REST APIs](/rest/api/storageservices/data-lake-storage-gen2) to read different types of data. We recommend utilizing the [Delta Lake protocol](https://github.com/delta-io/delta/blob/master/PROTOCOL.md) in order to read tables.
+Once you authenticate, you can connect to OneLake using [Azure Data Lake Storage REST APIs](/rest/api/storageservices/data-lake-storage-gen2) to read different types of data. We recommend utilizing the [Delta Lake protocol](https://github.com/delta-io/delta/blob/master/PROTOCOL.md) in order to read tables. You can also use the same APIs to read tables and files through OneLake shortcuts; the API calls behave the same as reading native OneLake data, whether the shortcut references external storage or data shared from another tenant.
 
 Alternatively, if you choose to utilize Azure SQL Database, you can implement the following procedure to read data from a Warehouse.
 
@@ -157,6 +163,9 @@ When a new item is created, the following root folders are created in OneLake:
 
 You can create additional folders under these, and use them for storing data in any format (under `Files` folder) or in parquet format (under `Tables` folder).
 Follow the [instructions](#how-to-read-and-write-data-in-microsoft-fabric) above to read/write from OneLake storage.
+
+> [!NOTE]
+> Items that use OneLake integration can also reference external data through OneLake shortcuts. Shortcuts appear as standard folders within the item's OneLake namespace, so your workload can read shortcut-referenced data by using the same APIs without additional configuration.
 
 ## Related content
 

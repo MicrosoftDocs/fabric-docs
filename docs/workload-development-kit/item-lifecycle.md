@@ -2,7 +2,7 @@
 title: Item lifecycle
 description: Learn about item lifecycle in Microsoft Fabric.
 ms.topic: concept-article
-ms.date: 05/21/2024
+ms.date: 04/29/2026
 ---
 # Item life cycle
 

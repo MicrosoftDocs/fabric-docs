@@ -1,5 +1,5 @@
 ---
-title: 'Digital twin builder (preview) tutorial part 4: Explore your ontology'
+title: 'Digital Twin Builder (Preview) Tutorial Part 4: Explore Your Ontology'
 description: Search and explore the ontology from digital twin builder (preview) tutorial. Part 4 of the digital twin builder (preview) tutorial.
 ms.date: 07/01/2025
 ms.topic: tutorial
@@ -91,11 +91,11 @@ The ontology data for a digital twin builder (preview) item is stored in a Fabri
 
 Follow these steps to view your domain data.
 
-1. Go to your Fabric workspace and identify the SQL endpoint of the lakehouse associated with your digital twin builder item. The SQL endpoint has the same name as your digital twin builder item with a *dtdm* extension, so in this case it's called *TutorialDTBdtdm*.
+1. Go to your Fabric workspace and identify the SQL analytics endpoint of the lakehouse associated with your digital twin builder item. The SQL analytics endpoint has the same name as your digital twin builder item with a *dtdm* extension, so in this case it's called *TutorialDTBdtdm*.
 
-    :::image type="content" source="media/tutorial/sql-endpoint.png" alt-text="Screenshot of selecting the SQL endpoint.":::
+    :::image type="content" source="media/tutorial/sql-endpoint.png" alt-text="Screenshot of selecting the SQL analytics endpoint.":::
 
-1. Select the SQL endpoint to go to the explorer page.
+1. Select the SQL analytics endpoint to go to the explorer page.
 
     In the navigation pane under **Schemas**, the **dbo** entry represents the base layer and the **dom** entry represents the domain layer. You need to use the *dom* layer to simplify creating Power BI reports, so expand **dom**.
     

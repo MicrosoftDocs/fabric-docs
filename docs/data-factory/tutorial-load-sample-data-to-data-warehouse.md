@@ -1,10 +1,10 @@
 ---
 title: Load Sample data to Data Warehouse
 description: Learn how to build and schedule a new pipeline to copy sample data to a Data Warehouse.
-ms.reviewer: xupzhou
+ms.reviewer: xupzhou, jovanpop
 ms.topic: tutorial
 ms.custom: pipelines, sfi-image-nochange
-ms.date: 02/25/2025
+ms.date: 06/23/2026
 ms.search.form: Pipeline Tutorials
 ---
 
@@ -27,7 +27,7 @@ To get started, you must complete the following prerequisites:
 
 1. Navigate to your [!INCLUDE [product-name](../includes/product-name.md)] workspace. If you created a new workspace in the prior Prerequisites section, use this one.
 
-   :::image type="content" source="media/create-first-dataflow-gen2/navigate-to-workspace.png" alt-text="Screenshot of the workspaces window where you navigate to your workspace.":::
+<!--   :::image type="content" source="media/create-first-dataflow-gen2/navigate-to-workspace.png" alt-text="Screenshot of the workspaces window where you navigate to your workspace."::: -->
 
 1. Select  **+ New item**.
 1. Search for and select **Pipeline** and then input a pipeline name to create a new pipeline. to create a new pipeline.
@@ -54,7 +54,7 @@ In this session, you start to build your pipeline by following below steps about
 
 1. In the **Connect to data source** section of the **Copy data** assistant, a preview of the sample data **NYC Taxi - Green** is displayed. Select **Next** to move on to the data destination.
 
-   :::image type="content" source="media/tutorial-load-sample-data-to-data-warehouse/preview-data.png" alt-text="Screenshot showing a preview of the Bing COVID-19 sample data.":::
+   :::image type="content" source="media/tutorial-load-sample-data-to-data-warehouse/preview-data.png" alt-text="Screenshot showing a preview of sample data.":::
 
 ### Step 3: Configure your destination
 

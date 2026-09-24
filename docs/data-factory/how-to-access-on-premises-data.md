@@ -4,23 +4,23 @@ description: This article describes how to configure a gateway to access on-prem
 ms.reviewer: lle
 ms.topic: how-to
 ms.custom: configuration
-ms.date: 07/02/2025
+ms.date: 06/17/2026
 ms.search.form: On-premises data sources gateway
 ai-usage: ai-assisted
 ---
 
 # Access on-premises data sources in Data Factory for Microsoft Fabric
 
-Data Factory for Microsoft Fabric is a cloud service that helps you move, transform, and manage data from different sources. If your data lives on-premises, you can use the on-premises Data Gateway to connect your local environment to the cloud safely. This guide shows you how to set up and use the gateway so you can easily work with your on-premises data.
+Data Factory for Microsoft Fabric is a cloud service that helps you move, transform, and manage data from different sources. If your data lives on-premises, you can use the on-premises data gateway to connect your local environment to the cloud safely. This article shows you how to set up and use the gateway so you can easily work with your on-premises data.
 
 ## Available connection types
 
-For a complete list of connectors supported for on-premises data types and details on how to connect to each type, see [pipeline connectors in Microsoft Fabric](pipeline-support.md) and your source's specific connector page.
+For a complete list of connectors supported for on-premises data types and details on how to connect to each type, see [connector overview in Microsoft Fabric](connector-overview.md) and your source's specific connector page.
 
 Some available connections include:
 
-- Entra ID
-- Adobe Analytics
+- Microsoft Entra ID
+- [Adobe Analytics](connector-adobe-analytics-overview.md)
 - [Analysis Services](connector-azure-analysis-services-overview.md)
 - [Azure Blob Storage](connector-azure-blob-storage-overview.md)
 - [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2-overview.md)
@@ -44,14 +44,14 @@ Some available connections include:
 - [SQL Server](connector-sql-server-database-overview.md)
 - Sybase
 - [Teradata](connector-teradata-database-overview.md)
-- Web
+- [Web](connector-web-overview.md)
 
 ## Create an on-premises data gateway
 
 An on-premises data gateway is software that you install within your local network. It lets you connect directly from your local machine to the cloud.
 
 > [!NOTE]
-> You need an on-premises data gateway version 3000.214.2 or higher to support Fabric pipelines.
+> You need an on-premises data gateway version 3000.214.2 or later to support Fabric pipelines.
 
 To set up your gateway:
 
@@ -59,13 +59,13 @@ To set up your gateway:
 
    :::image type="content" source="media/how-to-access-on-premises-data/gateway-setup.png" alt-text="Screenshot showing the on-premises data gateway setup.":::
 
-1. Sign in with your user account to access the on-premises data gateway. Once you're signed in, it's ready to use.
+1. Sign in with your user account to access the on-premises data gateway. After you're signed in, it's ready to use.
 
    :::image type="content" source="media/how-to-access-on-premises-data/gateway-setup-after-sign-in.png" alt-text="Screenshot showing the on-premises data gateway setup after the user signed in.":::
 
 ## Create a connection for your on-premises data source
 
-1. Go to the [admin portal](https://app.powerbi.com) and select the settings button (the gear icon) at the top right of the page. Then choose **Manage connections and gateways** from the dropdown menu.
+1. Go to the [Fabric portal](https://app.powerbi.com) and select the settings button (the gear icon) at the top right of the page. Then choose **Manage connections and gateways** from the dropdown menu.
 
    :::image type="content" source="media/how-to-access-on-premises-data/manage-connections-gateways.png" alt-text="Screenshot showing the Settings menu with Manage connections and gateways highlighted.":::
 
@@ -74,7 +74,7 @@ To set up your gateway:
    :::image type="content" source="media/how-to-access-on-premises-data/new-connection-details.png" alt-text="Screenshot showing the New connection dialog with On-premises selected.":::
 
    >[!TIP]
-   >Check out the [pipeline connectors in Microsoft Fabric article](pipeline-support.md) and specific connector articles for details like supported authentication types for your source or troubleshooting information.
+   >Check out the [connector overview in Microsoft Fabric](connector-overview.md) and specific connector articles for details like supported authentication types for your source or troubleshooting information.
 
 ## Connect your on-premises data source to a Dataflow Gen2 in Data Factory for Microsoft Fabric
 
@@ -117,7 +117,7 @@ In this example, you'll create and run a [pipeline](pipeline-runs.md) to load da
    :::image type="content" source="media/how-to-access-on-premises-data/create-pipeline.png" alt-text="Screenshot showing how to create a new pipeline.":::
 
    > [!NOTE]
-   > You need to configure your firewall to allow outbound connections to ***.frontend.clouddatahub.net** from the gateway for Fabric pipeline capabilities.
+   > You need to configure your firewall to allow outbound connections to `*.frontend.clouddatahub.net` from the gateway for Fabric pipeline capabilities.
 
 1. From the Home tab of the pipeline editor, select **Copy data** and then **Use copy assistant**. Add a new source to the activity in the assistant's **Choose data source** page, then select the connection you created in the previous step.
 
@@ -136,15 +136,15 @@ In this example, you'll create and run a [pipeline](pipeline-runs.md) to load da
 
 ## Use on-premises data in a Copy job
 
-In this example, we'll show you how to connect a [Copy job](what-is-copy-job.md#supported-connectors) to an on-premises data source.
+This example shows how to connect a [Copy job](what-is-copy-job.md#supported-connectors) to an on-premises data source.
 
 1. [Create an on-premises data gateway to connect to your source.](#create-an-on-premises-data-gateway)
 
-1. Go to your workspace and create a new **Copy job.**
+1. Go to your workspace and create a new **Copy job**.
 
    :::image type="content" source="media/how-to-access-on-premises-data/create-copy-job.png" lightbox="media/how-to-access-on-premises-data/create-copy-job.png" alt-text="Screenshot showing the new item menu in the Microsoft Fabric workspace with Copy job highlighted.":::
 
-1. In the Copy job wizard, on the Choose data source page, go to **New sources**, and select your source. In this example, we're using SQL Server database.
+1. In the Copy job wizard, on the **Choose data source** page, go to **New sources**, and select your source. In this example, use a SQL Server database.
 
    :::image type="content" source="media/how-to-access-on-premises-data/copy-job-choose-data-source.png" lightbox="media/how-to-access-on-premises-data/copy-job-choose-data-source.png" alt-text="Screenshot of the Copy job wizard with a new source selected.":::
 

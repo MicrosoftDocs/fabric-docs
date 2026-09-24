@@ -3,7 +3,7 @@ title: Real-Time Intelligence tutorial part 2- Get data in the Real-Time hub
 description: Learn how to get data in the Real-Time hub in Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.topic: tutorial
-ms.date: 10/28/2025
+ms.date: 07/05/2026
 ms.subservice: rti-core
 ms.search.form: Get started
 #customer intent: I want to learn how to get data in the Real-Time hub in Real-Time Intelligence.
@@ -21,11 +21,9 @@ Use the sample gallery to create an eventstream that simulates bicycle rental da
 
 1. Select **Real-Time** in the left navigation bar.
 
-1. Select **Add data** in the top-right corner of the page.
+1. Select **Add data** in the upper-right corner of the page, scroll down, and select the **Bicycle rentals** tile.
 
-   :::image type="content" source="media/tutorial/connect-data-source.png" alt-text="Screenshot of the Real-Time hub with Get Events highlighted." lightbox="media/tutorial/connect-data-source.png":::
-
-1. Under **Sample scenarios**, select **Connect** on the **Bicycle rentals** tile.
+   :::image type="content" source="media/tutorial/bicycles-data-source.png" alt-text="Screenshot of the data sources page with the Bicycle rentals tile highlighted." lightbox="media/tutorial/bicycles-data-source.png":::
 
 1. On the **Connect data source** page, for **Source name**, enter **TutorialSource**.
 
@@ -94,6 +92,8 @@ Create a destination to send the transformed events to a KQL database.
     | **Input data format**   | *Json*                                                    |
 
 1. Verify that the box **Activate ingestion after adding the data** is checked.
+
+    :::image type="content" source="media/tutorial/activate-ingestion.png" alt-text="Screenshot showing the Activate ingestion option selected." lightbox="media/tutorial/activate-ingestion.png":::
 
 1. Select **Save**.
 

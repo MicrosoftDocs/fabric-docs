@@ -3,19 +3,20 @@ title: Use Azure OpenAI with SynapseML
 description: How to use prebuilt Azure OpenAI in Fabric with SynapseML for distributed processing
 ms.author: lagayhar
 author: lgayhardt
-ms.reviewer: vimeland
-reviewer: virginiaroman
+ms.reviewer: scottpolly
+reviewer: s-polly
 ms.topic: how-to
 ms.custom:
-ms.date: 01/16/2026
+ms.date: 07/29/2026
 ms.update-cycle: 180-days
 ms.search.form:
 ms.collection: ce-skilling-ai-copilot
+ai.usage: ai-assisted
 ---
 
 # Use Azure OpenAI in Fabric with SynapseML (preview)
 
-This article shows how to use Azure OpenAI in Fabric with [SynapseML](https://github.com/microsoft/SynapseML). SynapseML is an open-source library that enables distributed processing of large datasets with Foundry Tools. For single-row or small dataset scenarios, see [Use Azure OpenAI with Python SDK](how-to-use-openai-python-sdk.md) or [Use Azure OpenAI with AI Functions](how-to-use-openai-ai-functions.md).
+This article shows how to use Azure OpenAI in Fabric with [SynapseML](https://github.com/microsoft/SynapseML). SynapseML is an open-source library that enables distributed processing of large datasets with Foundry Tools. For direct Python API calls, see [Use Azure OpenAI with OpenAI Python SDK](how-to-use-openai-python-sdk.md). For prebuilt transformations on pandas or PySpark DataFrames, see [Use Azure OpenAI with AI Functions](how-to-use-openai-ai-functions.md).
 
 ## Why use SynapseML?
 
@@ -36,9 +37,11 @@ import synapse.ml.core
 from synapse.ml.services.openai import *
 ```
 
-The `OpenAIPrompt` transformer provides more flexibility, including support for the Chat Completions or Responses API, usage tracking, and structured output. For finer control use `OpenAIChatCompletions` or `OpenAIResponses` transformers directly. See more details on [SynapseML GitHub Example Notebook](https://github.com/microsoft/SynapseML/blob/master/docs/Explore%20Algorithms/OpenAI/OpenAI.ipynb)
+The `OpenAIPrompt` transformer provides more flexibility, including support for the chat completions or responses API, usage tracking, and structured output. For finer control, use `OpenAIChatCompletion` or `OpenAIResponses` transformers directly. For more information, see the [SynapseML GitHub example notebook](https://github.com/microsoft/SynapseML/blob/master/docs/Explore%20Algorithms/OpenAI/OpenAI.ipynb).
 
-### Using Chat Completions API
+Use `setPromptTemplate` to create prompts from DataFrame columns. A placeholder such as `{prompt}` inserts the value from the `prompt` column for each row.
+
+### Use the chat completions API
 
 ```python
 from synapse.ml.services.openai import OpenAIPrompt
@@ -53,9 +56,9 @@ df = spark.createDataFrame([
 # Configure OpenAIPrompt with chat_completions API
 prompt_completion = (
     OpenAIPrompt()
-    .setDeploymentName("gpt-4.1")
+    .setDeploymentName("gpt-5.1")
     .setApiType("chat_completions")  # Accepts "chat_completions" or "responses"
-    .setPromptCol("prompt")
+    .setPromptTemplate("{prompt}")
     .setUsageCol("usage")  # Track token usage
     .setOutputCol("completions")
 )
@@ -64,7 +67,7 @@ prompt_completion = (
 display(prompt_completion.transform(df).select("prompt", "completions", "usage"))
 ```
 
-### Using Responses API
+### Use the responses API
 
 The Responses API provides improved response quality and better handling of structured outputs.
 
@@ -74,9 +77,9 @@ from synapse.ml.services.openai import OpenAIPrompt
 # Configure OpenAIPrompt with responses API
 prompt_responses = (
     OpenAIPrompt()
-    .setDeploymentName("gpt-4.1")
+    .setDeploymentName("gpt-5.1")
     .setApiType("responses")
-    .setPromptCol("prompt")
+    .setPromptTemplate("{prompt}")
     .setUsageCol("usage")  # Track token usage
     .setStore(False)  # Fabric LLM endpoint does not support storage
     .setOutputCol("responses")
@@ -105,15 +108,15 @@ from synapse.ml.services.openai import OpenAIPrompt
 
 # Create a DataFrame with prompts requiring structured output
 df = spark.createDataFrame([
-    ("List three programming languages with their main use cases.",),
+    ("Return a JSON object that lists three programming languages and their main use cases.",),
 ]).toDF("prompt")
 
 # Configure OpenAIPrompt with JSON response format
 prompt_json = (
     OpenAIPrompt()
-    .setDeploymentName("gpt-4.1")
+    .setDeploymentName("gpt-5.1")
     .setApiType("chat_completions")
-    .setPromptCol("prompt")
+    .setPromptTemplate("{prompt}")
     .setUsageCol("usage")
     .setResponseFormat({"type": "json_object"})  # Request JSON output
     .setOutputCol("completions")
@@ -154,5 +157,5 @@ For information about available models and consumption rates, see [Foundry Tools
 ## Related content
 
 - [Use Azure OpenAI with AI Functions](how-to-use-openai-ai-functions.md) for large scale dataset transformations in Fabric for Pandas or PySpark DataFrames
-- [Use Azure OpenAI with Python SDK](how-to-use-openai-python-sdk.md) for pythonic control over single API calls using OpenAI Python SDK
+- [Use Azure OpenAI with OpenAI Python SDK](how-to-use-openai-python-sdk.md) for the OpenAI package or built-in synchronous and asynchronous OpenAI-compatible clients
 - [Use Azure OpenAI with REST API](how-to-use-openai-via-rest-api.md) for direct REST API calls to the LLM endpoint

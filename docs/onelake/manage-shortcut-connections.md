@@ -3,6 +3,10 @@ title: Manage shortcut connections
 description: How to update the shared cloud connections that are created to enable OneLake shortcuts.
 ms.topic: how-to
 ms.date: 04/23/2025
+ms.reviewer:  # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
+
 #customer intent: As a data engineer, I want to know which of my shortcut connections are out of date and be able to change or replace them as needed so that our data connections stay current.
 ---
 
@@ -14,7 +18,7 @@ Shortcuts in OneLake use shared cloud connections to access the cloud resources 
 
 You can view and manage all existing cloud connections for shortcuts in a single lakehouse.
 
-1. In the [Microsoft Fabric portal](https://app.fabric.microsoft.com), navigate to your lakehouse.
+1. In the [Fabric portal](https://app.fabric.microsoft.com), navigate to your lakehouse.
 
 1. Select **Settings**.
 

@@ -3,7 +3,7 @@ title: Data Factory limitations overview
 description: Identifies limitations that affect Data Factory in Microsoft Fabric features.
 ms.reviewer: susabat
 ms.topic: troubleshooting
-ms.date: 03/07/2025
+ms.date: 7/30/2026
 ms.custom: configuration
 ---
 
@@ -17,13 +17,9 @@ For service level outages or degradation notifications, check [Microsoft Fabric 
 
 The following list describes the current limitations of pipelines in Data Factory in Microsoft Fabric.
 
-- Most of the Azure Data Factory copy and orchestration patterns are applicable to Fabric pipelines, but [tumbling window](/azure/data-factory/how-to-create-tumbling-window-trigger) isn't yet available.
--	Connectors don't support OAuth and  Azure key vault (AKV).
--	Managed System Identity (MSI) is only available for Azure Blob Storage. Support for other sources is coming soon. 
+- Most of the Azure Data Factory copy and orchestration patterns apply to Fabric pipelines, but [tumbling window](/azure/data-factory/how-to-create-tumbling-window-trigger) is only partially implemented by using interval based schedules. You can create time slices, but backfill isn't yet supported.
 -	GetMetaData activity can't have a source from Fabric KQL databases.
 -	Script activity can't have a source from Fabric KQL databases.
--	Validation activity, Mapping Data Flow activity, and the SSIS integration runtime aren't available. 
--	Web activity doesn't support service principal based authentication.
 -	Background sync of authentication doesn't happen for pipelines. Recommendation is to do minor description like updates to pipelines and save them. That way, new token is obtained and cached so pipeline can run again with updated password of entra id. 
 
 ## Pipeline resource limits
@@ -32,7 +28,7 @@ The following table describes the resource limitations for pipelines in Data Fac
 
 | Pipeline Resource | Default limit | Maximum limit |
 |---|---|---|
-| Total number of pipelines within a [workspace](/fabric/fundamentals/workspaces) | 5,000 | 5,000 |
+| Total number of pipelines within a [workspace](/fabric/fundamentals/workspaces) | 1,000 | 1,000 |
 | Concurrent pipeline runs per [workspace](/fabric/fundamentals/workspaces) that's shared among all pipelines in [workspace](/fabric/fundamentals/workspaces)  | 10,000 | 10,000 |
 | Concurrent external activities like stored procedure, Web, Web Hook, and others per [workspace](/fabric/fundamentals/workspaces) | 100 | 100 |
 | Concurrent pipeline activities execution for Lookup, GetMetadata, and Delete per [workspace](/fabric/fundamentals/workspaces) | 100 | 100 |
@@ -63,6 +59,11 @@ The following table describes the limitations for Copy job in Data Factory in Mi
 ## Data Factory Dataflow Gen2 limitations
 
 The following list describes the limitations for Dataflow Gen2 in Data Factory in Microsoft Fabric.
+* **Query limit for staging and destinations**: A single Dataflow Gen2 supports up to **50 queries** that either:
+  * Have **staging enabled**, or
+  * Have a **data destination configured** (for example, Warehouse, Lakehouse, or other Fabric destinations).
+
+  Queries that **don’t write data**—such as **functions**, **helper queries**, or **intermediate transformation queries** that aren’t staged and don’t have a data destination—**don’t count toward this limit**.
 
 - Data destination to Lakehouse:
   - Spaces or special characters aren't supported in column or table names.
@@ -76,25 +77,22 @@ The following list describes the limitations for Dataflow Gen2 in Data Factory i
 - Dataflow Gen2 doesn't support for guest users in the tenant to connect to the data sources and destinations in the tenant the user is guest. Use a native user in the tenant to connect to the data sources and destinations.
 - Consuming data from a dataflow gen2 with the dataflow connector requires Admin, Member or Contributor permissions. Viewer permission isn't sufficient and isn't supported for consuming data from the dataflow.
 - When you don't access staging items with your dataflow for more than 90 days, you need to re-authendicate to ensure the dataflow is able to access the staging items. You can do this by creating a new dataflow gen2 within the same workspace. 
+- Staging lakehouses are visible in **My Workspace**. In shared workspaces, staging lakehouses created by Dataflow Gen2 are hidden from the workspace item list. In **My Workspace**, however, these staging lakehouses are visible due to a platform-side difference in how hidden items are filtered. Don't modify, rename, or delete these staging lakehouses, they're managed by Dataflow Gen2 and used internally for query staging and destination writes. 
+* **Supported gateway required**: Dataflow Gen2 requires a currently supported data gateway. At minimum, the last six released gateway versions are supported.
 
-The following table indicates the supported data types in specific storage locations.
+* **Delta Lake case sensitivity limitation**: Delta Lake doesn’t support case‑sensitive column names. Columns like `MyColumn` and `mycolumn` result in duplicate column errors, even though they’re allowed in Mashup.
 
-| **Supported data types per storage location:**  | DataflowStagingLakehouse | Azure DB (SQL) Output | Azure Data Explorer Output | Fabric Lakehouse (LH) Output | Fabric Warehouse (WH) Output |
-|-------------------------------------------------|--------------------------|-----------------------|----------------------------|------------------------------|------------------------------|
-| Action| No| No | No  | No    | No    |
-| Any   | No| No | No  | No    | No    |
-| Binary| No| No | No  | No    | No    |
-| Currency | Yes   | Yes| Yes | Yes   | No    |
-| DateTimeZone| Yes   | Yes| Yes | No    | No    |
-| Duration | No| No | Yes | No    | No    |
-| Function | No| No | No  | No    | No    |
-| None  | No| No | No  | No    | No    |
-| Null  | No| No | No  | No    | No    |
-| Time  | Yes   | Yes| No  | No   | No   |
-| Type  | No| No | No  | No    | No    |
-| Structured (List, Record, Table)| No| No | No  | No    | No    |
+* **Column nullability default behavior**: All destination columns default to allowing null values.
+
+* **Publish and validation time limit**: Each query must complete validation and publish within 10 minutes. Queries exceeding this limit should be simplified or split across multiple dataflows.
+
+* **Guest user access not supported**: Guest users can’t connect to data sources or destinations in the tenant they’re visiting. Use a native user account in the tenant instead.
+
+* **Required permissions to consume dataflows**: Consuming data from a Dataflow Gen2 requires Admin, Member, or Contributor permissions. Viewer permission isn’t supported.
+
+* **Staging authentication expiration**: If staging items aren’t accessed for more than 90 days, re‑authentication is required. This can be done by creating a new Dataflow Gen2 in the same workspace.
 
 ## Related content
 
 - [Service level outages](https://support.fabric.microsoft.com)
-- [Get your questions answered by the Data Factory community](https://community.fabric.microsoft.com/t5/Data-Factory-preview-Community/ct-p/datafactory)
+- [Data Factory forums | Microsoft Fabric Community](https://community.fabric.microsoft.com/category/datafactory)

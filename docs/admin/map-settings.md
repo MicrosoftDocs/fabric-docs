@@ -1,35 +1,39 @@
 ---
-title: Map tenant settings 
+title: Azure Map tenant settings
 description: Toggle tenant settings to permit or restrict organization members from using Map items.
 author: msmimart
 ms.author: mimart
 ms.reviewer: limingchen
-ms.topic: how-to
-ms.date: 09/15/2025
+ms.topic: concept-article
+ms.date: 07/24/2026
+ai-usage: ai-assisted
 ms.search.form: Map tenant settings
 ---
 
-# Map tenant settings
+# Azure Maps Services settings
 
 Tenant settings control whether members of your organization can use Map items. Administrators can enable or disable this feature to allow or restrict access. If enabled, users can create, view, and interact with Map items in their Fabric environment. If disabled, Map item functionality is unavailable to all users in the tenant.
 
-Microsoft Fabric includes two tenant settings that determine whether Azure Maps services are available in Map items and Map visualizations. These settings affect user access to map-powered features, including Map items and Map visualizations within Notebooks.
+Fabric includes three tenant settings that determine whether Azure Maps services are available in Map items and Map visuals. These settings affect user access to map-powered features, including Map items and Map visuals within notebooks.
 
 ## Access to Azure Maps Services
 
-When the **Users can use Azure Maps services** setting is enabled, users can access both the Map item and the Map visualization in Notebooks. These features, powered by Azure Maps, allow users to create location-aware reports, monitor real-time telemetry, and explore spatial data directly within Microsoft Fabric.
+When the **Users can use Azure Maps services** setting is enabled, users can access both the Map item and the Map visual in notebooks. These features, powered by Azure Maps, allow users to create location-aware reports, monitor real-time telemetry, and explore spatial data directly within Fabric.
 
-This setting determines whether members of your organization, or specific security groups, can access Azure Maps-powered experiences within Microsoft Fabric. When enabled, users can utilize features such as Interactive Maps and geospatial analytics across Fabric components like Map items, Map visualizations, and Notebooks. Disabling this setting restricts access to these location-aware capabilities, helping administrators manage data usage and compliance based on organizational needs.
+This setting determines whether members of your organization, or specific security groups, can access Azure Maps-powered experiences within Fabric. When enabled, users can utilize features such as Interactive Maps and geospatial analytics across Fabric components like Map items, Map visuals, and notebooks. Disabling this setting restricts access to these location-aware capabilities, helping administrators manage data usage and compliance based on organizational needs.
 
 :::image type="content" source="media/tenant-settings/access-azure-maps-services.png" alt-text="A screenshot of the Azure Maps 'Users can use Azure Maps services' settings.":::
 
 **Default**: Enabled
 
+> [!NOTE]
+> Even when this setting is turned off, users can still open Map items. In this limited experience, the map background is blank because Azure Maps basemaps aren't available, but added data layers continue to display. Turn the setting back on to restore the full Azure Maps experience.
+
 ## Configure global data processing
 
-The **Data sent to Azure Maps can be processed outside your capacity’s geographic region, compliance boundary or national cloud instance** setting is relevant only for customers who plan to use Map items and Map visualizations in Notebooks powered by Azure Maps, and whose capacity's geographic region is outside the supported Azure Maps service regions.
+The **Data sent to Azure Maps can be processed outside your capacity's geographic region, compliance boundary or national cloud instance** setting is relevant only for customers who plan to use Map items and Map visuals in notebooks powered by Azure Maps, and whose capacity's geographic region is outside the supported Azure Maps service regions.
 
-When enabled, this setting allows data sent to Azure Maps to be routed to the nearest available region, which may reside outside your organization’s compliance boundary or national cloud instance. This ensures uninterrupted access to Azure Maps capabilities in unsupported regions.
+When enabled, this setting allows data sent to Azure Maps to be routed to the nearest available region, which may reside outside your organization's compliance boundary or national cloud instance. This ensures uninterrupted access to Azure Maps capabilities in unsupported regions.
 
 > [!NOTE]
 > This setting alone does not enable Azure Maps. You must also enable the setting **Users can use Azure Maps services**.
@@ -39,5 +43,15 @@ When enabled, this setting allows data sent to Azure Maps to be routed to the ne
 **Default**: Disabled
 
 > [!NOTE]
+> If your capacity's geographic region isn't a supported Azure Maps region and this setting is disabled, users can still open Map items in a limited experience. The map displays a blank background instead of an Azure Maps basemap, but added data layers remain visible. Re-enable this setting to restore the full Azure Maps experience.
+
+> [!NOTE]
 > Azure Maps does not process or transmit any customer names or personally identifiable information (PII).
 
+## Access to Azure Maps Weather Services (Preview)
+
+The **Users can use Azure Maps Weather Services (Preview)** setting controls whether users can access weather data in Map experiences that use Azure Maps Weather, sourced from AccuWeather.
+
+This setting is relevant only for organizations that already use Azure Maps-powered features in Fabric. It doesn't turn on Azure Maps by itself. To use Azure Maps Weather Services, you must also enable **Users can use Azure Maps services**.
+
+For more information, see [Azure Maps Weather services](https://go.microsoft.com/fwlink/?linkid=2340279).

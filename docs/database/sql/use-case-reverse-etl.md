@@ -1,7 +1,7 @@
 ---
 title: Use SQL database as the Target of a Reverse ETL Workload
 description: Learn how to use SQL database in Fabric as a reverse ETL target in Microsoft Fabric.
-ms.reviewer: pamela, imotiwala, antho
+ms.reviewer: pamela, antho
 ms.date: 01/07/2026
 ms.topic: solution-overview
 ---
@@ -107,8 +107,14 @@ SQL database in Fabric uses the same SQL Database Engine as **Azure SQL Database
 - **Security model**: SQL database in Fabric uses **Microsoft Entra ID** authentication only. Plan identities for Pipelines, Dataflows, and Spark jobs accordingly.
 - **Replication**: SQL database in Fabric automatically replicates read-only data to **OneLake**. This synchronization is useful for reporting and analysis needs, while the database remains available for read/write operational workloads.
 
-## Related content 
+## Fabric SQL database use case stories
+
+To learn more about the best use cases for Fabric SQL database, see:
 
 - [Use SQL database as an operational data store](use-case-operational-data-store.md)
 - [Use SQL database as the source for translytical applications](use-case-translytical-applications.md)
+- [Use SQL database in AI applications](use-case-ai-application.md)
+
+## Related content 
+
 - [Intelligent applications and AI](/sql/sql-server/ai/artificial-intelligence-intelligent-applications?toc=/fabric/database/toc.json&bc=/fabric/breadcrumb/toc.json&view=fabric-sqldb&preserve-view=true)

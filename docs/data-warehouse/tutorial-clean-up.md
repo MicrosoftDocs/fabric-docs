@@ -36,4 +36,4 @@ In this task, you'll remove the workspace you created in the first tutorial.
 ## Next step
 
 > [!div class="nextstepaction"]
-> [What is data warehousing in Microsoft Fabric?](data-warehousing.md)
+> [What is Fabric Data Warehouse?](data-warehousing.md)

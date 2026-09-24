@@ -2,7 +2,7 @@
 title: Microsoft Entra Authentication in Fabric Data Warehouse
 description: Learn more about Microsoft Entra authentication, an alternative to SQL authentication in Microsoft Fabric.
 ms.reviewer: frnuson, kadejo, jaszymas
-ms.date: 04/06/2025
+ms.date: 07/14/2026
 ms.topic: how-to
 ms.custom:
 - fabric-cat
@@ -67,8 +67,6 @@ There are two means by which a User or SPN can be granted access:
 
 You can alter the default permissions given to the User or SPN by the system. Use the T-SQL [GRANT](/sql/t-sql/statements/grant-transact-sql?view=fabric&preserve-view=true) and [DENY](/sql/t-sql/statements/deny-transact-sql?view=fabric&preserve-view=true) commands to alter permissions as required, or [ALTER ROLE](/sql/t-sql/statements/alter-role-transact-sql?view=fabric&preserve-view=true) to add membership to roles.
 
-Currently, SPNs don't have the capability as user accounts for detailed permission configuration with `GRANT`/`DENY`.
-
 ## Support for user identities and service principal names (SPNs)
 
 Fabric natively supports authentication and authorization for Microsoft Entra users and service principal names (SPN) in SQL connections to warehouse and SQL analytics endpoint items.
@@ -104,7 +102,7 @@ Applications and tools must upgrade drivers to versions that support Microsoft E
 
 Fabric is compatible with Microsoft's native drivers, including OLE DB, `Microsoft.Data.SqlClient`, and generic drivers such ODBC and JDBC. The transition for applications to work with Fabric can be managed through reconfiguration to use Microsoft Entra ID-based authentication.
 
-For more information, see [Connectivity to data warehousing in Microsoft Fabric](connectivity.md).
+For more information, see [Connectivity to Fabric Data Warehouse](connectivity.md).
 
 ### Microsoft OLE DB
 
@@ -169,5 +167,5 @@ Code snippets using SPNs:
 
 ## Related content
 
-- [Connectivity to data warehousing in Microsoft Fabric](connectivity.md)
-- [Security for data warehousing in Microsoft Fabric](security.md)
+- [Connectivity to Fabric Data Warehouse](connectivity.md)
+- [Security in Fabric Data Warehouse](security.md)

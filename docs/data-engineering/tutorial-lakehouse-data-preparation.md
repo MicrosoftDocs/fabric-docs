@@ -72,7 +72,7 @@ The tables follow a star schema, which is a common pattern for organizing analyt
 
 In this tutorial page, select the tab that matches the notebook you imported, and keep using that same tab for all steps. The tabs are in this article, not in the notebook.
 
-1. **Cell 1 - Spark session configuration.** This cell enables two Fabric features that optimize how data is written and read in subsequent cells. [V-order](delta-optimization-and-v-order.md) optimizes the parquet file layout for faster reads and better compression. [Optimize write](delta-optimization-and-v-order.md#what-is-optimize-write) reduces the number of files written and increases individual file size.
+1. **Cell 1 - Spark session configuration.** This cell enables two Fabric features that optimize how data is written and read in subsequent cells. [V-order](delta-optimization-and-v-order.md) optimizes the parquet file layout for faster reads and better compression. [Optimize write](./tune-file-size.md#optimize-write) reduces the number of files written and increases individual file size.
 
    Run this cell, and wait for it to finish before moving on to the next step.
 
@@ -307,9 +307,9 @@ In this section, you continue in the same notebook and run the next cells to cre
 
    :::image type="content" source="media\tutorial-lakehouse-data-preparation\validate-tables.png" alt-text="Screenshot of the Lakehouse explorer showing where the new tables appear." lightbox="media\tutorial-lakehouse-data-preparation\validate-tables.png":::
 
-This tutorial writes data as Delta lake files. Fabric automatically discovers and registers these tables in the metastore, so you don't need to run separate `CREATE TABLE` statements.
+This tutorial writes data as Delta Lake files. Fabric automatically discovers and registers these tables in the metastore, so you don't need to run separate `CREATE TABLE` statements.
 
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Create a semantic model and build a report](tutorial-lakehouse-build-report.md)
+> [Create a semantic model and create a report](tutorial-lakehouse-build-report.md)

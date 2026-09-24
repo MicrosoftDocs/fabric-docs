@@ -2,7 +2,7 @@
 title: Transactions in Fabric Data Warehouse
 description: Learn how to use transactions and how to insert and modify data in Warehouse tables in Microsoft Fabric.
 ms.reviewer: twcyril
-ms.date: 10/17/2025
+ms.date: 6/3/2026
 ms.topic: how-to
 ms.search.form: Warehouse design and development
 ---
@@ -16,7 +16,7 @@ Fabric Data Warehouse supports ACID-compliant transactions. Each transaction is 
 
 ## Explicit transactions
 
-You can modify data that is stored in tables in a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] using explicit transactions to group changes together. 
+You can modify data that is stored in tables in a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] using explicit transactions to group changes together.
 
 For example, you could commit inserts to multiples tables, or, none of the tables if an error arises. If you're changing details about a purchase order that affects three tables, you can group those changes into a single transaction. That means when those tables are queried, they either all have the changes or none of them do. Transactions are a common practice for when you need to ensure your data is consistent across multiple tables.
 
@@ -24,6 +24,32 @@ You can use standard T-SQL (`BEGIN TRAN`, `COMMIT TRAN`, and `ROLLBACK TRAN`) sy
     - [BEGIN TRANSACTION](/sql/t-sql/language-elements/begin-transaction-transact-sql?view=fabric&preserve-view=true)
     - [COMMIT TRANSACTION](/sql/t-sql/language-elements/commit-transaction-transact-sql?view=fabric&preserve-view=true)
     - [ROLLBACK TRANSACTION](/sql/t-sql/language-elements/rollback-transaction-transact-sql?view=fabric&preserve-view=true)
+
+For example, Fabric Data Warehouse will treat these schema changes as a single atomic unit:
+
+```sql
+-- Sample Syntax--- 
+BEGIN TRAN; 
+ALTER TABLE <table_name> ADD <column_name> <type>; 
+ALTER TABLE <table_name> DROP COLUMN <column_name>; 
+COMMIT; 
+```
+
+If any statement in the transaction fails, all schema changes are automatically rolled back.
+
+Fabric Data Warehouse supports executing the following inside an explicit transaction:  
+
+- `CREATE TABLE`
+- `DROP TABLE`
+- `TRUNCATE TABLE`
+- `CTAS`
+- `sp_rename`
+- `ALTER TABLE` add nullable columns 
+- `ALTER TABLE` drop columns 
+- `ALTER TABLE` add or drop `PRIMARY KEY`, `UNIQUE`, and `FOREIGN KEY` constraints with the `NOT ENFORCED` keyword
+- Multiple `ALTER TABLE` statements
+- `ALTER TABLE` on distributed temporary tables
+- Supported [ALTER COLUMN](/sql/t-sql/statements/alter-table-transact-sql?view=fabric&preserve-view=true#alter-column) operations
 
 ### Cross-database query transaction support
 
@@ -54,6 +80,8 @@ You can query locks currently held with the dynamic management view (DMV) [sys.d
 
 For more information about locks, lock escalation, and lock compatibility, see [Transaction locking and row versioning guide](/sql/relational-databases/sql-server-transaction-locking-and-row-versioning-guide?view=fabric&preserve-view=true).
 
+If queries appear stuck or are taking longer than expected because of locks, see [Troubleshoot query blocking in Fabric Data Warehouse](troubleshoot-query-blocking.md).
+
 ### Snapshot isolation
 
 Fabric Data Warehouse enforces snapshot isolation on all transactions. Snapshot isolation is a row-based isolation level that provides transaction-level consistency for data, and uses row versions stored in `tempdb` to select rows to update. The transaction uses the data row versions that exist when the transaction begins. This ensures that each transaction operates on a consistent snapshot of the data as it existed at the start of the transaction. 
@@ -76,10 +104,9 @@ Schema locks prevent conflicts on DDL statements, such as a table's schema being
 
 - Avoid long-running transactions, or schedule during periods of low or no concurrent activity.
 - Schedule DDL operations only during maintenance windows to minimize blocking.
-- Avoid placing DDL statements inside explicit user transactions (`BEGIN TRAN`). Long-running transactions that modify tables can cause blocking issues for other DML operations and `SELECT` queries, both on user tables and system catalog views like `sys.tables`. To monitor and troubleshoot potential lock conflicts, use `sys.dm_tran_locks`.
+- While DDL statements can be executed inside explicit user transactions (`BEGIN TRAN`), they should be used with caution in concurrent workloads. Due to locking behavior, DDL within a transaction can block concurrent DML or SELECT operations on the affected tables, as well as SELECT queries on system catalog views such `sys.tables` or `sys.objects`. To monitor and troubleshoot potential lock conflicts, use `sys.dm_tran_locks`.
 - Monitor locks and conflicts in the warehouse.
     - Use [sys.dm_tran_locks](/sql/relational-databases/system-dynamic-management-views/sys-dm-tran-locks-transact-sql?view=fabric&preserve-view=true) to inspect current locks.
-- Fabric Data Warehouse supports some DDL statements inside user-defined transactions, but are not recommended in long-running transactions. Inside transactions, DDL statements can block concurrent transactions or cause write-write conflicts.
 
 <a id="ddl-support-within-transactions"></a>
 
@@ -129,7 +156,6 @@ INSERT statements always create new parquet files, which means fewer conflicts w
 ## Limitations
 
 - Distributed transactions are not supported, for example, `BEGIN DISTRIBUTED TRANSACTION`.
-- `ALTER TABLE` is not supported within an explicit transaction.
 - Save points are not supported.
 - Named transactions are not supported.
 - Marked transactions are not supported.

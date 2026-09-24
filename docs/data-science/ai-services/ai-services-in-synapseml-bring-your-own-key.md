@@ -5,8 +5,8 @@ ms.topic: overview
 ms.custom: 
 ms.author: lagayhar
 author: lgayhardt
-ms.reviewer: vimeland
-reviewer: virginiaroman
+ms.reviewer: scottpolly
+reviewer: s-polly
 ms.date: 01/16/2026
 ai-usage: ai-assisted
 ms.update-cycle: 180-days
@@ -20,7 +20,7 @@ ms.collection: ce-skilling-ai-copilot
 [Foundry Tools](https://azure.microsoft.com/products/ai-services/) is a suite of APIs, SDKs, and services that you use to add AI features to your apps. Foundry Tools helps you build apps that see, hear, speak, understand, and reason. It includes five capabilities: vision, speech, language, web search, and decision. Fabric uses SynapseML to provide access to these services.
 
 > [!NOTE]
-> Fabric integrates with Foundry Tools to enrich your data with [Azure OpenAI Service](https://azure.microsoft.com/products/ai-services/openai-service/), [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/), and [Azure Translator in Foundry Tools](https://azure.microsoft.com/products/ai-services/translator/). This integration is in public preview. Learn more in [Foundry Tools in Fabric](./ai-services-overview.md).
+> Fabric integrates with Foundry Tools to enrich your data with [Azure OpenAI Service](/azure/foundry/foundry-models/concepts/models-sold-directly-by-azure?tabs=global-standard-aoai%2Cglobal-standard&pivots=azure-openai), [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/), and [Azure Translator in Foundry Tools](https://azure.microsoft.com/products/ai-services/translator/). This integration is in public preview. Learn more in [Foundry Tools in Fabric](./ai-services-overview.md).
 >
 > For Azure OpenAI specifically, Fabric also provides [AI Functions](how-to-use-openai-ai-functions.md) for simple DataFrame operations. For distributed processing, see [Use Azure OpenAI with SynapseML](how-to-use-openai-synapse-ml.md).
 
@@ -33,7 +33,7 @@ The following sections document SynapseML transformers available for Foundry Too
 >
 > - **For text operations at any scale** (sentiment, translation, summarization, classification, extraction): Use [AI Functions](how-to-use-openai-ai-functions.md) which provide DataFrame extensions with minimal code. **PySpark AI Functions are fully distributed** (powered by SynapseML), handling thousands to millions of rows.
 > - **For advanced custom prompts at scale**: Use [Azure OpenAI with SynapseML](how-to-use-openai-synapse-ml.md) which offers the `OpenAIPrompt` transformer when you need unrestricted prompt control beyond AI Functions' validated templates
-> - **For single API calls with full control**: Use [Azure OpenAI with Python SDK](how-to-use-openai-python-sdk.md)
+> - **For direct Python API calls**: Use the [OpenAI Python SDK](how-to-use-openai-python-sdk.md)
 >
 > The services below require bring-your-own-key and are useful for specialized vision, speech, document intelligence, and search scenarios not covered by AI Functions.
 
@@ -122,7 +122,7 @@ The following sections document SynapseML transformers available for Foundry Too
 
 - [AI Functions overview](how-to-use-openai-ai-functions.md) - Simplest approach for text operations with Pandas and PySpark DataFrames
 - [Use Azure OpenAI with SynapseML](how-to-use-openai-synapse-ml.md) - Distributed processing with OpenAIPrompt transformer, no subscription key needed
-- [Use Azure OpenAI with Python SDK](how-to-use-openai-python-sdk.md) - Fine-grained control for single API calls
+- [Use Azure OpenAI with OpenAI Python SDK](how-to-use-openai-python-sdk.md) for the OpenAI package or built-in synchronous and asynchronous OpenAI-compatible clients.
 
 ### SynapseML with Foundry Tools
 

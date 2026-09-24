@@ -125,7 +125,7 @@ Power BI leverages Microsoft 365 data loss prevention to enable central security
 
 ## Default label policy
 
-To help ensure comprehensive protection and governance of sensitive data, organizations can create default label policies for Power BI that automatically apply default sensitivity labels to unlabeled content. Currently, default label policies are supported in Power BI Desktop only. For more information, see [Default label policy](/fabric/governance/service-security-sensitivity-label-default-label-policy).
+To help ensure comprehensive protection and governance of sensitive data, organizations can create default label policies for Power BI that automatically apply default sensitivity labels to unlabeled content. Default label policies are supported in both Power BI Desktop and the Power BI service. For more information, see [Default label policy](/fabric/governance/service-security-sensitivity-label-default-label-policy).
 
 ## Mandatory label policy
 

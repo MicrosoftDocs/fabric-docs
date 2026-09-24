@@ -3,7 +3,7 @@ title: Real-Time Intelligence tutorial part 6 - Create a Real-Time Dashboard
 description: Learn how to create a Real-Time Dashboard in Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.topic: tutorial
-ms.date: 12/29/2025
+ms.date: 05/14/2025
 ms.subservice: rti-core
 ms.search.form: Get started
 #customer intent: I want to learn how to create a Real-Time Dashboard in Real-Time Intelligence.
@@ -13,12 +13,11 @@ ms.search.form: Get started
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see: [Real-Time Intelligence tutorial part 5: Query streaming data using KQL](tutorial-5-query-data.md).
 
-In this part of the tutorial, you learn how to create a Real-Time Dashboard in Real-Time Intelligence. You create a Kusto Query Language (KQL) query, create a Real-Time Dashboard, add a new tile to the dashboard, and explore the data visually by adding an aggregation.
+In this part of the tutorial, you create a Real-Time Dashboard in Real-Time Intelligence. You start with a Kusto Query Language (KQL) query, create a Real-Time Dashboard, add a new tile to the dashboard, and explore the data visually by adding an aggregation.
 
 ## Create a real-time dashboard
 
 1. In your KQL queryset, copy, paste, and run the following query. You might have already run this query from the previous section in this tutorial.
-    This query returns a column chart showing the most recent number of bikes by *BikepointID*.
 
     ```kusto
     AggregatedData
@@ -26,25 +25,34 @@ In this part of the tutorial, you learn how to create a Real-Time Dashboard in R
     | render columnchart with (ycolumns=No_Bikes,xcolumn=BikepointID)
     ```
 
-    :::image type="content" source="media/tutorial/bikes-by-bikepoint.png" alt-text="Screenshot of query showing column chart of bikes by bike point ID. " lightbox="media/tutorial/bikes-by-bikepoint.png":::
+    The query returns a column chart showing the most recent number of bikes by *BikepointID*.
 
-1. Select **Save to dashboard** > **New Real-Time Dashboard**.
+1. Select **Save to dashboard** > **To a new Dashboard**.
+
+    :::image type="content" source="media/tutorial/bikes-by-bikepoint.png" alt-text="Screenshot of query showing column chart of bikes by bike point ID. " lightbox="media/tutorial/bikes-by-bikepoint.png":::
 
 1. Enter the following information:
 
     | Field | Value |
     | --- | --- |
     | **Name** | *TutorialDashboard* |
-    | **Location** | The workspace in which you created your resources |
+    | **Location** | The workspace in which you created your resources. |
 
 1. Select **Create**.
 
-   The new real-time dashboard, *TutorialDashboard*, opens with the New tile. You can also access the real-time dashboard by browsing to your workspace and selecting the desired item.
+1. In the dialog box that appears, select **Open Dashboard**.
+
+   The *TutorialDashboard* opens with one tile that displays the visual you created with the query above.
 
    :::image type="content" source="media/tutorial/tutorial-dashboard-new-tile.png" alt-text="Screenshot of TutorialDashboard showing one new tile. " lightbox="media/tutorial/tutorial-dashboard-new-tile.png":::
 
-<!-- ## Using Copilot. Content drafted, but not published as per Michal's request. Leaving here for future. 
+You can access this real-time dashboard any time by browsing to your workspace and selecting the *TutorialDashboard*.
+
+<!-- // Content drafted, but not published as per Michal's request. Leaving here for future. // 
+
 ## Generate a real-time dashboard using Copilot (preview)
+
+## Using Copilot to create a real-time daashboard
 
 The process uses AI to generate a Real-Time Dashboard from the streaming data in your table. You can then customize the dashboard by adding or modifying tiles as needed.
 
@@ -72,11 +80,21 @@ Copilot automatically generates the Copilot Insights page and Profile page, both
 
 --> 
 
+<!-- // Content drafted for new experience, but not yet released. Need new screenshot of the final result.//
+
 ## Add a new tile by using a query
 
-Make sure that you're in **Editing** mode in the dashboard before beginning the following steps. If you're not in **Editing** mode, toggle from **Viewing** on the top right corner of the dashboard.
+You need to be in editing mode to add new tiles to a dashboard. Each tile is based on a KQL query, and you can choose from various visualization types to display the data.
 
-1. Select **New tile**.
+1. Open the *TutorialDashboard* you created in the previous section.
+
+1. Make sure you're in **Editing** mode by toggling from **Viewing** on the top right corner of the dashboard.
+
+   :::image type="content" source="media/tutorial/editing-mode.png" alt-text="Screenshot of the viewing/editing button.":::
+
+1. Select **Add visual**, and in the dropdown that opens, scroll down and select **Map**.
+
+   :::image type="content" source="media/tutorial/add-visual.png" alt-text="Screenshot of the add visual button and dropdown." lightbox="media/tutorial/add-visual.png":::
 
 1. In the query editor, enter and run the following query:
 
@@ -85,26 +103,54 @@ Make sure that you're in **Editing** mode in the dashboard before beginning the 
     | where Timestamp > ago(1h)
     ```
 
-1. Above the results pane, select **+ Add visual**.
+    A preview of the map visual appears, but it doesn't have the necessary configuration to display the data correctly.
 
-1. In the **Visual formatting** pane, enter the following information:
+1. In the **Visualization** pane, select the expand button to see all visualization options. Then enter the following information to configure the map visual:
 
     | Field | Value |
     | --- | --- |
     | Tile name | *Bike locations Map* |
-    | **Visual type** | *Map* |
     | **Define location by** | *Latitude and longitude* |
     | **Latitude column** | *Latitude* |
     | **Longitude column** | *Longitude* |
     | **Label column** | *BikepointID* |
 
-1. Select **Apply changes**.
-
-    You can resize the tiles and zoom in on the map as desired.
+1. The map visual updates as you define each configuration setting. You can zoom in on the map as desired, adjust the settings further, and when you're satisfied with the visual, select **Done** to add the map tile to your dashboard.
 
     :::image type="content" source="media/tutorial/final-dashboard.png" alt-text="Screenshot of final dashboard with two tiles." lightbox="media/tutorial/final-dashboard.png":::
 
 1. Save the dashboard by selecting the **Save** icon on the top left corner of the dashboard.
+
+-->
+
+## Add a new tile by using a query
+
+Make sure that you're in **Editing** mode in the dashboard before beginning the following steps. If you're not in **Editing** mode, toggle from **Viewing** on the top right corner of the dashboard.
+
+1. Select **Add visual**.
+
+1. In the query editor, enter and run the following query:
+
+    ```kusto
+    RawData
+    | where Timestamp > ago(1h)
+    ```
+
+1. In the **Visualization** pane, select the expand button to see all visualization options. Then enter the following information to configure the map visual:
+
+    | Field | Value |
+    | --- | --- |
+    | Tile name | *Bike locations Map* |
+    | **Define location by** | *Latitude and longitude* |
+    | **Latitude column** | *Latitude* |
+    | **Longitude column** | *Longitude* |
+    | **Label column** | *BikepointID* |
+
+1. View the Visual tab to see a draft of the new tile. When you are happy with the visualization, select **Apply changes**.
+
+    :::image type="content" source="media/tutorial/final-dashboard.png" alt-text="Screenshot of final dashboard with two tiles." lightbox="media/tutorial/final-dashboard.png":::
+
+1. The new or edited tile is displayed in the dashboard. To save the dashboard with the new tile, select **Save** at the top left corner of the dashboard.
 
 ## Customize tile visuals
 
@@ -128,7 +174,7 @@ To customize the visualization of a tile on your dashboard, follow these steps:
 
 You can set up [Activator](data-activator/activator-introduction.md) alerts on your Real-Time Dashboard tiles to get notified when certain conditions are met in your data. Set up an alert on the *Bike locations Map* tile to get notified when the number of bikes at any station exceeds a certain threshold.
 
-1. From the new bar chart tile, select the Alert icon. Or, from the **More options** (three dots) menu, select **Set Alert**.
+1. From the new bar chart tile, select the Alert icon. Or, from the **More options** (three dots) menu, select **Add Alert**.
 
    :::image type="content" source="media/tutorial/tutorial-dashboard-set-alert.png" alt-text="Screenshot of the set alert option." lightbox="media/tutorial/tutorial-dashboard-set-alert.png":::
 
@@ -160,7 +206,7 @@ You can set up [Activator](data-activator/activator-introduction.md) alerts on y
 
    :::image type="content" source="media/tutorial/tutorial-dashboard-alert-open.png" alt-text="Screenshot alert summary with the open button highlighted." lightbox="media/tutorial/tutorial-dashboard-alert-open.png":::
 
-1. From the Activator Alerts page, you can view and manage your alert definitions, see analytics, and alert history. 
+1. From the Activator Alerts page, you can view and manage your alert definitions, see analytics, and alert history.
 
    For more details, see [Create alerts for a Real-Time Dashboard](data-activator/activator-get-data-real-time-dashboard.md).
 

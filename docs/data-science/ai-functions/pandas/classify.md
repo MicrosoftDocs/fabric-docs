@@ -1,21 +1,22 @@
 ---
 title: Use ai.classify with pandas
 description: Learn how to categorize input text according to custom labels by using the ai.classify function with pandas.
-ms.reviewer: vimeland
+ms.reviewer: singhrana
+reviewer: ranadeepsingh
 ms.topic: how-to
 ms.date: 11/13/2025
-ms.search.form: AI functions
+ms.search.form: AI Functions
+ai-usage: ai-assisted
 ---
 
 # Use ai.classify with pandas
 
-
-The `ai.classify` function uses generative AI to categorize input text according to custom labels you choose, with a single line of code.
+The `ai.classify` function categorizes each input row by using the labels you provide.
 
 > [!NOTE]
-> - This article covers using *ai.classify* with pandas. To use *ai.classify* with PySpark, see [this article](../pyspark/classify.md).
-> - See other AI functions in [this overview article](../overview.md).
-> - Learn how to customize the [configuration of AI functions](./configuration.md).
+> - This article covers `ai.classify` with pandas. For PySpark, see [Use ai.classify with PySpark](../pyspark/classify.md).
+> - For all AI Functions and prerequisites, see [AI Functions overview](../overview.md).
+> - Change default configuration for [AI Functions with pandas](./configuration.md).
 
 ## Overview
 
@@ -57,22 +58,45 @@ df["category"] = df['descriptions'].ai.classify("kitchen", "bedroom", "garage", 
 display(df)
 ```
 
-This example code cell provides the following output:
+Output:
 
 :::image type="content" source="../../media/ai-functions/classify-example-output.png" alt-text="Screenshot of a data frame with 'descriptions' and 'category' columns. The 'category' column lists each description’s category name." lightbox="../../media/ai-functions/classify-example-output.png":::
+
+## Multimodal input
+
+To classify images, PDFs, or text files, set `column_type="path"` when the input column contains file path strings. For supported file types and setup, see [Use multimodal input with AI Functions](../multimodal-overview.md).
+
+```python
+# This code uses AI. Always review output for mistakes.
+
+file_path_series = aifunc.list_file_paths("/lakehouse/default/Files")
+custom_df = pd.DataFrame({"file_path": file_path_series})
+
+custom_df["highest_degree"] = custom_df["file_path"].ai.classify(
+    "Master", "PhD", "Bachelor", "Other",
+)
+display(custom_df)
+```
+
+> [!NOTE]
+> When you use `aifunc.list_file_paths()` to create your file path column, the returned `yarl.URL` objects are automatically detected as file paths. You only need to specify `column_type="path"` when your column contains plain string URLs.
+
+You can also use `aifunc.load` to ingest files into a DataFrame, then classify the file-path column:
+
+```python
+# This code uses AI. Always review output for mistakes.
+
+df, schema = aifunc.load("/lakehouse/default/Files")
+df["category"] = df["file_path"].ai.classify("Master", "PhD", "Bachelor", "Other")
+display(df)
+```
+
+When you use `aifunc.load`, the file-path column contains `yarl.URL` objects that are automatically detected. For plain string URLs, set `column_type="path"`.
 
 ## Related content
 
 - Use [ai.classify with PySpark](../pyspark/classify.md).
-- Detect sentiment with [ai.analyze_sentiment](./analyze-sentiment.md).
-- Generate vector embeddings with [ai.embed](./embed.md).
-- Extract entities with [ai_extract](./extract.md).
-- Fix grammar with [ai.fix_grammar](./fix-grammar.md).
-- Answer custom user prompts with [ai.generate_response](./generate-response.md).
-- Calculate similarity with [ai.similarity](./similarity.md).
-- Summarize text with [ai.summarize](./summarize.md).
-- Translate text with [ai.translate](./translate.md).
-
-- Learn more about the [full set of AI functions](../overview.md).
-- Customize the [configuration of AI functions](./configuration.md).
-- Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).
+- Learn more about [AI Functions](../overview.md).
+- Use [multimodal input with AI Functions](../multimodal-overview.md).
+- Change default configuration for [AI Functions with pandas](./configuration.md).
+- Understand [billing for AI Functions](../billing.md).

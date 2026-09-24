@@ -2,9 +2,10 @@
 title: Data Factory Pricing
 description: This article provides an overview of the pricing model for Data Factory in Microsoft Fabric.
 ms.reviewer: makromer
+ms.date: 06/19/2026
 ms.topic: concept-article
-ms.custom: configuration
-ms.date: 12/18/2024
+ms.custom:
+  - configuration
 ---
 
 # Data Factory pricing in Microsoft Fabric
@@ -21,11 +22,13 @@ You can manage your Fabric Data Factory run costs easily with simplified billing
 
 ## Data Factory pricing meters
 
-Whether you’re a citizen or professional developer, Data Factory enables you to develop enterprise-scale data integration solutions with next-generation dataflows and pipelines. These experiences operate on multiple services with different capacity meters. Pipelines use **Data Orchestration** and **Data Movement** meters, while Dataflow Gen2 uses **Standard Compute** and **High Scale Compute**. Copy Job, on the other hand, uses **Data Movement** and **Data Movement – Incremental copy** meters for billing. Additionally, like other Fabric experiences, the common meter for storage consumption is OneLake Storage.
+Whether you're a citizen or professional developer, Data Factory enables you to develop enterprise-scale data integration solutions with next-generation dataflows and pipelines. These experiences operate on multiple services with different capacity meters. Pipelines use **Data Orchestration** and **Data Movement** meters, while Dataflow Gen2 uses **Standard Compute** and **High Scale Compute**. Copy Job, on the other hand, uses **Data Movement** and **Data Movement – Incremental copy** meters for billing. Additionally, like other Fabric experiences, the common meter for storage consumption is OneLake Storage.
 
 :::image type="content" source="media/pricing-overview/pricing-meters.png" alt-text="Diagram showing the pricing meters for Data Factory in Microsoft Fabric.":::
 
-## Pricing examples
+<a id="pricing-examples"></a>
+
+## Price examples
 
 Here are some example scenarios for pricing of pipelines:
 
@@ -38,7 +41,7 @@ Here are some example scenarios for pricing of pipelines:
 Here are some pricing examples for Copy job:
 
 - [Load 1-TB of CSV to a Lakehouse table](pricing-scenario-copy-job.md)
-  
+
 ## Related content
 
 - [Pipelines pricing for Data Factory in Microsoft Fabric](pricing-pipelines.md)

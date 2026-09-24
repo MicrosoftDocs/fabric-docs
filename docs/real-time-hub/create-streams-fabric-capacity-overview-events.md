@@ -1,9 +1,11 @@
 ---
-title: Get Capacity overview events in Fabric Real-Time hub
-description: This article describes how to get Fabric capacity overview events as an eventstream in Fabric Real-Time hub. 
+title: Capacity Overview Events in Fabric Real-Time Hub
+description: Fabric capacity overview events let you monitor capacity usage in Real-Time hub. Learn how to create eventstreams from capacity events step by step.
 ms.reviewer: geguirgu
 ms.topic: how-to
-ms.date: 11/17/2025
+ms.date: 04/02/2026
+author: spelluru
+ms.author: spelluru
 ms.custom: references_regions
 ---
 
@@ -25,7 +27,11 @@ Here are the supported Capacity overview events:
 
 For more information, see [Explore Capacity overview events](explore-fabric-capacity-overview-events.md).
 
-[!INCLUDE [consume-fabric-events-regions](./includes/consume-fabric-events-regions.md)]
+[!INCLUDE [consume-fabric-events-regions](../real-time-intelligence/event-streams/includes/connectors/consume-fabric-events-regions.md)]
+
+[!INCLUDE [outbound-access-protection-note](./includes/outbound-access-protection-note.md)]
+
+[!INCLUDE [workspace-private-links-note](./includes/workspace-private-links-note.md)]
 
 ## Prerequisites
 
@@ -52,25 +58,13 @@ You can create streams for Fabric capacity overview events in Real-Time hub usin
 1. In Real-Time hub, select **Fabric events** on the left navigation menu.
 1. Move the mouse over **Capacity overview events**, and select the **+** (plus) link, or select **... (ellipsis)** and then select **Create Eventstream**.
 
+    :::image type="content" source="./media/create-streams-fabric-capacity-overview-events/create-menu.png" alt-text="Screenshot that shows the Fabric events page with Capacity overview events selected." lightbox="./media/create-streams-fabric-capacity-overview-events/create-menu.png":::
+
     Now, use instructions from the [Configure and create an eventstream](#configure-and-create-an-eventstream) section, but skip the first step of using the **Add source** page.
 
 ## Configure and create an eventstream
 
-1. On the **Connect** page, for **Event types**, select the event types that you want to monitor.
-1. This step is optional. To see the schemas for event types,  select **View selected event type schemas**. If you select it, browse through schemas for the events, and then navigate back to previous page by selecting the backward arrow button at the top. 
-1. For **Event scope**, confirm that **By capacity** is selected. 
-1. In **Capacity**,  select the **capacity** for which you want to receive the events.
-1. Now, on the **Configure connection settings** page, you can add filters to set the filter conditions by selecting fields to watch and the alert value. To add a filter:
-    1. Select **+ Filter**. 
-    1. Select a field.
-    1. Select an operator.
-    1. Select one or more values to match. 
-1. In the **Stream details** section, follow these steps.
-    1. Select the **workspace** where you want to save the eventstream.
-    1. Enter a **name for the eventstream**. The **Stream name** is automatically generated for you.
-1. Then, select **Next** at the bottom of the page.
-1. On the **Review + connect** page, review settings, and select **Create source**.
-1. When the wizard succeeds in creating a stream, on the **Review + connect** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you. To close the wizard, select **Finish** at the bottom of the page.
+[!INCLUDE [fabric-capacity-overview-connector-configuration](../real-time-intelligence/event-streams/includes/connectors/fabric-capacity-overview-connector-configuration.md)]
 
 ## View stream from the Real-Time hub page
 Select **Real-Time hub** on the left navigation menu, and confirm that you see the stream you created. Refresh the page if you don't see it. 

@@ -2,7 +2,7 @@
 title: Publish a workload
 description: Learn how to publish your workload in the Microsoft Fabric portal so that other users can use the workload.
 ms.topic: how-to
-ms.date: 09/29/2024
+ms.date: 04/29/2026
 #customer intent: As an independent software vendor (ISV), I want to know how to publish my workload to Microsoft Fabric.
 ---
 

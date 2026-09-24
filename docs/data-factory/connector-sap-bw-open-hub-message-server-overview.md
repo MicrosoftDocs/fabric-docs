@@ -3,7 +3,7 @@ title: SAP BW Open Hub Message Server connector overview
 description: This article explains the overview of using SAP BW Open Hub Message Server.
 ms.reviewer: jianleishen
 ms.topic: how-to
-ms.date: 12/04/2025
+ms.date: 05/22/2026
 ms.custom:
   - template-how-to
   - connectors
@@ -17,5 +17,9 @@ The SAP BW Open Hub Message Server connector is supported in Data Factory for [!
 
 | Supported capabilities                                                                 | Gateway                        | Authentication                                                                                                 |
 |----------------------------------------------------------------------------------------|--------------------------------|----------------------------------------------------------------------------------------------------------------|
-| **Pipeline** <br>- Copy activity (source/-)<br>- Lookup activity | None<br> On-premises<br>Virtual network | Basic |
-| **Copy job** (source/-)<br>- Full load|None<br> On-premises<br>Virtual network |Basic|
+| **Pipeline** <br>- Copy activity (source/-)<br>- Lookup activity | On-premises | Basic |
+| **Copy job** (source/-)<br>- Full load|On-premises |Basic|
+
+## Related content
+
+- [Connector overview](connector-overview.md)

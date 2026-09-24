@@ -3,27 +3,30 @@ title: Configure AKV references
 description: How to configure Azure Key Vault reference in Microsoft Fabric
 ms.reviewer: abnarain
 ms.topic: how-to
-ms.date: 12/31/2025
+ms.date: 06/15/2026
 ms.search.form: Configure Azure Key Vault references
 ms.custom: configuration
+ai-usage: ai-assisted
 ---
 
 # Configure Azure Key Vault references
 
 [Azure Key Vault (AKV)](/azure/key-vault/general/overview) is Microsoft's cloud service for storing secrets, keys, and certificates centrally, so you don't have to hardcode them into your apps. By using Azure Key Vault references in Microsoft Fabric, you can just point to a secret in your vault instead of copying and pasting credentials.
 
-To use Azure Key Vault references in Microsoft Fabric, you:
+To use Azure Key Vault references in Fabric, you:
 
-1. [Create an Azure Key Vault reference in Microsoft Fabric](#create-an-azure-key-vault-reference-in-microsoft-fabric)
+1. [Create an Azure Key Vault reference in Fabric](#create-an-azure-key-vault-reference-in-microsoft-fabric)
 1. [Store your credentials in Azure Key Vault](#store-your-credentials-in-azure-key-vault)
 1. [Use Azure Key Vault reference in connections](#use-azure-key-vault-reference-in-connections)
 
 ## Prerequisites
 
-- A Microsoft Fabric tenant account with an active subscription. [Create an account for free](/fabric/fundamentals/fabric-trial).
+- A Fabric tenant account with an active subscription. [Create an account for free](/fabric/fundamentals/fabric-trial).
 - An [Azure subscription](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - An [Azure Key Vault](/azure/key-vault/secrets/quick-create-portal)
-  - The Azure Key Vault is accessible from public network.
+  - Either of the following is true:
+    - The Azure Key Vault is accessible from public network.
+    - The Azure Key Vault is private with an on-premises data gateway having network line of sight to the Key Vault private endpoint.
   - The creator of Azure Key Vault reference connection has at least [Key Vault Certificate User](/azure/role-based-access-control/built-in-roles/security#key-vault-certificate-user) permissions on the Key Vault.
 
 - Check [supported connectors and authentication types](#supported-connectors-and-authentication-types) to ensure the connector you want to use supports AKV references.
@@ -39,7 +42,7 @@ To use Azure Key Vault references in Microsoft Fabric, you:
 1. Under **Reference alias**, enter a name for your reference.
 1. Under **Account Name**, enter the name of the existing Azure Key Vault you want to connect to.
 1. Use OAuth 2.0 to authenticate to connect to your key vault and select **Edit credentials**.
-1. Follow the prompts to sign in with your Azure credentials and grant Microsoft Fabric access to your Azure Key Vault. Make sure you have the [necessary permissions](#prerequisites) to access the Key Vault.
+1. Follow the prompts to sign in with your Azure credentials and grant Fabric access to your Azure Key Vault. Make sure you have the [necessary permissions](#prerequisites) to access the Key Vault.
 1. (Optional) Select the check box to allow on-premises data gateways or virtual network gateways to use this AKV reference.
 1. Select **Create** and check its status to verify if it's online and connected to the key vault.
 
@@ -59,14 +62,14 @@ To store your credentials for [supported connectors](#supported-connectors-and-a
     - Leave the other values as their defaults.
 1. Select **Create**.
 
-You're ready to use this secret in Microsoft Fabric connections.
+You're ready to use this secret in Fabric connections.
 
 For more information about Azure Key Vault secrets, see [secrets in Azure Key Vault](/azure/key-vault/secrets/quick-create-portal#add-a-secret-to-key-vault).
 
 ## Use Azure Key Vault reference in connections
 
 Create connections by using an Azure Key Vault reference through the **Manage Connections and Gateways** settings.
-(Currently, the get data experience in Microsoft Fabric doesn't support creating connections by authenticating with Azure Key Vault references.)
+(Currently, the get data experience in Fabric doesn't support creating connections by authenticating with Azure Key Vault references.)
 
 To create a connection through the **Manage Connections and Gateways** settings:
 
@@ -94,21 +97,25 @@ To create a connection through the **Manage Connections and Gateways** settings:
 
 When you configure an Azure Key Vault reference in Fabric, you create a secure pointer to your secret rather than storing the secret itself. Here's how the process works:
 
-**Initial Setup:**
+### Initial setup
+
 Fabric records only the vault URI, secret name from your Key Vault, and user auth or OAuth2.0 credential for connecting to the Azure Key Vault (AKV). You must grant your user identity **Get** and **List** permissions in the specified AKV. Importantly, the actual secret values are never stored within Fabric.
 
-**Runtime Secret Retrieval:**
+### Runtime secret retrieval
+
 When Fabric needs to establish a data connection, it dynamically retrieves the secret from your Key Vault using the stored reference. The secret is used immediately to authenticate the connection and is held in memory only for the duration needed to establish that connection.
 
 ## Supported connectors and authentication types
 
-| Supported Connector | Category | Account key | Basic (Username/Password) | Token (Shared Access Signature or Personal Access Token) | Service Principal |
+| Supported connector | Category | Account key | Basic (Username/Password) | Token (Shared Access Signature or Personal Access Token) | Service principal |
 | --- | --- | --- | --- | --- | --- |
 | [:::image type="icon" source="media/data-pipeline-support/blobs-64.png":::<br/>**Azure Blob<br/>Storage**](connector-azure-blob-storage-copy-activity.md) | **Azure** | <!--AKV reference (Account key)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--AKV reference (Basic)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--AKV reference (Token)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--AKV reference (SPN)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |
 | [:::image type="icon" source="media/data-pipeline-support/blobs-64.png":::<br/>**Azure Data Lake<br/>Storage Gen2**](connector-azure-data-lake-storage-gen2-copy-activity.md) | **Azure** |  <!--AKV reference (Account key)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--AKV reference (Basic)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--AKV reference (Token)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--AKV reference (SPN)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |
+| :::image type="icon" source="media/akv-reference/devops-logo.png":::<br/>**Azure DevOps -<br/>Source Control** | **Git Provider** | <!--AKV reference (Account key)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--AKV reference (Basic)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--AKV reference (Token)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--AKV reference (SPN)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |
 | [:::image type="icon" source="media/data-pipeline-support/azure-table-64.png":::<br/>**Azure Table<br/>Storage**](connector-azure-table-storage-copy-activity.md) | **Azure** | <!--AKV reference (Account key)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--AKV reference (Basic)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--AKV reference (Token)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--AKV reference (SPN)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |
 | [:::image type="icon" source="media/akv-reference/databricks-64.png":::<br/>**Databricks**](connector-databricks.md) | **Services and apps** | <!--AKV reference (Account key)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: |  <!--AKV reference (Basic)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--AKV reference (Token)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--AKV reference (SPN)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: |
 | [:::image type="icon" source="media/data-pipeline-support/dataverse-64.png":::<br/>**Dataverse**](connector-dataverse-copy-activity.md) | **Services and apps** | <!--AKV reference (Account key)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: |  <!--AKV reference (Basic)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--AKV reference (Token)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--AKV reference (SPN)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |
+| :::image type="icon" source="media/akv-reference/github-logo.png":::<br/>**GitHub -<br/>Source Control** | **Git Provider** | <!--AKV reference (Account key)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--AKV reference (Basic)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--AKV reference (Token)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--AKV reference (SPN)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: |
 | [:::image type="icon" source="media/data-pipeline-support/odata-64.png":::<br/>**OData**](connector-odata.md) | **Generic protocol** | <!--AKV reference (Account key)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--AKV reference (Basic)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--AKV reference (Token)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--AKV reference (SPN)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: |
 | [:::image type="icon" source="media/data-pipeline-support/oracle-cloud-storage.png":::<br/>**Oracle Cloud Storage**](connector-oracle-cloud-storage-copy-activity.md) | **File** | <!--AKV reference (Account key)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--AKV reference (Basic)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--AKV reference (Token)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--AKV reference (SPN)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: |
 | [:::image type="icon" source="media/data-pipeline-support/postgresql-64.png":::<br/>**PostgreSQL**](connector-postgresql-copy-activity.md) | **Database** | <!--AKV reference (Account key)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--AKV reference (Basic)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--AKV reference (Token)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--AKV reference (SPN)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: |
@@ -119,9 +126,9 @@ When Fabric needs to establish a data connection, it dynamically retrieves the s
 
 ## Limitations and considerations
 
-- Azure Key Vault references work with Cloud and on-premises data gateway connections.  
-- Virtual network data gateways connections aren’t yet supported.
-- Fabric Lineage view isn't available for AKV references.
+- Azure Key Vault references work with cloud and on-premises data gateway connections.
+- Virtual network data gateways connections aren't yet supported.
+- Fabric lineage view isn't available for AKV references.
 - You can't create AKV references by using a connection from the **Modern Get Data** pane in Fabric items. Instead, [create connections using AKV references through the Manage Connections and Gateways settings](#use-azure-key-vault-reference-in-connections).
 - Azure Key Vault references in Fabric always get the current (latest) version of a secret. Azure Key Vault credential versioning isn't supported.
 

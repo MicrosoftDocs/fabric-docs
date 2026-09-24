@@ -1,5 +1,5 @@
 ---
-title: Capacity consumption for digital twin builder (preview)
+title: Capacity Consumption for Digital Twin Builder (Preview)
 description: This article contains information about how digital twin builder (preview) measures resource consumption that affects your billing.
 ms.date: 06/06/2025
 ms.topic: concept-article

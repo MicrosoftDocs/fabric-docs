@@ -9,7 +9,7 @@ ms.date: 12/15/2025
 
 # Manual git integration with a service principal in Azure DevOps
 
-This article provides manual steps on how to set up a service principal for integrating Microsoft Fabric with Azure DevOps using user identity. To learn how Azure DevOps service principal integration is working, check out our document - [Automate git integration with a service principal in Azure DevOps](automate-git-integration-with-service-principal.md).
+This article provides manual steps on how to set up a service principal for integrating Fabric with Azure DevOps using user identity. To learn how Azure DevOps service principal integration works, see [Automate git integration with a service principal in Azure DevOps](automate-git-integration-with-service-principal.md).
 
 ## Prerequisites
 

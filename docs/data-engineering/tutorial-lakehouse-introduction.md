@@ -9,7 +9,7 @@ ai-usage: ai-assisted
 
 # Lakehouse end-to-end scenario: overview and architecture
 
-Microsoft Fabric is an all-in-one analytics solution for enterprises that covers everything from data movement to data science, real-time analytics, and business intelligence. It offers a comprehensive suite of services, including data lake, data engineering, and data integration, all in one place. For more information, see [What is Microsoft Fabric?](../fundamentals/microsoft-fabric-overview.md)
+Microsoft Fabric is an all-in-one analytics solution for enterprises that covers everything from data movement to data science, real-time analytics, and business intelligence. It offers a comprehensive suite of services, including data lake, data engineering, and data integration, all in one place. For more information, see [What is Fabric?](../fundamentals/microsoft-fabric-overview.md)
 
 This tutorial walks you through an end-to-end scenario from data acquisition to data consumption. It helps you build a basic understanding of Fabric, including the different experiences and how they integrate, as well as the professional and citizen developer experiences that come with working on this platform. This tutorial isn't intended to be a reference architecture, an exhaustive list of features and functionality, or a recommendation of specific best practices.
 
@@ -23,15 +23,15 @@ With the flexibility offered by Fabric, you can implement either lakehouse or da
 
 This tutorial explains how a developer at the fictional Wide World Importers company from the retail domain completes the following steps:
 
-1. Sign in to your Power BI account and sign up for the free [Microsoft Fabric trial](../fundamentals/fabric-trial.md). If you don't have a Power BI license, [sign up for a Fabric free license](https://app.fabric.microsoft.com/?pbi_source=learn-data-engineering-tutorial-lakehouse-introduction) and then you can start the Fabric trial.
+1. Sign in to your Power BI account and sign up for the free [Fabric trial](../fundamentals/fabric-trial.md). If you don't have a Power BI license, [sign up for a Fabric free license](https://app.fabric.microsoft.com/?pbi_source=learn-data-engineering-tutorial-lakehouse-introduction) and then you can start the Fabric trial.
 
 1. Build and implement an end-to-end lakehouse for your organization:
 
    * [Create a Fabric workspace](tutorial-lakehouse-get-started.md).
    * [Create a lakehouse](tutorial-build-lakehouse.md).
    * [Ingest data](tutorial-lakehouse-data-ingestion.md), [transform data](tutorial-lakehouse-data-preparation.md), and load it into the lakehouse. You can also explore the OneLake, one copy of your data across lakehouse mode and SQL analytics endpoint mode.
-   * Connect to your lakehouse using the SQL analytics endpoint and [create a semantic model and build a report](tutorial-lakehouse-build-report.md) to analyze sales data across different dimensions.
-   * Optionally, you can orchestrate and schedule data ingestion and transformation flow with a pipeline.
+   * Connect to your lakehouse using the SQL analytics endpoint and [create a semantic model and create a report](tutorial-lakehouse-build-report.md) to analyze sales data across different dimensions.
+   * Optionally, you can orchestrate and schedule data ingestion and transformation flow with a pipeline. Pipelines include Lakehouse-focused activities such as the Lakehouse Maintenance activity (to automate Delta table upkeep with OPTIMIZE and VACUUM) and the [Refresh SQL analytics endpoint activity](../data-factory/refresh-sql-endpoint-activity.md) (to keep the SQL analytics endpoint synchronized after data loads). The pipeline expression builder also includes Copilot assistance for quicker, more accurate expression authoring. For details, see [Lakehouse Maintenance activity](../data-factory/lakehouse-maintenance-activity.md).
 
 1. [Clean up resources](tutorial-lakehouse-clean-up.md) by deleting the workspace and other items.
 
@@ -39,15 +39,17 @@ This tutorial explains how a developer at the fictional Wide World Importers com
 
 The following image shows the lakehouse end-to-end architecture. The components involved are described in the following list.
 
-:::image type="content" source="media\tutorial-lakehouse-introduction\lakehouse-end-to-end-architecture.png" alt-text="Diagram of the end-to-end architecture of a lakehouse in Microsoft Fabric." lightbox="media/tutorial-lakehouse-introduction/lakehouse-end-to-end-architecture.png":::
+:::image type="content" source="media\tutorial-lakehouse-introduction\lakehouse-end-to-end-architecture.png" alt-text="Diagram of the end-to-end architecture of a lakehouse in Fabric." lightbox="media/tutorial-lakehouse-introduction/lakehouse-end-to-end-architecture.png":::
 
 * **Data sources**: Fabric makes it quick and easy to connect to Azure Data Services, as well as other cloud-based platforms and on-premises data sources, for streamlined data ingestion.
 
-* **Ingestion**: You can quickly build insights for your organization using more than 200 native connectors. These connectors are integrated into the Fabric pipeline and utilize the user-friendly drag-and-drop data transformation with dataflow. Additionally, with the Shortcut feature in Fabric you can connect to existing data, without having to copy or move it.
+* **Ingestion**: You can quickly build insights for your organization using more than 200 native connectors. These connectors are integrated into the Fabric pipeline and utilize the user-friendly drag-and-drop data transformation with dataflow. Additionally, with the Shortcut feature in Fabric you can connect to existing data, without having to copy or move it. OneLake shortcuts can also reference data products across tenants through [OneLake external data sharing](../governance/external-data-sharing-overview.md), giving you access to live, governed operational data without copying or building ETL pipelines. Fabric also includes high-performance, vectorized file readers for common formats such as CSV (with JSON support coming) to reduce ingestion latency.
 
-* **Transform and store**: Fabric standardizes on Delta Lake format. Which means all the Fabric engines can access and manipulate the same dataset stored in OneLake without duplicating data. This storage system provides the flexibility to build lakehouses using a medallion architecture or a data mesh, depending on your organizational requirement. You can choose between a low-code or no-code experience for data transformation, utilizing either pipelines/dataflows or notebook/Spark for a code-first experience.
+* **Transform and store**: Fabric standardizes on Delta Lake format. Which means all the Fabric engines can access and manipulate the same dataset stored in OneLake without duplicating data. OneLake's unified governance model ensures that data accessed through shortcuts participates in the same security and compliance policies as locally stored data, providing a single version of truth across the organization. This storage system provides the flexibility to build lakehouses using a medallion architecture or a data mesh, depending on your organizational requirement. You can choose between a low-code or no-code experience for data transformation, utilizing either pipelines/dataflows or notebook/Spark for a code-first experience. Lakehouse tables also support performance optimizations such as Z-ordering and Liquid Clustering to improve query performance and manage data layout at scale. Additionally, Materialized Lake Views are available to precompute and cache results over lakehouse data, which speeds up repeated analytics. Operationalization can include automated maintenance of Lakehouse Delta tables via the Lakehouse Maintenance activity in pipelines and triggering a SQL analytics endpoint refresh as part of post-load steps—see the optional pipeline orchestration step in the scenario overview above for details.
 
-* **Consume**: Power BI can consume data from the Lakehouse for reporting and visualization. Each Lakehouse has a built-in TDS endpoint called the *SQL analytics endpoint* for easy connectivity and querying of data in the Lakehouse tables from other reporting tools. The SQL analytics endpoint provides users with the SQL connection functionality.
+* **Consume**: Power BI can consume data from the Lakehouse for reporting and visualization. Each Lakehouse has a built-in TDS endpoint, the *SQL analytics endpoint*, for easy connectivity and querying of data in the Lakehouse tables from other reporting tools. Pipeline orchestration can include a step to refresh the Lakehouse SQL analytics endpoint to ensure schema and metadata are current for reporting tools after data loads—see the optional pipeline orchestration step in the scenario overview above for details.
+
+  Through [cross-tenant data sharing](../governance/external-data-sharing-overview.md), reports, semantic models, and AI/data science workloads can also consume shared OneLake data across organizational boundaries, enabling collaboration without data duplication.
 
 ## Sample dataset
 
@@ -69,7 +71,7 @@ As described earlier, this tutorial uses the sample data from [Wide World Import
 
 The following image shows the source, destination, and data transformation:
 
-:::image type="content" source="media\tutorial-lakehouse-introduction\data-transformation-flow.png" alt-text="Diagram of how data flows and transforms in Microsoft Fabric." lightbox="media/tutorial-lakehouse-introduction/data-transformation-flow.png":::
+:::image type="content" source="media\tutorial-lakehouse-introduction\data-transformation-flow.png" alt-text="Diagram of how data flows and transforms in Fabric." lightbox="media/tutorial-lakehouse-introduction/data-transformation-flow.png":::
 
 * **Data Source**: The source data is in Parquet file format and in an unpartitioned structure. It's stored in a folder for each table. In this tutorial, you set up a pipeline to ingest the complete historical or onetime data to the lakehouse.
 
@@ -77,13 +79,15 @@ The following image shows the source, destination, and data transformation:
 
   :::image type="content" source="media\tutorial-lakehouse-introduction\incremental-data-load.png" alt-text="Diagram showing how changed data can be incrementally merged into initially ingested data in a lakehouse." lightbox="media/tutorial-lakehouse-introduction/incremental-data-load.png":::
 
-* **Lakehouse**: In this tutorial, you create a lakehouse, ingest data into the files section of the lakehouse, and then create delta lake tables in the Tables section of the lakehouse.
+* **Lakehouse**: In this tutorial, you create a lakehouse, ingest data into the files section of the lakehouse, and then create Delta Lake tables in the Tables section of the lakehouse.
 
-* **Transform**: For data preparation and transformation, this tutorial covers two different approaches: notebooks and Spark for a code-first experience, and pipelines and dataflows for a low-code or no-code experience.
+* **Transform**: For data preparation and transformation, this tutorial covers two different approaches: notebooks and Spark for a code-first experience, and pipelines and dataflows for a low-code or no-code experience. The latest Fabric runtime includes a native execution engine that delivers significant performance improvements over open-source Spark for notebook and Spark job workloads. The pipeline expression builder includes Copilot assistance to help author expressions and build pipeline logic for quicker, more accurate expression generation.
 
-* **Consume**: Power BI can consume data from the lakehouse for reporting and visualization. Each lakehouse has a built-in TDS endpoint called the *SQL analytics endpoint* for easy connectivity and querying of data in the lakehouse tables from other reporting tools. You can also use the Direct Lake feature to create reports and dashboards that query data directly from the lakehouse. Additionally, you can make your data available to non-Microsoft reporting tools by using the TDS/SQL analytics endpoint to connect and run SQL queries for analytics.
+* **Consume**: Power BI can consume data from the lakehouse for reporting and visualization. Each lakehouse has a built-in TDS endpoint called the *SQL analytics endpoint* for easy connectivity and querying of data in the lakehouse tables from other reporting tools. You can also use Direct Lake over OneLake to let Power BI query lakehouse tables directly without import or a dedicated semantic model refresh cycle. Additionally, you can make your data available to non-Microsoft reporting tools by using the TDS/SQL analytics endpoint to connect and run SQL queries for analytics.
+
+  For Spark SQL workloads specifically, ODBC-compatible clients can connect using the [Microsoft ODBC Driver for Microsoft Fabric Data Engineering (Preview)](./spark-odbc-driver.md) with Microsoft Entra ID authentication (interactive, Azure CLI, service principal, certificate, or access token).
 
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Create a lakehouse](tutorial-lakehouse-get-started.md)
+> [Create a Fabric workspace](tutorial-lakehouse-get-started.md)

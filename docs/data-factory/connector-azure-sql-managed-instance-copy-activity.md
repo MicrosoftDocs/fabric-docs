@@ -141,9 +141,9 @@ Under **Advanced**, you can specify the following fields:
 
 ### Mapping
 
-For the **Mapping** tab configuration, if you don't apply Azure SQL Managed Instance with auto create table as your destination, go to [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab).
+For the **Mapping** tab configuration, if you don't apply Azure SQL Managed Instance with auto create table as your destination, go to [Mapping](copy-data-activity.md#configure-your-mappings-under-the-mapping-tab).
 
-If you apply Azure SQL Managed Instance with auto create table as your destination, except the configuration in [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab), you can edit the type for your destination columns. After selecting **Import schemas**, you can specify the column type in your destination.
+If you apply Azure SQL Managed Instance with auto create table as your destination, except the configuration in [Mapping](copy-data-activity.md#configure-your-mappings-under-the-mapping-tab), you can edit the type for your destination columns. After selecting **Import schemas**, you can specify the column type in your destination.
 
 For example, the type for *ID* column in source is int, and you can change it to float type when mapping to the destination column.
 
@@ -151,7 +151,7 @@ For example, the type for *ID* column in source is int, and you can change it to
 
 ### Settings
 
-For **Settings** tab configuration, go to [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
+For **Settings** tab configuration, go to [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-the-settings-tab).
 
 ## Data type mapping for Azure SQL Managed Instance
 

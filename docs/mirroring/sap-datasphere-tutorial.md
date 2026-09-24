@@ -1,18 +1,16 @@
 ---
-title: "Tutorial: Configure Microsoft Fabric Mirrored Databases to Mirror SAP via SAP Datasphere (Preview)"
+title: "Tutorial: Configure Microsoft Fabric Mirrored Databases to Mirror SAP via SAP Datasphere"
 description: Learn how to mirror SAP systems via SAP Datasphere. Set up connections, replicate data, and integrate with Fabric for data management.
 ms.reviewer: jingwang
-ms.date: 11/03/2025
+ms.date: 02/26/2026
 ms.topic: tutorial
 ---
 
-# Mirroring SAP via SAP Datasphere (Preview)
+# Mirroring SAP via SAP Datasphere
 
 [Mirroring in Fabric](../mirroring/overview.md) is an enterprise, cloud-based, zero-ETL, SaaS technology. In this section, you learn how to create a mirrored SAP database, which creates a read-only, continuously replicated copy of your SAP data in OneLake.
 
 This tutorial introduces how to set up mirrored SAP via SAP Datasphere. For a solution overview, refer to [Mirroring for SAP via SAP Datasphere](sap.md#mirroring-for-sap-via-sap-datasphere).
-
-[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
 ## Prerequisites
 
@@ -64,7 +62,7 @@ Create a replication flow to replicate data from your SAP source into ADLS Gen2.
 
     :::image type="content" source="media/sap-datasphere-tutorial/sap-datasphere-target-settings.png" alt-text="Screenshot of ADLS Gen2 target settings." lightbox="media/sap-datasphere-tutorial/sap-datasphere-target-settings.png":::
 
-1. Configure the detail settings for the replication. Select **Settings** in the middle section of the canvas. Check and adjust the selected **Load Type** if needed. Currently, mirroring supports **Initial and Delta**.
+1. Configure the detail settings for the replication. Select **Settings** in the middle section of the canvas. Check and adjust the selected **Load Type** if needed. Currently, mirroring supports **Initial and Delta** or **Initial Only**.
 
     :::image type="content" source="media/sap-datasphere-tutorial/sap-datasphere-load-type.png" alt-text="Screenshot of replication flow load type settings." lightbox="media/sap-datasphere-tutorial/sap-datasphere-load-type.png":::
 
@@ -82,7 +80,7 @@ This section explains how to create the mirrored SAP database in Fabric.
 
 1. Open the [Fabric portal](https://fabric.microsoft.com).
 
-1. [Create a lakehouse](../onelake/create-lakehouse-onelake.md) or reuse an existing lakehouse.
+1. [Create a lakehouse](../data-engineering/create-lakehouse.md) or reuse an existing lakehouse.
 
 1. In your lakehouse, [create an Azure Data Lake Storage Gen2 shortcut](../onelake/create-adls-shortcut.md) to the storage container where SAP Datasphere replicates the source SAP data. Make sure you select the whole storage container when creating the shortcut:
 
@@ -92,7 +90,7 @@ This section explains how to create the mirrored SAP database in Fabric.
 
 ### Create a mirrored database
 
-1. In your workspace, select **New item** and find **Mirrored SAP (preview)**.
+1. In your workspace, select **New item** and find **Mirrored SAP**.
 
 1. Select the lakehouse name that contains the shortcut to your ADLS Gen2 storage container from the OneLake catalog.
 

@@ -1,20 +1,20 @@
 ---
 title: GQL Expressions, Predicates, and Functions
-description: Complete reference for GQL expressions, predicates, and built-in functions in graph in Microsoft Fabric.
+description: Learn about GQL expressions, predicates, and built-in functions for data processing, filtering, and analysis in graph in Microsoft Fabric queries.
 ms.topic: reference
-ms.date: 11/18/2025
+ms.date: 05/20/2026
 ms.reviewer: splantikow
 ---
 
 # GQL expressions, predicates, and functions
 
-[!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
+This article provides a comprehensive reference for GQL expressions, predicates, and built-in functions available in graph in Microsoft Fabric queries. Use this reference to understand how to perform calculations, filter results, and transform data in your graph queries.
 
-GQL expressions let you perform calculations, comparisons, and transformations on data within your queries. In combination with built-in functions, expressions provide powerful tools for data processing, filtering, and analysis in graph queries.
+For an overview of the GQL query language and end-to-end query examples, see [GQL language guide](gql-language-guide.md). For information about supported data types and literal syntax, see [GQL values and value types](gql-values-and-value-types.md).
 
 ## Literals
 
-Literals are simple expressions that directly evaluate to the stated value. Literals of each kind of value are explained in detail in [GQL values and value types](gql-values-and-value-types.md).
+Literals are simple expressions that directly evaluate to the stated value. The [GQL values and value types](gql-values-and-value-types.md) article explains literals of each kind of value in detail.
 
 **Example:**
 
@@ -32,14 +32,14 @@ For detailed literal syntax for each data type, see [GQL values and value types]
 
 ## Predicates
 
-Predicates are boolean expressions, which are commonly used to filter results in GQL queries. They evaluate to `TRUE`, `FALSE`, or `UNKNOWN` (null). 
+Predicates are boolean expressions that you commonly use to filter results in GQL queries. They evaluate to `TRUE`, `FALSE`, or `UNKNOWN` (null).
 
 > [!CAUTION]
-> When used as a filter, predicates retain only those items, for which the predicate evaluates to `TRUE`.
+> When you use predicates as a filter, they retain only those items for which the predicate evaluates to `TRUE`.
 
 ## Comparison predicates
 
-Compare values using these operators:
+Use these operators to compare values:
 
 - `=` (equal)
 - `<>` (not equal)
@@ -70,10 +70,10 @@ RETURN p.firstName
 
 **Number coercion rules:**
 
-In order of precedence:
+Use the following rules in order of precedence:
 
-1. Comparison expressions involving arguments of approximate numeric types coerce all arguments to be of an approximate numeric type.
-2. Comparison expressions involving arguments of both signed and unsigned integer types coerce all arguments to be of a signed integer type.
+1. Comparison expressions that involve arguments of approximate numeric types coerce all arguments to be of an approximate numeric type.
+1. Comparison expressions that involve arguments of both signed and unsigned integer types coerce all arguments to be of a signed integer type.
 
 ## Logical expressions
 
@@ -82,6 +82,7 @@ Combine conditions with logical operators:
 - `AND` (both conditions true)
 - `OR` (either condition true)
 - `NOT` (negates condition)
+- `XOR` (exclusive disjunction — true when exactly one operand is true)
 
 **Example:**
 
@@ -94,7 +95,7 @@ RETURN p.firstName || ' ' || p.lastName AS fullName
 
 ## Property existence predicates
 
-To check if properties exist, you can use:
+To check if properties exist, use these predicates:
 
 <!-- GQL Predicate: Checked 2025-11-13 -->
 ```gql
@@ -106,8 +107,8 @@ p.browserUsed IS NULL
 > Attempting to access a known non-existing property results in a syntax error.
 > Access to a potentially non-existing property evaluates to `null`.
 > The determination of whether a property is known or potentially non-existing
-> is made based on the type of the accessed node or edge.
- 
+> is based on the type of the accessed node or edge.
+
 ## List membership predicates
 
 Test if values are in lists:
@@ -120,7 +121,7 @@ p.gender NOT IN ['male', 'female']
 
 ## String pattern predicates
 
-Match strings using pattern matching:
+Match strings by using pattern matching techniques:
 
 <!-- GQL Predicate: Checked 2025-11-13 -->
 ```gql
@@ -138,11 +139,11 @@ Use standard arithmetic operators with numeric values:
 - `*` (multiplication)
 - `/` (division)
 
-Arithmetic operators follow general mathematical conventions. 
+Arithmetic operators follow general mathematical conventions.
 
 **Precedence:**
 
-Generally operators follow established operator precedence rules, such as `*` before `+`. Use parentheses to control evaluation order as needed.
+Generally, operators follow established operator precedence rules, such as `*` before `+`. Use parentheses to control evaluation order as needed.
 
 **Example:**
 
@@ -152,10 +153,10 @@ Generally operators follow established operator precedence rules, such as `*` be
 
 **Coercion rules:**
 
-In order of precedence:
+Use the following rules in order of precedence:
 
 1. Arithmetic expressions involving arguments of approximate number types return a result of an approximate numeric type.
-2. Arithmetic expressions involving arguments of both signed and unsigned integer types return a result of a signed integer type.
+1. Arithmetic expressions involving arguments of both signed and unsigned integer types return a result of a signed integer type.
 
 **Example:**
 
@@ -166,7 +167,7 @@ RETURN birth_year
 
 ## Property access
 
-Access properties using dot notation:
+Access properties by using dot notation:
 
 ```gql
 p.firstName
@@ -175,7 +176,7 @@ edge.creationDate
 
 ## List access
 
-Access list elements using zero-based indexing:
+Access list elements by using zero-based indexing:
 
 ```gql
 interests[0]    -- first element
@@ -188,8 +189,7 @@ GQL supports various built-in functions for data processing and analysis.
 
 ### Aggregate functions
 
-Aggregate functions are used to evaluate an expression over a set of rows and obtain a final result value by combining the values computed for each row. The following aggregate functions are supported for graph in
-Microsoft Fabric:
+Use aggregate functions to evaluate an expression over a set of rows and get a final result value by combining the values computed for each row. Graph supports the following aggregate functions:
 
 - `count(*)` - counts rows
 - `sum(expression)` - sums numeric values
@@ -198,13 +198,13 @@ Microsoft Fabric:
 - `max(expression)` - finds maximum value
 - `collect_list(expression)` - collects values into a list
 
-In general, aggregate functions ignore null values and always return a null value when no material input values are provided. You can use `coalesce` to obtain a different default value: `coalesce(sum(expr), 0)`. The only exception is the `count` aggregate function, which always counts the non-null values provided, returning 0 if there are none. Use `count(*)` to also include null values in the count.  
+In general, aggregate functions ignore null values and always return a null value when no material input values are provided. You can use `coalesce` to get a different default value: `coalesce(sum(expr), 0)`. The only exception is the `count` aggregate function, which always counts the non-null values provided, returning 0 if there are none. Use `count(*)` to include null values in the count.  
 
-Aggregate functions are used in three different ways:
+Use aggregate functions in three different ways:
 
-- For computing (vertical) aggregates over whole tables
-- For computing (vertical) aggregates over subtables determined by a grouping key
-- For computing (horizontal) aggregates over the elements of a group list
+- To compute (vertical) aggregates over whole tables
+- To compute (vertical) aggregates over subtables determined by a grouping key
+- To compute (horizontal) aggregates over the elements of a group list
 
 **Vertical aggregates:**
 
@@ -231,19 +231,60 @@ MATCH (p:Person)-[edges:knows]->{1,3}(:Person)
 RETURN p.firstName, avg(edges.creationDate) AS avg_connection_date
 ```
 
-Horizontal aggregation always takes precedence over vertical aggregation. 
+Horizontal aggregation always takes precedence over vertical aggregation.
 To convert a group list into a regular list, use `collect_list(edges)`.
 
 > [!NOTE]
 > For comprehensive coverage of aggregation techniques including variable-length edge binding and combining horizontal/vertical aggregation, see [Advanced Aggregation Techniques](gql-language-guide.md#advanced-aggregation-techniques).
 
+### Conditional expressions
+
+Use conditional expressions to return different values based on conditions.
+
+**Searched CASE:**
+
+```gql
+CASE
+  WHEN condition1 THEN result1
+  WHEN condition2 THEN result2
+  ELSE default_result
+END
+```
+
+**Simple CASE:**
+
+```gql
+CASE expression
+  WHEN value1 THEN result1
+  WHEN value2 THEN result2
+  ELSE default_result
+END
+```
+
+**NULLIF:**
+
+`NULLIF(a, b)` returns `NULL` if `a` equals `b`, otherwise returns `a`.
+
+**Example:**
+
+```gql
+MATCH (p:Person)
+RETURN p.firstName,
+       CASE
+         WHEN p.gender = 'male' THEN 'M'
+         WHEN p.gender = 'female' THEN 'F'
+         ELSE 'Other'
+       END AS gender_code,
+       NULLIF(p.browserUsed, 'Unknown') AS browser
+```
+
 ### String functions
 
-- `char_length(string)` - returns string length
-- `upper(string)`- returns uppercase variant of provided string (US ASCII only)
-- `lower(string)`- returns lowercase variant of provided string (US ASCII only)
-- `trim(string)` - removes leading and trailing whitespace
-- `string_join(list, separator)` - joins list elements with separator
+- `char_length(string)` - returns string length.
+- `upper(string)`- returns uppercase variant of provided string (US ASCII only).
+- `lower(string)`- returns lowercase variant of provided string (US ASCII only).
+- `trim(string)` - removes leading and trailing whitespace.
+- `string_join(list, separator)` - joins list elements with separator.
 
 **Example:**
 
@@ -255,21 +296,23 @@ RETURN upper(p.firstName) AS name_upper
 
 ### Graph functions
 
-- `nodes(path)` - returns nodes from a path value
-- `edges(path)` - returns edges from a path value
-- `labels(node_or_edge)` - returns the labels of a node or edge as a list of strings
+- `nodes(path)` - returns nodes from a path value.
+- `edges(path)` - returns edges from a path value.
+- `elements(path)` - returns all nodes and edges from a path as a single list, in path order.
+- `labels(node_or_edge)` - returns the labels of a node or edge as a list of strings.
+- `path_length(path)` - returns the number of edges in a path.
 
 **Example:**
 
 ```gql
 MATCH p=(:Company)<-[:workAt]-(:Person)-[:knows]-{1,3}(:Person)-[:workAt]->(:Company)
-RETURN nodes(p) AS chain_of_colleagues
+RETURN nodes(p) AS chain_of_colleagues, path_length(p) AS hops
 ```
 
 ### List functions
 
-- `size(list)` - returns size of a list value
-- `trim(list,n)` - trim a list to be at most of size `n`
+- `size(list)` - returns size of a list value.
+- `trim(list,n)` - trim a list to be at most of size `n`.
 
 **Example:**
 
@@ -281,8 +324,8 @@ RETURN p.firstName, collect_list(t.name) AS interests
 
 ### Temporal functions
 
-- `zoned_datetime()` - returns current zoned datetime
-- `zoned_datetime("2025-09-12T10:10:52Z")` - returns zoned datetime given by the argument in ISO 8601 format
+- `zoned_datetime()` - returns the current zoned datetime.
+- `zoned_datetime("2025-09-12T10:10:52Z")` - returns the zoned datetime given by the argument in ISO 8601 format.
 
 **Example:**
 
@@ -292,18 +335,21 @@ RETURN zoned_datetime() AS now
 
 ### Generic functions
 
-- `coalesce(value1, value2, ...)` - returns first non-null value
+- `coalesce(value1, value2, ...)` - returns the first non-null value.
+- `to_json_string(value)` - converts a value to its JSON string representation.
 
 **Example:**
 
 ```gql
 MATCH (p:Person)
-RETURN coalesce(p.firstName, 'Unknown') AS display_name
+RETURN coalesce(p.firstName, 'Unknown') AS display_name,
+       to_json_string(p) AS person_json
 ```
 
 ## Related content
 
 - [GQL language guide](gql-language-guide.md)
 - [GQL values and value types](gql-values-and-value-types.md)
+- [Optimize GQL query performance](gql-query-performance.md)
 - [Graph patterns](gql-graph-patterns.md)
-- [Try Microsoft Fabric for free](/fabric/fundamentals/fabric-trial)
+- [Try graph for free](../fundamentals/fabric-trial.md)

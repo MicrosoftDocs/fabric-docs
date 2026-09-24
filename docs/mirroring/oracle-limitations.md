@@ -2,7 +2,7 @@
 title: "Mirroring Oracle limitations in Microsoft Fabric"
 description: Learn about the limitations when mirroring Oracle databases in Microsoft Fabric.
 ms.reviewer: sbahadur
-ms.date: 08/22/2025
+ms.date: 02/26/2026
 ms.topic: limits-and-quotas
 ms.custom: references_regions
 ai-usage: ai-assisted
@@ -10,7 +10,7 @@ ai-usage: ai-assisted
 
 # Mirroring Oracle limitations in Microsoft Fabric
 
-[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
+
 
 This article outlines the current limits when mirroring [Oracle databases in Microsoft Fabric](overview.md). These limits could change as we continue to improve the service.
 
@@ -21,11 +21,7 @@ This article outlines the current limits when mirroring [Oracle databases in Mic
 
 Here's what you can expect for database scale:
 
-* Currently, mirrored database supports up to **500 tables**
-* In each workspace, you can have:
-  * One Oracle server
-  * One On-Premises Data Gateway (OPDG) instance
-  * One Oracle mirror artifact
+* Currently, mirrored database supports up to **1000 tables**
 
 ## Supported Environments
 
@@ -37,9 +33,10 @@ We support these Oracle Server environments:
 * Oracle Database@Azure
 * Oracle Exadata
 
+Mirroring for Oracle can only support databases in write mode. LogMiner doesn't work on read mode databases.
+
 >[!NOTE]
 >* LogMiner needs to be enabled on your Oracle server. This tool helps track changes in your Oracle database for real-time mirroring.
->* Oracle Autonomous Database isn't supported in this preview.
 
 ## Mirroring prerequisites
 
@@ -79,9 +76,12 @@ For schema (DDL) changes, we currently support:
 
 We also support mirroring tables that have a partitioning - if your source tables are partitioned, then we can mirror those tables over.
 
-Tables that don't have a Primary Key (PK) are supported - if you have a unique index in your tables, then we can support mirroring those tables. If your tables doesn't have a Primary Key (PK) or a unique index, we won't support mirroring those tables over.
+Tables that don't have a Primary Key (PK) are supported - if you have a unique index in your tables, then we can support mirroring those tables. If your tables don't have a Primary Key (PK) or a unique index, we will not support mirroring those tables over.
 
 We can't support table names that have a length greater than or equal to 30.
+
+## Large tables and reseeds
+Onboarding or reseeding multiple large tables at the same time does cause sharp memory spikes. If you stagger large tables and avoid bulk restarts that trigger multiple reseeds concurrently, it proves to work well.
 
 ## Required Permissions
 
@@ -108,6 +108,10 @@ Your database needs these archive log settings:
 * Keep archive log mode on during mirroring
 * Redo log file archiving enabled by the database admin
 
+Aggressive purging of Oracle archive logs during initial load or heavy CDC activity can force retries and increase memory pressure. The guidance for stablility is to avoid purging during initial load and heavy CDC. If downtime windows aren’t clear, please retain at least the last ~24 hours of logs.
+
+If you get this error - "Complete Logminer Dictionary not found or ORA-01291: missing logfile\\nORA-06512: at \\\"SYS.DBMS_LOGMNR\\\.," follow the above guidance on the retention of log files.
+
 ### Logging Configuration
 
 If your Oracle user doesn't have direct ALTER DATABASE and ALTER TABLE permissions, ask your DBA to run these commands:
@@ -125,6 +129,25 @@ If your Oracle user doesn't have direct ALTER DATABASE and ALTER TABLE permissio
    ALTER TABLE {schemaName}.{tableName} ADD SUPPLEMENTAL LOG DATA (ALL) COLUMNS;
    ```
 
+## Invalid Decimal Precision or Scale for Oracle NUMBER columns
+#### Issue
+If an Oracle column is defined as NUMBER without precision and scale (that is, no (p,s) specified), mirroring to Fabric may fail with the following error:
+Invalid Decimal Precision or Scale. Precision: 38 Scale: 127
+#### Cause
+This issue can occur due to an outdated Oracle client/ODP driver used by the On-premises Data Gateway, which does not correctly interpret Oracle NUMBER types without explicit precision and scale.
+#### Resolution
+Upgrade the Oracle client tools used by the gateway and restart the mirroring process by following these steps:
+1. Stop mirroring for the affected database
+   * If stopping mirroring impacts downstream consumers, alternatively stop the On-premises Data Gateway.
+1. Update Oracle client tools
+   * On the VM hosting the On-premises Data Gateway, Install the latest version of [Oracle Client for Microsoft Tools (ODP driver)](https://www.oracle.com/database/technologies/appdev/ocmt.html).
+1. Restart gateway services
+   * Open services.msc
+   * Restart the On-Premises Data Gateway service
+1. Restart mirroring
+   * Return to the Fabric portal
+   * Restart the mirror
+
 ## Set up your gateway
 
 Currently, we only support connecting to Oracle using an On-Premises Data Gateway (OPDG). You need to install and configure the gateway on a machine that can connect to your Oracle server.
@@ -132,6 +155,21 @@ Currently, we only support connecting to Oracle using an On-Premises Data Gatewa
 For machine requirements and setup instructions to install and register your gateway, see the [On-premises Data Gateway installation guide](/data-integration/gateway/service-gateway-install#download-and-install-a-standard-gateway).
 >[!NOTE]
 >* To ensure that you have the latest performance enhancements and updates, make sure that you have the upgraded to the latest version of the [On-Premises Data Gateway](oracle-tutorial.md#install-the-on-premises-data-gateway). To review recent updates, refer to the [Currently supported monthly updates](/data-integration/gateway/service-gateway-monthly-updates).
+
+In higher‑concurrency setups, memory usage accumulates over time as each mirroring pipeline runs its own process. Better stability can be obtainted by - 
+* Using fewer, more powerful gateway VMs with sufficient headroom and
+* Dedicating the VMs exclusively to the on‑premises Data Gateway - no other Fabric or batch workloads
+
+If you get this error - "Unable to connect to the remote server…," either a connection attempt failed because the connected party didn't properly respond after a period of time, or the established connection failed because connected host failed to respond. Oracle Mirror Publisher runs on On Premises Data Gateway and needs to have the authoritative requirements for gateway outbound connectivity. Refer to the [Adjust communication settings for the on-premises data gateway](/data-integration/gateway/service-gateway-communication) and follow the guidance listed there.
+
+## Issues outside of Mirroring for Oracle
+
+If you get any of the following errors - 
+
+* ORA-00604: error occurred at recursive SQL level 1\\nORA-01289: cannot add duplicate logfile +DBSV6162_ARCHIVE_OBIA/CPOBIACH/ARCHIVELOG/2026_03_03/thread_1_seq_138823.582.1226964749\\nORA-06512: at \\\"SYS.DBMS_LOGMNR\\\," line 82\\nORA-06512: at line 1\\nORA-06512: at line 1\\nORA-06512: at \\\"SYS.DBMS_LOGMNR\\\," line 72\\nORA-06512: at line 1'
+* ORA-65040: operation not allowed from within a pluggable database.
+
+You need to reach out to the Oracle support team or open up a support ticket with Oracle - not Microsoft. Let the Oracle support team know that the Oracle database used for Mirroring needs updates to the latest patch.
 
 ## Related Content
 

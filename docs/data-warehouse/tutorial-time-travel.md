@@ -2,13 +2,15 @@
 title: "Data Warehouse Tutorial: Time Travel with T-SQL in a Warehouse"
 description: "In this tutorial, learn how to use T-SQL statements to time travel in a warehouse table."
 ms.reviewer: ajagadish
-ms.date: 04/06/2025
+ms.date: 05/19/2026
 ms.topic: how-to
 ---
 
-# Tutorial: Time travel with T-SQL in a Warehouse
+# Tutorial: Time travel with T-SQL in a warehouse
 
-In this tutorial, learn how to use T-SQL statements to _[time travel](time-travel.md)_ in a warehouse table. Time travel means to query data as it existed at a specific point in time, which is made automatically possible by Fabric Warehouse [data retention](time-travel.md#data-retention).
+**Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
+
+In this tutorial, learn how to use T-SQL statements to [time travel](time-travel.md) in a warehouse table. Time travel means to query data as it existed at a specific point in time.
 
 > [!NOTE]
 > This tutorial forms part of an [end-to-end scenario](tutorial-introduction.md#data-warehouse-end-to-end-scenario). In order to complete this tutorial, you must first complete these tutorials:
@@ -99,6 +101,9 @@ In this task, learn how to create a view of the top 10 customers by sales. You w
 
 1. Return to the `Time Travel Now` query, and then replace `YOUR_TIMESTAMP` with the timestamp you copied to the clipboard.
 
+   > [!IMPORTANT]
+   > The `FOR TIMESTAMP AS OF` literal accepts at most three digits of fractional seconds (the `yyyy-MM-ddTHH:mm:ss[.fff]` format). If the value you copied has more than three fractional-second digits (for example, `2024-05-02T20:44:13.7700000`), trim it to milliseconds (`2024-05-02T20:44:13.770`). A higher-precision literal fails with a conversion error. For details, see [Time travel limitations](time-travel.md#limitations).
+
 1. Run the query, and notice that the second top `CustomerKey` value is 49 for `Tailspin Toys (Muir, MI)`.
 
 1. Modify the timestamp value to an earlier time _by subtracting one minute_ from the timestamp.
@@ -111,7 +116,7 @@ In this task, learn how to create a view of the top 10 customers by sales. You w
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Create a query with the visual query builder in a Warehouse](tutorial-visual-query.md)
+> [Tutorial: Use AI functions to query data in a Warehouse](tutorial-ai-functions.md)
 
 ## Related content
 

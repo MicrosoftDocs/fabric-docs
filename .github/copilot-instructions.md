@@ -54,20 +54,21 @@ Below are instructions specific to this repository. These may be updated by repo
 
 <!--- Add additional repository level instructions below. Do NOT update this line or above. --->
 
-### Fabric Terminology Guidelines
+### Fabric terminology guidelines
 
-When writing about Microsoft Fabric services, follow these terminology standards:
+When writing about Microsoft Fabric services, follow these terminology standards. For full definitions of Fabric terms, see [Microsoft Fabric terminology](../docs/fundamentals/fabric-terminology.md).
 
-#### Correct Terminology
+The following table provides usage guidance for commonly misused terms. For definitions, see the [glossary](../docs/fundamentals/fabric-terminology.md).
 
-- ✅ Use "Eventhouse in Fabric" or "Eventhouse" (NOT "Fabric Eventhouse")
-- ✅ Use "Lakehouse in Fabric" or "Lakehouse" (NOT "Fabric Lakehouse")
-- ✅ Use "Database in Fabric" or "Database" (NOT "Fabric Database")
-- ✅ Use "data gateway" or "on-premises data gateway" (NOT "Fabric data gateway")
-
-**Note**: Marketing terms like "Fabric Eventhouse" are acceptable in blogs but prohibited in docs.
-
-**Usage**: Use shorter forms (e.g., "Eventhouse") when Fabric context is clear; use full forms (e.g., "Eventhouse in Fabric") when introducing concepts.
-
+| Term | Usage |
+|------|-------|
+| eventhouse | Always lowercase when talking about an instance. Don't use "event house" or "event-house". |
+| item | Don't use "artifact", "asset", or "object". Whenever possible, use the specific term for the item type instead of "item". |
+| lakehouse | Always lowercase when talking about an instance. Don't use "lake house" or "lake-house". |
+| mirroring | Don't use "replication" or "data copy". Don't capitalize "mirroring". |
+| OneLake security | Don't capitalize "security". |
+| SQL analytics endpoint | Always use the full term "SQL analytics endpoint". Don't shorten to "SQL endpoint" or "analytics endpoint". Don't capitalize "analytics endpoint". |
+| SQL database in Fabric | Always use the full term "SQL database in Fabric" unless referring to a SQL database outside of Fabric. Don't shorten to "SQL database" or "Fabric SQL database". Don't capitalize "database". |
+| warehouse | Always lowercase when talking about an instance. Don't use "data warehouse" when talking about an instance. "Data Warehouse" (capitalized) is the name of the workload. |
 
 

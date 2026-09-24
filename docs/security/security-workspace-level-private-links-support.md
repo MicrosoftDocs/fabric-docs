@@ -1,11 +1,12 @@
 ---
-title: Supported scenarios for workspace private links
+title: Supported Scenarios for Workspace Private Links
 description: Find information and links for supported and unsupported workspace-level private link scenarios.
 author: msmimart
 ms.author: mimart
 ms.reviewer: karthikeyana
 ms.topic: overview
-ms.date: 10/22/2025
+ms.date: 06/16/2026
+ai-usage: ai-assisted
 
 #customer intent: As a workspace admin, I want to get more information about how to use workspace-level private link in supported and unsupported scenarios.
 
@@ -25,7 +26,7 @@ Workspace-level private links in Microsoft Fabric provide a secure way to connec
 
 You can use workspace-level private links to connect to the following item types in Fabric:
 
-* Lakehouse, SQL Endpoint, Shortcut
+* Lakehouse, SQL analytics endpoint, Shortcut
 * Direct connection via OneLake endpoint
 * Notebook, Spark job definition, Environment
 * Machine learning experiment, machine learning model
@@ -38,23 +39,31 @@ You can use workspace-level private links to connect to the following item types
 * Mirrored database
 * Eventstream
 * Eventhouse
+* Activator
+* Data Agent
 
 ### Notes about unsupported item types
 
 The following item types aren't currently supported in workspaces enabled with workspace-level private links:
 
-* Deployment pipelines
-* Default semantic models
+* **Deployment pipelines**
 
-If a workspace contains any unsupported item types, inbound public access can't be restricted for the workspace, even if workspace-level private link is set up. 
+   If a workspace contains any unsupported item types, inbound public access can't be restricted for the workspace, even if workspace-level private link is set up. 
+    
+   Similarly, if a workspace is already configured to restrict inbound public access, unsupported item types can't be created in that workspace.
 
-Similarly, if a workspace is already configured to restrict inbound public access, unsupported item types can't be created in that workspace.
+   When a workspace is assigned to a deployment pipeline, it can't be configured to block public access, as deployment pipelines don't currently support workspace-level private links.
 
-When working with unsupported item types, be aware of the following considerations.
+* **SQL databases**
 
-* **Deployment pipelines:** When a workspace is assigned to a deployment pipeline, it can't be configured to block public access, as deployment pipelines don't currently support workspace-level private links.
+   Tenant-level [private links](security-private-links-overview.md) are available for SQL database, but currently, workspace-level private links are not available in SQL database.
 
-* **Default semantic models:** Existing lakehouses, warehouses, and mirrored databases use a default semantic model that doesn't support workspace-level private links, which prevents you from blocking public access to the workspace. You can bypass this default semantic model limitation by configuring the workspace to block public access first, and then creating a lakehouse, warehouse, or mirrored database.
+* **Semantic models**
+
+   Power BI semantic models aren't supported in workspaces with workspace-level private links enabled. If a workspace contains any Power BI semantic models, you can't enable workspace-level private links for that workspace.
+
+   > [!NOTE]
+   > Default semantic models were previously created for workspaces with lakehouses, warehouses, or mirrored databases, and they would block creation of workspace-level private links. This issue no longer occurs because default semantic models stopped being created automatically as of September 5, 2025, and existing default semantic models were decoupled from their parent items as of November 30, 2025. For more information, see [Power BI semantic models in Microsoft Fabric](../data-warehouse/semantic-models.md).
 
 ## Management options for supported item types
 
@@ -74,6 +83,7 @@ Admin APIs remain accessible even for restricted workspaces, because the tenant-
 * [OneLake Shortcuts - REST API (Core)](/rest/api/fabric/core/onelake-shortcuts)
     * From a restricted workspace, you can create shortcuts to other data sources such as external storage, or through trusted access.
     * When you create a shortcut to another restricted workspace, you need to create a managed private endpoint and get approval from the target workspace private link service owner in Azure. For more information, see [Cross-workspace communication](security-cross-workspace-communication.md).
+    * Cross-region shortcuts aren't supported using managed private endpoints on private link-enabled workspaces.
     * Shortcut transforms aren't currently supported in restricted workspaces.
 * [Tags - REST API (Core)](/rest/api/fabric/core/tags)
 * [Workspaces - REST API (Core)](/rest/api/fabric/core/workspaces)
@@ -98,36 +108,55 @@ Create and manage Lakehouses in workspaces enabled with private links by using t
 * [Background Jobs - REST API (Lakehouse)](/rest/api/fabric/lakehouse/background-jobs)
 ---
 
+### Materialized lake views support (Preview)
+ 
+Use Fabric portal or REST APIs in workspaces enabled with private links to refresh materialized lake views in Lakehouse. This feature is in preview.
+ 
+#### [Fabric portal](#tab/fabric-portal-2)
+* [Schedule lineage](/fabric/data-engineering/materialized-lake-views/schedule-lineage-run)
+#### [REST API](#tab/rest-apis-2)
+* [Manage materialized lake views using REST API](/fabric/data-engineering/materialized-lake-views/materialized-lake-views-public-api)
+---
+
 ### Warehouse support
 
 Create and manage warehouses in workspaces enabled with private links by using the Fabric portal or REST APIs.
 
-#### [Fabric portal](#tab/fabric-portal-2)
-* [Create a Warehouse](/fabric/data-warehouse/create-warehouse)
-#### [REST API](#tab/rest-apis-2)
+#### [Fabric portal](#tab/fabric-portal-15)
+* [Create a Warehouse](../data-warehouse/create-warehouse.md)
+#### [REST API](#tab/rest-apis-15)
 * [Warehouse REST API](/rest/api/fabric/warehouse/items)
 * [Items - REST API (WarehouseSnapshot)](/rest/api/fabric/warehousesnapshot/items)
-* To get the workspace private link service connection string for a warehouse:
-   [Get Connection String - REST API (Warehouse)](/rest/api/fabric/warehouse/items/get-connection-string)
+
+To get the workspace private link service connection string for a warehouse: [Get Connection String - REST API (Warehouse)](/rest/api/fabric/warehouse/items/get-connection-string)
+
+When using the REST API to retrieve the connection string use, the `privateLinkType=Workspace` flag to get the workspace private link connection string.
+
 ---
 
-To use the warehouse connection string with a workspace-level private link, add z{xy} to the regular warehouse connection string. For example:
+To use the warehouse connection string with a workspace-level private link, add information to the placeholders z{xy} to the regular warehouse connection string, as described in [Private links for Fabric workspaces](security-workspace-level-private-links-overview.md#connecting-to-workspaces). The `z` is a literal inclusion in the connection string, and the brackets are not included, so for example `zab` or `z44`. For example:
 
-```http
-https://{GUID}-{GUID}.z{xy}.datawarehouse.fabric.microsoft.com
+```url
+{GUID}-{GUID}.z{xy}.datawarehouse.fabric.microsoft.com
 ```
 
-Using the warehouse connection string, you can also access a warehouse via the SQL Tabular Data Stream (TDS) endpoint in tools such as SQL Server Management Studio.
+Using the warehouse connection string, you can also access a warehouse via the SQL Tabular Data Stream (TDS) endpoint in tools such as SQL Server Management Studio. All SQL analytics endpoints and warehouses in a workspace share the same connection string hostname for TDS connectivity.
 
-### SQL Endpoint support
+<a id="sql-endpoint-support"></a>
 
-Find the workspace private link service connection string for a SQL Endpoint by using the Fabric portal or REST API.
+### SQL analytics endpoint support
 
-#### [Fabric portal](#tab/fabric-portal-3)
-* [Find the Connection String (SQL Endpoint)](/fabric/data-warehouse/how-to-connect#find-the-warehouse-connection-string)
-#### [REST API](#tab/rest-apis-3)
-* [Items - List SQL Endpoints](/rest/api/fabric/sqlendpoint/items/list-sql-endpoints)
-* [Items - Get Connection String (SQL Endpoint)](/rest/api/fabric/sqlendpoint/items/get-connection-string)
+To use the warehouse connection string with a workspace-level private link, add information to the placeholders z{xy} to the regular warehouse connection string, as described in [Private links for Fabric workspaces](security-workspace-level-private-links-overview.md#connecting-to-workspaces). The `z` is a literal inclusion in the connection string, and the brackets are not included, so for example `zab` or `z44`. For example:
+
+```url
+{GUID}-{GUID}.z{xy}.datawarehouse.fabric.microsoft.com
+```
+
+* To get the workspace private link service connection string for a SQL analytics endpoint:
+  [Items - Get Connection String (SQL analytics endpoint)](/rest/api/fabric/sqlendpoint/items/get-connection-string)
+
+Using the SQL analytics endpoint connection string, you can also access a SQL analytics endpoint via the SQL Tabular Data Stream (TDS) endpoint in tools such as SQL Server Management Studio. All SQL analytics endpoints and warehouses in a workspace share the same connection string hostname for TDS connectivity.
+
 ---
 
 ### Notebook support
@@ -232,7 +261,7 @@ Manage eventstreams in workspaces enabled with private links by using the Fabric
 
 Eventstream APIs use a graph-like structure to define an Eventstream item, which consists of four components: source, destination, operator, and stream. 
 
-Currently, Eventstream only supports Workspace Private Link for a limited set of sources and destinations. If you include an unsupported component in the Eventstream API payload, the request may fail.
+Currently, Eventstream only supports Workspace Private Link for a limited set of sources and destinations. If you include an unsupported component in the Eventstream API payload, the request might fail.
 
 The following scenarios are unsupported:
 
@@ -264,6 +293,10 @@ A connection based on a virtual network data gateway must be used, including in 
 
 Power Platform Dataflow Connector: When a workspace has workspace private links enabled and public access denied, for any two dataflows in that workspace (dataflow A and dataflow B), neither dataflow will be able to connect to the other dataflow using the Power Platform Dataflow Connector, because the dataflow won't appear in the navigator.
 
+> [!NOTE]
+> Copilot in Dataflow Gen2 isn't supported when workspace-level Private Links is enabled.
+
+
 #### [Fabric portal](#tab/fabric-portal-12)
 * [Dataflow Gen2 default destination](/fabric/data-factory/default-destination)
 #### [REST API](#tab/rest-apis-12)
@@ -292,8 +325,28 @@ You can manage mirrored databases in workspaces enabled with private links by us
 ---
 
 > [!NOTE]
-> * Currently, workspace-level private link is supported for [open mirroring](/fabric/mirroring/open-mirroring), [Azure Cosmos DB mirroring](/fabric/mirroring/azure-cosmos-db), [Azure SQL Managed Instance mirroring](/fabric/mirroring/azure-sql-managed-instance) and [SQL Server 2025 mirroring](/fabric/mirroring/sql-server). For other types of database mirroring, if your workspace is configured to deny inbound public access, active mirrored databases enter a paused state, and mirroring can't be started.
+> * Currently, workspace-level inbound network protection is supported for [open mirroring](/fabric/mirroring/open-mirroring), [Azure Cosmos DB mirroring](/fabric/mirroring/azure-cosmos-db), [Azure SQL Database mirroring](/fabric/mirroring/azure-sql-database), [Azure SQL Managed Instance mirroring](/fabric/mirroring/azure-sql-managed-instance), [SAP mirroring](/fabric/mirroring/sap), [SharePoint List mirroring](/fabric/mirroring/sharepoint-list), and [SQL Server 2025 mirroring](/fabric/mirroring/sql-server). For other types of database mirroring, if your workspace is configured to deny inbound public access, active mirrored databases enter a paused state, and mirroring can't be started.
 > * For open mirroring, when your workspace is configured to deny inbound public access, ensure the publisher writes data into the OneLake landing zone via a private link with workspace FQDN.
+
+### Azure and Fabric Events support
+
+When workspace-level private links are configured on a workspace to block public access, event consumers (such as Activator alerts or eventstreams) in other workspaces can't subscribe to or consume events from items in that workspace unless a private link is established from the consumer's network to the source workspace (the workspace where the events originate).
+
+This applies to all Fabric event types. For example, if you create an Activator alert in Workspace A to monitor OneLake events from a lakehouse in Workspace B, Workspace B is the source workspace. If Workspace B blocks public network access, this configuration fails unless a private link is established from Workspace A's network to Workspace B.
+
+Azure events (such as Azure Blob Storage events) are also affected. When you configure a consumer to receive Azure events, an eventstream item is created in a Fabric workspace to represent the Azure source. If the workspace that contains this eventstream item blocks public network access, consumers in other workspaces can't consume those events unless a private link is established. Additionally, Azure events are affected by tenant-level private link configuration. When the **Block Public Internet Access** tenant setting is enabled, Azure event sources outside the tenant are blocked from delivering events into Fabric entirely, regardless of workspace-level settings.
+
+Event consumption within the same workspace is always allowed, regardless of private link settings. If workspace-level private link settings change after a consumer is already configured, the system detects the change and pauses the configuration. While paused, events are retained for up to 24 hours. For details on paused configurations, see [Paused event configurations in Real-Time hub](/fabric/real-time-hub/fabric-events-paused-state).
+
+For more information, see [Workspace private links for Azure and Fabric events](/fabric/real-time-hub/workspace-private-links-real-time-events).
+
+### Data agent
+Data agents can connect to lakehouse, warehouse, and SQL data sources within a workspace that has workspace-level private links enabled (public access disabled). Cross-workspace access is supported when network connectivity is explicitly established (for example, using a managed private endpoint) and subject to region and token constraints.
+
+Current limitations: 
+- Kusto, semantic models, and mirrored data sources are not supported in private link scenarios. These limitations are inherent to the item types themselves, and not a limitation of Data Agents. 
+- Cross-region private-link access for SQL sources is also not supported.
+- Private links are not supported for external integrations such as AI Foundry or Microsoft 365.
 
 ## Supported and unsupported management tools
 
@@ -316,14 +369,56 @@ You can manage mirrored databases in workspaces enabled with private links by us
 - For Data Engineering workloads:
    - To query Lakehouse files or tables from a workspace that has workspace-level private link enabled, you must create a cross-workspace managed private endpoint connection to access resources in the other workspace. <!--For instructions, see [Cross workspace communication](security-cross-workspace-communication.md).-->
    - You can use either relative or full paths to query files or tables within the same workspace, or use a cross-workspace managed private endpoint connection to access them from another workspace. To read files in a Lakehouse located in another workspace, use a fully qualified path that includes the workspace ID and lakehouse ID (not their display names). This approach ensures the Spark session can resolve the path correctly and avoids socket timeout errors. [Learn more](workspace-outbound-access-protection-data-engineering.md#understanding-file-path-behavior-in-fabric-notebooks).
+- Variable Libraries cannot be accessed from a Pipeline.
 - Current limitations for Private Link with an eventhouse:
    - Copilot features: Machine learning workloads might experience limited functionality due to a known regression.
    - Eventstream pull: Eventstream workloads don't currently support full polling functionality.
-   - Fabric doesn't currently support Event Hub integration.
+   - Fabric doesn't currently support Azure Event Hubs integration.
    - Queued ingestion via OneLake isn't currently available.
-* The **OneLake Catalog - Govern** tab isn't available when Private Link is activated.
-* **OneLake Security** isn't currently supported when a workspace-level private link is enabled for a workspace.
-* Workspace monitoring isn't currently supported when a workspace-level private link is enabled for a workspace.
+- For Activator:
+  - With tenant-level private links enabled, Activator supports ingesting events from KQL/Eventhouse, Power BI, and Real-Time Hub Fabric Events.
+  - With workspace-level private links enabled, Activator supports ingesting events from KQL/Eventhouse and Real-Time Hub Fabric Events.
+  - Activator doesn't support ingestion from Eventstream with private links enabled.
+- The **OneLake Catalog - Govern** tab isn't available when Private Link is activated.
+- Workspace monitoring isn't currently supported when a workspace-level private link is enabled for a workspace.
+- Power BI semantic models aren't supported in workspaces with workspace-level private links enabled.
+   - Semantic model creation may be disabled.
+   - Creation attempts may fail in restricted workspaces.
+
+## Azure role-based access control (RBAC) and workspace-level private links
+
+Provisioning and management of workspace-level private links and associated private endpoints require specific Azure RBAC permissions. These permissions can be narrowly scoped by defining a custom Azure role that grants only the required Virtual Network, Private Link, and Private Endpoint actions at the resource group level, enabling delegated management without assigning broad roles such as Owner or Contributor. The following custom role definition provides necessary permissions to create virtual networks, subnets, Fabric workspace private links and private endpoints scoped to a specific group.
+
+```json
+{
+  "Name": "Custom Fabric WSPL role",
+  "Description": "Read access to resource group, create private endpoints for Fabric WSPL",
+  "Actions": [
+    "*/read",
+    "Microsoft.Network/virtualNetworks/write",
+    "Microsoft.Network/virtualNetworks/subnets/write",
+    "Microsoft.Network/privateEndpoints/write",
+    "Microsoft.Network/privateEndpoints/delete",
+    "Microsoft.Network/privateEndpoints/privateDnsZoneGroups/write",
+    "Microsoft.Network/virtualNetworks/subnets/join/action",
+    "Microsoft.Network/virtualNetworks/join/action",
+    "Microsoft.Network/privateDnsZones/join/action",
+    "Microsoft.Network/privateDnsZones/write",
+    "Microsoft.Network/privateDnsZones/delete",
+    "Microsoft.Network/privateDnsZones/virtualNetworkLinks/write",
+    "Microsoft.Network/privateDnsZones/virtualNetworkLinks/delete",
+    "Microsoft.Resources/deployments/validate/action",
+    "Microsoft.Resources/deployments/write",
+    "Microsoft.Fabric/privateLinkServicesForFabric/*",
+    "Microsoft.Network/privateEndpoints/privateLinkServiceProxies/write"
+  ],
+  "NotActions": [],
+  "NotDataActions": [],
+  "AssignableScopes": [
+    "/subscriptions/<replace-with-subscription-id>/resourceGroups/<replace-with-resource-group>"
+  ]
+}
+```
 
 ## Common errors and troubleshooting
 
@@ -331,7 +426,7 @@ You can manage mirrored databases in workspaces enabled with private links by us
 
 When trying to access a workspace configured to restrict public access, users encounter the following error:
 
-```
+```output
    "errorCode": "RequestDeniedByInboundPolicy",
    "message": "Request is denied due to inbound communication policy"
 ```
@@ -347,7 +442,7 @@ When trying to access a workspace configured to restrict public access, users en
 
 When trying to set a workspace to restrict public access, users encounter the following error:
 
-```
+```output
    "errorCode": "InboundRestrictionNotEligible",
    "message": "This workspace contains items that do not comply with requested policy"
 ```

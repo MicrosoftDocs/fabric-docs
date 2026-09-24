@@ -1,9 +1,11 @@
 ---
 title: Use Tidyverse
 description: How to use Tidyverse, a collection of R packages designed for data science.
-ms.reviewer: lagayhar, sgilley
+ms.author: lagayhar
+ms.reviewer: scottpolly
 ms.topic: how-to
-ms.date: 06/30/2025
+ms.date: 08/31/2026
+ai-usage: ai-assisted
 ms.search.form: R Language
 ---
 
@@ -73,18 +75,18 @@ head(stocks_readr)
 
 `tidyr` is an R package that provides tools for working with messy data. The main functions in `tidyr` are designed to help you reshape data into a tidy format. Tidy data has a specific structure where each variable is a column and each observation is a row, which makes it easier to work with data in R and other tools.
 
-For example, the `gather()` function in `tidyr` can be used to convert wide data into long data. Here's an example:
+For example, the `pivot_longer()` function in `tidyr` converts wide data into long data:
 
 ```R
 # convert the stock data into longer data
 library(tidyr)
-stocksL <- gather(data = stocks, key = stock, value = price, X, Y, Z)
+stocksL <- pivot_longer(stocks, cols = X:Z, names_to = "stock", values_to = "price")
 stocksL
 ```
 
 ## Functional programming
 
-`purrr` is an R package that enhances R’s functional programming toolkit by providing a complete and consistent set of tools for working with functions and vectors. The best place to start with `purrr` is the family of `map()` functions that allow you to replace many for loops with code that is both more succinct and easier to read. Here’s an example of using `map()` to apply a function to each element of a list:
+`purrr` is an R package that enhances R's functional programming toolkit by providing a complete and consistent set of tools for working with functions and vectors. The best place to start with `purrr` is the family of `map()` functions that allow you to replace many for loops with code that is both more succinct and easier to read. Here's an example of using `map()` to apply a function to each element of a list:
 
 ```R
 # double the stock values using purrr

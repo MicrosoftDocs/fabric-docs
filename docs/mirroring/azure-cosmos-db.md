@@ -19,7 +19,7 @@ You can use built-in Power BI capabilities to access data in OneLake in DirectLa
 In addition to Power BI, you can use T-SQL to run complex aggregate queries or use Spark for data exploration. You can seamlessly access the data in notebooks and use data science to build machine learning models.
 
 > [!IMPORTANT]
-> Currently, only Azure Cosmos DB for NoSQL accounts are supported.
+> Currently, only Azure Cosmos DB for NoSQL accounts are supported. Mirroring isn't available in sovereign clouds (Azure Government and Azure China).
 
 ## Why use mirroring in Fabric?
 
@@ -45,7 +45,7 @@ Mirrored databases are an item in **Fabric Data Warehousing** distinct from the 
 Every Mirrored Azure Cosmos DB item creates these items you can interact with in your Fabric workspace:  
 
 - The mirrored database item. Mirroring manages the replication of data into [OneLake](../onelake/onelake-overview.md) and conversion to Parquet, in an analytics-ready format. This enables downstream scenarios like data engineering, data science, and more.
-- [SQL analytics endpoint](../data-warehouse/get-started-lakehouse-sql-analytics-endpoint.md), which is automatically generated
+- [SQL analytics endpoint](../data-engineering/lakehouse-sql-analytics-endpoint.md), which is automatically generated
 
 ### Mirrored database
 
@@ -61,7 +61,7 @@ You can perform the following actions in the SQL analytics endpoint:
 - Join and query data in other mirrored databases, Warehouses, and Lakehouses in the same workspace.
 - You can easily visualize and build BI reports based on SQL queries or views. 
 
-In addition to the [SQL query editor](../data-warehouse/sql-query-editor.md), there's a broad ecosystem of tooling. These tools include [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true), [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms), and even GitHub Copilot. You can supercharge analysis and insights generation from the tool of your choice.
+In addition to the [SQL query editor](../data-warehouse/sql-query-editor.md), there's a broad ecosystem of tooling. These tools include [the MSSQL extension for Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true), [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms), and even GitHub Copilot. You can supercharge analysis and insights generation from the tool of your choice.
 
 ### Semantic model
 
@@ -147,9 +147,11 @@ You can also mask sensitive data from non admin users using dynamic data masking
 
 ### Network security
 
-Azure Cosmos DB accounts with virtual networks or private endpoints are supported with Fabric mirroring using the Network ACL Bypass feature. This allows your authorized Fabric workspace to access the Cosmos DB account without requiring a data gateway, while maintaining enhanced network security. For detailed configuration instructions, see [Configure private networks for Microsoft Fabric mirrored databases from Azure Cosmos DB](azure-cosmos-db-private-network.md).
+> [!NOTE]
+>
+> Mirroring doesn't support customer managed keys (CMK) on OneLake.
 
-Currently, mirroring doesn't support customer managed keys (CMK) on OneLake.
+Azure Cosmos DB accounts with virtual networks or private endpoints are supported with Fabric mirroring using the Network ACL Bypass feature. This allows your authorized Fabric workspace to access the Cosmos DB account without requiring a data gateway, while maintaining enhanced network security. For detailed configuration instructions, see [Configure private networks for Microsoft Fabric mirrored databases from Azure Cosmos DB](azure-cosmos-db-private-network.md).
 
 ## Disaster recovery and replication latency
 

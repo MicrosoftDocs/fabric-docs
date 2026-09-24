@@ -1,16 +1,14 @@
 ---
-title: Preview only step in Dataflow Gen2 (Preview)
+title: Preview only step in Dataflow Gen2
 description: Accelerate authoring in Dataflow Gen2 with preview-only steps—apply transformations during design time without affecting runtime execution.
 ms.reviewer: miescobar
 ms.topic: how-to
-ms.date: 09/15/2025
+ms.date: 03/15/2026
 ms.custom: dataflows
 ---
 
-# Preview only step in Dataflow Gen2 (Preview)
+# Preview only step in Dataflow Gen2
 
-> [!NOTE]
-> Preview only step is currently in preview.
 
 Preview only steps are transformation steps in Dataflow Gen2 that are executed only during the authoring phase for the data preview. They're excluded from run operations, ensuring they don't affect runtime behavior or production logic.
 

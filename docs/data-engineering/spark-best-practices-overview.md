@@ -10,7 +10,7 @@ ms.date: 10/23/2025
 
 # Fabric Spark best practices overview
 
-This series of articles outlines best practices for optimizing the performance, security, and cost of Spark jobs when running Spark Notebooks and Spark Job Definitions (SJDs) on Microsoft Fabric. You should be familiar with basic data engineering concepts in Fabric. If you're new to Fabric, refer to [Fabric data engineering documentation](/fabric/data-engineering).
+This series of articles outlines best practices for optimizing the performance, security, and cost of Spark jobs when running Spark Notebooks and Spark job definitions (SJDs) on Fabric. You should be familiar with basic data engineering concepts in Fabric. If you're new to Fabric, refer to [Fabric data engineering documentation](/fabric/data-engineering).
 
 ## Articles in this series
 

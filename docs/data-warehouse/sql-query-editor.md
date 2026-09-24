@@ -1,8 +1,8 @@
 ---
 title: Query Using the SQL Query Editor
 description: Learn how to use the SQL query editor.
-ms.reviewer: prlangad, jacindaeng, pradeepsrikakolapu
-ms.date: 01/08/2026
+ms.reviewer: prlangad, rakrish75, pvenkat
+ms.date: 09/09/2026
 ms.topic: how-to
 ms.custom:
   - sfi-image-nochange
@@ -32,7 +32,7 @@ The SQL query editor provides a text editor to write queries by using T-SQL. To 
 
    :::image type="content" source="media/sql-query-editor/new-sql-query-dropdown-templates.png" alt-text="Screenshot showing where to find the SQL templates in the ribbon." lightbox="media/sql-query-editor/new-sql-query-dropdown-templates.png":::
 
-As you work on your SQL query, the queries are automatically saved every few seconds. A "saving" indicator appears in your query tab to indicate that your query is being saved.
+When autosave is enabled, your query is automatically saved every few seconds. A "saving" indicator appears in your query tab while your query is being saved. You can enable or disable autosave with an option in the status bar.
 
 ## Multitask between tabs for data preview, querying, and modeling
 
@@ -42,27 +42,27 @@ The data preview, querying, and modeling experience opens as individual tabs tha
 
 ### View query results
 
-Once you've written the T-SQL query, select **Run** to execute the query.
+When your T-SQL query is ready, select **Run** to execute the query.
 
 The **Results** preview appears in the **Results** section. If the query returns more than 10,000 rows, the preview shows only the first 10,000 rows. You can search for a string within the results grid to filter rows that match the search criteria. The **Messages** tab shows SQL messages returned when the SQL query runs.
 
 The status bar indicates the query status, duration of the run, and number of rows and columns returned in results.
 
-To enable **Save as view**, **Save as table**, **Open in Excel**, **Explore this data (preview)**, and **Visualize results** menus, highlight the SQL statement containing the `SELECT` statement in the SQL query editor.
+To **Save as view**, **Save as table**, **Open in Excel**, **Explore this data (preview)**, or **Visualize results**, highlight the SQL statement containing the `SELECT` statement in the SQL query editor, and then select the action from the **Messages** and **Results** bar.
 
-   :::image type="content" source="media/sql-query-editor/sql-editor-commands.png" alt-text="Screenshot of the query editor window. Command buttons are boxed in red." lightbox="media/sql-query-editor/editor-commands.png":::
+   :::image type="content" source="media/sql-query-editor/sql-editor-commands.png" alt-text="Screenshot of the query editor window." lightbox="media/sql-query-editor/sql-editor-commands.png":::
 
 #### Save as view
 
 Select the query and save your query as a view by using the **Save as view** button. Select a schema name, provide the name of the view, and verify the SQL statement before confirming the creation of the view. When the view is successfully created, it appears in the **Explorer**.
 
-   :::image type="content" source="media/sql-query-editor/save-as-view.png" alt-text="Screenshot showing how to use Save as view menu.":::
+   :::image type="content" source="media/sql-query-editor/save-as-view.png" alt-text="Screenshot showing how to use Save as view menu." lightbox="media/sql-query-editor/save-as-view.png" :::
 
 #### Save as table
 
 Use **Save as table** to save your query results into a table. Select the warehouse where you want to save results, select a schema, and provide a table name to load results into the table by using the [CREATE TABLE AS SELECT](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?view=fabric&preserve-view=true) statement. When the table is successfully created, it appears in the **Explorer**.
 
-   :::image type="content" source="media/sql-query-editor/save-as-table.png" alt-text="Screenshot showing how to use Save as table menu.":::
+   :::image type="content" source="media/sql-query-editor/save-as-table.png" alt-text="Screenshot showing how to use Save as table menu." lightbox="media/sql-query-editor/save-as-table.png" :::
 
 #### Open in Excel
 
@@ -73,7 +73,7 @@ Select **Open in Excel** to open the corresponding T-SQL query in Excel and exec
 Follow these steps to work with the Excel file locally:
 
 1. After you select the **Continue** button, locate the downloaded Excel file in your Windows File Explorer, for example, in the **Downloads** folder of your browser.
-1. To see the data, select the **Enable Editing** button in the **Protected View** ribbon followed by the **Enable Content** button in the **Security Warning** ribbon. Once both are enabled, you're presented with the following dialog to approve running the query listed.
+1. To see the data, select the **Enable Editing** button in the **Protected View** ribbon followed by the **Enable Content** button in the **Security Warning** ribbon. When both are enabled, you're presented with the following dialog to approve running the query listed.
    :::image type="content" source="media/sql-query-editor/native-database-query.png" alt-text="Screenshot from Microsoft Excel showing the Native Database Query dialog." lightbox="media/sql-query-editor/native-database-query.png":::
 
 1. Select **Run**.
@@ -100,7 +100,7 @@ The **Copy** dropdown list allows you to copy the results and column names in th
 
 #### Multiple result sets
 
-When you run multiple queries and those queries return multiple results, you can select the **Results** dropdown list to see individual results.
+When you run multiple queries and those queries return multiple results, select the **Results** dropdown list to see individual results.
 
    :::image type="content" source="media/sql-query-editor/sql-query-editor-overview.png" alt-text="Screenshot of the query editor window with results." lightbox="media/sql-query-editor/sql-query-editor-overview.png":::
 
@@ -143,7 +143,6 @@ When a query is still running and you close the query editor tab, you can decide
 
 Keyboard shortcuts provide a quick way to navigate and work more efficiently in the SQL query editor. The following table lists all the shortcuts available in Windows and macOS, in the Edge browser, for the SQL query editor in the [!INCLUDE [product-name](../includes/product-name.md)] portal:
 
-
 | **Function** | **Windows Shortcut** | **macOS Shortcut** | 
 |---------------|----------------------|------------------|
 | **Query editor actions** |||
@@ -169,7 +168,7 @@ Keyboard shortcuts provide a quick way to navigate and work more efficiently in 
 | Refresh metadata | Ctrl + Shift + R | Command + Shift + R | 
 | Open settings | Ctrl + Shift + X | Command + Shift + X | 
 | Copy SQL connection string | Ctrl + Shift + C | Command + Shift + C | 
-| Open query activity | Ctrl + Shift + A | Command + Shift + A | 
+| Open Monitor | Ctrl + Shift + A | Command + Shift + A | 
 | Open Copilot chat pane | Ctrl + Shift + I | Command + Shift + I | 
 | New semantic model | Ctrl + Shift + M | Command + Shift + M | 
 | New SQL Query | Ctrl + J | Command + J |
@@ -201,21 +200,21 @@ Keyboard shortcuts provide a quick way to navigate and work more efficiently in 
 
 - T-SQL statements that use the T-SQL `OPTION` syntax aren't currently supported in the **Explore this data** or **Visualize results** options with DirectQuery mode. The workaround is to create visualizations in Power BI Desktop using **Import** mode.
 
-- The following table summarizes the expected behavior that doesn't match with [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true):
+- The following table summarizes the expected behavior that doesn't match with [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) or [the MSSQL extension for Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true):
 
-   | **Scenario** | **Supported in SSMS/ADS** | **Supported in SQL query editor in Fabric portal** |
+   | **Scenario** | **Supported in SSMS or Visual Studio Code** | **Supported in SQL query editor in Fabric portal** |
    |---|---|---|
    |Using [SET Statements (Transact-SQL)](/sql/t-sql/statements/set-statements-transact-sql?view=fabric&preserve-view=true) to set properties for session |Yes|No|
    |Using [sp_set_session_context (Transact-SQL)](/sql/relational-databases/system-stored-procedures/sp-set-session-context-transact-sql?view=fabric&preserve-view=true) for multiple batch statements runs |Yes|No|
-   |[Transactions (Transact-SQL)](transactions.md) (unless executed as a single batch request) |Yes|No|
-
-## Related content
-
-- [Manage objects in your data warehouse](manage-objects.md)
-- [Query using the Visual Query editor](visual-query-editor.md)
-- [Tutorial: Create cross-warehouse queries with the SQL query editor](tutorial-sql-cross-warehouse-query-editor.md)
+   |[Transactions in Fabric Data Warehouse](transactions.md) (unless executed as a single batch request) |Yes|No|
 
 ## Next step
 
 > [!div class="nextstepaction"]
-> [How-to: Query the Warehouse](query-warehouse.md)
+> [Query the warehouse](query-warehouse.md)
+
+## Related content
+
+- [Manage objects in your data warehouse](manage-objects.md)
+- [Query using the visual query editor](visual-query-editor.md)
+- [Tutorial: Create a cross-warehouse query in a warehouse](tutorial-sql-cross-warehouse-query-editor.md)

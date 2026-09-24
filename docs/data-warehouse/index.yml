@@ -1,28 +1,27 @@
 ### YamlMime:Landing
 
-title: Fabric Data Warehouse documentation # < 60 chars
-summary: Learn more about Fabric Data Warehouse # < 160 chars
+title: Fabric Data Warehouse documentation
+summary: Learn about Fabric Data Warehouse, a fully managed, scalable data warehouse solution.
 
 metadata:
-  title: Fabric Data Warehouse # Required; page title displayed in search results. Include the brand. < 60 chars.
-  description: Fabric Data Warehouse landing page  # Required; article description that is displayed in search results. < 160 chars.
+  title: Fabric Data Warehouse documentation
+  description: Learn about Fabric Data Warehouse, a fully managed, scalable data warehouse solution.
+  ms.subservice: data-warehouse
   ms.topic: landing-page # Required
   ms.collection: collection # Optional; Remove if no collection is used.
-  ms.date: 02/11/2026
+  ms.date: 07/10/2026
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:
 # Cards and links should be based on top customer tasks or top subjects
 # Start card title with a verb
   # Card 
-  - title: Fabric Data Warehouse
+  - title: About Data Warehouse
     linkLists:
       - linkListType: overview
         links:
           - text: Overview
             url: data-warehousing.md
-          - text: Better together - the lakehouse and warehouse
-            url: get-started-lakehouse-sql-analytics-endpoint.md
           - text: Architecture
             url: architecture.md
 
@@ -31,11 +30,11 @@ landingContent:
     linkLists:
       - linkListType: tutorial
         links:
-          - text: End to End tutorials 
+          - text: End to end tutorials 
             url: ../fundamentals/end-to-end-tutorials.md
-          - text: Data warehouse tutorial
+          - text: Data Warehouse tutorial
             url: tutorial-introduction.md            
-          - text: Create a Warehouse quickstart
+          - text: Create a warehouse quickstart
             url: create-warehouse.md
 
   # Card 
@@ -43,7 +42,7 @@ landingContent:
     linkLists:
       - linkListType: concept
         links:
-          - text: Data warehousing security
+          - text: Warehouse security
             url: security.md
           - text: Connectivity
             url: connectivity.md    
@@ -53,7 +52,7 @@ landingContent:
             url: workspace-roles.md
           - text: SQL granular permissions
             url: sql-granular-permissions.md
-          - text: SQL Audit Logs
+          - text: SQL audit logs
             url: sql-audit-logs.md            
           - text: Row-level security
             url: row-level-security.md
@@ -76,6 +75,8 @@ landingContent:
             url: ingest-data-tsql.md
           - text: Ingest data using Copy
             url: ingest-data-copy.md
+          - text: Troubleshoot ingestion errors
+            url: troubleshoot-ingestion-errors.md
       - linkListType: concept
         links:
           - text: Mirroring 
@@ -99,23 +100,27 @@ landingContent:
           - text: Share and secure mirrored databases
             url: ../mirroring/share-and-manage-permissions.md
   # Card 
-  - title: Design and Develop
+  - title: Design and develop
     linkLists:
       - linkListType: concept
         links:
-          - text: Development and Deployment
+          - text: Development and deployment
             url: development-deployment.md
           - text: Warehouse projects in Visual Studio Code
             url: develop-warehouse-project.md
-          - text: Semantic models
-            url: semantic-models.md            
+          - text: Pre- and post-deployment scripts
+            url: deployment-scripts.md
           - text: Reports in the Power BI service
             url: reports-power-bi-service.md   
-  # card
+          - text: Semantic models
+            url: semantic-models.md            
+  # Card
   - title: Query
     linkLists: 
       - linkListType: concept
         links:
+          - text: Use AI functions
+            url: ai-functions.md
           - text: Query using the SQL Query editor
             url: sql-query-editor.md
           - text: Query with T-SQL
@@ -159,7 +164,7 @@ landingContent:
           - text: Monitor using DMVs
             url: monitor-using-dmv.md
   # Card 
-  - title: Warehouse capacity
+  - title: Data Warehouse capacity
     linkLists:
       - linkListType: architecture
         links:
@@ -169,7 +174,7 @@ landingContent:
             url: pause-resume.md
           - text: Smoothing and throttling
             url: compute-capacity-smoothing-throttling.md
-          - text: Workload Management
+          - text: Workload management
             url: workload-management.md            
   # Card 
   - title: Data recovery
@@ -187,20 +192,18 @@ landingContent:
     linkLists:
       - linkListType: architecture
         links:
-          - text: Warehouse performance
+          - text: Data Warehouse performance
             url: guidelines-warehouse-performance.md
-          - text: SQL analytics endpoint performance
-            url: sql-analytics-endpoint-performance.md
           - text: Security
             url: security.md
-          - text: Ingest Data
+          - text: Ingest data
             url: ingest-data.md
   # Card 
   - title: Migration
     linkLists:
       - linkListType: deploy
         links:
-          - text: Migration assistant 
+          - text: Migration Assistant 
             url: migration-assistant.md
           - text: Migrate planning for Azure Synapse Analytics dedicated SQL pools
             url: migration-synapse-dedicated-sql-pool-warehouse.md

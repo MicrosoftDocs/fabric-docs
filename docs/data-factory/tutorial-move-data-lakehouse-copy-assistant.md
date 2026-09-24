@@ -1,6 +1,6 @@
 ---
-title: Move data from Azure SQL DB into Lakehouse via copy assistant
-description: Learn steps to move data as files or tables into Lakehouse.
+title: Move data from Azure SQL Database into Lakehouse via copy assistant
+description: Learn steps to move data from Azure SQL Database as files or tables into Lakehouse.
 ms.reviewer: jianleishen
 ms.topic: tutorial
 ms.custom: pipelines, sfi-image-nochange
@@ -8,7 +8,7 @@ ms.date: 12/18/2024
 ms.search.form: Pipeline Copy Assistant
 ---
 
-# Move data from Azure SQL DB into Lakehouse via copy assistant
+# Move data from Azure SQL Database into Lakehouse via copy assistant
 
 This tutorial describes the steps to move data into Lakehouse.
 
@@ -94,14 +94,14 @@ Follow these steps to set up your copy activity.
    :::image type="content" source="media/tutorial-move-data-lakehouse-copy-assistant/view-table-output.png" alt-text="Screenshot showing where to switch to Table view.":::
 
    > [!Note]
-   > Currently data lands into Lakehouse Tables folders (a managed area) in Delta format only. Those files will be automatically registered as a table and be visible under Table view from Lakehouse portal.
+   > Currently data lands into Lakehouse Tables folders (a managed area) in Delta format only. Those files are automatically registered as a table and become visible under Table view in Lakehouse Explorer.
    > Only the first layer folders under Tables will be registered as delta table.
    > Browsing or Previewing from Lakehouse Table isn't supported yet.
    > Data that gets loaded into the same table will be appended. Delete or Update to tables isn't supported yet.
 
 ## Related content
 
-This sample shows you how to move data from Azure SQL DB into Lakehouse with the Copy Assistant in Data Factory for Microsoft Fabric.  You learned how to:
+This sample shows you how to move data from Azure SQL Database into Lakehouse with the Copy Assistant in Data Factory for Microsoft Fabric. You learned how to:
 
 > [!div class="checklist"]
 > - Move files into Lakehouse as tables in delta format with the Copy Assistant.

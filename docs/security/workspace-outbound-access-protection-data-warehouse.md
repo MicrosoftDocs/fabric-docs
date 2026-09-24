@@ -4,23 +4,23 @@ description: "This article describes workspace outbound access protection for da
 author: msmimart
 ms.author: mimart
 ms.topic: overview
-ms.date: 11/17/2025
+ms.date: 05/08/2026
 
-#customer intent: As a data engineer, I want to restrict and manage outbound network connections from my Fabric workspace’s data warehouse workloads, so that I can prevent unauthorized data exfiltration and ensure compliance with my organization’s security requirements.
+#customer intent: As a data engineer, I want to restrict and manage outbound network connections from my Fabric workspace's data warehouse workloads, so that I can prevent unauthorized data exfiltration and ensure compliance with my organization's security requirements.
 
 ---
 
-# Workspace outbound access protection for Data Warehouse (preview)
+# Workspace outbound access protection for Data Warehouse
 
-Workspace outbound access protection helps safeguard your data by controlling outbound connections from Data Warehouse items in your workspace to external data sources. When this feature is enabled, [Data Warehouse items](#supported-data-warehouse-item-types) are restricted from making outbound connections. At this time, exceptions can’t be configured. All outbound connections from warehouses and SQL analytics endpoints are blocked when outbound access protection is enabled.
+Workspace outbound access protection helps safeguard your data by controlling outbound connections from Data Warehouse items in your workspace to external data sources. When this feature is enabled, outbound connections from [Data Warehouse items](#supported-data-warehouse-item-types) are permitted only to administrator-allowed endpoints configured for the workspace. All other outbound connections from warehouses and SQL analytics endpoints are blocked.
 
 ## Understanding outbound access protection with Data Warehouse
 
-When outbound access protection is enabled, the workspace automatically blocks all outbound warehouse and SQL endpoint connections to external networks and other workspaces. Any attempt to access data, services, or resources outside the current workspace is denied.
+When outbound access protection is enabled, outbound connections from warehouses and SQL analytics endpoints are restricted to the workspace's administrator-allowed endpoints. Any attempt to access data, services, or resources at endpoints that haven't been explicitly allowed is denied.
 
 ## Configuring outbound access protection for Data Warehouse
 
-To configure outbound access protection for Data Warehouse, follow the steps in [Enable workspace outbound access protection](workspace-outbound-access-protection-set-up.md). At this time, exceptions can’t be configured through managed private endpoints. All outbound connections from warehouses and SQL analytics endpoints are blocked when outbound access protection is enabled.
+To configure outbound access protection for Data Warehouse, follow the steps in [Enable workspace outbound access protection](workspace-outbound-access-protection-set-up.md). Once enabled, outbound connections from warehouses and SQL analytics endpoints are permitted only to administrator-allowed endpoints configured for the workspace. All other outbound connections are blocked.
 
 ## Supported Data Warehouse item types
 
@@ -37,11 +37,11 @@ With outbound access protection enabled, Fabric warehouses restrict ingestion pi
 
 ### SQL analytics endpoints
 
-For SQL analytics endpoints, outbound access protection ensures that all queries and data retrieval operations are limited to resources within the current workspace. You can only use data import commands with data inside your workspace, unless you use the [updated COPY INTO feature](https://blog.fabric.microsoft.com/blog/announcing-public-preview-onelake-as-a-source-for-copy-into-and-openrowset) that enables you to ingest data directly from OneLake as a source. 
+For SQL analytics endpoints, outbound access protection ensures that all queries and data retrieval operations are limited to resources within the current workspace. You can only use data import commands with data inside your workspace, unless you use `COPY INTO` to ingest data directly from OneLake as a source.
 
 ## Considerations and limitations
 
-- All outbound connections from warehouses and SQL analytics endpoints are blocked when outbound access protection is enabled. Currently, exceptions can’t be configured through managed private endpoints. 
+- All outbound connections from warehouses and SQL analytics endpoints are blocked when outbound access protection is enabled. Currently, exceptions can't be configured through managed private endpoints. 
 - Data import commands (such as COPY INTO, OPENROWSET, Bulk Insert) are restricted to sources within the current workspace, except when using the [COPY INTO](/sql/t-sql/statements/copy-into-transact-sql?view=fabric&preserve-view=true) feature to ingest data directly from OneLake as a source.
 - For other limitations, refer to [Workspace outbound access protection overview - Microsoft Fabric](/fabric/security/workspace-outbound-access-protection-overview#considerations-and-limitations).
 

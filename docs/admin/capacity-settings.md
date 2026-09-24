@@ -1,22 +1,22 @@
 ---
 title: Manage your Fabric capacity
 description: Learn how to manage your Microsoft Fabric capacity and understand that different settings that are available to you.
-author: julcsc
-ms.author: juliacawthra
+author: msmimart
+ms.author: mimart
 ms.topic: how-to
-ms.date: 09/02/2025
+ms.date: 03/06/2026
 ai-usage: ai-assisted
 ---
 
 # Manage your Fabric capacity
 
-This article describes the Microsoft Fabric capacity settings. The article is aimed at admins who want to understand how to manage their Microsoft Fabric capacities.
+This article describes the Fabric capacity settings. The article is aimed at admins who want to understand how to manage their Fabric capacities.
 
 ## Get to the capacity settings
 
 To get to the capacity settings, follow these steps:
 
-1. In Microsoft Fabric, select the gear icon (**&#9881;**), and then select **Admin portal**.
+1. In Fabric, select the gear icon (**&#9881;**), and then select **Admin portal**.
 1. In the Admin portal, select **Capacity settings**.
 
 ## View your capacity
@@ -26,13 +26,13 @@ The capacity settings page shows a list of all the capacities in your [tenant](.
 * **Power BI Premium** - A capacity that was bought as part of a Power BI Premium subscription. These capacities use P SKUs.
 
    >[!NOTE]
-   >Power BI capacities are transitioning to Fabric. For more information, see [Power BI Premium transition to Microsoft Fabric](/power-bi/enterprise/service-premium-faq#power-bi-premium-transition-to-microsoft-fabric).
+   >Power BI Premium per-capacity (P SKU) subscriptions are retiring. To keep your Power BI workloads running, migrate to Microsoft Fabric capacity (F SKUs). For an end-to-end view of the migration, see [Power BI Premium to Microsoft Fabric migration overview](/power-bi/support/premium-migration-overview). For answers to common questions, see the [Power BI Premium to Microsoft Fabric migration FAQ](/power-bi/support/premium-migration-faq).
 
 * **Power BI Embedded** - A capacity that was bought as part of a Power BI Embedded subscription. These capacities use A or EM SKUs.
-* **Trial** - A [Microsoft Fabric trial](../fundamentals/fabric-trial.md) capacity. These capacities use Trial SKUs.
-* **Fabric capacity** - A Microsoft Fabric capacity. These capacities use F SKUs.
+* **Trial** - A [Fabric trial](../fundamentals/fabric-trial.md) capacity. These capacities use Trial SKUs.
+* **Fabric capacity** - A Fabric capacity. These capacities use F SKUs.
 
-The rest of this article is divided to sections based on the different capacity types. To view the settings of your capacity, select the tab that matches your capacity type. If there's no tab to select, the section applies to all capacity types.
+The rest of this article is divided into sections based on the different capacity types. To view the settings of your capacity, select the tab that matches your capacity type. If there's no tab to select, the section applies to all capacity types.
 
 ## Manage your capacity
 
@@ -40,7 +40,7 @@ This section lists basic capacity management tasks, such as creating a new capac
 
 ### Create a new capacity
 
-To create a new capacity you need to be a [Microsoft Fabric admin](../admin/microsoft-fabric-admin.md).
+To create a new capacity you need to be a [Fabric admin](../admin/microsoft-fabric-admin.md).
 
 # [Power BI Premium](#tab/power-bi-premium)
 
@@ -99,7 +99,7 @@ To create a new Power BI Embedded with an EM SKU, follow these steps:
 
 # [Trial](#tab/trial)
 
-To create a new Trial capacity, see [Microsoft Fabric trial](../fundamentals/fabric-trial.md#start-the-fabric-capacity-trial).
+To create a new Trial capacity, see [Fabric trial](../fundamentals/fabric-trial.md#start-the-fabric-capacity-trial).
 
 # [Fabric Capacity](#tab/fabric-capacity)
 
@@ -145,7 +145,7 @@ To change the name of your EM capacity, follow these steps:
 1. Enter the new name for the capacity, and then select the checkmark icon (**&check;*)*.
 
 >[!NOTE]
->Renaming isn’t supported for A SKUs.
+>Renaming isn't supported for A SKUs.
 
 # [Trial](#tab/trial)
 
@@ -240,9 +240,9 @@ To resize a Fabric capacity, see [Scale your capacity](../enterprise/scale-capac
 
 ### Delete a capacity
 
-To delete a capacity you need to be a [Microsoft Fabric admin](../admin/microsoft-fabric-admin.md).
+To delete a capacity you need to be a [Fabric admin](../admin/microsoft-fabric-admin.md).
 
-When you delete a Power BI Premium, Trial or Fabric Capacity, non-Power BI Fabric items in workspaces assigned to the capacity are soft deleted. These Fabric items can still be seen in OneLake Data Hub and in the workspace list, but can't be opened or used. If the workspace that holds these items is associated to a capacity (other than Power BI Embedded) from the same region as the deleted capacity within seven days, the deleted items are restored. This seven-day period is separate from the [workspace retention policy](portal-workspaces.md#workspace-retention).
+When you delete a Power BI Premium, Trial or Fabric Capacity, non-Power BI Fabric items in workspaces assigned to the capacity are soft deleted. These Fabric items can still be seen in OneLake catalog and in the workspace list, but can't be opened or used. If the workspace that holds these items is associated to a capacity (other than Power BI Embedded) from the same region as the deleted capacity within seven days, the deleted items are restored. This seven-day period is separate from the [workspace retention setting](workspace-retention.md#set-up-the-retention-period-for-deleted-collaborative-workspaces).
 
 # [Power BI Premium](#tab/power-bi-premium)
 
@@ -320,14 +320,14 @@ This table summarizes the actions you can take in the details section.
 
 >[!NOTE]
 >* Some of the features in the table are only available if they are enabled in the tenant.
->* Trail capacities only have some of the settings listed in the table
+>* Trial capacities only have some of the settings listed in the table.
 
 | Details setting name                 | Description |
 |--------------------------------------|-------------|
 | Disaster Recovery                    | Enable [disaster recovery](/azure/reliability/reliability-fabric#set-up-disaster-recovery) for the capacity |
 | Capacity usage report                | The usage report is replaced with the [capacity metrics app](../enterprise/metrics-app.md) |
 | Notifications                        | Enable [notification](service-admin-premium-capacity-notifications.md) for your capacity |
-| Copilot capacity                     | Designate this capacity as a [Fabric Copilot capacity](../enterprise/fabric-copilot-capacity.md) |
+| Copilot capacity                     | Designate this capacity as a [Copilot in Fabric capacity](../enterprise/fabric-copilot-capacity.md) |
 | Contributor permissions              | Set up the ability to add workspaces to the capacity. Select one of these two options:<li>The entire organization</li><li>Specific users or security groups</li> |
 | Admin permissions                    | Give specific users the ability to do the following:<li>Change capacity settings</li><li>Add contributors to the capacity</li><li>Add or remove workspaces from the capacity</li> |
 | Power BI workloads                   | Configure [Power BI workloads](/power-bi/enterprise/service-admin-premium-workloads) for:<li>[Semantic models](/power-bi/enterprise/service-admin-premium-workloads#semantic-models)</li><li>[Paginated reports](/power-bi/enterprise/service-admin-premium-workloads#paginated-reports)</li><li>[AI](/power-bi/enterprise/service-admin-premium-workloads#ai-preview)</li> |
@@ -367,10 +367,10 @@ To optimize performance and prevent memory-related errors, administrators can ad
 4. Locate the **Semantic models** section.
 5. Adjust the **Max memory (%)** slider to allocate more memory as needed.
 
-> [NOTE]
+> [!NOTE]
 > Increasing memory allocation may help resolve issues such as model loading failures or performance bottlenecks. For more context on SKU limitations, see [Semantic model SKU limitation](../enterprise/powerbi/service-premium-what-is.md#semantic-model-sku-limitation).
 
 ## Related content
 
-* [Microsoft Fabric licenses](../enterprise/licenses.md)
+* [Fabric licenses](../enterprise/licenses.md)
 * [About tenant settings](about-tenant-settings.md)

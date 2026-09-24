@@ -28,11 +28,11 @@ Start by accessing the SQL analytics endpoint for the first Cosmos DB in Fabric 
     > [!IMPORTANT]
     > For this guide, the first Cosmos DB database has the [sample data set](sample-data.md) already loaded. The remaining query examples in this guide assume that you're using the same data set for this database.
 
-1. In the menu bar, select the **Cosmos DB** list and then select **SQL Endpoint**.
+1. In the menu bar, select the **Cosmos DB** list and then select **SQL analytics Endpoint**.
 
-    :::image type="content" source="media/how-to-query-cross-database/endpoint-selection.png" lightbox="media/how-to-query-cross-database/endpoint-selection-full.png" alt-text="Screenshot of the endpoint selection option in the menu bar for a database in Cosmos DB in Fabric.":::
+    :::image type="content" source="media/how-to-query-cross-database/endpoint-selection.png" lightbox="media/how-to-query-cross-database/endpoint-selection-full.png" alt-text="Screenshot of the SQL analytics endpoint selection option in the menu bar for a database in Cosmos DB in Fabric.":::
 
-1. In the analytics endpoint page, select **New SQL Query** in the menu bar.
+1. In the SQL analytics endpoint page, select **New SQL Query** in the menu bar.
 
 1. Open a new query editor and then run a test query. Ensure that you see the expected data.
 
@@ -65,7 +65,7 @@ Start by accessing the SQL analytics endpoint for the first Cosmos DB in Fabric 
 
 Now, connect to the mirrored SQL analytics endpoint for a second Cosmos DB in Fabric database.
 
-1. While still in the analytics endpoint page, select **+ Warehouses** from the menu bar.
+1. While still in the SQL analytics endpoint page, select **+ Warehouses** from the menu bar.
 
 1. Add another SQL analytics endpoint item for the second Fabric item you want to query.
 

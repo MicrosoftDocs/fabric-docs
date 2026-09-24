@@ -9,7 +9,7 @@ ms.search.form: Fabric API GraphQL Limitations # This article's title shouldn't 
 ---
 # Limitations of Microsoft Fabric API for GraphQL
 
-Current general product limitations for API for GraphQL in Microsoft Fabric are listed in this article. We're continually improving API for GraphQL with new features. For more information on the future of Microsoft Fabric, see [Fabric Roadmap](https://aka.ms/FabricRoadmap).
+Current general product limitations for API for GraphQL in Microsoft Fabric are listed in this article. We're continually improving API for GraphQL with new features. For more information on the future of Fabric, see [Fabric Roadmap](https://aka.ms/FabricRoadmap).
 
 ## Who needs to understand limitations
 
@@ -41,7 +41,7 @@ The following table summarizes key size, pagination, and performance constraints
 
 ## Stored procedure limitations
 
-Stored procedures in Azure SQL, SQL Database in Fabric, and Data Warehouses have specific constraints:
+Stored procedures in Azure SQL, SQL database in Fabric, and warehouses have specific constraints:
 
 - **Result set handling**: Only the first result set returned by the stored procedure is used. Multiple result sets aren't supported.
 - **Metadata requirements**: Only stored procedures whose first result set metadata can be described by `sys.dm_exec_describe_first_result_set` are supported.
@@ -53,7 +53,7 @@ Stored procedures in Azure SQL, SQL Database in Fabric, and Data Warehouses have
 
 ## Known issues
 
-For known issues in API for GraphQL, visit [Microsoft Fabric Known Issues](https://support.fabric.microsoft.com/known-issues/).
+For known issues in API for GraphQL, visit [Fabric Known Issues](https://support.fabric.microsoft.com/known-issues/).
 
 ## Related content
 

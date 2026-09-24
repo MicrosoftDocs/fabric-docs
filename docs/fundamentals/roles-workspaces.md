@@ -5,14 +5,15 @@ author: SnehaGunda
 ms.author: sngun
 ms.reviewer: yicw, mesrivas
 ms.topic: concept-article
-ms.date: 01/20/2026
+ms.date: 04/24/2026
+ai-usage: ai-assisted
 ---
 
 # Roles in workspaces in Microsoft Fabric
 
 Workspace roles let you manage who can do what in a [!INCLUDE [product-name](../includes/product-name.md)] workspace. [!INCLUDE [product-name](../includes/product-name.md)] workspaces sit on top of OneLake and divide the data lake into separate containers that can be secured independently. Workspace roles in [!INCLUDE [product-name](../includes/product-name.md)] extend the Power BI workspace roles by associating new [!INCLUDE [product-name](../includes/product-name.md)] capabilities such as data integration and data exploration with existing workspace roles. For more information on Power BI roles, see [Roles in workspaces in Power BI](/power-bi/collaborate-share/service-new-workspaces).
 
-You can either assign roles to individuals or to security groups, Microsoft 365 groups, and distribution lists. To grant access to a workspace, assign those user groups or individuals to one of the workspace roles: Admin, Member, Contributor, or Viewer. Here's how to [give users access to workspaces](give-access-workspaces.md).
+You can either assign roles to individuals or to security groups, Microsoft 365 groups, and distribution lists. To grant access to a workspace, assign those user groups or individuals to one of the workspace roles: Admin, Member, Contributor, or Viewer. Here's how to [give users access to workspaces](give-access-workspaces.md). Microsoft Entra ID service principals (app registrations) can also be assigned to workspace roles and inherit the same permissions as users for API-based operations in Fabric, including the Items REST API and the Job Scheduler API.
 
 To create a new workspace, see [Create a workspace](create-workspaces.md).
 
@@ -35,6 +36,7 @@ Users in workspace roles have the following [!INCLUDE [product-name](../includes
 | Connect workspace to a Git repository |  &#x2705; | | | |
 | View and read content of pipelines, notebooks, Spark job definitions, ML models and experiments, and eventstreams. | &#x2705; | &#x2705; | &#x2705; | &#x2705; |
 | View and read content of KQL databases, KQL query-sets, digital twin builder items, and real-time dashboards. | &#x2705; | &#x2705; | &#x2705; | &#x2705; |
+| View and read content of event schema sets.<sup>5</sup> | &#x2705; | &#x2705; | &#x2705; | &#x2705; |
 | Connect to SQL analytics endpoint of Lakehouse or the Warehouse | &#x2705; | &#x2705; | &#x2705; | &#x2705; |
 | Read Lakehouse and Data warehouse data and shortcuts<sup>2</sup> with T-SQL through TDS endpoint (ReadData). | &#x2705; | &#x2705; | &#x2705; | &#x2705; |
 | Read Lakehouse and Data warehouse data and shortcuts<sup>2</sup> through OneLake APIs and Spark (ReadAll). | &#x2705; | &#x2705; | &#x2705; |  |
@@ -42,6 +44,7 @@ Users in workspace roles have the following [!INCLUDE [product-name](../includes
 | Subscribe to OneLake events. | &#x2705; | &#x2705; | &#x2705; |  |
 | Write or delete pipelines, notebooks, Spark job definitions, ML models, and experiments, and eventstreams. | &#x2705; | &#x2705; | &#x2705; |  |
 | Write or delete Eventhouses<sup>3</sup>, KQL Querysets, Real-Time Dashboards, digital twin builder data, and schema and data of KQL Databases, Lakehouses, data warehouses, and shortcuts. | &#x2705; | &#x2705; | &#x2705; |  |
+| Create, write, or delete event schema sets, and the schemas and event types they contain.<sup>5</sup> | &#x2705; | &#x2705; | &#x2705; |  |
 | Execute or cancel execution of notebooks, Spark job definitions, ML models, and experiments. | &#x2705; | &#x2705; | &#x2705; |  |
 | Execute or cancel execution of pipelines. | &#x2705; | &#x2705; | &#x2705; |  |
 | View execution output of pipelines, notebooks, ML models and experiments. | &#x2705; | &#x2705; | &#x2705; | &#x2705; |
@@ -55,6 +58,11 @@ Users in workspace roles have the following [!INCLUDE [product-name](../includes
 <sup>3</sup> Other permissions are needed to perform certain operations on data in an Eventhouse. Learn more about the [hybrid role-based access control model](/kusto/access-control/role-based-access-control?view=microsoft-fabric&preserve-view=true).
 
 <sup>4</sup> Keep in mind that you also need permissions on the gateway. Those permissions are managed elsewhere, independent of workspace roles and permissions.
+
+<sup>5</sup> Publishing and consuming business event data is governed separately by data access roles, not by workspace roles. Learn more about [managing data access for business events](../real-time-hub/business-events/manage-business-events-data-access.md).
+
+> [!NOTE]
+> The Create/Modify and Write/Delete permissions for notebooks apply equally when using the Items REST API. Admin, Member, and Contributor can perform notebook CRUD operations via the API, while Viewer cannot. For Job Scheduler API execution, Admin, Member, and Contributor can start and cancel runs; all roles including Viewer can monitor run status and view execution output, including run metadata such as status and exit values returned by notebook runs.
 
 ## Related content
 

@@ -1,81 +1,56 @@
 ---
 title: Add PostgreSQL Database CDC source to an eventstream
-description: Learn how to add a PostgreSQL Database Change Data Capture (CDC) source to an eventstream.
+description: Learn how to add a PostgreSQL Database Change Data Capture (CDC) source to an eventstream in Microsoft Fabric to stream database changes in real time.
 ms.reviewer: zhenxilin
 ms.topic: how-to
 ms.custom: sfi-image-nochange
-ms.date: 05/23/2025
+ms.date: 06/10/2026
 ms.search.form: Source and Destination
+
+#customer intent: As a data engineer, I want to add a PostgreSQL Database CDC source to an eventstream so that I can stream database changes in real time for analytics and downstream processing.
+
 ---
 
 # Add PostgreSQL Database CDC source to an eventstream
 
 This article shows you how to add a PostgreSQL Database Change Data Capture (CDC) source to an eventstream.
 
-The PostgreSQL Database Change Data Capture (CDC) source connector for Microsoft Fabric event streams allows you to capture a snapshot of the current data in a PostgreSQL database. Currently, PostgreSQL Database Change Data Capture (CDC) is supported from the following services where the databases can be accessed publicly: 
-- **Azure Database for PostgreSQL**
-- **Amazon RDS for PostgreSQL**
-- **Amazon Aurora PostgreSQL**
-- **Google Cloud SQL for PostgreSQL**
+With Change Data Capture (CDC), you can stream database changes—inserts, updates, and deletes—in real time without polling. By connecting PostgreSQL as a CDC source, you can build real-time analytics pipelines and keep downstream systems synchronized with your source data.
 
-Once the PostgreSQL Database CDC source is added to the eventstream, it captures row-level changes to the specified tables. These changes can then be processed in real-time and sent to different destinations for further analysis.
-
-## Prerequisites
-
-- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
-- Registered user access in the PostgreSQL database.
-- Your PostgreSQL database should be publicly accessible and not be behind a firewall or secured in a virtual network. If it resides in a protected network, connect to it by using [Eventstream connector vNet injection](./streaming-connector-private-network-support-guide.md).
-- CDC enabled in the PostgreSQL database and tables.
-
-  If you have Azure Database for PostgreSQL, follow the steps in the next section to enable CDC. For detailed information, see [Logical replication and logical decoding - Azure Database for PostgreSQL - Flexible Server](/azure/postgresql/flexible-server/concepts-logical).
-
-  For other PostgreSQL databases, see [Debezium connector for PostgreSQL :: Debezium Documentation](https://debezium.io/documentation/reference/stable/connectors/postgresql.html#setting-up-postgresql).
-- If you don't have an eventstream, [create an eventstream](create-manage-an-eventstream.md). 
-
-## Enable CDC in your PostgreSQL Database
-
-This section uses **Azure Database for PostgreSQL** as an example.
-
-To enable CDC in your **Azure Database for PostgreSQL Flexible Server**, follow these steps:
-
-1. On your Azure Database for PostgreSQL Flexible Server page in the Azure portal, select **Server parameters** in the navigation menu.
-
-1. On the **Server parameters** page:
-
-   - Set **wal_level** to **logical**.
-   - Update the **max_worker_processes** to at least **16**.
-
-   :::image type="content" border="true" source="media/add-source-postgresql-database-cdc-connector/enable-cdc-flexible.png" alt-text="A screenshot of enabling CDC for a flexible server deployment.":::
-
-1. Save the changes and restart the server.
-
-1. Confirm that your Azure Database for PostgreSQL Flexible Server instance allows public network traffic.
-
-1. Grant the **admin user** replication permissions by running the following SQL statement. If you want to use other user account to connect your PostgreSQL DB to fetch CDC, ensure the user is the **table owner**.
-
-   ```sql
-   ALTER ROLE <admin_user_or_table_owner_user> WITH REPLICATION;
-   ```
+[!INCLUDE [postgresql-database-cdc-connector-prerequisites](./includes/connectors/postgresql-database-cdc-source-connector-prerequisites.md)]
 
 ## Launch the Select a data source wizard
 [!INCLUDE [launch-connect-external-source](./includes/launch-connect-external-source.md)]
 
 On the **Select a data source** page, search for and select **Connect** on the **PostgreSQL DB (CDC)** tile.
 
-:::image type="content" source="./media/add-source-postgresql-database-cdc-connector/select-postgresql-cdc.png" alt-text="Screenshot that shows the selection of Azure DB for PostgreSQL (CDC) as the source type in the Get events wizard." lightbox="./media/add-source-postgresql-database-cdc-connector/select-postgresql-cdc.png":::
+:::image type="content" source="./media/add-source-postgresql-database-cdc-connector/select-postgresql-cdc.png" alt-text="Screenshot that shows the selection of Azure Database (DB) for PostgreSQL (CDC) as the source type in the Get events wizard." lightbox="./media/add-source-postgresql-database-cdc-connector/select-postgresql-cdc.png":::
 
 ## Configure and connect to PostgreSQL Database CDC
 
-[!INCLUDE [postgresql-database-cdc-connector](./includes/postgresql-database-cdc-source-connector.md)]
+[!INCLUDE [postgresql-database-cdc-connector-configuration](./includes/connectors/postgresql-database-cdc-source-connector-configuration.md)]
 
 ## View updated eventstream
 
-1. You can see the PostgreSQL Database CDC source added to your eventstream in **Edit mode**.
+1. The PostgreSQL Database CDC source appears in your eventstream in **Edit mode**.
 
-    :::image type="content" source="media/add-source-postgresql-database-cdc-connector/edit-view.png" alt-text="A screenshot of streaming PostgreSQL DB CDC source in Edit view." lightbox="media/add-source-postgresql-database-cdc-connector/edit-view.png":::
+    :::image type="content" source="media/add-source-postgresql-database-cdc-connector/edit-view.png" alt-text="Screenshot of the PostgreSQL DB CDC source in Edit view with extended features." lightbox="media/add-source-postgresql-database-cdc-connector/edit-view.png":::
 1. To implement this newly added PostgreSQL DB CDC source, select **Publish**. After you complete these steps, your PostgreSQL DB CDC source is available for visualization in the **Live view**.
 
-    :::image type="content" source="media/add-source-postgresql-database-cdc-connector/live-view.png" alt-text="A screenshot of streaming PostgreSQL DB CDC source in Live view." lightbox="media/add-source-postgresql-database-cdc-connector/live-view.png":::
+    :::image type="content" source="media/add-source-postgresql-database-cdc-connector/live-view.png" alt-text="Screenshot of the PostgreSQL DB CDC source in Live view with extended features." lightbox="media/add-source-postgresql-database-cdc-connector/live-view.png":::
+
+[!INCLUDE [configure-destinations-schema-enabled-sources](./includes/configure-destinations-schema-enabled-sources.md)]
+
+### View DeltaFlow analytics-ready output (Preview)
+
+If you enabled **Analytics-ready events & auto-updated schema** (DeltaFlow), the destination tables are automatically created in a shape that mirrors your source database tables. Each table includes the original columns along with metadata columns for the change type and timestamp.
+
+> [!NOTE]
+> The following screenshot shows Azure SQL Database CDC. The DeltaFlow destination table output is the same for all supported CDC source connectors.
+
+:::image type="content" source="includes/media/configure-destinations-schema-enabled-sources/delta-flow-destination-tables.gif" alt-text="Screenshot showing the Eventhouse destination tables created by DeltaFlow in analytics-ready shape." lightbox="includes/media/configure-destinations-schema-enabled-sources/delta-flow-destination-tables.gif":::
+
+You can query these tables by using Kusto Query Language (KQL) or other analytics tools without needing to parse raw Debezium CDC payloads.
 
 ## Related content
 
@@ -89,11 +64,8 @@ Other connectors:
 - [Azure SQL Database Change Data Capture (CDC)](add-source-azure-sql-database-change-data-capture.md)
 - [Confluent Kafka](add-source-confluent-kafka.md)
 - [Custom endpoint](add-source-custom-app.md)
-- [Google Cloud Pub/Sub](add-source-google-cloud-pub-sub.md) 
+- [Google Cloud Pub/Sub](add-source-google-cloud-pub-sub.md)
 - [MySQL Database CDC](add-source-mysql-database-change-data-capture.md)
-- [PostgreSQL Database CDC](add-source-postgresql-database-change-data-capture.md)
 - [Sample data](add-source-sample-data.md)
 - [Azure Blob Storage events](add-source-azure-blob-storage.md)
 - [Fabric workspace event](add-source-fabric-workspace.md)
-
-

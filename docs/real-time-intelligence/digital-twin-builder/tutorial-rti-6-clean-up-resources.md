@@ -1,5 +1,5 @@
 ---
-title: 'Digital twin builder (preview) in Real-Time Intelligence tutorial part 6: Clean up resources'
+title: 'Digital Twin Builder (Preview) in Real-Time Intelligence Tutorial Part 6: Clean Up Resources'
 description: Delete resources created during the Digital twin builder (preview) in Real-Time Intelligence tutorial.
 ms.date: 11/10/2025
 ms.topic: tutorial

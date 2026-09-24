@@ -1,9 +1,9 @@
 ---
-title: Change data policies in Real-Time Intelligence
+title: Change Data Policies in Real-Time Intelligence
 description: Learn how to change the retention and caching policies in Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.topic: how-to
-ms.date: 11/19/2024
+ms.date: 03/22/2026
 ms.subservice: rti-eventhouse
 ms.search.form: product-kusto
 ---
@@ -27,24 +27,24 @@ For more information, see [Retention policy](/azure/data-explorer/kusto/manageme
 
     :::image type="content" source="media/data-policies/data-policies.png" alt-text="Screenshot showing the manage tab in a KQL database." :::
 
-1. Under **Retention**, either select the toggle to set the retention period to **Unlimited**, or enter a time period and select **Done**. By default, your data is stored for 3650 days.
+1. Under **Retention**, either select the toggle to set the retention period to **Unlimited**, or enter a time period and select **Done**. By default, your data is stored for 3,650 days.
 
     :::image type="content" source="media/data-policies/retention-policy.png" alt-text="Screenshot of data retention policy pane with default value.":::
 
     > [!NOTE]
-    > The minimum retention period is 1 day. The maximum retention period is 36,500 days.
+    > The minimum retention period is one day. The maximum retention period is 36,500 days.
 
 ## Caching policy
 
-The caching policy allows you to choose which data should be cached and kept in local SSD storage. The availability of data in hot cache increases query performance but also storage costs. In Real-Time Intelligence, you can enable a caching policy on KQL Databases. After enabling caching, you can set the time span that the data remains in the hot cache.
+The caching policy controls which data gets cached and stored on the local SSD. When data is available in the hot cache, query performance improves, but storage costs also rise. In Real-Time Intelligence, you can turn on a caching policy for KQL databases. After you enable caching, you can specify how long data stays in the hot cache.
 
 For more information, see [Caching policy](/azure/data-explorer/kusto/management/cachepolicy?context=/fabric/context/context&pivots=fabric).
 
-1. To change the caching policy, browse to your KQL database and select **Manage** > **Data policies**.
+1. To change the caching policy, go to your KQL database and select **Manage** > **Data policies**.
 
     :::image type="content" source="media/data-policies/data-policies.png" alt-text="Screenshot showing the manage tab in a KQL database." :::
 
-1. Under **Caching**, either select the toggle to set the caching period to **Unlimited**, or enter a time period and select **Done**. By default, your data is cached for 3650 days.
+1. Under **Caching**, select the toggle to set the caching period to **Unlimited**, or enter a time period and select **Done**. By default, your data is cached for 3,650 days.
 
     :::image type="content" source="media/data-policies/caching-policy.png" alt-text="Screenshot of caching policy pane with default value.":::
 

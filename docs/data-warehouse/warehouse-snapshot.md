@@ -2,7 +2,7 @@
 title: Warehouse Snapshots
 description: Learn about warehouse snapshots in Fabric Data Warehouse.
 ms.reviewer: twcyril
-ms.date: 11/10/2025
+ms.date: 05/01/2026
 ms.topic: concept-article
 ms.search.form: Warehouse snapshot overview
 ---
@@ -10,7 +10,7 @@ ms.search.form: Warehouse snapshot overview
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
-A warehouse snapshot is a read-only representation of a warehouse item at a specific point in time, retained to up to 30 days. To get started, [create a warehouse snapshot](create-manage-warehouse-snapshot.md).
+A warehouse snapshot is a read-only representation of a warehouse item at a specific point in time. To get started, [create a warehouse snapshot](create-manage-warehouse-snapshot.md).
 
 Warehouse snapshots can be seamlessly "rolled forward" on demand, allowing consumers to connect to the same snapshot or use a consistent warehouse connection string to access a past version of the data. When the snapshot timestamp is rolled forward, updates are applied immediately, as if in a single, atomic transaction. Warehouse snapshot ensures that data engineers can provide analytical users with a consistent dataset, even as real-time updates occur. Analysts can run `SELECT` queries based on the snapshot without any ETL interference.
 
@@ -64,7 +64,7 @@ When a T-SQL query is run, information about the current version of the data bei
 
 - Warehouse snapshots require unique names, unique from the warehouse and SQL analytics endpoint.
 - Warehouse snapshots don't exist without the source warehouse. When the warehouse is deleted, all snapshots are deleted. Warehouse snapshots must be recreated if the warehouse is restored.
-- Warehouse snapshots are valid for up to 30 days in the past. Snapshot datetime can be set to any date in the past up to 30 days or database creation time (whichever is later).
+- Warehouse snapshots are valid for the [configured retention period](data-retention.md), up to 120 days in the past. The snapshot datetime can be set upon creation, to any date in the past within the retention period or database creation time (whichever is later). Retention periods can't be configured on individual warehouse snapshots. A snapshot inherits its access boundary from the parent warehouse's retention setting at the time the snapshot was created.
 
 ## Remarks
 
@@ -82,3 +82,4 @@ When a T-SQL query is run, information about the current version of the data bei
 
 - [Query data as it existed in the past](time-travel.md)
 - [Create a sample Warehouse in Microsoft Fabric](create-warehouse-sample.md)
+- [Configurable data retention](data-retention.md)

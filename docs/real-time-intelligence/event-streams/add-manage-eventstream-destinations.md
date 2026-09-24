@@ -1,9 +1,9 @@
 ---
-title: Add and manage eventstream destinations
+title: Add and Manage Eventstream Destinations
 description: Learn how to add and manage an event destination in an Eventstream item with the Microsoft Fabric event streams feature.
 ms.reviewer: xujiang1
 ms.topic: how-to
-ms.date: 11/27/2024
+ms.date: 03/19/2026
 ms.search.form: Source and Destination
 ---
 
@@ -15,7 +15,7 @@ After you create an eventstream in Microsoft Fabric, you can route the data to d
 
 To add a destination to an eventstream, you need the following prerequisites:
 
-- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions.
+- Access to a workspace in the Fabric capacity license mode or the Trial license mode with Contributor or higher permissions.
 - For an Eventhouse, Lakehouse, or Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] destination, access to the workspace where the destination is located with **Contributor** or higher permissions.
 
 ## Supported destinations

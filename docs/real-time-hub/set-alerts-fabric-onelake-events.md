@@ -10,7 +10,11 @@ ms.date: 12/14/2025
 
 This article describes how to set alerts on OneLake events in Real-Time hub.
 
-[!INCLUDE [consume-fabric-events-regions](./includes/consume-fabric-events-regions.md)]
+[!INCLUDE [consume-fabric-events-regions](../real-time-intelligence/event-streams/includes/connectors/consume-fabric-events-regions.md)]
+
+[!INCLUDE [outbound-access-protection-note](./includes/outbound-access-protection-note.md)]
+
+[!INCLUDE [workspace-private-links-note](./includes/workspace-private-links-note.md)]
 
 ## Navigate to Real-Time hub
 
@@ -41,7 +45,7 @@ Do steps from one of the following sections, which opens a side panel where you 
 
     :::image type="content" source="./media/set-alerts-fabric-onelake-events/detail-view.png" alt-text="Screenshot that shows the OneLake events detail page with Set alert button selected." lightbox="./media/set-alerts-fabric-onelake-events/detail-view.png":::
 
-[!INCLUDE [rule-details](./includes/rule-details.md)]
+[!INCLUDE [rule-details](../real-time-intelligence/data-activator/includes/rule-details.md)]
 
 ## Monitor section
 
@@ -60,10 +64,10 @@ Do steps from one of the following sections, which opens a side panel where you 
         1. Select the data source from the list. 
         1. Select **Next** at the bottom of the page. 
     
-            :::image type="content" source="./media/create-streams-onelake-events/select-data-source.png" alt-text="Screenshot that shows the selection of a specific OneLake data source." lightbox="./media/create-streams-onelake-events/select-data-source.png":::       
+            :::image type="content" source="../real-time-intelligence/event-streams/includes/connectors/media/fabric-onelake-source-connector/select-data-source.png" alt-text="Screenshot that shows the selection of a specific OneLake data source." lightbox="../real-time-intelligence/event-streams/includes/connectors/media/fabric-onelake-source-connector/select-data-source.png":::       
         1. Select all tables or a specific table that you're interested in, and then select **Add**. 
 
-            :::image type="content" source="./media/create-streams-onelake-events/select-tables.png" alt-text="Screenshot that shows the selection of all tables." lightbox="./media/create-streams-onelake-events/select-tables.png":::       
+            :::image type="content" source="../real-time-intelligence/event-streams/includes/connectors/media/fabric-onelake-source-connector/select-tables.png" alt-text="Screenshot that shows the selection of all tables." lightbox="../real-time-intelligence/event-streams/includes/connectors/media/fabric-onelake-source-connector/select-tables.png":::       
 
         > [!NOTE]
         > OneLake events are supported for data in OneLake. However, events for data in OneLake via shortcuts aren't yet available.
@@ -75,16 +79,19 @@ Do steps from one of the following sections, which opens a side panel where you 
         1. Select one or more values to match. 
  
             :::image type="content" source="./media/set-alerts-fabric-onelake-events/set-filters.png" alt-text="Screenshot that shows the addition of a filter." lightbox="./media/set-alerts-fabric-onelake-events/set-filters.png":::                 
+
+        > [!NOTE]
+        > File uploads through the Fabric portal might generate storage events with `contentLength = 0`. Don't filter events by using `contentLength > 0`, as this condition might exclude valid events.
     1. Select **Next** at the bottom of the page. 
     1. On the **Review + connect** page, review the settings, and select **Save**.
     
         :::image type="content" source="./media/set-alerts-fabric-onelake-events/review-create-page.png" alt-text="Screenshot that shows the Add source wizard Review and create page for OneLake events.":::        
 
-[!INCLUDE [rule-condition-events](./includes/rule-condition-events.md)]
+[!INCLUDE [rule-condition-events](../real-time-intelligence/data-activator/includes/rule-condition-events.md)]
 
-[!INCLUDE [rule-action](./includes/rule-action.md)]
+[!INCLUDE [rule-action](../real-time-intelligence/data-activator/includes/rule-action.md)]
 
-[!INCLUDE [rule-save-location](./includes/rule-save-location.md)]
+[!INCLUDE [rule-save-location](../real-time-intelligence/data-activator/includes/rule-save-location.md)]
 
 ## Create alert
 

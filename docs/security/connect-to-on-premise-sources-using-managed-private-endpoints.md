@@ -6,7 +6,7 @@ ms.author: mimart
 ms.reviewer: saravi
 ms.topic: how-to
 ms.custom: sfi-image-nochange, sfi-ropc-nochange
-ms.date: 10/07/2025
+ms.date: 03/03/2026
 ---
 
 # Connect to external sources or on-premises data sources to Microsoft Fabric using managed private endpoints
@@ -313,7 +313,6 @@ Common scenarios include:
 
 - Requires at least **2 IP configurations** (in multiples of 2) for high availability.
 - Supports **static destination IP addresses only**.
-- Source Private Endpoint, Private Link Service, and Fabric workspace must reside in the **same region** (cross-region is not yet supported).
 - Available only in select regions during preview: *North Central US, East US 2, Central US, South Central US, West US, West US 2, West US 3, Southeast Asia, Australia East, Spain Central*.
 - You must enable the feature flag `Microsoft.Network/AllowPrivateLinkserviceUDR` in your Azure subscription.
 

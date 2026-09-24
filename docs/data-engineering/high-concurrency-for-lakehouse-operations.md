@@ -1,90 +1,94 @@
 ---
 title: High concurrency mode for Lakehouse operations in Microsoft Fabric
-description: Learn how High Concurrency (HC) mode optimizes Spark session utilization for Lakehouse operations like Load to Delta and Preview, improving price-performance and concurrency efficiency in Microsoft Fabric.
+description: Learn how high concurrency mode reuses Spark sessions for Lakehouse load and preview operations to improve start time, throughput, and capacity efficiency in Microsoft Fabric.
 ms.reviewer: saravi
 ms.topic: concept-article
-ms.date: 12/04/2025
+ms.date: 03/01/2026
+ai-usage: ai-assisted
 ---
 
 # High concurrency mode for Lakehouse operations in Microsoft Fabric
 
-High concurrency mode for Lakehouse operations in Microsoft Fabric is designed to optimize Spark resource utilization and improve concurrency for workloads that fall back to Spark execution — such as **Load to Table** and **Preview** operations.
+High concurrency mode is Spark session sharing for lakehouse operations. Instead of starting a separate Spark session for each operation, Fabric runs multiple compatible operations in one shared session. This approach is most relevant when operations execute on Spark, such as when you load files into a table or preview table data.
 
-When a Lakehouse table preview operation runs in Spark (for example, when the SQL endpoint isn’t available), it can hold a Spark session for up to 20 minutes. On smaller capacities, this behavior can lead to session blocking and reduced concurrency. The new **High Concurrency mode** addresses this by allowing multiple Lakehouse operations to share a single Spark session, maximizing efficiency and reducing compute overhead.
+Without high concurrency mode (session sharing), a preview operation can hold a Spark session for up to 20 minutes (for example, when the SQL analytics endpoint isn't available). On smaller capacities, this limitation reduces concurrency and increases wait time for other operations. By using high concurrency mode, compatible operations share one Spark session.
 
- Also in the cases where Managed Virtual Networks are enabled, given that Starer Pools are not supported, each table load operation could take 3 to 5 minutes to start, but with the high concurrency mode the subsequent table loads or the preview is going to be within 5 seconds if the operation is within the same Lakehouse, user and workspace boundary.
+This behavior is especially noticeable in workspaces that use Managed Virtual Networks, where initial Spark startup can take longer. In those cases, a first table load might take three to five minutes to start, but subsequent loads or preview operations can start in about five seconds when they run under the same user and workspace.
 
-## How it works
+## Benefits
 
-In High Concurrency mode, a single Spark session can host up to **five independent Lakehouse jobs** concurrently. Each job runs in an isolated REPL core within the Spark application, ensuring variable and execution isolation across operations.
-
-This approach enables Fabric to reuse existing Spark sessions for new Lakehouse jobs without creating additional sessions — resulting in faster start times, improved throughput, and better utilization of compute resources.
-
-> [!NOTE]
-> High Concurrency mode is automatically used when Lakehouse **Load** or **Preview** operations use Spark.
-
-
-### Session sharing conditions
-
-For High Concurrency mode to apply, the following conditions must be met:
-
-- The operations must be triggered by the same user.
-- The session must run under the same Lakehouse and workspace.
-
-When these conditions are satisfied, the Lakehouse operations are automatically grouped and executed under a shared Spark session.
-
-## Benefits for customers
-
-High Concurrency mode provides **significant improvements in performance, efficiency, and cost optimization** for Lakehouse operations:
+High concurrency mode improves performance and efficiency for lakehouse operations:
 
 | Benefit | Description |
 |----------|--------------|
-| **Optimized Compute Usage** | Up to five Lakehouse operations can run in a shared Spark session, reducing capacity usage and preventing resource exhaustion. |
-| **Faster Start Times** | Session reuse minimizes Spark startup latency, especially when workspaces are enabled with network security features like private links |
-| **Improved Price-Performance** | Only the initiating Spark session is billed — subsequent shared operations are not billed separately, leading to compute costs savings. |
-| **Higher Concurrency** | Enables more users or workflows to execute Lakehouse operations simultaneously without blocking other workloads which allow users with smaller capacities to run more jobs |
+| **Optimized compute usage** | Up to five Lakehouse operations can run in one shared Spark session, which lowers capacity pressure. |
+| **Faster start times** | Session reuse reduces Spark startup latency, especially in workspaces with network security features such as private links. |
+| **Improved price-performance** | Only the initiating Spark session is billed. Subsequent operations that share that session aren't billed separately. |
+| **Higher concurrency** | More Lakehouse operations can run at the same time without blocking other workloads, which is especially helpful on smaller capacities. |
 
-## Example scenario
+## How high concurrency mode works
 
-Consider the following example:
+In high concurrency mode, a single Spark session can host up to five independent lakehouse jobs concurrently. Each job runs in an isolated REPL core within the Spark application, ensuring variable and execution isolation across operations.
 
-1. A user performs a **Load to Table** operation on a Lakehouse table. This triggers a Spark session in High Concurrency mode.
-2. While the session is active, the user performs **Preview** or **Load** operations on another table or file.
-3. These subsequent operations reuse the same Spark session — running concurrently in separate REPLs within the Spark application.
-4. Fabric monitors session sharing and resource allocation automatically to ensure balanced execution.
+This approach reuses existing Spark sessions for new lakehouse jobs without creating extra sessions, which improves startup time, throughput, and overall compute utilization.
 
-In this example, Spark resources are reused efficiently, allowing multiple Lakehouse jobs to complete faster and at a lower cost.
+> [!NOTE]
+> For lakehouse load and preview operations, high concurrency mode is automatic when the operation runs on Spark - there's no per-operation toggle in the Fabric portal. By contrast, workspace settings and notebooks configure high concurrency for notebooks and pipelines. For details, see [Configure high concurrency mode for Fabric notebooks](configure-high-concurrency-session-notebooks.md).
 
-## Monitoring and observability
+## When high concurrency mode shares sessions
 
-You can track High Concurrency sessions in the **Monitoring hub**. When a Lakehouse operation (such as a table load or preview) utilizes a High Concurrency Spark session, it appears in the activity list with a specific naming convention: `HC_<lakehouse_name>_<operation_id>`.
+For high concurrency mode to apply, the following conditions must be met:
 
-This naming convention helps you quickly identify which activities are running in High Concurrency mode.
+- The same user triggers the operations.
+- The operations run in the same workspace.
+
+Session sharing scopes to the **user and workspace** - not to an individual Lakehouse. Load and preview operations that the same user runs in the same workspace can reuse a single shared Spark session even when they target different Lakehouses or are started from different items.
+
+> [!NOTE]
+> Sessions aren't shared across schema-enabled and non-schema lakehouses. Because of catalog differences between these lakehouse types, their operations run in separate shared sessions even when the user and workspace are the same.
+
+When these conditions are satisfied, the lakehouse operations automatically group and execute under a shared Spark session.
+
+## Example flow
+
+The following example shows how session sharing works. You perform a load-to-table operation on a lakehouse table, which starts a Spark session in high concurrency mode. While that session is active, you preview another table or load another file. These subsequent operations reuse the same Spark session and run concurrently in separate REPLs within the Spark application, while Fabric continues to monitor session sharing and resource allocation.
+
+In this example, Spark resources are reused efficiently, allowing multiple lakehouse jobs to complete faster and at a lower cost.
+
+## Considerations and limitations
+
+Because a single Spark session is shared across a user's lakehouse operations in a workspace, keep the following behaviors in mind:
+
+- **Deleting an item can cancel operations that belong to other items.** The shared session associates with the item that first started it. If you delete that item while the session is active, the session is canceled. Any Load table or preview operations from *other* items that share the same session are canceled at the same time. This behavior is an expected consequence of sharing one session per user and workspace.
+- **A canceled operation might be left incomplete.** If a Load table operation is canceled before it finishes, the target table might not reflect the full load. Load table writes use Delta's atomic commits, so a canceled load doesn't corrupt data that's already in the table. However, the load isn't guaranteed to have completed. Rerun the operation to bring the table to the intended state.
+- **Rerun to recover.** Rerun the Load table operation against the same source and target is the recommended recovery path after an unexpected session cancellation.
+
+## Monitor shared sessions
+
+You can track high concurrency sessions in the **Monitoring hub**. When a Lakehouse operation (such as table load or preview) uses a high concurrency Spark session, the activity appears with this naming pattern: `HC_<lakehouse_name>_<operation_id>`.
+
+This naming convention helps you quickly identify which activities run in High Concurrency mode.
 
 :::image type="content" source="./media/high-concurrency-lakehouse-overview/high-concurrency-for-lakehouse-monitoring.png" alt-text="Screenshot of the Monitoring hub showing a High Concurrency Lakehouse activity." lightbox="./media/high-concurrency-lakehouse-overview/high-concurrency-for-lakehouse-monitoring.png":::
 
-To view the specific operations running within the session:
+To view the specific operations running in the shared session, select the activity name (for example, `HC_lakehouse_Etc`) in the Monitoring hub, and then open the detail view.
 
-1. Select the activity name (for example, `HC_lakehouse_Etc`) in the Monitoring hub.
-2. Navigate to the detail view.
-
-In the detail view, you can see the list of individual jobs that are being executed in the High Concurrency session. This list displays the table-specific operations, such as "Load table," confirming that multiple jobs are sharing the single Spark application context.
+In the detail view, you can see the individual jobs executing in the high concurrency session. This list shows table-level operations, such as "Load table," confirming that multiple jobs share one Spark application context.
 
 :::image type="content" source="./media/high-concurrency-lakehouse-overview/high-concurrency-for-lakehouse-monitoring-detail.png" alt-text="Screenshot of the detailed job view showing multiple Load table operations within a single session." lightbox="./media/high-concurrency-lakehouse-overview/high-concurrency-for-lakehouse-monitoring-detail.png":::
 
-
-
-
 ## Billing and capacity impact
 
-High Concurrency sessions provide measurable **price-performance gains**:
+High concurrency sessions provide measurable price-performance gains:
 
-- **Only the initiating Spark session** that starts the shared application is billed.  
-- Subsequent Lakehouse operations sharing that session **do not incur additional billing**.  
-- Capacity metrics will reflect usage against the initiating job only, reducing total compute consumption.
+- Only the initiating Spark session that starts the shared application is billed.
+- Subsequent lakehouse operations that share that session don't incur additional billing.
+- Capacity metrics reflect usage against the initiating job, reducing total compute consumption.
 
-This model ensures Lakehouse users achieve better price performance per capacity unit, especially in workloads with frequent **Load** or **Preview** operations.
+This model improves price performance per capacity unit, especially for workloads with frequent load or preview operations.
 
 ## Related content
-* To learn more about high concurrency mode in Microsoft Fabric, see [High concurrency mode in Apache Spark for Fabric](high-concurrency-overview.md).
-* To get started with high concurrency mode for notebooks, see [Configure high concurrency mode for Fabric notebooks](configure-high-concurrency-session-notebooks.md).
+
+- To learn more about high concurrency mode in Fabric, see [High concurrency mode in Apache Spark for Fabric](high-concurrency-overview.md).
+- To get started with high concurrency mode for notebooks, see [Configure high concurrency mode for Fabric notebooks](configure-high-concurrency-session-notebooks.md).
+

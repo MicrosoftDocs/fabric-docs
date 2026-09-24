@@ -1,5 +1,5 @@
 ---
-title: 'Digital twin builder (preview) in Real-Time Intelligence tutorial part 5: Query and visualize data'
+title: 'Digital Twin Builder (Preview) in Real-Time Intelligence Tutorial Part 5: Query and Visualize Data'
 description: Run KQL queries on contextualized digital twin builder (preview) data and visualize it in a Real-Time Dashboard.
 ms.date: 12/12/2025
 ms.topic: tutorial

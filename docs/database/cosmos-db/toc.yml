@@ -1,6 +1,6 @@
 ### YamlMime:TOC
 items:
-  - name: Overview
+  - name: What is Azure Cosmos DB in Fabric?
     href: overview.md
   - name: FAQ
     displayName: Frequently asked questions
@@ -30,6 +30,10 @@ items:
         href: how-to-use-python-notebooks.md
       - name: User data functions
         href: how-to-user-data-functions.md
+      - name: Translytical task flows
+        href: how-to-create-translytical-task-flows.md
+      - name: Reverse ETL data pipeline
+        href: how-to-build-reverse-etl-data-pipeline.md
   - name: Samples
     items:
       - name: Cosmos DB getting started

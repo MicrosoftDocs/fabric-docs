@@ -2,31 +2,48 @@
 title: Set up your Data Warehouse connection
 description: This article provides information about how to create a Data Warehouse connection in Microsoft Fabric.
 ms.topic: how-to
-ms.date: 2/9/2025
+ms.date: 03/13/2026
 ms.custom:
   - template-how-to
   - connectors
+ai-usage: ai-assisted
 ---
 
 # Set up your Data Warehouse connection
 
-This article outlines the steps to create a Data Warehouse connection.
+This article outlines the steps to create a warehouse connection.
 
 ## Supported authentication types
 
-The Data Warehouse connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+The warehouse connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
 |Organizational account| √ | √ |
 
-## Set up your connection in Dataflow Gen2
+## Set up your connection for dataflow Gen2
+You can connect dataflow Gen2 to a warehouse by using Power Query connectors. Follow these steps to create your connection:
 
-You can connect Dataflow Gen2 to a Data Warehouse in Microsoft Fabric using Power Query connectors. Follow these steps to create your connection:
+1. Check [capabilities](#capabilities) to make sure your scenario is supported.
+1. [Complete prerequisites for Data Warehouse](#prerequisites).
+1. [Get data in Fabric](#get-data).
+1. [Connect to a warehouse](#connect-to-a-warehouse).
 
-1. [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
-1. [Set up Warehouse prerequisites](/power-query/connectors/warehouse#prerequisites).
-1. [Connect to a Warehouse (from Power Query online)](/power-query/connectors/warehouse#connect-to-a-warehouse-from-power-query-online).
+### Capabilities
+
+[!INCLUDE [warehouse-ccapabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/warehouse/warehouse-capabilities-supported.md)]
+
+### Prerequisites
+
+[!INCLUDE [warehouse-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/warehouse/warehouse-prerequisites.md)]
+
+### Get data
+
+[!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
+
+### Connect to a Warehouse
+
+[!INCLUDE [warehouse-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/warehouse/warehouse-connect-to-power-query-online.md)]
 
 ### Using relative references
 
@@ -35,7 +52,6 @@ Inside the navigator, a special node with the name **!(Current Workspace)** is l
 ![Screenshot of the navigator showing the !(Current Workspace) node for the Fabric Warehouse connector](media/connector-data-warehouse/warehouse-relative-reference-current-workspace.png)
 
 When using any items within this node, the M script emitted uses workspace or warehouse identifiers and instead uses relative references such as the ```"."``` handler to denote the current workspace and the name of the warehouse as in the example M code.
-
 
 ```M-code
 let
@@ -46,10 +62,6 @@ let
 in
   #"Navigation 3"
   ```
-
-### More information
-
-- [Warehouse connector capabilities](/power-query/connectors/warehouse#capabilities)
 
 ## Set up your connection in a pipeline
 
@@ -62,17 +74,17 @@ You can set up a Data Warehouse connection in the **Get Data** page or in the **
        - In copy assistant, go to **OneLake catalog** section.
        - In a pipeline, select Browse all under **Connection**, and go to **OneLake catalog** section.
     
-    1. Select an existing Data Warehouse to connect to it.
+    1. Select an existing warehouse to connect to it.
 
         :::image type="content" source="media/connector-data-warehouse/select-data-warehouse-in-onelake.png" alt-text="Screenshot of selecting Data Warehouse in OneLake section.":::
     
-    You can also select a Data Warehouse by choosing **none** in the pipeline **Connection** drop‑down list. When **none** is selected, the **Item** field becomes available, and you can pick the Data Warehouse you need.
+    You can also select a warehouse by choosing **none** in the pipeline **Connection** drop‑down list. When **none** is selected, the **Item** field becomes available, and you can pick the warehouse you need.
 
 - (Preview) In **Manage connections and gateways** page:
 
-    1. On this page, select **+ New**, choose Warehouse as the connection type, and enter a connection name. Then complete the organizational account authentication by selecting **Edit credentials**.
+    1. On this page, select **+ New**, choose **Warehouse** as the connection type, and enter a connection name. Then complete the organizational account authentication by selecting **Edit credentials**.
     
-        :::image type="content" source="media/connector-data-warehouse/manage-connection-gateways-new-connection.png" alt-text="Screenshot creating new Lakehouse connection in Manage connection gateways.":::
+        :::image type="content" source="media/connector-data-warehouse/manage-connection-gateways-new-connection.png" alt-text="Screenshot creating new lakehouse connection in Manage connection gateways.":::
     
     1. After the connection is created, go to the pipeline and select it in the connection drop‑down list. 
 
@@ -81,4 +93,8 @@ You can set up a Data Warehouse connection in the **Get Data** page or in the **
     >[!NOTE]
     >If you create the connection through **Manage connections and gateways** page:
     >- To allow multiple users to collaborate in one pipeline, please ensure the connection is shared with them.
-    >- If you choose to use an existing Data Warehouse connection within the tenant, ensure it has at least Viewer permission to access the workspace and Data Warehouse. For more information about the permission, see this [article](../data-warehouse/workspace-roles.md).
+    >- If you choose to use an existing Data Warehouse connection within the tenant, ensure it has at least Viewer permission to access the workspace and warehouse. For more information about the permission, see this [article](../data-warehouse/workspace-roles.md).
+
+## Related content
+
+- [For more information about this connector, see the Data Warehouse connector documentation.](/power-query/connectors/warehouse)

@@ -1,76 +1,165 @@
 ---
 title: "Manage Fabric Materialized Lake Views Lineage"
-description: Learn how to Manage Fabric materialized lake views lineage.
-ms.reviewer: sairamyeturi
+description: Learn how to view and manage materialized lake views lineage in Microsoft Fabric, including the lineage interface and custom Spark environments.
+ms.reviewer: bsankaran, sairamyeturi, nijelsf, hgowrisankar
 ms.topic: how-to
-ms.date: 06/26/2025
+ms.date: 07/17/2026
+ai-usage: ai-assisted
 #customer intent: As a data engineer, I want to manage Fabric materialized lake views lineage in Microsoft Fabric so that I can efficiently handle large datasets and optimize query performance.
 ---
 
 # Manage Fabric materialized lake views lineage
 
-Fabric materialized lake views (MLVs) are an efficient way to manage and query large datasets by pre computing and storing the results of a query. In a fabric environment, managing these views effectively can significantly enhance performance and reduce query times.
+Fabric materialized lake views (MLVs) help you manage and query large datasets by precomputing and storing query results. In Fabric, lineage helps you understand dependencies and refresh flow so you can operate MLVs more reliably.
 
-This document delves into the various aspects of managing Fabric MLVs, including understanding the lineage, scheduling the MLV runs, exploring the history of MLVs, and detailing operational run specifics.
+This article explains how to view lineage, understand the lineage interface, and use extended lineage to trace dependencies across lakehouses.
 
 ## View lineage
 
-A lineage is a fundamental structure for managing dependencies and scheduling tasks. In the context of MLVs, the lineage represents the sequence of MLV that needs to be executed to refresh the MLV once new data is available.
+A materialized lake views lineage shows dependency order for refresh operations. For MLVs, lineage represents the sequence of views that must run when new data is available.
 
-After you create the MLV, select **Manage materialized lake views** to navigate to the MLV lineage.
+After you create the MLV in Fabric, select the **Materialized lake views** tab in the ribbon, then select **Manage** to navigate to the MLV lineage.
 
-## Materialized lake views Lineage
+## Materialized lake views lineage
 
-The lineage or MLV flow is defined per the code written by the user in the notebook. It's created after the MLV end-to-end flow is created.
+Notebook code defines the lineage (MLV flow), and Fabric creates it when you create the end-to-end MLV flow.
 
 > [!Important]
-> All shortcuts are treated as source entities in the lineage view.
-> All tables or Materialized lake views under a shortcut schema are treated as source entities in the lineage view.
+> The lineage view treats all shortcuts as source entities.
+> The lineage view treats all tables or materialized lake views in a shortcut schema as source entities.
 
 :::image type="content" source="./media/view-lineage/job-graph.png" alt-text="Screenshot showing a job graph in lineage." border="true" lightbox="./media/view-lineage/job-graph.png":::
 
-To run the lineage, schedule the lineage as per your requirement. Once the job Graph is scheduled, navigate to the current run and check the lineage view.
+
+To run lineage, schedule it based on your refresh requirements. After the job is scheduled, go to the current run to view lineage execution.
 
 :::image type="content" source="./media/view-lineage/lineage-view.png" alt-text="Screenshot showing an executed lineage view." border="true" lightbox="./media/view-lineage/lineage-view.png":::
 
+
 ## Understand the lineage view
 
-The lineage for an MLV ensures that data is processed in the correct order, respecting all the dependencies. Each node in the lineage represents a specific operation, such as reading from a source table or performing a transformation. Arrows between nodes signify the dependencies, dictating the execution order. You can select a particular node to understand the flow right from the source tables and parent nodes to the dependent nodes as well.
+In the materialized lake views lineage view, the system processes data in dependency order. Each materialized lake view represents an operation (for example, reading from a source table or running a transformation). Arrows show the nature of each dependency relationship and execution order.
 
-The lineage UI also has the following functionalities:
+Select a materialized lake view to inspect upstream and downstream relationships.
 
-* **Refresh:** This option lets you refresh the lineage UI to reflect any recent changes in status.
+The lineage page includes these actions:
+
+- **Refresh**: Refreshes the lineage view to reflect recent status changes.
 
   > [!NOTE]
-  > * This is a lineage UI refresh only and not a data refresh.
-  > * Lineage UI is auto refreshed for every 2 minutes when there's an ongoing run or if the user's browser tab is active.
+  > This action refreshes only the lineage view. It doesn't refresh data.
+  > The lineage view auto-refreshes every 2 minutes when a run is in progress and the browser tab is active.
 
   :::image type="content" source="./media/view-lineage/view-refresh.png" alt-text="Screenshot showing how to refresh a lineage UI." border="true" lightbox="./media/view-lineage/view-refresh.png":::
 
-* **New materialized lake view:** You can open a notebook to make changes to the MLVs per your requirements.
+
+- **Search in lineage**: Search for a specific materialized lake view or table by name within the lineage graph.
+
+:::image type="content" source="./media/view-lineage/search-filter.png" alt-text="Screenshot showing how to search within lineage UI." border="true" lightbox="./media/view-lineage/search-filter.png":::
+
+- **New materialized lake view**: Opens a notebook where you can create or modify MLVs.
 
   > [!NOTE]
-  > These notebooks aren't directly linked to a lineage UI and are used to create an MLV.
+  > These notebooks aren't directly linked to the lineage view.
 
   :::image type="content" source="./media/view-lineage/new-materialized-view.png" alt-text="Screenshot showing a new materialized lake view." border="true" lightbox="./media/view-lineage/new-materialized-view.png":::
 
-* **Schedule:** You can schedule a run as per your business requirements and refresh the MLVs when new data is present.
 
-:::image type="content" source="./media/view-lineage/schedule-button.png" alt-text="Screenshot showing the schedule button." border="true" lightbox="./media/view-lineage/schedule-button.png":::
+- **Manage schedules**: Opens the Manage schedules pane to create or manage refresh schedules.
 
-* **Toggle View:** You can now toggle the view to *Portrait or Landscape* view depending on the size of the lineage.
+  :::image type="content" source="./media/view-lineage/schedule-button.png" alt-text="Screenshot showing the schedule button." border="true" lightbox="./media/view-lineage/schedule-button.png":::
 
-* **Reset lineage** You can adjust the lineage UI according to the screen size using this option.
+
+- **Reset lineage**: Resets lineage layout for your current screen size.
 
   :::image type="content" source="./media/view-lineage/switch-layout.png" alt-text="Screenshot showing how to switch lineage view layout." border="true" lightbox="./media/view-lineage/switch-layout.png":::
 
-## Use custom environment
 
-The ability to attach a custom Spark environment to  MLV lineage in Microsoft Fabric allows users to optimize performance and resource usage during lineage refreshes. By default, lineage uses the workspace’s environment. However, users can associate a specific environment to the lineage to tailor compute configurations suited for different workloads. Only environments that the user has access to can be selected, and any changes to the environment take effect from the next refresh. If user doesn't have access to the selected environment, they may not see the environment name or workspace-specific details of the environment, and options such as “Schedule” or “Run” would be disabled for the user. In cases where the environment which had been associated is deleted, an error is shown on the dropdown, prompting the user to choose an accessible environment to proceed.
+## View extended lineage
 
-## Related articles
+The standard lineage shows dependencies in context of the current lakehouse and its immediate upstream lakehouses or sources (one level deep). **Extended lineage** expands that view so you can trace every dependency all the way back to its source — recursively across lakehouses.
 
-* [Microsoft Fabric materialized lake views overview](overview-materialized-lake-view.md)
+| | Standard lineage | Extended lineage |
+|---|---|---|
+| **Scope** | Current lakehouse + one level of cross-lakehouse parents | Full recursive chain across all lakehouses |
+| **Upstream MLVs** | Shown as leaf nodes — you can't see what feeds them | Fully expanded — every upstream view and its sources are visible |
+| **Cross-lakehouse** | Not shown | Visible if you have read access on the upstream workspace |
 
-* [Microsoft Fabric materialized lake view tutorial](tutorial.md)
+To view extended lineage:
+
+1. Open the **Manage** tab of the materialized lake view.
+
+
+
+1. Turn on the **Extended lineage** toggle in the toolbar.
+
+
+
+The lineage updates to show all upstream dependencies, including materialized lake views and source tables in other lakehouses. Each node in the graph displays its name and lakehouse. The node type (table, shortcut, or materialized lake view) is indicated by an icon.
+
+> [!NOTE]
+> You can only see upstream dependencies in workspaces where you have at least read permissions. Dependencies in workspaces you can't access appear as a faulted node.
+
+### Faulted nodes
+
+When an upstream dependency is missing, deleted, or inaccessible, it appears as a **faulted node** in the lineage graph. Faulted nodes display an error indicator with a message explaining the issue (for example, "missing or inaccessible").
+
+### Cross-lakehouse execution
+
+Extended lineage enables **cross-lakehouse execution**. A single lakehouse can define and refresh materialized lake views that reference tables across multiple lakehouses — including lakehouses in other workspaces — eliminating the need to duplicate transformation logic in each one.
+
+For example, if you have three lakehouses — Bronze, Silver, and Gold — you can define all your materialized lake views in the Gold lakehouse while referencing source tables or materialized lake views in Bronze and Silver. These lakehouses can be in the same workspace or different workspaces. Fabric handles the cross-lakehouse reads during refresh, so you maintain one set of definitions instead of three.
+
+### Schedule upstream materialized lake views
+
+From the extended lineage view, you can schedule refreshes for upstream materialized lake views in other lakehouses — without navigating to each upstream lakehouse separately. When creating a schedule or an ad-hoc run, you can select which lakehouses to include in the refresh. For details, see [Schedule a materialized lake view refresh](./schedule-lineage-run.md#schedule-across-lakehouses).
+
+### Permissions for extended lineage
+
+| Action | Required permission |
+|---|---|
+| View extended lineage | Read access on upstream workspaces |
+| Schedule upstream materialized lake views | Contributor on the upstream lakehouse |
+| View details of upstream dependencies | Read access on the item |
+
+## View lineage for file ingestion
+
+When a materialized lake view ingests files with `USING OneLake_Files`, its source is a physical OneLake folder or OneLake folder shortcut rather than an upstream table. The lineage view represents this source with a **source folder** node that feeds the file-ingesting view, so you can trace and monitor a complete file-backed medallion pipeline.
+
+The lineage graph starts from the source folder that the view ingests. The folder node connects to the bronze file-ingesting materialized lake view, which in turn feeds downstream silver and gold views, following the same dependency ordering that Fabric applies to table-based views.
+
+:::image type="content" source="./media/view-lineage/medallion-dag-landing.png" alt-text="Screenshot of a materialized lake views lineage graph showing a source folder feeding a bronze file-ingesting view, then silver and gold views." border="true" lightbox="./media/view-lineage/medallion-dag-landing.png":::
+
+To inspect a file-backed pipeline and confirm that the refresh detected source changes, follow these steps:
+
+1. Select the source folder node to open its details pane. The pane shows the OneLake path and the files discovered in the folder.
+
+   :::image type="content" source="./media/view-lineage/source-folder-details-pane.png" alt-text="Screenshot of the source folder details pane showing the OneLake path and files in the folder." border="true" lightbox="./media/view-lineage/source-folder-details-pane.png":::
+
+1. Select the file-ingesting materialized lake view node to view its details, including the source format, schema mode, and refresh mode.
+
+   :::image type="content" source="./media/view-lineage/view-file-details-pane.png" alt-text="Screenshot of the file-ingesting materialized lake view details pane showing format, schema mode, and refresh mode." border="true" lightbox="./media/view-lineage/view-file-details-pane.png":::
+
+1. Open the **Recent runs** tab, drill into a managed run, and select the file-ingesting view to see its files-processed and rows-added metrics.
+
+   :::image type="content" source="./media/view-lineage/files-processed.png" alt-text="Screenshot of a run's details showing the number of files processed and rows added for a file-ingesting materialized lake view." border="true" lightbox="./media/view-lineage/files-processed.png":::
+
+### Interpret file processing metrics
+
+**Files processed** is a run-level metric, not the total number of files currently present in the source folder. The count depends on the view's refresh mode:
+
+- For the `APPEND_ONLY` refresh mode, it counts the new files that the run ingests. It doesn't count files that earlier runs already materialized.
+- For the `FULL` refresh mode, it counts the files read while rebuilding the view from the current folder snapshot.
+- A successful run can report zero files processed when the managed refresh detects no new source files.
+
+Use the source folder details pane for the current folder inventory and the run details pane for the files acted on by a specific refresh. The two counts answer different questions and don't necessarily match for an incremental run.
+
+> [!TIP]
+> Each ingested row also carries a `__filepath__` column that records its source file. Use `GROUP BY __filepath__` to inspect the files represented in the current materialized result. This view reflects current row lineage, while **Files processed** reflects the work that one refresh run performs.
+
+## Related content
+
+- [Fabric materialized lake views overview](overview-materialized-lake-view.md)
+- [Schedule a materialized lake view refresh](./schedule-lineage-run.md)
+- [Fabric materialized lake view tutorial](tutorial.md)
 

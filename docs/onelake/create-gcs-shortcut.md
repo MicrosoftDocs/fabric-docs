@@ -1,7 +1,9 @@
 ---
 title: Create a Google Cloud Storage(GCS) shortcut
 description: Learn how to create a OneLake shortcut for Google Cloud Storage (GCS) inside a Microsoft Fabric lakehouse.
-ms.reviewer: eloldag
+ms.reviewer: eloldag # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.search.form: Shortcuts
 ms.topic: how-to
 ms.date: 03/15/2024
@@ -20,7 +22,7 @@ GCS shortcuts can take advantage of file caching to reduce egress costs associat
 
 ## Prerequisites
 
-- If you don't have a lakehouse, create one by following these steps: [Creating a lakehouse with OneLake](create-lakehouse-onelake.md).
+- If you don't have a lakehouse, create one by following these steps: [Create a lakehouse](../data-engineering/create-lakehouse.md).
 
 - Ensure your chosen GCS bucket and user meet the [access](#access) and [authorization](#authorization) requirements for GCS shortcuts.
 
@@ -32,7 +34,7 @@ GCS shortcuts can take advantage of file caching to reduce egress costs associat
 
 1. Select **New shortcut**.
 
-   :::image type="content" source="media\create-onelake-shortcut\new-shortcut-lake-view.png" alt-text="Screenshot of right click context menu showing where to select New shortcut from the Lake view." lightbox="media\create-onelake-shortcut\new-shortcut-lake-view.png":::
+   :::image type="content" source="shortcuts/media/create-onelake-shortcut/new-shortcut-lake-view.png" alt-text="Screenshot of right click context menu showing where to select New shortcut from the Lake view." lightbox="shortcuts/media/create-onelake-shortcut/new-shortcut-lake-view.png":::
 
 ## Select a source
 
@@ -105,6 +107,6 @@ The following limitations apply to Google Cloud Storage shortcuts:
 
 ## Related content
 
-- [Create a OneLake shortcut](create-onelake-shortcut.md)
+- [Create a OneLake shortcut](shortcuts/create-onelake-shortcut.md)
 - [Create an Azure Data Lake Storage Gen2 shortcut](create-adls-shortcut.md)
 - [Use OneLake shortcuts REST APIs](onelake-shortcuts-rest-api.md)

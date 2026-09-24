@@ -145,6 +145,16 @@
         "source_path_from_root": "/docs/data-science/ai-services/how-to-use-openai-sdk-synapse.md",
         "redirect_url": "/fabric/data-science/ai-services/how-to-use-openai-python-sdk",
         "redirect_document_id": false
-      }
+      },
+      {
+        "source_path_from_root": "/docs/data-science/data-agent-mcp-agent-framework.md",
+        "redirect_url": "/fabric/data-science/",
+        "redirect_document_id": false
+      },
+    {
+      "source_path": "docs/data-science/data-agent-copilot-powerbi.md",
+      "redirect_url": "/fabric/data-science/data-agent-foundry",
+      "redirect_document_id": false
+    }
     ]
 }

@@ -1,10 +1,10 @@
 ---
 title: Query with the SQL Query Editor
 description: Learn how to use the SQL database query editor in the Fabric portal.
-ms.reviewer: yoleichen, pradeepsrikakolapu
+ms.reviewer: yoleichen, pvenkat
 ms.date: 01/05/2026
 ms.topic: how-to
-ms.search.form: Develop and run queries in SQL editor
+ms.search.form: Develop and run queries in SQL editor, SQL Database query editor
 ---
 
 # Query with the SQL query editor

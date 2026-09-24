@@ -17,7 +17,7 @@ An **item reference** variable is an advanced variable type used within the Fabr
 ## How to use
 An item reference variable can be used just like other variables in a variable library.
 
-1. Sign in to Microsoft Fabric
+1. Sign in to Fabric.
 2. Navigate to your workspace and variable library
 3. At the top, select **+ New Variable**
 4. Provide a name for the variable, select **item reference** for the type, and then click the **...** to select a value
@@ -28,8 +28,6 @@ An item reference variable can be used just like other variables in a variable l
  
  :::image type="content" source="media/item-reference/item-1.png" alt-text="Screenshot of the item reference." lightbox="media/item-reference/item-1.png":::
 
- 
-
 If you need to edit an item reference or need to double-check the value:
 - to see additional details click the value 
 - to edit this value or values of other value-sets- click the button next to the value. 
@@ -38,7 +36,7 @@ If you need to edit an item reference or need to double-check the value:
 
 
 ## How it works
-An Item Reference variable's value is essentially a static pointer to a Fabric item identified by **Workspace ID + Item ID**. The value is stored as a pair of GUIDs corresponding to the target item's workspace and the item itself. For example, a reference might be stored internally as:
+An item reference variable's value is essentially a static pointer to a Fabric item identified by **Workspace ID + Item ID**. The value is stored as a pair of GUIDs corresponding to the target item's workspace and the item itself. For example, a reference might be stored internally as:
 
  - WorkspaceID = aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb 
  - ItemID  = 00aa00aa-bb11-cc22-dd33-44ee44ee44ee
@@ -52,69 +50,10 @@ Keep in mind the following when working with item references:
 - For stage-specific variations, use value-sets, where each set can point to a different static item (e.g., different lakehouses per stage).
 - All values across value-sets **should** be of the same item type to ensure compatibility and prevent runtime errors. However, we don't enforce having the same item type across value sets.
 
+## Representation in Git and APIs
+Manage the variable library as code. By using Git or REST APIs, you can work with item reference variables through a clear JSON format. All variables appear in the variable library’s definition file (stored in Git, usually .json), listing properties like name, type, and value.
 
-## Supported items
-The following is a list of items that are currently supported using item reference:
-- [Shortcut for a lakehouse ](../../onelake/assign-variables-to-shortcuts.md)
-- [User data functions](../../data-engineering/user-data-functions/connect-to-data-sources.md)
-- Notebook, through [NotebookUtils](../../data-engineering/notebook-utilities.md#variable-library-utilities)
- 
- :::image type="content" source="media/item-reference/item-4.png" alt-text="Screenshot of the item reference notebook." lightbox="media/item-reference/item-4.png":::
-
-
->[!NOTE]
->Notebook, through [`%%configure`](../../data-engineering/author-execute-notebook.md#spark-session-configuration-magic-command) isn't supported.
-
-### Limitations
-Currently, you can only reference fabric items and semantic models. Other Power BI items, like Datamarts, Dataflow Gen1 are currently not supported.
-
-
-
-### Permissions Required to Create/Use Item References
-Using Item Reference variables involves two layers of permissions:
-
-- **Create/Edit** - Although any workspace contributor can modify variable values, an Item reference variable only permits users to set as value items for which they have read permissions. This applies to any value, the default active value set or other value-sets. Be aware that during when saving a Variable Library item, a permission check is performed on the active values of item reference variables for the user who's saving the item, even if those values remain unchanged.
-- **Use an item ref variable** - When creating/updating a reference to a variable in a consumer item, users can't set a reference to an item reference variable unless they have at least **READ** permission for the item in the active value-set.
-
-#### Permission validation
-Permission validation is triggered in the following use-cases:
-
-- Edit a Variable library item which has Item reference variables 
-When editing we validate both that the referenced items exist, and that the user has at least read permissions to them, for all item reference values in the active value set, for the following scenarios:
- - UI - During **SAVE** of the Variable Library item, a permission check is performed on the active values of item reference variables for the user who's saving the item, even if those values remain unchanged.
- - APIs/Git Update - Permission validation is done during Update and fails if no read permission to the Item ref's active value of the updated workspace.
- - Deployment - A variable library item's deployment will fail if no read permission to the Item ref's active value of the target workspace.
-
-- View item reference additional details in the Variable library page (UI only) 
-Users with access to the Variable library (WS viewer or higher) who lack permissions for the item in the referenced item variable, won't see their details in the UI. Instead, they'll see the item ID accompanied by a hover message, rather than the details component.
-
- :::image type="content" source="media/item-reference/item-5.png" alt-text="Screenshot of the permissions." lightbox="media/item-reference/item-5.png":::
-
-- Create/Edit item reference variable 
-  - UI - When updating Value of any value set (Default or other), user can select item from a list showing only items he has at least read permission to.
-  - APIs/Git Update or Deployment - see Edit Variable library item above.
-
-- Use of item reference variable in a consumer item
-  - UI - Creating a Reference to variable - When creating in an item a reference to an 'Item reference' variable using the 'Select variable' UI dialog (like in Shortcut for Lakehouse and Data pipeline), there's validation that the user creating the reference has at least read permission to the items in the 'item reference' variables (the validation is for the active values only). If not, the user sees just the items' ID.
-
-### Behavior Across CI/CD Pipelines and Deployment Stages
-The Variable Library enables CI/CD for Fabric content across environments (Dev, Test, Prod) using Item Reference variables for stage-specific configurations. Keep in mind the following:
-
-**Static References**
-
-- Item References are tied to a specific workspace and item ID.
-- Deploying to a new stage, these references still point to the original workspace unless manually updated.
-- Use Multiple Value-Sets for each stage and activate the correct set manually or via API scripts.
-
-For more information, see [value-sets in variable libraries](value-sets.md).
-
-
-
-
-### Representation in Git and APIs
-The Variable Library is managed as code. Using Git or REST APIs, Item Reference variables have a clear JSON format. All variables appear in the Variable Library’s definition file (stored in Git, usually .json), listing properties like name, type, and value.
-
-For an Item Reference (Static) variable, the value is structured data for workspace and item IDs. Example:
+For an item reference (static) variable, the value is structured data for workspace and item IDs. Example:
 
 ```json
 
@@ -136,6 +75,57 @@ Remember the following when working via API:
 - Only IDs are stored; names and metadata are retrieved at runtime or cached in Fabric. 
 - Creating/updating via API, you provide workspace and item IDs. Invalid IDs cause errors.
 
+
+
+## Supported items
+The following is a list of items that are currently supported using item reference:
+- [Shortcut for a lakehouse ](../../onelake/assign-variables-to-shortcuts.md)
+- [User data functions](../../data-engineering/user-data-functions/connect-to-data-sources.md)
+- Notebook, through [NotebookUtils](../../data-engineering/notebookutils/notebookutils-variable-library.md)
+ 
+
+>[!NOTE]
+>Notebook, through [`%%configure`](../../data-engineering/author-execute-notebook.md#spark-session-configuration-magic-command) isn't supported.
+
+### Python code example
+The following code example shows how to use an item reference in a python script.
+
+```python
+var_ref = "$(/**/VarLibItem/itemReference)"
+var_obj = notebookutils.variableLibrary.get(var_ref)
+workspace_id = var_obj.get("workspaceId").value()
+item_id = var_obj.get("itemId").value()
+print(workspace_id)
+print(item_id)
+
+```
+
+This code does the following:
+
+- Resolves an item reference variable from a variable library in Fabric.
+- Retrieves the metadata object for that referenced item
+- Extracts the workspace ID and item ID
+- Prints them so they can be used programmatically.
+
+## Permissions Required to Create/Use item reference variables
+Using item reference variables involves two layers of permissions:
+
+- **Create and Edit an item reference variable**: Users with Contributor or above roles in the workspace can create and edit variables in the library, while Viewers are read-only.
+- **Accessing the item reference variable**: In addition to rights on the Variable Library, **you must have at least Read permission on the item reference variable** you intend to reference.
+
+For more information on permissions and permission validation, see [Variable library permissions](variable-library-permissions.md#item-reference-variable-type-preview)
+
+### Limitations
+Currently, you can only reference fabric items and semantic models. Other Power BI items, like Dataflow Gen1 are currently not supported.
+
+## Additional information
+The variable library enables CI/CD for Fabric content across environments (Dev, Test, Prod) by using item reference variables for stage-specific configurations. Keep the following points in mind:
+
+- Item references are tied to a specific workspace and item ID.
+- Deploying to a new stage, these references still point to the original workspace unless manually updated.
+- Use multiple value sets for each stage and activate the correct set manually or via API scripts.
+
+For more information, see [value-sets in variable libraries](value-sets.md).
 
 
 

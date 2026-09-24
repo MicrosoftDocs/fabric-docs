@@ -16,14 +16,14 @@ The Microsoft Fabric notebook is a web-based interactive surface for developing 
 
 A Spark job progress indicator is provided with a real-time progress bar that helps you monitor the job execution status for each notebook cell. You can view the status and tasks' progress across your Spark jobs and stages.
 
-:::image type="content" source="media\spark-monitor-debug\spark-monitor-progress.png" alt-text="Screenshot showing Notebook cell and Spark job progress list." lightbox="media\spark-monitor-debug\spark-monitor-progress.png":::
+:::image type="content" source="media\spark-monitor-debug\spark-monitor-progress.png" alt-text="Screenshot showing notebook cell and Spark job progress list." lightbox="media\spark-monitor-debug\spark-monitor-progress.png":::
 
 
 ## Monitor Resource usage
 
 The executor usage graph visually displays the allocation of Spark job executors and resource usage. Currently, only the runtime information of **spark 3.4** and above will display this feature. Click on **Resources** tab, the line chart for the resource usage of code cell will be showing. 
 
-:::image type="content" source="media\spark-monitor-debug\resource.png" alt-text="Screenshot showing Notebook cell and resource usage of code cell." lightbox="media\spark-monitor-debug\resource.png":::
+:::image type="content" source="media\spark-monitor-debug\resource.png" alt-text="Screenshot showing notebook cell and resource usage of code cell." lightbox="media\spark-monitor-debug\resource.png":::
 
 ## View Spark Advisor recommendations
 
@@ -60,3 +60,4 @@ If you want to access additional information about the Spark execution at the no
 - Learn about [Spark advisor](spark-advisor-introduction.md)
 - [Apache Spark application detail monitoring](spark-detail-monitoring.md)
 - [Use the extended Spark history server to debug apps](apache-spark-history-server.md)
+- [Diagnose notebook failures with Copilot](copilot-notebooks-chat-pane.md#diagnose-notebook-failures)

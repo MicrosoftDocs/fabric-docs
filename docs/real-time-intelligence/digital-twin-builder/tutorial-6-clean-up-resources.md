@@ -1,5 +1,5 @@
 ---
-title: 'Digital twin builder (preview) tutorial part 6: Clean up resources'
+title: 'Digital Twin Builder (Preview) Tutorial Part 6: Clean Up Resources'
 description: Delete resources created during the digital twin builder (preview) tutorial. Part 6 of the digital twin builder (preview) tutorial.
 ms.date: 05/01/2025
 ms.topic: tutorial

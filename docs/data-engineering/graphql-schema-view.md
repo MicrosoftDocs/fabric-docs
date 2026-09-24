@@ -61,7 +61,7 @@ Mutations are write operations for creating, updating, and deleting data. Expand
 :::image type="content" source="media/graphql-schema-view/schema-explorer-mutations.png" alt-text="Screenshot of the Schema explorer pane, showing an expanded list of automatically generated mutations." lightbox="media/graphql-schema-view/schema-explorer-mutations.png":::
 
 > [!NOTE]
-> Mutations are only generated for Fabric Data Warehouse data sources. SQL Analytics Endpoints (Lakehouses and mirrored databases) are read-only and only support queries. If you don't see mutations in your Schema explorer, verify that you've connected to a Fabric Data Warehouse. 
+> Mutations are only generated for Fabric Data Warehouse data sources. SQL analytics endpoints (lakehouses and mirrored databases) are read-only and only support queries. If you don't see mutations in your Schema explorer, verify that you've connected to a warehouse.
 
 ## Modify objects using the schema explorer
 

@@ -11,21 +11,19 @@ ms.search.form: Source and Destination
 
 This article shows you how to add an Azure Cosmos DB (**Azure Cosmos DB for NoSQL**) Change Data Capture source to an eventstream. 
 
-The Azure Cosmos DB Change Data Capture (CDC) source connector for Microsoft Fabric event streams lets you capture a snapshot of the current data in an Azure Cosmos DB database. The connector then monitors and records any future row-level changes to this data. Once the changes are captured in the eventstream, you can process this CDC data in real-time and send it to different destinations within Fabric for further processing or analysis.
-
-[!INCLUDE [azure-cosmos-db-cdc-source-prerequisites-connection-details](./includes/azure-cosmos-db-cdc-source-prerequisites-connection-details.md)]
+[!INCLUDE [azure-cosmos-db-cdc-source-connector-prerequisites](./includes/connectors/azure-cosmos-db-cdc-source-connector-prerequisites.md)]
 
 ## Add Azure Cosmos DB (CDC) as a source
 
 [!INCLUDE [launch-connect-external-source](./includes/launch-connect-external-source.md)]
 
-On the **Select a data source** page, search for and select **Connect** on the **Azure Event Hubs** tile.
+On the **Select a data source** page, search for and select **Connect** on the **Azure Cosmos DB (CDC)** tile.
 
 :::image type="content" source="./media/add-source-azure-cosmos-db-change-data-capture/select-azure-cosmos-db.png" alt-text="Screenshot that shows the selection of Azure Cosmos DB (CDC) as the source type in the Select a data source wizard." lightbox="./media/add-source-azure-cosmos-db-change-data-capture/select-azure-cosmos-db.png":::
 
 ## Configure and connect to Azure Cosmos DB (CDC)
 
-[!INCLUDE [azure-cosmos-db-connector](./includes/azure-cosmos-db-cdc-source-connector.md)]
+[!INCLUDE [azure-cosmos-db-cdc-source-connector-configuration](./includes/connectors/azure-cosmos-db-cdc-source-connector-configuration.md)]
 
 ## View updated eventstream
 1. You see the Azure Cosmos DB (CDC) source added to your eventstream in **Edit mode**. Select **Publish** to publish the changes and begin streaming Azure Cosmos DB CDC data to the eventstream.

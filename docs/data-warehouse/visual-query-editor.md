@@ -1,7 +1,7 @@
 ---
 title: Query Using the Visual Query Editor
 description: Learn how to use the visual query editor for a no-code experience to create your queries.
-ms.reviewer: prlangad, jacindaeng, fresantos
+ms.reviewer: prlangad, rakrish75, fresantos
 ms.date: 09/08/2025
 ms.topic: how-to
 ms.search.form: Query editor # This article's title should not change. If so, contact engineering.
@@ -88,4 +88,4 @@ For more information on cross-warehouse querying, see [Cross-warehouse querying]
 
 - [Query the SQL analytics endpoint or Warehouse in Microsoft Fabric](query-warehouse.md)
 - [Query using the SQL query editor](sql-query-editor.md)
-- [Query insights in Fabric data warehousing](query-insights.md)
+- [Query insights in Fabric Data Warehouse](query-insights.md)

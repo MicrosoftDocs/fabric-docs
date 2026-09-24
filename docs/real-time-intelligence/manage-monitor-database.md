@@ -3,7 +3,7 @@ title: Manage and monitor a KQL database
 description: Learn how to manage and monitor a KQL database and gain insights from the system information in Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.topic: how-to
-ms.date: 01/29/2026
+ms.date: 05/04/2026
 ms.subservice: rti-eventhouse
 ms.search.form: Database
 #customer intent: As a user, I want to learn how to manage and monitor a KQL  database so that I can effectively utilize Real-Time Intelligence.
@@ -82,11 +82,13 @@ In the Explorer pane, you can:
 
 * Hover over the **more menu** in the explorer pane to perform the following actions:
 
-    * To query tables in a database, select  **Query data**.
+  * To query tables in a database, select  **Query data**.
 
-    * To create a new related item, select **New related item** > and then select [KQL Queryset](create-query-set.md), [Notebook](notebooks.md#create-a-notebook-from-a-kql-database), or [Real-Time Dashboard](dashboard-real-time-create.md#create-a-new-dashboard).
+  * To create a new related item, select **New related item** > and then select [KQL Queryset](create-query-set.md), [Notebook](notebooks.md#create-a-notebook-from-a-kql-database), or [Real-Time Dashboard](dashboard-real-time-create.md#create-a-new-dashboard).
 
-    * To ingest data into a database, select **Get data**.
+  * To ingest data into a database, select **Get data**.
+
+* Use folders to organize the [tables](manage-monitor-table.md#organize-tables-with-folders), [shortcuts](onelake-shortcuts.md#organize-shortcuts-with-folders), [materialized views](materialized-view.md#organize-materialized-views-in-folders), and [functions](create-functions.md#organize-functions-with-folders) in your database.
 
 ## Main view area
 

@@ -323,6 +323,8 @@ items:
     href: /kusto/query/fork-operator?view=microsoft-fabric&preserve-view=true
   - name: getschema operator
     href: /kusto/query/getschema-operator?view=microsoft-fabric&preserve-view=true
+  - name: inline external table operator
+    href: /kusto/query/inline-external-table-operator?view=microsoft-fabric&preserve-view=true
   - name: invoke operator
     href: /kusto/query/invoke-operator?view=microsoft-fabric&preserve-view=true
   - name: join operator
@@ -1520,10 +1522,39 @@ items:
       - name: node_degree_out()
         displayName: graph, node, Node degree out node_degree_out, outdegree node_degree_out
         href: /kusto/query/node-degree-out?view=microsoft-fabric&preserve-view=true
+      - name: node_id()
+        displayName: graph, node, Node Id
+        href: /kusto/query/node-id?view=microsoft-fabric&preserve-view=true
+  - name: Visualization
+    items:
+    - name: Overview
+      href: /kusto/query/graph-visualization-overview?view=microsoft-fabric&preserve-view=true
+    - name: Kusto Explorer
+      href: /kusto/query/graph-visualization-kusto-explorer?view=microsoft-fabric&preserve-view=true
+    - name: Graphistry
+      href: /kusto/query/graph-visualization-graphistry?view=microsoft-fabric&preserve-view=true
+    - name: Custom visualization
+      href: /kusto/query/graph-visualization-custom?view=microsoft-fabric&preserve-view=true
   - name: Scenarios
     href: /kusto/query/graph-scenarios?view=microsoft-fabric&preserve-view=true
   - name: Best practices
     href: /kusto/query/graph-best-practices?view=microsoft-fabric&preserve-view=true
+  - name: Additional query languages
+    items:
+    - name: GQL (Graph query language)
+      items:
+      - name: GQL
+        href: /kusto/query/graph-query-language?view=microsoft-fabric&preserve-view=true
+      - name: GQL guide
+        href: /kusto/query/graph-query-language-guide?view=microsoft-fabric&preserve-view=true
+      - name: GQL clauses
+        href: /kusto/query/graph-query-language-clauses?view=microsoft-fabric&preserve-view=true
+      - name: GQL functions
+        href: /kusto/query/graph-query-language-functions?view=microsoft-fabric&preserve-view=true
+    - name: openCypher
+      href: /kusto/query/opencypher-graph-query-language?view=microsoft-fabric&preserve-view=true
+    - name: How to run GQL or openCypher queries
+      href: /kusto/query/run-graph-query-with-graph-reference?view=microsoft-fabric&preserve-view=true
 - name: Geospatial
   items:
   - name: Geospatial clustering

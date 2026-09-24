@@ -2,15 +2,15 @@
 title: Create and manage streaming virtual network data gateway
 description: Learn how to create and manage a streaming virtual network data gateway.
 ms.reviewer: spelluru
-ms.author: xujiang1
-author: xujxu
+ms.author: spelluru
+author: spelluru
 ms.topic: how-to
 ms.custom: sfi-image-nochange, sfi-ropc-nochange
 ms.date: 01/27/2026
 ms.search.form: Eventstream connector private network support
 ---
 
-# Create and manage a streaming virtual network data gateway (preview)
+# Create and manage a streaming virtual network data gateway
 
 A Streaming virtual network data gateway provides an abstraction of the Azure virtual network and its subnet resources within Fabric. It allows Eventstream’s streaming connector service to use the Azure virtual network and subnet resource, injecting the connector into this Azure virtual network. As a result, Eventstream’s streaming connector can access streaming sources within a private network to collect real-time data for Fabric.
 

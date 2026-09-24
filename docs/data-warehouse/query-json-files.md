@@ -1,10 +1,8 @@
 ---
 title: Query JSON Files By Using Fabric Data Warehouse or SQL analytics endpoint
 description: Learn how to query JSON files in data lake storage using the Fabric Data Warehouse or SQL analytics endpoint.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: jovanpop
-ms.date: 02/11/2026
+ms.date: 06/23/2026
 ms.topic: how-to
 ms.search.form: Query JSON files
 ---
@@ -57,7 +55,7 @@ To read a JSON Lines file, provide its URL in the `BULK` argument:
 ```sql
 SELECT TOP 10 *
 FROM OPENROWSET(
-    BULK 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/bing_covid-19_data/latest/bing_covid-19_data.jsonl'
+    BULK 'https://<storage account>.blob.core.windows.net/public/<subfolder>/<file name>.jsonl'
 );
 ```
 
@@ -68,7 +66,7 @@ However, you can explicitly define the schema to control which properties are re
 ```sql
 SELECT TOP 10 *
 FROM OPENROWSET(
-    BULK 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/bing_covid-19_data/latest/bing_covid-19_data.jsonl'
+    BULK 'https://<storage account>.blob.core.windows.net/public/<subfolder>/<file name>.jsonl'
 ) WITH (
     country_region VARCHAR(100),
     confirmed INT,

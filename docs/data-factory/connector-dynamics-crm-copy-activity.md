@@ -16,7 +16,7 @@ This article outlines how to use the copy activity in a pipeline to copy data fr
 
 ## Prerequisites
 
-To use this connector with Entra ID service-principal authentication, you must set up server-to-server (S2S) authentication in Dynamics CRM. First register the application user (Service Principal) in Microsoft Entra. For more information, see [Create a Microsoft Entra application and service principal that can access resources](/entra/identity-platform/howto-create-service-principal-portal). 
+To use this connector with Microsoft Entra service-principal authentication, you must set up server-to-server (S2S) authentication in Dynamics CRM. First register the application user (Service Principal) in Microsoft Entra. For more information, see [Create a Microsoft Entra application and service principal that can access resources](/entra/identity-platform/howto-create-service-principal-portal). 
 
 During application registration you will need to create that user in Dynamics CRM and grant permissions. Those permissions can either be granted directly or indirectly by adding the application user to a team which has been granted permissions in Dynamics CRM. For more information on how to set up an application user to authenticate with Dynamics CRM, see [Use single-tenant server-to-server authentication](/powerapps/developer/data-platform/use-single-tenant-server-server-authentication).
 
@@ -94,11 +94,11 @@ Under **Advanced**, you can specify the following fields:
 
 ### Mapping
 
-For **Mapping** tab configuration, go to [Configure your mappings under mapping tab](copy-data-activity.md#configure-your-mappings-under-mapping-tab). 
+For **Mapping** tab configuration, go to [Configure your mappings under mapping tab](copy-data-activity.md#configure-your-mappings-under-the-mapping-tab). 
 
 ### Settings
 
-For the **Settings** tab configuration, go to [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
+For the **Settings** tab configuration, go to [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-the-settings-tab).
 
 ## Table summary
 

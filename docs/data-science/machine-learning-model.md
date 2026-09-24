@@ -1,11 +1,12 @@
-﻿---
+---
 title: Machine learning model
 description: Learn how to create, track, and manage machine learning models in Microsoft Fabric. Compare model versions, apply tags, and deploy models for scoring and inferencing.
 ms.author: scottpolly
 author: s-polly
-ms.reviewer: midesa
+ms.reviewer: scottpolly
+reviewer: s-polly
 ms.topic: concept-article
-ms.date: 01/29/2026
+ms.date: 05/15/2026
 ms.search.form: Create New Model, Model Comparison
 ---
 
@@ -56,6 +57,9 @@ print("Version: {}".format(mv.version))
 ## Manage versions within a machine learning model
 
 A machine learning model contains a collection of model versions for simplified tracking and comparison. Within a model, a data scientist can navigate across various model versions to explore the underlying parameters and metrics. Data scientists can also make comparisons across model versions to identify whether or not newer models might yield better results.
+
+> [!NOTE]
+> With MLflow 3 support in Fabric, every model you log with `mlflow.<flavor>.log_model(model, name="...")` creates a **LoggedModel** entity that's linked to its source run, parameters, metrics, datasets, and environment. You can open a LoggedModel from the experiment page and register it as a new ML model or a new version of an existing model. For details, see [MLflow 3 in Fabric Data Science](mlflow-3-overview.md).
 
 ### Track machine learning models
 
@@ -163,8 +167,8 @@ Once you train a model on a data set, you can apply that model to data it never 
 
 Fabric supports multiple approaches for applying your trained models:
 
-- **Batch scoring** – Apply your model at scale across large datasets using Apache Spark. This is ideal for generating predictions on historical or scheduled data.
-- **Real-time scoring** – Deploy your model to an endpoint for on-demand predictions, useful for applications that need immediate results.
+- **Batch scoring** � Apply your model at scale across large datasets using Apache Spark. This is ideal for generating predictions on historical or scheduled data.
+- **Real-time scoring** � Deploy your model to an endpoint for on-demand predictions, useful for applications that need immediate results.
 
 To get started with applying your models, choose the approach that fits your scenario:
 
@@ -178,4 +182,6 @@ To get started with applying your models, choose the approach that fits your sce
 
 - [Track experiments with MLflow in Fabric](machine-learning-experiment.md)
 - [MLflow Experiment APIs reference](https://www.mlflow.org/docs/latest/python_api/mlflow.html)
+- [Manage MLflow models across workspaces and platforms](machine-learning-cross-workspace-logging.md)
+- [MLflow 3 in Fabric Data Science](mlflow-3-overview.md)
 

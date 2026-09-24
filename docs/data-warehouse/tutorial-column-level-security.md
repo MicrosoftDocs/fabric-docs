@@ -1,15 +1,15 @@
 ---
-title: Implement Column-Level Security in Fabric Data Warehousing
-description: A guide to use column-level security in Fabric data warehousing.
+title: Implement Column-Level Security in Fabric Data Warehouse
+description: A guide to use column-level security in Fabric Data Warehouse.
 ms.reviewer: dhsundar
 ms.date: 07/26/2024
 ms.topic: how-to
 ---
-# Implement column-level security in Fabric data warehousing
+# Implement column-level security in Fabric Data Warehouse
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-Column-level security (CLS) in Microsoft Fabric allows you to control access to columns in a table based on specific grants on these tables. For more information, see [Column-level security in Fabric data warehousing](column-level-security.md).
+Column-level security (CLS) in Microsoft Fabric allows you to control access to columns in a table based on specific grants on these tables. For more information, see [Column-level security in Fabric Data Warehouse](column-level-security.md).
 
 This guide will walk you through the steps to implement column-level security in a Warehouse or SQL analytics endpoint. 
 
@@ -57,5 +57,5 @@ Regularly monitor and update your column-level security policies as your securit
 
 ## Related content
 
-- [Column-level security for Fabric data warehousing](column-level-security.md)
-- [Row-level security in Fabric data warehousing](row-level-security.md)
+- [Column-level security for Fabric Data Warehouse](column-level-security.md)
+- [Row-level security in Fabric Data Warehouse](row-level-security.md)

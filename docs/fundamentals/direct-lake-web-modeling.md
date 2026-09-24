@@ -7,16 +7,16 @@ ms.reviewer: zoedouglas
 ms.service: powerbi
 ms.subservice: powerbi-premium
 ms.topic: how-to
-ms.date: 02/02/2026
+ms.date: 09/02/2026
 LocalizationGroup: Admin
 ---
 # Direct Lake in web modeling
 
-**Open data model**, or web modeling, works with semantic models with Direct Lake tables. Direct Lake tables can be **Direct Lake on SQL** or **Direct Lake on OneLake**, which have different considerations when creating and editing in the web.
+**Open data model**, or web modeling, works with semantic models with Direct Lake tables. Direct Lake tables can be **Direct Lake on SQL** or **Direct Lake on OneLake**, which have different considerations when creating and editing in the web. For the source types available with each option, see [Supported Fabric data sources](direct-lake-overview.md#supported-fabric-data-sources).
 
 | Scenario | Direct Lake on OneLake | Direct Lake on SQL |
 |:---------|:------------|:------------|
-| Creating in the web | <ul><li>Select **Create** in the left navigation, then **OneLake catalog**.</li><li>Select **New semantic model** from Lakehouse.</li> <li>Select **OneLake catalog** from web modeling.</li> <li>Select **New item** from a workspace and choosing **Semantic model**, then **OneLake catalog**</li></ul> | Select **New semantic model** from SQL analytics endpoints or Warehouses. |
+| Creating in the web | <ul><li>Select **Create** in the left navigation, then **OneLake catalog**.</li><li>Select **New semantic model** from a supported Fabric data source.</li><li>Select **OneLake catalog** from web modeling.</li><li>Select **New item** from a workspace, select **Semantic model**, then select **OneLake catalog**.</li></ul> | Select **New semantic model** from the SQL analytics endpoint of a supported Fabric data source. |
 | Editing in the web | Select **Open data model** from the semantic model details page or context menu.    | Select **Open data model** from the semantic model details page or context menu. |
 
 **Edit in Desktop** is available when web modeling to continue [live editing any Direct Lake semantic model in Power BI Desktop](direct-lake-power-bi-desktop.md).
@@ -25,14 +25,14 @@ LocalizationGroup: Admin
 
 To create a semantic model with **Direct Lake on OneLake tables**, take the following steps.
 
-1. Select **Create** from the left navigation bar, then select **OneLake catalog** and choose a Fabric item. Alternatively, open the Lakehouse and select **New semantic model**.
+1. Select **Create** from the left navigation bar, select **OneLake catalog**, and choose a supported Fabric data source. Alternatively, open a supported source item and select **New semantic model**.
 1. Give your semantic model a name, pick a Fabric workspace for it, and select the tables to include. Then press **OK**.
 
 The semantic model is created and now you're live editing the modeling in the browser.
 
 To create a semantic model with **Direct Lake on SQL tables**, take the following steps.
 
-1. Open the SQL analytics endpoint or warehouse, go to **Reporting** and then select **New semantic model**.
+1. Open the SQL analytics endpoint of a supported Fabric data source, go to **Reporting**, and then select **New semantic model**.
 1. Give your semantic model a name, pick a Fabric workspace for it, and select the tables to include. Then press **OK**.
 
 The semantic model is created and now you're live editing the modeling in the browser.
@@ -68,6 +68,24 @@ Direct Lake on OneLake tables can be added to an existing semantic model with im
 
 Use the **Refresh** button in the web modeling ribbon to update import table data, reframe Direct Lake tables, and perform a schema sync on all tables to get the latest column information from the respective data sources.
 
+## Convert a Direct Lake table to Import storage mode
+
+You can convert an individual table in a **Direct Lake on OneLake** semantic model from Direct Lake to Import storage mode. Converting a table creates a composite model that combines Direct Lake and Import tables. You can perform this conversion only in Power BI web modeling. Power BI Desktop doesn't offer per-table conversion from Direct Lake to Import storage mode.
+
+> [!IMPORTANT]
+> Converting a table to Import storage mode is an irreversible operation. After you convert the table, you can't set the mode back to Direct Lake. The table's Power Query M connector is converted to a SQL connector, and the table uses the Fabric SQL analytics endpoint for the data source.
+
+To convert one or multiple tables:
+
+1. Open the semantic model in Power BI web modeling and switch to **editing** mode.
+1. Select one or multiple tables you want to convert.
+1. Open the **Properties** pane and change the **Storage mode** value from **Direct Lake** to **Import**, and then select **Continue** in the confirmation dialog.
+1. In the Power Query online experience, select **Configure connection** and provide the connection details for the data source.
+1. Select **Save** to load the data.
+1. Return to web modeling and select **Refresh**.
+
+The tables are now in Import storage mode alongside your Direct Lake tables. 
+  
 ## Related content
 
 - [Edit data models in the Power BI service](/power-bi/transform-model/service-edit-data-models)

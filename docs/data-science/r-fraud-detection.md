@@ -1,9 +1,11 @@
 ---
 title: 'Tutorial: Use R to detect fraud'
 description: This tutorial shows a data science workflow in R, with an end-to-end example of building a model to detect fraud.
-ms.reviewer: lagayhar
+ms.author: lagayhar
+ms.reviewer: scottpolly
 ms.topic: tutorial
-ms.date: 04/14/2025
+ms.date: 08/31/2026
+ai-usage: ai-assisted
 ms.search.form: R Language
 #customer intent: As a data scientist, I want to build a machine learning model in R so I can detect future fraudulent transactions.
 ---
@@ -31,8 +33,8 @@ This tutorial covers these steps:
 
 To follow along in a notebook, you have these options:
 
-- Open and run the built-in notebook in the Synapse Data Science experience
-- Upload your notebook from GitHub to the Synapse Data Science experience
+- Open and run the built-in notebook in the Data Science workload
+- Upload your notebook from GitHub to the Data Science workload
 
 ### Open the built-in notebook
 
@@ -55,7 +57,7 @@ For machine learning model development or ad-hoc data analysis, you might need t
 * Use inline installation resources - for example `install.packages` and `devtools::install_version` - to install in your current notebook only.
 * As an alternative, you can create a Fabric environment, and install libraries from public sources or upload custom libraries to it. Then, your workspace admin can attach the environment as the default for the workspace. All the libraries in the environment then become available for use in any notebooks and Spark job definitions in the workspace. For more information about environments, visit [create, configure, and use an environment in Microsoft Fabric](https://aka.ms/fabric/create-environment).
 
-In this tutorial, use `install.version()` to install the imbalanced-learn library:
+In this tutorial, use `devtools::install_version()` to install the `bnlearn` and `imbalance` libraries:
 
 ```r
 # Install dependencies
@@ -68,14 +70,14 @@ This installation step might need 8 to 10 minutes to complete.
 
 ## Step 2: Load the data
 
-The fraud detection dataset contains credit card transactions from September 2013, that European cardholders made over the course of two days. The dataset contains only numerical features, because of a Principal Component Analysis (PCA) transformation applied to the original features. The PCA transformed all features except for `Time` and `Amount`. To protect confidentiality, the original features or more background information about the dataset are not available.
+The fraud detection dataset contains credit card transactions from September 2013 that European cardholders made over the course of two days. The dataset contains only numerical features because of a Principal Component Analysis (PCA) transformation applied to the original features. The PCA transformed all features except for `Time` and `Amount`. To protect confidentiality, the original features or more background information about the dataset aren't available.
 
 These details describe the dataset:
 
-- The `V1`, `V2`, `V3`, …, `V28` features are the principal components obtained with PCA
-- The `Time` feature contains the elapsed seconds between a transaction and the first transaction in the dataset
-- The `Amount` feature is the transaction amount. You can use this feature for example-dependent, cost-sensitive learning
-- The `Class` column is the response (target) variable. It has the value `1` for fraud, and `0` otherwise
+- The `V1`, `V2`, `V3`, …, `V28` features are the principal components obtained through PCA.
+- The `Time` feature contains the elapsed seconds between a transaction and the first transaction in the dataset.
+- The `Amount` feature is the transaction amount. You can use this feature for example-dependent, cost-sensitive learning.
+- The `Class` column is the response (target) variable. It has the value `1` for fraud, and `0` otherwise.
 
 Only 492 transactions, out of 284,807 transactions total, are fraudulent. The dataset is highly imbalanced, because the minority (fraudulent) class accounts for only about 0.172% of the data.
 
@@ -86,9 +88,9 @@ This table shows a preview of the *creditcard.csv* data:
 |0|-1.3598071336738|-0.0727811733098497|2.53634673796914|1.37815522427443|-0.338320769942518|0.462387777762292|0.239598554061257|0.0986979012610507|0.363786969611213|0.0907941719789316|-0.551599533260813|-0.617800855762348|-0.991389847235408|-0.311169353699879|1.46817697209427|-0.470400525259478|0.207971241929242|0.0257905801985591|0.403992960255733|0.251412098239705|-0.018306777944153|0.277837575558899|-0.110473910188767|0.0669280749146731|0.128539358273528|-0.189114843888824|0.133558376740387|-0.0210530534538215|149.62|"0"|
 |0|1.19185711131486|0.26615071205963|0.16648011335321|0.448154078460911|0.0600176492822243|-0.0823608088155687|-0.0788029833323113|0.0851016549148104|-0.255425128109186|-0.166974414004614|1.61272666105479|1.06523531137287|0.48909501589608|-0.143772296441519|0.635558093258208|0.463917041022171|-0.114804663102346|-0.183361270123994|-0.145783041325259|-0.0690831352230203|-0.225775248033138|-0.638671952771851|0.101288021253234|-0.339846475529127|0.167170404418143|0.125894532368176|-0.00898309914322813|0.0147241691924927|2.69|"0"|
 
-### Download the dataset and upload to the lakehouse
+### Download the dataset and upload it to the lakehouse
 
-Define these parameters, so that you can use this notebook with different datasets:
+Define these parameters so that you can use this notebook with different datasets:
 
 ```r
 IS_CUSTOM_DATA <- FALSE  # If TRUE, the dataset has to be uploaded manually
@@ -104,7 +106,7 @@ DATA_FILE <- "creditcard.csv"  # Data file name
 This code downloads a publicly available version of the dataset, and then stores that data in a Fabric lakehouse:
 
 > [!IMPORTANT]
-> Be sure to [add a lakehouse](https://aka.ms/fabric/addlakehouse) to the notebook before you run it. Otherwise, you get an error.
+> Before running the notebook, [add a lakehouse](https://aka.ms/fabric/addlakehouse). Otherwise, you get an error.
 
 ```r
 if (!IS_CUSTOM_DATA) {
@@ -124,7 +126,7 @@ if (!IS_CUSTOM_DATA) {
 }
 ```
 
-### Read raw date data from the lakehouse
+### Read raw data from the lakehouse
 
 This code reads raw data from the **Files** section of the lakehouse:
 
@@ -162,7 +164,7 @@ message(sprintf("No Frauds %.2f%% of the dataset\n", round(sum(data_df$Class == 
 message(sprintf("Frauds %.2f%% of the dataset\n", round(sum(data_df$Class == 1)/nrow(data_df) * 100, 2)))
 ```
 
-This class distribution shows that most of the transactions are nonfraudulent. Therefore, data preprocessing is required before model training, to avoid overfitting.
+This class distribution shows that most of the transactions are nonfraudulent. Therefore, data preprocessing is required before model training to avoid overfitting.
 
 ### View the distribution of fraudulent versus nonfraudulent transactions
 
@@ -203,11 +205,11 @@ For highly imbalanced data, box plots might not show accurate insights. However,
 
 ## Step 4: Train and evaluate the models
 
-Train a LightGBM model to classify the fraud transactions. Here, you train a LightGBM model on both the imbalanced dataset and the balanced dataset. Then, you compare the performance of both models.
+Train a LightGBM model to classify the fraud transactions. In this step, you train a LightGBM model on both the imbalanced dataset and the balanced dataset. Then, you compare the performance of both models.
 
 ### Prepare training and test datasets
 
-Before training, split the data to the training and test datasets:
+Before training, split the data into training and test datasets:
 
 ```r
 # Split the dataset into training and test datasets
@@ -252,8 +254,6 @@ message(
     )
 )
 ```
-
-For more information about SMOTE, visit the [Package 'imbalance'](https://cran.r-project.org/web/packages/imbalance/imbalance.pdf) and [Working with imbalanced datasets](https://cran.r-project.org/web/packages/imbalance/vignettes/imbalance.pdf) resources at the CRAN website.
 
 ### Train the model with LightGBM
 
@@ -515,6 +515,6 @@ The earlier figures clearly show that the model trained on the balanced dataset 
 ## Related content
 
 - [Machine learning model in Microsoft Fabric](machine-learning-model.md)
-- [Train machine learning models](model-training/model-training-overview.md)
+- [Train machine learning models](model-training-overview.md)
 - [Machine learning experiments in Microsoft Fabric](machine-learning-experiment.md)
 

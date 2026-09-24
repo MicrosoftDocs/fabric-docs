@@ -1,0 +1,76 @@
+### YamlMime:TOC
+items:
+  - name: What is the Fabric data agent?
+    href: ../concept-data-agent.md
+  - name: Fabric data agent tenant settings
+    href: ../data-agent-tenant-settings.md
+  - name: How to create a Fabric data agent
+    href: ../how-to-create-data-agent.md
+  - name: Fabric data agent SDK
+    href: ../fabric-data-agent-sdk.md
+  - name: Add data sources to a Fabric data agent
+    items:
+      - name: Add a data source to a data agent
+        href: ../data-agent-add-datasources.md
+      - name: SQL sources
+        href: ../data-agent-sql-sources.md
+      - name: Connect to a Foundry Search Index
+        href: ../data-agent-ai-search-index.md
+      - name: Semantic model sources
+        href: ../semantic-model-best-practices.md
+  - name: Configure your Fabric data agent
+    items:
+      - name: Data agent configurations
+        href: ../data-agent-configurations.md
+      - name: Example queries
+        href: ../data-agent-example-queries.md
+      - name: Schema object descriptions (Preview)
+        href: ../data-agent-schema-object-descriptions.md
+      - name: Topics (Preview)
+        href: ../data-agent-topics.md
+      - name: Best practices for improving query generation
+        href: ../data-agent-configuration-best-practices.md
+      - name: How to configure a data agent
+        href: ../develop-iterative-process-data-agent.md
+      - name: Improve data source routing
+        href: ../data-agent-routing.md
+      - name: Add code interpreter
+        href: ../data-agent-code-interpreter.md
+      - name: Configure a data agent with AI
+        href: ../data-agent-creator-agent-overview.md
+      - name: Fabric data agent runtime
+        href: ../data-agent-runtime.md
+  - name: Evaluate a Fabric data agent
+    href: ../evaluate-data-agent.md
+  - name: How to consume a Fabric data agent
+    items:
+      - name: Get visual responses from a data agent (preview)
+        href: ../data-agent-visuals.md
+      - name: Consume a data agent from Microsoft Foundry (preview)
+        href: ../data-agent-foundry.md
+      - name: Consume a data agent from Microsoft Foundry via Fabric IQ (preview)
+        href: ../data-agent-foundry-fabric-iq.md
+      - name: Consume a data agent from Microsoft Copilot Studio (preview)
+        href: ../data-agent-microsoft-copilot-studio.md
+      - name: Consume a data agent from Microsoft Copilot Studio as a tool
+        href: ../data-agent-microsoft-copilot-studio-tool.md
+      - name: Consume a data agent using Python SDK (preview)
+        href: ../consume-data-agent-python.md
+      - name: Consume a data agent from Microsoft 365 Copilot (preview)
+        href: ../data-agent-microsoft-365-copilot.md
+      - name: Enable co-publishers for a Fabric data agent in Microsoft 365 Copilot (preview) 
+        href: ../data-agent-enable-co-publishers.md
+      - name: Consume a data agent as Model Context Protocol Server (preview)
+        href: ../data-agent-mcp-server.md
+  - name: Observe and Monitor Fabric data agent
+    items:
+      - name: Observe with Microsoft Foundry
+        href: ../fabric-data-agent-foundry-observability.md
+  - name: Source Control, CI/CD, and ALM for Fabric data agent
+    href: ../data-agent-source-control.md
+  - name: Service Principal for Fabric data agent
+    href: ../data-agent-service-principal.md
+  - name: Fabric data agent end-to-end tutorial
+    href: ../data-agent-end-to-end-tutorial.md
+  - name: Fabric data agent sharing
+    href: ../data-agent-sharing.md

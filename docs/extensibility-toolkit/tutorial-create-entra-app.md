@@ -140,7 +140,7 @@ If you need full control or prefer manual setup, follow these detailed steps.
    api://localdevinstance/[YOUR-TENANT-ID]/[YOUR-WORKLOAD-NAME]/[RANDOM-STRING]
    ```
    
-   Example: `api://localdevinstance/12345678-1234-1234-1234-123456789012/Org.MyWorkload/AbCdE`
+   Example: `api://localdevinstance/aaaabbbb-0000-cccc-1111-dddd2222eeee/Org.MyWorkload/AbCdE`
 
 ### Step 4: Configure API Permissions
 
@@ -171,7 +171,7 @@ If you need full control or prefer manual setup, follow these detailed steps.
    * Select `User.Read`
 
 5. **Add Azure Data Explorer Permissions**:
-   * Add permission for "Azure Data Explorer" (App ID: `2746ea77-4702-4b45-80ca-3c97e680e8b7`)
+   * Add permission for "Azure Data Explorer" (App ID: `00001111-aaaa-2222-bbbb-3333cccc4444`)
    * Select `user_impersonation`
 
 ### Step 5: Create OAuth Scopes (for Remote Hosting)

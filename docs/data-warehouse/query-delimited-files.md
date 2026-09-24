@@ -1,10 +1,8 @@
 ---
 title: "Query Delimited (CSV/TSV) Files By Using Fabric Data Warehouse or SQL Analytics Endpoint"
 description: Learn how to query delimited text files in data lake storage using the Fabric Data Warehouse or SQL analytics endpoint.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: jovanpop
-ms.date: 02/11/2026
+ms.date: 06/23/2026
 ms.topic: how-to
 ms.search.form: Query external delimited files
 ---
@@ -33,7 +31,7 @@ If the file is publicly accessible, or if your Microsoft Entra ID has permission
 ```sql
 SELECT TOP 10 *
 FROM OPENROWSET(
-    BULK 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/ecdc_cases/latest/ecdc_cases.csv',
+    BULK 'https://<storage account>.blob.core.windows.net/public/<subfolder>/<file name>.csv',
     HEADER_ROW = TRUE
 );
 ```
@@ -47,7 +45,7 @@ Make sure the URL points to the correct file and ends with the .tsv extension to
 ```sql
 SELECT TOP 10 *
 FROM OPENROWSET(
-    BULK '/Files/curated/covid-19/ecdc_cases/latest/ecdc_cases.tsv'
+    BULK '<subfolder>/<file name>.tsv'
 );
 ```
 
@@ -67,7 +65,7 @@ Use the `FIELDTERMINATOR = '\t'` option in the `OPENROWSET` statement to specify
 ```sql
 SELECT TOP 10 *
 FROM OPENROWSET(
-    BULK '/Files/covid-19/ecdc_cases/latest/ecdc_cases.txt',
+    BULK '<subfolder>/<file name>.txt',
     FORMAT = 'CSV',                -- Use CSV for delimited files
     FIELDTERMINATOR = ';',         -- Column delimiter
     ROWTERMINATOR = '\n',          -- Row delimiter

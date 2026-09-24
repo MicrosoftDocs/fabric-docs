@@ -1,64 +1,85 @@
 ---
-title: Real-Time Intelligence tutorial part 7 - Detect anomalies on an Eventhouse table
+title: Real-Time Intelligence Tutorial Part 7 - Detect Anomalies on an Eventhouse Table
 description: Learn how to detect anomalies on your Eventhouse table in Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.topic: tutorial
-ms.date: 02/11/2025
+ms.date: 05/20/2026
 ms.subservice: rti-core
 ms.search.form: Get started
 #customer intent: I want to learn how to detect anomalies on my Eventhouse table in Real-Time Intelligence.
 ---
+
 # Real-Time Intelligence tutorial part 7: Detect anomalies on an Eventhouse table
 
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see: [Real-Time Intelligence tutorial part 6: Create a Real-Time Dashboard](tutorial-6-create-dashboard.md).
 
-Anomaly detection is a feature of Real-Time Intelligence that allows you to identify unusual patterns in your data. In this part of the tutorial, you learn how to create an 'Anomaly detector' item on your workspace to detect anomalies in the number of empty docks at a station.
+In this part of the tutorial, you build a real-time data workflow that detects anomalies in streaming data. You use an Eventhouse table to analyze time series data and identify unusual patterns.
 
-## Detect anomalies on an Eventhouse table
+## Create an anomaly detector
 
-1. From the left navigation bar, select **Real-Time** to open the *Real-Time hub*.
-1. Under **All data streams** select the eventhouse table **TransformedData** you created in the previous tutorial. The table details page opens. Select **Detect anomalies** from the top menu.
+Open the Eventhouse table created in the previous tutorial.
 
-    :::image type="content" source="media/tutorial/detect-anomalies.png" alt-text="Screenshot of eventhouse table details page and detect anomalies selected." lightbox="media/tutorial/detect-anomalies.png":::
+1. From the left navigation pane, select **Real-Time**.
 
-1. Enter **`BikeAnomaliesconfiguration`** as Name.
-1. Under Save to, select **Create detector**.
-1. Select the workspace in which you want to create the anomaly detector item, enter **`BikeAnomalies`**. Then select **Create**.
-1. In the *Select attributes* section, choose the following options:
+    :::image type="content" source="media/tutorial/anomaly-detection/real-time-button.png" alt-text="Screenshot of the Real-Time button in the left navigation pane." lightbox="media/tutorial/anomaly-detection/real-time-button.png":::
+
+1. Under **Streaming data**, select the **TransformedData** table.
+
+    :::image type="content" source="media/tutorial/anomaly-detection/select-table.png" alt-text="Screenshot of selecting the TransformedData table." lightbox="media/tutorial/anomaly-detection/select-table.png":::
+
+1. On the table details page, select **Detect anomalies** from the toolbar.
+
+    :::image type="content" source="media/tutorial/anomaly-detection/table-details-page.png" alt-text="Screenshot of selecting Detect anomalies from the toolbar." lightbox="media/tutorial/anomaly-detection/table-details-page.png":::
+
+Create a detector to analyze the data for anomalies.
+
+In the **New Anomaly detector** pane:
+   1. Enter a name for the detector.
+   1. Select your Fabric workspace.
+   1. Select **Create**.
+
+:::image type="content" source="media/tutorial/anomaly-detection/new-anomaly-detector.png" alt-text="Screenshot of the New Anomaly detector pane." lightbox="media/tutorial/anomaly-detection/new-anomaly-detector.png":::
+
+## Configure anomaly detection
+
+Configure the attributes used to detect anomalies.
+
+1. In the **Edit configuration** section, set the following values:
 
     | Field | Value |
-    | --- | --- |
-    | Value to watch | No_Empty_Docks |
-    | Group by | Street|
-    | Timestamp | Timestamp |  
+    |---|---|
+    | Value to watch | No_Bikes |
+    | Group by | Street |
+    | Timestamp | Timestamp |
 
-    :::image type="content" source="media/tutorial/anomaly-configuration.png" alt-text="Screenshot of anomaly configuration pane." lightbox="media/tutorial/anomaly-configuration.png":::
+    :::image type="content" source="media/tutorial/anomaly-detection/configure.png" alt-text="Screenshot of the anomaly detection configuration popup." lightbox="media/tutorial/anomaly-detection/configure.png":::
 
-1. Select **Run analysis**.
-
-    > [!IMPORTANT]
-    > Analysis typically takes up to 4 minutes depending on your data size and can run for up to 30 minutes. You can navigate away from the page and check back in when the analysis is complete.
-    
-    > [!NOTE]
-    > Ensure your Eventhouse table contains sufficient historical data to improve model recommendations and anomaly detection accuracy. For example, datasets with one data point per day require a few months of data, while datasets with one data point per second might only need a few days.
-    
-1. When analysis is complete, anomalies along with tabular data are displayed on the right.
-
-    :::image type="content" source="media/tutorial/anomalies-detected.png" alt-text="Screenshot of completed anomaly detection." lightbox="media/tutorial/anomalies-detected.png":::
-
-    > [!NOTE]
-    > Play around with the **Detection model** under **Customize detection** section and Timestamp above the **Detector results** pane. More data might increase anomaly detection accuracy.
-    
 1. Select **Save**.
 
-## Related content
+## Choose an anomaly detection model
 
-For more information about tasks performed in this tutorial, see:
-* [Anomaly detection in Real-Time Intelligence (Preview)](anomaly-detection.md)
+1. In the **Find models** section, select **Analyze my data** to find the best anomaly detection model for your data.
+
+    :::image type="content" source="media/tutorial/anomaly-detection/analyze.png" alt-text="Screenshot of the Find models section." lightbox="media/tutorial/anomaly-detection/analyze.png":::
+
+1. Review the recommended models and select the one that best fits your needs. For this tutorial, select the recommended **Local Pattern Detector** model.
+
+    :::image type="content" source="media/tutorial/anomaly-detection/models.png" alt-text="Screenshot of selecting the Local Pattern Detector model." lightbox="media/tutorial/anomaly-detection/models.png":::
+
+1. Select **Save**.
+
+## Review anomaly results
+
+After the analysis completes, review the detected anomalies.
+
+1. View the anomaly results in the **Detector results** pane.
+1. Inspect the chart and tabular output to identify unusual patterns.
+
+    :::image type="content" source="media/tutorial/anomaly-detection/results.png" alt-text="Screenshot of completed anomaly detection." lightbox="media/tutorial/anomaly-detection/results.png":::
 
 ## Next step
 
 > [!div class="nextstepaction"]
 > [Real-Time Intelligence tutorial part 8: Create a map using geospatial data](tutorial-8-create-map.md)
-
+``

@@ -27,7 +27,7 @@ Before you generate invocation code, you need:
 
 ## Generate code for Fabric Notebooks
 
-When integrating with Fabric items, use this option to call your functions from Fabric Notebooks. The generated code uses the built-in `mssparkutils.userDataFunction` utility, which provides a simple way to invoke functions without managing authentication or endpoints. This is ideal for data processing workflows, exploratory analysis, and machine learning pipelines within the Fabric environment.
+When you integrate with Fabric items, use this option to call your functions from Fabric notebooks. The generated code uses the built-in `mssparkutils.userDataFunction` utility, which provides a simple way to invoke functions without managing authentication or endpoints. This approach is ideal for data processing workflows, exploratory analysis, and machine learning pipelines within the Fabric environment.
 
 1. Open your User Data Functions item in the Fabric portal.
 
@@ -43,7 +43,7 @@ When integrating with Fabric items, use this option to call your functions from 
 
 1. Copy the generated code snippet.
 
-1. Paste it into a new cell in your Fabric Notebook.
+1. Paste it into a new cell in your Fabric notebook.
 
 1. Update the function parameters with your actual values. The generated code includes a comment showing where to update:
    ```python
@@ -53,7 +53,7 @@ When integrating with Fabric items, use this option to call your functions from 
 
 1. Run the cell to invoke your function.
 
-For more information, see [Fabric Notebook User Data Functions utilities](../notebook-utilities.md#user-data-function-udf-utilities).
+For more information, see [Fabric Notebook User Data Functions utilities](../notebookutils/notebookutils-user-data-function.md).
 
 ## Generate code for client applications
 
@@ -144,8 +144,8 @@ When you generate the OpenAPI specification, these docstring values populate the
 Once you've generated your invocation code, you can use it to integrate your functions into different scenarios:
 
 **Fabric item integrations:**
-- Call functions from Notebooks for data processing, machine learning, and exploratory analysis
-- Orchestrate functions in Pipelines for data transformation workflows
+- Call functions from notebooks for data processing, machine learning, and exploratory analysis
+- Orchestrate functions in pipelines for data transformation workflows
 - Trigger functions from Activator rules in response to real-time events
 
 **External application integrations:**
@@ -158,6 +158,6 @@ Once you've generated your invocation code, you can use it to integrate your fun
 ## Related content
 
 - [Invoke User Data Functions from a Python application](./tutorial-invoke-from-python-app.md) - Complete walkthrough for calling functions from external Python apps
-- [Fabric Notebook utilities](../notebook-utilities.md#user-data-function-udf-utilities) - Reference for calling functions from notebooks
+- [Fabric Notebook utilities](../notebookutils/notebookutils-user-data-function.md) - Reference for calling functions from notebooks
 - [Integration with Fabric pipelines](./create-functions-activity-data-pipelines.md) - Use functions in data pipelines
 - [Python programming model](./python-programming-model.md) - Learn how to write functions with proper docstrings

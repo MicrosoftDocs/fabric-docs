@@ -1,5 +1,5 @@
 ---
-title: Perform contextualization
+title: Perform Contextualization
 description: Learn about building relationship types with the contextualization feature of digital twin builder (preview).
 ms.date: 05/02/2025
 ms.topic: how-to

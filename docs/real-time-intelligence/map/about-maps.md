@@ -4,7 +4,7 @@ description: Learn about map items in Fabric
 ms.reviewer: smunk
 author: sipa
 ms.author: sipa
-ms.date: 02/16/2025
+ms.date: 06/26/2026
 ms.topic: article
 ms.service: fabric
 ms.subservice: rti-core
@@ -13,14 +13,13 @@ ms.search.form: Map item
 
 # What is a map in Fabric Maps?
 
-A map in Fabric Maps is a first‑class Fabric item used to visualize and analyze spatial data in Microsoft Fabric. A map connects to your historical or real‑time data sources and renders that data as interactive geographic layers, allowing you to explore patterns, relationships, and trends based on location.
+Fabric Maps is a powerful geospatial visualization platform that transforms spatial data, whether static or real-time, into actionable intelligence. By uncovering patterns, relationships, and trends across space and time, Map reveals insights often missed in traditional charts and tables, helping you make informed decisions with greater clarity.
 
-Maps are designed analytical scenarios where *where something happens* is as important as *when it happens*.
+Map offers robust customization capabilities that let you tailor visualizations to your audience and data content. Overlay diverse data layers—such as bubbles, heatmaps, lines, polygons, and 3D extrusions—to represent complex spatial relationships. Each layer supports advanced styling options including color schemes, opacity, stroke width, interactive tooltips, and data labels. To enhance clarity and emphasize key insights, choose from multiple map styles like Grayscale, Road, Satellite, or Night.
 
 For a high‑level overview of the Fabric Maps capability, see [What is Fabric Maps?](about-fabric-maps.md).
 
-> [!IMPORTANT]
-> Fabric Maps is currently in [preview](../../fundamentals/preview.md). Features and functionality may change.
+For instructions on how to create a map, see [Create a map](create-map.md).
 
 ## What is a map item?
 
@@ -39,6 +38,8 @@ Maps don't store data directly. Instead, they reference spatial data stored in o
 
 - **Lakehouses** for historical or batch spatial data (such as GeoJSON files)
 - **Eventhouses and KQL databases** for streaming or near‑real‑time data
+- **Ontology** for semantic map layers that bind spatial data to governed business entity types (such as customers, routes, or service areas)
+- **External geospatial web services** for raster imagery hosted outside Fabric (such as satellite imagery, elevation models, or weather overlays)
 
 This separation allows you to govern, secure, and reuse your data independently of how it's visualized.
 

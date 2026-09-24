@@ -7,16 +7,16 @@ ms.date: 01/27/2026
 ms.search.form: SparkStructuredStreaming Eventstream Notebook
 ---
 
-# Query Microsoft Fabric Eventstream from a notebook with Spark Structured Streaming
+# Query eventstream in Microsoft Fabric from a notebook with Spark Structured Streaming
 
-Microsoft Fabric Eventstream is a fully managed event ingestion and streaming service that enables real-time data processing and analytics. You can integrate Eventstream with Microsoft Fabric notebooks using Spark Structured Streaming to process and analyze streaming data in real time.
+Eventstream in Microsoft Fabric is a fully managed event ingestion and streaming service that enables real-time data processing and analytics. You can integrate eventstream with Fabric notebooks using Spark Structured Streaming to process and analyze streaming data in real time.
 
-This integration allows you to explore Eventstreams and other real-time sources through the Real-Time hub, right from within your Fabric notebooks. You can also create new Eventstreams and start ingesting data from nearly 30 (and growing) streaming sources including CDC-enabled databases, message brokers, streaming services and public feeds. The new programming model allows you to easily connect to Eventstream, read streaming data, and perform real-time analytics using familiar Spark APIs without any connection strings or credentials, making it more secure to build real-time applications
+This integration allows you to explore eventstreams and other real-time sources through the Real-Time hub, right from within your Fabric notebooks. You can also create new eventstreams and start ingesting data from nearly 30 (and growing) streaming sources including CDC-enabled databases, message brokers, streaming services and public feeds. The new programming model allows you to easily connect to eventstream, read streaming data, and perform real-time analytics using familiar Spark APIs without any connection strings or credentials, making it more secure to build real-time applications
 
 ## Prerequisites
 Before you begin, ensure you have the following prerequisites in place:
-- A Microsoft Fabric workspace with Eventstream enabled.
-- A notebook environment set up in Microsoft Fabric.
+- A Fabric workspace with eventstream enabled.
+- A notebook environment set up in Fabric.
 - Basic knowledge of Spark Structured Streaming and PySpark or Scala.
 
 ## Steps to Query Eventstream from a Notebook
@@ -81,11 +81,11 @@ You can also add the notebook as a destination for the Eventstream to start inge
 
 
 ## Conclusion
-Integrating Microsoft Fabric Eventstream with notebooks using Spark Structured Streaming enables you to process and analyze real-time data seamlessly. By following the steps outlined in this article, you can easily connect to Eventstream, read streaming data, and perform real-time analytics using familiar Spark APIs. This integration opens up new possibilities for building real-time applications and gaining insights from streaming data within the Microsoft Fabric ecosystem.
+Integrating eventstream in Fabric with notebooks using Spark Structured Streaming enables you to process and analyze real-time data seamlessly. By following the steps outlined in this article, you can easily connect to eventstream, read streaming data, and perform real-time analytics using familiar Spark APIs. This integration opens up new possibilities for building real-time applications and gaining insights from streaming data within the Fabric ecosystem.
 
 ## Related content
-To learn more about working with Eventstreams and notebooks in Microsoft Fabric, check out the following resources
-- [Create and manage an Eventstream](../real-time-intelligence/event-streams/create-manage-an-eventstream.md)
-- [Add a Spark Notebook destination to an eventstream](../real-time-intelligence/event-streams/add-destination-spark-notebook.md)
+To learn more about working with eventstreams and notebooks in Fabric, check out the following resources
+- [Create and manage an eventstream](../real-time-intelligence/event-streams/create-manage-an-eventstream.md)
+- [Add a Spark notebook destination to an eventstream](../real-time-intelligence/event-streams/add-destination-spark-notebook.md)
 - [Spark Structured Streaming guide](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html)
 

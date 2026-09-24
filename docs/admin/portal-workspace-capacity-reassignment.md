@@ -172,4 +172,5 @@ The following sections describe common error types you might encounter during ca
 ## Related articles
 
 - [Manage workspaces](portal-workspaces.md)
+- [Move shortcuts to a new region](../onelake/shortcuts/move-shortcuts-region.md)
 

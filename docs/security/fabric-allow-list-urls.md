@@ -74,6 +74,7 @@ The **Endpoint** column lists domain names and links to external sites, which co
 |Purpose   |Endpoint  |Port      |
 |:---------|:---------|:---------|
 |Inbound connections|https://cdn.jsdelivr.net/npm/monaco-editor*|N/A|
+|Inbound connections|https://pbilhe.powerbi.com|N/A|
 
 ## Notebook
 

@@ -1,7 +1,7 @@
 ---
-title: "Tutorial part 0: Introduction and environment setup"
+title: "Tutorial Part 0: Introduction and Environment Setup"
 description: Get started with ontology (preview) by setting up a sample retail scenario. Part 0 of the ontology (preview) tutorial.
-ms.date: 02/04/2026
+ms.date: 04/13/2026
 ms.topic: tutorial
 zone_pivot_group_filename: iq/ontology/zone-pivot-groups.json
 zone_pivot_groups: create-ontology-scenario
@@ -24,13 +24,10 @@ The example scenario for this tutorial is a fictional company called Lakeshore R
 * A [workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity). Use this workspace for all resources you create in the tutorial.
 * Required settings for ontology (preview) and data agent must be enabled on your tenant. A [Fabric administrator](../../admin/roles.md) should enable the following settings in the [tenant settings](../../admin/tenant-settings-index.md) page of the [admin portal](../../admin/admin-center.md):
     * *Enable Ontology item (preview)*
-    * *User can create Graph (preview)*
-    * *Users can create and share Data agent item types (preview)*
-    * *Users can use Copilot and other features powered by Azure OpenAI*
-    * *Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance*
-    * *Data sent to Azure OpenAI can be stored outside your capacity's geographic region, compliance boundary, or national cloud instance*
+    * *Users can use Copilot and other features powered by Azure OpenAI (required for data agent)*
+    * *Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance (required for data agent)*
 
-    :::image type="content" source="media/tutorial-0-introduction/prerequisite-ontology.png" alt-text="Screenshot of enabling ontology in the admin portal.":::
+    :::image type="content" source="media/tutorial-0-introduction/prerequisite-ontology.png" alt-text="Screenshot of enabling ontology in the admin portal." lightbox="media/tutorial-0-introduction/prerequisite-ontology.png":::
 
     For more information about these prerequisites, see [Ontology (preview) required tenant settings](overview-tenant-settings.md).
 ::: zone-end
@@ -38,20 +35,18 @@ The example scenario for this tutorial is a fictional company called Lakeshore R
 * A [workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity). Use this workspace for all resources you create in the tutorial.
 * Required settings for ontology (preview) and data agent must be enabled on your tenant. A [Fabric administrator](../../admin/roles.md) should enable the following settings in the [tenant settings](../../admin/tenant-settings-index.md) page of the [admin portal](../../admin/admin-center.md):
     * *Enable Ontology item (preview)*
-    * *User can create Graph (preview)*
-    * *Users can create and share Data agent item types (preview)*
-    * *Users can use Copilot and other features powered by Azure OpenAI*
-    * *Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance*
-    * *Data sent to Azure OpenAI can be stored outside your capacity's geographic region, compliance boundary, or national cloud instance*
+    * *Users can use Copilot and other features powered by Azure OpenAI (required for data agent)*
+    * *Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance (required for data agent)*
+    * *Data sent to Azure OpenAI can be stored outside your capacity's geographic region, compliance boundary, or national cloud instance  (required for data agent)*
 
-    :::image type="content" source="media/tutorial-0-introduction/prerequisite-ontology.png" alt-text="Screenshot of enabling ontology in the admin portal.":::
+    :::image type="content" source="media/tutorial-0-introduction/prerequisite-ontology.png" alt-text="Screenshot of enabling ontology in the admin portal." lightbox="media/tutorial-0-introduction/prerequisite-ontology.png":::
 
     For more information about these prerequisites, see [Ontology (preview) required tenant settings](overview-tenant-settings.md).
 ::: zone-end
 
 ## Download sample data 
 
-Download the contents of this GitHub folder: [IQ samples](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/iq).
+Download the contents of this GitHub folder: [Ontology samples](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/iq/ontology).
 
 It contains the following sample CSV files. The data contains static entity details about the Lakeshore Retail scenario and streaming data from its freezers:
 * *DimStore.csv*
@@ -64,9 +59,11 @@ It contains the following sample CSV files. The data contains static entity deta
 
 Follow these steps to prepare the sample tutorial data in a lakehouse.
 
-1. Start in your Fabric workspace. Use the **+ New item** button to create a new **Lakehouse** item called *OntologyDataLH*.
+1. Start in your Fabric workspace. Use the **+ New item** button to create a new **Lakehouse** item.
 
     :::image type="content" source="media/tutorial-0-introduction/lakehouse-new.png" alt-text="Screenshot of creating a new lakehouse item." lightbox="media/tutorial-0-introduction/lakehouse-new.png":::
+
+1. For the lakehouse **Name**, enter *OntologyDataLH*. For **Location**, select your workspace. Check the box for **Lakehouse schemas** and select **Create**.
 
 1. The new lakehouse opens when it's ready. From the lakehouse ribbon, select **Get data > Upload files**.
 
@@ -123,8 +120,8 @@ This section prepares you to generate an ontology from a semantic model. If you'
 
     | From table | To table | Cardinality | Cross-filter direction | Make this relationship active? |
     |---|---|---|---|---|
-    | *factsales*, select `StoreId` | *dimstore*, select `StoreId` | Many to one (*:1) | Single | Yes |
-    | *factsales*, select `ProductId` | *dimproducts*, select `ProductId` | Many to one (*:1) | Single | Yes |
+    | *factsales*, select `StoreId` column | *dimstore*, select `StoreId` column | Many to one (*:1) | Single | Yes |
+    | *factsales*, select `ProductId` column | *dimproducts*, select `ProductId` column | Many to one (*:1) | Single | Yes |
 
     The relationships look like this when you're done:
 

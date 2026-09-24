@@ -26,8 +26,8 @@ The Copy activity connects to your data sources and destinations, then moves dat
 
 To get started, you need to complete these prerequisites:
 
-- A Microsoft Fabric tenant account with an active subscription. Create an account for free.
-- A Microsoft Fabric enabled Workspace.
+- A Fabric tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
+- A Fabric-enabled workspace. [Create a workspace](../fundamentals/create-workspaces.md).
 
 ## Add a copy activity using copy assistant
 
@@ -42,7 +42,7 @@ Follow these steps to set up your copy activity using copy assistant.
 
 ### Configure your source
 
-1. Select a data source type from the category. You'll use Azure Blob Storage as an example. Select **Azure Blob Storage**.
+1. Select a data source type from the category. Use Azure Blob Storage as an example. Select **Azure Blob Storage**.
 
    :::image type="content" source="media/copy-data-activity/choose-data-source.png" alt-text="Screenshot of Choose data source screen." lightbox="media/copy-data-activity/choose-data-source.png":::
 
@@ -74,7 +74,7 @@ Follow these steps to set up your copy activity using copy assistant.
    :::image type="content" source="media/copy-data-activity/connect-to-data-destination.png" alt-text="Screenshot of Connect to data destination." lightbox="media/copy-data-activity/connect-to-data-destination.png":::
 
    > [!NOTE]
-   > You can only use a single on-premises data gateway within the same Copy activity. If both source and sink are on-premises data sources, they need to use the same gateway. To move data between on-premises data sources with different gateways, you need to copy using the first gateway to an intermediate cloud source in one Copy activity. Then you can use another Copy activity to copy it from the intermediate cloud source using the second gateway.
+   > You can only use a single on-premises data gateway within the same Copy activity. If both source and data destination are on-premises data sources, they need to use the same gateway. To move data between on-premises data sources with different gateways, you need to copy using the first gateway to an intermediate cloud source in one Copy activity. Then you can use another Copy activity to copy it from the intermediate cloud source using the second gateway.
 
 ### Review and create your copy activity
 
@@ -99,11 +99,11 @@ Follow these steps to add a copy activity directly.
 
    :::image type="content" source="media/copy-data-activity/add-copy-activity-to-pipeline-canvas.png" alt-text="Screenshot showing two ways to add a copy activity." lightbox="media/copy-data-activity/add-copy-activity-to-pipeline-canvas.png":::
 
-### Configure your general settings under general tab
+### Configure your general settings under the General tab
 
 To learn how to configure your general settings, see [General](activity-overview.md#general-settings).
 
-### Configure your source under the source tab
+### Configure your source under the Source tab
 
 1. In **Connection**, select an existing connection, or select **More** to create a new connection.
 
@@ -123,7 +123,7 @@ To learn how to configure your general settings, see [General](activity-overview
 
 1. Expand **Advanced** for more advanced settings like query timeout, or partitioning. (Advanced settings vary by connector.)
 
-### Configure your destination under the destination tab
+### Configure your destination under the Destination tab
 
 1. In **Connection** select an existing connection, or select **More** to create a new connection. It can be either your internal first class data store from your workspace, such as Lakehouse, or your external data stores. In this example, we use Lakehouse.
 
@@ -135,7 +135,7 @@ To learn how to configure your general settings, see [General](activity-overview
 
 Now you can either save your pipeline with this copy activity or continue to design your pipeline.
 
-### Configure your mappings under mapping tab
+### Configure your mappings under the Mapping tab
 
 If the connector that you use supports mapping, you can go to **Mapping** tab to configure your mapping.
 
@@ -149,9 +149,11 @@ If the connector that you use supports mapping, you can go to **Mapping** tab to
 
 You can also select **+ New mapping** to add new mapping, select **Clear** to clear all mapping settings, and select **Reset** to reset all mapping **Source** column.
 
-For more information about data type mapping, see [Data type mapping in a copy activity](data-type-mapping.md).
+## Data type mapping
 
-### Configure your other settings under settings tab
+[!INCLUDE [data-type-mapping-data-movement](includes/data-type-mapping-data-movement.md)]
+
+### Configure your other settings under the Settings tab
 
 The **Settings** tab contains the settings of performance, staging, and so on.
 
@@ -161,11 +163,11 @@ See the following table for the description of each setting.
 
 |Setting  |Description  |JSON script property |
 |---------|---------|---------|
-|**Intelligent throughput optimization** |Specify to optimize the throughput. You can choose from: <br>• **Auto**<br>• **Standard**<br>• **Balanced**<br>• **Maximum**<br><br> When you choose **Auto**, the optimal setting is dynamically applied based on your source-destination pair and data pattern. You can also customize your throughput, and custom value can be 2-256 while higher value implies more gains.  | dataIntegrationUnits |
+|**Intelligent throughput optimization** |Specify to optimize the throughput. You can choose from: <br>• **Auto**<br>• **Standard**<br>• **Balanced**<br>• **Maximum**<br><br> When you choose **Auto**, the optimal setting is dynamically applied based on your source-destination pair and data pattern. You can also customize your throughput, and custom value can be 4-256 while higher value implies more gains.  | dataIntegrationUnits |
 |**Degree of copy parallelism** | Specify the degree of parallelism that data loading would use. | parallelCopies |
 |**Adaptive performance tuning (Preview)** | Specify whether the service can apply performance optimizations and tuning according to the custom configuration. | adaptivePerformanceTuning |
 |**Data consistency verification** | If you set `true` for this property, when copying binary files, copy activity will check file size, lastModifiedDate, and checksum for each binary file copied from source to destination store to ensure the data consistency between source and destination store. When copying tabular data, copy activity will check the total row count after job completes, ensuring the total number of rows read from the source is same as the number of rows copied to the destination plus the number of incompatible rows that were skipped. Be aware the copy performance is affected by enabling this option. | validateDataConsistency |
-|**Fault tolerance** |When you select this option, you can ignore some errors that happen in the middle of copy process. For example, incompatible rows between source and destination store, file being deleted during data movement, etc.  |• enableSkipIncompatibleRow <br> • skipErrorFile: <br>  &nbsp;&nbsp; fileMissing <br>&nbsp;&nbsp; fileForbidden <br> &nbsp;&nbsp; invalidFileName |
+|**Fault tolerance** |When you select this option, you can ignore some errors that happen in the middle of the copy process. For example, incompatible rows between the source and destination store, or a file deleted during data movement.  |• enableSkipIncompatibleRow <br> • skipErrorFile: <br>  &nbsp;&nbsp; fileMissing <br>&nbsp;&nbsp; fileForbidden <br> &nbsp;&nbsp; invalidFileName |
 |**Enable logging** |When you select this option, you can log copied files, skipped files and rows.| / |
 |**Enable staging** | Specify whether to copy data via an interim staging store. Enable staging only for helpful scenarios.| enableStaging |
 | *For **Workspace*** |  |  |
@@ -192,7 +194,7 @@ Parameters can be used to control the behavior of a pipeline and its activities.
 
     :::image type="content" source="./media/copy-data-activity/add-dynamic-content-page.png" alt-text="Screenshot showing the Add dynamic content page.":::
 
-1. Specify the name for your parameter and give it a default value if you want, or you can specify the value for the parameter when it is triggered in the pipeline.
+1. Enter a name for your parameter and give it a default value if you want, or specify the value for the parameter when the pipeline is triggered.
 
     :::image type="content" source="./media/copy-data-activity/new-parameter.png" alt-text="Screenshot shows creating a new parameter.":::
 
@@ -202,7 +204,7 @@ Parameters can be used to control the behavior of a pipeline and its activities.
 
     :::image type="content" source="./media/copy-data-activity/select-parameter.png" alt-text="Screenshot showing selecting parameter.":::
 
-1. Specify the ID of your Lakehouse or Data Warehouse. To find the ID, go to your Lakehouse or Data Warehouse in your workspace. The ID appears in the URL after `/lakehouses/` or `/datawarehouses/`.
+1. Specify the ID of your lakehouse or warehouse. To find the ID, go to your lakehouse or warehouse in your workspace. The ID appears in the URL after `/lakehouses/` or `/datawarehouses/`.
 
     - **Lakehouse ID**:
 

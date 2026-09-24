@@ -1,11 +1,11 @@
 ### YamlMime:Landing
 
-title: IQ (preview) documentation in Microsoft Fabric
+title: Fabric IQ documentation
 summary:  Fabric IQ (preview) enables a governed, self-service knowledge graph that links business entities, relationships, and business logic into a coherent framework for driving action across all enterprise data.
 
 metadata:
-  title: Fabric IQ (preview) documentation
-  description: Learn about Fabric IQ (preview).
+  title: Fabric IQ documentation
+  description: Learn about Fabric IQ (preview) for governed, self-service knowledge graphs in Fabric.
   ms.topic: landing-page
   ms.collection: collection
   ms.date: 11/05/2025
@@ -35,7 +35,7 @@ landingContent:
             url: ontology/tutorial-2-enrich-ontology.md
           - text: 3- Preview the ontology
             url: ontology/tutorial-3-preview-ontology.md
-          - text: 4- Create data agent
+          - text: 4- Consume ontology from agents
             url: ontology/tutorial-4-create-data-agent.md
           - text: 5- Conclude and clean up resources
             url: ontology/tutorial-5-conclusion.md
@@ -52,15 +52,23 @@ landingContent:
             url: ontology/how-to-bind-data.md
           - text: Add relationship types
             url: ontology/how-to-create-relationship-types.md
-          - text: Use preview experience
-            url: ontology/how-to-use-preview-experience.md
+          - text: View entity type details
+            url: ontology/how-to-view-entity-type-details.md
+
+  # Card
+  - title: Integrations
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Fabric IQ in Microsoft 365 Copilot Cowork (Frontier)
+            url: connectors/cowork-overview.md
             
   # Card
-  - title: About Graph in Microsoft Fabric
+  - title: About graph in Microsoft Fabric
     linkLists:
       - linkListType: overview
         links:
-          - text: Graph in Microsoft Fabric Overview
+          - text: Graph overview
             url: ../graph/overview.md
           - text: What is a graph database?
             url: ../graph/graph-database.md
@@ -68,13 +76,13 @@ landingContent:
             url: ../graph/graph-data-models.md
 
   # Card
-  - title: Get started with Graph in Microsoft Fabric
+  - title: Get started with graph in Microsoft Fabric
     linkLists:
       - linkListType: get-started
         links:
-          - text: Quickstart guide for Graph in Microsoft Fabric
+          - text: Quickstart guide for graph
             url: ../graph/quickstart.md
-          - text: Try Microsoft Fabric for free
+          - text: Try Fabric for free
             url: /fabric/fundamentals/fabric-trial
 
   # Card
@@ -112,5 +120,5 @@ landingContent:
             url: ../graph/gql-query-api.md
           - text: Graph Items REST API reference
             url: /rest/api/fabric/graphmodel/items
-          - text: Microsoft Fabric REST API reference
+          - text: Fabric REST API reference
             url: /rest/api/fabric/articles

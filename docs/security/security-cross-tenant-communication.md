@@ -131,7 +131,7 @@ Next, access Fabric privately from the virtual machine you created in the previo
 
    `nslookup {workspaceid}.z{xy}.w.api.fabric.microsoft.com`
 
-   where *workspaceid* is the workspace object ID without dashes, and *xy* represents the first two characters of the workspace object ID.
+   where *workspaceid* is the workspace object ID without dashes, and *xy* represents the first two characters of the workspace object ID. The `z` is a literal inclusion in the connection string, and the brackets are not included, so for example `zab` or `z44`. 
 
 1. The private IP address is returned.
 

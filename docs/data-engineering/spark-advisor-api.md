@@ -66,7 +66,7 @@ GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|spark
 | Name | In | Required | Type | Description |
 | --- | --- | --- | --- | --- |
 | workspaceId | path | True | string uuid | The workspace ID. |
-| itemId | path | True | string uuid | The item ID of the notebook or Spark job definition or Lakehouse. |
+| itemId | path | True | string uuid | The item ID of the notebook or Spark job definition or lakehouse. |
 | livyId | path | True | string uuid | The Livy session ID. |
 | appId | path | True | string | The Spark application ID, like application_1111111111111_0001. |
 | attemptId | path | False | int | The attempt ID of that application ID. If not specified, the ID of last attempt is used. |
@@ -91,7 +91,7 @@ None
 #### Sample request
 
 ```
-GET https://api.fabric.microsoft.com/v1/workspaces/00aa00aa-bb11-cc22-dd33-44ee44ee44ee/notebooks/11bb11bb-cc22-dd33-ee44-55ff55ff55ff/livySessions/0a0a0a0a-1111-bbbb-2222-3c3c3c3c3c3c/applications/application_11111111111110001/1/advice  
+GET https://api.fabric.microsoft.com/v1/workspaces/aaaabbbb-0000-cccc-1111-dddd2222eeee/notebooks/11bb11bb-cc22-dd33-ee44-55ff55ff55ff/livySessions/0a0a0a0a-1111-bbbb-2222-3c3c3c3c3c3c/applications/application_11111111111110001/1/advice  
 ```
 
 #### Sample response
@@ -138,7 +138,7 @@ GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|spark
 | Name | In | Required | Type | Description |
 | --- | --- | --- | --- | --- |
 | workspaceId | path | True | string uuid | The workspace ID. |
-| itemId | path | True | string uuid | The item ID of the notebook or Spark job definition or Lakehouse. |
+| itemId | path | True | string uuid | The item ID of the notebook or Spark job definition or lakehouse. |
 | livyId | path | True | string uuid | The Livy session ID. |
 | appId | path | True | string | The Spark application ID, like application_1111111111111_0001. |
 | attemptId | path | False | int | The attempt ID of that application ID. If not specified, the ID of last attempt is used. |
@@ -160,7 +160,7 @@ None
 #### Sample request
 
 ```HTTP
-GET https://api.fabric.microsoft.com/v1/workspaces/00aa00aa-bb11-cc22-dd33-44ee44ee44ee/notebooks/11bb11bb-cc22-dd33-ee44-55ff55ff55ff/livySessions/0a0a0a0a-1111-bbbb-2222-3c3c3c3c3c3c/applications/application_11111111111110001/1/advice/jobGroups/6
+GET https://api.fabric.microsoft.com/v1/workspaces/aaaabbbb-0000-cccc-1111-dddd2222eeee/notebooks/11bb11bb-cc22-dd33-ee44-55ff55ff55ff/livySessions/0a0a0a0a-1111-bbbb-2222-3c3c3c3c3c3c/applications/application_11111111111110001/1/advice/jobGroups/6
 ```
 
 Status code: 200

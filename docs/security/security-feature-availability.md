@@ -5,7 +5,7 @@ description: Learn about the support status of the Fabric security features Work
 author: msmimart
 ms.author: mimart
 ms.reviewer: mimart
-ms.date: 02/19/2026
+ms.date: 07/08/2026
 ms.topic: concept-article
 ---
 
@@ -24,62 +24,64 @@ The following table shows the support status for each Fabric item. A check mark 
 | Workload | Item type | Workspace private links | Customer managed keys | Outbound access protection |
 |--|--|:--:|:--:|:--:|
 | **Data Engineering** | Lakehouse | ✓ | ✓ | ✓ |
-|  | Lakehouse Shortcut | ✓ | - | Preview |
-|  | Lakehouse SQL Endpoint | ✓ | ✓ | ✓ |
+|  | Lakehouse SQL analytics endpoint | ✓ | ✓ | ✓ |
 |  | Notebook | ✓ | ✓ | ✓ |
 |  | Spark Job Definition | ✓ | ✓ | ✓ |
 |  | Environment | ✓ | ✓ | ✓ |
 |  | Lakehouse with Schema | - | ✓ | ✓ |
 |  | Spark Connectors for SQL Data Warehouse | - | - | - |
 | **Data Factory** | Default Semantic Model | ✓ | - | ✓ |
-|  | Pipeline | ✓ | ✓ | Preview |
+|  | Pipeline | ✓ | ✓ | ✓ |
 |  | Dataflow Gen1 | - | - | - |
-|  | Dataflow Gen2 | - | ✓ | Preview |
-|  | Copy Job | ✓ | ✓ | Preview |
+|  | Dataflow Gen2 | - | ✓ | ✓ |
+|  | Copy Job | ✓ | ✓ | ✓ |
 |  | Mounted Azure Data Factory | ✓ | - | - |
-|  | Vnet data gateway | ✓ | - | Preview |
-|  | On-premises data gateway: Pipeline/Copy Job | ✓ | - | Preview |
-|  | On-premises data gateway: Dataflow Gen2 | -| - | Preview|
-|  | Data Workflow | - | - | - |
+|  | Vnet data gateway | ✓ | - | ✓ |
+|  | On-premises data gateway: Pipeline/Copy Job | ✓ | - | ✓ |
+|  | On-premises data gateway: Dataflow Gen2 | -| - | ✓ |
+|  | Data Workflow (previously Airflow) | - | - | - |
 |  | Data Build Tool job | - | - | - |
-| **Data Science** | ML Model | ✓ | ✓ |  |
-|  | Experiment | ✓ | ✓ |  |
-|  | Data Agent | ✓ | - |  |
-| **Data Warehouse** | SQL Endpoint | ✓ | ✓ | ✓ |
+| **Data Science** | ML Model | ✓ | ✓ | ✓ |
+|  | Experiment | ✓ | ✓ | ✓ |
+|  | Data Agent | ✓ | - | Preview |
+| **Data Warehouse** | SQL analytics endpoint | ✓ | ✓ | ✓ |
 |  | Warehouse | ✓ | ✓ | ✓ |
 |  | Warehouse with EDPE | - | - | - |
 | **Developer Experience** | API for GraphQL | - | ✓ | - |
 |  | Deployment Pipeline |  | - | ✓ |
 |  | Git Integration | ✓ | - | ✓ |
-|  | Variable Library | ✓ | - | - |
+|  | Variable Library | ✓ | - | ✓ |
 | **Governance and Security** | Sensitivity Label | - | - | - |
 |  | Share item | - | - | - |
-| **Graph** | Graph model  | - | - | - |
-|  | Graph queryset | - | - | - |
+| **Fabric IQ** | Graph model  | - | - | Preview |
+|  | Graph queryset | - | - | Preview |
+|  | Operations agent | - | - | Preview |
 | **Industry Solutions** | Healthcare data solutions | - | ✓ | - |
 |  | Sustainability Solution | - | ✓ | - |
 |  | Retail Solution | - | ✓ | - |
-| **Mirroring** | Mirrored Azure SQL Database | - | - | Preview|
-|  | Mirrored Azure SQL Managed Instance | ✓ | - | Preview |
-|  | Open Mirroring | ✓ | - | - |
+| **Mirroring** | Mirrored Azure Cosmos DB | ✓ | ✓ | ✓ |
+|  | Mirrored Azure Database for MySQL | - | ✓ | ✓ |
+|  | Mirrored Azure Database for PostgreSQL | - | ✓ | ✓ |
 |  | Mirrored Azure Databricks Catalog | - | - | - |
-|  | Mirrored Snowflake | - | - | Preview|
-|  | Mirrored SQL Server 2025 (Windows/Linux on-premises) | ✓ | - | Preview |
-|  | Mirrored SQL Server 2016-2022 | - | - | - |
+|  | Mirrored Azure SQL Database | ✓ | ✓ | ✓ |
+|  | Mirrored Azure SQL Managed Instance | ✓ | ✓ | ✓ |
 |  | Mirrored Dataverse | - | - | - |
-|  | Mirrored SAP | - | - | - |
-|  | Mirrored Azure Cosmos DB | ✓ | - | Preview |
-|  | Mirrored Azure Database for PostgreSQL | - | - | Preview |
-|  | Mirrored Google Bigquery | - | - | Preview |
-|  | Mirrored Oracle |  | - | Preview |
-| **Native Databases** | Sql DB in Fabric |  | Preview | - |
-|  | Cosmos DB |  |  | - |
+|  | Mirrored Google Bigquery | - | ✓ | ✓ |
+|  | Mirrored Oracle | - | ✓ | ✓ |
+|  | Mirrored SAP | ✓ | ✓ | ✓ |
+|  | Mirrored SharePoint List | ✓ | ✓ | ✓ |
+|  | Mirrored Snowflake | - | ✓ | ✓ |
+|  | Mirrored SQL Server 2016-2022 | - | ✓ | ✓ |
+|  | Mirrored SQL Server 2025 | ✓ | ✓ | ✓ |
+|  | Open Mirroring | ✓ | ✓ | ✓ |
+| **Fabric Databases** | SQL database in Fabric |  | ✓ | - |
+|  | Cosmos DB |  | - | - |
 |  | Snowflake database | - | - | - |
-| **OneLake** | Shortcut | ✓ | - | - |
-| **Power BI** | Power BI Report | - | - | - |
+| **OneLake** | Shortcut | ✓ | ✓ | Preview |
+| **Power BI** | Power BI Report | - | - | Preview |
 |  | Dashboard | - | - | - |
 |  | Scorecard | - | - | - |
-|  | Semantic Model | - | - | - |
+|  | Semantic Model | - | - | Preview |
 |  | Streaming dataflow | - | - | - |
 |  | Streaming dataset | - | - | - |
 |  | Paginated Report | - | - | - |
@@ -87,16 +89,15 @@ The following table shows the support status for each Fabric item. A check mark 
 |  | Exploration | - | - | - |
 |  | Org App | - | - | - |
 |  | Metric Set | - | - | - |
-| **Real-Time Intelligence** | KQL Queryset | ✓ | Preview | - |
-|  | Activator | ✓ | - | - |
-|  | Eventhouse/KQL DB | ✓ | Preview |  |
-|  | Eventstream | ✓ |  | - |
-|  | Real-Time Dashboard | ✓ | Preview | - |
+| **Real-Time Intelligence** | KQL Queryset | ✓ | Preview | Preview |
+|  | Activator | ✓ | - | Preview |
+|  | Eventhouse/KQL DB | ✓ | Preview | Preview |
+|  | Eventstream | ✓ | - | Preview |
+|  | Real-Time Dashboard | ✓ | Preview | Preview |
 |  | Anomaly detector  | - | - | - |
 |  | Digital Twin Builder | - | - | - | 
 |  | Event Schema Set  | - | - | - |
-|  | Map | - | - | - |
-| **Uncategorized**  | Operations Agent | - | - | - |
+|  | Map | - | - | Preview |
 
 ## Related links
 

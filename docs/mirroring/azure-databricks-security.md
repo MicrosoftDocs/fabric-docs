@@ -2,7 +2,7 @@
 title: "Microsoft Fabric Mirrored Databases From Azure Databricks Security"
 description: Learn about security for Azure Databricks mirroring in Microsoft Fabric.
 ms.reviewer: preshah, sheppardshep
-ms.date: 07/31/2025
+ms.date: 05/01/2026
 ms.topic: overview
 ms.search.form: Databricks security overview
 ---
@@ -28,6 +28,8 @@ When configuring Azure Databricks mirroring to Microsoft Fabric, enable [trusted
 Trusted workspace access requires creating a connection directly to the ADLS storage account which can be used independently of the Azure Databricks workspace connection. Unity Catalog policies such as [RLS/CLM or ABAC](/azure/databricks/tables/row-and-column-filters) are not enforced at the storage layer and will not be applied if a connection is used to directly access storage. Trusted workspace access instead relies on [Fabric workspace identities administration and governance](../security/workspace-identity.md#security-administration-and-governance-of-the-workspace-identity).
 
 Follow the steps in the [Tutorial to Enable network security access](../mirroring/azure-databricks-tutorial.md). It is recommended to give granular control on the storage account by specifying a specific folder within a container, and [Assign Azure roles using the Azure portal](/azure/role-based-access-control/role-assignments-portal#step-2-open-the-add-role-assignment-page).
+
+When ADLS Gen2 is protected by an Azure Storage firewall, Fabric uses Workspace Identity to access the firewall. Even if **Service principal** is selected for ADLS authentication in the **Network Security** tab, the Workspace Identity must be allowed in the Azure Storage account firewall.  A service principal or OAuth are used for Databricks authentication and Unity Catalog authorization.
 
 ## Permissions
 

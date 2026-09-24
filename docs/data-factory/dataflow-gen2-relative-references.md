@@ -4,7 +4,7 @@ description: Understand how relative references work with Fabric connectors in D
 author: ptyx507x
 ms.author: miescobar
 ms.service: fabric
-ms.topic: conceptual
+ms.topic: article
 ms.date: 02/23/2026
 ai-usage: ai-assisted
 ---

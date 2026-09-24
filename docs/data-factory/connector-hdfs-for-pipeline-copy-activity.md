@@ -1,6 +1,6 @@
 ---
-title: Configure Hdfs for Pipeline in a copy activity
-description: This article explains how to copy data using Hdfs for Pipeline.
+title: Configure HDFS for Pipeline in a Copy Activity
+description: This article explains how to copy data using HDFS for Pipeline.
 ms.reviewer: jianleishen
 ms.topic: how-to
 ms.date: 06/04/2025
@@ -8,7 +8,7 @@ ms.custom:
   - template-how-to
 ---
 
-# Configure Hdfs for Pipeline in a copy activity
+# Configure HDFS for Pipeline in a copy activity
 
 This article outlines how to use the copy activity in a pipeline to copy data from and to Hdfs for Pipeline.
 
@@ -97,11 +97,11 @@ Under **Advanced**, you can specify the following fields:
 
 ### Mapping
 
-For **Mapping** tab configuration, go to [Configure your mappings under mapping tab](copy-data-activity.md#configure-your-mappings-under-mapping-tab).
+For **Mapping** tab configuration, go to [Configure your mappings under mapping tab](copy-data-activity.md#configure-your-mappings-under-the-mapping-tab).
 
 ### Settings
 
-For **Settings** tab configuration, see [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
+For **Settings** tab configuration, see [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-the-settings-tab).
 
 ## Table summary
 

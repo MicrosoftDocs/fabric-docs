@@ -1,5 +1,5 @@
 ---
-title: Mapping data to entity types
+title: Mapping Data to Entity Types
 description: Understand the mapping feature in digital twin builder (preview).
 ms.date: 07/28/2025
 ms.topic: concept-article

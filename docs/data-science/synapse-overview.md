@@ -3,9 +3,9 @@ title: SynapseML and its use in Azure Synapse Analytics.
 description: Learn about the SynapseML library and how it simplifies the creation of massively scalable machine learning (ML) pipelines in Azure Synapse Analytics.
 ms.reviewer: vimeland
 reviewer: vimeland
-author: jonburchel
-ms.author: jburchel
-ms.topic: conceptual
+author: s-polly
+ms.author: scottpolly
+ms.topic: article
 ms.date: 01/16/2026
 ai.usage: ai-assisted
 ---
@@ -54,7 +54,7 @@ After building a model, it's imperative that researchers and engineers understan
 
 ## Enterprise support on Azure Synapse Analytics
 
-SynapseML is generally available on Azure Synapse Analytics with enterprise support. Build large-scale machine learning pipelines using Foundry Tools, LightGBM, ONNX, and other [selected SynapseML features](https://techcommunity.microsoft.com/t5/azure-synapse-analytics-blog/streamline-collaboration-and-insights-with-simplified-machine/ba-p/2924707). Use templates to quickly prototype distributed machine learning systems, like visual search engines, predictive maintenance pipelines, and document translation.
+SynapseML is generally available on Azure Synapse Analytics with enterprise support. Build large-scale machine learning pipelines using Foundry Tools, LightGBM, ONNX, and other [selected SynapseML features](https://techcommunity.microsoft.com/blog/azuresynapseanalyticsblog/streamline-collaboration-and-insights-with-simplified-machine-learning-on-azure-/2924707). Use templates to quickly prototype distributed machine learning systems, like visual search engines, predictive maintenance pipelines, and document translation.
 
 ## Related content
 
@@ -62,7 +62,7 @@ SynapseML is generally available on Azure Synapse Analytics with enterprise supp
 
 - [AI Functions overview](ai-functions/overview.md) - Simplest approach for text transformation operations
 - [Use Azure OpenAI with SynapseML](ai-services/how-to-use-openai-synapse-ml.md) - Distributed processing for large-scale workloads
-- [Use Azure OpenAI with Python SDK](ai-services/how-to-use-openai-python-sdk.md) - Fine-grained control for single API calls
+- [Use Azure OpenAI with OpenAI Python SDK](ai-services/how-to-use-openai-python-sdk.md) for the OpenAI package or built-in synchronous and asynchronous OpenAI-compatible clients.
 - [Foundry Tools in SynapseML with bring-your-own-key](ai-services/ai-services-in-synapseml-bring-your-own-key.md) - Specialized Foundry Tools
 
 ### SynapseML resources

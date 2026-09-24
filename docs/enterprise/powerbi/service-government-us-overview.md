@@ -84,7 +84,7 @@ Authentication, identity, and administration for Power BI depend on connectivity
 | OAuth 2.0 connections | **All**: preview.powerbi.com |
 | Service telemetry | **All**: dc.services.visualstudio.us |
 | Informational messages (optional) | **All**: arc.msn.com |
-| SharePoint web part integration with Power BI | **All**: api.powerbi.com |
+| SharePoint web part integration with Power BI | **GCC**: api.powerbigov.us<br>**GCC High**: api.high.powerbigov.us<br>**DoD**: api.mil.powerbigov.us |
 
 ## Connect government and global Azure cloud services
 
@@ -142,7 +142,6 @@ If a release is planned for an environment, the table includes the quarter of es
 |[Data Protection (MIP labels)](./service-security-sensitivity-label-overview.md)|✅ |✅|
 |[Dataflows - Direct Query](/power-bi/transform-model/dataflows/dataflows-configure-consume) | ✅ |✅|Not planned |
 |[Dataflows - SQL Compute engine optimization](/power-bi/transform-model/dataflows/dataflows-premium-features) | ✅ |✅|Not planned |
-| Datamarts  |Not planned |Not planned |Not planned |
 |[Power BI tab in Teams](/power-bi/collaborate-share/service-collaborate-microsoft-teams)|✅|✅|
 |[Large models](service-premium-large-models.md) | ✅ |✅| Not planned |
 |[Call Quality Data Connector](/microsoftteams/cqd-power-bi-connector)| ✅<sup>3</sup> | ✅<sup>3</sup> | ✅<sup>3</sup> |

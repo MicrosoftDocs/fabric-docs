@@ -31,7 +31,7 @@ Cross-region API calls are a common cause of high latency. For optimal performan
 
 To find your Fabric tenant's region:
 
-1. Sign in to the Microsoft Fabric portal with an admin account
+1. Sign in to the Fabric portal with an admin account
 1. Select the Help icon (**?**) in the top right corner
 1. At the bottom of the Help pane, select **About Fabric**
 1. Note the region displayed in the tenant details
@@ -125,7 +125,7 @@ API for GraphQL acts as a query interface over your data sources. If the underly
    - Add appropriate indexes for frequently queried columns
    - Consider the right data store for your use case: [Fabric decision guide – choose a data store](../fundamentals/decision-guide-data-store.md)
    - Review query execution plans for optimization opportunities
-1. **Right-size capacity**: Ensure your Fabric capacity SKU provides sufficient compute resources. See [Microsoft Fabric concepts](../enterprise/licenses.md#capacity) for guidance on selecting appropriate capacity.
+1. **Right-size capacity**: Ensure your Fabric capacity SKU provides sufficient compute resources. See [Fabric concepts](../enterprise/licenses.md#capacity) for guidance on selecting appropriate capacity.
 
 ### Query design
 

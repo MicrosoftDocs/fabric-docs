@@ -99,4 +99,4 @@ To implement items in your workload:
 - [Define Item Creation](how-to-create-item.md)
 - [Store Item Definition](how-to-store-item-definition.md)
 
-For detailed component documentation, see the [ItemEditor documentation](https://github.com/microsoft/fabric-extensibility-toolkit/docs/controls/ItemEditor.md).
+For detailed component documentation, see the [ItemEditor documentation](https://github.com/microsoft/fabric-extensibility-toolkit/blob/main/docs/components/ItemEditor.md).

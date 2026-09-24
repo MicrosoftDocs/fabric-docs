@@ -1,4 +1,4 @@
----
+﻿---
 title: Track user activities in Microsoft Fabric
 description: Learn how to track user activities in Microsoft Fabric using the audit log.
 author: msmimart
@@ -9,7 +9,7 @@ ms.date: 02/12/2026
 
 # Track user activities in Microsoft Fabric
 
-Knowing who is taking what action on which item in Microsoft Fabric, can be critical in helping your organization fulfill requirements such as meeting regulatory compliance and records management. This article discusses tracking user activities using the [audit log](/purview/audit-log-activities).
+Knowing who is taking what action on which item in Fabric, can be critical in helping your organization fulfill requirements such as meeting regulatory compliance and records management. This article discusses tracking user activities using the [audit log](/purview/audit-log-activities).
 
 ## Prerequisites
 

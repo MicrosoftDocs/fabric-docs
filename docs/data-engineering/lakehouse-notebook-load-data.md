@@ -8,7 +8,7 @@ ms.date: 05/24/2024
 
 # Use a notebook to load data into your lakehouse
 
-In this tutorial, learn how to read/write data into your Fabric lakehouse with a notebook. Fabric supports Spark API and Pandas API are to achieve this goal.
+In this tutorial, learn how to read/write data into your lakehouse in Fabric with a notebook. Fabric supports Spark API and Pandas API are to achieve this goal.
 
 ## Load data with an Apache Spark API
 

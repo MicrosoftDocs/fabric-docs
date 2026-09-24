@@ -1,16 +1,14 @@
 ---
-title: Troubleshooting Graph in Microsoft Fabric
-description: Learn about troubleshooting Graph in Microsoft Fabric.
+title: Troubleshooting and FAQ for graph in Microsoft Fabric
+description: Find solutions for common graph in Microsoft Fabric issues like model loading errors and queryset problems, plus frequently asked questions and best practices.
 ms.topic: reference
-ms.date: 01/26/2026
+ms.date: 05/20/2026
 ms.reviewer: wangwilliam
 ---
 
-# Troubleshooting Graph in Microsoft Fabric
+# Troubleshooting and FAQ for graph in Microsoft Fabric
 
-[!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
-
-This article provides troubleshooting guidance and answers to frequently asked questions about Graph in Microsoft Fabric. For known limitations that might impact your experience, see [Current Limitations of Graph in Microsoft Fabric](limitations.md).
+This article provides troubleshooting guidance and answers to frequently asked questions about graph in Microsoft Fabric. For known limitations that might impact your experience, see [Current limitations of graph](limitations.md).
 
 ## Graph model disappears or becomes empty when switching tabs
 
@@ -49,18 +47,20 @@ Currently, there's no UI option to manually refresh a queryset's connection to a
 
 ### Can I create a node from a column in an existing table?
 
-Yes, you can create a separate node type from any column in your table. For each of these node types, you should delete properties that you won't need in queries or analysis, because excessive properties make your graph harder to maintain and use.
+Yes, you can create a separate node type from any column in your table. For each of these node types, don't add properties that you don't need in queries or analysis, because excessive properties make your graph harder to maintain and use.
 
-You may also use that same table as the edge mapping table for edges types connected to these node types.
+You can also use that same table as the edge source table for edge types connected to these node types.
 
 ### How do I change which property appears as the node label?
 
-By default, nodes display their ID as the label. To change the display label:
+By default, nodes display their name as the label. To change the display label:
 
 1. Open the query view.
-1. On the right side, find the **Components** panel.
-1. Select the ellipses (...) next to the node type.
+1. On the right side, select the **Components** icon (shaped like a puzzle piece).
+1. Select the ellipses (...) next to the node type and select **Display property**.
 1. Choose the property you want to appear as the node label.
+
+:::image type="content" source="./media/troubleshooting/change-display-property.png" alt-text="Screenshot of changing a display property in the Components panel." lightbox="./media/troubleshooting/change-display-property.png":::
 
 ## Best practices
 
@@ -71,5 +71,6 @@ By default, nodes display their ID as the label. To change the display label:
 
 ## Related content
 
-- [What is Graph in Microsoft Fabric?](overview.md)
-- [Quickstart guide for Graph in Microsoft Fabric](quickstart.md)
+- [What is graph in Microsoft Fabric?](overview.md)
+- [Quickstart guide for graph in Microsoft Fabric](quickstart.md)
+- [Optimize GQL query performance in graph](gql-query-performance.md)

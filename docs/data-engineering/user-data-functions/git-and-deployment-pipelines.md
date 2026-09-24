@@ -12,7 +12,7 @@ ms.search.form: Use Git and deployment pipelines in user data functions
 
 This article explains how Git integration and deployment pipelines work for user data functions in Microsoft Fabric. With Git integration, you can keep your Fabric workspace in sync with a repository branch, enabling you to version control your user data functions, collaborate using branches and pull requests, and work with your code in your preferred Git tooling, such as Azure DevOps.
 
-Learn more about the process of integrating Git with your Microsoft Fabric workspace in [Basic concepts in Git integration](../../cicd/git-integration/git-integration-process.md).
+To learn more about the process of integrating Git with your Fabric workspace, see [Basic concepts in Git integration](../../cicd/git-integration/git-integration-process.md).
 
 ## Set up a connection
 
@@ -74,5 +74,5 @@ To deploy your user data functions using a deployment pipeline:
 
 ## Related content
 
-- [Introduction to Microsoft Fabric Git integration](../../cicd/git-integration/intro-to-git-integration.md)
+- [Introduction to Fabric Git integration](../../cicd/git-integration/intro-to-git-integration.md)
 - [Introduction to deployment pipelines](../../cicd/deployment-pipelines/intro-to-deployment-pipelines.md)

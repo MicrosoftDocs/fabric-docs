@@ -3,7 +3,7 @@ title: Dataflow activity
 description: Learn how to add a Dataflow activity to a pipeline and use it to run a Dataflow Gen2.
 ms.reviewer: xupxhou, miescobar
 ms.topic: how-to
-ms.date: 2/4/2026
+ms.date: 5/21/2026
 ms.custom:
   - pipelines
   - dataflows
@@ -57,9 +57,6 @@ You can select the refresh button to request the latest parameter information fr
 
 Inside the Dataflow parameters section you're able to enter the name of the parameter that you wish to pass and the type and value that you wish to pass.
 
->[!NOTE]
->Parameterizing the DataflowId in the dataflow pipeline activity settings will only support the legacy Dataflow Gen2 version without CI/CD support. That is,  you can't invoke dataflows with CI/CD support using parameterization of the DataflowId.
-
 ## Save and run or schedule the pipeline
 
 [!INCLUDE[save-run-schedule-pipeline](includes/save-run-schedule-pipeline.md)]
@@ -85,6 +82,10 @@ If your Dataflow used an On-Premises Data Gateway, you can also explore the deta
 You can also request support through the [Fabric Community Forum](https://community.fabric.microsoft.com/t5/Data-Factory-forums/ct-p/datafactory) or by [raising a dedicated support case](https://support.fabric.microsoft.com/) where one of our engineers will be able to assist.
 
 ## Known issues
+
+> [!CAUTION]
+> When using a Dataflow Gen1 or a Dataflow Gen2 (non CI/CD) in the Dataflow activity, you might experience delays before the refresh operation starts. This issue doesn't affect Dataflow Gen2 (CI/CD). Consider [migrating your existing solutions to Dataflow Gen2 (CI/CD)](/fabric/data-factory/migrate-to-dataflow-gen2-using-save-as) for a more reliable experience.
+
 - Using Service Principal to run a notebook that contains Semantic Link code has functional limitations and supports only a subset of semantic link features. See the [supported semantic link functions](../data-science/semantic-link-service-principal-support.md#supported-semantic-link-functions) for details. To use other capabilities, you're recommended to [manually authenticate semantic link with a service principal](../data-science/semantic-link-service-principal-support.md#manually-authenticate-semantic-link-with-a-service-principal).
 - Some customers may not see the Workspace Identity (WI) dropdown, or may see it but be unable to create a connection. This behavior is due to a known issue in one of our underlying platform components. The fix is currently being worked on.
 

@@ -1,9 +1,10 @@
 ---
 title: "Tutorial: Visualize predictions with a Power BI report"
 description: In this fifth part of the tutorial series, learn how to get set up to create reports and how to create various visuals to analyze data.
-ms.reviewer: amjafari, lagayhar
+ms.author: lagayhar
+ms.reviewer: scottpolly
 ms.topic: tutorial
-ms.date: 04/25/2025
+ms.date: 08/31/2026
 #CustomerIntent: As a data scientist, I want to create a Power BI report to visualize the predictions data.
 ---
 
@@ -11,7 +12,7 @@ ms.date: 04/25/2025
 
 In this tutorial, you build a Power BI report from the predictions data you generated in [Part 4: Perform batch scoring and save predictions to a lakehouse](tutorial-data-science-batch-scoring.md).
 
-You'll learn how to:
+You learn how to:
 
 > [!div class="checklist"]
 >
@@ -24,7 +25,7 @@ You'll learn how to:
 
 [!INCLUDE [prerequisites](./includes/prerequisites.md)]
 
-This is part 5 of 5 in the tutorial series. To complete this tutorial, first complete:
+This tutorial is part 5 of 5 in the tutorial series. To complete this tutorial, first complete:
 
 * [Part 1: Ingest data into a Microsoft Fabric lakehouse using Apache Spark](tutorial-data-science-ingest-data.md).
 * [Part 2: Explore and visualize data using Microsoft Fabric notebooks](tutorial-data-science-explore-notebook.md) to learn more about the data.
@@ -46,7 +47,7 @@ Create a new semantic model linked to the predictions data you produced in part 
 
 1. Select **New semantic model** in the top ribbon, as shown in the following screenshot:
 
-   :::image type="content" source="media\tutorial-data-science-create-report\new-power-bi-dataset.png" alt-text="Screenshot of the lakehouse UI home, showing where to select the New semantic model option on the ribbon." lightbox="media\tutorial-data-science-create-report\new-power-bi-dataset.png":::
+    :::image type="content" source="media\tutorial-data-science-create-report\new-power-bi-dataset.png" alt-text="Screenshot of the Lakehouse home page, showing where to select the New semantic model option on the ribbon." lightbox="media\tutorial-data-science-create-report\new-power-bi-dataset.png":::
 
 1. Give the semantic model a name - for example, "bank churn predictions." Then, select the **customer_churn_test_predictions** dataset as shown in the following screenshot:
 
@@ -66,7 +67,7 @@ Add some measures to the semantic model:
 
     1. To determine the average predicted churn rate, replace `Measure =` in the formula bar with the following code snippet:
 
-        ```python
+        ```DAX
         Churn Rate = AVERAGE(customer_churn_test_predictions[predictions])
         ```
 
@@ -91,7 +92,7 @@ Add some measures to the semantic model:
     
     1. Each prediction represents one customer. To determine the total number of customers, replace `Measure =` in the formula bar with:
 
-        ```python
+        ```DAX
         Customers = COUNT(customer_churn_test_predictions[predictions])
         ```
 
@@ -103,7 +104,7 @@ Add some measures to the semantic model:
     
     1. To determine the churn rate for Germany, replace `Measure =` in the formula bar with:
 
-        ```python
+        ```DAX
         Germany Churn = CALCULATE(AVERAGE(customer_churn_test_predictions[predictions]),FILTER(customer_churn_test_predictions, customer_churn_test_predictions[Geography_Germany] = TRUE()))
         ```
 
@@ -115,19 +116,19 @@ Add some measures to the semantic model:
 
     * Spain's churn rate:
 
-        ```python
+        ```DAX
         Spain Churn = CALCULATE(AVERAGE(customer_churn_test_predictions[predictions]),FILTER(customer_churn_test_predictions, customer_churn_test_predictions[Geography_Spain] = TRUE()))
         ```
 
     * France's churn rate:
 
-        ```python
+        ```DAX
         France Churn = CALCULATE(AVERAGE(customer_churn_test_predictions[predictions]),FILTER(customer_churn_test_predictions, customer_churn_test_predictions[Geography_France] = TRUE()))
         ```
 
 ## Create a new report
 
-Once you complete all of the operations described earlier, select **Create new report** in the top ribbon File option list to open the Power BI report authoring page, as shown in the following screenshot:
+After you complete all of the operations described earlier, select **Create new report** in the top ribbon File option list to open the Power BI report authoring page, as shown in the following screenshot:
 
 :::image type="content" source="media/tutorial-data-science-create-report/visualize-this-data.png" alt-text="Screenshot shows how to create a report.":::
 
@@ -211,7 +212,7 @@ The Power BI report shows that:
 
 ## Next step
 
-This completes the five part tutorial series. See other end-to-end sample tutorials:
+This tutorial series is complete. For other end-to-end sample tutorials, see:
 
 > [!div class="nextstepaction"]
 > [How to use end-to-end AI samples in Microsoft Fabric](use-ai-samples.md)

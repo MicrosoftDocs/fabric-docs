@@ -13,7 +13,7 @@ ai-usage: ai-assisted
 [!INCLUDE [product-name](../includes/product-name.md)] works with many data sources, both on-premises and in the cloud. Each data source has specific setup requirements. This article shows you how to add an Azure SQL Server as a cloud data source as an example - and the process is similar for other sources. If you need help with on-premises data sources, see [Add or remove a gateway data source](/power-bi/connect-data/service-gateway-data-sources).
 
 > [!NOTE]
-> Right now, cloud connections work with pipelines and Kusto. For datasets, datamarts, and dataflows, you need to use Power Query Online's "get data" experience to create personal cloud connections.
+> Right now, cloud connections work with pipelines and Kusto. For datasets and dataflows, you need to use Power Query Online's "get data" experience to create personal cloud connections.
 
 ## Add a data source
 
@@ -160,6 +160,38 @@ for conn in resp.json().get("value", []):
    print(f"{conn['displayName']}: {conn['id']}")
 ```
 
+## Connection recency (Preview)
+
+Microsoft Fabric provides usage-based properties to help you better understand how connections are configured and used over time. These properties improve audit visibility and support safer connection lifecycle management.
+
+Over time, connections may be reused, replaced, or left idle. Without clear usage signals, it can be difficult to determine whether a connection is still active or safe to modify, rotate credentials for, or remove. The Last Used Time capability introduces additional metadata to help you make more informed decisions.
+
+:::image type="content" source="media/data-source-management/connection-recency.png" alt-text="Screenshot showing the recency of connection." lightbox="media/data-source-management/connection-recency.png":::
+
+Two new properties are available in connection metadata:
+
+### Last linked to items
+
+- Shows the most recent time the connection was linked to a Fabric item.
+
+- Reflects configuration activity (for example, when the connection was associated with a pipeline or other artifact).
+
+- Helps identify recently created or newly reused connections.
+
+This property indicates when a connection was last configured or associated with an item.
+
+### Last credentials used
+
+- Shows the most recent time the connection’s credentials were used at runtime.
+
+- Reflects actual execution usage, not just configuration.
+
+- Helps distinguish between defined connections and actively used connections.
+
+This property indicates when a connection was last used to execute a workload.
+
+Together, these properties provide both configuration signals and runtime usage signals for better operational insight.
+
 ## Manage users
 
 After you add a cloud data source, you give users and security groups access to the specific data source. The access list for the data source controls only who is allowed to use the data source in items that include data from the data source.  
@@ -189,6 +221,9 @@ After you add a cloud data source, you give users and security groups access to 
 > [!NOTE]
 > You need to add users to each data source separately - each one has its own access list.
 
+> [!NOTE]
+> A user sees only connections they have access to in the **Connections** tab of **Manage connections and gateways**. Connections that the user isn't part of don't appear in this page, even when the user is a tenant administrator and the **Tenant administration** toggle is enabled.
+
 ## Remove users from a data source
 
 To remove access, go to the **Manage Users** tab and remove the user or security group from the list.
@@ -201,6 +236,9 @@ Control who can share connections in your organization. By default, users can sh
 * Users with sharing permissions
 
 Connection sharing helps teams collaborate while keeping credentials secure. Shared connections only work within Fabric.
+
+> [!NOTE]
+> Guest users might face limitations when sharing connections in Fabric if the organization's Microsoft Entra [B2B guest user properties](/entra/external-id/user-properties#guest-user-permissions) block user discoverability and sharing permissions.
 
 ### Restrict connection sharing
 
@@ -231,6 +269,96 @@ As a tenant admin, you can limit who can share connections:
 >
 > * Blocking sharing could limit collaboration between users
 > * Existing shared connections stay shared when you turn on the restriction
+
+## Manage connections tenant-wide with the admin APIs
+
+> [!NOTE]
+> The admin connections APIs are in preview. Names, endpoints, and behavior might change before general availability.
+
+Tenant administrators can inventory and govern every connection in the tenant with the admin connections APIs, regardless of who created the connection or which workspace it's used in. The admin endpoints cover all connection types, not just cloud connections. Unlike the connection-owner [List Connections](/rest/api/fabric/core/connections/list-connections) endpoint, which returns only the connections you own or are shared with, the admin endpoints return connections across the whole tenant.
+
+The caller must be a Fabric administrator, or authenticate by using a service principal, with the **Tenant.Read.All** or **Tenant.ReadWrite.All** scope.
+
+These APIs help you:
+
+- **Discover and inventory**: list every connection in the tenant and review details such as connector type, authentication type, endpoints, and recency.
+- **Govern ownership**: take ownership of orphaned connections when the original creator leaves the organization, and reassign connections to keep workloads running.
+- **Govern security and compliance**: identify insecure credential types and review endpoint domains against your network policies.
+- **Maintain operational hygiene**: find duplicate or stale connections and delete the ones you no longer need.
+
+| Operation | API |
+| --- | --- |
+| List all connections in the tenant | [Connections - List Connection](/rest/api/fabric/admin/connections/list-connection) |
+| Get a single connection | [Connections - Get Connection](/rest/api/fabric/admin/connections/get-connection) |
+| Delete a connection | [Connections - Delete Connection](/rest/api/fabric/admin/connections/delete-connection) |
+| List the role assignments on a connection | `GET /v1/admin/connections/{connectionId}/roleAssignments` |
+| Add a role assignment (assign an owner) | `POST /v1/admin/connections/{connectionId}/roleAssignments` |
+| Update a role assignment | `PATCH /v1/admin/connections/{connectionId}/roleAssignments/{roleAssignmentId}` |
+| Delete a role assignment | `DELETE /v1/admin/connections/{connectionId}/roleAssignments/{roleAssignmentId}` |
+
+To list every connection in the tenant, send an HTTP GET to the admin connections endpoint, including your token in the `Authorization` header:
+
+```http
+GET https://api.fabric.microsoft.com/v1/admin/connections
+Authorization: Bearer <token>
+```
+
+A successful response returns a `value` array of connection objects. Each object includes identity, connectivity type, connection details (endpoint path and type), privacy level, credential details, and connection recency:
+
+```json
+{
+  "value": [
+    {
+      "id": "6952a7b2-aea3-414f-9d85-6c0fe5d34539",
+      "displayName": "ContosoConnection1",
+      "gatewayId": "8f72eea3-d989-4a5a-aeed-02b3aaa2ddd0",
+      "connectivityType": "ShareableCloud",
+      "connectionDetails": {
+        "type": "Web",
+        "path": "https://www.contoso.com"
+      },
+      "privacyLevel": "Public",
+      "credentialDetails": {
+        "credentialType": "Anonymous",
+        "singleSignOnType": "None",
+        "connectionEncryption": "NotEncrypted",
+        "skipTestConnection": false
+      },
+      "connectionRecency": {
+        "createdDateTime": "2023-05-23T16:22:20Z",
+        "lastBoundDateTime": "2023-05-26T16:22:20Z",
+        "lastCredentialUsedDateTime": "2023-05-27T16:22:20Z"
+      }
+    }
+  ],
+  "continuationToken": "LDEsMTAwMDAwLDA%3D"
+}
+```
+
+If you have more than 100 connections, use the `continuationToken` query parameter on subsequent requests to page through all results.
+
+### Take ownership or reassign a connection
+
+When a connection's original owner leaves the organization, or you need to move a connection to a different owner, use the role assignment APIs to grant the **Owner** role to a user or service principal. This action keeps dependent pipelines, dataflows, and other items running.
+
+To assign an owner, send an HTTP POST to the connection's `roleAssignments` endpoint with the principal and role in the request body:
+
+```http
+POST https://api.fabric.microsoft.com/v1/admin/connections/{connectionId}/roleAssignments
+Authorization: Bearer <token>
+Content-Type: application/json
+
+{
+  "principal": {
+    "id": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+    "type": "User"
+  },
+  "role": "Owner"
+}
+```
+
+To review who currently has access to a connection, send an HTTP GET to the same endpoint to list all role assignments. To change an existing assignment, send an HTTP PATCH to `.../roleAssignments/{roleAssignmentId}` with the new `role` value. To remove access, send an HTTP DELETE to `.../roleAssignments/{roleAssignmentId}`.
+
 
 ## Related content
 

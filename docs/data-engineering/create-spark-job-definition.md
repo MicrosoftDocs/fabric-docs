@@ -9,18 +9,18 @@ ms.search.form: Create Spark Job Definition,spark_job_definition
 
 # How to create an Apache Spark job definition in Fabric
 
-In this tutorial, learn how to create a Spark job definition in Microsoft Fabric.
+In this tutorial, learn how to create a Spark job definition in Fabric.
 
 The Spark job definition creation process is quick and simple; there are several ways to get started. 
 
-You can create a Spark job definition from the Fabric portal or by using the Microsoft Fabric REST API. This article focuses on creating a Spark job definition from the Fabric portal. For information about creating a Spark job definition using the REST API, see [Apache Spark job definition API v1](spark-job-definition-api.md) and [Apache Spark job definition API v2](spark-job-definition-api-v2.md).
+You can create a Spark job definition from the Fabric portal or by using the Fabric REST API. This article focuses on creating a Spark job definition from the Fabric portal. For information about creating a Spark job definition using the REST API, see [Apache Spark job definition API v1](spark-job-definition-api.md) and [Apache Spark job definition API v2](spark-job-definition-api-v2.md).
 
 ## Prerequisites
 
 Before you get started, you need:
 
 - A Fabric tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
-- A workspace in Microsoft Fabric. For more information, see [Create and manage workspaces in Microsoft Fabric](../fundamentals/create-workspaces.md).
+- A workspace in Fabric. For more information, see [Create and manage workspaces in Fabric](../fundamentals/create-workspaces.md).
 - At least one lakehouse in the workspace. The lakehouse serves as the default file system for the Spark job definition. For more information, see [Create a lakehouse](../data-engineering/create-lakehouse.md).
 - A main definition file for the Spark job. This file contains the application logic and is mandatory to run a Spark job. Each Spark job definition can have only one main definition file.
 
@@ -29,7 +29,7 @@ You need to give your Spark job definition a name when you create it. The name m
 ## Create a Spark job definition in the Fabric portal
 
 To create a Spark job definition in the Fabric portal, follow these steps:
-1. Sign in to the [Microsoft Fabric portal](https://fabric.microsoft.com/).
+1. Sign in to the [Fabric portal](https://fabric.microsoft.com/).
 1. Navigate to the desired workspace where you want to create the Spark job definition.
 1. Select **New item** > **Spark Job Definition**.
 1. In the **New Spark Job Definition** pane, provide the following information:

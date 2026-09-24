@@ -1,9 +1,12 @@
 ---
 title: Create a OneLake Shared Access Signature (SAS)
 description: Learn how to create a OneLake shared access signature to provide short-term, delegated access to OneLake.
-ms.reviewer: mabasile
+ms.reviewer: mabasile # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.topic: concept-article
 ms.date: 04/10/2025
+ai-usage: ai-assisted
 
 #CustomerIntent: As a data engineer, I want to generate a OneLake SAS to integrate new applications into my Fabric environment.
 ---
@@ -20,7 +23,7 @@ Creating a OneLake SAS is similar to creating an [Azure Storage user-delegated S
 
 ## Required permissions
 
-Requesting a user delegation key is a tenant-level operation in Microsoft Fabric. The user or security principal who requests a user delegation key must have at least read permissions in one workspace in the Fabric tenant. The requesting user's identity is used to authenticate the SAS, so the user must have permission to the data that they grant the SAS access to.  
+Requesting a user delegation key is a tenant-level operation in Fabric. The user or security principal who requests a user delegation key must have at least read permissions in one workspace in the Fabric tenant. The requesting user's identity is used to authenticate the SAS, so the user must have permission to the data that they grant the SAS access to.  
 
 ## Acquire an OAuth 2.0 token
 
@@ -76,7 +79,7 @@ Permissions can be combined to permit a client to perform multiple operations wi
 
 Examples of valid permission settings include `rw`, `rd`, `rl`, `wd`, `wl`, and `rl`. You can't specify a permission more than once.
 
-To ensure parity with existing Azure Storage tools, OneLake uses the same permission format as Azure Storage. OneLake evaluates the permissions granted to a SAS in `signedPermissions`, the permissions of the signing identity in Fabric, and any [OneLake security roles](./security/get-started-onelake-security.md), if applicable.
+To ensure parity with existing Azure Storage tools, OneLake uses the same permission format as Azure Storage. OneLake evaluates the permissions granted to a SAS in `signedPermissions`, the permissions of the signing identity in Fabric, and any [OneLake security roles](./security/data-access-control-model.md), if applicable.
 
 Remember that some operations, such as setting permissions or deleting workspaces, generally aren't permitted on OneLake via Azure Storage APIs. Granting that permission (`sp=op`) doesn't allow a OneLake SAS to perform those operations.
 
@@ -223,9 +226,66 @@ The following example shows a OneLake SAS URI with a OneLake SAS token appended 
 https://onelake.blob.fabric.microsoft.com/myWorkspace/myLakehouse.Lakehouse/Files/?sp=rw&st=2023-05-24T01:13:55Z&se=2023-05-24T09:13:55Z&skoid=<object-id>&sktid=<tenant-id>&skt=2023-05-24T01:13:55Z&ske=2023-05-24T09:13:55Z&sks=b&skv=2022-11-02&sv=2022-11-02&sr=d&sig=<signature>
 ```
 
+## Create a OneLake SAS with Python
+
+To create a OneLake SAS with Python, first set up a Data Lake client and authenticate by following [Use Python to access OneLake](onelake-access-python.md) or the [Azure Data Lake Storage client library for Python](/python/api/overview/azure/storage-file-datalake-readme). Then, use the following OneLake-specific endpoint, account name, and path values:
+
+- Use `https://onelake.dfs.fabric.microsoft.com` as the account URL. If you run the code in a Fabric notebook, use the [regional endpoint](onelake-access-api.md#data-residency) instead.
+- Use `onelake` as the `account_name` when generating the SAS.
+- Use the workspace name as the `file_system_name`.
+- Use the item path, such as `myLakehouse.Lakehouse/Files` for a directory or `myLakehouse.Lakehouse/Files/sales.csv` for a file.
+
+The following examples use these imports:
+
+```python
+from datetime import datetime, timedelta, timezone
+from azure.identity import DefaultAzureCredential
+from azure.storage.filedatalake import DataLakeServiceClient
+from azure.storage.filedatalake import generate_directory_sas, generate_file_sas, DirectorySasPermissions
+```
+
+### Acquire a user delegation key
+
+After you authenticate and create a `DataLakeServiceClient`, request a user delegation key. The key lifetime and the SAS lifetime can each be at most one hour.
+
+```python
+start_time = datetime.now(timezone.utc)
+expiry_time = start_time + timedelta(hours=1)
+
+service_client = DataLakeServiceClient(
+    account_url="https://onelake.dfs.fabric.microsoft.com",
+    credential=DefaultAzureCredential(),
+)
+
+delegation_key = service_client.get_user_delegation_key(
+    key_start_time=start_time,
+    key_expiry_time=expiry_time,
+)
+```
+
+### Generate a directory SAS
+
+The following example shows the OneLake-specific call to generate a SAS for a lakehouse directory by using the user delegation key:
+
+```python
+sas_token = generate_directory_sas(
+    account_name="onelake",
+    file_system_name="myWorkspace",
+    directory_name="myLakehouse.Lakehouse/Files",
+    credential=delegation_key,
+    permission=DirectorySasPermissions(read=True, list=True),
+    expiry=expiry_time,
+    start=start_time,
+)
+```
+
+Use `generate_file_sas` instead of `generate_directory_sas` when you want to grant access to a single file.
+
+For the full Python SDK setup, authentication, and client patterns, see the [Azure Data Lake Storage client library for Python](/python/api/overview/azure/storage-file-datalake-readme).
+
 ## Related content
 
 - [Create a user delegation SAS](/rest/api/storageservices/create-user-delegation-sas)
 - [Request a user delegation key](/rest/api/storageservices/get-user-delegation-key)
-- [Get started with OneLake data access roles](security/get-started-onelake-security.md)
+- [OneLake security roles, permissions, and scopes](security/data-access-control-model.md)
 

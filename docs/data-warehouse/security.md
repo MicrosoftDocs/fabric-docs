@@ -2,7 +2,7 @@
 title: Secure Your Fabric Data Warehouse
 description: Learn more about securing your warehouse in Microsoft Fabric.
 ms.reviewer: fresantos
-ms.date: 02/17/2026
+ms.date: 03/13/2026
 ms.topic: concept-article
 ms.search.form: Warehouse roles and permissions # This article's title should not change. If so, contact engineering.
 ---
@@ -66,32 +66,32 @@ Microsoft Fabric data warehousing supports several data protection technologies 
 
 Object-level security is a security mechanism that controls access to specific database objects, such as tables, views, or procedures, based on user privileges or roles. It ensures that users or roles can only interact with and manipulate the objects they have been granted permissions for, protecting the integrity and confidentiality of the database schema and its associated resources.
 
-For details on the managing granular permissions in SQL, see [SQL granular permissions in Microsoft Fabric](sql-granular-permissions.md).
+For details on managing granular permissions in SQL, see [SQL granular permissions in Fabric Data Warehouse](sql-granular-permissions.md).
 
 #### Row-level security
 
 Row-level security is a database security feature that restricts access to individual rows or records within a database table based on specified criteria, such as user roles or attributes. It ensures that users can only view or manipulate data that is explicitly authorized for their access, enhancing data privacy and control.
 
-For details on row-level security, see [Row-level security in Fabric data warehousing](row-level-security.md).
+For details on row-level security, see [Row-level security in Fabric Data Warehouse](row-level-security.md).
 
 #### Column-level security
 
 Column-level security is a database security measure that limits access to specific columns or fields within a database table, allowing users to see and interact with only the authorized columns while concealing sensitive or restricted information. It offers fine-grained control over data access, safeguarding confidential data within a database.
 
-For details on column-level security, see [Column-level security in Fabric data warehousing](column-level-security.md).
+For details on column-level security, see [Column-level security in Fabric Data Warehouse](column-level-security.md).
 
 #### Dynamic data masking
 
 Dynamic data masking helps prevent unauthorized viewing of sensitive data by enabling administrators to specify how much sensitive data to reveal, with minimal effect on the application layer. Dynamic data masking can be configured on designated database fields to hide sensitive data in the result sets of queries. With dynamic data masking, the data in the database isn't changed, so it can be used with existing applications since masking rules are applied to query results. Many applications can mask sensitive data without modifying existing queries.
 
-For details on dynamic data masking, see [Dynamic data masking in Fabric data warehousing](dynamic-data-masking.md).
+For details on dynamic data masking, see [Dynamic data masking in Fabric Data Warehouse](dynamic-data-masking.md).
 
 ## User audit logs
 
-To track user activity in warehouse and SQL analytics endpoint for meeting regulatory compliance and records managements requirements, a set of audit activities are accessible via Microsoft Purview and PowerShell. 
+To track user activity in a warehouse or SQL analytics endpoint for meeting regulatory compliance and records requirements, a set of audit activities are accessible via Microsoft Purview and PowerShell.
 
 - You can use user audit logs to identify who is taking what action on your Fabric items. 
-- To get started, learn [how to configure SQL audit logs in Fabric Data Warehouse (Preview)](configure-sql-audit-logs.md). 
+- To get started, learn [how to configure SQL audit logs in Fabric Data Warehouse](configure-sql-audit-logs.md). 
 - You can [track user activities across Microsoft Fabric](../admin/track-user-activities.md). For more information, see the [Operation list](../admin/operation-list.md).
 
 ## SQL analytics endpoint security
@@ -106,4 +106,4 @@ You can enhance your security posture by using customer-managed keys (CMK), givi
 
 - [Warehouse connectivity in Microsoft Fabric](connectivity.md)
 - [Workspace roles in Fabric Data Warehouse](workspace-roles.md)
-- [SQL granular permissions in Microsoft Fabric](sql-granular-permissions.md)
+- [SQL granular permissions in Fabric Data Warehouse](sql-granular-permissions.md)

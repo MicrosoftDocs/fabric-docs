@@ -1,4 +1,4 @@
----
+﻿---
 title: Configure Power BI Premium capacity notifications
 description: Learn how you can configure email notifications for your Power BI Premium capacities in the admin portal.
 author: msmimart
@@ -64,4 +64,4 @@ To configure the capacity notification emails, follow these steps:
 ## Related content
 
 - [What is Power BI Premium?](/power-bi/enterprise/service-premium-what-is)
-- [What is Microsoft Fabric admin?](microsoft-fabric-admin.md)
+- [What is Fabric admin?](microsoft-fabric-admin.md)

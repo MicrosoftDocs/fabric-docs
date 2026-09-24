@@ -1,4 +1,4 @@
----
+﻿---
 title: Service interruption notifications
 description: Learn about how to receive email notifications when there's a Power BI service disruption or outage.
 author: msmimart
@@ -9,7 +9,7 @@ ms.date: 03/17/2024
 
 # Service interruption notifications
 
-It's important to have insight into the availability of your mission-critical business applications. Microsoft Fabric incident notification so you can optionally receive emails if there's a service disruption or degradation.
+It's important to have insight into the availability of your mission-critical business applications. Fabric incident notification so you can optionally receive emails if there's a service disruption or degradation.
 
 At this time, emails are sent for the following *reliability scenarios*:
 

@@ -3,7 +3,7 @@ title: Resolve conflicts with Git integration
 description: Learn how to resolve conflicts when using Fabric's Git integration tools, including selecting versions, reverting states, and resolving conflicts in Git.
 ms.reviewer: NimrodShalit
 ms.topic: how-to
-ms.date: 12/15/2025
+ms.date: 06/15/2026
 #customer intent: As a developer, I want to know how to resolve conflicts when using Fabric's Git integration tools.
 ---
 
@@ -13,7 +13,7 @@ A conflict occurs when changes are made *to the same item* in both the workspace
 
 :::image type="content" source="./media/conflict-resolution/conflict-status-workspace.png" alt-text="Screenshot of a report with a Git status that says conflict.":::
 
-When you select **Update** when there are conflicts, a message notifies you that you need to resolve the conflicts before you can update.
+When you select **Update** when there are conflicts, you see the **Resolve Conflicts** button.
 
 :::image type="content" source="./media/conflict-resolution/source-control-resolve-conflict.png" alt-text="Screenshot of error message from source control tab informing about conflicts.":::
 
@@ -26,7 +26,7 @@ There are three ways to resolve a conflict:
 
 ## Resolve conflict in UI
 
-Select **Update all** to see a list of all the items that have conflicts. You can then select which version to keep for each item. For each conflicted item, you can choose to accept the incoming changes from the Git repository or keep the current version that's in the workspace.
+Select **Resolve Conflicts** to see a list of all the items that have conflicts. You can then select which version to keep for each item. For each conflicted item, you can choose to accept the incoming changes from the Git repository or keep the current version that's in the workspace.
 
 :::image type="content" source="./media/conflict-resolution/conflict-resolution.png" alt-text="Screenshot of UI to select which version of a conflicted item to keep.":::
 
@@ -36,6 +36,8 @@ Select **Update all** to see a list of all the items that have conflicts. You ca
 > Accepting incoming changes will override the current item in the workspace.
 
 - Choose **Keep current content** to keep the version currently in the workspace. After the update is complete, the Git status becomes *uncommitted changes* as the changes in the workspace aren't yet committed to the branch.
+
+- You can also open the [compare and commit changes](./granular-compare.md) dialog to compare the different versions of a conflicted item side by side. Reviewing the changes this way helps you decide which version to keep before you resolve the conflict.
 
 ## Revert to a previous state
 
@@ -53,7 +55,7 @@ To revert to the prior synced state, do *one* of the following actions:
 If you're not sure what changes were made and which version to choose and don’t want to revert to a previous state, you can try resolving the conflict in the Git repo by creating a new branch, resolving the conflict in that branch, and syncing it with the current one.
 
 >[!NOTE]
->Only a workspace admin can reconnect the workspace to the new branch.
+>By default, switching a connected workspace's Git branch (or checking out a new branch) is restricted to workspace Admins. However, a workspace Admin can enable the per-workspace setting **Allow users with at least Contributor role to change Git branch** to delegate branch-switching capabilities to Contributors or Members. For more information, see [Connect a workspace to a Git repo](git-get-started.md#connect-a-workspace-to-a-git-repo).
 
 1. From the **Source control** panel, check out a new branch using the last synced branch ID shown on bottom of screen
 
@@ -66,7 +68,7 @@ If you're not sure what changes were made and which version to choose and don’
 1. Commit your changes into the new branch. This new branch now has the changes you made to the items connected to an earlier version of the Git branch that doesn't conflict with your changes.
 1. In git, resolve the conflicts between the original branch and the new branch.
 1. In git, merge the new branch into the original branch
-1. In Fabric, [switch](./manage-branches.md#switch-branches) the workspace back to the original branch.
+1. In Fabric, [switch](./branched-workspace.md#switch-branches) the workspace back to the original branch.
 
 ## Related content
 

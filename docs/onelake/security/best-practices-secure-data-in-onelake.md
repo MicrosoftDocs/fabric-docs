@@ -1,7 +1,9 @@
 ---
 title: Security best practices
 description: Best practices for securing your data in OneLake including least privilege access, workload permissions, and user permissions.
-ms.reviewer: eloldag, aamerril
+ms.reviewer: aamerril # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.topic: concept-article
 ms.date: 09/05/2025
 ai-usage: ai-assisted
@@ -18,9 +20,9 @@ Least privilege access is a fundamental security principle in computer science t
 
 - If users only need access to a single lakehouse or data item, use the **Share** feature to grant them access to only that item. Only assign a user to a workspace role if that user needs to see *all* items in that workspace.
 
-- Use [OneLake security](./get-started-onelake-security.md) to restrict access to folders and tables within a lakehouse. For sensitive data, OneLake security [row](./row-level-security.md) or [column](./column-level-security.md) level security ensures that protected row and columns remain hidden.
+- Use [OneLake security](./get-started-security.md) to restrict access to folders and tables within a lakehouse. For sensitive data, OneLake security [row](./table-column-row-security.md#row-level-security) or [column](./table-column-row-security.md#column-level-security) level security ensures that protected rows and columns remain hidden.
 
-- To write data to OneLake, there are two permission options: workspace roles or [OneLake security ReadWrite permission.](./data-access-control-model.md#readwrite-permission) Users with Admin, Member, or Contributor workspace roles can write data to OneLake. For Viewers or users with only Read permissions on the item, you can grant granular OneLake security ReadWrite permission to specific folders and tables. These permissions can be utilized through Spark notebooks, OneLake File Explorer, and OneLake APIs. Write operations through the Lakehouse UX for viewers aren't supported at this time.
+- To write data to OneLake, there are two permission options: workspace roles or [OneLake security ReadWrite permission.](./data-access-control-model.md#readwrite-permission) Users with Admin, Member, or Contributor workspace roles can write data to OneLake. For Viewers or users with only Read permissions on the item, you can grant granular OneLake security ReadWrite permission to specific folders and tables. These permissions can be utilized through Spark notebooks, OneLake file explorer, and OneLake APIs. Write operations through the Lakehouse UX for viewers aren't supported at this time.
 
 - If users need to manage access to data, such as sharing an item or configuring OneLake security roles, then Admin or Member workspace roles are required.
 
@@ -32,7 +34,7 @@ Least privilege access is a fundamental security principle in computer science t
 
 This pattern is the recommended baseline architecture for implementing OneLake security at scale. Some scenarios might require alternative approaches due to current network security constraints. This pattern aligns with the long-term direction of OneLake security as those limitations are addressed.
 
-The core principle is to centralize data ownership and security enforcement in a primary workspace. Manage and secure your data at the source, then share it to downstream workspaces by using OneLake shortcuts. This approach ensures OneLake security policies are consistently enforced, regardless of where users consume the data.
+The core principle is to centralize data ownership and security enforcement in a primary workspace. Manage and secure your data at the source, then share it to downstream workspaces by using shortcuts in OneLake. This approach ensures OneLake security policies are consistently enforced, regardless of where users consume the data.
 
 :::image type="content" source="./media/best-practices-secure-data-in-onelake/base-pattern.png" alt-text="Diagram of the base pattern showing a core Workspace A that has security set. Users are then consuming that data through shortcuts in Workspaces B and C.":::
 
@@ -52,6 +54,6 @@ The core principle is to centralize data ownership and security enforcement in a
 ## Related content
 
 - [Fabric security overview](../../security/security-overview.md)
-- [OneLake security overview](./get-started-onelake-security.md)
-- [Data access control model](./data-access-control-model.md)
+- [Data security in OneLake](./get-started-security.md)
+- [How OneLake security controls data access](./data-access-control-model.md)
 

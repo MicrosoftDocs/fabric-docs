@@ -1,15 +1,15 @@
 ---
 title: Troubleshoot the Dynamics 365, Dataverse (Common Data Service), and Dynamics CRM connectors
-description: Learn how to troubleshoot issues with the Dynamics 365, Dataverse (Common Data Service), and Dynamics CRM connectors in Data Factory in Microsoft Fabric.
+description: Learn how to troubleshoot issues with the Dynamics 365, Dataverse (Common Data Service), and Dynamics CRM connectors in Fabric Data Factory.
 ms.reviewer: xupzhou
 ms.topic: troubleshooting
 ms.date: 10/23/2024
 ms.custom: connectors
 ---
 
-# Troubleshoot the Dynamics 365, Dataverse (Common Data Service), and Dynamics CRM connectors in Data Factory in Microsoft Fabric
+# Troubleshoot the Dynamics 365, Dataverse (Common Data Service), and Dynamics CRM connectors in Fabric Data Factory
 
-This article provides suggestions to troubleshoot common problems with the Dynamics 365, Dataverse (Common Data Service), and Dynamics CRM connectors in Data Factory in Microsoft Fabric.
+This article provides suggestions to troubleshoot common problems with the Dynamics 365, Dataverse (Common Data Service), and Dynamics CRM connectors in Data Factory.
 
 ## Error code: DynamicsCreateServiceClientError
 
@@ -184,6 +184,6 @@ This article provides suggestions to troubleshoot common problems with the Dynam
 
 For more troubleshooting help, try these resources:
 
-- [Data Factory blog](https://blog.fabric.microsoft.com/blog/category/data-factory)
-- [Data Factory community](https://community.fabric.microsoft.com/t5/Data-Factory-preview-Community/ct-p/datafactory)
+- [Fabric blog](https://community.fabric.microsoft.com/category/fabricupdatesblogs/blog/fbc_fabricupdatesblogs)
+- [Data Factory forums | Fabric Community](https://community.fabric.microsoft.com/category/datafactory)
 - [Data Factory feature requests ideas](https://ideas.fabric.microsoft.com/)

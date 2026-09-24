@@ -3,7 +3,7 @@ title: Dataflow Gen2 data destinations and managed settings
 description: Describes how to use Dataflow Gen2 to save your data in specific destinations, along with instructions on how to use managed settings.
 ms.reviewer: jeluitwi
 ms.topic: how-to
-ms.date: 11/06/2025
+ms.date: 08/25/2026
 ms.custom: dataflows
 ai-usage: ai-assisted
 ---
@@ -17,7 +17,7 @@ The following list contains the supported data destinations:
 [!INCLUDE [dataflow-gen2-data-destinations](includes/dataflow-gen2-data-destinations.md)]
 
 > [!NOTE]
->To load your data to the Fabric Warehouse, you can use the Azure Synapse Analytics (SQL DW) connector by getting the SQL connection string. More information: [Connectivity to data warehousing in Microsoft Fabric](../data-warehouse/connectivity.md)
+> To load your data to Fabric Data Warehouse, you can use the Azure Synapse Analytics (SQL DW) connector by getting the SQL connection string. For more information, see [Connectivity to Fabric Data Warehouse](../data-warehouse/connectivity.md).
 
 ## Entry points
 
@@ -45,14 +45,56 @@ Connecting to the data destination works like connecting to a data source. You c
 
 ## Set up file-based destinations
 
-When you choose a file-based destination (for example, SharePoint), you'll need to configure a few settings. Here's what you need to set:
+When you choose a file-based destination (for example, SharePoint), you'll need to configure settings based on the file format you select.
+
+### Delimited text format
+
+When you select **Delimited text** as the file format, configure these settings:
 
 * **File name**: The name of the file that gets created in the destination. By default, the file name matches your query name.
-* **File format**: The format of the file that gets created in the destination.
-* **File origin**: The encoding that's used to create the file in the destination. By default, this is set to **UTF-8**.
-* **File delimiter**: The delimiter that gets used to create the file in the destination. By default, this is set to **Comma**.
+* **File origin**: The encoding used to create the file in the destination. By default, this is set to **65001: Unicode (UTF-8)**.
+* **Delimiter**: The delimiter used to separate values in the file. Options include:
+  * Colon
+  * Comma (default)
+  * Equals sign
+  * Semicolon
+  * Space
+  * Tab
 
-:::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/file-destinations-settings.png" alt-text="Screenshot of the File destination settings window with the file name, file format, file origin, and file delimiter settings displayed.":::
+:::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/file-destinations-settings.png" alt-text="Screenshot of the File destination settings window with the delimited text format selected.":::
+
+### Excel format (Preview)
+
+> [!NOTE]
+> Excel format for file-based destinations is currently in preview.
+
+When you select **Excel** as the file format, you have three format options: **Single sheet**, **Multi sheet**, and **Advanced**.
+
+#### Single sheet format
+
+The single sheet format writes your data to a single sheet in the Excel file. Configure these settings:
+
+* **File name**: The name of the Excel file that gets created in the destination. By default, the file name matches your query name with an `.xlsx` extension.
+* **Output type**: Choose how your data is represented in the sheet:
+  * **Sheet**: Outputs data as a standard Excel table.
+  * **Chart**: Outputs data as a chart. When you select Chart, you need to configure additional settings:
+    * **Sheet name**: The name of the sheet where the chart is created.
+    * **Chart kind**: The type of chart to create (for example, Area).
+    * **Axis columns**: The columns to use for the chart axis.
+    * **Value columns**: The columns to use for the chart values.
+    * **Primary axis column**: The column to use as the primary axis (optional).
+* **Sheet name**: The name of the sheet where data is written (when Output type is Sheet).
+
+#### Multi sheet format
+
+The multi sheet format partitions your data across multiple sheets based on a column value. Configure these settings:
+
+* **File name**: The name of the Excel file that gets created in the destination.
+* **Sheet partition column**: The column used to partition data across multiple sheets. Each unique value in this column creates a separate sheet.
+
+#### Advanced format
+
+The advanced format provides more control over Excel output, allowing you to create complex workbooks with multiple sheets, charts, and customized formatting using navigation tables. For more information, see [Excel Advanced Data Destination](dataflow-gen2-data-destinations-excel-advanced.md).
 
 ## Create a new table or pick an existing table
 
@@ -123,18 +165,15 @@ Schema options on publish only apply when the update method is **replace**. When
 
 > [!NOTE]
 > When loading data into the warehouse, only fixed schema is supported.
+> When loading data into a Snowflake database, only fixed schema is supported. If you change the schema of your source query, you need to reconfigure the destination mapping manually.
 
 :::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/fixed-schema.png" alt-text="Screenshot of the Schema options on publish option, with Fixed schema selected.":::
 
 ## Parameterization
 
-[Parameters](/power-query/power-query-query-parameters) are a core feature within Dataflow Gen2. Once a parameter gets created or you use the **Always allow** setting, an input widget becomes available to define the table or file name for your destination.
+[Parameters](/power-query/power-query-query-parameters) are a core feature within Dataflow Gen2. Use the dynamic expression editor to combine text with dynamic date and time values, parameters, and workspace variables in supported data destination fields. The editor is enabled by default. In a supported field, press `/` to insert a value. For more information, see [Use the dynamic expression editor for Dataflow Gen2 data destinations](dataflow-gen2-dynamic-expression-editor-data-destinations.md).
 
-![Screenshot of the data destination experience where the table name is using a parameter called "TableName" and the input widget is shown.](media/dataflow-gen2-data-destinations-and-managed-settings/parameter-table-name.png)
-
-> [!NOTE]
-> Parameters in the data destination can also be applied directly through the M script created for the queries related to it. You can manually alter the script of your data destination queries to apply the parameters to meet your requirements.
-> However, the user interface currently only supports parameterization for the table or file name field.
+To parameterize destination settings that the dynamic expression editor doesn't support, use the M script created for the destination query. For more information, see [Advanced edit for data destination queries](dataflow-gen2-advanced-edit-data-destinations.md).
 
 ## Mashup script for data destination queries
 
@@ -164,20 +203,20 @@ These pieces of M scripts aren't visible inside of the Dataflow application, but
 
 ## Supported data source types per destination
 
-| Supported data types per storage location | DataflowStagingLakehouse | Azure DB (SQL) Output | Azure Data Explorer Output | Fabric Lakehouse (LH) Output | Fabric Warehouse (WH) Output | Fabric SQL Database (SQL) Output |
-| --- | --- | --- | --- | --- | --- |--- |
-| Action                           | No  | No  | No  | No  | No  | No  |
-| Any                              | No  | No  | No  | No  | No  | No  |
-| Binary                           | No  | No  | No  | No  | No  | No  |
-| Currency                         | Yes | Yes | Yes | Yes | No  | Yes |
-| DateTimeZone                     | Yes | Yes | Yes | No  | No  | Yes |
-| Duration                         | No  | No  | Yes | No  | No  | No  |
-| Function                         | No  | No  | No  | No  | No  | No  |
-| None                             | No  | No  | No  | No  | No  | No  |
-| Null                             | No  | No  | No  | No  | No  | No  |
-| Time                             | Yes | Yes | No  | No | No   | Yes |
-| Type                             | No  | No  | No  | No  | No  | No  |
-| Structured (List, Record, Table) | No  | No  | No  | No  | No  | No  |
+| Supported data types per storage location | DataflowStagingLakehouse | Azure DB (SQL) Output | Azure Data Explorer Output | Fabric Lakehouse (LH) Output | Fabric Warehouse (WH) Output | Fabric SQL Database (SQL) Output | Snowflake Output |
+| --- | --- | --- | --- | --- | --- |--- |--- |
+| Action                           | No  | No  | No  | No  | No  | No  | No  |
+| Any                              | No  | No  | No  | No  | No  | No  | No  |
+| Binary                           | No  | No  | No  | No  | No  | No  | No  |
+| Currency                         | Yes | Yes | Yes | Yes | No  | Yes | Yes |
+| DateTimeZone                     | Yes | Yes | Yes | No  | No  | Yes | No  |
+| Duration                         | No  | No  | Yes | No  | No  | No  | No  |
+| Function                         | No  | No  | No  | No  | No  | No  | No  |
+| None                             | No  | No  | No  | No  | No  | No  | No  |
+| Null                             | No  | No  | No  | No  | No  | No  | No  |
+| Time                             | Yes | Yes | No  | No | No   | Yes | Yes |
+| Type                             | No  | No  | No  | No  | No  | No  | No  |
+| Structured (List, Record, Table) | No  | No  | No  | No  | No  | No  | No  |
 
 When working with data types such as currency or percentage, we typically convert them to their decimal equivalents for most destinations. However, when reconnecting to these destinations and following the existing table path, you might encounter difficulties mapping, for example, currency to a decimal column. In such cases, try changing the data type in the editor to decimal, as this will facilitate easier mapping to the existing table and column.
 
@@ -197,9 +236,16 @@ To enable staging, right-click on the query and enable staging by selecting the 
 
 :::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/disable-staging.png" alt-text="Screenshot of the query drop-down menu with Enable staging emphasized.":::
 
+#### Snowflake destination preview limitations
+
+Snowflake as a data destination has the following known limitations:
+
+* **Dynamic schema is not supported.** If you change the columns in your source query (add, rename, or remove columns), you need to manually reconfigure the destination mapping. Other destinations like Fabric Lakehouse support dynamic schema, but Snowflake doesn't yet.
+* **Default destination only works for new tables.** When using the default destination experience with Snowflake, it creates a new table on the first refresh. However, if you later change the schema of your dataflow, the destination schema isn't updated automatically.
+
 #### Loading data into the Warehouse
 
-When you load data into the Warehouse, staging is required before the write operation to the data destination. This requirement improves performance. Currently, only loading into the same workspace as the dataflow is supported. Ensure staging is enabled for all queries that load into the warehouse.  
+When you load data into the Warehouse, staging is required before the write operation to the data destination. This requirement improves performance. Currently, only loading into the same workspace as the dataflow is supported. Ensure staging is enabled for all queries that load into the warehouse.
 
 When staging is disabled, and you choose Warehouse as the output destination, you get a warning to enable staging first before you can configure the data destination.
 
@@ -209,11 +255,49 @@ If you already have a warehouse as a destination and try to disable staging, a w
 
 :::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/enable-staging.png" alt-text="Screenshot of the Enable staging warning.":::
 
-### Schema support for Lakehouse, Warehouse and SQL databases (preview)
+### Schema support for Lakehouse, Warehouse and SQL databases
 
-Lakehouse, Warehouse, and SQL databases in Microsoft Fabric all support the ability to create a schema for your data. This means you can structure your data in a way that makes it easier to manage and query. In order to be able to write to schemas in these destinations you need to enable the **Navigate using full hierarchy** option under **advanced options** when you set up your connection. If you don't enable this option, you won't be able to select or view the schemas in the destination. A preview limitation for enabling Navigate using full hierarchy is that fast copy may not work properly. To use this feature in combination with a gateway we require at least 3000.290 version of the gateway. 
+Lakehouse, Warehouse, and SQL databases in Microsoft Fabric all support the ability to create a schema for your data. This means you can structure your data in a way that makes it easier to manage and query. In order to be able to write to schemas in these destinations you need to enable the **Navigate using full hierarchy** option under **advanced options** when you set up your connection. If you don't enable this option, you won't be able to select or view the schemas in the destination. A preview limitation for enabling Navigate using full hierarchy is that fast copy may not work properly. To use this feature in combination with a gateway we require at least 3000.310 version of the gateway.
 
 :::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/enable-schema-support.png" alt-text="Screenshot highlighting the Enable schema support option.":::
+
+### Automatic SQL analytics endpoint metadata sync for Lakehouse destinations
+
+When a Dataflow Gen2 refresh writes data to a Lakehouse table destination, the SQL analytics endpoint metadata is automatically synchronized as part of the refresh. This means your data is immediately queryable through the SQL analytics endpoint after a successful refresh, with no additional action or separate API call required.
+
+This behavior is controlled by the **Synchronize SQL Analytics Endpoint metadata** option, which lives under **Advanced options** in the Lakehouse connection settings (visible when you create or edit a Lakehouse data destination connection). The option is set to **True** by default.
+
+In most scenarios, you should leave this option enabled so downstream consumers (Power BI semantic models, notebooks, SQL queries) always see the latest data after a dataflow refresh.
+
+You can set this option to **False** in edge cases where:
+
+* You don't query the Lakehouse through the SQL analytics endpoint and don't need the metadata sync.
+* You see significantly longer refresh times caused by a large delta log backlog on the destination Lakehouse, and you want to skip the synchronization step until the backlog is addressed (for example, through table maintenance and vacuuming).
+
+When the option is set to **False**, the SQL analytics endpoint metadata isn't refreshed by the dataflow, and downstream SQL analytics endpoint consumers may see stale data until the next sync (manual or scheduled) occurs.
+
+### Enable V-Order compression on a Lakehouse destination
+
+> [!NOTE]
+> This advanced option is currently in preview.
+
+When a Dataflow Gen2 refresh writes data to a Fabric Lakehouse table destination, you can control whether the data is written using V-Order compression. V-Order is a write-time optimization for the Parquet file format that improves read performance for downstream Fabric engines such as the SQL analytics endpoint, Direct Lake semantic models, and Spark, at the cost of additional CPU during the write. For background and cross-engine guidance, see [Delta Lake table optimization and V-Order](../data-engineering/delta-optimization-and-v-order.md) and [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md).
+
+This behavior is controlled by the **Enable use of V-Order compression** option, which lives under **Advanced options** in the Lakehouse connection settings (visible when you create or edit a Lakehouse data destination connection). The option is set to **True** by default.
+
+:::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/enable-vorder-compression.png" alt-text="Screenshot of the Connect to data destination dialog for Lakehouse with the Enable use of V-Order compression advanced option highlighted.":::
+
+#### When to turn V-Order on or off for the destination
+
+Choose your setting based on how the destination Lakehouse table will be consumed:
+
+* **Turn V-Order off (improved write performance)** when the table is read only a small number of times. This is typical for intermediate tables in a medallion architecture (for example, a bronze table that's transformed once into a silver table) or for tables that are consumed primarily through Spark, which doesn't benefit from V-Order. Skipping V-Order reduces write-time CPU and shortens refresh duration, especially for large writes.
+* **Turn V-Order on (improved read performance)** when the table is read multiple times, or when it's consumed by Fabric engines that benefit from V-Order, such as Power BI Direct Lake semantic models or Fabric Warehouse. V-Order improves read performance by roughly 10% for the SQL analytics endpoint and Warehouse, and is the recommended write format for Direct Lake consumption.
+
+If you're unsure, the rule of thumb is: data read once benefits more from V-Order being off, and data read many times benefits more from V-Order being on. For a detailed matrix of write methods and read engines, see [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md).
+
+> [!NOTE]
+> The destination-level **Enable use of V-Order compression** option controls writes to the destination Lakehouse. To control V-Order compression for the staging Lakehouse used during dataflow execution, use the dataflow-level **Enable V-Order compression** option on the Scale tab. For more information, see [Staged data options for Dataflow Gen2](dataflow-gen2-staged-data-options.md).
 
 ### Vacuuming your Lakehouse data destination
 

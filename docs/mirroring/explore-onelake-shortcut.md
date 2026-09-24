@@ -1,7 +1,7 @@
 ---
 title: "Explore Data in Your Mirrored Database With Notebooks"
 description: Learn how to access your mirrored database from Lakehouse and Spark queries in Notebooks.
-ms.reviewer: imotiwala, chweb, anithaa
+ms.reviewer: sbahadur
 ms.date: 11/19/2024
 ms.topic: how-to
 ms.custom: sfi-image-nochange

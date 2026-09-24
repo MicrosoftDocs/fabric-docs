@@ -3,7 +3,7 @@ title: "Best practices for getting the best performance with Dataflow Gen2 in Fa
 description: "This article provides best practices for optimizing the performance of Dataflow Gen2 in Fabric Data Factory. By following these guidelines, you can enhance the efficiency and speed of your data integration processes."
 ms.reviewer: dougklo, jeluitwi
 ms.topic: concept-article
-ms.date: 07/29/2025
+ms.date: 06/24/2026
 ms.custom: dataflow
 ---
 
@@ -36,7 +36,7 @@ Data transformation is the process of converting data from one structure to anot
 
 ### Staging data and warehouse compute
 
-Staging data is a technique used to improve performance by temporarily storing intermediate results in a staging area. Dataflow Gen2 comes with a staging Lakehouse and a staging Warehouse, which can be used to perform transformations more efficiently. By staging data, you can use the compute resources of these staging areas to break down complex dataflows into manageable steps, reducing overall processing time. This break down is particularly useful for large datasets or complex transformations that would otherwise take a long time to execute in a single step. You can consider staging locations as a temporary storage area that allows you to fold transformations. This approach is especially beneficial when working with data sources that don't support query folding or when transformations are too complex to be pushed down to the source system. To apply staging effectively, you can keep an eye on the folding indicators in the dataflow editor to ensure that your transformations are being pushed down to the source. If you notice that a transformation isn't folding, consider splitting the query into two queries and apply the transformation in the second query. Enable staging on the first query to perform the transformation in the staging Lakehouse or Warehouse compute. This approach allows you to take advantage of the compute resources available in the staging areas while ensuring that your dataflow remains efficient and responsive.
+Staging data is a technique used to improve performance by temporarily storing intermediate results in a staging area. Dataflow Gen2 comes with a staging Lakehouse and a staging Warehouse, which can be used to perform transformations more efficiently. By staging data, you can use the compute resources of these staging areas to break down complex dataflows into manageable steps, reducing overall processing time. This breakdown is particularly useful for large datasets or complex transformations that would otherwise take a long time to execute in a single step. You can consider staging locations as a temporary storage area that allows you to fold transformations. This approach is especially beneficial when working with data sources that don't support query folding or when transformations are too complex to be pushed down to the source system. To apply staging effectively, you can keep an eye on the folding indicators in the dataflow editor to ensure that your transformations are being pushed down to the source. If you notice that a transformation isn't folding, consider splitting the query into two queries and apply the transformation in the second query. Enable staging on the first query to perform the transformation in the staging Lakehouse or Warehouse compute. This approach allows you to take advantage of the compute resources available in the staging areas while ensuring that your dataflow remains efficient and responsive.
 
 :::image type="content" source="media/dataflow-gen2-performance-best-practices/enable-staging.png" alt-text="Screenshot showing how to enable staging in Dataflow Gen2.":::
 
@@ -86,11 +86,15 @@ If you now look at the folding indicators in the dataflow editor, the transforma
 
 To learn more about how to optimize your dataflow transformations and ensure that they are being pushed down to the source system, go to [Query folding](/power-query/query-folding-basics).
 
-### Consideration 3: The impact on staging on data movement when using Lakehouse as a destination
+### Consideration 3: Optimize staging-to-Lakehouse data movement for a Lakehouse destination
 
-In this scenario, you're using a Lakehouse destination for your dataflow, and you have enabled staging to perform transformations before writing the final output. However, you notice that the overall refresh time is longer than expected, and you want to optimize the performance of this process.
+In this scenario, use a Lakehouse destination for your dataflow, and enable staging to run transformations before writing the final output. Make sure the step that moves staged data to the Lakehouse doesn't add unnecessary overhead to the overall refresh time.
 
-In this case, the data movement from the staging Warehouse to the Lakehouse destination can be a bottleneck. To improve performance, consider changing the destination to a Warehouse instead of a Lakehouse. This change allows you to use the compute resources of the staging Warehouse for transformations and write the final output directly to the Warehouse destination. The path of data movement becomes more efficient, as it avoids the additional overhead of writing to a Lakehouse. If a Lakehouse destination is necessary, consider disabling staging for the query that writes to the Lakehouse. This action allows you to write the final output directly to the Lakehouse without the additional overhead of staging, which can significantly improve performance. However, be aware that disabling staging means that you won't be able to perform transformations in the staging area, so ensure that your transformations are designed to fold to the source system whenever possible. This scenario highlights the importance of understanding the data movement path and optimizing it for better performance. Observe the difference in execution time when using a Warehouse destination compared to a Lakehouse destination with staging disabled. By carefully considering the destination and staging options, you can enhance the efficiency of your dataflow and reduce overall refresh time.
+A Lakehouse is a fully supported, high-performance destination for this pattern. The data movement from the staging Warehouse to the Lakehouse destination is optimized, so you no longer need to switch your destination to a Warehouse to get good performance. The recommended approach is the ELT pattern: use [Fast Copy](./dataflows-gen2-fast-copy.md) to land the data quickly, run your transformations on the staged data by using the Fabric staging compute, and write the final output to the Lakehouse. For large datasets, Fast Copy remains the recommended way to move the data efficiently.
+
+To get the most out of this pattern today, separate the Fast Copy and the transformation work into two queries: one query that performs the Fast Copy data movement, and a second query that applies the transformations on the staged data before writing to the Lakehouse destination. Combining a Fast Copy operation with non-folding transformations in the same query disables Fast Copy, so keeping them in separate queries is the main thing to watch for. If your transformations fully fold to the source, you can also write directly to the Lakehouse with staging disabled.
+
+When you stage data and write to a Lakehouse destination, turn on the **Optimized copy to Lakehouse (Preview)** option on the Scale tab to route the staged data to the Lakehouse through the faster copy path, which reduces the overhead of the staging-to-Lakehouse hop. For more information, see [Staged data options for Dataflow Gen2](dataflow-gen2-staged-data-options.md).
 
 ### Consideration 4: Large data previews during design-time
 
@@ -142,7 +146,38 @@ In this case, consider splitting your dataflow into two separate dataflows: one 
 
 In this scenario, you're using dataflow connectors to consume data from your dataflow, and you want to optimize your data integration processes. Dataflow connectors can provide a convenient way to access and consume data.
 
-In this case, consider using data destinations instead of dataflow connectors for consuming data from your dataflow. Data destinations, such as Lakehouses and Warehouses, are designed to efficiently store and serve data, allowing you to apply their capabilities for downstream consumption. A major benefit of using data destinations is that they often serve more generic ways of connecting to data, such as the SQL endpoint or use the Direct Lake capabilities, which can significantly improve performance and reduce resource consumption.
+In this case, consider using data destinations instead of dataflow connectors for consuming data from your dataflow. Data destinations, such as Lakehouses and Warehouses, are designed to efficiently store and serve data, allowing you to apply their capabilities for downstream consumption. A major benefit of using data destinations is that they often serve more generic ways of connecting to data, such as the SQL analytics endpoint or use the Direct Lake capabilities, which can significantly improve performance and reduce resource consumption.
+
+### Consideration 9: Enable the Modern Evaluator for improved query execution performance
+
+In this scenario, you want to improve the overall performance of your dataflow, particularly for complex transformations or when working with connectors that don't support query folding.
+
+In this case, consider enabling the Modern Query Evaluation Engine (Modern Evaluator) for your Dataflow Gen2 with CI/CD. The Modern Evaluator is a new query execution engine running on .NET Core 8 that can significantly improve the performance of dataflow runs. It's recommended to always enable this feature for supported scenarios, as it provides several key benefits:
+
+- **Faster dataflow execution**: The modern engine can substantially reduce query evaluation time. Many dataflows run noticeably faster, enabling you to refresh data more frequently or meet tight refresh windows.
+- **More efficient processing**: The engine is optimized for efficiency, using improved algorithms and a modern runtime. This means it can handle complex transformations with less overhead, which helps maintain performance as your data volume grows.
+- **Scalability and reliability**: By speeding up execution and reducing bottlenecks, the Modern Evaluator helps dataflows scale to larger volumes with greater stability. You can expect more consistent refresh durations and fewer timeout issues on large dataflows.
+
+The Modern Evaluator is particularly beneficial when:
+
+- You're working with non-foldable or partially foldable connectors
+- You're applying filters, column derivations, or data cleansing operations
+- You're dealing with large data volumes or complex transformations
+- Your dataflows run multiple times a day and you need to accumulate time savings
+
+To enable the Modern Evaluator:
+
+1. Open your dataflow in the Power Query editor.
+1. Select **Options** from the menu.
+1. Navigate to the **Scale** tab.
+1. Turn on the **Modern query evaluation engine** option.
+1. Save and run your dataflow.
+
+:::image type="content" source="media/dataflow-gen2-modern-evaluator/modern-evaluator-option.png" alt-text="Screenshot of the options dialog displaying the modern query evaluator setting." lightbox="media/dataflow-gen2-modern-evaluator/modern-evaluator-option.png":::
+
+The Modern Evaluator supports a growing list of connectors. For the full list of supported connectors and current feature status, see [Modern Evaluator for Dataflow Gen2 with CI/CD](dataflow-gen2-modern-evaluator.md#supported-connectors). If your dataflow uses connectors not in the supported list, those queries continue to run with the standard engine.
+
+To learn more about the Modern Evaluator, see [Modern Evaluator for Dataflow Gen2 with CI/CD](dataflow-gen2-modern-evaluator.md).
 
 ## Conclusion
 

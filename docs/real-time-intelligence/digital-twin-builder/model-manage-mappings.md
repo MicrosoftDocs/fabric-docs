@@ -1,5 +1,5 @@
 ---
-title: Manage entity types and mappings
+title: Manage Entity Types and Mappings
 description: Create and manage mappings in digital twin builder (preview).
 ms.date: 05/28/2025
 ms.topic: how-to

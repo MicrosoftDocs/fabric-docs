@@ -27,6 +27,7 @@ This article details the current limitations for Azure Cosmos DB accounts mirror
   | **API for Apache Cassandra (RU-based)** | No |
   | **Managed Instance for Apache Cassandra** | No |
   | **DocumentDB (vCore-based)** | No |
+  | **Sovereign Cloud (Azure Government and Azure China)** | No |
 
 ## Account and database limitations
 
@@ -43,6 +44,8 @@ This article details the current limitations for Azure Cosmos DB accounts mirror
 - You can't enable continuous backup on an Azure Cosmos DB account that previously disabled the analytical store feature for a container.
 
 ## Security limitations
+
+- Mirroring doesn't support customer managed keys (CMK) on OneLake.
 
 - Azure Cosmos DB read-write account keys and Microsoft Entra ID authentication with role-based access control are the only supported mechanisms to connect to the source account. Read-only account keys and managed identities aren't supported.
 

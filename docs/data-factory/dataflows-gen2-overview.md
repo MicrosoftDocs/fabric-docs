@@ -2,7 +2,7 @@
 title: Differences between Dataflow Gen1 and Dataflow Gen2
 description: Compare differences between Dataflow Gen1 and Gen2 in Data Factory for Microsoft Fabric.
 ms.topic: overview
-ms.date: 11/19/2025
+ms.date: 8/13/2026
 ms.reviewer: jeluitwi
 ms.search.form: DataflowGen2 Overview
 ms.custom: dataflows
@@ -15,18 +15,21 @@ Dataflows are a cloud-based tool that helps you prepare and transform data witho
 
 Dataflow Gen2 is the newer, more powerful version that works alongside the original Power BI Dataflow (now called Gen1). Built using the familiar [Power Query](/power-query/power-query-what-is-power-query) experience that's available across several Microsoft products and services such as Excel, Power BI, Power Platform, and Dynamics 365, Dataflow Gen2 provides enhanced features, better performance, and fast copy capabilities to quickly ingest and transform data. If you're starting fresh, we recommend Dataflow Gen2 for its enhanced features and better performance.
 
+> [!IMPORTANT]
+> As of April 2026, the option to create new Dataflow Gen2 items without CI/CD and Git integration support (previously known as Dataflow Gen2 Classic) is no longer available. All new Dataflow Gen2 items are now created with CI/CD and Git integration support by default. Existing Dataflow Gen2 items without CI/CD support continue to work as expected. To convert an existing classic dataflow, use the [Save As feature](migrate-to-dataflow-gen2-using-save-as.md).
+
 ## What can you do with dataflows?
 
 With dataflows, you can:
 
-- **Connect to your data**: Pull information from databases, files, web services, and more.
+- **Connect to your data**: Pull information from databases, files, web services, and more. You can also reconnect to recently used sources.
 - **Transform your data**: Clean, filter, combine, and reshape your data using a visual interface.
 - **Load data anywhere**: Send your transformed data to databases, data warehouses, or cloud storage.
 - **Automate the process**: Set up schedules so your data stays fresh and up-to-date.
 
 ## Dataflow features
 
-Here's the features that are available between Dataflow Gen2 and Gen1:
+Here's a comparison of features between Dataflow Gen2 and Gen1:
 
 | Feature |   Dataflow Gen2 |  Dataflow Gen1 |
 |--------|---|---|
@@ -41,6 +44,7 @@ Here's the features that are available between Dataflow Gen2 and Gen1:
 | Direct Query via the dataflow connector |  | ✓ |
 | Refresh only changed data       | ✓ | ✓ |
 | AI-powered insights | ✓ | ✓ |
+| Recent data shortcuts to previously used sources | ✓ |  |
 
 ## Upgrades to Dataflow Gen2
 
@@ -95,7 +99,13 @@ To learn more about connecting dataflows with pipelines, see [dataflow activitie
 
 ### High-performance computing
 
-Dataflow Gen2 uses advanced compute Fabric SQL Compute engines to handle large amounts of data efficiently. To make this work, Dataflow Gen2 creates both Lakehouse and Warehouse items in your workspace and uses them to store and access data, improving performance for all your dataflows.
+Dataflow Gen2 uses advanced Fabric SQL compute engines to handle large amounts of data efficiently. To make this work, Dataflow Gen2 creates both Lakehouse and Warehouse items in your workspace and uses them to store and access data, improving performance for all your dataflows.
+
+### Find and reuse recent data sources
+
+Dataflow Gen2 includes a **Recent data** module that records items you've previously used—such as tables, files, folders, databases, and sheets—and lets you load them directly into the Dataflow Gen2 editing canvas. You can access Recent data from the Power Query ribbon or from the Modern Get Data experience, so you can quickly get back to the data you need without reconfiguring your connections.
+
+From any Recent data entry, you can also select **Browse location** to explore and select additional related items within the same folder or database, making it easy to work with multiple resources in the same location.
 
 ## Copilot for Dataflow Gen2
 
@@ -118,7 +128,7 @@ Dataflow Gen2 requires a Fabric capacity, a Fabric trial capacity, or a Power BI
 
 ## Moving from Dataflow Gen1 to Gen2
 
-If you already have dataflows built with Gen1, don't worry – you can easily migrate them to Gen2. We've got several options to help you make the switch:
+If you already have dataflows built with Gen1, you can easily migrate them to Gen2. Several options help you make the switch:
 
 - [Export and import your queries](#export-and-import-your-queries)
 - [Copy and paste in Power Query](#copy-and-paste-in-power-query)
@@ -134,7 +144,11 @@ If you have a dataflow in Power BI or Power Apps, you can copy your queries and 
 
 ### Use the Save As feature
 
-If you already have any type of dataflow (Gen1, Gen2, or Gen2 CI/CD), Data Factory now includes a Save As feature. This lets you save any existing dataflow as a new Dataflow Gen2 (CI/CD) item with just one action. More details: [Migrate to Dataflow Gen2 (CI/CD) using Save As](migrate-to-dataflow-gen2-using-save-as.md).
+If you already have any type of dataflow (Gen1 or Gen2), Data Factory includes a Save As feature. This lets you save any existing dataflow as a new Dataflow Gen2 item with CI/CD and Git integration support in just one action. More details: [Migrate to Dataflow Gen2 using Save As](migrate-to-dataflow-gen2-using-save-as.md).
+
+## Staging items in your workspace
+
+In some experiences, you might see system-generated items like **DataflowsStagingLakehouse** or **DataflowsStagingWarehouse** in your workspace. These are internal staging items used by Dataflow Gen2 and aren't intended for direct interaction. You can safely disregard them.
 
 ## Related content
 
@@ -143,3 +157,4 @@ Ready to learn more? Check out these helpful resources:
 - [Monitor your dataflows](dataflows-gen2-monitor.md) - Track refresh history and performance
 - [Save drafts as you work](dataflows-gen2-save-draft.md) - Learn about the autosave feature
 - [Migrate from Gen1 to Gen2](move-dataflow-gen1-to-dataflow-gen2.md) - Step-by-step migration guide
+- [Dataflow Gen2 cost and performance benchmarks](dataflow-gen2-cost-performance-benchmarks.md) - Compare CU cost and execution time across capabilities.

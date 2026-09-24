@@ -7,6 +7,7 @@ ms.topic: tutorial
 ms.collection:
 - ce-skilling-ai-copilot
 ms.custom: sfi-image-nochange
+ms.search.form: Get started
 ---
 
 # Ingest sample data and create objects and data

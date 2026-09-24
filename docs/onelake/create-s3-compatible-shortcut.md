@@ -1,7 +1,9 @@
 ---
 title: Create an Amazon S3 compatible shortcut
 description: Learn how to create a OneLake shortcut that's Amazon S3 compatible for easy data access in a Fabric lakehouse.
-ms.reviewer: eloldag, mahi
+ms.reviewer: eloldag, mahi # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.search.form: Shortcuts
 ms.topic: how-to
 ms.date: 07/24/2025
@@ -16,7 +18,7 @@ S3 compatible shortcuts can take advantage of file caching to reduce egress cost
 
 ## Prerequisites
 
-- If you don't have a lakehouse, create one by following these steps: [Create a lakehouse with OneLake](create-lakehouse-onelake.md).
+- If you don't have a lakehouse, create one by following these steps: [Create a lakehouse](../data-engineering/create-lakehouse.md).
 
 - Ensure your chosen S3 compatible bucket and secret key credentials meet the [access and authorization requirements for S3 shortcuts](./create-s3-shortcut.md#access).
 
@@ -28,7 +30,7 @@ S3 compatible shortcuts can take advantage of file caching to reduce egress cost
 
 1. Select **New shortcut**.
 
-   :::image type="content" source="media/create-onelake-shortcut/new-shortcut-lake-view.png" alt-text="Screenshot of right click context menu showing where to select New shortcut from the Lake view.":::
+   :::image type="content" source="shortcuts/media/create-onelake-shortcut/new-shortcut-lake-view.png" alt-text="Screenshot of right click context menu showing where to select New shortcut from the Lake view.":::
 
 ## Select a source
 
@@ -69,6 +71,6 @@ The following limitations apply to S3 compatible shortcuts:
 
 ## Related content
 
-- [Create a OneLake shortcut](create-onelake-shortcut.md)
+- [Create a OneLake shortcut](shortcuts/create-onelake-shortcut.md)
 - [Create an Azure Data Lake Storage Gen2 shortcut](create-adls-shortcut.md)
 

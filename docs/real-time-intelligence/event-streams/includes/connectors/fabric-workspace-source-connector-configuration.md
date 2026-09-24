@@ -1,0 +1,24 @@
+---
+title: Fabric Workspace Item events connector for Fabric event streams
+description: The include files has the common content for configuring Fabric Workspace Item events connector for Fabric event streams and Real-Time hub. 
+ms.reviewer: xujiang1
+ms.topic: include
+ms.date: 04/02/2026
+---
+
+1. On the **Connect** screen, first select  **Event type(s)** of interest that you want to capture in the eventstream. By default, all supported events are captured.
+
+    :::image type="content" source="./media/fabric-workspace-source-connector/select-event-types.png" alt-text="Screenshot that shows the Connect page for Fabric Workspace item events.":::
+1. In the next step, select the right **Event source**. You can choose between streaming all workspace item events in a tenant by selecting the source option as **Across this tenant** or restrict to specific workspace by choosing **By workspace** option. To select a **workspace** for which you want to stream workspace item events, you must be a workspace admin, member, or contributor of that workspace. To receive workspace item events across the tenant, you need to be a Fabric tenant admin
+
+   :::image type="content" border="true" source="media/fabric-workspace-source-connector/connect.png" alt-text="A screenshot of the Connect screen.":::
+
+### Stream or source details
+
+[!INCLUDE [stream-source-details](./stream-source-details.md)]
+
+### Review and connect
+
+On the **Review + connect** screen, review the summary, and select **Add** (Eventstream) or **Connect** (Real-Time hub).
+
+

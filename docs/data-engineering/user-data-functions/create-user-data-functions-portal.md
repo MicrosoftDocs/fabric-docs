@@ -6,25 +6,26 @@ ms.topic: quickstart
 ms.custom: freshness-kr
 ms.date: 01/21/2026
 ms.search.form: Create Fabric User data functions
+ai-usage: ai-assisted
 ---
 
-# Create a Fabric User data functions item
+# Create a user data functions item in Fabric
 
-User Data Functions enable you to create reusable Python functions that can be invoked across Microsoft Fabric and from external applications. By centralizing your business logic in functions, you can maintain consistency, reduce code duplication, and streamline data transformation workflows throughout your organization.
+User data functions enable you to create reusable Python functions that you can invoke across Microsoft Fabric and from external applications. By centralizing your business logic in functions, you can maintain consistency, reduce code duplication, and streamline data transformation workflows throughout your organization.
 
-With User Data Functions, you can:
+By using user data functions, you can:
 - **Centralize business logic** - Write functions once and invoke them from Pipelines, Notebooks, Activator rules, and Power BI
 - **Integrate seamlessly** - Call functions via REST endpoints from any application or service
 - **Accelerate development** - Use pre-built sample functions or create custom functions with the Python programming model
 - **Maintain consistency** - Ensure data transformations and business rules are applied uniformly across all workloads
 
-This quickstart shows you how to create your first User Data Functions item, add functions from the sample library, write custom functions, and run them in the Fabric portal. By the end, you have a working function that demonstrates category standardization for product data.
+This quickstart shows you how to create your first user data functions item, add functions from the sample library, write custom functions, and run them in the Fabric portal. By the end, you have a working function that demonstrates category standardization for product data.
 
 ## What you accomplish
 
 In this quickstart, you complete the following tasks:
 
-1. Create a User Data Functions item in your workspace
+1. Create a user data functions item in your workspace
 1. Add and configure required Python libraries (like pandas)
 1. Insert a function from the sample library
 1. Write a custom function with proper syntax and decorators
@@ -33,7 +34,7 @@ In this quickstart, you complete the following tasks:
 
 ## Prerequisites
 
-- A [Microsoft Fabric capacity](../../enterprise/licenses.md) in one of [the supported regions](../../admin/region-availability.md). If you don't have a Fabric capacity, start a [free Fabric trial](../../get-started/fabric-trial.md).
+- A [Fabric capacity](../../enterprise/licenses.md) in one of [the supported regions](../../admin/region-availability.md). If you don't have a Fabric capacity, start a [free Fabric trial](../../get-started/fabric-trial.md).
 - A [Fabric workspace](../../get-started/create-workspaces.md) assigned to that capacity
 
 ## Create a new user data functions item
@@ -69,7 +70,7 @@ This example shows how to add a new function from the **Insert sample** menu. In
    
 1. Select **+Add from PyPI** to add a new library from the public PyPI repository.
 
-1. Search for and select the **pandas** library and select the version. Once the library is added, it's automatically saved in your User Data Functions item. 
+1. Search for and select the **pandas** library and select the version. After you add the library, the portal automatically saves it in your user data functions item.
 
    :::image type="content" source="..\media\user-data-functions-manage-libraries\add-pandas-library.png" alt-text="Screenshot showing how to add pandas library." lightbox="..\media\user-data-functions-manage-libraries\add-pandas-library.png":::
 
@@ -78,7 +79,7 @@ This example shows how to add a new function from the **Insert sample** menu. In
    >[!NOTE]
    > The `fabric_user_data_functions` library is included by default and can't be removed. This library is required for the functionality of User data functions. You need to update the version of this library for any future releases of this SDK.
 
-1. Close the **Library management** pane to return to the User Data Functions home page.
+1. Close the **Library management** pane to return to the user data functions home page.
 
 ### Insert the sample function
 
@@ -96,7 +97,7 @@ This example shows how to add a new function from the **Insert sample** menu. In
 
 Now that you added a function from the sample library, you can write your own custom function directly in the code editor. This section shows you the syntax and structure required for creating functions from scratch.
 
-Every runnable function requires the `@udf.function()` decorator before the function definition. This decorator marks your Python function as executable within the User Data Functions framework. The basic syntax is:
+Every runnable function requires the `@udf.function()` decorator before the function definition. This decorator marks your Python function as executable within the user data functions framework. The basic syntax is:
 
 ```python
 @udf.function()
@@ -106,7 +107,7 @@ def your_function_name(parameter: type) -> return_type:
 ```
 
 > [!IMPORTANT]
-> Parameter names must use camelCase (for example, `productName` instead of `product_name`) and all parameters are required. For complete syntax requirements and limitations, see [Syntax requirements and limitations](./python-programming-model.md#syntax-requirements-and-limitations).
+> Parameter names must use camelCase (for example, `productName` instead of `product_name`). Parameters without default values are required; parameters with default values are optional at invocation time. For complete syntax requirements and limitations, see [Syntax requirements and limitations](./python-programming-model.md#syntax-requirements-and-limitations).
 
 Here's a complete example that standardizes product categories from raw sales data:
 
@@ -142,11 +143,43 @@ def standardize_category(productName: str, rawCategory: str) -> dict:
     }
 ```
 
-You can add this function to your code editor alongside the existing functions. The function appears in the **Functions explorer** with a circle icon, indicating it needs to be published. 
+You can add this function to your code editor alongside the existing functions. The function appears in the **Functions explorer** with a circle icon, indicating it needs to be published.
+
+### Using default parameter values
+
+Functions can define default values for any parameter, making those parameters optional at invocation time. The following example shows a function with several types of default values:
+
+```python
+@udf.function()
+def score_customer(
+    customerId: str,                          # required — no default
+    isActive: bool = True,                    # optional bool default
+    maxRecords: int = 100,                    # optional int default
+    startDate: datetime.datetime = "2025-01-01T00:00:00Z",  # specify as a string; the runtime parses it to datetime at invocation time
+    tags: list | None = None,                 # optional list — use None to avoid mutable default
+) -> dict:
+    tags = tags or []
+    return {
+        "customerId": customerId,
+        "isActive": isActive,
+        "maxRecords": maxRecords,
+        "startDate": str(startDate),
+        "tags": tags,
+    }
+```
+
+Supported default input types at a high level:
+- **JSON-serializable strings**, **booleans**, **integers**, and **floats** — use directly as defaults.
+- **Date/time strings** — specify as a string in the function signature; the runtime parses it to `datetime` at invocation time. Use ISO 8601 format (for example, `2025-12-31T23:59:59Z`) for reliable parsing.
+- **Lists and dictionaries** — must be JSON-serializable. Prefer `None` in the signature and assign the real default inside the function to avoid shared mutable defaults.
+- **Objects or arrays of objects** — can map to pandas DataFrame or Series. Requires `fabric-user-data-functions` version 1.0.0 or later.
+
+> [!NOTE]
+> Sets and tuples are **not** supported as default values. All defaults must be JSON-serializable.
 
 ### Programming model key concepts 
 
-Your User Data Functions use the [User Data Functions Python Programming model](./python-programming-model.md) to create, run, debug, and modify individual functions. The programming model is provided by the `fabric-user-data-functions` package, which is [publicly available on PyPI](https://pypi.org/project/fabric-user-data-functions/) and pre-installed in your user data functions items.
+Your user data functions use the [User data functions Python programming model](./python-programming-model.md) to create, run, debug, and modify individual functions. The `fabric-user-data-functions` package provides the programming model. This package is [publicly available on PyPI](https://pypi.org/project/fabric-user-data-functions/) and preinstalled in your user data functions items.
 
 When you create your first function, the code file includes the required import statements:
 
@@ -161,8 +194,9 @@ udf = fn.UserDataFunctions()
 Key points about the programming model:
 
 - The `fabric-user-data-functions` package provides the `fabric.functions` module, which you import as `fn` in your code.
-- The `fn.UserDataFunctions()` call creates the execution context required for defining and running functions within a User Data Functions item.
+- The `fn.UserDataFunctions()` call creates the execution context required for defining and running functions within a user data functions item.
 - Other libraries like `logging` enable you to write custom logs for debugging and monitoring.
+- The Python programming model supports default argument values for function parameters. For the authoritative list of supported types and constraints, see [Syntax requirements and limitations](./python-programming-model.md#syntax-requirements-and-limitations).
 
 >[!NOTE]
 > The `import fabric.functions as fn` statement and the `udf = fn.UserDataFunctions()` line are required for your functions to work properly. Your **functions will not work** if these lines are missing. 
@@ -183,6 +217,9 @@ Now that you created multiple functions (the sample `manipulate_data` function a
 ## Run your functions
 
 With all your functions created, tested, and published, you can now switch to **Run only** mode to execute them and see the results.
+
+> [!NOTE]
+> Parameters with defined default values can be omitted in the **Run** pane — the defined defaults are used automatically. Complex inputs such as lists and dictionaries should be provided as JSON. Date/time inputs should use a consistent format such as ISO 8601 (for example, `2025-12-31T23:59:59Z`) for proper parsing.
 
 1. Select **Run only mode** from the mode selector in the top-right corner of the portal.
    
@@ -271,20 +308,25 @@ After the code is removed, you can select **Publish** to save your changes. Once
 
 ## Troubleshooting
 
-If you encounter issues while working with User Data Functions:
+If you encounter issues while working with user data functions:
 
 - **Function won't publish** - Check for syntax errors in your code. Ensure all required imports (`fabric.functions`) and the `udf = fn.UserDataFunctions()` line are present.
 - **Parameter naming errors** - Remember that parameter names must use camelCase (no underscores). Review the [syntax requirements and limitations](./python-programming-model.md#syntax-requirements-and-limitations).
 - **Library import errors** - Verify that all required libraries are added via Library Management and that the version is compatible with Python 3.11.
 - **Function not appearing in Functions explorer** - Make sure you published your changes after adding or modifying functions.
+- **Default value issues** - If a function fails to publish or inputs aren't parsed correctly:
+  - Use ISO 8601 format (for example, `2025-12-31T23:59:59Z`) for date/time default values to ensure reliable parsing.
+  - Avoid mutable defaults for lists and dictionaries. Use `None` in the function signature and assign the real default inside the function body (for example, `items = items or []`).
+  - Ensure all default values are JSON-serializable. Sets and tuples are not supported as defaults.
+  - Verify that parameter names and default values match what's expected. If your function uses pandas DataFrame or Series defaults, ensure the `fabric-user-data-functions` package is version 1.0.0 or later.
 
-For more help, see [User Data Functions service limits and considerations](./user-data-functions-service-limits.md).
+For more help, see [User data functions service limits and considerations](./user-data-functions-service-limits.md).
 
 ## Related content
 
-Now that you created your first User Data Functions item, explore these resources to expand your skills:
+To expand your skills, explore these resources:
 
 - [Create a Fabric User data functions item in Visual Studio Code](./create-user-data-functions-vs-code.md) - Learn to develop functions locally with full IDE support
 - [Learn about the User data functions programming model](./python-programming-model.md) - Dive deeper into the Python SDK and advanced features
-- [Invoke User Data Functions from a Python application](./tutorial-invoke-from-python-app.md) - Call your functions from external applications via REST APIs
-- [Manage libraries for User Data Functions](./how-to-manage-libraries.md) - Learn advanced library management techniques
+- [Invoke user data functions from a Python application](./tutorial-invoke-from-python-app.md) - Call your functions from external applications via REST APIs
+- [Manage libraries for user data functions](./how-to-manage-libraries.md) - Learn advanced library management techniques

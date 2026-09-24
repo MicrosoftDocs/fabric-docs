@@ -4,15 +4,19 @@ description: How to enable and use the native execution engine to execute Apache
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 10/01/2025
+ai-usage: ai-assisted
 ---
 
 # Native execution engine for Fabric Data Engineering
 
-The native execution engine is a groundbreaking enhancement for Apache Spark job executions in Microsoft Fabric. This vectorized engine optimizes the performance and efficiency of your Spark queries by running them directly on your lakehouse infrastructure. The engine's seamless integration means it requires no code modifications and avoids vendor lock-in. It supports Apache Spark APIs and is compatible with **[Runtime 1.3 (Apache Spark 3.5)](./runtime-1-3.md)**, and works with both Parquet and Delta formats. Regardless of your data's location within OneLake, or if you access data via shortcuts, the native execution engine maximizes efficiency and performance.
+The native execution engine is a groundbreaking enhancement for Apache Spark job executions in Microsoft Fabric. This vectorized engine optimizes the performance and efficiency of your Spark queries by running them directly on your lakehouse infrastructure. The engine's seamless integration means it requires no code modifications and avoids vendor lock-in. It supports Apache Spark APIs and is compatible with **[Runtime 1.3 (Apache Spark 3.5)](./runtime-1-3.md)** and **[Runtime 2.0 (Apache Spark 4.1)](./runtime-2-0.md)**, and works with Parquet, Delta, and CSV formats. Regardless of your data's location within OneLake, or if you access data via shortcuts, the native execution engine maximizes efficiency and performance.
 
-The native execution engine significantly elevates query performance while minimizing operational costs. It delivers a remarkable speed enhancement, achieving up to four times faster performance compared to traditional OSS (open source software) Spark, as validated by the TPC-DS 1-TB benchmark. The engine is adept at managing a wide array of data processing scenarios, ranging from routine data ingestion, batch jobs, and ETL (extract, transform, load) tasks, to complex data science analytics and responsive interactive queries. Users benefit from accelerated processing times, heightened throughput, and optimized resource utilization.
+The native execution engine significantly elevates query performance while minimizing operational costs. Actual results vary by workload characteristics and configuration. The engine is adept at managing a wide array of data processing scenarios, ranging from routine data ingestion, batch jobs, and ETL (extract, transform, load) tasks, to complex data science analytics and responsive interactive queries. Users benefit from accelerated processing times, heightened throughput, and optimized resource utilization.
 
 The Native Execution Engine is based on two key OSS components: [Velox](https://github.com/facebookincubator/velox), a C++ database acceleration library introduced by Meta, and [Apache Gluten (incubating)](https://github.com/apache/incubator-gluten), a middle layer responsible for offloading JVM-based SQL engines’ execution to native engines introduced by Intel.
+
+Supported operators are offloaded from JVM-based Spark to a vectorized C++ execution path, providing columnar, SIMD-accelerated processing with native support for Parquet and Delta formats. The native engine preserves key Fabric Spark query optimizations, including adaptive query execution (AQE), cost-based rewrites, column pruning, and predicate pushdown, so these optimizer behaviors remain fully active when operators are offloaded.
+The engine also supports parallel Delta snapshot loading and accelerates operations that benefit from Z-ordering and Liquid Clustering on Delta tables, providing further performance gains for organized data layouts.
 
 
 ## When to use the native execution engine
@@ -31,7 +35,7 @@ For information on the operators and functions supported by the native execution
 To use the full capabilities of the native execution engine during the preview phase, specific configurations are necessary. The following procedures show how to activate this feature for notebooks, Spark job definitions, and entire environments.
 
 > [!IMPORTANT]
-> The native execution engine supports the latest GA runtime version, which is [Runtime 1.3 (Apache Spark 3.5, Delta Lake 3.2)](./runtime-1-3.md). With the release of the native execution engine in Runtime 1.3, support for the previous version—[Runtime 1.2 (Apache Spark 3.4, Delta Lake 2.4)](./runtime-1-2.md)—is discontinued. We encourage all customers to upgrade to the latest Runtime 1.3. If you're using the Native Execution Engine on Runtime 1.2, native acceleration will be disabled.
+> The native execution engine supports [Runtime 1.3 (Apache Spark 3.5, Delta Lake 3.2)](./runtime-1-3.md) and [Runtime 2.0 (Apache Spark 4.1, Delta Lake 4.1)](./runtime-2-0.md).
 
 ### Enable at the environment level
 
@@ -143,11 +147,11 @@ There are several methods to determine if an operator in your Apache Spark job w
 
 ### Spark UI and Spark history server
 
-Access the Spark UI or Spark history server to locate the query you need to inspect. To access the Spark web UI, navigate to your Spark Job Definition and run it. From the **Runs** tab, select the **...** next to the **Application name** and select **Open Spark web UI**. You can also access the Spark UI from the **Monitor** tab in the workspace. Select the notebook or pipeline, from the monitoring page, there's a direct link to the **Spark UI** for active jobs.
+Access the Spark UI or Spark history server to locate the query you need to inspect. To access the Spark web UI, navigate to your Spark job definition and run it. From the **Runs** tab, select the **...** next to the **Application name** and select **Open Spark web UI**. You can also access the Spark UI from the **Monitor** tab in the workspace. Select the notebook or pipeline, from the monitoring page, there's a direct link to the **Spark UI** for active jobs.
 
 :::image type="content" source="media\native\spark-web-ui.png" alt-text="Screenshot showing how to navigate to the Spark web UI." lightbox="media\native\spark-web-ui.png":::
 
-In the query plan displayed within the Spark UI interface, look for any node names that end with the suffix *Transformer*, *NativeFileScan, or *VeloxColumnarToRowExec*. The suffix indicates that the native execution engine executed the operation. For instance, nodes might be labeled as *RollUpHashAggregateTransformer*, *ProjectExecTransformer*, *BroadcastHashJoinExecTransformer*, *ShuffledHashJoinExecTransformer*, or *BroadcastNestedLoopJoinExecTransformer*.
+In the query plan displayed within the Spark UI interface, look for any node names that end with the suffix *Transformer*, *NativeFileScan, or *VeloxColumnarToRowExec*. The suffix indicates that the native execution engine executed the operation. For instance, nodes might be labeled as *RollUpHashAggregateTransformer*, *ProjectExecTransformer*, *BroadcastHashJoinExecTransformer*, *ShuffledHashJoinExecTransformer*, or *BroadcastNestedLoopJoinExecTransformer*. For CSV data sources, native scans may appear as native file scan or transformer nodes in the Spark UI, similar to Parquet and Delta scan nodes.
 
 :::image type="content" source="media\native\spark-ui.jpg" alt-text="Screenshot showing how to check DAG visualization that ends with the suffix Transformer." lightbox="media\native\spark-ui.jpg":::
 
@@ -156,6 +160,10 @@ In the query plan displayed within the Spark UI interface, look for any node nam
 Alternatively, you can execute the `df.explain()` command in your notebook to view the execution plan. Within the output, look for the same *Transformer*, *NativeFileScan, or *VeloxColumnarToRowExec* suffixes. This method provides a quick way to confirm whether specific operations are being handled by the native execution engine.
 
 :::image type="content" source="media\native\df-details.jpg" alt-text="Screenshot showing how to check the physical plan for your query, and see that the query was executed by the native execution engine." lightbox="media\native\df-details.jpg":::
+
+### Fabric Spark Advisor alerts
+
+Fabric Spark Advisor provides real-time fallback visibility during notebook cell execution. When an operator or plan segment falls back to JVM-based Spark instead of the native path, Advisor surfaces an alert directly in the notebook cell output, helping you quickly identify unsupported operators or configurations without leaving the notebook. You can use these alerts to diagnose when native offload isn't applied and to decide whether to adjust your query or configuration.
 
 ### Fallback mechanism
 
@@ -183,17 +191,17 @@ You can also select on the query description for the Apache Spark query executio
 
 ## Limitations
 
-While the Native Execution Engine (NEE) in Microsoft Fabric significantly boosts performance for Apache Spark jobs, it currently has the following limitations:
+While the native execution engine (NEE) in Fabric significantly boosts performance for Apache Spark jobs, it currently has the following limitations. Several correctness-related items that applied to [Runtime 1.3 (Apache Spark 3.5)](./runtime-1-3.md) are resolved in [Runtime 2.0 (Apache Spark 4.1)](./runtime-2-0.md); each item notes the runtime it applies to.
 
 ### Existing limitations
 
-- **Incompatible Spark features**: Native execution engine doesn't currently support user-defined functions (UDFs), the `array_contains` function, or structured streaming. If these functions or unsupported features are used either directly or through imported libraries, Spark will revert to its default engine.
+- **Incompatible Spark features** (all runtimes): The native execution engine doesn't currently support structured streaming. If you use unsupported features either directly or through imported libraries, Spark reverts to its default engine. The native execution engine now supports Python UDFs, Scala UDFs, and complex data types (arrays, maps, structs). For more information, see [Python UDFs, Scala UDFs, and complex data types in native execution engine](native-execution-engine-udf-complex-types.md).
 
-- **Unsupported file formats**: Queries against `JSON`, `XML`, and `CSV` formats aren't accelerated by native execution engine. These default back to the regular Spark JVM engine for execution.
+- **Unsupported file formats** (all runtimes): The native execution engine doesn't accelerate queries against `JSON` and `XML` formats. These formats default back to the regular Spark JVM engine for execution. The vectorized CSV parser now supports CSV.
 
-- **ANSI mode not supported**: Native execution engine doesn't support ANSI SQL mode. If enabled, execution falls back to the vanilla Spark engine.
+- **ANSI mode** (Runtime 1.3 only): On Runtime 1.3 (Apache Spark 3.5), the native execution engine doesn't support ANSI SQL mode. If you enable ANSI SQL mode, execution falls back to the vanilla Spark engine. On Runtime 2.0 (Apache Spark 4.1), ANSI SQL mode is supported: operators offload to the native engine and ANSI error semantics (for example, division by zero and invalid casts) are enforced consistently with JVM Spark.
 
-- **Date filter type mismatches**: To benefit from native execution engine's acceleration, ensure that both sides of a date comparison match in data type. For example, instead of comparing a `DATETIME` column with a string literal, cast it explicitly as shown:
+- **Date filter type mismatches** (all runtimes): To benefit from the native execution engine's acceleration, ensure that both sides of a date comparison match in data type. For example, instead of comparing a `DATETIME` column with a string literal, cast it explicitly as shown:
   
   ```sql
   CAST(order_date AS DATE) = '2024-05-20'
@@ -201,32 +209,38 @@ While the Native Execution Engine (NEE) in Microsoft Fabric significantly boosts
 
 ### Other considerations and limitations
 
-- **Decimal to Float casting mismatch**: When casting from `DECIMAL` to `FLOAT`, Spark preserves precision by converting to a string and parsing it. NEE (via Velox) performs a direct cast from the internal `int128_t` representation, which can result in rounding discrepancies.
+> [!NOTE]
+> The decimal-casting, timezone, `round()`, `map()` duplicate-key, and `collect_list()`/`collect_set()` items in this section apply to [Runtime 1.3 (Apache Spark 3.5)](./runtime-1-3.md) and are resolved in [Runtime 2.0 (Apache Spark 4.1)](./runtime-2-0.md). They're retained for users still running on Runtime 1.3.
 
-- **Timezone configuration errors** : Setting an unrecognized timezone in Spark causes the job to fail under NEE, whereas Spark JVM handles it gracefully. For example:
+- **Decimal to Float casting mismatch** (Runtime 1.3; resolved in Runtime 2.0): When casting from `DECIMAL` to `FLOAT`, Spark preserves precision by converting to a string and parsing it. On Runtime 1.3, NEE (via Velox) performs a direct cast from the internal `int128_t` representation, which can result in rounding discrepancies.
+
+- **Timezone configuration errors** (Runtime 1.3; resolved in Runtime 2.0): On Runtime 1.3, setting an unrecognized timezone in Spark causes the job to fail under NEE, whereas Spark JVM handles it gracefully. For example:
   ```json
-  "spark.sql.session.timeZone": "-08:00"  // May cause failure under NEE
+  "spark.sql.session.timeZone": "-08:00"  // May cause failure under NEE on Runtime 1.3
   ```
 
-- **Inconsistent rounding behavior**: The `round()` function behaves differently in NEE due to reliance on `std::round`, which doesn't replicate Spark’s rounding logic. This can lead to numeric inconsistencies in rounding results.
+- **Inconsistent rounding behavior** (Runtime 1.3; resolved in Runtime 2.0): On Runtime 1.3, the `round()` function behaves differently in NEE due to reliance on `std::round`, which doesn't replicate Spark’s rounding logic. This difference can lead to numeric inconsistencies in rounding results.
 
-- **Missing duplicate key check in `map()` function**: When `spark.sql.mapKeyDedupPolicy` is set to _EXCEPTION_, Spark throws an error for duplicate keys. NEE currently skips this check and allows the query to succeed incorrectly.  
+- **Missing duplicate key check in `map()` function** (Runtime 1.3; resolved in Runtime 2.0): When `spark.sql.mapKeyDedupPolicy` is set to _EXCEPTION_, Spark throws an error for duplicate keys. On Runtime 1.3, NEE skips this check and allows the query to succeed incorrectly. On Runtime 2.0, NEE raises `DUPLICATED_MAP_KEY` consistently with JVM Spark.  
   Example:
   ```sql
-  SELECT map(1, 'a', 1, 'b'); -- Should fail, but returns {1: 'b'}
+  SELECT map(1, 'a', 1, 'b'); -- Should fail with duplicate keys
   ```
 
-- **Order variance in `collect_list()` with sorting**: When using `DISTRIBUTE BY` and `SORT BY`, Spark preserves the element order in `collect_list()`. NEE might return values in a different order due to shuffle differences, which can result in mismatched expectations for ordering-sensitive logic.
+- **Order variance in `collect_list()` with sorting** (Runtime 1.3; resolved in Runtime 2.0): When using `DISTRIBUTE BY` and `SORT BY`, Spark preserves the element order in `collect_list()`. On Runtime 1.3, NEE might return values in a different order due to shuffle differences, which can result in mismatched expectations for ordering-sensitive logic.
 
-- **Intermediate type mismatch for `collect_list()` / `collect_set()`**: Spark uses `BINARY` as the intermediate type for these aggregations, whereas NEE uses `ARRAY`. This mismatch might lead to compatibility issues during query planning or execution.
+- **Intermediate type mismatch for `collect_list()` / `collect_set()`** (Runtime 1.3; resolved in Runtime 2.0): On Runtime 1.3, Spark uses `BINARY` as the intermediate type for these aggregations, whereas NEE uses `ARRAY`. This mismatch might lead to compatibility issues during query planning or execution.
 
-- Managed private endpoints required for storage access: When Native Execution Engine (NEE) is enabled, and if spark jobs are trying to access a storage account using a managed private endpoint, users must configure separate managed private endpoints for both the Blob (blob.core.windows.net) and DFS / File System (dfs.core.windows.net) endpoints, even if they point to the same storage account. A single endpoint cannot be reused for both. This is a current limitation and may require additional network configuration when enabling native execution engine in a workspace that has managed private endpoints to storage accounts.
+- **Managed private endpoints required for storage access** (all runtimes): When Native Execution Engine (NEE) is enabled, and if spark jobs are trying to access a storage account by using a managed private endpoint, you must configure separate managed private endpoints for both the Blob (blob.core.windows.net) and DFS / File System (dfs.core.windows.net) endpoints, even if they point to the same storage account. You can't reuse a single endpoint for both. This limitation might require additional network configuration when enabling native execution engine in a workspace that has managed private endpoints to storage accounts.
 
 > [!div class="nextstepaction"]
 > [Watch this Fabric espresso video on native execution engine](https://youtu.be/8GJj4QlFlsw?si=r7M5VUI7NdyoR66v)
 
 ## Related content
 
+- [Delta Lake in Fabric overview](../fundamentals/delta-lake-overview.md)
+- [Python UDFs, Scala UDFs, and complex data types in native execution engine](native-execution-engine-udf-complex-types.md)
+- [Efficient scaledown and remote shuffle manager](efficient-scaledown-remote-shuffle-manager.md)
 - [Apache Spark Runtimes in Fabric](./runtime.md)
 - [What is autotune for Apache Spark configurations in Fabric?](./autotune.md)
 

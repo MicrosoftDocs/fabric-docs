@@ -19,7 +19,7 @@ The cross-tenant access feature allows provider tenants to share data stored in 
 
 ## How it works
 
-Cross tenant access allows guest tenants to access data stored in a provider's warehouse item and SQL analytics endpoint. When the provider enables principals from the guest tenant to use this feature, Fabric creates corresponding service principals for each guest in the provider's tenant. The provider then grants permission’s on the warehouse to these service principals. Guests with permissions can access [warehouse TDS endpoints](../data-warehouse/connectivity.md) using their own Entra ID identity credentials with tools such as SQL Server Management Studio (SSMS). To do that, guests authenticate with their home organization and are authorized to access a warehouse.
+Cross tenant access allows guest tenants to access data stored in a provider's warehouse item and SQL analytics endpoint. When the provider enables principals from the guest tenant to use this feature, Fabric creates corresponding service principals for each guest in the provider's tenant. The provider then grants permissions on the warehouse to these service principals. Guests with permissions can access [warehouse TDS endpoints](../data-warehouse/connectivity.md) using their own Entra ID identity credentials with tools such as SQL Server Management Studio (SSMS). To do that, guests authenticate with their home organization and are authorized to access a warehouse.
 
 Unlike B2B, use of cross-tenant access in Fabric warehouse items doesn't grant guests access to the providers directory. Providers don't need to manage individual guest users, when providers configure a group for cross-tenant access, the group membership is managed by the guest tenant.  
 
@@ -58,10 +58,10 @@ Unlike the external data sharing feature in Fabric, which allows providers to sh
 | tenantId | Body | Yes | String | Guest tenant ID |
 | type | Body | Yes | String | User or Group |
 | userDetails | Body | Yes | JSON or Complex | Details of the guest tenant user |
-| userPrincipalName | Body | Yes | String | Guest users’ principal name |
+| userPrincipalName | Body | Yes | String | Guest users' principal name |
 | groupDetails | Body | Yes | JSON or Complex | Details of the guest tenant group |
 | groupType | Body | Yes | String | Type of guest tenant group, send "Unknown" if not available |
-| email | Body | Yes | String | Guest tenant group’s email |
+| email | Body | Yes | String | Guest tenant group's email |
 
 #### Sample request body
 
@@ -135,12 +135,12 @@ Request body for group mapping, when the group doesn't have email
 
 #### Response codes
 
-|Response code          |	Note                                                            |
+|Response code          |    Note                                                            |
 |-----------------------|-----------------------------------------------------------------|
-|200 OK	                |If no mappings exist, the API returns an empty list              |
-|404 Not found  	      |                                                                 |
-|401 Unauthorized	      |                                                                 |
-|429 Too many requests	|Too many requests, expected 50/minute                            |
+|200 OK                    |If no mappings exist, the API returns an empty list              |
+|404 Not found            |                                                                 |
+|401 Unauthorized          |                                                                 |
+|429 Too many requests    |Too many requests, expected 50/minute                            |
 
 ### Remove guest principals that are enabled for cross-tenant access
 
@@ -171,7 +171,7 @@ When this API is called, the groups and service principals created for guest pri
 | 401 Unauthorized |  |
 | 429 Too many requests | Too many requests, expected 50/minute |
 
-## Grant workspace role or permission’s to service principals
+## Grant workspace role or permissions to service principals
 
 Permitted users from the provider tenant can grant a workspace role to the groups or service principals created to represent the guest principals by using the Add workspace role assignment REST API or Fabric UI. They can also share the warehouse item with groups and service principals.
 
@@ -209,7 +209,7 @@ Permitted users from the provider tenant can call this API to get the SQL connec
 
 ## Governance of cross-tenant access
 
- - **Use the Get cross tenant auth mapping API** - You can use the GET cross tenant auth mappings API to review the guest tenant users and groups that can potentially access warehouses and SQL endpoints in your tenant. These users also need to be granted permissions on the items.
+ - **Use the Get cross tenant auth mapping API** - You can use the GET cross tenant auth mappings API to review the guest tenant users and groups that can potentially access warehouses and SQL analytics endpoints in your tenant. These users also need to be granted permissions on the items.
 
  - **Use audit logs in Purview** - Navigate to the Microsoft Purview hub, where you can search for the following event types to get detailed information about mapping CRUD and token generation activities as a provider.
 
@@ -223,7 +223,7 @@ Permitted users from the provider tenant can call this API to get the SQL connec
    * Consent Cross Tenant Auth
    * Revoke Consent Cross Tenant Auth
 
- - **Govern the service principals and groups created in Microsoft Entra** (Global Admin, App admin, or other high privilege users only) - You can also review the service principals and groups created in Microsoft Entra to enable guest tenant principals to access cross tenant data. Other Azure experiences such as Sign-in logs (Service principal sign-ins) will show the service principal sign-in details corresponding to guest tenant users’ sign-in activities. Microsoft Entra Audit logs will also provide information about group creation activity performed by Fabric. The Fabric Identity applications and app-registrations created by Fabric for cross-tenant access shouldn't be modified or deleted. Providers should delete the mappings if they want to remove a FabricIdentity created for cross-tenant access.
+ - **Govern the service principals and groups created in Microsoft Entra** (Global Admin, App admin, or other high privilege users only) - You can also review the service principals and groups created in Microsoft Entra to enable guest tenant principals to access cross tenant data. Other Azure experiences such as Sign-in logs (Service principal sign-ins) will show the service principal sign-in details corresponding to guest tenant users' sign-in activities. Microsoft Entra Audit logs will also provide information about group creation activity performed by Fabric. The Fabric Identity applications and app-registrations created by Fabric for cross-tenant access shouldn't be modified or deleted. Providers should delete the mappings if they want to remove a FabricIdentity created for cross-tenant access.
  - **Disable access for a guest user** - You can disable cross-tenant access for a guest user that has been granted access through a group by calling the `POST https://api.fabric.microsoft.com/v1/admin/crosstenantauth/mappings` API with the query parameter denyUserAccess set to true. The guest user will be unable to login to cross-tenant data warehouses within an hour, however existing sessions will be unaffected. You can re-enable access for a user that was previously denied access by calling the `POST https://api.fabric.microsoft.com/v1/admin/crosstenantauth/mappings` API with the query parameter denyUserAccess set to false. The guest user will be able to login to cross-tenant data warehouses within an hour.
 
 ## Enforce multi-factor authentication on access requests from outside the organization
@@ -267,7 +267,7 @@ To enable MFA enforcement:
 
  - Resource limits and recycling of SPNs - The service-principals and groups created for cross-tenant users impact resource limits in the provider tenant. Refer to Microsoft Entra ID limits for more details. Fabric allows you to create up to 100,000 service principals for cross tenant access, but it's possible that your resource limits are exhausted before this. If a guest doesn't log in to a warehouse over a period of five days, we remove the service principal associated with this guest principal to control resource limits.
 
- - Guests can't run public facing APIs. The service-principals and groups created for cross tenant users can't currently run public-facing APIs. This applies to auditing, snapshots, and SQL pools. For example, only users from the provider tenant can create a snapshot; the guest user can’t run the API to create it, however they can query the snapshot. Similarly, for auditing the guest user can only run the auditing TVF but not the APIs to enable/disable the logs.
+ - Guests can't run public facing APIs. The service-principals and groups created for cross tenant users can't currently run public-facing APIs. This applies to auditing, snapshots, and SQL pools. For example, only users from the provider tenant can create a snapshot; the guest user can't run the API to create it, however they can query the snapshot. Similarly, for auditing the guest user can only run the auditing TVF but not the APIs to enable/disable the logs.
 
  - When a guest tenant revokes consent, guests lose access to warehouses in the provider tenant within a day. However, existing sessions are unaffected.
 

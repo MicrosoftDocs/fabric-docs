@@ -1,10 +1,10 @@
 ### YamlMime:Landing
-title: Data Factory documentation in Microsoft Fabric
-summary: Data factory in Microsoft Fabric provides cloud-scale data movement and data transformation services that allow you to solve the most complex data factory and ETL scenarios. It's intended to make your data factory experience easy to use, powerful, and truly enterprise-grade. # < 160 chars
+title: Fabric Data Factory documentation
+summary: Fabric Data Factory provides cloud-scale data movement and data transformation services for complex ETL scenarios.
 
 metadata:
-  title: Data Factory  in Microsoft Fabric documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
-  description: Summary of the Data Factory in Microsoft Fabric documentation # Required; article description that is displayed in search results. < 160 chars.
+  title: Fabric Data Factory documentation
+  description: Learn about Fabric Data Factory for cloud-scale data movement and transformation services.
   ms.subservice: data-factory
   ms.custom: configuration
   ms.topic: landing-page # Required
@@ -30,15 +30,15 @@ landingContent:
             url: connector-overview.md
           - text: Pricing in Data Factory
             url: pricing-overview.md
-          - text: Migrate to Data Factory in Fabric
+          - text: Migrate to Fabric Data Factory
             url: upgrade-paths.md
-          - text: Compare Azure Data Factory to Data Factory in Fabric
+          - text: Compare Azure Data Factory to Fabric Data Factory
             url: compare-fabric-data-factory-and-azure-data-factory.md
       - linkListType: learn
         links:
           - text: Data Factory training
             url: /training/browse/?terms=data%20factory%20fabric
-  - title: Migrate to Data Factory in Fabric
+  - title: Migrate to Fabric Data Factory
     linkLists:
       - linkListType: how-to-guide
         links:

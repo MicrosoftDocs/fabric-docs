@@ -4,7 +4,7 @@ description: Learn how Microsoft Fabric security works, and what features are av
 author: msmimart
 ms.author: mimart
 ms.topic: overview
-ms.date: 05/11/2025
+ms.date: 08/13/2026
 ---
 
 # Security in Microsoft Fabric
@@ -33,7 +33,7 @@ Microsoft Fabric is a SaaS platform, like many other Microsoft services such as 
 
 ## Understand network security
 
-Fabric is SaaS service that runs in the Microsoft cloud. Some scenarios involve connecting to data that's outside of the Fabric platform. For example, viewing a report from your own network or connecting to data that's in another service. Interactions within Fabric use the internal Microsoft network and traffic outside of the service is protected by default. For more information and a detailed description, see [Data in transit](security-fundamentals.md#data-in-transit).
+Fabric is a SaaS service that runs in the Microsoft cloud. Some scenarios involve connecting to data that's outside of the Fabric platform. For example, viewing a report from your own network or connecting to data that's in another service. Interactions within Fabric use the internal Microsoft network and traffic outside of the service is protected by default. For more information and a detailed description, see [Data in transit](security-fundamentals.md#data-in-transit).
 
 ### Inbound network security
 
@@ -61,14 +61,14 @@ To configure Private Links in Fabric, see [Set up and use private links](../secu
 
 ### Outbound network security
 
-Fabric has a set of tools that allow you to connect to external data sources and bring that data into Fabric in a secure way. This section lists different ways to import and connect to data from a secure network into fabric.
+Fabric has a set of tools that allow you to connect to external data sources and bring that data into Fabric in a secure way. This section lists different ways to import and connect to data from a secure network into Fabric.
 
 #### Trusted workspace access
 
-With Fabric you can access firewall enabled Azure Data Lake Gen 2 accounts securely. Fabric workspaces that have a workspace identity can securely access Azure Data Lake Gen 2 accounts with public network access enabled, from selected virtual networks and IP addresses. You can limit ADLS gen 2 access to specific Fabric workspaces. For more information, see [Trusted workspace access](../security/security-trusted-workspace-access.md).
+With Fabric you can access firewall enabled Azure Data Lake Gen 2 accounts securely. Fabric workspaces that have a workspace identity can securely access Azure Data Lake Gen 2 accounts with public network access enabled, from selected virtual networks and IP addresses. You can limit Azure Data Lake Storage Gen2 access to specific Fabric workspaces. For more information, see [Trusted workspace access](../security/security-trusted-workspace-access.md).
 
 > [!NOTE]
-> Fabric workspace identities can only be created in workspaces associated with a Fabric F SKU capacity. For information about buying a Fabric subscription, see [Buy a Microsoft Fabric subscription](../enterprise/buy-subscription.md). 
+> You can create a workspace identity in any workspace except **My workspace**, regardless of capacity SKU. Trusted workspace access requires a purchased Microsoft Fabric capacity (F SKU). For information about buying Fabric capacity, see [Buy Fabric capacity in Azure](../enterprise/buy-capacity.md).
 
 #### Managed Private Endpoints
 
@@ -118,7 +118,7 @@ Fabric is part of a larger Microsoft ecosystem. If your organization is already 
 
 Fabric ensures that your data is secure across regions when you're working with several tenants that have multiple capacities across a number of geographies.
 
-* **Data logical separation** - The [Fabric platform](security-fundamentals.md#fabric-platform) provide logical isolation between tenants to protect your data.
+* **Data logical separation** - The [Fabric platform](security-fundamentals.md#fabric-platform) provides logical isolation between tenants to protect your data.
 
 * **Data sovereignty** - To start working with multi-geo, see [Configure Multi-Geo support for Fabric](../admin/service-admin-premium-multi-geo.md).
 
@@ -161,7 +161,7 @@ Fabric data resiliency ensures that your data is available if there is a disaste
 
 As an [administrator in Fabric](../admin/admin-overview.md), you get to control capabilities for the entire organization. Fabric enables delegation of the admin role to capacities, workspaces, and domains. By delegating admin responsibilities to the right people, you can implement a model that lets several key admins control general Fabric settings across the organization, while other admins who are in charge of settings related to specific areas.
 
-Using various tools, admins can also [monitor](../admin/admin-overview.md#monitor) key Fabric aspects such as capacity consumption.
+Using various tools, admins can also [monitor](../admin/admin-overview.md#monitor-fabric-usage-and-activity) key Fabric aspects such as capacity consumption.
 
 ## Audit Logs
 To view your audit logs, follow the instructions in [Track user activities in Microsoft Fabric](../admin/track-user-activities.md). You can also refer to the [Operation list](../admin/operation-list.md) to see which activities are available for searching in the audit logs.

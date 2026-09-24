@@ -2,7 +2,7 @@
 title: Fabric Mirroring Public REST API
 description: This article describes the available REST APIs for Fabric mirroring.
 ms.reviewer: xuyan
-ms.date: 11/27/2025
+ms.date: 03/18/2026
 ms.topic: reference
 ms.custom: sfi-ropc-nochange
 ---
@@ -52,7 +52,7 @@ The original JSON definition examples are as follows. For more information about
 > [!IMPORTANT]
 > To mirror data from Azure SQL Database, Azure SQL Managed Instance, Azure Database for PostgreSQL or SQL Server 2025, you need to also do the following before start mirroring:
 >
-> 1. Enable the managed identity of your [Azure SQL logical server](azure-sql-database-tutorial.md#enable-managed-identity), [Azure SQL Managed Instance](azure-sql-managed-instance-tutorial.md#enable-system-assigned-managed-identity-sami-of-your-azure-sql-managed-instance), [Azure Database for PostgreSQL](azure-database-postgresql-tutorial.md#prepare-your-azure-database-for-postgresql) or [SQL Server](sql-server-tutorial.md?tabs=sql2025#connect-to-your-sql-server).
+> 1. Enable the managed identity of your [Azure SQL logical server](azure-sql-database-tutorial.md#enable-managed-identity), [Azure SQL Managed Instance](azure-sql-managed-instance-tutorial.md#enable-system-assigned-managed-identity-sami-of-your-azure-sql-managed-instance), [Azure Database for PostgreSQL](azure-database-postgresql-tutorial.md#prepare-your-azure-database-for-postgresql), [Azure Database for MySQL](azure-database-mysql-tutorial.md#prepare-your-azure-database-for-mysql) or [SQL Server 2025](sql-server-tutorial.md?tabs=sql2025#connect-to-your-sql-server).
 > 2. [Grant the managed identity **Read and Write** permission to the mirrored database](share-and-manage-permissions.md#share-a-mirrored-database). Currently you need to do this on the Fabric portal. Alternatively, you can grant the managed identity workspace role using [Add Workspace Role Assignment API](/rest/api/fabric/core/workspaces/add-workspace-role-assignment).
 
 > [!NOTE]
@@ -128,6 +128,38 @@ Response 201:
     "description": "A mirrored database description", 
     "workspaceId": "<your workspace ID>" 
 } 
+```
+
+## Enable delta change data feed for a mirrored database
+
+[Delta change data feed](extended-capabilities.md#delta-change-data-feed-preview) is enabled per mirrored database. To enable, follow these steps:
+
+1. Use [Get mirrored database definition API](#get-mirrored-database-definition) to retrieve the current definition.
+1. Add the `enableDeltaChangeDataFeed` sink property.
+1. Use [Update mirrored database definition API](#update-mirrored-database-definition) to update the definition.
+
+Example:
+
+```json
+{
+    "properties": {
+        "source": {
+            "type": "<your source type>",
+            "typeProperties": {
+                "connection": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1",
+                "database": "xxxx"
+            }
+        },
+        "target": {
+            "type": "MountedRelationalDatabase",
+            "typeProperties": {
+                "defaultSchema": "xxxx",
+                "enableDeltaChangeDataFeed": true,
+                "format": "Delta"
+            }
+        }
+    }
+}
 ```
 
 ## Delete mirrored database

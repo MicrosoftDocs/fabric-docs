@@ -9,7 +9,7 @@ ai-usage: ai-assisted
 
 # Debug pipelines in Microsoft Fabric 
 
-This article shows you how to debug pipelines in Fabric. You can save and run pipelines incrementally, using the Active and Inactive activity states to isolate logic while you troubleshoot issues. Learn more about [deactivating activities](/fabric/data-factory/deactivate-activity).
+This article shows you how to debug pipelines in Fabric. You can save and run pipelines incrementally, using the Active and Inactive activity states to isolate logic while you troubleshoot issues. Learn more about [deactivating activities](activity-overview.md#deactivate-an-activity).
 
 Unlike Azure Data Factory, Microsoft Fabric Data Factory doesn't have a separate Debug mode. Debugging is straightforward: you disable specific activities and run the pipeline to validate behavior step by step. This approach gives you full control over which parts of your pipeline execute during testing.
 

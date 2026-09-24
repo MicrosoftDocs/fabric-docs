@@ -31,7 +31,7 @@ To configure Iceberg format, choose your connection in the destination of the pi
 
 Specify the Iceberg format as the destination format to copy data. Unlike other file format, you don't need to specify the file name when coping data to the destination, and the service will generate the file names automatically.
 
-If you apply Iceberg format and the destination file is auto created, you can map your data by referring to [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab) and edit the type for your destination columns.
+If you apply Iceberg format and the destination file is auto created, you can map your data by referring to [Mapping](copy-data-activity.md#configure-your-mappings-under-the-mapping-tab) and edit the type for your destination columns.
 
 ## Table summary
 

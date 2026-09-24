@@ -14,7 +14,7 @@ The mirrored Azure Databricks catalog item can connect to Azure Databricks works
 
 The virtual network data gateway securely routes traffic between the mirrored Azure Databricks catalog item and the Azure Databricks workspace. It uses a private endpoint within your virtual network and Azure backbone connectivity. This architecture ensures that all communication remains isolated within private IP spaces and avoids public network exposure. For more information, see [What is a virtual network (VNet) data gateway?](/data-integration/vnet/overview)
 
-You can also connect to your ADLS storage accounts that are behind a private endpoint. For more information, see [Enable network security access for your Azure Data Lake Storage Gen2 account](azure-databricks-tutorial.md#enable-network-security-access-for-your-azure-data-lake-storage-gen2-account).
+You can also connect to your ADLS storage accounts that are behind a private endpoint. When ADLS Gen2 is protected by an Azure Storage firewall, Fabric uses Workspace Identity to access the storage account, regardless of the authentication method used for the Databricks connection. For more information, see [Enable network security access for your Azure Data Lake Storage Gen2 account](azure-databricks-tutorial.md#enable-network-security-access-for-your-azure-data-lake-storage-gen2-account).
 
 ## Prerequisites
 

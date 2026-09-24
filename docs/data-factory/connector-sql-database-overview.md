@@ -1,15 +1,15 @@
 ---
-title: SQL database connector overview (Preview)
+title: SQL database connector overview
 description: This article explains the overview of using SQL database.
 ms.reviewer: jianleishen
 ms.topic: how-to
-ms.date: 07/09/2025
+ms.date: 03/04/2026
 ms.custom:
   - template-how-to
   - connectors
 ---
 
-# SQL database connector overview (Preview)
+# SQL database connector overview
 
 The SQL database connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 

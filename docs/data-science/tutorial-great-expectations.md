@@ -1,6 +1,7 @@
 ﻿---
 title: "Tutorial: Validate data using SemPy and Great Expectations (GX)"
 description: Illustrates how to use SemPy together with Great Expectations to perform data validation on Power BI semantic models.
+ai-usage: ai-assisted
 ms.reviewer: marcozo
 ms.topic: tutorial
 ms.date: 08/15/2025
@@ -41,7 +42,7 @@ This tutorial shows you how to:
 
 In this section, you set up a notebook environment with the necessary modules and data.
 
-1. Install `SemPy` and the relevant `Great Expectations` libraries from PyPI using the `%pip` in-line installation capability within the notebook.
+1. Install `SemPy` and the relevant `Great Expectations` libraries from PyPI by using the `%pip` inline installation capability within the notebook. This tutorial intentionally uses the `great-expectations<1.0` dependency set that matches the Fabric sample notebook and the GX APIs used in this example. If you install a newer GX version in a different environment, some configuration and expectation APIs might differ.
 
 
 ```python
@@ -304,7 +305,7 @@ result_df[["Batch ID", "type", "success", "element_count", "unexpected_count", "
 
 :::image type="content" source="media/tutorial-great-expectations/validation.png" alt-text="Table shows the validation results." lightbox="media/tutorial-great-expectations/validation.png":::
 
-From these results you can see that all your expectations passed the validation, except for the "Total Units YoY Asset" that you defined through a custom DAX query. 
+From these results, you can see that all your expectations passed the validation, except for the "Total Units YoY Asset" expectation that you defined through a custom DAX query. This failure is expected in the sample and is useful for demonstrating the diagnostic process in the next section.
 
 ## Diagnostics
 
@@ -364,7 +365,7 @@ context = context.convert_to_file_context()
 Now that you saved the context, copy the `gx` directory to your lakehouse.
 
 > [!IMPORTANT]
-> **This cell assumes you  [added a lakehouse](https://aka.ms/fabric/addlakehouse) to the notebook.** If there is no lakehouse attached, you won't see an error, but you also won't later be able to get the context. If you add a lakehouse now, the kernel will restart, so you'll have to re-run the entire notebook to get back to this point.
+> **This cell assumes you [added a lakehouse](https://aka.ms/fabric/addlakehouse) to the notebook.** If you don't attach a lakehouse, you won't see an error, but you also won't later be able to get the context. If you add a lakehouse now, the kernel restarts and you have to rerun the entire notebook to get back to this point.
 
 
 ```python

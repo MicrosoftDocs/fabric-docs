@@ -1,17 +1,16 @@
 ---
-title: Eventhouse Endpoint for Lakehouse and Data Warehouse (preview)
+title: Eventhouse Endpoint for Lakehouse and Data Warehouse
 description: Use an eventhouse endpoint to query Lakehouse or Warehouse tables with enhanced performance and flexibility in Real-Time Intelligence.
-ms.reviewer: tzgitlin
+ai-usage: ai-assisted
+ms.reviewer: tzgitlin, salilkanade, wiassaf
 ms.subservice: rti-eventhouse
 ms.topic: how-to
-ms.date: 01/19/2026
+ms.date: 06/29/2026
 ---
 
-# Enable Eventhouse endpoint for lakehouse and data warehouse (preview)
+# Enable Eventhouse endpoint for lakehouse and warehouse
 
 The Eventhouse endpoint is a powerful capability in Microsoft Fabric that lets you query tables with exceptional speed and ease. Use the Eventhouse endpoint to query lakehouse or warehouse data, discover real-time insights across your data estate, and streamline the analysis of structured, semi-structured, and unstructured data.
-
-[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
 ## Benefits
 
@@ -19,9 +18,9 @@ When you enable the Eventhouse endpoint, you get:
 
 * **Instant schema sync**: The endpoint syncs tables and schema changes within seconds without manual setup. See the list of [sync statuses](#sync-statuses).
 * **Mirrored schema**: Access current and future lakehouse and warehouse data through a mirrored schema in a dedicated KQL database view.
-* **Rich consumption and visualization options**: Use Copilot, NL2KQL, dashboards, embedded queries, and visual data exploration.
+* **Rich consumption and visualization options**: Use a unified **Analyze data with** entry point across Lakehouse, Data Warehouse, Eventhouse, and KQL database items to improve tool discoverability, including **SQL analytics endpoint** and **Notebook** where applicable, along with Copilot, NL2KQL, dashboards, embedded queries, and visual data exploration.
 * **Reflected in Workspace and OneLake catalog trees**: The Eventhouse endpoint and database appear as new branches in your lakehouse tree.
-* **Fast, scalable queries**: Run analytics in KQL or SQL using advanced table operators and commands.
+* **Fast, scalable queries**: Run analytics in KQL or SQL using advanced table operators and commands. For Eventhouse and KQL database items, **SQL analytics endpoint** in **Analyze data with** appears when OneLake availability and schema synchronization are enabled.
 * **Advanced insights**: Run time series analysis, detect anomalies, and use Python for advanced processing.
 
 After you enable the endpoint, it tracks the source data and optimizes it for Eventhouse performance and flexibility. Each lakehouse or warehouse table attaches to a [OneLake shortcut](onelake-shortcuts.md) in the Eventhouse endpoint with [Query acceleration policies](query-acceleration-overview.md) that optimize the source data. <!-- Eventhouse shortcuts update automatically as the source lakehouse schema changes.-->
@@ -45,25 +44,50 @@ Users with contributor or owner permission on the parent data source have contri
 
 ## Enable the Eventhouse endpoint
 
-Enable the Eventhouse endpoint from your Fabric workspace, your OneLake catalog, or the Lakehouse/Warehouse ribbon.
+You can enable the Eventhouse endpoint using any of these three methods:
 
-1. Select the Lakehouse or Warehouse to query:
+### Method 1: From your Fabric workspace
 
-    * From your Fabric **Workspace**, browse to the **Lakehouse** or **Warehouse**. From the more options menu **...**, select **Eventhouse endpoint**.
+1. In your Fabric workspace, navigate to your **Lakehouse** or **Warehouse**.
+1. Select the more options menu (**...**) and choose **Eventhouse endpoint**.
 
-      :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-workspace.png" alt-text="Screenshot of enabling the Eventhouse endpoint from the Workspace.":::
+   :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-workspace.png" alt-text="Screenshot of enabling the Eventhouse endpoint from the Workspace.":::
 
-    * From the **OneLake catalog**, browse to the **Lakehouse** or **Warehouse**. From the more options menu **...**, select **Eventhouse endpoint**.
+### Method 2: From the OneLake catalog
 
-      :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-catalog.png" alt-text="Screenshot of enabling the Eventhouse endpoint from the OneLake catalog."::: 
+1. In the **OneLake catalog**, navigate to your **Lakehouse** or **Warehouse**.
+1. Select the more options menu (**...**) and choose **Eventhouse endpoint**.
 
-    * From the **OneLake catalog**, select the **Lakehouse** or **Warehouse**. From the Lakehouse toolbar, select **Analyze Data** > **Eventhouse endpoint**.
+   :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-catalog.png" alt-text="Screenshot of enabling the Eventhouse endpoint from the OneLake catalog.":::
 
-      :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-ribbon.png" alt-text="Screenshot of enabling the Eventhouse endpoint from the Lakehouse ribbon." lightbox="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-ribbon.png":::
+### Method 3: From the Lakehouse/Warehouse ribbon in the OneLake catalog
 
-1. The **Eventhouse Endpoint** opens with a welcome message. Select **Close** to start querying the Eventhouse.
+1. In the **OneLake catalog**, select your **Lakehouse** or **Warehouse** to open the details.
+1. From the toolbar, select **Analyze data with** > **Eventhouse endpoint**.
 
-    :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-welcome-small.png" alt-text="Screenshot of the welcome message for the Eventhouse endpoint." lightbox="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-welcome.png":::
+   :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-ribbon.png" alt-text="Screenshot of enabling the Eventhouse endpoint from the Lakehouse ribbon." lightbox="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-ribbon.png":::
+
+### Method 4: From the Analyze data with option in the Lakehouse/Warehouse
+
+1. In your Fabric workspace, navigate to your **Lakehouse** or **Warehouse**.
+1. Select **Analyze data with** > **Eventhouse endpoint**.
+
+   :::image type="content" source="../includes/media/analyze-data-with.png" alt-text="Screenshot of the **Analyze data with** button expanded to see the SQL analytics endpoint, eventhouse endpoint, and notebook options.":::
+
+## Analyze data with menu
+
+Microsoft Fabric provides a unified **Analyze data with** menu across Lakehouse, Data Warehouse, Eventhouse, and KQL database items.
+
+* From Lakehouse and Data Warehouse items, the menu includes **Eventhouse endpoint**.
+* From Eventhouse and KQL database items, the menu includes **SQL analytics endpoint** (when OneLake availability and schema synchronization are enabled) and **Notebook**.
+
+### Complete the setup
+
+After using any of the above methods:
+
+* The **Eventhouse endpoint** opens with a welcome message. Select **Close** to start querying the Eventhouse.
+
+   :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-welcome-small.png" alt-text="Screenshot of the welcome message for the Eventhouse endpoint." lightbox="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-welcome.png":::
 
 The workspace and OneLake catalog show the endpoint and KQL database as child items of the Lakehouse.
 
@@ -79,11 +103,15 @@ The Eventhouse endpoint has these characteristics:
 
   :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-query.png" alt-text="Screenshot of the KQL queryset with a get table schema query." lightbox="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-query.png":::
 
-* **System Overview**: Shows sync status, storage and activity statistics, and more [details](manage-monitor-eventhouse.md#view-system-overview) including a link to the source lakehouse or warehouse.
+* **System Overview**: Shows sync status, storage and activity statistics, and more [details](manage-monitor-eventhouse.md#system-overview) including a link to the source lakehouse or warehouse.
 
-* **KQL database**: The database is named **<Lakehouse_Name or Warehouse_Name>_EventhouseEndpoint**. As the **Eventhouse Endpoint** is read-only, create database and add table capabilities are disabled. Run KQL queries, create [visualizations](dashboard-real-time-create.md) in a real-time dashboard, and perform advanced analytics with KQL or SQL.
+* **KQL database**: The database is named **<Lakehouse_Name or Warehouse_Name>_EventhouseEndpoint**. As the **Eventhouse endpoint** is read-only, create database and add table capabilities are disabled. Run KQL queries, create [visualizations](dashboard-real-time-create.md) in a real-time dashboard, and perform advanced analytics with KQL or SQL.
+  The **Analyze data with** > **SQL analytics endpoint** option appears for this database only when OneLake availability and schema synchronization are enabled.
 
 * **Shortcuts**: reference OneLake tables that you can query directly using the table function or using natural language via Copilot. If the source has multiple schemas, the schema name shows in each shortcut name. For example, if the schemas are `sales` and `marketing` and each has a table named `customers`, the shortcuts are `sales_customers` and `marketing_customers`.
+
+> [!NOTE]
+> Select **Analyze data with** > **Notebook** to launch a new or existing Spark notebook that automatically attaches to the selected Lakehouse, Data Warehouse, Eventhouse, or KQL database context.
 
 ## Update the data policy
 
@@ -105,7 +133,7 @@ Update the cache period for a specific shortcut table to optimize query performa
 
 ## Share the Eventhouse endpoint
 
-To share the endpoint, you need to configure share settings for both the endpoint and the source data. 
+To share the endpoint, you need to configure share settings for both the endpoint and the source data.
 
 1. Configure permissions to [share data in the Lakehouse](../data-engineering/lakehouse-sharing.md) or [share data in the Data Warehouse](../data-warehouse/share-warehouse-manage-permissions.md).
 
@@ -119,21 +147,21 @@ Remove the Eventhouse endpoint from the workspace or the OneLake catalog. Deleti
 
 1. Open your Fabric workspace.
 
-1. Browse to the Eventhouse Endpoint branch of the Lakehouse/Warehouse tree. From the more options menu **...**, select **Delete**.
+1. Browse to the Eventhouse endpoint branch of the Lakehouse/Warehouse tree. From the more options menu **...**, select **Delete**.
 
     :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-delete.png" alt-text="Screenshot of the Lakehouse tree. The more options menu is open, and Delete is highlighted.":::
 
 1. In the confirmation dialog box, select **Delete**.
 
-If you delete the Eventhouse endpoint, you can re-enable it at any time. The new endpoint creates a new Eventhouse and KQL database, but the new database doesn't retain previous queries, visualizations, or dashboards. If you try to re-enable the endpoint while the previous one is still being deleted, you see a message to wait a few seconds. After the previous endpoint is deleted, you can re-enable it.
+    If you delete the Eventhouse endpoint, you can re-enable it at any time. The new endpoint creates a new Eventhouse and KQL database, but the new database doesn't retain previous queries, visualizations, or dashboards. If you try to re-enable the endpoint while the previous one is still being deleted, you see a message to wait a few seconds. After the previous endpoint is deleted, you can re-enable it.
 
-:::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-deleted.png" alt-text="Screenshot of a message stating that the endpoint is being deleted and to wait a few seconds.":::
+    :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-deleted.png" alt-text="Screenshot of a message stating that the endpoint is being deleted and to wait a few seconds.":::
 
 ## Reset the Eventhouse endpoint
 
 Use the reset button to delete the endpoint and restart the connection.
 
-:::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-reset.png" alt-text="Screenshot of the reset button under the top navigation bar, when Endpoint is selected.":::
+:::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-reset.png" alt-text="Screenshot of the reset button under the top navigation bar, when endpoint is selected.":::
 
 ## Sync statuses
 
@@ -144,7 +172,7 @@ The Eventhouse endpoint syncs source tables and schema changes within seconds. T
 **Sync statuses for the Eventhouse endpoint**:
 
 | Sync status | Description |
-|--|--|
+| -- | -- |
 | synced | All OneLake shortcuts are synchronized. Source link: [link] |
 | workInProgress | Synchronization in progress. ${syncing} of ${total} OneLake shortcuts are currently syncing. Some OneLake shortcuts are warming up. Source link: {link} |
 | warmingUp | Eventhouse endpoint is warming up. More than 50 percent of some OneLake shortcuts are warming up. The system is aligning with the source engine. Source link: {link} |
@@ -152,7 +180,7 @@ The Eventhouse endpoint syncs source tables and schema changes within seconds. T
 **Sync statuses for shortcut**:
 
 | Sync status | Description |
-|--|--|
+| -- | -- |
 | synced | This shortcut is fully synchronized. Over 98 percent of the data is in sync with the source. Source link: {link} |
 | workInProgress | Synchronization is underway. Between 20 percent and 98 percent of the data is synced with the source. Source link: {link} |
 | warmingUp | Synchronization is in progress. Less than 20 percent of the data is synced with the source. Source link: {link} |
@@ -160,7 +188,16 @@ The Eventhouse endpoint syncs source tables and schema changes within seconds. T
 ## Considerations and limitations
 
 * You can't enable the Eventhouse endpoint from within an open Lakehouse.
-* Changes to the source table schema don't appear at the Eventhouse endpoint.
+
+* Source table and schema changes are mirrored to the Eventhouse endpoint within seconds (near real time), with possible brief delays while synchronization is in progress.
+
+* **Advisor banner:** When creating an Eventhouse endpoint, some shortcut tables might not be created. If one or more tables aren't created, an advisor banner appears at the top of the endpoint with the failure reason and the affected table names. You can't dismiss the banner. Common failure reasons include:
+
+  | Failure reason | Description |
+  |----------------|-------------|
+  | Source table not reachable | The underlying OneLake table is inaccessible, for example, due to insufficient permissions (403 error). Verify that you have read access to the source table and retry. |
+  | Source table not in Delta format | Shortcut creation requires the source table to be in Delta format. Convert the source table to Delta format and recreate the endpoint. |
+  | Unsupported Delta features | The source table uses Delta features that aren't currently supported. Unsupported features include: Timestamp columns without timezone, V2 checkpoints, Catalog-managed tables. |
 
 ## Related content
 

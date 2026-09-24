@@ -62,9 +62,114 @@ In production, your workload's manifests are packaged and uploaded as part of yo
 - If icons or strings are missing, check the `assets` paths and that the DevServer is serving those files under `/assets`.
 - If Fabric can't find your manifests, verify the `/manifests` route exists in your template and returns valid JSON.
 
+## Remote endpoint stubs for local development
+
+The DevServer includes built-in stub implementations for remote endpoints, allowing you to test jobs and lifecycle notifications locally without deploying to Azure or other cloud services. These stubs intercept calls that would normally go to your production remote endpoints and handle them on your local machine.
+
+### What are remote endpoint stubs?
+
+Remote endpoint stubs are local implementations of the remote endpoint contract that:
+
+- Receive job execution requests and lifecycle notifications from Fabric
+- Log request details to your console for immediate visibility
+- Provide sample implementations showing how to interact with OneLake and other Fabric services
+- Demonstrate token handling and authentication patterns
+- Enable rapid iteration without cloud deployment
+
+### Features supported by stubs
+
+The DevServer stubs support:
+
+**Job execution**
+- On-demand and scheduled job triggers
+- Job lifecycle management (start, status, cancel)
+- Sample implementations showing data processing patterns
+- OneLake integration examples
+
+**Lifecycle notifications**
+- Item creation notifications
+- Item update notifications
+- Item deletion and soft delete notifications
+- Sample infrastructure provisioning patterns
+
+### How it works
+
+When you run the DevServer with remote endpoints configured:
+
+1. **Automatic redirection** - All remote endpoint calls defined in your item manifest are automatically redirected to your local machine
+2. **Console logging** - Request details, tokens, and payloads appear in your DevServer console
+3. **Sample execution** - Stub implementations execute showing best practices
+4. **Token access** - You receive actual Fabric tokens that can be used to call Fabric APIs and access OneLake
+
+### Using remote endpoint stubs
+
+To use the remote endpoint stubs for local testing:
+
+1. **Configure your item manifest** - Define jobs or lifecycle notifications as you would for production (see [Enable Remote Jobs](how-to-enable-remote-jobs.md) and [Enable Item Lifecycle Notifications](how-to-enable-remote-item-lifecycle.md))
+
+2. **Start your DevServer** - Launch the development server following the [quickstart guide](get-started.md)
+
+3. **Register your local workload** - Use the DevGateway to register your workload with Fabric
+
+4. **Trigger operations in Fabric** - Perform actions that trigger jobs or lifecycle notifications:
+   - Create, update, or delete items for lifecycle notifications
+   - Trigger jobs manually or via schedules
+
+5. **Observe stub execution** - Watch your DevServer console for:
+   - Incoming request details
+   - Authentication token information
+   - OneLake access examples
+   - Job execution patterns
+
+### Example console output
+
+When a job is triggered, you see output like:
+
+```
+🔔 Job execution request received
+   Job Type: MyWorkload.DataProcessor.RefreshData
+   Instance ID: abc123-def456
+   Workspace ID: 11111111-2222-3333-4444-555555555555
+   Item ID: aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee
+
+🔑 Authentication tokens received
+   Subject Token: eyJ0eXAiOiJKV1QiLCJhbGc...
+   App Token: eyJ0eXAiOiJKV1QiLCJhbGc...
+   Tenant ID: bbbbcccc-1111-dddd-2222-eeee3333ffff
+
+📦 OneLake access example
+   Getting OneLake token for scope: https://storage.azure.com/.default
+   Reading from: /workspaces/{workspaceId}/items/{itemId}/files/
+
+✅ Job execution completed
+```
+
+### Benefits of local stub testing
+
+- **No Azure deployment required** - Test remote endpoint logic without cloud resources
+- **Fast iteration** - See results immediately in your console
+- **Token handling examples** - Learn authentication patterns with real tokens
+- **OneLake integration** - Test data access patterns safely
+- **Sample code** - See working implementations to guide your production code
+
+### Moving to production
+
+The stub implementations provide sample code you can adapt for production:
+
+1. Review the stub implementation in your DevServer codebase
+2. Implement production endpoints using the patterns demonstrated
+3. Deploy endpoints to Azure Functions, Container Instances, or other hosting
+4. Update manifest configuration to point to production endpoints (see [Enable Remote Endpoints](how-to-enable-remote-endpoint.md))
+
+The stubs use the same authentication patterns and API contracts as production, making the transition straightforward.
+
 ## See also
 
 - [DevGateway](./tools-register-local-workload.md)
+- [Enable Remote Endpoints](how-to-enable-remote-endpoint.md)
+- [Enable Remote Jobs](how-to-enable-remote-jobs.md)
+- [Enable Item Lifecycle Notifications](how-to-enable-remote-item-lifecycle.md)
+- [Authenticate Remote Endpoints](authentication-remote.md)
 - [Workload manifest](./manifest-workload.md)
 - [Product manifest](./manifest-product.md)
 - [Item manifest](./manifest-item.md)

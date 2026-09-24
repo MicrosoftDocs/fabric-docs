@@ -1,7 +1,9 @@
 ---
 title: Create a Dataverse shortcut
 description: Learn how to create a OneLake shortcut for Dataverse inside a Microsoft Fabric lakehouse.
-ms.reviewer: eloldag
+ms.reviewer: eloldag # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.search.form: Shortcuts
 ms.topic: how-to
 ms.date: 11/20/2025
@@ -10,7 +12,7 @@ ms.date: 11/20/2025
 
 # Create a Dataverse shortcut
 
-Dataverse direct integration with Microsoft Fabric enables organizations to extend their Dynamics 365 enterprise applications and business processes into Fabric. This integration is accomplished through shortcuts, which can be created in two ways: through the PowerApps maker portal, or through Fabric directly.
+Dataverse direct integration with Fabric enables organizations to extend their Dynamics 365 enterprise applications and business processes into Fabric. This integration is accomplished through shortcuts, which can be created in two ways: through the PowerApps maker portal, or through Fabric directly.
 
 Dataverse shortcuts are read-only. They don't support write operations regardless of the user's permissions.
 
@@ -20,7 +22,7 @@ For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md). To 
 
 Authorized PowerApps users can access the PowerApps maker portal and use the **Link to Microsoft Fabric** feature. From this single action, a lakehouse is created in Fabric and shortcuts are automatically generated for each table in the Dataverse environment. 
 
-For more information, see [Dataverse direct integration with Microsoft Fabric](https://go.microsoft.com/fwlink/?linkid=2245037).
+For more information, see [Dataverse direct integration with Fabric](https://go.microsoft.com/fwlink/?linkid=2245037).
 
 ## Create shortcuts through Fabric
 

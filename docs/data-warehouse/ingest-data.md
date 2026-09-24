@@ -1,43 +1,48 @@
 ---
 title: Ingest Data into the Warehouse
 description: Learn about the features and methods to ingest data into your warehouse in Microsoft Fabric.
-ms.reviewer: procha, fresantos
-ms.date: 12/02/2025
+ms.reviewer: procha, fresantos, jovanpop
+ms.date: 08/27/2026
 ms.topic: concept-article
 ms.search.form: Ingesting data # This article's title should not change. If so, contact engineering.
 ---
-# Ingest data into the Warehouse
+# Ingest data into the warehouse
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
- [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] offers built-in data ingestion tools that allow users to ingest data into warehouses at scale using code-free or code-rich experiences.
+ [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] provides built-in data ingestion tools. Use these tools to ingest data into warehouses at scale by using code-free or code-rich experiences.
 
-### Decide which data ingestion tool to use
+## Choose a data ingestion tool
 
-To decide which data ingestion option to use, you can use the following criteria: 
+Choose a data ingestion option based on the following criteria: 
 
-- Use the **COPY (Transact-SQL)** statement for code-rich data ingestion operations, for the highest data ingestion throughput possible, or when you need to add data ingestion as part of a Transact-SQL logic. 
-    - To get started, see [Ingest data using the COPY statement](ingest-data-copy.md)
-    - The [!INCLUDE [fabric-dw](includes/fabric-dw.md)] also supports traditional `BULK INSERT` statement that is synonym for `COPY INTO` with classic loading options.
-    - The `COPY` statement in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports data sources from Azure storage accounts and OneLake lakehouse folders. OneLake sources are currently a preview feature.
-- Use **pipelines** for code-free or low-code, robust data ingestion workflows that run repeatedly, at a schedule, or that involves large volumes of data. 
-    - To get started, see [Ingest data into your Warehouse using pipelines](ingest-data-pipelines.md).
-    - Using pipelines, you can orchestrate robust workflows for a full Extract, Transform, Load (ETL) experience that includes activities to help prepare the destination environment, run custom Transact-SQL statements, perform lookups, or copy data from a source to a destination. 
-- Use **dataflows** for a code-free experience that allow custom transformations to source data before it's ingested. 
+- Use the **COPY (Transact-SQL)** statement for code-rich data ingestion operations. It provides the highest data ingestion throughput. Use it when you need to add data ingestion as part of your Transact-SQL logic. 
+    - To get started, see [Ingest data using the COPY statement](ingest-data-copy.md).
+    - The [!INCLUDE [fabric-dw](includes/fabric-dw.md)] also supports the traditional `BULK INSERT` statement for compatibility. In Fabric Data Warehouse, this statement maps to `COPY INTO` behavior with classic loading options.
+    - The `COPY` statement in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports data sources from Azure storage accounts and OneLake lakehouse folders.
+    - Specify `Workspace Identity` in the `CREDENTIAL` clause to impersonate the Fabric workspace identity when accessing the source. For example, `CREDENTIAL = (IDENTITY = 'Workspace Identity')`. The statement continues to run in the current user's SQL security context. 
+- Use **BCP API (Preview)** for direct client-side ingestion when data is in your application tier and you can't stage files first.
+   - To get started, see [Ingest data using BCP API (Preview)](ingest-data-bulk-copy.md).
+   - BCP API supports bcp.exe scripts and application APIs such as C# `SqlBulkCopy` and Java `SQLServerBulkCopy`.
+   - For highest-throughput file-based ingestion, prefer `COPY INTO` whenever staging is possible.
+- Use **pipelines** for code-free or low-code, robust data ingestion workflows that run repeatedly, on a schedule, or that involve large volumes of data. 
+   - To get started, see [Ingest data into your warehouse using pipelines](ingest-data-pipelines.md).
+   - By using pipelines, you can orchestrate robust workflows for a full Extract, Transform, Load (ETL) experience. This experience includes activities to help prepare the destination environment, run custom Transact-SQL statements, perform lookups, or copy data from a source to a destination. 
+- Use **dataflows** for a code-free experience that allows custom transformations to source data before ingestion. 
     - To get started, see [Ingest data using a dataflow](../data-factory/create-first-dataflow-gen2.md).
     - These transformations include (but aren't limited to) changing data types, adding or removing columns, or using functions to produce calculated columns.
 - Use **T-SQL ingestion** for code-rich experiences to create new tables or update existing ones with source data within the same workspace or external storage. 
     - To get started, see [Ingest data into your Warehouse using Transact-SQL](ingest-data-tsql.md).
-    - You can use Transact-SQL features such as `INSERT...SELECT`, `SELECT INTO`, or `CREATE TABLE AS SELECT (CTAS)` to read data from table referencing other warehouses, lakehouses, or mirrored databases within the same workspace, or to read data from `OPENROWSET` function that references files in the external Azure storage accounts.
-    - You can also [write a cross-database queries](query-warehouse.md#write-a-cross-database-query) between different warehouses in your Fabric workspace.
+    - Use Transact-SQL features such as `INSERT...SELECT`, `SELECT INTO`, or `CREATE TABLE AS SELECT (CTAS)` to read data from tables that reference other warehouses, lakehouses, or mirrored databases within the same workspace. You can also use these features to read data from the `OPENROWSET` function that references files in external Azure storage accounts.
+    - You can also [write cross-database queries](query-warehouse.md#write-a-cross-database-query) between different warehouses in your Fabric workspace.
 
 ## Supported data formats and sources
 
-Data ingestion for [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] offers a vast number of data formats and sources you can use. Each of the options outlined includes its own list of supported data connector types and data formats. 
+Data ingestion for [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] supports many data formats and sources. Each option outlined in this article includes its own list of supported data connector types and data formats.
 
-For **T-SQL ingestion**, table data sources must be within the same [!INCLUDE [product-name](../includes/product-name.md)] workspace and file data sources must be in Azure Data Lake or Azure Blob storage. Queries can be performed using three-part naming or OPENROWSET function for the source data. Table data sources can reference Delta Lake data sets, while OPENROWSET() can reference Parquet, CSV, or JSONL files in Azure Data Lake or Azure Blob storage.
+For **T-SQL ingestion**, table data sources must be within the same [!INCLUDE [product-name](../includes/product-name.md)] workspace, and file data sources must be in Azure Data Lake or Azure Blob storage. You can query data by using three-part naming or the `OPENROWSET` function for the source data. Table data sources can reference Delta Lake data sets, while `OPENROWSET` can reference Parquet, CSV, or JSONL files in Azure Data Lake or Azure Blob storage.
 
-As an example, suppose there's two warehouses named Inventory and Sales in a workspace. A query such as the following one creates a new table in the Inventory warehouse with the content of a table in the Inventory warehouse, joined with a table in the Sales warehouse, and with external files containing customer information:
+For example, suppose a workspace has two warehouses, named `Inventory` and `Sales`. A query such as the following one creates a new table in the `Inventory` warehouse with the content of a table in the `Inventory` warehouse joined with a table in the `Sales` warehouse, and with external files containing customer information:
 
 ```sql
 CREATE TABLE Inventory.dbo.RegionalSalesOrders
@@ -55,34 +60,84 @@ WHERE s.Region = 'West region';
 ```
 
 > [!NOTE]
-> Reading data using `OPENROWSET` can be slower than querying data from a table. If you plan to access the same external data repeatedly, consider ingesting it into a dedicated table to improve performance and query efficiency.
+> Reading data by using `OPENROWSET` can be slower than querying data from a table. If you plan to access the same external data repeatedly, consider ingesting it into a dedicated table to improve performance and query efficiency.
 
-The [COPY (Transact-SQL)](/sql/t-sql/statements/copy-into-transact-sql?view=fabric&preserve-view=true) statement currently supports the PARQUET and CSV file formats. For data sources, currently Azure Data Lake Storage (ADLS) Gen2 and Azure Blob Storage are supported.
+The [COPY (Transact-SQL)](/sql/t-sql/statements/copy-into-transact-sql?view=fabric&preserve-view=true) statement supports the CSV, JSONL, and PARQUET file formats. Supported data sources include Azure Data Lake Storage (ADLS) Gen2, Azure Blob Storage, and OneLake.
+
+For direct client-side ingestion scenarios, [BCP API (Preview)](ingest-data-bulk-copy.md) supports tools and APIs such as bcp.exe, C# `SqlBulkCopy`, and Java `SQLServerBulkCopy` over SQL connections without staging files first.
 
 **Pipelines** and **dataflows** support a wide variety of data sources and data formats. For more information, see [Pipelines](ingest-data-pipelines.md) and [Dataflows](../data-factory/dataflows-gen2-overview.md).
 
+## Use Workspace Identity with COPY INTO
+
+Use [Workspace Identity](../security/workspace-identity.md) with `COPY INTO` to separate access to the source data from permission to write to the target warehouse table. Workspace Identity is supported for Azure Blob Storage, ADLS Gen2, and OneLake sources. The statement runs in the current user's SQL security context. The `WITH (CREDENTIAL = (IDENTITY = 'Workspace Identity'))` clause allows `COPY INTO` to impersonate the workspace identity only when it accesses the source. All SQL permissions and audit attribution remain associated with the executing user.
+
+Without Workspace Identity, a user who receives access to the warehouse through item sharing can run `COPY INTO` with at least Read item permission and the required SQL permissions.
+
+Complete the following setup before you run `COPY INTO` with Workspace Identity:
+
+1. Configure a workspace identity for the workspace that contains the target warehouse.
+1. Grant the workspace identity access to the source:
+   - For Azure Blob Storage and ADLS Gen2, find the workspace identity by the workspace name, and assign the **Storage Blob Data Reader** role on the storage account or container. For ADLS Gen2 directory-level access, grant the required ACL permissions. Assign permissions to the workspace identity as you would to a Microsoft Entra user.
+   - For OneLake, find the workspace identity by the workspace name, add it to the workspace that contains the source data, and assign at least the Contributor workspace role.
+1. Assign the executing user at least the Viewer role on the workspace that contains the target warehouse. Item permissions alone don't authorize a user to impersonate the workspace identity. The workspace-role requirement applies only when the user specifies Workspace Identity.
+1. Grant the executing user `INSERT` permission on the target table. When Workspace Identity is the credential, `ADMINISTER DATABASE BULK OPERATIONS` permission isn't required.
+
+The following example loads a CSV file from OneLake by impersonating Workspace Identity for source access:
+
+```sql
+COPY INTO dbo.SalesOrders
+FROM 'https://onelake.dfs.fabric.microsoft.com/<workspace-id>/<item-id>/Files/orders/*.csv'
+WITH (
+    FILE_TYPE = 'CSV',
+    FIRSTROW = 2,
+    CREDENTIAL = (IDENTITY = 'Workspace Identity')
+);
+```
+
+> [!IMPORTANT]
+> Sensitivity label policies vary by organization. `COPY INTO` can fail when the destination has a sensitivity label with restrictions that prevent the operation. If a sensitivity label causes the failure, remove the label from the destination before retrying the command.
+
 ## Best practices
 
-The COPY command feature in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] uses a simple, flexible, and fast interface for high-throughput data ingestion for SQL workloads. In the current version, we support loading data from external storage accounts only.
+The `COPY` command in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] provides a simple, flexible, and fast interface for high-throughput data ingestion for SQL workloads from Azure Storage and OneLake.
 
-You can also use T-SQL language to create a new table and then insert into it, and then update and delete rows of data. Data can be inserted from any database within the [!INCLUDE [product-name](../includes/product-name.md)] workspace using cross-database queries. If you want to ingest data from a Lakehouse to a warehouse, you can do this with a cross database query. For example:
+You can also use T-SQL language to create a new table and then insert into it, and then update and delete rows of data. You can insert data from any database within the [!INCLUDE [product-name](../includes/product-name.md)] workspace by using cross-database queries. If you want to ingest data from a Lakehouse to a warehouse, you can do this with a cross database query. For example:
 
 ```sql
 INSERT INTO MyWarehouseTable
 SELECT * FROM MyLakehouse.dbo.MyLakehouseTable;
 ```
 
-- Avoid ingesting data using singleton `INSERT` statements, as this causes poor performance on queries and updates. If singleton `INSERT` statements were used for data ingestion consecutively, we recommend creating a new table by using `CREATE TABLE AS SELECT (CTAS)` or `INSERT...SELECT` patterns, dropping the original table, and then creating your table again from the table you created using `CREATE TABLE AS SELECT (CTAS)`.
+- Avoid ingesting data by using singleton `INSERT` statements, as this approach causes poor performance on queries and updates. If you use singleton `INSERT` statements for data ingestion consecutively, create a new table by using `CREATE TABLE AS SELECT (CTAS)` or `INSERT...SELECT` patterns, drop the original table, and then create your table again from the table you created by using `CREATE TABLE AS SELECT (CTAS)`.
   - Dropping your existing table impacts your semantic model, including any custom measures or customizations you might have made to the semantic model.
-- When working with external data on files, we recommend that files are at least 4 MB in size.
+- When working with external data on files, ensure files are at least 4 MB in size.
 - For large compressed CSV files, consider splitting your file into multiple files.
 - Azure Data Lake Storage (ADLS) Gen2 offers better performance than Azure Blob Storage (legacy). Consider using an ADLS Gen2 account whenever possible. 
 - For pipelines that run frequently, consider isolating your Azure storage account from other services that could access the same files at the same time.
 - Explicit transactions allow you to group multiple data changes together so that they're only visible when reading one or more tables when the transaction is fully committed. You also have the ability to roll back the transaction if any of the changes fail.
-- If a SELECT is within a transaction, and was preceded by data insertions, the [automatically generated statistics](statistics.md) can be inaccurate after a rollback. Inaccurate statistics can lead to unoptimized query plans and execution times. If you roll back a transaction with SELECTs after a large INSERT, [update statistics](/sql/t-sql/statements/update-statistics-transact-sql?view=fabric&preserve-view=true) for the columns mentioned in your SELECT.
+- If a `SELECT` is within a transaction, and was preceded by data insertions, the [automatically generated statistics](statistics.md) can be inaccurate after a rollback. Inaccurate statistics can lead to unoptimized query plans and execution times. If you roll back a transaction with `SELECT`s after a large `INSERT`, [update statistics](/sql/t-sql/statements/update-statistics-transact-sql?view=fabric&preserve-view=true) for the columns mentioned in your `SELECT`.
 
 > [!NOTE]
-> Regardless of how you ingest data into warehouses, the parquet files produced by the data ingestion task will be optimized using V-Order write optimization. V-Order optimizes parquet files to enable lightning-fast reads under the Microsoft Fabric compute engines such as Power BI, SQL, Spark, and others. Warehouse queries in general benefit from faster read times for queries with this optimization, still ensuring the parquet files are 100% compliant to its open-source specification. It isn't recommended to disable V-Order as it might affect read performance. For more information on V-Order, see [Understand and manage V-Order for Warehouse](v-order.md).
+> Regardless of how you ingest data into warehouses, the data ingestion task optimizes the parquet files it produces by using V-Order write optimization. V-Order optimizes parquet files to enable lightning-fast reads under the Microsoft Fabric compute engines such as Power BI, SQL, Spark, and others. Warehouse queries in general benefit from faster read times for queries with this optimization, while still ensuring the parquet files are 100% compliant to their open-source specification. Don't disable V-Order as it might affect read performance. For more information on V-Order, see [Understand and manage V-Order for Warehouse](v-order.md).
+
+## Frequently asked questions about data ingestion for Fabric Data Warehouse
+
+### What is the file splitting guidance for the COPY command loading compressed CSV files?
+
+Consider splitting large CSV files, especially when the number of files is small, but keep files at a minimum of 4 MB each for better performance.
+
+### What is the file splitting guidance for the COPY command loading Parquet files?
+
+Consider splitting large Parquet files, especially when the number of files is small.
+
+### Are there any limitations on the number or size of files?
+
+There are no limitations on the number or size of files. However, for best performance, use files that are at least 4 MB.
+
+### Which credential does the COPY command use if I don't specify one?
+
+By default, `COPY INTO` uses the executing user's Microsoft Entra identity for source access.
 
 ## Related content
 

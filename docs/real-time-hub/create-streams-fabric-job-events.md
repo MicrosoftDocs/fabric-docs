@@ -27,7 +27,11 @@ With Fabric event streams, you can capture these Job events, transform them, and
 
 For more information, see [Explore Job events](explore-fabric-Job-events.md).
 
-[!INCLUDE [consume-fabric-events-regions](./includes/consume-fabric-events-regions.md)]
+[!INCLUDE [consume-fabric-events-regions](../real-time-intelligence/event-streams/includes/connectors/consume-fabric-events-regions.md)]
+
+[!INCLUDE [outbound-access-protection-note](./includes/outbound-access-protection-note.md)]
+
+[!INCLUDE [workspace-private-links-note](./includes/workspace-private-links-note.md)]
 
 ## Prerequisites
 
@@ -68,42 +72,18 @@ Move the mouse over **Job events**, and select the **Create Eventstream** link o
 
 ## Configure and create an eventstream
 
-1. On the **Connect** page, for **Event types**, select the event types that you want to monitor.
+[!INCLUDE [fabric-job-source-connector-configuration](../real-time-intelligence/event-streams/includes/connectors/fabric-job-source-connector-configuration.md)]
 
-    :::image type="content" source="./media/create-streams-fabric-job-events/select-event-types.png" alt-text="Screenshot that shows the selection of Job event types on the Connect page." lightbox="./media/create-streams-fabric-job-events/select-event-types.png":::
-1. This step is optional. To see the schemas for event types,  select **View selected event type schemas**. If you select it, browse through schemas for the events, and then navigate back to previous page by selecting the backward arrow button at the top. 
-1. For **Event source**, confirm that **By item** is selected. 
-1. For **Workspace**, select a workspace where the Fabric item is. 
-1. For **Item**, select the Fabric item.     
+## View stream from the Real-Time hub page
 
-    :::image type="content" source="./media/create-streams-fabric-job-events/source-workspace-item.png" alt-text="Screenshot that shows the configuration of source, workspace, and item." lightbox="./media/create-streams-fabric-job-events/source-workspace-item.png":::
-1. Now, on the **Configure connection settings** page, you can add filters to set the filter conditions by selecting fields to watch and the alert value. To add a filter:
-    1. Select **+ Filter**. 
-    1. Select a field.
-    1. Select an operator.
-    1. Select one or more values to match. 
- 
-        :::image type="content" source="./media/create-streams-fabric-job-events/set-filters.png" alt-text="Screenshot that shows the addition of a filter." lightbox="./media/create-streams-onelake-events/set-filters.png":::       
-1. In the **Stream details** section to the right, follow these steps.
-    1. Select the **workspace** where you want to save the eventstream.
-    1. Enter a **name for the eventstream**. The **Stream name** is automatically generated for you.
-        :::image type="content" source="./media/create-streams-fabric-job-events/stream-name.png" alt-text="Screenshot that shows the name of the stream." lightbox="./media/create-streams-fabric-job-events/stream-name.png":::       
-1. Then, select **Next** at the bottom of the page.
-
-    :::image type="content" source="./media/create-streams-fabric-job-events/next-button.png" alt-text="Screenshot that shows the selection of the Next button." lightbox="./media/create-streams-fabric-job-events/next-button.png":::
-1. On the **Review + connect** page, review settings, and select **Connect**.
-
-    :::image type="content" source="./media/create-streams-fabric-job-events/review-create-page.png" alt-text="Screenshot that shows the Review and create page." lightbox="./media/create-streams-fabric-job-events/review-create-page.png":::
 1. When the wizard succeeds in creating a stream, use **Open eventstream** link to open the eventstream that was created for you. Select **Finish** to close the wizard. 
 
     :::image type="content" source="./media/create-streams-fabric-job-events/review-create-success.png" alt-text="Screenshot that shows the Review and create page with links to open the eventstream." lightbox="./media/create-streams-fabric-job-events/review-create-success.png":::
+1. Select **Real-Time hub** on the left navigation menu, and confirm that you see the stream you created. Refresh the page if you don't see it. 
 
-## View stream from the Real-Time hub page
-Select **Real-Time hub** on the left navigation menu, and confirm that you see the stream you created. Refresh the page if you don't see it. 
+    :::image type="content" source="./media/create-streams-fabric-job-events/verify-stream.png" alt-text="Screenshot that shows data stream in the My data streams page." lightbox="./media/create-streams-fabric-job-events/verify-stream.png":::
 
-:::image type="content" source="./media/create-streams-fabric-job-events/verify-stream.png" alt-text="Screenshot that shows data stream in the My data streams page." lightbox="./media/create-streams-fabric-job-events/verify-stream.png":::
-
-For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
+    For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
 
 
 ## Related content

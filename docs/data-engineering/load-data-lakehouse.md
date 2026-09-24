@@ -13,7 +13,7 @@ There are several ways to get data into a lakehouse, ranging from simple file up
 
 ## Ways to load data into a lakehouse
 
-The following sections describe each approach — file upload, shortcuts, Dataflow Gen2, data pipelines, notebook code, and Eventstream — ordered from the simplest no-code option to more advanced programmatic and real-time methods.
+The following sections describe each approach — file upload, shortcuts, dataflow Gen2, data pipelines, notebook code, and eventstream — ordered from the simplest no-code option to more advanced programmatic and real-time methods.
 
 ### Upload files
 
@@ -44,11 +44,11 @@ Spark notebooks give you full programmatic control over data ingestion. Use Spar
 
 [Eventstream](../real-time-intelligence/event-streams/overview.md) ingests, processes, and routes high-volume real-time events from a wide variety of sources. You can add a lakehouse as a destination to land streaming data directly into Delta tables.
 
-:::image type="content" source="media/load-data-lakehouse/get-data-eventstream.png" alt-text="Screenshot of getting data into a lakehouse from Eventstream." lightbox="media/load-data-lakehouse/get-data-eventstream.png":::
+:::image type="content" source="media/load-data-lakehouse/get-data-eventstream.png" alt-text="Screenshot of getting data into a lakehouse from eventstream." lightbox="media/load-data-lakehouse/get-data-eventstream.png":::
 
-For more information, see [Get data from Eventstream in a lakehouse](../real-time-intelligence/event-streams/get-data-from-eventstream-in-multiple-fabric-items.md#get-data-from-an-eventstream-and-add-it-to-a-lakehouse).
+For more information, see [Get data from eventstream in a lakehouse](../real-time-intelligence/event-streams/get-data-from-eventstream-in-multiple-fabric-items.md#get-data-from-an-eventstream-and-add-it-to-a-lakehouse).
 
-For time-series or high-throughput streaming scenarios, you can also stream events into an Eventhouse and enable OneLake availability. This creates a Delta table in OneLake that a lakehouse can access through a shortcut. For more information, see [Eventhouse OneLake availability](../real-time-intelligence/event-house-onelake-availability.md).
+For time-series or high-throughput streaming scenarios, you can also stream events into an eventhouse and enable OneLake availability. This creates a Delta table in OneLake that a lakehouse can access through a shortcut. For more information, see [eventhouse OneLake availability](../real-time-intelligence/event-house-onelake-availability.md).
 
 ## Choose an approach
 
@@ -60,9 +60,9 @@ The following table summarizes when to use each approach for loading data into a
 | Reference data without copying it | Shortcuts |
 | Small to medium data with visual transformations | Dataflow Gen2 |
 | Large-scale data movement | Data pipelines |
-| Complex transformations or unsupported sources | Notebook code |
+| Complex transformations or unsupported sources | notebook code |
 | Real-time event ingestion | Eventstream |
-| Time-series or high-throughput streaming | Eventstream to Eventhouse with OneLake availability |
+| Time-series or high-throughput streaming | Eventstream to eventhouse with OneLake availability |
 
 ## Related content
 

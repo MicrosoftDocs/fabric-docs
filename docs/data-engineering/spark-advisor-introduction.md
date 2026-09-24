@@ -7,11 +7,12 @@ ms.date: 02/25/2023
 ms.custom:
   - template-howto
 ms.search.form: View Spark advisor within a notebook
+ai-usage: ai-assisted
 ---
 
 # Apache Spark advisor for real-time advice on notebooks
 
-The Apache Spark advisor analyzes commands and code run by Apache Spark and displays real-time advice for Notebook runs. The Apache Spark advisor has built-in patterns to help users avoid common mistakes. It offers recommendations for code optimization, performs error analysis, and locates the root cause of failures.
+The Apache Spark advisor analyzes commands and code run by Apache Spark and displays real-time advice for notebook runs. The Apache Spark advisor has built-in patterns to help users avoid common mistakes. It offers recommendations for code optimization, performs error analysis, and locates the root cause of failures.
 
 ## Built-in advice
 
@@ -65,9 +66,13 @@ This query contains the expression with Double type. We recommend that you enabl
 
 This query contains time consuming join due to "Or" condition within query. We recommend that you enable the configuration 'spark.advise.nonEqJoinConvertRule.enable', which can help to convert the join triggered by "Or" condition to SMJ or BHJ to accelerate this query.
 
+### Execution fallback to JVM-based Spark
+
+When the [Native Execution Engine](./native-execution-engine-overview.md) is enabled and a notebook cell's execution plan contains operators that can't be offloaded to the native path, Spark Advisor surfaces a real-time alert in the cell output. The alert indicates that execution fell back to JVM-based Spark and helps you identify the cause, such as unsupported operators, data types, or configurations. To address the fallback, review the query plan for unsupported operations and adjust your logic to use supported operators, or verify that `spark.native.enabled` is set correctly for your notebook or Spark job definition.
+
 ## User experience
 
-The Apache Spark advisor displays the advice, including info, warnings, and errors, at Notebook cell output in real-time.
+The Apache Spark advisor displays the advice, including info, warnings, and errors, at notebook cell output in real-time.
 
 - Info
     :::image type="content" source="media\spark-advisor-introduction\info.png" alt-text="Screenshot showing the info." lightbox="media/spark-advisor-introduction/info.png":::
@@ -80,9 +85,9 @@ The Apache Spark advisor displays the advice, including info, warnings, and erro
 
 ## Spark Advisor Setting
 
-The Spark advisor setting allows you to choose whether to show or hide specific types of Spark advice according to your needs. Additionally, you have the flexibility to enable or disable the Spark Advisor for your Notebooks within a workspace, based on your preferences.
+The Spark advisor setting allows you to choose whether to show or hide specific types of Spark advice according to your needs. Additionally, you have the flexibility to enable or disable the Spark Advisor for your notebooks within a workspace, based on your preferences.
 
-You can access the Spark Advisor settings at the Fabric Notebook level to enjoy its benefits and ensure a productive notebook authoring experience.
+You can access the Spark Advisor settings at the Fabric notebook level to enjoy its benefits and ensure a productive notebook authoring experience.
 
 :::image type="content" source="media\spark-advisor-introduction\spark-advisor-setting.png" alt-text="Screenshot showing the spark advisor setting." lightbox="media/spark-advisor-introduction/spark-advisor-setting.png":::
 

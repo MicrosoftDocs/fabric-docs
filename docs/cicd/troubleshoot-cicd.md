@@ -4,7 +4,7 @@ description: Troubleshoot problems with deployment pipelines, the Fabric Applica
 ms.reviewer: NimrodShalit
 ms.topic: troubleshooting
 ms.custom: sfi-image-nochange
-ms.date: 02/17/2026
+ms.date: 06/15/2026
 ms.search.form: Deployment pipelines troubleshooting, View deployment pipeline, Deployment pipelines operations, Deployment rules
 ---
 
@@ -33,7 +33,6 @@ To understand the considerations and limitations of various lifecycle management
 * [Deployment pipelines](#deployment-pipelines)  
   * [Paginated reports](#paginated-reports)  
   * [Dataflows](#dataflows)  
-  * [Datamarts](#datamarts)  
   * [Permissions](#permissions)  
   * [Rules](#rules)
 
@@ -100,13 +99,19 @@ To understand the considerations and limitations of various lifecycle management
 
 **Description of problem**: I don't see the workspace I want to connect to in the branching out tab of the **Source control** panel.  
 **Cause**: The branching out list only shows workspaces that you have permission to view.  
-**Solution**: Check that the workspace you want exists and that you have permission to view it. If not, ask the owner of the workspace to give you permission. See [Branch limitations](./git-integration/git-integration-process.md#branching-out-limitations) for more information.
+**Solution**: Check that the workspace you want exists and that you have permission to view it. If not, ask the owner of the workspace to give you permission. See [Branch limitations](./git-integration/branched-workspace.md#branching-out-limitations) for more information.
 
 #### Branching out: My new workspace wasn’t synced with my Git repository
 
 **Description of problem**: When branching out to a new workspace, I’m navigated to the new workspace but Git integration isn’t enabled there.
 **Cause**: The [Git integration switch](../admin/git-integration-admin-settings.md) might be enabled for your source workspace, but not for the whole tenant as the tenant admin can delegate control of the switch to workspace admins. If this is the case, your new workspace won't have Git integration enabled and you'll need to manually enable it from the workspace settings before syncing the workspace with Git.
 **Solution**: Enable Git integration from the workspace settings of your new workspace.
+
+#### Switch branch or Checkout new branch is unavailable for a contributor or member
+
+**Description of problem**: As a Contributor or Member (non-admin), I can't switch branches or check out a new branch from the **Source control** panel.  
+**Cause**: By default, branch switching and new-branch creation are restricted to workspace admins. A Contributor can perform these actions only when the workspace-level **Allow users with at least Contributor role to change Git branch** setting is enabled, the workspace has an active Git connection, and the Contributor has write access to all items in the workspace.  
+**Solution**: Ask a workspace admin to enable the **Allow users with at least Contributor role to change Git branch** setting in the workspace settings. For more information, see [Allow Contributors and Members to switch branches](./git-integration/git-get-started.md#allow-contributors-and-members-to-switch-branches)
 
 ### Connect folder issues
 
@@ -130,6 +135,19 @@ To understand the considerations and limitations of various lifecycle management
 **Cause**: If your workspace has folders and the connected Git folder doesn't yet have subfolders, they are considered to be different. If your workspace has folders but the Git branch doesn't, you see the *uncommitted changes* message. If you try to update the workspace before committing the changes, you get a conflict. Once the Git folder has the same folder structure as the workspace, you won't get this message anymore.
 
 **Solution**: To resolve the issue, [commit](./git-integration/git-get-started.md#commit-changes-to-git) changes to Git. If you can't make changes directly to the connected branch, we recommend using the [checkout branch](./git-integration/git-integration-process.md#handling-folder-changes-safely) option. For more information, see [Handling folder changes safely](./git-integration/git-integration-process.md#handling-folder-changes-safely).
+
+#### My workspace shows uncommitted changes on a report I didn't modify
+
+**Description of problem**: I notice uncommitted changes for a report in my workspace, even though I didn't manually modify any items.
+
+**Cause**: This behavior can happen when a report name includes special characters such as `:`, `#`, `[`, or `]`, and the report has a dependency-by-path on a semantic model. Special characters in item names cause the system to autocorrect the dependency paths. These automatic adjustments are expected behavior and ensure the report stays correctly linked to its semantic model in the Git branch.
+
+**Solution**: Commit the changes so the Git branch stays aligned with the item's true state. If you want more certainty before committing, use the **Commit to new branch** option in the source control pane, and then compare the differences between:
+
+* the item currently stored in your Git branch
+* the newly generated item committed to the new branch
+
+Review the diff to confirm that only dependency paths were adjusted and that no unintended logic or structural changes were introduced. This workflow gives you a safe validation step before you merge the changes into your working branch.
 
 ### Commit issues
 
@@ -192,11 +210,11 @@ For more information, see [Manually Update from Git](./git-integration/partial-u
 
 **Description of problem**: After updating from Git, when looking at the lineage view, the dependencies of some items aren't as expected. For example, the proxy model no longer points to the correct model.
 
-**Cause**: Git Integration doesn't support Direct Query and proxy models at this time.
+**Cause**: Git integration doesn't support DirectQuery and proxy models at this time.
 
 **Solution**: To fix the dependencies, do one of the following actions:
 
-* Edit the *bim* file of the ProxyDataset in the Git repository so that it points to the correct dataset, and then, in the workspace, update from Git to receive the change.
+* Edit the *bim* file of the proxy semantic model in the Git repository so that it points to the correct semantic model. Then, in the workspace, update from Git to receive the change.
 * Use the [Update Datasource API](/rest/api/power-bi/datasets/update-datasources-in-group) to update the connection details of the proxy model in the workspace.
 
 ### Resolve error issues
@@ -442,17 +460,6 @@ When you deploy a paginated report that's connected to a Fabric semantic model, 
 
 **Solution**: This behavior doesn't affect deployment pipelines.
 
-### Datamarts
-
-#### Deployment problem: I can't deploy a datamart in the pipeline
-
-**Solution**: To deploy a datamart, you must be the owner of the datamart.
-
-#### Deployment problem: My datamart deployment failed because of a circular dependency
-
-:::image type="content" source="./media/troubleshoot-cicd/circular-dependency.png" alt-text="Screenshot of error message about circular or self dependencies.":::
-
-**Solution**: There's either an item that references itself, or more than one item involved in a circular chain of references (for example, item A references item B and item B references item A). To deploy the datamart, remove the circular dependency and redeploy.
 
 ### Permissions
 
@@ -534,10 +541,10 @@ If one of the rule options is grayed out, it could be because of the following r
 
 
 ### Retirement of semantic model support for deployment pipelines
-To improve reliability and consistency across deployment environments, Microsoft Fabric deployment pipelines is retiring support for semantic models that haven't been upgraded to enhanced metadata (Git supports only the Enhanced Metadata format). This change supports strategic improvements in semantic model management, including XMLA read/write and Analysis Services migration, and ensures consistency across environments (see Using enhanced semantic model metadata).
+To improve reliability and consistency across pipeline stages, Fabric deployment pipelines is retiring support for semantic models that aren't upgraded to enhanced metadata (Git supports only the Enhanced Metadata format). This change supports strategic improvements in semantic model management, including XMLA read/write and Analysis Services migration, and ensures consistency across environments (see Using enhanced semantic model metadata).
 
 #### What change is Microsoft making to semantic model support in deployment pipelines?
-**Solution**: Beginning February 12, 2026, Microsoft Fabric deployment pipelines will retire support for semantic models that have not been upgraded to Enhanced Metadata. Deployment pipelines—and Git integration—require Enhanced Metadata for improved reliability, consistency, and alignment with ongoing platform investments such as XMLA read/write and Analysis Services migration.
+**Solution**: Beginning February 12, 2026, Fabric deployment pipelines retire support for semantic models that aren't upgraded to Enhanced Metadata. Deployment pipelines and Git integration require Enhanced Metadata for improved reliability, consistency, and alignment with ongoing platform investments such as XMLA read/write and Analysis Services migration.
 
 #### Why is this change happening?
 **Solution**: Enhanced Metadata provides a consistent, modernized model structure that enables:
@@ -546,17 +553,17 @@ To improve reliability and consistency across deployment environments, Microsoft
 - Compatibility with Git (which supports only Enhanced Metadata)
 - Improved XMLA read/write experiences
 - Future migration paths aligned with Analysis Services
-- Greater consistency across the unified Microsoft Fabric platform
+- Greater consistency across the unified Fabric platform
 
 
 #### Who is impacted?
-**Solution**:  Any organization using Microsoft Fabric deployment pipelines with semantic models still using legacy (non‑enhanced) metadata. This change also applies to Power BI semantic models within Fabric.
+**Solution**:  Any organization using Fabric deployment pipelines with semantic models still using legacy (non‑enhanced) metadata. This change also applies to Power BI semantic models within Fabric.
 
 #### What happens if we try to deploy models that haven’t been upgraded?
 **Solution**: 
 
 - Deployment of legacy metadata models will fail.
-- PBIX files opened in the latest Power BI Desktop are automatically upgraded.
+- .pbix files opened in the latest Power BI Desktop are automatically upgraded.
 - If a report has unapplied query changes or upgrade errors, users will see a warning and must upgrade manually.
 - Some legacy queries (especially for SQL Server, Oracle, Teradata, SAP HANA) may not convert cleanly and could generate errors like:
 - "Unable to convert an M query in table 'Dimension City' into a native source query."

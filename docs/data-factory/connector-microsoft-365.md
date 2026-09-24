@@ -1,30 +1,30 @@
 ---
-title: How to create a Microsoft 365 connection
-description: This article provides information about how to do create Microsoft 365 connection in [!INCLUDE [product-name](../includes/product-name.md)].
+title: Set up your Microsoft 365 Connection
+description: This article provides information about how to create a Microsoft 365 connection in Microsoft Fabric.
 ms.reviewer: xupzhou
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 03/13/2026
 ms.custom:
 - template-how-to
 - connectors
 - sfi-image-nochange
+ai-usage: ai-assisted
 ---
 
-# How to create a Microsoft 365 connection
+# Set up your Microsoft 365 connection
 
 This article outlines the steps to create a Microsoft 365 connection.
 
 ## Supported authentication types
 
-This Microsoft 365 connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+This Microsoft 365 connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
 |Service principal| √| n/a|
 
-## Set up your connection in Dataflow Gen2
-
-The Microsoft 365 connector isn't currently supported in Dataflow Gen2.
+## Set up your connection for Dataflow Gen2
+The Microsoft 365 connector isn't currently supported in dataflow Gen2.
 
 ## Set up your connection in a pipeline
 
@@ -61,7 +61,7 @@ Under **Authentication method**, select your authentication from the drop-down l
 
 :::image type="content" source="media/connector-microsoft-365/authentication-method.png" alt-text="Screenshot of the authentication method of Microsoft 365.":::
 
-#### Service Principal authentication
+#### Service principal authentication
 
 :::image type="content" source="media/connector-microsoft-365/service-pricipal-authentication.png" alt-text="Screenshot of the Service Principal authentication method of Microsoft 365.":::
 
@@ -99,6 +99,7 @@ The following table contains the supported authentication type properties.
 |- Tenant ID|Your service principal tenant ID. Specify the tenant information under which your Microsoft Entra web application resides.|Yes |||
 |- Service Principal ID|Specify the application's client ID.|Yes |||
 |- Service Principal key|Specify the application's key.|Yes |||
+
 
 ## Related content
 

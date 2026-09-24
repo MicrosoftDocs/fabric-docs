@@ -12,7 +12,7 @@ ms.topic: how-to
 
 Dynamic data masking is a cutting-edge data protection technology that helps organizations safeguard sensitive information within their databases. It allows you to define masking rules for specific columns, ensuring that only authorized users see the original data while concealing it for others. Dynamic data masking provides an additional layer of security by dynamically altering the data presented to users, based on their access permissions.
 
-For more information, see [Dynamic data masking in Fabric data warehousing](dynamic-data-masking.md).
+For more information, see [Dynamic data masking in Fabric Data Warehouse](dynamic-data-masking.md).
 
 ## Prerequisites
 
@@ -67,7 +67,7 @@ Before you begin, make sure you have the following:
 
 Once the dynamic data masking rules are applied, you can test the masking by querying the table with a test user who does not have the Administrator, Member, or Contributor rights on the workspace, or elevated permissions on the [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
 
-1. Sign in to a tool like [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true) as the test user, for example TestUser@contoso.com.
+1. Sign in to a tool like [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the MSSQL extension for Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true) as the test user, for example TestUser@contoso.com.
 1. As the test user, run a query against the table. The masked data is displayed according to the rules you defined.
     ```sql
     SELECT * FROM dbo.EmployeeData;
@@ -120,8 +120,8 @@ To manage or modify existing dynamic data masking rules, create a new SQL script
 
 ## Related content
 
-- [Dynamic data masking in Fabric data warehousing](dynamic-data-masking.md)
-- [Workspace roles in Fabric data warehousing](workspace-roles.md)
-- [Column-level security in Fabric data warehousing](column-level-security.md)
-- [Row-level security in Fabric data warehousing](row-level-security.md)
-- [Security for data warehousing in Microsoft Fabric](security.md)
+- [Dynamic data masking in Fabric Data Warehouse](dynamic-data-masking.md)
+- [Workspace roles in Fabric Data Warehouse](workspace-roles.md)
+- [Column-level security in Fabric Data Warehouse](column-level-security.md)
+- [Row-level security in Fabric Data Warehouse](row-level-security.md)
+- [Security in Fabric Data Warehouse](security.md)

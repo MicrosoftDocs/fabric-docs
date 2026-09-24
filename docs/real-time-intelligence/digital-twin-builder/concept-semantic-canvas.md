@@ -1,5 +1,5 @@
 ---
-title: Using the semantic canvas
+title: Using the Semantic Canvas
 description: Understand the semantic canvas in the digital twin builder (preview).
 ms.date: 07/01/2025
 ms.topic: concept-article

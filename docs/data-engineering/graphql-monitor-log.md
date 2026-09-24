@@ -14,7 +14,7 @@ ms.date: 01/21/2026
 Gain complete visibility into your production GraphQL APIs with Microsoft Fabric's integrated monitoring and logging capabilities. Track real-time performance metrics, analyze query patterns, troubleshoot errors, and understand how clients interact with your APIs—all from within the Fabric workspace.
 
 **Key monitoring capabilities:**
-- **Real-time dashboard**: Visualize API performance, response times, and error rates with interactive charts
+- **Real-Time Dashboard**: Visualize API performance, response times, and error rates with interactive charts
 - **Detailed request logging**: Capture complete request/response data, query complexity, and execution details  
 - **Performance analytics**: Identify slow queries, optimize bottlenecks, and track usage trends over time
 - **Error tracking**: Monitor failures, investigate root causes, and improve API reliability
@@ -171,7 +171,7 @@ Use the logging page to:
 
 ## Related content
 
-* [Microsoft Fabric API for GraphQL](api-graphql-overview.md)
+* [Fabric API for GraphQL](api-graphql-overview.md)
 * [Workspace Monitoring Overview](..\fundamentals\workspace-monitoring-overview.md)
 * [API for GraphQL in Fabric](get-started-api-graphql.md)
 * [Fabric API for GraphQL Editor](api-graphql-editor.md)

@@ -1,9 +1,11 @@
 ---
 title: Integrate OneLake with Azure Synapse Analytics
-description: Learn about Microsoft Fabric integration with Azure Synapse Analytics, including how to read and write data into Fabric using Azure Synapse Spark pool.
-ms.reviewer: eloldag, mahi
+description: Learn how to use Azure Synapse Analytics to read and write data to OneLake with Apache Spark and serverless SQL.
+ms.reviewer: eloldag, mahi # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.topic: how-to
-ms.date: 09/27/2023
+ms.date: 04/06/2026
 #customer intent: As a data engineer, I want to learn how to integrate OneLake with Azure Synapse Analytics so that I can efficiently read and write data into Fabric using Azure Synapse Spark pool.
 ---
 
@@ -11,11 +13,19 @@ ms.date: 09/27/2023
 
 Azure Synapse is a limitless analytics service that brings together enterprise data warehousing and Big Data analytics. This tutorial shows how to connect to OneLake using [Azure Synapse Analytics](/azure/synapse-analytics/).
 
-## Write data from Synapse using Apache Spark
+## Prerequisites
+
+Before you begin, make sure you have the following items:
+
+- Access to a Azure Synapse workspace where you can create or use an Apache Spark pool and run SQL scripts.
+- Access to a lakehouse in Fabric.
+- The ABFS path for the lakehouse **Tables** folder or the table that you want to query.
+
+## Write data from Azure Synapse using Apache Spark
 
 Follow these steps to use Apache Spark to write sample data to OneLake from Azure Synapse Analytics.
 
-1. Open your Synapse workspace and [create an Apache Spark pool](/azure/synapse-analytics/quickstart-create-apache-spark-pool-studio) with your preferred parameters.
+1. Open your Azure Synapse workspace and [create an Apache Spark pool](/azure/synapse-analytics/quickstart-create-apache-spark-pool-studio) with your preferred parameters.
 
    :::image type="content" source="media\onelake-azure-synapse-analytics\new-apache-spark-pool.png" alt-text="Screenshot showing where to select New in the Apache Spark pool screen.":::
 
@@ -23,7 +33,7 @@ Follow these steps to use Apache Spark to write sample data to OneLake from Azur
 
 1. Open the notebook, set the language to **PySpark (Python)**, and connect it to your newly created Spark pool.
 
-1. In a separate tab, navigate to your Microsoft Fabric lakehouse and find the top-level **Tables** folder.
+1. In a separate tab, navigate to your Fabric lakehouse and find the top-level **Tables** folder.
 
 1. Right-click on the **Tables** folder and select **Properties**.
 
@@ -33,7 +43,7 @@ Follow these steps to use Apache Spark to write sample data to OneLake from Azur
 
    :::image type="content" source="media\onelake-azure-synapse-analytics\abfs-path.png" alt-text="Screenshot showing where to copy the ABFS path.":::
 
-1. Back in the Azure Synapse notebook, in the first new code cell, provide the lakehouse path. This lakehouse is where your data is written later. Run the cell.
+1. Back in the Azure Synapse notebook, in the first new code cell, provide the lakehouse path. This path points to the **Tables** folder in the lakehouse where you write the sample data later. Run the cell.
 
    ```python
    # Replace the path below with the ABFS path to your lakehouse Tables folder. 
@@ -60,7 +70,7 @@ Follow these steps to use Apache Spark to write sample data to OneLake from Azur
    filteredTaxiDf.write.format("delta").mode("overwrite").save(oneLakePath + '/Taxi/')
    ```
 
-1. Finally, in a new code cell, test that your data was successfully written by reading your newly loaded file from OneLake. Run the cell.
+1. Finally, in a new code cell, test that your data was successfully written by reading the new Delta table from OneLake. Run the cell.
 
    ```python
    lakehouseRead = spark.read.format('delta').load(oneLakePath + '/Taxi/')
@@ -69,11 +79,11 @@ Follow these steps to use Apache Spark to write sample data to OneLake from Azur
 
 Congratulations. You can now read and write data in OneLake using Apache Spark in Azure Synapse Analytics.
 
-## Read data from Synapse using SQL
+## Read data from Azure Synapse using SQL
 
 Follow these steps to use SQL serverless to read data from OneLake from Azure Synapse Analytics.
 
-1. Open a Fabric lakehouse and identify a table that you'd like to query from Synapse.
+1. Open a Fabric lakehouse and identify a table that you'd like to query from Azure Synapse.
 
 1. Right-click on the table and select **Properties**.
 
@@ -81,7 +91,7 @@ Follow these steps to use SQL serverless to read data from OneLake from Azure Sy
 
    :::image type="content" source="media\onelake-azure-synapse-analytics\abfs-path.png" alt-text="Screenshot showing where to copy the ABFS path.":::
 
-1. Open your Synapse workspace in [Synapse Studio](https://web.azuresynapse.net/workspaces).
+1. Open your Azure Synapse workspace in [Azure Synapse Studio](https://web.azuresynapse.net/workspaces).
 
 1. Create a new SQL script.
 

@@ -44,6 +44,8 @@ Select the **Settings** tab in the activity properties pane, then select the Fab
 
 Here you can configure your connection, workspace, and Spark job definition. If no Spark job definition exists yet, you can create a new Spark job definition from your pipeline editor by selecting the **+New** button next to **Spark job definition**.
 
+You can choose either a Service Principal (SPN) or Workspace Identity (WI) connection. The selected connection determines how the Notebook or Spark job is authenticated during pipeline runs.
+
 :::image type="content" source="media/spark-job-definition-activity/create-new-spark-job-from-activity.png" lightbox="media/spark-job-definition-activity/create-new-spark-job-from-activity.png" alt-text="Screenshot showing the +New button next to the Spark job definition selection box in the Settings tab of the Spark Job definition properties pages in the pipeline editor window.":::
 
 After you set a name and select create, you will be taken to your Spark job definition to set your configurations. 
@@ -68,13 +70,60 @@ You can also parameterize these setting fields to orchestrate your Spark job def
 
 :::image type="content" source="media/spark-job-definition-activity/spark-job-definition-parameterized-expression.png" lightbox="media/spark-job-definition-activity/spark-job-definition-parameterized-expression.png" alt-text="Screenshot showing an expression set for a Main definition file under Advanced settings in the Spark Job Definition activity settings.":::
 
+Within the **Settings** tab, you can configure more settings under **Spark settings**.
+
+## Spark settings
+
+Use these settings to control the compute resources and execution behavior of your Spark job.
+
+### Spark driver core
+
+Specifies the number of CPU cores allocated to the **driver node**, which coordinates the Spark job, schedules tasks, and collects results.
+
+### Spark driver memory
+
+Defines the amount of memory available to the **driver node**.
+
+Increase this if your job requires more memory for coordination, metadata, or result aggregation.
+
+### Spark executor core
+
+Specifies the number of CPU cores allocated to each **executor**, which performs the actual data processing tasks.
+
+### Spark executor memory
+
+Defines the amount of memory allocated to each **executor**.
+
+Higher memory can improve performance for large or memory-intensive workloads.
+
+### Dynamic allocation
+
+Controls whether Spark automatically adjusts the number of executors at runtime based on workload demand.
+
+- **Enabled**: Spark dynamically scales executors up or down to optimize resource usage  
+- **Disabled**: The number of executors remains fixed (based on *Spark executor instances*)
+
+### Spark executor instances
+
+Specifies the **number of executors** to use when dynamic allocation is disabled.
+
+This directly controls the level of parallelism for your job.
+
+### Spark properties
+
+Allows you to provide **custom Spark configuration settings** as key-value pairs (for example, `spark.sql.shuffle.partitions`).
+
+Use this to fine-tune job behavior beyond the default settings.
+
+:::image type="content" source="media/spark-job-definition-activity/sjd-spark-settings.png" lightbox="media/spark-job-definition-activity/sjd-spark-settings.png" alt-text="Screenshot showing the options under the Spark settings in the Spark Job Definition activity settings.":::
+
 ## Known limitations
 
 Current limitations in the Spark Job Definition activity for Fabric Data Factory are listed here. This section is subject to change.
 
 - Although we support monitoring the activity via the output tab, you aren't able to monitor the Spark Job Definition at a more granular level yet. For example, links to the monitoring page, status, duration, and previous Spark Job Definition runs aren't available directly in the Data Factory. However, you can see more granular details in the [Spark Job Definition monitoring page](../data-engineering/monitor-spark-job-definitions.md).
 - Detailed run-level monitoring is available in the Spark Job Definition monitoring page. The authentication method (SPN or WI) used for the run does **not** affect monitoring behavior.
-- Some customers may not see the Workspace Identity (WI) dropdown, or may see it but be unable to create a connection. This behavior is due to a known issue in one of our underlying platform components. The fix for this is currently being worked on.
+- Users must use an SPN or WI connection for the SJD monitoring URL feature.
 
 ## Save and run or schedule the pipeline
 

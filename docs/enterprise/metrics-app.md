@@ -20,7 +20,7 @@ The app is updated often with new features and functionalities. It provides the 
 
 ## Install the app
 
-You must be a capacity admin to install and view the Microsoft Fabric Capacity Metrics app.
+You must be a capacity admin to install the Microsoft Fabric Capacity Metrics app. After the app is installed, a capacity admin can grant other users permission to view it by sharing the report. For more information, see [Share the Fabric Capacity Metrics report](#share-the-fabric-capacity-metrics-report).
 
 To install the app, follow the instructions in [Install the Microsoft Fabric Capacity Metrics app](metrics-app-install.md).
 
@@ -28,17 +28,17 @@ To install the app, follow the instructions in [Install the Microsoft Fabric Cap
 
 The Microsoft Fabric Capacity Metrics app provides various features and functionalities to help you monitor and manage your capacities effectively. The app includes the following pages:
 
-- **Health** page (preview): Get a high-level overview for all capacities you're admin of, and identify those capacities consuming the most compute or experiencing issues like throttling or query rejections. For more information, see [Understand the metrics app Health page](metrics-app-health-page.md).
+- **Health** page: Get a high-level overview for all capacities you're admin of, and identify those capacities consuming the most compute or experiencing issues like throttling or query rejections. For more information, see [Understand the metrics app Health page](metrics-app-health-page.md).
 
-- **Compute** page: Get a 14-day view of your capacity’s compute performance. Visuals include ribbon charts, utilization trends, and a matrix of operations, helping you analyze usage patterns, peak loads, and throttling events. For more information, see [Understand the metrics app compute page](metrics-app-compute-page.md).
+- **Compute** page: Get a 14-day view of your capacity’s compute performance. Visuals include ribbon charts, utilization trends, and a matrix of operations, helping you analyze usage patterns, peak loads, and throttling events. AI Functions appears as a distinct operation category in ribbon charts, utilization trends, and the matrix of operations, tracked separately from Spark and Dataflows Gen2. For more information, see [Understand the metrics app compute page](metrics-app-compute-page.md).
 
 - **Storage** page: Monitor storage usage over the past 30 days. View current and billable storage by workspace, track soft-deleted data, and explore trends through column charts and detailed tables. For more information, see [Understand the metrics app storage page](metrics-app-storage-page.md).
 
-- **Timepoint** page: Drill into a specific 30-second timepoint to see which operations - interactive or background - consumed the most compute. Use this page to diagnose overloads and understand autoscale or throttling behavior. For more information, see [Understand the metrics app timepoint page](metrics-app-timepoint-page.md).
+- **Timepoint** page: Drill into a specific 30-second timepoint to see which operations (interactive or background) consumed the most compute. The operation breakdown includes a dedicated AI Functions operation group, so you can see AI Functions usage at a given 30-second interval. Use this page to diagnose overloads and understand autoscale or throttling behavior. For more information, see [Understand the metrics app timepoint page](metrics-app-timepoint-page.md).
 
-- **Timepoint summary** page (preview): Summarizes operation types (not individual operations) that contributed to capacity usage during a selected timepoint. Ideal for identifying high-impact workloads and understanding autoscale thresholds. For more information, see [Understand the metrics app timepoint summary page](metrics-app-timepoint-summary-page.md).
+- **Timepoint summary** page: Summarizes operation types (not individual operations) that contributed to capacity usage during a selected timepoint. Summary visuals include AI Functions as an operation type, helping identify when AI Functions contributes materially to capacity usage and autoscale thresholds. For more information, see [Understand the metrics app timepoint summary page](metrics-app-timepoint-summary-page.md).
 
-- **Timepoint item detail** page (preview): Provides granular detail on operations within a specific item at a timepoint. Includes filters for operation ID, user, and CU thresholds that are useful for root-cause analysis and performance tuning. For more information, see [Understand the metrics app timepoint item detail page](metrics-app-timepoint-item-detail-page.md).
+- **Timepoint item detail** page: Provides granular detail on operations within a specific item at a timepoint. Includes filters for operation ID, user, and CU thresholds that are useful for root-cause analysis and performance tuning. For more information, see [Understand the metrics app timepoint item detail page](metrics-app-timepoint-item-detail-page.md).
 
 - **Autoscale compute for Spark** page: This page provides insights into the autoscaling behavior of Spark workloads, helping you optimize performance and resource allocation. For more information, see [Understand the metrics app Autoscale compute for Spark page](metrics-app-feature-autoscale-page.md).
 
@@ -48,7 +48,7 @@ The Microsoft Fabric Capacity Metrics app provides various features and function
 
 - **Monitor paused capacity**: Track when a capacity was paused or resumed, and understand why utilization spikes may appear during pauses. Includes guidance on interpreting `carryforward` operations. To learn more, see [Monitor a paused capacity](monitor-paused-capacity.md).
 
-- **Calculations**: Understand how the app computes key metrics like CU usage, throttling, and autoscale impact. Useful for interpreting visuals and validating internal reporting. For more information, see [Metrics app calculations](metrics-app-calculations.md).
+- **Calculations**: Understand how the app computes key metrics like CU usage, throttling, and autoscale impact. The operation taxonomy and CU calculations include AI Functions as a separate operation type, with its CU usage attributed independently from Spark and Dataflows Gen2 in all visuals. Useful for interpreting visuals and validating internal reporting. For more information, see [Metrics app calculations](metrics-app-calculations.md).
 
 ## Data latency
 
@@ -77,11 +77,11 @@ When using the Microsoft Fabric Capacity Metrics app, consider the following con
 
 - Update the parameters and refresh the semantic model whenever your available capacities change. For example, if you obtain JIT tenant admin access, update the *RegionName* parameter in the semantic model settings (as described in the installation guidance) and then refresh the model after access is granted.
 
-- The Microsoft Fabric Capacity Metrics app doesn't support alerts or notifications. For real-time alerts, see [What is Real-Time hub?](../real-time-hub/real-time-hub-overview.md)
+- The Microsoft Fabric Capacity Metrics app doesn't support alerts or notifications. To set up alerts on your capacity health, use [Fabric capacity overview events](../real-time-hub/explore-fabric-capacity-overview-events.md). To monitor or set alerts on individual operations, use [Fabric capacity operation events](../real-time-hub/explore-fabric-capacity-operation-events.md).
 
 - Data for new capacities isn't visible in the Metrics app until the next scheduled refresh. Data for new items and workspaces isn't visible until the next scheduled refresh after their first operation consuming CUs within the past 14 days. To view the data before the next scheduled refresh, initiate a manual refresh of the semantic model.
 
-- To hide user emails in the app, disable the [Show user data in the Fabric Capacity Metrics app and reports](../admin/service-admin-portal-audit-usage.md#show-user-data-in-the-fabric-capacity-metrics-app-and-reports) setting in the Admin portal.
+- To hide user emails in the app, disable the [Show user data in the Fabric Capacity Metrics app and reports](../admin/service-admin-portal-audit-usage.md#show-user-data-in-the-microsoft-fabric-capacity-metrics-app-and-reports) setting in the Admin portal.
 
 - Billable items and operations consume CU units from your capacity and are paid for by your organization. Non-billable items and operations reflect preview features that don't count towards your capacity limit and aren't paid for. They provide an indication of possible future impact on your capacity. When preview features become generally available, your organization starts paying for them and their impact on your capacity is taken into account.
 
@@ -99,10 +99,12 @@ When using the Microsoft Fabric Capacity Metrics app, consider the following con
 
 - The *CU (s)* column of the [matrix by item and operation](metrics-app-compute-page.md#matrix-by-item-and-operation) table displays the cumulative consumption of CU seconds for a specific item over the past 14 days. If you move the item from another workspace to the current workspace in the last 14 days, the *CU (s)* column includes the cumulative consumption of CU seconds for the item in the previous workspace.
 
-- The Microsoft Fabric Capacity Metrics app doesn't support environments that use [private links](../security/security-private-links-overview.md).
+- The Fabric Capacity Metrics app supports environments that use [tenant-level private links](../security/security-private-links-overview.md), but workspace‑level private links aren’t supported on workspaces where the app is installed.
 
 - The threshold values on throttling visuals don't reflect applied surge protection settings. To view the actual [surge protection](surge-protection.md) thresholds, refer to the Admin Portal in the Power BI service.
 
 ## Related content
 
 - [Install the Microsoft Fabric Capacity Metrics app](metrics-app-install.md)
+- [Explore Fabric capacity overview events](../real-time-hub/explore-fabric-capacity-overview-events.md)
+- [Explore Fabric capacity operation events](../real-time-hub/explore-fabric-capacity-operation-events.md)

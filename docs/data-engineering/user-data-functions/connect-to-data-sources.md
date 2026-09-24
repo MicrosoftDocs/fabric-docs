@@ -22,9 +22,9 @@ In this article, you learn how to:
 
 The following data sources are currently supported for Fabric User data functions:
 
-- [Fabric SQL databases](../../database/sql/overview.md) for read/write operations
+- [SQL databases in Fabric](../../database/sql/overview.md) for read/write operations
 - [Fabric warehouses](../../data-warehouse/create-warehouse.md) for read/write operations
-- [Fabric lakehouses](../lakehouse-overview.md) for read/write operations for Lakehouse files and for read-only operations for the SQL Endpoint.
+- [Fabric lakehouses](../lakehouse-overview.md) for read/write operations for Lakehouse files and for read-only operations for the SQL analytics endpoint.
 - [Fabric mirrored databases](../../mirroring/overview.md) for read-only operations
 
 > [!NOTE]

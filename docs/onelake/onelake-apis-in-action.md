@@ -1,7 +1,9 @@
 ---
 title: Use Blob and ADLS APIs to mirror data into OneLake
 description: This explains how developers can use Azure Data Lake Storage (ADLS) and Blob Storage APIs to efficiently connect existing applications to OneLake, especially for streaming Parquet data into Microsoft Fabric’s open mirroring landing zone, without needing to rewrite their apps. It covers practical implementation details, performance tips, and robust testing strategies using the Azurite emulator
-ms.reviewer: eloldag, tompeplow
+ms.reviewer: eloldag, tompeplow # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.topic: overview
 ms.date: 10/07/2025
 #customer intent: As a developer or data engineer, I want to seamlessly connect my existing Azure Storage-based applications to OneLake and efficiently stream, serialize, and upload data—such as Parquet files—into Fabric’s open mirroring landing zone, so that I can modernize my data pipelines, optimize performance, and enable robust, testable integrations without rewriting my code.
@@ -15,7 +17,7 @@ If your application uses [Azure Data Lake Storage (ADLS)](/rest/api/storageservi
 We demonstrate how Blob and ADLS APIs are used with OneLake through a real-world mirroring example and share developer insights from OneLake. We explore when and why you might choose one API over another, and how to get the most out of each. All the patterns we cover apply to Azure Storage storage as well.
 
 In this scenario, we cover:
-- What is [open mirroring](/fabric/database/mirrored-database/open-mirroring-landing-zone-format)
+- What is [open mirroring](../database/mirrored-database/open-mirroring-landing-zone-format.md)
 - How to use the .NET [Azure Blob Storage](/azure/storage/blobs/storage-blob-dotnet-get-started) and [Distributed File System (DFS)](/azure/storage/blobs/data-lake-storage-directory-file-acl-dotnet) clients to write data into the open mirror landing zone.
 - How to combine the Blob Storage and DFS clients for uploading data and managing folders in OneLake, especially when performance matters
 - How to handle scenarios that crop up with block blobs when writing parquet data to blob storage from .NET
@@ -25,7 +27,7 @@ In this scenario, we cover:
 > The code for this article can be found in [GitHub](https://github.com/microsoft/fabric-toolbox/tree/main/samples/OneLake/write-to-open-mirror-landing-zone/OneLakeOpenMirroringExample).
 
 ## Streaming parquet into OneLake with Blob APIs
-In this section, we demonstrate how to efficiently stream parquet data into OneLake, particularly the open mirroring landing zone. Open mirroring is a powerful way to bring data from proprietary systems, where shortcuts [shortcuts](onelake-shortcuts.md) can't be used, into Microsoft Fabric. It handles the heavy lifting, converting raw data into [Delta Lake format](https://delta.io/), managing [upserts, delete vectors](https://docs.delta.io/latest/delta-update.html), [optimize](https://delta.io/blog/delta-lake-optimize/), [vacuum](https://docs.delta.io/latest/delta-utility.html#remove-files-no-longer-referenced-by-a-delta-table), and more. All you need to do is upload your data into the landing zone, include a row marker, and mirroring takes it from there.
+In this section, we demonstrate how to efficiently stream parquet data into OneLake, particularly the open mirroring landing zone. Open mirroring is a powerful way to bring data from proprietary systems, where shortcuts [shortcuts](onelake-shortcuts.md) can't be used, into Fabric. It handles the heavy lifting, converting raw data into [Delta Lake format](https://delta.io/), managing [upserts, delete vectors](https://docs.delta.io/latest/delta-update.html), [optimize](https://delta.io/blog/delta-lake-optimize/), [vacuum](https://docs.delta.io/latest/delta-utility.html#remove-files-no-longer-referenced-by-a-delta-table), and more. All you need to do is upload your data into the landing zone, include a row marker, and mirroring takes it from there.
 
 It's common that teams write custom code to extract data from proprietary systems and output it in an open format. While open mirroring ingests both CSV and Parquet into Delta tables, if you’re already writing code, you might as well go with Parquet, it’s more efficient to upload and process.
 
@@ -43,7 +45,7 @@ This approach keeps your Azure Function lightweight, fast, and cost-efficient, n
 
 ## Open mirroring landing zone summary
 
-The [open mirroring landing zone](/fabric/database/mirrored-database/open-mirroring-landing-zone-format) acts like an inbox for your mirrored tables, add files then Fabric takes care of the ingestion. But behind that simplicity is a clear protocol your application needs to follow to ensure data is correctly discovered and processed.
+The [open mirroring landing zone](../database/mirrored-database/open-mirroring-landing-zone-format.md) acts like an inbox for your mirrored tables, add files then Fabric takes care of the ingestion. But behind that simplicity is a clear protocol your application needs to follow to ensure data is correctly discovered and processed.
 
 ### Folder structure
 

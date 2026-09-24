@@ -1,8 +1,8 @@
 ---
 title: Streaming Connector virtual network and on-premises Supported Sources
 description: This file has the list of sources supported by Streaming Connector virtual network and on-premises.
-ms.author: xujiang1
-author: xujxu
+ms.author: spelluru
+author: spelluru
 ms.topic: include
 ms.service: fabric
 ms.subservice: rti-eventstream
@@ -10,14 +10,16 @@ ms.custom:
 ms.date: 01/27/2026
 ---
 
-This feature applies to Eventstream sources that use streaming connectors to retrieve data from external sources, that is, outbound requests are made to those external systems. It supports the following features: 
+This applies to Eventstream sources that use streaming connectors to retrieve data from external sources. These connectors make outbound requests to those external systems. It supports the following sources: 
 
 - Azure SQL Database Change Data Capture (CDC)
 - Azure SQL Managed Instance CDC
+- Oracle Database CDC
 - Azure Service Bus
 - Azure Cosmos DB CDC
 - Azure Data Explorer (ADX)
 - Azure Event Hubs (Extended features mode)
+- Azure IoT Hub (Extended features mode)
 - Amazon Managed Streaming for Apache Kafka
 - Apache Kafka
 - Amazon Kinesis Data Streams

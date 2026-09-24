@@ -9,7 +9,7 @@ ms.search.form: Monitor Spark capacity consumption
 
 # Monitor Apache Spark capacity consumption
 
-The purpose of this article is to offer guidance for admins who want to monitor activities in the capacities they manage. By utilizing the Apache Spark capacity consumption reports available in the [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md), admins can gain insights into the billable Spark capacity consumption for items, including Lakehouse, Notebook, and Apache Spark job definitions. Some Spark capacity consumption activities aren't reported in the app.
+The purpose of this article is to offer guidance for admins who want to monitor activities in the capacities they manage. By utilizing the Apache Spark capacity consumption reports available in the [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md), admins can gain insights into the billable Spark capacity consumption for items, including lakehouse, notebook, and Apache Spark job definitions. Some Spark capacity consumption activities aren't reported in the app.
 
 ## Spark capacity consumption reported
 
@@ -18,7 +18,7 @@ The following operations from lakehouses, notebooks, and Spark job definitions a
 | Operation name | Item | Comments |
 |--|--|--|
 | **Lakehouse operations** | Lakehouse | Users preview table in the Lakehouse explorer. |
-| **Lakehouse table load** | Lakehouse | Users load delta table in the Lakehouse explorer. |
+| **Lakehouse table load** | Lakehouse | Users load Delta table in the Lakehouse explorer. |
 | **Notebook run** | Notebook | Notebook runs manually by users. |
 | **Notebook HC run** |  Notebook | Notebook runs under the high concurrency Apache Spark session. |
 | **Notebook scheduled run** | Notebook | Notebook runs triggered by notebook scheduled events. |
@@ -45,7 +45,7 @@ All Spark related operations are classified as [background operations](../enterp
 
 ### Background operations report
 
-Background operations are displayed for a specific [timepoint](../enterprise/metrics-app-timepoint-page.md). In the report's table, each row refers to a user operation. Review the **User** column to identify who performed a specific operation. If you need more information about a specific operation, you can use its **Operation ID** to look it up in the Microsoft Fabric [monitoring hub](../admin/monitoring-hub.md).
+Background operations are displayed for a specific [timepoint](../enterprise/metrics-app-timepoint-page.md). In the report's table, each row refers to a user operation. Review the **User** column to identify who performed a specific operation. If you need more information about a specific operation, you can use its **Operation ID** to look it up in the Fabric [monitoring hub](../admin/monitoring-hub.md).
 
 :::image type="content" source="media\monitor-spark-capacity-consumption\background-operations-report.png" alt-text="Screenshot showing background operations report." lightbox="media\monitor-spark-capacity-consumption\background-operations-report.png":::
 

@@ -9,7 +9,7 @@ ms.search.form: Get Started Lakehouse Streaming SQL Endpoint
 
 # Get streaming data into lakehouse and access with SQL analytics endpoint
 
-This quickstart explains how to create a Spark Job Definition that contains Python code with Spark Structured Streaming to land data in a lakehouse and then serve it through a SQL analytics endpoint. After completing this quickstart, you'll have a Spark Job Definition that runs continuously and the SQL analytics endpoint can view the incoming data.
+This quickstart explains how to create a Spark job definition that contains Python code with Spark Structured Streaming to land data in a lakehouse and then serve it through a SQL analytics endpoint. After completing this quickstart, you'll have a Spark job definition that runs continuously and the SQL analytics endpoint can view the incoming data.
 
 ## Create a Python script
 
@@ -56,7 +56,7 @@ Use the following Python script to create a streaming Delta table in a lakehouse
 
 Use the following steps to create a lakehouse:
 
-1. Sign in to the [Microsoft Fabric portal](https://app.fabric.microsoft.com).
+1. Sign in to the [Fabric portal](https://app.fabric.microsoft.com).
 
 1. Navigate to your desired workspace or create a new one if needed.
 
@@ -66,21 +66,21 @@ Use the following steps to create a lakehouse:
 
 1. Enter name of your lakehouse and select **Create**.
 
-## Create a Spark Job Definition
+## Create a Spark job definition
 
-Use the following steps to create a Spark Job Definition:
+Use the following steps to create a Spark job definition:
 
 1. From the same workspace where you created a lakehouse, select **New item**.
 
 1. In the panel that opens, under **Get data**, select **Spark Job Definition**.
 
-1. Enter name of your Spark Job Definition and select **Create**.
+1. Enter name of your Spark job definition and select **Create**.
 
 1. Select **Upload** and select the Python file you created in the previous step.
 
 1. Under **Lakehouse Reference** choose the lakehouse you created.
 
-## Set Retry policy for Spark Job Definition
+## Set Retry policy for Spark job definition
 
 Use the following steps to set the retry policy for your Spark job definition:
 
@@ -99,7 +99,7 @@ Use the following steps to set the retry policy for your Spark job definition:
 > [!NOTE]
 > There is a lifetime limit of 90 days for the retry policy setup. Once the retry policy is enabled, the job will be restarted according to the policy within 90 days. After this period, the retry policy will automatically cease to function, and the job will be terminated. Users will then need to manually restart the job, which will, in turn, re-enable the retry policy.
 
-## Execute and monitor the Spark Job Definition
+## Execute and monitor the Spark job definition
 
 1. From the top menu, select the **Run** icon.
 
@@ -111,7 +111,7 @@ Use the following steps to set the retry policy for your Spark job definition:
 
 After the script runs, a table named *streamingtable* with *timestamp* and *value* columns is created in the lakehouse. You can view the data using the SQL analytics endpoint:
 
-1. From the workspace, open your Lakehouse.
+1. From the workspace, open your lakehouse.
 
 1. Switch to **SQL analytics endpoint** from the top-right corner.
 
@@ -119,5 +119,5 @@ After the script runs, a table named *streamingtable* with *timestamp* and *valu
 
 ## Related content
 
-- [Spark Job Definition](spark-job-definition.md)
+- [Spark job definition](spark-job-definition.md)
 - [What is the SQL analytics endpoint for a lakehouse?](lakehouse-sql-analytics-endpoint.md)

@@ -1,21 +1,22 @@
 ---
 title: Use ai.summarize with PySpark
-description: Learn how to to produce summaries of input text by using the ai.summarize function with PySpark.
-ms.reviewer: vimeland
+description: Learn how to produce summaries of input text by using the ai.summarize function with PySpark.
+ms.reviewer: singhrana
+reviewer: ranadeepsingh
 ms.topic: how-to
-ms.date: 11/13/2025
-ms.search.form: AI functions
+ms.date: 05/12/2026
+ms.search.form: AI Functions
+ai-usage: ai-assisted
 ---
 
 # Use ai.summarize with PySpark
 
-
-The `ai.summarize` function uses generative AI to produce summaries of input text, with a single line of code. The function can either summarize values from one column of a DataFrame or values across all the columns.
+The `ai.summarize` function summarizes text from one column or across all columns in each row.
 
 > [!NOTE]
-> - This article covers using *ai.summarize* with PySpark. To use *ai.summarize* with pandas, see [this article](../pandas/summarize.md).
-> - See other AI functions in [this overview article](../overview.md).
-> - Learn how to customize the [configuration of AI functions](./configuration.md).
+> - This article covers `ai.summarize` with PySpark. For pandas, see [Use ai.summarize with pandas](../pandas/summarize.md).
+> - For all AI Functions and prerequisites, see [AI Functions overview](../overview.md).
+> - Change default configuration for [AI Functions with PySpark](./configuration.md).
 
 ## Overview
 
@@ -44,7 +45,7 @@ df.ai.summarize(output_col="summaries")
 | Name | Description |
 |---|---|
 | `input_col` <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains the name of an existing column with input text values to summarize. If you don't set this parameter, the function summarizes values across all columns in the DataFrame, instead of values from a specific column. |
-| `instructions` <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains more context for the AI model, such as specifying output length, tone, or more. More precise instructions will yield better results. |
+| `instructions` <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that provides more context for the AI model, such as output length, tone, audience, or focus. More precise instructions produce better results. |
 | `error_col` <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains the name of a new column to store any OpenAI errors that result from processing each input text row. If you don't set this parameter, a default name generates for the error column. If an input row has no errors, the value in this column is `null`. |
 | `output_col` <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains the name of a new column to store summaries for each input text row. If you don't set this parameter, a default name generates for the output column. |
 
@@ -78,7 +79,7 @@ summaries = df.ai.summarize(input_col="description", output_col="summaries")
 display(summaries)
 ```
 
-This example code cell provides the following output:
+Output:
 
 :::image type="content" source="../../media/ai-functions/summarize-single-example-output.png" alt-text="Screenshot showing a data frame. The 'summaries' column has a summary of the 'description' column only, in the corresponding row." lightbox="../../media/ai-functions/summarize-single-example-output.png":::
 
@@ -106,24 +107,76 @@ summaries = df.ai.summarize(output_col="summaries")
 display(summaries)
 ```
 
-This example code cell provides the following output:
+Output:
 
 :::image type="content" source="../../media/ai-functions/summarize-all-example-output.png" alt-text="Screenshot showing a data frame. The 'summaries' column has a summary of the information across all the columns in the corresponding row." lightbox="../../media/ai-functions/summarize-all-example-output.png":::
 
 ---
 
+## Customize summaries with instructions
+
+Use the `instructions` parameter to control the tone, length, audience, or focus of generated summaries without changing the source text.
+
+# [Summarize for an executive audience](#tab/pyspark-instructions-column)
+
+```python
+# This code uses AI. Always review output for mistakes.
+
+summaries = df.ai.summarize(
+    input_col="description",
+    output_col="executive_summary",
+    instructions="Write one concise sentence for a business executive. Focus on product value and avoid marketing language.",
+)
+display(summaries)
+```
+
+# [Summarize across all columns](#tab/pyspark-instructions-dataframe)
+
+```python
+# This code uses AI. Always review output for mistakes.
+
+summaries = df.ai.summarize(
+    output_col="release_note",
+    instructions="Write one sentence that includes the product name, release year, and main customer benefit.",
+)
+display(summaries)
+```
+
+---
+
+## Multimodal input
+
+To summarize images, PDFs, or text files, set `input_col_type="path"` for single-column mode, or `col_types` for DataFrame-level mode. For setup, see [Use multimodal input with AI Functions](../multimodal-overview.md).
+
+```python
+# This code uses AI. Always review output for mistakes.
+
+# Summarize file content from a single column
+results = custom_df.ai.summarize(
+    instructions="Summarize this file in one sentence for a support analyst.",
+    input_col="file_path",
+    input_col_type="path",
+    output_col="summary",
+)
+display(results)
+```
+
+You can also summarize values across all columns in a DataFrame by omitting the input column and using `col_types`:
+
+```python
+# This code uses AI. Always review output for mistakes.
+
+results = custom_df.ai.summarize(
+    col_types={"file_path": "path"},
+    output_col="summary",
+)
+display(results)
+```
+
 ## Related content
 
 - Use [ai.summarize with pandas](../pandas/summarize.md).
-- Detect sentiment with [ai.analyze_sentiment](./analyze-sentiment.md).
-- Categorize text with [ai.classify](./classify.md).
-- Generate vector embeddings with [ai.embed](./embed.md).
-- Extract entities with [ai_extract](./extract.md).
-- Fix grammar with [ai.fix_grammar](./fix-grammar.md).
-- Answer custom user prompts with [ai.generate_response](./generate-response.md).
-- Calculate similarity with [ai.similarity](./similarity.md).
-- Translate text with [ai.translate](./translate.md).
-
-- Learn more about the [full set of AI functions](../overview.md).
-- Customize the [configuration of AI functions](./configuration.md).
-- Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).
+- Learn more about [AI Functions](../overview.md).
+- Use [multimodal input with AI Functions](../multimodal-overview.md).
+- Change default configuration for [AI Functions with PySpark](./configuration.md).
+- Understand [billing for AI Functions](../billing.md).

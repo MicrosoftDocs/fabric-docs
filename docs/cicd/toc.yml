@@ -1,18 +1,20 @@
 items:
-- name: Application lifecycle management documentation
+- name: Microsoft Fabric CI/CD documentation
   href: index.yml
-- name: What is application lifecycle management? 
+- name: What is CI/CD in Microsoft Fabric?
   href: cicd-overview.md
 
-- name: "Tutorial: End to end application lifecycle management"
-  href: cicd-tutorial.md
+- name: "Tutorial: End-to-end automation in Fabric"
+  href: tutorial-end-to-end-automation.md
 - name: CI/CD workflow options in Fabric
   items:
   - name: Overview
     href: manage-deployment.md
-  - name: Tutorial - CI/CD for Microsoft Fabric Using Azure DevOps & the fabric-cicd Python Package
+  - name: Tutorial - CI/CD using Azure DevOps & fabric-cicd library
     href: tutorial-fabric-cicd-azure-devops.md
-  - name: Tutorial - Local deployment with fabric-cicd 
+  - name: Tutorial - CI/CD using Fabric Bulk API
+    href: tutorial-bulkapi-cicd.md
+  - name: Tutorial - Local deployment
     href: tutorial-fabric-cicd-local.md   
 - name: Continuous integration with Git
   items:
@@ -20,10 +22,18 @@ items:
     href: git-integration/intro-to-git-integration.md
   - name: "Get started with Git integration"
     href: git-integration/git-get-started.md
-  - name: "Understand the Git integration process"
+  - name: "Basic concepts in Git integration"
     href: git-integration/git-integration-process.md
-  - name: "Manage Git branches"
-    href: git-integration/manage-branches.md
+  - name: "Development process in Fabric"
+    items:
+    - name: Overview
+      href: git-integration/manage-branches.md
+    - name: Development process using Branched workspace
+      href: git-integration/branched-workspace.md
+    - name: Configure branch workspace admin profile
+      href: git-integration/branch-workspace-admin-profile.md
+    - name: Development process using client tool
+      href: git-integration/client-tool.md     
   - name: Handle errors and conflicts
     items:
     - name: Resolve conflicts
@@ -34,6 +44,8 @@ items:
       href: git-integration/dependency-errors.md
     - name: Expired licenses
       href: git-integration/license-change.md
+    - name: Logical ID conflicts
+      href: git-integration/logical-id-conflict-resolution.md
   - name: Git integration source code format
     href: git-integration/source-code-format.md
   - name: Automate Git integration
@@ -46,10 +58,14 @@ items:
       href: git-integration/git-integration-with-service-principal.md
   - name: GitHub data residency support
     href: github-data-residency-support.md
+  - name: Compare and commit changes
+    href: git-integration/granular-compare.md
 - name: Continuous Deployment with deployment pipelines
   items:
   - name: Introduction to deployment pipelines
     href: deployment-pipelines/intro-to-deployment-pipelines.md
+  - name: "Tutorial: End to end application lifecycle management"
+    href: cicd-tutorial.md
   - name: New deployment pipelines interface
     href: deployment-pipelines/deployment-pipelines-new-ui.md
   - name: Get started with deployment pipelines
@@ -87,6 +103,8 @@ items:
       items:
       - name: Item references
         href: variable-library/item-reference-variable-type.md
+      - name: Connection references
+        href: variable-library/connection-reference-variable-type.md
     - name: Permissions
       href: variable-library/variable-library-permissions.md
     - name: "CI/CD and Variable libraries"
@@ -99,6 +117,8 @@ items:
     href: variable-library/variable-library-troubleshoot.md
 - name: Lifecycle management best practices
   href: best-practices-cicd.md
+- name: Understand dependency binding in cross-workspace deployment
+  href: cross-workspace-dependency-binding.md
 - name: Network security and CI/CD
   href: cicd-security.md
 - name: Frequently asked questions

@@ -2,15 +2,15 @@
 title: Eventstream streaming connector virtual network and on-premises support guide
 description: Learn how to create and manage Streaming virtual network data gateways, connect streaming source’s network to the Azure virtual network and then add data source in private network into Eventstream.
 ms.reviewer: spelluru
-ms.author: xujiang1
-author: xujxu
+ms.author: spelluru
+author: spelluru
 ms.topic: how-to
 ms.custom: sfi-image-nochange, sfi-ropc-nochange
 ms.date: 01/27/2026
 ms.search.form: Eventstream connector private network support
 ---
 
-# Eventstream streaming connector virtual network and on-premises support guide (preview)
+# Eventstream streaming connector virtual network and on-premises support guide
 
 The streaming connector virtual network and on-premises support offers a secure, managed way for Eventstream to access streaming sources that are in private networks. This guide shows you how to use this feature to connect your private-network sources with Eventstream. You learn how to grant the necessary permissions, set up a virtual network, link your source network, create a data gateway for the streaming virtual network, and add your private network data source to Eventstream.
 
@@ -58,20 +58,28 @@ This section shows how to prepare the Azure virtual network with a subnet config
 
     :::image type="content" source="media/streaming-connector-virtual-network-on-premises-support/create-virtual-network.png" alt-text="Screenshot of showing the first step of creating virtual network." lightbox="media/streaming-connector-virtual-network-on-premises-support/create-virtual-network.png":::
 
-    You can reuse the existing Azure virtual network that is this region. But ensure the virtual network has an IP address range that doesn't overlap with the following ranges: **10.240.0.0/16** and **10.224.0.0/12**. 
+    You can reuse the existing Azure virtual network that is this region. But ensure the virtual network has an IP address range that doesn't overlap with the following ranges: **10.240.0.0/16** and **10.224.0.0/12**.  
 
 2. Navigate to the **Subnets** tab under your virtual network resource to prepare the subnet. 
-3. You can either select an existing subnet to edit or create a new one. 
+3. You can either select an existing subnet to edit or create a new one.
+
+   > [!NOTE]  
+   > It is strongly recommended to **create a new subnet for connector vNet injection** to avoid potential conflicts. If you choose to use an existing subnet, ensure that it does not contain any Private Endpoints, Load Balancers, Application Gateways, virtual machines (VMs), virtual machine scale sets, or network interfaces (NICs).
 
     :::image type="content" source="media/streaming-connector-virtual-network-on-premises-support/select-subnet.png" alt-text="Screenshot of showing selecting or creating subnets." lightbox="media/streaming-connector-virtual-network-on-premises-support/select-subnet.png":::
 
-4. When configuring your subnet, make sure to use an IP address range that doesn't overlap with **10.240.0.0/16** or **10.224.0.0/12** and at least **16 IPs** are available (for example, when creating subnet in Azure, make sure you set xx.xx.xx.xx **/27** at least), and select Subnet Delegation to delegate subnet to service: **Messaging Connectors**.
+4. When configuring your subnet, make sure to use an IP address range that doesn't overlap with **10.240.0.0/16** or **10.224.0.0/12** and at least **16 (15+1) IPs** are available (for example, when creating subnet in Azure, make sure you set xx.xx.xx.xx **/27** at least), and select Subnet Delegation to delegate subnet to service: **Messaging Connectors**.
+
+   > [!NOTE]
+   > When planning the available IP count for a subnet, consider the number of connectors that will run in the subnet and the potential for connector resource auto-scaling. Note that Azure reserves **15** IP addresses per subnet. 
+   > - Each connector uses one IP address. When connector resource auto-scaling occurs, the maximum number of IP addresses a connector can use equals the source's partition count (if the source has partitions).
+   > - **Example**: If you have two Apache Kafka connectors added to eventstreams with a vNet in a new subnet, and each Kafka source has 10 partitions, the maximum IP count needed is 35 (15 Azure-reserved IPs + 10 IPs × 2 connectors).
 
     :::image type="content" source="media/streaming-connector-virtual-network-on-premises-support/set-up-subnet.png" alt-text="Screenshot of showing how to set up a subnet." lightbox="media/streaming-connector-virtual-network-on-premises-support/set-up-subnet.png":::
 
 ## Prerequisite 3: Connect your streaming source’s network to the Azure virtual network 
 
-When the source is in private network, it's required to have your Azure virtual network created in the previous step to be connected with your source’s private network, that is, the client in this Azure virtual network should be able to connect to this source.  
+When the source is in private network, it's required to have your Azure virtual network created in the previous step to be connected with your source’s private network, that is, the client in this Azure virtual network should be able to connect to this source. You can create a virtual machine in another subnet within the Azure virtual network and use it to verify connectivity to the private network where your source is located.
 
 ### Non-Azure sources and on-premises sources
 
@@ -109,7 +117,7 @@ The example demonstrates using Azure SQL Server source.
 
     :::image type="content" source="media/streaming-connector-virtual-network-on-premises-support/create-private-endpoint.png" alt-text="Screenshot of showing how create a private endpoint." lightbox="media/streaming-connector-virtual-network-on-premises-support/create-private-endpoint.png":::
 
-1. Use the wizard to create the private endpoint, selecting the Azure virtual network created in Prerequisite #1 during the 'Virtual Network' step. For the subnet selection, choose a subnet different from the one delegated to ‘MessagingConnector’ in Prerequisite #1. 
+1. Use the wizard to create the private endpoint, selecting the Azure virtual network created in Prerequisite #1 during the 'Virtual Network' step. For the subnet selection, **choose a subnet different from the one delegated to ‘MessagingConnector’** in Prerequisite #1. 
 
     :::image type="content" source="media/streaming-connector-virtual-network-on-premises-support/configure-virtual-network.png" alt-text="Screenshot of showing how to delegate to ‘MessagingConnector’." lightbox="media/streaming-connector-virtual-network-on-premises-support/configure-virtual-network.png":::
 
@@ -199,12 +207,12 @@ After the Streaming virtual network data gateway is created, go back to Get even
 
     :::image type="content" source="media/streaming-connector-virtual-network-on-premises-support/new-connection.png" alt-text="Screenshot of showing how to create a new DMTS connection." lightbox="media/streaming-connector-virtual-network-on-premises-support/new-connection.png":::
 
-1. Ensure selecting the **streaming virtual network data gateway** under **Data gateway**. It has the prefix `[Streaming vNet]`. You can select refresh icon to get the newly created gateway listed.
+1. Ensure selecting the **streaming virtual network data gateway** under **Data gateway**. It has the prefix `[Streaming VNET]`. You can select refresh icon to get the newly created gateway listed.
 
     :::image type="content" source="media/streaming-connector-virtual-network-on-premises-support/select-data-gateway.png" alt-text="Screenshot of showing how to select a streaming virtual network when creating new DMTS connection." lightbox="media/streaming-connector-virtual-network-on-premises-support/select-data-gateway.png":::
 
     > [!NOTE]  
-    > If a data gateway is selected, skip the test connection step in this connection creation wizard.
+    > If you use a data gateway, test connection isn't supported for this scenario, so **Skip test connection** is selected by default.
     
 1. Select the **Connection** you created with the streaming virtual network data gateway included. It has a prefix: `[vNet]`.
 
@@ -232,6 +240,7 @@ Azure Service Bus | Azure Service Bus
 Azure Cosmos DB CDC | Azure Cosmos DB v2
 Azure Data Explorer (ADX) | Azure Data Explorer (Kusto)
 Azure Event Hubs (Extended features mode) | Event Hubs
+Azure IoT Hub (Extended features mode) | IoTHub
 Amazon MSK Kafka | Kafka Cluster
 Apache Kafka | Kafka Cluster
 Amazon Kinesis Data Streams | Kinesis
@@ -244,6 +253,7 @@ HTTP | Web v2
 Solace PubSub+ | Solace PubSub+
 SQL Server on VM CDC | SQL Server
 MySQL Database CDC | MySQL
+Oracle DB CDC | Oracle
 
 ## Finish the configuration and publish the eventstream
 

@@ -1,0 +1,35 @@
+---
+title: Azure Cosmos DB CDC connector for Fabric event streams
+description: Include file that provides the common content for configuring an Azure Cosmos DB Change Data Capture (CDC) connector for Fabric event streams and Real-Time hub.
+ms.reviewer: xujiang1
+ms.topic: include
+ms.date: 04/03/2026
+---
+
+1. On the **Connect** screen, under **Connection**, select **New connection** to create a cloud connection linking to your Azure Cosmos DB database.
+
+    :::image type="content" source="media/azure-cosmos-db-cdc-source-connector/new-connection-link.png" alt-text="Screenshot that shows the Connect page with the New connection link selected." lightbox="media/azure-cosmos-db-cdc-source-connector/new-connection-link.png":::   
+1. On the **Connection settings** screen, enter the following information:
+
+   - **Cosmos DB Endpoint:** Enter the URI or Endpoint for your Cosmos DB account that you copied from the Azure portal.
+   - **Connection name**: Automatically generated, or you can enter a new name for this connection.
+   - **Account key:** Enter the Primary Key for your Azure Cosmos DB account that you copied from the Azure portal.
+
+   :::image type="content" border="true" source="media/azure-cosmos-db-cdc-source-connector/connect.png" alt-text="A screenshot of the Connection settings for the Azure Cosmos DB CDC source.":::
+1. Select **Connect**.
+
+1. Provide the following information for your Azure Cosmos DB resources.
+
+   - **Container ID:** Enter the name of the Azure Cosmos DB container or table you want to connect to.
+   - **Database:** Enter the name of your Azure Cosmos DB database.
+   - **Offset policy:** Select whether to start reading **Earliest** or **Latest** offsets if there's no commit.
+
+### Stream or source details
+
+[!INCLUDE [stream-source-details](./stream-source-details.md)]
+
+### Review and connect
+
+On the **Review + connect** screen, review the summary, and select **Add** (Eventstream) or **Connect** (Real-Time hub).
+
+

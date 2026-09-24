@@ -2,8 +2,8 @@
 title: Choose the right network security feature for Eventstream
 description: Learn how to select the appropriate network security feature for Eventstream, including managed private endpoints, tenant-level private links, and workspace-level private links.
 ms.reviewer: spelluru
-ms.author: zhenxilin
-author: alexlzx
+ms.author: spelluru
+author: spelluru
 ms.topic: concept-article
 ms.date: 01/16/2025
 ms.search.form: fabric's network security
@@ -174,8 +174,8 @@ Use the following flowchart and decision matrix to determine the right network s
 | Public feeds    | Weather                                                      | Internal  | Secure by default        | -                |
 | Fabric events   | Fabric Workspace item, Fabric OneLake events, Fabric Job events, etc. | Internal  | Secure by default        | -                |
 | Azure streaming sources   | Azure Event Hubs (Basic feature level), Azure IoT Hub                               | Outbound  | Managed Private Endpoint | GA  |
-| External        | Confluent Cloud for Apache Kafka, Amazon Kinesis, Google Pub/Sub, MQTT, etc. [Full list](./streaming-connector-private-network-support-overview.md#supported-sources)        | Outbound  | Connector virtual network injection           | PuPr  |
-| Database CDC    | PostgreSQL, MySQL, SQL Server, etc. [Full list](./streaming-connector-private-network-support-overview.md#supported-sources)                                | Outbound  | Connector virtual network injection           | PuPr |
+| External        | Confluent Cloud for Apache Kafka, Amazon Kinesis, Google Pub/Sub, MQTT, etc. [Full list](./streaming-connector-private-network-support-overview.md#supported-sources)        | Outbound  | Connector virtual network injection           | GA  |
+| Database CDC    | PostgreSQL, MySQL, SQL Server, etc. [Full list](./streaming-connector-private-network-support-overview.md#supported-sources)                                | Outbound  | Connector virtual network injection           | GA |
 
 #### Destinations
 

@@ -1,5 +1,5 @@
 ---
-title: Understand the metrics app health page (preview)
+title: Understand the metrics app health page
 description: Learn how to read the Microsoft Fabric Capacity metrics app's health page.
 author: dknappettmsft
 ms.author: daknappe
@@ -7,9 +7,7 @@ ms.topic: concept-article
 ms.date: 01/26/2026
 ---
 
-# Understand the metrics app Health page (preview)
-
-[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
+# Understand the metrics app Health page
 
 The **Health** page in the Microsoft Fabric Capacity Metrics app offers a high-level overview of all capacities that a user is admin of. This page is designed to help capacity administrators quickly identify capacities that are consuming the most compute resources or are experiencing issues such as throttling or query rejections.
 
@@ -72,7 +70,7 @@ The matrix includes the following fields:
 | **SKU**                       | Latest SKU of the capacity|
 | **State**                     | A state of the capacity (Active/Suspended/Deleting/Updating SKU)|
 | **Region**                    | Region of capacity|
-| **Health** | Shows different states according to its usage behavior:<br><ul><li><strong>Suspended</strong> – Capacity is suspended.</li><li><strong>Healthy</strong> – Capacity hasn't experienced any throttling or rejections.</li><li><strong>1 - At Risk of Throttling</strong> – Capacities that have at least one 30 sec. window where interactive delay % was above 90%.</li><li><strong>2 - Throttling</strong> – Capacities that have at least one 30 sec. window where interactive delay % was above 100% and thus might have operations that were throttled.</li><li><strong>3 - At Risk of Interactive Rejection</strong> – Capacities that have at least one 30 sec. window where interactive rejection % was above 90%.</li><li><strong>4 - Interactive Rejection</strong> – Capacities that have at least one 30 sec. window where interactive rejection % was above 100%.</li><li><strong>5 - At Risk of Background Rejection</strong> – Capacities that have at least one 30 sec. window where background rejection % was above 90%.</li><li><strong>6 - Background Rejection</strong> – Capacities that have at least one 30 sec. window where background rejection % was above 100%.</li></ul> |
+| **Health** | Shows different states according to its usage behavior:<br><ul><li><strong>Healthy</strong> – Capacity isn't experiencing any throttling.</li><li><strong>Suspended</strong> – Capacity is suspended.</li><li><strong>At Risk of Throttling</strong> – Capacities that have at least one 30 second window where a 10 min interactive percentage was above 90% and capacity overage isn't enabled.</li><li><strong>At Risk of Overage Billing</strong> – Capacities that have at least one 30 second window where a 10 minute interactive percentage was above 90% and capacity overage is enabled.</li><li><strong>Overage Billing Active</strong> – Capacities that have at least one 30 second window where a 10 minute interactive percentage was above 100% and capacity overage is enabled.</li><li><strong>Throttling</strong> – Capacities that have at least one 30 second window where a 10 minute interactive percentage was above 100% and might have operations that were throttled.</li><li><strong>At Risk of Interactive Rejection</strong> – Capacities that have at least one 30 second window where a 60 minute interactive percentage was above 90%.</li><li><strong>Interactive Rejection</strong> – Capacities that have at least one 30 second window where a 60 minute interactive percentage was above 100%.</li><li><strong>At Risk of Background Rejection</strong> – Capacities that have at least one 30 second window where a 24 hour background percentage was above 90%.</li><li><strong>Background Rejection</strong> – Capacities that have at least one 30 second window where a 24 hour background percentage was above 100%.</li></ul> |
 | **User**| Number of users|
 | **Avg. utilization %**| Average utilization during selected time period|
 | **Cumulative debt**| Sparkline of cumulative carry forward spread across selected time period|

@@ -1,136 +1,78 @@
 ---
 title: Real-Time Dashboard permissions
-description: Learn how to share Real-Time Dashboards without giving access to the underlying data source.
-ms.reviewer: yaschust
-ms.topic: how-to
+description: Learn about Real-Time Dashboards permissions.
+ms.reviewer: mbar
+ms.topic: overview
 ms.subservice: rti-dashboard
-ms.date: 05/15/2025
+ms.date: 08/24/2026
 ---
+
 # Real-Time Dashboard permissions
 
-Real-Time Dashboards are powerful tools for visualizing and analyzing data from various sources. For more information on Real-Time Dashboards, see [Create a Real-Time Dashboard](dashboard-real-time-create.md).
+Real-Time Dashboards let you share visualizations with other users. When you share a dashboard, you control access to the dashboard item separately from access to the underlying data source. 
 
-In this article, you learn how to grant permissions and control access to data sources when sharing your real-time dashboards with other users.
+This article helps you understand the permission layers and identity models that determine what users can see and do after you share a Real-Time Dashboard.
 
-There are two types of permissions:
+:::image type="content" source="media/dashboard-permissions/dashboard-permissions-diagram.png" alt-text="Diagram showing the different levels of permissions.":::
 
-* **Fabric permissions**: These permissions control the ability to view or edit a real-time dashboard when it's shared.
-* **Data source permissions**: These permissions control access to the underlying data used by a real-time dashboard.
+## Dashboard permissions and data source permissions
 
-:::image type="content" source="media/dashboard-permissions/permission-diagram.png" alt-text="Diagram showing the different levels of permissions.":::
+When you share a Real-Time Dashboard, you can control access to the dashboard itself and to the underlying data source.
 
-## Prerequisites
+* **Dashboard permissions:** Dashboard permissions control access to the dashboard item. These permissions determine whether users can view, edit, or reshare the dashboard.
 
-* A real-time dashboard with at least one data source and one tile.
+* **Data source permissions:** Data source permissions control access to the underlying data used by dashboard tiles and visuals. Sharing a dashboard doesn't automatically grant access to the underlying data source. 
 
-## Sharing Real-Time Dashboards
+## Identity models for data source access 
 
-When you [share](../fundamentals/share-items.md) a real-time dashboard, you can specify if the user can view, edit, or share. These permissions are for the real-time dashboard itself and not the underlying data. Access to the underlying data can be controlled by following the steps in [Set up data source permissions](#set-up-data-source-permissions).
+When a user accesses a Real-Time Dashboard, the system uses one of two identity models to determine whether the user can access the underlying data source:
 
-## Grant access to the data source
+### Pass-through identity
 
-You can grant separate permissions to your real-time dashboard and to the underlying data source. You can share a real-time dashboard with a user and allow them to view the tiles and visuals of the real-time dashboard without giving them access to the raw data source.
+With pass-through identity, the dashboard uses the viewer's own identity to authenticate to the data source. This option is the default. 
 
-Set up permissions for the underlying [data source](dashboard-real-time-create.md#add-data-source) by defining the identity that the dashboard uses for accessing data from each data source.
+- Users can view tile data only if they already have access to the underlying data source.
+- Data source security is continuously enforced, and users can't access data they don't have permission to view.
+- No cloud connection is required for this identity model.
 
-There are two identity options.
+### Dashboard editor’s identity
 
-* Pass-through identity:
+With dashboard editor's identity, the dashboard uses a cloud connection configured by an editor to access the data source. 
 
-   The real-time dashboard user's identity is used when authenticating to access the underlying data source. If the user is using pass-through identity, they'll only be able to view the data in the tiles if they have access to the underlying data source. This is the default setting.
+- Viewers can see dashboard data without direct access to the data source. 
+- Editors configure the cloud connection used by the dashboard. 
+- If multiple editors modify the dashboard, each editor must set up their own cloud connection. 
+- If a valid connection isn't available, users can see data only if they have their own access to the data source.
 
-* Dashboard editor’s identity:
+:::image type="content" source="media/dashboard-permissions/data-source-settings.png" alt-text="Screenshot showing the Data source settings pane with Dashboard editor's identity selected.":::
 
-   This option allows the user to use the Dashboard editor’s identity, and therefore their permissions, to access the underlying data source. The editor defines a cloud connection that the dashboard uses to connect to the relevant data source. Only editors can define cloud connections and permissions for a specific real-time dashboard. If there's more than one editor, each editor that modifies the real-time dashboard needs to set up their own cloud connections.
+## Permission scenarios
 
-   If a data source is configured to use Dashboard editor’s identity but a valid connection doesn't exist, the user is able to view the real-time dashboard but will only see data if they themselves have access to it.
+The following table summarizes common scenarios for sharing Real-Time Dashboards:
 
-## Set up data source permissions
+| Dashboard Permission | Data Source access model | Result |
+|---------------------|--------------------------|--------|
+| Edit | Dashboard editor's identity | Users can view and edit the dashboard. |
+| Edit | Pass-through identity | Users can edit the dashboard. They can see tile data only if they have access to the data source. |
+| View | Dashboard editor's identity |Users can view dashboard data, but they can't edit the dashboard.  |
+| View | Pass-through identity | Users can view the dashboard. They can see data only if they have access to the data source.  |
 
-Navigate to a real-time dashboard for which you have edit rights.
+## Choose an access model
 
-### Set up the cloud connection
+**Use pass-through identity when:**
 
-The cloud connection uses the real-time dashboard owner's identity to give access to the underlying data source to other users.
+- Each viewer uses their own identity to access the data source.
+- Users already have access to the underlying data source.
+- You want to enforce data access directly by the source system.
 
-1. In Settings, select **Manage connections and gateways**
+**Use dashboard editor's identity when:**
 
-   This takes you to your Manage Connections and Gateways page in Power BI.
+- Users need dashboard insights but shouldn't receive direct access to the raw data source. 
+- You want dashboard viewers to have a consistent view of tile data. 
+- An editor can manage the cloud connection used for data access. 
 
-   :::image type="content" source="media/dashboard-permissions/settings.png" alt-text="Screenshot showing how to navigate to the Manage connections and gateways view pane.":::
+## Next steps 
 
-1. In the top ribbon on the **Manage connections** page, select **+ New**.
-1. Complete the New connection form:
-
-   :::image type="content" source="media/dashboard-permissions/new-connection.png" alt-text="Screenshot showing how to complete the new connection form.":::
-
-   1. Select **Cloud connection** and give your connection a name.
-   1. Under **Connection type**, enter Azure Data Explorer (Kusto).
-   1. Under **Cluster**, paste the Cluster URI for the cluster you want to connect to. You can get your Cluster URI from the Eventhouse details in your Eventhouse System Overview page, or in your [KQL database details](access-database-copy-uri.md#copy-uri) pane.
-   1. Under **Authentication method**, select **OAuth 2.0**. Complete the verification steps by selecting **Edit credentials**. This opens a popup window where you verify the user that the real-time dashboard will use to access the database.
-
-   1. Select **Create**, then **Close**.
-
-You should now see the new cloud connection added to the list displayed in the viewing pane.
-
-> [!NOTE]
-> If the cloud connection is not used for 90 days, it will expire and a new gateway connection will need to be set up. To do this, you need to go back to the connection in the **Manage connections and Gateways** page, select **Edit credentials** and verify the user again.
-
-> [!NOTE]
-> You need a separate connection for each [data source](dashboard-real-time-create.md#add-data-source).
-
-### Set up the data source permissions
-
-Once the cloud connections are added, you can set up the permissions for the data sources.
-
-1. Browse to Real-Time Intelligence in the navigation bar, and open your real-time dashboard.
-1. In the top menu select **Viewing** and toggle to **Editing mode**.
-
-   :::image type="content" source="media/dashboard-permissions/viewing-editing-mode.png" alt-text="Screenshot showing the toggle to Edit mode.":::
-
-1. Select **New data source** in the top toolbar. If your data source already exists, it appears listed below the **Add+** button. Select the **Edit** pencil icon next to the relevant data source to edit it.
-
-1. Select **Connect**. The **Data source** box appears.
-1. To change the access permissions to use the Dashboard editor’s identity, select **Dashboard editor’s identity** and select the connection you want to use from the dropdown menu. Select **Apply**. The data source now has a cloud connection associated with it and the users that you share this real-time dashboard with are able to access the data.
-
-    :::image type="content" source="media/dashboard-permissions/edit-data-source.png" alt-text="Screenshot showing the Edit data source box where the applicable identity can be selected.":::
-
-Your data source permissions are now set up. You can share your real-time dashboard with these settings in place.
-
-> [!NOTE]
-> If you do not set up any cloud connections or permissions for your data source, the default will use Pass-through identity.
-
-## Permissions scenarios
-
-The following table summarizes the various permissions scenarios.
-
-| Fabric-level permissions  | Data source permissions |   What can the user see and do? |
-| -------- |-------- |-------- |
-| Shared with Edit rights | Dashboard editor’s identity using a cloud connection | User can view the data in the tiles and edit the real-time dashboard, for example add new tiles and run new queries. However, when the user toggles to **Edit mode**, a pop-up message appears. The pop-up box gives the user the option to: <br> <ul> <li>**Continue editing**: the user can edit, but the cloud connection to the Dashboard editor’s identity is lost and they use their own identity and permissions.</li> <li>**Replace data connections**: the user is required to set up their own cloud connections to access the data. You're directed straight to the Data sources pane where this can be done. </li> <li>**Back to View mode**: stay in View mode with access to the data through the existing cloud connection.</li> </ul> |
-| Shared with Edit rights | Pass-through identity | User can only see the data in the tiles if they have their own permissions. They can edit, add new tiles and run queries, but the tiles show error messages. |
-| Shared with View rights only | Dashboard editor’s identity using a cloud connection | User can view the data in the tiles, but they can't edit the real-time dashboard. |
-| Shared with View rights only | Pass-through identity | User can view the real-time dashboard but can only see data if they themselves have permissions to the data source. |
-
-## How to revoke permissions
-
-There are a few ways to revoke a user’s access permissions.
-
-* Remove their access from the real-time dashboard.
-* Remove the cloud connection.
-
-  Select **Settings** > **Manage connections and gateways**. Select the **Options** menu alongside the name of the connection you want to remove, and select **Remove**.
-
-  :::image type="content" source="media/dashboard-permissions/remove-connection.png" alt-text="Screenshot showing how to remove a connection.":::
-
-* Remove the user from the cloud connection.
-
-   Select **Settings** > **Manage connections and gateways**. Select the **Options** menu alongside the name of the connection you want to change, and select **Manage users**. Delete the user from the connection by selecting the trashcan icon next to their name in the **Manage users** box.
-  
-* Edit the Data source access permissions.
-
-  In your real-time dashboard, open the **Data source** box by selecting **New data source** from the top toolbar. Select the **edit** pencil icon next to the data source you want to edit. Change the **Data source access permissions** to **Pass-through identity**. The user now uses his own identity to access the data source.
-
-## Related content
-
-* [Create a Real-Time Dashboard](dashboard-real-time-create.md)
-* [Share items in Microsoft Fabric](../fundamentals/share-items.md)
+* [Configure data source access for a Real-Time Dashboard](dashboard-data-source-access.md).
+* [Share Real-Time Dashboards](dashboard-real-time-create.md#share-the-dashboard).
+* [Create a Real-Time Dashboard](dashboard-real-time-create.md).

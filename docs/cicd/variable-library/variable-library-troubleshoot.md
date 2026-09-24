@@ -10,7 +10,7 @@ ms.date: 12/15/2025
 
 # Troubleshoot variable libraries 
 
-This article provides solutions for common errors and problems that you might encounter when you work with Microsoft Fabric variable libraries.
+This article provides solutions for common errors and problems that you might encounter when you work with variable libraries in Fabric.
 
 
 ## Failure to manage a variable library
@@ -50,7 +50,7 @@ This article provides solutions for common errors and problems that you might en
 
 **Cause**: The active value set in the target stage is missing in the deployed variable library. A possible reason is that you removed or renamed the active value set in the source or target stage.
 
-**Solution**: Change the active value set in the target stage, or rename the current value set to one that exists in the source.
+**Solution**: Change the active value set in the target stage, or rename the active value set to one that exists in the source.
 
 ## Variable reference failure
 

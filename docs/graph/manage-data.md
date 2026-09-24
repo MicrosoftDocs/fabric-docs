@@ -1,29 +1,30 @@
 ---
-title: Manage data in Graph in Microsoft Fabric
-description: Learn how to refresh graph data manually and configure a scheduled refresh in Microsoft Fabric.
+title: Manage and Refresh Data in graph in Microsoft Fabric
+description: Learn how to refresh graph data manually and configure a scheduled refresh in Microsoft Fabric, including workspace settings and refresh history monitoring.
 ms.topic: how-to
-ms.date: 02/18/2026
+ms.date: 05/20/2026
 ms.reviewer: wangwilliam
 ---
 
-# Manage data in Graph in Microsoft Fabric
-
-[!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
+# Manage data in graph in Microsoft Fabric
 
 This article shows you how to save your graph model, refresh graph data, and configure scheduled refresh in Microsoft Fabric.
 
 ## Save your graph model
 
-When you select **Save** in the graph model editor, Graph performs two operations:
+When you select **Save** in the graph model editor, graph in Microsoft Fabric performs two operations:
 
 1. **Persists your graph model** – Saves the current configuration, including node types, edge types, and column mappings.
 1. **Triggers data ingestion** – Ingests data from the underlying lakehouse tables and constructs the queryable graph based on the updated model.
 
 Because save and ingestion are a single operation, every save refreshes your graph data. Save your model whenever you add or modify node types, edge types, or mappings.
 
+> [!NOTE]
+> A graph model that you create and define entirely through the REST API is schema-complete but isn't queryable until you open it once in the graph model editor in the Fabric portal. The portal provisions the internal loading infrastructure on first open. Until then, a refresh fails because the required internal configuration doesn't exist. After the one-time portal initialization, you can refresh and query the graph normally.
+
 ## Refresh graph data manually
 
-If the data in your underlying lakehouse changes but your graph model stays the same, you can manually pull in the latest data by selecting **Save** in the graph model editor. Even when the model configuration hasn't changed, the save operation re-ingests data from OneLake and rebuilds the queryable graph.
+If the data in your underlying lakehouse changes but your graph model stays the same, you can manually pull in the latest data by selecting **Save** in the graph model editor. Even when the model configuration didn't change, the save operation reingests data from OneLake and rebuilds the queryable graph.
 
 ## Configure scheduled refresh
 
@@ -54,6 +55,7 @@ To edit or delete a scheduled refresh, select the **Edit** option in the **Sched
 
 ## Related content
 
+- [Design a graph schema](design-graph-schema.md)
 - [Graph overview](overview.md)
 - [Monitor graph status](monitoring-overview.md)
 - [Troubleshooting and FAQ](troubleshooting-and-faq.md)

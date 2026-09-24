@@ -3,13 +3,13 @@ title: Microsoft Fabric Eventstreams Capacity Consumption
 description: Learn how to monitor capacity consumption for Microsoft Fabric eventstreams.
 ms.reviewer: xujiang1
 ms.topic: concept-article 
-ms.date: 10/29/2024
+ms.date: 03/19/2026
 ms.search.form: Monitor eventstreams capacity consumption
 ---
 
 # Capacity consumption for Microsoft Fabric eventstreams
 
-This article contains information on how usage of Microsoft Fabric eventstreams is billed and reported.
+This article explains how Microsoft Fabric eventstreams usage is billed and reported.
 
 ## Operation types
 
@@ -26,20 +26,20 @@ Four operation types define eventstream usage. The following table provides info
 
 <sup>2</sup> For **Eventstream Processor Per Hour**, the CU consumption rate of the eventstream processor is correlated to the throughput of event traffic, the complexity of the event processing logic, and the partition count of input data:
 
-- With **Low** set in **Event throughput setting**, the processor's CU consumption rate starts at 1/3 base rate (0.778 CU hours) and autoscales within 2/3 base rate (1.555 CU hours), 1 base rate (2.333 CU hours), 2 base rates, and 4 base rates.
-- With **Medium** set in **Event throughput setting**, the processor's CU consumption rate starts at 1 base rate and autoscales within multiple possible base rates.
-- With **High** set in **Event throughput setting**, the processor's CU consumption rate starts at 2 base rates and autoscales within multiple possible base rates.
+- By setting **Event throughput setting** to **Low**, the processor's CU consumption rate starts at one-third base rate (0.778 CU hours) and autoscales within two-thirds base rate (1.555 CU hours), one base rate (2.333 CU hours), two base rates, and four base rates.
+- By setting **Event throughput setting** to **Medium**, the processor's CU consumption rate starts at one base rate and autoscales within multiple possible base rates.
+- By setting **Event throughput setting** to **High**, the processor's CU consumption rate starts at two base rates and autoscales within multiple possible base rates.
 
 <sup>3</sup> For **Eventstream Connectors Per vCore Hour**:
 
-- The CU consumption of the eventstream connector is for charging computing resources when pulling real-time data from sources. It excludes Azure Event Hubs, Azure IoT Hub, and custom endpoints. Data from Azure Event Hubs and Azure IoT Hub is pulled via the eventstream processor.
-- Connector CU consumption is designed to correlate with throughput. When throughput increases, the number of vCores increases (autoscales). Increased vCores result in higher CU consumption. Currently, connector autoscaling is unavailable, so only one vCore is used per connector source.
+- The CU consumption of the eventstream connector charges for computing resources when pulling real-time data from sources. It excludes Azure Event Hubs, Azure IoT Hub, and custom endpoints. Data from Azure Event Hubs and Azure IoT Hub is pulled via the eventstream processor.
+- Connector CU consumption correlates with throughput. When throughput increases, the number of vCores increases (autoscales). Increased vCores results in higher CU consumption. Currently, connector autoscaling isn't available, so only one vCore is used per connector source.
 
 ## Storage billing
 
-Retention of events in Fabric eventstreams is billed separately from your Fabric or Power BI premium capacity units.  
+Retention of events in Microsoft Fabric eventstreams is billed separately from your Microsoft Fabric or Power BI premium capacity units.    
 
-*OneLake storage* is standard storage that's used to persist and store all data. When you set the retention setting for more than one day (that is, 24 hours), you're charged according to OneLake storage. See details of OneLake storage per month on the [Microsoft Fabric pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/) page.
+*OneLake storage* is standard storage that's used to persist and store all data. When you set the retention setting for more than one day (that is, 24 hours), you incur charges according to OneLake storage. See details of OneLake storage per month on the [Microsoft Fabric pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/) page.
 
 ## Monitoring OneLake storage
 
@@ -47,7 +47,7 @@ The [Microsoft Fabric Capacity Metric app](../../enterprise/metrics-app.md) 
 
 ## Important considerations
 
-- Microsoft Fabric eventstreams can operate with the smallest *F* capacity. However, you might need additional capacity units if you use other Fabric items as destinations.
+- Microsoft Fabric eventstreams can operate with the smallest *F* capacity. However, you might need more capacity units if you use other Microsoft Fabric items as destinations.
 - Eventstream flat, data traffic, and processor operations are billed only when data is being ingested or processed. If no data flows in or out for more than two hours, these operations don't incur charges.
 
 ## Changes to the Microsoft Fabric workload consumption rate
@@ -58,7 +58,7 @@ Changes are effective on the date stated in Microsoft release notes or the Micro
 
 ## Ability to pause and resume capacity
 
-You can pause and resume your capacity in Microsoft Fabric. When your capacity isn't operational, you can pause it to save costs for your organization. Later, when you want to resume work on your capacity, you can reactivate it.
+You can pause and resume your capacity in Microsoft Fabric. When your capacity isn't operational, pause it to save costs for your organization. Later, when you want to resume work on your capacity, reactivate it.
 
 The following table describes what happens to an eventstream when you pause or resume a capacity.
 

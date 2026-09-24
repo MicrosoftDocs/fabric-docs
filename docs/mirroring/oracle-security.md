@@ -6,11 +6,11 @@ ms.date: 08/22/2025
 ms.topic: how-to
 ---
 
-# How to: Secure data Microsoft Fabric mirrored databases from Oracle (Preview)
+# How to: Secure data Microsoft Fabric mirrored databases from Oracle
 
 This guide helps you establish data security in your mirrored Oracle in Microsoft Fabric.
 
-[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
+
 
 ## Security requirements
 

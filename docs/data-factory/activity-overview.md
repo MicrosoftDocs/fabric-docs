@@ -1,13 +1,13 @@
 ---
 title: Activity overview
 description: Learn about activities.
-ms.reviewer: pennyzhou-msft
+ms.reviewer: n0elleli
 ms.topic: overview
-ms.date: 07/25/2025
-ms.custom: pipelines
-ms.search.form: Pipeline Activity Overview
+ms.date: 08/10/2026
+ms.custom: pipelines 
+ms.search.form: Pipeline Activity Overview 
 ai-usage: ai-assisted
----
+--- 
 
 # Activity overview
 
@@ -46,13 +46,13 @@ For more information, see the [data transformation activities](transform-data.md
 
 Data transformation activity | Compute environment
 ---------------------------- | -------------------
-[Copy data](copy-data-activity.md) | Compute manager by Microsoft Fabric
-[Dataflow Gen2](dataflows-gen2-overview.md) | Compute manager by Microsoft Fabric
-[Delete data](delete-data-activity.md) | Compute manager by Microsoft Fabric
-[Fabric Notebook](notebook-activity.md) | Apache Spark clusters managed by Microsoft Fabric
-[HDInsight activity](azure-hdinsight-activity.md) | Apache Spark clusters managed by Microsoft Fabric
-[Spark Job Definition](spark-job-definition-activity.md) | Apache Spark clusters managed by Microsoft Fabric
-[Stored Procedure](stored-procedure-activity.md) | Azure SQL, Azure Synapse Analytics, or SQL Server
+[Copy data](copy-data-activity.md) | Compute manager by Fabric
+[Dataflow Gen2](dataflows-gen2-overview.md) | Compute manager by Fabric
+[Delete data](delete-data-activity.md) | Compute manager by Fabric
+[Fabric notebook](notebook-activity.md) | Apache Spark clusters managed by Fabric
+[HDInsight activity](azure-hdinsight-activity.md) | Apache Spark clusters managed by Fabric
+[Spark job definition](spark-job-definition-activity.md) | Apache Spark clusters managed by Fabric
+[Stored procedure](stored-procedure-activity.md) | Azure SQL, Azure Synapse Analytics, or SQL Server
 [SQL script](script-activity.md) | Azure SQL, Azure Synapse Analytics, or SQL Server
 
 ## Control flow activities
@@ -62,6 +62,7 @@ These activities help you control how your pipeline runs:
 Control activity | Description
 ---------------- | -----------
 [Append variable](append-variable-activity.md) | Add a value to an existing array variable.
+[Approval activity](approval-activity.md) | Pauses pipeline execution and requests an approve or reject decision from designated reviewers.
 [Azure Batch activity](azure-batch-activity.md) | Runs an Azure Batch script.
 [Azure Databricks activity](azure-databricks-activity.md) | Runs an Azure Databricks job (Notebook, Jar, Python).
 [Azure Machine Learning activity](azure-machine-learning-activity.md) | Runs an Azure Machine Learning job.
@@ -70,17 +71,20 @@ Control activity | Description
 [Filter](filter-activity.md) | Apply a filter expression to an input array.
 [ForEach](foreach-activity.md) | ForEach Activity defines a repeating control flow in your pipeline. This activity is used to iterate over a collection and executes specified activities in a loop. The loop implementation of this activity is similar to the Foreach looping structure in programming languages.
 [Functions activity](functions-activity.md) | Executes an Azure Function.
-[Get metadata](get-metadata-activity.md) | GetMetadata activity can be used to retrieve metadata of any data in a Data Factory or Synapse pipeline.
+[Get metadata](get-metadata-activity.md) | GetMetadata activity can be used to retrieve metadata of any data in a Data Factory or Azure Synapse pipeline.
 [If condition](if-condition-activity.md) | The If Condition can be used to branch based on condition that evaluates to true or false. The If Condition activity provides the same functionality that an if statement provides in programming languages. It evaluates a set of activities when the condition evaluates to `true` and another set of activities when the condition evaluates to `false`.
-[Invoke pipeline](invoke-pipeline-activity.md) | Execute Pipeline activity allows a Data Factory or Synapse pipeline to invoke another pipeline.
+[Invoke pipeline](invoke-pipeline-activity.md) | Execute Pipeline activity allows a Data Factory or Azure Synapse pipeline to invoke another pipeline.
 [KQL activity](kql-activity.md) | Executes a KQL script against a Kusto instance.
-[Lookup Activity](lookup-activity.md) | Lookup Activity can be used to read or look up a record/ table name/ value from any external source. This output can further be referenced by succeeding activities.
-[Set Variable](set-variable-activity.md) | Set the value of an existing variable.
+[Lakehouse maintenance activity](lakehouse-maintenance-activity.md) | Perform routine table maintenance on a lakehouse from a Fabric pipeline.
+[Lookup activity](lookup-activity.md) | Lookup Activity can be used to read or look up a record/ table name/ value from any external source. This output can further be referenced by succeeding activities.
+[Refresh materialized lake view activity](refresh-materialized-lake-view-activity.md) | Refreshes a materialized lake view in a lakehouse to reflect the latest data.
+[Refresh SQL analytics endpoint activity](refresh-sql-endpoint-activity.md) | Refreshes a lakehouse SQL analytics endpoint to reflect the latest data.
+[Set variable](set-variable-activity.md) | Set the value of an existing variable.
 [Switch activity](switch-activity.md) | Implements a switch expression that allows multiple subsequent activities for each potential result of the expression.
 [Teams activity](teams-activity.md) | Posts a message in a Teams channel or group chat.
-[Until activity](until-activity.md) | Implements Do-Until loop that is similar to Do-Until looping structure in programming languages. It executes a set of activities in a loop until the condition associated with the activity evaluates to true. You can specify a timeout value for the until activity.
-[Wait activity](wait-activity.md) | When you use a Wait activity in a pipeline, the pipeline waits for the specified time before continuing with execution of subsequent activities.
-[Web activity](web-activity.md) | Web Activity can be used to call a custom REST endpoint from a pipeline.
+[Until activity](until-activity.md) | Implements do-until loop that is similar to do-until looping structure in programming languages. It executes a set of activities in a loop until the condition associated with the activity evaluates to true. You can specify a timeout value for the until activity.
+[Wait activity](wait-activity.md) | When you use a wait activity in a pipeline, the pipeline waits for the specified time before continuing with execution of subsequent activities.
+[Web activity](web-activity.md) | Web activity can be used to call a custom REST endpoint from a pipeline.
 [Webhook activity](webhook-activity.md) | Using the webhook activity, call an endpoint, and pass a callback URL. The pipeline run waits for the callback to be invoked before proceeding to the next activity.
 
 ## Adding activities to a pipeline with the [!INCLUDE [product-name](../includes/product-name.md)] UI
@@ -88,7 +92,7 @@ Control activity | Description
 Here's how to add and configure activities in your pipeline:
 
 1. Create a new pipeline in your workspace.
-1. Go to the Activities tab and browse through the available activities. Scroll right to see all options, then select an activity to add it to the pipeline editor.
+1. Go to the **Activities** tab and browse through the available activities. Scroll right to see all options, then select an activity to add it to the pipeline editor.
 1. When you add an activity and select it on the canvas, you'll see its **General** settings in the properties pane below.
 1. Each activity has other configuration options on other tabs in the properties pane.
 
@@ -105,14 +109,60 @@ Every activity includes **Name** and **Description** fields in the general setti
 Setting | Description
 ---------|----------
 Timeout | How long an activity can run before timing out. The default is 12 hours, and the maximum is seven days. Use the format D.HH:MM:SS.
-Retry | How many times to retry if the activity fails.
-(Advanced properties) Retry interval (sec) | How many seconds to wait between retry attempts.
+Enable retries | When selected,  the activity automatically retries if it fails.
+Retry | How many times to retry if the activity fails. Defaults to 1.
+Retry conditions (preview) | Configure specific error conditions that trigger a retry.
+Retry interval (sec) | How many seconds to wait between retry attempts. The default is 30 seconds.
 (Advanced properties) Secure output | When selected, activity output won't appear in logs.
 (Advanced properties) Secure input | When selected, activity input won't appear in logs.
 
 > [!NOTE]
 > By default, you can have up to 120 activities per pipeline. This includes inner activities for containers.
 
+## Retry an activity
+
+When an activity fails during pipeline execution, you can configure it to automatically retry before marking the run as failed. This feature is useful for handling transient errors like network timeouts, temporary service unavailability, or intermittent connection issues.
+
+Learn more about retry settings and how to configure retries [here](activity-retries.md). 
+
+## Deactivate an activity
+
+You can deactivate one or more activities from a pipeline to skip them during validation and pipeline runs. This feature improves pipeline developer efficiency, letting you comment out part of the pipeline without deleting it from the canvas. You can reactivate activities at a later time.
+
+### Deactivate activities
+
+[!INCLUDE [deactivate-activities](includes/deactivate-activities.md)]
+
+### Reactivate activities
+
+To reactivate the activities, choose _Activated_ for the _Activity State_, and they revert back to their previous behaviors, as expected.
+
+### Inactive activity behaviors
+
+An inactive activity behaves differently in a pipeline.
+
+- On canvas, the inactive activity is grayed out, with _Inactive sign_ placed next to the activity type
+- On canvas, a status sign (Succeeded, Failed or Skipped) is placed on the box, to visualize the _Mark activity as_ setting
+- The activity is excluded from pipeline validation. Hence, you don't need to provide all required fields for an inactive activity.
+- During debug run and pipeline run, the activity won't actually execute. Instead, it runs a place holder line item, with the reserved status **Inactive**
+- The branching option is controlled by _Mark activity as_ option. In other words:
+   - If you mark the activity as _Succeeded_, the _UponSuccess_ or _UponCompletion_ branch runs
+   - If you mark the activity as _Failed_, the _UponFailure_ or _UponCompletion_ branch runs
+   - If you mark the activity as _Skipped_, the _UponSkip_ branch runs
+
+   :::image type="content" source="./media/deactivate-activity/deactivate-02-run-status.png" alt-text="Screenshot showing activity run status of an inactive activity.":::
+
+### Best practices for deactivation
+
+Deactivation is a powerful tool for pipeline developers. It allows developers to "comment out" part of the code, without permanently deleting the activities. It shines in following scenarios:
+
+- When developing a pipeline, developer can add place holder inactive activities before filling all the required fields. For instance, I need a Copy activity from SQL Server to warehouse, but I haven't set up all the connections yet. So I use an _inactive_ copy activity as the place holder for iterative development process.
+- After deployment, developer can comment out certain activities that are constantly causing troubles to avoid costly retries. For instance, my on-premises SQL server is having network connection issues, and I know my copy activities fail for certain. I may want to deactivate the copy activity, to avoid retry requests from flooding the brittle system.
+
+> [!NOTE]
+> An inactive activity never actually runs. This means the activity won't have an error field, or its typical output fields. Any references to missing fields may throw errors downstream.
+
 ## Related content
 
-- [Create your first pipeline](create-first-pipeline-with-sample-data.md) 
+- [Create your first pipeline](create-first-pipeline-with-sample-data.md)
+- [Activity retries](activity-retries.md)

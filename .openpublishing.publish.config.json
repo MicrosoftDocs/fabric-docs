@@ -7,7 +7,7 @@
       "locale": "en-us",
       "monikers": [],
       "moniker_ranges": [],
-      "open_to_public_contributors": true,
+      "open_to_public_contributors": false,
       "type_mapping": {
         "Conceptual": "Content",
         "ZonePivotGroups": "Toc"
@@ -19,7 +19,7 @@
         "docs/cicd/.openpublishing.redirection.cicd.json",
         "docs/data-engineering/.openpublishing.redirection.data-engineering.json",
         "docs/data-factory/.openpublishing.redirection.data-factory.json",
-        "docs/data-science/.openpublishing.redirection.data-science.json",        
+        "docs/data-science/.openpublishing.redirection.data-science.json",
         "docs/data-warehouse/.openpublishing.redirection.data-warehouse.json",
         "docs/database/.openpublishing.redirection.database.json",
         "docs/database/sql/.openpublishing.redirection.sql-database.json",
@@ -32,7 +32,8 @@
         "docs/real-time-intelligence/.openpublishing.redirection.real-time-intelligence.json",
         "docs/security/.openpublishing.redirection.security.json",
         "docs/workload-development-kit/.openpublishing.redirection.workload-development-kit.json",
-        "docs/known-issues/.openpublishing.redirection.known-issues.json"
+        "docs/known-issues/.openpublishing.redirection.known-issues.json",
+        "docs/extensibility-toolkit/.openpublishing.redirection.extensibility-toolkit.json"
       ]
     }
   ],
@@ -73,6 +74,18 @@
       "url": "https://github.com/MicrosoftDocs/dataexplorer-docs-pr",
       "branch": "main",
       "branch_mapping": {}
+    },
+    {
+      "path_to_root": "powerquery-repo",
+      "url": "https://github.com/MicrosoftDocs/powerquery-docs-pr",
+      "branch": "main",
+      "branch_mapping": {}
+    },
+    {
+      "path_to_root": "reusable-content",
+      "url": "https://github.com/MicrosoftDocs/reusable-content",
+      "branch": "main",
+      "branch_mapping": {}
     }
   ],
   "branch_target_mapping": {
@@ -96,4 +109,3 @@
   "skip_source_output_uploading": false,
   "need_generate_pdf_url_template": true
 }
-
