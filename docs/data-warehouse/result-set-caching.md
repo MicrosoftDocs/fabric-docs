@@ -8,9 +8,7 @@ ms.search.form: Optimization # This article's title should not change. If so, co
 ---
 # Result set caching
 
-<!--
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
--->
 
 Result set caching is a built-in performance optimization for Fabric Data Warehouse and Lakehouse SQL analytics endpoints that improves read latency. 
 
