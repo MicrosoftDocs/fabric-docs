@@ -47,8 +47,8 @@ The following table lists all Azure regions where Power BI or Fabric is availabl
 | Austria      | Austria East         | ✅ | ❌ | Power BI only region |
 | Belgium      | Belgium Central      | ✅ | ❌ | Power BI only region |
 | Denmark      | Denmark East         | ✅ | ❌ | Power BI only region |
-| Europe       | Europe - North Europe| ✅ | ✅ | Not available: <br> [Digital twin builder (preview)](../real-time-intelligence/digital-twin-builder/overview.md) <br> [Fabric App (preview)](../apps/overview.md)<br>[Fabric Database Hub](../database/hub/overview.md) <br> [Ontology (preview)](../iq/ontology/overview.md) |
-| Europe       | Europe - West Europe | ✅ | ✅ | [Fabric Database Hub](../database/hub/overview.md) <br> [Ontology (preview)](../iq/ontology/overview.md) |
+| Europe       | Europe - North Europe| ✅ | ✅ | Not available: <br> [Digital twin builder (preview)](../real-time-intelligence/digital-twin-builder/overview.md) <br> [Fabric App (preview)](../apps/overview.md)<br>[Fabric Database Hub](../database/hub/overview.md) |
+| Europe       | Europe - West Europe | ✅ | ✅ | [Fabric Database Hub](../database/hub/overview.md) |
 | Europe       | France Central       | ✅ | ✅ |  |
 | Europe       | France South         | ✅ | ❌ | Power BI only region |
 | Europe       | Germany North        | ✅ | ❌ | Power BI only region |
