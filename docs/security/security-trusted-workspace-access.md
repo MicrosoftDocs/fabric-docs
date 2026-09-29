@@ -10,7 +10,7 @@ ms.date: 08/13/2026
 
 # Trusted workspace access
 
-Fabric allows you to access firewall-enabled Azure Data Lake Storage (ADLS) Gen2 accounts in a secure manner. Fabric workspaces that have a workspace identity can securely access ADLS Gen2 accounts with either public network access enabled from selected virtual networks and IP addresses or with public network access disabled. You can limit ADLS Gen2 access to specific Fabric workspaces.
+Fabric allows you to access firewall-enabled Azure Blob Storage and Azure Data Lake Storage (ADLS) accounts in a secure manner. Fabric workspaces that have a workspace identity can securely access Blob Storage and ADLS accounts with either public network access enabled from selected virtual networks and IP addresses or with public network access disabled. You can limit Blob Storage and ADLS accounts access to specific Fabric workspaces.
 
 Fabric workspaces that access a storage account with trusted workspace access need proper authorization for the request. Authorization is supported with Microsoft Entra credentials for organizational accounts or service principals. To find out more about resource instance rules, see [Grant access from Azure resource instances](/azure/storage/common/storage-network-security?tabs=azure-portal).
 
@@ -33,7 +33,8 @@ This article shows you how to:
 
 * [Load data with AzCopy](#load-data-using-azcopy-and-trusted-workspace-access) from a firewall-enabled Azure Storage account into OneLake.
 
-## Configure trusted workspace access in ADLS Gen2
+<a id="configure-trusted-workspace-access-in-adls-gen2"></a>
+## Configure trusted workspace access in Blob Storage or ADLS
 
 ### Prerequisites
 
@@ -91,7 +92,7 @@ Add-AzStorageAccountNetworkRule -ResourceGroupName $resourceGroupName -Name $acc
 
 ### Trusted service exception
 
-If you select the trusted service exception for an ADLS Gen2 account that has public network access enabled from selected virtual networks and IP addresses, Fabric workspaces with a workspace identity can access the storage account. When the trusted service exception checkbox is selected, any workspaces in your tenant's Fabric capacities that have a workspace identity can access data stored in the storage account.
+If you select the trusted service exception for a Blob Storage or ADLS account that has public network access enabled from selected virtual networks and IP addresses, Fabric workspaces with a workspace identity can access the storage account. When you select the trusted service exception checkbox, any workspaces in your tenant's Fabric capacities that have a workspace identity can access data stored in the storage account.
 
 This configuration isn't recommended, and support might be discontinued in the future. We recommend that you [use resource instance rules to grant access to specific resources](/azure/storage/common/storage-network-security?tabs=azure-portal).
 
@@ -117,7 +118,7 @@ The following sections show you how to use these methods.
 
 ### Create a OneLake shortcut to storage account with trusted workspace access
 
- With the workspace identity configured in Fabric, and trusted workspace access enabled in your ADLS Gen2 storage account, you can create OneLake shortcuts to access your data from Fabric. You just create a new ADLS shortcut in a Fabric Lakehouse and you can start analyzing your data with Spark, SQL, and Power BI.
+ When you configure the workspace identity in Fabric and enable trusted workspace access in your Blob Storage or ADLS storage account, you can create OneLake shortcuts to access your data from Fabric. You just need to create a new Blob Storage or ADLS shortcut in a Fabric Lakehouse and you can start analyzing your data with Spark, SQL, and Power BI.
 
 > [!NOTE]
 >- Preexisting shortcuts in a workspace that meets the prerequisites automatically start to support trusted service access.
@@ -178,7 +179,7 @@ With the workspace identity configured in Fabric and trusted access enabled in y
 
 #### Prerequisites
 
- * A Fabric workspace associated with a purchased Microsoft Fabric capacity (F SKU). See [Workspace identity](./workspace-identity.md).
+* A Fabric workspace associated with a purchased Microsoft Fabric capacity (F SKU). See [Workspace identity](./workspace-identity.md).
 * Create a workspace identity associated with the Fabric workspace.
 * The principal used for authentication in the pipeline should have Azure RBAC roles on the storage account. The principal must have a Storage Blob Data Contributor, Storage Blob Data owner, or Storage Blob Data Reader role at the storage account scope.
 * Configure a [resource instance rule](#configure-trusted-workspace-access-in-adls-gen2) for the storage account.
@@ -191,7 +192,7 @@ With the workspace identity configured in Fabric and trusted access enabled in y
 
     :::image type="content" source="./media/security-trusted-workspace-access/create-new-data-pipeline-dialog.png" alt-text="Screenshot showing the New pipeline dialog." lightbox="./media/security-trusted-workspace-access/create-new-data-pipeline-dialog.png":::
 
-1. Choose **Azure Data Lake Gen2** as the data source.
+1. Choose **Azure Data Lake Gen2** or **Azure Blobs** as the data source.
 
     :::image type="content" source="./media/security-trusted-workspace-access/select-azure-data-lake-gen2-data-source.png" alt-text="Screenshot showing choosing ADLS Gen2 selection." lightbox="./media/security-trusted-workspace-access/select-azure-data-lake-gen2-data-source.png":::
 
@@ -215,11 +216,11 @@ With the workspace identity configured in Fabric and trusted access enabled in y
 
 ### Use the T-SQL COPY statement to ingest data into a warehouse
 
-With the workspace identity configured in Fabric and trusted access enabled in your ADLS Gen2 storage account, you can use the [COPY T-SQL statement](/sql/t-sql/statements/copy-into-transact-sql?view=fabric&preserve-view=true) to ingest data into your Fabric warehouse. Once the data is ingested into the warehouse, then you can start analyzing your data with SQL and Power BI. Users with Admin, Member, Contributor, Viewer workspace roles, or read permissions on the warehouse, can use trusted access along with the T-SQL COPY command.
+When you configure the workspace identity in Fabric and enable trusted access in your Blob Storage or ADLS storage account, you can use the [COPY T-SQL statement](/sql/t-sql/statements/copy-into-transact-sql?view=fabric&preserve-view=true) to ingest data into your Fabric warehouse. After you ingest the data into the warehouse, you can start analyzing your data with SQL and Power BI. Users with Admin, Member, Contributor, or Viewer workspace roles, or read permissions on the warehouse, can use trusted access along with the T-SQL COPY command.
 
 ### Create a semantic model with trusted workspace access
 
-Semantic models in import mode support trusted workspace access to storage accounts. You can use this feature to create models and reports for data in firewall-enabled ADLS Gen2 storage accounts.
+Semantic models in import mode support trusted workspace access to storage accounts. Use this feature to create models and reports for data in firewall-enabled Blob Storage or ADLS storage accounts.
 
 #### Prerequisites
 

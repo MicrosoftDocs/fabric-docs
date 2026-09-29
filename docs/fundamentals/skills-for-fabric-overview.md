@@ -74,7 +74,7 @@ The following table lists realistic intents across three audiences. In each case
 | **Citizen developer or business user** | "Show me total revenue by product for last quarter." | Writes and runs the warehouse query, and returns the results. |
 | **Citizen developer or business user** | "Document my entire Fabric workspace." | Scans the workspace and produces structured documentation in Markdown. |
 
-For a detailed Data Warehouse example, see how the [`sqldw-cli` operations skill](../data-warehouse/skills-for-data-warehouse-operations.md) guides read-only investigations of failures, query performance, capacity spikes, SQL pool pressure, and lakehouse table health.
+For a detailed Data Warehouse example, see how the [`sqldw-cli` operations skill](../data-warehouse/skills-for-data-warehouse-operations.md) guides read-only investigations of broad warehouse health, failures, query performance, capacity spikes, SQL pool pressure, cluster-key candidates, and lakehouse table health.
 
 ## Compatible AI tools
 

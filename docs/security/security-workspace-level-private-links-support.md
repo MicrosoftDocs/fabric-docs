@@ -342,10 +342,10 @@ Event consumption within the same workspace is always allowed, regardless of pri
 For more information, see [Tenant private links for Azure and Fabric events](../real-time-hub/private-links-real-time-events.md) and [Workspace private links for Azure, Fabric, and Business events](../real-time-hub/workspace-private-links-real-time-events.md).
 
 ### Data agent
-Data agents can connect to lakehouse, warehouse, and SQL data sources within a workspace that has workspace-level private links enabled (public access disabled). Cross-workspace access is supported when network connectivity is explicitly established (for example, using a managed private endpoint) and subject to region and token constraints.
+Data agents can connect to any data source that supports workspace-level private links, within a workspace that has workspace-level private links enabled (public access disabled). Cross-workspace access is supported when you explicitly establish network connectivity (for example, by using a managed private endpoint) and subject to region and token constraints.
 
 Current limitations: 
-- Kusto, semantic models, and mirrored data sources are not supported in private link scenarios. These limitations are inherent to the item types themselves, and not a limitation of Data Agents. 
+- Any private link limitations that apply to a data source also apply when a Data Agent connects to that source. These limitations are inherent to the item types themselves, and not a limitation of Data Agents.
 - Cross-region private-link access for SQL sources is also not supported.
 - Private links are not supported for external integrations such as AI Foundry or Microsoft 365.
 

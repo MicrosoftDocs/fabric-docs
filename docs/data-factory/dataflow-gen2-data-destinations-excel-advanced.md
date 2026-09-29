@@ -1,9 +1,9 @@
 ---
-title: Creating Excel documents with navigation tables
+title: Create Excel documents with navigation tables
 description: Learn how to create Excel documents programmatically using Power Query navigation tables
 author: jorgegom
 ms.topic: concept-article
-ms.date: 09/03/2026
+ms.date: 09/28/2026
 ms.author: jorgegom
 ms.custom: dataflows
 ---
@@ -13,6 +13,8 @@ ms.custom: dataflows
 When you are working on a file based destination in Dataflow Gen2, you have the option to save your data in various formats, including Excel. Excel files can be created with simple tabular data, but you can also create complex workbooks with multiple sheets, charts, and customized formatting by using navigation tables. These navigation tables define the structure and content of the Excel document programmatically and provide a powerful way to generate dynamic Excel files.
 
 This article explains how to construct these navigation tables to generate Excel documents programmatically from your Dataflow.
+
+To learn more about these capabilities, see [Style Excel documents and add hyperlinks with navigation tables](dataflow-gen2-data-destinations-excel-styles.md) and [Add conditional formatting to Excel documents with navigation tables](dataflow-gen2-data-destinations-excel-conditional-formatting.md).
 
 ## Prerequisites
 
@@ -42,6 +44,11 @@ Excel documents in Power Query are represented as navigation tables—standard M
 
 When you configure an Excel Output Destination in a Dataflow, the system reads this navigation table and generates the corresponding Excel file. This approach provides flexibility in defining complex workbooks with multiple sheets, charts, and data relationships.
 
+> [!IMPORTANT]
+> M record fields and table column names are case-sensitive. Use property names exactly as documented, such as `PartType`, `StartCell`, and `DataSeries`. Enumerated values such as `SheetData`, `Column`, and `Center` are accepted without regard to case, but use the documented casing for readable, predictable code. Source table column names used by `AxisColumns`, `ValueColumns`, styles, conditional formatting, and hyperlinks are case-sensitive.
+
+Examples that use names such as `SalesData`, `YourDataTable`, or `MainTable` expect those values to be tables defined earlier in the same query or supplied by another Dataflow query. A complete query must define every referenced identifier.
+
 ## Quick reference
 
 This section provides a consolidated view of part types and their key properties for quick lookup. For ready-to-use code templates, see [Common patterns](#common-patterns). For error resolution, see [Troubleshooting](#troubleshooting).
@@ -49,36 +56,41 @@ This section provides a consolidated view of part types and their key properties
 ### Part types at a glance
 
 | Part Type | Purpose | Data Required | Positioning | Multiple per Sheet |
-|-----------|---------|---------------|-------------|--------------------|
+| --- | --- | --- | --- | --- |
 | `Workbook` | Document-level settings | No (`null`) | N/A | No (first row only) |
 | `SheetData` | Simple data export | Yes (inline table) | Always A1 | No |
 | `Table` | Excel Table with formatting | Yes (inline table) | `StartCell` or auto | Yes (if no overlap) |
 | `Range` | Raw data without table styling | Yes (inline table) | `StartCell` or auto | Yes (if no overlap) |
+| `Text` | A value in a cell or merged region | Yes (single value) | `StartCell` or auto | Yes (if no overlap) |
 | `Chart` | Chart visualization | Yes (inline or reference) | `Bounds` property | Yes |
 
 ### Key properties by part type
 
-| Property | Workbook | SheetData | Table | Range | Chart |
-|----------|:--------:|:---------:|:-----:|:-----:|:-----:|
-| `StartCell` | - | - | ✓ | ✓ | - |
-| `TableStyle` | - | - | ✓ | - | ✓* |
-| `SkipHeader` | - | - | - | ✓ | - |
-| `ShowGridlines` | - | ✓ | ✓ | ✓ | ✓ |
-| `ChartType` | - | - | - | - | ✓ |
-| `ChartTitle` | - | - | - | - | ✓ |
-| `DataSeries` | - | - | - | - | ✓ |
-| `Bounds` | - | - | - | - | ✓ |
-| `ChartInferenceFunction` | ✓ | - | - | - | - |
-| `StrictNameHandling` | ✓ | - | - | - | - |
-| `UseSharedStrings` | ✓ | - | - | - | - |
-| `AutoPositionColumnOffset` | - | - | ✓ | ✓ | ✓* |
-| `AutoPositionRowOffset` | - | - | ✓ | ✓ | ✓* |
+| Property | Workbook | SheetData | Table | Range | Text | Chart |
+| --- | :---: | :---: | :---: | :---: | :---: | :---: |
+| `StartCell` | - | - | ✓ | ✓ | ✓ | - |
+| `ColumnSpan` | - | - | - | - | ✓ | - |
+| `TableStyle` | - | - | ✓ | - | - | ✓* |
+| `SkipHeader` | - | - | - | ✓ | - | - |
+| `ShowGridlines` | - | ✓ | ✓ | ✓ | ✓ | ✓ |
+| `ChartType` | - | - | - | - | - | ✓ |
+| `ChartTitle` | - | - | - | - | - | ✓ |
+| `DataSeries` | - | - | - | - | - | ✓ |
+| `Bounds` | - | - | - | - | - | ✓ |
+| `ChartInferenceFunction` | ✓ | - | - | - | - | - |
+| `StrictNameHandling` | ✓ | - | - | - | - | - |
+| `UseSharedStrings` | ✓ | - | - | - | - | - |
+| `AutoPositionColumnOffset` | - | - | ✓ | ✓ | ✓ | ✓* |
+| `AutoPositionRowOffset` | - | - | ✓ | ✓ | ✓ | ✓* |
+| `Styles` | - | ✓ | ✓ | ✓ | ✓ | ✓* |
+| `ConditionalFormatting` | - | ✓ | ✓ | ✓ | ✓ | ✓* |
+| `Hyperlinks` | - | ✓ | ✓ | ✓ | ✓ | ✓* |
 
 \* For charts with inline data, these properties control the backing data table.
 
 ## Minimal example
 
-The simplest way to create an Excel document is to provide a navigation table with just the data you want to export. All columns except `Data` and `PartType` are optional—the connector can infer missing properties and build a functional document.
+The simplest way to create an Excel document is to provide a navigation table with just the data you want to export. `PartType` and `Data` are the only required navigation-table columns. The connector can infer omitted `Sheet`, `Name`, and `Properties` columns.
 
 The following example defines a `SalesData` table that is used throughout this article:
 
@@ -145,12 +157,36 @@ in
 The navigation table follows a specific schema with the following columns:
 
 | Column | Type | Required | Description |
-|--------|------|----------|-------------|
+| --- | --- | --- | --- |
 | Sheet | nullable text | No | The parent worksheet name for the part. If not specified, a default name is generated. |
 | Name | nullable text | No | A unique identifier for the part. Required only when other parts need to reference this part's data. |
-| PartType | nullable text | No | The type of part being created: `Workbook`, `SheetData`, `Table`, `Range`, or `Chart`. |
+| PartType | text | Yes | The type of part you're creating: `Workbook`, `SheetData`, `Table`, `Range`, `Text`, or `Chart`. Don't leave this column null or blank. |
 | Properties | nullable record | No | Configuration options specific to the part type. |
-| Data | any | Yes | The actual data content. Can be a table, or a reference to another part. |
+| Data | any | Yes | The part's content. The required value shape depends on `PartType`; see the following table. |
+
+For consistency, especially when you construct rows dynamically, use this full schema even when some values are null:
+
+```powerquery-m
+type table [
+    Sheet = nullable text,
+    Name = nullable text,
+    PartType = text,
+    Properties = nullable record,
+    Data = any
+]
+```
+
+Older or dynamically combined queries can declare the column as `PartType = nullable text`; the system accepts that M type declaration, but every navigation-table row must still contain a non-null `PartType` value. Use `[]` for an included but empty `Properties` record. The legal `Data` values are:
+
+| `PartType` | Legal `Data` value |
+| --- | --- |
+| `Workbook` | `null`. This row configures the document and, when present, must be first. |
+| `SheetData`, `Table`, `Range` | An inline table with at least one schema column. The table can contain zero data rows. |
+| `Text` | One scalar value, such as text, number, logical, date/time, duration, or null. It isn't a table. |
+| `Chart` | An inline table, or an empty zero-column table carrying reference metadata: `#table({}, {}) meta [Name = "SourcePartName"]`. |
+
+> [!TIP]
+> A `Workbook` row is optional. Add it only for document-level settings such as `ChartInferenceFunction`, `StrictNameHandling`, or `UseSharedStrings`. With the full schema, use `{null, null, "Workbook", [...], null}` because `Sheet` and `Name` have no meaning for this document-level row.
 
 ### Supported part types
 
@@ -158,13 +194,16 @@ The navigation table follows a specific schema with the following columns:
 - **SheetData**: A worksheet containing tabular data. This part is *data-bound*. SheetData parts must contain inline data and can't use table references. Creates a single data range starting at cell A1.
 - **Table**: An Excel Table (formatted with table styling). This part is *data-bound*. Supports explicit positioning via `StartCell` and auto positioning. Multiple Table parts can exist on the same sheet if they don't overlap.
 - **Range**: A data range without Excel Table formatting. This part is *data-bound*. Supports explicit positioning via `StartCell` and auto positioning. Multiple Range parts can exist on the same sheet if they don't overlap.
+- **Text**: A single value placed in a cell or merged region. Supports explicit positioning via `StartCell` and auto positioning. Text isn't data-bound and can't be referenced by charts.
 - **Chart**: A chart visualization. Can be placed on its own sheet or combined with data. This part is *data-bound* when it contains inline data, or it can reference data from another part.
 
 > [!NOTE]
-> *Data-bound parts* are parts that contain or reference tabular data. `SheetData`, `Table`, `Range`, and `Chart` (with inline data) are data-bound parts. Each data-bound part registers its data source using the part's `Name`, so all data-bound parts must have unique names.
+> *Data-bound parts* are parts that contain or reference tabular data. `SheetData`, `Table`, `Range`, and `Chart` (with inline data) are data-bound parts. Each inline data-bound part registers its data source using its supplied or generated `Name`, so those names must be unique. Give a source an explicit `Name` when a chart references it.
+
+<!-- -->
 
 > [!IMPORTANT]
-> You can't mix `SheetData` with `Table` or `Range` parts on the same sheet. Use either `SheetData` alone or `Table`/`Range` parts together. When you need multiple data regions on one sheet, use `Table` or `Range` parts with positioning.
+> You can't mix `SheetData` with `Table`, `Range`, or `Text` parts on the same sheet. Use either `SheetData` alone or positioned parts together. When you need multiple regions on one sheet, use `Table`, `Range`, or `Text` parts with positioning.
 
 ### Choosing the right part type
 
@@ -192,6 +231,12 @@ Use this decision guide to select the appropriate part type for your scenario:
 - You're placing multiple data regions on one sheet
 - The data will be consumed by other systems that expect plain ranges
 
+**Use `Text` when:**
+
+- You want to add a title, label, note, or other single value.
+- You want the value to occupy a merged region.
+- You want to place text beside or above Table and Range parts.
+
 **Use `Chart` when:**
 
 - You need data visualization
@@ -208,7 +253,7 @@ let
     excelDocument = #table(
         type table [Sheet = nullable text, Name = nullable text, PartType = nullable text, Properties = nullable record, Data = any],
         {
-            {"Workbook", "Workbook", "Workbook", [ChartInferenceFunction = Office.InferChartPropertiesGenerator()], null},
+            {null, null, "Workbook", [ChartInferenceFunction = Office.InferChartPropertiesGenerator()], null},
             {"DataSheet", "SalesTable", "SheetData", [], SalesData},
             {"ChartSheet", "SalesChart", "Chart", [ChartType = "Column"], buildReference("SalesTable")}
         }
@@ -227,6 +272,8 @@ When a chart references data from a different part using the `meta [Name = "..."
 
 > [!IMPORTANT]
 > When using references, the `Name` column is mandatory. The reference is resolved by matching the value in `meta [Name = "..."]` to the `Name` column of another row in the navigation table.
+>
+> A reference is an empty **zero-column table with metadata**, not text and not the source table itself: `#table({}, {}) meta [Name = "SalesTable"]`. The metadata name match is case-sensitive. Only `Chart` parts can use this reference form.
 
 ```powerquery-m
 let
@@ -236,7 +283,7 @@ let
     excelDocument = #table(
         type table [Sheet = nullable text, Name = nullable text, PartType = nullable text, Properties = nullable record, Data = any],
         {
-            {"Workbook", "Workbook", "Workbook", [ChartInferenceFunction = Office.InferChartPropertiesGenerator()], null},
+            {null, null, "Workbook", [ChartInferenceFunction = Office.InferChartPropertiesGenerator()], null},
             // Data on its own sheet
             {"DataSheet", "SalesTable", "SheetData", [], SalesData},
             // Chart on a different sheet, referencing the data
@@ -256,7 +303,7 @@ let
     excelDocument = #table(
         type table [Sheet = nullable text, Name = nullable text, PartType = nullable text, Properties = nullable record, Data = any],
         {
-            {"Workbook", "Workbook", "Workbook", [ChartInferenceFunction = Office.InferChartPropertiesGenerator()], null},
+            {null, null, "Workbook", [ChartInferenceFunction = Office.InferChartPropertiesGenerator()], null},
             // Data and chart appear together on the same sheet
             {"SalesSheet", "SalesChart", "Chart", [ChartType = "Column"], SalesData}
         }
@@ -323,7 +370,7 @@ in
 The `Table` part creates an Excel Table with formatting, filter dropdowns, and structured references. Use it when you want Excel Table features.
 
 | Property | Type | Default | Description |
-|----------|------|---------|-------------|
+| --- | --- | --- | --- |
 | StartCell | text | `"auto"` | The top-left cell for the table (e.g., `"B3"`). Use `"auto"` for auto positioning. |
 | TableStyle | text | `"TableStyleMedium2"` | The Excel table style. Valid values: `TableStyleLight1`-`21`, `TableStyleMedium1`-`28`, `TableStyleDark1`-`11`. |
 | AutoPositionColumnOffset | number | `1` | Column offset from A when auto positioning (1 = column B). |
@@ -350,7 +397,7 @@ in
 The `Range` part creates a data range without Excel Table formatting. Use it when you need raw data without table features.
 
 | Property | Type | Default | Description |
-|----------|------|---------|-------------|
+| --- | --- | --- | --- |
 | StartCell | text | `"auto"` | The top-left cell for the range (e.g., `"C5"`). Use `"auto"` for auto positioning. |
 | SkipHeader | logical | `false` | When `true`, omits the header row. |
 | AutoPositionColumnOffset | number | `1` | Column offset from A when auto positioning. |
@@ -375,9 +422,45 @@ in
     excelDocument
 ```
 
+### Text part
+
+The `Text` part places one value in a worksheet. Use a single-cell `StartCell` for a normal cell, or use a bounded range such as `"A1:B1"` to merge that region and place the value in its top-left cell.
+
+| Property | Type | Default | Description |
+| --- | --- | --- | --- |
+| StartCell | text | `"auto"` | A single cell or bounded range. A range creates a merged region. |
+| ColumnSpan | number | `1` | Number of columns to merge when using auto positioning. |
+| AutoPositionColumnOffset | number | `1` | Column offset when using auto positioning. |
+| AutoPositionRowOffset | number | `1` | Row offset when using auto positioning. |
+| ShowGridlines | logical | `true` | Controls gridlines for the entire worksheet. |
+
+Use either `StartCell` or `ColumnSpan`, not both. `ColumnSpan` creates a horizontal merged region and is only available with auto positioning. To create a multirow merged region, specify the complete bounded range in `StartCell`, such as `"A1:B2"`.
+
+Text can share a sheet with Table, Range, and Chart parts when their occupied cells don't overlap. It can't share a sheet with `SheetData`, and it can't be used as a chart data source.
+
+The following example places a merged title above a table. Both parts use explicit positions, so their occupied cells are predictable and don't overlap.
+
+```powerquery-m
+let
+    SalesData = #table(
+        type table [Region = text, Revenue = number],
+        {{"North", 95000}, {"South", 78000}}
+    ),
+
+    excelDocument = #table(
+        type table [Sheet = nullable text, Name = nullable text, PartType = nullable text, Properties = nullable record, Data = any],
+        {
+            {"Report", "ReportTitle", "Text", [StartCell = "A1:B1", ShowGridlines = false], "Regional Sales Report"},
+            {"Report", "SalesTable", "Table", [StartCell = "A3"], SalesData}
+        }
+    )
+in
+    excelDocument
+```
+
 ### Multiple tables on the same sheet
 
-You can place multiple `Table` or `Range` parts on the same sheet as long as they don't overlap.
+You can place multiple `Table`, `Range`, or `Text` parts on the same sheet as long as they don't overlap.
 
 ```powerquery-m
 let
@@ -406,7 +489,7 @@ in
 When you don't specify `StartCell` (or set it to `"auto"`), the system automatically positions parts vertically, one below another, in the order they appear in the navigation table. This is useful when you have multiple data regions and don't need precise control.
 
 | Property | Default | Description |
-|----------|---------|-------------|
+| --- | --- | --- |
 | AutoPositionColumnOffset | `1` | The starting column offset from A. Value of `0` starts at column A, `1` at column B. |
 | AutoPositionRowOffset | `1` | The number of empty rows between parts. Value of `0` places parts immediately adjacent. |
 
@@ -476,7 +559,7 @@ Column widths are calculated automatically based on content and data types. When
 
 ## ShowGridlines property
 
-The `ShowGridlines` property controls whether Excel's gridlines are visible for a sheet. This property can be set on `SheetData`, `Table`, `Range`, or `Chart` parts and affects the entire sheet. When `true` (the default), gridlines are visible. When `false`, gridlines are hidden.
+The `ShowGridlines` property controls whether Excel's gridlines are visible for a sheet. Set this property on `SheetData`, `Table`, `Range`, `Text`, or `Chart` parts. It affects the entire sheet. When `true` (the default), gridlines are visible. When `false`, gridlines are hidden.
 
 If any part on a sheet explicitly sets `ShowGridlines` to `false`, the entire sheet hides gridlines.
 
@@ -501,7 +584,7 @@ in
 The `Workbook` part type allows you to configure document-level settings. If used, it must be the first row in the navigation table.
 
 | Property | Type | Description |
-|----------|------|-------------|
+| --- | --- | --- |
 | ChartInferenceFunction | function | A function that automatically determines chart properties when not explicitly specified. Use `Office.InferChartPropertiesGenerator()` for the built-in inference engine. |
 | StrictNameHandling | logical | When `true`, throws an error if sheet or part names contain invalid characters. When `false` (default), names are automatically sanitized. |
 | UseSharedStrings | logical | When `true` (default), uses Excel's shared string table for text cells, resulting in smaller files. |
@@ -514,7 +597,7 @@ let
         type table [Sheet = nullable text, Name = nullable text, PartType = nullable text, Properties = nullable record, Data = any],
         {
             // Workbook configuration (must be first)
-            {"Workbook", "Workbook", "Workbook", 
+            {null, null, "Workbook",
                 [
                     ChartInferenceFunction = Office.InferChartPropertiesGenerator([
                         Allow3DCharts = false,
@@ -593,7 +676,7 @@ Power Query data types and their facets directly influence how cells are formatt
 ### Basic type mappings
 
 | Power Query Type | Excel Format |
-|-----------------|--------------|
+| --- | --- |
 | `Text.Type` | Text (@) |
 | `Int32.Type`, `Int64.Type` | General |
 | `Decimal.Type`, `Number.Type` | Number with two decimal places |
@@ -690,7 +773,7 @@ Charts are configured through the `Properties` record. You can explicitly specif
 ### Chart properties
 
 | Property | Type | Description |
-|----------|------|-------------|
+| --- | --- | --- |
 | ChartType | text | The type of chart to create. |
 | ChartTitle | text | The title displayed on the chart. |
 | DataSeries | record | Configuration for data series, axes, and values. |
@@ -708,6 +791,8 @@ When `Bounds` isn't specified, charts are positioned at a default location start
 
 Use a single cell reference for the top-left corner (default size of 8 columns x 16 rows) or a range for explicit dimensions:
 
+The references identify chart anchors, not a set of worksheet cells to format. In a range such as `"G6:N21"`, `G6` is the top-left anchor and `N21` is the bottom-right anchor.
+
 ```powerquery-m
 // Single cell: chart starts at B2 with default size
 [Bounds = "B2"]
@@ -720,8 +805,10 @@ Use a single cell reference for the top-left corner (default size of 8 columns x
 
 Specify the top-left corner and dimensions:
 
+Use this mode when you know the chart size. Don't include `ToColumn` or `ToRow` in the same `Bounds` record.
+
 | Property | Type | Description |
-|----------|------|-------------|
+| --- | --- | --- |
 | FromColumn | number or text | Column index (0-based) or Excel column name (e.g., `"A"`, `"G"`). Default: `7` (column H). |
 | FromRow | number | Row index (0-based). Default: `7` (row 8). |
 | Width | number | Chart width in number of columns. Default: `8`. |
@@ -740,8 +827,10 @@ Specify the top-left corner and dimensions:
 
 Alternatively, specify both corners of the chart area:
 
+Use this mode when you know both anchor positions. Don't include `Width` or `Height` in the same `Bounds` record. `FromColumn`, `FromRow`, `ToColumn`, and `ToRow` are zero-based anchor coordinates; the `To` coordinate must be greater than the corresponding `From` coordinate.
+
 | Property | Type | Description |
-|----------|------|-------------|
+| --- | --- | --- |
 | FromColumn | number or text | Starting column (0-based index or Excel name). Default: `7` (column H). |
 | FromRow | number | Starting row (0-based). Default: `7` (row 8). |
 | ToColumn | number or text | Ending column (0-based index or Excel name). |
@@ -817,7 +906,7 @@ in
 For precise positioning within cells, use offset properties. Offsets are in EMUs (English Metric Units), where 914400 EMUs equals 1 inch.
 
 | Property | Type | Description |
-|----------|------|-------------|
+| --- | --- | --- |
 | FromColumnOffset | number | Offset from the left edge of the starting cell (in EMUs). |
 | FromRowOffset | number | Offset from the top edge of the starting cell (in EMUs). |
 | ToColumnOffset | number | Offset from the left edge of the ending cell (in EMUs). |
@@ -839,7 +928,7 @@ For precise positioning within cells, use offset properties. Offsets are in EMUs
 ### Supported chart types
 
 | Chart Type | Description |
-|------------|-------------|
+| --- | --- |
 | `Area` | Area chart |
 | `Area3D` | 3D area chart |
 | `Bar` | Horizontal bar chart |
@@ -862,12 +951,14 @@ For precise positioning within cells, use offset properties. Offsets are in EMUs
 The `DataSeries` record defines how your data maps to chart elements:
 
 | Property | Type | Required | Description |
-|----------|------|----------|-------------|
+| --- | --- | --- | --- |
 | AxisColumns | list or text | Yes* | One or more column names to use as the chart axis (categories). |
 | ValueColumns | list or text | Yes* | One or more column names to use as chart values (series). |
 | PrimaryAxisColumn | text | No | When using multiple axis columns, specifies which one serves as the primary axis label. |
 
 \* Required unless a `ChartInferenceFunction` is configured in the Workbook properties. Without inference, omitting `AxisColumns` throws a "No axis columns provided" error, and omitting `ValueColumns` throws a "No value columns provided" error.
+
+`AxisColumns` and `ValueColumns` identify columns in the chart's source Power Query table schema. Their names are case-sensitive and must match that schema exactly. They aren't Excel worksheet column letters.
 
 ### Example with explicit chart configuration
 
@@ -943,7 +1034,7 @@ let
     excelDocument = #table(
         type table [Sheet = nullable text, Name = nullable text, PartType = nullable text, Properties = nullable record, Data = any],
         {
-            {"Workbook", "Workbook", "Workbook",
+            {null, null, "Workbook",
                 [ChartInferenceFunction = Office.InferChartPropertiesGenerator()],
                 null
             },
@@ -960,7 +1051,7 @@ in
 `Office.InferChartPropertiesGenerator` accepts an optional record with the following options:
 
 | Option | Type | Default | Description |
-|--------|------|---------|-------------|
+| --- | --- | --- | --- |
 | Allow3DCharts | logical | false | When `true`, the inference engine might select 3D chart types for appropriate data. |
 | PreferMultilevelChartInference | logical | false | When `true`, uses all leading non-numeric columns as axis columns for multilevel charts. |
 
@@ -976,7 +1067,7 @@ let
     excelDocument = #table(
         type table [Sheet = nullable text, Name = nullable text, PartType = nullable text, Properties = nullable record, Data = any],
         {
-            {"Workbook", "Workbook", "Workbook",
+            {null, null, "Workbook",
                 [ChartInferenceFunction = chartInference],
                 null
             },
@@ -1012,7 +1103,7 @@ The inference engine returns a record with three functions:
 The inference engine selects chart types based on data characteristics:
 
 | Data Characteristics | Inferred Chart Type |
-|---------------------|---------------------|
+| --- | --- |
 | Single series, ≤6 categories, categorical axis | Pie |
 | Single series, 7-15 categories, categorical axis | Doughnut |
 | DateTime axis | Line or Area |
@@ -1043,7 +1134,7 @@ let
     excelDocument = #table(
         type table [Sheet = nullable text, Name = nullable text, PartType = nullable text, Properties = nullable record, Data = any],
         {
-            {"Workbook", "Workbook", "Workbook",
+            {null, null, "Workbook",
                 [ChartInferenceFunction = customInference],
                 null
             },
@@ -1183,7 +1274,7 @@ let
                                 buildReference(dataName)}
                         }
             ),
-            workbookRow = {{"Workbook", "Workbook", "Workbook", [ChartInferenceFunction = Office.InferChartPropertiesGenerator()], null}}
+            workbookRow = {{null, null, "Workbook", [ChartInferenceFunction = Office.InferChartPropertiesGenerator()], null}}
         in
             #table(
                 type table [Sheet = nullable text, Name = nullable text, PartType = nullable text, Properties = nullable record, Data = any],
@@ -1243,7 +1334,7 @@ let
     excelDocument = #table(
         type table [Sheet = nullable text, Name = nullable text, PartType = nullable text, Properties = nullable record, Data = any],
         {
-            {"Workbook", "Workbook", "Workbook", [ChartInferenceFunction = Office.InferChartPropertiesGenerator()], null},
+            {null, null, "Workbook", [ChartInferenceFunction = Office.InferChartPropertiesGenerator()], null},
             {"Report", "SalesChart", "Chart", 
                 [ChartType = "Column", Bounds = "F2:M18"], 
                 YourDataTable
@@ -1398,11 +1489,11 @@ This section covers common errors you might encounter when constructing navigati
 ### Error reference
 
 | Error code | Error message | How to fix |
-|------------|---------------|------------|
+| --- | --- | --- |
 | 10950 | Missing {field} for document part in row {row}. | Ensure each row in your navigation table includes all required columns. For SheetData parts, provide the `Data` column with a table value. For Chart parts, provide either inline data or a valid table reference. |
 | 10951 | Duplicate part name: {name} | Each row in the navigation table must have a unique `Name` value. Rename one of the duplicate parts to resolve this error. |
 | 10953 | Container name '{name}' is invalid. Consider using '{suggestion}' instead. | Sheet names contain invalid characters (`\ / ? * [ ]`) or formatting issues. Use the suggested alternative name or enable automatic sanitization by omitting `StrictNameHandling` or setting it to `false`. |
-| 10954 | Duplicate container '{name}'. Each document part (row) needs a unique value in the Container column. | Two parts have the same `Sheet` value. When using `SheetData`, each worksheet can only be created once. For multiple data regions on the same sheet, use `Table` or `Range` parts instead. |
+| 10954 | Duplicate container '{name}'. Each document part (row) needs a unique value in the Container column. | Two parts have the same `Sheet` value. When using `SheetData`, each worksheet can only be created once. For multiple regions on the same sheet, use `Table`, `Range`, or `Text` parts instead. |
 | 10955 | Duplicate name '{name}'. Each document part (row) needs a unique Name. | Two data-bound parts have the same `Name` value. Each data-bound part must have a unique name because it registers a data source that other parts can reference. Rename one of the parts. |
 | 10956 | Referenced table '{name}' wasn't found. | When using table references (empty tables with `Name` metadata), ensure the referenced `Name` matches a data part's `Name` value. Check for typos and case sensitivity. |
 | 10959 | AxisColumns must be a single text value or a list of texts. | The `AxisColumns` property has an invalid type. Provide a text value like `"Category"` or a list like `{"Region", "Year"}`. |
@@ -1418,7 +1509,7 @@ This section covers common errors you might encounter when constructing navigati
 | 10986 | Parts of type '{type}' in '{format}' files must have a Table as Data. TableReference isn't allowed. | `SheetData`, `Table`, and `Range` parts must contain inline table data and can't use table references. Only Chart parts can reference data from other parts. |
 | 10987 | Parts of type '{type}' must have a Table or a Table reference as Data. | The part requires either a table or a valid table reference in the `Data` column. Ensure you're providing a table value, not null or another type. |
 | 10988 | {field} cannot be null or whitespace. | The `Sheet` name or another required field is empty or contains only whitespace. Provide a valid non-empty value. |
-| 10989 | Part type '{type}' isn't supported. | Use a valid part type: `Workbook`, `SheetData`, `Table`, `Range`, or `Chart`. Check for typos in the `PartType` column. |
+| 10989 | Part type '{type}' isn't supported. | Use a valid part type: `Workbook`, `SheetData`, `Table`, `Range`, `Text`, or `Chart`. Check for typos in the `PartType` column. |
 | 10990 | Part {type} with document options must be the first part (row) in the table. | The `Workbook` part (containing options like `ChartInferenceFunction`) must be the first row in your navigation table. Reorder your rows accordingly. |
 | 30005 | The chart inference function isn't available for part '{name}'. Set the {property} property manually. | Add a `Workbook` part as the first row with `[ChartInferenceFunction = Office.InferChartPropertiesGenerator()]` in its `Properties`, or manually specify the required property on the chart. |
 | 30006 | The chart inference function didn't return a valid ChartType for part '{name}'. | The inference engine couldn't determine an appropriate chart type for your data. Specify `ChartType` explicitly in the chart's `Properties` record. |
@@ -1434,6 +1525,10 @@ This section covers common errors you might encounter when constructing navigati
 | 30068 | Part '{name}' specifies AutoPositionColumnOffset or AutoPositionRowOffset but has an explicit StartCell. | You can't combine auto positioning offsets with an explicit `StartCell`. Either remove `StartCell` to use auto positioning, or remove the offset properties. |
 | 30069 | Part '{name}' with AutoPositionColumnOffset would exceed Excel's maximum column limit. | The column offset combined with the table width exceeds column 16,384. Reduce the offset or the number of columns. |
 | 30070 | The TableStyle '{style}' for part '{name}' is invalid. | Use a valid Excel table style: `TableStyleLight1`-`21`, `TableStyleMedium1`-`28`, or `TableStyleDark1`-`11`. |
+| 30183 | The `ColumnSpan` property on a Text part requires auto positioning. | Remove `StartCell` to use `ColumnSpan`, or remove `ColumnSpan` and express the merged region as a bounded range in `StartCell`. |
+| 30184 | The `ColumnSpan` property on a Text part isn't a whole number from 1 through 16,384. | Use a whole number within the Excel column limit. |
+| 30185 | The `StartCell` property on a Text part covers a whole row or column. | Use a single cell, a bounded range such as `"B2:E2"`, or `ColumnSpan` with auto positioning. |
+| 30186 | A Text part and a `SheetData` part use the same sheet. | Move one part to another sheet, or replace `SheetData` with positioned Table or Range parts. |
 
 ### Common issues
 
@@ -1449,7 +1544,7 @@ This section covers common errors you might encounter when constructing navigati
 type table [
     Sheet = nullable text,        // Optional: worksheet name
     Name = nullable text,         // Unique identifier for the part
-    PartType = nullable text,     // "Workbook", "SheetData", "Table", "Range", or "Chart"
+    PartType = text,              // Required: "Workbook", "SheetData", "Table", "Range", "Text", or "Chart"
     Properties = nullable record, // Configuration options
     Data = any                    // Table, table reference, or null
 ]
@@ -1464,7 +1559,7 @@ type table [
 **Solution**: Either add a Workbook part with the inference function as the first row:
 
 ```powerquery-m
-{"Workbook", "Workbook", "Workbook", [ChartInferenceFunction = Office.InferChartPropertiesGenerator()], null}
+{null, null, "Workbook", [ChartInferenceFunction = Office.InferChartPropertiesGenerator()], null}
 ```
 
 Or specify `DataSeries` explicitly for each chart:
@@ -1519,21 +1614,22 @@ Table.TransformColumns(
 Table.SelectRows(YourTable, each [DateColumn] >= #date(1900, 1, 1))
 ```
 
-#### SheetData and Table/Range mixing error
+#### SheetData and positioned-part mixing error
 
-**Issue**: Error "Container already has a SheetData part" or "Container already has Range or Table parts."
+**Issue**: An error reports that `SheetData` can't be combined with another part on the same sheet.
 
-**Cause**: You can't combine `SheetData` with `Table` or `Range` parts on the same sheet.
+**Cause**: You can't combine `SheetData` with `Table`, `Range`, or `Text` parts on the same sheet.
 
-**Solution**: Either use `SheetData` alone for a sheet, or use `Table`/`Range` parts together:
+**Solution**: Either use `SheetData` alone for a sheet, or use positioned parts together:
 
 ```powerquery-m
 // Option 1: Use SheetData alone
 {"Sheet1", "Data", "SheetData", [], myTable}
 
-// Option 2: Use Table/Range parts for multiple regions
-{"Sheet1", "Table1", "Table", [StartCell = "A1"], firstTable},
-{"Sheet1", "Table2", "Table", [StartCell = "F1"], secondTable}
+// Option 2: Use Table, Range, or Text parts for multiple regions
+{"Sheet1", "Title", "Text", [StartCell = "A1:J1"], "Sales report"},
+{"Sheet1", "Table1", "Table", [StartCell = "A3"], firstTable},
+{"Sheet1", "Table2", "Table", [StartCell = "F3"], secondTable}
 ```
 
 #### Auto positioning conflicts
