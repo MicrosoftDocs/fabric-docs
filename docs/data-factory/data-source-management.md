@@ -288,13 +288,15 @@ These APIs help you:
 
 | Operation | API |
 | --- | --- |
-| List all connections in the tenant | [Connections - List Connection](/rest/api/fabric/admin/connections/list-connection) |
-| Get a single connection | [Connections - Get Connection](/rest/api/fabric/admin/connections/get-connection) |
-| Delete a connection | [Connections - Delete Connection](/rest/api/fabric/admin/connections/delete-connection) |
+| List all connections in the tenant | Coming Soon |
+| Get a single connection | Coming Soon |
+| Delete a connection | Coming Soon |
 | List the role assignments on a connection | `GET /v1/admin/connections/{connectionId}/roleAssignments` |
 | Add a role assignment (assign an owner) | `POST /v1/admin/connections/{connectionId}/roleAssignments` |
 | Update a role assignment | `PATCH /v1/admin/connections/{connectionId}/roleAssignments/{roleAssignmentId}` |
 | Delete a role assignment | `DELETE /v1/admin/connections/{connectionId}/roleAssignments/{roleAssignmentId}` |
+
+_The admin connection API reference is being published. Until it's available, use the endpoint and examples in this section._
 
 To list every connection in the tenant, send an HTTP GET to the admin connections endpoint, including your token in the `Authorization` header:
 

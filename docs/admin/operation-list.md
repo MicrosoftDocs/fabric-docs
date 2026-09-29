@@ -353,7 +353,6 @@ To audit OneLake data access and storage operations, use [OneLake diagnostics](.
 | Get Model Diagram Layouts | :::no-loc text="GetPowerBIDataModelDiagramLayouts"::: | Get diagram layouts when open data model in web model view.  |
 | Get Model SAS Token via Lockbox | :::no-loc text="GetModelSASTokenViaLockbox"::: | Gets the SAS Token for a given model in a tenant via Lockbox  |
 | Get My Goals | :::no-loc text="GetMyGoals"::: |   |
-| Get OneLake file soft-delete settings | :::no-loc text="GetFileSoftDelete"::: | OneLake operation. Generated when a user reads the workspace's OneLake file soft-delete status and retention period. |
 | Get Pending Change Status | :::no-loc text="GetPendingChangeStatus"::: |   |
 | Get Power BI group users | :::no-loc text="GetGroupUsers"::: |   |
 | Get Publish To Web Artifacts As Admin | :::no-loc text="GetPublishToWebArtifactsAsAdmin"::: |   |
@@ -434,7 +433,7 @@ To audit OneLake data access and storage operations, use [OneLake diagnostics](.
 | Migrated dataflow storage location | :::no-loc text="MigratedDataflowStorageLocation"::: | Not currently used  |
 | Migrated workspace to a capacity | :::no-loc text="MigrateWorkspaceIntoCapacity"::: |   |
 | Modified OneLake default tier | :::no-loc text="ModifiedDefaultTier"::: |   |
-| Modified OneLake file soft-delete settings | :::no-loc text="ModifiedOneLakeFileSoftDeleteSettings"::: | OneLake operation. Generated when a workspace admin enables or disables OneLake file soft delete, or changes the retention period (1–365 days). |
+| Modified OneLake file soft-delete settings | :::no-loc text="ModifiedOneLakeFileSoftDeleteSettings"::: | Generated when a workspace admin changes the OneLake file-level soft-delete retention settings (enable/disable, retention period). |
 | Modify Workspace Capacity | :::no-loc text="ModifyWorkspaceCapacity"::: | Modify Workspace Capacity is a capacity activity, which is generated on assigning a Power BI workspace to a capacity using an API call or the UI.  |
 | Move Goals | :::no-loc text="MoveGoals"::: | Moves goals within a scorecard |
 | Move Scorecard | :::no-loc text="MoveScorecard"::: |   |
