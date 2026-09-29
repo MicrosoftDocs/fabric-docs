@@ -18,13 +18,14 @@ Use **Eventstream workspace monitoring (preview)** to track the health and perfo
 
 ## Monitoring tables
 
-Eventstream monitoring provides three tables in the workspace monitoring database. All tables share common columns (base dimensions) and include table-specific columns for the data they track.
+Eventstream monitoring provides four tables in the workspace monitoring database. All tables share common columns (base dimensions) and include table-specific columns for the data they track.
 
 | Table | What it tells you | Emission frequency |
 |---|---|---|
 | `EventStreamNodeStatus` | Whether each node in your eventstream is running, paused, failed, or in another state. | Approximately every 6 hours |
 | `EventStreamMetrics` | Data flow metrics like incoming and outgoing message counts, byte volumes, watermark delay, and backlogged events. | Every minute |
 | `EventStreamErrorMetrics` | Error counts by type, including runtime errors, deserialization errors, and data conversion errors. | Every minute |
+| `EventStreamDiagnosticLogs` | Diagnostic messages that help troubleshoot Eventstream issues, including error types, error codes, severity, and whether an error is fatal to processing. | As diagnostic events occur. Repeated events can be throttled or aggregated. |
 
 ## Questions you can answer
 
@@ -43,18 +44,37 @@ All three Eventstream monitoring tables include these columns. They show which e
 | Column | Type | Description |
 |---|---|---|
 | `Timestamp` | datetime | The date and time (UTC) when the event was recorded. |
-| `ArtifactId` | string | The unique identifier of the eventstream. |
-| `ArtifactName` | string | The display name of the eventstream. |
-| `ArtifactKind` | string | Always `Event Stream` for Eventstream items. |
+| `ItemId` | string | The unique identifier of the eventstream. |
+| `ItemName` | string | The display name of the eventstream. |
+| `ItemKind` | string | Always `Event Stream` for Eventstream items. |
 | `WorkspaceId` | string | The unique identifier of the Fabric workspace. |
 | `WorkspaceName` | string | The display name of the workspace. |
 | `CustomerTenantId` | string | The Microsoft Entra tenant ID. |
-| `Level` | string | The severity level of the event (for example, "Informational"). |
 | `OperationId` | string | A unique identifier for the operation. |
-| `PremiumCapacityId` | string | The identifier of the Fabric capacity. |
-| `PlatformMonitoringCategory` | string | The monitoring category (for example, "Engine"). |
-| `PlatformMonitoringTableName` | string | The name of the monitoring table. |
-| `LogAnalyticsResourceId` | string | The Azure Log Analytics workspace resource ID. |
+| `CapacityId` | string | The identifier of the Fabric capacity. |
+
+## EventStreamDiagnosticLogs 
+
+This table contains diagnostic messages that help troubleshoot issues in Eventstream, such as input deserialization errors, data conversion errors, query processing failures, and failures when accessing sources or destinations. 
+
+Unlike the  EventStreamErrorMetrics table, which reports error counts, this table provides descriptive messages and diagnostic context. 
+
+Diagnostic logs are emitted as conditions are reported, rather than at a fixed frequency. Repeated events can be throttled or combined into aggregate entries, so the number of log rows doesn't necessarily equal the number of errors or affected events. 
+
+In addition to the common columns, diagnostic logs include the following fields: 
+
+| Column | Type | Description | 
+ | --- | --- | --- | 
+ | `CorrelationId` | string | An identifier that associates the diagnostic log with the underlying service resource. | 
+ | `OperationName` | string | The operation associated with the diagnostic message, such as receiving or processing events. | 
+ | `NodeDirection` | string | The role of the eventstream component associated with the diagnostic message. | 
+ | `Category` | string | The diagnostic category, such as `Execution` or `Authoring`. | 
+ | `Severity` | string | The diagnostic severity: `Info`, `Warning`, `Error`, or `Critical`. | 
+ | `ErrorType` | string | The error category or diagnostic type, such as `DataError` or `QueryRuntimeError`. | 
+ | `ErrorCode` | string | A specific error code, when available, that identifies the reported condition. | 
+ | `IsFatal` | bool | Whether the reported condition is fatal to the underlying processing job. | 
+ | `Message` | string | A human-readable diagnostic message. For aggregated data errors, the message includes the affected event count and reporting time window. | 
+
 
 ## EventStreamNodeStatus
 
