@@ -14,7 +14,9 @@ ai-usage: ai-assisted
 This article outlines the steps to create a Palantir Foundry connection.
 
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
+
+## Summary
 
 The Palantir Foundry connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
@@ -31,19 +33,27 @@ You can connect a dataflow Gen2 in Fabric to Palantir Foundry using Power Query 
 1. [Get data in Fabric](#get-data).
 1. [Connect to Palantir Foundry](#connect-to-palantir-foundry).
 
-### Capabilities
+## Prerequisites
+
+[!INCLUDE [palantir-foundry-datasets-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/palantir-foundry-datasets/palantir-foundry-datasets-prerequisites.md)]
+
+<a id="capabilities"></a>
+
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
 
 [!INCLUDE [palantir-foundry-datasets-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/palantir-foundry-datasets/palantir-foundry-datasets-capabilities-supported.md)]
 
-### Prerequisites
-
-[!INCLUDE [palantir-foundry-datasets-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/palantir-foundry-datasets/palantir-foundry-datasets-prerequisites.md)]
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Connect to Palantir Foundry
+<a id="connect-to-palantir-foundry"></a>
+
+### Connection instructions
 
 [!INCLUDE [palantir-foundry-datasets-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/palantir-foundry-datasets/palantir-foundry-datasets-connect-to-power-query-online.md)]
 

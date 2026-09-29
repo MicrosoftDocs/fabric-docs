@@ -154,3 +154,4 @@ Build custom selectors by specifying:
 * [dbt job in Microsoft Fabric overview](dbt-job-overview.md)
 * [Step-by-step dbt job tutorial](dbt-job-how-to.md)
 * [How to create a new dbt job](dbt-job-how-to.md)
+* [Configure CI/CD for dbt jobs using Variable Library](simplify-cicd-for-dbt-jobs.md)

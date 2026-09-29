@@ -13,7 +13,9 @@ ai-usage: ai-assisted
 
 This article outlines the steps to create an Azure Table Storage connection in Microsoft Fabric.
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
+
+## Summary
 
 The Azure Table Storage connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
@@ -30,19 +32,29 @@ You can connect dataflow Gen2 to Azure Table Storage in Fabric by using Power Qu
 1. [Copy your account key for Azure Table Storage](#copy-your-account-key-for-azure-table-storage).
 1. [Connect to Azure Table Storage](#connect-to-azure-table-storage).
 
-### Capabilities
+<a id="capabilities"></a>
+
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
 
 [!INCLUDE [azure-table-storage-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-table-storage/azure-table-storage-capabilities-supported.md)]
+
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Copy your account key for Azure Table Storage
+<a id="copy-your-account-key-for-azure-table-storage"></a>
+
+### Copy your account key
 
 [!INCLUDE [azure-table-storage-copy-account-key](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-table-storage/azure-table-storage-copy-account-key.md)]
 
-### Connect to Azure Table Storage
+<a id="connect-to-azure-table-storage"></a>
+
+### Connection instructions
 
 [!INCLUDE [azure-table-storage-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-table-storage/azure-table-storage-connect-to-power-query-online.md)]
 
