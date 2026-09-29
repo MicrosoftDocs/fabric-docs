@@ -93,6 +93,8 @@ items:
             href: tutorial-identity.md
           - name: Manage objects in a warehouse
             href: manage-objects.md
+          - name: Migrate to IDENTITY columns
+            href: migrate-identity-columns.md
   - name: Continuous integration & continuous deployment (CI/CD)
     items:
       - name: Development and deployment overview
@@ -119,6 +121,8 @@ items:
     items:
       - name: AI functions
         href: ai-functions.md
+      - name: Fabric functions
+        href: fabric-user-data-functions.md
       - name: Query labels
         href: query-label.md
       - name: Transactions
@@ -341,25 +345,37 @@ items:
       - name: Mirroring overview
         href: /fabric/mirroring/overview?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
       - name: Mirroring documentation
-        href: /fabric/mirroring/
+        href: /fabric/mirroring/ 
   - name: Migrate
     items:
-      - name: Migration Assistant
-        href: migration-assistant.md
-      - name: Planning for migration from Azure Synapse Analytics
-        href: migration-synapse-dedicated-sql-pool-warehouse.md
-      - name: Methods for migration from Azure Synapse Analytics
+    - name: Migration Assistant overview
+      href: migration-assistant.md
+    - name: Migrate using an uploaded file
+      href: migrate-using-upload-file.md
+    - name: Migrate using a direct connection
+      href: migrate-using-connection-to-source-system.md
+    - name: From Azure Synapse Analytics
+      items:
+      - name: Plan your migration
+        href: migration-synapse-dedicated-sql-pool-planning.md
+      - name: Choose migration methods
         href: migration-synapse-dedicated-sql-pool-methods.md
-      - name: How to
-        items:
-          - name: Extract DAC from a dedicated SQL pool
-            href: extract-data-tier-application-synapse-dedicated-sql-pool.md
-          - name: Migrate with a DACPAC file
-            href: migrate-using-upload-file.md
-          - name: Migrate with a direct connection
-            href: migrate-using-connection-to-source-system.md
-          - name: Migrate to IDENTITY columns
-            href: migrate-identity-columns.md
+      - name: Extract a DAC from a dedicated SQL pool
+        href: extract-data-tier-application-synapse-dedicated-sql-pool.md
+    - name: From SQL Server
+      items:
+      - name: Plan your migration
+        href: migration-sql-server-planning.md
+      - name: Choose migration methods
+        href: migration-sql-server-methods.md
+    - name: From Teradata
+      items:
+      - name: Plan your migration
+        href: migration-teradata-planning.md
+      - name: Choose migration methods
+        href: migration-teradata-methods.md
+      - name: SQL reference
+        href: migration-teradata-sql-translation.md
   - name: Troubleshoot
     items:
       - name: Troubleshoot your warehouse

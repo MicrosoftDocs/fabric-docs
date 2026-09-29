@@ -3,7 +3,7 @@ title: What is Fabric Apps (Preview)?
 description: Learn about Microsoft Fabric Apps, a platform for building and deploying backend services with TypeScript data models, authentication, and static hosting on Microsoft Fabric.
 ms.reviewer: mksuni
 ms.topic: overview
-ms.date: 06/02/2026
+ms.date: 09/15/2026
 ai-usage: ai-assisted
 ms.search.form: Fabric Apps overview
 ---
@@ -19,9 +19,10 @@ Fabric Apps (preview) is built on the Rayfin SDK and enables developers to creat
 Fabric Apps provides these capabilities:
 
 - **Data models to APIs** – Decorate TypeScript classes with `@entity()`, `@text()`, `@uuid()`, and other decorators. Fabric Apps generates database schemas and GraphQL endpoints automatically.
+- **Fabric data connectors** – Add typed access to a lakehouse, warehouse, SQL database in Fabric, or semantic model.
 - **Type-safe clients** – The client SDK validates queries and mutations before they reach the backend, catching errors during development.
 - **Built-in authentication** – Session management, token handling, and authentication flows are included. Configure Fabric SSO for deployed applications or use email and password during local development.
-- **Static hosting** – Build and serve your frontend application alongside your backend APIs with a single deployment command.
+- **Static hosting** – Build and serve your frontend application alongside your backend APIs. Require Fabric item access or allow anonymous access to hosted assets.
 - **Local development** – Run the full stack locally with Docker for rapid iteration, then deploy to Fabric when ready for production. Scaffold projects, develop with GitHub Copilot, and deploy to Fabric using Rayfin CLI.
 
 ## Regions supported 
@@ -56,7 +57,7 @@ When you deploy your application with `rayfin up`, Fabric creates child services
 | --- | --- | --- |
 | **SQL database in Fabric** | A managed SQL database with your schema applied from TypeScript data model decorators. | View database, run queries with the query editor, copy connection string. The database is read-only in the portal—schema changes must come from your code via `rayfin up`. |
 | **Authentication** | Fabric brokered authentication using Microsoft Entra ID (SSO). Users sign in through their existing Fabric identity. | View authenticated users in the SQL database. |
-| **Static Content** | Your built frontend assets (HTML, CSS, JS) served at a public URL using OneLake storage. | View hosting URL. Assets are updated on each deploy. |
+| **Static Content** | Your built frontend assets (HTML, CSS, JS) served from a Fabric Apps hosting URL. Configure protected access or allow anonymous access to the assets. | View hosting URL. Assets are updated on each deploy. |
 
 ## App backend URL
 
@@ -83,7 +84,7 @@ After deployment, you can manage your Fabric app directly in the Fabric portal.
 Open the Fabric app in the portal to see:
 
 - **App Backend URL** — This endpoint is used for all the backend services used by the application.
-- **App URL** — The public URL where your static content is hosted. Fabric SSO is required to access the app.
+- **App URL** — The URL where your static content is hosted. Access depends on the `assetAccess` setting in `rayfin.yml`.
 
 ### Manage child items
 
@@ -159,7 +160,7 @@ Fabric Apps is ideal for:
 
 - **Rapid prototyping** – Go from idea to live URL in minutes with preconfigured infrastructure.
 - **Internal tools and dashboards** – Build authenticated admin interfaces without writing backend boilerplate.
-- **Data exploration and visualization** – Query Fabric data through GraphQL and display it in custom frontends.
+- **Data exploration and visualization** – Use connectors to query supported Fabric data items and display the results in custom frontends.
 - **AI and agent applications** – Provide structured backend services for AI agents that need persistent state.
 
 Fabric Apps might not be suitable for:
@@ -173,7 +174,7 @@ Fabric Apps might not be suitable for:
 
 **You're responsible for:**
 
-- Keeping secrets, API keys, and sensitive data out of your code, frontend assets, and repository. Static content is served from a public URL.
+- Keeping secrets, API keys, and sensitive data out of your code, frontend assets, and repository. Don't store secrets in frontend assets, regardless of the configured hosting access.
 - What your app exposes through Fabric SSO controls sign-in since your code controls what authenticated users see and do.
 - Granting only the permissions contributors need to deploy or manage the app.
 - Legal and compliance accountability for the data your app collects, processes, and stores.
@@ -182,5 +183,6 @@ Fabric Apps might not be suitable for:
 
 - [Create your first Fabric Apps project](create-app.md)
 - [Define data models with decorators](data-models.md)
+- [Connect Fabric Apps to Fabric data](connectors.md)
 - [Deploy to Fabric](deploy-app.md)
 - [Configure authentication](authentication.md)

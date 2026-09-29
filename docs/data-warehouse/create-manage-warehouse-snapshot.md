@@ -76,7 +76,7 @@ Once created, warehouse snapshots appear as child items in the workspace.
 
 :::image type="content" source="media/create-manage-warehouse-snapshot/workspace.png" alt-text="Screenshot from the Fabric portal showing the warehouse snapshot in the item list." lightbox="media/create-manage-warehouse-snapshot/workspace.png":::
 
-Connect to the snapshot just like a warehouse. In the settings of your warehouse snapshot, select the **SQL endpoint** page to view and copy the **SQL connection string**. This is the server name for your warehouse snapshot, and it looks like: `<server-name>.datawarehouse.fabric.microsoft.com`.  
+Connect to the snapshot just like a warehouse. In the **Settings** of your warehouse snapshot, select the **SQL connection string** page to view and copy the **SQL connection string**. This string is the server name for your warehouse snapshot, and it looks like: `<server-name>.datawarehouse.fabric.microsoft.com`.
 
 Users with appropriate permissions (Admin, Member, Contributor, or Viewer) can query a snapshot just like a warehouse. For more information, see [Warehouse connectivity in Microsoft Fabric](connectivity.md).
 

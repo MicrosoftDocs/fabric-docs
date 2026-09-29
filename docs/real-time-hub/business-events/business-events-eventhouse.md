@@ -14,9 +14,6 @@ Every business event your organization publishes becomes a queryable record in E
 
 Eventhouse is enabled by default when you create a business event in Real-Time hub. Each business event maps to a dedicated KQL table in your eventhouse database, and every published event is automatically ingested and retained.
 
-> [!IMPORTANT]
-> This feature is in [preview](../../fundamentals/preview.md).
-
 ## Why use Eventhouse with business events?
 
 Eventhouse is uniquely suited as the analytical layer for business events because it provides:

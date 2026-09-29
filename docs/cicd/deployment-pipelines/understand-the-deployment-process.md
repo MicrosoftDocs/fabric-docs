@@ -3,7 +3,8 @@ title: The Microsoft Fabric deployment pipelines process
 description: Understand how deployment pipelines, the Fabric Application lifecycle management (ALM) tool, works.
 ms.reviewer: Lee
 ms.topic: concept-article
-ms.date: 12/15/2025
+ms.date: 09/24/2026
+ai-usage: ai-assisted
 ms.search.form: Introduction to Deployment pipelines, Manage access in Deployment pipelines, Deployment pipelines operations
 #customer intent: As a developer, I want to understand how the Microsoft Fabric deployment pipelines process works so that I can use it effectively.
 ---
@@ -84,8 +85,9 @@ When content from the source stage is copied to the target stage, Fabric identif
 
 In the target stage, [item properties that aren't copied](understand-the-deployment-process.md#item-properties-that-are-not-copied), remain as they were before deployment. New content and new items are copied from the source stage to the target stage.
 
+#### Deployment process with an attached deployment plan (preview)
 
-
+When you attach a deployment plan, deployment pipelines apply the plan to the selected content. For the shared execution behavior, see [How a deployment plan works](../deployment-plan/deployment-plan-overview.md#how-a-deployment-plan-works). For instructions, see [Deploy with a deployment plan](deploy-content.md#deploy-with-a-deployment-plan-preview).
 
 ## Autobinding
 

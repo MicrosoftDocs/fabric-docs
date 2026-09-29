@@ -21,7 +21,7 @@ To get started, you must complete the following prerequisites:
 
 - Your tenant-level admin must enable ["Service principals can call Fabric public APIs"](../admin/service-admin-portal-developer.md#service-principals-can-call-fabric-public-apis):
 
-  1. Go to the admin portal of Fabric and navigate to Tenant Settings.
+1. Go to **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**.
   2. Under Developer Settings, expand the "Service principals can call Fabric public APIs" section.
   3. Toggle the "Enabled" button and choose either "The entire organization" or "Specific security groups."
   4. Select Apply.

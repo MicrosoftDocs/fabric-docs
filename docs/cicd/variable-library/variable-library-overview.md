@@ -2,7 +2,7 @@
 title: Fabric Application Lifecycle Management Variable Library
 description: Learn how to use a Microsoft Fabric application lifecycle management (ALM) variable library to customize your release stages.
 ms.topic: overview
-ms.date: 12/15/2025
+ms.date: 09/01/2026
 ms.search.form: Variable library overview
 #customer intent: As a developer, I want to learn how to use a Fabric application lifecycle management (ALM) variable library to customize my release stages, so that I can manage my content lifecycle.
 ---
@@ -61,6 +61,8 @@ The following items support the variable library:
 - [Dataflow Gen 2](../../data-factory/dataflow-gen2-variable-library-integration.md)
 - [Copy job](../../data-factory/cicd-copy-job.md)
 - [User data functions](../../data-engineering/user-data-functions/python-programming-model.md#get-variables-from-fabric-variable-libraries)
+- [Eventstream](/fabric/real-time-intelligence/event-streams/overview)
+- [Deployment plan](../deployment-plan/deployment-plan-overview.md) action parameters
 - [Plan](../../iq/plan/overview.md)
 
 ## Naming conventions
@@ -83,3 +85,4 @@ The variable library name is *not* case sensitive.
 
 * [Variable library permissions](./variable-library-permissions.md)
 * [Create and manage variable libraries](./get-started-variable-libraries.md)
+* [Variable library CI/CD](variable-library-cicd.md)

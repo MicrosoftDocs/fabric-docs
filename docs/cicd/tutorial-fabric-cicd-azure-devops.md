@@ -65,9 +65,9 @@ Before you begin, make sure you have the following in place:
 | 6 | **Git integration in Fabric** | Connect the **dev** workspace to the `dev` branch of your ADO repo |
 | 7 | **Python 3.12+** | Used in the pipeline agent to run the deployment script |
 | 8 | **`fabric-cicd` Python package** | Microsoft's open-source deployment library ([PyPI](https://pypi.org/project/fabric-cicd/)) |
-| 9 | **Fabric Admin setting for SPN** | A Fabric Admin must enable *"Service principals can use Fabric APIs"* in the Fabric Admin Portal under **Tenant Settings** |
+| 9 | **Fabric Admin setting for SPN** | A Fabric Admin must enable *"Service principals can use Fabric APIs"* under **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**. |
 
-> 💡 **Tip:** To enable Service Principal access in Fabric, a Fabric Admin must enable *"Service principals can use Fabric APIs"* in the Fabric Admin Portal under **Tenant Settings**.
+> 💡 **Tip:** To enable Service Principal access in Fabric, a Fabric Admin must enable *"Service principals can use Fabric APIs"* under **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**.
 
 ### Download the source files
 

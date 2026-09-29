@@ -15,9 +15,6 @@ This tutorial guides you through the full workflow of reacting to your own busin
 1. Validate the published events in Real-Time hub.
 1. Create an Activator rule that triggers a user data function when the business event occurs. 
 
-> [!IMPORTANT]
-> This feature is in [preview](../../fundamentals/preview.md).
-
 ## Create a new business event
 
 1. Go to **Business events** in Real-Time hub.
@@ -77,11 +74,11 @@ This tutorial guides you through the full workflow of reacting to your own busin
     Help on module notebookutils.businessEvents in notebookutils:
     
     NAME
-        notebookutils.businessEvents - [Preview] Utility for Business Events operations in Fabric
+        notebookutils.businessEvents - Utility for Business Events operations in Fabric
     
     FUNCTIONS
         help(methodName: str = '') -> None
-            [Preview] Provides help for the notebookutils.businessEvents module or the specified method.
+            Provides help for the notebookutils.businessEvents module or the specified method.
             
             Examples:
             notebookutils.businessEvents.help()
@@ -89,7 +86,7 @@ This tutorial guides you through the full workflow of reacting to your own busin
             :param methodName: The name of the method to get help with.
         
         publish(eventSchemaSetWorkspace: str, eventSchemaSet: str, eventTypeName: str, eventData: Union[Dict[str, Any], List[Dict[str, Any]]], dataVersion: str = 'v1') -> bool
-            [Preview] Publish business events data to the specified event type.
+            Publish business events data to the specified event type.
             
             Examples:
             notebookutils.businessEvents.publish(

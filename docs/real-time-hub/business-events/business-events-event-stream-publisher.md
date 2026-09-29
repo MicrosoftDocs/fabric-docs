@@ -68,6 +68,9 @@ Schema mapping also enforces CloudEvents metadata, ensuring protocol consistency
 
 ## Publishing and operationalizing the Eventstream
 
+> [!NOTE]
+> Workspace private links can block cross-workspace business event publishing. For Business events, the source workspace is the workspace that contains the Event Schema Set. If that workspace blocks public access, publish from the same workspace or establish a private link from the publisher's network to the source workspace. For more information, see [Workspace private links for Azure, Fabric, and Business events](../workspace-private-links-real-time-events.md).
+
 After defining transformations and schema mapping, publish the Eventstream to start producing business events. When you publish, you activate the pipeline, which enables:
 
 * Continuous ingestion of the operational dataset.

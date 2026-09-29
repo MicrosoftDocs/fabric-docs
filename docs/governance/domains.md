@@ -86,7 +86,7 @@ Before you start creating domains for your organization, it is recommended to re
 
 To create domain, you must be a Fabric admin.
 
-1. Open the admin portal and select the **Domains** tab.
+1.  Sign in to [Fabric](https://app.fabric.microsoft.com) by using your admin account credentials. Open the **OneLake catalog**, and then select **Govern** > **Domains**.
 
 1. On the **Domains** tab, select **Create new domain**.
 

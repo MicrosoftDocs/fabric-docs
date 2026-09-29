@@ -99,7 +99,7 @@ Access to a Foundry project on its own doesn't include access to the telemetry. 
 
 ## Operational metadata tenant setting
 
-A tenant setting in the Fabric admin portal controls whether Fabric data agents send operational metadata for observability in Foundry. The setting is on by default.
+A tenant setting in **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings** controls whether Fabric data agents send operational metadata for observability in Foundry. The setting is on by default.
 
 The setting sends only operational metadata. This metadata includes agent display names, data source names, reasoning step IDs, and conversation IDs. Fabric doesn't send any customer content. User prompts and data agent responses stay within Fabric's compliance boundary and aren't included in this telemetry.
 

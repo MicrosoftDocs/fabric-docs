@@ -4,8 +4,8 @@ description: Troubleshoot problems with deployment pipelines, the Fabric Applica
 ms.reviewer: NimrodShalit
 ms.topic: troubleshooting
 ms.custom: sfi-image-nochange
-ms.date: 06/15/2026
-ms.search.form: Deployment pipelines troubleshooting, View deployment pipeline, Deployment pipelines operations, Deployment rules
+ms.date: 09/23/2026
+ms.search.form: Deployment pipelines troubleshooting, View deployment pipeline, Deployment pipelines operations, Deployment rules, Deployment plan
 ---
 
 # Troubleshoot lifecycle management issues
@@ -14,13 +14,13 @@ Use this article to troubleshoot issues in the lifecycle management process.
 
 To understand the considerations and limitations of various lifecycle management issues, review the links in the following table:
 
-| Topic | Git integration  | Deployment pipelines |
-|--------|------------------|---------------------|
-| **General limitations** | [general Git limitations](./git-integration/git-integration-process.md#considerations-and-limitations) | [deployment pipelines limitations](deployment-pipelines/understand-the-deployment-process.md#considerations-and-limitations) |
-| **Permissions needed** | [permissions](./git-integration/git-integration-process.md#permissions) | [permissions](deployment-pipelines/understand-the-deployment-process.md#permissions) |
-| **Workspace limitations** | [workspaces](./git-integration/git-integration-process.md#workspace-limitations) | [workspaces](deployment-pipelines/assign-pipeline.md#considerations-and-limitations) |
-| **Supported Fabric items** | [supported items](./git-integration/intro-to-git-integration.md#supported-items) | [supported items](deployment-pipelines/intro-to-deployment-pipelines.md#supported-items) |
-| **Semantic model** |   | [Semantic model limitations](deployment-pipelines/understand-the-deployment-process.md#semantic-model-limitations)
+| Topic | Git integration  | Deployment pipelines | Deployment plans |
+|--------|------------------|---------------------|------------------|
+| **General limitations** | [general Git limitations](./git-integration/git-integration-process.md#considerations-and-limitations) | [deployment pipelines limitations](deployment-pipelines/understand-the-deployment-process.md#considerations-and-limitations) | [deployment plan limitations](deployment-plan/deployment-plan-overview.md#considerations-and-limitations) |
+| **Permissions needed** | [permissions](./git-integration/git-integration-process.md#permissions) | [permissions](deployment-pipelines/understand-the-deployment-process.md#permissions) | [permissions](deployment-plan/deployment-plan-permissions.md) |
+| **Workspace limitations** | [workspaces](./git-integration/git-integration-process.md#workspace-limitations) | [workspaces](deployment-pipelines/assign-pipeline.md#considerations-and-limitations) | |
+| **Supported Fabric items** | [supported items](./git-integration/intro-to-git-integration.md#supported-items) | [supported items](deployment-pipelines/intro-to-deployment-pipelines.md#supported-items) | [supported action types](deployment-plan/deployment-plan-actions.md) |
+| **Semantic model** |   | [Semantic model limitations](deployment-pipelines/understand-the-deployment-process.md#semantic-model-limitations) | |
 
 * [Git integration](#git-integration)  
 
@@ -35,6 +35,7 @@ To understand the considerations and limitations of various lifecycle management
   * [Dataflows](#dataflows)  
   * [Permissions](#permissions)  
   * [Rules](#rules)
+* [Deployment plans](#deployment-plans)
 
 ## Git integration
 
@@ -629,8 +630,50 @@ Use this section to troubleshoot pipeline [rules](deployment-pipelines/create-ru
 |Multiple data sources aren't supported |A semantic model rule can't be applied due to its data source configuration. Either remove the rule, or rewrite the semantic model queries using standard Power BI Desktop tools. |
 |Target semantic model can only be changed by its owner |Your rule will overwrite some semantic models in the destination workspace. You must be the owner of any semantic model that will be overwritten. |  
 
+## Deployment plans
+
+A deployment plan controls the order in which items deploy, and runs actions before or after they deploy. A plan can be attached to Git integration, a deployment pipeline, or the APIs, so a plan problem can surface on any of those surfaces.
+
+For the full list, see [Troubleshoot deployment plans](deployment-plan/deployment-plan-troubleshoot.md).
+
+### My plan isn't in the list when I try to attach it
+
+The picker on each attach surface only lists plans you have access to. Confirm that the deployment plan item type is enabled for your tenant, that the plan is saved, and that you have at least the Contributor role on the workspace that holds the plan. For more information, see [The plan isn't in the picker](deployment-plan/deployment-plan-troubleshoot.md#the-plan-isnt-in-the-picker).
+
+### I can't save my plan
+
+A plan is validated when it's saved, and some problems block the save. The most common are a cycle between deployment groups, a duplicate name, a dependency that names something the plan doesn't contain, and the same item appearing in more than one group.
+
+The canvas prevents most of these while you edit, so you're most likely to meet them when a plan arrives another way, such as through the REST API or a pull from Git. For the full list, see [The plan can't be saved](deployment-plan/deployment-plan-troubleshoot.md#the-plan-cant-be-saved).
+
+### My plan saved, but it shows warnings
+
+Warnings depend on the workspace the plan points at rather than on the plan itself, so they don't block saving or attaching. They usually mean the plan references an item that doesn't exist in the target workspace yet. For more information, see [The plan can be saved, but shows warnings](deployment-plan/deployment-plan-troubleshoot.md#the-plan-can-be-saved-but-shows-warnings).
+
+### The deployment stopped partway through and some items deployed
+
+This is expected behavior. When a deployed item or an action fails, the deployment halts. Whatever already deployed stays in the target workspace, and the items later in the order don't deploy. There's no automatic rollback.
+
+For recovery guidance, see [The deployment stopped partway through](deployment-plan/deployment-plan-troubleshoot.md#the-deployment-stopped-partway-through).
+
+### An action failed the first time I deployed into a new workspace
+
+A deployment carries item definitions. It doesn't carry workspace settings, and neither does a plan. A new workspace, such as a branch-out workspace or a newly created pipeline stage, starts with default settings, so the items deploy correctly and then the first action fails.
+
+Workspace identity, Spark settings, and connections are all workspace-level and must be configured on the target before the first deployment. For more information, see [An action failed because the workspace isn't configured](deployment-plan/deployment-plan-troubleshoot.md#an-action-failed-because-the-workspace-isnt-configured).
+
+### An action failed and I can't tell why from the deployment
+
+An action is a normal Fabric item run, so its failure details live with the item rather than with the plan. The deployment reports an error that identifies the action that failed. Open that item and review its run history.
+
+### A variable reference in my plan couldn't be resolved
+
+Variable resolution is evaluated with your permissions, so a reference can resolve for one user and fail for another. For the meaning of each resolution status, see [Variable reference resolution failures](variable-library/variable-reference-resolution-failure.md).
+
 ## Related content
 
 * [Get started with deployment pipelines](deployment-pipelines/get-started-with-deployment-pipelines.md)
 * [Assign a workspace to a pipeline stage](deployment-pipelines/assign-pipeline.md)
 * [Deployment history](deployment-pipelines/deployment-history.md)
+* [Troubleshoot deployment plans](deployment-plan/deployment-plan-troubleshoot.md)
+* [Deployment plan permissions](deployment-plan/deployment-plan-permissions.md)

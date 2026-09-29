@@ -8,9 +8,9 @@ ms.date: 03/06/2026
 ai-usage: ai-assisted
 ---
 
-# Manage your Fabric capacity
+# Manage your capacities in the Admin portal
 
-This article describes the Fabric capacity settings. The article is aimed at admins who want to understand how to manage their Fabric capacities.
+This article describes the capacity settings in the Admin portal. The article is aimed at admins who want to understand how to manage their Fabric capacities.
 
 ## Get to the capacity settings
 
@@ -339,7 +339,7 @@ This table summarizes the actions you can take in the details section.
 
 ### Delegated tenant settings
 
-[Delegating admin settings](admin-overview.md#delegate-admin-rights) can be used to grant granular access to features in the capacity. The delegated tenant settings section lists these tenant settings:
+Use [Delegating admin settings](../admin/admin-overview.md#delegate-admin-rights) to grant granular access to features in the capacity. The delegated tenant settings section lists these tenant settings:
 
 * Workload management tenant settings that are automatically delegated to the capacity.
 * Tenant settings delegated by the Fabric Admin.
@@ -348,7 +348,7 @@ By default, delegated tenant settings inherit their configuration from the tenan
 
 1. From the **Delegate tenant setting** list, open the setting you want to delegate permissions for.
 1. Select the **Override tenant admin selection** checkbox.
-1. Select **Enabled**
+1. Select **Enabled**.
 1. In the *Apply to* section, select one of the following options:
    * **All the users in capacity** - Delegate the setting to all the users in the capacity.
    * **Specific security groups** - Apply the setting to specific security groups. Enter the security groups you want to apply the setting to.

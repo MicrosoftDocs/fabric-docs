@@ -3,7 +3,7 @@ title: Monitor Graph Performance
 description: Monitor graph performance in Microsoft Fabric. Learn what factors affect refresh and query speed, how to identify bottlenecks, and what actions to take.
 #customer intent: As a Fabric user, I want to understand graph performance characteristics so that I can identify bottlenecks and keep my graph workloads running efficiently.
 ms.topic: how-to
-ms.date: 05/20/2026
+ms.date: 09/17/2026
 ms.reviewer: wangwilliam
 ai-usage: ai-assisted
 ---
@@ -60,11 +60,11 @@ Compare refresh durations over time to establish a baseline for your graph. A re
 
 ### Respond to refresh failures
 
-Graph refresh jobs can fail when they exceed the 20-minute timeout. For large graphs, this timeout can cause a failure up to once a week. If a refresh fails:
+Graph refresh duration depends on the graph size, source data, and available capacity. The 20-minute Query API timeout doesn't apply to refresh jobs. If a refresh fails:
 
 1. Open the Monitoring hub and locate the failed refresh job.
 1. Select the job to view error details and timing information.
-1. If the failure was a timeout, try again - the next refresh typically succeeds. If timeouts happen repeatedly, reduce the graph size by removing unused node types, edge types, or properties.
+1. If the failure indicates a transient service or capacity problem, retry the refresh. If failures continue, reduce the graph size by removing unused node types, edge types, or properties.
 1. If the failure was caused by a configuration error, open your graph model and verify that node and edge type mappings, key columns, and foreign key columns are correct.
 
 For more troubleshooting information, see [Troubleshooting and FAQ](troubleshooting-and-faq.md).
@@ -78,7 +78,7 @@ Individual GQL query metrics aren't currently available in the Monitoring hub. I
 When you run a GQL query in the **Code Editor**, observe:
 
 - **Response time**: How long the query takes to return results. Slow queries typically involve deep traversals, unbounded matches, or large result sets.
-- **Result size**: Large result sets (approaching the 64-MB truncation limit) indicate that the query needs tighter bounds or filtering. If results are truncated, add `LIMIT`, `FILTER`, or `WHERE` clauses to narrow the output.
+- **Result size**: Large result sets whose internal binary representation approaches 64 MB indicate that the query needs tighter bounds or filtering. A truncated result includes an additional status with public code `01000` and canonical GQLSTATUS `01M11`. Add `LIMIT`, `FILTER`, or `WHERE` clauses to narrow the output.
 - **Empty results after a successful refresh**: This situation usually means the graph model configuration doesn't match the underlying data. Verify that your node type mappings point to the correct source tables and columns.
 
 ### Common query performance problems and solutions
@@ -87,8 +87,8 @@ When you run a GQL query in the **Code Editor**, observe:
 | --- | --- | --- |
 | Query takes more than a few seconds | Deep traversal (high hop count) or missing filters | Add pattern-level `WHERE` clauses, reduce hop range, and apply `LIMIT`. |
 | Query returns no results | Node or edge type misconfiguration, or empty source tables | Verify model mappings and confirm source data exists. |
-| Query results are truncated | Result set exceeds 64 MB | Narrow projections with specific properties instead of `RETURN *`, and add `LIMIT`. |
-| Aggregations are slow or unstable | Result set exceeds 128 MB before aggregation | Add filters to reduce intermediate results before `GROUP BY`. |
+| Query results are truncated | The response's internal binary representation exceeds 64 MB. | Narrow projections with specific properties instead of `RETURN *`, and add `LIMIT`. |
+| Sorts or aggregations are slow or fail | The query produces a large intermediate result | Add filters before `ORDER BY` or `GROUP BY`, and project only the required properties. |
 | Query times out (20-minute limit) | Unbounded multihop traversal on a dense graph | Use `TRAIL` to prevent edge revisits, tighten hop bounds, and add `LIMIT`. |
 
 For detailed query optimization strategies, see [Optimize GQL query performance](gql-query-performance.md).
@@ -107,7 +107,7 @@ For more information, see [Install the Microsoft Fabric Capacity Metrics app](..
 
 - **Right-size your model**: Avoid adding node types, edge types, and properties you don't need. Smaller models refresh faster and use less memory.
 - **Filter early, project narrowly**: Use pattern-level `WHERE` clauses and return only the properties you need. Avoid `RETURN *`.
-- **Bound your results**: Apply `LIMIT` to high-cardinality queries. Keep results well under the 64-MB truncation threshold.
+- **Bound your results**: Apply `LIMIT` to high-cardinality queries. Keep the internal binary representation of responses below 64 MB.
 - **Keep traversals shallow**: Use the tightest hop range your scenario allows. Use `TRAIL` to prevent redundant paths in dense graphs.
 - **Monitor refresh trends**: Establish a baseline refresh duration and investigate when refreshes deviate significantly.
 - **Check capacity during slowdowns**: Use the **Capacity Metrics app** to determine whether capacity pressure is the cause.

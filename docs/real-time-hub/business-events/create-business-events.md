@@ -10,9 +10,6 @@ ms.topic: how-to
 
 This article shows you how to create and manage business events in Microsoft Fabric Real-Time hub. Business events are custom events that you can define, publish, and consume within the Microsoft Fabric ecosystem. By creating business events, you can enable event-driven automation and integration scenarios across your data estate. For more information about business events, see [Business events in Microsoft Fabric](business-events-overview.md).
 
-> [!IMPORTANT]
-> This feature is in [preview](../../fundamentals/preview.md).
-
 ## Create a business event from a new schema
 
 1. Go to **Business events** in Real-Time hub.

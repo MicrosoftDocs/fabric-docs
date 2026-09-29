@@ -6,7 +6,7 @@ author: sipa
 ms.author: sipa
 ms.topic: overview
 ms.custom:
-ms.date: 2/23/2026
+ms.date: 09/13/2026
 ms.search.form: 
 ---
 
@@ -16,9 +16,11 @@ Microsoft Fabric Maps let you visualize real-time and historical location data i
 
 Maps work with data in space and time. You can visualize real-time event data queried from [Eventhouses](../eventhouse.md) by using [Kusto Query Language (KQL)](/kusto/query/?view=microsoft-fabric&preserve-view=true), and historical or static spatial data stored in a [Lakehouse](/fabric/data-engineering/lakehouse-overview). This combination makes it possible to view live operational activity in geographic context while maintaining access to historical reference data.
 
+Maps can also display remotely hosted vector data from [external feature services](about-external-feature-services.md), including WFS, OGC API - Features, and Esri Feature Service endpoints. The same map can combine these queryable vector features with Fabric data and raster imagery.
+
 ## How maps fit into Real-Time Intelligence
 
-In a Real-Time Intelligence solution, data is ingested from streaming sources, processed and stored in Eventhouses, and a visual endpoint in this workflow by rendering query results as spatial layers that refresh as new data arrives. Each map is a first‑class Fabric item that belongs to a workspace and participates in Fabric's permission, sharing, and lifecycle management model.
+In a Real-Time Intelligence solution, you ingest data from streaming sources, process and store it in eventhouses, and use a visual endpoint in this workflow by rendering query results as spatial layers that refresh as new data arrives. Each map is a first‑class Fabric item that belongs to a workspace and participates in Fabric's permission, sharing, and lifecycle management model.
 
 Fabric Maps display data through layers, where each layer represents a specific dataset or query result. Layers can visualize points, lines, or polygons, allowing you to emphasize different spatial aspects of the data—such as density, movement, or geographic boundaries—within a single map view. For more information on data layers, see [Fabric Maps layers](about-layers.md).
 
@@ -30,11 +32,11 @@ This combination is especially useful in scenarios where incoming events need to
 
 ### Imagery data sources
 
-In addition to vector data layers, Fabric Maps support imagery data sources that provide raster basemap and custom imagery layers. These imagery layers, powered by Azure Maps or stored in OneLake, add geographic context beneath vector and real-time data, helping users interpret spatial patterns and operational activity within their physical environment. For more information, see [Cloud Optimized GeoTIFF (COG)](about-lakehouse-layers.md#raster-data).
+In addition to vector data layers, Fabric Maps support imagery data sources that provide raster basemap and custom imagery layers. These imagery layers, powered by Azure Maps, stored in OneLake, or retrieved from external WMS and WMTS services, add geographic context beneath vector and real-time data. For more information, see [Cloud Optimized GeoTIFF (COG)](about-lakehouse-layers.md#raster-data) and [WMS and WMTS imagery sources](about-external-sourced-imagery.md).
 
 ## Using Azure Maps services with Fabric Maps
 
-Fabric Maps are commonly used together with Azure Maps REST APIs to enrich spatial workflows. In routing and logistics scenarios, an Azure Maps service such as the Route Directions API can be used to calculate routes or determine optimized paths based on incoming location data. The resulting route geometry is stored in Fabric—typically in a Lakehouse or generated through a notebook—and then added to a map as a layer for visualization and analysis. For an example, see [Tutorial: Build real-time work order routing with Fabric Maps](tutorial-real-time-work-order-routing-application.md).
+You commonly use Fabric Maps together with Azure Maps REST APIs to enrich spatial workflows. In routing and logistics scenarios, use an Azure Maps service such as the Route Directions API to calculate routes or determine optimized paths based on incoming location data. Store the resulting route geometry in Fabric—typically in a lakehouse or generated through a notebook—and then add it to a map as a layer for visualization and analysis. For an example, see [Tutorial: Build real-time work order routing with Fabric Maps](tutorial-real-time-work-order-routing-application.md).
 
 This approach separates geospatial computation from visualization. Azure Maps services perform spatial processing, while Fabric Maps focus on presenting continuously updated geographic insights within a Real-Time Intelligence solution.
 
@@ -53,7 +55,7 @@ By integrating real-time analytics with geographic context, Maps help transform 
 
 Fabric Maps uses the same capacity units (CUs) as other Microsoft Fabric workloads. You don't need to purchase a separate map‑specific license or SKU.
 
-All Fabric Maps operations consume your organization's Fabric capacity. This includes activities such as rendering base map tiles, interacting with map layers, and generating tilesets. Capacity consumption varies based on the type and volume of map operations and is shared with other workloads running in the same Fabric capacity.
+All Fabric Maps operations consume your organization's Fabric capacity. This consumption includes activities such as rendering base map tiles, interacting with map layers, and generating tilesets. Capacity consumption varies based on the type and volume of map operations and is shared with other workloads running in the same Fabric capacity.
 
 | Meter Name   | Operation Name  | Description    | Unit of Measure  | Fabric Consumption Rate (CU Hours)  |
 |--------------|-----------------|----------------|------------------|-------------------------------------|
@@ -62,7 +64,7 @@ All Fabric Maps operations consume your organization's Fabric capacity. This inc
 
 You can monitor your graph workload's resource consumption and performance in the [Fabric Capacity Metrics app](../../enterprise/metrics-app.md).  
 
-For more information on pricing and capacity units, see [Microsoft Fabric pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/).
+For more information about pricing and capacity units, see [Microsoft Fabric pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/).
 
 ## Next steps
 

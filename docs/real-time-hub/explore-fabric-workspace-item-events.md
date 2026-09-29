@@ -3,7 +3,8 @@ title: Explore Fabric workspace item events in Fabric Real-Time hub
 description: This article shows how to explore Fabric workspace item events in Fabric Real-Time hub.
 ms.reviewer: majia
 ms.topic: how-to
-ms.date: 12/11/2025
+ms.date: 09/01/2026
+ai-usage: ai-assisted
 ---
 
 # Explore Fabric workspace item events in Fabric Real-Time hub

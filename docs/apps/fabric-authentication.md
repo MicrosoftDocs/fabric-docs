@@ -48,7 +48,7 @@ For deployed applications, redeploy to push the updated settings:
 npx rayfin up
 ```
 
-For deployed apps, `npx rayfin up` adds your deployed app callback URL to `allowedRedirectUris`.
+For deployed apps, `npx rayfin up` adds your deployed app origin to `allowedRedirectUris`. For configuration and security guidance, see [Configure authentication redirect URIs](configure-authentication-redirect-uris.md).
 
 ## Install the Fabric auth provider (optional)
 
@@ -285,5 +285,6 @@ The sign-in flow expires after 5 minutes. If you start the sign-in process but d
 ## Related content
 
 - [Configure authentication](authentication.md)
+- [Configure authentication redirect URIs](configure-authentication-redirect-uris.md)
 - [Deploy to Fabric](deploy-app.md)
 - [Define data models](data-models.md)

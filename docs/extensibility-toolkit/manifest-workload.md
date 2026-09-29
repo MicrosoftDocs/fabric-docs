@@ -52,7 +52,7 @@ In the Starter-Kit, populates the placeholders every time the Manifest is create
 
 - DevGateway: Register your local development instance with Fabric so your app can load inside the Fabric portal during development.
 - DevServer: Which is providing the information to the Fabric 
-- Admin Portal: for test and production, upload the manifest package through the Fabric Admin Portal as part of publishing. See [Publish your workload](publishing-overview.md).
+- Workloads: For test and production, upload the manifest package through **OneLake catalog** > **Govern** > **Configurations** > **Workloads** as part of publishing. See [Publish your workload](publishing-overview.md).
 
 ## Backend folder limits
 

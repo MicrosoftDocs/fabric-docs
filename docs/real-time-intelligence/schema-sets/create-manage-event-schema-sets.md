@@ -7,7 +7,7 @@ ms.custom:
   - ai-gen-docs-bap
   - ai-gen-description
   - ai-seo-date:08/07/2025
-ms.date: 08/05/2026
+ms.date: 09/08/2026
 ms.search.form: Schema Registry
 ai-usage: ai-assisted
 ---
@@ -23,28 +23,41 @@ To create an event schema set, you need the **Admin**, **Member**, or **Contribu
 ## Create a schema set
 
 1. Sign in to [Microsoft Fabric](https://fabric.microsoft.com/).
-1. Select **My workspace** on the left navigation bar.
-1. On the **My workspace** page, select **+ New item** on the command bar. 
-1. On the **New item** page, search for **Event schema set**, and then select **Event Schema Set (preview)**.
+1. Open the workspace where you want to create the schema set.
+1. Select **+ New item** on the command bar.
+1. On the **New item** page, search for **Event schema set**, and then select **Event schema set**.
 
-    :::image type="content" source="./media/create-manage-event-schema-sets/new-item-event-schema-set.png" alt-text="Screenshot of the New item page with Event schema set (preview) selected." lightbox="./media/create-manage-event-schema-sets/new-item-event-schema-set.png":::
+    :::image type="content" source="./media/create-manage-event-schema-sets/new-item-event-schema-set.png" alt-text="Screenshot of the New item page with Event schema set selected." lightbox="./media/create-manage-event-schema-sets/new-item-event-schema-set.png":::
 
-1. In the **New event schema set (preview)** window, enter a **name** for the schema set, and then select **Create**. The name must contain fewer than **256 UTF-8 characters**. 
+1. In the **New event schema set** window, enter a **name** for the schema set, such as `Fabrikam device telemetry`, and then select **Create**. The name must contain fewer than **256 UTF-8 characters**.
 
-    :::image type="content" source="./media/create-manage-event-schema-sets/new-schema-set-window.png" alt-text="Screenshot that shows the New event schema set (preview) window." lightbox="./media/create-manage-event-schema-sets/new-schema-set-window.png":::
+    :::image type="content" source="./media/create-manage-event-schema-sets/new-schema-set-window.png" alt-text="Screenshot that shows the New event schema set window." lightbox="./media/create-manage-event-schema-sets/new-schema-set-window.png":::
 
-1. Creation of the new event schema set in your workspace can take a few seconds. After the schema set is created, you're directed to the main editor where you can start with adding a schema to the schema set.
+1. Wait for creation to finish. The schema set page opens. You can [create a schema](create-manage-event-schemas.md) or [import existing Avro schemas](import-event-schemas.md).
 
-    :::image type="content" source="./media/create-manage-event-schema-sets/editor.png" alt-text="Screenshot that shows the main editor for a schema set." lightbox="./media/create-manage-event-schema-sets/editor.png":::
+    :::image type="content" source="./media/create-manage-event-schema-sets/editor.png" alt-text="Screenshot that shows a newly created schema set and options to add schemas." lightbox="./media/create-manage-event-schema-sets/editor.png":::
+
+## Explore a schema set
+
+Open the event schema set from its workspace or from the **Event schema registry** page in Real-Time hub. The schema set page lists the schemas in that set.
+
+- Search for a schema by name.
+- Preview a schema to inspect its definition without leaving the list.
+- Open a schema to view its definition and [version history](manage-event-schema-versions.md).
+- Select multiple schemas to download their definitions.
+
+The schema set page and the individual schema page are separate views. Use the containing schema set link when you want to return to the group of related schemas.
+
+<!-- Screenshot: media/create-manage-event-schema-sets/schema-set-list.png; capture the populated schema set, preview, and navigation. -->
 
 ## Configure settings for a schema set
 
-Once you have at least one schema in the schema set, you can configure settings such as schema set name, description, sensitivity label, and endorsement, select the **gear** button on the ribbon in the top-left corner.
+Open the schema set settings to manage its name and description. Fabric governance settings, such as sensitivity labels and endorsement, apply to the schema set item. For access requirements, see [Permissions](schema-registry-overview.md#permissions).
 
 :::image type="content" source="./media/create-manage-event-schema-sets/schema-set-settings.png" alt-text="Screenshot that shows the settings for a schema set." lightbox="./media/create-manage-event-schema-sets/schema-set-settings.png":::
 
-## Next step
+## Related content
 
-Now, add a schema to the event schema set by following instructions from [Create and manage event schemas in schema sets](create-manage-event-schemas.md).
-
-
+- [Create and manage event schemas in schema sets](create-manage-event-schemas.md).
+- [Import event schemas](import-event-schemas.md).
+- [Manage event schema versions](manage-event-schema-versions.md).

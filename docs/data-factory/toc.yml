@@ -85,40 +85,38 @@
         href: copilot-fabric-data-factory.md
       - name: Get started with Copilot in Data Factory
         href: copilot-fabric-data-factory-get-started.md
-  - name: Migrate to Fabric
+  - name: Upgrade to Fabric
     items:
     - name: Compare Azure Data Factory to Data Factory in Fabric
       href: compare-fabric-data-factory-and-azure-data-factory.md
-    - name: Migration planning
-      href: migrate-planning-azure-data-factory.md
+    - name: Upgrade planning
+      href: upgrade-planning-azure-data-factory.md
     - name: Upgrade pipelines to Fabric
       items:
-      - name: Pipeline assessment tool
-        href: /azure/data-factory/how-to-assess-your-azure-data-factory-to-fabric-data-factory-migration?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
       - name: Upgrade Azure Data Factory pipelines to Fabric
-        href: /azure/data-factory/how-to-upgrade-your-azure-data-factory-pipelines-to-fabric-data-factory?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
+        href: how-to-upgrade-your-azure-data-factory-pipelines-to-fabric-data-factory.md
       - name: Upgrade Azure Synapse Analytics pipelines to Fabric
-        href: /azure/data-factory/how-to-upgrade-your-azure-synapse-analytics-pipelines-to-fabric-data-factory?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
+        href: how-to-upgrade-your-azure-synapse-analytics-pipelines-to-fabric-data-factory.md
       - name: Upgrade Mapping Data Flows pipelines to Fabric
         href: dataflow-gen2-mapping-data-flows-transforms-upgrade.md
       - name: Upgrade pipelines with PowerShell
         items:
         - name: Pipeline upgrade with PowerShell overview
-          href: migrate-pipelines-powershell-upgrade-module-for-azure-data-factory-to-fabric.md
+          href: upgrade-pipelines-powershell-module-for-azure-data-factory-to-fabric.md
         - name: Tutorial PowerShell pipeline upgrade
-          href: migrate-pipelines-powershell-upgrade-module-tutorial.md
+          href: upgrade-pipelines-powershell-module-tutorial.md
         - name: Build your resolutions file
-          href: migrate-pipelines-how-to-add-connections-to-resolutions-file.md
+          href: upgrade-pipelines-how-to-add-connections-to-resolutions-file.md
         - name: Find your Fabric workspace ID
-          href: migrate-pipelines-how-to-find-your-fabric-workspace-id.md
+          href: upgrade-pipelines-how-to-find-your-fabric-workspace-id.md
     - name: Connector capability comparison
       href: connector-parity.md
     - name: Migrate global parameters to variable libraries
       href: convert-global-parameters-to-variable-libraries.md
-    - name: Migration best practices
-      href: migration-best-practices.md
+    - name: Upgrade best practices
+      href: upgrade-best-practices.md
     - name: Bring your Azure Data Factory to Fabric
-      href: migrate-pipelines-azure-data-factory-item.md 
+      href: upgrade-pipelines-azure-data-factory-item.md 
     - name: How to ingest data from Azure Data Factory to Fabric
       href: /azure/data-factory/how-to-ingest-data-into-fabric-from-azure-data-factory?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
     - name: Dataflows
@@ -1054,8 +1052,8 @@
             href: create-first-dataflow-gen2.md
           - name: Get data in dataflows
             href: get-data-dataflow-gen2.md
-          - name: My Queries (Preview)
-            href: dataflow-gen2-my-queries.md
+          - name: My queries and shared queries
+            href: dataflow-gen2-my-queries-shared-queries.md
           - name: Use a dataflow in a pipeline
             href: tutorial-dataflows-gen2-pipeline-activity.md
           - name: Save a draft of your dataflow
@@ -1077,6 +1075,10 @@
                 href: dataflow-gen2-advanced-edit-data-destinations.md
               - name: Excel advanced data destination
                 href: dataflow-gen2-data-destinations-excel-advanced.md
+          - name: Send email from Dataflow Gen2 (preview)
+            href: send-email-dataflow-gen2.md
+          - name: Back up query data to a lakehouse (preview)
+            href: back-up-query-data-lakehouse.md
           - name: Authoring tools
             items:
               - name: Machine learning model in Dataflow Gen2
@@ -1091,7 +1093,7 @@
                 href: dataflow-gen2-preview-only-step.md
               - name: Partitioned compute (Preview)
                 href: dataflow-gen2-partitioned-compute.md
-              - name: Staged data options (Preview)
+              - name: Staged data options
                 href: dataflow-gen2-staged-data-options.md
               - name: Relative references with Fabric connectors
                 href: dataflow-gen2-relative-references.md
@@ -1099,6 +1101,8 @@
                 href: dataflow-parameters.md
               - name: Variable libraries in Dataflow Gen2
                 href: dataflow-gen2-variable-library-integration.md    
+              - name: Data visuals (Preview)
+                href: dataflow-gen2-data-visuals.md
           - name: Mapping data flow transforms (Preview)
             href: dataflow-gen2-mapping-data-flows-transforms.md
           - name: Dataflow refresh
@@ -1205,6 +1209,10 @@
                 href: azure-databricks-activity.md
               - name: Azure Machine Learning activity
                 href: azure-machine-learning-activity.md
+              - name: Business action activity
+                href: business-actions-activity.md
+              - name: Fabric Actions activity
+                href: fabric-actions-activity.md
               - name: Fail activity
                 href: fail-activity.md
               - name: Filter activity
@@ -1253,6 +1261,8 @@
         href: cicd-pipelines.md
       - name: Run, schedule, or trigger pipelines
         href: pipeline-runs.md
+      - name: Run conditions
+        href: pipeline-run-conditions.md
       - name: CI/CD for pipelines
         href: cicd-pipelines.md
       - name: Expressions and functions
@@ -1260,9 +1270,12 @@
       - name: Pipeline sample templates
         href: templates.md
       - name: Monitor pipeline runs
-        href: monitor-pipeline-runs.md
         items:
-          - name: Browse pipeline runs in the Monitoring Hub
+          - name: Choose how to monitor pipeline runs
+            href: monitor-pipeline-runs.md
+          - name: Monitor pipeline runs in the new Monitoring hub (preview)
+            href: monitor-pipeline-runs-new-monitoring-hub.md
+          - name: Monitor pipeline runs in the legacy Monitoring hub
             href: monitoring-hub-pipeline-runs.md
           - name: Pipeline run alerts
             href: create-alerts-for-pipeline-runs.md

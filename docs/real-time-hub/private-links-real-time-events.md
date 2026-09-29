@@ -37,5 +37,5 @@ To restore event delivery, disable the **Block Public Internet Access** tenant s
 ## Related content
 
 - [About tenant-level private links](/fabric/security/security-private-links-overview)
-- [Workspace private links for Azure and Fabric events](workspace-private-links-real-time-events.md)
+- [Workspace private links for Azure, Fabric, and Business events](workspace-private-links-real-time-events.md)
 - [Paused event configurations](fabric-events-paused-state.md)

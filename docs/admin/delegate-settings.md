@@ -1,16 +1,16 @@
 ---
 title: Delegate tenant settings
-description: Learn how you can delegate settings in the Microsoft Fabric admin portal, from the tenant to the capacity, and from the capacity to workspaces.
+description: Learn how you can delegate settings in Microsoft Fabric, from the tenant to the capacity, and from the capacity to workspaces.
 author: msmimart
 ms.author: mimart
 ms.topic: how-to
 ms.date: 11/16/2023
-#customer intent: Learn how to delegate settings in the Microsoft Fabric admin portal.
+#customer intent: Learn how to delegate settings in Microsoft Fabric.
 ---
 
 # Delegate tenant settings
 
-Fabric allows organizations to delegate settings from the tenant to the capacity, and from the capacity to workspaces. Delegation allows the organization to give admins control over specific settings relevant to their area of responsibility. Delegation prevents centralized admins from becoming a bottle neck for teams across the organization that require control over specific settings.
+Fabric allows organizations to delegate settings from the tenant to the capacity, and from the capacity to workspaces. Delegation allows the organization to give admins control over specific settings relevant to their area of responsibility. Delegation prevents centralized admins from becoming a bottleneck for teams across the organization that require control over specific settings.
 
 Here are some key concepts related to delegating settings in Fabric:
 
@@ -40,7 +40,7 @@ Follow these steps to delegate settings to workspaces:
 
 3. Select the option to delegate to a workspaces. Some settings can't be delegated to workspaces. In such cases, there isn't an option to delegate to a workspace.
 
-4. Select **Apply**
+4. Select **Apply**.
 
 ## Audit your delegated settings
 

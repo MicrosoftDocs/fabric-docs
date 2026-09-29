@@ -64,7 +64,8 @@ After you've selected the Azure subscription to use with Autoscale, and created 
 
 The following steps show you how to enable and associate Autoscale with the resource group.
 
-1. Open the **Power BI Admin portal** and select **Capacity settings** from the left pane. Information about your Power BI Premium capacity appears.
+1. Go to **OneLake catalog** > **Govern** > **Capacities**. Information about your Power BI Premium capacity appears.
+
 1. Select **Manage Autoscale**  to enable and configure **Autoscale**. The **Autoscale settings** pane appears. Select  **Enable Autoscale**.
 1. Select the Azure subscription to use with Autoscale. Only subscriptions available to the current user are displayed, which is why you must be at least a *contributor* for the subscription.
 1. After you select your subscription, choose the **Resource group** you created in the previous section from the list of resource groups available to the subscription. Assign the maximum number of v-cores to use for Autoscale, and then select **Save**.
@@ -79,10 +80,13 @@ You only pay for autoscale when it's triggered. Autoscale is triggered when [int
 
 To disable Autoscale, follow these steps:
 
-1. Open the **Power BI Admin portal** and select **Capacity settings**.
-1. Select the capacity you want to disable Autoscale for.
-1. Select **Manage Autoscale**.
-1. Clear the **Enable Autoscale** checkbox.
+1. Go to **OneLake catalog** > **Govern** > **Capacities**.
+
+2. Select the capacity you want to disable Autoscale for.
+
+3. Select **Manage Autoscale**
+
+4. Clear the **Enable Autoscale** checkbox.
 
 ## Related content
 

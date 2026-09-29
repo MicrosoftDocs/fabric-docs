@@ -33,9 +33,9 @@ Follow these steps to change the default capacity region when you're creating a 
 
 1. In Fabric, select **settings** (&#9881;) and from the menu select **Admin portal**.
 
-2. In the *Admin portal*, select **Capacity settings**.
+2. Go to **OneLake catalog** > **Govern** > **Capacities**.
 
-3. Select **Set up new capacity**.
+3. Select **New capacity**.
 
 4. From the **Region** dropdown menu, select the region you want to use for this capacity.
 
@@ -43,9 +43,9 @@ Follow these steps to change the default capacity region when you're creating a 
 
 1. In Fabric, select **settings** (&#9881;) and from the menu select **Admin portal**.
 
-2. In the *Admin portal*, select **Capacity settings**.
+2. Go to **OneLake catalog** > **Govern** > **Capacities**.
 
-3. Select **Set up new capacity**.
+3. Select **New capacity**.
 
 4. From the **Region** dropdown menu, select the region you want to use for this capacity.
 

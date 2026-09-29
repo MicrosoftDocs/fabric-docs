@@ -4,7 +4,7 @@ description: Learn how eventstreams can help you capture, transform, and route r
 ms.reviewer: xujiang1
 ms.topic: concept-article
 ms.custom: sfi-image-nochange
-ms.date: 04/29/2026
+ms.date: 09/02/2026
 ms.search.form: Eventstream Overview
 ai-usage: ai-assisted
 ---
@@ -14,6 +14,24 @@ ai-usage: ai-assisted
 Use the eventstreams feature in Microsoft Fabric Real-Time Intelligence to bring real-time events into Fabric, transform them, and then send them to various destinations without writing any code. You create an eventstream, add event data sources to the stream, optionally add transformations to transform the event data, and then send the data to supported destinations.
 
 Also, with Apache Kafka endpoints available for eventstreams, you can send or consume real-time events by using the Kafka protocol.
+
+## Two ways to build an eventstream
+
+When you create a new event stream, you can choose between two experiences:
+
+- **Existing eventstream experience.** The eventstream capabilities available
+  today continue to work as before. See
+  [Create an Eventstream in Microsoft Fabric](./create-manage-an-eventstream.md).
+- **Schema-aware eventstream (Preview).** An opt-in experience for ingesting,
+  understanding, and processing schematized and unschematized events. It
+  includes enhanced data preview, the Classifier workflow, Event SchemaSet
+  integration, and mixed processing for schematized, classified, and untyped
+  events. See
+  [Create a schema-aware Eventstream (Preview)](./create-schema-aware-eventstream.md).
+
+To compare the capabilities and decide whether to opt in, see
+[Schema-aware Eventstreams overview (Preview)](./schema-aware-eventstreams-overview.md).
+The rest of this article describes the existing eventstream experience.
 
 ## Bring events into Fabric
 
@@ -48,8 +66,20 @@ You can attach multiple destinations in an eventstream to simultaneously receive
 
 Eventstreams provide schema management capabilities to help you govern and validate the structure of your streaming data:
 
-- **Schema Registry (preview)**: Register and version schemas centrally by using the Fabric Schema Registry to manage schema evolution across your eventstreams. For more information, see [Use event schemas in eventstreams](../schema-sets/use-event-schemas.md).
-- **Multiple schema inferencing (preview)**: Infer and work with multiple schemas within a single eventstream. Design diverse transformation paths by selecting the appropriate inferred schema for each path. For more information, see [Enhance event processing by using multiple schema inferencing](process-events-with-multiple-schemas.md).
+- **Schema-aware Eventstreams (Preview)**: An opt-in experience that processes
+  schematized and unschematized events in one pipeline. It includes the
+  Classifier workflow, Event SchemaSet integration, enhanced data preview, and
+  mixed processing for schematized, classified, and untyped events. For more
+  information, see
+  [Schema-aware Eventstreams overview (Preview)](./schema-aware-eventstreams-overview.md).
+- **Schema Registry**: Register, import, version, and compare schemas centrally by using generally available event schema sets. For more information, see [Schema Registry overview](../schema-sets/schema-registry-overview.md).
+- **Multiple schema inferencing (preview)**: In the existing Eventstream
+  experience, infer and work with multiple schemas within one Eventstream.
+  Design transformation paths by selecting the inferred schema for each path.
+  For more information, see
+  [Enhance event processing by using multiple schema inferencing](process-events-with-multiple-schemas.md).
+  For unschematized events with different shapes in a schema-aware Eventstream,
+  see [Classify unschematized events (Preview)](./process-events-with-classifier.md).
 - **Confluent Schema Registry–based deserialization (preview)**: When you ingest data from Confluent Cloud for Apache Kafka, eventstreams can use Confluent Schema Registry to deserialize schema-encoded messages, improving interoperability with Confluent-based streaming ecosystems.
 
 These features improve schema governance and interoperability when you consume varied streams in your eventstreams.
@@ -106,5 +136,3 @@ Fabric eventstreams have the following general limitations. Before you work with
 
 - [Create an eventstream in Microsoft Fabric](./create-manage-an-eventstream.md)
 - [Enrich events with reference data](./enrich-events-with-reference-data.md)
-
-

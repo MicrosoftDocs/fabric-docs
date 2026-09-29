@@ -50,6 +50,9 @@ A notebook publishes a business event by providing:
 > [!NOTE]
 > The properties `eventSchemaSetWorkspace` and `eventSchemaSet` support both Fabric item names and Fabric item IDs.
 
+> [!NOTE]
+> Workspace private links can block cross-workspace business event publishing. For Business events, the source workspace is the workspace that contains the Event Schema Set. If that workspace blocks public access, publish from a notebook in the same workspace or establish a private link from the publisher's network to the source workspace. For more information, see [Workspace private links for Azure, Fabric, and Business events](../workspace-private-links-real-time-events.md).
+
 For example, a simple event for delayed orders might look like: 
 
 ```python

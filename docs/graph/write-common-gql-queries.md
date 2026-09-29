@@ -1,8 +1,8 @@
 ---
 title: Write common GQL queries in Microsoft Fabric
-description: Learn how to write common GQL queries in Microsoft Fabric, including neighbor queries, multi-hop traversal, shared connection patterns, and entity existence checks.
+description: Learn how to write common GQL queries in Microsoft Fabric, including neighbor queries, multihop traversal, correlated subqueries, shared connections, and entity existence checks.
 ms.topic: how-to
-ms.date: 05/20/2026
+ms.date: 09/18/2026
 ms.reviewer: splantikow
 ai-usage: ai-assisted
 ---
@@ -11,11 +11,13 @@ ai-usage: ai-assisted
 
 This article provides practical GQL query patterns for common graph tasks in Microsoft Fabric: finding neighbors, traversing multihop connections, identifying shared connections, counting relationships, and finding entities with no connections.
 
-Examples use the [social network sample dataset](sample-datasets.md). For full language reference, see [GQL language guide](gql-language-guide.md).
+The examples use the [social network sample dataset](sample-datasets.md). For an end-to-end explanation of query flow and statements, see [GQL language guide](gql-language-guide.md).
+Use this article when you know the graph task you want to accomplish. For systematic instruction on constructing node, edge, and path patterns, see [Write graph pattern queries](write-graph-pattern-queries.md). For detailed filtering and aggregation workflows, see [Filter and aggregate graph data](filter-aggregate-graph-data.md).
+
 
 ## Prerequisites
 
-- A graph item with data loaded. If you're new to graph, complete the [tutorial](tutorial-introduction.md) first.
+- A graph item built from the [social network sample dataset](sample-datasets.md), with the node types, edge types, and properties described in the [social network schema example](gql-schema-example.md).
 - Familiarity with basic `MATCH` and `RETURN` queries. See [GQL language guide](gql-language-guide.md).
 
 ## Find direct neighbors
@@ -40,7 +42,7 @@ RETURN c.name, c.url
 
 Use variable-length patterns with `{min,max}` to traverse more than one hop.
 
-Find people two hops away - friends of Alice's friends who Alice doesn't directly know:
+Find people reached by exactly two `knows` edges from Alice:
 
 ```gql
 MATCH (alice:Person WHERE alice.firstName = 'Alice')-[:knows]->{2,2}(fof:Person)
@@ -56,33 +58,64 @@ RETURN DISTINCT dst.firstName, dst.lastName
 LIMIT 100
 ```
 
+Find one shortest path from Alice to each person reachable within four hops:
+
+<!-- GQL Query: Added 2026-09-17 -->
+```gql
+MATCH p = ANY SHORTEST
+  (src:Person WHERE src.firstName = 'Alice')-[:knows]->{1,4}(dst:Person)
+RETURN dst.firstName, dst.lastName, path_length(p) AS hopCount
+ORDER BY hopCount, dst.lastName
+LIMIT 100
+```
+
+If multiple shortest paths reach the same person in the same number of hops, `ANY SHORTEST` returns one of them without a deterministic tie choice.
+
+Inline predicates constrain which paths are eligible for `ANY SHORTEST`.
+Postfilters apply after a shortest path is selected. For examples, see [Place
+predicates before or after path
+selection](gql-graph-patterns.md#place-predicates-before-or-after-path-selection).
+
 > [!TIP]
-> Always set an upper bound on variable-length traversal. Unbounded patterns across large or dense graphs can hit query timeout limits. See [Current limitations](limitations.md).
+> Use a finite upper bound for predictable query cost. Unbounded `ALL WALK` traversal isn't supported. Other unbounded path modes can still produce large results. See [Current limitations](limitations.md#variable-length-paths).
 
 ## Count relationships per entity
 
 Use `GROUP BY` with `count(*)` to count how many relationships each entity has.
+For detailed grouping, aggregate filtering, and conditional routing patterns,
+see [Filter and aggregate graph data](filter-aggregate-graph-data.md).
 
 Count how many friends each person has, ordered from most to fewest:
 
 ```gql
 MATCH (p:Person)-[:knows]->(friend:Person)
-LET name = p.firstName || ' ' || p.lastName
-RETURN name, count(*) AS friendCount
-GROUP BY name
+LET personId = p.id, name = p.firstName || ' ' || p.lastName
+RETURN personId, name, count(*) AS friendCount
+GROUP BY personId, name
 ORDER BY friendCount DESC
 LIMIT 20
 ```
 
-Count how many employees work at each company:
+## Calculate a value for each entity
 
+Use a correlated `CALL` subquery to calculate a value for each input row. Variables from the outer query are implicitly available inside the subquery.
+
+Calculate the number of friends for each person:
+
+<!-- GQL Query: Added 2026-09-16 -->
 ```gql
-MATCH (p:Person)-[:workAt]->(c:Company)
-LET companyName = c.name
-RETURN companyName, count(*) AS employeeCount
-GROUP BY companyName
-ORDER BY employeeCount DESC
+MATCH (p:Person)
+CALL {
+  MATCH (p)-[:knows]->(friend:Person)
+  RETURN count(*) AS friendCount
+}
+RETURN p.firstName, p.lastName, friendCount
+ORDER BY friendCount DESC
 ```
+
+Outer variables remain available after `CALL`. Of the variables created inside the subquery, only returned columns become available outside it. An ungrouped `count(*)` returns `0` when no matching friends exist, so this query retains people who have no friends.
+
+Ordinary `CALL` drops an outer row when the subquery returns no rows and produces one output row for each subquery row when it returns multiple rows. Use `OPTIONAL CALL` when you need to preserve an outer row that has no matching subquery row.
 
 ## Find shared connections
 
@@ -111,24 +144,30 @@ LIMIT 100
 
 ## Find entities with no relationships
 
-Use `OPTIONAL MATCH` followed by a null check to find nodes that have no matching relationship.
+Use `NOT EXISTS` to find nodes for which a correlated subquery returns no rows.
 
 Find people who don't work at any company:
 
+<!-- GQL Query: Added 2026-09-16 -->
 ```gql
 MATCH (p:Person)
-OPTIONAL MATCH (p)-[:workAt]->(c:Company)
-FILTER c IS NULL
+WHERE NOT EXISTS {
+  MATCH (p)-[:workAt]->(c:Company)
+  RETURN c
+}
 RETURN p.firstName, p.lastName
 LIMIT 100
 ```
 
 Find posts with no comments:
 
+<!-- GQL Query: Added 2026-09-16 -->
 ```gql
 MATCH (post:Post)
-OPTIONAL MATCH (comment:Comment)-[:replyOf]->(post)
-FILTER comment IS NULL
+WHERE NOT EXISTS {
+  MATCH (comment:Comment)-[:replyOf]->(post)
+  RETURN comment
+}
 RETURN post.id, post.content
 LIMIT 100
 ```
@@ -141,9 +180,9 @@ Find people with more than 10 friends:
 
 ```gql
 MATCH (p:Person)-[:knows]->(friend:Person)
-LET name = p.firstName || ' ' || p.lastName
-RETURN name, count(*) AS friendCount
-GROUP BY name
+LET personId = p.id, name = p.firstName || ' ' || p.lastName
+RETURN personId, name, count(*) AS friendCount
+GROUP BY personId, name
 FILTER friendCount > 10
 ORDER BY friendCount DESC
 ```
@@ -153,9 +192,7 @@ ORDER BY friendCount DESC
 
 ## Related content
 
-- [Write graph pattern queries](write-graph-pattern-queries.md)
-- [Filter and aggregate graph data](filter-aggregate-graph-data.md)
 - [GQL language guide](gql-language-guide.md)
 - [GQL graph patterns](gql-graph-patterns.md)
+- [Filter and aggregate graph data](filter-aggregate-graph-data.md)
 - [Optimize GQL query performance](gql-query-performance.md)
-- [Current limitations](limitations.md)

@@ -20,7 +20,7 @@ You can activate, configure, and query model endpoints by using a [public-facing
 
 ## Prerequisites
 
-- Your tenant has machine learning model endpoints enabled by default. If your administrator wants to disable this feature, they can turn off [the tenant switch for ML model endpoints](../admin/service-admin-portal-microsoft-fabric-tenant-settings.md) in the Fabric admin portal.
+- Your tenant has machine learning model endpoints enabled by default. If your administrator wants to disable this feature, they can turn off [the tenant switch for ML model endpoints](../admin/service-admin-portal-microsoft-fabric-tenant-settings.md) in **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**.
 
 ## Limitations
 

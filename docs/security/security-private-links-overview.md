@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.reviewer: karthikeyana
 ms.topic: concept-article
-ms.date: 08/21/2025
+ms.date: 08/26/2026
 ---
 
 # Private links for Fabric tenants
@@ -40,7 +40,7 @@ Using private endpoints with Fabric provides the following benefits:
 
 ## Understand private endpoint configuration
 
-There are two tenant settings in the Fabric admin portal involved in Private Link configuration: **Azure Private Links** and **Block Public Internet Access**.
+Two settings in **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings** control Private Link configuration: **Azure Private Links** and **Block Public Internet Access**.
 
 If Azure Private Link is properly configured and **Block public Internet access** is **enabled**:
 
@@ -156,17 +156,19 @@ Limitations:
 
 Customers can provision and utilize Healthcare data solutions in Microsoft Fabric through a private link. In a tenant where private link is enabled, customers can deploy Healthcare data solution capabilities to execute comprehensive data ingestion and transformation scenarios for their clinical data. Also included is the ability to ingest healthcare data from various sources, such as Azure Storage accounts, and more.
 
-### Azure and Fabric Events
+### Azure, Fabric, and Business events
 
 Fabric events (such as Job events, Workspace item events, and OneLake events) support Private Link at the tenant level without affecting event delivery, because they originate from within the tenant. However, when [workspace-level private links](security-workspace-level-private-links-overview.md) are configured to block public access on the workspace where the events originate (the source workspace), event consumers such as Activator alerts or eventstreams in other workspaces are blocked from consuming those events unless a private link is established from the consumer's network to the source workspace.
 
 Azure events (such as Azure Blob Storage events) are affected by both tenant-level and workspace-level private links. When the **Block Public Internet Access** tenant setting is enabled, Azure event sources outside the tenant are blocked from delivering events into Fabric entirely:
 * New configurations to consume Azure events are blocked.
-* Existing configurations consuming Azure events stop delivering events. The system detects the configuration change and puts the consumer in a paused state.
+* Existing configurations consuming Azure events stop delivering events because the events are dropped at the Azure source. The consumer doesn't enter a paused state.
 
 Additionally, when you configure a consumer to receive Azure events, an eventstream item is created in a Fabric workspace to represent the Azure source. Workspace-level private links affect Azure event consumption in the same way as Fabric events: if the workspace containing this eventstream item blocks public network access, consumers in other workspaces are blocked unless a private link is established.
 
-For more information, see [Tenant private links for Azure and Fabric events](/fabric/real-time-hub/private-links-real-time-events).
+For Business events, the source workspace is the workspace that contains the Event Schema Set. If that workspace blocks public access, publishers and consumers in other workspaces need a private link to the source workspace.
+
+For more information, see [Tenant private links for Azure and Fabric events](../real-time-hub/private-links-real-time-events.md) and [Workspace private links for Azure, Fabric, and Business events](../real-time-hub/workspace-private-links-real-time-events.md).
   
 <!--### Other Fabric items
 

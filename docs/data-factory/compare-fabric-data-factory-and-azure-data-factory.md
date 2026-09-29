@@ -16,7 +16,7 @@ ai-usage: ai-assisted
 
 [Fabric Data Factory](data-factory-overview.md) is the next generation of [Azure Data Factory](/azure/data-factory/introduction). By using OneLake as the unified storage layer, Fabric Data Factory reduces infrastructure complexity and data movement. Pipelines can work directly with live data through [OneLake shortcuts](../onelake/onelake-shortcuts.md) and [cross-tenant sharing](../governance/external-data-sharing-overview.md).
 
-This article compares the core features, activities, connectors, and infrastructure components of both services. To plan a migration, see the [migration planning guide](migrate-planning-azure-data-factory.md).
+This article compares the core features, activities, connectors, and infrastructure components of both services. To plan an upgrade, see the [upgrade planning guide](upgrade-planning-azure-data-factory.md).
 
 ## Compare features side by side
 

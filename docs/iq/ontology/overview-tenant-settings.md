@@ -9,9 +9,11 @@ ms.topic: concept-article
 
 Before you can use all the features of ontology (preview), you must enable certain settings on your Fabric tenant. This article describes required and optional tenant settings for using ontology.
 
-[Fabric administrators](../../admin/roles.md) can grant access to these settings in the [admin portal](../../admin/admin-center.md) under [tenant settings](../../admin/tenant-settings-index.md).
+[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
-## Ontology item (preview)
+[Fabric administrators](../../admin/roles.md) can grant access to these settings in **OneLake catalog** > **Govern** > **Configurations** > [**Tenant settings**](../../admin/tenant-settings-index.md).
+
+## Ontology item
 
 This setting is **required** to create ontology (preview) items: *Enable Ontology item (preview)*.
 

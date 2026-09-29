@@ -29,7 +29,7 @@ For background on what Fabric governance covers and why it matters, see [Governa
 
 - A Microsoft Fabric tenant that already contains data you can browse.
 - Access to at least one workspace or item, so items appear for you in the OneLake catalog. You see only the items you have permission to access.
-- Purview-dependent capabilities—sensitivity labels, protection policies, DLP, and Microsoft Purview integration—require extra Microsoft Purview licensing. Everything else works with your Fabric license.
+- Purview-dependent capabilities—sensitivity labels, protection policies, and DLP—require extra Microsoft Purview licensing. Everything else works with your Fabric license.
 
 ## Start in the OneLake catalog
 
@@ -63,7 +63,6 @@ Classify sensitive data so users and systems recognize it, then apply policies t
 | Label data as public, general, confidential, or restricted so users and automated systems can identify what needs extra care | [Sensitivity labels](information-protection.md) |
 | Restrict who can access an item based on the sensitivity label it carries | [Protection policies](protection-policies-overview.md) |
 | Block or alert on risky data movement, for example exporting an item that carries a specific label | [Data loss prevention (DLP) policies](data-loss-prevention-configure.md) |
-| Govern Fabric alongside the rest of your data estate from a single Microsoft Purview experience | [Microsoft Purview and Fabric](microsoft-purview-fabric.md) |
 
 ## Trace how data flows and what depends on it
 
@@ -84,7 +83,7 @@ Give partners, suppliers, or subsidiaries access to Fabric data without copying 
 
 ## Extend governance to your broader security stack
 
-Connect Fabric to the cataloging, cloud app security, and auditing tools you already use.
+Connect Fabric to the security and auditing tools you already use.
 
 | When you want to... | Use this capability |
 | --- | --- |
@@ -100,7 +99,6 @@ Most Fabric governance capabilities work out of the box with your Fabric license
 - Sensitivity labels and information protection
 - Protection policies
 - Data loss prevention (DLP) policies
-- Microsoft Purview integration for cross-estate governance
 
 For licensing details and how these capabilities fit into an overall governance strategy, see [Governance and compliance in Fabric](governance-compliance-overview.md).
 ## Related content

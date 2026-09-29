@@ -4,43 +4,43 @@ description: Learn about Schema Registry, a centralized repository in Fabric Rea
 #customer intent: As a data engineer, I want to understand what Schema Registry is, so that I can evaluate if it will help me manage data consistency in my real-time workflows.
 contributors: null
 ms.topic: overview
-ms.date: 08/05/2026
+ms.date: 09/08/2026
 ms.custom:
   - ai-gen-docs-bap
   - ai-gen-title
 ms.search.form: Schema Registry
 ai-usage: ai-assisted
 ---
+# Schema Registry in Fabric Real-Time Intelligence
 
+Schema Registry in Fabric Real-Time Intelligence is a central place to define, validate, and evolve data schemas for streaming data.
 
-# Schema Registry in Fabric Real-Time Intelligence (preview)
+By organizing your schemas and schema sets centrally, your teams can improve data quality, consistency, and control across your event-driven workflows. After you register a schema and define what your events should look like, what fields it should have, and what types of values are expected, you can use these defined events and map them to your Eventstreams or re-use them as Business Events.
 
-Schema Registry in Fabric Real-Time Intelligence is a central place to define, validate, and evolve data schemas for streaming data. Use it to improve data quality and keep your real-time event-driven workflows consistent.
+Registering a schema doesn't validate or filter events. You must use them in Eventstreams, which determines how incoming events are associated with schemas.
 
 > [!NOTE]
-> This feature is currently in preview. For the list of supported regions, see [Schema Registry region availability](schema-registry-region-availability.md).
+> Role in schema-aware Eventstreams (Preview)
+>
+> Schema-aware Eventstreams integrates with Event Schema sets to use schemas for processing events from certain sources. Ingested events tagged with registered schemas can be automatically recognized and processed by using their corresponding schema definitions. Schematized, classified, and untyped events can coexist in the same Eventstream. For more information, see [Schema-aware Eventstreams](../event-streams/schema-aware-eventstreams-overview.md).
 
-## Benefits of using Schema Registry
-Schema Registry in Fabric Real-Time Intelligence helps improve data quality, consistency, and control across your event-driven workflows.
+Schema Registry also manages any schemas that you create as part of Business Events. Once defined, you can publish or subscribe to these events. For more information, see [Business events overview](../../real-time-hub/business-events/business-events-overview.md).
 
-Registering a schema means defining what your data should look like, what fields it should have, and what types of values are expected.
+Use event schema sets to:
 
-When schema registration is enabled, only events that match the registered schema are allowed to move through your event-driven architecture. It helps catch errors early and ensures that your data is clean, consistent, and ready to use. 
-
-Schema validation is applied throughout the Fabric Real-Time intelligence workflow: 
-
-- When events first enter through an eventstream
-- During preprocessing and transformation
-- Before data is delivered to destinations like Eventhouse, Lakehouse, and Data Activator
-- Even for derived streams, where one stream feeds into another
-
-Using schemas not only improves data quality but also gives you better control by preventing bad or unexpected data from disrupting your downstream processes.
-
-Schema Registry helps you maintain data integrity, enable reuse across services, and establish access controls—all key to building reliable and scalable real-time data solutions in Fabric Real-Time intelligence.
+- Discover and reuse related schemas across teams.
+- Import multiple Avro schemas and their versions together.
+- Publish new versions while retaining earlier definitions.
+- Compare versions before updating producers and consumers.
+- Control access through Fabric workspace roles and item sharing.
 
 ## Key concepts
 
 This section describes key concepts of Schema Registry.
+
+### Schema Registry
+
+The [Event schema registry page](../../real-time-hub/event-schema-registry-page.md) in Real-Time hub provides a tenant-wide view of the schema sets and schemas you have permission to access. Expand a schema set to explore its schemas, preview a definition, or open the schema set or an individual schema.
 
 ### Schema sets
 
@@ -52,19 +52,28 @@ For details about who can perform each action on a schema set, see [Permissions]
 
 The Schema Registry supports the **Avro** schema format.
 
+An Avro schema describes fields, types, and nested structures. The schema format is different from the encoding used to send event payloads; supported payload formats depend on the source connector.
+
+### Event types
+
+An event type identifies an event and references its schema. Event types can also carry protocol metadata, such as a CloudEvents type. An event schema set groups related schemas and event types in one Fabric workspace item. The metadata model is based on the vendor-neutral [xRegistry specification](https://github.com/xregistry/spec).
+
 ### Schema registration
 
-There are several ways to register schemas in Fabric Real-Time intelligence:
+You can register schemas in Fabric Real-Time Intelligence by using one of the following methods:
 
 - Use the visual UI builder to create your schema step by step.
-- Upload a file containing your schema definition.
+- Upload a file that contains your schema definition.
 - Paste your schema directly in the Code View.
+- Import multiple Avro files into a new or existing schema set.
 
-You can register schemas using Fabric Real-Time hub user interface (UI) or Schema sets UI. For more information, see [Create and manage event schemas](create-manage-event-schemas.md).
+Register schemas by using the Fabric Real-Time hub user interface (UI) or the Schemasets UI. For more information, see [Create and manage event schemas](create-manage-event-schemas.md).
 
 ### Schema versioning
 
-Versioning is supported in Schema Registry within Fabric Real-Time Intelligence. Any edits to an existing schema are treated as a new version. Schema Registry doesn't support semantic versions. Instead, schema versions are tracked as incremental numeric versions to indicate change over time. There is no compatibility checks or native support for schema evolution yet. For more information, see [Update a schema](create-manage-event-schemas.md#update-an-event-schema).
+Saving an updated schema definition creates a new, incrementally numbered version. Earlier versions remain available for inspection and comparison. Schema Registry doesn't use semantic version numbers, and instead uses named versions (v1, v2, and so on).
+
+You can switch the version you view without changing the latest version or reconfiguring a pipeline. Use version comparison to review changes before adopting a new definition. The UI doesn't expose compatibility policy controls. Reviewing a comparison doesn't guarantee that a change is safe for existing consumers. For more information, see [Manage event schema versions](manage-event-schema-versions.md).
 
 ## Permissions
 
@@ -108,6 +117,6 @@ See the following articles:
 
 - [Create a schema set](create-manage-event-schema-sets.md)
 - [Create schemas in a schema set](create-manage-event-schemas.md)
-
-
-
+- [Import event schemas](import-event-schemas.md)
+- [Manage event schema versions](manage-event-schema-versions.md)
+- [Event schema limitations](schema-registry-limitations.md)

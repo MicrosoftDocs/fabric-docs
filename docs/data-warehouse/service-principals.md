@@ -151,7 +151,7 @@ You can manually test token generation and API connectivity the Azure CLI.
 
    Provide the following for placeholders in the script:
 
-   - `<WORKSPACE_GUID>` The easiest way to find your workspace ID is in the URL of the Fabric site for an item in a workspace. As in Power BI, the Fabric URL contains the workspace ID, which is the unique identifier after `/groups/` in the URL, for example: `https://powerbi.com/groups/11aa111-a11a-1111-1abc-aa1111aaaa/...`. Alternatively, you can find the workspace ID in the Power BI Admin portal settings by selecting **Details** next to the workspace name.
+   - `<WORKSPACE_GUID>` The easiest way to find your workspace ID is in the URL of the Fabric site for an item in a workspace. As in Power BI, the Fabric URL contains the workspace ID, which is the unique identifier after `/groups/` in the URL, for example: `https://powerbi.com/groups/11aa111-a11a-1111-1abc-aa1111aaaa/...`. Alternatively, you can find the workspace ID in **Admin portal** > **Workspaces** by selecting the **Actions** menu > **Details** next to the workspace name.
 
 1. The SPN is now initiated with a Fabric security token for 30 days.
 

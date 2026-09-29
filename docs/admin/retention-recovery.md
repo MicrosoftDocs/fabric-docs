@@ -6,7 +6,7 @@ ms.author: daknappe
 ms.reviewer: yuturchi, arthii
 ms.custom: admin-portal
 ms.topic: concept-article
-ms.date: 07/28/2026
+ms.date: 09/01/2026
 ai-usage: ai-assisted
 ---
 
@@ -37,7 +37,7 @@ When you delete a workspace, Fabric doesn't permanently remove it immediately. I
 
 The retention period for personal workspaces (*My workspaces*) is fixed at 30 days.
 
-The default retention period for collaborative workspaces is seven days. You can change the retention period (from 7 to 90 days) by using the **Define workspace retention period** tenant setting in the admin portal.
+The default retention period for collaborative workspaces is seven days. You can change the retention period (from 7 to 90 days) by using the **Define workspace retention period** setting in **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**.
 
 Changing this setting also applies to collaborative workspaces that are already deleted. Fabric calculates the remaining retention from the current setting value rather than from the value that was in effect when the workspace was deleted. Decreasing the retention period can make an already deleted workspace eligible for immediate permanent deletion. For more information, see [How changing the retention period affects workspaces that are already deleted](workspace-retention.md#how-changing-the-retention-period-affects-already-deleted-workspaces).
 
@@ -50,7 +50,7 @@ During the retention period, you can restore a deleted workspace or permanently 
 
 Fabric supports soft-delete and recovery for individual items within workspaces. When you delete a supported item, it enters a retention period during which workspace contributors, members, and admins can recover it. This feature provides an additional layer of data protection at the item level.
 
-You can change the retention period (from 3 to 90 days) or turn item recovery off by using the **Fabric Item Recovery** tenant setting in the admin portal.
+You can change the retention period (from 3 to 90 days) or turn item recovery off by using the **Fabric Item Recovery** setting in **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**.
 
 For step-by-step instructions on setting up item recovery and restoring or permanently deleting items, see [Recover or permanently delete items](item-recovery.md).
 
@@ -145,7 +145,7 @@ To stop incurring costs for a soft-deleted item, permanently delete it before th
 - You can't delete [workspace folders](../fundamentals/workspaces-folders.md) that have soft-deleted items until you permanently delete all items in the folder.
 - Only [tenant admins](roles.md) can set up item retention settings. Workspace admins can't change these settings at the workspace level.
 - When item recovery is enabled, admin insights on the [Govern tab in the OneLake catalog](../governance/onelake-catalog-govern.md) reflect deleted items only after they're permanently deleted. Soft-deleted items that are still in the retention period don't appear as deleted in the insights.
-- When item recovery is enabled, [Fabric workspace item events](../real-time-hub/create-streams-fabric-workspace-item-events.md) such as `Microsoft.Fabric.ItemDeleteSucceeded` are generated when items are permanently deleted. Soft-deleting an item doesn't generate a delete event.
+- When item recovery is enabled, [Fabric workspace item events](../real-time-hub/create-streams-fabric-workspace-item-events.md) are generated throughout the item lifecycle. Soft-delete operations generate `Microsoft.Fabric.ItemSoftDeleteSucceeded` or `Microsoft.Fabric.ItemSoftDeleteFailed` events, recovery operations generate `Microsoft.Fabric.ItemRecoverSucceeded` or `Microsoft.Fabric.ItemRecoverFailed` events, and permanent delete operations continue to generate `Microsoft.Fabric.ItemDeleteSucceeded` or `Microsoft.Fabric.ItemDeleteFailed` events.
 
 ## Known issues
 
