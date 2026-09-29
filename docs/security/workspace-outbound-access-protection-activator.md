@@ -8,7 +8,7 @@ ms.date: 05/26/2026
 ms.topic: how-to
 ---
 
-# Workspace outbound access protection for Activator (preview)
+# Workspace outbound access protection for Activator
 
 Workspace outbound access protection helps safeguard your data by controlling outbound connections from Activator items in your workspace to external resources. When you enable this feature, Activator action targets can't make outbound connections unless you explicitly grant access through approved data connection rules.
 
@@ -17,7 +17,7 @@ Workspace outbound access protection helps safeguard your data by controlling ou
 
 ## Learn about outbound access protection with Activator
 
-Activator triggers actions when conditions in your data are met. These actions can target Fabric items, Microsoft Teams, email recipients, Power Automate flows and Business events. When you enable outbound access protection, each action target is handled as follows:
+Activator triggers actions when conditions in your data are met. These actions can target Fabric items, Microsoft Teams, email recipients, Power Automate flows, and Business events. When you enable outbound access protection, each action target is handled as follows:
 
 | Action target | Behavior with outbound access protection enabled |
 |---|---|
