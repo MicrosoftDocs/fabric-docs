@@ -4,7 +4,7 @@ description: Learn about Copilot in Fabric and Power BI, which brings a new way 
 author: SnehaGunda
 ms.author: sngun
 ms.reviewer: daengli, guptamaya, maghan
-ms.date: 06/19/2026
+ms.date: 09/29/2026
 ms.update-cycle: 180-days
 ms.topic: overview
 ms.collection:
@@ -164,11 +164,13 @@ The prebuilt [Azure OpenAI Service](/azure/foundry/foundry-models/concepts/model
 ### Data storage of conversation history cross geographic regions
 
 > [!NOTE]
->This section only applies to customers who want to use [Copilot in Notebooks](../data-engineering/copilot-notebooks-overview.md) and Fabric [data agents](../data-science/concept-data-agent.md) (formerly known as Data agent) powered by Azure OpenAI, and whose capacity's geographic region is outside of the EU data boundary and the US. 
+> This section only applies to customers who want to use [Copilot in notebooks](../data-engineering/copilot-notebooks-overview.md) powered by Azure OpenAI, and whose capacity's geographic region is outside of the EU data boundary and the US.
 
-Conversational agentic experiences such as Copilot in Notebooks and Fabric data agents store conversation history across user sessions so the agent keeps context between sessions. This history is stored inside the Azure security boundary, in the same region and Azure OpenAI resources that process your other Fabric AI requests. Users can delete their conversation history at any time by clearing the chat; if it isn't removed manually, it's stored for 28 days.
+Copilot in notebooks stores conversation history across user sessions so that it can maintain context. This history is stored inside the Azure security boundary, in the same region and Azure OpenAI resources that process your other Fabric AI requests. Users can delete their conversation history at any time by clearing the chat. If the history isn't manually removed, it's stored for 28 days.
 
 For full details and the tenant setting that controls this behavior, see [Copilot and Agent tenant settings](../admin/service-admin-portal-copilot.md).
+
+Fabric data agents also store conversation history across user sessions for up to 28 days, but they don't require the cross-region data storage tenant setting. For more information, see [Privacy, security, and responsible use of Copilot in notebooks and Fabric data agents](copilot-data-science-privacy-security.md#how-we-handle-conversation-history).
 
 ## Related content
 
@@ -176,4 +178,3 @@ For full details and the tenant setting that controls this behavior, see [Copilo
 - [Copilot for Microsoft Fabric and Power BI: FAQ](copilot-faq-fabric.yml)
 - [Foundry Tools in Fabric (preview)](../data-science/ai-services/ai-services-overview.md)
 - [Copilot tenant settings](../admin/service-admin-portal-copilot.md)
-

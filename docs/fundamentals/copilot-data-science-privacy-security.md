@@ -5,14 +5,15 @@ author: snehagunda
 ms.author: sngun
 ms.reviewer: guptamaya
 ms.topic: concept-article
-ms.date: 05/11/2025
+ms.date: 09/29/2026
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
+ai-usage: ai-assisted
 ---
 
 # Privacy, security, and responsible use of Copilot in notebooks and Fabric data agents
 
-In this article, learn how [Microsoft Copilot in Notebooks](../data-engineering/copilot-notebooks-overview.md) and and Fabric [data agents](../data-science/concept-data-agent.md) (formerly known as Data agent) works, how it keeps your business data secure and compliant with privacy requirements, and how to responsibly use generative AI. For an overview of these topics for Copilot in Fabric, see [Privacy, security, and responsible use for Copilot (preview)](../fundamentals/copilot-privacy-security.md).
+In this article, learn how [Microsoft Copilot in Notebooks](../data-engineering/copilot-notebooks-overview.md) and Fabric [data agents](../data-science/concept-data-agent.md) (formerly known as Data agent) work, how they keep your business data secure and compliant with privacy requirements, and how to responsibly use generative AI. For an overview of these topics for Copilot in Fabric, see [Privacy, security, and responsible use for Copilot (preview)](../fundamentals/copilot-privacy-security.md).
 
 
 ## Data use
@@ -39,13 +40,15 @@ In this article, learn how [Microsoft Copilot in Notebooks](../data-engineering/
 
 For [Copilot in Notebooks](../data-engineering/copilot-notebooks-overview.md) and Fabric [data agents](../data-science/concept-data-agent.md), we store conversation history across user sessions.
 
-#### Why do we store conversations history and where is it stored?
+#### Why do we store conversation history, and where is it stored?
 
-In order to use fully conversational agentic AI experiences, the agent needs to store conversation history across user sessions to maintain context. This ensures that the AI agent keeps context about what a user asked in previous sessions and is typically a desired behavior in many agentic AI experiences. Experiences such as Copilot in Notebooks and Fabric data agents are AI experiences that store conversation history across  user's sessions.
+Fully conversational AI experiences store conversation history across user sessions to maintain context about previous questions. Copilot in notebooks and Fabric data agents both store conversation history across a user's sessions.
 
-**This history is stored inside the Azure security boundary, in the same region and in the same Azure OpenAI resources that process all your Fabric AI requests.** The difference in this case is that the conversation history is stored for as long as the user allows. For experiences that don't store conversation history across sessions, no data is stored. Prompts are only processed by Azure OpenAI resources that Fabric uses.
+For Copilot in notebooks, the history is stored inside the Azure security boundary, in the same region and Azure OpenAI resources that process your other Fabric AI requests. For experiences that don't store conversation history across sessions, no data is stored. Prompts are only processed by Azure OpenAI resources that Fabric uses.
 
-**Your users can delete their conversation history at any time, simply by clearing the chat. This option exists both for Copilot in Notebooks and data agents.** If the conversation history isn't manually removed, it is stored for 28 days.
+Fabric data agents don't require the **Data sent to Azure OpenAI can be stored outside your capacity's geographic region, compliance boundary, or national cloud instance** tenant setting to store conversation history.
+
+Users can delete their conversation history at any time by clearing the chat in Copilot in notebooks or a data agent. If the conversation history isn't manually removed, it's stored for 28 days.
 
 ## Copilot in Notebooks: Responsible AI FAQ
 

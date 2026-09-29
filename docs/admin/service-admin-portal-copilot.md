@@ -1,4 +1,4 @@
-﻿---
+---
 title: Copilot and Agent admin settings
 description: Learn how administrators can configure Copilot and Agent admin settings in Fabric. Control AI access, data processing regions, storage policies, and Copilot capacities.
 author: snehagunda
@@ -7,7 +7,7 @@ ms.reviewer: guptamaya
 ms.custom:
   - tenant-setting
 ms.topic: how-to
-ms.date: 08/11/2026
+ms.date: 09/29/2026
 ms.update-cycle: 180-days
 LocalizationGroup: Administration
 no-loc: [Copilot]
@@ -88,21 +88,14 @@ For more information, see [OpenAI as a subprocessor in Microsoft Fabric](../fund
 
 ## Data sent to Azure OpenAI can be stored outside your capacity's geographic region, compliance boundary, or national cloud instance
 
-This setting is only applicable for customers who want to use Copilot in notebooks and data agents in Fabric powered by Azure OpenAI, and whose capacity's geographic region is outside of the EU data boundary and the US. The following screenshot shows how to configure this setting:
+This setting is only applicable for customers who want to use Copilot in notebooks powered by Azure OpenAI, and whose capacity's geographic region is outside of the EU data boundary and the US. The following screenshot shows how to configure this setting:
 
 :::image type="content" source="./media/service-admin-portal-copilot/fabric-copilot-storage-tenant-setting.png" alt-text="Screenshot of Fabric Copilot Storage setting in the admin portal." lightbox="./media/service-admin-portal-copilot/fabric-copilot-storage-tenant-setting.png":::
 
-For more information, see [Available regions](../fundamentals/copilot-fabric-overview.md#available-regions).
+Copilot in notebooks stores conversation history across user sessions so that it can maintain context. The history is stored inside the Azure security boundary, in the same region and Azure OpenAI resources that process your other Fabric AI requests. Users can delete their conversation history at any time by clearing the chat. If the history isn't manually removed, it's stored for 28 days.
 
-**Default:** Disabled
-
-This setting is only applicable for customers who want to use [Copilot in notebooks](../data-engineering/copilot-notebooks-overview.md) and Fabric [data agents](../data-science/concept-data-agent.md) powered by Azure OpenAI, and whose capacity's geographic region is outside of the EU data boundary and the US.
-
-To use fully conversational agentic AI experiences, the agent needs to store conversation history across user sessions. This ensures that the AI agent keeps context about what a user asked in previous sessions. Experiences such as Copilot in notebooks and Fabric data agents store conversation history across the user's sessions. This history is stored inside the Azure security boundary, in the same region and in the same Azure OpenAI resources that process all your Fabric AI requests. The difference in this case is that the conversation history is stored for as long as the user allows. For experiences that don't store conversation history across sessions, no data is stored. Prompts are only processed by Azure OpenAI resources that Fabric uses.
-
-Users can delete their conversation history at any time by clearing the chat. This option exists both for Copilot in notebooks and data agents. If the conversation history isn't manually removed, it's stored for 28 days.
-
-:::image type="content" source="./media/service-admin-portal-copilot/fabric-copilot-storage-tenant-setting.png" alt-text="Screenshot of Fabric Copilot Storage setting in the admin portal." lightbox="./media/service-admin-portal-copilot/fabric-copilot-storage-tenant-setting.png":::
+> [!NOTE]
+> Fabric data agents also store conversation history across user sessions, but they don't require this tenant setting. For more information, see [Privacy, security, and responsible use of Copilot in notebooks and Fabric data agents](../fundamentals/copilot-data-science-privacy-security.md#how-we-handle-conversation-history).
 
 For more information, see [Available regions](../fundamentals/copilot-fabric-overview.md#available-regions).
 
