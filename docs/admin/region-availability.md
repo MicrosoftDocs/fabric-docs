@@ -52,7 +52,7 @@ The following table lists all Azure regions where Power BI or Fabric is availabl
 | Europe       | France Central       | ✅ | ✅ |  |
 | Europe       | France South         | ✅ | ❌ | Power BI only region |
 | Europe       | Germany North        | ✅ | ❌ | Power BI only region |
-| Europe       | Germany West Central | ✅ | ✅ | Not available: <br> [Fabric App (preview)](../apps/overview.md) |
+| Europe       | Germany West Central | ✅ | ✅ |  |
 | Europe       | Italy North          | ✅ | ✅ |  |
 | Europe       | Norway East          | ✅ | ✅ |  |
 | Europe       | Norway West          | ✅ | ❌ | Power BI only region |
