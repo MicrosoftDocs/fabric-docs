@@ -1,5 +1,5 @@
 ---
-title: Use Ontology MCP Server
+title: Use Ontology MCP Server (Preview)
 description: Learn how to consume ontology (preview) as a Model Context Protocol (MCP) server.
 ms.date: 04/14/2026
 ms.topic: how-to
@@ -7,7 +7,7 @@ ms.topic: how-to
 
 # Consume ontology (preview) as an MCP server
 
-The Model Context Protocol (MCP) server allows AI systems to discover and interact with external tools in a structured way, extending beyond their own data and reasoning. Ontology can function as an MCP server, exposing an API so that external AI systems can interact with it through the MCP protocol. This helps integrate ontology into AI workflows.
+Through the Model Context Protocol (MCP) server, AI systems can discover and interact with external tools in a structured way, extending beyond their own data and reasoning. Ontology (preview) can function as an MCP server, exposing an API so that external AI systems can interact with it through the MCP protocol. This capability helps integrate ontology into AI workflows.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
@@ -16,7 +16,7 @@ The Model Context Protocol (MCP) server allows AI systems to discover and intera
 Before using ontology as an MCP server, make sure you have the following prerequisites:
 
 * [A paid F2 or higher Fabric capacity](../../enterprise/fabric-features.md#feature-parity-list), or a [Power BI Premium per capacity (P1 or higher)](../../enterprise/licenses.md#workspace) capacity with [Microsoft Fabric enabled](../../admin/fabric-switch.md).
-* **Ontology item (preview)** [enabled on your Fabric tenant](overview-tenant-settings.md#ontology-item-preview).
+* **Ontology item (preview)** [enabled on your Fabric tenant](overview-tenant-settings.md#ontology-item).
 * An ontology (preview) item
 
 ## How it works
@@ -40,11 +40,11 @@ You use this **MCP server URL** in the next section.
 
 :::image type="content" source="media/how-to-use-ontology-mcp-server/mcp-json.png" alt-text="Screenshot showing the MCP file of the ontology." lightbox="media/how-to-use-ontology-mcp-server/mcp-json.png":::
 
-## Enabling Agent Mode
+## Enable agent mode
 
-After adding the MCP server, enable **Agent Mode** in VS Code. Agent Mode lets VS Code act as an orchestrator interface, connecting your editor with MCP servers to interact with external tools like ontology. To enable it:
+After adding the MCP server, enable **Agent Mode** in Visual Studio Code. In agent mode, VS Code acts as an orchestrator interface that connects your editor with MCP servers to interact with external tools like ontology. To enable it:
 
-1. In VS Code, open "Chat" (Ctrl + Shift + I).
+1. In VS Code, open chat (Ctrl + Shift + I).
 1. Start the MCP server.
 
     :::image type="content" source="media/how-to-use-ontology-mcp-server/agent-mode-1.png" alt-text="Screenshot of starting the server in agent mode." lightbox="media/how-to-use-ontology-mcp-server/agent-mode-1.png":::
@@ -53,4 +53,4 @@ After adding the MCP server, enable **Agent Mode** in VS Code. Agent Mode lets V
 
     :::image type="content" source="media/how-to-use-ontology-mcp-server/agent-mode-2.png" alt-text="Screenshot showing the running server and place for prompts in agent mode." lightbox="media/how-to-use-ontology-mcp-server/agent-mode-2.png":::
 
-1. When Agent Mode is active, select an **orchestrator** to handle your queries. Available orchestrators in public preview include **GPT-5, GPT-4.1, Claude Sonnet 4.5, Gemini 2.5 pro**, and many more. The orchestrator manages the flow of information between your queries in VS Code and the ontology MCP server.
+1. When agent mode is active, select an **orchestrator** to handle your queries. Available orchestrators in public preview include **GPT-5, GPT-4.1, Claude Sonnet 4.5, Gemini 2.5 Pro**, and many more. The orchestrator manages the flow of information between your queries in VS Code and the ontology MCP server.

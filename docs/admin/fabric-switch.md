@@ -36,7 +36,7 @@ In your tenant, you can enable Fabric for:
 
 Follow these steps to enable Fabric for your tenant.
 
-1. In the Power BI portal, navigate to the [tenant settings](tenant-settings-index.md) in the admin portal and in *Microsoft Fabric*, expand **Users can create Fabric items**.
+1. In Fabric, select **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**. Under *Microsoft Fabric*, expand **Users can create Fabric items**.
 
 2. Enable the **Users can create Fabric items** switch.
 
@@ -53,11 +53,11 @@ Consider the Fabric setting at the tenant level a recommendation for the entire 
 
 Follow these steps to enable Fabric for a specific capacity.
 
-1. Navigate to the [capacity settings](capacity-settings.md) in the admin portal.
+1. In Fabric, select **OneLake catalog** > **Govern** > **Capacities**.
 
-2. Select the capacity you want to enable Fabric for.
+2. Next to the capacity name, select the **More options** menu > **Settings**.
 
-3. Select the **Delegate tenant settings** tab, and under **Fabric**, expand the **Users can create Fabric items** setting.
+3. Go to **Delegated tenant settings** > **Microsoft Fabric** > **Users can create Fabric items**.
 
 4. Check the **Override tenant admin selection** checkbox and verify that the **Users can create Fabric items** setting is enabled.
 

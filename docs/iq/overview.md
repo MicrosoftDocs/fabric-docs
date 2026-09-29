@@ -30,9 +30,11 @@ Semantic models and ontologies work together. You can generate or align ontologi
 
 ### Operational intelligence with ontologies
 
-[Ontology (preview)](ontology/overview.md) defines core business entities, relationships, properties, rules, and actions. Agents understand what actions are available and how to invoke them. Operations agents monitor live data, detect anomalies, and take governed action.
+[Ontology (preview)](ontology/overview.md) is a shared, machine-understandable representation of your business. It defines entity types, properties, relationships, rules, and metrics, and binds them to live enterprise data so people, applications, and AI agents share the same vocabulary and context. Rules capture business logic in natural language, and metrics carry source-owned Power BI DAX measures into ontology context so agents reuse trusted calculations. With this shared language, agents can monitor live data, detect anomalies, and take governed action.
 
-Ontologies can be generated from existing Power BI semantic models, allowing you to bootstrap from trusted logic and definitions already in production. Both humans and AI agents can use this shared language for cross-domain reasoning and decision-ready actions. You can also query your ontology using natural language through the NL2Ontology query layer, which converts business questions into structured queries.
+You can create ontology items from scratch or generate them from existing Power BI semantic models to bootstrap from trusted logic already in production. This process also carries over calculated columns and source-owned DAX measures as metrics. You can also generate ontology details with the ontology agent or import them from open standards like RDF or OWL.
+
+After an ontology is created, you can optionally generate a built-in graph model from its business entities, relationships, rules, and source bindings to help answer relationship-centric questions. The built-in ontology agent supports the ontology lifecycle through natural-language interactions: it generates definitions and data bindings, answers business questions against your ontology context, and proposes changes for your review under a proposal-first model.
 
 ## Why use Fabric IQ?
 

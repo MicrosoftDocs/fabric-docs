@@ -13,6 +13,11 @@ A graph schema is the collection of node types, edge types, and their properties
 
 Use these guidelines before you start modeling in the graph model editor. For step-by-step instructions on creating nodes and edges, see the [graph tutorial](tutorial-introduction.md). Examples in this article use the [Adventure Works sample dataset](sample-datasets.md).
 
+This article describes the supported Fabric modeling workflow. For the formal
+GQL concepts and standard syntax that describe graph structures, see [GQL graph
+types](gql-graph-types.md). Graph doesn't currently accept graph-type
+declarations directly.
+
 > [!IMPORTANT]
 > Graph currently doesn't support schema evolution. After you create a graph model and load its data, any structural changes, such as adding or removing node types, edge types, and properties, require you to reload all data before querying the updated structure. To reload the data, select **Save** in the top ribbon. This data reload process takes time and consumes capacity, so plan your schema thoroughly before you start modeling.
 
@@ -77,16 +82,15 @@ Every node type requires a key column (or compound key) that uniquely identifies
 - **Use compound keys** when a single column doesn't guarantee uniqueness. For example, a `ProductVersion` node might need both `ProductID` and `VersionNumber` as its key.
 - **Match data types** between key columns and the foreign key columns used in edge mappings. Mismatched types cause edge creation failures.
 
-> [!TIP]
-> Define [node key constraints](gql-graph-types.md#set-up-node-key-constraints) to enable the query engine to perform direct lookups on key properties. This optimization speeds up queries that look up specific nodes by key.
-
 ## Add node properties
 
 When you create a node type, choose what properties from the source table to include as properties in the node type, especially properties for which OneLake Security access rules have been applied to the underlying source table.
 
 Add properties during node creation with the **+ Add property** button. Alternatively, add properties to an existing node by double-clicking the node type in the graph model editor to open the node edit dialog and selecting **Edit definition**. Select **Add property**, and then choose columns from the source table.
 
-You might not want to add every column in the table as a property. Excessive properties increase storage, slow queries, and make the graph harder to maintain. For these reasons, avoid adding properties that you don't need for queries or analysis.
+Each property becomes part of the graph data that must be loaded and
+maintained. Avoid adding properties that you don't need for queries or
+analysis.
 
 For each node type, keep only properties that are:
 
@@ -98,9 +102,11 @@ For more information on how property count affects query performance, see [Retur
 
 ### Choose data types
 
-Select the most specific data type for each property. The right types improve both storage efficiency and query performance:
+Select data types that represent the source values and the operations that
+queries perform:
 
-- Use `INT` or `UINT64` for numeric identifiers and counts. Numeric comparisons are faster than string comparisons.
+- Use `INT` for whole-number identifiers and counts when the source values are
+  numeric.
 - Use `ZONED DATETIME` for timestamps instead of string-formatted dates.
 - Use `BOOLEAN` for true/false flags instead of string values like `"yes"` or `"no"`.
 
@@ -114,7 +120,7 @@ Follow these guidelines:
 
 - **Use descriptive labels** that read as verbs or verb phrases. For example, `purchases`, `sells`, `livesIn`, and `belongsTo`. A well-named edge makes queries easier to read.
 - **Consider direction carefully.** Edges in graph are directed. Choose the direction that best represents the real-world relationship. For example, `Customer` --*purchases*--> `Order` reads more naturally than `Order` --*purchasedBy*--> `Customer`.
-- **Give distinct names to edge types that connect different node type pairs.** If both "employee sells order" and "customer purchases order" connect to `Order`, name them `sells` and `purchases` rather than giving both the same label. For more information, see [edge creation limitations](limitations.md#edge-creation).
+- **Give distinct names to edge types that connect different node type pairs.** If both "employee sells order" and "customer purchases order" connect to `Order`, name them `sells` and `purchases` rather than giving both the same label. For more information, see [edge creation limitations](limitations.md#graph-processing-and-scale).
 
 ### Add properties to edge types
 
@@ -144,22 +150,25 @@ For a step-by-step walkthrough of the embedded entity pattern, see [Add multiple
 
 ## Change your graph schema
 
-Graph doesn't support schema evolution. After you save a graph model, the structure of node types, edge types, and their properties is fixed. To make structural changes—such as adding a property to a node type, removing an edge type, or changing a key column—you must create a new graph model and reload your data.
+Graph doesn't apply structural changes incrementally. When you change node
+types, edge types, properties, keys, or mappings, saving the existing graph
+model reloads all its data and rebuilds the queryable graph.
 
 To change your graph schema:
 
-1. In your workspace, create a new graph item that connects to the same lakehouse.
-1. In the graph model editor, add the node types and edge types you need, including any new or modified properties.
-1. Configure key columns and edge mappings. Make sure data types match between key columns and foreign key columns.
-1. Select **Save** to ingest data and build the new graph.
-1. Update any querysets to point to the new graph.
-1. After you verify the new graph works as expected, delete the original graph item if you don't need it.
+1. Open the existing graph item in the graph model editor.
+1. Add, edit, or remove node types, edge types, properties, keys, and mappings
+   as needed.
+1. Select **Save** to validate the updated model and reload all graph data.
+1. After the reload completes, run representative queries to verify the
+   updated structure and data.
 
 ## Related content
 
 - [Convert relational data to a graph model](convert-relational-data-to-graph-model.md)
 - [Tutorial: Introduction to graph](tutorial-introduction.md)
-- [GQL graph types](gql-graph-types.md)
+- [GQL graph types reference](gql-graph-types.md)
+- [GQL schema example: social network](gql-schema-example.md)
 - [Optimize GQL query performance](gql-query-performance.md)
 - [Labeled property graphs](graph-data-models.md)
 - [Current limitations](limitations.md)

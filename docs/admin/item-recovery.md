@@ -6,7 +6,7 @@ ms.author: daknappe
 ms.reviewer: yuturchi, arthii
 ms.custom: admin-portal
 ms.topic: how-to
-ms.date: 07/28/2026
+ms.date: 09/01/2026
 ai-usage: ai-assisted
 ---
 
@@ -31,8 +31,8 @@ For an overview of how retention works for workspaces and items, see [Retention 
 
 You can change the retention period (from 3 to 90 days) or turn item recovery off by using the **Item Recovery** tenant setting.
 
-1. In the admin portal, go to **Tenant settings** > **Item Recovery**.
-1. Make sure the setting is turned on, and then enter the number of days for the retention period (3 to 90 days).
+1. Sign in to [Fabric](https://app.fabric.microsoft.com) using your admin account credentials. Open the **OneLake catalog**, and then select the **Govern** tab > **Configurations** > **Tenant settings** > **Item Recovery**.
+1. Turn on the setting and enter the number of days for the retention period (7 to 90 days).
 1. Select **Apply**.
 
 > [!NOTE]

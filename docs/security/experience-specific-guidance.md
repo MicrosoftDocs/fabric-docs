@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.reviewer: danzhang, wiassaf
 ms.topic: how-to
-ms.date: 09/02/2026
+ms.date: 09/24/2026
 ai-usage: ai-assisted
 ---
 
@@ -765,6 +765,24 @@ Microsoft Fabric Variable libraries enable developers to customize and share ite
  - In the newly created workspace, connect and sync to your Azure ADO repo again.
  - All Fabric items in this repository are automatically downloaded to your new Workspace.
  - After syncing your items from Git, open your Variable Libraries in the new workspace and manually select the desired [active value set](../cicd/variable-library/get-started-variable-libraries.md#add-a-value-set).
+
+### Deployment plan
+
+A [deployment plan](../cicd/deployment-plan/deployment-plan-overview.md) is an item in a Fabric workspace. It groups items and sets the order to deploy them. It can run actions before or after each item deploys. The item definition stores these settings, inputs, and item references. The plan doesn't have a separate store for values used at run time.
+
+Prepare for recovery by using [Fabric Git integration](../cicd/git-integration/intro-to-git-integration.md):
+
+1. Connect the workspace that contains the plan to an Azure DevOps or GitHub repository.
+1. Commit the plan and all workspace items that it uses.
+1. Commit each change so Git has the latest definitions.
+
+After a regional disaster:
+
+1. Create a workspace in the healthy region.
+1. Connect the workspace to the same repository and branch.
+1. [Update the workspace from Git](../cicd/git-integration/git-get-started.md#update-workspace-from-git). This step restores the plan and its items.
+
+Git restores the full plan definition. It doesn't restore data or run state for the linked items. Use the sections in this article to recover those items.
 
 ### Customer-managed keys for Fabric workspaces
 

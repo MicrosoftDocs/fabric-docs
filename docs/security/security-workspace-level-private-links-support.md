@@ -5,8 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.reviewer: karthikeyana
 ms.topic: overview
-ms.date: 06/16/2026
-ai-usage: ai-assisted
+ms.date: 08/26/2026
 
 #customer intent: As a workspace admin, I want to get more information about how to use workspace-level private link in supported and unsupported scenarios.
 
@@ -328,17 +327,19 @@ You can manage mirrored databases in workspaces enabled with private links by us
 > * Currently, workspace-level inbound network protection is supported for [open mirroring](/fabric/mirroring/open-mirroring), [Azure Cosmos DB mirroring](/fabric/mirroring/azure-cosmos-db), [Azure SQL Database mirroring](/fabric/mirroring/azure-sql-database), [Azure SQL Managed Instance mirroring](/fabric/mirroring/azure-sql-managed-instance), [SAP mirroring](/fabric/mirroring/sap), [SharePoint List mirroring](/fabric/mirroring/sharepoint-list), and [SQL Server 2025 mirroring](/fabric/mirroring/sql-server). For other types of database mirroring, if your workspace is configured to deny inbound public access, active mirrored databases enter a paused state, and mirroring can't be started.
 > * For open mirroring, when your workspace is configured to deny inbound public access, ensure the publisher writes data into the OneLake landing zone via a private link with workspace FQDN.
 
-### Azure and Fabric Events support
+### Azure, Fabric, and Business events support
 
-When workspace-level private links are configured on a workspace to block public access, event consumers (such as Activator alerts or eventstreams) in other workspaces can't subscribe to or consume events from items in that workspace unless a private link is established from the consumer's network to the source workspace (the workspace where the events originate).
+When workspace-level private links are configured on a workspace to block public access, event consumers (such as Activator alerts or Eventstreams) in other workspaces can't subscribe to or consume events from items in that workspace unless a private link is established from the consumer's network to the source workspace (the workspace where the events originate).
 
 This applies to all Fabric event types. For example, if you create an Activator alert in Workspace A to monitor OneLake events from a lakehouse in Workspace B, Workspace B is the source workspace. If Workspace B blocks public network access, this configuration fails unless a private link is established from Workspace A's network to Workspace B.
 
 Azure events (such as Azure Blob Storage events) are also affected. When you configure a consumer to receive Azure events, an eventstream item is created in a Fabric workspace to represent the Azure source. If the workspace that contains this eventstream item blocks public network access, consumers in other workspaces can't consume those events unless a private link is established. Additionally, Azure events are affected by tenant-level private link configuration. When the **Block Public Internet Access** tenant setting is enabled, Azure event sources outside the tenant are blocked from delivering events into Fabric entirely, regardless of workspace-level settings.
 
-Event consumption within the same workspace is always allowed, regardless of private link settings. If workspace-level private link settings change after a consumer is already configured, the system detects the change and pauses the configuration. While paused, events are retained for up to 24 hours. For details on paused configurations, see [Paused event configurations in Real-Time hub](/fabric/real-time-hub/fabric-events-paused-state).
+For Business events, the source workspace is the workspace that contains the Event Schema Set. If that workspace blocks public access, publishers and consumers in other workspaces need a private link to the source workspace.
 
-For more information, see [Workspace private links for Azure and Fabric events](/fabric/real-time-hub/workspace-private-links-real-time-events).
+Event consumption within the same workspace is always allowed, regardless of private link settings. If workspace-level private link settings change after a consumer is already configured, the system detects the change and pauses the configuration. While paused, events are retained for up to 7 days. For details on paused configurations, see [Paused event configurations in Real-Time hub](/fabric/real-time-hub/fabric-events-paused-state).
+
+For more information, see [Tenant private links for Azure and Fabric events](../real-time-hub/private-links-real-time-events.md) and [Workspace private links for Azure, Fabric, and Business events](../real-time-hub/workspace-private-links-real-time-events.md).
 
 ### Data agent
 Data agents can connect to lakehouse, warehouse, and SQL data sources within a workspace that has workspace-level private links enabled (public access disabled). Cross-workspace access is supported when network connectivity is explicitly established (for example, using a managed private endpoint) and subject to region and token constraints.

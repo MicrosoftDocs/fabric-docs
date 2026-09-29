@@ -1,28 +1,28 @@
 ---
-title: Workspace private links for Azure and Fabric events
-description: Learn how workspace-level private links affect Azure and Fabric event consumption in Microsoft Fabric Real-Time hub.
+title: Workspace private links for Azure, Fabric, and Business events
+description: Learn how workspace-level private links work with Azure, Fabric, and Business events in Microsoft Fabric Real-Time hub.
 author: george-guirguis
 ms.author: geguirgu
 ms.topic: how-to
-ms.date: 08/20/2026
+ms.date: 08/26/2026
 ai-usage: ai-assisted
 
-#customer intent: As an admin, I want to understand how workspace-level private link configurations affect Real-Time event consumption so that I can securely configure event-driven workflows while maintaining private network access.
+#customer intent: As an admin, I want to understand how workspace-level private link configurations affect the consumption of Azure, Fabric, and Business events so that I can securely configure event-driven workflows while maintaining private network access.
 
 ---
 
-# Workspace private links for Azure and Fabric events
+# Workspace private links for Azure, Fabric, and Business events
 
 When you configure [workspace-level private links](/fabric/security/security-workspace-level-private-links-overview) on a workspace to block public access, event consumers (such as Activator rules or Eventstreams) in other workspaces can't consume events from items in that workspace unless you establish a private link from the consumer's network to the source workspace.
 
-In Azure and Fabric events, the **source workspace** is the workspace where the events originate, and the **consumer workspace** is the workspace where you create the Activator rule, Eventstream, or other consumer item. You enforce workspace-level private links on the **source workspace** only. The consumer workspace's private link configuration doesn't impact the events flow. Event consumption within the same workspace is always allowed, regardless of private link settings.
+For Azure, Fabric, and Business events, the **source workspace** is the workspace where the events originate, and the **consumer workspace** is the workspace where you create the Activator rule, Eventstream, or other consumer item. For Business events, the source workspace is always the workspace that contains the Event Schema Set where the Business event is defined. You enforce workspace-level private links on the **source workspace** only. The consumer workspace's private link configuration doesn't impact the events flow. Event consumption within the same workspace is always allowed, regardless of private link settings.
 
 > [!NOTE]
 > It might take up to 30 minutes for changes to the workspace networking configuration to take effect.
 
-## How workspace-level private links affect event consumption
+## How workspace-level private links affect Azure, Fabric, and Business events
 
-The following table summarizes how workspace-level private link settings affect event consumption.
+The following table summarizes how workspace-level private link settings affect Azure, Fabric, and Business events.
 
 | Source workspace private links | Consumer workspace private links | Private link from consumer to source | Result |
 |---|---|---|---|
@@ -39,15 +39,23 @@ Workspace-level private links don't affect capacity overview events. Capacity ov
 
 The following examples illustrate how workspace-level private links affect different event types.
 
-### Fabric events: OneLake events
+### OneLake events
 
 Suppose you configure an Activator rule in **Workspace A** to monitor OneLake events from a lakehouse in **Workspace B**. In this case, Workspace B is the source workspace (where the events originate) and Workspace A is the consumer workspace (where the Activator rule is created). If Workspace B blocks public network access, this configuration fails unless you establish a private link from Workspace A's network to Workspace B.
 
-### Fabric events: Job events
+### Job events
 
 Suppose you create an Eventstream in **Workspace A** to capture Job events emitted by a pipeline in **Workspace B**. Workspace B is the source workspace because the pipeline job runs there, and Workspace A is the consumer workspace because you create the Eventstream there. If Workspace B blocks public network access, the Eventstream can't receive events from the pipeline unless you establish a private link from Workspace A's network to Workspace B.
 
-### Azure events: Azure Blob Storage events
+### Business events
+
+When you publish or consume a Business event, the source workspace is the workspace that contains the Event Schema Set for that Business event.
+
+For example, suppose a Business event is defined in an Event Schema Set in **Workspace B**. If you create an Activator rule, Eventstream, notebook, or User Data Function in **Workspace A** to publish or consume that Business event, Workspace B is the source workspace and Workspace A is the publisher or consumer workspace. If Workspace B blocks public network access, the cross-workspace configuration fails unless you establish a private link from Workspace A's network to Workspace B.
+
+Publishing or consuming the Business event from the same workspace as the Event Schema Set is always allowed, regardless of private link settings.
+
+### Azure Blob Storage events
 
 When you configure a consumer to receive Azure Blob Storage events, an Eventstream item is created in a Fabric workspace to represent the Azure source. This Eventstream item acts as the bridge between the Azure source and Fabric consumers.
 

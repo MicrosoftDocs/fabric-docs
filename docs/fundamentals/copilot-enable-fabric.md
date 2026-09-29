@@ -35,8 +35,8 @@ After you meet the prerequisites, complete the following steps to enable Copilot
 
 | **Step** | **Where** | **Description** |
 |---|---|---|
-| 1. [Enable Copilot tenant settings](#enable-copilot-tenant-settings) | Fabric admin portal | Enable the Copilot tenant settings and scope them to specific security groups. |
-| 2. [Configure delegated capacity settings](#configure-delegated-capacity-settings) | Fabric admin portal | If tenant settings are delegated, enable Copilot in the capacity-level settings. |
+| 1. [Enable Copilot tenant settings](#enable-copilot-tenant-settings) | OneLake catalog Govern | Enable the Copilot tenant settings and scope them to specific security groups. |
+| 2. [Configure delegated capacity settings](#configure-delegated-capacity-settings) | OneLake catalog Govern | If tenant settings are delegated, enable Copilot in the capacity-level settings. |
 | 3. [Assign workspaces and provision access](#assign-workspaces-and-provision-access) | Workspace settings | Assign a workspace to a Copilot-enabled capacity and grant access to users. |
 | 4. [Enable Copilot in Power BI Desktop](#enable-copilot-in-power-bi-desktop) (optional) | Power BI Desktop | If you use Power BI Desktop, select a Copilot-enabled workspace as your active workspace. |
 
@@ -71,7 +71,7 @@ For more information about these settings, see [Copilot tenant settings](../admi
 
 If the Copilot tenant settings are [delegated to capacity administrators](../admin/delegate-settings.md), each capacity administrator must also enable Copilot for their specific Fabric capacity.
 
-1. In the Fabric admin portal, open the capacity settings for the Fabric capacity you plan to use with Copilot.
+1. In **OneLake catalog** > **Govern** > **Capacities**, open the Fabric capacity you plan to use with Copilot.
 
 1. In the delegated tenant settings, enable the **Users can use Copilot and other features powered by Azure OpenAI** setting.
 

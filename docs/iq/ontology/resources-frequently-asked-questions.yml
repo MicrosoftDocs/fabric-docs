@@ -1,11 +1,11 @@
 ### YamlMime:FAQ
 metadata:
-  title: "Ontology (preview) Frequently Asked Questions"
+  title: "Ontology (Preview) Frequently Asked Questions"
   description: "Frequently asked questions about ontology (preview)."
   ms.topic: faq
   ms.date: 01/27/2026
 
-title: "Ontology (preview) frequently asked questions"
+title: "Ontology (Preview) Frequently Asked Questions"
 summary: "This article contains answers to frequently asked questions about ontology (preview)."
 
 sections:
@@ -26,7 +26,7 @@ sections:
           
           Ontology provides a semantic layer for your enterprise vocabulary that unifies meaning across domains and OneLake sources. It defines entity types, relationships, properties, rules, and constraints, and binds them to real data so that downstream tools share the same language. [Graph in Microsoft Fabric](../../graph/overview.md) is a graph solution that offers native graph storage and compute for nodes, edges, and traversals over connected data. It's good for path finding, dependency analysis, and graph algorithms.
           
-          Ontology (preview) works together with graph today. Ontology declares which things connect and why, and you can use graph to view your entity instances to learn more about the instantiated ontology and see patterns in the [entity type details](how-to-view-entity-type-details.md).
+          Ontology (preview) works together with graph today. Ontology declares which things connect and why, and you can use graph to view your entity instances to learn more about the instantiated ontology and see patterns in the [entity type details](how-to-view-ontology-details.md).
           
           For more about these items in Fabric IQ, see [What is Fabric IQ (preview)?](../overview.md#iq-as-a-workload-in-fabric)
 

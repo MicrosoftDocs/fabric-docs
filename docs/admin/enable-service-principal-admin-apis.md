@@ -36,7 +36,7 @@ To enable service principal authentication for Fabric APIs, follow these steps:
 
 1. Enable the Fabric admin settings:
 
-   1. Sign in to the Fabric admin portal. You need to be a Fabric admin to see the tenant settings page.
+   1. Sign in to [Fabric](https://app.fabric.microsoft.com) using your admin account credentials. Open the **OneLake catalog**, and then select the **Govern** tab > **Configurations** > **Tenant settings**.
    1. Under **Admin API settings**, select the switch for the type of admin APIs you want to enable:
 
         * **Service principals can access read-only admin APIs** (see [supported Power BI admin APIs](#supported-power-bi-admin-apis-for-read-only))
@@ -104,7 +104,7 @@ The following read-only admin APIs support service principal authentication. Thi
 
 An app using service principal authentication that calls read-only admin APIs **must not** have any admin-consent required permissions for Power BI set on it in the Azure portal. To check the assigned permissions:
 
-1. Sign into the **Azure portal**.
+1. Sign in to the **Azure portal**.
 
 1. Select **Microsoft Entra ID**, then **Enterprise applications**.
 
@@ -122,7 +122,7 @@ To find out if a specific Fabric admin API supports service principal authentica
 
 * The service principal can make REST API calls, but you can't open Fabric with service principal credentials.
 
-* Fabric admin rights are required to enable service principal in the Admin API settings in the Fabric admin portal.
+* Fabric admin rights are required to enable service principal in the Admin API settings in the Fabric.
 
 ## Related content
 

@@ -1,11 +1,11 @@
 ---
-title: Create an operations agent to use with ontology
+title: Create an Operations Agent to Use with Ontology (Preview)
 description: Create an operations agent that monitors an ontology (preview) item by using business rules in natural language.
 ms.date: 07/17/2026
 ms.topic: how-to
 ---
 
-# Create an operations agent grounded in an ontology
+# Create an operations agent grounded in an ontology (preview)
 
 Ontology (preview) integrates with [operations agent](../../real-time-intelligence/operations-agent.md) to continuously monitor your ontology, surface insights against your business goals, and recommend actions—all grounded in the ontology's entity types and relationships.
 
@@ -13,15 +13,21 @@ Ontology (preview) integrates with [operations agent](../../real-time-intelligen
 
 ## Prerequisites
 
-Make sure you meet the [operations agent prerequisites](../../real-time-intelligence/operations-agent.md#prerequisites), including the Microsoft Teams account and tenant settings for operations agent, Microsoft Copilot, and Azure OpenAI.
+Before you begin, make sure you have:
 
-## Create operations agent with ontology (preview) source
+* A Microsoft Fabric workspace that contains at least one ontology (preview) item, accessible through the OneLake catalog. For more information, see [Create ontology (preview) item](tutorial-1-create-ontology.md#create-ontology-preview-item).
+* The [operations agent prerequisites](../../real-time-intelligence/operations-agent.md#prerequisites), including the Microsoft Teams account and tenant settings for operations agent, Microsoft Copilot, and Azure OpenAI.
+
+>[!NOTE]
+>Due to a current known issue, operations agent doesn't work with an ontology that uses semantic models for binding.
+
+## Create operations agent with ontology source
 
 Follow these steps to create a new operations agent that monitors an ontology (preview) item. For full details on each setup field, see [Create an operations agent](../../real-time-intelligence/operations-agent.md#create-an-operations-agent).
 
 1. In your Fabric workspace, select **+ New item** and create a new **Operations agent** item.
 
-1. On the **Agent setup** page, fill in the following:
+1. On the **Agent setup** page, fill in the following fields:
 
     * **Agent instructions**: Add guidance for the agent's behavior. For example, *Monitor the freezer temperature and keep the temperature below 20.*
     * **Knowledge**: Select **Add data** and choose your ontology item.
@@ -44,3 +50,4 @@ When a recommendation arrives, review the context (which references ontology ent
 
 * [Operations agent overview](../../real-time-intelligence/operations-agent.md)
 * [Operations agent limitations](../../real-time-intelligence/operations-agent-limitations.md)
+* [Agent integration options for ontology (preview)](concepts-agent-integration.md)

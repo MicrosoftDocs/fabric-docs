@@ -5,7 +5,7 @@ author: dknappettmsft
 ms.author: daknappe
 ms.topic: reference
 ms.custom:
-ms.date: 04/08/2026
+ms.date: 09/08/2026
 ms.update-cycle: 180-days
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
@@ -216,6 +216,14 @@ The usage for each operation is reported in CU processing time in seconds. Eight
 | XMLA read | XMLA read operations initiated by the user, for queries and discoveries  | Semantic model | Power BI Capacity Usage CU | Interactive |
 | XMLA write | A background XMLA write operation that changes the model  | Semantic model | Power BI Capacity Usage CU | Background |
 | Power BI scripting visual execution | R and Py visuals run triggered by rendering Power BI report |Power BI scripting report | Spark memory optimized capacity (CU) | Interactive |
+
+### Project Osmos
+
+[The data engineering agent (Project Osmos)](../data-engineering/data-engineering-agent-overview.md) operations are listed in this table. You can find the consumption rates in [Project Osmos consumption](../data-engineering/data-engineering-agent-consumption.md).
+
+| Operation | Description | Item | Azure billing meter | Type |
+| --- | --- | --- | --- | --- |
+| Project Osmos | Language model input and output used by autonomous data engineering tasks | Lakehouse | Copilot and AI | Background |
 
 ### Real-Time Intelligence
 

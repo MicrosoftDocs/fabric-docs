@@ -22,6 +22,7 @@
         "docs/data-science/.openpublishing.redirection.data-science.json",
         "docs/data-warehouse/.openpublishing.redirection.data-warehouse.json",
         "docs/database/.openpublishing.redirection.database.json",
+        "docs/database/hub/.openpublishing.redirection.database-hub.json",
         "docs/database/sql/.openpublishing.redirection.sql-database.json",
         "docs/database/mirrored-database/.openpublishing.redirection.database.json",
         "docs/enterprise/.openpublishing.redirection.enterprise.json",

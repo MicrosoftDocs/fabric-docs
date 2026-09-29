@@ -3,7 +3,7 @@ title: Overview of Fabric Git integration
 description: An introduction to integrating Git version control with the Fabric Application lifecycle management (ALM) tool
 ms.reviewer: NimrodShalit
 ms.topic: overview
-ms.date: 07/21/2026
+ms.date: 09/01/2026
 ms.search.form: Git integration supported items, Introduction to Git integration
 #customer intent: As a developer I want to learn about the Git integration feature in Fabric so that my team can collaborate more effectively.
 ---
@@ -23,6 +23,8 @@ Git integration in Fabric enables developers to integrate their development proc
 * Apply the capabilities of familiar source control tools to manage Fabric items
 
 The integration with source control is on a workspace level. Developers can version items they develop within a workspace in a single process, with full visibility to all their items. The workspace structure, including [subfolders](./git-integration-process.md#folders), is preserved in the Git repository.
+
+For supported Git operations, you can optionally attach a [deployment plan](../deployment-plan/deployment-plan-overview.md) to control deployment order and run action steps.
 
 See the list of [supported items](#supported-items).
 
@@ -119,6 +121,7 @@ The following items currently support Git integration:
 
 * CI/CD items:
 
+  * [Deployment plan](../deployment-plan/deployment-plan-overview.md) *(preview)*
   * [Variable Library](../variable-library/variable-library-overview.md)
 
 * IQ (preview) items:
@@ -141,3 +144,4 @@ The actions you can take on a workspace depend on the permissions you have in bo
 
 * [Get started with Git integration](./git-get-started.md)
 * [Understand the Git integration process](./git-integration-process.md)
+* [Attach a deployment plan](../deployment-plan/deployment-plan-attach.md)

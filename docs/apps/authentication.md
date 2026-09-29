@@ -96,10 +96,11 @@ When you use the `RayfinClient`, the authentication service is available on `cli
 - **Sign-out** to end the current session.
 - **Session reads and subscriptions** so your UI stays in sync with the user's authentication state.
 
-For the code that wires these into a real app, see [Configure Fabric SSO authentication for your Fabric app](fabric-authentication.md).
+For the code that wires these features into a real app, see [Configure Fabric SSO authentication for your Fabric app](fabric-authentication.md). For callback and handoff allow list guidance, see [Configure authentication redirect URIs](configure-authentication-redirect-uris.md).
 
 ## Related content
 
 - [Configure Fabric SSO authentication for your Fabric app](fabric-authentication.md)
+- [Configure authentication redirect URIs](configure-authentication-redirect-uris.md)
 - [Define data permissions](data-permissions.md)
 - [Deploy your Fabric Apps project](deploy-app.md)

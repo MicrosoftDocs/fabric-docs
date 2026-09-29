@@ -77,7 +77,7 @@ For Delta tables using Azure Data Lake Storage (ADLS) or OneLake:
 1. Go to the [Azure portal](https://portal.azure.com/) and then select **Storage Account** > **Access Control (IAM)**
 2. Add role assignment: **Storage Blob Data Contributor** (for write) or **Storage Blob Data Reader** (for read-only)
 3. Select your user or service principal
-4. For service principals: Enable in Fabric Admin Portal (Tenant settings) and add to workspace with Contributor role
+4. For service principals: Enable the setting in **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**, and add the service principal to the workspace with the Contributor role.
 5. Verify authentication uses the correct scope: `https://storage.azure.com/` for OneLake
 
 ```python
@@ -149,7 +149,7 @@ Use one or more of these strategies to reduce capacity consumption and prevent t
 
 Enable Autoscale Billing to offload Spark jobs from your Fabric capacity to dedicated, serverless resources with pay-as-you-go billing. With Autoscale Billing enabled, Spark jobs no longer consume Compute Units (CUs) from your Fabric capacity, eliminating capacity exceeded errors for Spark workloads:
 
-1. Navigate to the [Fabric Admin Portal](https://app.fabric.microsoft.com/admin) and select **Capacity settings** > **Fabric capacity**.
+1. Go to **OneLake catalog** > **Govern** > **Capacities** > **Fabric capacity**.
 1. Select the capacity you want to configure and scroll to the **Autoscale Billing for Fabric Spark** section.
 1. Enable the **Autoscale Billing** toggle.
 1. Use the slider to set the **Maximum Capacity Units (CU)** you want to allocate to Spark jobs. You're only billed for the compute used, up to this limit.
@@ -189,7 +189,7 @@ For Spark operations (notebooks, Spark job definitions):
 - Stagger job execution times to avoid peak loads
 - Stop long-running or stalled notebooks and Spark sessions
 - Manage [Spark job concurrency limits](spark-job-concurrency-and-queueing.md)
-- Restart your Fabric capacity from the Admin Portal (Capacity Settings > Fabric Capacity > Restart) to clear orphaned sessions. Wait approximately 10 minutes before retrying operations
+- Restart your Fabric capacity from **OneLake catalog** > **Govern** > **Capacities** > **Fabric capacity** > **Restart** to clear orphaned sessions. Wait approximately 10 minutes before retrying operations.
 - Optimize Spark jobs to use resources more efficiently
 
 **Fix 5: Scale Up Your Capacity**
@@ -297,7 +297,7 @@ Use one or more of the following fixes to verify and restore your workspace’s 
 
 **Fix 1: Confirm Capacity Status and Assignment**
 
-1. In the Fabric Admin Portal, verify your capacity is active and running
+1. In **OneLake catalog** > **Govern** > **Capacities**, verify your capacity is active and running.
 2. Check that the workspace is assigned to this capacity
 3. Navigate to **Workspace settings** > **License Info** to confirm "Fabric Capacity" backing
 4. Ensure the workspace hasn't been accidentally unassigned from the capacity
@@ -305,7 +305,7 @@ Use one or more of the following fixes to verify and restore your workspace’s 
 
 **Fix 2: Verify Tenant Settings**
 
-1. In the Power BI Admin Portal under **Tenant Settings** > **Microsoft Fabric**, ensure "Users can create Fabric items" is enabled
+1. In **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings** > **Microsoft Fabric**, ensure "Users can create Fabric items" is enabled.
 2. Confirm no organizational policies are blocking Fabric operations
 3. If the problem persists for only one workspace while others work fine, consider creating a new workspace and move content
 

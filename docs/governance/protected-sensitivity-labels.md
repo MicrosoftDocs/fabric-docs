@@ -62,7 +62,7 @@ If no user has even these usage rights, nobody can change or remove the label fr
 
 To avoid this situation, the Fabric admin can enable the **Allow workspace admins to override automatically applied sensitivity labels** tenant setting. This makes it possible for workspace admins to override automatically applied sensitivity labels without regard to label change enforcement rules.
 
-To enable this setting, go to: **Admin portal > Tenant settings > Information protection**, and enable the toggle on the **Allow workspace admins to override automatically applied sensitivity labels** setting.
+To enable this setting, go to **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings** > **Information protection**, and enable the toggle on the **Allow workspace admins to override automatically applied sensitivity labels** setting.
 
 ## Related content
 

@@ -11,9 +11,6 @@ ms.date: 02/28/2026
 
 This article covers the business events list page in Real-Time hub. The list page shows all your business events in a list, lets you filter them, and provides quick access to their details.
 
-> [!IMPORTANT]
-> This feature is in [preview](../../fundamentals/preview.md).
-
 > [!NOTE]
 > If you aren't familiar with business events, see [Business events overview](business-events-overview.md) to learn what business events are and how they can benefit your organization.
 
@@ -91,4 +88,3 @@ Create a new business event by selecting the **+ New business event** button at 
 - **Add a User Data Function consumer for the business event**: You can create a User Data Function consumer for a business event to trigger an action when the event occurs. To create a User Data Function consumer for the selected event, select **Add consumer** -> **Create User Data Function consumer** on the ribbon. For step-by-step guidance on creating a User Data Function consumer, see [Publish business events using User Data Function and react using Activator](tutorial-business-events-user-data-function-activation-email.md).
 
 :::image type="content" source="./media/business-events-page/add-consumer-button.png" alt-text="Screenshot of add consumer button in the business events list page." lightbox="./media/business-events-page/add-consumer-button.png":::
-

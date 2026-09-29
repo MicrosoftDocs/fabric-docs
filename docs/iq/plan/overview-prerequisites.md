@@ -13,7 +13,7 @@ This article lists all the required prerequisites, tenant settings, and capacity
 
 ## Tenant settings
 
-[Fabric administrators](../../admin/roles.md) can grant access to these settings in the [admin portal](../../admin/admin-center.md) under [Tenant settings](../../admin/tenant-settings-index.md).
+[Fabric administrators](../../admin/roles.md) can grant access to these settings in **OneLake catalog** > **Govern** > **Configurations** > [**Tenant settings**](../../admin/tenant-settings-index.md).
 
 1. Under [Integration settings](../../admin/tenant-settings-index.md#integration-settings), enable **Allow XMLA endpoints and Analyze in Excel with on-premises semantic models**.
 
@@ -36,7 +36,7 @@ This article lists all the required prerequisites, tenant settings, and capacity
 
 * Planning scenarios that rely on XMLA endpoints and embed tokens require supported **Microsoft Fabric capacities (F SKUs)** or **Power BI Premium capacities (P1–P5)**. Power BI Pro and Power BI Premium Per User (PPU) aren't supported for these scenarios. Some lower-capacity SKUs can also have XMLA and memory limitations that prevent supported usage.
 
-* In the Power BI Admin portal, under **Capacity settings**, ensure that the **XMLA Endpoint** setting is configured as **Read Only** or **Read Write**.
+* In **OneLake catalog** > **Govern** > **Capacities**, ensure that the **XMLA Endpoint** setting is configured as **Read Only** or **Read Write**.
 
     :::image type="content" source="media/overview-prerequisites/set-xmla-read-only.png" alt-text="Screenshot of setting xmla endpoints as read only or read write.":::
 

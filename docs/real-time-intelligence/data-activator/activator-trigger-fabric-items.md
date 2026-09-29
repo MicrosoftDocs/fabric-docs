@@ -9,7 +9,7 @@ ms.search.form: Data Activator Fabric Item
 
 # Trigger Fabric items
 
-To load, transform, and analyze data in Microsoft Fabric, use Fabric Pipelines, Dataflows, Notebooks, Spark Job Definition, User Data Functions, Copy jobs, or Publish business event (preview). Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rules can take an action that starts jobs on Fabric items. Use this feature in the following scenarios:
+To load, transform, and analyze data in Microsoft Fabric, use Fabric Pipelines, Dataflows, Notebooks, Spark Job Definition, User Data Functions, Copy jobs, or Publish business event. Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rules can take an action that starts jobs on Fabric items. Use this feature in the following scenarios:
 
 * Run Pipelines and Dataflows when new files are loaded to Azure storage accounts, to load files into OneLake. To learn more, see [Azure Storage events](/azure/storage/blobs/storage-blob-event-overview).
 
@@ -20,7 +20,7 @@ To load, transform, and analyze data in Microsoft Fabric, use Fabric Pipelines, 
 * Run Functions to execute custom business logic to analyze and process data by using code.
 
 * Run Copy jobs to copy data between supported sources and destinations. For more information, see [What is Copy job in Data Factory](../../data-factory/what-is-copy-job.md).
-* Publish business events (preview) to trigger downstream processes that consume business events, such as event-driven architectures, real-time analytics, and integration with external systems.
+* Publish business events to trigger downstream processes that consume business events, such as event-driven architectures, real-time analytics, and integration with external systems.
 
 ## How to trigger a job on Fabric items
 

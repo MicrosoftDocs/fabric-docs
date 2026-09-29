@@ -7,7 +7,7 @@ ms.author: limingchen
 ms.topic: article
 ms.service: fabric
 ms.subservice: rti-core
-ms.date: 2/23/2026
+ms.date: 09/13/2026
 ms.search.form: Data filtering
 ---
 
@@ -15,7 +15,11 @@ ms.search.form: Data filtering
 
 Data filtering in Fabric Maps lets you limit which records are rendered in a **map layer** based on attribute values. Filtering applies **per layer**, not at the map level, and affects only how data is visualized, not the underlying data source.
 
-Filtering is available for vector data layers created from supported data sources, including GeoJSON, PMTiles, Kusto, and Ontology (preview).
+Filtering is available for vector data layers created from supported data sources, including GeoJSON, PMTiles, Kusto, Ontology (preview), and external feature services.
+
+External feature service layers can also have a **source query** that limits which records and fields the remote service returns. A source query is evaluated by the remote service before Fabric Maps retrieves the data. The map-layer filters described in this article apply only to the retrieved features. For more information, see [Source queries and map-layer filters](about-external-feature-services.md#source-queries-and-map-layer-filters).
+
+External feature service layers support the same builder- and viewer-mode filtering behavior as other vector layers, including locked filters and filter persistence. Date/time values are interpreted as UTC in RFC 3339 format.
 
 ## How data filtering works
 
@@ -32,15 +36,16 @@ Key characteristics:
 
 The available filter types depend on the data source and field type.
 
-| Filter type   | Description                                                 | Supported sources                 |
-|---------------|-------------------------------------------------------------|-----------------------------------|
-| Categorical   | Filters text-based fields using one or more selected values | GeoJSON, PMTiles, Kusto, Ontology |
-| Numeric range | Filters numeric fields using a minimum and maximum range    | GeoJSON, PMTiles, Kusto, Ontology |
-| Boolean       | Filters true/false fields                                   | GeoJSON, PMTiles, Kusto, Ontology |
-| Date/time     | Filters records within a time range                         | Kusto only                        |
+| Filter type   | Description                                                 | Supported sources                                            |
+|---------------|-------------------------------------------------------------|--------------------------------------------------------------|
+| Categorical   | Filters text-based fields using one or more selected values | GeoJSON, PMTiles, Kusto, Ontology, external feature services |
+| Numeric range | Filters numeric fields using a minimum and maximum range    | GeoJSON, PMTiles, Kusto, Ontology, external feature services |
+| Boolean       | Filters true/false fields                                   | GeoJSON, PMTiles, Kusto, Ontology, external feature services |
+| Date/time     | Filters records within a time range                         | Kusto, Ontology, external feature services                   |
 
 > [!NOTE]
 > Date/time filtering isn't available for GeoJSON or PMTiles layers.
+
 ## Builder and consumer behavior
 
 Filtering behavior differs depending on whether a map is opened in **edit mode** or **view mode**.
@@ -86,11 +91,11 @@ Filtering integrates with other layer-level capabilities:
 
 ## Limitations and design considerations
 
-Some of the limitations and design considerations of data filters include:
+Data filters have the following limitations and design considerations:
 
-- If a GeoJSON or PMTiles source has no properties, no fields are available for filtering.
-- Numeric range controls abbreviate large values (for example, 4.2B) to improve readability. Hovering over the number reveals the exact, unabbreviated value.
-- Filtering applies only to vector layers; imagery layers aren't filterable.
+- If a GeoJSON or PMTiles source has no properties, the filter can't access any fields.
+- Numeric range controls abbreviate large values (for example, 4.2B) to improve readability. Hover over the number to see the exact value.
+- Filtering works only on vector layers. You can't filter imagery layers.
 
 ## Next steps
 

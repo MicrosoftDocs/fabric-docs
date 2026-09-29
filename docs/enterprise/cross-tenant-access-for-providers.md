@@ -7,6 +7,7 @@ ms.reviewer: mesrivas, prlangad, wiassaf
 ms.topic: concept-article
 ROBOTS: NOINDEX
 ms.date: 02/12/2026
+ai-usage: ai-assisted
 ---
 
 # What is cross-tenant access for providers?
@@ -211,7 +212,7 @@ Permitted users from the provider tenant can call this API to get the SQL connec
 
  - **Use the Get cross tenant auth mapping API** - You can use the GET cross tenant auth mappings API to review the guest tenant users and groups that can potentially access warehouses and SQL analytics endpoints in your tenant. These users also need to be granted permissions on the items.
 
- - **Use audit logs in Purview** - Navigate to the Microsoft Purview hub, where you can search for the following event types to get detailed information about mapping CRUD and token generation activities as a provider.
+ - **Use Microsoft Purview Audit** - Go to [Microsoft Purview Audit](https://purview.microsoft.com/audit/), where you can search for the following event types to get detailed information about mapping CRUD and token generation activities as a provider.
 
    * Created cross tenant auth mapping
    * Listed cross tenant auth mapping
@@ -234,11 +235,13 @@ This setting is disabled by default and applies to the entire organization. Only
 
 To enable MFA enforcement:
 
-1. Go to the [Admin portal](../admin/admin-center.md).
-1. Select **Tenant settings**.
+1. Open the **OneLake catalog**, select the **Govern** section, and then select **Configurations** > **Tenant settings**.
 1. In the **Export and sharing settings** section, find **Enforce multi-factor authentication on access requests from outside the organization**.
 1. Enable the toggle.
 1. Select **Apply**.
+
+> [!NOTE]
+> If OneLake catalog and Govern aren't available in your region, use the **Admin portal** during the regional rollout.
 
 > [!NOTE]
 > When this setting is enabled, guests who access cross-tenant warehouse items without having MFA enabled are denied access. The guest tenant is responsible for configuring MFA policies for their users.

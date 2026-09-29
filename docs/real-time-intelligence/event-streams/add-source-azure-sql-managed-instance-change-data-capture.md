@@ -13,6 +13,8 @@ ms.search.form: Source and Destination
 
 This article shows you how to add an Azure SQL Managed Instance Change Data Capture (CDC) source to an eventstream. 
 
+[!INCLUDE [schema-aware-source-callout](./includes/schema-aware-source-callout.md)]
+
 [!INCLUDE [azure-sql-managed-instance-cdc-source-connector-prerequisites](./includes/connectors/azure-sql-managed-instance-cdc-source-connector-prerequisites.md)]
 
 ## Add Azure SQL Managed Instance CDC as a source

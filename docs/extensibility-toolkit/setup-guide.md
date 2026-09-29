@@ -53,9 +53,9 @@ pwsh ./scripts/Run/StartDevGateway.ps1
 
 Navigate to the Fabric portal and configure the required settings:
 
-**3.1 Configure tenant settings in Admin Portal:**
+**3.1 Configure tenant settings in OneLake catalog Govern:**
 
-Head to the Admin Portal settings and enable the following tenant settings:
+Go to **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**, and enable the following settings:
 - Capacity admins and contributors can add and remove additional workloads
 - Workspace admins can develop partner workloads
 - Users can see and work with additional workloads not validated by Microsoft

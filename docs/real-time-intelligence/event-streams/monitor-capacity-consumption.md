@@ -3,7 +3,7 @@ title: Microsoft Fabric Eventstreams Capacity Consumption
 description: Learn how to monitor capacity consumption for Microsoft Fabric eventstreams.
 ms.reviewer: xujiang1
 ms.topic: concept-article 
-ms.date: 03/19/2026
+ms.date: 09/16/2026
 ms.search.form: Monitor eventstreams capacity consumption
 ---
 
@@ -13,7 +13,7 @@ This article explains how Microsoft Fabric eventstreams usage is billed and repo
 
 ## Operation types
 
-Four operation types define eventstream usage. The following table provides information about eventstream operations shown in the [Microsoft Fabric Capacity Metrics app](../../enterprise/metrics-app.md) and their Fabric consumption rates.
+Five operation types define eventstream usage. The following table provides information about eventstream operations shown in the [Microsoft Fabric Capacity Metrics app](../../enterprise/metrics-app.md) and their Fabric consumption rates.
 
 | Operation in Capacity Metrics app | Description | Operation unit of measure | Fabric consumption rate |
 | --------------------------------- | ----------- | ------------------------- | ----------------------- |
@@ -21,6 +21,7 @@ Four operation types define eventstream usage. The following table provides info
 | **Eventstream Data Traffic Per GB** | Data ingress and egress volume in default and derived streams <br/> (includes 24-hour retention) | Per gigabyte | 0.342 CU hours |
 | **Eventstream Processor Per Hour** | Computing resources that the processor consumes | Per hour | Starts at 0.778 CU hours and autoscales <sup>2</sup> per throughput |
 | **Eventstream Connectors Per vCore Hour** | Computing resources that the connectors consume | Per hour | 0.611 CU hours per vCore <sup>3</sup> |
+| **Eventstream Custom Stream Connector Per vCore Hour** | Computing resources that a running Custom Stream Connector consumes | Per hour | 2.2607 CU hours per vCore <sup>4</sup> |
 
 <sup>1</sup> **Eventstream Per Hour** is charged only when it's active (that is, events are flowing in or out). If no traffic flowed in or out for the past two hours, no charges apply.
 
@@ -32,8 +33,10 @@ Four operation types define eventstream usage. The following table provides info
 
 <sup>3</sup> For **Eventstream Connectors Per vCore Hour**:
 
-- The CU consumption of the eventstream connector charges for computing resources when pulling real-time data from sources. It excludes Azure Event Hubs, Azure IoT Hub, and custom endpoints. Data from Azure Event Hubs and Azure IoT Hub is pulled via the eventstream processor.
+- The CU consumption of built-in eventstream connectors charges for computing resources when pulling real-time data from sources. It excludes Azure Event Hubs, Azure IoT Hub, custom endpoints, and Custom Stream Connectors. Data from Azure Event Hubs and Azure IoT Hub is pulled via the eventstream processor.
 - Connector CU consumption correlates with throughput. When throughput increases, the number of vCores increases (autoscales). Increased vCores results in higher CU consumption. Currently, connector autoscaling isn't available, so only one vCore is used per connector source.
+
+<sup>4</sup> **Eventstream Custom Stream Connector Per vCore Hour** is charged for each vCore while the [Custom Stream Connector](add-custom-stream-connector.md) is running. The consumption rate is 2.261 CU hours per vCore hour.
 
 ## Storage billing
 

@@ -89,21 +89,20 @@ Workspace identity is supported for authentication to target resources in connec
 
 ### Administer the workspace identity in Fabric
 
-Fabric administrators can administer the workspace identities created in their tenant on the [Fabric identities tab](../admin/fabric-identities-manage.md) in the admin portal.
+Fabric administrators can manage the workspace identities that they create in their tenant. Use [**Fabric identities**](../admin/fabric-identities-manage.md) under **Configurations** in the **Govern** section of the OneLake catalog.
 
-1. Navigate to the **Fabric identities** tab in the Admin portal.
+1. In the **OneLake catalog**, select **Govern** > **Configurations** > **Fabric identities**.
 1. Select a workspace identity, and then select **Details**.
 1. In the Details tab, you can view additional information related to the workspace identity.
 1. You can also delete a workspace identity.
    > [!NOTE]
    > Workspace identities cannot be restored after deletion. Be sure to review the consequences of deleting a workspace identity described in [Delete a workspace identity](#delete-a-workspace-identity).
 
-### Administer the workspace identity in Purview
+### Review workspace identity events in Microsoft Purview Audit
 
-You can view the audit events generated upon the creation and deletion of workspace identity in Purview Audit Log. To access the log
+You can view the audit events generated when creating and deleting workspace identities in Microsoft Purview Audit. To access the log:
 
-1. Navigate to the [Microsoft Purview hub](../governance/use-microsoft-purview-hub.md).
-1. Select the **Audit** tile.
+1. Go to [Microsoft Purview Audit](https://purview.microsoft.com/audit/).
 1. In the audit search form that appears, use the **Activities - friendly names** field to search for *fabric identity* to find the activities related to workspace identities. Currently, the following activities related to workspace identities are:
     * Created Fabric Identity for Workspace
     * Retrieved Fabric Identity for Workspace

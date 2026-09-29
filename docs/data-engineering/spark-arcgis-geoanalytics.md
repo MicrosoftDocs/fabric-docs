@@ -13,11 +13,11 @@ Microsoft and [Esri](https://www.esri.com/) have partnered to integrate spatial 
 
 ## Enable ArcGIS GeoAnalytics
 
-Tenant administrators can enable or disable the ArcGIS GeoAnalytics library in the Fabric Runtime for all users. To do so, sign in to the Fabric portal and navigate to **Settings** > **Admin Portal**. In the **Tenant settings**, enable **ArcGIS GeoAnalytics for Fabric Runtime**. When disabled, it won't be available in Spark notebooks or Spark job definitions.
+Tenant administrators can enable or disable the ArcGIS GeoAnalytics library in the Fabric Runtime for all users. To do so, sign in to the Fabric portal and go to **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**. Enable **ArcGIS GeoAnalytics for Fabric Runtime**. When disabled, it won't be available in Spark notebooks or Spark job definitions.
 
 :::image type="content" source="media\spark-arcgis-geoanalytics\enable-arcgis-tenant.png" alt-text="Screenshot showing how to enable ArcGIS GeoAnalytics from Tenant settings." lightbox="media/spark-arcgis-geoanalytics/enable-arcgis-tenant.png":::
 
-Additionally, if you are a Capacity administrator you can enable or disable the ArcGIS GeoAnalytics library in the Fabric Runtime for all users using your specific capacity. By default, capacity level settings are inherited from tenant level settings however you as a capacity administrator can choose to override it at the capacity level by navigating to **Settings** > **Admin Portal** > **Capacity settings** and choose your capacity. Next, under **Delegated tenant settings** > **Integration settings**, you can override and enable or disable **ArcGIS GeoAnalytics for Fabric Runtime**.
+Additionally, if you are a Capacity administrator you can enable or disable the ArcGIS GeoAnalytics library in the Fabric Runtime for all users using your specific capacity. By default, capacity level settings are inherited from tenant level settings however you as a capacity administrator can choose to override it at the capacity level by going to **OneLake catalog** > **Govern** > **Capacities** and choosing your capacity. Next, under **Delegated tenant settings** > **Integration settings**, you can override and enable or disable **ArcGIS GeoAnalytics for Fabric Runtime**.
 
 :::image type="content" source="media\spark-arcgis-geoanalytics\enable-arcgis-capacity.png" alt-text="Screenshot showing how to enable ArcGIS GeoAnalytics from Capacity settings." lightbox="media/spark-arcgis-geoanalytics/enable-arcgis-capacity.png":::
 

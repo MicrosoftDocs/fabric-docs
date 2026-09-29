@@ -3,7 +3,7 @@ title: Get started with Git integration
 description: Learn how to connect a workspace to a Git repository and branch, commit changes to the repo or workspace and sync.
 ms.reviewer: NimrodShalit
 ms.topic: quickstart
-ms.date: 12/16/2025
+ms.date: 09/01/2026
 ms.search.form: Connect to a Git repo, Update from Git, Commit changes to Git, Introduction to Git integration
 #customer intent: As a developer, I want to connect my workspace to a Git repo so that I can collaborate with others and leverage source control.
 ---
@@ -267,4 +267,3 @@ The actions you can take on a workspace depend on the permissions you have in bo
 
 - [Understand the Git integration process](./git-integration-process.md)
 - [Manage Git branches](./manage-branches.md)
-- [Git integration best practices](../best-practices-cicd.md)

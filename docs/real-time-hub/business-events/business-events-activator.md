@@ -14,9 +14,6 @@ Activator provides a no-code way to publish business events in Microsoft Fabric.
 
 By acting as a publisher, Activator turns insights from **Power BI reports**, **Real-Time Dashboards**, **KQL queries**, and **Fabric Warehouse SQL queries** into governed business signals that downstream systems can subscribe to and act on in real time.
 
-> [!IMPORTANT]
-> This feature is in [preview](../../fundamentals/preview.md).
-
 ## Why use Activator to publish business events?
 
 Activator is uniquely suited for publishing business events because it works directly with the Power BI reports, dashboards, and queries where business users already monitor their data. You don't need to write code or build custom pipelines. Instead, you define conditions on your existing reports, dashboards, or queries, and Activator publishes a business event whenever that condition is met.
@@ -68,6 +65,9 @@ Before you publish business events from Activator, make sure the following items
 - A [business event](create-business-events.md) defined in Real-Time hub with the fields that match your use case.
 - A data source supported by Activator, such as a Power BI report, Real-Time Dashboard, KQL query, or Fabric Warehouse SQL query.
 - Publish permission on the business event. For more information, see [Manage data access for business events](manage-business-events-data-access.md).
+
+> [!NOTE]
+> Workspace private links can block cross-workspace business event publishing. For Business events, the source workspace is the workspace that contains the Event Schema Set. If that workspace blocks public access, publish from the same workspace or establish a private link from the publisher's network to the source workspace. For more information, see [Workspace private links for Azure, Fabric, and Business events](../workspace-private-links-real-time-events.md).
 
 ## Example: Publish events from a Power BI report
 

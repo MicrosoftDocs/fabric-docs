@@ -3,7 +3,7 @@ title: Create and deploy your first Fabric app with the Rayfin CLI
 description: Learn how to scaffold a Microsoft Fabric app, run it locally, sign in, and deploy it to Microsoft Fabric by using the Rayfin CLI.
 ms.reviewer: mksuni
 ms.topic: tutorial
-ms.date: 06/02/2026
+ms.date: 08/19/2026
 ai-usage: ai-assisted
 ms.search.form: Create and deploy a Fabric app with Rayfin CLI
 ---
@@ -27,9 +27,25 @@ In this tutorial, you:
 - The Fabric Apps workload enabled in your tenant.
 - Node.js and npm installed.
 
-If the Fabric Apps workload isn't enabled yet, ask a Fabric administrator to turn on **Fabric Apps (preview)** in the Fabric admin portal.
 
-## Step 1: Create a new project
+## Create an app with an AI prompt
+
+Use the following prompt with GitHub Copilot or another coding agent to create, explore, run, customize, and deploy a Fabric app:
+
+```text
+Set up a new Fabric App project called "rayfin-app-ws".
+
+1. Run: npm create @microsoft/rayfin@latest
+2. Open the scaffolded project directory.
+3. Explore the project structure and understand the Rayfin app framework.
+4. Run: npm run dev
+5. Make changes to the app based on my instructions.
+6. When ready, deploy with: npx rayfin up
+```
+
+The agent runs the commands interactively and asks for any required project or workspace settings. Review generated files and command output before deployment. If the Fabric Apps workload isn't enabled yet, ask a Fabric administrator to turn on **Fabric Apps (preview)** in **OneLake catalog** > **Govern** > **Configurations** > **Workloads**.
+
+## Create a new app from CLI
 
 To scaffold a new app from a template, use `npm create`:
 
@@ -52,7 +68,7 @@ cd my-app
 > npx rayfin init .
 > ```
 
-## Step 2: Review the generated project
+### Review the generated project
 
 After scaffolding, the project includes the files you need to start developing:
 
@@ -63,17 +79,17 @@ After scaffolding, the project includes the files you need to start developing:
 
 For a detailed file-by-file breakdown, see [Understand the project structure](project-structure.md).
 
-## Step 3: Run the app locally
+### Run the app locally
 
 Start the local development environment:
 
 ```bash
-npm run dev
+npx rayfin dev
 ```
 
 This command starts the frontend development server for the scaffolded app and deploys the backend to Fabric. To confirm the app starts correctly, open the local URL shown in the terminal.
 
-## Step 4: Deploy the app to Fabric
+### Deploy the app to Fabric
 
 Build more features into your application. After you test your changes, deploy to Fabric again.
 
@@ -87,7 +103,7 @@ To preview the deployment without making changes, run:
 npx rayfin up --dry-run
 ```
 
-## Step 5: Verify the deployment
+### Verify the deployment
 
 Check the current deployment state:
 
@@ -103,7 +119,7 @@ npx rayfin up status --json
 
 After a successful deploy, the CLI prints the hosted app URL and the Fabric portal link for the deployed item.
 
-## Step 6: Deloy database or static content only
+### Deploy database or static content only
 
 If you only changed data models, apply the database changes without a full redeploy:
 
@@ -115,6 +131,23 @@ If you only changed frontend code, redeploy the static assets:
 
 ```bash
 npx rayfin up staticapp deploy
+```
+
+### Add functions
+
+Functions are TypeScript functions that run on the server inside your Fabric app. Use functions for logic that must not run in the browser, such as working with secrets, accessing privileged data, and calling downstream services on behalf of the signed-in user.
+
+```bash
+npx rayfin functions init
+```
+
+GitHub Copilot can generate and update the required files and components. You can also ask the agent to run the app, debug functions locally, and deploy the app. For example, you can use the following prompt to build an AI pull request review assistant by using functions:
+
+```text
+Build an app that lets me view all pull requests for the repository
+<repoURL>, chat with my Azure AI Foundry agent <agentName> to review
+pull requests, and post review comments. Use functions with delegated
+authentication to connect to Azure AI Foundry and Azure DevOps.
 ```
 
 ## Troubleshoot common issues

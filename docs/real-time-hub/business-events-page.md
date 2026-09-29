@@ -13,9 +13,6 @@ ai-usage: ai-assisted
 
 # Explore the Business events page in Fabric Real-Time hub
 
-> [!IMPORTANT]
-> This feature is in [preview](../fundamentals/preview.md).
-
 Business events are events that applications and analytics generate in Microsoft Fabric to represent something meaningful to your business, such as an order being placed or a threshold being crossed. You define and publish these events from sources such as user data functions and notebooks, so they carry the business context that matters to you. This context differs from Fabric events and Azure events, which are system events that the platform generates automatically to signal changes in Fabric workspace items or Azure services.
 
 On this page, you define, discover, publish, and consume business events across Fabric. After you publish a business event, you can use it to trigger alerts, automate workflows, run analytics, or provide real-time context to AI systems. 

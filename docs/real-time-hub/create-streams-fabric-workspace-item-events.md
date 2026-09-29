@@ -4,16 +4,17 @@ description: Fabric workspace item events let you track changes in Real-Time hub
 #customer intent: As a Fabric developer, I want to create a stream for Fabric workspace item events in Real-Time hub so that I can track changes happening in my workspace.
 ms.reviewer: anboisve
 ms.topic: how-to
-ms.date: 04/02/2026
+ms.date: 09/01/2026
 author: spelluru
 ms.author: spelluru
+ai-usage: ai-assisted
 ---
 
 # Get Fabric workspace item events in Real-Time hub
 
 This article describes how to get Fabric workspace item events as an eventstream in Fabric Real-Time hub.
 
-Fabric workspace item events are discrete Fabric events that occur when contents of your Fabric Workspace is changed. These changes include creating, updating, or deleting of Fabric items except for the item types listed in the following note.
+Fabric workspace item events are discrete Fabric events that occur when the contents of your Fabric workspace change. These changes include creating, updating, soft-deleting, recovering, or permanently deleting Fabric items, except for the item types listed in the following note.
 [!INCLUDE [unsupported-itemtypes-in-workspaceevents](../real-time-intelligence/event-streams/includes/connectors/unsupported-itemtypes-in-workspaceevents.md)]
 
 With Fabric eventstreams, you can capture these Fabric workspace events, transform them, and route them to various destinations in Fabric for further analysis. This seamless integration of Fabric workspace events within Fabric eventstreams gives you greater flexibility for monitoring and analyzing activities in your Fabric workspace.

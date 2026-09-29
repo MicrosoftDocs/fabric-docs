@@ -1,23 +1,20 @@
 ---
-title: Staged data options for Dataflow Gen2 (Preview)
+title: Staged data options for Dataflow Gen2
 description: Tune how Dataflow Gen2 writes intermediate (staged) data and copies that data to Fabric Lakehouse destinations using the Staged Data options on the Scale tab.
 ms.reviewer: jeluitwi
 ms.topic: how-to
-ms.date: 5/13/2026
+ms.date: 09/03/2026
 ms.custom: dataflows
 ---
 
 # Staged data options for Dataflow Gen2
 
-> [!NOTE]
-> The staged data options described in this article are currently in preview.
-
 When you enable [staging](dataflow-gen2-data-destinations-and-managed-settings.md#using-staging-before-loading-to-a-destination) on a query, Dataflow Gen2 writes intermediate results to an internal staging Lakehouse so the engine can use Fabric compute for transformations or to land data in a destination.
 
 The **Staged Data** section in the dataflow Scale settings lets you tune two aspects of that pipeline:
 
-- **Optimized copy to Lakehouse (Preview)** — Use a faster path to write staged data to a Fabric Lakehouse data destination.
-- **Enable V-Order compression (Preview)** — Apply V-Order compression to data written to the staging Lakehouse.
+- **Optimized copy to Lakehouse** — Use a faster path to write staged data to a Fabric Lakehouse data destination.
+- **Enable V-Order compression** — Apply V-Order compression to data written to the staging Lakehouse.
 
 Both options apply at the dataflow level and only take effect in Dataflow Gen2.
 
@@ -30,7 +27,7 @@ Both options apply at the dataflow level and only take effect in Dataflow Gen2.
 
 :::image type="content" source="media/dataflow-gen2-staged-data-options/staged-data-options.png" alt-text="Screenshot of the Options dialog with the Scale tab selected and the Staged Data section highlighted." lightbox="media/dataflow-gen2-staged-data-options/staged-data-options.png":::
 
-## Optimized copy to Lakehouse (Preview)
+## Optimized copy to Lakehouse
 
 When this option is on, Dataflow Gen2 uses an optimized data movement path for queries that:
 
@@ -60,7 +57,7 @@ The option is **off by default**. For most dataflows that stage data and write t
 - If you turn off staging for a query, the optimized copy path doesn't apply to that query.
 - The option applies to all qualifying queries in the dataflow. There's no per-query override today.
 
-## Enable V-Order compression (Preview)
+## Enable V-Order compression
 
 V-Order is a write-time optimization for the Parquet file format that improves read performance for downstream Fabric engines, at the cost of additional CPU during the write. For background and cross-engine guidance, see [Delta Lake table optimization and V-Order](../data-engineering/delta-optimization-and-v-order.md) and [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md).
 

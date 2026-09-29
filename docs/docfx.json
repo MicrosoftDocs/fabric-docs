@@ -179,6 +179,8 @@
                 "database/cosmos-db/**/*.yml": "database-cosmos-db",
                 "database/sql/**/*.md": "database-sql",
                 "database/sql/**/*.yml": "database-sql",
+                "database/hub/**/*.md": "database",
+                "database/hub/**/*.yml": "database",
                 "enterprise/**/*.md": "enterprise",
                 "enterprise/**/*.yml": "enterprise",
                 "enterprise/powerbi/**/*.md": "powerbi-admin",

@@ -8,7 +8,7 @@ metadata:
   description: Learn about SQL database and Cosmos DB in Fabric.
   ms.topic: landing-page # Required
   ms.collection: collection # Optional; Remove if no collection is used.
-  ms.date: 01/09/2026
+  ms.date: 09/18/2026
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:
@@ -19,6 +19,8 @@ landingContent:
     linkLists:
       - linkListType: overview
         links:
+          - text: Database Hub
+            url: hub/overview.md
           - text: SQL database in Fabric
             url: sql/overview.md
           - text: Cosmos DB database in Fabric
@@ -26,6 +28,18 @@ landingContent:
           - text: "Decision guide: Which data store?"
             url: ../fundamentals/decision-guide-data-store.md
   # Card 
+  - title: Get started with the Database Hub
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: What is the Database Hub?
+            url: hub/overview.md
+          - text: Monitor your database estate
+            url: hub/monitor.md
+          - text: Database Hub FAQ
+            url: hub/faq.yml
+
+  # Card
   - title: Get started with SQL database
     linkLists:
       - linkListType: how-to-guide
@@ -36,63 +50,20 @@ landingContent:
             url: sql/connect.md
           - text: Connect with Python
             url: sql/connect-python.md
-          - text: Intelligent applications and AI
-            url: /sql/sql-server/ai/artificial-intelligence-intelligent-applications?toc=/fabric/database/toc.json&bc=/fabric/breadcrumb/toc.json&view=fabric-sqldb&preserve-view=true
           - text: Load data
             url: sql/load-data-pipelines.md
+      - linkListType: concept
+        links:            
           - text: Reverse ETL
             url: sql/use-case-reverse-etl.md            
           - text: Translytical applications
             url: sql/use-case-translytical-applications.md
-  # Card 
-  - title: Secure and share in SQL database
-    linkLists:
-      - linkListType: get-started
-        links:
-          - text: Security overview
-            url: sql/security-overview.md
-          - text: Auditing in SQL database
-            url: sql/auditing.md
-          - text: Authentication
-            url: sql/authentication.md
-          - text: Authorization
-            url: sql/authorization.md
-          - text: Protect sensitive data with Purview
-            url: sql/protect-databases-with-protection-policies.md
-          - text: Share your SQL database
-            url: sql/share-sql-manage-permission.md
-          - text: Secure and share mirrored data
-            url: sql/mirroring-secure.md
-
-  # Card 
-  - title: Monitor SQL database
-    linkLists:
-      - linkListType: how-to-guide
-        links:
+      - linkListType: reference
+        links:            
           - text: Performance Dashboard
             url: sql/performance-dashboard.md
           - text: Monitor mirroring replication
             url: sql/mirroring-monitor.md
-  # Card 
-  - title: Copilot in SQL database
-    linkLists:
-      - linkListType: how-to-guide
-        links:
-          - text: Copilot for SQL database in Fabric
-            url: sql/copilot.md
-          - text: Copilot chat pane
-            url: sql/copilot-chat-pane.md
-          - text: Copilot code completion
-            url: sql/copilot-code-completion.md
-          - text: Copilot quick actions
-            url: sql/copilot-quick-actions.md
-  # Card 
-  - title: Get started with SQL analytics endpoint
-    linkLists:
-      - linkListType: get-started
-        links:
-          - text: What is a Lakehouse?
-            url: ../data-engineering/lakehouse-overview.md
 
   # Card 
   - title: Get started with Cosmos DB database
@@ -101,6 +72,10 @@ landingContent:
         links:
           - text: Create a database
             url: cosmos-db/quickstart-portal.md
+          - text: Implement continuous integration and deployment
+            url: cosmos-db/how-to-continuous-integration-deployment.md
+          - text: Monitor activity and performance
+            url: cosmos-db/how-to-monitor.md
       - linkListType: how-to-guide
         links:
           - text: Run cross-database queries
@@ -112,19 +87,39 @@ landingContent:
           - text: FAQ
             url: cosmos-db/faq.yml
 
-  # Card 
-  - title: Secure Cosmos DB database
+  # Card
+  - title: Build AI applications with Fabric databases
     linkLists:
       - linkListType: concept
         links:
-          - text: Security baseline
-            url: cosmos-db/security.md
-          - text: Authorization
-            url: cosmos-db/authorization.md
+          - text: Index vector data in Cosmos DB
+            url: cosmos-db/index-vector-data.md
+          - text: Full text indexing and search in Cosmos DB
+            url: cosmos-db/full-text-indexing.md
+          - text: Hybrid search in Cosmos DB
+            url: cosmos-db/hybrid-search.md
+      - linkListType: concept
+        links:
+          - text: AI features in SQL database in Fabric
+            url: sql/use-case-ai-application.md
+          - text: Intelligent applications and AI in SQL Database Engine
+            url: /sql/sql-server/ai/artificial-intelligence-intelligent-applications?toc=/fabric/database/toc.json&bc=/fabric/breadcrumb/toc.json&view=fabric-sqldb&preserve-view=true
+          - text: Vectors and embeddings in SQL database
+            url: /sql/sql-server/ai/vectors?toc=/fabric/database/toc.json&bc=/fabric/breadcrumb/toc.json&view=fabric-sqldb&preserve-view=true
+
+  # Card 
+  - title: Copilot in SQL database in Fabric
+    linkLists:
       - linkListType: how-to-guide
-        links:            
-          - text: Authenticate using Microsoft Entra ID
-            url: cosmos-db/how-to-authenticate.md
+        links:
+          - text: Copilot for SQL database in Fabric
+            url: sql/copilot.md
+          - text: Copilot chat pane
+            url: sql/copilot-chat-pane.md
+          - text: Copilot code completion
+            url: sql/copilot-code-completion.md
+          - text: Copilot quick actions
+            url: sql/copilot-quick-actions.md
 
   # Card 
   - title: Query and tune Cosmos DB database
@@ -150,24 +145,3 @@ landingContent:
           - text: NoSQL query language
             url: /nosql/query/overview?context=/fabric/context/context-database
 
-  # Card
-  - title: Build AI applications with Cosmos DB database
-    linkLists:
-      - linkListType: concept
-        links:
-          - text: Index vector data
-            url: cosmos-db/index-vector-data.md
-          - text: Full text indexing and search
-            url: cosmos-db/full-text-indexing.md
-          - text: Hybrid search
-            url: cosmos-db/hybrid-search.md
-
-  # Card 
-  - title: Deploy and monitor Cosmos DB database
-    linkLists:
-      - linkListType: how-to-guide
-        links:
-          - text: Implement continuous integration and deployment
-            url: cosmos-db/how-to-continuous-integration-deployment.md
-          - text: Monitor activity and performance
-            url: cosmos-db/how-to-monitor.md

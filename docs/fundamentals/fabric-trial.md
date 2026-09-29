@@ -53,7 +53,7 @@ Learn more about which [Microsoft Fabric features are supported in a trial capac
 
 ## When your Fabric trial ends
 
-Your Microsoft Fabric trial capacity lasts for 60 days, unless you cancel it earlier. As the trial nears its end, you’ll see notifications in the Fabric portal and in the **Capacity settings** page of the Admin portal, helping you track how much time remains.
+Your Microsoft Fabric trial capacity lasts for 60 days, unless you cancel it earlier. As the trial nears its end, you’ll see notifications in the Fabric portal and in **OneLake catalog** > **Govern** > **Capacities**, helping you track how much time remains.
 
 Once the trial expires:
 
@@ -66,7 +66,7 @@ For more information, see [ending your trial](#end-a-fabric-trial). If Copilot b
 
 > [!TIP]
 >
-> - To check your trial status or trial expiration date, go to **Admin portal > Capacity settings > Trial**.
+> - To check your trial status or trial expiration date, go to **OneLake catalog** > **Govern** > **Capacities** > **Trial**.
 >
 > - If you need to request a trial extension, contact your Microsoft sales representative or contact the [Azure sales team](https://azure.microsoft.com/contact/?msockid=02d2195e72356be10cc60cb5738d6afb) for assistance.
 >
@@ -150,7 +150,7 @@ To start using your Fabric capacity trial, create a new workspace. Assign that w
 
 ## Get the status of your trial
 
-To see the status of your trial, open your Account manager again and look for the **Trial status**. Your Account manager keeps track of the number of days remaining in your trial. You can also see the countdown in the Fabric menu bar or go to **Admin portal > Capacity settings > Trial**.
+To see the status of your trial, open your Account manager again and look for the **Trial status**. Your Account manager keeps track of the number of days remaining in your trial. You can also see the countdown in the Fabric menu bar or go to **OneLake catalog** > **Govern** > **Capacities** > **Trial**.
 
 :::image type="content" source="media/fabric-trial/trial-status-me-control.png" lightbox="media/fabric-trial/trial-status-me-control.png" alt-text="Screenshot of the Microsoft Fabric trial status.":::
 
@@ -160,9 +160,9 @@ The person who starts the Fabric trial capacity becomes the Capacity administrat
 
 ### Share by enabling contributor permissions
 
-To share and collaborate during a trial, you need to make sure the right tenant settings are enabled. Trial enablement is no longer controlled by a single toggle in the Admin portal. Instead, it’s managed through **Tenant settings** and **Help and support settings**, with optional capacity assignment.
+To share and collaborate during a trial, you need to make sure the right tenant settings are enabled. Trial enablement is managed through **Tenant settings** and **Help and support settings**, with optional capacity assignment.
 
-1. In the **Admin portal**, go to **Tenant settings.**
+1. Go to **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**.
 1. Expand **Users can create Fabric items**, and turn it on. Optionally, scope this setting to specific security groups.
 1. Under **Help and support settings**, enable **Users can try Microsoft Fabric paid features**. This allows users to start a trial.
 1. (Optional) Assign trial capacity in **Capacity settings** if you want to control where trial workspaces are created.
@@ -184,8 +184,7 @@ For more information, see [Use Workspace settings](workspaces.md#workspace-type)
 
 If you're the Capacity administrator or Tenant administrator, you might be eligible to increase the trial capacity by following these steps:
 
-1. From the upper right corner of Fabric, select the gear icon, then select **Admin portal**.
-1. Select **Capacity settings**, and then choose the **Trial** tab.
+1. Go to **OneLake catalog** > **Govern** > **Capacities**, and then choose the **Trial** tab.
 1. Your current trial size is displayed here. Select the **Change size** button to increase from 4 capacity units to 64 capacity units.
 1. Select **Apply**. If you're eligible to change the size, you see a success message and receive a notification.
 
@@ -223,9 +222,9 @@ If you don't move the workspaces and their contents to a new capacity that suppo
 
   :::image type="content" source="media/fabric-trial/cancel-trial.png" lightbox="media/fabric-trial/cancel-trial.png" alt-text="Screenshot of the Cancel trial button in Account manager.":::
 
-- **Cancel the Fabric trial capacity using the Admin portal**: As a Capacity or Fabric administrator, you can use the Admin portal to cancel a Fabric trial capacity:
+- **Cancel the Fabric trial capacity in Govern**: As a Capacity or Fabric administrator, you can use **OneLake catalog** > **Govern** > **Capacities** to cancel a Fabric trial capacity:
 
-  1. Select **Settings** > **Admin portal** > **Capacity settings**.
+  1. Go to **OneLake catalog** > **Govern** > **Capacities**.
   1. Then choose the **Trials** tab.
   1. Select the cog icon for the trial capacity that you want to delete.
 
@@ -280,9 +279,9 @@ If you do see the **Start trial** button in your Account manager but can't start
 
 #### How do I look up the trial Capacity administrator?
 
-To request access to a trial capacity or to check whether your organization has the Fabric tenant setting enabled, you can contact your Capacity administrator. Ask your Fabric administrator to use the Admin portal to look up your Capacity administrator. You can find your Fabric administrator as the service administrator in the Workspace Settings of your workspace.
+To request access to a trial capacity or to check whether your organization has the Fabric tenant setting enabled, you can contact your Capacity administrator. Ask your Fabric administrator to use **OneLake catalog** > **Govern** > **Capacities** to look up your Capacity administrator. You can find your Fabric administrator as the service administrator in the Workspace Settings of your workspace.
 
-If you're the Capacity or Fabric administrator, from the upper right corner of Fabric, select the gear icon. Select **Admin portal**. For a Fabric trial, select **Capacity settings** and then choose the **Trial** tab.
+If you're the Capacity or Fabric administrator, go to **OneLake catalog** > **Govern** > **Capacities**, and then choose the **Trial** tab.
 
 :::image type="content" source="media/fabric-trial/fabric-admin.png" lightbox="media/fabric-trial/fabric-admin.png" alt-text="Screenshot of Admin center showing the Capacity settings screen.":::
 
@@ -295,19 +294,19 @@ Microsoft limits the number of trial capacities available per tenant. If your te
 
 To resolve this issue:
 
-- Contact your Fabric administrator to check existing trial capacities in **Admin portal > Capacity settings > Trial**. If there are inactive or unmanaged trial capacities (for example, from users who left the organization), consider canceling them to free up capacity for new trials.
+- Contact your Fabric administrator to check existing trial capacities in **OneLake catalog** > **Govern** > **Capacities** > **Trial**. If there are inactive or unmanaged trial capacities (for example, from users who left the organization), consider canceling them to free up capacity for new trials.
 - Request access to an existing trial capacity from a Capacity administrator who can share their trial by assigning workspaces or enabling contributor permissions.
 - Consider [purchasing a Fabric capacity](../enterprise/buy-capacity.md) if trial limits prevent your organization from testing Fabric features.
 
 #### How do I look up the number of days remaining in my trial?
 
-From the upper right corner of Fabric, select the gear icon. Select **Admin portal**. For a Fabric trial, select **Capacity settings** and then choose the **Trial** tab. The **Days left** column tracks the remaining days for each trial.
+Go to **OneLake catalog** > **Govern** > **Capacities**, and then choose the **Trial** tab. The **Days left** column tracks the remaining days for each trial.
 
 :::image type="content" source="media/fabric-trial/fabric-admin-days-left.png" lightbox="media/fabric-trial/fabric-admin-days-left.png" alt-text="Screenshot of Admin center showing the Capacity settings screen and days left for each trial.":::
 
 #### Why can't I assign a workspace to the trial capacity in my workspace settings?
 
-This can occur when the Fabric administrator turns off trials after you start a trial. To add your workspace to the trial capacity, open the Admin portal by selecting it from the gear icon in the top menu bar. Then, select **Trial > Capacity settings** and choose the name of the capacity. If you don't see your workspace assigned, add it here.
+This can occur when the Fabric administrator turns off trials after you start a trial. To add your workspace to the trial capacity, go to **OneLake catalog** > **Govern** > **Capacities** > **Trial**, and choose the name of the capacity. If you don't see your workspace assigned, add it here.
 
 :::image type="content" source="media/fabric-trial/capacity-wk-assignment.png" lightbox="media/fabric-trial/capacity-wk-assignment.png" alt-text="Screenshot of the Capacities page in the Admin portal.":::
 

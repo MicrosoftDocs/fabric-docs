@@ -3,7 +3,7 @@ title: Development process using branch workspace
 description: Learn how developers can use the Fabric branch-out experience in their development process.
 ms.reviewer: PrigalYaron
 ms.topic: concept-article
-ms.date: 09/01/2026
+ms.date: 09/24/2026
 ai-usage: ai-assisted
 ---
 
@@ -24,7 +24,7 @@ The branch workspace relationship has several visual representations in the Fabr
 
    :::image type="content" source="media/branch-out/branch-6.png" alt-text="Screenshot of workspace tree hierarchy with branch workspaces." lightbox="media/branch-out/branch-6.png":::
 
-- Workspace breadcrumbs: Navigation option from branch workspace to source workspace 
+- Workspace breadcrumbs: Navigation option from branch workspace to source workspace
 
    :::image type="content" source="media/branch-out/branch-7.png" alt-text="Screenshot of branch workspace breadcrumbs." lightbox="media/branch-out/branch-7.png":::
 
@@ -132,6 +132,31 @@ You can't switch branches if you have any uncommitted changes in the workspace. 
 
 To connect the current workspace to a new branch while keeping the existing workspace status, select **Checkout new branch**. Learn more about checking out a new branch at [Resolve conflicts in Git](./conflict-resolution.md#resolve-conflict-in-git).
 
+### Branch out with a deployment plan
+
+Attach a [deployment plan](../deployment-plan/deployment-plan-overview.md) when items must deploy in a specific order or when notebooks, data pipelines, or other supported actions must run during branch-out. The deployment plan controls how Fabric populates the branched workspace; it doesn’t change how the Git branch or workspace is created.
+
+Before you begin, save the deployment plan and commit it to the current Git branch with the items that it references. Only deployment plans available in Git can be selected during branch-out.
+
+To branch out with a deployment plan:
+
+1. From the **Branches** tab of the **Source control** pane, select **Branch out with deployment plan**.
+
+   :::image type="content" source="media/branch-out/branch-deployment-plan-1.png" alt-text="Screenshot of the Source control menu with Branch out with deployment plan highlighted." lightbox="media/branch-out/branch-deployment-plan-1.png":::
+
+1. Configure the new branch and target workspace. Select **Next**.
+
+   :::image type="content" source="media/branch-out/branch-deployment-plan-2.png" alt-text="Screenshot of the Create branch with deployment plan wizard with branch and workspace settings." lightbox="media/branch-out/branch-deployment-plan-2.png":::
+
+1. Select a deployment plan in the branch-out wizard. To use the standard branch-out behavior, select **No deployment plan**.
+1. If you selected **Select items individually (Preview)**, select the items to include in the branched workspace, including the items needed by the plan's actions. Attaching the plan doesn't select these items for you.
+1. Select **Create branch**.
+
+   :::image type="content" source="media/branch-out/branch-deployment-plan-3.png" alt-text="Screenshot of the branch-out wizard with a deployment plan selected and workspace items listed." lightbox="media/branch-out/branch-deployment-plan-3.png":::
+
+Fabric creates the branch and workspace, and then uses the deployment plan while populating the target workspace. For how the selected items, plan relationships, Fabric lineage, and actions determine the deployment, see [How a deployment plan works](../deployment-plan/deployment-plan-overview.md#how-a-deployment-plan-works).
+
+Branching out without a deployment plan works as before: Fabric deploys the selected items using its standard dependency handling and doesn’t run pre-deployment or post-deployment actions.
 
 ### Branching out limitations
 - Branch workspace admin profile is in Preview.

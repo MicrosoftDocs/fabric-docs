@@ -3,7 +3,7 @@ title: Real-Time Dashboard supported data sources
 description: Learn about the data sources supported in Real-Time Dashboard in Microsoft Fabric.
 ms.reviewer: mibar, v-hzargari
 ms.topic: concept-article
-ms.date: 08/20/2026
+ms.date: 09/28/2026
 ms.search.form: Overview
 ai-usage: ai-assisted
 ---

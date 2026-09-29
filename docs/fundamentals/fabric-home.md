@@ -198,8 +198,9 @@ Select the gear icon in the top bar to open settings. Links shown depend on your
 |---------|------------------|
 | Preferences | Set display language, personalize UI behavior, manage notifications, configure item settings (per item type), enable developer mode (where applicable). |
 | Resources and extensions | Manage personal and group storage, Power BI item settings, connections and gateways, embed codes, Azure Analysis Services migrations.|
-| Governance and insights | Access the Admin portal (if permitted) and Microsoft Purview hub (preview) for governance and compliance insights. |
+| Governance and insights | Open OneLake Catalog and select **Govern** for governance and administration. If OneLake Catalog and Govern aren't yet available in your region, use the **Admin portal**. |
 
+Learn more: [Govern in OneLake Catalog](../governance/onelake-catalog-govern.md) • [Fabric administration](../admin/admin-overview.md)
 You can also select region-specific English language variants, including English (United States), English (United Kingdom), and English (Canada), from the language settings. Each variant applies its associated date and time format throughout the Fabric experience, making it easier to display dates and times in the format commonly used in your region.
 
 Learn more: [Admin portal](../admin/admin-center.md) • [Microsoft Purview hub (preview)](../governance/use-microsoft-purview-hub.md)

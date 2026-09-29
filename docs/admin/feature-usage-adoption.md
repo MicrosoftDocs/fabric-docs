@@ -6,13 +6,17 @@ ms.author: mimart
 ms.topic: concept-article
 ms.custom: sfi-image-nochange
 ms.date: 12/17/2025
+ai-usage: ai-assisted
 ---
 
 # Feature usage and adoption report (preview)
 
+> [!IMPORTANT]
+> The [Govern report in the OneLake catalog](../governance/onelake-catalog-govern.md#govern-report) is generally available (GA). Use the Govern report for tenant-wide governance and administration insights. The Feature usage and adoption report remains in preview, won't become GA, and won't be expanded with additional data.
+
 The Feature Usage and Adoption Report is aimed at admins who want to understand how Fabric features are utilized across the organization. As an admin, the report insights can help you govern your Fabric tenant and take action when needed.
 
-You can access the report from the [Admin monitoring](monitoring-workspace.md) workspace. To access the workspace, you must be a [Fabric administrator](microsoft-fabric-admin.md#power-platform-and-fabric-admin-roles).
+You can access the report from the [Admin monitoring](monitoring-workspace.md) workspace. To access the workspace, you must be a [Fabric administrator](roles.md#power-platform-and-fabric-admin-roles).
 
 You can also have an admin share the report or semantic model directly with you. With build permissions to the semantic model, users can design a custom report that relies on the same underlying data.
 
@@ -174,9 +178,9 @@ This section lists the report's considerations and limitations.
 
 * *Info Not Available* represents data that isn't available. Data might not be available when an audit event doesn't have complete information, or when that information isn't applicable for the event.
 
-* The report reflects your tenant's audit activity on a rolling 30 day basis, along with the latest snapshot of your tenant's inventory.
+* The report reflects your tenant's audit activity on a rolling 30-day basis, along with the latest snapshot of your tenant's inventory.
 
-* Deleted inventory (including workspaces with extended retention) doesn't appear in the report after 28 days post deletion. They can be seen in the admin portal until they're permanently deleted.
+* Deleted inventory (including workspaces with extended retention) doesn't appear in the report after 28 days post deletion. They can be seen in Fabric until they're permanently deleted.
 
 * Items created and deleted within a 24 hour period could have incomplete information.
   
@@ -200,4 +204,4 @@ Semantic models in *Power BI Pro* and *Power BI Premium Per-User* (PPU) workspac
 
 * [What is the Admin monitoring workspace?](monitoring-workspace.md)
 
-* [Admin overview](microsoft-fabric-admin.md)
+* [Admin overview](admin-overview.md)

@@ -1,5 +1,4 @@
 ---
-title: Include File for Supported Property Types
 description: Include file for supported property types for ontology (preview) data binding
 ms.topic: include
 ms.date: 03/31/2025
@@ -7,9 +6,9 @@ ms.date: 03/31/2025
 
 ## Supported property types
 
-The following table lists the supported property types for data that can be bound to properties in ontology (preview).
+The following table lists the supported property types for data that you can bind to properties in ontology (preview).
 
-| Ontology property value type | Supported Lakehouse types | Supported Eventhouse types |
+| Ontology property value type | Supported lakehouse types | Supported eventhouse types |
 | --- | --- | --- |
 | integer | tinyint, smallint, bigint, integer, long, short | int, long |
 | boolean | boolean | bool |
@@ -17,13 +16,13 @@ The following table lists the supported property types for data that can be boun
 | double | double, decimal, float | decimal, real |
 | string | char, decimal(p, s), string, array, binary, binary16, byte, map, object, struct, timestampint64, timestamp_ntz | dynamic, string, guid, timespan |
 
-The following table shows supported source column value types that can be used for the timestamp selection in a time series binding.
+The following table shows supported source column value types that you can use for the timestamp selection in a time series binding.
 
-| Ontology configuration | Lakehouse and Eventhouse source column value type |
+| Ontology configuration | Lakehouse and eventhouse source column value type |
 | --- | --- |
 | Timestamp | datetime, date, timestamp |
 
-The following table shows supported property types that can be used as the entity type key.
+The following table shows supported property types that you can use as the entity type key.
 
 | Ontology configuration | Ontology property value type |
 | --- | --- |

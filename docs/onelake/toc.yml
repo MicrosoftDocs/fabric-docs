@@ -100,18 +100,18 @@ items:
     items:
     - name: What are table APIs?
       href: ./table-apis/table-apis-overview.md
-    - name: Iceberg
+    - name: Read table metadata
       items:
-      - name: Table APIs for Iceberg
+      - name: Iceberg metadata API
         href: ./table-apis/iceberg-table-apis-overview.md
-      - name: Get started with Iceberg table APIs
+      - name: Iceberg metadata API samples
         href: ./table-apis/iceberg-table-apis-get-started.md
-    - name: Delta
-      items:
-      - name: Table APIs for Delta
+      - name: Delta metadata API
         href: ./table-apis/delta-table-apis-overview.md
-      - name: Get started with Delta table APIs
+      - name: Delta metadata API samples
         href: ./table-apis/delta-table-apis-get-started.md
+    - name: Read table data
+      href: ./table-apis/read-table-data-rest-api.md
   - name: OneLake file explorer for Windows
     items:
     - name: OneLake file explorer overview
