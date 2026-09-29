@@ -1,110 +1,26 @@
 ﻿---
-title: Customize a map
-description: Learn how to customize a map in Microsoft Fabric Real-Time Intelligence.
+title: Configure layer settings in Fabric Maps
+description: Learn how to configure layer appearance, labels, visibility, and data-driven styling in Fabric Maps.
 ms.reviewer: smunk, sipa
 ms.topic: how-to
-ms.date: 09/13/2026
-ms.search.form: Customize the map
+ms.date: 09/22/2026
+ms.search.form: Configure layer settings
 ---
 
-# Customize a map
+# Configure layer settings in Fabric Maps
 
-Microsoft Fabric Maps provides two levels of customization. **Base map settings** control the overall appearance and behavior of the map, including the basemap style, map elements, interactive controls, initial view, and localization. These settings apply to the entire map and affect all layers. **Layer settings** control how individual datasets are rendered, including colors, labels, symbols, clustering, and data-driven styling. Changes to layer settings affect only the selected layer, making it possible to customize each dataset independently.
+Layer settings control how individual datasets render in Fabric Maps, including colors, labels, symbols, clustering, visibility, and data-driven styling. Changes affect only the selected layer and don't modify map-wide settings.
+
+For settings that control the basemap, initial map view, map elements, interactive controls, and localization, see [Configure map settings in Fabric Maps](configure-map-settings.md).
 
 ## Prerequisites
 
-* A [workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity)
-* A [map](create-map.md) with editing permissions and at least one connected data source.
+- A [workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity).
+- A [map](create-map.md) that you have permission to edit and that contains at least one data layer.
 
 ## Configure basemap settings
 
-Map settings control the overall appearance and behavior of the map. You can choose a basemap style, configure the initial map view, show or hide map elements such as labels and boundaries, enable interactive controls, and select the display language for map labels.
-
-Changes made to map settings apply to the entire map and affect all layers displayed on it.
-
-:::image type="content" source="media/customize-map/ribbon-map-setting.png" lightbox="media/customize-map/ribbon-map-setting.png" alt-text="Screenshot of ribbon map settings.":::
-
-There are five different categories of basemap settings:
-
-* Style
-* Initial map view
-* Map elements
-* Controls
-* Localization
-
-### Style
-
-The map style determines the appearance of the basemap and provides geographic context for the data displayed on the map. Choose from a range of built-in styles, such as road, satellite, grayscale, and high-contrast themes, to match your visualization needs and improve readability for your audience.
-
-:::image type="content" source="media/customize-map/base-map-style.png" lightbox="media/customize-map/base-map-style.png" alt-text="A screenshot showing the Basemap configuration panel's list of initial map view settings available for the basemap.":::
-
-| Property | Description |
-| -------- | ----------- |
-| Map style | Sets the visual style of the basemap. Valid values: [Road, Satellite, Hybrid, Grayscale (Light), Grayscale (Dark), Night, High Contrast (Light), High Contrast (Dark), Blank, Blank (Accessible)](/azure/azure-maps/supported-map-styles). Default = *Grayscale (Light)*. |
-| Background color | Sets the basemap background color. Available when **Map style** is set to **Blank** or **Blank (Accessible)**. |
-
-### Initial map view
-
-The initial map view defines the default location and perspective shown when the map first loads. Configure the starting center point, zoom level, pitch, and rotation to focus viewers on the most relevant geographic area and present the map from the desired viewpoint.
-
-:::image type="content" source="media/customize-map/base-map-initial-map-view.png" lightbox="media/customize-map/base-map-initial-map-view.png" alt-text="A screenshot showing the basemap configuration panel's initial map view settings which includes latitude and longitude, zoom level, pitch, and compass.":::
-
-| Property | Description |
-| -------- | ----------- |
-| Latitude | Sets the center latitude of the initial map view. Valid values: -90 to 90. |
-| Longitude | Sets the center longitude of the initial map view. Valid values: -180 to 180. |
-| Zoom level | Sets the initial zoom level of the map view. Valid values: 1 to 22. Default = *1*. |
-| Pitch | Sets the viewing angle of the map relative to the horizon. Valid values: 0 to 60 degrees. Default = *0*. |
-| Compass | Sets the initial map rotation. Valid values: -180 to 180 degrees. Default = *0*. |
-
-### Map elements
-
-Map elements provide extra geographic context by displaying labels, boundaries, roads, and building footprints. You can show or hide individual elements to reduce visual clutter, emphasize specific data layers, or create a map that is tailored to your audience and scenario.
-
-:::image type="content" source="media/customize-map/base-map-elements.png" lightbox="media/customize-map/base-map-elements.png" alt-text="A screenshot showing the basemap configuration panel's map elements with toggle options for Labels, Country Region border, Administrative district border, Admin district 2 border, Road details, and Building footprints, each showing on or off status.":::
-
-| Property | Description |
-| ---------| ----------- |
-| Labels | Toggle the visibility of map labels such as road names, city names, and country/region names. Default = *on* |
-| Country/Region border | Toggle the visibility of country/region borders on the map. Default = *on* |
-| Administrative district border | Toggle visibility of borders for first-level administrative areas, such as states or provinces. Default = *on* |
-| Admin district 2 border | Toggle visibility of borders for second-level administrative areas, such as counties. Default = *on* |
-| Road details | Toggle visibility of detailed street layouts in populated areas. Default = *on* |
-| Building footprints | Toggle visibility of building footprints at higher zoom levels. Default = *on* |
-
-### Controls
-
-Map controls add interactive tools that help users navigate and explore the map. Enable controls such as zoom, pitch, compass, and scale to allow viewers to adjust the map view and better understand the data being displayed.
-
-:::image type="content" source="media/customize-map/base-map-controls.png" lightbox="media/customize-map/base-map-controls.png" alt-text="A screenshot of the Map controls section in the basemap configuration panel, showing toggle settings for Zoom control, Pitch control, Compass control, Scale control, Traffic control, and World wrap, along with the current enabled or disabled state of each map control.":::
-
-| Property | Description |
-| -------- | ----------- |
-| Zoom control | Shows or hides the zoom control so users can adjust zoom interactively. Default = *on*. |
-| Pitch control | Shows or hides the pitch control so users can adjust viewing angle interactively. Default = *on*. |
-| Compass control | Shows or hides the compass control so users can adjust map rotation interactively. Default = *on*. |
-| Scale control | Shows or hides the scale bar. Valid values: Metric units only. Default = *on*. |
-| Traffic control | Shows or hides the traffic toggle button for real-time traffic flow. Default = *on*. |
-| World wrap | Enables or disables seamless horizontal panning across the globe. Default = *on*. |
-
-The following image shows a map with the Traffic toggle set to off.
-
-:::image type="content" source="media/customize-map/traffic-off.png" lightbox="media/customize-map/traffic-off.png" alt-text="A screenshot of a Fabric Maps map with the traffic control set to off.":::
-
-The following image shows a map with the Traffic toggle set to on.
-
-:::image type="content" source="media/customize-map/traffic-on.png" lightbox="media/customize-map/traffic-on.png" alt-text="A screenshot of a Fabric Maps map with the traffic control displayed.":::
-
-### Localization
-
-Localization settings control how geographic information is presented to users. Configure the display language used for map labels and select the map view that determines how country/region and disputed boundary information appears on the map. These settings help ensure the map aligns with the language and regional conventions expected by your audience.
-
-:::image type="content" source="media/customize-map/base-map-localization.png" lightbox="media/customize-map/base-map-localization.png" alt-text="A screenshot of the Localization section in the basemap configuration panel, showing the Language setting configured to follow the Fabric user language preference and the Map view setting set to Auto, allowing customization of map language and geopolitical boundary display.":::
-
-| Property | Description |
-| -------- | ----------- |
-| Display language | Sets the language used for map labels. The list includes the countries or regions supported by Fabric Maps. Default = *Default*, which means map labels use the language configured for the Fabric user. For more information, see [Localization support in Azure Maps](/azure/azure-maps/supported-languages?pivots=service-previous). |
-| Map view | Sets which geopolitically disputed map content (including borders and labels) is displayed. Default = *Auto*. For more information, see [Azure Maps supported views](/azure/azure-maps/supported-languages?pivots=service-latest#azure-maps-supported-views). |
+For map-wide settings such as style, initial view, map elements, controls, and localization, see [Configure map settings in Fabric Maps](configure-map-settings.md). This article covers layer settings.
 
 ## Configure layer settings
 
@@ -114,9 +30,9 @@ Fabric Maps automatically determines the geometry type from the data source. The
 
 There are three groups of layer settings:
 
-* [Geometry type settings](#geometry-type-settings): Control the appearance and behavior of the selected point, line, or polygon layer.
-* [Data label settings](#data-label-settings): Control the text displayed for features in the selected layer.
-* [Visibility settings](#visibility-settings): Control when features appear and which properties are available in tooltips.
+- [Geometry type settings](#geometry-type-settings): Control the appearance and behavior of the selected point, line, or polygon layer.
+- [Data label settings](#data-label-settings): Control the text displayed for features in the selected layer.
+- [Visibility settings](#visibility-settings): Control when features appear and which properties are available in tooltips.
 
 > [!NOTE]
 > GeoJSON multigeometries, such as `MultiPoint`, `MultiLineString`, and `MultiPolygon`, use the settings for their corresponding geometry family: point, line, or polygon.
@@ -175,9 +91,9 @@ Line layers display linear features such as roads, paths, routes, and boundaries
 
 Point layers display individual locations or events. Select a point **Layer type** to choose how the point data is rendered:
 
-* **Bubble** displays points as circles.
-* **Marker** displays points as built-in icons or custom images.
-* **Heatmap** displays point density using a color gradient.
+- **Bubble** displays points as circles.
+- **Marker** displays points as built-in icons or custom images.
+- **Heatmap** displays point density using a color gradient.
 
 ##### Bubble layer
 
@@ -324,16 +240,16 @@ Data-driven styling lets you control how vector layers are colored based on prop
 
 Data-driven styling is supported for the following layer types:
 
-* [Line](#line-settings)
-* [Polygon](#polygon-settings)
-* [Bubble](#bubble-layer)
-* [Marker](#marker-layer)
+- [Line](#line-settings)
+- [Polygon](#polygon-settings)
+- [Bubble](#bubble-layer)
+- [Marker](#marker-layer)
 
 In the **Layer settings** pane, configure data-driven color styling through:
 
-* **Color by**: Selects the data property used for color mapping.
-* **Style by**: Selects the styling mode (**Category** or **Value range**).
-* **Choose a method**: Available when **Style by** is set to **Value range** and lets you choose **Steps** or **Gradient**.
+- **Color by**: Selects the data property used for color mapping.
+- **Style by**: Selects the styling mode (**Category** or **Value range**).
+- **Choose a method**: Available when **Style by** is set to **Value range** and lets you choose **Steps** or **Gradient**.
 
 | Styling mode | Description | Supported data types | Available methods | Typical use cases |
 | ------------ | ----------- | -------------------- | ----------------- | ----------------- |
@@ -350,16 +266,16 @@ In the **Layer settings** pane, configure data-driven color styling through:
 
 1. In **Color by**, select the property that drives color.
 1. In **Style by**, select one of the following options:
-   * **Category**
-   * **Value range**
+    - **Category**
+    - **Value range**
 1. If you select **Value range**, in **Choose a method**, select either **Steps** or **Gradient**.
 
 ### Configure value range methods
 
 When you set **Style by** to **Value range**, use one of these methods:
 
-* **Steps**: Divides the numeric domain into discrete buckets, where each bucket gets a distinct color. Use this method when you want explicit class breaks.
-* **Gradient**: Applies a continuous color ramp across the numeric domain. Use this method when you want smooth visual transitions between low and high values.
+- **Steps**: Divides the numeric domain into discrete buckets, where each bucket gets a distinct color. Use this method when you want explicit class breaks.
+- **Gradient**: Applies a continuous color ramp across the numeric domain. Use this method when you want smooth visual transitions between low and high values.
 
 ### Rotate markers by data field
 
@@ -373,8 +289,14 @@ Use data values in the range **0 to 360** so markers rotate correctly.
 
 ### Additional behavior and considerations
 
-* The **Data layer** pane displays a color legend for both **Category** and **Value range** styles.
-* For **Category** styling, the legend automatically collapses when more than 10 items are shown; select **Show more** to expand.
-* For **Category** styling, the legend supports up to 100 categories. Additional values appear as **Other**.
-* For marker layers, data-driven color styling is supported for built-in marker symbols, except when using gradient-based color styling. Custom marker images don't support data-driven color styling.
-* Data-driven styling works with other layer features such as **filters** and **labels**. Due to a current limitation, legends for PMTiles-based layers don't update when filters are applied and continue to display values for the unfiltered dataset.
+- The **Data layer** pane displays a color legend for both **Category** and **Value range** styles.
+- For **Category** styling, the legend automatically collapses when more than 10 items are shown; select **Show more** to expand.
+- For **Category** styling, the legend supports up to 100 categories. Additional values appear as **Other**.
+- For marker layers, data-driven color styling is supported for built-in marker symbols, except when using gradient-based color styling. Custom marker images don't support data-driven color styling.
+- Data-driven styling works with other layer features such as **filters** and **labels**. Due to a current limitation, legends for PMTiles-based layers don't update when filters are applied and continue to display values for the unfiltered dataset.
+
+## Related content
+
+- [Configure map settings in Fabric Maps](configure-map-settings.md)
+- [Manage data layers in Fabric Maps](data-layer-management.md)
+- [Data filtering in Fabric Maps](about-data-filtering.md)

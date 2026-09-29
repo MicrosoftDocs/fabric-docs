@@ -84,7 +84,7 @@ The following screenshot shows the new data layer added to the map with the defa
 > [!NOTE]
 > **Zoom to fit** is available for PMTiles when bounds information is included in the metadata.
 
-For more information on data layer customization, see [Customize a map](customize-map.md).
+For more information on data layer customization, see [Configure layer settings in Fabric Maps](customize-map.md).
 
 ## Create a layer from raster data
 
@@ -107,7 +107,7 @@ A Cloud Optimized GeoTIFF (COG) is a standard GeoTIFF file (.tiff) designed for 
 1. Select **Zoom to fit** to focus the map on the raster extent.
     :::image type="content" source="media/layers/lakehouse/cog-file-example.png" lightbox="media/layers/lakehouse/cog-file-example.png" alt-text="Screenshot of a map with a Cloud Optimized GeoTIFF (COG) file overlaying it.":::
 
-There are other data layer customization options available. For more information, see [Customize a map](customize-map.md).
+Other data layer customization options are available. For more information, see [Configure layer settings in Fabric Maps](customize-map.md).
 
 > [!TIP]
 > For scenarios that require custom basemaps or organization‑specific imagery, see [Bring your own imagery into Fabric Maps](https://blog.fabric.microsoft.com/en-US/blog/maps-in-microsoft-fabric-bring-your-own-imagery-into-real-time-intelligence/).
@@ -122,7 +122,7 @@ After adding a layer, you can:
 - Configure labels and tooltips.
 - Apply filters to limit the data shown (for supported vector layers).
 
-Changes apply immediately to the map canvas. For more information about layer settings, see [Customize a map](customize-map.md).
+Changes apply immediately to the map canvas. For more information, see [Configure layer settings in Fabric Maps](customize-map.md).
 
 ## Next steps
 
