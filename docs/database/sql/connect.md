@@ -45,7 +45,7 @@ To find the server name for your **Fabric SQL database**:
 To find the server name of the **SQL analytics endpoint** of your SQL database:
 
 - Go to the settings of your SQL database item, then select **Connection strings**.
-- Or, select the `...` menu, then select **SQL endpoint**, then copy the **SQL connection string**. This is the server name.
+- Or, select the `...` menu, then select **SQL connection string**, then copy the **SQL connection string**. This is the server name.
 
 ## Open in button to connect
 

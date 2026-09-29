@@ -1,21 +1,24 @@
 ---
-title: "OneLake table APIs for Iceberg"
+title: "OneLake Iceberg metadata API"
 description: "Overview of the OneLake REST API endpoint for Apache Iceberg REST Catalog (IRC) APIs in Microsoft Fabric."
 ms.reviewer: mahi # Product team ms alias(es)
 # author: Do not use - assigned by folder in docfx file
 # ms.author: Do not use - assigned by folder in docfx file
-ms.date: 10/01/2025
+ms.date: 09/16/2026
 ms.topic: concept-article
+ai-usage: ai-assisted
 #customer intent: As a OneLake user, I want to learn what the Iceberg table APIs are, what operations they support, and any current limitations or considerations, so that I can understand how to interact with my Fabric data using the Iceberg REST Catalog standard.
 ---
 
-# OneLake table APIs for Iceberg
+# OneLake Iceberg metadata API
 
 OneLake offers a REST API endpoint for interacting with tables in Fabric. This article describes how to get started using this endpoint to interact with Apache Iceberg REST Catalog (IRC) APIs available at this endpoint for metadata read operations.
 
+These operations discover namespaces, tables, and table metadata. To retrieve rows from a Delta Lake or Apache Iceberg table while enforcing OneLake security, use the [OneLake table read API](./read-table-data-rest-api.md).
+
 For overall OneLake table API guidance and prerequisite guidance, see the [OneLake table API overview](./table-apis-overview.md).
 
-For detailed API documentation, see the [Getting started guide](./iceberg-table-apis-get-started.md#client-quickstart-examples). 
+For examples of using the API, see the [Iceberg table API samples](./iceberg-table-apis-get-started.md#client-quickstart-examples).
 
 ## Iceberg table API endpoint
 
@@ -25,20 +28,20 @@ The OneLake table API endpoint is:
 https://onelake.table.fabric.microsoft.com
 ```
 
-At the OneLake table API endpoint, the Iceberg REST Catalog (IRC) APIs are available under the following `<BaseUrl>`. You can generally provide this path when initializing existing IRC clients or libraries.
+At the OneLake table API endpoint, the Iceberg REST Catalog (IRC) API is available under the following `<BaseUrl>`. You can generally provide this path when initializing existing IRC clients or libraries.
 
 ```
 https://onelake.table.fabric.microsoft.com/iceberg
 ```
 
-Examples of IRC client configuration with the OneLake table endpoint are covered in the [Getting started guide](./iceberg-table-apis-get-started.md#client-quickstart-examples).
+Examples of IRC client configuration with the OneLake table endpoint are covered in the [Iceberg table API samples](./iceberg-table-apis-get-started.md#client-quickstart-examples).
 
 > [!NOTE]
 > Before using the Iceberg APIs, be sure you have Delta Lake to Iceberg metadata conversion enabled for your tenant or workspace. [See the instructions to learn how to enable automatic Delta Lake to Iceberg metadata conversion](../onelake-iceberg-tables.md#virtualize-delta-lake-tables-as-iceberg).
 
 ## Iceberg table API operations
 
-The following IRC operations are currently supported at this endpoint. Detailed guidance for these operations is available in the [Getting started guide](./iceberg-table-apis-get-started.md#example-requests-and-responses).
+This endpoint currently supports the following IRC operations. You can find examples of these operations in the [Iceberg table API samples](./iceberg-table-apis-get-started.md#example-requests-and-responses).
 
 - **Get configuration**
     
@@ -74,7 +77,7 @@ The following IRC operations are currently supported at this endpoint. Detailed 
 
 ## Current limitations, considerations
 
-The use of the OneLake table APIs for Iceberg is subject to the following limitations and considerations:
+The use of the OneLake Iceberg metadata API is subject to the following limitations and considerations:
 
 - **Certain data items may not support schemas**
 
@@ -86,13 +89,13 @@ The use of the OneLake table APIs for Iceberg is subject to the following limita
 
     Because of this limitation, we don't yet support the `parent` query parameter for the `list namespaces` operation.
 
-- **Metadata write operations, other operations**
+- **Metadata write operations and other metadata operations**
 
-    Only the operations listed in [Iceberg table API operations](#iceberg-table-api-operations) are supported today. Operations that handle metadata write operations aren't yet supported by the OneLake table API endpoint. We plan to add support for more operations at a later time.
+    The Iceberg REST Catalog surface supports only the metadata operations listed in [Iceberg table API operations](#iceberg-table-api-operations). This surface doesn't support metadata write operations. This limitation doesn't describe row retrieval through the separate table read API.
 
 ## Related content
 
-- Learn more about [OneLake table APIs](./table-apis-overview.md).
-- See [detailed guidance and API details](./iceberg-table-apis-get-started.md).
+- Learn more about the [OneLake table APIs overview](./table-apis-overview.md).
+- See the [Iceberg table API samples](./iceberg-table-apis-get-started.md).
+- [Read OneLake table data](./read-table-data-rest-api.md).
 - Set up [automatic Delta Lake to Iceberg format conversion](../onelake-iceberg-tables.md#virtualize-delta-lake-tables-as-iceberg).
-

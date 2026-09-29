@@ -55,16 +55,16 @@ The selected tool generates a query based on the provided schema, metadata, and 
 
 By using this approach, users can interact with their data by using natural language. The Fabric data agent handles the complexities of query generation, validation, and execution. Users don't need to write SQL, DAX, or KQL themselves.
 
-## Security and governance with Microsoft Purview
+## Security and protection with Microsoft Purview
 
-Microsoft Purview provides governance and risk controls for Fabric data agents. These features are currently in preview and help organizations maintain compliance when using agents to access Fabric data. Key capabilities include:
+Microsoft Purview provides security, risk, and compliance controls for Fabric data agents. These features are currently in preview and help organizations maintain compliance when using agents to access Fabric data. Key capabilities include:
 
 - **Risk discovery and auditing**: Prompts and responses from Fabric data agents can be subject to Purview risk discovery and auditing, giving security teams visibility into how agents interact with organizational data.
 - **DSPM Data Risk Assessments**: Data Security Posture Management (DSPM) Data Risk Assessments can surface sensitive data risks in the data sources that agents use, helping you identify and address potential exposure.
 - **Insider Risk Management**: Purview Insider Risk Management can detect risky AI usage patterns involving agents, such as unusual query volumes or access to sensitive data.
 - **Audit, eDiscovery, and retention**: Purview Audit, eDiscovery, and retention policies apply to agent interactions and outputs in supported Fabric workloads. Non-compliant usage detection can also flag agent activity that violates organizational policies.
 
-For more information about how Microsoft Purview integrates with Fabric, see [Use Microsoft Purview to govern Microsoft Fabric](../governance/microsoft-purview-fabric.md).
+For more information, see [Use Microsoft Purview to protect Microsoft Fabric](../governance/microsoft-purview-fabric.md).
 
 ## Fabric data agent configuration
 

@@ -31,7 +31,7 @@ To get started, you must complete the following prerequisites:
 
 - To authenticate your DAGs with Fabric APIs, use either a [service principal](#set-up-apache-airflow-connection) by following these steps:
 
-    - In Fabric, select **Settings**, **Admin portal**, **Tenant Settings**, and enable service principals to call Fabric public APIs on your fabric tenant.
+   - In Fabric, go to **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**, and enable service principals to call Fabric public APIs on your Fabric tenant.
     
        :::image type="content" source="media/apache-airflow-jobs/enable-service-principals.png" lightbox="media/apache-airflow-jobs/enable-service-principals.png" alt-text="Screenshot of the Microsoft Fabric Admin portal settings with service principals enabled to call Fabric public APIs.":::
     

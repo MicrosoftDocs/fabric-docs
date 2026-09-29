@@ -10,8 +10,8 @@ ms.date: 02/27/2026
 
 This article describes how to set alerts on business events in Real-Time hub.
 
-> [!IMPORTANT]
-> This feature is in [preview](../../fundamentals/preview.md).
+> [!NOTE]
+> Workspace private links can block cross-workspace business event consumption. For Business events, the source workspace is the workspace that contains the Event Schema Set. If that workspace blocks public access, create the Activator rule in the same workspace or establish a private link from the consumer's network to the source workspace. For more information, see [Workspace private links for Azure, Fabric, and Business events](../workspace-private-links-real-time-events.md).
 
 ## Navigate to Real-Time hub
 

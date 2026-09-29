@@ -1,8 +1,8 @@
 ---
-title: Get data in Dataflow Gen2
-description: Learn about the get data modules, recent data, connectors, and Copilot options for ingesting and transforming data in Dataflow Gen2.
+title: Get Data in Dataflow Gen2
+description: Explore Dataflow Gen2 Get data modules to connect to sources, reuse personal and shared queries, and transform data with Copilot.
 ms.reviewer: xupzhou
-ms.date: 07/27/2026
+ms.date: 09/08/2026
 ms.topic: how-to
 ms.collection:
   - ce-skilling-ai-copilot
@@ -13,7 +13,7 @@ ai-usage: ai-assisted
 
 # Get data in Dataflow Gen2
 
-Dataflow Gen2 provides several ways to connect to and get your data. You can browse data sources by category, find Fabric items in the OneLake catalog, return to recently used items, upload files, or use Copilot to ingest and transform data with natural language commands.
+Dataflow Gen2 provides several ways to connect to and get your data. You can browse data sources by category, find Fabric items in the OneLake catalog, return to recently used items, reuse shared queries, upload files, or use Copilot to ingest and transform data with natural language commands.
 
 ## Prerequisites
 
@@ -53,11 +53,13 @@ For Dataflow Gen2 the connection options include:
 
   [!INCLUDE [New data source module](~/../powerquery-repo/powerquery-docs/includes/get-data-new-source-module.md)]
 
-- **Recent**:
+- **Recents & My Queries**:
 
     [!INCLUDE [Recent data sources module](~/../powerquery-repo/powerquery-docs/includes/get-data-recent-sources-module.md)]
 
     For more information, see [Use recent data in Dataflow Gen2](#use-recent-data-in-dataflow-gen2).
+
+    To browse your personal query library, select the **My Queries** filter within this module. For instructions, see [Import a query from My queries](dataflow-gen2-my-queries-shared-queries.md#import-a-query-from-my-queries).
 
 - **OneLake catalog**:
 
@@ -78,6 +80,10 @@ For Dataflow Gen2 the connection options include:
 - **Blank query**:
 
   [!INCLUDE [Blank query module](~/../powerquery-repo/powerquery-docs/includes/get-data-blank-query-module.md)]
+
+- **Shared queries** (preview):
+
+    The **Shared queries** module is currently in preview. It's separate from **Recents & My Queries**, not another filter within it. Browse your accessible workspaces, folders, and subfolders to find dataflows with sharing enabled. Select shared queries to import them as independent copies into the dataflow you're authoring. For step-by-step instructions, see [Browse and import shared queries](dataflow-gen2-my-queries-shared-queries.md#browse-and-import-shared-queries).
 
 The modules that appear can vary based on the product experience and connector. For more information about the shared Power Query interface, see [Get data modules in Power Query Online](/power-query/get-data-experience#get-data-modules-in-power-query-online).
 
@@ -116,7 +122,7 @@ To return to the previous step, select the **Restore** button next to it and you
 > [!IMPORTANT]
 > Recent data is currently in preview for Dataflow Gen2.
 
-The **Recent** module provides quick access to data items that you used previously in Dataflow Gen2. You can return to tables, folders, databases, sheets, and other supported items without navigating through connection dialogs and folder structures again.
+The **Recent** filter in the **Recents & My Queries** module provides quick access to data items that you used previously in Dataflow Gen2. You can return to tables, folders, databases, sheets, and other supported items without navigating through connection dialogs and folder structures again.
 
 ### Items that support recent data
 
@@ -149,11 +155,14 @@ Use the get data experience when you add a data source to your dataflow.
 
 1. In your Fabric workspace, open an existing Dataflow Gen2 item or create one.
 1. In the Power Query editor, select **Get data**.
-1. In the **Get data** dialog, select the **Recent** module.
+1. In the **Get data** dialog, select the **Recents & My Queries** module.
+1. Select the **Recent** filter.
 1. Review the recently used items from your previous dataflow sessions.
 1. Select an item to load it into the Power Query editor.
 
-  :::image type="content" source="media/recent-data/recent-data-get-data.jpg" alt-text="Screenshot of the Recent module in the get data experience." lightbox="media/recent-data/recent-data-get-data.jpg":::
+   The following screenshot shows an earlier **Get data** layout with **Recent data**.
+
+   :::image type="content" source="media/recent-data/recent-data-get-data.jpg" alt-text="Screenshot of recent data sources in an earlier Get data layout." lightbox="media/recent-data/recent-data-get-data.jpg":::
 
 ### Browse related items
 

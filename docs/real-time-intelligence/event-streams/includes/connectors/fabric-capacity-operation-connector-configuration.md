@@ -6,7 +6,7 @@ ms.topic: include
 ms.date: 08/21/2026
 ---
 
-1. On the **Connect** screen, first select  **Event type(s)** of interest that you want to capture in the eventstream. By default, all supported events are captured.
+1. On the **Connect** screen, select the **Event types** that you want to capture in the event stream. By default, the connector captures all supported events.
 
     :::image type="content" source="./media/fabric-capacity-operation-source-connector/select-event-types.png" alt-text="Screenshot that shows the Connect page for Fabric capacity operation events.":::
 1. For **Event scope**, select the Fabric capacity for which you want to stream capacity operation events. You need to be a capacity admin on the selected capacity to stream its capacity operation events.

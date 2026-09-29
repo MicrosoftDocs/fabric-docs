@@ -27,7 +27,7 @@ You must be a Fabric administrator to enable master data endorsement.
 
 To enable master data endorsement, turn on the **Endorse master data (preview)** tenant setting and specify who is authorized to apply the **Master data** badge to data items.
 
-1. [Open the admin portal and go to the tenant settings](./about-tenant-settings.md#how-to-get-to-the-tenant-settings).
+1. Sign in to [Fabric](https://app.fabric.microsoft.com) using your admin account credentials. Open the **OneLake catalog**, and then select the **Govern** tab > **Configurations** > **Tenant settings**.
 1. Find and expand the **Endorse master data (preview)** tenant setting.
 1. Switch the toggle to **Enabled**.
 1. Specify who can apply the **Master data** badge to data items by choosing the appropriate options:

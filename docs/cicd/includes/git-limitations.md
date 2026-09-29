@@ -91,6 +91,8 @@ Git Integration re‑creates item definitions only and does not restore item dat
 ### Sync and commit limitations
 
 - You can only sync in one direction at a time. You can’t commit and update at the same time.
+- Saving a deployment plan assigns a logical ID to each referenced item that doesn't already have one. A later Git operation can report a logical ID conflict if the branch contains matching items with different logical IDs. For more information, see [Resolve Logical ID Conflicts in Microsoft Fabric](../git-integration/logical-id-conflict-resolution.md).
+- When you attach a deployment plan while switching branches, the selected plan version must exist in the target branch. The operation is blocked if you can't read the plan, lack Git sync permission for a referenced item, or the plan changes before the sync starts. For resolution steps, see [Resolve deployment plan errors when switching branches](../git-integration/dependency-errors.md#resolve-deployment-plan-errors-when-switching-branches).
 - Sensitivity labels aren't supported and exporting items with sensitivity labels might be disabled. To commit items that have sensitivity labels without the sensitivity label, [ask your administrator](/fabric/admin/git-integration-admin-settings#users-can-export-workspace-items-with-applied-sensitivity-labels-to-git-repositories-preview) for help.
 - Works with [limited items](/fabric/cicd/git-integration/intro-to-git-integration#supported-items). Unsupported items in the folder are ignored.
 - Duplicating names isn't allowed. Even if Power BI allows name duplication, the update, commit, or undo action fails.

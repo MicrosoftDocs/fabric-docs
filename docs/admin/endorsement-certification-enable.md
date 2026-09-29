@@ -24,7 +24,7 @@ Certification is part of Power BI's *endorsement* feature. For more information,
 
 ## Enable item certification
 
-1. [In the Admin portal, go to Tenant settings](./about-tenant-settings.md#how-to-get-to-the-tenant-settings).
+1. Go to **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**.
 1. Under the Export and sharing settings section, expand the Certification section.
 
    :::image type="content" source="./media/endorsement-certification-enable/certification-setup-dialog.png" alt-text="Screenshot of how to set up semantic model and dataflow certification.":::

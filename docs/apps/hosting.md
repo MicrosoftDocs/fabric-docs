@@ -1,15 +1,15 @@
 ---
 title: Static content hosting for Fabric Apps
-description: Learn how to configure and deploy static frontend applications alongside your Fabric Apps backend using the built-in static hosting service.
+description: Learn how to configure, protect, and deploy static frontend applications alongside your Fabric Apps backend.
 ms.reviewer: mksuni
 ms.topic: how-to
-ms.date: 06/02/2026
+ms.date: 09/15/2026
 ai-usage: ai-generated
 ---
 
 # Static content hosting for Fabric Apps
 
-Fabric Apps includes a static content hosting service that builds, packages, and serves your frontend application alongside your backend APIs. When static hosting is enabled, the CLI deploys your built assets to Fabric and provides a public URL where users can access your application.
+Fabric Apps includes a static content hosting service that builds, packages, and serves your frontend application alongside your backend APIs. When static hosting is enabled, the CLI deploys your built assets to Fabric and provides a hosting URL. You can require users to sign in and have permission to view the Fabric app, or you can allow anonymous access to the hosted assets.
 
 ## Prerequisites
 
@@ -24,7 +24,7 @@ When you deploy with static hosting enabled, the CLI performs these steps:
 1. Validates that the output folder exists and contains files.
 1. Packages all files into a compressed ZIP archive (maximum 100 MB).
 1. Uploads the archive to the Fabric Apps host.
-1. Returns a public hosting URL where your application is accessible.
+1. Applies the configured access setting and returns a hosting URL.
 
 ## Configure static hosting
 
@@ -37,6 +37,7 @@ services:
     folder: dist
     buildCommand: npm run build
     indexDocument: index.html
+    assetAccess: protected
 ```
 
 ### Configuration options
@@ -48,6 +49,26 @@ services:
 | `root` | No | Project root | Root directory of the frontend project, relative to the project root. |
 | `buildCommand` | No | — | Shell command to run before packaging (for example, `npm run build`). |
 | `indexDocument` | No | — | Default document to serve for directory requests (for example, `index.html`). |
+| `assetAccess` | No | `protected` for noninteractive deployments | Controls access to hosted assets. Use `protected` to require sign-in and permission to view the Fabric app, or use `public` to allow anonymous access. |
+
+## Configure access to hosted assets
+
+Set `assetAccess` to one of these values:
+
+- **`protected`** - Requires users to sign in and have permission to view the Fabric app before they can retrieve hosted assets.
+- **`public`** - Allows anyone with the hosting URL to retrieve hosted assets without signing in.
+
+Protected hosting controls access to the static files that Fabric Apps serves. It doesn't replace authentication and authorization in your application or APIs.
+
+The first interactive `npx rayfin up` deployment prompts you to choose an access setting if `assetAccess` isn't configured. Noninteractive deployments use `protected` and save that setting to `rayfin.yml`.
+
+To change the access setting after deployment, update `assetAccess`, and then run a full deployment:
+
+```bash
+npx rayfin up
+```
+
+The `npx rayfin up staticapp deploy` command updates content only. It doesn't apply a new `assetAccess` value.
 
 ### Example with a separate frontend directory
 
@@ -61,6 +82,7 @@ services:
     folder: dist
     buildCommand: npm run build
     indexDocument: index.html
+    assetAccess: protected
 ```
 
 This configuration resolves the output path to `<project-root>/frontend/dist`.
@@ -153,6 +175,7 @@ services:
     folder: dist
     buildCommand: npm run build
     indexDocument: index.html
+    assetAccess: protected
 ```
 
 ## Test locally

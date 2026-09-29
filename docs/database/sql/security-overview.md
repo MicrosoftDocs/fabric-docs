@@ -5,6 +5,7 @@ ms.reviewer: pivanho, jaszymas
 ms.date: 10/23/2025
 ms.topic: concept-article
 ms.search.form: SQL database security
+ai-usage: ai-assisted
 ---
 # Security
 
@@ -31,11 +32,11 @@ For more information about access control, see [Authorization in SQL database in
 
 ## Governance
 
-Microsoft Purview is a family of data governance, risk, and compliance solutions that can help your organization govern, protect, and manage your entire data estate. Among other benefits, Microsoft Purview allows you to label your SQL database items with sensitivity labels and define protection policies that control access based on sensitivity labels.
+Microsoft Purview provides security, risk, and compliance capabilities that help protect Fabric data. Microsoft Purview allows you to label your SQL database items with sensitivity labels and define protection policies that control access based on sensitivity labels.
 
-For more information about data governance capabilities of Microsoft Purview for Microsoft Fabric, including SQL database, see:
+For more information about Microsoft Purview protection capabilities for Microsoft Fabric, including SQL database, see:
 
-- [Use Microsoft Purview to govern Microsoft Fabric](../../governance/microsoft-purview-fabric.md)
+- [Use Microsoft Purview to protect Microsoft Fabric](../../governance/microsoft-purview-fabric.md)
 - [Information protection in Microsoft Fabric](../../governance/information-protection.md)
 - [Protection policies in Microsoft Fabric](../../governance/protection-policies-overview.md)
 - [Protect sensitive data in SQL database with Microsoft Purview protection policies](protect-databases-with-protection-policies.md)

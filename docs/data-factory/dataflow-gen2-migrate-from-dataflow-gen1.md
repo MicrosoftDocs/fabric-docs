@@ -5,6 +5,7 @@ ms.reviewer: mllopis, alpowers
 ms.topic: concept-article
 ms.date: 11/19/2025
 ms.custom: fabric-cat, intro-migration, dataflows
+ai-usage: ai-assisted
 ---
 
 # Migrate from Dataflow Gen1 to Dataflow Gen2
@@ -80,7 +81,6 @@ The following table presents features supported in Power BI dataflow and/or Fabr
 | Azure [service tags](../security/security-service-tags.md) support, which is a defined group of IP addresses that's automatically managed to minimize the complexity of updates or changes to network security rules | Yes | Yes |
 | **Governance** |||
 | Content [endorsement](../governance/endorsement-overview.md), to promote or certify valuable, high-quality Fabric items | Yes | Yes |
-| [Microsoft Purview integration](../governance/microsoft-purview-fabric.md), which helps customers manage and govern Fabric items | Yes | Yes |
 | Microsoft Information Protection (MIP) [sensitivity labels](../fundamentals/apply-sensitivity-labels.md) and integration with [Microsoft Defender for Cloud Apps](../governance/service-security-using-defender-for-cloud-apps-controls.md) for data loss prevention (DLP) | Yes | Yes |
 | **Monitoring and diagnostic logging** |||
 | Enhanced [refresh history](dataflows-gen2-monitor.md), which allows you to evaluate in detail what happened during the refresh of your dataflow | No | Yes |

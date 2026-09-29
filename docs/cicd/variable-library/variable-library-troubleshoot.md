@@ -79,3 +79,4 @@ After you find and fix the problem, remove the current reference and replace it 
 ## Related content
 
 - [Create and manage variable libraries](./get-started-variable-libraries.md)
+- [Variable reference resolution failures](./variable-reference-resolution-failure.md)

@@ -1,14 +1,14 @@
 ---
 title: Add Cribl source to an eventstream
-description: Learn how to add a Cribl source to an eventstream. This feature is currently in preview.
+description: Learn how to add a Cribl source to an eventstream.
 ms.reviewer: xujiang1
 ms.topic: how-to
-ms.date: 11/05/2025
+ms.date: 09/16/2026
 ms.search.form: Source and Destination
 ms.custom: reference_regions
 ---
 
-# Add Cribl source to an eventstream (preview)
+# Add Cribl source to an eventstream
 
 This article shows you how to add a Cribl source to an eventstream.
 

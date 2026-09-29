@@ -1,10 +1,10 @@
 ---
 title: Understand dependency binding in cross-workspace deployment
-description: Learn how Fabric items reference their dependencies using logical IDs or object IDs, and how this affects cross-workspace deployment with Git integration.
+description: Learn how Fabric items and deployment plans use logical IDs or object IDs, and how this affects cross-workspace deployment.
 ms.reviewer: NimrodShalit
 ms.topic: concept-article
-ms.date: 05/14/2026
-ms.search.form: cross-workspace deployment, logical ID, object ID, Git integration, dependency binding
+ms.date: 09/01/2026
+ms.search.form: cross-workspace deployment, logical ID, object ID, Git integration, dependency binding, deployment plan
 ---
 
 # Understand dependency binding in cross-workspace deployment
@@ -27,6 +27,14 @@ This article maps which Fabric item types support dependency binding through log
 Within a workspace, items reference their dependencies using object IDs. When Fabric exports an item to Git, it replaces some of these object IDs with logical IDs from the `.platform` file. When you sync the Git branch to a different workspace, Fabric resolves those logical IDs back to the correct object IDs in the target workspace. This is what makes dependency binding work.
 
 However, not all dependency references are replaced with logical IDs during export. Items that keep object IDs in their Git representation still point to the original workspace after sync, and you need to update them manually or through parameterization.
+
+### Deployment plans and logical IDs
+
+When you save a deployment plan, Fabric assigns a logical ID to each referenced item that doesn't already have one. The plan stores that logical ID so it can identify the corresponding item when the plan moves to another workspace.
+
+Assigning a logical ID to a referenced item doesn't change how that item's own dependencies are stored. The dependency-binding behavior in the following tables still applies when you deploy with a plan. Review the plan's action steps and their dependencies before you use the plan in another workspace.
+
+Saving requires write permission on each referenced item because assigning a logical ID updates the item. If Fabric can't assign a logical ID to a referenced item type, the plan can't be saved.
 
 > [!IMPORTANT]
 > Dependency binding only applies to references between Fabric items within the **same workspace**. If an item references a Fabric item in a **different workspace**, that reference uses an object ID and doesn't bind automatically. References to **Connections** (data source connections, gateways) also don't auto-bind. Use [Variable Libraries](./variable-library/variable-library-overview.md) with environment-specific value sets to manage connection references across environments.
@@ -182,3 +190,4 @@ When you deploy Fabric items across workspaces, dependencies between items can b
 - [Introduction to Git integration](./git-integration/intro-to-git-integration.md)
 - [Git integration source code format](./git-integration/source-code-format.md)
 - [Logical ID conflict resolution](./git-integration/logical-id-conflict-resolution.md)
+- [What is a deployment plan?](./deployment-plan/deployment-plan-overview.md)

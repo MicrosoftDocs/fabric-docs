@@ -3,7 +3,7 @@ title: Development Process in Microsoft Fabric
 description: Learn how to develop an app using Git branches to work in your own isolated workspace environment and improve collaboration with your team.
 ms.reviewer: NimrodShalit
 ms.topic: concept-article
-ms.date: 06/15/2026
+ms.date: 09/01/2026
 #customer intent: As a developer, I want to learn how to use Git branches in Fabric so that I can work in my own isolated environment.
 ---
 
@@ -23,4 +23,3 @@ The Fabric workspace is a *shared runtime environment* for all items, and each w
 ## Related content
 - [Fabric deployment options](../manage-deployment.md)
 - [Resolve errors and conflicts](./conflict-resolution.md)
-- [Git integration best practices](../best-practices-cicd.md)

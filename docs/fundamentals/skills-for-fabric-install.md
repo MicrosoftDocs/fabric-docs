@@ -16,7 +16,7 @@ ai-usage: ai-assisted
 This article explains how to install, configure, and update [Skills for Fabric](skills-for-fabric-overview.md) by using GitHub Copilot CLI, Claude Code, or other compatible AI coding tools.
 
 > [!IMPORTANT]
-> Skills for Fabric ships as two separate plug-ins from the same marketplace: the Fabric collection (`fabric-skills`) and the Power BI plug-in (`powerbi-authoring`). The Fabric collection doesn't include the Power BI plug-in. For full coverage, install both as shown in [Install with GitHub Copilot CLI or Claude Code](#install-with-github-copilot-cli-or-claude-code).
+> Skills for Fabric ships as two separate plug-ins from the same marketplace: the Fabric collection (`fabric-skills`) and the Power BI plug-in (`powerbi-authoring`). The Fabric [data engineering agent (Project Osmos)](../data-engineering/data-engineering-agent-overview.md) skill is included with the Fabric collection, so you don't need to install a separate Project Osmos plug-in. The Fabric collection doesn't include the Power BI plug-in. For full coverage, install both as shown in [Install with GitHub Copilot CLI or Claude Code](#install-with-github-copilot-cli-or-claude-code).
 
 ## Prerequisites
 

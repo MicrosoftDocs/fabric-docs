@@ -104,6 +104,11 @@
         "source_path_from_root": "/docs/data-warehouse/pre-post-deployment-scripts.md",
         "redirect_url": "/fabric/data-warehouse/deployment-scripts",
         "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-warehouse/migration-synapse-dedicated-sql-pool-warehouse.md",
+        "redirect_url": "/fabric/data-warehouse/migration-synapse-dedicated-sql-pool-planning",
+        "redirect_document_id": false
       }
     ]
 }

@@ -7,8 +7,8 @@ ms.date: 11/18/2024
 
 | Event Source | Description |  
 | ------------- | ----------- |  
+| [Business Events](../business-events/create-business-events.md) | Learn how to capture and process events from Business Events. |
 | [Azure Blob Storage events](../get-azure-blob-storage-events.md) | Learn how to capture and process events from Azure Blob Storage. |  
 | [Fabric Workspace Item events](../create-streams-fabric-workspace-item-events.md) | Understand how to work with events from Fabric Workspace Items. |  
 | [Fabric OneLake events](../create-streams-fabric-onelake-events.md) | Explore event handling for Fabric OneLake. |  
 | [Fabric Job events](../create-streams-fabric-job-events.md) | Manage and process Fabric Job events effectively. |
-

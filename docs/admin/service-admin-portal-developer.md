@@ -12,12 +12,12 @@ LocalizationGroup: Administration
 
 # Developer tenant settings
 
-These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
+These settings are configured in **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
 
 To manage Power BI developer settings, you must be a Fabric administrator. For more information about the Fabric administrator role, see [Understand Fabric admin roles](roles.md).
 
 >[!NOTE]
->The developer settings in the Admin portal are different from and not related to the [developer mode](/power-bi/developer/visuals/environment-setup#set-up-power-bi-service-for-developing-a-visual) setting for debugging visuals.
+>The developer settings in **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings** are different from and not related to the [developer mode](/power-bi/developer/visuals/environment-setup#set-up-power-bi-service-for-developing-a-visual) setting for debugging visuals.
 
 ## Embed content in apps
 

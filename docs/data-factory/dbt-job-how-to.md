@@ -1,15 +1,15 @@
 ---
-title: How to create a new dbt job in Microsoft Fabric (preview)
+title: How to Create a New dbt Job in Microsoft Fabric
 description: This article guides you through how to create a dbt job, execute it, and view the results.
 ms.reviewer: akurnala, meghasony
 ms.topic: how-to
-ms.date: 11/20/2025
+ms.date: 08/19/2026
 ms.search.form: dbt-job-tutorials
 ---
 
-# Learn how to create a new dbt job in Microsoft Fabric (preview)
+# Learn how to create a new dbt job in Microsoft Fabric
 
-Fabric now lets you transform data in your Data Warehouses by using dbt—all within the Fabric web experience. No external adapters, no CLI, no Airflow. Just SQL, a warehouse, and a streamlined UI.
+Fabric now lets you transform data in your Data Warehouses by using dbt—all within the Fabric web experience. No local installs, no CLI, no Airflow. Just SQL, a warehouse, and a streamlined UI.
 
 This walkthrough demonstrates how to use dbt directly within Fabric to transform data in a warehouse—without external tools. This approach minimizes setup complexity and enables users to use existing compute resources. As a result, dbt jobs make enterprise-scale data modeling more accessible to the SQL community.
 
@@ -23,7 +23,7 @@ This tool is designed to help data engineers and analysts:
 
 Before you create a dbt job in Fabric, make sure your environment is set up correctly:
 
-- [Enable dbt jobs](dbt-job-overview.md#how-to-enable-dbt-jobs-preview)
+- [Enable dbt jobs](dbt-job-overview.md#enable-dbt-jobs)
 - [Create a workspace](/fabric/fundamentals/create-workspaces) if you don't have one.
 - [Set up a Fabric Data Warehouse](/fabric/data-warehouse/create-warehouse) if you don't have one.
 - [Set permissions and access](dbt-job-overview.md#required-permissions-and-access)
@@ -107,6 +107,6 @@ Fabric provides several tools to help you monitor and validate your dbt jobs:
 
 ## Related content
 
-* [dbt job in Microsoft Fabric overview](dbt-job-overview.md)
-* [Step-by-step dbt job tutorial](dbt-job-how-to.md)
-* [How to configure a dbt job](dbt-job-configure.md)
+- [dbt job in Microsoft Fabric overview](dbt-job-overview.md)
+- [Step-by-step dbt job tutorial](dbt-job-sample-tutorial.md)
+- [How to configure a dbt job](dbt-job-configure.md)

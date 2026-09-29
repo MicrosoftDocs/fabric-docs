@@ -1,14 +1,12 @@
 ---
-title: "Tutorial: Set Up SharePoint List Mirroring in Microsoft Fabric (Preview)"
+title: "Tutorial: Set Up SharePoint List Mirroring in Microsoft Fabric"
 description: Learn how to mirror your SharePoint List in Microsoft Fabric for near real-time data replication.
 ms.reviewer: sbahadur
-ms.date: 03/02/2026
+ms.date: 08/27/2026
 ms.topic: tutorial
 ---
 
-# Tutorial: Set up SharePoint List mirroring in Microsoft Fabric (Preview)
-
-[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
+# Tutorial: Set up SharePoint List mirroring in Microsoft Fabric
 
 [Mirroring in Fabric](overview.md) provides an easy experience to avoid complex ETL (Extract Transform Load) and integrate your existing Sharepoint List data with the rest of your data in Microsoft Fabric. You can continuously replicate your existing SharePoint data directly into Fabric's OneLake.
 
@@ -25,7 +23,7 @@ In this section, we'll provide a brief overview of how to create a new mirrore
 
 1. Open your Fabric workspace and check that it has a Trial or Premium Fabric capacity
 
-1. Select **New** > **Mirrored SharePoint Online List (preview)**
+1. Select **New** > **Mirrored SharePoint Online List**
     :::image type="content" source="media/sharepoint-list-tutorial/select-sharepoint-online-list.png" alt-text="Screenshot of Fabric workspace showing New item menu with Mirrored SharePoint Online List option highlighted." lightbox="media/sharepoint-list-tutorial/select-sharepoint-online-list.png":::
 
 1. Select **SharePoint Online list**
@@ -42,4 +40,4 @@ Once mirroring is configured, you're directed to the **Mirroring Status** page. 
 
 ## Related content
 
-[Learn more about Sharepoint List mirroring](sharepoint-list.md)
+[Learn more about SharePoint List mirroring](sharepoint-list.md)

@@ -20,7 +20,7 @@ To create variable library items in Fabric, you need:
 
 * A Fabric tenant account with an active subscription. [Create an account for free](../../get-started/fabric-trial.md).
 * A [workspace](../../get-started/create-workspaces.md) with a Fabric-enabled [capacity](../../enterprise/licenses.md#capacity).
-* The following [tenant switches](../../admin/about-tenant-settings.md) enabled from the Admin portal:
+* The following [tenant switches](../../admin/about-tenant-settings.md) enabled in **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**:
   * [Users can create Fabric items](../../admin/fabric-switch.md)
 
   The tenant admin, capacity admin, or workspace admin can enable these switches, depending on your [organization's settings](../../admin/delegate-settings.md).

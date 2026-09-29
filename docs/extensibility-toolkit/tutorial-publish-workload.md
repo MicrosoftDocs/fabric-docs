@@ -10,7 +10,7 @@ ms.date: 11/18/2025
 
 # How to publish and manage your workload
 
-This article describes how to upload and manage a workload in Microsoft Fabric. The **Workloads** page in the Admin Portal has two tabs:
+This article describes how to upload and manage a workload in Microsoft Fabric. The **Workloads** page in **OneLake catalog** > **Govern** has two tabs:
 
 - **Manage my tenant** - Browse and add published workloads to your tenant.
 - **Publish** - Upload and manage your own workload packages.
@@ -32,7 +32,7 @@ To deploy a workload, you must have the following prerequisites:
 The **Manage my tenant** tab lists all workloads that have been published and are available for your tenant. From this tab, admins can:
 
 - **Browse available workloads** - View all workloads published to the Workload Hub, including their publisher and status.
-- **Add workloads** - Select a workload to view its details, including an overview, documentation links, and licensing information. Select **Add Workload** to add it to your tenant directly from the Admin Portal.
+- **Add workloads** - Select a workload to view its details, including an overview, documentation links, and licensing information. Select **Add Workload** to add it to your tenant.
 - **Consent on behalf of the organization** - If you have sufficient Microsoft Entra permissions, select **Consent** to grant organization-wide consent for the workload's required permissions. This eliminates the need for individual users to consent when they first use the workload.
 
 ## Upload a workload
@@ -43,11 +43,11 @@ Use the **Publish** tab to upload your own workload packages. To upload a worklo
 
    :::image type="content" source="./media/tutorial-publish-workload/sign-in.png" alt-text="Screenshot of Microsoft Fabric sign-in page.":::
 
-1. In **Settings**, go to **Admin portal**.
+1. Go to **OneLake catalog** > **Govern** > **Configurations** > **Workloads**.
 
    :::image type="content" source="./media/tutorial-publish-workload/settings-admin-portal.png" alt-text="Screenshot showing how to get to the Microsoft Fabric admin portal.":::
 
-1. On **Workloads**, select **Upload workload**.
+1. Select **Upload workload**.
 
    :::image type="content" source="./media/tutorial-publish-workload/upload-workload.png" alt-text="Screenshot showing how to upload a workload.":::
 
@@ -77,7 +77,7 @@ After a workload is added, you can update, delete, or deactivate the workload.
 
 To change to a different active version of a workload:
 
-1. In the **Admin portal**, on the **Workloads** pane, select a workload to activate.
+1. In **OneLake catalog**, select **Govern** > **Configurations** > **Workloads**, and then select a workload to activate.
 1. On the **Add** tab, select **Edit**.
 
    :::image type="content" source="./media/tutorial-publish-workload/edit-workload.png" alt-text="Screenshot showing how to update a workload.":::
@@ -96,7 +96,7 @@ The new version number is now listed, and **Status** is **Active in tenant**.
 
 To delete a workload:
 
-1. In the **Admin portal**, on the **Workloads** pane, select the workload to delete.
+1. In **OneLake catalog**, select **Govern** > **Configurations** > **Workloads**, and then select the workload to delete.
 1. On the **Uploads** tab, next to the version you want to delete, select the **Delete** icon.
 
    :::image type="content" source="./media/tutorial-publish-workload/delete-workload.png" alt-text="Screenshot showing how to delete a workload.":::
@@ -107,7 +107,7 @@ You can't delete the active version of a workload. To delete an active version o
 
 To deactivate a workload:
 
-1. In the **Admin portal**, on the **Workloads** pane, select the workload to deactivate.
+1. In **OneLake catalog**, select **Govern** > **Configurations** > **Workloads**, and then select the workload to deactivate.
 1. On the **Add** tab, select **Deactivate**.
 
    :::image type="content" source="./media/tutorial-publish-workload/deactivate.png" alt-text="Screenshot showing how to deactivate a workload.":::

@@ -40,7 +40,7 @@ In this package, the [frontend manifest files](https://github.com/microsoft/Micr
 
 ## Enable the workload development feature in Fabric
 
-The tenant administrator must first enable the workload development feature in the Microsoft Fabric admin portal. The feature can be enabled for the entire organization or for specific groups within the organization. For a tenant admin, to enable the workload development feature for specific groups, complete the steps that are described in [Enable the development tenant setting](/fabric/workload-development-kit/environment-setup#enable-the-development-tenant-setting).
+The tenant administrator must first enable the workload development feature in tenant settings. The feature can be enabled for the entire organization or for specific groups within the organization. For a tenant admin, to enable the workload development feature for specific groups, complete the steps that are described in [Enable the development tenant setting](/fabric/workload-development-kit/environment-setup#enable-the-development-tenant-setting).
 
 :::image type="content" source="./media/extensibility-front-end/tenant-switch.png" alt-text="Screenshot of the workloads development tenant switch.":::
 

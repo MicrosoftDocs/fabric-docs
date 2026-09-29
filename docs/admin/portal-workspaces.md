@@ -1,21 +1,27 @@
-﻿---
+---
 title: Manage workspaces
-description: Learn how to view and understand info about workspaces and manage workspaces as an administrator.
+description: Learn how to find, review, and manage workspaces from the Govern section of the OneLake catalog.
 author: mimart
 ms.author: mimart
 ms.reviewer: yuturchi
-ms.custom: admin-portal
 ms.topic: how-to
-ms.date: 07/28/2026
+ms.date: 09/08/2026
+ai-usage: ai-assisted
 ---
 
 # Manage workspaces
 
-As a Fabric administrator, you can govern the workspaces that exist in your organization on the **Workspaces** tab in the Admin portal. For information about how to get to and use the Admin portal, see [About the Admin portal](tenant-settings-index.md).
+As a Fabric administrator, you can view and manage the workspaces in your organization from **Workspaces** in the [Govern section of the OneLake catalog](../governance/onelake-catalog-govern.md).
 
-On the **Workspaces** tab, you see a list of all the workspaces in your tenant. Above the list, a ribbon provides options to help you govern the workspaces. These options also appear in the **More options (...)** menu of the selected workspace. The list of options varies depending on workspace type and status. All the options are described under [workspace options](#workspace-options).
+To open **Workspaces**:
 
-:::image type="content" source="media/portal-workspaces/power-bi-workspaces-admin-portal.png" alt-text="Screenshot that shows a Power B I workspaces list in the admin portal.":::
+1. Sign in to [Fabric](https://app.fabric.microsoft.com) by using your admin account credentials.
+1. Select **OneLake catalog**.
+1. Select **Govern**, and then select **Workspaces** under **Manage**.
+
+The **Workspaces** page lists the workspaces in your tenant. Select a workspace to display the commands available for its type and state.
+
+<!-- Placeholder: Workspaces list in OneLake catalog > Govern > Workspaces. -->
 
 The following table describes the columns of the list of workspaces.
 
@@ -23,13 +29,25 @@ The following table describes the columns of the list of workspaces.
 | --------- | --------- |
 | **Name** | The name given to the workspace. |
 | **Description** | The information that is given in the description field of the workspace settings. |
-| **Type** | The type of workspace. There are two types of workspaces:<br>:::image type="icon" border="false" source="./media/portal-workspaces/app-workspace-icon.png"::: **Workspace** (also known as "app workspace")<br>:::image type="icon" border="false" source="./media/portal-workspaces/personal-workspace-icon.png"::: **Personal Group** ("My workspaces")|
+| **Type** | The workspace type: **Workspace**, **Personal Group** (My workspace), or **Admin Workspace**. |
 | **State** | The state lets you know if the workspace is available for use. There are five states, **Active**, **Orphaned**, **Deleted**, **Removing**, and **Not found**. For more information, see [Workspace states](#workspace-states). |
-| **Capacity name** | Name given to the workspace's capacity. |
-| **Capacity SKU Tier** | The type of workspace type used for the workspace's capacity. Capacity SKU Tiers include **Power BI Premium** and **Power BI Premium Per-User (PPU)**. For more information about capacity tiers, see [Configure and manage capacities in Power BI Premium](/power-bi/enterprise/service-admin-premium-manage). |
-| **Upgrade status** | The upgrade status lets you know if the workspace is eligible for a Fabric upgrade. |
+| **Capacity name** | The name of the capacity assigned to the workspace. |
+| **Capacity SKU Tier** | The SKU tier of the workspace's assigned capacity. For more information, see [Configure and manage capacities in Power BI Premium](/power-bi/enterprise/service-admin-premium-manage). |
 
-The table columns on the **Workspaces** tab correspond to the properties returned by the [admin Rest API](/rest/api/power-bi/admin) for workspaces. Personal workspaces are of type **PersonalGroup** and all other workspaces are of type **Workspace**. For more information, see [Workspaces](../fundamentals/workspaces.md).
+For more information about workspaces, see [Workspaces](../fundamentals/workspaces.md). To retrieve workspace metadata programmatically, use the [admin REST API](/rest/api/power-bi/admin).
+
+### Find and filter workspaces
+
+Use **Filter by keyword** to search the workspace list. Select **Filter** to refine the list by:
+
+* **Type**: Admin Workspace, Personal Group, or Workspace.
+* **Capacity SKU Tier**.
+* **Capacity name**.
+* **State**.
+
+Select **Clear all** to remove the applied filters.
+
+<!-- Placeholder: Workspaces Filter menu showing Type, Capacity SKU Tier, Capacity name, and State. -->
 
 ## Workspace states
 
@@ -61,55 +79,74 @@ For detailed instructions on setting up retention periods, restoring workspaces 
 
 ## Workspace options
 
-The ribbon at the top of the list and the More options (...) menus of the individual workspaces provide options that to help you manage the workspaces. The Refresh and the Export options are always present, while the selection of other options that appear depends on the workspace type and status. All the options are described in the following table.
+When you select a workspace, a command bar appears above the list. You can also select **More options (...)** next to a workspace to open the same actions in a menu. The available commands depend on the workspace type and state. For example, an active workspace can provide edit, access, export, and reassignment commands, while a deleted workspace can provide edit, export, restore, and permanent-delete commands.
+
+<!-- Placeholder: More options menu for an active workspace. -->
 
 |Option  |Description  |
 |---------|---------|
-| **Refresh** | Refreshes the workspace list.|
-| **Export** |Exports the table as a *.csv* file.|
-| **Details** |Lists the items that are contained in the workspace.|
-| **Edit** |Enables you to edit the workspace name and description. |
-| **Access** |Enables you to manage workspace access. You can use this feature to delete workspaces by first adding yourself to a workspace as an admin then opening the workspace to delete it.|
-| **Get access** |Grants you temporary access to another user's MyWorkspace. See [Gain access to any user's My workspace](#gain-access-to-any-users-my-workspace) for detail.|
-| **Capacity** |Enables you to assign the workspace to Premium capacity or to remove it from Premium capacity. |
-| **Recover** |Enables you to restore an orphaned workspace. |
-| **Restore** |Enables you to restore the MyWorkspace of a user that has left the organization, or a deleted collaborative workspace. For MyWorkspaces, see [Restore a deleted My workspace as an app workspace](workspace-retention.md#restore-a-deleted-my-workspace-as-an-app-workspace). For collaborative workspaces, see [Restore a deleted collaborative workspace](workspace-retention.md#restore-a-deleted-collaborative-workspace) |
-| **Permanently delete** |Enables you to permanently delete a deleted collaborative workspace before the end of its retention period. See [Permanently delete a deleted collaborative workspace during the retention period](workspace-retention.md#permanently-delete-a-deleted-collaborative-workspace-during-the-retention-period). |
+| **Edit** | Opens **Workspace settings** for the selected workspace. |
+| **Access** | Opens the **Manage access** pane for the selected workspace. |
+| **Export** | Exports the workspace list as a *.csv* file. |
+| **Reassign workspace** | Opens a pane where you can change the workspace type or assigned capacity. |
+| **Restore** | Restores a deleted My workspace or collaborative workspace. For details, see [Restore a deleted My workspace as an app workspace](workspace-retention.md#restore-a-deleted-my-workspace-as-an-app-workspace) or [Restore a deleted collaborative workspace](workspace-retention.md#restore-a-deleted-collaborative-workspace). |
+| **Permanently delete** | Permanently deletes a deleted collaborative workspace before its retention period ends. For details, see [Permanently delete a deleted collaborative workspace during the retention period](workspace-retention.md#permanently-delete-a-deleted-collaborative-workspace-during-the-retention-period). |
 
 >[!NOTE]
 > Admins can also manage and recover workspaces using PowerShell cmdlets.
 >
 > Admins can also control users' ability to create new workspace experience workspaces and classic workspaces. See [Workspace settings](./portal-workspace.md) in this article for details.
 
+## Manage workspace access
+
+To manage who can access a workspace:
+
+1. Select the workspace in the list.
+1. Select **Access** on the command bar, or select **More options (...)** and then select **Access**.
+1. In the **Manage access** pane, you can:
+    * Select **Add people or groups** to grant workspace access.
+    * Search for a person or group that already has access.
+    * Review or change the role assigned to a person or group.
+
+<!-- Placeholder: Manage access pane opened by the Access command. -->
+
+## Edit workspace settings
+
+To open the settings for a workspace:
+
+1. Select the workspace in the list.
+1. Select **Edit** on the command bar.
+1. Update the available settings in the **Workspace settings** pane.
+
+The settings available in the pane depend on the workspace and your permissions.
+
+<!-- Placeholder: Workspace settings pane opened by the Edit command. -->
+
 ## Workspace item limits
 
-Workspaces can contain a maximum of 1,000 Fabric and Power BI items, including parent and child items.
+Workspaces can contain up to 1,000 Fabric and Power BI items, including both parent and child items.  
 
-Users attempting to create new items after this limit is reached get an error in the item creation flow. To develop a plan for managing item counts in workspaces, Fabric admins can review the total count of items per workspace in the admin monitoring workspace. See the [total number of items in a workspace](./feature-usage-adoption.md#measures).
+Users who try to create new items after reaching this limit receive an error during the item creation process. To develop a plan for managing item counts in workspaces, Fabric admins can review workspace inventory in the [Govern report in the OneLake catalog](../governance/onelake-catalog-govern.md#govern-report).  
 
 > [!NOTE]
-> If specific items have limits, those limits still apply, but the total number of items in the workspace is still capped at a 1000. For item specific limits, review the item type' documentation.
+> If specific item types have lower limits, those limits still apply. For item-specific limits, review the documentation for that item type.
 
 
 ## Reassign a workspace to a different capacity
 
-Workspaces and the data they contain reside on capacities. You can move the workspace to a different capacity via the workspace type.
+Capacities host workspaces and the data they contain. Reassign a workspace to change its workspace type or assigned capacity.  
 
-1. Go to **Admin portal** > **Workspaces**.
+1. Select the workspace in the list.
+1. Select **Reassign workspace** on the command bar.
+1. In the **Reassign workspace** pane, select an available workspace type.
+1. If required, select the capacity under **Details**.
+1. Select **Apply**.
 
-1. Find the workspace you want to move, open the options menu, and choose **Reassign workspace**.
+<!-- Placeholder: Reassign workspace pane showing workspace type and capacity selection. -->
 
-    :::image type="content" source="./media/portal-workspaces/reassign-workspace-option.png" alt-text="Screenshot showing the Reassign workspace option.":::
-
-1. On the Reassign workspace side pane that appears, select the desired workspace type, and choose a capacity, if asked.
-
-    :::image type="content" source="./media/portal-workspaces/license-modes.png" alt-text="Screenshot showing the Reassign workspace types pane.":::
-
-1. Select **Save** to apply the change.
-
-    > [!NOTE]
-    > * The types of items in the workspace can affect your ability to change workspace types or move the workspace to a capacity in a different region.
-    > * Moving a workspace to a different capacity might start successfully but finish with errors, which could affect some or all items in the workspace. For details, see [Capacity reassignment restrictions and common issues](portal-workspace-capacity-reassignment.md).
+> [!NOTE]
+> * The types of items in the workspace can affect your ability to change workspace types or move the workspace to a capacity in a different region.
+> * Moving a workspace to a different capacity might start successfully but finish with errors, which could affect some or all items in the workspace. For details, see [Capacity reassignment restrictions and common issues](portal-workspace-capacity-reassignment.md).
 
 ## Govern My workspaces
 
@@ -132,13 +169,14 @@ When you gain temporary access to a My workspace, you can:
 
 * Perform any actions in the My workspace as if it's your own My workspace. You can view and make any changes to the contents, including sharing or unsharing. But you can't grant anyone else access to the My workspace.
 
-You can manage access to My workspaces by using the Fabric Admin portal or the Fabric Admin APIs. 
+You can manage access to My workspaces by using the Govern section of the OneLake catalog or the Fabric Admin APIs.
 
-To manage access by using the Fabric Admin portal:
+To manage access by using the OneLake catalog Govern section:
 
-1. In the Fabric Admin portal, open the **Workspaces** page and find the personal workspace you want to access.
-1. Select the workspace, and then choose **Get Access** from the ribbon. Or, select **More options (...)** and choose **Get Access**.
-1. To remove access, select **Remove Access** from the ribbon or from the **More options (...)** menu.
+1. Sign in to [Fabric](https://app.fabric.microsoft.com) using your admin account credentials.
+1. Open the **OneLake catalog**, select the **Govern** section, and then select **Workspaces**.
+1. Select the personal workspace you want to access, and then select **Get Access** on the command bar.
+1. To remove access, select the workspace, and then select **Remove Access** on the command bar.
 
    > [!NOTE]
    > If you don't remove access, it automatically revokes after 24 hours. 
@@ -168,4 +206,4 @@ For details, see [Capacity reassignment restrictions and common issues](portal-w
 
 ## Related content
 
-* [About the admin portal](admin-center.md)
+* [Administration overview](admin-overview.md)

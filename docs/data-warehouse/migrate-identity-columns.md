@@ -67,7 +67,7 @@ VALUES (101, '2025-01-15', 1, 5000.00),
 SET IDENTITY_INSERT dbo.Orders OFF;
 ```
 
-For larger datasets, you can use `COPY INTO` with `IDENTITY_INSERT`:
+For larger datasets, you can use [COPY INTO](/sql/t-sql/statements/copy-into-transact-sql?view=fabric&preserve-view=true) with `IDENTITY_INSERT`:
 
 ```sql
 COPY INTO dbo.Orders (OrderID 1, OrderDate 2, CustomerID 3, TotalAmount 4)

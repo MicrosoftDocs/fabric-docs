@@ -32,7 +32,7 @@ For information on enabling audit, see [Enable Audit Log](/purview/audit-log-ena
 For more information about one-click policies, see [Considerations for DSPM for AI](/purview/dspm-for-ai-considerations#one-click-policies-from-data-security-posture-management-for-ai)
 
 ### 3. Enable Fabric Tenant Setting
-- In the Fabric Admin Portal:
+- In **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**:
   - Turn on:
     **Allow Microsoft Purview to secure AI interactions** 
 

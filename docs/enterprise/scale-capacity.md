@@ -4,7 +4,7 @@ description: Scale a Microsoft Fabric capacity up or down in the Azure portal to
 author: dknappettmsft
 ms.author: daknappe
 ms.topic: how-to
-ms.date: 04/20/2026
+ms.date: 09/23/2026
 ai-usage: ai-assisted
 ---
 
@@ -38,6 +38,8 @@ To scale your capacity, you need:
 
 ## Scale a capacity
 
+To scale a capacity in the Azure portal, follow these steps:
+
 1. Sign in to the [Azure portal](https://portal.azure.com/).
 
 1. Select the **Microsoft Fabric** service to see your capacities. Search for *Microsoft Fabric* in the search menu.
@@ -52,7 +54,11 @@ To scale your capacity, you need:
 
 ## Considerations and limitations
 
-Scaling up a capacity that's smaller than F64 to a larger capacity happens almost immediately. The capacity license updates usually take up to a day. However, some updates might take longer. During this time, Fabric Free users might see a request to upgrade to a Power BI Pro license when they try to access a Power BI report.
+Here are some considerations and limitations to keep in mind when scaling your capacity:
+
+- Scaling up a capacity that's smaller than F64 to a larger capacity happens almost immediately. The capacity license updates usually take up to a day. However, some updates might take longer. During this time, Fabric Free users might see a request to upgrade to a Power BI Pro license when they try to access a Power BI report.
+
+- Avoid resizing a capacity frequently. Applying a new capacity size can take time, and operations already in progress might be delayed or otherwise affected. When possible, resize during a period of low activity.
 
 ## Related content
 

@@ -16,7 +16,7 @@ Use this article in the final stage of your migration to validate workloads, ali
 In this article, you learn how to:
 
 - Map Synapse RBAC and network patterns to Fabric workspace, OneLake, and managed network controls.
-- Reconnect governance workflows, including Microsoft Purview integration and labeling.
+- Reestablish governance and protection workflows by using OneLake Catalog and Microsoft Purview Information Protection.
 - Use the phase-by-phase migration checklist to validate, optimize, and execute cutover.
 - Plan decommissioning of legacy Synapse Spark resources after successful cutover.
 
@@ -36,7 +36,7 @@ In this article, you learn how to:
 
 ## Governance
 
-If you use Azure Purview with Synapse, Fabric provides native Microsoft Purview integration for data catalog, lineage, sensitivity labels, and access policies. Reconnect your Purview account to scan Fabric workspaces.
+Use [OneLake Catalog](../governance/onelake-catalog-overview.md) to discover and govern migrated Fabric items and review their lineage. Use Microsoft Purview Information Protection to apply sensitivity labels and protection policies to supported Fabric items.
 
 ## Migration checklist
 
@@ -92,7 +92,7 @@ For security, governance, and network mapping guidance, see [Phase 4: Security a
 - **5.2** Configure OneLake RBAC for fine-grained data access control at the folder and table level.
 - **5.3** Configure Managed VNet and Managed Private Endpoints for Spark workloads that access private data sources (requires Custom Pools).
 - **5.4** Replace SHIR with On-premises Data Gateway (OPDG), and replace VNet IR with VNet Data Gateway.
-- **5.5** Reconnect Microsoft Purview for governance, lineage, and sensitivity labels.
+- **5.5** Verify that migrated items appear in OneLake Catalog and review their lineage.
 - **5.6** Review and apply sensitivity labels to migrated Lakehouse items as needed.
 
 ### Phase 6: Optimize and validate

@@ -3,7 +3,7 @@ title: Fabric Apps frequently asked questions (FAQ)
 description: Answers to common questions about Microsoft Fabric Apps, including capabilities, limitations, deployment, and architecture.
 ms.reviewer: mksuni
 ms.topic: faq
-ms.date: 06/02/2026
+ms.date: 09/15/2026
 ai-usage: ai-generated
 ---
 
@@ -113,7 +113,7 @@ No. Use an explicit join entity with two `@one()` navigation decorators instead.
 
 ### Can I write custom SQL queries?
 
-No direct SQL query support exists. All data access goes through the generated GraphQL APIs.
+Fabric Apps doesn't expose raw custom SQL through its generated API or connectors. Use the generated GraphQL client for app-owned data. To access an existing lakehouse, warehouse, or SQL database in Fabric, add a connector and use its typed operations.
 
 ## Performance and scale
 
@@ -148,15 +148,19 @@ Yes. Implement client-side caching in your frontend application. The backend doe
 - Composite primary keys aren't supported
 - Custom authentication providers aren't supported
 - Multiple environments management isn't available out of the box
+- Workspace outbound access protection isn't supported at this time.
+- Tenant-level and workspace-level private links aren't supported at this time.
+- Application lifecycle management (ALM) isn't supported at this time.
 
 See [Troubleshoot Fabric Apps](troubleshooting.md) for workarounds.
 
 ### Can I export my data?
 
-Yes. You can also connect directly to the SQL database if you have the connection string.
+Yes. Use the generated data client to read app-owned data, or use a connector to read from a supported Fabric data item. Select only the fields you need, page through large result sets, and generate the export in your application.
 
 ## Related content
 
 - [What is Fabric Apps?](overview.md)
 - [Create your first project](create-app.md)
+- [Connect Fabric Apps to Fabric data](connectors.md)
 - [Troubleshoot Fabric Apps](troubleshooting.md)

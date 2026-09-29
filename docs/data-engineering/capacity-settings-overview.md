@@ -14,9 +14,7 @@ Admins purchase Microsoft Fabric capacities based on the compute and scale requi
 
 Fabric capacity admins can now manage and govern their Data Engineering and Data Science settings from the admin settings portal. Admins can configure Spark environment for their users by enabling workspace level compute, choose a default runtime, and also create or manage spark properties for their capacities.
 
-From the Admin portal, navigate to the **Data Engineering/Science Settings** section and select a specific capacity as shown in the following animation:
-
-:::image type="content" source="media\capacity-settings\capacity-settings-without-user-defined-pools.gif" alt-text="A gif showing the  configuration of capacity settings for Data Engineering/Science." lightbox="media\capacity-settings\capacity-settings-without-user-defined-pools.gif":::
+Go to **OneLake catalog** > **Govern** > **Capacities**. Next to the capacity name, select the **More options** menu > **Settings** and navigate to the **Data Engineering/Science Settings** section.
 
 ## Related content
 

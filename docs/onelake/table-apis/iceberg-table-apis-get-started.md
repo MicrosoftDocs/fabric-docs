@@ -1,5 +1,5 @@
 ---
-title: "Getting started with OneLake table APIs for Iceberg"
+title: "Iceberg table API samples"
 description: "Quickstart and client configuration for using the OneLake REST API endpoint with Apache Iceberg REST Catalog (IRC) APIs in Microsoft Fabric."
 ms.reviewer: mahi # Product team ms alias(es)
 # author: Do not use - assigned by folder in docfx file
@@ -9,17 +9,17 @@ ms.topic: how-to
 #customer intent: As a OneLake user, I want to learn how to quickly configure my tools and applications to connect to OneLake table APIs using the Apache Iceberg REST Catalog standard, so that I can access, explore, and interact with my Fabric data using familiar open-source clients and libraries.
 ---
 
-# Getting started with OneLake table APIs for Iceberg
+# Iceberg table API samples
 
 OneLake offers a REST API endpoint for interacting with tables in Fabric. This endpoint supports read-only metadata operations for Apache Iceberg tables in Fabric. These operations are compatible with [the Iceberg REST Catalog (IRC) API open standard](https://iceberg.apache.org/rest-catalog-spec/).
 
 ## Prerequisites
 
-Learn more about [OneLake table APIs for Iceberg](./iceberg-table-apis-overview.md) and make sure to review the [prerequisite information](./table-apis-overview.md#prerequisites). 
+Learn more about the [Iceberg metadata API](./iceberg-table-apis-overview.md) and make sure to review the [prerequisite information](./table-apis-overview.md#prerequisites).
 
 ## Client quickstart examples
 
-Review these samples to learn how to set up existing Iceberg REST Catalog (IRC) clients or libraries for use with the new OneLake table endpoint.
+Review these samples to learn how to set up existing Iceberg REST Catalog (IRC) clients or libraries for use with the OneLake table endpoint.
 
 ### PyIceberg
 
@@ -448,6 +448,6 @@ List Iceberg catalog configuration settings.
 ## Related content
 
 - Learn more about [OneLake table APIs](./table-apis-overview.md).
-- Learn more about [OneLake table APIs for Iceberg](./iceberg-table-apis-overview.md).
+- Learn more about the [Iceberg metadata API](./iceberg-table-apis-overview.md).
+- [Read OneLake table data](./read-table-data-rest-api.md).
 - Set up [automatic Delta Lake to Iceberg format conversion](../onelake-iceberg-tables.md#virtualize-delta-lake-tables-as-iceberg).
-

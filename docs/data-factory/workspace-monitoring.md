@@ -29,7 +29,7 @@ Workspace monitoring gives you log-level visibility for all items in a workspace
 
 ## Troubleshooting missing monitoring tables
 
-When new workspace monitoring tables become available and you don't see them in your existing monitoring eventhouse, recreate workspace monitoring for the workspace by deleting the previous eventhouse and re-adding it to your workspace. Recreating the monitoring eventhouse provisions the latest monitoring schema and ensures newly available tables are visible. Be sure to save any custom Kql queries before removing the existing monitoring eventhouse. The monitoring experience is backed by a monitoring eventhouse and monitoring Kql database that are created when workspace monitoring is enabled.
+When new workspace monitoring tables become available and you don't see them in your existing monitoring eventhouse, recreate workspace monitoring for the workspace by deleting the previous eventhouse and re-adding it to your workspace. Recreating the monitoring eventhouse provisions the latest monitoring schema and ensures newly available tables are visible. Be sure to save any custom KQL queries before removing the existing monitoring eventhouse. The monitoring experience is backed by a monitoring eventhouse and monitoring KQL database that are created when workspace monitoring is enabled.
 
 ## Review logged data
 
@@ -151,5 +151,5 @@ The following table describes the schema of `FabricDataPipelinesActivityRunsLogs
 
 ## Related content
 
-- [How to monitor pipeline runs](/fabric/data-factory/monitor-pipeline-runs)
-- [How to monitor pipeline runs in Monitoring hub](/fabric/data-factory/monitoring-hub-pipeline-runs)
+- [Choose how to monitor pipeline runs](/fabric/data-factory/monitor-pipeline-runs)
+- [Monitor pipeline runs in the legacy Monitoring hub](/fabric/data-factory/monitoring-hub-pipeline-runs)

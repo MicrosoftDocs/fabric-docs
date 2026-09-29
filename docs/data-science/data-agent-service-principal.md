@@ -52,7 +52,7 @@ Follow the steps in [Create a Microsoft Entra application and service principal 
 
 A Fabric tenant administrator must allow service principals to call Fabric APIs:
 
-1. In the [Fabric admin portal](/fabric/admin/admin-center), go to **Tenant settings** > **Developer settings**.
+1. Go to **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings** > **Developer settings**.
 1. Enable **Service principals can use Fabric APIs**.
 1. Scope the setting to **The entire organization** or to a specific security group that contains your service principal.
 

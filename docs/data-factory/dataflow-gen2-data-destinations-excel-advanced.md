@@ -3,15 +3,12 @@ title: Creating Excel documents with navigation tables
 description: Learn how to create Excel documents programmatically using Power Query navigation tables
 author: jorgegom
 ms.topic: concept-article
-ms.date: 01/12/2026
+ms.date: 09/03/2026
 ms.author: jorgegom
 ms.custom: dataflows
 ---
 
-# Excel Advanced Data Destination (Preview)
-
-> [!NOTE]
-> Excel format for file-based destinations is currently in preview.
+# Excel Advanced data destination
 
 When you are working on a file based destination in Dataflow Gen2, you have the option to save your data in various formats, including Excel. Excel files can be created with simple tabular data, but you can also create complex workbooks with multiple sheets, charts, and customized formatting by using navigation tables. These navigation tables define the structure and content of the Excel document programmatically and provide a powerful way to generate dynamic Excel files.
 

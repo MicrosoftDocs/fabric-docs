@@ -15,7 +15,7 @@ ms.topic: include
 | [Google BigQuery](../google-bigquery.md) | [Database mirroring](../overview.md#how-does-database-mirroring-work) | [Tutorial: Google BigQuery](../google-bigquery-tutorial.md) |
 | [Oracle](../oracle.md) | [Database mirroring](../overview.md#how-does-database-mirroring-work) | [Tutorial: Oracle](../oracle-tutorial.md) |
 | [SAP](../sap.md) | [Database mirroring](../overview.md#how-does-database-mirroring-work) | [Tutorial: SAP Datasphere](../sap-datasphere-tutorial.md) |
-| [SharePoint List (preview)](../sharepoint-list.md) | [Database mirroring](../overview.md#how-does-database-mirroring-work) | [Tutorial: SharePoint List (preview)](../sharepoint-list-tutorial.md) |
+| [SharePoint List](../sharepoint-list.md) | [Database mirroring](../overview.md#how-does-database-mirroring-work) | [Tutorial: SharePoint List](../sharepoint-list-tutorial.md) |
 | [Snowflake](../snowflake.md) | [Database mirroring](../overview.md#how-does-database-mirroring-work) | [Tutorial: Snowflake](../snowflake-tutorial.md) |
 | [SQL Server](../sql-server.md) | [Database mirroring](../overview.md#how-does-database-mirroring-work) | [Tutorial: SQL Server](../sql-server-tutorial.md) |
 | [Open mirrored databases](../open-mirroring.md) | [Open mirroring](../overview.md#how-does-open-mirroring-work) | [Tutorial: Open mirroring](../open-mirroring-tutorial.md) |

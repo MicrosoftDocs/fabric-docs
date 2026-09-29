@@ -2,8 +2,9 @@
 title: Optimize GQL Query Performance for graph in Microsoft Fabric
 description: Learn how to write efficient GQL queries for graph in Microsoft Fabric. Apply filtering, traversal, and key constraint strategies to improve query performance.
 ms.topic: how-to
-ms.date: 05/20/2026
+ms.date: 09/17/2026
 ms.reviewer: splantikow
+ai-usage: ai-assisted
 ---
 
 # Optimize GQL query performance for graph in Microsoft Fabric
@@ -12,37 +13,52 @@ This article provides guidance for writing GQL (Graph Query Language) queries th
 
 For hard limits on graph size, result size, and query timeout, see [Current limitations](limitations.md). Several recommendations in this article also relate to how you design your graph schema. For more information, see [Design a graph schema](design-graph-schema.md).
 
-## Filter early in patterns
+## Place filters according to their semantics
 
-Place filters inside graph patterns rather than in later statements. Pattern-level `WHERE` clauses reduce the number of intermediate results before joins and subsequent statements run, which lowers overall execution cost.
+Place a predicate inside a graph pattern when it defines which node or edge can
+participate in the match. Use a statement-level `MATCH ... WHERE` condition to
+postfilter the completed match, or a separate `FILTER` statement when the
+predicate applies to the row produced by an earlier statement.
 
-**Recommended:** Filter during pattern matching.
+For example, use pattern-level `WHERE` clauses for conditions on the matched nodes:
 
 ```gql
--- Pattern-level WHERE reduces intermediate results
 MATCH (p:Person WHERE p.birthday < 19940101)-[:workAt]->(c:Company WHERE c.id > 1000)
 RETURN p.firstName, p.lastName, c.name
 ```
 
-**Avoid:** Filtering late with a separate FILTER statement.
+A separate `FILTER` can express the same condition after an ordinary mandatory
+match that uses the default `ALL` path search:
 
 ```gql
--- Statement-level filter runs after all pattern matches are produced
 MATCH (p:Person)-[:workAt]->(c:Company)
 FILTER p.birthday < 19940101 AND c.id > 1000
 RETURN p.firstName, p.lastName, c.name
 ```
 
-Both queries return the same results, but the first version lets the query engine prune rows earlier in the evaluation process.
+The query optimizer can apply equivalent predicates during scanning when doing
+so preserves query semantics, so inline syntax isn't inherently faster. Choose
+the form that expresses when the condition applies.
+
+Predicate placement can change results with `ANY SHORTEST`. Inline predicates
+constrain the paths eligible for shortest-path selection. A statement-level
+`WHERE` or subsequent `FILTER` applies after path selection, so it can remove a
+selected shortest path without choosing a longer path instead. For the current
+`MATCH ... WHERE` limitation and a reliable placement pattern, see [Place
+predicates before or after path
+selection](gql-graph-patterns.md#place-predicates-before-or-after-path-selection).
+
+Placement also matters with `OPTIONAL MATCH`, where an inline `WHERE` constrains
+the optional match but a subsequent `FILTER` can remove the null-extended row.
 
 > [!TIP]
-> Think of pattern-level `WHERE` as analogous to a SQL `JOIN ... ON` condition. It constrains matches at the point of evaluation instead of post-filtering the full result set.
+> Think of pattern-level `WHERE` as analogous to a SQL `JOIN ... ON` condition. It describes which matches qualify rather than filtering the resulting row afterward.
 
 ## Return only the properties you need
 
 Return only the node and edge properties your scenario requires. Avoid returning full nodes or using `RETURN *` when you need only a subset of properties.
 
-In graph, OneLake tables back node properties. Selecting unnecessary properties increases data read, serialization cost, and response size. During graph modeling, manually select columns from the source table that you want to add as node type properties.
+Selecting unnecessary properties increases data read, serialization cost, and response size. During graph modeling, select only the source columns that you need as node type properties.
 
 **Recommended:** Narrow projection.
 
@@ -81,7 +97,7 @@ RETURN p.firstName, friend.firstName
 ```
 
 > [!IMPORTANT]
-> Graph truncates responses larger than 64 MB and aggregation performance can be unstable when results exceed 128 MB. Use `FILTER`, `LIMIT`, and `GROUP BY` to keep results within these bounds. For more information, see [Current limitations](limitations.md).
+> Graph truncates query responses whose internal binary representation exceeds 64 MB. A truncated response includes an additional status with public code `01000` and canonical GQLSTATUS `01M11`. Use filters, narrow projections, and `LIMIT` to reduce the result size. For more information, see [Current limitations](limitations.md).
 
 ## Keep traversals shallow and targeted
 
@@ -96,20 +112,20 @@ RETURN p.firstName, friend.firstName
 LIMIT 1000
 ```
 
-**Avoid:** Maximum-depth traversal without clear need.
+**Avoid:** A wide traversal range without clear need.
 
 ```gql
--- Exploring the full 8-hop limit on a dense graph is expensive
+-- A wider range on a dense graph is more expensive
 MATCH (p:Person)-[:knows]->{1,8}(friend:Person)
 RETURN *
 ```
 
 > [!IMPORTANT]
-> Graph supports up to **eight hops** in variable-length patterns. Even so, use the tightest bounds your scenario allows. In the example, the `{1,3}` pattern is significantly cheaper than `{1,8}` on the same graph.
+> The visual query builder limits variable-length paths to eight hops, but this user-interface limit doesn't apply to GQL in the code editor. Use the tightest bound your scenario allows because a wider range can match more paths.
 
-## Use TRAIL to prevent redundant traversals
+## Use TRAIL when paths must not repeat edges
 
-Use `TRAIL` path mode to prevent the query engine from revisiting the same edge. In dense graphs, cycles can cause exponential path explosion. `TRAIL` ensures each edge is visited at most once per path, which improves both correctness and performance.
+Use `TRAIL` path mode when a valid path must not repeat an edge. In graphs with cycles, this restriction can also reduce the number of matching paths compared with the default `WALK` mode.
 
 ```gql
 -- TRAIL prevents revisiting the same :knows edge
@@ -118,7 +134,9 @@ WHERE src.firstName = 'Alice' AND dst.firstName = 'Bob'
 RETURN count(*) AS numPaths
 ```
 
-Without `TRAIL`, the same query on a cyclic graph can produce a much larger (and often redundant) result set.
+Without `TRAIL`, the same query on a cyclic graph can return paths that repeat an edge. Use the mode that matches the required path semantics rather than treating `TRAIL` as a general performance optimization.
+
+An unbounded `ALL WALK` pattern isn't supported because cycles can produce infinitely many paths. Although unbounded `TRAIL`, `SIMPLE`, and `ACYCLIC` patterns terminate, they can still enumerate many paths. Use a finite upper bound unless the query requires unbounded traversal.
 
 ## Use shared variables for efficient joins
 
@@ -145,9 +163,9 @@ RETURN p1.firstName, c.name, p2.firstName, city.name
 
 A cartesian product pairs every result from one pattern with every result from the other. If `Person-workAt->Company` matches 1,000 rows and `Person-isLocatedIn->City` matches 500 rows, the query returns 1,000 × 500 = 500,000 rows. Adding a shared variable constrains the join so only matching pairs are returned.
 
-## Define key constraints on nodes
+## Filter on key properties when identifying nodes
 
-Define [node key constraints](gql-graph-types.md#set-up-node-key-constraints) in your graph type. Key constraints enable the system to optimize queries that look up specific nodes by their key properties, similar to primary key indexes in relational databases.
+Define [node key constraints](gql-graph-types.md#set-up-node-key-constraints) to identify nodes uniquely and enforce data integrity. When you need one specific node, include its key property in the pattern predicate to avoid matching unrelated nodes.
 
 For example, if your graph type defines `id` as the key for `Person` nodes:
 
@@ -156,28 +174,26 @@ CONSTRAINT person_pk
   FOR (n:Person) REQUIRE n.id IS KEY
 ```
 
-Then queries that filter on `id` can use that key for a direct lookup:
+Then filter on `id` when you need that person:
 
 ```gql
--- Fast: the engine can look up person 12345 directly using the key
 MATCH (p:Person WHERE p.id = 12345)-[:workAt]->(c:Company)
 RETURN p.firstName, c.name
 ```
 
-Without the filter on the key property, the engine must scan every `Person` node:
+Without the filter, the query matches every `Person` node before traversing `workAt` edges:
 
 ```gql
--- Slower: scans all Person nodes before traversing
 MATCH (p:Person)-[:workAt]->(c:Company)
 RETURN p.firstName, c.name
 ```
 
 > [!TIP]
-> When you need a specific node, filter on its key property in the `MATCH` pattern to take advantage of the constraint you defined.
+> A key constraint establishes identity and uniqueness. It doesn't by itself guarantee a particular physical lookup or query plan.
 
 ## Choose appropriate data types
 
-Select the most specific data type for each property during graph modeling. Choosing the right types is important for both storage efficiency and query performance. For example, numeric comparisons on `INT` properties are faster than string comparisons on equivalent `STRING` values.
+Select the data type that represents each property's values and intended operations. For example, use a numeric type for values that you calculate or compare numerically instead of storing formatted numbers as strings.
 
 For supported data types, see [Current limitations — Data types](limitations.md#data-types) and [Supported property types](gql-graph-types.md#supported-property-types).
 
@@ -188,8 +204,8 @@ Where possible, retrieve related entities in a single graph pattern rather than 
 **Recommended:** Single combined pattern.
 
 ```gql
-MATCH (c:Customer)-[:purchased]->(o:Order)-[:contains]->(product:Product)
-RETURN c.id, o.id, product.name
+MATCH (c:Customer)-[:purchases]->(o:`Order`)-[:`contains`]->(product:`Product`)
+RETURN c.fullName, o, product.productName
 LIMIT 1000
 ```
 
@@ -197,12 +213,13 @@ LIMIT 1000
 
 ```gql
 -- Query 1: fetch 100 orders
-MATCH (c:Customer)-[:purchased]->(o:Order)
-RETURN c.id, o.id
+MATCH (c:Customer)-[:purchases]->(o:`Order`)
+RETURN c.fullName, o
+LIMIT 100
 
--- Query 2: run once per order to get products (N+1 problem)
-MATCH (o:Order)-[:contains]->(product:Product)
-RETURN o.id, product.name
+-- Query 2: repeat for each returned order, substituting its key value
+MATCH (o:`Order` WHERE o.SalesOrderDetailID_K = 12345)-[:`contains`]->(product:`Product`)
+RETURN o, product.productName
 ```
 
 ## Test queries against realistic data volumes

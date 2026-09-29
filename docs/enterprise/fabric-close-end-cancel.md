@@ -66,7 +66,7 @@ The Fabric trial capacity lasts 60 days. [Cancel a Fabric capacity trial](../fun
 
 ### Delete a Fabric capacity and Fabric trial capacity
 
-The Capacity administrator can delete Fabric capacities using the Fabric admin portal. Fabric items in workspaces assigned to the capacity become unusable unless the workspaces are assigned to a different Fabric capacity within seven days. To learn more, see [Delete a capacity](../admin/capacity-settings.md#delete-a-capacity) and 
+The Capacity administrator can delete Fabric capacities using **OneLake catalog** > **Govern** > **Capacities**. Fabric items in workspaces assigned to the capacity become unusable unless the workspaces are assigned to a different Fabric capacity within seven days. To learn more, see [Delete a capacity](../admin/capacity-settings.md#delete-a-capacity) and
 [Fabric capacity deletion.](../admin/capacity-settings.md#delete-a-capacity)
 
 ### Buy a Fabric trial capacity
@@ -100,7 +100,7 @@ Cancel an A SKU subscription in Azure.
 
 ## Disable Fabric
 
-Fabric administrators can turn off Fabric for an entire organization, individuals, and security groups. See [Can I disable Microsoft Fabric?](../admin/fabric-switch.md#can-i-disable-microsoft-fabric). At the tenant level, the Fabric admin uses the Admin portal **Settings.** The Fabric administrator can also delegate a Capacity administrator to disable Fabric at the capacity level using the Admin portal **Capacity settings.**
+Fabric administrators can turn off Fabric for an entire organization, individuals, and security groups. See [Can I disable Microsoft Fabric?](../admin/fabric-switch.md#can-i-disable-microsoft-fabric). At the tenant level, the Fabric admin uses **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**. The Fabric administrator can also delegate a Capacity administrator to disable Fabric at the capacity level using **OneLake catalog** > **Govern** > **Capacities**.
 
 ## Licenses
 

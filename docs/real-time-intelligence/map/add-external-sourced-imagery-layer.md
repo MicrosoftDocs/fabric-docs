@@ -5,21 +5,23 @@ ms.reviewer: smunk, sipa
 ms.topic: how-to
 ms.service: fabric
 ms.subservice: rti-core
-ms.date: 3/06/2026
+ms.date: 09/13/2026
 ms.search.form: WMS, WMTS, WMS and WMTS imagery sources, Microsoft Planetary Computer Pro imagery, MPC
 ---
 
 # Add a WMS or WMTS imagery layer to a map
 
-This how-to article shows you how to add external raster imagery to Fabric Maps using Web Map Service (WMS) and Web Map Tile Service (WMTS) endpoints. Learn how to create and manage Geospatial Web Services connections, authenticate to external imagery services, and render WMS or WMTS layers—including Microsoft Planetary Computer Pro imagery—directly on a map. By connecting to external imagery sources, you can enrich your maps with authoritative raster data such as satellite imagery, elevation models, or thematic overlays without copying or storing the imagery in Fabric.
+This article shows you how to add external raster imagery to Fabric Maps by using Web Map Service (WMS) and Web Map Tile Service (WMTS) endpoints. Learn how to create and manage Geospatial Web Services connections, authenticate to external imagery services, and render WMS or WMTS layers—including Microsoft Planetary Computer Pro imagery—directly on a map. By connecting to external imagery sources, you can enrich your maps with authoritative raster data such as satellite imagery, elevation models, or thematic overlays without copying or storing the imagery in Fabric.
 
-For more information on WMS or WMTS imagery, see [Create layers using WMS and WMTS imagery sources in Fabric Maps](about-external-sourced-imagery.md)
+For more information about WMS or WMTS imagery, see [Create layers using WMS and WMTS imagery sources in Fabric Maps](about-external-sourced-imagery.md).
+
+WMS and WMTS return raster imagery. To add queryable vector features from WFS, OGC API - Features, or Esri Feature Service, see [Add an external feature service layer to a map](add-external-feature-service-layer.md).
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
 ## Prerequisites
 
-Before you begin, make sure you have:
+Before you begin, ensure you have:
 
 - Access to a WMS or WMTS endpoint
 - Permission to create or use Geospatial Web Services connections
@@ -36,16 +38,16 @@ To use a WMS or WMTS service in Fabric Maps, first create a **Geospatial Web Ser
 
 1. In Fabric, open **User settings**.
 
-    :::image type="content" source="media/layers/user-settings.png" alt-text="A screenshot of the User settings menu in Microsoft Fabric Maps with Settings selected in the dropdown.":::
+    :::image type="content" source="media/layers/external/user-settings.png" alt-text="A screenshot of the User settings menu in Microsoft Fabric Maps with Settings selected in the dropdown.":::
 
 1. Select **Manage connections and gateways**.
 1. Select **New**, and then choose **Cloud connection**.
 
-    :::image type="content" source="media/layers/new-connection.png" alt-text="A screenshot of the Microsoft Fabric Maps interface showing the Manage Connections and Gateways page. The New button in the upper left is highlighted.":::
+    :::image type="content" source="media/layers/external/new-connection.png" alt-text="A screenshot of the Microsoft Fabric Maps interface showing the Manage Connections and Gateways page. The New button in the upper left is highlighted.":::
 
 1. For **Connection type**, select **Geospatial Web Services**.
 
-    :::image type="content" source="media/layers/fabric-maps-connection-type.png" alt-text="Screenshot of the New connection dialog in Microsoft Fabric Maps. The Cloud option is selected among connection types, and the Connection type dropdown is expanded, highlighting Geospatial Web Services as an option.":::
+    :::image type="content" source="media/layers/external/fabric-maps-connection-type.png" alt-text="Screenshot of the New connection dialog in Microsoft Fabric Maps. The Cloud option is selected among connection types, and the Connection type dropdown is expanded, highlighting Geospatial Web Services as an option.":::
 
 1. Enter a descriptive name for the connection.
 1. Configure the connection:
@@ -54,7 +56,7 @@ To use a WMS or WMTS service in Fabric Maps, first create a **Geospatial Web Ser
     - **Authentication method**: Anonymous, Basic authentication, or API key.
     - **Privacy level**: None, Private, Organizational, Public.
 
-    :::image type="content" source="media/layers/fabric-maps-connection-settings.png" alt-text="A screenshot that shows the New connection dialog in Microsoft Fabric Maps showing fields for configuring a Geospatial Web Services connection. The form includes dropdowns and input fields for connection type set to Geospatial Web Services, base URL, protocol, API key name, authentication method, and privacy level set to Organizational. There are checkboxes for allowing code-first artifacts and gateway utilization.":::
+    :::image type="content" source="media/layers/external/fabric-maps-connection-settings.png" alt-text="A screenshot that shows the New connection dialog in Microsoft Fabric Maps showing fields for configuring a Geospatial Web Services connection. The form includes dropdowns and input fields for connection type set to Geospatial Web Services, base URL, protocol, API key name, authentication method, and privacy level set to Organizational. There are checkboxes for allowing code-first artifacts and gateway utilization.":::
 
 1. Select **Create**.
 
@@ -85,25 +87,25 @@ Shared connections allow teams to use the same imagery source without embedding 
 
 ### Step 3: Add the imagery layer to a map
 
-Once Geospatial Web Services connections are created, you can add one or more to your map instance as an external source for a new map layer.
+After you create Geospatial Web Services connections, add one or more to your map instance as an external source for a new map layer.
 
 1. Open an existing map or create a new map in Fabric Maps.
 1. Open the **External sources** tab.
 1. Select **Add sources**.
 
-    :::image type="content" source="media/layers/add-source.png" alt-text="A screenshot of the Microsoft Fabric Maps interface showing the External sources tab selected in the Explorer panel. The Add source button is visible, allowing users to add a new external data source. The wider environment displays a map preview on the right and a navigation bar at the top with options for Home, New tileset, Tileset activity, and Map settings.":::
+    :::image type="content" source="media/layers/external/add-source.png" alt-text="A screenshot of the Microsoft Fabric Maps interface showing the External sources tab selected in the Explorer panel. The Add source button is visible, allowing users to add a new external data source. The wider environment displays a map preview on the right and a navigation bar at the top with options for Home, New tileset, Tileset activity, and Map settings.":::
 
 1. Choose the desired source from the **Connection** drop-down list.
-1. Once the connection is selected, select the **Add** button.
+1. Select the **Add** button.
 
-    :::image type="content" source="media/layers/add-connection.png" alt-text="A screenshot of the Dialog box titled Choose data source, centered on the Microsoft Fabric Maps interface. The dialog prompts the user to select a connection from a dropdown, and provides Add and Cancel buttons, with Add highlighted. Above the dialog, a message states you can create up to 100 connections and advises managing or deleting unused ones.":::
+    :::image type="content" source="media/layers/external/choose-data-source.png" alt-text="A screenshot of the Dialog box titled Choose data source, centered on the Microsoft Fabric Maps interface. The dialog prompts the user to select a connection from a dropdown, and provides Add and Cancel buttons, with Add highlighted. Above the dialog, a message states you can create up to 100 connections and advises managing or deleting unused ones.":::
 
 1. Expand the connection to view available imagery layers.
 1. Right‑click a layer and select **Show on map**.
 
 :::image type="content" source="media/layers/show-on-map.png" alt-text="A screenshot showing the Explorer panel in Microsoft Fabric Maps with the External sources tab selected. A list of layers is shown with the More options menu displaying the option Show on map highlighted.":::
 
-The imagery layer is rendered on the map canvas.
+The imagery layer renders on the map canvas.
 
 ### Step 4: Adjust imagery layer appearance
 
@@ -116,7 +118,7 @@ After adding the imagery layer, you can:
 External imagery layers behave like other imagery layers in Fabric Maps and can be combined with other imagery layers or vector layers.
 
 > [!NOTE]
-> Fabric Maps currently supports rendering WMS and WMTS imagery using the EPSG:3857 (Web Mercator) projection and JPEG or PNG image formats.
+> Fabric Maps currently supports rendering WMS and WMTS imagery by using the EPSG:3857 (Web Mercator) projection and JPEG or PNG image formats.
 
 ## Use Microsoft Planetary Computer Pro imagery
 
@@ -130,15 +132,15 @@ Fabric Maps integrates with **Microsoft Planetary Computer (MPC) Pro** by connec
 To connect to MPC Pro, you must construct a WMTS endpoint URL from a geocatalog collection.
 
 1. Identify the target MPC Pro geocatalog collection.
-1. Retrieve minZoom, bbox and render configuration parameters. For detailed instructions, see [Get the WMTS endpoint URL from the MPC Pro geocatalog](get-mpc-pro-wmts-endpoint.md).
+1. Retrieve `minZoom`, `bbox`, and render configuration parameters. For detailed instructions, see [Get the WMTS endpoint URL from the MPC Pro geocatalog](get-mpc-pro-wmts-endpoint.md).
 1. To ensure correct WMTS rendering in MPC Pro, register the bounding box (`bbox`) and associated metadata through the [registration API](/rest/api/planetarycomputer/data-plane/mosaics-register-search/register?view=rest-planetarycomputer-data-plane-2025-04-30-preview&tabs=HTTP&preserve-view=true).
 1. Use these values to construct the WMTS capabilities URL.
 
-Access to the MPC Pro geocatalog is required to retrieve this information.
+You need access to the MPC Pro geocatalog to retrieve this information.
 
 ### Step 2: Create the MPC Pro connection in Fabric
 
-Once you have the WMTS endpoint URL from the previous section, you're ready to create a connection to a  _Microsoft Planetary Computer_.
+After you get the WMTS endpoint URL, you're ready to create a connection to a  _Microsoft Planetary Computer_.
 
 1. Open **Manage connections and gateways**.
 1. Select **New**, and then choose **Cloud**.
@@ -160,11 +162,11 @@ Once you have the WMTS endpoint URL from the previous section, you're ready to c
 1. In **External sources**, add the MPC Pro connection.
 1. Select an imagery layer and choose **Show on map**.
 
-MPC Pro imagery layers behave like other WMTS imagery layers and can be reordered, styled, and combined with other map content.
+MPC Pro imagery layers behave like other WMTS imagery layers and you can reorder, style, and combine them with other map content.
 
 ## Limitations and considerations
 
 - A Fabric Maps item can reference up to 100 external connections.
-- Some WMS services don't provide complete metadata (such as bounding boxes or minimum zoom levels), which can cause **Zoom to fit** to behave unexpectedly.
+- Some WMS services don't provide complete metadata, such as bounding boxes or minimum zoom levels. This incomplete metadata can cause **Zoom to fit** to behave unexpectedly.
 - Rendering performance and availability depend on the external imagery service.
-- Fabric Maps doesn't cache or stored external imagery.
+- Fabric Maps doesn't cache or store external imagery.
