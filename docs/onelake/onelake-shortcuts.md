@@ -248,6 +248,7 @@ When you create shortcuts between multiple Fabric items within a workspace, you 
 ## Limitations and considerations
 
 * Each Fabric item supports up to 100,000 shortcuts. In this context, the term item refers to apps, lakehouses, warehouses, reports, and more.
+* Each Fabric item supports a maximum of 100 unique data source connections. Because external OneLake shortcuts use connections to reach their source, the total number of unique connections referenced by all external shortcuts in an item can't exceed 100. Internal shortcuts (to other OneLake locations) don't count toward this limit.
 * A single OneLake path supports up to 10 shortcuts.
 * The maximum number of direct shortcuts to shortcut links is 5.
 * Shortcut names, parent paths, and target paths can't contain "%" or "+" characters.
