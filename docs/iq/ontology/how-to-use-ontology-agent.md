@@ -137,11 +137,14 @@ The ontology agent has the same regional availability as ontology items.
 
 ### Current limitations
 
-Keep in mind these general limitations during preview:
+Keep in mind these limitations during preview:
 
 - Each conversation operates on a single ontology in a single workspace. The agent can't span multiple ontologies in one conversation.
 - The ontology agent doesn't support customer-managed keys (CMK) for conversation data at this time. The service encrypts data by using Microsoft-managed keys, in alignment with Fabric data protection standards.
 - Applying ontology changes adds or updates items in place. There's no built-in rollback; to restore an earlier definition, reapply it.
+- Due to current known issues, these experiences are unavailable for query through the ontology agent:
+    - querying the parent entity and getting the instances of the inheriting entities (also not available through MCP)
+    - ask_ontology does not consider rules in the response (list rules is available through the [MCP tool](how-to-use-ontology-mcp-server.md))
 
 ### Responsible AI
 

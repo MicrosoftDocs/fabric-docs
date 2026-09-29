@@ -12,6 +12,9 @@ A [semantic model](../../data-warehouse/semantic-models.md) in Fabric is a logic
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
+>[!NOTE]
+> You need both Read and Build [permissions](/power-bi/connect-data/service-datasets-permissions#what-are-the-semantic-model-permissions) on the semantic models to generate an ontology from a semantic model and query the semantic models using ontology.
+
 ## Process overview
 
 Ontology generation automatically creates the following elements:

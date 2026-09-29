@@ -225,6 +225,8 @@ items:
         href: event-streams/get-data-from-eventstream-in-multiple-fabric-items.md
       - name: Develop
         items:
+          - name: Variable library support
+            href: event-streams/variable-library-support.md
           - name: CI/CD
             href: event-streams/eventstream-cicd.md
           - name: REST API

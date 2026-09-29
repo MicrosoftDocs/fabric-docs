@@ -48,6 +48,7 @@ The following table describes common issues when binding data to an ontology (pr
 | Issue | Recommendation |
 | --- | --- |
 | Issue with keys while binding relationship types | If you don't see any keys for an entity type, make sure your source and target entity types have keys defined. |
+| Can't bind data from a semantic model | Make sure you have both [Read and Build permissions](/power-bi/connect-data/service-datasets-permissions#what-are-the-semantic-model-permissions) on the semantic model. |
 
 ## Troubleshoot entity type details
 
@@ -121,3 +122,17 @@ The following sections describe common issues when you use the [ontology agent i
 |---|---|
 | The agent stops responding or returns an error | Send *Try again* as a new message in the same chat. The agent preserves the conversation context and retries the failed turn. If the failure persists, wait a few minutes before you retry. During preview, conversation state exists only in your current browser session, so refreshing the page clears the chat and any in-progress draft. Changes already applied in Act mode remain part of the ontology item. |
 | The output is low quality or off topic | - Explain what's wrong and why in the chat. Specific feedback helps the agent improve its next response. <br>- Restate your goal with more detail. <br> - If quality is consistently low, use the in-chat feedback control. |
+
+## Troubleshoot ontology MCP server
+
+| Issue | Recommendation |
+|---|---|
+| Can't use Service Principal to access the ontology MCP | This feature is currently unavailable due to a known issue. |
+| Can't query a parent entity and get the instances of the inheriting entities | This feature is currently unavailable due to a known issue. |
+
+
+## Troubleshoot migration to new experience
+
+| Issue | Recommendation |
+|---|---|
+| Migration fails | Check whether your old ontology meets either of these failure conditions: <br>- The old ontology contains properties configured as *Defined at Binding* <br>- The old ontology contains entities that use composite keys <br><br> Both of these conditions cause migration to fail. Remove the problematic properties or keys and retry the migration. |
