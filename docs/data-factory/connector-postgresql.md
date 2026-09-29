@@ -14,7 +14,9 @@ ai-usage: ai-assisted
 This article outlines the steps to create a PostgreSQL database connection.
 
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
+
+## Summary
 
 The PostgreSQL database connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
@@ -30,22 +32,30 @@ You can connect a dataflow Gen2 in Fabric to a PostgreSQL database by using Powe
 1. [Get data in Fabric](#get-data).
 1. [Connect to a PostgreSQL database](#connect-to-a-postgresql-database).
 
-### Capabilities
-
-[!INCLUDE [postgresql-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/postgresql/postgresql-capabilities-supported.md)]
-
-### Prerequisites
+## Prerequisites
 
 [!INCLUDE [postgresql-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/postgresql/postgresql-prerequisites.md)]
 
 > [!IMPORTANT]
 > To use PostgreSQL as a Dataflow Gen2 data destination through an on-premises data gateway, install the [June 2026 gateway update (version 3000.322)](/data-integration/gateway/service-gateway-monthly-updates#june-2026-update-3000322) or later.
 
+<a id="capabilities"></a>
+
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
+
+[!INCLUDE [postgresql-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/postgresql/postgresql-capabilities-supported.md)]
+
+## Connection settings
+
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Connect to a PostgreSQL database
+<a id="connect-to-a-postgresql-database"></a>
+
+### Connection instructions
 
 [!INCLUDE [postgresql-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/postgresql/postgresql-connect-to-power-query-online.md)]
 

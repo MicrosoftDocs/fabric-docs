@@ -20,19 +20,27 @@ You can connect a dataflow Gen2 in Fabric to Parquet files by using Power Query 
 1. [Get data in Fabric](#get-data).
 1. [Connect to a Parquet file](#connect-to-a-parquet-file).
 
-### Capabilities
+<a id="capabilities"></a>
+
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
 
 [!INCLUDE [parquet-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/parquet/parquet-capabilities-supported.md)]
+
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Connect to a Parquet file
+<a id="connect-to-a-parquet-file"></a>
+
+### Connection instructions
 
 [!INCLUDE [parquet-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/parquet/parquet-connect-to-power-query-online.md)]
 
-### Limitations and considerations
+## Limitations and considerations
 
 [!INCLUDE [parquet-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/parquet/parquet-limitations-and-considerations-include.md)]
 

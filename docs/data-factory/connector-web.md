@@ -14,7 +14,9 @@ ai-usage: ai-assisted
 This article outlines the steps to create either a Web API or Web page connection.
 
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
+
+## Summary
 
 Both the Web API and Web page connectors support the following authentication types for copy and dataflow Gen2 respectively.
 
@@ -33,19 +35,27 @@ You can connect a dataflow Gen2 in Fabric to Web using Power Query connectors. F
 1. [Get data in Fabric](#get-data).
 1. [Load web data](#load-web-data).
 
-### Capabilities
+## Prerequisites
+
+[!INCLUDE [web-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/web/web-prerequisites.md)]
+
+<a id="capabilities"></a>
+
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
 
 [!INCLUDE [web-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/web/web-capabilities-supported.md)]
 
-### Prerequisites
-
-[!INCLUDE [web-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/web/web-prerequisites.md)]
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Load web data
+<a id="load-web-data"></a>
+
+### Connection instructions
 
 [!INCLUDE [web-load-data-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/web/web-load-data-power-query-online.md)]
 

@@ -45,8 +45,10 @@ items:
     href: anonymous-data-access.md
 - name: Functions
   items:
-  - name: Use Functions
+  - name: Use functions
     href: functions.md
+  - name: Connect functions to external resources
+    href: functions-connect-external-resources.md
   - name: Manage function secrets
     href: manage-function-secrets.md
 - name: Hosting

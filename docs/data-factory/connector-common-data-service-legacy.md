@@ -14,7 +14,9 @@ ai-usage: ai-assisted
 
 This article outlines the steps to create a Common Data Service (Legacy) connection.
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
+
+## Summary
 
 The Common Data Service (Legacy) connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
@@ -32,23 +34,33 @@ You can connect dataflow Gen2 to Common Data Service (Legacy) in Fabric by using
 1. [Connect to Common Data Service (Legacy)](#connect-to-common-data-service-legacy).
 
 
-### Capabilities
+## Prerequisites
+
+[!INCLUDE [common-data-service-legacy-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/common-data-service-legacy/common-data-service-legacy-prerequisites.md)]
+
+<a id="capabilities"></a>
+
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
 
 [!INCLUDE [common-data-service-legacy-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/common-data-service-legacy/common-data-service-legacy-capabilities-supported.md)]
 
-### Prerequisites
-
-[!INCLUDE [common-data-service-legacy-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/common-data-service-legacy/common-data-service-legacy-prerequisites.md)]
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Find your Common Data Service (Legacy) URL
+<a id="find-your-common-data-service-legacy-url"></a>
+
+### Find your environment URL
 
 [!INCLUDE [common-data-service-legacy-find-environment-url](~/../powerquery-repo/powerquery-docs/connectors/includes/common-data-service-legacy/common-data-service-legacy-find-environment-url.md)]
 
-### Connect to Common Data Service (Legacy)
+<a id="connect-to-common-data-service-legacy"></a>
+
+### Connection instructions
 
 [!INCLUDE [common-data-service-legacy-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/common-data-service-legacy/common-data-service-legacy-connect-to-power-query-online.md)]
 

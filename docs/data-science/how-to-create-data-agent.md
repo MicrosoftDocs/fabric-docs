@@ -71,12 +71,14 @@ After you create a Fabric data agent, you can add up to five data sources, inclu
 
 When you create a Fabric data agent for the first time, and provide a name, the OneLake catalog automatically appears, allowing you to add data sources. To add a data source, select it from the catalog as shown on the next screen, then select **Add**. Each data source must be added individually. For example, you can add a lakehouse, select **Add**, and then proceed to add another data source. To filter the data source types, select the filter icon and then select the desired type. You can filter by data source type to locate sources more easily, including items shared across organizational boundaries through [cross-tenant data sharing](../governance/external-data-sharing-overview.md).
 
-Once you add the data source, the **Explorer** on the left pane of the Fabric data agent page populates with the available tables in each selected data source, where you can use the checkboxes to make tables available or unavailable to the AI as shown in the following screenshot:
-
 :::image type="content" source="./media/how-to-create-data-agent/change-datasource.png" alt-text="Screenshot showing how to add data sources." lightbox="./media/how-to-create-data-agent/change-datasource.png":::
 
 > [!NOTE]
 > You only need Read permission to add a Power BI semantic model as a data source. Build permission isn't required, and users don't need access to the workspace where the semantic model resides when using it via a data agent. Write permission is only needed to modify the semantic model or use capabilities such as Prep for AI.
+
+Once you add the data source, the **Explorer** on the left pane of the Fabric data agent page populates with the available tables in each selected data source. You can search for table elements, use the checkboxes to make individual elements available or unavailable to the AI, or select a parent-level item to make all elements available. When you select a parent-level item in the **Explorer**, all its child items are automatically selected and made available to the AI, as shown in the following section:
+
+:::image type="content" source="./media/how-to-create-data-agent/data-agent-table-selection-and-search.gif" alt-text="Screenshot showing how to search, select a single table, and select multiple elements at once." lightbox="./media/how-to-create-data-agent/data-agent-table-selection-and-search.gif":::
 
 For subsequent additions of data sources, navigate to the **Explorer** on the left pane of the Fabric data agent page, and select **+ Data source**, as shown in this screenshot:
 
@@ -245,4 +247,3 @@ Fabric data agents support lifecycle management capabilities that help you manag
 - [Data agent concept](concept-data-agent.md)
 - [Data agent end-to-end tutorial](data-agent-end-to-end-tutorial.md)
 - [Lifecycle management in Fabric](../cicd/cicd-overview.md)
-
