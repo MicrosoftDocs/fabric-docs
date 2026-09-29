@@ -14,7 +14,9 @@ ai-usage: ai-assisted
 This article outlines the steps to create a SharePoint folder connection.
 
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
+
+## Summary
 
 The SharePoint folder connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
@@ -34,15 +36,23 @@ You can connect a dataflow Gen2 in Fabric to a SharePoint folder by using Power 
 1. [Get data in Fabric](#get-data).
 1. [Connect to a SharePoint folder](#connect-to-a-sharepoint-folder).
 
-### Capabilities
+<a id="capabilities"></a>
+
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
 
 [!INCLUDE [sharepoint-folder-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/sharepoint-folder/sharepoint-folder-capabilities-supported.md)]
+
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Connect to a SharePoint folder
+<a id="connect-to-a-sharepoint-folder"></a>
+
+### Connection instructions
 
 [!INCLUDE [sharepoint-folder-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/sharepoint-folder/sharepoint-folder-connect-to-power-query-online.md)]
 

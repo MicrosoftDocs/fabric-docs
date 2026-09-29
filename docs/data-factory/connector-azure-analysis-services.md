@@ -20,7 +20,9 @@ You can connect dataflow Gen2 to Azure Analysis Services in Fabric by using Powe
 1. [Connect to Azure Analysis Services](#connect-to-azure-analysis-services).
 
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
+
+## Summary
 
 The Access database connector supports the following authentication types for copy and dataflow Gen2.
 
@@ -28,13 +30,21 @@ The Access database connector supports the following authentication types for co
 |:---|:---|:---|
 |Organizational account| n/a | √ |
 
-## Capabilities
-[!INCLUDE [azure-analysis-services-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-analysis-services/azure-analysis-services-capabilities-supported.md)]
-
 ## Prerequisites
 [!INCLUDE [azure-analysis-services-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-analysis-services/azure-analysis-services-prerequisites.md)]
 
-## Connect to Azure Analysis Services
+<a id="capabilities"></a>
+
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
+[!INCLUDE [azure-analysis-services-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-analysis-services/azure-analysis-services-capabilities-supported.md)]
+
+## Connection settings
+
+<a id="connect-to-azure-analysis-services"></a>
+
+### Connection instructions
 
 [!INCLUDE [azure-analysis-services-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-analysis-services/azure-analysis-services-connect-to-power-query-online.md)]
 

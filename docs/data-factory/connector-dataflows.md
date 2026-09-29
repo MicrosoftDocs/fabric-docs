@@ -14,7 +14,9 @@ ai-usage: ai-assisted
 This article outlines the steps to create a dataflow connection.
 
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
+
+## Summary
 
 The dataflow connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
@@ -30,29 +32,37 @@ You can connect dataflow Gen2 to dataflows (Power Platform) in Fabric by using P
 1. [Get data in Fabric](#get-data).
 1. [Get data from dataflows](#get-data-from-dataflows).
 
-### Capabilities
+## Prerequisites
+
+[!INCLUDE [dataflows-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/dataflows/dataflows-prerequisites.md)]
+
+<a id="capabilities"></a>
+
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
 
 [!INCLUDE [dataflows-ccapabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/dataflows/dataflows-capabilities-supported.md)]
 
-### Prerequisites
-
-[!INCLUDE [dataflows-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/dataflows/dataflows-prerequisites.md)]
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Get data from dataflows
+<a id="get-data-from-dataflows"></a>
+
+### Connection instructions
 
 [!INCLUDE [dataflows-get-data-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/dataflows/dataflows-get-data-power-query-online.md)]
-
-### Limitations and considerations
-
-[!INCLUDE [dataflows-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/dataflows/dataflows-limitations-and-considerations-include.md)]
 
 ## Set up your connection in a pipeline
 
 Data Factory doesn't currently support dataflow data in pipelines.
+
+## Limitations and considerations
+
+[!INCLUDE [dataflows-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/dataflows/dataflows-limitations-and-considerations-include.md)]
 
 ## Related content
 

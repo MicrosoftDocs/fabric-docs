@@ -13,7 +13,9 @@ ai-usage: ai-assisted
 
 This article outlines the steps to create a KQL database connection.
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
+
+## Summary
 
 The KQL database connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
@@ -29,19 +31,27 @@ You can connect dataflow Gen2 in Fabric to KQL database using Power Query connec
 1. [Get data in Fabric](#get-data).
 1. [Connect to a KQL database](#connect-to-a-kql-database).
 
-### Capabilities
+## Prerequisites
+
+[!INCLUDE [kql-database-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/kql-database/kql-database-prerequisites.md)]
+
+<a id="capabilities"></a>
+
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
 
 [!INCLUDE [kql-database-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/kql-database/kql-database-capabilities-supported.md)]
 
-### Prerequisites
-
-[!INCLUDE [kql-database-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/kql-database/kql-database-prerequisites.md)]
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Connect to a KQL database
+<a id="connect-to-a-kql-database"></a>
+
+### Connection instructions
 
 [!INCLUDE [kql-database-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/kql-database/kql-database-connect-to-power-query-online.md)]
 

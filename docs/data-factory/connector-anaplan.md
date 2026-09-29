@@ -14,7 +14,9 @@ ai-usage: ai-assisted
 This article outlines the steps to create an Anaplan connection.
 
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
+
+## Summary
 
 The Anaplan connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
@@ -32,29 +34,37 @@ You can connect dataflow Gen2 in Fabric to Anaplan by using Power Query connecto
 1. [Connect to Anaplan data](#connect-to-anaplan-data).
 1. Check [limitations and considerations](#limitations-and-considerations) for any current restrictions.
 
-### Capabilities
+## Prerequisites
+
+[!INCLUDE [anaplan-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/anaplan/anaplan-prerequisites.md)]
+
+<a id="capabilities"></a>
+
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
 
 [!INCLUDE [anaplan-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/anaplan/anaplan-capabilities-supported.md)]
 
-### Prerequisites
-
-[!INCLUDE [anaplan-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/anaplan/anaplan-prerequisites.md)]
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Connect to Anaplan data
+<a id="connect-to-anaplan-data"></a>
+
+### Connection instructions
 
 [!INCLUDE [anaplan-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/anaplan/anaplan-connect-to-power-query-online.md)]
-
-### Limitations and considerations
-
-[!INCLUDE [anaplan-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/anaplan/anaplan-limitations-and-considerations-include.md)]
 
 ## Set up your connection in a pipeline
 
 Data Factory doesn't currently support Anaplan in pipelines.
+
+## Limitations and considerations
+
+[!INCLUDE [anaplan-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/anaplan/anaplan-limitations-and-considerations-include.md)]
 
 ## Related content
 

@@ -184,11 +184,11 @@ Before you get started, be sure to set up the following prerequisites:
 ### Step 2: Name the pipeline and assign stages
 
 1. In the **Create deployment pipeline** dialog box, enter a name and description for the pipeline, and select **Next**.
-1. Set your deployment pipeline’s structure by defining the required stages for your deployment pipeline. By default, the pipeline has three stages: _Development_, _Test_, and _Production_.
+1. Set your deployment pipeline's structure by defining the required stages for your deployment pipeline. By default, the pipeline has three stages: _Development_, _Test_, and _Production_.
 
    :::image type="content" source="media/cicd-data-pipelines/default-deployment-pipeline-stages.png" alt-text="Screenshot showing the default deployment pipeline stages.":::
 
-   You can add another stage, delete stages, or rename them by typing a new name in the box. Select **Create** (or **Create and continue**) when you’re done.
+   You can add another stage, delete stages, or rename them by typing a new name in the box. Select **Create** (or **Create and continue**) when you're done.
 
    :::image type="content" source="media/cicd-data-pipelines/sample-deployment-pipeline.png" alt-text="Screenshot showing a populated sample deployment pipeline.":::
 
@@ -253,7 +253,8 @@ The following known limitations apply to CI/CD for pipelines in Data Factory:
 
 ## Related content
 
-- [Introduction to the CI/CD process as part of the ALM cycle in Fabric](../cicd/cicd-overview.md?source=recommendations)
+- [Configure CI/CD for dbt jobs using Variable Library](simplify-cicd-for-dbt-jobs.md)
+- [Introduction to the CI/CD process as part of the ALM cycle in Microsoft Fabric](../cicd/cicd-overview.md?source=recommendations)
 - [Get started with Git integration, the Fabric Application Lifecycle Management (ALM) tool](../cicd/git-integration/git-get-started.md?tabs=azure-devops%2CAzure%2Ccommit-to-git)
 - [Get started using deployment pipelines, the Fabric Application Lifecycle Management (ALM) tool](../cicd/deployment-pipelines/get-started-with-deployment-pipelines.md?tabs=from-fabric%2Cnew%2Cstage-settings-new)
 - [Blog: Exploring CI/CD Capabilities in Fabric: A Focus on pipelines](https://blog.fabric.microsoft.com/blog/exploring-ci-cd-capabilities-in-microsoft-fabric-a-focus-on-data-pipelines?ft=All)

@@ -14,7 +14,9 @@ ai-usage: ai-assisted
 This article outlines the steps to create an IBM Db2 database connection.
 
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
+
+## Summary
 
 The IBM Db2 database connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
@@ -31,23 +33,31 @@ You can connect dataflow Gen2 in Fabric to an IBM Db2 database by using Power Qu
 1. [Get data in Fabric](#get-data).
 1. [Connect to an IBM Db2 database](#connect-to-an-ibm-db2-database).
 
-### Capabilities
+## Prerequisites
+
+[!INCLUDE [ibm-db2-database-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/ibm-db2-database/ibm-db2-database-prerequisites.md)]
+
+<a id="capabilities"></a>
+
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
 
 [!INCLUDE [ibm-db2-database-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/ibm-db2-database/ibm-db2-database-capabilities-supported.md)]
 
-### Prerequisites
-
-[!INCLUDE [ibm-db2-database-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/ibm-db2-database/ibm-db2-database-prerequisites.md)]
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Connect to an IBM Db2 database
+<a id="connect-to-an-ibm-db2-database"></a>
+
+### Connection instructions
 
 [!INCLUDE [ibm-db2-database-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/ibm-db2-database/ibm-db2-database-connect-to-power-query-online.md)]
 
-### Limitations and considerations
+## Limitations and considerations
 
 [!INCLUDE [ibm-db2-database-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/ibm-db2-database/ibm-db2-database-limitations-and-considerations-include.md)]
 

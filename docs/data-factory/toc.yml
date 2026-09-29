@@ -1181,6 +1181,8 @@
           href: dbt-job-onelake-logs.md
         - name: dbt job activity in a pipeline
           href: dbt-job-activity.md
+        - name: Configure CI/CD for dbt jobs
+          href: simplify-cicd-for-dbt-jobs.md
         - name: dbt job pricing
           href: dbt-job-pricing.md
   - name: Create, manage, & schedule pipelines

@@ -15,6 +15,23 @@ A data agent lets users interact with data through natural language. To improve 
 
 This article describes the configurations you can use to enhance your data agent.
 
+## Data agent schema selection
+
+Schema selection controls which objects in a data source the data agent can use to answer questions. The selected schema provides context for query generation and limits generated queries to approved objects.
+
+After you add a data source, use the **Explorer** to review and select its available objects. You can:
+
+- Search for a specific schema element.
+- Use checkboxes to select individual elements.
+- Select a parent-level item to automatically select all its child items.
+- Choose **Select all** to make all available elements in the data source available to the data agent.
+
+The objects you can select depend on the data source type. For the schema selection options available for each type, see [Add and configure data sources in a Fabric data agent](data-agent-add-datasources.md).
+
+Select only the objects that the data agent needs to answer its intended questions. A focused schema reduces ambiguity, helps the agent route questions to the appropriate data source, and improves query generation. For more guidance, see [Best practices for improving data agent query generation](data-agent-configuration-best-practices.md#limit-the-selected-schema).
+
+:::image type="content" source="./media/how-to-create-data-agent/data-agent-table-selection-and-search.gif" alt-text="Screenshot showing how to search, select a single table, and select multiple elements at once." lightbox="./media/how-to-create-data-agent/data-agent-table-selection-and-search.gif":::
+
 ## Data agent instructions
 
 Data agent instructions guide the agent in generating accurate and relevant responses to user questions. These instructions can specify which data sources to prioritize, outline how to handle certain types of queries, and provide helpful terminology or context for interpreting user intent.

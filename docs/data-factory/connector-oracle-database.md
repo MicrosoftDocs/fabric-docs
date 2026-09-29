@@ -15,7 +15,9 @@ ai-usage: ai-assisted
 
 This article outlines the steps to create an Oracle database connection.
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
+
+## Summary
 
 The Oracle database connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
@@ -58,21 +60,25 @@ You can connect a dataflow Gen2 in Fabric to an Oracle database by using Power Q
 1. [Get data in Fabric](#get-data).
 1. [Connect to an Oracle database](#connect-to-an-oracle-database).
 
-### Capabilities
+<a id="capabilities"></a>
+
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
 
 [!INCLUDE [oracle-database-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/oracle-database/oracle-database-capabilities-supported.md)]
+
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Connect to an Oracle database
+<a id="connect-to-an-oracle-database"></a>
+
+### Connection instructions
 
 [!INCLUDE [oracle-database-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/oracle-database/oracle-database-connect-to-power-query-online.md)]
-
-### Limitations and considerations
-
-[!INCLUDE [oracle-database-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/oracle-database/oracle-database-limitations-and-considerations-include.md)]
 
 ## Set up your connection in a pipeline
 
@@ -145,6 +151,10 @@ The following table contains properties for the supported authentication type.
 |- User name |The Oracle database user name.|Yes ||
 |- Password |The Oracle database password.|Yes ||
 
+
+## Limitations and considerations
+
+[!INCLUDE [oracle-database-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/oracle-database/oracle-database-limitations-and-considerations-include.md)]
 
 ## Related content
 

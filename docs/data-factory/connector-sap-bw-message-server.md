@@ -14,7 +14,9 @@ ai-usage: ai-assisted
 This article outlines the steps to create an SAP BW Message Server connection.
 
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
+
+## Summary
 
 The SAP BW Message Server connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
@@ -31,19 +33,27 @@ You can connect a dataflow Gen2 in Fabric to SAP BW Message Server by using Powe
 1. [Get data in Fabric](#get-data).
 1. [Connect to an SAP BW Message Server](#connect-to-an-sap-bw-message-server).
 
-### Capabilities
+## Prerequisites
+
+[!INCLUDE [sap-business-warehouse-message-server-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/sap-business-warehouse-message-server/sap-business-warehouse-message-server-prerequisites.md)]
+
+<a id="capabilities"></a>
+
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
 
 [!INCLUDE [sap-business-warehouse-message-server-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/sap-business-warehouse-message-server/sap-business-warehouse-message-server-capabilities-supported.md)]
 
-### Prerequisites
-
-[!INCLUDE [sap-business-warehouse-message-server-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/sap-business-warehouse-message-server/sap-business-warehouse-message-server-prerequisites.md)]
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Connect to an SAP BW Message Server
+<a id="connect-to-an-sap-bw-message-server"></a>
+
+### Connection instructions
 
 [!INCLUDE [sap-business-warehouse-message-server-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/sap-business-warehouse-message-server/sap-business-warehouse-message-server-connect-to-power-query-online.md)]
 
