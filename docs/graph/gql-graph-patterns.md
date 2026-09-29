@@ -101,7 +101,7 @@ This counts the number of `isLocatedIn` edges connecting `Person` nodes or `Orga
 | Syntax                | Meaning                                        |
 |-----------------------|------------------------------------------------|
 | `A&B`                 | Labels need to include both A and B.           |
-| `A\|B`                | Labels need to include at least one of A or B. |
+| <code>A&#124;B</code> | Labels need to include at least one of A or B. |
 | `!A`                  | Labels need to exclude A.                      |
 
 Additionally, use parenthesis to control the order of label expression evaluation. By default, `!` has the highest precedence and `&` has higher precedence than `|`. Therefore `!A&B|C|!D` is the same as `((!A)&B)|C|(!D)`.
