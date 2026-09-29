@@ -51,15 +51,9 @@ Power BI Pro and Power BI Premium Per User (PPU) aren't supported for planning s
 
 ### Database-level row-level security (RLS) support
 
-PowerTable doesn't support user-specific database-level row-level security (RLS) when connecting to Fabric SQL tables through a database connection. As a result, users might see rows that differ from the expected RLS-filtered results. This limitation exists because PowerTable executes all database queries by using the identity associated with the database connection that the user configures during sheet creation, rather than the identity of the signed-in PowerTable user.
-
-Blend (From Sheets) doesn't support RLS. All data available in the source sheet is visible regardless of the viewer's RLS permissions.
-
-### DMTS connection recovery
-
-If you delete the DMTS connection that you configured for a PowerTable sheet, or if it becomes unavailable, you can't open the sheet to update the connection. The connection recovery screen doesn't appear, and you see the message "DMTS connection is deleted or not found."
-
-To recover, create a new PowerTable sheet by using the **Existing Table** option and configure the same table again.
+> [!NOTE]
+> - Database-level row-level security (RLS) is supported when connecting PowerTable to Fabric SQL tables through a database connection.
+> - Row-level security (RLS) is supported in Blend (From Sheets).
 
 ### Excel export limitations
 
@@ -122,6 +116,14 @@ Gantt and Resource Layout support up to 30,000 rows. Gantt and Resource Layout a
 
 > [!NOTE]
 > Application database creation for plan items is now supported when using a service principal with deployment pipelines.
+
+## Deployment pipelines will fail with 100 Data Input items
+
+Deployment pipelines will fail when a plan item contains 100 Data Input items. A fix will be available soon.
+
+## When you receive a "Something went wrong" error
+
+If you encounter a "Something went wrong" error that could be caused by a database connection issue, wait up to 90 minutes and try again. A fix will be available soon.
 
 ## Workspace renaming
 
