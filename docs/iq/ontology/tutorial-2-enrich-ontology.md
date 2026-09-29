@@ -82,18 +82,18 @@ Metadata for relationship types supports descriptions and additional metadata ke
 
 1. Use the same steps that you used for the *Store operates Refrigeration Unit* relationship type to add the relationship type metadata described in the following table.
 
-    | Relationship type name | Metadata |
-    | --- | --- |
-    | *operates* | **Description:** *Identifies the refrigeration equipment operating in a store.* |
-    | *deliversTo* | **Description:** *Identifies the store receiving the shipment.* |
-    | *occursAt* | **Description:** *Identifies where the sale occurred.* |
-    | *stockedAt* | **Description:** *Represents an active store assortment and its current inventory position, not merely a historical sale.* |
-    | *originatesAt* | **Description:** *Identifies the distribution center sending the shipment.* |
-    | *forProduct* | **Description:** *Identifies the item sold.* |
-    | *stockedAt* | **Description:** *The item is part of the store's active assortment and has a current inventory position there.* |
-    | *suppliedBy* | **Description:** *Identifies the supplier responsible for the items.* |
-    | *contains* | **Description:** *Identifies the item being replenished.* |
-    | *hasTelemetryReading* | **Description:** *Identified sensor telemetry readings for refrigeration units.* |
+    | Relationship type name | Source > target entity type | Metadata |
+    | --- | --- | --- |
+    | *operates* | Store > Refrigeration Unit | **Description:** *Identifies the refrigeration equipment operating in a store.* |
+    | *deliversTo* | Shipment > Store | **Description:** *Identifies the store receiving the shipment.* |
+    | *occursAt* | Sale > Store | **Description:** *Identifies where the sale occurred.* |
+    | *stockedAt* | Inventory > Store | **Description:** *Represents an active store assortment and its current inventory position, not merely a historical sale.* |
+    | *originatesAt* | Shipment > Distribution Center | **Description:** *Identifies the distribution center sending the shipment.* |
+    | *forProduct* | Sale > Product | **Description:** *Identifies the item sold.* |
+    | *stockedAt* | Product > Inventory | **Description:** *The item is part of the store's active assortment and has a current inventory position there.* |
+    | *suppliedBy* | Product > Supplier | **Description:** *Identifies the supplier responsible for the items.* |
+    | *contains* | Shipment > Product | **Description:** *Identifies the item being replenished.* |
+    | *hasTelemetryReading* | Refrigeration Unit > Refrigeration Telemetry | **Description:** *Identified sensor telemetry readings for refrigeration units.* |
 
 ## Add rules
 
