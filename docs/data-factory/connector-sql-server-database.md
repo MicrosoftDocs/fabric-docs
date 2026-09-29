@@ -14,7 +14,9 @@ ai-usage: ai-assisted
 This article outlines the steps to create a SQL Server database connection.
 
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
+
+## Summary
 
 The SQL Server database connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
@@ -34,21 +36,35 @@ You can connect a dataflow Gen2 in Fabric to a SQL Server database using Power Q
 1. [Connect to SQL Server database](#connect-to-sql-server-database).
 
 
-### Capabilities
+<a id="capabilities"></a>
+
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
 
 [!INCLUDE [sql-server-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/sql-server/sql-server-capabilities-supported.md)]
+
+<a id="connect-to-sql-server-database"></a>
+
+<a id="connect-from-power-query-online"></a>
+
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Connect to SQL Server database
+### Connection instructions
 
 [!INCLUDE [sql-server-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/sql-server/sql-server-connect-to-power-query-online.md)]
 
-### Limitations and considerations
+## Limitations and considerations
 
-[!INCLUDE [sql-server-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/sql-server/sql-server-limitations-and-considerations.md)]
+[!INCLUDE [sql-server-limitations](~/../powerquery-repo/powerquery-docs/connectors/includes/sql-server/limitations.md)]
+
+## Troubleshooting
+
+[!INCLUDE [sql-server-troubleshooting](~/../powerquery-repo/powerquery-docs/connectors/includes/sql-server/troubleshooting.md)]
 
 ## Related content
 

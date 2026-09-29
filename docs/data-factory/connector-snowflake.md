@@ -13,7 +13,11 @@ ai-usage: ai-assisted
 
 This article outlines the steps to create a Snowflake database connection.
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
+
+<a id="authentication-supported"></a>
+
+## Summary
 
 The Snowflake database connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
@@ -24,8 +28,6 @@ The Snowflake database connector supports the following authentication types for
 |Key-pair | √ | √ |
 |Service Principal (SPN)|  | √ |
 
-[!INCLUDE [snowflake-authentication-types-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/snowflake/snowflake-authentication-types-supported.md)]
-
 ## Set up your connection for Dataflow Gen2
 You can connect a dataflow Gen2 in Fabric to Snowflake using Power Query connectors. Follow these steps to create your connection:
 
@@ -33,38 +35,35 @@ You can connect a dataflow Gen2 in Fabric to Snowflake using Power Query connect
 1. [Get data in Fabric](#get-data).
 1. [Connect to a Snowflake database](#connect-to-a-snowflake-database).
 
-### Capabilities
+<a id="capabilities"></a>
+
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
 
 [!INCLUDE [snowflake-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/snowflake/snowflake-capabilities-supported.md)]
+
+<a id="connect-to-a-snowflake-database"></a>
+
+<a id="connect-from-power-query-online"></a>
+
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Connect to a Snowflake database
+### Connection steps
 
 [!INCLUDE [snowflake-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/snowflake/snowflake-connect-to-power-query-online.md)]
 
-### Limitations and considerations
-
-[!INCLUDE [snowflake-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/snowflake/snowflake-limitations-and-considerations-include.md)]
-
 ## Set up your connection in Manage connections and gateways
 
-The following table contains a summary of the properties needed for Snowflake connection:
+### Connection properties
 
-| Name | Description | Required |
-| --- | --- | --- |
-| **Connection name** | A name for your connection. | Yes |
-| **Connection type** | Select a type for your connection. | Yes |
-| **Server** | The host name of the Snowflake account. | Yes |
-| **Warehouse** | The default virtual warehouse used for the session after connecting. | Yes |
-| **Authentication kind** | Go to [Authentication](#authentication). | Yes |
-| **Privacy Level** | The privacy level that you want to apply. Allowed values are None, Organizational, Privacy, and Public. | Yes |
-| **Specify a text value to use as Role name** | Enter a text value to use as Role name. | No |
-| **Connection timeout in seconds** | The time to wait (in seconds) while trying to establish a connection before terminating the attempt and generating an error. | No |
-| **Command timeout in seconds** | The time to wait (in seconds) while trying to execute a command before terminating the attempt and generating an error. | No |
-| **Implementation** | The implementation modes for test connection. | No |
+[!INCLUDE [snowflake-connection-settings](includes/connector-snowflake-connection-settings.md)]
+
+### Connection instructions
 
 For specific instructions to set up your connection in Manage connections and gateways, follow these steps:
 
@@ -110,7 +109,7 @@ For specific instructions to set up your connection in Manage connections and ga
 
 1. Select **Create** to create your connection. Your creation is successfully tested and saved if all the credentials are correct. If not correct, the creation fails with errors.
 
-## Authentication
+### Authentication
 
 This section lists the instructions for each authentication type supported by the Snowflake connector:
 
@@ -118,20 +117,20 @@ This section lists the instructions for each authentication type supported by th
 - [Microsoft Account](#microsoft-account-authentication)
 - [Key-pair](#key-pair-authentication)
 
-### Snowflake authentication
+#### Snowflake authentication
 
 :::image type="content" source="media/connector-snowflake/snowflake-authentication.png" alt-text="Screenshot showing that Snowflake method for Snowflake.":::
 
 - **Username**: Specify the login name for the Snowflake user.
 - **Password**: Specify the password for the Snowflake user.
 
-### Microsoft Account authentication
+#### Microsoft Account authentication
 
 :::image type="content" source="media/connector-snowflake/microsoft-account-authentication.png" alt-text="Screenshot showing that Microsoft Account method for Snowflake.":::
 
 Select **Edit credentials**, which displays the sign in interface. Enter your account and password to sign in your organizational account. After signing in, go back to the New connection page.
 
-### Key-pair authentication
+#### Key-pair authentication
 
 :::image type="content" source="media/connector-snowflake/key-pair-authentication.png" alt-text="Screenshot showing that Key-pair authentication method for Snowflake.":::
 
@@ -144,6 +143,20 @@ To use Key-pair authentication, you need to configure and create a Key-pair auth
 
     :::image type="content" source="media/connector-snowflake/key-pair-authentication-passphrase.png" alt-text="Screenshot showing the passphrase option.":::
 
+
+<a id="remarks"></a>
+
+## Additional information
+
+### Authentication details
+
+[!INCLUDE [snowflake-authentication-types-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/snowflake/snowflake-authentication-types-supported.md)]
+
+<a id="known-issues-and-limitations"></a>
+
+## Limitations and considerations
+
+[!INCLUDE [snowflake-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/snowflake/snowflake-limitations-and-considerations-include.md)]
 
 ## Related content
 
