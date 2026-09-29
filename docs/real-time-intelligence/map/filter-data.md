@@ -7,13 +7,16 @@ ms.author: limingchen
 ms.topic: article
 ms.service: fabric
 ms.subservice: rti-core
-ms.date: 3/5/2026
+ms.date: 09/13/2026
 ms.search.form: Data filtering
 ---
 
 # Filter data in a map layer
 
 This article shows how to apply filters to a map layer in Fabric Maps to control which records are displayed. For more information on data filtering, see [Data filtering in Fabric Maps](about-data-filtering.md).
+
+> [!NOTE]
+> For an external feature service layer, use a source query to control which records and fields the remote service returns. The map-layer filters in this article apply after Fabric Maps retrieves the features. For more information, see [Source queries and map-layer filters](about-external-feature-services.md#source-queries-and-map-layer-filters).
 
 ## Prerequisites
 
@@ -52,7 +55,7 @@ By selecting the **Select a field** dropdown list, you can now create any of the
 
 Use categorical filters to include or exclude records based on text values.
 
-1. In the filter panel, select a **text-based field**.
+1. In the filter pane, select a **text-based field**.
 1. Use the search box to find values.
 1. Select one or more values.
 1. Select **Apply**.
@@ -74,7 +77,7 @@ Use numeric range filters to limit records within a value range.
 :::image type="content" source="media/data-filters/numeric-range-filter.png" alt-text="A screenshot showing a filter dialog box for configuring a numeric range filter. The Field name dropdown is set to YEAR at the top. Next, the Filter range section displays a horizontal slider with a green track between two circular handles, spanning from 1.9 K on the left to 2 K on the right. A tooltip shows the value 2025 above the right handle demonstrating what happens when you hover over a point on the slider. At the bottom, a Lock filter toggle switch appears in the off position, followed by Apply and Cancel buttons.":::
 
 > [!NOTE]
-> As shown in the screenshot, large values are abbreviated on the horizontal slider for readability. Hovering over a point displays the full value.
+> As shown in the preceding screenshot, large values are abbreviated on the horizontal slider for readability. Hovering over a point displays the full value.
 ### Create a Boolean filter
 
 Use Boolean filters for true/false fields.
@@ -85,9 +88,9 @@ Use Boolean filters for true/false fields.
 
 :::image type="content" source="media/data-filters/boolean-field.png" alt-text="A screenshot showing two filter dialog boxes for a Boolean field side by side, one showing the Filter value toggle switch is on and the other is off. At the bottom are Apply and Cancel buttons.":::
 
-### Create a date/time filter (Kusto and Ontology only)
+### Create a date/time filter
 
-Date/time filters are available only for Kusto and Ontology layers.
+Date/time filters are available for Kusto, Ontology, and external feature service layers. Fabric Maps interprets external feature service date/time values as UTC in RFC 3339 format.
 
 1. Select a date/time field.
 1. Choose a start and end time.
@@ -132,7 +135,7 @@ Locked filters:
 You must be in edit mode to permanently remove a filter.
 
 1. Open the map in **edit mode**.
-1. Remove the filter, locked or unlocked, by selecting the '**x**'.
+1. Remove the filter, locked or unlocked, by selecting the **x**.
 
     :::image type="content" source="media/data-filters/remove-filter.png" alt-text="A screenshot of the Fabric Maps toolbar showing the Home tab with a Save button. The Explorer panel displays the layer with two active filters visible. An Add filter button with a plus icon appears to the left of the filters.":::
 
@@ -143,11 +146,11 @@ You must be in edit mode to permanently remove a filter.
 In view mode, you can remove unlocked filters to view unfiltered data, but changes aren't saved.
 
 1. Open the map in **view mode**.
-1. Remove the unlocked filter, by selecting the '**x**'. Notice that the locked filter doesn't have an '**x**'. A lock icon indicates that the filter is locked.
+1. Remove the unlocked filter by selecting the **x**. The locked filter doesn't have an **x**. A lock icon indicates that the filter is locked.
 
     :::image type="content" source="media/data-filters/remove-filter-view-mode.png" alt-text="A screenshot showing a section of the Fabric Maps layer panel showing two active filters. The first filter isn't locked and has an x button for removal. The second filter has a lock icon and no x button indicating a locked filter that can't be removed. A Refresh button appear above the filters, but no save icon indicating the map can't be saved.":::
 
-1. Notice that you can't save the map.
+1. You can't save the map.
 
 ## Limitations and design considerations
 

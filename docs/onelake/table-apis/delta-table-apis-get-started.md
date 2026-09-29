@@ -1,5 +1,5 @@
 ---
-title: "Getting started with OneLake table APIs for Delta"
+title: "Delta table API samples"
 description: "Quickstart for using the OneLake REST API endpoint with Delta APIs in Microsoft Fabric."
 ms.reviewer: preshah # Product team ms alias(es)
 # author: Do not use - assigned by folder in docfx file
@@ -9,7 +9,7 @@ ms.topic: how-to
 #customer intent: As a OneLake user, I want to learn how to quickly configure my tools and applications to connect to OneLake table APIs using the Delta standard, so that I can access, explore, and interact with my Fabric data using familiar open-source clients and libraries.
 ---
 
-# Getting started with OneLake table APIs for Delta
+# Delta table API samples
 
 OneLake offers a REST API endpoint for interacting with tables in Fabric. This endpoint supports read-only metadata operations for Delta tables in Fabric. These operations are compatible with [Unity Catalog API open standard.](https://github.com/unitycatalog/unitycatalog/tree/main/api)
 
@@ -219,6 +219,6 @@ curl -X GET \
 
 ## Related content
 
-- Learn more about [OneLake table APIs](./table-apis-overview.md). 
-- Learn more about [OneLake table APIs for Delta](./delta-table-apis-overview.md).
-
+- Learn more about the [OneLake table APIs overview](./table-apis-overview.md).
+- Learn more about the [Delta metadata API](./delta-table-apis-overview.md).
+- [Read OneLake table data](./read-table-data-rest-api.md).

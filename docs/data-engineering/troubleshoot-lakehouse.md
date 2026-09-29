@@ -1317,7 +1317,7 @@ See [lakehouse sharing documentation](lakehouse-sharing.md) for permission detai
 **Fix 3: Update Service Principal Credentials**
 
 For service principal authentication:
-1. Verify the service principal is enabled in Fabric Admin Portal (Tenant settings)
+1. Verify the service principal is enabled in **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**.
 2. Ensure the service principal is added to the workspace with Contributor role or higher
 3. Update credentials in Power BI data source settings with the correct tenant ID, client ID, and secret
 4. Test the connection to verify authentication succeeds

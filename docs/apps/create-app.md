@@ -3,7 +3,7 @@ title: Create your first Fabric apps project
 description: Learn how to create and run your first Microsoft Fabric apps project locally using the Rayfin CLI and templates.
 ms.reviewer: mksuni
 ms.topic: quickstart
-ms.date: 06/02/2026
+ms.date: 08/24/2026
 ai-usage: ai-assisted
 ms.search.form: Getting started with Fabric app
 ---
@@ -17,6 +17,7 @@ Fabric apps helps you build and ship backend services faster by providing ready-
 - A Microsoft account with access to Fabric.
 - A Fabric workspace where you have contributor or admin permissions.
 - Fabric app enabled by a tenant admin in settings. See [Enable Fabric app in tenant admin settings](#enable-fabric-app-in-tenant-admin-settings).
+- [Node.js 20 or later](https://nodejs.org/).
 
 ## Enable Fabric app in tenant admin settings
 
@@ -32,11 +33,44 @@ If you are not a tenant admin, contact your organization's Fabric administrator 
 Changes may take a few minutes to propagate.
 After the setting is enabled, users in the allowed scope can create Fabric apps in their workspaces.
 
-## Step 1: Sign in to the Fabric portal
+## From nothing to a running app
+
+Create and run a Fabric app with four commands. Rayfin deploys your backend to Microsoft Fabric, and you run your frontend locally against it. You don't run the backend locally.
+
+```bash
+npm create @microsoft/rayfin@latest my-app
+cd my-app
+npx rayfin up
+npm run dev
+```
+
+Run `npx rayfin up status` to confirm the backend deployment.
+
+### Let an agent create the app
+
+Copy the following prompt into GitHub Copilot or another coding agent that has access to a terminal:
+
+```text
+Set up a new Rayfin app for me, end to end.
+
+Rayfin is a backend platform for TypeScript developers on Microsoft Fabric. Before writing
+any code, read https://rayfin.ai/docs/reference/agent-rules.md. Every page on that site is
+available as raw Markdown by appending .md to its URL.
+
+Then do the work yourself rather than printing steps for me:
+1. Scaffold a project with `npm create @microsoft/rayfin@latest my-app` and install dependencies.
+2. Sign in with `npx rayfin login`.
+3. Deploy with `npx rayfin up` and confirm it with `npx rayfin up status`.
+4. Start the frontend with `npm run dev` and tell me the URL to open.
+```
+
+Review the generated files and command output before you deploy the app.
+
+## Create an app from portal
 
 Open [Fabric](https://app.fabric.microsoft.com) in your browser and sign in with your Microsoft account.
 
-## Step 2: Select a workspace
+### Select a workspace
 
 After signing in, select a workspace from the left navigation panel.
 If you do not have an existing workspace, create one:
@@ -45,7 +79,7 @@ If you do not have an existing workspace, create one:
 1. Select **New workspace**.
 1. Enter a name for the workspace and select Fabric capacity.
 
-## Step 3: Create a new Fabric app
+### Create a new Fabric app
 
 1. In the workspace view, select **New item**.
 1. Search for **App** in the item type list or scroll to find it.
@@ -53,7 +87,7 @@ If you do not have an existing workspace, create one:
 1. Enter a name for your Fabric app (for example, `my-rayfin-app`).
 1. Select **Create**.
 
-## Step 4: Open, edit, and deploy your app
+### Open, edit, and deploy your app
 
 You can develop locally using [Rayfin CLI](https://www.npmjs.com/package/@microsoft/rayfin-cli).
 

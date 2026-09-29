@@ -7,7 +7,7 @@ ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: how-to
-ms.date: 03/18/2026
+ms.date: 09/01/2026
 
 ---
 
@@ -34,6 +34,14 @@ This conflict indicates that your workspace item has a different logical ID than
 
 Confirming the operation results in the logical id from your source control replacing the matched item’s logical id within the workspace. 
 
+## How deployment plans affect logical IDs
+
+When you save a deployment plan, Fabric assigns a logical ID to each referenced item that doesn't already have one. If an item already has a logical ID, the plan uses the existing ID.
+
+Adding an item to a plan doesn't create a logical ID conflict by itself. However, because the item now has a logical ID, a later Git operation can detect a conflict if the connected branch contains an item with the same name and type but a different logical ID.
+
+Saving requires write permission on each referenced item because assigning a logical ID updates the item. If Fabric can't assign a logical ID to a referenced item type, the plan can't be saved.
+
 ## Common scenarios that lead to conflicts
 Logical ID mismatches may occur when you:
 
@@ -43,6 +51,7 @@ Logical ID mismatches may occur when you:
 |Switch to a different branch|Changing branches may bring in item definitions that don't share the same logical IDs as the workspace versions.|
 |Branch-out to a new branch based on a different branch than the connected branch|Introduces a second, unrelated lineage of item identities into a workspace that is already mapped to a specific Git branch.|
 |Branch out to an existing workspace that contains items|When branching out from a workspace into an existing workspace that already contains items, Fabric aligns the target workspace metadata with the new connected branch which was created from the source workspace branch metadata.|
+|Run a Git operation after saving a deployment plan|Saving a plan can assign logical IDs to referenced items. If the branch contains matching items with different logical IDs, the Git operation detects a conflict.|
 
 
 
@@ -79,4 +88,5 @@ You can do this by:
 - [Conflict resolution](./conflict-resolution.md)
 - [Manually update after a failed update](./partial-update.md)
 - [Understand dependency binding in cross-workspace deployment](../cross-workspace-dependency-binding.md)
+- [What is a deployment plan?](../deployment-plan/deployment-plan-overview.md)
 - [Lifecycle management Frequently asked questions](../faq.yml)

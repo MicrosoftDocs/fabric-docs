@@ -60,10 +60,10 @@ If you use an **F64** SKU, the burst maximum is **384 Spark VCores**:
 
 ## Job-level bursting control
 
-Capacity admins can enable or disable job-level bursting in the Admin portal:
+Capacity admins can enable or disable job-level bursting in **OneLake catalog** > **Govern** > **Capacities**:
 
-1. Go to **Admin portal** > **Capacity settings** > **Fabric capacity**.
-1. Select the capacity you want to manage.
+1. On the **Manage capacities** page, filter or search the list to find the capacity.  
+1. Next to the capacity name, select the **More options** menu > **Settings**.
 1. Open **Data Engineering/Science settings** > **Open Spark Compute**.
 1. Use **Disable job-level bursting**.
 

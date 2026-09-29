@@ -11,7 +11,7 @@ ms.date: 12/15/2025
 Fabric is a software as a service (SaaS) platform that lets users get, create, share, and visualize data. As a SaaS service, Fabric offers a complete security package for the entire platform. For more information, see [Network Security](../security/security-overview.md).
 
 >[!IMPORTANT]
->Deployment pipelines are currently not supported for workspace with inbound access protection.
+>Deployment pipelines aren't currently supported for workspace with inbound access protection.
 
 
 ## Workspace level security
@@ -116,3 +116,4 @@ For more information, see [OAP and workspace considerations](../security/workspa
 * [Git integration](./git-integration/intro-to-git-integration.md)
 * [Manage admin access to workspace inbound access protection settings](../security/security-workspace-enable-inbound-access-protection.md)
 * [Workspace outbound access protection](../security/workspace-outbound-access-protection-overview.md)
+* [Deployment plan permissions](./deployment-plan/deployment-plan-permissions.md)

@@ -29,6 +29,8 @@ landingContent:
             url: deployment-pipelines/intro-to-deployment-pipelines.md  
           - text: What is a Variable library?
             url: variable-library/variable-library-overview.md
+          - text: What is a deployment plan?
+            url: deployment-plan/deployment-plan-overview.md
                           
   # Card 
   - title: Get started
@@ -40,7 +42,9 @@ landingContent:
           - text: Get started with deployment pipelines
             url: deployment-pipelines/get-started-with-deployment-pipelines.md
           - text: Get started with Variable libraries
-            url: variable-library/get-started-variable-libraries.md            
+            url: variable-library/get-started-variable-libraries.md
+          - text: Create a deployment plan
+            url: deployment-plan/how-to-create-deployment-plan.md
       - linkListType: concept
         links:
           - text: Git integration concepts
@@ -49,12 +53,16 @@ landingContent:
             url: deployment-pipelines/understand-the-deployment-process.md
           - text: Variable libraries
             url: variable-library/variable-library-overview.md
+          - text: Deployment plan permissions
+            url: deployment-plan/deployment-plan-permissions.md
       - linkListType: reference
         links:
           - text: Frequently asked questions about the Fabric CI/CD tools
             url: faq.yml
           - text: Troubleshoot CI/CD issues
             url: troubleshoot-cicd.md
+          - text: Troubleshoot deployment plans
+            url: deployment-plan/deployment-plan-troubleshoot.md
 
   # Card 
   - title: What's new in CI/CD?
@@ -63,6 +71,8 @@ landingContent:
         links:
           - text: Variable libraries
             url: variable-library/variable-library-overview.md
+          - text: Deployment plans (preview)
+            url: deployment-plan/deployment-plan-overview.md
           - text: Deployment pipelines new interface
             url: deployment-pipelines/deployment-pipelines-new-ui.md
           - text: Supported items
@@ -77,8 +87,6 @@ landingContent:
             url: git-integration/manage-branches.md
           - text: Resolve conflicts in Git
             url: git-integration/conflict-resolution.md
-          - text: CI/CD best practices
-            url:  ./best-practices-cicd.md 
       - linkListType: tutorial
         links:
           - text: CI/CD tutorial

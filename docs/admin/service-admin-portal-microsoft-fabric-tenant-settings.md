@@ -11,7 +11,7 @@ ms.date: 04/08/2026
 
 # Microsoft Fabric tenant settings
 
-Fabric tenant settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
+Fabric tenant settings are configured in **Configurations** > **Tenant settings** in the [Govern section of the OneLake catalog](../governance/onelake-catalog-govern.md). For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
 
 ## Users can create Fabric items
 

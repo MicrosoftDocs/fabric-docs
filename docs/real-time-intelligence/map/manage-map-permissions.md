@@ -1,8 +1,8 @@
 ---
-title: Manage Map permissions in Microsoft Fabric
+title: Manage map permissions in Microsoft Fabric
 description: Learn how to grant, modify, and revoke access to map items in Microsoft Fabric Maps.
 ms.reviewer: smunk, limingchen
-ms.date: 02/16/2025
+ms.date: 09/13/2026
 ms.topic: how-to
 ms.subservice: rti-core
 ms.search.form: Map permissions
@@ -29,13 +29,13 @@ For more information, see:
 - [Permission model – Microsoft Fabric](../../security/permission-model.md)
 
 > [!IMPORTANT]
-> Managing map permissions controls access to the **map item only**.  It does **not** grant access to the underlying data sources used by the map.
+> Managing map permissions controls access to the **map item only**.  It doesn't grant access to the underlying data sources used by the map.
 >
 > For a conceptual overview of how workspace roles, map permissions, and data permissions interact, see [Permissions in Fabric Maps](about-map-permissions.md).
 
-## Managing Map Permissions
+## Managing map permissions
 
-To manage Map permissions
+To manage map permissions:
 
 1. In your workspace, locate the map item.
 1. Select the **More options** (**…**) menu next to the map.
@@ -47,7 +47,7 @@ The **Direct access** panel opens and shows all users and groups that currently 
 
 :::image type="content" source="media/manage-map-permissions/direct-access-before.png" lightbox="media/manage-map-permissions/direct-access-before.png" alt-text="Screenshot showing the direct access panel for the WorkordersMap item in Microsoft Fabric showing a table with four users and their permissions. Column headers are People and groups with access, Email Address, Role, and Permissions. The panel includes an Add user button and Filter by keyword search box at the top.":::
 
-When you add new users to a map you grant them read access and can also specify more permissions such as the ability to edit and share the map.
+When you add new users to a map, you grant them read access. You can also specify more permissions, such as the ability to edit and share the map.
 
 > [!NOTE]
 > Map permissions are evaluated together with the user's workspace role. Some permissions require specific workspace roles to take effect.
@@ -60,11 +60,11 @@ In the **Direct access** panel, you can:
 - Grant access to a map by adding new users and specifying roles.
 - Revoke or modify access of current recipients.
 
-## Grant access to a map using direct access
+## Grant access to a map by using direct access
 
-To add a new user:
+To add a new user, follow these steps:
 
-1. In the **Manage permissions** panel **Direct access** tab, select **+ Add user**.
+1. In the **Manage permissions** pane, go to the **Direct access** tab, and select **+ Add user**.
 
       :::image type="content" source="media/manage-map-permissions/add-user.png" lightbox="media/manage-map-permissions/add-user.png" alt-text="Screenshot of the Manage permissions panel for a map item in Microsoft Fabric. The Direct access tab is selected showing a table with columns for People and groups with access, Email Address, Role, and Permissions.":::
 
@@ -74,13 +74,13 @@ To add a new user:
    - **Edit** – Allows users with write-capable workspace roles (**Administrator**, **Member**, or **Contributor**) to modify and save changes to the map.
 
    > [!NOTE]
-   > When granted access, all users are automatically given **Read** privileges to the map, available with all workspace roles.
+   > When you grant access, all users automatically get **Read** privileges to the map, which is available with all workspace roles.
 
 1. Select **Grant**.
 
     :::image type="content" source="media/manage-map-permissions/grant-people-access.png" alt-text="Screenshot of the Grant people access dialog for WorkordersMap in Microsoft Fabric. The dialog shows a recipient field with Paige Turner added, Additional permissions section with Share checkbox selected and Edit checkbox unselected, Notification Options section with Notify recipients by email checkbox selected, an optional message text box, and an information note stating Share the KQL database and Lakehouse before sharing the Map. Grant and Back buttons appear at the bottom right.":::
 
-Those added can now access the map with the permissions granted.
+Those you add can now access the map with the permissions you granted.
 
 :::image type="content" source="media/manage-map-permissions/direct-access-after.png" lightbox="media/manage-map-permissions/direct-access-after.png" alt-text="A screenshot of the direct access panel for WorkordersMap showing the new user with permissions Read, Reshare.":::
 
@@ -97,11 +97,11 @@ In the **Links** tab, you can:
 - Specify the permission level granted by the link.
 - View and delete existing sharing links.
 
-## Grant access to a map using Links
+## Grant access to a map by using links
 
-To add a new user:
+To add a new user, follow these steps:
 
-1. In the **Manage permissions** panel **Links** tab, select **+ Add link**.
+1. In the **Manage permissions** pane, go to the **Links** tab, and select **+ Add link**.
 
     :::image type="content" source="media/manage-map-permissions/add-link.png" lightbox="media/manage-map-permissions/add-link.png" alt-text="Screenshot of the Manage permissions panel in Fabric Maps showing the Links tab selected. The panel displays an Add link button in the upper left corner. The center of the panel shows an empty state with a folder icon and the message Links you share with others appear here.":::
 
@@ -113,22 +113,22 @@ To add a new user:
 
     :::image type="content" source="media/manage-map-permissions/select-additional-permissions.png" alt-text="A screenshot of the Fabric Maps create and send link dialog. The dialog shows a briefcase icon with the text People in your organization can view and a chevron arrow. Below are two input fields labeled Enter a name or email address and Add a message optional. A Send button appears on the right side. At the bottom are four sharing options displayed as icons with labels: Copy link, by Email, by Teams, and by PowerPoint. The dialog includes a search icon and close X button in the header.":::
 
-1. The **Select permissions** dialog appears with three options for **People who can view this map**. With the desired option selected, select the **Apply** button.
+1. The **Select permissions** dialog appears with three options for **People who can view this map**. Select the desired option, and then select **Apply**.
       - **People in your organization**: This option shares the map with people in your organization who already have permission to access the workspace. The link grants view-only access and doesn't allow editing or resharing.
       - **People with existing access**: Shares the map only with users who already have permission to access it in the workspace.
       - **Specific people**: Allows you to grant **Share** or **Edit** permissions to selected users or groups. Only the people you specify receive the permissions assigned by the link.
 
-1. Once back in the **Create and send link** dialog you can send the link to those specified using the **Send** button or any of the options along the bottom including **Copy link**, **By Email**, **by Teams** or **by PowerPoint**.
+1. When you return to the **Create and send link** dialog, you can send the link to the specified users by using the **Send** button or any of the options along the bottom, including **Copy link**, **By Email**, **by Teams**, or **by PowerPoint**.
 
 > [!NOTE]
 > Granting access to a map doesn't grant access to its underlying data.  
-> Users must also have permission to read any Lakehouse, Eventhouse, or KQL database used by the map.
+> Users must also have permission to read any lakehouse, eventhouse, or KQL database used by the map and access to connections used by external layers.
 
 ## Modify permissions or remove access
 
-To change existing permissions or remove access altogether:
+To change existing permissions or remove access:
 
-1. Open the **Manage permissions** panel.
+1. Open the **Manage permissions** pane.
 2. Locate the user or group.
 3. Choose one of the following actions:
    - **Add** or **Remove** individual permissions
@@ -146,15 +146,18 @@ If users can open a map but see missing layers or errors, verify that they have 
 - Eventhouses
 - KQL databases or KQL querysets
 
+For an external feature service layer, viewers don't need separate access to the cloud connection. Verify that the connection contains valid credentials and that the remote service is reachable through the public internet.
+
 For more information, see [Data permissions and map visibility](about-map-permissions.md#data-permissions-and-map-visibility).
 
 ## Troubleshooting
 
 | Issue | Possible cause |
-|------|----------------|
+| ----- | -------------- |
 | Map opens but layers don't render | User lacks permission on the underlying data source |
 | User can't edit or share a map | Workspace role doesn't allow editing or sharing |
 | Map loads with incomplete data | Data permissions restrict query results |
+| An external feature service layer doesn't render | Confirm that the remote service is reachable over the public internet. If the service requires authentication, verify that the cloud connection contains valid credentials. |
 
 Fabric Maps never elevates data access.  
 Maps display only the data that a user is authorized to read.

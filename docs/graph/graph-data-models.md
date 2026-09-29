@@ -38,7 +38,9 @@ For most customers, the LPG model provides the best balance of performance, usab
 - **Simplicity and intuitiveness:** Nodes and edges map closely to how people think about networks. LPG is less complex than RDF. You don't need to define ontologies or manage global identifiers.
 - **Properties on edges:** Model weighted, temporal, or labeled relationships on edges. This feature supports advanced analytics like recommendations and fraud detection.
 - **Performance and storage efficiency:** LPG-based graph databases store data compactly and enable fast traversals, even for large, complex graphs.
-- **Flexible schema:** Evolve your graph model as your business needs change, without rigid constraints. Note that schema changes currently require you to create a new graph model and reload your data. For more information, see [Design a graph schema](design-graph-schema.md).
+- **Flexible schema:** Update your graph model as your business needs change.
+  Saving structural changes to an existing model reloads all graph data. For
+  more information, see [Design a graph schema](design-graph-schema.md).
 - **Integration with Fabric:** Graph works with OneLake and Power BI, enabling seamless analytics and visualization.
 
 For details on how node types and edge types map to lakehouse tables in Fabric, see [Understand node types and edge types](design-graph-schema.md#understand-node-types-and-edge-types).

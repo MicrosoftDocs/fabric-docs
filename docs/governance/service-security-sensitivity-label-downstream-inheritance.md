@@ -68,8 +68,7 @@ In certain cases, downstream inheritance (like other automated labeling scenario
 
 ## Enabling fully automated downstream inheritance
 
-Fully automated downstream inheritance is controlled by the tenant setting **Automatically apply sensitivity labels to downstream content**. This setting is enabled by default when information protection is enabled (that is, when the tenant setting **Allow users to apply sensitivity labels for content**
-is enabled). To change the downstream inheritance setting, [go to the tenant settings in the admin portal](../admin/about-tenant-settings.md#how-to-get-to-the-tenant-settings) and enable/disable the **Automatically apply sensitivity labels to downstream content** setting as desired.
+The tenant setting **Automatically apply sensitivity labels to downstream content** controls fully automated downstream inheritance. This setting is enabled by default when information protection is enabled (that is, when the tenant setting **Allow users to apply sensitivity labels for content** is enabled). To change the downstream inheritance setting, [go to the tenant settings](../admin/about-tenant-settings.md#how-to-get-to-the-tenant-settings) and enable or disable the **Automatically apply sensitivity labels to downstream content** setting as desired.
 
 :::image type="content" source="media/service-security-sensitivity-label-downstream-inheritance/downstream-inheritance-fully-automated-tenant-switch.png" alt-text="Screenshot of tenant setting for automatically applying labels to downstream content.":::
 

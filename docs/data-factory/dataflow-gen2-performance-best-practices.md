@@ -3,7 +3,7 @@ title: "Best practices for getting the best performance with Dataflow Gen2 in Fa
 description: "This article provides best practices for optimizing the performance of Dataflow Gen2 in Fabric Data Factory. By following these guidelines, you can enhance the efficiency and speed of your data integration processes."
 ms.reviewer: dougklo, jeluitwi
 ms.topic: concept-article
-ms.date: 06/24/2026
+ms.date: 09/03/2026
 ms.custom: dataflow
 ---
 
@@ -94,7 +94,7 @@ A Lakehouse is a fully supported, high-performance destination for this pattern.
 
 To get the most out of this pattern today, separate the Fast Copy and the transformation work into two queries: one query that performs the Fast Copy data movement, and a second query that applies the transformations on the staged data before writing to the Lakehouse destination. Combining a Fast Copy operation with non-folding transformations in the same query disables Fast Copy, so keeping them in separate queries is the main thing to watch for. If your transformations fully fold to the source, you can also write directly to the Lakehouse with staging disabled.
 
-When you stage data and write to a Lakehouse destination, turn on the **Optimized copy to Lakehouse (Preview)** option on the Scale tab to route the staged data to the Lakehouse through the faster copy path, which reduces the overhead of the staging-to-Lakehouse hop. For more information, see [Staged data options for Dataflow Gen2](dataflow-gen2-staged-data-options.md).
+When you stage data and write to a Lakehouse destination, turn on the **Optimized copy to Lakehouse** option on the Scale tab to route the staged data to the Lakehouse through the faster copy path, which reduces the overhead of the staging-to-Lakehouse hop. For more information, see [Staged data options for Dataflow Gen2](dataflow-gen2-staged-data-options.md).
 
 ### Consideration 4: Large data previews during design-time
 
@@ -174,8 +174,6 @@ To enable the Modern Evaluator:
 1. Save and run your dataflow.
 
 :::image type="content" source="media/dataflow-gen2-modern-evaluator/modern-evaluator-option.png" alt-text="Screenshot of the options dialog displaying the modern query evaluator setting." lightbox="media/dataflow-gen2-modern-evaluator/modern-evaluator-option.png":::
-
-The Modern Evaluator supports a growing list of connectors. For the full list of supported connectors and current feature status, see [Modern Evaluator for Dataflow Gen2 with CI/CD](dataflow-gen2-modern-evaluator.md#supported-connectors). If your dataflow uses connectors not in the supported list, those queries continue to run with the standard engine.
 
 To learn more about the Modern Evaluator, see [Modern Evaluator for Dataflow Gen2 with CI/CD](dataflow-gen2-modern-evaluator.md).
 

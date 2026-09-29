@@ -4,7 +4,7 @@ description: Learn how to enable and disable Fabric tenant settings.
 author: msmimart
 ms.author: mimart
 ms.topic: how-to
-ms.date: 08/22/2025
+ms.date: 09/01/2026
 ---
 
 # About tenant settings
@@ -26,13 +26,15 @@ You can identify new settings according to their *new* icon.  
 
 ## How to get to the tenant settings
 
-To get to the tenant settings:
+To access the tenant settings:
 
-1. Select the [settings (gear) icon](/fabric/fundamentals/fabric-settings#open-the-fabric-settings-pane) at the top of the Fabric portal.
+1. Sign in to [Fabric](https://app.fabric.microsoft.com) using your admin account credentials.
+1. Select **OneLake catalog**, and then select the **Govern** tab. 
+1. Select **Configurations** > **Tenant settings**. 
 
-1. In the side pane that appears, select **Admin portal** under the **Governance and insights** heading.
-
-1. The admin portal opens. Select **Tenant settings**.
+> [!NOTE]
+> OneLake catalog and Govern are rolling out by region. If they're not available in your region,
+> select the **Settings** (gear) icon > **Admin portal** > **Tenant settings** during the regional rollout.
 
 ## How to use the tenant settings
 
@@ -61,5 +63,5 @@ Many of the settings can have one of three states:
 ## Related content
 
 - [Use the Fabric REST API to list tenant settings](/rest/api/fabric/admin/tenants/list-tenant-settings)
-- [What is the admin portal?](admin-center.md)
+- [Administration overview](admin-overview.md)
 - [Tenant settings index](tenant-settings-index.md)

@@ -5,7 +5,7 @@ author: dknappettmsft
 ms.author: daknappe
 ms.reviewer: cnovak
 ms.topic: troubleshooting
-ms.date: 09/04/2025
+ms.date: 09/23/2026
 ai-usage: ai-assisted
 ---
 
@@ -33,7 +33,7 @@ In decentralized self-service environments, multiple business units share the sa
 In centralized environments, a core IT or COE team is responsible for managing essential content, including enterprise business intelligence and managed self-service applications. Governance is implemented through formal mechanisms, emphasizing **stringent service level agreements (SLAs), proactive oversight, and hierarchical supervision**. It's recommended that organizations consistently maintain, administer, and enhance their enterprise capacities. The following guidelines are vital for mission-critical (tier 1) solutions, yet they remain relevant to other high-priority business operational (tier 2) and select noncritical ad-hoc (tier 3) solutions as well.
 
 - **Enforce capacity oversight & SLA:** [Assign a capacity admin or team](/power-bi/guidance/fabric-adoption-roadmap-system-oversight) [to manage each key capacity](../admin/capacity-settings.md). They monitor usage, handle incidents, plan upgrades, and ensure SLAs are met - like uptime and query speed for executive reports. If metrics risk breaching SLAs, admins must escalate actions (such as optimizing or scaling up). Include SLA adherence in regular ops meetings or reports. Manage enterprise capacities with IT-level discipline to ensure reliable performance and maintain platform trust.
-- **Implement proactive scaling for spikes:** Usage can spike unexpectedly. Pausing settles any overuse as a one-time billing event through pay-as-you-go charges, effectively resetting usage and preventing throttling. Scheduled capacity resizing - such as scaling up at the end of a quarter and back down after - can be automated with [Fabric CLI](/rest/api/fabric/articles/fabric-command-line-interface), [Azure Automation](pause-resume.md), or [Fabric’s REST APIs](/rest/api/microsoftfabric/fabric-capacities) to manage predictable surges. F SKUs are flexible, allowing both resizing and pausing as needed.
+- **Implement proactive scaling for spikes:** Usage can spike unexpectedly. Pausing settles any overuse as a one-time billing event through pay-as-you-go charges, effectively resetting usage and preventing throttling. Automate scheduled capacity resizing - such as scaling up at the end of a quarter and back down after - by using [Fabric CLI](/rest/api/fabric/articles/fabric-command-line-interface), [Azure Automation](pause-resume.md), or [Fabric’s REST APIs](/rest/api/microsoftfabric/fabric-capacities) to manage predictable surges. F SKUs are flexible, allowing both resizing and pausing as needed. However, avoid resizing a capacity frequently as operations already in progress might be delayed or otherwise affected. Plan resizes for periods of low activity. For more information, see [Scale your Fabric capacity](scale-capacity.md).
 - **Combine RI / Pay Go:** Use reserved instance (RI) for discounts on pricing when possible, and supplement it [**pause/resume/resize**](pause-resume.md) of the capacity with pay-as-you-go pricing for flexibility. For predictable surges, compare costs: scaling up with pay-as-you-go for occasional peaks (for example, you have a F64 as RI, using F128 on Mondays by adding pay-as-you-go F64) can be cheaper than buying extra RI. However, if added capacity is needed more than four days a week, RI can offer better value.
 
   > [!NOTE]

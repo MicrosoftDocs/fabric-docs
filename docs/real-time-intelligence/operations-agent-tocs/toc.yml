@@ -4,6 +4,8 @@ items:
   href: ../operations-agent.md
 - name: Operations agent actions
   href: ../operations-agent-actions.md
+- name: Operations agent performance dashboard
+  href: ../operations-agent-performance-dashboard.md
 - name: Operations agents billing
   href: ../operations-agent-billing.md
 - name: Operations agents limitations

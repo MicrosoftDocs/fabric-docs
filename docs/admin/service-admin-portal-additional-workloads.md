@@ -11,7 +11,7 @@ ms.date: 04/08/2026
 
 # Tenant settings for additional workloads
 
-These settings are configured in the tenant settings section of the [Admin portal](./about-tenant-settings.md#how-to-get-to-the-tenant-settings). For information about how to get to and use tenant settings, see [About tenant settings](./about-tenant-settings.md).
+These settings are configured in **Configurations** > **Tenant settings** in the [Govern section of the OneLake catalog](../governance/onelake-catalog-govern.md). For information about how to get to and use tenant settings, see [About tenant settings](./about-tenant-settings.md).
 
 Additional workloads let organizations extend Fabric with partner and custom workloads. Tenant admins can control who can add, develop, and use those workloads.
 

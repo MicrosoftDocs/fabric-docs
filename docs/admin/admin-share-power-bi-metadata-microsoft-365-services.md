@@ -88,7 +88,7 @@ For more information about data storage for Microsoft 365, see [Where your Micro
 
 The **Share Fabric data with your Microsoft 365 services** tenant setting is on by default. To change this setting:
 
-1. Go to **Admin portal** > **Tenant settings** > **Share Fabric data with your Microsoft 365 services**.
+1. Go to **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings** > **Share Fabric data with your Microsoft 365 services**.
 1. Set the toggle to **Enabled** or **Disabled** as needed.
 
 Changes can take up to 24 hours to take effect.

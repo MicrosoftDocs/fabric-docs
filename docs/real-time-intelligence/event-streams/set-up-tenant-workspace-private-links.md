@@ -17,7 +17,7 @@ Fabric supports private links at both the tenant level and the workspace level:
 
 ## Tenant private link
 
-There are two tenant settings in the Fabric admin portal involved in Private Link configuration:
+There are two settings in **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings** involved in Private Link configuration:
 
 * **Azure Private Links**
 

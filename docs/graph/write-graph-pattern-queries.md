@@ -2,7 +2,7 @@
 title: Write graph pattern queries in Microsoft Fabric
 description: Learn how to write GQL graph pattern queries in Microsoft Fabric, including multi-hop traversal, path modes, variable reuse, and optional matching with examples.
 ms.topic: how-to
-ms.date: 05/20/2026
+ms.date: 09/18/2026
 ms.reviewer: splantikow
 ai-usage: ai-assisted
 ---
@@ -13,9 +13,15 @@ Graph pattern matching lets you describe the structure of the data you want to f
 
 The examples use the [social network sample dataset](sample-datasets.md). For a full pattern syntax reference, see [GQL graph patterns](gql-graph-patterns.md).
 
+Use this article to learn how to construct and combine node, edge, and path
+patterns. For ready-to-adapt tasks such as finding neighbors or entities with
+no relationships, see [Write common GQL queries](write-common-gql-queries.md).
+For filtering, grouping, and aggregate workflows, see [Filter and aggregate
+graph data](filter-aggregate-graph-data.md).
+
 ## Prerequisites
 
-- A graph item with data loaded. If you're new to graph, complete the [tutorial](tutorial-introduction.md) first.
+- A graph item built from the [social network sample dataset](sample-datasets.md), with the node types, edge types, and properties described in the [social network schema example](gql-schema-example.md).
 - Familiarity with basic `MATCH` and `RETURN` queries. See [GQL language guide](gql-language-guide.md).
 
 ## Match direct relationships
@@ -43,7 +49,12 @@ LIMIT 100
 
 ## Filter patterns with inline WHERE
 
-Place `WHERE` inside the pattern to filter nodes and edges as they're matched. This approach is more efficient than filtering after the fact.
+Place `WHERE` inside the pattern when a condition defines which node or edge can
+participate in the match. Use a statement-level `MATCH ... WHERE` condition to
+postfilter the completed match, or a separate `FILTER` when the condition
+applies to the row produced by an earlier statement. Predicate placement can
+change shortest-path results. For more information, see [Place predicates before or after path
+selection](gql-graph-patterns.md#place-predicates-before-or-after-path-selection).
 
 For example, to find people born before 1990 who work at a company whose name starts with 'A':
 
@@ -81,16 +92,18 @@ LIMIT 100
 
 ## Control traversal with path modes
 
-By default, GQL uses `TRAIL` mode, which prevents the same edge from being traversed more than once. Use path modes explicitly when you need different guarantees.
+By default, GQL uses `WALK`, which allows repeated nodes and edges. Use another path mode when you need stricter element uniqueness.
 
 | Path mode | Behavior | Use when... |
 | --- | --- | --- |
-| `WALK` | Allows repeated nodes and edges | You want raw traversal with no restrictions. Rarely needed; mainly useful for exploratory queries. |
-| `TRAIL` | No repeated edges (default) | You want to avoid retracing the same relationship, but the same node can appear via different relationships. Works well for most traversal queries. |
-| `SIMPLE` | No repeated nodes except start and end | You want no node to appear more than once in the middle of a path, but allow paths that close back to the start. Useful for detecting loops. |
-| `ACYCLIC` | No repeated nodes at all | You need to guarantee that no node appears anywhere in the path more than once. Use for strict hierarchies, lineage, or any traversal where revisiting a node would produce incorrect results. |
+| `WALK` | Allows repeated nodes and edges (default) | You want all matching walks within a finite bound. |
+| `TRAIL` | No repeated edges | You want to avoid retracing the same edge, but the same node can appear through different edges. |
+| `SIMPLE` | No repeated nodes except a shared start and end node, and no repeated edges | You want no node to appear more than once in the middle of a path, but allow paths that close back to the start. Useful for detecting loops. |
+| `ACYCLIC` | No repeated nodes or edges | You need to guarantee that no node appears anywhere in the path more than once. Use for strict hierarchies, lineage, or any traversal where revisiting a node would produce incorrect results. |
 
-`WALK` is the most permissive mode and `ACYCLIC` is the most restrictive. `TRAIL` is the default and works well for most queries. Use a more restrictive mode only when your use case requires it.
+`WALK` is the most permissive mode and `ACYCLIC` is the most restrictive.
+
+For `SIMPLE` and `ACYCLIC`, edge uniqueness follows from node uniqueness. A `SIMPLE` path can close by returning to its first node, but it still can't reuse an edge.
 
 To illustrate the difference, consider the path Alice → Bob → Carol → Bob:
 
@@ -103,7 +116,10 @@ The following example shows how to use `TRAIL` to count how many distinct paths 
 
 ```gql
 MATCH TRAIL (src:Person WHERE src.firstName = 'Alice')-[:knows]->{1,4}(dst:Person)
-RETURN dst.firstName, dst.lastName, count(*) AS pathCount
+LET personId = dst.id
+RETURN personId, dst.firstName, dst.lastName, count(*) AS pathCount
+GROUP BY personId, dst.firstName, dst.lastName
+ORDER BY pathCount DESC
 LIMIT 100
 ```
 
@@ -115,8 +131,42 @@ RETURN dst.firstName, dst.lastName
 LIMIT 100
 ```
 
+The default `REPEATABLE ELEMENTS` match mode allows an edge to be reused by separate paths in the same graph pattern. Use `DIFFERENT EDGES` or `DIFFERENT RELATIONSHIPS` when every edge binding across all paths must be different:
+
+<!-- GQL Query: Added 2026-09-17 -->
+```gql
+MATCH DIFFERENT EDGES
+  (p:Person)-[:knows]->(friend:Person),
+  (p)-[:knows]->(other:Person)
+RETURN p.firstName, friend.firstName, other.firstName
+LIMIT 100
+```
+
+## Return one shortest path
+
+`ALL` is the default path search and returns every matching path. Use `ANY
+SHORTEST` to return one shortest path for each source-destination pair. The
+following query finds one shortest path from Alice to Bob:
+
+<!-- GQL Query: Added 2026-09-17 -->
+```gql
+MATCH p = ANY SHORTEST
+  (src:Person WHERE src.firstName = 'Alice')-[:knows]->{1,4}
+  (dst:Person WHERE dst.firstName = 'Bob')
+RETURN p, path_length(p) AS hopCount
+```
+
+When multiple shortest paths tie, which path is returned isn't deterministic.
+`ALL SHORTEST` and `ANY` path searches aren't supported.
+
+Predicate placement can change the result of `ANY SHORTEST`. Inline node and
+edge predicates constrain which paths are eligible, while a postfilter can
+remove the selected path without choosing a longer path instead. See [Place
+predicates before or after path
+selection](gql-graph-patterns.md#place-predicates-before-or-after-path-selection).
+
 > [!TIP]
-> For large graphs, always set an upper bound on variable-length patterns (`{1,4}` rather than `{1,}`). Unbounded traversal across dense graphs can hit query timeout limits. See [Current limitations](limitations.md).
+> Prefer a finite upper bound for predictable query cost. Unbounded `ALL WALK` patterns aren't supported. Unbounded patterns with `TRAIL`, `SIMPLE`, or `ACYCLIC` terminate through element uniqueness but can still return many paths. Unbounded `ANY SHORTEST WALK` supports only specific query shapes. See [Current limitations](limitations.md#variable-length-paths).
 
 ## Use variable reuse to express shared entities
 
@@ -146,7 +196,8 @@ LIMIT 100
 
 ## Combine multiple patterns
 
-List multiple patterns in a single `MATCH`, separated by commas. All patterns must share at least one variable so they join correctly.
+List multiple patterns in a single `MATCH`, separated by commas. Reuse a
+variable when the patterns must bind the same graph element.
 
 For example, to find up to 100 people along with both their workplace and the city they live in:
 
@@ -158,6 +209,11 @@ LIMIT 100
 ```
 
 The shared variable `p` connects the two patterns. Each result row represents one person with their company and city.
+
+Disconnected patterns are also valid, but they form a Cartesian product of
+their matches. Use them only when you intentionally need every combination. For
+performance guidance, see [Use shared variables for efficient
+joins](gql-query-performance.md#use-shared-variables-for-efficient-joins).
 
 ## Match optional relationships
 
@@ -185,8 +241,6 @@ LIMIT 100
 ## Related content
 
 - [GQL graph patterns](gql-graph-patterns.md)
-- [GQL language guide](gql-language-guide.md)
 - [Filter and aggregate graph data](filter-aggregate-graph-data.md)
 - [Write common GQL queries](write-common-gql-queries.md)
-- [Optimize GQL query performance](gql-query-performance.md)
 - [Current limitations](limitations.md)

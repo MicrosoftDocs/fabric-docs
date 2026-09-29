@@ -1,41 +1,38 @@
 ---
-title: Migrate with a DACPAC File or SQL Files
-description: This tutorial provides a step-by-step guide for the Migration Assistant for Fabric Data Warehouse using a DACPAC file or a zip of .sql files.
+title: Migrate by uploading a file with the Migration Assistant
+description: Learn how to migrate source metadata to Fabric Data Warehouse by uploading a DACPAC file or a zip archive of SQL or BTEQ files.
 ms.reviewer: anphil, pvenkat, prlangad
-ms.date: 05/21/2026
+ms.date: 09/21/2026
 ms.topic: how-to
 ms.search.form: Migration Assistant
 ai-usage: ai-assisted
 ---
-# Migrate with a DACPAC file or SQL files
+# Migrate by uploading a file with the Fabric Migration Assistant
 
-**Applies to**: [!INCLUDE [fabric-dw](../data-warehouse/includes/applies-to-version/fabric-dw.md)]
+**Applies to:** [!INCLUDE [fabric-dw](../data-warehouse/includes/applies-to-version/fabric-dw.md)]
 
-The [Fabric Migration Assistant for Data Warehouse](migration-assistant.md) is a migration experience that you can use to copy dedicated SQL pools in Azure Synapse Analytics, databases in SQL Server, and databases from other SQL Database Engine platforms seamlessly into Fabric Data Warehouse.
+The [Fabric Migration Assistant](migration-assistant.md) provides a guided experience for migrating source metadata and data to Fabric Data Warehouse. This guide explains how to migrate metadata from:
 
-This guide walks you through the steps to migrate to Fabric Data Warehouse by using a DACPAC file or a zip of .sql files.
+- Azure Synapse Analytics or SQL Server by using a DACPAC file
+- Teradata by using a .zip archive of `.sql` and/or `.bteq` files
 
 > [!TIP]
-> For more information on strategy and planning your migration, see [Migration​ planning: ​Azure Synapse Analytics dedicated SQL pools to Fabric Data Warehouse](migration-synapse-dedicated-sql-pool-warehouse.md).
+> For source-specific planning, see:
+> - [Plan migration from Azure Synapse Analytics](migration-synapse-dedicated-sql-pool-planning.md)
+> - [Plan migration from SQL Server](migration-sql-server-planning.md)
+> - [Plan migration from Teradata](migration-teradata-planning.md)
 
 ## Prerequisites
 
-Before you begin, make sure you have the following items ready:
+Before you begin, make sure you have the following ready:
 
 - A Fabric workspace with an active capacity or trial capacity.
 - [Create a workspace](../fundamentals/create-workspaces.md) or select an existing workspace you want to migrate into. The Migration Assistant creates a new warehouse for you.
-- A file that contains the metadata of database objects, including the schema of tables, views, stored procedures, functions, and more. 
-   
-   You have multiple options for the source file:
-   
-   - DACPAC file extracted from your existing warehouse. A [DACPAC](/sql/tools/sql-database-projects/concepts/data-tier-applications/overview#dacpac-operations) (data-tier application package) file is built from SQL database projects. 
-     - You can use [SDK-style database projects](/dotnet/core/project-sdk/overview) with [Visual Studio Code](https://code.visualstudio.com/docs) or the [SqlPackage command-line utility](/sql/tools/sqlpackage/sqlpackage-extract). 
-     - To create a DAC in Visual Studio 2022 from Azure Synapse Analytics with SQL Server Data Tools, see [Extract a Data-tier Application (DAC) from an Azure Synapse dedicated SQL pool in Visual Studio 2022](extract-data-tier-application-synapse-dedicated-sql-pool.md).
-   - A compressed zip of .sql files containing database object definitions. There are multiple ways in which you can extract .sql files.
-      - To generate scripts in SSMS, you can use [Generate Scripts Wizard](/ssms/scripting/generate-and-publish-scripts-wizard).
-      - You can also use [SqlPackage Script](/sql/tools/sqlpackage/sqlpackage-script).
-   - A compressed zip of SQL database project. 
-      - To create a SQL database project in Visual Studio Code, see [SQL Database Projects](/sql/tools/visual-studio-code-extensions/sql-database-projects/sql-database-projects-extension).
+- A source metadata file in one of these formats:
+   - A DACPAC file extracted from Azure Synapse Analytics or SQL Server. A [DACPAC](/sql/tools/sql-database-projects/concepts/data-tier-applications/overview) contains metadata for database objects, including tables, views, stored procedures, and functions.
+      - To create a DACPAC from Azure Synapse Analytics, see [Extract a Data-tier Application (DAC) from an Azure Synapse dedicated SQL pool in Visual Studio 2022](extract-data-tier-application-synapse-dedicated-sql-pool.md).
+      - You can also use the [Generate Scripts Wizard in SQL Server Management Studio (SSMS)](/ssms/scripting/generate-and-publish-scripts-wizard), [SDK-style database projects](https://marketplace.visualstudio.com/items?itemName=ms-mssql.sql-database-projects-vscode) with Visual Studio Code, or the [SqlPackage command-line utility](/sql/tools/sqlpackage/sqlpackage-extract).
+   - A zip archive of Teradata `.sql` and/or `.bteq` files that contains the object definitions and dependencies for the migration.
 
 To use the AI-assisted migration features of the Migration Assistant to fix migration problems, you need to activate Copilot:
 
@@ -45,23 +42,29 @@ To use the AI-assisted migration features of the Migration Assistant to fix migr
 
 1. In your Fabric workspace, select the **Migrate** button on the item action deck.
 
-   :::image type="content" source="media/migrate-using-upload-file/migrate-button.png" alt-text="Screenshot from the Fabric portal of the Migrate button in the item action deck.":::
+    :::image type="content" source="media/migrate-using-upload-file/migrate-button.png" alt-text="Screenshot from the Fabric portal of the Migrate button in the item action deck.":::
 
-1. In the **Migrate to Fabric** source menu, under **Migrate to a warehouse**, select the source system tile. 
-   - If you're migrating from an Azure Synapse Analytics dedicated SQL pool, select the **Azure Synapse Analytics dedicated SQL pool** tile. 
-   - If you're migrating from any other T-SQL database, such as a database in SQL Server, Azure SQL Database, or Azure SQL Managed Instance, select the **SQL Server database** tile.
+1. In the **Migrate to Fabric** source menu, under **Migrate to a warehouse**, select the source system tile:
+   - For Azure Synapse Analytics, select **Azure Synapse Analytics dedicated SQL pool**.
+   - For SQL Server, Azure SQL Database, or Azure SQL Managed Instance, select **SQL Server database**.
+   - For Teradata, select **Teradata (Preview)**.
 
    :::image type="content" source="media/migrate-using-upload-file/source-system-tile.png" alt-text="Screenshot from the Fabric portal of the source system tiles." lightbox="media/migrate-using-upload-file/source-system-tile.png":::
 
-1. On the **Choose your method** page, select **Upload a file with the source metadata** and select **Next**.
+1. If the **Choose your method** page appears, select **Upload a file with the source metadata**, and then select **Next**.
 
-1. Select **Choose file** and upload the DACPAC file of your source data warehouse or a zip of .sql files extracted from your source data warehouse. When the upload finishes, select **Next**.
+   :::image type="content" source="media/migrate-using-upload-file/choose-your-method-upload-file.png" alt-text="Screenshot from the Fabric portal, showing how to upload a file for migration.":::
 
-   :::image type="content" source="media/migrate-using-upload-file/upload-dacpac-choose-file.png" alt-text="Screenshot from the Fabric portal of the Upload DACPAC file step in the Migration Assistant." lightbox="media/migrate-using-upload-file/upload-dacpac-choose-file.png":::
+1. On **Set the source**, select **Choose file**, select the source file, and then select **Next**.
 
-1. In the **Set the destination** page, enter the name of the new Fabric workspace, the new warehouse item you want to migrate into, and select the collation. Select **Next**.
+   :::image type="content" source="media/migrate-using-upload-file/upload-dacpac-choose-file.png" alt-text="Screenshot from the Fabric portal of the source metadata file upload step in Migration Assistant." lightbox="media/migrate-using-upload-file/upload-dacpac-choose-file.png":::
+
+1. In the **Set the destination** page, provide the name of the Fabric workspace and new warehouse item you want to migrate into. Select **Next**.
 
 1. Review your inputs and select **Migrate**. The Migration Assistant creates a new warehouse item and starts the metadata migration.
+
+   > [!NOTE]
+   > When using the Migration Assistant, the new warehouse has **case insensitive collation**, regardless of the [default warehouse collation setting](collation.md).
 
    :::image type="content" source="media/migrate-using-upload-file/review-upload-dacpac.png" alt-text="Screenshot from the Fabric portal of the Review page of the Migration Assistant. The source is a DACPAC file and the Destination is a new warehouse item named AdventureWorks." lightbox="media/migrate-using-upload-file/review-upload-dacpac.png":::
 
@@ -75,36 +78,19 @@ To use the AI-assisted migration features of the Migration Assistant to fix migr
 
    :::image type="content" source="media/migrate-using-upload-file/show-migrated-objects-list.png" alt-text="Screenshot from the Fabric portal of the Migration Assistant's metadata migration summary and the list of migrated objects." lightbox="media/migrate-using-upload-file/show-migrated-objects-list.png":::
 
-   The **State** column indicates if the Migration Assistant adjusted the object's metadata during the translation to Fabric Data Warehouse. For example, you might see that certain column datatypes or T-SQL language constructs are automatically converted to the ones that are supported in Fabric. The **Details** column shows the information about the adjustments that the portal made to the objects.  
+   The **State** column indicates if the Migration Assistant adjusted the object's metadata during the translation to Fabric Data Warehouse. For example, you might see that certain column datatypes or T-SQL language constructs are automatically converted to the ones that are supported in Fabric. The **Details** column shows the information about the adjustments that the Migration Assistant made to the objects.  
 
 1. Select any object to see the adjustments that the Migration Assistant made during migration.
 
 1. Open the metadata migration summary in full screen view for better readability. Apply filters to view specific object types.
 
    :::image type="content" source="media/migrate-using-upload-file/show-migrated-objects-full-screen.png" alt-text="Screenshot of the full screen view of the Migration Assistant's metadata migration summary of migrated objects." lightbox="media/migrate-using-upload-file/show-migrated-objects-full-screen.png":::
-   
-1. Optionally, select the **Export** menu to download a migration summary as an Excel file or a CSV. 
 
-   - The downloaded Excel file is a fully structured workbook with two worksheets: **Migrated Objects** and **Objects To Fix**. It's MIP-compliant and aligned with your organization's sensitivity labels.
-   - The CSV is lightweight and tool-friendly.
-
-   :::image type="content" source="media/migrate-using-upload-file/export-download.png" alt-text="Screenshot from the Fabric portal showing the Export and Download As options." lightbox="media/migrate-using-upload-file/export-download.png":::
-   
-   Each exported file provides a structured, comprehensive view of your migration results, including:
-   
-   |Field name|Description|Sample values|
-   | :-------- | :-------- | :------------ |
-   |**Object name**|Name of SQL object| |
-   |**Object type**|SQL object types| Table, view, stored procedure, function |
-   |**State**|Translation state | Adjusted: Fabric Data Warehouse compatible updates are applied<br><br>Not adjusted: No change in the original script|
-   |**Details**|List of adjustments applied or error messages||
-   |**Type of error**|Type of translation error| Translation message, Translation error, Translation apply error |
-   
 ### Fix problems by using Migration Assistant
 
-Some database object metadata might fail to migrate. Commonly, this failure occurs because the Migration Assistant couldn't translate the T-SQL metadata into those that are supported in a Fabric warehouse or the translated code failed to apply to T-SQL.  
+Some database object metadata might fail to migrate. Commonly, this failure occurs because the Migration Assistant couldn't translate the T-SQL metadata into those that are supported in Fabric Data Warehouse or the translated code failed to apply to T-SQL.  
 
-Fix these scripts by using the Migration Assistant.
+Let's fix these scripts with help from the Migration Assistant.
 
 1. Select the **Fix problems** step in the Migration Assistant to see the scripts that failed to migrate.
 
@@ -114,6 +100,9 @@ Fix these scripts by using the Migration Assistant.
 1. Review the comments in the beginning of the script to see the adjustments that were made to the script.
 1. Review and fix the broken scripts by using the error information and documentation.
 1. To use Copilot for AI-powered assistance in fixing the errors, select **Fix query errors** in the **Suggested action** section. Copilot updates the script with suggestions. Mistakes can happen as Copilot uses AI, so verify code suggestions and make any adjustments you need.
+
+   :::image type="content" source="media/migrate-using-upload-file/fix-query-errors.png" alt-text="Screenshot from the Fabric portal of the Query editor showing T-SQL queries that failed to migrate, and the comments and fixes suggested by Copilot." lightbox="media/migrate-using-upload-file/fix-query-errors.png":::
+
 1. Select **Run** to validate and create the object.
 1. The next script to fix opens.
 1. Continue to fix the rest of the scripts. You can choose to skip fixing scripts that you don't need during this step.
@@ -124,10 +113,10 @@ Fix these scripts by using the Migration Assistant.
 Copy data helps with migrating data used by the objects you migrate. You can use a [Fabric Data Factory copy job](../data-factory/create-copy-job.md) to do it manually, or follow these steps for the copy job integration in the Migration Assistant.
 
 1. Select the **Copy data** step in the Migration Assistant.
-1. Select **Use a copy job** button.
-1. Enter a name for the new job, and then select **Create**. 
-1. On **Connect to data source** page, enter **Connection credentials** for the source warehouse. Select **Next**.
-1. In the **Choose data** page, select the tables you want to migrate. The object metadata should already exist in the target warehouse. Select **Next**.
+1. Select **Use a copy job**.
+1. Assign a name to the new job, then select **Create**. 
+1. On the **Connect to data source** page, provide the connection credentials for your source system. Select **Next**.
+1. On the **Choose data** page, select the tables you want to migrate. Select **Next**.
 
    :::image type="content" source="media/migrate-using-upload-file/choose-data.png" alt-text="Screenshot from the Fabric portal of the Choose data pane, with some tables selected." lightbox="media/migrate-using-upload-file/choose-data.png":::
 
@@ -156,8 +145,7 @@ In the final step, reconnect the data loading and reporting platforms so that th
    and s.session_id <> @@SPID; --ignore myself
    ```
    
-   - In Azure Synapse Analytics dedicated SQL pools, you can find session information including source application, who is connected, where the connection is coming from, and if it's using Microsoft Entra or SQL authentication:  
-
+   - In Azure Synapse Analytics dedicated SQL pools, you can find session information, including the source application, connected user, connection origin, and authentication method:
    ```sql
    SELECT DISTINCT CASE 
             WHEN len(tt) = 0
@@ -174,7 +162,6 @@ In the final step, reconnect the data loading and reporting platforms so that th
         FROM sys.dm_pdw_exec_sessions
         ) AS a;
    ```
-
 1. Update the connections to your reporting platforms to point to your Fabric warehouse. 
 1. Test the Fabric warehouse with some reporting before rerouting. Perform comparison and data validation tests in your reporting platforms.
 1. Update the connections for data loading (ETL/ELT) platforms to point to your Fabric warehouse.
@@ -191,4 +178,3 @@ Congratulations! You're now ready to start using your new warehouse.
 
 - [Fabric Migration Assistant for Data Warehouse](migration-assistant.md)
 - [Microsoft Fabric Migration Overview](../fundamentals/migration.md)
-- [Upgrade your Azure Data Factory pipelines to Fabric](/azure/data-factory/how-to-upgrade-your-azure-data-factory-pipelines-to-fabric-data-factory)

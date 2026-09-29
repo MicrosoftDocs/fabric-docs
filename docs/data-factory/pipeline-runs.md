@@ -4,13 +4,13 @@ description: Explanation of what a pipeline run is, including on-demand and sche
 ms.reviewer: noelleli
 ms.topic: how-to
 ms.custom: pipelines, sfi-image-nochange
-ms.date: 03/10/2026
+ms.date: 09/21/2026
 ai-usage: ai-assisted
 ---
 
 # Run, schedule, or use events to trigger a pipeline
 
-A pipeline run occurs when a pipeline is started and the activities are executed.
+A pipeline run starts when you trigger a pipeline, the pipeline meets any configured [run conditions](#control-pipeline-runs-with-run-conditions-preview), and the activities begin.
 
 You can start a pipeline run in three ways:
 
@@ -78,7 +78,7 @@ Once your Fixed schedule is configured, select **Save** to set your schedule.
 Interval-based schedules (preview) allow you to configure fixed, non-overlapping intervals to run your pipelines.
 
 > [!NOTE]
-> Interval-based schedules are in Public preview.
+> Interval-based schedules are in preview.
 
 :::image type="content" source="media/pipeline-runs/interval-based-schedule-trigger-parameters.png" alt-text="Screenshot showing Trigger parameters with Window start time and Window end time for an interval-based schedule." lightbox="media/pipeline-runs/interval-based-schedule-trigger-parameters.png":::
 
@@ -220,6 +220,12 @@ These built-in parameters come from the **Subject** and **Topic** fields of the 
 ```@pipeline()?.TriggerEvent?.FileName```
 
 Notice the `?` after the `pipeline()` object reference. This handles NULL values in the pipeline expression language. You need this syntax when testing a pipeline that uses trigger parameters because during manual testing, file and folder name parameters aren't set, returning a NULL value. When you trigger the pipeline from a file event, you'll see the file name and folder name filled out in those fields.
+
+## Control pipeline runs with run conditions (preview)
+
+In addition to choosing how a pipeline run starts, use run conditions to control whether the pipeline can proceed. A run condition can wait for upstream pipeline runs, required data, or covered time windows before the pipeline activities begin.
+
+Run conditions don't replace schedules or event triggers. They add dependency criteria to a pipeline run. For configuration steps, supported condition types, monitoring guidance, and limitations, see [Run conditions in Fabric pipelines](pipeline-run-conditions.md).
 
 ## Related content
 

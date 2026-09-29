@@ -15,6 +15,8 @@ ms.search.form: Source and Destination
 
 This article shows you how to add a PostgreSQL Database Change Data Capture (CDC) source to an eventstream.
 
+[!INCLUDE [schema-aware-source-callout](./includes/schema-aware-source-callout.md)]
+
 With Change Data Capture (CDC), you can stream database changes—inserts, updates, and deletes—in real time without polling. By connecting PostgreSQL as a CDC source, you can build real-time analytics pipelines and keep downstream systems synchronized with your source data.
 
 [!INCLUDE [postgresql-database-cdc-connector-prerequisites](./includes/connectors/postgresql-database-cdc-source-connector-prerequisites.md)]

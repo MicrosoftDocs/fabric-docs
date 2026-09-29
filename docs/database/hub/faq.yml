@@ -1,0 +1,204 @@
+### YamlMime:FAQ
+metadata:
+  title: "Frequently asked questions about Database Hub (preview)"
+  description: This article answers frequently asked questions about Database Hub in Fabric.
+  ms.reviewer: amapatil, jmaldonado, varundhawan, ivujic, lancewright
+  ms.topic: faq
+  ms.date: 09/21/2026
+
+title: "Frequently asked questions about Database Hub in Fabric (preview)"
+
+summary: |
+  This article answers frequently asked questions about Database Hub in Fabric.
+
+sections:
+  - name: Database Hub in Fabric
+    questions:
+      - question: |
+          How does Database Hub relate to OneLake and Microsoft Purview?
+        answer:
+          They are complementary. OneLake provides unified data storage for analytics. Database Hub provides unified operational control. They intersect through scenarios such as mirroring, analytics readiness, and inventory sharing.
+
+          Database Hub isn't a data catalog. It focuses on operational metadata, signals, and actions. Where appropriate, it links to Purview or Fabric analytics experiences.
+
+      - question: |
+          Can I change resources from Database Hub, or is it read-only?
+        answer:
+          Database Hub is action-oriented but deliberately conservative. Actions are explicit and always approved by the end user (who must have the necessary permission to perform the action). Examples can include opening native surfaces and applying supported agent-proposed recommendations with confirmation.
+
+          All actions respect role permissions and require approval. Database Hub validates intent and scope, then delegates execution to the authoritative service. Bulk actions and broader configuration changes can be introduced over time.
+
+      - question: |
+          To see them in the Database Hub, do I need to move my Azure database resources to Fabric?
+        answer:
+          No. You don't need to relocate your databases. For example, on-premises SQL Server instances connect through Azure Arc and appear in Database Hub while remaining on-premises. Azure databases remain in their subscriptions.
+
+          Database Hub centralizes operational metadata, signals, and actions. It doesn't centralize operational data. [Fabric OneLake](../../onelake/onelake-overview.md) and [Fabric mirroring](../../mirroring/overview.md) can be used for analytics scenarios, but they are optional and separate from management.
+
+  - name: Viewing your database estate
+    questions:
+      - question: |
+          What can I monitor with Database Hub?
+        answer:
+          Observability focuses on estate-level health and pressure signals such as CPU, I/O, connectivity, error conditions, posture, and utilization. These signals roll up into severity states that surface issues before charts.
+
+          The goal is to identify where attention is needed and create a scoped view that people or agents can analyze. Advanced, engine-specific diagnostics remain available through native tools and are accessible through drill-through actions.
+      - question: |
+          How is Database Hub different from third-party monitoring tools?
+        answer:
+          Third-party tools can provide deep capabilities for specific engines or environments and can require separate setup and infrastructure.
+
+          Database Hub is built into the Microsoft platform and spans supported SQL, NoSQL, on-premises, Azure, and Fabric resources. It unifies inventory, scope, actions, and agent-driven insights and connects you to specialized native tools when deeper work is required. It doesn't aim to replace every specialized tool.
+      - question: |
+          How do agents appear in Database Hub?
+        answer:
+          Database Hub supports both human-driven and agent-assisted workflows. Agents can consume Database Hub context, investigate findings, and propose actions, while execution continues to respect existing permissions and approval boundaries.
+      - question: |
+          Is Database Hub different from Copilot?
+        answer:
+          Yes. Copilot is the conversational interface. Agents are the analytical and operational engines behind it.
+
+          Copilot provides grounded explanations and summaries using the same scoped data and agent findings visible in the UI. When Copilot recommends an action, it is backed by an explicit agent capability and an auditable proposal. There is no free-form execution.
+
+  - name: Monitoring Microsoft SQL databases in the Database Hub
+    questions:
+      - question: |
+          Are there any steps necessary to add a Microsoft SQL database to the Database Hub?
+        answer:
+          Yes. In the current preview, Microsoft SQL databases require additional configuration. For instructions, see [Add a Microsoft SQL database to the Database Hub](add-sql.md).
+
+      - question: |
+          Is Database Hub replacing Azure Arc or the Azure portal for databases?
+        answer:
+          No. Database Hub builds on these technologies rather than replacing them. Azure Arc remains the mechanism for connecting on-premises SQL Server instances to Azure. The Azure portal and native tools remain the authoritative surfaces for configuration and execution.
+
+          Database Hub acts as a specialized control plane on top. It provides unified inventory, scoped context, agent-driven insights, and explicit actions, then routes execution to the correct native surface. You can continue to use the Azure portal, SSMS, Azure Data Studio, Visual Studio Code, and Fabric tools as before.
+
+  - name: Azure Cosmos DB in the Database Hub
+    questions:
+      - question: |
+          Does my Azure Cosmos DB account have to run in Fabric?
+        answer:
+          No. Database Hub is accessed through Microsoft Fabric, but it can discover Azure Cosmos DB accounts wherever they run in Azure. Those accounts remain in their existing subscriptions; discovery and estate monitoring do not require moving or mirroring their data into Fabric.
+      - question: |
+          Are there any steps necessary to add an Azure Cosmos DB account to the Database Hub?
+        answer:
+          No. Detection is automatic for Azure Cosmos DB accounts, based on your existing Microsoft Entra ID and Azure RBAC permissions.
+      - question: |
+          Does Estate list accounts or individual databases and containers?
+        answer: |
+          **Estate** lists Azure Cosmos DB accounts, not the databases or containers inside them.
+      - question: |
+          Do I need to onboard to Cosmos DB Fleet Analytics for baseline monitoring?
+        answer:
+          No. Baseline discovery uses Azure resource inventory, and baseline monitoring uses existing Azure Monitor metrics. Fleet Analytics is a separate, opt-in pipeline.
+      - question: |
+          Why can I see an account in Estate but not query its data?
+        answer:
+          For querying data in a database or container, your identity needs a separate Cosmos DB data-plane role assignment (or account keys, where allowed), plus network access to the account. Resource-level (management-plane) access, which is what makes an account visible in **Estate**, doesn't grant this.
+      - question: |
+          Why do two people see different inventories or charts?
+        answer:
+          Their Azure access, signed-in tenant, active filters, selected accounts, or time ranges can differ. Sharing a link or view doesn't grant additional access. Each person sees only the resources their identity is authorized to view.
+      - question: |
+          Does the dashboard show every account in Estate?
+        answer:
+          Check the selected resources and filters. A dashboard value describes that selection, which can be narrower than the inventory in **Estate**.
+      - question: |
+          Why do Database Hub and Azure Monitor show different values?
+        answer:
+          The views can use different resources, time ranges, granularities, aggregations, or refresh times. Compare the same metric for one account over the same interval.
+      - question: |
+          Does "No data" mean an account is healthy or down?
+        answer:
+          Neither. It means no usable value is available for that view. Check the selected interval, account activity, metric applicability by API type, access, and processing delay before drawing a conclusion.
+      - question: |
+          Can I investigate slow queries or hot partitions directly in the Performance dashboard?
+        answer:
+          The Performance dashboard focuses on account and estate-level metrics like RU consumption, throttling, latency, and availability. It doesn't provide query-level diagnostics, partition-key hot-spot analysis, or diagnostic log search. Use the Azure portal, Data Explorer, and Cosmos DB diagnostic logs for those investigations.
+      - question: |
+          Can I scale RU/s directly from Database Hub?
+        answer:
+          No. Use the Azure portal or your existing automation to change throughput for Azure Cosmos DB.
+      - question: |
+          Are Entra authentication, customer-managed keys, and diagnostic logging assessed identically across engines?
+        answer:
+          Do not assume parity. Audit logging isn't assessed for Cosmos DB yet. An unavailable assessment doesn't mean a control is disabled.
+      - question: |
+          Does Database Hub replace Microsoft Defender for Cosmos DB or automatically fix findings?
+        answer:
+          No. Use Database Hub findings as scoped guidance alongside the applicable service and security tools. The Cosmos DB monitoring workflow described here doesn't automatically remediate accounts.
+      - question: |
+          Why does Cosmos DB show two creation steps while SQL shows one?
+        answer:
+          SQL allocates capacity at database creation time in a single step. Cosmos DB separates a lightweight account-creation step (no throughput, no billing) from container creation, where throughput, partition keys, and indexing are configured and billing starts. Database Hub's inline create flow reflects only the first step; the second step provides a link to the Azure portal.
+      - question: |
+          Do normal Azure charges still apply to an account created from Database Hub?
+        answer:
+          Yes. An account created from Database Hub is an Azure resource in the selected subscription. No charges accrue until a database and container with provisioned or autoscale throughput are created.
+
+
+  - name: Azure Database for PostgreSQL flexible server in the Database Hub
+    questions:
+      - question: |
+          Does my Azure Database for PostgreSQL flexible server have to run in Fabric?
+        answer:
+          No. Database Hub is accessed through Microsoft Fabric, but it can discover supported Azure Database for PostgreSQL Flexible Server instances in Azure. Those servers remain in their existing subscriptions; discovery and estate monitoring do not require moving or mirroring their data into Fabric.
+      - question: |
+          Are there any steps necessary to add an Azure Database for PostgreSQL flexible server to the Database Hub?
+        answer:
+          No. Detection is automatic for Azure Database for PostgreSQL flexible server instances, based on your existing Microsoft Entra ID and Azure RBAC permissions.
+      - question: |
+          Does Estate list servers or individual PostgreSQL databases?
+        answer:
+          The PostgreSQL inventory entity is a Flexible Server instance. A server can host multiple databases. Do not interpret a count of servers as a count of application databases.
+      - question: |
+          Do I need to register each existing server or enable Query Store?
+        answer:
+          Baseline discovery uses Azure resource inventory, and baseline monitoring uses existing Azure Monitor metrics. You do not need Query Store, the SQL monitoring extended property, or an Arc installation. Tenant access and Azure resource/metric permissions still apply.
+      - question: |
+          Why can I see a server but not connect to a database?
+        answer:
+          Azure resource access and PostgreSQL database access are separate. To connect, your client needs network reachability and an authorized database identity. Check the flexible server's authentication and network configuration without assuming that **Estate** visibility grants a connection.
+      - question: |
+          Why do two people see different inventories or charts?
+        answer:
+          Their Azure access, signed-in tenant, active filters, selected servers, or time ranges can differ. Compare these settings before assuming that resources or telemetry are missing. A shared link doesn't grant additional access.
+      - question: |
+          Does the dashboard show every server in my estate?
+        answer:
+          Check the selected resources and filters. A dashboard value describes that selection, which can be narrower than the inventory in Estate. Also check for unavailable or inapplicable metrics before interpreting the value as a complete estate assessment.
+      - question: |
+          Why do Database Hub and Azure Monitor show different values?
+        answer:
+          The views can use different resources, time ranges, granularities, aggregations, or refresh times. Compare the same metric for one server over the same interval first. An estate summary isn't directly comparable to a single-server chart.
+      - question: |
+          Does "No data" mean a server is healthy or down?
+        answer:
+          Neither. It means no usable value is available for that view. Check the selected interval, server state, metric applicability, access, and processing delay before drawing a conclusion.
+      - question: |
+          Can I investigate slow queries directly in the Performance dashboard?
+        answer:
+          Currently, Database Hub doesn't provide Query Store-backed top queries, query plans, wait-event analysis, or log search. Use the Azure portal and PostgreSQL tools for those investigations.
+      - question: |
+          Can I use SQL monitoring templates or Activator with PostgreSQL metrics?
+        answer:
+          The SQL-specific monitoring templates and SQL ADX proxy are not part of the PostgreSQL Azure Monitor path. Activator alerting over these PostgreSQL metrics isn't currently supported. This limitation doesn't remove the service's separate Azure Monitor alerting options.
+      - question: |
+          Are Entra authentication, CMK, and auditing assessed identically across engines?
+        answer:
+          Do not assume parity. PostgreSQL supports these service features, but Database Hub assessment coverage is engine-specific. Review the applicable assessment and current server configuration. An unavailable CMK assessment doesn't mean encryption is disabled.
+      - question: |
+          Does Database Hub replace Microsoft Defender or automatically fix findings?
+        answer:
+          No. Use Database Hub findings as scoped guidance alongside the applicable service and security tools. Verify evidence and apply authorized changes through the appropriate service. The PostgreSQL monitoring workflow described here doesn't automatically remediate servers.
+      - question: |
+          Do normal Azure charges still apply to a server created from Database Hub?
+        answer:
+          Yes. A Flexible Server created from Database Hub is an Azure resource in the selected subscription. Review its configuration and cost before deployment.
+
+additionalContent: |
+
+  ## Related content
+
+  - [What is the Database Hub?](overview.md)

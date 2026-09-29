@@ -5,7 +5,7 @@ ms.reviewer: eloldag # Product team ms alias(es)
 # author: Do not use - assigned by folder in docfx file
 # ms.author: Do not use - assigned by folder in docfx file
 ms.topic: how-to
-ms.date: 05/20/2026
+ms.date: 09/21/2026
 ai-usage: ai-assisted
 #customer intent: As a capacity admin, I want to understand how OneLake usage is billed and reported, including consumption of storage and transactions, so that I can effectively manage and optimize my costs and resources.
 ---
@@ -103,6 +103,22 @@ OneLake security consumes capacity for row level security (RLS) transactions bas
 | **Operation** | **Description** | **Operation Unit of Measure** | **Capacity Units** |
 | --- | --- | --- | --- |
 | **OneLake security RLS** | OneLake security RLS | Million rows in the table | 1 CU seconds |
+
+## Table read API
+
+Calls to the table read API are billed to the calling user. You pay for the `POST /read` operation. You don't pay separately for retrieving the streams with `GET /readStream/{streamId}`.
+
+The API measures the rows it scans, not just the rows it returns. Charges are rounded up to the nearest million rows.
+
+| **Operation** | **Unit of measure** | **Consumption** |
+| --- | --- | --- |
+| `/read` | 1 million rows scanned | 8 CU seconds |
+
+When a table uses RLS, the number of rows scanned can be larger than the number of rows returned. If RLS returns no rows from data that is already materialized, the API still charges the base rate of 0.8 CU seconds.
+
+To return RLS-filtered results, the API materializes the data in a hidden OneLake location. You're charged for the volume of materialized data that the API generates and stores. The data is retained for seven days, and reading it doesn't extend its retention period.
+
+For more information about the workflow, see [Read OneLake table data](./table-apis/read-table-data-rest-api.md).
 
 ## OneLake diagnostics
 

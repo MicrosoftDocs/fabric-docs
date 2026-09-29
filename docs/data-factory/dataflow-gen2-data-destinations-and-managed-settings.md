@@ -3,7 +3,7 @@ title: Dataflow Gen2 data destinations and managed settings
 description: Describes how to use Dataflow Gen2 to save your data in specific destinations, along with instructions on how to use managed settings.
 ms.reviewer: jeluitwi
 ms.topic: how-to
-ms.date: 08/25/2026
+ms.date: 09/03/2026
 ms.custom: dataflows
 ai-usage: ai-assisted
 ---
@@ -63,10 +63,7 @@ When you select **Delimited text** as the file format, configure these settings:
 
 :::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/file-destinations-settings.png" alt-text="Screenshot of the File destination settings window with the delimited text format selected.":::
 
-### Excel format (Preview)
-
-> [!NOTE]
-> Excel format for file-based destinations is currently in preview.
+### Excel format
 
 When you select **Excel** as the file format, you have three format options: **Single sheet**, **Multi sheet**, and **Advanced**.
 
@@ -236,12 +233,15 @@ To enable staging, right-click on the query and enable staging by selecting the 
 
 :::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/disable-staging.png" alt-text="Screenshot of the query drop-down menu with Enable staging emphasized.":::
 
-#### Snowflake destination preview limitations
+#### Snowflake destination limitations
 
 Snowflake as a data destination has the following known limitations:
 
 * **Dynamic schema is not supported.** If you change the columns in your source query (add, rename, or remove columns), you need to manually reconfigure the destination mapping. Other destinations like Fabric Lakehouse support dynamic schema, but Snowflake doesn't yet.
 * **Default destination only works for new tables.** When using the default destination experience with Snowflake, it creates a new table on the first refresh. However, if you later change the schema of your dataflow, the destination schema isn't updated automatically.
+
+> [!NOTE]
+> To use Snowflake as a data destination through an on-premises data gateway, [install the latest version of the gateway](/data-integration/gateway/service-gateway-install). Older gateway versions don't include the connector changes required for Snowflake destinations.
 
 #### Loading data into the Warehouse
 
@@ -277,9 +277,6 @@ You can set this option to **False** in edge cases where:
 When the option is set to **False**, the SQL analytics endpoint metadata isn't refreshed by the dataflow, and downstream SQL analytics endpoint consumers may see stale data until the next sync (manual or scheduled) occurs.
 
 ### Enable V-Order compression on a Lakehouse destination
-
-> [!NOTE]
-> This advanced option is currently in preview.
 
 When a Dataflow Gen2 refresh writes data to a Fabric Lakehouse table destination, you can control whether the data is written using V-Order compression. V-Order is a write-time optimization for the Parquet file format that improves read performance for downstream Fabric engines such as the SQL analytics endpoint, Direct Lake semantic models, and Spark, at the cost of additional CPU during the write. For background and cross-engine guidance, see [Delta Lake table optimization and V-Order](../data-engineering/delta-optimization-and-v-order.md) and [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md).
 

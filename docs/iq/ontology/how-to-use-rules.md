@@ -1,79 +1,190 @@
 ---
-title: Use Rules (with Fabric Activator)
-description: Learn about using Fabric Activator rules in ontology (preview).
-ms.date: 04/24/2026
+title: Define Business Rules (Preview)
+description: Learn about using business rules in ontology (preview).
+ms.date: 09/15/2026
 ms.topic: how-to
 ---
 
-# Rules in ontology (preview) (with Fabric Activator)
+# Create and manage business rules in ontology (preview)
 
-The *rules* feature of ontology (preview) lets you automate and manage event-driven alerts directly within your entity types. With the integrated capabilities of [Fabric Activator](../../real-time-intelligence/data-activator/activator-introduction.md), you can achieve real-time monitoring and response for your business entities. This feature allows you to define alerts that monitor properties across every instance of an entity type, to ensure comprehensive, ongoing oversight.
+In ontology (preview), business rules let you define the rules and guardrails that your operations use day to day. Write rules in natural language and link them to entity types, properties, and relationship types so consumers can discover the same rules. Consumers of ontology, like AI agents, can use these rules to ground their responses.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
-Rules transform ontologies from static information models to operationalized ones. The ontology becomes capable of automatically initiating business processes through alerts and automated actions, all within a seamless and context-aware environment. This feature helps you unlock automation capabilities without needing to switch between tools or write custom code, to streamline workflows and enhance efficiency.
-
->[!NOTE]
-> Rules in ontology (preview) rely on Fabric Activator and are subject to Fabric Activator costs. For more information about Fabric Activator pricing, see [Understand Activator capacity consumption, usage reporting, and billing](../../real-time-intelligence/data-activator/activator-capacity-usage.md).
-
+This article shows how to create, browse, edit, and delete business rules in the new ontology experience.
 
 ## Prerequisites
 
-Before defining rules, make sure you have the following prerequisites:
+Before creating business rules, ensure you have:
+* Write permission on the ontology item.
+* Entity types, properties, or relationship types in the ontology if you want to link the rule to ontology concepts.
 
-* A [Fabric workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity).
-* **Ontology item (preview)** enabled on your tenant.
-* An ontology (preview) item with [data binding](how-to-bind-data.md) completed for at least one time series property.
+## Access business rules
 
-## Key concepts
+1. Open an ontology item in Fabric.
+1. In the **Explorer**, expand **Overview** and select **Rules**.
 
-Rules use the following ontology (preview) concepts. For definitions of these terms, see the [Ontology (preview) glossary](resources-glossary.md).
+    :::image type="content" source="media/how-to-use-rules/open-rules.png" alt-text="Screenshot of opening the rules page." lightbox="media/how-to-use-rules/open-rules.png":::
 
-* *Entity type*
-* *Rule*
-* *[Fabric Activator](../../real-time-intelligence/data-activator/activator-introduction.md)*
+### View created rules
 
-## Create a rule
+After you create rules, the **Business rules** page lists the rules in the ontology and the entity types linked to each rule.
 
-1. Open the rules configuration from the Home configuration canvas or from the entity type details.
+:::image type="content" source="media/how-to-use-rules/rules-list.png" alt-text="Screenshot of the Business rules page, showing saved rules and linked entity types." lightbox="media/how-to-use-rules/rules-list.png":::
 
-    To open rules from the configuration canvas, select **...** next to an entity type name to open its options menu. Hover over **Manage rules**, then select **Add rule**.
+To browse and find rules:
 
-    :::image type="content" source="media/how-to-use-rules/add-rules-canvas.png" alt-text="Screenshot of Manage rules from the Home configuration canvas." lightbox="media/how-to-use-rules/add-rules-canvas.png":::
+* Enter text in **Search rules by name** to find a rule by name.
+* Select **Entity type** to filter the list. You can select more than one entity type.
+* Select **Clear all** in the entity type menu to remove entity type filters.
+* Select a rule name or row to open the rule details page.
 
-    To open rules from the entity type details view (any tab), select **Manage rules > Add rule**.
+If a rule links only to properties or relationships, open the rule details page to view all linked concepts.
 
-    :::image type="content" source="media/how-to-use-rules/add-rules-preview.png" alt-text="Screenshot of View rules from the entity type details Configuration tab." lightbox="media/how-to-use-rules/add-rules-preview.png":::
+## Create a business rule
 
-1. The **Add rule** panel opens and displays the rule configuration options.
+1. On the **Business rules** page, the **+ Create rule** button appears if there are no rules yet, and the **New rule** button appears if there are already rules created. Select the button that's visible in your scenario.
+1. On the rule details page, enter a **Rule name** and a **Rule definition** that describes what must, must not, or should be true.
 
-    :::image type="content" source="media/how-to-use-rules/add-rule.png" alt-text="Screenshot of Add rule panel." lightbox="media/how-to-use-rules/add-rule.png":::
+    For example: *Every refrigeration unit must receive a safety inspection at least once every 90 days.*
 
-1. Configure the rule, including **Details**, **Monitor**, **Conditions**, **Actions**, and **Save location**. 
+1. Optionally, add [linked ontology concepts](#link-ontology-concepts).
+1. Optionally, add a [description and additional metadata](#add-rule-metadata).
+1. Select **Save**.
 
-    While configuring, keep the following notes in mind:
+    :::image type="content" source="media/how-to-use-rules/completed-rule.png" alt-text="Screenshot of a completed business rule with a rule definition, linked entity type, description, and metadata." lightbox="media/how-to-use-rules/completed-rule.png":::
 
-    * Ontology-authored rules support temporal conditions (for example, thresholds exceeded over a time window) and aggregations via the Fabric Activator condition configuration, evaluated per entity instance. For more information about using these fields, see [Create a rule in Fabric Activator](../../real-time-intelligence/data-activator/activator-create-activators.md).
+The **Rule name** and **Rule definition** fields are required. Linked ontology concepts, description, and additional metadata are optional.
 
-    * By default, ontology rules are saved to a new Fabric Activator item. If you want to choose an existing Fabric Activator item instead, select it manually from the **Save location** step. We recommend saving all rules for an ontology to the same workspace and Fabric Activator item.
+### Write a clear rule definition
 
-        :::image type="content" source="media/how-to-use-rules/save-location.png" alt-text="Screenshot of changing the save location.":::
+A useful rule definition expresses how your business operates.
 
-1. When you're finished configuring, select **Create**.
+| Pattern | Example |
+| --- | --- |
+| Must be true | Every refrigeration unit must receive a safety inspection at least once every 90 days. |
+| Must not be true | A shipment must not depart when its cold-chain temperature is above the approved threshold. |
+| Should normally be true | Orders over $50,000 should have finance approval before release. |
 
-1. The rule is now visible in the **Rules** panel. To start or stop the rule, toggle the switch next to the rule name.
+Suggestions:
 
-    :::image type="content" source="media/how-to-use-rules/completed-rule.png" alt-text="Screenshot of the option to disable a rule." lightbox="media/how-to-use-rules/completed-rule.png":::
+* Use the same names and business language as your ontology.
+* Link each entity type, property, or relationship type that the rule explicitly depends on.
+* Put rationale and supporting context in the description instead of combining it with the rule definition.
+* Use additional metadata for consistent structured context such as category, policy name, or documents.
 
-## View and edit a rule
+### Link ontology concepts
 
-You can reopen the **Rules** panel at any time by selecting **View rules** from any of the **Manage rules** dialogs described in [Create a rule](#create-a-rule).
+Linked concepts make rules easier for authorized agents and applications to discover and interpret.
 
-In the **Rules** pane, you can: 
-* Change which Fabric Activator item is used to store ontology rules, by selecting **Edit** next to the Activator name.
+1. On the rule details page, under **Linked ontology concepts**, select **Add concept**.
+1. In the **Add concepts** dialog, use the following tabs to browse or search the ontology:
 
-    :::image type="content" source="media/how-to-use-rules/edit-activator-overall.png" alt-text="Screenshot of editing the overall activator instance used for ontology rules.":::
+    * **Entity types**
+    * **Properties**
+    * **Relationships**
 
-* Manage the rule by selecting **...** next to the rule name to open its options menu. From here, you can **Edit** the rule, **Delete** the rule, or **Open in Activator**. Opening a rule in Fabric Activator lets you make more edits to the rule and analyze its conditions and actions. For more information, see [Create a rule in Fabric Activator](../../real-time-intelligence/data-activator/activator-create-activators.md).
+1. Select one or more concepts.
+1. Select **Save** to add the selected concepts to the rule.
 
-    :::image type="content" source="media/how-to-use-rules/rule-options.png" alt-text="Screenshot of the options for a rule.":::
+    :::image type="content" source="media/how-to-use-rules/add-rule-concepts.png" alt-text="Screenshot of the Add concepts dialog with the entity type list and concept picker tabs." lightbox="media/how-to-use-rules/add-rule-concepts.png":::
+
+To remove a linked concept, deselect the concept and then save the rule.
+
+### Add rule metadata
+
+The **Rule metadata** section provides optional context for reviewers, agents, and other consumers.
+
+1. On the rule details page, find **Rule metadata** and select **Edit**.
+1. Enter an optional **Description**.
+1. To add structured context, select **Add** under **Additional metadata**.
+1. Enter a key and value, and then select **Add**.
+1. Repeat the previous step for any additional key-value pairs.
+1. Select **Save** in the **Rule metadata** dialog.
+1. Select **Save** on the rule details page.
+
+    :::image type="content" source="media/how-to-use-rules/rule-metadata.png" alt-text="Screenshot of the Rule metadata dialog with a description and an additional metadata key-value pair." lightbox="media/how-to-use-rules/rule-metadata.png":::
+
+Examples of useful additional metadata include:
+
+* `category: maintenance`
+* `region: EMEA`
+* `policyFamily: food-safety`
+* `owner: facilities-operations`
+
+## Edit or delete a business rule
+
+To edit a business rule:
+1. On the **Business rules** page, select the rule you want to edit.
+1. Update the rule name or rule definition.
+1. Add or remove linked ontology concepts as needed.
+1. Select **Edit** in the **Rule metadata** section to update the description or additional metadata.
+1. Select **Save**.
+
+Removing the last linked concept displays the same non-blocking warning that appears when you create a rule without links.
+
+To delete a business rule:
+
+1. On the **Business rules** page, find the rule you want to delete.
+1. Select **More actions (...)** and then select **Delete rule**.
+1. Review the confirmation dialog.
+1. Select **Delete**.
+
+    :::image type="content" source="media/how-to-use-rules/delete-rule-confirmation.png" alt-text="Screenshot of the Delete rule confirmation dialog." lightbox="media/how-to-use-rules/delete-rule-confirmation.png":::
+
+Deleting a rule removes it from every linked entity type.
+
+>[!IMPORTANT]
+> Deleting a business rule can't be undone.
+
+## Retrieve business rules with ontology MCP
+
+Authorized agents and applications can use the ontology MCP `list_ontology_rules` tool to retrieve the defined business rules. The tool returns each rule's name, natural-language definition, linked entity types, properties and relationships, description, and additional metadata.
+
+You can also use `ask_ontology` to ask a question about the ontology in natural language, and the MCP server will consider rules in its response.
+
+The tool is read-only, leaving it up to you to interpret and operationalize the rules because ontology doesn't execute on them.
+
+## Migrate Activator rules from ontology old experience
+
+The [ontology old experience](old-experience/overview.md) supported alerting of rules with [Fabric Activator](../../real-time-intelligence/data-activator/activator-introduction.md). The new ontology experience doesn't currently provide direct integration with Activator.
+
+If you're migrating an old experience ontology to the new experience, follow these steps to recreate your rules.
+
+1. Identify the old experience ontology item and its Activator integrations.
+1. [Migrate](overview.md#migrate-from-old-experience) the old experience item to the new experience.
+1. Recreate the relevant business logic as ontology business rules expressed in natural language in the new experience item.
+1. Configure Activator separately for the data sources and services that are related to your rules logic (outside of the ontology new experience). For detailed instructions, see [Tutorial: Create and activate a Fabric Activator rule](../..//real-time-intelligence/data-activator/activator-tutorial.md).
+
+> [!NOTE]
+> The ontology new experience doesn't replace or migrate existing Activator workflows.
+
+### Share your feedback
+
+We'd like to hear how you want to use Activator with the ontology new experience and rules in ontology. Your feedback can help us understand which integration scenarios are most important.
+
+Submit feedback through [Fabric feedback channels](../../fundamentals/feedback.md).
+
+## Limitations and considerations
+
+* A business rule is a natural-language definition. Ontology doesn't run the rule against data or execute actions.
+* Changes to the ontology can affect business rules.
+    * Renaming a linked entity type, property, or relationship type updates the structured reference in the rule.
+    * Deleting a linked concept removes it from the rule.
+* The ontology new experience doesn't provide Activator integration, and migrating to the new experience doesn't replace or migrate existing Activator workflows.
+
+### Troubleshooting
+
+| Issue | Resolution |
+| --- | --- |
+| **Create** or **Save** isn't available | Enter values in the required **Rule name** and **Rule definition** fields. |
+| A rule name is rejected | Choose a unique name. |
+| A concept isn't available in the picker | Confirm that the entity type, property, or relationship type exists in the ontology. |
+| A metadata key is rejected | Use a key that isn't already present in the rule. |
+| A saved rule isn't visible | Clear the rule-name search and any entity type filters. |
+
+## Related content
+
+* [Create entity types](how-to-create-entity-types.md)
+* [Create relationship types](how-to-create-relationship-types.md)
+* [Add metadata](how-to-add-metadata.md)

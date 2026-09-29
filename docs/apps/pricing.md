@@ -1,15 +1,15 @@
 ---
 title: Pricing and capacity usage for Fabric Apps
-description: Understand how Fabric Apps consumes Microsoft Fabric capacity units (CUs), including SQL database, GraphQL API, and OneLake operations.
+description: Understand how Fabric Apps consumes Microsoft Fabric capacity units (CUs), including SQL database, GraphQL API, User Data Functions, and OneLake operations.
 ms.topic: concept-article
 ms.reviewer: mksuni
-ms.date: 06/02/2026
+ms.date: 09/15/2026
 ai-usage: ai-assisted
 ---
 
 # Pricing and capacity usage for Fabric Apps
 
-Understand how a Fabric app consumes Fabric capacity and which platform features don't add separate charges. This article explains where capacity units (CUs) are used across the SQL database in Fabric, GraphQL API, and OneLake operations.
+Learn how a Fabric app uses Fabric capacity and which platform features don't add separate charges. This article explains where capacity units (CUs) are used across the SQL database in Fabric, GraphQL API, User Data Functions, and OneLake operations.
 
 ## How billing works
 
@@ -20,10 +20,11 @@ CU consumption is tracked in the [Microsoft Fabric Capacity Metrics app](/fabric
 
 ## What consumes capacity
 
-A Fabric app uses three Fabric services that consume CUs:
+A Fabric app uses four Fabric services that consume CUs:
 
 - [SQL Database](#sql-database)
 - [GraphQL API](#graphql-api)
+- [Fabric User Data Functions](#fabric-user-data-functions)
 - [OneLake storage (static content)](#onelake-storage-static-content)
 
 ### SQL Database
@@ -48,9 +49,25 @@ The consumption rate is ten CUs per hour of request and response processing time
 
 For more details, see [Fabric API for GraphQL](/fabric/enterprise/fabric-operations#fabric-api-for-graphql) in the Fabric operations documentation.
 
+### Fabric User Data Functions
+
+You pay for [Fabric User Data Functions](https://aka.ms/ms-fabric-functions-docs) based on function execution, metadata storage in OneLake, and related OneLake operations.
+
+
+
+| Operation | Description | Item | Azure billing meter | Type |
+| --- | --- | --- | --- | --- |
+| **User Data Functions Execution** | Compute for a function run requested by the Fabric portal, another Fabric item, or an external application. | User Data Functions | User Data Function Execution (CU/s) | Interactive |
+| **User Data Functions Portal Test** | Compute for testing a function in develop mode. Test sessions have a minimum duration of 15 minutes. | User Data Functions | User Data Function Execution (CU/s) | Interactive |
+| **User Data Functions Static Storage** | Storage of compressed internal function metadata in a service-managed OneLake account. This charge applies even if you don't use the item. | OneLake Storage | OneLake Storage | Background |
+| **User Data Functions Static Storage Read** | Reads internal function metadata when a function runs after a period of inactivity. | OneLake Read Operations | OneLake Read Operations | Background |
+| **User Data Functions Static Storage Write** | Writes or updates internal function metadata when the User Data Functions item is published. | OneLake Write Operations | OneLake Write Operations | Background |
+| **User Data Functions Static Storage Iterative Read** | Reads internal function metadata when User Data Functions are listed. | OneLake Iterative Read Operations | OneLake Iterative Read Operations | Background |
+| **User Data Functions Static Storage Other Operations** | Other operations on function metadata in a service-managed OneLake account. | OneLake Other Operations | OneLake Other Operations | Background |
+
 ### OneLake storage (static content)
 
-When static hosting is enabled, your built frontend assets (HTML, CSS, JS) are stored in OneLake and served from a public URL.
+When static hosting is enabled, your built frontend assets (HTML, CSS, JS) are stored in OneLake and served from a Fabric Apps hosting URL. The storage and read operations apply whether you configure protected or public asset access.
 OneLake storage and the read/write operations to serve content consume CUs.
 
 | Operation | What it covers | Billing meter | Type |

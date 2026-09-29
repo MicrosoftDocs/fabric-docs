@@ -272,8 +272,12 @@ items:
         href: ./materialized-lake-views/data-quality.md
     - name: Manage
       items:
-      - name: Optimal refresh for materialized lake views
-        href: ./materialized-lake-views/refresh-materialized-lake-view.md
+      - name: Optimal refresh
+        items:
+        - name: Optimal refresh for materialized lake views
+          href: ./materialized-lake-views/refresh-materialized-lake-view.md
+        - name: Enable optimal refresh for deletes and updates
+          href: ./materialized-lake-views/optimal-refresh-handling-deletes-updates.md
       - name: View lineage
         href: ./materialized-lake-views/view-lineage.md
       - name: Schedule materialized lake views
@@ -830,6 +834,16 @@ items:
     href: api-graphql-limits.md
   - name: Frequently asked questions
     href: graphql-faq.yml
+- name: Data engineering agent (Project Osmos)
+  items:
+  - name: Overview
+    href: data-engineering-agent-overview.md
+  - name: Get started
+    href: data-engineering-agent-get-started.md
+  - name: Best practices
+    href: data-engineering-agent-best-practices.md
+  - name: Consumption
+    href: data-engineering-agent-consumption.md
 - name: Partner integration
   items:
    - name: Esri - ArcGIS GeoAnalytics

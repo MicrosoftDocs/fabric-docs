@@ -3,7 +3,7 @@ title: Create a map
 description: Learn how to create a map in Fabric Maps to visualize spatial data in Real-Time Intelligence.
 ms.reviewer: smunk, sipa
 ms.topic: how-to
-ms.date: 07/31/2026
+ms.date: 09/13/2026
 ai-usage: ai-assisted
 ms.search.form: Create a map
 ---
@@ -14,7 +14,7 @@ Fabric Maps lets you visualize spatial data—static or real time—directly in 
 
 ## Prerequisites
 
-* A [workspace](../../fundamentals/workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity). For more information on creating a workspace, see [Create a workspace](../../fundamentals/create-workspaces.md)
+* A [workspace](../../fundamentals/workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity). For more information on creating a workspace, see [Create a workspace](../../fundamentals/create-workspaces.md).
 * Permission to create items in the workspace.
 
 ## Enable Maps in tenant settings
@@ -22,10 +22,10 @@ Fabric Maps lets you visualize spatial data—static or real time—directly in 
 > [!IMPORTANT]
 > Only the tenant admin is authorized to perform this step.
 
-1. Go to the [admin portal](../../admin/admin-center.md).
-1. Select the **Tenant settings** tab in the [admin portal](../../admin/tenant-settings-index.md) and search for *Map*. For more information, see [About tenant settings](../../admin/about-tenant-settings.md).
+1. Go to **OneLake catalog** > **Govern** > **Configurations** > [**Tenant settings**](../../admin/tenant-settings-index.md).
+1. Search for *Map*. For more information, see [About tenant settings](../../admin/about-tenant-settings.md).
 1. If your Fabric capacity is located outside the EU or US regions, you must enable the Azure Maps services tenant settings. Begin by searching for **Azure Maps services** in the tenant settings, then toggle the option **Data sent to Azure Maps can be processed outside your capacity's geography region, compliance boundary, or national cloud instance** to **Enabled**.
-1. Select **Apply**
+1. Select **Apply**.
 
 > [!NOTE]
 > Even if these tenant settings are turned off, you can still create and open Map items. In this limited experience, the map background is blank because Azure Maps basemaps aren't available, but the data layers you add continue to display. Ask your tenant admin to turn the settings back on to restore the full Azure Maps experience.
@@ -51,7 +51,7 @@ To create a new map:
 
 ## Visualize spatial data
 
-After creating a map, you can visualize spatial data by adding layers from supported data sources. Map currently supports connections to Lakehouses and Eventhouses. For more information on establishing these connections to create map layers in Fabric Maps, see [Fabric Maps layers](about-layers.md).
+After creating a map, you can add layers from lakehouses, eventhouses and KQL databases, Ontology items, external feature services, and external WMS or WMTS imagery services. For information about the available layer categories and data sources, see [Fabric Maps layers](about-layers.md).
 
 ## Next steps
 

@@ -1,7 +1,7 @@
 ---
 title: Activity overview
 description: Learn about activities.
-ms.reviewer: n0elleli
+ms.reviewer: noelleli
 ms.topic: overview
 ms.date: 08/10/2026
 ms.custom: pipelines 
@@ -66,7 +66,9 @@ Control activity | Description
 [Azure Batch activity](azure-batch-activity.md) | Runs an Azure Batch script.
 [Azure Databricks activity](azure-databricks-activity.md) | Runs an Azure Databricks job (Notebook, Jar, Python).
 [Azure Machine Learning activity](azure-machine-learning-activity.md) | Runs an Azure Machine Learning job.
+[Business action activity](business-actions-activity.md) | Runs an enterprise application action through a Logic Apps connector.
 [Deactivate activity](deactivate-activity.md) | Deactivates another activity.
+[Fabric Actions activity](fabric-actions-activity.md) | Runs a Fabric REST API operation.
 [Fail](fail-activity.md) | Cause pipeline execution to fail with a customized error message and error code.
 [Filter](filter-activity.md) | Apply a filter expression to an input array.
 [ForEach](foreach-activity.md) | ForEach Activity defines a repeating control flow in your pipeline. This activity is used to iterate over a collection and executes specified activities in a loop. The loop implementation of this activity is similar to the Foreach looping structure in programming languages.

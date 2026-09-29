@@ -107,9 +107,7 @@ You can download files directly from the Lakehouse explorer, from both table fil
 
 To enable file downloads:
 
-1. In the Fabric portal, select the **Settings** gear icon (**&#9881;**) at the top of the page.
-1. In the side pane, under **Governance and administration**, select **Admin portal**.
-1. Select **Tenant settings**.
+1. In the Fabric portal, go to **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**.
 1. Under **OneLake settings**, turn on "Users can access data stored in OneLake with apps external to Fabric."
 
 :::image type="content" source="media\lakehouse-overview\lakehouse-download-settings.png" alt-text="Screenshot showing the download setting in tenant settings." lightbox="media\lakehouse-overview\lakehouse-download-settings.png":::

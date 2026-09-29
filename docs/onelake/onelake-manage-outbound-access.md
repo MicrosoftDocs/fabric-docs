@@ -9,7 +9,7 @@ ms.date: 01/20/2026
 #customer intent: As a data admin, I want to learn how to protect my data by limiting outbound requests. As a data engineer, I want to learn how to work with my data, even when outbound access protection is turned on. 
 ---
 
-# Limit outbound requests with outbound access protection (preview)
+# Limit outbound requests with outbound access protection
 
 Outbound access protection protects data by limiting OneLake's outbound requests made through shortcuts and copy operations. 
 
@@ -45,7 +45,7 @@ Outbound access protection doesn't block copy operations that move data within a
 
 ## Copying data between Azure Storage and OneLake
 
-When you copy data between Azure Storage and OneLake, the direction of the outbound requests **is reversed**. The destination account makes an **outbound call to the source account**. This behavior applies to copy operations made directly with Azure Storage [Copy Blob from URL](/rest/api/storageservices/copy-blob-from-url) and [Put Block from URL](/rest/api/storageservices/put-block-from-url) APIs. It also applies to managed copy experiences with [AzCopy](/azure/storage/common/storage-use-azcopy-v10) and Azure Storage Explorer. Outbound access protection restricts this outbound call from destination to source. **However, this means outbound access protection does not restrict your workspace from being the source of a copy operation, as no outbound call is made from the source workspace.**
+When you copy data between Azure Storage and OneLake, the direction of the outbound requests **is reversed**. The destination account makes an **outbound call to the source account**. This behavior applies to copy operations made directly by using Azure Storage [Copy Blob from URL](/rest/api/storageservices/copy-blob-from-url) and [Put Block from URL](/rest/api/storageservices/put-block-from-url) APIs. It also applies to managed copy experiences by using [AzCopy](/azure/storage/common/storage-use-azcopy-v10) and Azure Storage Explorer. Outbound access protection restricts this outbound call from destination to source. **However, this behavior means outbound access protection doesn't restrict your workspace from being the source of a copy operation, as no outbound call is made from the source workspace.**  To restrict these types of operations, see [Protect inbound traffic](../security/protect-inbound-traffic.md).
 
 For example, the following AzCopy sample moves data from the source Azure Storage account "source" to the destination lakehouse in OneLake. If Workspace A has outbound protection turned on, then the outbound call from Workspace A to the external Azure Storage account is blocked, and the data isn't loaded, unless the external Azure Storage account is permitted via the allow list.
 
@@ -54,7 +54,7 @@ Syntax
 azcopy copy "https://source.blob.core.windows.net/myContainer/sales.csv" "https://onelake.dfs.fabric.microsoft.com/WorkspaceA/LakehouseA.Lakehouse/Files/sales.csv" --trusted-microsoft-suffixes "fabric.microsoft.com"
 ```
 
-However, in the following scenario, Workspace A is now the source of the copy operation, with the external Azure Storage account as the destination. In this scenario, **outbound access protection does not block this call**, as only inbound calls are made to Workspace A. To restrict these types of operations, see [Protect inbound traffic](../security/protect-inbound-traffic.md).
+However, in the following scenario, Workspace A is now the source of the copy operation, with the external Azure Storage account as the destination. In this scenario, **outbound access protection doesn't block this call**, as only inbound calls are made to Workspace A. You can restrict this inbound call to OneLake by using [Fabric inbound access protection. ](../security/security-private-links-overview.md)
 
 Syntax
 ```azcopy
@@ -63,9 +63,9 @@ azcopy copy "https://onelake.dfs.fabric.microsoft.com/WorkspaceA/LakehouseA.Lake
 
 ## Allowing requests to Fabric workspaces.
 
-You can permit your Fabric workspace to make outbound requests to a different Fabric workspace by either [creating a data connection rule](../security/workspace-outbound-access-protection-allow-list-connector.md) via the Lakehouse connector, or creating a [managed private endpoint](../security/security-managed-private-endpoints-overview.md). When you allow list the target workspace or have an approved managed private endpoint, outbound requests are permitted from the source workspace to the target workspace even when outbound access is restricted.
+You can permit your Fabric workspace to make outbound requests to a different Fabric workspace by [creating a data connection rule](../security/workspace-outbound-access-protection-allow-list-connector.md) through the OneLake File Connector. When you add the target workspace to the allow list, you permit outbound requests from the source workspace to the target workspace even when outbound access is restricted.
 
-For example, creating a data connection rule from Workspace A to Workspace B lets users read data in Workspace B through a shortcut, or copy data from Workspace B to Workspace A using AzCopy.
+For example, adding Workspace B to Workspace A's connector allow list lets users in Workspace A read data in Workspace B through a shortcut or copy data from Workspace A to Workspace B by using AzCopy.
 
 ## Allowing requests to external locations
 

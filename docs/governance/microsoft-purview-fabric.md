@@ -1,53 +1,105 @@
 ---
-title: Use Microsoft Purview to Govern Microsoft Fabric
-description: This article describes how Microsoft Purview and Microsoft Fabric work together to deliver a complete, governed data flow.
+title: Use Microsoft Purview with Microsoft Fabric
+description: Learn how Microsoft Purview helps protect Fabric data and supports audit, risk, and compliance scenarios.
 ms.reviewer: viseshag
 author: msmimart
 ms.author: mimart
 ms.topic: overview
-ms.date: 02/09/2026
+ms.date: 08/26/2026
+ai-usage: ai-assisted
 ---
 
-# Use Microsoft Purview to govern Microsoft Fabric
+# Use Microsoft Purview to protect Microsoft Fabric
 
-Microsoft Purview and Microsoft Fabric are part of the Microsoft Intelligent data platform that allows you to store, analyze, and govern your data. With Microsoft Fabric and Microsoft Purview together you're able to govern your entire estate and lineage of data. From data source down to the Power BI report, Microsoft Purview and Fabric work together seamlessly so you can store, analyze, and govern your data without piecing together services from multiple vendors.
+Microsoft Fabric provides built-in governance capabilities for discovering, governing, and managing data. Microsoft Purview works with Fabric to protect sensitive data and support audit, risk, and compliance scenarios. This article explains when to use each experience.
 
-## What is Microsoft Purview?
+## Governance in Microsoft Fabric
 
-Microsoft Purview is a family of data governance, risk, and compliance solutions that can help your organization govern, protect, and manage your entire data estate. Microsoft Purview solutions provide integrated coverage and help address the recent increases in remote user connectivity, the fragmentation of data across organizations, and the blurring of traditional IT management roles.
+Microsoft Fabric includes built-in governance capabilities that help organizations discover, govern, manage, and protect data.
 
-Microsoft Purview includes [risk and compliance solutions](/microsoft-365/compliance/purview-compliance) and [unified data governance solutions](/azure/purview/overview) that support both Microsoft 365, on-premises, multicloud, and software-as-a-service (SaaS) data services. Microsoft Purview can help you:
+The OneLake catalog is the primary Fabric experience for discovering and governing Fabric data. From the catalog, data consumers and data owners can find trusted data, understand where it comes from, and act on its governance state without leaving Fabric. Built-in governance capabilities include:
 
-- Protect sensitive data across clouds, apps, and devices.
-- Identify data risks and manage regulatory compliance requirements.
-- Get started with regulatory compliance.
-- Create an up-to-date map of your entire data estate that includes data classification and end-to-end lineage.
-- Identify where sensitive data is stored in your estate.
-- Create a secure environment for data consumers to find valuable data.
-- Generate insights about how your data is stored and used.
+- **Discovery** — find and explore data across your Fabric estate from a single catalog experience.
+- **Governance Insights** — see the governance state of your data across the organization and for the data you own.
+- **Recommended Actions** — get prioritized guidance to improve the governance posture of your data.
+- **Domains** — organize data by business area to support federated, distributed ownership.
+- **Endorsement** — promote or certify trusted items so consumers can find high-quality, approved data.
+- **Lineage** — trace how data flows across Fabric items, from source to report.
 
-For more information, you can follow these links:
+To learn more about these capabilities, see [Fabric governance documentation](./index.yml), [Governance and compliance in Microsoft Fabric](governance-compliance-overview.md), [OneLake catalog overview](onelake-catalog-overview.md), and [Govern your Fabric data with the OneLake catalog](onelake-catalog-govern.md).
 
-- Get started with [Microsoft Purview risk and compliance solutions](/microsoft-365/compliance/purview-compliance)
-- Get started with [Microsoft Purview data governance solutions](/azure/purview/overview)
+Fabric brings governance and administrative experiences together in the **Govern** section of the OneLake catalog. Use **Govern** to review governance insights and recommended actions and to access tenant configuration, workspace and capacity management, policies, and other organization-wide controls.
 
-## Microsoft Purview and Microsoft Fabric together
+A single person often holds more than one of these responsibilities. Someone who manages capacities might also be a Fabric administrator, a domain administrator, a workspace administrator, or a data steward. The **Govern** section is organized around what you're trying to accomplish rather than around a single role.
 
-Microsoft Purview works with Microsoft Fabric so users can discover and manage Microsoft Fabric items in Microsoft Purview applications. The integration currently allows you to take advantage of these applications:
+## When to use Microsoft Purview with Fabric
 
-- **Microsoft Purview Unified Catalog** - automatically view metadata about your Microsoft Fabric items in the Microsoft Purview Unified Catalog with [live view in Microsoft Purview.](/purview/live-view) Or, connect your data catalog to Microsoft Fabric in [the same tenant](/purview/register-scan-fabric-tenant) or [across tenants](/purview/register-scan-fabric-tenant-cross-tenant). The Unified Catalog also supports publication workflows for data products and glossary terms. Data quality checks can be applied to ungoverned assets, including Fabric data, even when those assets aren't linked to data products.
-- **Microsoft Purview Information Protection** - allows you to discover, classify, and protect Fabric data using sensitivity labels from Microsoft Purview Information Protection. Sensitivity labels can be set on all Fabric items. Data remains protected when it's exported via supported export paths. Compliance admins can monitor activities on sensitivity labels in Microsoft Purview Audit. For more information, see [Information Protection in Microsoft Fabric](information-protection.md). Moreover, you can control access to items in Fabric using sensitivity labels with protection policies. Learn more about [Protection Policies in Fabric](protection-policies-overview.md)
-- **Microsoft Purview Data Loss Prevention (DLP)** - DLP policies support structured data in Fabric, such as lakehouses, warehouses, various databases, and semantic models. DLP policies detect upload of sensitive data into OneLake and can also enforce access restrictions on sensitive assets across Fabric KQL Database, Fabric SQL Database, and Fabric Data Warehouse. Policies evaluate sensitivity labels and sensitive info types (such as credit card and social security numbers) on structured data in these stores to limit user actions when data is classified as sensitive. DLP policies can be configured to generate policy tips for Fabric users and alerts for security admins. DLP policies can also be configured to allow workspace admins to override them. For more information, see [data loss prevention policies](/power-bi/enterprise/service-security-dlp-policies-for-power-bi-overview).
-- **Microsoft Purview Audit** - all Microsoft Fabric user activities are logged and available in the Microsoft Purview audit log. For more information, see [track user activities in Microsoft Fabric](../admin/track-user-activities.md) and [track user activities in Power BI](../admin/service-admin-portal-audit-usage.md).
-- **Microsoft Purview Insider Risk Management (IRM)** - IRM policies support ready-to-use risk indicators for Microsoft Fabric such as Power BI and lakehouse activities. These indicators help organizations detect potential data theft or data leakage involving Fabric lakehouse and Power BI assets. IRM also includes detections specific to Fabric data exfiltration scenarios (for example, exporting Power BI reports or moving data from lakehouse and warehouse assets) via the data theft policy. Organizations can use IRM reporting to monitor Fabric-related risky activities and usage to help identify potential insider risks. For more information on supported Fabric workloads, see [Configure policy indicators in Insider Risk Management](/purview/insider-risk-management-settings-policy-indicators#microsoft-fabric-indicators).
-- **Microsoft Purview governance for Fabric Copilots and agents**- Purview provides governance and risk controls for Fabric Copilots and agents, including risk discovery in prompts and responses, audit coverage for AI interactions, and retention and eDiscovery applicability to AI-generated content. Purview can also detect non-compliant or risky AI usage across supported Fabric workloads. For more information, see [Microsoft Purview data security and compliance protections for generative AI apps](/purview/ai-microsoft-purview).
+Microsoft Purview works with Fabric to support information protection, compliance, risk management,
+and security scenarios.
 
-Microsoft Purview and Microsoft Fabric will continue to work more closely together. Soon you'll be able to use more solutions to monitor and manage Microsoft Fabric as well.
+Microsoft Fabric provides the built-in governance capabilities described previously. Microsoft Purview adds protection and monitoring when your security, risk, and compliance needs extend beyond Fabric. Consider Microsoft Purview when you need to:
 
-## OneLake catalog
+- Discover and classify sensitive data, and apply protection with information protection and sensitivity labels.
+- Prevent risky sharing or movement of sensitive data with data loss prevention.
+- Audit and investigate user activity for compliance and security.
+- Address broader compliance and risk-management requirements.
 
-The security insights previously available in the Microsoft Purview Hub are now available in the OneLake catalog. The Govern tab in the OneLake catalog provides a centralized view of your Fabric data and its governance state directly within Fabric. For more information, see [Govern Fabric data](onelake-catalog-govern.md).
+Using Microsoft Purview doesn't change where Fabric governance lives. The OneLake catalog remains
+the primary experience for governing Fabric data, and Microsoft Purview adds protection, audit,
+risk, and compliance coverage.
 
-## Learn more
+## How Fabric and Purview work together
 
-- How to use the [OneLake catalog](onelake-catalog-govern.md)
+Microsoft Fabric surfaces its governance capabilities natively, and Microsoft Purview integrates
+with Fabric so you can protect and monitor Fabric data. The following integrations are available
+today:
+
+- **Microsoft Purview Information Protection** — discover, classify, and protect Fabric data using sensitivity labels. Sensitivity labels can be set on all Fabric items, and data remains protected when it's exported through supported export paths. For more information, see [Information Protection in Microsoft Fabric](information-protection.md). *Customer outcome:* keep sensitive Fabric data classified and protected wherever it goes.
+- **Microsoft Purview Data Loss Prevention (DLP)** — DLP policies support structured data in Fabric, such as lakehouses, warehouses, databases, and semantic models. Policies evaluate sensitivity labels and sensitive info types to limit user actions when data is classified as sensitive, and can generate policy tips and alerts. For more information, see [data loss prevention policies](/power-bi/enterprise/service-security-dlp-policies-for-power-bi-overview). *Customer outcome:* prevent the risky sharing or movement of sensitive Fabric data.
+- **Microsoft Purview Audit** — all Microsoft Fabric user activities are logged and available in the Microsoft Purview audit log. For more information, see [track user activities in Microsoft Fabric](../admin/track-user-activities.md) and [track user activities in Power BI](../admin/service-admin-portal-audit-usage.md). *Customer outcome:* audit and investigate activity across Fabric for compliance and security.
+- **Microsoft Purview Insider Risk Management (IRM)** — IRM policies support ready-to-use risk indicators for Microsoft Fabric, such as Power BI and lakehouse activities, to help detect potential data theft or leakage. For more information on supported Fabric workloads, see [Configure policy indicators in Insider Risk Management](/purview/insider-risk-management-settings-policy-indicators#microsoft-fabric-indicators). *Customer outcome:* identify and respond to insider risks involving Fabric data.
+- **Microsoft Purview governance for Fabric Copilots and agents** — Purview provides governance and risk controls for Fabric Copilots and agents, including risk discovery in prompts and responses, audit coverage for AI interactions, and retention and eDiscovery applicability to AI-generated content. For more information, see [Microsoft Purview data security and compliance protections for generative AI apps](/purview/ai-microsoft-purview). *Customer outcome:* govern and monitor AI usage across supported Fabric workloads.
+
+## Security and compliance scenarios
+
+Use the following scenarios to decide which experience to reach for. Fabric's built-in governance is
+the starting point, and Microsoft Purview extends protection, audit, risk, and compliance.
+
+### Discover and govern data
+
+Start with Fabric's built-in governance experiences to find and govern your Fabric data:
+
+- [OneLake catalog overview](onelake-catalog-overview.md)
+- [Govern your Fabric data with the OneLake catalog](onelake-catalog-govern.md)
+- [Fabric governance documentation](./index.yml)
+- [Governance and compliance in Microsoft Fabric](governance-compliance-overview.md)
+
+### Protect sensitive data
+
+Fabric supports sensitivity labels natively, and Microsoft Purview extends protection with information protection and data loss prevention:
+
+- [Information Protection in Microsoft Fabric](information-protection.md)
+- [Microsoft Purview data security and compliance protections for generative AI apps](/purview/ai-microsoft-purview)
+
+### Audit and investigate activity
+
+Fabric user activity is available in the Microsoft Purview audit log for compliance and investigation:
+
+- [Track user activities in Microsoft Fabric](../admin/track-user-activities.md)
+- [Track user activities in Power BI](../admin/service-admin-portal-audit-usage.md)
+
+## Related documentation
+
+### Start with Fabric governance
+
+- [Fabric governance documentation](./index.yml)
+- [Governance and compliance in Microsoft Fabric](governance-compliance-overview.md)
+- [OneLake catalog overview](onelake-catalog-overview.md)
+
+### Govern data
+
+- [Govern your Fabric data with the OneLake catalog](onelake-catalog-govern.md)
+
+### Microsoft Purview integrations
+
+- [Microsoft Purview data security and compliance protections for generative AI apps](/purview/ai-microsoft-purview)

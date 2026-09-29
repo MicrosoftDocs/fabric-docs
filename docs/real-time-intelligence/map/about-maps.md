@@ -1,10 +1,10 @@
 ---
-title: About Map items in Microsoft Fabric
+title: About map items in Microsoft Fabric
 description: Learn about map items in Fabric
 ms.reviewer: smunk
 author: sipa
 ms.author: sipa
-ms.date: 06/26/2026
+ms.date: 09/13/2026
 ms.topic: article
 ms.service: fabric
 ms.subservice: rti-core
@@ -13,11 +13,11 @@ ms.search.form: Map item
 
 # What is a map in Fabric Maps?
 
-Fabric Maps is a powerful geospatial visualization platform that transforms spatial data, whether static or real-time, into actionable intelligence. By uncovering patterns, relationships, and trends across space and time, Map reveals insights often missed in traditional charts and tables, helping you make informed decisions with greater clarity.
+Fabric Maps is a powerful geospatial visualization platform that transforms spatial data, whether static or real-time, into actionable intelligence. By uncovering patterns, relationships, and trends across space and time, maps reveal insights often missed in traditional charts and tables. Maps help you make informed decisions with greater clarity.
 
-Map offers robust customization capabilities that let you tailor visualizations to your audience and data content. Overlay diverse data layers—such as bubbles, heatmaps, lines, polygons, and 3D extrusions—to represent complex spatial relationships. Each layer supports advanced styling options including color schemes, opacity, stroke width, interactive tooltips, and data labels. To enhance clarity and emphasize key insights, choose from multiple map styles like Grayscale, Road, Satellite, or Night.
+Map offers robust customization capabilities that you can use to tailor visualizations to your audience and data content. Overlay diverse data layers—such as bubbles, heatmaps, lines, polygons, and 3D extrusions—to represent complex spatial relationships. Each layer supports advanced styling options including color schemes, opacity, stroke width, interactive tooltips, and data labels. To enhance clarity and emphasize key insights, choose from multiple map styles like Grayscale, Road, Satellite, or Night.
 
-For a high‑level overview of the Fabric Maps capability, see [What is Fabric Maps?](about-fabric-maps.md).
+For a high‑level overview of the Fabric Maps capability, see [What is Fabric Maps?](about-fabric-maps.md)
 
 For instructions on how to create a map, see [Create a map](create-map.md).
 
@@ -36,12 +36,12 @@ Unlike static images or exported visuals, map items remain connected to their un
 
 Maps don't store data directly. Instead, they reference spatial data stored in other Fabric items, including:
 
-- **Lakehouses** for historical or batch spatial data (such as GeoJSON files)
-- **Eventhouses and KQL databases** for streaming or near‑real‑time data
-- **Ontology** for semantic map layers that bind spatial data to governed business entity types (such as customers, routes, or service areas)
-- **External geospatial web services** for raster imagery hosted outside Fabric (such as satellite imagery, elevation models, or weather overlays)
+- **Lakehouses** for historical or batch spatial data (such as GeoJSON files).
+- **Eventhouses and KQL databases** for streaming or near‑real‑time data.
+- **Ontology** for semantic map layers that bind spatial data to governed business entity types (such as customers, routes, or service areas).
+- **External geospatial web services** for spatial data hosted outside Fabric. Use WFS, OGC API - Features, or Esri Feature Service for queryable vector features, and use WMS or WMTS for raster imagery.
 
-This separation allows you to govern, secure, and reuse your data independently of how it's visualized.
+- This separation allows you to govern, secure, and reuse your data independently of how it's visualized.
 
 ## Static and real‑time mapping
 
@@ -62,7 +62,7 @@ Maps visualize data through layers. Each layer represents a dataset rendered in 
 - Heatmaps
 - Extrusions
 
-Layers can be styled independently to control appearance, interactivity, and visibility. This layered approach makes it possible to overlay multiple datasets and explore how they relate spatially.
+You can style layers independently to control appearance, interactivity, and visibility. By using this approach, you can overlay multiple datasets and explore how they relate spatially.
 
 ## Maps and tilesets
 
@@ -71,7 +71,7 @@ Maps and tilesets serve different purposes in Fabric Maps:
 - A **map** is the visualization and interaction surface.
 - A **tileset** is an optimized, preprocessed representation of large spatial datasets.
 
-Tilesets are commonly used as data sources for maps when working with large or complex static datasets. For more information, see:
+Use tilesets as data sources for maps when working with large or complex static datasets. For more information, see:
 
 - [What is a tileset in Fabric Maps?](about-tile-sets.md)
 - [Create a tileset](create-tile-sets.md)

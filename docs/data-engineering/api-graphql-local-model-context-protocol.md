@@ -67,7 +67,7 @@ Follow the complete guide at [Use Service Principals with Fabric API for GraphQL
 - Grant permissions to your GraphQL API and workspace (**requires workspace admin or contributor role**)
 
 > [!TIP]
-> **Not an admin?** You can complete the first two items yourself. For the tenant setting, ask your Fabric tenant admin to enable "Service principals can use Fabric APIs" under **Admin portal** > **Tenant settings** > **Developer settings**. For workspace permissions, ask your workspace admin to grant your service principal access to the workspace or specific GraphQL API.
+> **Not an admin?** You can complete the first two items yourself. For the tenant setting, ask your Fabric tenant admin to enable "Service principals can use Fabric APIs" under **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings** > **Developer settings**. For workspace permissions, ask your workspace admin to grant your service principal access to the workspace or specific GraphQL API.
 
 As you complete the setup, capture these three values for the [GraphQL MCP server configuration](#configure-environment-variables):
 

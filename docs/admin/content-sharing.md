@@ -8,13 +8,17 @@ ms.custom:
   - build-2023
   - ignite-2023
 ms.date: 08/07/2024
+ai-usage: ai-assisted
 ---
 
 # Content sharing report (preview)
 
+> [!IMPORTANT]
+> The [Govern report in the OneLake catalog](../governance/onelake-catalog-govern.md#govern-report) is generally available (GA). Use the Govern report for tenant-wide governance and administration insights. The Content sharing report remains in preview, won't become GA, and won't be expanded with additional data.
+
 The *content sharing* report is aimed at admins who want to understand how Fabric items are distributed and shared across the organization. As an admin, the report insights can help you govern your Fabric tenant and take action if needed.
 
-You can access the report from the [Admin monitoring](monitoring-workspace.md) workspace. To access the workspace, you must be a [Fabric administrator](microsoft-fabric-admin.md#power-platform-and-fabric-admin-roles) or a [Microsoft 365 global administrator](/microsoft-365/admin/add-users/about-admin-roles).
+You can access the report from the [Admin monitoring](monitoring-workspace.md) workspace. To access the workspace, you must be a [Fabric administrator](roles.md#power-platform-and-fabric-admin-roles) or a [Microsoft 365 global administrator](/microsoft-365/admin/add-users/about-admin-roles).
 
 You can also have an admin share the report or semantic model directly with you. With build permissions to the semantic model, users can design a custom report that relies on the same underlying data.
 
@@ -140,7 +144,7 @@ This section lists the report's considerations and limitations.
 
 * The report retains information for 28 days, including deleted capacities, workspaces, and other items.
 
-* Deleted workspaces with extended retention don't appear in the report after 28 days. They can be seen in the admin portal until they're permanently deleted.
+* Deleted workspaces with extended retention don't appear in the report after 28 days. They can be seen in Fabric until they're permanently deleted.
 
 * Items created and deleted within a 24 hour period may have incomplete information.
 
@@ -167,4 +171,4 @@ Semantic models in *Power BI Pro* and *Power BI Premium Per-User* (PPU) workspac
 
 * [What is the Admin monitoring workspace?](monitoring-workspace.md)
 
-* [Admin overview](microsoft-fabric-admin.md)
+* [Admin overview](admin-overview.md)

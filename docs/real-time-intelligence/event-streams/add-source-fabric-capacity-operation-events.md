@@ -31,10 +31,10 @@ On **Select a data source**, search for and select **Connect** on the **Fabric c
 
 ## View updated eventstream
 
-1. Once the connection is created, you can see the Fabric capacity operation events source added to your eventstream in **Edit mode**. Select **Publish** to publish the eventstream and capture capacity operation events.
+1. After you create the connection, you see the Fabric capacity operation events source added to your event stream in **Edit mode**. Select **Publish** to publish the event stream and capture capacity operation events.
 
-    :::image type="content" source="media/add-source-fabric-capacity-operation-events/publish.png" alt-text="A screenshot of the Fabric capacity operation events source added to the eventstream." lightbox="media/add-source-fabric-capacity-operation-events/publish.png":::
-1. If you want to transform the Fabric capacity operation events, open your eventstream and select **Edit** to enter **Edit mode**. Then you can add operations to transform the Fabric capacity operation events or route them to a destination such as Lakehouse.
+    :::image type="content" source="media/add-source-fabric-capacity-operation-events/publish.png" alt-text="A screenshot of the Fabric capacity operation events source added to the event stream." lightbox="media/add-source-fabric-capacity-operation-events/publish.png":::
+1. To transform the Fabric capacity operation events, open your event stream and select **Edit** to enter **Edit mode**. Then you can add operations to transform the Fabric capacity operation events or route them to a destination such as Lakehouse.
 
     :::image type="content" source="media/add-source-fabric-capacity-operation-events/edit.png" alt-text="A screenshot of the Fabric capacity operation events in Live view, where you can select Edit." lightbox="media/add-source-fabric-capacity-operation-events/edit.png" :::
 

@@ -3,7 +3,7 @@ title: Customize a map
 description: Learn how to customize a map in Microsoft Fabric Real-Time Intelligence.
 ms.reviewer: smunk, sipa
 ms.topic: how-to
-ms.date: 09/15/2025
+ms.date: 09/13/2026
 ms.search.form: Customize the map
 ---
 
@@ -14,7 +14,7 @@ Microsoft Fabric Maps provides two levels of customization. **Base map settings*
 ## Prerequisites
 
 * A [workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity)
-* A [map](create-map.md) with editing permissions and connected data sources, either geoJson files in lakehouse, or KQL databases.
+* A [map](create-map.md) with editing permissions and at least one connected data source.
 
 ## Configure basemap settings
 
@@ -212,7 +212,7 @@ The following screenshots show bubble points grouped into clusters. Zooming in r
 
 ##### Marker layer
 
-Marker layers display points as icons. You can use a built-in Fluent icon or a custom image stored in a Lakehouse.
+Marker layers display points as icons. You can use a built-in Fluent icon or a custom image stored in a lakehouse.
 
 :::image type="content" source="media/customize-map/custom-markers.png" lightbox="media/customize-map/custom-markers.png" alt-text="A screenshot of Fabric Maps showing public school locations in a suburban area with custom purple school building markers and labels. Settings panel on the right displays marker customization options including symbol, stroke color, size, rotation, opacity, and marker anchor.":::
 
@@ -249,7 +249,7 @@ Marker layers display points as icons. You can use a built-in Fluent icon or a c
 
 ###### Custom markers
 
-To use a custom image as a marker, browse the files in a Lakehouse and select a supported image format such as **SVG**, **PNG**, or **JPG**. After you select the image, Fabric Maps uses it as the symbol for point data.
+To use a custom image as a marker, browse the files in a lakehouse and select a supported image format such as **SVG**, **PNG**, or **JPG**. After you select the image, Fabric Maps uses it as the symbol for point data.
 
 :::image type="content" source="media/customize-map/create-custom-marker.png" lightbox="media/customize-map/create-custom-marker.png" alt-text="A screenshot of the Fabric Maps customization panel displaying various icon options for custom marker selection with a create button at the bottom.":::
 
