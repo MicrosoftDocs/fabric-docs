@@ -14,7 +14,9 @@ ai-usage: ai-assisted
 This article outlines the steps to create a Funnel connection.
 
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
+
+## Summary
 
 The Funnel connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
@@ -31,29 +33,37 @@ You can connect dataflow Gen2 in Fabric to Funnel using Power Query connectors. 
 1. [Connect to Funnel data](#connect-to-funnel-data).
 1. Check [limitations and considerations](#limitations-and-considerations) for any current restrictions.
 
-### Capabilities
+## Prerequisites
+
+[!INCLUDE [funnel-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/funnel/funnel-prerequisites.md)]
+
+<a id="capabilities"></a>
+
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
 
 [!INCLUDE [funnel-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/funnel/funnel-capabilities-supported.md)]
 
-### Prerequisites
-
-[!INCLUDE [funnel-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/funnel/funnel-prerequisites.md)]
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Connect to Funnel data
+<a id="connect-to-funnel-data"></a>
+
+### Connection instructions
 
 [!INCLUDE [funnel-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/funnel/funnel-connect-to-power-query-online.md)]
-
-### Limitations and considerations
-
-[!INCLUDE [funnel-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/funnel/funnel-limitations-and-considerations-include.md)]
 
 ## Set up your connection in a pipeline
 
 Data Factory doesn't currently support Funnel in pipelines.
+
+## Limitations and considerations
+
+[!INCLUDE [funnel-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/funnel/funnel-limitations-and-considerations-include.md)]
 
 ## Related content
 

@@ -14,7 +14,9 @@ ai-usage: ai-assisted
 This article outlines the steps to create a Google BigQuery connection.
 
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
+
+## Summary
 
 The Google BigQuery connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
@@ -31,23 +33,31 @@ You can connect dataflow Gen2 in Fabric to Google BigQuery by using Power Query 
 1. [Get data in Fabric](#get-data).
 1. [Connect to Google BigQuery data](#connect-to-google-bigquery-data).
 
-### Capabilities
+## Prerequisites
+
+[!INCLUDE [google-bigquery-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/google-bigquery/google-bigquery-prerequisites.md)]
+
+<a id="capabilities"></a>
+
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
 
 [!INCLUDE [google-bigquery-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/google-bigquery/google-bigquery-capabilities-supported.md)]
 
-### Prerequisites
-
-[!INCLUDE [google-bigquery-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/google-bigquery/google-bigquery-prerequisites.md)]
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Connect to Google BigQuery data
+<a id="connect-to-google-bigquery-data"></a>
+
+### Connection instructions
 
 [!INCLUDE [google-bigquery-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/google-bigquery/google-bigquery-connect-to-power-query-online.md)]
 
-### Limitations and considerations
+## Limitations and considerations
 
 [!INCLUDE [google-bigquery-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/google-bigquery/google-bigquery-limitations-and-considerations-include.md)]
 

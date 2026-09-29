@@ -15,7 +15,9 @@ ai-usage: ai-assisted
 
 This article outlines how to set up a connection to [Azure SQL Database](/azure/azure-sql/database/sql-database-paas-overview) for pipelines and dataflow Gen2 in Fabric.
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
+
+## Summary
 
 The Azure SQL Database connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
@@ -31,21 +33,29 @@ You can connect dataflow Gen2 to Azure SQL Database from Fabric using Power Quer
 1. Check [capabilities](#capabilities) to make sure your scenario is supported.
 1. [Complete prerequisites for Azure SQL Database](#prerequisites).
 1. [Get data in Fabric](#get-data).
-1. [Connect to Azure SQL database](#connect-to-azure-sql-database).
+1. [Connect to Azure SQL Database](#connect-to-azure-sql-database).
 
-### Capabilities
+## Prerequisites
+
+[!INCLUDE [azure-sql-database-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-sql-database/azure-sql-database-prerequisites.md)]
+
+<a id="capabilities"></a>
+
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
 
 [!INCLUDE [azure-sql-database-ccapabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-sql-database/azure-sql-database-capabilities-supported.md)]
 
-### Prerequisites
-
-[!INCLUDE [azure-sql-database-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-sql-database/azure-sql-database-prerequisites.md)]
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Connect to Azure SQL database
+<a id="connect-to-azure-sql-database"></a>
+
+### Connection instructions
 
 [!INCLUDE [azure-sql-database-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-sql-database/azure-sql-database-connect-to-power-query-online.md)]
 
