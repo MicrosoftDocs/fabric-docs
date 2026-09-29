@@ -11,6 +11,9 @@ Through the Model Context Protocol (MCP) server, AI systems can discover and int
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
+>[!NOTE]
+> Due to a known issue, you can't currently use Service Principal to access the ontology MCP.
+
 ## Prerequisites
 
 Before using ontology as an MCP server, make sure you have the following prerequisites:
