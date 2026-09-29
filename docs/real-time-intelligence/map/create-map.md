@@ -59,7 +59,10 @@ After creating a map, you can add layers from lakehouses, eventhouses and KQL da
 > [Fabric Maps layers](about-layers.md)
 
 > [!div class="nextstepaction"]
-> [Customize a map](customize-map.md)
+> [Configure map settings](configure-map-settings.md)
+
+> [!div class="nextstepaction"]
+> [Configure layer settings](customize-map.md)
 
 > [!div class="nextstepaction"]
 > [Share a map](share-map.md)
