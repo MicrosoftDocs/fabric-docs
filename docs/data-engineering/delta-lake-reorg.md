@@ -3,7 +3,7 @@ title: Reorganize Delta tables with REORG
 description: Learn how to use the REORG command in Microsoft Fabric to physically remove soft-deleted Delta Lake rows or add UniForm compatibility for Iceberg readers.
 ms.reviewer: milescole
 ms.topic: how-to
-ms.date: 05/18/2026
+ms.date: 09/23/2026
 ai-usage: ai-assisted
 ---
 
@@ -32,8 +32,60 @@ When you run `REORG TABLE ... APPLY (PURGE)`, Fabric rewrites the affected files
 
 This option is useful when:
 
-- You have compliance or GDPR requirements and need deleted data to be physically removed on a specific schedule.
+- You have [compliance requirements](#permanently-remove-deleted-data) and need deleted data to be physically removed on a specific schedule.
 - You want to force-purge files that fall below the 5% threshold that `OPTIMIZE` uses.
+
+## Permanently remove deleted data
+
+The `REORG TABLE ... APPLY (PURGE)` command rewrites the active data files, but the replaced files remain in OneLake as unreferenced files until `VACUUM` removes them. Since users can still use [time travel](./delta-lake-time-travel.md) or [restore](./delta-lake-restore.md) to access the deleted records, to permanently remove the deleted data, run `VACUUM` after `PURGE`.
+
+By default, `VACUUM` retains unreferenced files for seven days. If you must remove the files immediately, temporarily disable the retention duration safety check for the current Spark session, run `VACUUM` with zero-hour retention, and then reenable the safety check.
+
+> [!WARNING]
+> Zero-hour retention permanently removes all unreferenced files immediately. It can disrupt concurrent readers or writers and prevents time travel to table versions that depend on those files. Confirm that no concurrent operations are using the table before you continue.
+
+Run the commands in this order:
+
+# [Spark SQL](#tab/sparksql)
+
+```sql
+REORG TABLE schema_name.table_name APPLY (PURGE);
+
+SET spark.databricks.delta.retentionDurationCheck.enabled = false;
+VACUUM schema_name.table_name RETAIN 0 HOURS;
+SET spark.databricks.delta.retentionDurationCheck.enabled = true;
+```
+
+# [PySpark](#tab/pyspark)
+
+```python
+spark.sql("REORG TABLE schema_name.table_name APPLY (PURGE)")
+
+spark.conf.set("spark.databricks.delta.retentionDurationCheck.enabled", "false")
+try:
+    spark.sql("VACUUM schema_name.table_name RETAIN 0 HOURS")
+finally:
+    spark.conf.set("spark.databricks.delta.retentionDurationCheck.enabled", "true")
+```
+
+# [Scala](#tab/scala)
+
+```scala
+spark.sql("REORG TABLE schema_name.table_name APPLY (PURGE)")
+
+spark.conf.set("spark.databricks.delta.retentionDurationCheck.enabled", "false")
+try {
+  spark.sql("VACUUM schema_name.table_name RETAIN 0 HOURS")
+} finally {
+  spark.conf.set("spark.databricks.delta.retentionDurationCheck.enabled", "true")
+}
+```
+
+---
+
+The configuration change applies only to the current Spark session. Always reenable the safety check after the immediate cleanup. If immediate removal isn't required, keep the safety check enabled and run `VACUUM` after the required retention period.
+
+For more information about retention and its effect on time travel, see [VACUUM Delta tables](delta-lake-vacuum.md).
 
 ## Review the syntax
 
@@ -142,7 +194,7 @@ Don't run `REORG` from the SQL analytics endpoint. `REORG` is a Spark SQL mainte
 ## Follow best practices
 
 - Run `PURGE` only when you have a specific need, such as compliance requirements. `OPTIMIZE` automatically purges files where greater than 5% of records are referenced by deletion vectors, so routine maintenance usually doesn't require a separate `PURGE` step.
-- Run `PURGE` before `VACUUM` when you need deleted data to be physically removed for compliance or GDPR requirements.
+- Follow the [compliance cleanup workflow](#permanently-remove-deleted-data) when you need deleted data to be permanently removed from OneLake.
 - Use `WHERE` predicates to target specific partitions when you don't need to rewrite the full table.
 - Use `UPGRADE UNIFORM` when you need Iceberg readers, but plan for the extra metadata that UniForm maintains.
 - Treat `REORG` and `OPTIMIZE` as complementary maintenance operations, not interchangeable ones.
