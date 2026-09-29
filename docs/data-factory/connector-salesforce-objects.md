@@ -13,7 +13,9 @@ ai-usage: ai-assisted
 
 This article outlines the steps to create a Salesforce objects connection.
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
+
+## Summary
 
 The Salesforce objects connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
@@ -29,23 +31,31 @@ You can connect a dataflow Gen2 in Fabric to Salesforce objects by using Power Q
 1. [Get data in Fabric](#get-data).
 1. [Connect to Salesforce Objects](#connect-to-salesforce-objects).
 
-### Capabilities
+## Prerequisites
+
+[!INCLUDE [salesforce-objects-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/salesforce-objects/salesforce-objects-prerequisites.md)]
+
+<a id="capabilities"></a>
+
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
 
 [!INCLUDE [salesforce-objects-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/salesforce-objects/salesforce-objects-capabilities-supported.md)]
 
-### Prerequisites
-
-[!INCLUDE [salesforce-objects-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/salesforce-objects/salesforce-objects-prerequisites.md)]
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Connect to Salesforce Objects
+<a id="connect-to-salesforce-objects"></a>
+
+### Connection instructions
 
 [!INCLUDE [salesforce-objects-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/salesforce-objects/salesforce-objects-connect-to-power-query-online.md)]
 
-### Limitations and considerations
+## Limitations and considerations
 
 [!INCLUDE [salesforce-objects-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/salesforce-objects/salesforce-objects-limitations-and-considerations-include.md)]
 
