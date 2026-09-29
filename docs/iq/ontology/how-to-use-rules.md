@@ -141,8 +141,6 @@ Deleting a rule removes it from every linked entity type.
 
 Authorized agents and applications can use the ontology MCP `list_ontology_rules` tool to retrieve the defined business rules. The tool returns each rule's name, natural-language definition, linked entity types, properties and relationships, description, and additional metadata.
 
-You can also use `ask_ontology` to ask a question about the ontology in natural language, and the MCP server will consider rules in its response.
-
 The tool is read-only, leaving it up to you to interpret and operationalize the rules because ontology doesn't execute on them.
 
 ## Migrate Activator rules from ontology old experience
