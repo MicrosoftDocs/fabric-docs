@@ -100,10 +100,15 @@ To learn how to create and configure a map:
 > [!div class="nextstepaction"]
 > [Create a map](create-map.md)
 
-To customize map appearance and behavior:
+To configure map-wide appearance and behavior:
 
 > [!div class="nextstepaction"]
-> [Customize a map](customize-map.md)
+> [Configure map settings](configure-map-settings.md)
+
+To configure how individual layers are displayed:
+
+> [!div class="nextstepaction"]
+> [Configure layer settings](customize-map.md)
 
 To understand the broader Fabric Maps capability:
 

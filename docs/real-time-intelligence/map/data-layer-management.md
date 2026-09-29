@@ -89,4 +89,4 @@ Delete a data layer to permanently remove it from the map. The following steps s
 > [Data filtering in Fabric Maps](about-data-filtering.md)
 
 > [!div class="nextstepaction"]
-> [Customize a map](customize-map.md)
+> [Configure layer settings](customize-map.md)

@@ -496,7 +496,7 @@ To turn off basemap labels:
 
     :::image type="content" source="media/tutorials/real-time-work-order-routing-application/map-settings-labels.png" lightbox="media/tutorials/real-time-work-order-routing-application/map-settings-labels.png" alt-text="A screenshot showing the Microsoft Fabric Maps interface displaying a street map of Vienna Austria with purple route lines connecting multiple waypoints. The left side shows the Explorer pane with Data layers panel listing WorkordersFunction and Optimized Route layers. The top toolbar highlights the Map settings button highlighted with a red rectangle. The right side displays the Basemap settings panel with the Labels checkbox unchecked and highlighted with a red rectangle.":::
 
-For more information about map settings in Fabric Maps, see [Configure basemap settings](customize-map.md#configure-basemap-settings).
+For more information about map settings in Fabric Maps, see [Configure map settings in Fabric Maps](configure-map-settings.md).
 
 #### Add data labels to the layer
 
@@ -528,7 +528,7 @@ For more information about Fabric Maps articles covered in this tutorial, see:
 > [Create a map](create-map.md)
 
 > [!div class="nextstepaction"]
-> [Configure basemap settings](customize-map.md#configure-basemap-settings)
+> [Configure map settings](configure-map-settings.md)
 
 > [!div class="nextstepaction"]
 > [Data label settings](customize-map.md#data-label-settings)

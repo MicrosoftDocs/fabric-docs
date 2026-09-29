@@ -1140,6 +1140,8 @@ items:
         items:
           - name: Create a map
             href: map/create-map.md
+          - name: Configure map settings
+            href: map/configure-map-settings.md
           - name: Layers
             items:
               - name: Create layers from lakehouse data
@@ -1160,7 +1162,7 @@ items:
                 href: map/filter-data.md
               - name: Migrate KQL Queryset to a Kusto function
                 href: map/migrate-kusto-query-layer.md
-          - name: Customize a map
+          - name: Configure layer settings
             href: map/customize-map.md
           - name: Create a tileset
             href: map/create-tile-sets.md
