@@ -15,7 +15,7 @@ This article describes how to use notebook utilities for materialized lake views
 > To create your first materialized lake view, see [Get started with materialized lake views](./get-started-with-materialized-lake-views.md).
 
 > [!NOTE]
-> Materialized lake view notebook utilities are supported with **Spark 4.1**.
+> Materialized lake view notebook utilities are supported in Spark 4.1 for both Python and Scala.
 
 ## Prerequisites
 
@@ -87,7 +87,7 @@ from notebookutils import lakehouse
 
 op = lakehouse.refreshMlv(
     "sales_summary",
-    refreshMode="optimal"
+    "optimal"
 )
 ```
 
