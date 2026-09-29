@@ -22,7 +22,7 @@ Use secrets to provide sensitive configuration, such as personal access tokens a
 From the app root, enable the functions feature and set the secret:
 
 ```powershell
-npx rayfin secret set GITHUB_PAT
+npx rayfin secret set API_KEY
 ```
 
 The command prompts for the value and masks your input. To update an existing secret, run the same command again. The new value replaces the existing value.
@@ -93,16 +93,16 @@ udf.func(
 );
 ```
 
-The empty connections array indicates that the function doesn't request a delegated token. A PAT is a secret, not a connection.
+The empty connections array indicates that the function doesn't declare an external resource audience. A PAT is a secret, not a platform-provided resource token.
 
 ## Configure secrets by environment
 
 Provide secret values in the environment where the function runs:
 
-- **Local development:** Add secret values to the `Values` section of `rayfin/functions/local.settings.json`. The local Functions host reads function environment values from this file; `rayfin/.env` is used for CLI configuration interpolation.
+- **Local development:** Add secret values to the `Values` section of `rayfin/functions/local.settings.json`. The local Functions host reads function environment values from this file.
 - **Fabric:** Configure secrets for the deployed item in the Fabric portal.
 
-Use the same secret name in each environment. For example, configure `GITHUB_PAT` locally and in Fabric, then read it with `ctx.getSecret('GITHUB_PAT')` in both environments.
+Use the same secret name in each environment. For example, configure `GITHUB_PAT` locally and in Fabric, then read it with `ctx.getSecret('API_KEY')` in both environments.
 
 > [!IMPORTANT]
 > Don't commit secret values in `rayfin/functions/local.settings.json` or any other file to source control. Store only nonsecret examples or placeholders in files that you commit.

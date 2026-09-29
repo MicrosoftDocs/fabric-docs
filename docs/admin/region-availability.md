@@ -32,7 +32,7 @@ The following table lists all Azure regions where Power BI or Fabric is availabl
 |--|--|:--:|:--:|--|
 | Americas     | Brazil South         | ✅ | ✅ | Not available: <br> [Fabric App (preview)](../apps/overview.md) |
 | Americas     | Canada Central       | ✅ | ✅ | Not available: <br> [Fabric App (preview)](../apps/overview.md) |
-| Americas     | Canada East          | ✅ | ✅ |  |
+| Americas     | Canada East          | ✅ | ✅ | Not available: <br> [Fabric App (preview)](../apps/overview.md) |
 | Americas     | Chile Central        | ✅ | ❌ | Power BI only region |
 | Americas     | Mexico Central       | ✅ | ✅ | Not available: <br> [Fabric App (preview)](../apps/overview.md) |
 | Americas     | US - Central US      | ✅ | ✅ |  |
@@ -62,7 +62,7 @@ The following table lists all Azure regions where Power BI or Fabric is availabl
 | Europe       | Switzerland North    | ✅ | ✅ |  |
 | Europe       | Switzerland West     | ✅ | ✅ | Not available: <br> [Fabric App (preview)](../apps/overview.md) |
 | Europe       | UK South             | ✅ | ✅ |  |
-| Europe       | UK West              | ✅ | ✅ |  |
+| Europe       | UK West              | ✅ | ✅ | Not available: <br> [Fabric App (preview)](../apps/overview.md) |
 | **Geography**| **Region** | **Power BI** | **All Fabric workloads** | **Unavailable Fabric features** |
 | Qatar        | Qatar Central        | ✅ | ❌ | Power BI only region |
 | UAE          | UAE Central          | ✅ | ❌ | Power BI only region |
@@ -72,10 +72,10 @@ The following table lists all Azure regions where Power BI or Fabric is availabl
 | Asia Pacific | Asia - East Asia     | ✅ | ✅ |  |
 | Asia Pacific | Asia - Southeast Asia| ✅ | ✅ |  |
 | Asia Pacific | Australia East       | ✅ | ✅ |  |
-| Asia Pacific | Australia Southeast  | ✅ | ✅ |  |
+| Asia Pacific | Australia Southeast  | ✅ | ✅ | Not available: <br> [Fabric App (preview)](../apps/overview.md) |
 | Asia Pacific | India - Central India| ✅ | ✅ |  |
 | Asia Pacific | India - India West   | ✅ | ❌ | Power BI only region |
-| Asia Pacific | India - South India  | ✅ | ✅ |  |
+| Asia Pacific | India - South India  | ✅ | ✅ | Not available: <br> [Fabric App (preview)](../apps/overview.md) |
 | Asia Pacific | Indonesia Central    | ✅ | ✅ | Not available: <br> [Fabric App (preview)](../apps/overview.md) |
 | Asia Pacific | Israel Central       | ✅ | ✅ | Not available: <br> [Digital twin builder (preview)](../real-time-intelligence/digital-twin-builder/overview.md) <br> [Fabric App (preview)](../apps/overview.md) |
 | Asia Pacific | Japan East           | ✅ | ✅ |  |

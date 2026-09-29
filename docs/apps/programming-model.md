@@ -147,7 +147,7 @@ The `RayfinContext` provides the function's runtime services:
 | Member | Purpose |
 | --- | --- |
 | `ctx.accessToken` | Provides the signed-in user's Rayfin JSON Web Token (JWT). Decode the `sub` claim to get a stable user ID. |
-| `ctx.getToken(AudienceType.X)` | Gets a delegated, on-behalf-of token for a connection audience declared when you register the function. Replace `X` with the required audience. |
+| `ctx.Tokens.<Audience>` | Gets a platform-provided resource token for an audience declared in the `RayfinContext` annotation. Deployed Functions use the app identity and its permissions. For details, see [Connect Functions to external resources](functions-connect-external-resources.md). |
 | `ctx.getSecret('NAME')` | Gets a secret for the current invocation. Returns `undefined` when the secret isn't set. |
 | `ctx.getDataClient()` | Gets the typed data API for your entities. The client supports create, `findMany`, update, delete, and upsert operations. |
 | `ctx.baseUrl` | Provides the Rayfin endpoint for the current item. |
