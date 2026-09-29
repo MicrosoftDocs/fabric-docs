@@ -41,7 +41,7 @@ The Lakeshore Retail elements in this tutorial comprise the following ontology. 
 
 ## Download sample data
 
-Download the contents of the **New experience** folder from ontology samples in GitHub: [Ontology samples](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/iq/ontology).
+Download the contents of the **New experience** folder from ontology samples in GitHub: [Ontology samples](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/iq/ontology/new-experience).
 
 The sample data includes a set of CSV files containing static entity details about the Lakeshore Retail scenario and streaming data from its refrigerators, as well as a Power BI semantic model containing sales data.
 

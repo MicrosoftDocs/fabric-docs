@@ -138,7 +138,12 @@ A **data binding** maps ontology definitions to source data. It identifies the s
 
 ## Migrate from old experience
 
-The new ontology experience is the default experience for new ontology items. If you already have an ontology that you created in the old experience, use the in-product action to **create a copy in the new experience**. The copy flow preserves the original item while creating a separate ontology item based on its supported definitions.
+The new ontology experience is the default experience for new ontology items.
+
+>[!NOTE]
+> You can't create new instances of the old ontology experience through the ontology interface in Fabric. It's still possible to create instances of the old experience by using the ontology APIs and CI/CD.
+
+If you already have an ontology that you created in the old experience, use the in-product action to **create a copy in the new experience**. The copy flow preserves the original item while creating a separate ontology item based on its supported definitions.
 
 :::image type="content" source="media/overview/migrate-banner.png" alt-text="Screenshot of the banner in the old ontology with a button to create a copy in the new experience." lightbox="media/overview/migrate-banner.png":::
 
