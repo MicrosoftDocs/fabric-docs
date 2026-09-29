@@ -317,6 +317,10 @@ In GitHub Copilot CLI or Claude Code, update the installed Fabric collection:
 
 For Codex, run `codex plugin marketplace upgrade fabric-collection`, and then run `codex plugin add fabric-skills@fabric-collection`.
 
+## Current limitations
+
+* Data engineering agent (Project Osmos) isn't currently available for workspaces that have outbound access protection enabled.
+
 ## Related content
 
 - [Fabric data engineering agent (Project Osmos) overview](data-engineering-agent-overview.md)

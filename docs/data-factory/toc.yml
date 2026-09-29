@@ -1075,6 +1075,10 @@
                 href: dataflow-gen2-advanced-edit-data-destinations.md
               - name: Excel advanced data destination
                 href: dataflow-gen2-data-destinations-excel-advanced.md
+              - name: Style Excel documents and add hyperlinks with navigation tables
+                href: dataflow-gen2-data-destinations-excel-styles.md
+              - name: Add conditional formatting to Excel documents with navigation tables
+                href: dataflow-gen2-data-destinations-excel-conditional-formatting.md
           - name: Send email from Dataflow Gen2 (preview)
             href: send-email-dataflow-gen2.md
           - name: Back up query data to a lakehouse (preview)

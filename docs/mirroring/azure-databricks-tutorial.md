@@ -1,14 +1,14 @@
 ---
-title: "Microsoft Fabric Mirrored Databases From Azure Databricks Tutorial"
-description: Learn how to create a mirrored database from Azure Databricks in Microsoft Fabric.
+title: "Microsoft Fabric Mirrored Catalog From Azure Databricks Tutorial"
+description: Learn how to create a mirror from Azure Databricks in Microsoft Fabric.
 ms.reviewer: sheppardshep, mspreshah
 ms.date: 05/01/2026
 ms.topic: tutorial
 ---
 
-# Tutorial: Configure Microsoft Fabric mirrored databases from Azure Databricks
+# Tutorial: Configure Microsoft Fabric mirror from Azure Databricks Unity Catalog
 
-[Database mirroring in Microsoft Fabric](../mirroring/overview.md) is an enterprise, cloud-based, zero-ETL, SaaS technology. This guide helps you establish a mirrored database from Azure Databricks, which creates a read-only, continuously replicated copy of your Azure Databricks data in OneLake.
+[Mirroring in Microsoft Fabric](../mirroring/overview.md) is an enterprise, cloud-based, zero-ETL, SaaS technology. This guide helps you establish a mirror from Azure Databricks Unity Catalog, which creates a read-only, continuously replicated copy of your Azure Databricks data in OneLake.
 
 ## Prerequisites
 
@@ -18,9 +18,9 @@ ms.topic: tutorial
 - Have the `EXTERNAL USE SCHEMA` privilege on the schema in Unity Catalog that contains the tables that Fabric accesses.
 - Use Fabric's permissions model to set access controls for catalogs, schemas, and tables in Fabric.
 
-## Create a mirrored database from Azure Databricks
+## Create a mirror from Azure Databricks Unity Catalog
 
-Follow these steps to create a new mirrored database from your Azure Databricks Unity Catalog.
+Follow these steps to create a new mirror from your Azure Databricks Unity Catalog.
 
 1. Go to your workspace in [Fabric](https://app.fabric.microsoft.com).
 1. Select **New item** > **Mirrored Azure Databricks catalog**.
@@ -42,7 +42,7 @@ Follow these steps to create a new mirrored database from your Azure Databricks 
 
 1. Select **Next** to continue.
 
-1. On the **Review and create** page, review the details and optionally change the mirrored database item name, which must be unique in your workspace. By default, the name of the mirrored item is the name of the catalog.
+1. On the **Review and create** page, review the details and optionally change the mirror item name, which must be unique in your workspace. By default, the name of the mirrored item is the name of the catalog.
 
 1. Select **Create** to continue.
 
@@ -50,7 +50,7 @@ Follow these steps to create a new mirrored database from your Azure Databricks 
 
    Schemas that don't have any tables aren't shown.
 
-1. You can also see a preview of the data when you access a shortcut by selecting the SQL analytics endpoint. Open the SQL analytics endpoint item to launch the Explorer and Query editor page. You can query your mirrored Azure Databricks tables by using T-SQL in the SQL Editor.
+1. You can also see a preview of the data when you access a shortcut by selecting the SQL analytics endpoint. Open the SQL analytics endpoint item to launch the Explorer and Query editor page. You can query your mirrored Azure Databricks Unity Catalog tables by using T-SQL in the SQL Editor.
 
 ## Create Lakehouse shortcuts to the Databricks catalog item
 
@@ -74,7 +74,7 @@ For the best experience, use the Microsoft Edge browser for semantic modeling ta
 
 ### Manage your semantic model relationships
 
-After you create a new semantic model based on your mirrored database, configure the relationships between tables.
+After you create a new semantic model based on your mirrored item, configure the relationships between tables.
 
 1. Select **Model Layouts** from the **Explorer** in your workspace.
 1. Once you select **Model layouts**, you're presented with a graphic of the tables that are included as part of the semantic model.

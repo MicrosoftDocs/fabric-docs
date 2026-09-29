@@ -358,6 +358,8 @@ items:
         href: ./user-data-functions/user-data-functions-portal-editor.md
       - name: Python programming model
         href: ./user-data-functions/python-programming-model.md
+      - name: Write functions for business events
+        href: ./user-data-functions/write-functions-business-events.md
       - name: Test your user data functions
         href: ./user-data-functions/test-user-data-functions.md
       - name: View logs
@@ -372,6 +374,8 @@ items:
         href: ./user-data-functions/create-functions-activity-data-pipelines.md
       - name: Integration with Fabric notebooks
         href: ./notebookutils/notebookutils-user-data-function.md
+      - name: Publish business events
+        href: ../real-time-hub/business-events/tutorial-business-events-user-data-function-activation-email.md
       - name: Invoke functions using Python
         href: ./user-data-functions/tutorial-invoke-from-python-app.md
     - name: Manage
@@ -864,6 +868,8 @@ items:
         href: ./user-data-functions/user-data-functions-portal-editor.md
       - name: Python programming model
         href: ./user-data-functions/python-programming-model.md
+      - name: Write functions for business events
+        href: ./user-data-functions/write-functions-business-events.md
       - name: Test your user data functions
         href: ./user-data-functions/test-user-data-functions.md
       - name: View logs
@@ -880,6 +886,8 @@ items:
         href: ./user-data-functions/activator-action-function.md
       - name: Integration with Fabric notebooks
         href: ./notebookutils/notebookutils-user-data-function.md
+      - name: Publish business events and send email notifications
+        href: ../real-time-hub/business-events/tutorial-business-events-user-data-function-activation-email.md
       - name: Invoke functions using Python
         href: ./user-data-functions/tutorial-invoke-from-python-app.md
    - name: Manage
