@@ -93,6 +93,12 @@ When the pipeline runs, the **Select** field resolves to the parameter value, so
 
 You can add dynamic content for any column in **Settings** using the same approach.
 
+### CI/CD
+ 
+When you deploy a pipeline and its referenced dbt job together, the dbt job activity uses a relative reference to resolve the corresponding dbt job in the target workspace. You don't need to parameterize the workspace ID or dbt job ID for this scenario.
+ 
+For an end-to-end deployment example, see [Configure CI/CD for dbt jobs using Variable Library](simplify-cicd-for-dbt-jobs.md).
+
 ## dbt job activity advanced settings
 
 The **Settings** tab contains the advanced settings for dbt command options, node selection, and execution behavior.
