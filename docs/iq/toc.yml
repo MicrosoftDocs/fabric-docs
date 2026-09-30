@@ -302,9 +302,11 @@ items:
               - name: Writeback FAQ
                 href: plan/planning-writeback/writeback-faq.md
         - name: Security and governance
-          items:
+          items:    
               - name: Configure security settings
                 href: plan/planning-how-to-manage-security.md
+              - name: Configure role-based home layouts
+                href: plan/planning-how-to-create-manage-home-layouts.md 
         - name: Format and display
           items:
               - name: Change layouts
