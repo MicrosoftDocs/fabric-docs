@@ -3,7 +3,7 @@ title: Enable optimal refresh for deletes and updates in materialized lake views
 description: Learn how to enable optimal refresh for materialized lake views when source data contains deletes or updates.
 ms.topic: concept-article
 ms.reviewer: abhishjain
-ms.date: 09/22/2026
+ms.date: 09/29/2026
 ai-usage: ai-assisted
 #customer intent: As a data engineer, I want materialized lake views to process source deletes and updates incrementally so that I avoid costly full refreshes.
 ---
@@ -24,10 +24,14 @@ Fabric introduces the concept of a *refresh hint* that you use to declare the un
 
 ## Define a refresh hint
 
-Add a `REFRESH_HINT` clause when you create a materialized lake view. Only one `REFRESH_HINT` can be defined per materialized lake view.
+Add a `REFRESH_HINT` clause when you create a materialized lake view.
 
 ```sql
 CREATE [OR REPLACE] MATERIALIZED LAKE VIEW <view_name>
+[( 
+    CONSTRAINT constraint_name1 CHECK (condition expression1) [ON MISMATCH DROP | FAIL],  
+    CONSTRAINT constraint_name2 CHECK (condition expression2) [ON MISMATCH DROP | FAIL] 
+)] 
 (
     REFRESH_HINT <hint_name> UNIQUE (<column1> [, <column2>, ...])
 )
