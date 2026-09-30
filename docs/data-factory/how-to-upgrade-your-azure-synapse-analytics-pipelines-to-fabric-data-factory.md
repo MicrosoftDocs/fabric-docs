@@ -66,8 +66,6 @@ Each pipeline is categorized with a readiness status:
 
 [!INCLUDE [upgrade-assessment-statuses](includes/upgrade-assessment-statuses.md)]
 
-For details on how to drill into activity-level details, see [What the assessment statuses mean](how-to-upgrade-your-azure-data-factory-pipelines-to-fabric-data-factory.md#what-the-assessment-statuses-mean).
-
 ### Select pipelines to upgrade
 
 After reviewing results, select the Synapse pipelines you want to upgrade to your Fabric workspace.
