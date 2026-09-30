@@ -18,6 +18,8 @@ items:
         href: ../data-agent-ai-search-index.md
       - name: Semantic model sources
         href: ../semantic-model-best-practices.md
+      - name: Ontology sources
+        href: ../data-agent-ontology-sources.md
   - name: Configure your Fabric data agent
     items:
       - name: Data agent configurations
