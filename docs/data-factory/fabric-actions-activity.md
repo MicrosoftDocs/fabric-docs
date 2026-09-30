@@ -43,7 +43,7 @@ For more information, see [General settings](activity-overview.md#general-settin
 
 1. In the activity configuration pane, select a Fabric item type or search for the Fabric operation that you want to run.
 1. Select the operation from the browse and search experience.
-1. Select an existing Fabric connection, or create a Fabric connection when prompted.
+1. Select an existing Fabric connection, or create a Fabric connection when prompted. When creating a new connection, make sure the Base Url is: https://api.fabric.microsoft.com.
 1. Provide every required operation parameter.
 1. Use dynamic content or pipeline expressions for values that come from pipeline parameters or preceding activity outputs.
 1. Review the operation and parameter values before you run the pipeline.
