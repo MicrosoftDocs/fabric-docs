@@ -300,7 +300,11 @@ items:
               - name: Writeback - Enable writeback in reading mode
                 href: plan/planning-writeback/planning-how-to-enable-writeback-reading-mode.md
               - name: Writeback FAQ
-                href: plan/planning-writeback/writeback-faq.md     
+                href: plan/planning-writeback/writeback-faq.md
+        - name: Security and governance
+          items:
+              - name: Configure security settings
+                href: plan/planning-how-to-manage-security.md
         - name: Format and display
           items:
               - name: Change layouts
