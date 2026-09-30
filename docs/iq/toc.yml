@@ -161,6 +161,8 @@ items:
       href: plan/intelligence-how-to-get-started.md
     - name: Get started with reporting
       href: plan/intelligence-how-to-get-started-reporting.md
+    - name: Share a plan item with users outside the workspace
+      href: plan/sharing-plan-artifact.md
   - name: Planning sheets
     items:
     - name: Concepts
