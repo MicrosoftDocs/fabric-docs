@@ -40,8 +40,8 @@ You can create a database project from scratch or from an existing warehouse.
 1. Choose **Synapse Data Warehouse in Microsoft Fabric** as the target platform.  
 1. When prompted, select **Yes (recommended)** for an SDK-style project.  
 
-   > [!IMPORTANT]  
-   > Only **SDK-style** projects are supported for Fabric Data Warehouse.  
+> [!IMPORTANT]
+> Only **SDK-style** projects are supported for Fabric Data Warehouse.  
 
 1. Select **Yes** to the question **Do you want to configure SQL project build as the default build configuration for this folder?**
 1. Select **Yes** to trust the authors of the files in this folder.
@@ -112,24 +112,32 @@ Your project structure looks like this:
 
    :::image type="content" source="media/develop-warehouse-project/edit-sqlproj-file.png" alt-text="Screenshot from Visual Studio Code and the context menu of a database project. The Edit sqlproj File option is highlighted." lightbox="media/develop-warehouse-project/edit-sqlproj-file.png":::
 
-1. Verify the file contains the latest version of the [Microsoft.Build.Sql](https://www.nuget.org/packages/Microsoft.Build.Sql) SDK. For example, change the version for `Microsoft.Build.Sql` to `2.2.0` in the `.sqlproj` file.
+1. Verify the file contains the latest version of the [Microsoft.Build.Sql](https://www.nuget.org/packages/Microsoft.Build.Sql) SDK. For example, change the version for `Microsoft.Build.Sql` to `2.3.0` in the `.sqlproj` file.
 
    ```xml
-      <Sdk Name="Microsoft.Build.Sql" Version="2.2.0" />
+      <Sdk Name="Microsoft.Build.Sql" Version="2.3.0" />
    ```
 
 1. Verify the latest version of [Microsoft.SqlServer.Dacpacs.FabricDw](https://www.nuget.org/packages/Microsoft.SqlServer.Dacpacs.FabricDw), and add a reference inside the `Project/ItemGroup` XML node. For example:
 
    ```xml
-      <PackageReference Include="Microsoft.SqlServer.Dacpacs.FabricDw" Version="170.0.2" />
+      <PackageReference Include="Microsoft.SqlServer.Dacpacs.FabricDw" Version="170.0.4">
+          <DatabaseVariableLiteralValue>master</DatabaseVariableLiteralValue>
+          <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+      </PackageReference>
    ```
+> [!IMPORTANT]
+> If you add the package reference without the `DatabaseVariableLiteralValue` metadata, building the project succeeds, but `sqlpackage` **Publish** and **Script** actions can fail as soon as your code references objects in the `sys` schema, such as `sys.views`. In that case, you see errors like the following:
+>
+> `Error SQL72033: This deployment may encounter errors during execution because [<schema>].[<procedure>] depends on [sys].[views].[schema_id] and [sys].[views].[schema_id] does not exist in the target database.`
+
 
    This is how your database project for a warehouse should look like after the updates.
 
    ```xml
     <?xml version="1.0" encoding="utf-8"?>
     <Project DefaultTargets="Build">
-      <Sdk Name="Microsoft.Build.Sql" Version="2.2.0" />
+      <Sdk Name="Microsoft.Build.Sql" Version="2.3.0" />
       <PropertyGroup>
         <Name>DatabaseProject715wh</Name>
         <ProjectGuid>{2E278BCC-F118-4DDB-9255-94697F2930B4}</ProjectGuid>
@@ -138,7 +146,10 @@ Your project structure looks like this:
       </PropertyGroup>
       <ItemGroup>
         <None Include=".vscode\tasks.json" />
-        <PackageReference Include="Microsoft.SqlServer.Dacpacs.FabricDw" Version="170.0.2" />
+        <PackageReference Include="Microsoft.SqlServer.Dacpacs.FabricDw" Version="170.0.4">
+          <DatabaseVariableLiteralValue>master</DatabaseVariableLiteralValue>
+          <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+        </PackageReference>
       </ItemGroup>
       <Target Name="BeforeBuild">
         <Delete Files="$(BaseIntermediateOutputPath)\project.assets.json" />
@@ -219,8 +230,8 @@ When you deploy database projects to Fabric Data Warehouse, several settings con
     - **Caution** 
         - Ensure scripts are **idempotent** and don't introduce schema changes that conflict with deployment.
 
-   > [!TIP]
-   > When a deployment process or query is **idempotent**, you can run the command multiple times without causing logical problems or failures. An idempotent command is also written in a way it can be deployed to multiple databases without needing to predetermine their status.
+> [!TIP]
+> When a deployment process or query is **idempotent**, you can run the command multiple times without causing logical problems or failures. An idempotent command is also written in a way it can be deployed to multiple databases without needing to predetermine their status.
 
  -  `PostDeploy` for the [post-deployment script](deployment-scripts.md#sql-project-file-structure-and-syntax)
     
