@@ -49,11 +49,13 @@ Power BI Pro and Power BI Premium Per User (PPU) aren't supported for planning s
 
 ## PowerTable limitations
 
-### Database-level row-level security (RLS) support
+The following limitations apply to PowerTable sheets.
 
-> [!NOTE]
-> - Database-level row-level security (RLS) is supported when connecting PowerTable to Fabric SQL tables through a database connection.
-> - Row-level security (RLS) is supported in Blend (From Sheets).
+### DMTS connection recovery
+
+If you delete the DMTS connection that you configured for a PowerTable sheet, or if it becomes unavailable, you can't open the sheet to update the connection. The connection recovery screen doesn't appear, and you see the message "DMTS connection is deleted or not found."
+
+To recover, create a new PowerTable sheet by using the **Existing Table** option and configure the same table again.
 
 ### Excel export limitations
 
