@@ -629,6 +629,8 @@ items:
       href: plan/planning-concept-fiscal-year-setup.md
     - name: General - Row-level security (RLS)
       href: plan/planning-concept-row-level-security.md
+    - name: General - Create org apps
+      href: plan/resources/how-to-create-org-apps.md
     - name: FAQ
       items:
       - name: Plan general FAQ
