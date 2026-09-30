@@ -93,7 +93,7 @@
       href: upgrade-planning-azure-data-factory.md
     - name: Upgrade pipelines to Fabric
       items:
-      - name: Upgrade Azure Data Factory pipelines to Fabric
+      - name: Upgrade Azure Data Factory pipelines to Fabric Data Factory
         href: how-to-upgrade-your-azure-data-factory-pipelines-to-fabric-data-factory.md
       - name: Upgrade Azure Synapse Analytics pipelines to Fabric
         href: how-to-upgrade-your-azure-synapse-analytics-pipelines-to-fabric-data-factory.md
