@@ -3,14 +3,17 @@ title: A guide to Fabric Dataflows for Azure Data Factory Mapping Data Flow user
 description: Guide on common transformations from Azure Data Factory Mapping Data Flows and their equivalent transformations in Power Query inside of Fabric's dataflows.
 ms.topic: overview
 ms.custom: fabric-cat, intro-migration, dataflows
-ms.date: 12/18/2024
+ms.date: 09/30/2026
 ms.reviewer: alpowers
 ms.search.form: DataflowGen2
 ---
 
 # A guide to Fabric dataflows for Azure Data Factory Mapping Data Flow users
 
-Microsoft Fabric’s Data Factory experience provides an intuitive and user-friendly interface using Power Query Online that can help you streamline your data transformation workflows when authoring Dataflow Gen2. If you’re a developer with a background in Azure Data Factory's Mapping Data Flows, you find this guide helpful in mapping your existing Mapping Data Flow transformations to the Dataflow Gen2 Power Query user interface.
+Microsoft Fabric's Data Factory experience provides an intuitive and user-friendly Power Query Online interface that can help you streamline your data transformation workflows when authoring Dataflow Gen2. If you're a developer with a background in Azure Data Factory Mapping Data Flows, this guide can help you map your existing Mapping Data Flow transformations to equivalent capabilities in the Dataflow Gen2 Power Query interface.
+
+> [!NOTE]
+> Reimplementing Mapping Data Flow transformations by using Power Query isn't the only migration option. If you want to retain the familiar Mapping Data Flow authoring experience and Spark-based execution in Fabric, you can use [Mapping Data Flow (MDF) transforms in Dataflow Gen2](/fabric/data-factory/dataflow-gen2-mapping-data-flows-transforms). You can create new MDF transforms directly in Fabric or use the [built-in migration experience](/fabric/data-factory/dataflow-gen2-mapping-data-flows-transforms-upgrade) to convert eligible Azure Data Factory and Azure Synapse Analytics pipelines containing Mapping Data Flows into Fabric pipelines and MDF transforms. MDF transforms and the migration experience are currently in preview.
 
 ## Global search box
 

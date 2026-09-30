@@ -3,7 +3,8 @@ title: Spark SQL Reference for Materialized Lake Views
 description: Learn about the Spark SQL syntax for activities related to materialized lake views in Microsoft Fabric.
 ms.topic: concept-article
 ms.reviewer: bsankaran, sairamyeturi, nijelsf, hgowrisankar
-ms.date: 06/12/2026
+ms.date: 09/30/2026
+ai-usage: ai-assisted
 #customer intent: As a data engineer, I want to understand the Spark SQL syntax for creating, listing, updating, and deleting materialized lake views in Microsoft Fabric so that I can manage them effectively.
 ---
 
@@ -100,58 +101,79 @@ ON p.productID = o.productID
 
 ## Ingest files with `USING OneLake_Files`
 
-In addition to defining a materialized lake view from tables with `AS select_statement`, you can define one that ingests raw files (CSV or Parquet) directly from OneLake. A *file-ingesting* view uses a `USING OneLake_Files` clause that points to a physical OneLake folder or a OneLake folder shortcut instead of an `AS SELECT` query. This design makes it a natural **bronze** layer for a medallion architecture.
+In addition to defining a materialized lake view from tables, you can define one that ingests CSV or Parquet files directly from OneLake. A *file-ingesting* view uses `USING OneLake_Files` with a physical OneLake folder, a OneLake folder shortcut, or a single-file path. You can optionally use a FROM-less `AS SELECT` clause to filter, shape, and aggregate the source as it's ingested.
 
 The following table shows which syntax applies to each authoring style:
 
 | Aspect | Table-based materialized lake view | File-based materialized lake view |
 |---|---|---|
-| **Source** | Tables or other materialized lake views | A physical OneLake folder or OneLake folder shortcut |
-| **Definition** | `AS select_statement` | `USING OneLake_Files` + `OPTIONS` |
+| **Source** | Tables or other materialized lake views | A physical OneLake folder, OneLake folder shortcut, or single file |
+| **Definition** | `AS select_statement` | `USING OneLake_Files` + `OPTIONS` + optional FROM-less `AS SELECT` |
 | **Formats** | Any queryable table | CSV, Parquet |
 | **Schema** | Derived from the `SELECT` | `schema_mode` = `DYNAMIC` or `FIXED` |
-| **Source lineage** | Upstream tables/views | Source folder, plus a `__filepath__` column per row |
+| **Source lineage** | Upstream tables/views | Source location; optionally project the `__filepath__` source metadata column when you need per-row file traceability |
 | **Typical layer** | Silver, gold | Bronze |
-| **Data quality constraints** | Supported | Apply in a downstream table-based view |
+| **Data quality constraints** | Supported | Supported at ingestion time |
 
 ### Syntax
 
 ```sql
 CREATE [OR REPLACE] MATERIALIZED LAKE VIEW [IF NOT EXISTS] [workspace.lakehouse.schema].MLV_Identifier
+[(
+    CONSTRAINT constraint_name CHECK (condition) ON MISMATCH DROP | FAIL
+)]
 USING OneLake_Files
 OPTIONS (
     'format' = 'csv' | 'parquet',
-    'path'   = 'abfss://<workspace>@<host>/<lakehouse>/Files/<folder>/',
+    'path'   = 'abfss://<workspace>@<host>/<lakehouse>/Files/<folder-or-file>',
     ['header' = 'true' | 'false',]
-    ['delimiter' = '<char>']
+    ['delimiter' = '<char>',]
+    [...]
 )
+[PARTITIONED BY (column_name [, ...])]
+[COMMENT "description"]
 [TBLPROPERTIES (
     'schema_mode'  = 'DYNAMIC' | 'FIXED',
     'refresh_mode' = 'APPEND_ONLY' | 'FULL' | 'MIRROR'
 )]
+[AS SELECT select_expression [...] [WHERE condition]
+    [GROUP BY expression [, ...]] [HAVING condition]]
 ```
 
 > [!NOTE]
-> A file-ingesting materialized lake view has **no `AS SELECT` clause** — the source is the folder named in `OPTIONS`. To transform the ingested data, create a downstream table-based materialized lake view that selects from this view.
+> Don't specify a `FROM` clause in the file-ingestion `AS SELECT`. The source is already bound by `USING OneLake_Files` and the `path` option.
 
 ### OPTIONS reference
 
 | Option | Applies to | Description |
 |---|---|---|
 | `format` | CSV, Parquet | Source file format. Supported values are `csv` and `parquet`. |
-| `path` | CSV, Parquet | Physical OneLake folder or OneLake folder shortcut (`abfss://…`) that contains the source files. The service recursively ingests files in nested subfolders when you create the view. |
+| `path` | CSV, Parquet | Physical OneLake folder, OneLake folder shortcut, or single-file ABFSS path. Files available in nested subfolders are ingested recursively when the view is created. Use a trailing slash for a folder or include the file extension for a single file. |
 | `header` | CSV | Indicates whether the first row of each file contains column names. Defaults to `false`. |
 | `delimiter` | CSV | Field delimiter character (for example, `,` or `|`). Defaults to a comma. |
+| `sep` | CSV | Alias for `delimiter`. |
+| `quote` | CSV | Character used to quote values. |
+| `escape` | CSV | Character used to escape a quote inside an already quoted value. |
+| `nullValue` | CSV | String that represents a null value. |
+| `ignoreLeadingWhiteSpace` | CSV | Whether to remove leading spaces from values. |
+| `ignoreTrailingWhiteSpace` | CSV | Whether to remove trailing spaces from values. |
+| `multiLine` | CSV | Whether a quoted value can span multiple lines. Defaults to `false`. |
+| `dateFormat` | CSV | Java date pattern used to parse date values, such as `MM/dd/yyyy`. |
+| `timestampFormat` | CSV | Java timestamp pattern used to parse timestamp values. |
+| `encoding` | CSV | Character encoding, such as `UTF-8`, `ISO-8859-1`, `UTF-16`, or `Windows-1252`. |
+| `comment` | CSV | Character that marks a line as a comment to skip. |
+| `inferSchema` | CSV | Whether to infer column types. When `false`, columns are read as strings. Use `FIXED` schema mode when disabling inference. |
+| `columnNameOfCorruptRecord` | CSV | Name of a string column that receives the raw text for malformed rows. Valid rows contain `NULL` in this column. Include the column in the `AS SELECT` output. |
 
-> [!NOTE]
-> For CSV, only `header` and `delimiter` are currently supported. Additional parsing options (such as `nullValue`, `quote`, and `escape`) aren't yet available.
+> [!IMPORTANT]
+> Fabric manages malformed-row handling. Don't set the Spark CSV `mode` option.
 
 ### TBLPROPERTIES reference
 
 | Property | Values | Description |
 |---|---|---|
 | `schema_mode` | `DYNAMIC` (default), `FIXED` | `DYNAMIC` adds newly discovered columns and writes `NULL` when a file doesn't contain an established column. `FIXED` pins the schema at creation and rejects subsequent drift. |
-| `refresh_mode` | `APPEND_ONLY`, `FULL`, `MIRROR` | `APPEND_ONLY` adds rows from new files without removing rows for deleted files. `FULL` reprocesses the current folder as a complete snapshot. `MIRROR` keeps the materialized result aligned with file additions and deletions in the source folder. |
+| `refresh_mode` | `APPEND_ONLY`, `FULL`, `MIRROR` | For folders, `APPEND_ONLY` adds rows from new files, `FULL` reprocesses the current folder as a snapshot, and `MIRROR` reflects file additions and deletions. A single-file source uses `FULL` refresh semantics. |
 
 ### Example
 
@@ -172,6 +194,95 @@ TBLPROPERTIES (
 ```
 
 You can then build downstream silver and gold materialized lake views that select from `bronze.raw_orders`; Fabric records the dependency and refreshes them in order. To trace files through the pipeline, see [Manage Fabric materialized lake views lineage](./view-lineage.md#view-lineage-for-file-ingestion).
+
+### Filter, transform, and validate files during ingestion
+
+Use a FROM-less `AS SELECT` to select columns, filter rows, cast values, add computed columns, aggregate data, or apply window functions. File-ingestion constraints run against the projected output, so a constraint can reference a computed alias.
+
+The following example captures malformed rows, applies a row-level data quality rule, filters the input, and partitions the materialized output:
+
+```sql
+CREATE MATERIALIZED LAKE VIEW silver.valid_orders
+(
+    CONSTRAINT positive_amount
+        CHECK (order_amount > 0) ON MISMATCH DROP
+)
+USING OneLake_Files
+OPTIONS (
+    'format' = 'csv',
+    'path' = 'abfss://SalesWorkspace@onelake.dfs.fabric.microsoft.com/SalesLake.Lakehouse/Files/orders/',
+    'header' = 'true',
+    'multiLine' = 'true',
+    'dateFormat' = 'MM/dd/yyyy',
+    'timestampFormat' = 'MM/dd/yyyy HH:mm:ss',
+    'encoding' = 'ISO-8859-1',
+    'comment' = '#',
+    'columnNameOfCorruptRecord' = '_corrupt_record'
+)
+PARTITIONED BY (region)
+COMMENT "Valid orders ingested from CSV"
+TBLPROPERTIES (
+    'schema_mode' = 'DYNAMIC',
+    'refresh_mode' = 'FULL'
+)
+AS SELECT
+    order_id,
+    region,
+    CAST(amount AS DECIMAL(18,2)) AS order_amount,
+    CASE WHEN amount >= 1000 THEN 'high' ELSE 'standard' END AS order_band,
+    _corrupt_record,
+    __filepath__,
+    current_timestamp() AS ingested_at;
+```
+
+Query captured rows for inspection or remediation:
+
+```sql
+SELECT
+    _corrupt_record,
+    __filepath__,
+    ingested_at
+FROM silver.valid_orders
+WHERE _corrupt_record IS NOT NULL;
+```
+
+You can also create aggregated or windowed materialized results directly from files:
+
+```sql
+CREATE MATERIALIZED LAKE VIEW gold.sales_by_region
+USING OneLake_Files
+OPTIONS (
+    'format' = 'parquet',
+    'path' = 'abfss://SalesWorkspace@onelake.dfs.fabric.microsoft.com/SalesLake.Lakehouse/Files/sales/'
+)
+TBLPROPERTIES ('schema_mode' = 'DYNAMIC', 'refresh_mode' = 'FULL')
+AS SELECT
+    region,
+    COUNT(*) AS order_count,
+    SUM(amount) AS total_amount,
+    AVG(amount) AS average_amount
+GROUP BY region
+HAVING SUM(amount) > 0;
+```
+
+Supported expressions include standard Spark SQL arithmetic, aggregate, statistical, window, and ranking functions.
+
+### Ingest a single file
+
+Set `path` to a CSV or Parquet file instead of a folder. A single-file source uses `FULL` refresh semantics so replacing the file replaces the materialized result.
+
+```sql
+CREATE MATERIALIZED LAKE VIEW bronze.monthly_snapshot
+USING OneLake_Files
+OPTIONS (
+    'format' = 'parquet',
+    'path' = 'abfss://SalesWorkspace@onelake.dfs.fabric.microsoft.com/SalesLake.Lakehouse/Files/snapshots/2026-08.parquet'
+)
+TBLPROPERTIES (
+    'schema_mode' = 'FIXED',
+    'refresh_mode' = 'FULL'
+);
+```
 
 > [!NOTE]
 > When you use `FIXED` schema and the source folder contains multiple files with **different** schemas at the time of the initial `CREATE`, the view fails because it can't reconcile a single fixed schema. Point `FIXED` views at files that share one schema, or use `DYNAMIC`. This is a known restriction, similar to fixed-schema behavior in shortcut transformations.
@@ -257,9 +368,10 @@ The following limitations apply to the Spark SQL statements for materialized lak
 * **No user-defined functions** — User-defined functions (UDFs) aren't supported in the `SELECT` query that defines a materialized lake view.
 * **No temporary views as sources** — The `SELECT` query can reference tables and other materialized lake views, but not temporary views.
 * **Session-level Spark properties** — Spark configuration properties set at the session level (for example, `spark.conf.set(...)`) aren't applied during a scheduled refresh. Set properties at the lakehouse or workspace level instead.
+* **File ingestion** — File-ingesting views support only CSV and Parquet. A `FIXED`-schema view fails if the source folder holds files with different schemas at creation time. Source paths can't contain spaces. OneLake folder shortcuts are supported as sources, but managed refresh doesn't recursively discover files added under nested shortcut folders.
 
 ## Related content
 
-* [What are materialized lake views in Fabric?](./overview-materialized-lake-view.md)
+* [What are materialized lake views in Microsoft Fabric?](./overview-materialized-lake-view.md)
 * [Data quality in materialized lake views](./data-quality.md)
 * [Optimal refresh for materialized lake views](./refresh-materialized-lake-view.md)

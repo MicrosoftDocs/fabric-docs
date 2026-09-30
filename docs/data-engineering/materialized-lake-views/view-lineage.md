@@ -3,7 +3,7 @@ title: "Manage Fabric Materialized Lake Views Lineage"
 description: Learn how to view and manage materialized lake views lineage in Microsoft Fabric, including the lineage interface and custom Spark environments.
 ms.reviewer: bsankaran, sairamyeturi, nijelsf, hgowrisankar
 ms.topic: how-to
-ms.date: 07/17/2026
+ms.date: 09/30/2026
 ai-usage: ai-assisted
 #customer intent: As a data engineer, I want to manage Fabric materialized lake views lineage in Microsoft Fabric so that I can efficiently handle large datasets and optimize query performance.
 ---
@@ -124,9 +124,9 @@ From the extended lineage view, you can schedule refreshes for upstream material
 
 ## View lineage for file ingestion
 
-When a materialized lake view ingests files with `USING OneLake_Files`, its source is a physical OneLake folder or OneLake folder shortcut rather than an upstream table. The lineage view represents this source with a **source folder** node that feeds the file-ingesting view, so you can trace and monitor a complete file-backed medallion pipeline.
+When a materialized lake view ingests files with `USING OneLake_Files`, its source is a physical OneLake folder, a OneLake folder shortcut, or a single file rather than an upstream table. The lineage view represents the source location as an upstream node that feeds the file-ingesting view, so you can trace and monitor a complete file-backed medallion pipeline.
 
-The lineage graph starts from the source folder that the view ingests. The folder node connects to the bronze file-ingesting materialized lake view, which in turn feeds downstream silver and gold views, following the same dependency ordering that Fabric applies to table-based views.
+The lineage graph starts from the source location that the view ingests. The source node connects to the file-ingesting materialized lake view, which in turn can feed downstream silver and gold views, following the same dependency ordering that Fabric applies to table-based views.
 
 :::image type="content" source="./media/view-lineage/medallion-dag-landing.png" alt-text="Screenshot of a materialized lake views lineage graph showing a source folder feeding a bronze file-ingesting view, then silver and gold views." border="true" lightbox="./media/view-lineage/medallion-dag-landing.png":::
 
@@ -155,11 +155,10 @@ To inspect a file-backed pipeline and confirm that the refresh detected source c
 Use the source folder details pane for the current folder inventory and the run details pane for the files acted on by a specific refresh. The two counts answer different questions and don't necessarily match for an incremental run.
 
 > [!TIP]
-> Each ingested row also carries a `__filepath__` column that records its source file. Use `GROUP BY __filepath__` to inspect the files represented in the current materialized result. This view reflects current row lineage, while **Files processed** reflects the work that one refresh run performs.
+> If the view projects the `__filepath__` source metadata column, use `GROUP BY __filepath__` to inspect the files represented in the current materialized result. This view reflects current row lineage, while **Files processed** reflects the work that one refresh run performs.
 
 ## Related content
 
 - [Fabric materialized lake views overview](overview-materialized-lake-view.md)
 - [Schedule a materialized lake view refresh](./schedule-lineage-run.md)
 - [Fabric materialized lake view tutorial](tutorial.md)
-
