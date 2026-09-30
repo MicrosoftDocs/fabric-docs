@@ -613,6 +613,8 @@ items:
       href: plan/overview-roles.md
     - name: Billing and capacity usage
       href: plan/resources/billing-fabric-plan.md
+    - name: Capacity throttling
+      href: plan/capacity-throttling.md
     - name: Add bookmarks
       href: plan/planning-how-to-add-bookmark.md
     - name: General - Fiscal year setup
