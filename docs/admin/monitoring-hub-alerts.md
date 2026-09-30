@@ -119,6 +119,10 @@ To set up failure notifications for an item, on the **Job runs** page, select th
 
 You can manage both notifications for failed scheduled jobs and Activator-based alerts from the at-scale alert management experience in the Monitor hub. This experience gives you a single place to review and adjust alerts across your jobs. You can also manage Activator-based alerts from Real-Time hub and Activator.
 
+## Current limitations
+
+Activator-based alerts rely on workspace monitoring capabilities. In regions where workspace monitoring isn't available, you can't create or use Activator-based job alerts in the Monitor hub.
+
 ## Related content
 
 - [What is the Monitor hub?](monitoring-hub.md)
