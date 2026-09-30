@@ -161,6 +161,8 @@ items:
       href: plan/intelligence-how-to-get-started.md
     - name: Get started with reporting
       href: plan/intelligence-how-to-get-started-reporting.md
+    - name: Share a plan item with users outside the workspace
+      href: plan/sharing-plan-artifact.md
   - name: Planning sheets
     items:
     - name: Concepts
@@ -298,7 +300,13 @@ items:
               - name: Writeback - Enable writeback in reading mode
                 href: plan/planning-writeback/planning-how-to-enable-writeback-reading-mode.md
               - name: Writeback FAQ
-                href: plan/planning-writeback/writeback-faq.md     
+                href: plan/planning-writeback/writeback-faq.md
+        - name: Security and governance
+          items:    
+              - name: Configure security settings
+                href: plan/planning-how-to-manage-security.md
+              - name: Configure role-based home layouts
+                href: plan/planning-how-to-create-manage-home-layouts.md 
         - name: Format and display
           items:
               - name: Change layouts
@@ -513,6 +521,8 @@ items:
           items:
             - name: Set up access control
               href: plan/powertable-how-to-set-up-access-control.md
+            - name: Configure data security settings
+              href: plan/powertable-how-to-configure-security-settings.md
             - name: Approval workflow - Configure approval workflow
               href: plan/powertable-how-to-configure-approval-workflow.md
             - name: Approval workflow - Review changes
@@ -611,12 +621,16 @@ items:
       href: plan/overview-roles.md
     - name: Billing and capacity usage
       href: plan/resources/billing-fabric-plan.md
+    - name: Capacity throttling
+      href: plan/capacity-throttling.md
     - name: Add bookmarks
       href: plan/planning-how-to-add-bookmark.md
     - name: General - Fiscal year setup
       href: plan/planning-concept-fiscal-year-setup.md
     - name: General - Row-level security (RLS)
       href: plan/planning-concept-row-level-security.md
+    - name: General - Create org apps
+      href: plan/resources/how-to-create-org-apps.md
     - name: FAQ
       items:
       - name: Plan general FAQ
@@ -635,6 +649,8 @@ items:
         href: plan/resources/best-practices/time-intelligence.md
       - name: Semantic modeling
         href: plan/resources/best-practices/semantic-modeling.md
+      - name: ALM – Variable Library
+        href: plan/alm-variable-library.md
     - name: Troubleshoot
       items:
           - name: Troubleshoot semantic model connection
