@@ -297,6 +297,8 @@ items:
                 href: plan/planning-writeback/planning-how-to-configure-advanced-settings.md
               - name: Writeback - View writeback logs
                 href: plan/planning-writeback/planning-how-to-view-logs.md
+              - name: Writeback - Create event triggers
+                href: plan/planning-writeback/planning-how-to-configure-event-triggers.md
               - name: Writeback - Enable writeback in reading mode
                 href: plan/planning-writeback/planning-how-to-enable-writeback-reading-mode.md
               - name: Writeback FAQ
