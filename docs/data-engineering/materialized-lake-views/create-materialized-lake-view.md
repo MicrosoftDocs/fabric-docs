@@ -232,8 +232,7 @@ AS SELECT
     CASE WHEN amount >= 1000 THEN 'high' ELSE 'standard' END AS order_band,
     _corrupt_record,
     __filepath__,
-    current_timestamp() AS ingested_at
-WHERE order_status = 'ACTIVE';
+    current_timestamp() AS ingested_at;
 ```
 
 Query captured rows for inspection or remediation:

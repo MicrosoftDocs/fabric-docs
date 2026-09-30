@@ -81,8 +81,7 @@ AS SELECT
     region,
     CAST(amount AS DECIMAL(18,2)) AS amount,
     _corrupt_record,
-    __filepath__
-WHERE order_status = 'ACTIVE';
+    __filepath__;
 ```
 
 Key characteristics:
