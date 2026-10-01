@@ -40,8 +40,8 @@ You can create a database project from scratch or from an existing warehouse.
 1. Choose **Synapse Data Warehouse in Microsoft Fabric** as the target platform.  
 1. When prompted, select **Yes (recommended)** for an SDK-style project.  
 
-  > [!IMPORTANT]
-  > Only **SDK-style** projects are supported for Fabric Data Warehouse.  
+   > [!IMPORTANT]
+   > Only **SDK-style** projects are supported for Fabric Data Warehouse.  
 
 1. Select **Yes** to the question **Do you want to configure SQL project build as the default build configuration for this folder?**
 1. Select **Yes** to trust the authors of the files in this folder.
@@ -126,10 +126,10 @@ Your project structure looks like this:
           <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
       </PackageReference>
    ```
-  > [!IMPORTANT]
-  > If you add the package reference without the `DatabaseVariableLiteralValue` metadata, building the project succeeds, but `sqlpackage` **Publish** and **Script** actions can fail as soon as your code references objects in the `sys` schema, such as `sys.views`. In that case, you see errors like the following:
-  >
-  > `Error SQL72033: This deployment may encounter errors during execution because [<schema>].[<procedure>] depends on [sys].[views].[schema_id] and [sys].[views].[schema_id] does not exist in the target database.`
+   > [!IMPORTANT]
+   > If you add the package reference without the `DatabaseVariableLiteralValue` metadata, building the project succeeds, but `sqlpackage` **Publish** and **Script** actions can fail as soon as your code references objects in the `sys` schema, such as `sys.views`. In that case, you see errors like the following:
+   >
+   > `Error SQL72033: This deployment may encounter errors during execution because [<schema>].[<procedure>] depends on [sys].[views].[schema_id] and [sys].[views].[schema_id] does not exist in the target database.`
 
 
    This is how your database project for a warehouse should look like after the updates.
