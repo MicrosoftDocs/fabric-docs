@@ -32,7 +32,7 @@ The PostgreSQL resource represented in **Estate** is a flexible server instance,
 ## Prerequisites
 
 - In the current preview, ask a Fabric administrator to opt your tenant into the Database Hub preview experience in the Fabric admin portal. In **Tenant settings**, enable **Users can access the Database hub (preview)**.
-- Authenticate with a Microsoft Entra identity that has access to the Azure subscriptions and PostgreSQL flexible server resources you want to work with. Azure resource visibility alone doesn't grant permission to query a database. Database Hub uses your existing Microsoft Entra ID and Azure RBAC permissions rather than a separate permission model, so the access you assign here follows [standard Azure role-assignment steps](/azure/role-based-access-control/role-assignments-portal).
+- Start with the free experience by signing in with your work or school account. You can enter from the Azure portal or directly from Microsoft Fabric, even if you haven't used Fabric before. Authenticate with a Microsoft Entra identity that has access to the Azure subscriptions and PostgreSQL flexible server resources you want to work with. Azure resource visibility alone doesn't grant permission to query a database. Database Hub uses your existing Microsoft Entra ID and Azure RBAC permissions rather than a separate permission model, so the access you assign here follows [standard Azure role-assignment steps](/azure/role-based-access-control/role-assignments-portal).
 
     - For discovery and monitoring, your identity needs permission to read the relevant Azure resource metadata and Azure Monitor metrics.
 

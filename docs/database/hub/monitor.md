@@ -2,7 +2,7 @@
 title: Monitor Databases in the Database Hub (Preview)
 description: Learn how to monitor your database estate in the Database Hub in Microsoft Fabric.
 ms.reviewer: amapatil, jmaldonado, varundhawan, ivujic, lancewright
-ms.date: 09/21/2026
+ms.date: 09/29/2026
 ms.topic: overview
 ai-usage: ai-assisted
 ---
@@ -23,7 +23,7 @@ In the Database Hub in the Fabric portal, you can quickly identify affected reso
 
 [!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
 
-To get started, [Open the Database Hub](https://powerbi.com/workloads/fdh/databaseHub). From the navigation pane, select **Databases**. The Database Hub opens to **Overview**, scoped to your permissions.
+To get started for free, [open the Database Hub](https://powerbi.com/workloads/fdh/databaseHub). From the navigation pane, select **Databases**. The Database Hub opens to **Overview**, scoped to your permissions. Start with the free experience by signing in with your work or school account. You can enter from the Azure portal or directly from Microsoft Fabric, even if you haven't used Fabric before. 
 
    :::image type="content" source="media/monitor/databases-navigation-overview.png" alt-text="The Databases icon in the Fabric navigation menu.":::
 
@@ -37,9 +37,17 @@ In the Database Hub you can browse your database inventory in one place, narrow 
 ## Prerequisites
 
 - In the current preview, ask a Fabric administrator to opt your tenant into the Database Hub preview experience in the Fabric admin portal. In **Tenant settings**, enable **Users can access the Database hub (preview)**.
-- Access to Microsoft Fabric and the Databases experience.
+- Access to Microsoft Fabric and the Databases experience. No capacity is needed, all you need is a Fabric license or capacity assigned to your workspace. You need at least [a free Fabric license](../../enterprise/licenses.md#per-user-licenses). Database Hub is entirely free.
 - Permission to view the resource. Some detail fields and connection strings require read access to the resource itself, not only to the inventory.
 - For **Open in VS Code** and **Open in SSMS**, the tool must be installed on your device.
+
+- If you never used Microsoft Fabric before, you can still use the Database Hub.
+    - In the Azure portal, open [Azure SQL hub at aka.ms/azuresqlhub](https://aka.ms/azuresqlhub).
+    - Find the Improve security, performance, and cost section.
+    - On the **Optimize your database estate** card, select **Open in Fabric (Preview)**.
+    - Enter your work or school email address.
+    - Follow the prompts to complete the Microsoft Fabric free license setup.
+    - When setup completes, select **Get started**.
 
 ## Investigate issues in your database estate
 
