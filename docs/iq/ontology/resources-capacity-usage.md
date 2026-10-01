@@ -20,7 +20,7 @@ A single action can use more than one operation. For example, an agent answering
 | --- | --- | --- | --- |
 | Ontology Discovery | `Ontology Discovery` | Read requests that retrieve ontology definition from all interfaces like UI, MCP, Ontology Agent or cache definition through the ontology UI and supported ontology interfaces. | 1,000 CU-seconds per Ontology Discovery |
 | Ontology Logic and Operations | `Ontology Logic and Operations - <child operation name>` | Usage of the ontology's child Eventhouse and Graph items. | The same rate as the child item |
-| Ontology AI | `Ontology AI Reasoning` | Usage of the ontology MCP server and ontology agent. | Token-based model usage |
+| Ontology AI | `Ontology AI Reasoning` | Usage of the ontology MCP server and ontology agent. | Dynamic consumption |
 
 ## Ontology Discovery
 
