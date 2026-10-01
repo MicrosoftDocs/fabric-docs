@@ -12,6 +12,9 @@ The **ontology (preview)** item in Microsoft Fabric IQ provides a shared, machin
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
+>[!IMPORTANT]
+> For ontology known issues, see the [Microsoft Fabric known issues site](https://support.fabric.microsoft.com/known-issues/) and filter to **IQ**. For troubleshooting details, see [Troubleshoot ontology (preview)](resources-troubleshooting.md).
+
 Ontology helps bridge the gap between how data is physically stored and how your business understands it. Instead of requiring every consumer to interpret tables, columns, measures, and joins independently, an ontology supplies reusable business concepts and source mappings across domains. This shared context can support analytics, real-time operational experiences, and AI agents that need consistent definitions and relationships.
 
 ## Why use an ontology?
@@ -33,9 +36,6 @@ The following diagram illustrates that relationship.
 :::image type="content" source="media/overview/ontology-fabric-iq-overview.png" alt-text="Graphic showing how ontology in Fabric gives a live, unified view of the business." lightbox="media/overview/ontology-fabric-iq-overview.png":::
 
 Ontology aligns with familiar semantic-model constructs while extending them with ontology-specific modeling concepts. You can represent tables, columns, measures, and relationships alongside entity hierarchies, business rules, source bindings, namespaces, and other semantic metadata. You can build an ontology from scratch, or you can generate it directly from semantic models. This option helps you extend existing semantic models into operational and agentic scenarios without having to rebuild their business meaning from scratch when you already have it defined.
-
->[!IMPORTANT]
-> For ontology known issues, see the [Microsoft Fabric known issues site](https://support.fabric.microsoft.com/known-issues/) and filter to **IQ**. For troubleshooting details, see [Troubleshoot ontology (preview)](resources-troubleshooting.md).
 
 ## Key capabilities
 
