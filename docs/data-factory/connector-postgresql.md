@@ -34,7 +34,7 @@ You can connect a dataflow Gen2 in Fabric to a PostgreSQL database by using Powe
 
 ## Prerequisites
 
-[!INCLUDE [postgresql-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/postgresql/postgresql-prerequisites.md)]
+[!INCLUDE [postgresql-prerequisites](includes/power-query/connectors/includes/postgresql/postgresql-prerequisites.md)]
 
 > [!IMPORTANT]
 > To use PostgreSQL as a Dataflow Gen2 data destination through an on-premises data gateway, install the [June 2026 gateway update (version 3000.322)](/data-integration/gateway/service-gateway-monthly-updates#june-2026-update-3000322) or later.
@@ -45,7 +45,7 @@ You can connect a dataflow Gen2 in Fabric to a PostgreSQL database by using Powe
 
 ## Supported capabilities
 
-[!INCLUDE [postgresql-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/postgresql/postgresql-capabilities-supported.md)]
+[!INCLUDE [postgresql-capabilities-supported](includes/power-query/connectors/includes/postgresql/postgresql-capabilities-supported.md)]
 
 ## Connection settings
 
@@ -57,7 +57,7 @@ You can connect a dataflow Gen2 in Fabric to a PostgreSQL database by using Powe
 
 ### Connection instructions
 
-[!INCLUDE [postgresql-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/postgresql/postgresql-connect-to-power-query-online.md)]
+[!INCLUDE [postgresql-connect-to-power-query-online](includes/power-query/connectors/includes/postgresql/postgresql-connect-to-power-query-online.md)]
 
 ## Related content
 

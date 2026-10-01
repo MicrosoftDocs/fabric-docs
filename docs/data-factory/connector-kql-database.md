@@ -33,7 +33,7 @@ You can connect dataflow Gen2 in Fabric to KQL database using Power Query connec
 
 ## Prerequisites
 
-[!INCLUDE [kql-database-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/kql-database/kql-database-prerequisites.md)]
+[!INCLUDE [kql-database-prerequisites](includes/power-query/connectors/includes/kql-database/kql-database-prerequisites.md)]
 
 <a id="capabilities"></a>
 
@@ -41,7 +41,7 @@ You can connect dataflow Gen2 in Fabric to KQL database using Power Query connec
 
 ## Supported capabilities
 
-[!INCLUDE [kql-database-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/kql-database/kql-database-capabilities-supported.md)]
+[!INCLUDE [kql-database-capabilities-supported](includes/power-query/connectors/includes/kql-database/kql-database-capabilities-supported.md)]
 
 ## Connection settings
 
@@ -53,7 +53,7 @@ You can connect dataflow Gen2 in Fabric to KQL database using Power Query connec
 
 ### Connection instructions
 
-[!INCLUDE [kql-database-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/kql-database/kql-database-connect-to-power-query-online.md)]
+[!INCLUDE [kql-database-connect-to-power-query-online](includes/power-query/connectors/includes/kql-database/kql-database-connect-to-power-query-online.md)]
 
 ## Related content
 
