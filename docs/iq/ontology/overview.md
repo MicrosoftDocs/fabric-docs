@@ -13,7 +13,7 @@ The **ontology (preview)** item in Microsoft Fabric IQ provides a shared, machin
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
 >[!IMPORTANT]
-> For ontology known issues, see the [Microsoft Fabric known issues site](https://support.fabric.microsoft.com/known-issues/) and filter to **IQ**. For troubleshooting details, see [Troubleshoot ontology (preview)](resources-troubleshooting.md).
+> For ontology known issues, see the [Microsoft Fabric known issues site](https://support.fabric.microsoft.com/known-issues/) and search for *ontology*. For troubleshooting details, see [Troubleshoot ontology (preview)](resources-troubleshooting.md).
 
 Ontology helps bridge the gap between how data is physically stored and how your business understands it. Instead of requiring every consumer to interpret tables, columns, measures, and joins independently, an ontology supplies reusable business concepts and source mappings across domains. This shared context can support analytics, real-time operational experiences, and AI agents that need consistent definitions and relationships.
 
@@ -179,4 +179,4 @@ For troubleshooting details, see [Troubleshoot ontology](resources-troubleshooti
 - Add [metadata](how-to-add-metadata.md), [rules](how-to-use-rules.md), [metrics](how-to-use-metrics.md), [inheritance](how-to-use-inheritance.md), [shared properties](how-to-reuse-properties.md), and [namespaces](how-to-use-namespaces.md).
 - Connect a [supported agent](concepts-agent-integration.md) to consume the ontology context. Or, use the built in [ontology agent](how-to-use-ontology-agent.md) experience.
 - If you have an existing ontology item that was created with the old experience, review the [migration guidance](#migrate-from-old-experience) and create a copy in the new experience.
-- View ontology known issues on the [Microsoft Fabric known issues site](https://support.fabric.microsoft.com/known-issues/) (filter to **IQ**), or view [ontology troubleshooting details](resources-troubleshooting.md).
+- View ontology known issues on the [Microsoft Fabric known issues site](https://support.fabric.microsoft.com/known-issues/) (search for *ontology*), or view [ontology troubleshooting details](resources-troubleshooting.md).
