@@ -35,7 +35,7 @@ You can connect a dataflow Gen2 in Fabric to a Teradata database using Power Que
 
 ## Prerequisites
 
-[!INCLUDE [teradata-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/teradata/teradata-prerequisites.md)]
+[!INCLUDE [teradata-prerequisites](includes/power-query/connectors/includes/teradata/prerequisites.md)]
 
 <a id="capabilities"></a>
 
@@ -43,7 +43,7 @@ You can connect a dataflow Gen2 in Fabric to a Teradata database using Power Que
 
 ## Supported capabilities
 
-[!INCLUDE [teradata-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/teradata/teradata-capabilities-supported.md)]
+[!INCLUDE [teradata-capabilities-supported](includes/power-query/connectors/includes/teradata/capabilities-supported.md)]
 
 ## Connection settings
 
@@ -55,7 +55,7 @@ You can connect a dataflow Gen2 in Fabric to a Teradata database using Power Que
 
 ### Connection instructions
 
-[!INCLUDE [teradata-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/teradata/teradata-connect-to-power-query-online.md)]
+[!INCLUDE [teradata-connect-to-power-query-online](includes/power-query/connectors/includes/teradata/connect-to-power-query-online.md)]
 
 
 ## Related content

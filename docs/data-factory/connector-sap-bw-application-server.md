@@ -35,7 +35,7 @@ You can connect a dataflow Gen2 in Fabric to SAP BW Application Server by using 
 
 ## Prerequisites
 
-[!INCLUDE [sap-bw-application-server-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/sap-bw-application-server/sap-bw-application-server-prerequisites.md)]
+[!INCLUDE [sap-bw-application-server-prerequisites](includes/power-query/connectors/includes/sap-bw-application-server/prerequisites.md)]
 
 <a id="capabilities"></a>
 
@@ -43,7 +43,7 @@ You can connect a dataflow Gen2 in Fabric to SAP BW Application Server by using 
 
 ## Supported capabilities
 
-[!INCLUDE [sap-bw-application-server-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/sap-bw-application-server/sap-bw-application-server-capabilities-supported.md)]
+[!INCLUDE [sap-bw-application-server-capabilities-supported](includes/power-query/connectors/includes/sap-bw-application-server/capabilities-supported.md)]
 
 ## Connection settings
 
@@ -55,7 +55,7 @@ You can connect a dataflow Gen2 in Fabric to SAP BW Application Server by using 
 
 ### Connection instructions
 
-[!INCLUDE [sap-bw-application-server-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/sap-bw-application-server/sap-bw-application-server-connect-to-power-query-online.md)]
+[!INCLUDE [sap-bw-application-server-connect-to-power-query-online](includes/power-query/connectors/includes/sap-bw-application-server/connect-to-power-query-online.md)]
 
 ## Set up your connection in a pipeline
 

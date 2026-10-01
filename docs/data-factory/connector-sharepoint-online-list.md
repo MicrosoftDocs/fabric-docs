@@ -40,7 +40,7 @@ You can connect a dataflow Gen2 in Fabric to a SharePoint Online list by using P
 
 ## Supported capabilities
 
-[!INCLUDE [sharepoint-online-list-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/sharepoint-online-list/sharepoint-online-list-capabilities-supported.md)]
+[!INCLUDE [sharepoint-online-list-capabilities-supported](includes/power-query/connectors/includes/sharepoint-online-list/sharepoint-online-list-capabilities-supported.md)]
 
 ## Connection settings
 
@@ -52,7 +52,7 @@ You can connect a dataflow Gen2 in Fabric to a SharePoint Online list by using P
 
 ### Connection steps
 
-[!INCLUDE [sharepoint-online-list-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/sharepoint-online-list/sharepoint-online-list-connect-to-power-query-online.md)]
+[!INCLUDE [sharepoint-online-list-connect-to-power-query-online](includes/power-query/connectors/includes/sharepoint-online-list/sharepoint-online-list-connect-to-power-query-online.md)]
 
 ## Set up your connection in Manage connections and gateways
 
