@@ -167,7 +167,7 @@ Your old ontology stays in your workspace and is available until the old experie
 
 ## Troubleshooting and known issues
 
-For ontology known issues, see [Microsoft Fabric known issues](https://support.fabric.microsoft.com/known-issues/) and filter to **IQ**.
+For ontology known issues, see [Microsoft Fabric known issues](https://support.fabric.microsoft.com/known-issues/) and search for *ontology*.
 
 For troubleshooting details, see [Troubleshoot ontology](resources-troubleshooting.md).
 
