@@ -83,6 +83,15 @@ The creator can publish and consume any business event within the same Event Sch
 
 Use the [Fabric REST API](/rest/api/fabric/core/onelake-data-access-security/create-or-update-data-access-roles#dataaccessrole) to create or update data access roles for business events. This API updates role definitions by creating, updating, and deleting roles to match the payload you send.  
 
+Before you make the first data access roles API call for an event schema set, enable OneLake security for the event schema set item:
+
+```http
+POST https://msit-onelake.pbidedicated.windows.net/v1.0/workspaces/{workspaceId}/artifacts/{schemaSetId}
+Content-Type: application/json
+
+{"enableOneSecurity": true}
+```
+
 ### Endpoint 
 
 ```http
