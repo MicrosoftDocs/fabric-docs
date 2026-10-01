@@ -33,7 +33,7 @@ You can connect dataflow Gen2 to CloudBluePSA in Fabric by using Power Query con
 
 ## Prerequisites
 
-[!INCLUDE [cloudbluepsa-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/cloudbluepsa-prerequisites.md)]
+[!INCLUDE [cloudbluepsa-prerequisites](includes/power-query/connectors/includes/cloudbluepsa/prerequisites.md)]
 
 ## Connection settings
 
@@ -45,7 +45,7 @@ You can connect dataflow Gen2 to CloudBluePSA in Fabric by using Power Query con
 
 ### Connection instructions
 
-[!INCLUDE [cloudbluepsa-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/cloudbluepsa/cloudbluepsa-connect-to-power-query-online.md)]
+[!INCLUDE [cloudbluepsa-connect-to-power-query-online](includes/power-query/connectors/includes/cloudbluepsa/connect-to-power-query-online.md)]
 
 ## Set up your connection in a pipeline
 

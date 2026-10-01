@@ -36,7 +36,7 @@ You can connect dataflow Gen2 to Common Data Service (Legacy) in Fabric by using
 
 ## Prerequisites
 
-[!INCLUDE [common-data-service-legacy-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/common-data-service-legacy/common-data-service-legacy-prerequisites.md)]
+[!INCLUDE [common-data-service-legacy-prerequisites](includes/power-query/connectors/includes/common-data-service-legacy/common-data-service-legacy-prerequisites.md)]
 
 <a id="capabilities"></a>
 
@@ -44,7 +44,7 @@ You can connect dataflow Gen2 to Common Data Service (Legacy) in Fabric by using
 
 ## Supported capabilities
 
-[!INCLUDE [common-data-service-legacy-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/common-data-service-legacy/common-data-service-legacy-capabilities-supported.md)]
+[!INCLUDE [common-data-service-legacy-capabilities-supported](includes/power-query/connectors/includes/common-data-service-legacy/common-data-service-legacy-capabilities-supported.md)]
 
 ## Connection settings
 
@@ -56,13 +56,13 @@ You can connect dataflow Gen2 to Common Data Service (Legacy) in Fabric by using
 
 ### Find your environment URL
 
-[!INCLUDE [common-data-service-legacy-find-environment-url](~/../powerquery-repo/powerquery-docs/connectors/includes/common-data-service-legacy/common-data-service-legacy-find-environment-url.md)]
+[!INCLUDE [common-data-service-legacy-find-environment-url](includes/power-query/connectors/includes/common-data-service-legacy/common-data-service-legacy-find-environment-url.md)]
 
 <a id="connect-to-common-data-service-legacy"></a>
 
 ### Connection instructions
 
-[!INCLUDE [common-data-service-legacy-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/common-data-service-legacy/common-data-service-legacy-connect-to-power-query-online.md)]
+[!INCLUDE [common-data-service-legacy-connect-to-power-query-online](includes/power-query/connectors/includes/common-data-service-legacy/common-data-service-legacy-connect-to-power-query-online.md)]
 
 ## Set up your connection in a pipeline
 

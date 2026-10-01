@@ -34,7 +34,7 @@ You can connect dataflow Gen2 to dataflows (Power Platform) in Fabric by using P
 
 ## Prerequisites
 
-[!INCLUDE [dataflows-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/dataflows/dataflows-prerequisites.md)]
+[!INCLUDE [dataflows-prerequisites](includes/power-query/connectors/includes/dataflows/dataflows-prerequisites.md)]
 
 <a id="capabilities"></a>
 
@@ -42,7 +42,7 @@ You can connect dataflow Gen2 to dataflows (Power Platform) in Fabric by using P
 
 ## Supported capabilities
 
-[!INCLUDE [dataflows-ccapabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/dataflows/dataflows-capabilities-supported.md)]
+[!INCLUDE [dataflows-ccapabilities-supported](includes/power-query/connectors/includes/dataflows/dataflows-capabilities-supported.md)]
 
 ## Connection settings
 
@@ -54,7 +54,7 @@ You can connect dataflow Gen2 to dataflows (Power Platform) in Fabric by using P
 
 ### Connection instructions
 
-[!INCLUDE [dataflows-get-data-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/dataflows/dataflows-get-data-power-query-online.md)]
+[!INCLUDE [dataflows-get-data-power-query-online](includes/power-query/connectors/includes/dataflows/dataflows-get-data-power-query-online.md)]
 
 ## Set up your connection in a pipeline
 
@@ -62,7 +62,7 @@ Data Factory doesn't currently support dataflow data in pipelines.
 
 ## Limitations and considerations
 
-[!INCLUDE [dataflows-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/dataflows/dataflows-limitations-and-considerations-include.md)]
+[!INCLUDE [dataflows-limitations-and-considerations](includes/power-query/connectors/includes/dataflows/limitations.md)]
 
 ## Related content
 
