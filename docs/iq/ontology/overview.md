@@ -34,6 +34,9 @@ The following diagram illustrates that relationship.
 
 Ontology aligns with familiar semantic-model constructs while extending them with ontology-specific modeling concepts. You can represent tables, columns, measures, and relationships alongside entity hierarchies, business rules, source bindings, namespaces, and other semantic metadata. You can build an ontology from scratch, or you can generate it directly from semantic models. This option helps you extend existing semantic models into operational and agentic scenarios without having to rebuild their business meaning from scratch when you already have it defined.
 
+>[!IMPORTANT]
+> For ontology known issues, see the [Microsoft Fabric known issues site](https://support.fabric.microsoft.com/known-issues/) and filter to **IQ**. For troubleshooting details, see [Troubleshoot ontology (preview)](resources-troubleshooting.md).
+
 ## Key capabilities
 
 ### Unified semantic modeling
