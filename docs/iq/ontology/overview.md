@@ -162,6 +162,12 @@ Your old ontology stays in your workspace and is available until the old experie
 >[!IMPORTANT]
 > The old experience of ontology retires on Jan 31, 2027.
 
+## Troubleshooting and known issues
+
+For ontology known issues, see [Microsoft Fabric known issues](https://support.fabric.microsoft.com/known-issues/) and filter to **IQ**.
+
+For troubleshooting details, see [Troubleshoot ontology](resources-troubleshooting.md).
+
 ## Next steps
 
 - [Prepare your tenant](overview-tenant-settings.md) by enabling the required ontology settings.
@@ -170,5 +176,4 @@ Your old ontology stays in your workspace and is available until the old experie
 - Add [metadata](how-to-add-metadata.md), [rules](how-to-use-rules.md), [metrics](how-to-use-metrics.md), [inheritance](how-to-use-inheritance.md), [shared properties](how-to-reuse-properties.md), and [namespaces](how-to-use-namespaces.md).
 - Connect a [supported agent](concepts-agent-integration.md) to consume the ontology context. Or, use the built in [ontology agent](how-to-use-ontology-agent.md) experience.
 - If you have an existing ontology item that was created with the old experience, review the [migration guidance](#migrate-from-old-experience) and create a copy in the new experience.
-- [Troubleshoot ontology](resources-troubleshooting.md)
-- [Microsoft Fabric known issues](https://support.fabric.microsoft.com/known-issues/) (filter to **IQ**)
+- View ontology known issues on the [Microsoft Fabric known issues site](https://support.fabric.microsoft.com/known-issues/) (filter to **IQ**), or view [ontology troubleshooting details](resources-troubleshooting.md).
