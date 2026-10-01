@@ -35,7 +35,7 @@ You can connect dataflow Gen2 in Fabric to a MySQL database by using Power Query
 
 ## Prerequisites
 
-[!INCLUDE [mysql-database-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/mysql-database/mysql-database-prerequisites.md)]
+[!INCLUDE [mysql-database-prerequisites](includes/power-query/connectors/includes/mysql-database/mysql-database-prerequisites.md)]
 
 <a id="capabilities"></a>
 
@@ -43,7 +43,7 @@ You can connect dataflow Gen2 in Fabric to a MySQL database by using Power Query
 
 ## Supported capabilities
 
-[!INCLUDE [mysql-database-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/mysql-database/mysql-database-capabilities-supported.md)]
+[!INCLUDE [mysql-database-capabilities-supported](includes/power-query/connectors/includes/mysql-database/mysql-database-capabilities-supported.md)]
 
 ## Connection settings
 
@@ -55,11 +55,11 @@ You can connect dataflow Gen2 in Fabric to a MySQL database by using Power Query
 
 ### Connection instructions
 
-[!INCLUDE [mysql-database-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/mysql-database/mysql-database-connect-to-power-query-online.md)]
+[!INCLUDE [mysql-database-connect-to-power-query-online](includes/power-query/connectors/includes/mysql-database/mysql-database-connect-to-power-query-online.md)]
 
 ## Limitations and considerations
 
-[!INCLUDE [mysql-database-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/mysql-database/mysql-database-limitations-and-considerations.md)]
+[!INCLUDE [mysql-database-limitations-and-considerations](includes/power-query/connectors/includes/mysql-database/limitations.md)]
 
 ## Related content
 

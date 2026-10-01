@@ -101,20 +101,21 @@ Connect the Enterprise Dataset semantic model to the plan.
 
 1. On the launch screen, under **Get data**, select **Semantic Model**.
 
-:::image type="content" source="../../media/planning-tutorial/intelligence/tutorial-9-introduction-to-intelligence-sheets/create-intelligence-sheet-option.jpg" alt-text="Screenshot of the launch screen showing Intelligence as an option under Create new sheet." lightbox="../../media/planning-tutorial/intelligence/tutorial-9-introduction-to-intelligence-sheets/create-intelligence-sheet-option.jpg":::
+    :::image type="content" source="../../media/planning-tutorial/intelligence/tutorial-9-introduction-to-intelligence-sheets/create-intelligence-sheet-option.jpg" alt-text="Screenshot of the launch screen showing Intelligence as an option under Create new sheet." lightbox="../../media/planning-tutorial/intelligence/tutorial-9-introduction-to-intelligence-sheets/create-intelligence-sheet-option.jpg":::
 
-2. In **OneLake catalog**, select **Enterprise Dataset**, and then
-    select **Add**.
+1. In the **Select Semantic Model** window, select **Semantic Model Item** and then select the search field.
 
-:::image type="content" source="../../media/planning-tutorial/intelligence/tutorial-9-introduction-to-intelligence-sheets/select-enterprise-dataset.jpg" alt-text="Screenshot of OneLake catalog with Enterprise Dataset selected." lightbox="../../media/planning-tutorial/intelligence/tutorial-9-introduction-to-intelligence-sheets/select-enterprise-dataset.jpg":::
+    :::image type="content" source="../../media/planning-tutorial/intelligence/tutorial-9-introduction-to-intelligence-sheets/select-semantic-model.png" alt-text="Screenshot of the Select Semantic Model dialog with Semantic Model Item selected and the Select Semantic Model search field highlighted." lightbox="../../media/planning-tutorial/intelligence/tutorial-9-introduction-to-intelligence-sheets/select-semantic-model.png":::
 
-3. In **Select Semantic Model Connection**, select the shared cloud
-    connection you want to use.
+1. In **OneLake catalog**, select **Enterprise Dataset**, and then
+select **Add**.
 
-4. Under **Semantic Model**, verify that **Enterprise Dataset** is
-    selected, and then select **Connect**.
+    :::image type="content" source="../../media/planning-tutorial/intelligence/tutorial-9-introduction-to-intelligence-sheets/select-enterprise-dataset.jpg" alt-text="Screenshot of OneLake catalog with Enterprise Dataset selected." lightbox="../../media/planning-tutorial/intelligence/tutorial-9-introduction-to-intelligence-sheets/select-enterprise-dataset.jpg":::
 
-:::image type="content" source="../../media/planning-tutorial/intelligence/tutorial-9-introduction-to-intelligence-sheets/semantic-model-connection.jpg" alt-text="Screenshot of Select Semantic Model Connection with a shared connection and Enterprise Dataset selected." lightbox="../../media/planning-tutorial/intelligence/tutorial-9-introduction-to-intelligence-sheets/semantic-model-connection.jpg":::
+1. Under **Semantic Model**, verify that **Enterprise Dataset** is
+selected, and then select **Connect**.
+
+    :::image type="content" source="../../media/planning-tutorial/intelligence/tutorial-9-introduction-to-intelligence-sheets/semantic-model-connection.jpg" alt-text="Screenshot of Select Semantic Model with a shared connection and Enterprise Dataset selected." lightbox="../../media/planning-tutorial/intelligence/tutorial-9-introduction-to-intelligence-sheets/semantic-model-connection.jpg":::
 
 After the connection is established, the semantic model is added and its
 tables are available in the **Data** pane.
@@ -391,3 +392,5 @@ You now have an interactive enterprise dashboard that:
 - Uses comments to collaborate with colleagues.
 
 :::image type="content" source="../../media/planning-tutorial/intelligence/tutorial-9-introduction-to-intelligence-sheets/final-dashboard-preview.jpg" alt-text="Screenshot of the completed SaaS Enterprise financial performance dashboard with variance, trend, KPI, matrix, date filter, and header." lightbox="../../media/planning-tutorial/intelligence/tutorial-9-introduction-to-intelligence-sheets/final-dashboard-preview.jpg":::
+
+:::image type="content" source="../../media/planning-tutorial/intelligence/tutorial-10-build-profit-and-loss-intelligence/open-data-pane.png" alt-text="Screenshot of an intelligence sheet with the Data pane open and the Add button under Semantic Model highlighted." lightbox="../../media/planning-tutorial/intelligence/tutorial-10-build-profit-and-loss-intelligence/open-data-pane.png":::

@@ -35,7 +35,7 @@ You can connect dataflow Gen2 to Dataverse in Fabric by using Power Query connec
 
 ## Prerequisites
 
-[!INCLUDE [dataverse-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/dataverse/dataverse-prerequisites.md)]
+[!INCLUDE [dataverse-prerequisites](includes/power-query/connectors/includes/dataverse/dataverse-prerequisites.md)]
 
 <a id="capabilities"></a>
 
@@ -43,7 +43,7 @@ You can connect dataflow Gen2 to Dataverse in Fabric by using Power Query connec
 
 ## Supported capabilities
 
-[!INCLUDE [dataverse-ccapabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/dataverse/dataverse-capabilities-supported.md)]
+[!INCLUDE [dataverse-ccapabilities-supported](includes/power-query/connectors/includes/dataverse/dataverse-capabilities-supported.md)]
 
 ## Connection settings
 
@@ -55,17 +55,17 @@ You can connect dataflow Gen2 to Dataverse in Fabric by using Power Query connec
 
 ### Find your environment URL
 
-[!INCLUDE [dataverse-find-environment-url](~/../powerquery-repo/powerquery-docs/connectors/includes/dataverse/dataverse-find-environment-url.md)]
+[!INCLUDE [dataverse-find-environment-url](includes/power-query/connectors/includes/dataverse/dataverse-find-environment-url.md)]
 
 <a id="connect-to-dataverse"></a>
 
 ### Connection instructions
 
-[!INCLUDE [dataverse-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/dataverse/dataverse-connect-to-power-query-online.md)]
+[!INCLUDE [dataverse-connect-to-power-query-online](includes/power-query/connectors/includes/dataverse/dataverse-connect-to-power-query-online.md)]
 
 ## Limitations and considerations
 
-[!INCLUDE [dataverse-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/dataverse/dataverse-limitations-and-considerations-include.md)]
+[!INCLUDE [dataverse-limitations-and-considerations](includes/power-query/connectors/includes/dataverse/limitations.md)]
 
 ## Related content
 

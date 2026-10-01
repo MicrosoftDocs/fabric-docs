@@ -34,7 +34,7 @@ You can connect dataflow Gen2 in Fabric to Google Analytics by using Power Query
 
 ## Prerequisites
 
-[!INCLUDE [google-analytics-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/google-analytics/google-analytics-prerequisites.md)]
+[!INCLUDE [google-analytics-prerequisites](includes/power-query/connectors/includes/google-analytics/google-analytics-prerequisites.md)]
 
 <a id="capabilities"></a>
 
@@ -42,7 +42,7 @@ You can connect dataflow Gen2 in Fabric to Google Analytics by using Power Query
 
 ## Supported capabilities
 
-[!INCLUDE [google-analytics-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/google-analytics/google-analytics-capabilities-supported.md)]
+[!INCLUDE [google-analytics-capabilities-supported](includes/power-query/connectors/includes/google-analytics/google-analytics-capabilities-supported.md)]
 
 ## Connection settings
 
@@ -54,7 +54,7 @@ You can connect dataflow Gen2 in Fabric to Google Analytics by using Power Query
 
 ### Connection instructions
 
-[!INCLUDE [google-analytics-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/google-analytics/google-analytics-connect-to-power-query-online.md)]
+[!INCLUDE [google-analytics-connect-to-power-query-online](includes/power-query/connectors/includes/google-analytics/google-analytics-connect-to-power-query-online.md)]
 
 ## Set up your connection in a pipeline
 
@@ -62,7 +62,7 @@ Data Factory doesn't currently support Google Analytics data in pipelines.
 
 ## Limitations and considerations
 
-[!INCLUDE [google-analytics-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/google-analytics/google-analytics-limitations-and-considerations-include.md)]
+[!INCLUDE [google-analytics-limitations-and-considerations](includes/power-query/connectors/includes/google-analytics/limitations.md)]
 
 ## Related content
 

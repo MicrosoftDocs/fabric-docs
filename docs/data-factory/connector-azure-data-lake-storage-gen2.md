@@ -39,7 +39,7 @@ You can connect dataflow Gen2 to Azure Data Lake Storage Gen2 in Fabric using Po
 
 ## Prerequisites
 
-[!INCLUDE [data-lake-storage-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/data-lake-storage/data-lake-storage-prerequisites.md)]
+[!INCLUDE [data-lake-storage-prerequisites](includes/power-query/connectors/includes/data-lake-storage/data-lake-storage-prerequisites.md)]
 
 <a id="capabilities"></a>
 
@@ -47,7 +47,7 @@ You can connect dataflow Gen2 to Azure Data Lake Storage Gen2 in Fabric using Po
 
 ## Supported capabilities
 
-[!INCLUDE [data-lake-storage-ccapabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/data-lake-storage/data-lake-storage-capabilities-supported.md)]
+[!INCLUDE [data-lake-storage-ccapabilities-supported](includes/power-query/connectors/includes/data-lake-storage/data-lake-storage-capabilities-supported.md)]
 
 ## Connection settings
 
@@ -59,7 +59,7 @@ You can connect dataflow Gen2 to Azure Data Lake Storage Gen2 in Fabric using Po
 
 ### Connection instructions
 
-[!INCLUDE [data-lake-storage-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/data-lake-storage/data-lake-storage-connect-to-power-query-online.md)]
+[!INCLUDE [data-lake-storage-connect-to-power-query-online](includes/power-query/connectors/includes/data-lake-storage/data-lake-storage-connect-to-power-query-online.md)]
 
 ## Set up connections for trusted workspace access
 

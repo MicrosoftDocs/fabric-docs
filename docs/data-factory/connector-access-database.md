@@ -29,14 +29,14 @@ The Access database connector supports the following authentication types for co
 |Organizational account| n/a | √ |
 
 ## Prerequisites
-[!INCLUDE [access-database-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/access-database/access-database-prerequisites.md)]
+[!INCLUDE [access-database-prerequisites](includes/power-query/connectors/includes/access-database/access-database-prerequisites.md)]
 
 <a id="capabilities"></a>
 
 <a id="capabilities-supported"></a>
 
 ## Supported capabilities
-[!INCLUDE [access-database-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/access-database/access-database-capabilities-supported.md)]
+[!INCLUDE [access-database-capabilities-supported](includes/power-query/connectors/includes/access-database/access-database-capabilities-supported.md)]
 
 ## Connection settings
 
@@ -48,7 +48,7 @@ The Access database connector supports the following authentication types for co
 
 ### Connection instructions
 
-[!INCLUDE [access-database-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/access-database/access-database-connect-to-power-query-online.md)]
+[!INCLUDE [access-database-connect-to-power-query-online](includes/power-query/connectors/includes/access-database/access-database-connect-to-power-query-online.md)]
 
 ## Related content
 

@@ -30,7 +30,7 @@ In this article, you use the first method: how to upload an Excel or a CSV file 
 
 Before you begin, make sure that you have the following prerequisites in place:
 
-* Connections established to the [Fabric SQL database](planning-how-to-create-database-connection.md) and/or [semantic model](planning-how-to-create-semantic-model-connection.md) that contain the data for your PowerTable.
+* Connection established to the [Fabric SQL database](planning-how-to-create-database-connection.md) that stores the data for your PowerTable app.
 * [A plan item](planning-how-to-get-started.md#create-plan-item) created in your Fabric workspace.
 
 [!INCLUDE [new PowerTable sheet](includes/create-powertable.md)]

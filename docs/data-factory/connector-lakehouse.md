@@ -33,7 +33,7 @@ You can connect dataflow Gen2 in Fabric to a lakehouse by using Power Query conn
 
 ## Prerequisites
 
-[!INCLUDE [lakehouse-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/lakehouse/lakehouse-prerequisites.md)]
+[!INCLUDE [lakehouse-prerequisites](includes/power-query/connectors/includes/lakehouse/lakehouse-prerequisites.md)]
 
 <a id="capabilities"></a>
 
@@ -41,7 +41,7 @@ You can connect dataflow Gen2 in Fabric to a lakehouse by using Power Query conn
 
 ## Supported capabilities
 
-[!INCLUDE [lakehouse-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/lakehouse/lakehouse-capabilities-supported.md)]
+[!INCLUDE [lakehouse-capabilities-supported](includes/power-query/connectors/includes/lakehouse/lakehouse-capabilities-supported.md)]
 
 ## Connection settings
 
@@ -53,7 +53,7 @@ You can connect dataflow Gen2 in Fabric to a lakehouse by using Power Query conn
 
 ### Connection instructions
 
-[!INCLUDE [lakehouse-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/lakehouse/lakehouse-connect-to-power-query-online.md)]
+[!INCLUDE [lakehouse-connect-to-power-query-online](includes/power-query/connectors/includes/lakehouse/lakehouse-connect-to-power-query-online.md)]
 
 ### Using relative references
 

@@ -20,7 +20,7 @@ In this method, the semantic model is the initial input source, and the created 
 
 Before you begin, make sure that you have the following prerequisites in place:
 
-* Connections established to the [Fabric SQL database](planning-how-to-create-database-connection.md) and/or [semantic model](planning-how-to-create-semantic-model-connection.md) that contain the data for your PowerTable.
+* Connection established to the [Fabric SQL database](planning-how-to-create-database-connection.md) that stores the data for your PowerTable app.
 * [A plan item](planning-how-to-get-started.md#create-plan-item) created in your Fabric workspace.
 
 [!INCLUDE [new PowerTable sheet](includes/create-powertable.md)]
@@ -31,7 +31,17 @@ Before you begin, make sure that you have the following prerequisites in place:
 1. Choose the database schema.
 1. Enter a **Table Name**. Currently, table names support English characters only.
 1. Choose **Connect To Semantic Model** in **Import Data**.
-1. Select your **Connection** and the required **Semantic Model**.
+1. Select **Semantic Model Item** and then select the search field to choose a semantic model.
+
+    :::image type="content" source="media/powertable-how-to-connect-semantic-model/select-semantic-model-field.png" alt-text="Screenshot of the Select Table dialog with New Table, Connect To Semantic Model, and Semantic Model Item selected and the Semantic Model search field highlighted." lightbox="media/powertable-how-to-connect-semantic-model/select-semantic-model-field.png":::
+
+    > [!NOTE]
+    > The connection-based flow for semantic models is deprecated. You can connect to a semantic model directly by using your signed-in identity without configuring a shared cloud connection.
+
+1. Select a semantic model from the list and select **Add**.
+
+    :::image type="content" source="media/powertable-how-to-connect-semantic-model/choose-semantic-model.png" alt-text="Screenshot of the OneLake catalog Choose a semantic model dialog with Employee Details selected and the Add button highlighted." lightbox="media/powertable-how-to-connect-semantic-model/choose-semantic-model.png":::
+
 1. Select **Next**.
 
     :::image type="content" source="media/powertable-how-to-connect-semantic-model/new-table.png" alt-text="Screenshot of connecting to semantic model." lightbox="media/powertable-how-to-connect-semantic-model/new-table.png":::

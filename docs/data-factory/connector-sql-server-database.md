@@ -42,7 +42,7 @@ You can connect a dataflow Gen2 in Fabric to a SQL Server database using Power Q
 
 ## Supported capabilities
 
-[!INCLUDE [sql-server-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/sql-server/sql-server-capabilities-supported.md)]
+[!INCLUDE [sql-server-capabilities-supported](includes/power-query/connectors/includes/sql-server/sql-server-capabilities-supported.md)]
 
 <a id="connect-to-sql-server-database"></a>
 
@@ -56,15 +56,15 @@ You can connect a dataflow Gen2 in Fabric to a SQL Server database using Power Q
 
 ### Connection instructions
 
-[!INCLUDE [sql-server-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/sql-server/sql-server-connect-to-power-query-online.md)]
+[!INCLUDE [sql-server-connect-to-power-query-online](includes/power-query/connectors/includes/sql-server/sql-server-connect-to-power-query-online.md)]
 
 ## Limitations and considerations
 
-[!INCLUDE [sql-server-limitations](~/../powerquery-repo/powerquery-docs/connectors/includes/sql-server/limitations.md)]
+[!INCLUDE [sql-server-limitations](includes/power-query/connectors/includes/sql-server/limitations.md)]
 
 ## Troubleshooting
 
-[!INCLUDE [sql-server-troubleshooting](~/../powerquery-repo/powerquery-docs/connectors/includes/sql-server/troubleshooting.md)]
+[!INCLUDE [sql-server-troubleshooting](includes/power-query/connectors/includes/sql-server/troubleshooting.md)]
 
 ## Related content
 

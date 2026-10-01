@@ -134,6 +134,11 @@
       "source_path_from_root": "/docs/iq/plan/planning-tutorial/planning/tutorial-3-optimizer.md",
       "redirect_url": "/fabric/iq/plan/planning-tutorial/planning/tutorial-2-optimizer",
       "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/iq/plan/planning-how-to-create-semantic-model-connection.md",
+      "redirect_url": "/fabric/iq/plan/planning-how-to-get-started/#add-the-semantic-model",
+      "redirect_document_id": true
     }
   ]
 }

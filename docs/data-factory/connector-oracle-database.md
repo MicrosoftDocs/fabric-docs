@@ -66,7 +66,7 @@ You can connect a dataflow Gen2 in Fabric to an Oracle database by using Power Q
 
 ## Supported capabilities
 
-[!INCLUDE [oracle-database-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/oracle-database/oracle-database-capabilities-supported.md)]
+[!INCLUDE [oracle-database-capabilities-supported](includes/power-query/connectors/includes/oracle-database/oracle-database-capabilities-supported.md)]
 
 ## Connection settings
 
@@ -78,7 +78,7 @@ You can connect a dataflow Gen2 in Fabric to an Oracle database by using Power Q
 
 ### Connection instructions
 
-[!INCLUDE [oracle-database-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/oracle-database/oracle-database-connect-to-power-query-online.md)]
+[!INCLUDE [oracle-database-connect-to-power-query-online](includes/power-query/connectors/includes/oracle-database/oracle-database-connect-to-power-query-online.md)]
 
 ## Set up your connection in a pipeline
 
@@ -154,7 +154,7 @@ The following table contains properties for the supported authentication type.
 
 ## Limitations and considerations
 
-[!INCLUDE [oracle-database-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/oracle-database/oracle-database-limitations-and-considerations-include.md)]
+[!INCLUDE [oracle-database-limitations-and-considerations](includes/power-query/connectors/includes/oracle-database/limitations.md)]
 
 ## Related content
 

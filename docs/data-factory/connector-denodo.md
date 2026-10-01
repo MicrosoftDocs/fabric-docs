@@ -36,7 +36,7 @@ You can connect dataflow Gen2 in Fabric to Denodo using Power Query connectors. 
 
 ## Prerequisites
 
-[!INCLUDE [denodo-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/denodo/denodo-prerequisites.md)]
+[!INCLUDE [denodo-prerequisites](includes/power-query/connectors/includes/denodo/prerequisites.md)]
 
 <a id="capabilities"></a>
 
@@ -44,7 +44,7 @@ You can connect dataflow Gen2 in Fabric to Denodo using Power Query connectors. 
 
 ## Supported capabilities
 
-[!INCLUDE [denodo-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/denodo/denodo-capabilities-supported.md)]
+[!INCLUDE [denodo-capabilities-supported](includes/power-query/connectors/includes/denodo/capabilities-supported.md)]
 
 ## Connection settings
 
@@ -56,7 +56,7 @@ You can connect dataflow Gen2 in Fabric to Denodo using Power Query connectors. 
 
 ### Connection instructions
 
-[!INCLUDE [denodo-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/denodo/denodo-connect-to-power-query-online.md)]
+[!INCLUDE [denodo-connect-to-power-query-online](includes/power-query/connectors/includes/denodo/connect-to-power-query-online.md)]
 
 ## Set up your connection in a pipeline
 

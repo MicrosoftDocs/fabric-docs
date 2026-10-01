@@ -35,7 +35,7 @@ You can connect dataflow Gen2 in Fabric to Google Sheets using Power Query conne
 
 ## Prerequisites
 
-[!INCLUDE [google-sheets-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/google-sheets/google-sheets-prerequisites.md)]
+[!INCLUDE [google-sheets-prerequisites](includes/power-query/connectors/includes/google-sheets/google-sheets-prerequisites.md)]
 
 <a id="capabilities"></a>
 
@@ -43,7 +43,7 @@ You can connect dataflow Gen2 in Fabric to Google Sheets using Power Query conne
 
 ## Supported capabilities
 
-[!INCLUDE [google-sheets-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/google-sheets/google-sheets-capabilities-supported.md)]
+[!INCLUDE [google-sheets-capabilities-supported](includes/power-query/connectors/includes/google-sheets/google-sheets-capabilities-supported.md)]
 
 ## Connection settings
 
@@ -55,7 +55,7 @@ You can connect dataflow Gen2 in Fabric to Google Sheets using Power Query conne
 
 ### Connection instructions
 
-[!INCLUDE [google-sheets-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/google-sheets/google-sheets-connect-to-power-query-online.md)]
+[!INCLUDE [google-sheets-connect-to-power-query-online](includes/power-query/connectors/includes/google-sheets/google-sheets-connect-to-power-query-online.md)]
 
 ## Set up your connection in a pipeline
 
@@ -63,7 +63,7 @@ Data Factory doesn't currently support Google Sheets in pipelines.
 
 ## Limitations and considerations
 
-[!INCLUDE [google-sheets-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/google-sheets/google-sheets-limitations-and-considerations-include.md)]
+[!INCLUDE [google-sheets-limitations-and-considerations](includes/power-query/connectors/includes/google-sheets/limitations.md)]
 
 ## Related content
 

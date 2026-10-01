@@ -34,7 +34,7 @@ You can connect dataflow Gen2 in Fabric to MongoDB Atlas SQL by using Power Quer
 
 ## Prerequisites
 
-[!INCLUDE [mongodb-atlas-sql-interface-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/mongodb-atlas-sql-interface/mongodb-atlas-sql-interface-prerequisites.md)]
+[!INCLUDE [mongodb-atlas-sql-interface-prerequisites](includes/power-query/connectors/includes/mongodb-atlas-sql-interface/mongodb-atlas-sql-interface-prerequisites.md)]
 
 <a id="capabilities"></a>
 
@@ -42,7 +42,7 @@ You can connect dataflow Gen2 in Fabric to MongoDB Atlas SQL by using Power Quer
 
 ## Supported capabilities
 
-[!INCLUDE [mongodb-atlas-sql-interface-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/mongodb-atlas-sql-interface/mongodb-atlas-sql-interface-capabilities-supported.md)]
+[!INCLUDE [mongodb-atlas-sql-interface-capabilities-supported](includes/power-query/connectors/includes/mongodb-atlas-sql-interface/mongodb-atlas-sql-interface-capabilities-supported.md)]
 
 ## Connection settings
 
@@ -54,7 +54,7 @@ You can connect dataflow Gen2 in Fabric to MongoDB Atlas SQL by using Power Quer
 
 ### Connection instructions
 
-[!INCLUDE [mongodb-atlas-sql-interface-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/mongodb-atlas-sql-interface/mongodb-atlas-sql-interface-connect-to-power-query-online.md)]
+[!INCLUDE [mongodb-atlas-sql-interface-connect-to-power-query-online](includes/power-query/connectors/includes/mongodb-atlas-sql-interface/mongodb-atlas-sql-interface-connect-to-power-query-online.md)]
 
 
 ## Set up your connection in a pipeline
