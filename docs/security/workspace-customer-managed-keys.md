@@ -153,7 +153,7 @@ Before you configure your Fabric workspace with a customer-managed key, consider
 
 * The following data isn't protected with customer-managed keys:
 
-  * All data stored in the Spark Clusters (data stored in temp discs as part of shuffle or data spills or RDD caches in a spark application) aren't protected. This data includes all the Spark Jobs from Notebooks, Lakehouses, Spark Job Definitions, Lakehouse Table Load and Maintenance jobs, Shortcut Transforms, Fabric Materialized View Refresh.
+  * All data stored in the Spark Clusters, including data stored in temp disks as part of shuffle or data spills, or RDD caches in a spark application. This data includes all the Spark Jobs from Notebooks, Lakehouses, Spark Job Definitions, Lakehouse Table Load and Maintenance jobs, Shortcut Transforms, and Fabric Materialized View Refresh.
   * Libraries attached as part of environments or added as part of the Spark session customization using magic commands aren't protected
   * Metadata generated when creating a Pipeline and Copy job, such as DB name, table, schema
   * Metadata of ML model and experiment, like the model name, version, metrics
