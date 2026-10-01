@@ -4,7 +4,7 @@ metadata:
   description: This article answers frequently asked questions about Database Hub in Fabric.
   ms.reviewer: amapatil, jmaldonado, varundhawan, ivujic, lancewright
   ms.topic: faq
-  ms.date: 09/21/2026
+  ms.date: 09/30/2026
 
 title: "Frequently asked questions about Database Hub in Fabric (preview)"
 
@@ -34,6 +34,45 @@ sections:
           No. You don't need to relocate your databases. For example, on-premises SQL Server instances connect through Azure Arc and appear in Database Hub while remaining on-premises. Azure databases remain in their subscriptions.
 
           Database Hub centralizes operational metadata, signals, and actions. It doesn't centralize operational data. [Fabric OneLake](../../onelake/onelake-overview.md) and [Fabric mirroring](../../mirroring/overview.md) can be used for analytics scenarios, but they are optional and separate from management.
+
+      - question: |
+          Does Fabric Database Hub require a Fabric Capacity? 
+        answer:
+          No. All you need is a Fabric license or capacity assigned to your workspace. At least [a free Fabric license](../../enterprise/licenses.md#per-user-licenses) is required. Database Hub is entirely free.
+
+  - name: Privacy and data residency
+    questions:
+      - question: |
+          How does Fabric ensure storage and compute remain in the home region when no capacity is provisioned?
+        answer:
+          Database Hub inventory and security posture APIs don't require a Fabric capacity. These control-plane operations query Azure Resource Manager, Azure Resource Graph, the Fabric catalog, and, for health monitoring views, Kusto. They don't provision customer compute or copy the underlying database data into Fabric merely to display it.
+
+          A database's storage and compute remain in the region where the Azure or Fabric database was provisioned. Fabric identifies a tenant home region as the default location for Fabric data, and Database Hub control-plane operations run in that region.
+
+      - question: |
+          Does Database Hub send data over the public internet?
+        answer:
+          Database Hub doesn't require public database connectivity. It surfaces health and compliance signals by using Azure Resource Graph metadata and SQL performance signals, including for databases behind private endpoints.
+
+      - question: |
+          Does Database Hub work with workspace outbound access protection (OAP)?
+        answer:
+          Workspace outbound access protection applies only to supported workspace item types and requires workspaces hosted on supported Fabric F SKUs. Database Hub's capacityless APIs aren't listed as an OAP-protected item type.
+
+          Until Database Hub is explicitly included in the OAP support matrix and tested with the required connection rules, treat it as unsupported.
+
+      - question: |
+          Can I use Database Hub in an architecture that must meet LGPD and GDPR requirements?
+        answer:
+          You can use Microsoft Fabric as part of an architecture designed to meet GDPR or LGPD obligations. Database Hub follows Microsoft's privacy, data protection, and compliance framework.
+
+          Database Hub primarily processes resource metadata, configuration posture, identifiers, and selected health metrics rather than database application rows. These values can still be regulated data. Compliance is a shared responsibility. Review regional placement, access controls, retention, telemetry, private connectivity, data-subject procedures, and the applicable Microsoft contractual and audit documentation.
+
+      - question: |
+          Is Database Hub available in Fabric Government Cloud?
+        answer:
+          Microsoft Fabric entered public preview in Government Community Cloud (GCC) High in September 2026. Workload and feature availability vary and expand over time.
+
 
   - name: Viewing your database estate
     questions:
@@ -65,7 +104,7 @@ sections:
       - question: |
           Are there any steps necessary to add a Microsoft SQL database to the Database Hub?
         answer:
-          Yes. In the current preview, Microsoft SQL databases require additional configuration. For instructions, see [Add a Microsoft SQL database to the Database Hub](add-sql.md).
+          Yes. In the current preview, Microsoft SQL databases require additional configuration to collect performance data. For instructions, see [Enable performance monitoring for Microsoft SQL](add-sql.md).
 
       - question: |
           Is Database Hub replacing Azure Arc or the Azure portal for databases?

@@ -18,7 +18,7 @@ ms.topic: how-to
 Before creating entity types, ensure you have the following prerequisites:
 
 * A [Fabric workspace](../../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../../enterprise/licenses.md#capacity).
-* **Ontology item (preview)** [enabled on your Fabric tenant](../overview-tenant-settings.md#ontology-item).
+* **Ontology item (preview)** [enabled on your Fabric tenant](../overview-tenant-settings.md#users-can-create-ontology-preview-items).
 * An ontology (preview) item.
 * Understanding of [core ontology concepts](overview.md#core-concepts-defining-an-ontology).
 * Understanding of the data binding process from [Data binding](how-to-bind-data.md).
