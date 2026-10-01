@@ -17,11 +17,13 @@ The example scenario for this tutorial is a fictional company called Lakeshore R
 ## Prerequisites
 
 * A [workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity). Use this workspace for all resources you create in the tutorial.
-* The *Enable Ontology item (preview)* setting enabled on your Fabric tenant.
+* The *Users can create ontology (preview) items* and *Users can create Fabric items* settings enabled on your Fabric tenant.
 
-    A [Fabric administrator](../../admin/roles.md) can enable the setting in **OneLake catalog** > **Govern** > **Configurations** > [**Tenant settings**](../../admin/tenant-settings-index.md):
+    A [Fabric administrator](../../admin/roles.md) can enable the settings in **OneLake catalog** > **Govern** > **Configurations** > [**Tenant settings**](../../admin/tenant-settings-index.md):
 
-    :::image type="content" source="media/tutorial-0-introduction/prerequisite-ontology.png" alt-text="Screenshot of enabling ontology in the admin portal." lightbox="media/tutorial-0-introduction/prerequisite-ontology.png":::
+    :::image type="content" source="media/overview-tenant-settings/prerequisite-ontology.png" alt-text="Screenshot of enabling ontology in the admin portal." lightbox="media/overview-tenant-settings/prerequisite-ontology.png":::
+
+    :::image type="content" source="media/overview-tenant-settings/prerequisite-fabric-items.png" alt-text="Screenshot of enabling Fabric items in the admin portal." lightbox="media/overview-tenant-settings/prerequisite-fabric-items.png":::
 
 ## Scenario
 

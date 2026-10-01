@@ -1,7 +1,7 @@
 ---
 title: Pre-deployment and post-deployment scripts for Fabric Data Warehouse (Preview)
 description: Learn how to use pre-deployment and post-deployment scripts in SQL database projects to customize deployment of a warehouse in Microsoft Fabric.
-ms.date: 08/13/2026
+ms.date: 09/30/2026
 ms.reviewer: pvenkat
 ms.topic: how-to
 ms.search.form: Warehouse Source Control
@@ -118,6 +118,11 @@ When you connect a workspace to a Git repo, the pre-deployment and post-deployme
 1. The post-deployment script runs after the schema changes complete.
 
 Designations round-trip through Git: configuring a script in the portal and committing it, or authoring it in the `.sqlproj` and updating the workspace, produces a consistent result. Repeated commits and updates don't duplicate or lose the configuration. Because only one pre-deployment and one post-deployment script are allowed, a configuration authored in Git replaces any existing designation in the warehouse on update.
+
+> [!NOTE]
+> Pre-deployment and post-deployment scripts require the latest source control experience for full Git workflow support. In workspaces that haven't been upgraded, deployment script metadata isn't synchronized with source control, and deployment scripts won't participate in Git-based workflows.
+>
+> This limitation applies only to Git workflows and isn't a prerequisite for deployment pipelines (ALM).
 
 ### With deployment pipelines
 
