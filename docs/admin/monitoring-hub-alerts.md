@@ -121,7 +121,7 @@ You can manage both notifications for failed scheduled jobs and Activator-based 
 
 ## Current limitations
 
-Activator-based alerts rely on workspace monitoring capabilities. In regions where workspace monitoring isn't available, you can't create or use Activator-based job alerts in the Monitor hub.
+Activator-based alerts rely on workspace monitoring capabilities. In regions where workspace monitoring isn't available, you can't create or use Activator-based job alerts in the Monitor hub. For a list of supported regions see the [region availability](region-availability.md) page.
 
 ## Related content
 
