@@ -12,6 +12,8 @@ This article contains troubleshooting suggestions for ontology (preview).
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
+For ontology known issues, see [Microsoft Fabric known issues](https://support.fabric.microsoft.com/known-issues/) and search for *ontology*.
+
 ## Troubleshoot ontology item creation
 
 The following table describes common issues when creating a new ontology (preview) item.

@@ -37,7 +37,7 @@ You can connect a dataflow Gen2 in Fabric to Web using Power Query connectors. F
 
 ## Prerequisites
 
-[!INCLUDE [web-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/web/web-prerequisites.md)]
+[!INCLUDE [web-prerequisites](includes/power-query/connectors/includes/web/web-prerequisites.md)]
 
 <a id="capabilities"></a>
 
@@ -45,7 +45,7 @@ You can connect a dataflow Gen2 in Fabric to Web using Power Query connectors. F
 
 ## Supported capabilities
 
-[!INCLUDE [web-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/web/web-capabilities-supported.md)]
+[!INCLUDE [web-capabilities-supported](includes/power-query/connectors/includes/web/web-capabilities-supported.md)]
 
 ## Connection settings
 
@@ -57,7 +57,7 @@ You can connect a dataflow Gen2 in Fabric to Web using Power Query connectors. F
 
 ### Connection instructions
 
-[!INCLUDE [web-load-data-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/web/web-load-data-power-query-online.md)]
+[!INCLUDE [web-load-data-power-query-online](includes/power-query/connectors/includes/web/web-load-data-power-query-online.md)]
 
 ## Set up your connection in a pipeline
 

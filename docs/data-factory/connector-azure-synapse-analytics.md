@@ -35,7 +35,7 @@ You can connect dataflow Gen2 to Azure Synapse Analytics in Fabric by using Powe
 
 ## Prerequisites
 
-[!INCLUDE [synapse-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/synapse/synapse-prerequisites.md)]
+[!INCLUDE [synapse-prerequisites](includes/power-query/connectors/includes/synapse/synapse-prerequisites.md)]
 
 <a id="capabilities"></a>
 
@@ -43,7 +43,7 @@ You can connect dataflow Gen2 to Azure Synapse Analytics in Fabric by using Powe
 
 ## Supported capabilities
 
-[!INCLUDE [synapse-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/synapse/synapse-capabilities-supported.md)]
+[!INCLUDE [synapse-capabilities-supported](includes/power-query/connectors/includes/synapse/synapse-capabilities-supported.md)]
 
 ## Connection settings
 
@@ -55,7 +55,7 @@ You can connect dataflow Gen2 to Azure Synapse Analytics in Fabric by using Powe
 
 ### Connection instructions
 
-[!INCLUDE [azure-sql-data-warehouse-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-sql-data-warehouse/azure-sql-data-warehouse-connect-to-power-query-online.md)]
+[!INCLUDE [azure-sql-data-warehouse-connect-to-power-query-online](includes/power-query/connectors/includes/azure-sql-data-warehouse/azure-sql-data-warehouse-connect-to-power-query-online.md)]
 
 
 <a id="additional-information"></a>

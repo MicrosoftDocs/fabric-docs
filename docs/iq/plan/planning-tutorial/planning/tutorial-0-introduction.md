@@ -26,10 +26,6 @@ Before starting this tutorial series, verify that you have:
 
         :::image type="content" source="../../media/planning-tutorial/planning/tutorial-0-introduction/integration-settings-allow-xmla-endpoints.png" alt-text="Screenshot of integration settings option enabled to allow xmla endpoints with on-premise datasets." lightbox="../../media/planning-tutorial/planning/tutorial-0-introduction/integration-settings-allow-xmla-endpoints.png":::
 
-    * **Developer settings** > **Embed content in apps**
-
-        :::image type="content" source="../../media/planning-tutorial/planning/tutorial-0-introduction/developer-settings-embed-content.png" alt-text="Screenshot of developer settings to embed content in apps." lightbox="../../media/planning-tutorial/planning/tutorial-0-introduction/developer-settings-embed-content.png":::
-
     * **Developer settings** > **Service principals can call Fabric public APIs**
 
         :::image type="content" source="../../media/planning-tutorial/planning/tutorial-0-introduction/developer-settings-service-principal.png" alt-text="Screenshot of developer settings option enabled for service principals to call public APIs." lightbox="../../media/planning-tutorial/planning/tutorial-0-introduction/developer-settings-service-principal.png":::
@@ -102,13 +98,11 @@ In this step, you create the Plan app that hosts your planning sheets. This app 
 
 ### Connect to the semantic model
 
-In this step, you connect the Northwind FMCG semantic model to the Plan app through a semantic model connection. This connection makes the model's dimensions, measures, and date table available for planning.
+In this step, you connect the Northwind FMCG semantic model to the Plan app. This connection makes the model's dimensions, measures, and date table available for planning.
 
 1. On the launch screen, select **Semantic Model**.
-1. In the semantic model connection window, select **Create Connection**.
-1. In the connection list, select **Create a new connection**.
-1. Enter *Northwind_FMCG* as the connection name. Your account identifier is added automatically. Select **Sign in**, authenticate, and select **Create**.
-1. Confirm the new connection is selected. In the Semantic model field, select *Northwind FMCG* and select **Add**.
+1. In the window, select **Semantic Model Item** and then select the **Semantic Model** field.
+1. In the list that opens, select *Northwind FMCG* and select **Add**.
 
     :::image type="content" source="../../media/planning-tutorial/planning/tutorial-0-introduction/connect-semantic-model-planning.png" alt-text="Screenshot of connecting to the semantic model from planning." lightbox="../../media/planning-tutorial/planning/tutorial-0-introduction/connect-semantic-model-planning.png":::
 

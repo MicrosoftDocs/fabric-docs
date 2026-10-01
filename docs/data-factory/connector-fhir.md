@@ -35,7 +35,7 @@ You can connect dataflow Gen2 in Fabric to FHIR using Power Query connectors. Fo
 
 ## Prerequisites
 
-[!INCLUDE [fhir-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/fhir/fhir-prerequisites.md)]
+[!INCLUDE [fhir-prerequisites](includes/power-query/connectors/includes/fhir/fhir-prerequisites.md)]
 
 <a id="capabilities"></a>
 
@@ -43,7 +43,7 @@ You can connect dataflow Gen2 in Fabric to FHIR using Power Query connectors. Fo
 
 ## Supported capabilities
 
-[!INCLUDE [fhir-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/fhir/fhir-capabilities-supported.md)]
+[!INCLUDE [fhir-capabilities-supported](includes/power-query/connectors/includes/fhir/fhir-capabilities-supported.md)]
 
 ## Connection settings
 
@@ -55,7 +55,7 @@ You can connect dataflow Gen2 in Fabric to FHIR using Power Query connectors. Fo
 
 ### Connection instructions
 
-[!INCLUDE [fhir-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/fhir/fhir-connect-to-power-query-online.md)]
+[!INCLUDE [fhir-connect-to-power-query-online](includes/power-query/connectors/includes/fhir/fhir-connect-to-power-query-online.md)]
 
 ## Set up your connection in a pipeline
 

@@ -34,7 +34,7 @@ You can connect a dataflow Gen2 in Fabric to Profisee using Power Query connecto
 
 ## Prerequisites
 
-[!INCLUDE [profisee-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/profisee/profisee-prerequisites.md)]
+[!INCLUDE [profisee-prerequisites](includes/power-query/connectors/includes/profisee/prerequisites.md)]
 
 <a id="capabilities"></a>
 
@@ -42,7 +42,7 @@ You can connect a dataflow Gen2 in Fabric to Profisee using Power Query connecto
 
 ## Supported capabilities
 
-[!INCLUDE [profisee-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/profisee/profisee-capabilities-supported.md)]
+[!INCLUDE [profisee-capabilities-supported](includes/power-query/connectors/includes/profisee/capabilities-supported.md)]
 
 ## Connection settings
 
@@ -54,7 +54,7 @@ You can connect a dataflow Gen2 in Fabric to Profisee using Power Query connecto
 
 ### Connection instructions
 
-[!INCLUDE [profisee-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/profisee/profisee-connect-to-power-query-online.md)]
+[!INCLUDE [profisee-connect-to-power-query-online](includes/power-query/connectors/includes/profisee/connect-to-power-query-online.md)]
 
 ## Set up your connection in a pipeline
 

@@ -23,7 +23,7 @@ You can connect dataflow Gen2 to an Excel workbook in Fabric using Power Query c
 
 ## Prerequisites
 
-[!INCLUDE [excel-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/excel/excel-prerequisites.md)]
+[!INCLUDE [excel-prerequisites](includes/power-query/connectors/includes/excel/excel-prerequisites.md)]
 
 <a id="capabilities"></a>
 
@@ -31,7 +31,7 @@ You can connect dataflow Gen2 to an Excel workbook in Fabric using Power Query c
 
 ## Supported capabilities
 
-[!INCLUDE [excel-ccapabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/excel/excel-capabilities-supported.md)]
+[!INCLUDE [excel-ccapabilities-supported](includes/power-query/connectors/includes/excel/excel-capabilities-supported.md)]
 
 <a id="connect-to-an-excel-workbook"></a>
 
@@ -45,7 +45,7 @@ You can connect dataflow Gen2 to an Excel workbook in Fabric using Power Query c
 
 ### Connection instructions
 
-[!INCLUDE [excel-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/excel/excel-connect-to-power-query-online.md)]
+[!INCLUDE [excel-connect-to-power-query-online](includes/power-query/connectors/includes/excel/excel-connect-to-power-query-online.md)]
 
 <a id="remarks"></a>
 
@@ -61,7 +61,7 @@ You can connect dataflow Gen2 to an Excel workbook in Fabric using Power Query c
 
 ## Limitations and considerations
 
-[!INCLUDE [excel-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/excel/excel-limitations-and-considerations-include.md)]
+[!INCLUDE [excel-limitations-and-considerations](includes/power-query/connectors/includes/excel/limitations.md)]
 
 ## Related content
 

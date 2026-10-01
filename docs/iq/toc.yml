@@ -149,8 +149,6 @@ items:
     items:
     - name: Prerequisites
       href: plan/overview-prerequisites.md
-    - name: Create a semantic model connection
-      href: plan/planning-how-to-create-semantic-model-connection.md
     - name: Create a database connection for collaboration
       href: plan/planning-how-to-create-database-connection.md
     - name: Create a planning sheet
@@ -657,7 +655,7 @@ items:
         href: plan/alm-variable-library.md
     - name: Troubleshoot
       items:
-          - name: Troubleshoot semantic model connection
+          - name: Troubleshoot semantic model issues
             href: plan/planning-troubleshoot-semantic-model.md
           - name: Error codes and resolutions
             href: plan/resources/error-codes-and-resolutions.md

@@ -35,7 +35,7 @@ You can connect a dataflow Gen2 in Fabric to an SAP HANA database by using Power
 
 ## Prerequisites
 
-[!INCLUDE [sap-hana-database-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/sap-hana-database/sap-hana-database-prerequisites.md)]
+[!INCLUDE [sap-hana-database-prerequisites](includes/power-query/connectors/includes/sap-hana-database/sap-hana-database-prerequisites.md)]
 
 <a id="capabilities"></a>
 
@@ -43,7 +43,7 @@ You can connect a dataflow Gen2 in Fabric to an SAP HANA database by using Power
 
 ## Supported capabilities
 
-[!INCLUDE [sap-hana-database-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/sap-hana-database/sap-hana-database-capabilities-supported.md)]
+[!INCLUDE [sap-hana-database-capabilities-supported](includes/power-query/connectors/includes/sap-hana-database/sap-hana-database-capabilities-supported.md)]
 
 ## Connection settings
 
@@ -55,7 +55,7 @@ You can connect a dataflow Gen2 in Fabric to an SAP HANA database by using Power
 
 ### Connection steps
 
-[!INCLUDE [sap-hana-database-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/sap-hana-database/sap-hana-database-connect-to-power-query-online.md)]
+[!INCLUDE [sap-hana-database-connect-to-power-query-online](includes/power-query/connectors/includes/sap-hana-database/sap-hana-database-connect-to-power-query-online.md)]
 
 ## Set up your connection in Manage connections and gateways
 
@@ -141,7 +141,7 @@ This section lists the instructions for each authentication type supported by th
 
 ## Limitations and considerations
 
-[!INCLUDE [sap-hana-database-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/sap-hana-database/sap-hana-database-limitations.md)]
+[!INCLUDE [sap-hana-database-limitations-and-considerations](includes/power-query/connectors/includes/sap-hana-database/sap-hana-database-limitations.md)]
 
 
 ## Related content

@@ -30,7 +30,7 @@ The Amazon Redshift connector supports the following authentication types for co
 |Microsoft Account| n/a | √ |
 
 ## Prerequisites
-[!INCLUDE [amazon-redshift-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/amazon-redshift/amazon-redshift-prerequisites.md)]
+[!INCLUDE [amazon-redshift-prerequisites](includes/power-query/connectors/includes/amazon-redshift/amazon-redshift-prerequisites.md)]
 
 
 <a id="capabilities"></a>
@@ -38,7 +38,7 @@ The Amazon Redshift connector supports the following authentication types for co
 <a id="capabilities-supported"></a>
 
 ## Supported capabilities
-[!INCLUDE [amazon-redshift-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/amazon-redshift/amazon-redshift-capabilities-supported.md)]
+[!INCLUDE [amazon-redshift-capabilities-supported](includes/power-query/connectors/includes/amazon-redshift/amazon-redshift-capabilities-supported.md)]
 
 ## Connection settings
 
@@ -50,7 +50,7 @@ The Amazon Redshift connector supports the following authentication types for co
 
 ### Connection instructions
 
-[!INCLUDE [amazon-redshift-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/amazon-redshift/amazon-redshift-connect-to-power-query-online.md)]
+[!INCLUDE [amazon-redshift-connect-to-power-query-online](includes/power-query/connectors/includes/amazon-redshift/amazon-redshift-connect-to-power-query-online.md)]
 
 ## Related content
 

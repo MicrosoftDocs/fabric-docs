@@ -35,7 +35,7 @@ You can connect a dataflow Gen2 in Fabric to SAP BW Message Server by using Powe
 
 ## Prerequisites
 
-[!INCLUDE [sap-business-warehouse-message-server-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/sap-business-warehouse-message-server/sap-business-warehouse-message-server-prerequisites.md)]
+[!INCLUDE [sap-business-warehouse-message-server-prerequisites](includes/power-query/connectors/includes/sap-business-warehouse-message-server/sap-business-warehouse-message-server-prerequisites.md)]
 
 <a id="capabilities"></a>
 
@@ -43,7 +43,7 @@ You can connect a dataflow Gen2 in Fabric to SAP BW Message Server by using Powe
 
 ## Supported capabilities
 
-[!INCLUDE [sap-business-warehouse-message-server-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/sap-business-warehouse-message-server/sap-business-warehouse-message-server-capabilities-supported.md)]
+[!INCLUDE [sap-business-warehouse-message-server-capabilities-supported](includes/power-query/connectors/includes/sap-business-warehouse-message-server/sap-business-warehouse-message-server-capabilities-supported.md)]
 
 ## Connection settings
 
@@ -55,7 +55,7 @@ You can connect a dataflow Gen2 in Fabric to SAP BW Message Server by using Powe
 
 ### Connection instructions
 
-[!INCLUDE [sap-business-warehouse-message-server-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/sap-business-warehouse-message-server/sap-business-warehouse-message-server-connect-to-power-query-online.md)]
+[!INCLUDE [sap-business-warehouse-message-server-connect-to-power-query-online](includes/power-query/connectors/includes/sap-business-warehouse-message-server/sap-business-warehouse-message-server-connect-to-power-query-online.md)]
 
 
 ## Set up your connection in a pipeline

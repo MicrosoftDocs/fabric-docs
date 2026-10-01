@@ -61,7 +61,7 @@ The following table lists all Azure regions where Power BI or Fabric is availabl
 | Europe       | Sweden Central       | ✅ | ✅ | Not available by default for Power BI: <br> [Business Continuity Disaster Recovery (BCDR)](/azure/reliability/reliability-fabric#cross-region-disaster-recovery-and-business-continuity).<br> Power BI is supported in the region but not in its paired region |
 | Europe       | Switzerland North    | ✅ | ✅ |  |
 | Europe       | Switzerland West     | ✅ | ✅ | Not available: <br> [Fabric App (preview)](../apps/overview.md) |
-| Europe       | UK South             | ✅ | ✅ |  |
+| Europe       | UK South             | ✅ | ✅ | Not available: <br> [Fabric App (preview)](../apps/overview.md) |
 | Europe       | UK West              | ✅ | ✅ | Not available: <br> [Fabric App (preview)](../apps/overview.md) |
 | **Geography**| **Region** | **Power BI** | **All Fabric workloads** | **Unavailable Fabric features** |
 | Qatar        | Qatar Central        | ✅ | ❌ | Power BI only region |
