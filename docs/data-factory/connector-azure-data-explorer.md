@@ -34,7 +34,7 @@ You can connect dataflow Gen2 to Azure Data Explorer in Fabric using Power Query
 
 ## Prerequisites
 
-[!INCLUDE [azure-data-explorer-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-data-explorer/azure-data-explorer-prerequisites.md)]
+[!INCLUDE [azure-data-explorer-prerequisites](includes/power-query/connectors/includes/azure-data-explorer/azure-data-explorer-prerequisites.md)]
 
 <a id="capabilities"></a>
 
@@ -42,7 +42,7 @@ You can connect dataflow Gen2 to Azure Data Explorer in Fabric using Power Query
 
 ## Supported capabilities
 
-[!INCLUDE [azure-data-explorer-ccapabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-data-explorer/azure-data-explorer-capabilities-supported.md)]
+[!INCLUDE [azure-data-explorer-ccapabilities-supported](includes/power-query/connectors/includes/azure-data-explorer/azure-data-explorer-capabilities-supported.md)]
 
 ## Connection settings
 
@@ -54,7 +54,7 @@ You can connect dataflow Gen2 to Azure Data Explorer in Fabric using Power Query
 
 ### Connection instructions
 
-[!INCLUDE [azure-data-explorer-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-data-explorer/azure-data-explorer-connect-to-power-query-online.md)]
+[!INCLUDE [azure-data-explorer-connect-to-power-query-online](includes/power-query/connectors/includes/azure-data-explorer/azure-data-explorer-connect-to-power-query-online.md)]
 
 ## Set up your connection for a pipeline
 
