@@ -171,3 +171,4 @@ Your old ontology stays in your workspace and is available until the old experie
 - Connect a [supported agent](concepts-agent-integration.md) to consume the ontology context. Or, use the built in [ontology agent](how-to-use-ontology-agent.md) experience.
 - If you have an existing ontology item that was created with the old experience, review the [migration guidance](#migrate-from-old-experience) and create a copy in the new experience.
 - [Troubleshoot ontology](resources-troubleshooting.md)
+- [Microsoft Fabric known issues](https://support.fabric.microsoft.com/known-issues/) (filter to **IQ**)
