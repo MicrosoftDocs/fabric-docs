@@ -385,7 +385,7 @@ Current limitations:
 - Power BI semantic models aren't supported in workspaces with workspace-level private links enabled.
    - Semantic model creation may be disabled.
    - Creation attempts may fail in restricted workspaces.
-
+- Network proxies and traffic interceptors (for example, Zscaler) can prevent traffic from reaching the workspace's private endpoint, especially when users or network egress points are in a different Azure region than the workspace's capacity. For details, see *access-fails-through-a-network-proxy-or-traffic-interceptor* under Common errors and troubleshooting section.
 ## Azure role-based access control (RBAC) and workspace-level private links
 
 Provisioning and management of workspace-level private links and associated private endpoints require specific Azure RBAC permissions. These permissions can be narrowly scoped by defining a custom Azure role that grants only the required Virtual Network, Private Link, and Private Endpoint actions at the resource group level, enabling delegated management without assigning broad roles such as Owner or Contributor. The following custom role definition provides necessary permissions to create virtual networks, subnets, Fabric workspace private links and private endpoints scoped to a specific group.
@@ -451,6 +451,28 @@ When trying to set a workspace to restrict public access, users encounter the fo
 * **Cause**: This error occurs because the workspace contains one or more items that aren't compatible with workspace-level private links. As a result, you can't configure the workspace to restrict public access.
 
 * **Mitigation**: Delete the unsupported items in this workspace or use another workspace instead.
+
+### Access fails through a network proxy or traffic interceptor
+
+Users who connect through a cloud proxy or traffic interceptor, such as Zscaler, might intermittently be unable to access a workspace that restricts inbound public access. Other users in the same tenant might not be affected.
+
+Users might see one of the following:
+
+- An "Access Restricted" message in the Fabric portal.
+- The following error from REST API calls: 
+
+   ```json
+   "errorCode": "RequestDeniedByInboundPolicy",
+   "message": "Request is denied due to inbound communication policy"
+
+**Cause:** The proxy routes or resolves the request through a network path that bypasses the workspace's private endpoint. This most commonly occurs when users, proxy egress locations, or capacities span more than one Azure region. As a result, the request reaches Fabric from a network location that the workspace's inbound communication policy doesn't allow. 
+
+**Mitigation:**
+
+1. Configure your proxy to include all Azure regions used by your Fabric tenant and capacities. 
+2. Make sure the workspace FQDN resolves to the private IP address of your private endpoint from the client network, and not through the proxy's egress location. 
+3. Validate name resolution by running `nslookup` or `Resolve-DnsName` against the workspace FQDN from an affected client. Compare the result with a client that works.
+4. If the issue persists, contact your proxy vendor and [Microsoft support](https://support.fabric.microsoft.com/).
 
 ## Related content
 
