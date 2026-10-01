@@ -1,7 +1,7 @@
 ---
 title: Ontology (Preview) Required Tenant Settings
 description: Enable settings on your Fabric tenant before using ontology (preview) features.
-ms.date: 04/30/2026
+ms.date: 09/30/2026
 ms.topic: concept-article
 ---
 
@@ -13,9 +13,17 @@ Before you can use all the features of ontology (preview), you must enable certa
 
 [Fabric administrators](../../admin/roles.md) can grant access to these settings in **OneLake catalog** > **Govern** > **Configurations** > [**Tenant settings**](../../admin/tenant-settings-index.md).
 
-## Ontology item
+## Users can create Fabric items
 
-This setting is **required** to create ontology (preview) items: *Enable Ontology item (preview)*.
+This setting is **required** to create ontology (preview) items with the new experience: *Users can create Fabric items*.
+
+:::image type="content" source="media/overview-tenant-settings/prerequisite-fabric-items.png" alt-text="Screenshot of enabling Fabric items in the admin portal." lightbox="media/overview-tenant-settings/prerequisite-fabric-items.png":::
+
+If you don't enable this setting, you get errors when creating a new ontology item, including while [migrating from the old experience to the new experience](overview.md#migrate-from-old-experience).
+
+## Users can create ontology (preview) items
+
+This setting is **required** to create ontology (preview) items: *Users can create ontology (preview) items*.
 
 :::image type="content" source="media/overview-tenant-settings/prerequisite-ontology.png" alt-text="Screenshot of enabling ontology in the admin portal." lightbox="media/overview-tenant-settings/prerequisite-ontology.png":::
 
