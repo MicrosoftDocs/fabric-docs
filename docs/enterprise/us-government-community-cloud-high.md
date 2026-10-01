@@ -77,7 +77,6 @@ The following table lists the Fabric platform functionality available in GCC Hig
 | Real-Time Hub | Offers same functionality and capabilities as the public Fabric. |
 | OneLake security | Offers same functionality and capabilities as the public Fabric. |
 | OneLake disaster recovery | Offers same functionality and capabilities as the public Fabric. |
-| Workspace monitoring | Offers same functionality and capabilities as the public Fabric. |
 
 Items other than those listed in these tables aren't currently available in GCC High. Feature availability can differ from the public/commercial Fabric service because of government cloud requirements and service dependencies.
 
@@ -88,6 +87,7 @@ The following limitations apply to Fabric for GCC High:
 - **Customer-managed keys (CMK)** aren't supported.
 - **Outbound access protection** isn't supported.
 - **Workspace identity** isn't supported.
+- **Workspace monitoring** isn't supported.
 - **Shortcuts** have partial support. You can create shortcuts to Azure Blob Storage and Azure Data Lake Storage Gen2. Other shortcut scenarios, such as external connectivity, aren't supported.
 - **Fabric IQ items** (graph model, graph queryset, operations agent, and ontology) aren't supported.
 - **Mirroring sources** except mirrored Azure SQL Database aren't supported.
