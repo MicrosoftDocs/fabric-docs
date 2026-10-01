@@ -30,11 +30,7 @@ Yes. Importing a PBIX file creates the following items in the Fabric workspace:
 
 When you create an intelligence sheet, you use the semantic model. If you don't need the report, you can delete it.
 
-## Can I reuse an existing semantic model connection for an intelligence sheet?
-
-Yes. You can reuse an existing semantic model connection when connecting a semantic model to a plan item. You don't need to create a new connection unless you want to use different connection settings.
-
-## What is the difference between Semantic Model and Excel / CSV** on the Get Data page?
+## What is the difference between Semantic Model and Excel / CSV on the Get Data page?
 
 * **Semantic Model** creates a live connection to a published Power BI semantic model. The intelligence sheet reflects updates as the semantic model is refreshed.
 * **Excel / CSV** imports data from a file. The imported data is static and doesn't update automatically when the source file changes.

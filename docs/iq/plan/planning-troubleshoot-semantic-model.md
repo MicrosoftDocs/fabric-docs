@@ -23,6 +23,20 @@ The semantic model linked to the plan item can't be found. It might have been mo
 1. Verify that the semantic model exists in the required workspace in Microsoft Fabric.
 1. If it got moved, locate the new workspace and connect to it.
 
+## Insufficient semantic model permissions
+
+If you see error code `SM_CONN_1003`, the error indicates that you don't have sufficient permissions on the semantic model.
+
+To attach a semantic model to a plan, ensure that you have both *Read* and *Build* permissions on the semantic model. If you only need to read data from a semantic model that is already connected to a plan, *Read* permission is sufficient.
+
+### Resolution
+
+Ask the semantic model administrator to grant you *Read* and *Build* permissions on the semantic model, and then try attaching the semantic model to the plan again.
+
+## Related content
+
+To learn more about other error codes and resolutions, see [Error codes and resolutions](./resources/error-codes-and-resolutions.md).
+
 ## Shared cloud connection expired
 
 ### Cause
