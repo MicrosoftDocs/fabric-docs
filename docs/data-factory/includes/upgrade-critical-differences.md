@@ -3,7 +3,7 @@ title: Upgrade critical differences
 description: Differences to consider before upgrading from Azure Data Factory to Fabric Data Factory that customers commonly encounter.
 ms.reviewer: seanmirabile
 ms.topic: include
-ms.date: 08/21/2026
+ms.date: 10/01/2026
 ---
 
 Before you upgrade from Azure Data Factory to Fabric Data Factory, consider these critical architectural differences that tend to have the biggest effect on upgrade planning:
@@ -11,7 +11,7 @@ Before you upgrade from Azure Data Factory to Fabric Data Factory, consider thes
 | **Category** | **Azure Data Factory** | **Fabric Data Factory** | **Upgrade Impact** |
 |--------------|------------------------|-------------------------|----------------------|
 | **Custom code** | Custom Activity | [Azure Batch activity](../azure-batch-activity.md) | The activity name is different, but supports the same functionality. |
-| **Dataflows** | Mapping Data Flows (Spark-based) | [Dataflow Gen2](../dataflows-gen2-overview.md) (Power Query engine) with [fast copy](../dataflows-gen2-fast-copy.md) and [multiple destinations](../dataflow-gen2-data-destinations-and-managed-settings.md) | Different transformation engines and capabilities. Check our [guide to dataflows for Mapping Data Flow users](../guide-to-dataflows-for-mapping-data-flow-users.md) for more information. |
+| **Dataflows** | Mapping Data Flows with Spark-based execution | Dataflow Gen2 supports [Mapping Data Flow (MDF) transforms](/fabric/data-factory/dataflow-gen2-mapping-data-flows-transforms) with Spark-based execution. MDF transforms are currently in preview. | Eligible Azure Data Factory and Azure Synapse Analytics Mapping Data Flows can be migrated to MDF transforms in Dataflow Gen2 by using the [built-in migration experience](/fabric/data-factory/dataflow-gen2-mapping-data-flows-transforms-upgrade). Review the supported connectors, transformations, authentication methods, and preview limitations before migration. For unsupported scenarios, redesign the transformation by using Power Query in Dataflow Gen2, Fabric Warehouse SQL, notebooks, or another Fabric capability. |
 | **Datasets** | Separate, reusable dataset objects | Properties are defined inline within activities | When you convert from ADF to Fabric, 'dataset' information is within each activity. |
 | **Dynamic connections** | Linked service properties can be dynamic using parameters | Connection properties don't support dynamic properties but pipeline activities can use dynamic content for connection objects | For Metadata Driven Architecture-based solutions that rely on parameterized connections, parameterize the connection object in Fabric. |
 | **Global Parameters** | Global Parameters | [Fabric Variable Library](/fabric/cicd/variable-library/get-started-variable-libraries) | Different implementation patterns and data types, though we have [an upgrade guide](../convert-global-parameters-to-variable-libraries.md). |
