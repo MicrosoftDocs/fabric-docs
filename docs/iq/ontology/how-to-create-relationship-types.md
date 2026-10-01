@@ -18,7 +18,7 @@ With relationships, organizations can model, manage, and govern semantic connect
 Before adding relationship types to your ontology, make sure you have the following prerequisites:
 
 * A [Fabric workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity).
-* **Ontology item (preview)** [enabled on your Fabric tenant](overview-tenant-settings.md#ontology-item).
+* **Users can create ontology (preview) items** and **Users can create Fabric items** [enabled on your Fabric tenant](overview-tenant-settings.md).
 * An ontology (preview) item with [entity types](how-to-create-entity-types.md) created.
 * Relationship source data that meets these guidelines:
     * The data is in [OneLake](../../onelake/onelake-overview.md).

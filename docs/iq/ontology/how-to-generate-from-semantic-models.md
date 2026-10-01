@@ -51,7 +51,7 @@ By generating an ontology from multiple semantic models, you can:
 Before you add semantic models to an ontology, ensure you have:
 
 * A [Fabric workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity).
-* **Ontology item (preview)** [enabled on your Fabric tenant](overview-tenant-settings.md#ontology-item).
+* **Users can create ontology (preview) items** and **Users can create Fabric items** [enabled on your Fabric tenant](overview-tenant-settings.md).
 * One or more related [semantic models](../../data-warehouse/semantic-models.md) in your workspace that represent parts of the same business domain (for example, `Customer_retention` and `Support_operations`).
   * Both Read and Build [permissions](/power-bi/connect-data/service-datasets-permissions#what-are-the-semantic-model-permissions) on the semantic model(s). This is required to generate an ontology from the semantic models and query the semantic models using ontology.
 * Basic familiarity with the [ontology agent](how-to-use-ontology-agent.md).

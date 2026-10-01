@@ -25,7 +25,7 @@ This metadata improves agent answer correctness, especially for prompts that dep
 Before you add metadata to your ontology, make sure you have:
 
 * A [Fabric workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity).
-* **Ontology item (preview)** [enabled on your Fabric tenant](overview-tenant-settings.md#ontology-item).
+* **Users can create ontology (preview) items** and **Users can create Fabric items** [enabled on your Fabric tenant](overview-tenant-settings.md).
 * An ontology (preview) item that has [entity types](how-to-create-entity-types.md) or [relationship types](how-to-create-relationship-types.md).
 * Understanding of [core ontology concepts](overview.md#core-concepts).
 
