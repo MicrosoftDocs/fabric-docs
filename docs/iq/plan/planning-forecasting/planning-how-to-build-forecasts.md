@@ -138,11 +138,11 @@ Lock values entered in a planning sheet to prevent further edits and preserve ap
 Statistical forecasting uses historical data and statistical models to identify patterns and trends, and generates forecasts without manual input. For more information about Predict, see [Generating statistical forecasts](./planning-how-to-generate-statistical-forecasts-using-predict-feature.md).
 
 1. Before using **Predict**, in the **Model** ribbon, go to **Period** to display historical data from 2023 and 2024. Hide closed forecasts to focus on historical data and the periods available for forecasting.
-1. Predict works on any hierarchy level. In this example, select the grand total *Forecast,* then select **Predict** on the **Model** ribbon. THe plan displays the selected row and measure.
+1. Predict works on any hierarchy level. In this example, select the grand total *Forecast,* then select **Predict** on the **Model** ribbon. The plan displays the selected row and measure.
 
     :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/predict-pane-selected-measure-forecast-row.png" alt-text="Screenshot of the Predict side pane showing the selected measure and forecast row." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/predict-pane-selected-measure-forecast-row.png":::
 
-1. Set **Evaluation** to **Bottom Up**. This option generates the predicted future value based on the trend of individual leaf nodes; in this example, the chart of accounts,
+1. Set **Evaluation** to **Bottom Up**. This option generates the predicted future value based on the trend of individual leaf nodes; in this example, the chart of accounts.
 1. The **Trend Decomposition** forecasting algorithm is selected by default. For more information about algorithms, see [Statistical forecasting algorithms](../planning-concept-predict.md). Select **Year** for **Set Seasonality** and select **Run Forecast**.
 
     :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/predict-evaluation-seasonality-option.png" alt-text="Screenshot of the evaluation options and seasonality option in predict." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/predict-evaluation-seasonality-option.png":::
@@ -175,3 +175,9 @@ Deviation shows how actual or forecasted results differ from the original budget
     This action creates the deviation measure.
 
     :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/create-deviation-budget-forecast.png" alt-text="Screenshot of the deviation measure created between the budget and forecast measures.":::
+
+## Related content
+
+* To learn about setting up customized fiscal years for your planning data, see [Fiscal year setup in planning and reporting](../planning-concept-fiscal-year-setup.md).
+* For best practices on using supported date formats for automatic time intelligence, see [Best practices and supported date formats for automatic time intelligence](../resources/best-practices/time-intelligence.md).
+* To manually set up and map date formats when plan fails to detect the date format automatically, see [Map date fields manually](../resources/how-to-manually-map-time-intervals.md).
