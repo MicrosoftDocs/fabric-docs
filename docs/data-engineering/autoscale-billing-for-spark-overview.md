@@ -1,7 +1,7 @@
 ---
 title: On-demand billing for Apache Spark in Microsoft Fabric
 description: Learn about the On-demand Billing model for Apache Spark in Microsoft Fabric and how it enables flexible, pay-as-you-go compute for Spark workloads.
-ms.reviewer: saravi
+ms.reviewer: milescole
 ms.topic: concept-article
 ms.date: 03/05/2026
 ai-usage: ai-assisted

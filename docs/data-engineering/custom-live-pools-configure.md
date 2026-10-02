@@ -1,7 +1,7 @@
 ---
 title: Configure custom live pools in Microsoft Fabric
 description: Learn how to create, configure, and manage custom live pools in Microsoft Fabric for fast notebook session startup.
-ms.reviewer: saravi
+ms.reviewer: milescole
 ms.topic: how-to
 ms.date: 08/24/2026
 ai-usage: ai-assisted

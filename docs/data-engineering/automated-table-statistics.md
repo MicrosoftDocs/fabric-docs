@@ -2,7 +2,7 @@
 
 title: Configure and manage Automated Table Statistics in Fabric Spark
 description: Learn how to configure Automated Table Statistics in Fabric Spark to optimize performance for analytics workloads.
-ms.reviewer: saravi
+ms.reviewer: milescole
 ms.topic: how-to
 ms.date: 08/24/2026
 ai-usage: ai-assisted

@@ -1,7 +1,7 @@
 ---
 title: Notebook data export controls
 description: Learn how to configure and manage data export controls for Microsoft Fabric notebooks to govern how data leaves your organization's boundaries.
-ms.reviewer: saravi
+ms.reviewer: milescole
 ms.topic: how-to
 ms.date: 03/18/2026
 ms.search.form: Notebook Data Export Controls Security Governance

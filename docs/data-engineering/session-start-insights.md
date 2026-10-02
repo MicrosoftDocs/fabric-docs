@@ -1,7 +1,7 @@
 ---
 title: Session start insights for Fabric Data Engineering
 description: Learn how session start insights in Microsoft Fabric Data Engineering makes Spark session acquisition transparent, debuggable, and actionable.
-ms.reviewer: saravi
+ms.reviewer: milescole
 ms.topic: concept-article
 ms.date: 03/18/2026
 ai-usage: ai-assisted
