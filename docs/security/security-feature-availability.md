@@ -5,7 +5,7 @@ description: Learn about the support status of the Fabric security features Work
 author: msmimart
 ms.author: mimart
 ms.reviewer: mimart
-ms.date: 07/08/2026
+ms.date: 10/2/2026
 ms.topic: concept-article
 ---
 
@@ -55,6 +55,7 @@ The following table shows the support status for each Fabric item. A check mark 
 |  | Share item | - | - | - |
 | **Fabric IQ** | Graph model  | - | - | Preview |
 |  | Graph queryset | - | - | Preview |
+|  | Ontology | - | - | - |
 |  | Operations agent | - | - | Preview |
 | **Industry Solutions** | Healthcare data solutions | - | ✓ | - |
 |  | Sustainability Solution | - | ✓ | - |
