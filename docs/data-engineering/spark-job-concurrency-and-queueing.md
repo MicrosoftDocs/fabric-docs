@@ -1,7 +1,7 @@
 ---
 title: Concurrency limits and queueing in Apache Spark for Fabric
 description: Learn about the job concurrency limits and queueing for notebooks, Apache Spark job definitions, and lakehouse jobs in Fabric.
-ms.reviewer: saravi
+ms.reviewer: milescole
 ms.topic: concept-article
 ms.date: 06/15/2026
 ai-usage: ai-assisted
