@@ -287,8 +287,13 @@
     },
     {
       "source_path_from_root": "/docs/get-started/whats-new-archive.md",
-      "redirect_url": "/fabric/fundamentals/whats-new-archive",
-      "redirect_document_id": true
+      "redirect_url": "/fabric/fundamentals/whats-new",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/fundamentals/whats-new-archive.md",
+      "redirect_url": "/fabric/fundamentals/whats-new",
+      "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/get-started/fabric-home.md",

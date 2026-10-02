@@ -6,7 +6,7 @@
       - name: What is Data Factory?
         href: data-factory-overview.md
       - name: What's new in Data Factory
-        href: ../fundamentals/whats-new.md?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json#data-factory-in-microsoft-fabric
+        href: ../fundamentals/whats-new.md?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
       - name: Guided Data Factory lab
         href: guided-lab-experience.md
       - name: Data Factory training

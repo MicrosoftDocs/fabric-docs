@@ -2,7 +2,7 @@
 title: Data Warehouse operations skill for Fabric
 description: Learn how to use the Data Warehouse operations capability of sqldw-cli to diagnose warehouse health, query performance, capacity spikes, and cluster-key candidates.
 ms.reviewer: mariyaali
-ms.date: 09/14/2026
+ms.date: 09/29/2026
 ms.topic: concept-article
 ms.search.form: skills, AI, agents, monitoring, query performance
 ai-usage: ai-assisted
@@ -10,8 +10,6 @@ ai-usage: ai-assisted
 # Warehouse operations skill sqldw-cli
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
-
-[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
 The Fabric Data Warehouse operations capability of the `sqldw-cli` skill is part of Skills for Fabric. For installation, supported tools, and general usage, see [Skills for Fabric overview](../fundamentals/skills-for-fabric-overview.md). Use the skill from a compatible AI coding tool to investigate a warehouse or lakehouse SQL analytics endpoint with bounded, read-only diagnostics.
 
