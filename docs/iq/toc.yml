@@ -649,6 +649,8 @@ items:
       items:
       - name: Time intelligence
         href: plan/resources/best-practices/time-intelligence.md
+      - name: Configure time interval mapping manually
+        href: plan/resources/how-to-manually-map-time-intervals.md
       - name: Semantic modeling
         href: plan/resources/best-practices/semantic-modeling.md
       - name: ALM – Variable Library
