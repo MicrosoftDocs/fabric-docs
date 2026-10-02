@@ -1,7 +1,7 @@
 ---
 title: Job concurrency and queue monitoring
 description: Learn how to monitor Spark job concurrency, troubleshoot queuing, and understand capacity utilization in Microsoft Fabric.
-ms.reviewer: saravi
+ms.reviewer: milescole
 ms.topic: concept-article
 ms.date: 07/04/2026
 ai-usage: ai-assisted

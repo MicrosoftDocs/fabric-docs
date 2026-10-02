@@ -1,7 +1,7 @@
 ---
 title: Configure resource profiles in Microsoft Fabric
 description: Learn how to use resource profiles in Microsoft Fabric Data Engineering to get optimized compute recommendations tailored to your workload, configured through workspace settings.
-ms.reviewer: saravi
+ms.reviewer: milescole
 ms.topic: how-to
 ms.date: 03/18/2026
 ai-usage: ai-assisted

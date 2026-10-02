@@ -1,7 +1,7 @@
 ---
 title: Configure On-demand Billing for Spark in Microsoft Fabric
 description: Learn how to enable On-demand Billing for Apache Spark workloads in Microsoft Fabric and configure maximum capacity units.
-ms.reviewer: saravi
+ms.reviewer: milescole
 ms.topic: how-to
 ms.custom:
   - fabcon-2025
