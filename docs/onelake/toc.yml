@@ -197,8 +197,6 @@ items:
     href: onelake-lifecycle-management.md
   - name: Storage tiers
     href: onelake-storage-tiers.md
-  - name: Configure file-level soft delete
-    href: configure-soft-delete.md
   - name: Recover deleted files
     href: soft-delete.md
   - name: Plan for disaster recovery

@@ -273,5 +273,3 @@ items:
   items:
     - name: Use official Fabric icons
       href: icons.md
-    - name: Browse the what's new archive
-      href: whats-new-archive.md
