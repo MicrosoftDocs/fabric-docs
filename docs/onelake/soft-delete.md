@@ -6,16 +6,18 @@ ms.reviewer: eloldag # Product team ms alias(es)
 # ms.author: Do not use - assigned by folder in docfx file
 ms.topic: how-to
 ms.custom:
-ms.date: 08/21/2026
+ms.date: 02/03/2026
 ai-usage: ai-assisted
 #customer intent: As a OneLake user, I want to recover files that were accidentally deleted so that I can restore my data without losing work.
 ---
 
 # Recover deleted files in OneLake
 
-OneLake soft delete protects your data by retaining deleted files before permanent removal. Soft delete is turned on for each workspace by default with a seven-day retention period. Workspace admins can [configure file-level soft delete](configure-soft-delete.md) or turn it off.
+OneLake automatically protects your data by using soft delete, which retains deleted files for seven days before permanent removal. This built-in protection helps you recover from accidental deletions or user errors without needing to restore from backups.
 
-You can restore a soft-deleted file during the retention period that was active when the file was deleted. After that period ends, the file is permanently removed and can't be recovered. You pay for soft-deleted data at the same rate as active data.
+After seven days, soft-deleted files are permanently removed and can't be recovered.
+
+You pay for soft-deleted data at the same rate as active data.
 
 ## Restore soft-deleted files
 
@@ -92,7 +94,6 @@ For more information, see [Undelete Blob REST API](/rest/api/storageservices/und
 
 ## Related content
 
-- [Configure file-level soft delete in OneLake](configure-soft-delete.md)
 - [Use Azure Storage Explorer with OneLake](onelake-azure-storage-explorer.md)
 - [Connect to OneLake with PowerShell](onelake-powershell.md)
 - [Plan for disaster recovery and data protection](onelake-disaster-recovery.md)

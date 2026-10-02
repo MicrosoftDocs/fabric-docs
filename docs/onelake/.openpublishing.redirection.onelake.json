@@ -134,6 +134,11 @@
             "source_path_from_root": "/docs/onelake/security/table-folder-security.md",
             "redirect_url": "/fabric/onelake/security/table-column-row-security",
             "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/onelake/configure-soft-delete.md",
+            "redirect_url": "/fabric/onelake/soft-delete",
+            "redirect_document_id": true
         }
     ]
 }

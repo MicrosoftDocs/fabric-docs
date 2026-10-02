@@ -34,7 +34,7 @@ If you're a capacity admin, you can view your storage consumption in the [Fabric
 
 The workspace details table includes two columns: **Current storage** and **Billable storage**. Billable storage reflects cumulative data usage over the month. The total charge for data stored isn't taken on one day of the month, but on a pro-rated basis throughout the month. You can estimate the monthly price as the billable storage (GB) multiplied by the price per GB per month.
 
-For example, storing 1 TB of data on day 1, adds to 33 GB daily billable storage. On day one it's 1 TB / 30 days = 33 GB and every day adds 33 GB until the month ends. [OneLake soft delete](soft-delete.md) protects individual files from accidental deletion by retaining files for seven days by default before permanent removal. Workspace admins can [configure the retention period](configure-soft-delete.md). Soft-deleted data is billed at the same rate as active data. If you notice discrepancies between what you see in items and your billed storage totals, [OneLake item-size reporting](how-to-get-item-size.md) can help by surfacing soft-deleted and hidden system data as separate contributors to storage usage.
+For example, storing 1 TB of data on day 1, adds to 33 GB daily billable storage. On day one it's 1 TB / 30 days = 33 GB and every day adds 33 GB until the month ends. [OneLake soft delete](soft-delete.md) protects individual files from accidental deletion by retaining files for seven days before permanent removal. Soft-deleted data is billed at the same rate as active data. If you notice discrepancies between what you see in items and your billed storage totals, [OneLake item-size reporting](how-to-get-item-size.md) can help by surfacing soft-deleted and hidden system data as separate contributors to storage usage.
 
 :::image type="content" source="media\onelake-capacity-consumption\storage.png" alt-text="Diagram shows billable and current storage difference." lightbox="media\onelake-capacity-consumption\storage.png":::
 
@@ -69,4 +69,4 @@ In the preceding example, both storage and compute are billed to Capacity1. Now,
 
 If your CU consumption exceeds the capacity limit, [throttling](../enterprise/throttling.md) might occur, which causes transactions to be delayed or rejected temporarily.
 
-Start Fabric's free trial to explore OneLake and other features, and visit the [Fabric forum](https://community.fabric.microsoft.com/category/ac-community) for questions.
+Start Fabric's free trial to explore OneLake and other features, and visit the [Fabric forum](https://community.fabric.microsoft.com/t5/Forums/ct-p/ac_forums) for questions.
