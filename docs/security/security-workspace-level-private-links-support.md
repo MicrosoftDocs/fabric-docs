@@ -126,11 +126,11 @@ Create and manage warehouses in workspaces enabled with private links by using t
 
 To get the workspace private link service connection string for a warehouse: [Get Connection String - REST API (Warehouse)](/rest/api/fabric/warehouse/items/get-connection-string)
 
-When using the REST API to retrieve the connection string, use the `privateLinkType=Workspace` flag to get the workspace private link connection string.
+When you use the REST API to retrieve the connection string, include the `privateLinkType=Workspace` flag to get the workspace private link connection string.
 
 ---
 
-To use the warehouse connection string with a workspace-level private link, add `z{xy}` to the regular warehouse connection string, as described in [Private links for Fabric workspaces](security-workspace-level-private-links-overview.md#connecting-to-workspaces).The `z` is a literal inclusion in the connection string, and the `{xy}` placeholder is the first two characters of the workspace ID. The brackets are not included, so for example `zab` or `z44`. For example:
+To use the warehouse connection string with a workspace-level private link, add `z{xy}` to the regular warehouse connection string, as described in [Private links for Fabric workspaces](security-workspace-level-private-links-overview.md#connecting-to-workspaces). The `z` is a literal inclusion in the connection string, and the `{xy}` placeholder is the first two characters of the workspace ID. The brackets aren't included, so for example `zab` or `z44`. For example:
 
 ```url
 {GUID}-{GUID}.z{xy}.datawarehouse.fabric.microsoft.com
@@ -157,11 +157,11 @@ Create and manage SQL databases in workspaces enabled with private links by usin
 Current preview limitations for workspace private links in SQL database in Fabric:
 
 - A SQL database must exist in the workspace before setting up workspace-level private link.
-- A SQL database can't be created in a workspace that has workspace-level private link already enabled.
+- You can't create a SQL database in a workspace that already has workspace-level private link enabled.
 
 ### SQL analytics endpoint support
 
-To use the SQL analytics endpoint connection string with a workspace-level private link, add the placeholders `z{xy}` to the regular warehouse connection string, as described in [Private links for Fabric workspaces](security-workspace-level-private-links-overview.md#connecting-to-workspaces). The `z` is a literal inclusion in the connection string, and the `{xy}` placeholder is the first two characters of the workspace ID. The brackets are not included, so for example `zab` or `z44`. For example:
+To use the SQL analytics endpoint connection string with a workspace-level private link, add the placeholders `z{xy}` to the regular warehouse connection string, as described in [Private links for Fabric workspaces](security-workspace-level-private-links-overview.md#connecting-to-workspaces). The `z` is a literal inclusion in the connection string, and the `{xy}` placeholder is the first two characters of the workspace ID. The brackets aren't included, so for example `zab` or `z44`. For example:
 
 ```url
 {GUID}-{GUID}.z{xy}.datawarehouse.fabric.microsoft.com
