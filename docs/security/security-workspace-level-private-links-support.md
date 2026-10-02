@@ -3,9 +3,9 @@ title: Supported Scenarios for Workspace Private Links
 description: Find information and links for supported and unsupported workspace-level private link scenarios.
 author: msmimart
 ms.author: mimart
-ms.reviewer: karthikeyana
+ms.reviewer: karthikeyana, wiassaf
 ms.topic: overview
-ms.date: 08/26/2026
+ms.date: 10/01/2026
 
 #customer intent: As a workspace admin, I want to get more information about how to use workspace-level private link in supported and unsupported scenarios.
 
@@ -38,6 +38,7 @@ You can use workspace-level private links to connect to the following item types
 * Mirrored database
 * Eventstream
 * Eventhouse
+* SQL database in Fabric (preview)
 * Activator
 * Data Agent
 
@@ -52,10 +53,6 @@ The following item types aren't currently supported in workspaces enabled with w
    Similarly, if a workspace is already configured to restrict inbound public access, unsupported item types can't be created in that workspace.
 
    When a workspace is assigned to a deployment pipeline, it can't be configured to block public access, as deployment pipelines don't currently support workspace-level private links.
-
-* **SQL databases**
-
-   Tenant-level [private links](security-private-links-overview.md) are available for SQL database, but currently, workspace-level private links are not available in SQL database.
 
 * **Semantic models**
 
@@ -129,11 +126,11 @@ Create and manage warehouses in workspaces enabled with private links by using t
 
 To get the workspace private link service connection string for a warehouse: [Get Connection String - REST API (Warehouse)](/rest/api/fabric/warehouse/items/get-connection-string)
 
-When using the REST API to retrieve the connection string use, the `privateLinkType=Workspace` flag to get the workspace private link connection string.
+When using the REST API to retrieve the connection string, use the `privateLinkType=Workspace` flag to get the workspace private link connection string.
 
 ---
 
-To use the warehouse connection string with a workspace-level private link, add information to the placeholders z{xy} to the regular warehouse connection string, as described in [Private links for Fabric workspaces](security-workspace-level-private-links-overview.md#connecting-to-workspaces). The `z` is a literal inclusion in the connection string, and the brackets are not included, so for example `zab` or `z44`. For example:
+To use the warehouse connection string with a workspace-level private link, add `z{xy}` to the regular warehouse connection string, as described in [Private links for Fabric workspaces](security-workspace-level-private-links-overview.md#connecting-to-workspaces).The `z` is a literal inclusion in the connection string, and the `{xy}` placeholder is the first two characters of the workspace ID. The brackets are not included, so for example `zab` or `z44`. For example:
 
 ```url
 {GUID}-{GUID}.z{xy}.datawarehouse.fabric.microsoft.com
@@ -141,11 +138,30 @@ To use the warehouse connection string with a workspace-level private link, add 
 
 Using the warehouse connection string, you can also access a warehouse via the SQL Tabular Data Stream (TDS) endpoint in tools such as SQL Server Management Studio. All SQL analytics endpoints and warehouses in a workspace share the same connection string hostname for TDS connectivity.
 
-<a id="sql-endpoint-support"></a>
+### SQL database support
+
+Workspace (preview) and tenant-level [private links](security-private-links-overview.md) are available for SQL database.
+
+Create and manage SQL databases in workspaces enabled with private links by using the Fabric portal or REST APIs.
+
+#### [Fabric portal](#tab/fabric-portal-21)
+
+- [Create a SQL database](../database/sql/create.md)
+
+#### [REST API](#tab/rest-apis-21)
+
+- [SQL database REST API](/rest/api/fabric/sqldatabase/items)
+
+---
+
+Current preview limitations for workspace private links in SQL database in Fabric:
+
+- A SQL database must exist in the workspace before setting up workspace-level private link.
+- A SQL database can't be created in a workspace that has workspace-level private link already enabled.
 
 ### SQL analytics endpoint support
 
-To use the warehouse connection string with a workspace-level private link, add information to the placeholders z{xy} to the regular warehouse connection string, as described in [Private links for Fabric workspaces](security-workspace-level-private-links-overview.md#connecting-to-workspaces). The `z` is a literal inclusion in the connection string, and the brackets are not included, so for example `zab` or `z44`. For example:
+To use the SQL analytics endpoint connection string with a workspace-level private link, add the placeholders `z{xy}` to the regular warehouse connection string, as described in [Private links for Fabric workspaces](security-workspace-level-private-links-overview.md#connecting-to-workspaces). The `z` is a literal inclusion in the connection string, and the `{xy}` placeholder is the first two characters of the workspace ID. The brackets are not included, so for example `zab` or `z44`. For example:
 
 ```url
 {GUID}-{GUID}.z{xy}.datawarehouse.fabric.microsoft.com
@@ -156,6 +172,11 @@ To use the warehouse connection string with a workspace-level private link, add 
 
 Using the SQL analytics endpoint connection string, you can also access a SQL analytics endpoint via the SQL Tabular Data Stream (TDS) endpoint in tools such as SQL Server Management Studio. All SQL analytics endpoints and warehouses in a workspace share the same connection string hostname for TDS connectivity.
 
+#### [Fabric portal](#tab/fabric-portal-3)
+* [Find the Connection String (SQL analytics endpoint)](../data-warehouse/how-to-connect.md#find-the-warehouse-connection-string)
+#### [REST API](#tab/rest-apis-3)
+* [Items - List SQL analytics endpoints](/rest/api/fabric/sqlendpoint/items/list-sql-endpoints)
+* [Items - Get Connection String (SQL analytics endpoint)](/rest/api/fabric/sqlendpoint/items/get-connection-string)
 ---
 
 ### Notebook support
@@ -478,4 +499,5 @@ Users might see one of the following:
 
 * [About private links](./security-private-links-overview.md)
 * [Set up and use workspace-level private links](./security-workspace-level-private-links-set-up.md)
+
 <!--* [Microsoft Fabric multi-workspace APIs](./security-fabric-multi-workspace-api-overview.md)-->
