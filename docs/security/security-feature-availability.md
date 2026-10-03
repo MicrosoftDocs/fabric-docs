@@ -5,7 +5,7 @@ description: Learn about the support status of the Fabric security features Work
 author: msmimart
 ms.author: mimart
 ms.reviewer: mimart
-ms.date: 10/2/2026
+ms.date: 10/02/2026
 ms.topic: concept-article
 ---
 
@@ -75,7 +75,7 @@ The following table shows the support status for each Fabric item. A check mark 
 |  | Mirrored SQL Server 2016-2022 | - | ✓ | ✓ |
 |  | Mirrored SQL Server 2025 | ✓ | ✓ | ✓ |
 |  | Open Mirroring | ✓ | ✓ | ✓ |
-| **Fabric Databases** | SQL database in Fabric |  | ✓ | - |
+| **Fabric Databases** | SQL database in Fabric | Preview | ✓ | - |
 |  | Cosmos DB |  | - | - |
 |  | Snowflake database | - | - | - |
 | **OneLake** | Shortcut | ✓ | ✓ | ✓ |
