@@ -29,7 +29,7 @@ Two tenant settings control metadata scanning:
 * **Enhance admin APIs responses with detailed metadata**: This setting turns on Model caching and enhances API responses with low-level semantic model metadata (for example, name and description) for tables, columns, and measures.
 * **Enhance admin APIs responses with DAX and mashup expressions**: This setting allows the API response to include DAX expressions and Mashup queries. This setting can only be enabled if the first setting is also enabled.
 
-To enable these settings, go to **Admin portal > Tenant settings > Admin API settings**.
+To enable these settings, go to **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings** > **Admin API settings**.
 
 ## Related content
 

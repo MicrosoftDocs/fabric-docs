@@ -272,8 +272,12 @@ items:
         href: ./materialized-lake-views/data-quality.md
     - name: Manage
       items:
-      - name: Optimal refresh for materialized lake views
-        href: ./materialized-lake-views/refresh-materialized-lake-view.md
+      - name: Optimal refresh
+        items:
+        - name: Optimal refresh for materialized lake views
+          href: ./materialized-lake-views/refresh-materialized-lake-view.md
+        - name: Enable optimal refresh for deletes and updates
+          href: ./materialized-lake-views/optimal-refresh-handling-deletes-updates.md
       - name: View lineage
         href: ./materialized-lake-views/view-lineage.md
       - name: Schedule materialized lake views
@@ -354,6 +358,8 @@ items:
         href: ./user-data-functions/user-data-functions-portal-editor.md
       - name: Python programming model
         href: ./user-data-functions/python-programming-model.md
+      - name: Write functions for business events
+        href: ./user-data-functions/write-functions-business-events.md
       - name: Test your user data functions
         href: ./user-data-functions/test-user-data-functions.md
       - name: View logs
@@ -368,6 +374,8 @@ items:
         href: ./user-data-functions/create-functions-activity-data-pipelines.md
       - name: Integration with Fabric notebooks
         href: ./notebookutils/notebookutils-user-data-function.md
+      - name: Publish business events
+        href: ../real-time-hub/business-events/tutorial-business-events-user-data-function-activation-email.md
       - name: Invoke functions using Python
         href: ./user-data-functions/tutorial-invoke-from-python-app.md
     - name: Manage
@@ -830,6 +838,16 @@ items:
     href: api-graphql-limits.md
   - name: Frequently asked questions
     href: graphql-faq.yml
+- name: Data engineering agent (Project Osmos)
+  items:
+  - name: Overview
+    href: data-engineering-agent-overview.md
+  - name: Get started
+    href: data-engineering-agent-get-started.md
+  - name: Best practices
+    href: data-engineering-agent-best-practices.md
+  - name: Consumption
+    href: data-engineering-agent-consumption.md
 - name: Partner integration
   items:
    - name: Esri - ArcGIS GeoAnalytics
@@ -850,6 +868,8 @@ items:
         href: ./user-data-functions/user-data-functions-portal-editor.md
       - name: Python programming model
         href: ./user-data-functions/python-programming-model.md
+      - name: Write functions for business events
+        href: ./user-data-functions/write-functions-business-events.md
       - name: Test your user data functions
         href: ./user-data-functions/test-user-data-functions.md
       - name: View logs
@@ -866,6 +886,8 @@ items:
         href: ./user-data-functions/activator-action-function.md
       - name: Integration with Fabric notebooks
         href: ./notebookutils/notebookutils-user-data-function.md
+      - name: Publish business events and send email notifications
+        href: ../real-time-hub/business-events/tutorial-business-events-user-data-function-activation-email.md
       - name: Invoke functions using Python
         href: ./user-data-functions/tutorial-invoke-from-python-app.md
    - name: Manage

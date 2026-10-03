@@ -11,7 +11,7 @@ To integrate Git with your Microsoft Fabric workspace, you need to set up the fo
 
 To access the Git integration feature, you need a [Fabric capacity](/fabric/enterprise/licenses#capacity). A Fabric capacity is required to use all supported Fabric items. If you don't have one yet, [sign up for a free trial](/fabric/fundamentals/fabric-trial). Customers that already have a [Power BI Premium capacity](/power-bi/enterprise/service-premium-what-is), can use that capacity, but keep in mind that [certain Power BI SKUs only support Power BI items](/fabric/enterprise/licenses#capacity).
 
-In addition, the following [tenant switches](/fabric/admin/about-tenant-settings) must be enabled from the Admin portal:
+In addition, the following [tenant switches](/fabric/admin/about-tenant-settings) must be enabled in **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**:
 
 - [Users can create Fabric items](/fabric/admin/fabric-switch) - require in case of Fabric artifacts use
 - [Users can synchronize workspace items with their Git repositories](/fabric/admin/git-integration-admin-settings#users-can-synchronize-workspace-items-with-their-git-repositories-preview)

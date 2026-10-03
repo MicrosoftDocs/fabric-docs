@@ -14,7 +14,9 @@ ai-usage: ai-assisted
 This article outlines the steps to create a Profisee connection.
 
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
+
+## Summary
 
 The Profisee connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
@@ -30,21 +32,29 @@ You can connect a dataflow Gen2 in Fabric to Profisee using Power Query connecto
 1. [Get data in Fabric](#get-data).
 1. [Connect to Profisee data](#connect-to-profisee-data).
 
-### Capabilities
+## Prerequisites
 
-[!INCLUDE [profisee-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/profisee/profisee-capabilities-supported.md)]
+[!INCLUDE [profisee-prerequisites](includes/power-query/connectors/includes/profisee/prerequisites.md)]
 
-### Prerequisites
+<a id="capabilities"></a>
 
-[!INCLUDE [profisee-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/profisee/profisee-prerequisites.md)]
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
+
+[!INCLUDE [profisee-capabilities-supported](includes/power-query/connectors/includes/profisee/capabilities-supported.md)]
+
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Connect to Profisee data
+<a id="connect-to-profisee-data"></a>
 
-[!INCLUDE [profisee-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/profisee/profisee-connect-to-power-query-online.md)]
+### Connection instructions
+
+[!INCLUDE [profisee-connect-to-power-query-online](includes/power-query/connectors/includes/profisee/connect-to-power-query-online.md)]
 
 ## Set up your connection in a pipeline
 

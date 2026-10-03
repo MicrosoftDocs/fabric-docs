@@ -4,18 +4,18 @@ description: "Learn how to view, understand info, and manage Fabric identities a
 author: msmimart
 ms.author: mimart
 ms.topic: how-to
-ms.date: 06/21/2024
-ms.custom: sfi-image-nochange
-#customer intent: As a Fabric administrator, I want understand what's on the Fabric identities tab so that I can monitor and govern all the Fabric identities in my organization.
+ms.date: 09/01/2026
+ai-usage: ai-assisted
+#customer intent: As a Fabric administrator, I want to understand the Fabric identities page so that I can manage all the Fabric identities in my organization.
 ---
 
 # Manage Fabric identities
 
-As a Fabric administrator, you can govern the Fabric identities that exist in your organization on the **Fabric identities** tab in the admin portal. For information about how to get to and use the admin portal, see [How to get to the admin portal](./admin-center.md#how-to-get-to-the-admin-portal).
+As a Fabric administrator, you can manage your organization's Fabric identities from **Fabric identities** in the [Govern section of the OneLake catalog](../governance/onelake-catalog-govern.md).
 
-On the **Fabric identities** tab, you see a list of all the Fabric identities in your tenant.
+In the **OneLake catalog**, select **Govern** > **Configurations** > **Fabric identities**. The **Fabric identities** page lists all the Fabric identities in your tenant.
 
-:::image type="content" source="./media/fabric-identities-manage/fabric-identities-tab.png" alt-text="Screenshot showing the Fabric identities tab in the Fabric admin portal." lightbox="./media/fabric-identities-manage/fabric-identities-tab.png":::
+<!-- Placeholder: Fabric identities page in OneLake catalog > Govern > Configurations. -->
 
 The columns of the list of identities are described in following table.
 
@@ -28,9 +28,9 @@ The columns of the list of identities are described in following table.
 
 ## View identity details
 
-1. Select the radio button of the identity whose details you wish to view.
+1. Select the identity that you want to view.
 
-1. Select **Details** on the ribbon that appears. The **Details** side pane opens displaying the identity's details.
+1. Select **Details** on the command bar. The **Details** side pane opens and displays the identity's details.
 
 | Field                             | Description                                                                                               |
 |:----------------------------------|:----------------------------------------------------------------------------------------------------------|
@@ -49,17 +49,17 @@ The columns of the list of identities are described in following table.
 
 To delete an identity:
 
-1. Select the radio button of the identity you want to delete.
+1. Select the identity you want to delete.
 
-1. Select **Delete** on the ribbon that appears.
+1. Select **Delete** on the command bar.
 
 ## Refresh the identities list
 
-Select **Refresh** in the ribbon to refresh the list of identities.
+Select **Refresh** on the command bar to refresh the list of identities.
 
 ## Export the identities list as a .csv file
 
-Select **Export** on the ribbon to download the list of identities as a *.csv* file.
+Select **Export** on the command bar to download the list of identities as a *.csv* file.
 
 ## Related content
 

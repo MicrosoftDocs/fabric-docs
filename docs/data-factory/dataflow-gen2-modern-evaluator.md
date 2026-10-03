@@ -1,15 +1,21 @@
 ---
 title: Modern Evaluator for Dataflow Gen2 with CI/CD
-description: Boost Dataflow Gen2 with CI/CD performance with the Modern Evaluator—faster query execution, scalable workflows, and support for top connectors.
+description: Boost Dataflow Gen2 with CI/CD performance with the Modern Evaluator—faster query execution, scalable workflows, and support for all functions and most data sources.
 ms.reviewer: miescobar
 ms.topic: how-to
-ms.date: 8/13/2026
+ms.date: 9/9/2026
 ms.custom: dataflows
+ai-usage: ai-assisted
 ---
 
 # Modern Evaluator for Dataflow Gen2 with CI/CD
 
 The Modern Query Evaluation Engine (also known as the "Modern Evaluator") provides a new query execution engine running on .NET core version 8, which can significantly improve the performance of dataflow runs in some scenarios.
+
+The modern evaluator supports all Power Query functions and most data sources available in Dataflow Gen2 (CI/CD).
+
+> [!NOTE]
+> Requests that use the IBM Db2 database, Informix, or MQ connectors temporarily route to the standard (legacy) evaluation engine, even when the modern evaluator is enabled. The modern evaluator doesn't currently support these connectors.
 
 Dataflows running the modern evaluator could potentially see some of these key benefits:
 
@@ -35,7 +41,7 @@ Follow these steps to turn on the Modern Query Evaluation Engine for a dataflow:
 
     :::image type="content" source="media/dataflow-gen2-modern-evaluator/modern-evaluator-option.png" alt-text="Screenshot of the options dialog in a Dataflow Gen2 with CI/CD displaying the modern query evaluator setting." lightbox="media/dataflow-gen2-modern-evaluator/modern-evaluator-option.png":::
 
-1. **Save and run**: Save the dataflow settings. The next time you run the dataflow, it will use the Modern Evaluator for supported connectors.
+1. **Save and run**: Save the dataflow settings. The next time you run the dataflow, it uses the modern evaluator, except for requests that use the IBM Db2 database, Informix, or MQ connectors, which are temporarily routed to the standard evaluation engine.
 
 ## Performance considerations
 
@@ -101,119 +107,6 @@ This benchmark compares the legacy evaluation engine and the Modern Query Evalua
 **Observations**
 
 The Modern Query Evaluation Engine provides significant performance improvements due to a more efficient runtime and reduced execution overhead regardless of whether the query folds or not.
-
-
-## Supported connectors
-
-The Modern Query Evaluation Engine supports a variety of data connectors. Ensure your dataflow’s data sources are among the supported types to take advantage of the new engine. Currently supported connectors include.
-
-<details>
-<summary><b>Show connectors list</b></summary>
-
-- Acterys
-- Adobe Analytics
-- ADP Analytics
-- Anaplan
-- Aptix Insights
-- Asana
-- Assemble Views
-- Autodesk Construction Cloud
-- Automation Anywhere
-- Automy Data Analytics
-- [Azure Blob Storage](connector-azure-blob-storage-overview.md)
-- Azure Cost Management
-- [Azure Data Explorer (Kusto)](connector-azure-data-explorer.md)
-- [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2-overview.md)
-- Azure SQL database
-- Azure Synapse Analytics
-- Azure Synapse Analytics workspace
-- Azure Resource Graph
-- AzureTables
-- BI 360
-- BitSightSecurityRatings
-- Bloomberg
-- BQE Core
-- Building Connected
-- CCH Tagetik
-- CData Connect Cloud
-- Celonis
-- Cherwell
-- CloudBluePSA
-- Cognite
-- CogniteDataSource
-- CustomerInsights
-- Dataverse
-- DCWInsights
-- DeltaSharing
-- Dynamics 365 Business Central
-- DynatraceGrail
-- Eduframe
-- Emigo
-- EntersoftBusinessSuite
-- EQuIS
-- eWayCRM
-- Fabric AI Functions
-- [Fabric Lakehouse](connector-lakehouse-overview.md)
-- Fabric SQL database
-- [Fabric Warehouse](connector-data-warehouse-overview.md)
-- FactSet Analytics
-- FactSet RMS
-- Funnel
-- Google Analytics
-- Google Sheets
-- HexagonSmartApi
-- IndustrialAppStore
-- InformationGrid
-- Intune
-- inwink
-- JamfPro
-- Kognitwin
-- kxkdbinsightsenterprise
-- LEAP
-- Linkar
-- LinkedIn Learning
-- Microstrategy Dataset
-- [OData](connector-odata-overview.md)
-- OneStream
-- Paxata
-- PlanviewOKR
-- PlanviewProjectplace
-- [Power Platform Dataflows](connector-dataflows-overview.md)
-- Profisee
-- Quickbase
-- Roamler
-- Salesforce
-- Samsara
-- SDMX
-- [SharePoint folder](connector-sharepoint-folder-overview.md)
-- [SharePoint Online List](connector-sharepoint-online-list-overview.md)
-- ShortcutsBI
-- SiteImprove
-- SmartsheetGlobal
-- SoftOneBI
-- SolarwindsServiceDesk
-- Spigit
-- SumTotal
-- Supermetrics
-- SQL Server database
-- SurveyMonkey
-- TeamDesk
-- Tenforce
-- Usercube
-- Vena
-- VesselInsight
-- VivaInsights
-- [Web](connector-web-overview.md)
-- WebtrendsAnalytics
-- Windsor
-- Witivio
-- Wrike
-- Zendesk Data
-- Zoho Creator
-- Zucchetti
-</details>
-
-If a dataflow uses connectors not in this list, those queries continue to run with the standard (legacy) engine.
 
 ## Related content
 

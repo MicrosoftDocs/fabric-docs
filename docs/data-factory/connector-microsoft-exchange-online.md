@@ -14,7 +14,9 @@ ai-usage: ai-assisted
 This article outlines the steps to create a Microsoft Exchange Online connection.
 
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
+
+## Summary
 
 The Microsoft Exchange Online connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
@@ -29,17 +31,25 @@ You can connect dataflow Gen2 in Fabric to Microsoft Exchange Online using Power
 1. [Get data in Fabric](#get-data).
 1. [Connect to Microsoft Exchange Online](#connect-to-microsoft-exchange-online).
 
-### Capabilities
+<a id="capabilities"></a>
 
-[!INCLUDE [microsoft-exchange-online-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/microsoft-exchange-online/microsoft-exchange-online-capabilities-supported.md)]
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
+
+[!INCLUDE [microsoft-exchange-online-capabilities-supported](includes/power-query/connectors/includes/microsoft-exchange-online/microsoft-exchange-online-capabilities-supported.md)]
+
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Connect to Microsoft Exchange Online
+<a id="connect-to-microsoft-exchange-online"></a>
 
-[!INCLUDE [microsoft-exchange-online-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/microsoft-exchange-online/microsoft-exchange-online-connect-to-power-query-online.md)]
+### Connection instructions
+
+[!INCLUDE [microsoft-exchange-online-connect-to-power-query-online](includes/power-query/connectors/includes/microsoft-exchange-online/microsoft-exchange-online-connect-to-power-query-online.md)]
 
 ## Set up your connection in a pipeline
 

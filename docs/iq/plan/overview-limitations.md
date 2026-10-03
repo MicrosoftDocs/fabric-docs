@@ -2,7 +2,7 @@
 title: Known Limitations in Planning
 description: This article lists known issues and limitations present in planning in Fabric.
 ms.topic: concept-article
-ms.date: 09/16/2026
+ms.date: 09/23/2026
 #customer intent: As a user, I want to know the limitations present in planning.
 ---
 
@@ -22,21 +22,18 @@ Workspaces or tenants that use [private links](../../security/security-private-l
 
 ## Semantic model
 
-* You must have *Admin* or *Build* permissions on the semantic model.
-* Semantic models in Direct Lake mode require [additional configuration](planning-how-to-create-semantic-model-connection.md#connect-to-a-direct-lake-semantic-model).
-* Direct Lake and DirectQuery semantic models require a gateway connection that uses fixed credentials. Single sign-on (SSO) isn't supported yet.
+* You must have *Read* and *Build* permissions on the semantic model to attach it to a plan. *Read* permission is sufficient to read model data in a plan.
 * Each plan item connects to one semantic model, and you can't change it after you connect it. If you need to plan against different data sources, you must create separate plan items.
-* Semantic model connections only support OAuth-based and service principal-based authentication.
 * Semantic models published in *My workspace* aren't supported.
-* Composite models are supported in Planning. Support for individual configurations depends on the capabilities of the underlying semantic model, including storage modes, data sources, and authentication.
+* Composite models are supported in Planning, while support for individual configurations depends on the capabilities of the underlying semantic model, including storage modes, data sources, and authentication.
 * If the semantic model contains unsupported Unicode characters, inserting a Data input column in a planning sheet might fail.
 * Don't rename a semantic model that's connected to a plan item. Renaming the semantic model breaks the connection, and the plan item no longer works with the renamed semantic model.
 
 ### Row-level security (RLS) behavior
 
-* When RLS is configured on the connected semantic model, users without an assigned RLS role see the union of the data defined by all roles. Data that isn't included in any role isn't visible.
+* RLS and object-level security (OLS) are evaluated based on the signed-in user's permissions on the connected semantic model.
 
-## Writeback limitations 
+## Writeback limitations
 
 * Planning in Fabric supports writeback only to Fabric SQL databases.
 * Writeback stores planning data separately in Fabric SQL. It doesn't update the connected semantic model.
@@ -45,15 +42,11 @@ Workspaces or tenants that use [private links](../../security/security-private-l
 
 ## Capacities supported
 
-Power BI Pro and Power BI Premium Per User (PPU) aren't supported for planning scenarios that use XMLA endpoints and embed tokens. Similarly, lower-capacity SKUs that don't support XMLA endpoints are also unsupported.
+Power BI Pro and Power BI Premium Per User (PPU) aren't supported for planning scenarios that use XMLA endpoints. Similarly, lower-capacity SKUs that don't support XMLA endpoints are also unsupported.
 
 ## PowerTable limitations
 
-### Database-level row-level security (RLS) support
-
-PowerTable doesn't support user-specific database-level row-level security (RLS) when connecting to Fabric SQL tables through a database connection. As a result, users might see rows that differ from the expected RLS-filtered results. This limitation exists because PowerTable executes all database queries by using the identity associated with the database connection that the user configures during sheet creation, rather than the identity of the signed-in PowerTable user.
-
-Blend (From Sheets) doesn't support RLS. All data available in the source sheet is visible regardless of the viewer's RLS permissions.
+The following limitations apply to PowerTable sheets.
 
 ### DMTS connection recovery
 
@@ -105,23 +98,26 @@ Multiple record operations aren't supported in subsequent automation actions. Su
 
 Create Record, Update Record, Delete Record, and Form Submission database triggers support writeback of up to 10 records per trigger type. If a user writes back more than 10 records, automation jobs aren't triggered for any of the records. The system doesn't partially execute the automation for the first 10 records.
 
-### Scrollbar row limit
+### Scroll bar row limit
 
-Scrollbar supports up to 5 million rows. Scrollbar isn't supported when the total number of rows exceeds 5 million. Users can navigate the table only through pagination.
+Scroll bar supports up to 5 million rows. Scroll bar isn't supported when the total number of rows exceeds 5 million. Users can navigate the table only through pagination.
 
 ### Gantt and Resource Layout row limit
 
 Gantt and Resource Layout support up to 30,000 rows. Gantt and Resource Layout aren't supported when the total number of rows exceeds 30,000.
 
-## Workspace permissions
-
-* Users with the *Contributor* role can't create or share cloud connections.
-* Users with lower-level workspace roles, such as *Contributor*, can't create plan items that require embed token generation.
-
 ## CI/CD service principal support
 
 > [!NOTE]
 > Application database creation for plan items is now supported when using a service principal with deployment pipelines.
+
+## Deployment pipelines will fail with 100 Data Input items
+
+Deployment pipelines will fail when a plan item contains 100 Data Input items. A fix will be available soon.
+
+## When you receive a "Something went wrong" error
+
+If you encounter a "Something went wrong" error that could be caused by a database connection issue, wait up to 90 minutes and try again. A fix will be available soon.
 
 ## Workspace renaming
 

@@ -5,7 +5,7 @@ description: Learn about the support status of the Fabric security features Work
 author: msmimart
 ms.author: mimart
 ms.reviewer: mimart
-ms.date: 07/08/2026
+ms.date: 10/02/2026
 ms.topic: concept-article
 ---
 
@@ -55,6 +55,7 @@ The following table shows the support status for each Fabric item. A check mark 
 |  | Share item | - | - | - |
 | **Fabric IQ** | Graph model  | - | - | Preview |
 |  | Graph queryset | - | - | Preview |
+|  | Ontology | - | - | - |
 |  | Operations agent | - | - | Preview |
 | **Industry Solutions** | Healthcare data solutions | - | ✓ | - |
 |  | Sustainability Solution | - | ✓ | - |
@@ -74,10 +75,10 @@ The following table shows the support status for each Fabric item. A check mark 
 |  | Mirrored SQL Server 2016-2022 | - | ✓ | ✓ |
 |  | Mirrored SQL Server 2025 | ✓ | ✓ | ✓ |
 |  | Open Mirroring | ✓ | ✓ | ✓ |
-| **Fabric Databases** | SQL database in Fabric |  | ✓ | - |
+| **Fabric Databases** | SQL database in Fabric | Preview | ✓ | - |
 |  | Cosmos DB |  | - | - |
 |  | Snowflake database | - | - | - |
-| **OneLake** | Shortcut | ✓ | ✓ | Preview |
+| **OneLake** | Shortcut | ✓ | ✓ | ✓ |
 | **Power BI** | Power BI Report | - | - | Preview |
 |  | Dashboard | - | - | - |
 |  | Scorecard | - | - | - |
@@ -101,8 +102,7 @@ The following table shows the support status for each Fabric item. A check mark 
 
 ## Related links
 
-- Learn about the new features and documentation improvements for Microsoft Fabric in [What's new in Microsoft Fabric](/fabric/fundamentals/whats-new).
+- Learn about the new features and documentation improvements for Microsoft Fabric in [What's new in Microsoft Fabric](../fundamentals/whats-new.md).
 - Follow the latest in Fabric news and features in the [Microsoft Fabric Updates Blog](https://blog.fabric.microsoft.com/).
 - Find community, marketing, case studies, and industry news in the [Microsoft Fabric Blog](https://www.microsoft.com/microsoft-fabric/blog/).
 - Follow the latest in Power BI at [What's new in Power BI?](/power-bi/fundamentals/desktop-latest-update?tabs=powerbi-service)
-- Review older updates in the [Microsoft Fabric What's New archive](/fabric/fundamentals/whats-new-archive).

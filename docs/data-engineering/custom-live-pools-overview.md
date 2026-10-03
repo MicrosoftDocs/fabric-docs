@@ -1,7 +1,7 @@
 ---
 title: Custom live pools for Fabric Data Engineering overview
 description: Learn about custom live pools in Microsoft Fabric, which provide fast, predictable Spark session startup for enterprise analytics workloads.
-ms.reviewer: saravi
+ms.reviewer: milescole
 ms.topic: concept-article
 ms.date: 08/24/2026
 ai-usage: ai-assisted

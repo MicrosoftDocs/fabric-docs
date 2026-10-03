@@ -108,7 +108,7 @@ Planning is available in all Microsoft Fabric supported regions. For more inform
 
 ## Prerequisites for planning
 
-For more information about prerequisites for using planning, see [Prerequisites for planning in Fabric](overview-prerequisites.md). Prerequisites include tenant settings, capacity settings, semantic model connection owner permissions, and database connections.
+For more information about prerequisites for using planning, see [Prerequisites for planning in Fabric](overview-prerequisites.md). Prerequisites include tenant settings, capacity settings, and database connections.
 
 ## Next steps
 

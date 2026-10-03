@@ -13,7 +13,9 @@ ai-usage: ai-assisted
 
 You can connect to a lakehouse data lake in dataflow Gen2 and a pipeline by using the lakehouse connector provided by Data Factory.
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
+
+## Summary
 
 The lakehouse connector supports the following authentication types for copy and dataflow Gen2.
 
@@ -29,21 +31,29 @@ You can connect dataflow Gen2 in Fabric to a lakehouse by using Power Query conn
 1. [Get data in Fabric](#get-data).
 1. [Connect to a lakehouse](#connect-to-a-lakehouse).
 
-### Capabilities
+## Prerequisites
 
-[!INCLUDE [lakehouse-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/lakehouse/lakehouse-capabilities-supported.md)]
+[!INCLUDE [lakehouse-prerequisites](includes/power-query/connectors/includes/lakehouse/lakehouse-prerequisites.md)]
 
-### Prerequisites
+<a id="capabilities"></a>
 
-[!INCLUDE [lakehouse-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/lakehouse/lakehouse-prerequisites.md)]
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
+
+[!INCLUDE [lakehouse-capabilities-supported](includes/power-query/connectors/includes/lakehouse/lakehouse-capabilities-supported.md)]
+
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Connect to a lakehouse
+<a id="connect-to-a-lakehouse"></a>
 
-[!INCLUDE [lakehouse-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/lakehouse/lakehouse-connect-to-power-query-online.md)]
+### Connection instructions
+
+[!INCLUDE [lakehouse-connect-to-power-query-online](includes/power-query/connectors/includes/lakehouse/lakehouse-connect-to-power-query-online.md)]
 
 ### Using relative references
 

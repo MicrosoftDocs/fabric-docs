@@ -14,7 +14,9 @@ ai-usage: ai-assisted
 This article outlines the steps to create a MySQL database connection.
 
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
+
+## Summary
 
 The MySQL database connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
@@ -31,25 +33,33 @@ You can connect dataflow Gen2 in Fabric to a MySQL database by using Power Query
 1. [Get data in Fabric](#get-data).
 1. [Connect to MySQL database](#connect-to-mysql-database).
 
-### Capabilities
+## Prerequisites
 
-[!INCLUDE [mysql-database-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/mysql-database/mysql-database-capabilities-supported.md)]
+[!INCLUDE [mysql-database-prerequisites](includes/power-query/connectors/includes/mysql-database/mysql-database-prerequisites.md)]
 
-### Prerequisites
+<a id="capabilities"></a>
 
-[!INCLUDE [mysql-database-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/mysql-database/mysql-database-prerequisites.md)]
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
+
+[!INCLUDE [mysql-database-capabilities-supported](includes/power-query/connectors/includes/mysql-database/mysql-database-capabilities-supported.md)]
+
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Connect to MySQL database
+<a id="connect-to-mysql-database"></a>
 
-[!INCLUDE [mysql-database-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/mysql-database/mysql-database-connect-to-power-query-online.md)]
+### Connection instructions
 
-### Limitations and considerations
+[!INCLUDE [mysql-database-connect-to-power-query-online](includes/power-query/connectors/includes/mysql-database/mysql-database-connect-to-power-query-online.md)]
 
-[!INCLUDE [mysql-database-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/mysql-database/mysql-database-limitations-and-considerations.md)]
+## Limitations and considerations
+
+[!INCLUDE [mysql-database-limitations-and-considerations](includes/power-query/connectors/includes/mysql-database/limitations.md)]
 
 ## Related content
 

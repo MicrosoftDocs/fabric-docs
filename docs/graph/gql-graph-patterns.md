@@ -2,8 +2,9 @@
 title: GQL Graph Patterns for graph in Microsoft Fabric
 description: Learn about GQL graph pattern syntax for matching nodes, edges, and paths in graph queries. Includes examples and pattern composition rules.
 ms.topic: reference
-ms.date: 05/20/2026
+ms.date: 09/18/2026
 ms.reviewer: splantikow
+ai-usage: ai-assisted
 ---
 
 # GQL graph patterns
@@ -23,9 +24,8 @@ Simple element patterns help you match individual nodes and edges from your grap
 
 A node pattern specifies the labels and properties that a node must have to match:
 
-<!-- GQL Pattern: Checked 2025-11-13 -->
 ```gql
-(:City { name: "New York" })
+(:Place&City { name: "New York" })
 ```
 
 This pattern matches all nodes that have **both** the `Place` and `City` labels (indicated by the `&` operator) and whose `name` property equals `"New York"`. This combination of required labels and properties is called the *filler* of the node pattern.
@@ -101,7 +101,7 @@ This counts the number of `isLocatedIn` edges connecting `Person` nodes or `Orga
 | Syntax                | Meaning                                        |
 |-----------------------|------------------------------------------------|
 | `A&B`                 | Labels need to include both A and B.           |
-| `A\|B`                | Labels need to include at least one of A or B. |
+| <code>A&#124;B</code> | Labels need to include at least one of A or B. |
 | `!A`                  | Labels need to exclude A.                      |
 
 Additionally, use parenthesis to control the order of label expression evaluation. By default, `!` has the highest precedence and `&` has higher precedence than `|`. Therefore `!A&B|C|!D` is the same as `((!A)&B)|C|(!D)`.
@@ -154,25 +154,24 @@ Pattern predicates provide powerful inline filtering capabilities that can impro
 
 ```gql
 -- Multiple conditions in node predicates
-MATCH (p:Person WHERE p.age > 30 AND p.department = 'Engineering')
+MATCH (p:Person WHERE p.birthday < 19900101 AND p.gender = 'female')
       -[:workAt]->
-      (c:Company WHERE c.revenue > 1000000 AND c.location = 'Seattle')
+      (c:Company WHERE c.name STARTS WITH 'A')
 
--- Complex edge predicates with calculations
-MATCH (p1:Person)-[w:workAt WHERE w.start_date < ZONED_DATETIME('2020-01-01T00:00:00Z') 
-                              AND w.salary > 75000]-(c:Company)
+-- Filter on an edge property
+MATCH (p1:Person)-[w:workAt WHERE w.workFrom >= 2010]->(c:Company)
 
 -- MATCH WHERE: evaluated after pattern matching
 MATCH (p:Person)-[:workAt]->(c:Company)
-WHERE p.active = TRUE AND c.public = TRUE
+WHERE p.browserUsed = 'Firefox' AND c.name IS NOT NULL
 
 -- Filter during matching and after
-MATCH (p:Person WHERE p.department = 'Sales')-[:workAt]->(c:Company)
-WHERE p.quota_achievement > 1.2 AND c.revenue > c.revenue_target
+MATCH (p:Person WHERE p.gender = 'male')-[:workAt]->(c:Company)
+WHERE p.birthday < 19900101 AND c.url IS NOT NULL
 ```
 
 > [!TIP]
-> Using pattern predicates when the conditions are highly selective can reduce the size of intermediary results.
+> Keep a predicate inside the pattern when it describes which node or edge can participate in the match.
 
 ### Binding path variables
 
@@ -236,31 +235,130 @@ The resulting shape of a pattern doesn't have to be a linear path. You can match
 
 The pattern finds a person along with their education, employment, and content preferences all at once—a comprehensive profile query.
 
-### Match trails
+Patterns in the same `MATCH` don't have to share a variable. Disconnected
+patterns form a Cartesian product of their matches. Reuse a variable when the
+patterns should bind the same graph element and only joined combinations should
+remain.
 
-In complex patterns, it's often undesirable to traverse the same edge multiple times. Edge reuse becomes important when the actual graph contains cycles that could lead to infinite or overly long paths. To handle edge reuse, graph supports the `TRAIL` match mode.
+### Control element reuse
 
-Prefixing a path pattern with the keyword `TRAIL` discards all matches that bind the same edge multiple times:
+GQL controls repeated nodes and edges at two levels:
+
+- A match mode applies to the complete graph pattern, including comma-separated paths.
+- A path mode applies to one path.
+
+The default match mode is `REPEATABLE ELEMENTS`. It allows the same element binding to occur in different parts of the graph pattern, subject to the path mode of each path. You can write it explicitly:
+
+<!-- GQL Pattern: Added 2026-09-17 -->
+```gql
+REPEATABLE ELEMENTS (a)-[e1:knows]->(b), (a)-[e2:knows]->(c)
+```
+
+Use `DIFFERENT EDGES` or its synonym `DIFFERENT RELATIONSHIPS` to require edge uniqueness across the complete graph pattern. This match mode also changes any `WALK` path in the pattern to `TRAIL` behavior.
+
+<!-- GQL Pattern: Added 2026-09-17 -->
+```gql
+DIFFERENT EDGES (a)-[e1:knows]->(b), (a)-[e2:knows]->(c)
+```
+
+The following path modes control repeated elements within each path:
+
+| Path mode | Element reuse |
+| --------- | ------------- |
+| `WALK` | Nodes and edges can repeat. |
+| `TRAIL` | Edges can't repeat, but nodes can repeat. |
+| `SIMPLE` | Nodes can't repeat, except that the first and last node can be the same. Edges can't repeat. |
+| `ACYCLIC` | Nodes can't repeat, including the first and last node. Edges can't repeat. |
+
+`WALK` is the default path mode. Prefix a path with another mode when you need stricter element uniqueness:
+
+For `SIMPLE` and `ACYCLIC`, edge uniqueness follows from node uniqueness. A `SIMPLE` path can close by returning to its first node, but it still can't reuse an edge.
 
 <!-- GQL Pattern: Checked 2025-11-13 -->
 ```gql
 TRAIL (a)-[e1:knows]->(b)-[e2:knows]->(c)-[e3:knows]->(d)
 ```
 
-By using `TRAIL`, the pattern only produces matches in which all edges are different. Therefore, even if `c = a` such that the path forms a cycle in a given match, `e3` never binds to the same edge as `e1`.
+The `TRAIL` pattern produces only matches in which `e1`, `e2`, and `e3` are different. Nodes can still repeat, so the path can form a cycle without reusing an edge.
 
-The `TRAIL` mode is essential for preventing infinite loops and ensuring that your queries return meaningful, nonredundant paths.
+### Control which paths are returned
+
+A path search prefix controls which paths a path pattern returns. The default
+`ALL` prefix returns every path that matches the path mode and pattern. You can
+write `ALL` explicitly:
+
+<!-- GQL Pattern: Added 2026-09-17 -->
+```gql
+ALL TRAIL (a:Person)-[:knows]->{1,4}(b:Person)
+```
+
+Use `ANY SHORTEST` to return one shortest matching path for each source-destination pair from each input row:
+
+<!-- GQL Query: Added 2026-09-17 -->
+```gql
+MATCH p = ANY SHORTEST
+  (src:Person)-[:knows]->{1,4}(dst:Person)
+RETURN src.id AS sourceId, dst.id AS targetId, path_length(p) AS hopCount
+ORDER BY sourceId, targetId
+LIMIT 100
+```
+
+If multiple paths tie for the shortest length, the query returns one of them, but which tied path is returned isn't deterministic. A lower bound of zero can return a zero-hop path from a source node to itself.
+
+`ALL SHORTEST` and `ANY` path searches aren't supported.
+
+#### Place predicates before or after path selection
+
+Predicate placement determines whether a condition defines eligible paths or
+filters paths after the path search prefix has selected them:
+
+- An inline `WHERE` in a node or edge pattern is part of the pattern. It
+  constrains which paths are eligible before `ALL` or `ANY SHORTEST` is applied.
+- A statement-level `WHERE` after the complete `MATCH` pattern is a postfilter.
+  It filters rows after the path search prefix has selected paths.
+- A subsequent `FILTER` statement also filters rows after path selection.
+
+This distinction is especially important with `ANY SHORTEST`. In the following
+pattern, only `knows` edges created on or after the specified date are eligible
+when the query selects a shortest path:
+
+<!-- GQL Query: Added 2026-09-17 -->
+```gql
+MATCH p = ANY SHORTEST
+  (src:Person WHERE src.firstName = 'Alice')
+  -[connection:knows
+    WHERE connection.creationDate >= ZONED_DATETIME('2020-01-01T00:00:00Z')]->{1,4}
+  (dst:Person WHERE dst.firstName = 'Bob')
+RETURN p
+```
+
+Moving the edge condition to a postfilter changes the meaning. The query first
+selects a shortest path without that condition. It then removes the selected
+path if any edge fails the condition; it doesn't select a longer path instead:
+
+<!-- GQL Query: Added 2026-09-17 -->
+```gql
+MATCH p = ANY SHORTEST
+  (src:Person WHERE src.firstName = 'Alice')
+  -[connections:knows]->{1,4}
+  (dst:Person WHERE dst.firstName = 'Bob')
+FILTER ALL(connection IN connections
+           WHERE connection.creationDate >= ZONED_DATETIME('2020-01-01T00:00:00Z'))
+RETURN p
+```
+
+> [!IMPORTANT]
+> For some `ANY SHORTEST` query shapes, Graph can currently apply a
+> statement-level `MATCH ... WHERE` condition before path selection. Until this
+> limitation is resolved, use inline predicates for path eligibility and a
+> separate `FILTER` statement for post-selection filtering. For more
+> information, see [Current limitations](limitations.md#path-predicate-placement).
 
 ## Use variable-length patterns
 
 Variable-length patterns are powerful constructs that let you find paths of varying lengths without writing repetitive pattern specifications. They're essential for traversing hierarchies, social networks, and other structures where the optimal path length isn't known in advance.
 
 ### Bounded variable-length patterns
-
-> [!IMPORTANT]
->
-> Bounded variable-length patterns currently only support a maximum upper bound of 8.
-> See the article on current [limitations](limitations.md).
 
 Many common graph queries require repeating the same edge pattern multiple times. Instead of writing verbose patterns like:
 
@@ -289,21 +387,17 @@ For more flexibility, you can specify both a lower bound and an upper bound for 
 This pattern finds direct friends, friends-of-friends, and friends-of-friends-of-friends all in a single query.
 
 > [!NOTE]
-> The lower bound can also be `0`. In this case, no edges are matched and the whole pattern only matches
-> if and only if the two endpoint node patterns match the same node.
+> The lower bound can also be zero. A zero-hop match contains no edges and requires both endpoint node patterns to match the same node.
 >
 > Example:
 >
 > ```gql
-> (p1:Person)-[r:knows WHERE NOT p1=p2]->{0,1}(p2:Person)
+> (p1:Person)-[:knows]->{0,1}(p2:Person)
 > ```
 >
-> This pattern matches pairs of different persons that know each other *but also*
-> matches the same person as both `p1` and `p2` - even if that person doesn't "know" themselves.
+> This pattern matches each person as both `p1` and `p2` at zero hops, and matches connected pairs at one hop.
 
-When no lower bound is specified, it generally defaults to 0 (zero).
-<!-- but with the exception that
-when unbounded variable-length patterns with `+`-repetition are used, it defaults to 1 (one) instead -->
+When no lower bound is specified in `{,n}`, it defaults to zero.
 
 **Complex variable-length compositions:**
 Variable-length patterns can be part of larger, more complex patterns as in the following query:
@@ -316,7 +410,7 @@ RETURN *
 LIMIT 100
 ```
 
-The pattern finds pairs of comments where people who know each other liked different comments, and those comments are connected through reply chains of 1-5 levels each.
+The pattern finds pairs of comments where people who know each other liked different comments and a message `m` is connected to each comment by a chain of one to three `replyOf` edges.
 
 ### Bind variable-length pattern edge variables
 
@@ -354,45 +448,38 @@ RETURN a, b, size(e) AS num_edges
 LIMIT 100
 ```
 
-For more information, see [horizontal aggregation](gql-language-guide.md#horizontal-aggregation-with-group-list-variables).
-
-<!-- Commented out intentionally
+For more information, see [Aggregate
+functions](gql-expressions.md#aggregate-functions).
 
 ### Unbounded variable-length patterns
 
-You can also match arbitrarily long chains of edge patterns by specifying no upper bound. Unbounded patterns create an unbounded variable-length pattern, useful for traversing hierarchies or networks of unknown depth:
+Use an unbounded quantifier when the maximum path length isn't known:
 
+<!-- GQL Pattern: Added 2026-09-17 -->
 ```gql
-// 2 or more
+-- Two or more edges
 TRAIL (:Person)-[:knows]->{2,}(:Person)
 ```
 
-**Alternative syntax:**
+The `*` and `+` shortcuts specify zero-or-more and one-or-more repetitions:
 
-You can also specify one of the following two shortcuts:
-
+<!-- GQL Pattern: Added 2026-09-17 -->
 ```gql
-// 0, 1, or more (default lower bound is 0)
-TRAIL (:Person)-[:knows]->*(:Person)
+-- Zero or more edges
+ACYCLIC (:Person)-[:knows]->*(:Person)
 
-// 1 or more (default lower bound is 1)
-TRAIL (:Person)-[:knows]->+(:Person)
+-- One or more edges
+SIMPLE (:Person)-[:knows]->+(:Person)
 ```
 
-Both forms are equivalent and match chains of at least 2 `knows` relationships.
+An unbounded pattern with the default `ALL WALK` combination is rejected because cycles can produce infinitely many matching paths. Use `TRAIL`, `SIMPLE`, or `ACYCLIC` to bound the path through edge or node uniqueness. These modes guarantee termination, but a large graph can still produce a large number of paths.
 
 > [!IMPORTANT]
-> The set of matches for unbounded variable-length patterns can be infinite due to the presence of cycles in
-> the graph. Therefore, unbounded variable-length patterns must always be used with the `TRAIL` match mode 
-> to ensure termination and avoid infinite results.
-
--->
+> For a path bound by an unbounded `ANY SHORTEST WALK`, the only supported uses are `PATH_LENGTH(path)` and, alongside it, `path IS NULL`. Graph doesn't materialize the complete path in this form. Use a finite upper bound or specify `TRAIL`, `SIMPLE`, or `ACYCLIC` to return or otherwise use the path.
 
 ## Related content
 
-- [Write graph pattern queries](write-graph-pattern-queries.md)
-- [Write common GQL queries](write-common-gql-queries.md)
 - [GQL language guide](gql-language-guide.md)
-- [Social network schema example](gql-schema-example.md)
-- [GQL graph types](gql-graph-types.md)
-- [Try Microsoft Fabric for free](../fundamentals/fabric-trial.md)
+- [Write graph pattern queries](write-graph-pattern-queries.md)
+- [GQL expressions, predicates, and functions](gql-expressions.md)
+- [Current limitations](limitations.md)

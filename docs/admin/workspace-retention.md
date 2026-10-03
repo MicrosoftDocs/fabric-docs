@@ -26,7 +26,7 @@ For an overview of how retention works for workspaces and items, see [Retention 
 
 By default, Fabric retains deleted collaborative workspaces for seven days. You can change the length of the retention period (from 7 to 90 days) by using the **Define workspace retention period** tenant setting.
 
-1. In the admin portal, go to **Workspace settings** > **Define workspace retention period**.
+1. Go to **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings** > **Workspace settings** > **Define workspace retention period**.
 1. Turn on the setting and enter the number of days for the retention period. You can choose anywhere from 7 to 90 days.
 1. Select **Apply**.
 
@@ -50,7 +50,7 @@ Because Fabric recalculates the remaining retention from the current setting val
 > [!WARNING]
 > If you decrease the retention period so that a deleted workspace is already in its retention period for longer than the new value, that workspace becomes eligible for permanent deletion. Fabric permanently deletes it the next time it checks for expired workspaces, and there's no extra grace period. For example, if you deleted a workspace 30 days ago and you change the setting to seven days, Fabric permanently deletes that workspace and irreversibly deletes its contents.
 >
-> Before you decrease the retention period, go to the **Workspaces** page in the admin portal and restore any deleted workspace that you still need.
+> Before you decrease the retention period, go to **OneLake catalog** > **Govern** > **Workspaces** and restore any deleted workspace that you still need.
 
 Fabric evaluates deleted workspaces for permanent deletion periodically rather than scheduling the permanent deletion in advance. Increasing the retention period extends a deleted workspace as long as the workspace is still in its retention period and shows the status **Deleted**. After Fabric begins permanently deleting a workspace, increasing the setting doesn't recover it.
 
@@ -58,7 +58,7 @@ Fabric evaluates deleted workspaces for permanent deletion periodically rather t
 
 While a deleted collaborative workspace is in a retention period, you can restore it and its contents.
 
-1. In the admin portal, open the **Workspaces** page and find the deleted collaborative workspace you want to restore. Collaborative workspaces are of type **Workspace**. A workspace that is in a retention period has the status **Deleted**.
+1. In **OneLake catalog** > **Govern** > **Workspaces**, find the deleted collaborative workspace you want to restore. Collaborative workspaces are of type **Workspace**. A workspace that is in a retention period has the status **Deleted**.
 1. Select the workspace and then choose **Restore** from the ribbon, or select **More options (...)** and choose **Restore**.
 1. In the **Restore workspaces** panel that appears, enter a new name for the workspace and assign at least one user the Admin role in the workspace.
 1. Select **Restore**.
@@ -67,7 +67,7 @@ While a deleted collaborative workspace is in a retention period, you can restor
 
 While a deleted collaborative workspace is in a retention period, you can permanently delete it before the end of its retention period.
 
-1. In the admin portal, open the **Workspaces** page and find the deleted collaborative workspace you want to permanently delete. Collaborative workspaces are of type **Workspace**. A workspace that is in a retention period has the status **Deleted**.
+1. In **OneLake catalog** > **Govern** > **Workspaces**, find the deleted collaborative workspace you want to permanently delete. Collaborative workspaces are of type **Workspace**. A workspace that is in a retention period has the status **Deleted**.
 1. Select the workspace and then choose **Permanently delete** from the ribbon, or select **More options (...)** and choose **Permanently delete**.
 
 Fabric asks you to confirm the permanent deletion. After you confirm, the workspace and its contents are no longer recoverable.
@@ -77,11 +77,11 @@ Fabric asks you to confirm the permanent deletion. After you confirm, the worksp
 
 ## Restore a deleted My workspace as an app workspace
 
-When your organization removes users from Microsoft Entra ID, their My workspaces show up as **Deleted** in the **State** column on the **Workspaces** page in the admin portal. You can restore deleted My workspaces as app workspaces that other users can collaborate in.
+When your organization removes users from Microsoft Entra ID, their My workspaces show up as **Deleted** in the **State** column in **OneLake catalog** > **Govern** > **Workspaces**. You can restore deleted My workspaces as app workspaces that other users can collaborate in.
 
-During this restoration process, you need to assign at least one workspace admin and give the new workspace a name. After you restore the workspace, it shows up as **Workspace** in the **Type** column on the **Workspaces** page in the admin portal.
+During this restoration process, you need to assign at least one workspace admin and give the new workspace a name. After you restore the workspace, it shows up as **Workspace** in the **Type** column in **OneLake catalog** > **Govern** > **Workspaces**.
 
-1. In the admin portal, open the **Workspaces** page and find the deleted personal workspace you want to restore.
+1. In **OneLake catalog** > **Govern** > **Workspaces**, find the deleted personal workspace you want to restore.
 1. Select the workspace and then choose **Restore** from the ribbon, or select **More options (...)** and choose **Restore**.
 1. In the **Restore workspaces** panel that appears, enter a new name for the workspace and assign at least one user the Admin role in the workspace.
 1. Select **Restore**.

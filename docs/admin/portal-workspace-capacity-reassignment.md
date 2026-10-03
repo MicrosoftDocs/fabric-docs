@@ -17,7 +17,7 @@ Workspaces and the data they contain reside on capacities. Workspace admins can 
 
 In the Fabric UI, workspaces can be moved to other capacities in the following ways:
 
-* Fabric admins can reassign workspaces to a different capacity individually via the [Workspaces page](portal-workspaces.md#reassign-a-workspace-to-a-different-capacity) in the Fabric Admin portal.
+* Fabric admins can reassign workspaces individually to a different capacity. For more information, see [Reassign a workspace to a different capacity](portal-workspaces.md#reassign-a-workspace-to-a-different-capacity) in **OneLake catalog** > **Govern** > **Workspaces**.
 * Fabric admins and capacity admins can reassign workspaces to a capacity in bulk via the **Workspaces assigned to this capacity** option in the [capacity's settings](./capacity-settings.md#capacity-settings).
 * Workspace admins can reassign their workspace to a different capacity via the [Workspace type option of the workspace settings](../fundamentals/workspace-license-mode.md#reassign-a-workspace-to-a-different-capacity).
 
@@ -37,10 +37,10 @@ Capacity Administrator can perform following operations by Capacity type:
 
 |**Capacity Type**|**Can Move Any Workspace?**|**Workspace Admin Role Required?**|**Management Tool**|
 |----|---|---|---|
-|__P (Premium)__|__Yes__|No|Fabric Admin Portal|
+|__P (Premium)__|__Yes__|No|OneLake catalog Govern|
 |__F (Fabric)__|__No__ |__Yes__|Fabric Portal, User API, or Admin API|
 |__A (Azure)__|__No__|__Yes__|Fabric Portal, User API, or Admin API|
-|__EM (Office)__|__Yes__|__No__|Fabric Admin Portal|
+|__EM (Office)__|__Yes__|__No__|OneLake catalog Govern|
 
 ## Restrictions on moving workspaces around
 

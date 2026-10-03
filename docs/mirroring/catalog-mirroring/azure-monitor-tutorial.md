@@ -28,7 +28,7 @@ For onboarding with AI, see [Onboard with the Mirror Azure Monitor Fabric skill]
 - Connection creation role - A custom role on the Log Analytics workspace with permissions as detailed in [Create connection custom role](azure-monitor.md#create-connection-permissions) or as provided by the **Owner**, **User Access Administrator**, or **Role Based Access Control Administrator** [privileged roles](/azure/role-based-access-control/built-in-roles/privileged).
 - An existing **Fabric capacity**. If none exists, [start a Fabric trial](../../fundamentals/fabric-trial.md).
 - A Fabric **workspace** (not *My workspace*) to hold the mirrored item.
-- The **Mirrored Azure Monitor** catalog item enabled for your tenant. A tenant admin enables it in the Fabric **Admin portal** under **Tenant settings** > **Mirrored catalog item**. Complete this step if the **Mirrored Azure Monitor** card doesn't appear in **+ New item**.
+- The **Mirrored Azure Monitor** catalog item enabled for your tenant. A tenant admin enables it in **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings** > **Mirrored catalog item**. Complete this step if the **Mirrored Azure Monitor** card doesn't appear in **+ New item**.
 - For cross-tenant scenarios (Fabric tenant differs from the Log Analytics tenant): a **service principal** in the Log Analytics tenant with read access to the workspace, plus the tenant ID, application (client) ID, and client secret of that service principal.
 
 ## Create a mirrored Azure Monitor item
@@ -205,7 +205,7 @@ If creating the connection or the mirrored item fails, check the following condi
 
 - **Connection permission.** Creating a connection requires the `Microsoft.Authorization/roleAssignments/write` action on the source Log Analytics workspace. The Workspace Admin or Contributor role isn't sufficient on its own.
 - **Tenant mismatch.** If the Fabric tenant differs from the Log Analytics tenant, an organizational account or workspace identity fails. Use **service principal** authentication for cross-tenant connections.
-- **Catalog item not enabled.** If the **Mirrored Azure Monitor** card doesn't appear in **+ New item**, a tenant admin must enable the **Mirrored catalog item** tenant setting in the Fabric Admin portal.
+- **Catalog item not enabled.** If the **Mirrored Azure Monitor** card doesn't appear in **+ New item**, a tenant admin must enable the **Mirrored catalog item** in **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**.
 - **Expired or rotated credentials.** A connection that worked previously can fail if the creating user's access changed, or if a service principal's secret expired or was rotated. Re-create the connection with current credentials.
 - **Tables don't appear.** Only tables that recently received streaming data appear in the selection list. Add missing tables later through **Edit data selection** on the item.
 

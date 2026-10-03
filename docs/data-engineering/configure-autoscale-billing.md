@@ -1,7 +1,7 @@
 ---
 title: Configure On-demand Billing for Spark in Microsoft Fabric
 description: Learn how to enable On-demand Billing for Apache Spark workloads in Microsoft Fabric and configure maximum capacity units.
-ms.reviewer: saravi
+ms.reviewer: milescole
 ms.topic: how-to
 ms.custom:
   - fabcon-2025
@@ -25,9 +25,7 @@ This article explains how to enable on-demand billing for a Fabric capacity and 
 
 ## Configure on-demand billing
 
-1. Open the [Fabric Admin portal](https://app.fabric.microsoft.com/admin-portal).
-1. Under **Governance and insights**, select **Admin portal**.
-1. Select **Capacity settings**, then open the **Fabric Capacity** tab.
+1. Go to **OneLake catalog** > **Govern** > **Capacities**, then open the **Fabric Capacity** tab.
 1. Select the capacity you want to configure.
 1. In **Capacity settings**, scroll to **On-demand Billing for Fabric Spark**.
 1. Turn on **On-demand Billing**.

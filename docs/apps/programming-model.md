@@ -3,7 +3,7 @@ title: Programming model overview
 description: Learn about the Fabric Apps programming model, including TypeScript decorators, schema generation, and how data models become production-ready APIs.
 ms.reviewer: mksuni
 ms.topic: concept-article
-ms.date: 06/02/2026
+ms.date: 08/11/2026
 ai-usage: ai-assisted
 ---
 
@@ -106,6 +106,55 @@ Rayfin SDK provides decorators for common data modeling patterns:
 
 See [Define data permissions](data-permissions.md) for authorization details.
 
+## Functions
+
+Create one `UserDataFunctions` instance, and register each function by calling `udf.func(name, handler, connections?)`.
+
+Follow these rules when you define a function:
+
+- Place the `RayfinContext` parameter anywhere in the handler signature. The runtime identifies it by type, injects it, and excludes it from the generated function inputs.
+- Declare a connection for each delegated token the function needs. Omit the connections array for functions that only access app data or don't need delegated tokens.
+
+The following example registers a plain function and a function that uses the invocation context:
+
+```typescript
+import {
+  UserDataFunctions,
+  type RayfinContext,
+} from '@microsoft/fabric-user-data-functions';
+
+// Match rayfin/data/schema.ts so getDataClient() is fully typed.
+import type { TripPlan } from '../../data/TripPlan.js';
+
+type AppSchema = { TripPlan: TripPlan };
+
+const udf = new UserDataFunctions();
+
+udf.func('greet', async (name: string): Promise<string> => {
+  return `Hello, ${name}!`;
+});
+
+udf.func(
+  'whoAmI',
+  async (ctx: RayfinContext<AppSchema>): Promise<string> => {
+    return ctx.accessToken ? 'authenticated' : 'anonymous';
+  },
+);
+```
+
+The `RayfinContext` provides the function's runtime services:
+
+| Member | Purpose |
+| --- | --- |
+| `ctx.accessToken` | Provides the signed-in user's Rayfin JSON Web Token (JWT). Decode the `sub` claim to get a stable user ID. |
+| `ctx.Tokens.<Audience>` | Gets a platform-provided resource token for an audience declared in the `RayfinContext` annotation. Deployed Functions use the app identity and its permissions. For details, see [Connect Functions to external resources](functions-connect-external-resources.md). |
+| `ctx.getSecret('NAME')` | Gets a secret for the current invocation. Returns `undefined` when the secret isn't set. |
+| `ctx.getDataClient()` | Gets the typed data API for your entities. The client supports create, `findMany`, update, delete, and upsert operations. |
+| `ctx.baseUrl` | Provides the Rayfin endpoint for the current item. |
+| `ctx.publishableKey` | Provides the publishable key for the current item. |
+
+For setup, local debugging, and deployment instructions, see [Use Functions in Fabric Apps](functions.md).
+
 ## Development workflow
 
 A typical development cycle follows this pattern:
@@ -143,3 +192,5 @@ This approach ensures:
 - [Data models overview](data-models.md)
 - [Define data permissions](data-permissions.md)
 - [Query data with GraphQL](read-write-data-graphql.md)
+- [Use Functions in Fabric Apps](functions.md)
+- [Manage function secrets](manage-function-secrets.md)

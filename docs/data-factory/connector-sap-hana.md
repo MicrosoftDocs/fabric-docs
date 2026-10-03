@@ -14,7 +14,9 @@ ms.custom:
 This article outlines the steps to create an SAP HANA database connection.
 
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
+
+## Summary
 
 The SAP HANA database connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
@@ -31,28 +33,33 @@ You can connect a dataflow Gen2 in Fabric to an SAP HANA database by using Power
 1. [Get data in Fabric](#get-data).
 1. [Connect to an SAP HANA database](#connect-to-an-sap-hana-database).
 
-### Capabilities
+## Prerequisites
 
-[!INCLUDE [sap-hana-database-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/sap-hana-database/sap-hana-database-capabilities-supported.md)]
+[!INCLUDE [sap-hana-database-prerequisites](includes/power-query/connectors/includes/sap-hana-database/sap-hana-database-prerequisites.md)]
 
-### Prerequisites
+<a id="capabilities"></a>
 
-[!INCLUDE [sap-hana-database-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/sap-hana-database/sap-hana-database-prerequisites.md)]
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
+
+[!INCLUDE [sap-hana-database-capabilities-supported](includes/power-query/connectors/includes/sap-hana-database/sap-hana-database-capabilities-supported.md)]
+
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Connect to an SAP HANA database
+<a id="connect-to-an-sap-hana-database"></a>
 
-[!INCLUDE [sap-hana-database-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/sap-hana-database/sap-hana-database-connect-to-power-query-online.md)]
+### Connection steps
 
-### Limitations and considerations
-
-[!INCLUDE [sap-hana-database-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/sap-hana-database/sap-hana-database-limitations.md)]
-
+[!INCLUDE [sap-hana-database-connect-to-power-query-online](includes/power-query/connectors/includes/sap-hana-database/sap-hana-database-connect-to-power-query-online.md)]
 
 ## Set up your connection in Manage connections and gateways
+
+### Connection properties
 
 The following table contains a summary of the properties needed for an SAP HANA connection:
 
@@ -67,6 +74,8 @@ The following table contains a summary of the properties needed for an SAP HANA 
 | **SSL crypto provider** | The SSL crypto provider that you want to use. Allowed values are **mscrypto**, **sapcrypto**, and **commoncrypto**. | Yes if you enable **Validate server certificate**  |
 | **Single sign-on** | Configure SSO options for Kerberos or SAML based on your query mode. | No |
 | **Privacy level** | The privacy level that you want to apply. Allowed values are None, Organizational, Private, and Public. | Yes |
+
+### Connection instructions
 
 For specific instructions to set up your connection in Manage connections and gateways, follow these steps:
 
@@ -109,26 +118,31 @@ For specific instructions to set up your connection in Manage connections and ga
 
 1. Select **Create** to create your connection. Your creation is successfully tested and saved if all the credentials are correct. If not correct, the creation fails with errors.
 
-## Authentication
+### Authentication
 
 This section lists the instructions for each authentication type supported by the SAP HANA connector:
 
 - [Basic](#basic-authentication)
 - [Windows](#windows-authentication)
 
-### Basic authentication
+#### Basic authentication
 
 :::image type="content" source="./media/connector-sap-hana/basic-authentication.png" alt-text="Screenshot showing the Basic authentication method for SAP HANA.":::
 
 - **Username**: Specify the user name to connect to the SAP HANA server.
 - **Password**: Specify the password for the user account.
 
-### Windows authentication
+#### Windows authentication
 
 :::image type="content" source="./media/connector-sap-hana/windows-authentication.png" alt-text="Screenshot showing the Windows authentication method for SAP HANA.":::
 
 - **Username**: Specify user name when using Windows authentication. For example: `user@domain.com`
 - **Password**: Specify the password for the user account.
+
+## Limitations and considerations
+
+[!INCLUDE [sap-hana-database-limitations-and-considerations](includes/power-query/connectors/includes/sap-hana-database/sap-hana-database-limitations.md)]
+
 
 ## Related content
 

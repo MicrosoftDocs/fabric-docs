@@ -14,7 +14,9 @@ ai-usage: ai-assisted
 This article outlines the steps to create a OneStream connection.
 
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
+
+## Summary
 
 The OneStream connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
@@ -30,21 +32,29 @@ You can connect dataflow Gen2 in Fabric to OneStream using Power Query connector
 1. [Get data in Fabric](#get-data).
 1. [Connect to OneStream data](#connect-to-onestream-data).
 
-### Capabilities
+## Prerequisites
 
-[!INCLUDE [onestream-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/onestream/onestream-capabilities-supported.md)]
+[!INCLUDE [onestream-prerequisites](includes/power-query/connectors/includes/onestream/prerequisites.md)]
 
-### Prerequisites
+<a id="capabilities"></a>
 
-[!INCLUDE [onestream-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/onestream/onestream-prerequisites.md)]
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
+
+[!INCLUDE [onestream-capabilities-supported](includes/power-query/connectors/includes/onestream/capabilities-supported.md)]
+
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Connect to OneStream data
+<a id="connect-to-onestream-data"></a>
 
-[!INCLUDE [onestream-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/onestream/onestream-connect-to-power-query-online.md)]
+### Connection instructions
+
+[!INCLUDE [onestream-connect-to-power-query-online](includes/power-query/connectors/includes/onestream/connect-to-power-query-online.md)]
 
 ## Set up your connection in a pipeline
 

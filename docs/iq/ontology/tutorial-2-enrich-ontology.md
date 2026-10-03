@@ -1,173 +1,132 @@
 ---
-title: "Tutorial Part 2: Enrich the Ontology with Additional Data"
-description: Enrich the ontology by creating a new entity and binding time series data. Part 2 of the ontology (preview) tutorial.
-ms.date: 04/20/2026
+title: "Tutorial Part 2: Enrich the Ontology with Additional Data (Preview)"
+description: Enrich the ontology by adding metadata and rules. Part 2 of the ontology (preview) tutorial.
+ms.date: 09/12/2026
 ms.topic: tutorial
 ---
 
 # Ontology (preview) tutorial part 2: Enrich the ontology with additional data
 
-In this tutorial step, you enrich your ontology by adding a new *Freezer* entity type. This entity type adds more domain context and introduces properties for time series data, which reflects live operational information. 
+In this tutorial step, you enrich your ontology by adding metadata to the entity type and its properties. You also create some ontology business rules. This information adds more domain context and operational information.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
-First, you create the new entity type and define properties without binding them to specific data. Then, you bind the static data to those properties in a separate step. Later, you add time series data to the entity type by creating new properties and binding time series data to them in a single data binding operation.
+## Add metadata
 
->[!NOTE]
->For both static and time series data, you can create properties without binding data and bind data later, or create properties and bind data to them in a single step. This article demonstrates both approaches.
+You can add metadata to entity types and to specific properties on the entity types. You can also add metadata to relationships.
 
-After you complete data binding for the freezer entity, you create a new relationship type to represent the connection between a store and its freezers.
+### Add entity type metadata
 
-## Create Freezer entity type and add properties
+Metadata for entity types supports descriptions, synonyms, and additional metadata key-value pairs. Follow these steps to add that metadata to your entity types.
 
-Follow these steps to create the *Freezer* entity type and add properties to it. The properties aren't bound to data yet.
+1. Start with the Store entity type. Select it on the semantic canvas and select **View Entity Type details**.
 
-1. Start in the Home configuration canvas of ontology. Select **Add entity type** from the top ribbon. Enter *Freezer* for the name of your entity type and select **Add Entity Type**.
+    :::image type="content" source="media/tutorial-2-enrich-ontology/store-view-entity-type-details.png" alt-text="Screenshot of opening entity type details for Store." lightbox="media/tutorial-2-enrich-ontology/store-view-entity-type-details.png":::
 
-    :::image type="content" source="media/tutorial-2-enrich-ontology/add-freezer.png" alt-text="Screenshot of adding the new Freezer entity type." lightbox="media/tutorial-2-enrich-ontology/add-freezer.png":::
+1. On the **Configure** page that opens, scroll down to the **Entity metadata** section.
+1. Enter the following **Description**: *Filtered locations binding where LocationType = STORE; priorityDefinition=Tier 1 stores require same-day response.*
 
-1. With the Freezer entity type selected in the **Explorer**, select **View entity type details** from the top ribbon. 
+    :::image type="content" source="media/tutorial-2-enrich-ontology/store-metadata.png" alt-text="Screenshot of adding a metadata description to Store." lightbox="media/tutorial-2-enrich-ontology/store-metadata.png":::
 
-    :::image type="content" source="media/tutorial-2-enrich-ontology/view-entity-type-details.png" alt-text="Screenshot of the button to view Freezer entity type details.":::
+    Select **Update**.
 
-1. The **Configure** page of the entity type details opens. This page surfaces important information about the entity type, including its properties and data bindings. 
+1. Use the same steps that you used for the Store entity type to add the entity type metadata described in the following table.
 
-    Expand **Manage property bindings** and select **Add properties**.
+    | Entity type name | Metadata | Notes |
+    | --- | --- | --- |
+    | Distribution Center | **Description:** *Filtered locations binding where LocationType = DC.* | |
+    | Frozen Product | **Description:** *Filtered items binding where StorageClass = FROZEN.* | |
+    | Perishable Product | **Description:** *Filtered items binding where StorageClass = PERISHABLE.* | |
+    | Inventory | **Additional metadata:**<br><br> On-Shelf Availability % : On-shelf availability percentage is calculated by dividing the total ShelfAvailableUnits by the total ShelfCapacityUnits. If total ShelfCapacityUnits is zero, the result is blank to avoid division by zero. <br><br> Low On-Shelf Availability : On-Shelf Availability % less than 95 | Additional metadata is entered as key-value pairs. |
+    | Sale | **Description** and **Synonyms** are already added to the entity type from the semantic model import. | Just review the metadata that's already there (no need to add metadata manually). |
 
-    :::image type="content" source="media/tutorial-2-enrich-ontology/freezer-properties-1.png" alt-text="Screenshot of adding properties to the Freezer entity type." lightbox="media/tutorial-2-enrich-ontology/freezer-properties-1.png":::
+### Add entity type property metadata
 
-1. Add the following properties and select **Save**.
+Metadata for properties supports descriptions and additional metadata key-value pairs, but not synonyms. Follow these steps to add metadata to properties on your entity types.
 
-    | Name | Property type |
-    | --- | --- |
-    | `FreezerId` | String |
-    | `Model` | String |
-    | `minSafeTempC` | Double |
-    | `StoreId` | String |
+1. Start with Product > `ProductId`. Select the Product entity type, select **...**, and then select **Bind data**.
 
-    Here's what it looks like before saving:
+    :::image type="content" source="media/tutorial-2-enrich-ontology/product-bind-data.png" alt-text="Screenshot of opening the Product data bindings." lightbox="media/tutorial-2-enrich-ontology/product-bind-data.png":::
 
-    :::image type="content" source="media/tutorial-2-enrich-ontology/freezer-properties-2.png" alt-text="Screenshot of the properties for the Freezer entity type.":::
+1. Select **Entity type properties** from the left pane to open the **Properties** list.
+1. Next to the `ProductId` property, select **Metadata**.
 
-The properties are added to the **Configure** page, unbound to any data source.
+    :::image type="content" source="media/tutorial-2-enrich-ontology/product-property-metadata.png" alt-text="Screenshot of selecting metadata for the property." lightbox="media/tutorial-2-enrich-ontology/product-property-metadata.png":::
 
-:::image type="content" source="media/tutorial-2-enrich-ontology/freezer-properties-3.png" alt-text="Screenshot of the new unbound properties on the Freezer entity type." lightbox="media/tutorial-2-enrich-ontology/freezer-properties-3.png":::
+1. For **Description**, enter *Enterprise product identifier; not a supplier SKU or UPC.*
 
-## Bind static data to properties
+    :::image type="content" source="media/tutorial-2-enrich-ontology/product-property-metadata-edit.png" alt-text="Screenshot of entering metadata description for the property." lightbox="media/tutorial-2-enrich-ontology/product-property-metadata-edit.png":::
 
-Next, bind static data to the properties you created on the *Freezer* entity type.
+    Select **Update**.
 
-1. Expand **Manage property bindings** and select **Add binding and properties**.
+1. Select **Save**.
+1. Use the same steps that you used for the Product > `ProductId` property to add the property metadata described in the following table.
 
-    :::image type="content" source="media/tutorial-2-enrich-ontology/freezer-binding-1.png" alt-text="Screenshot of adding data bindings to Freezer." lightbox="media/tutorial-2-enrich-ontology/freezer-binding-1.png":::
+    | Entity Type | Property | Metadata |
+    | --- | --- | --- |
+    | Refrigeration Telemetry | TemperatureC | **Description:** Temperature in Celsius. |
+    | Inventory | InventoryStatus | **Description:** 0 is AT_RISK and 1 is HEALTHY. |
 
-1. Select **Add data binding > Lakehouse table**.
+### Add relationship metadata
 
-    :::image type="content" source="media/tutorial-2-enrich-ontology/freezer-binding-2.png" alt-text="Screenshot of the data binding page and data source selection.":::
+Metadata for relationship types supports descriptions and additional metadata key-value pairs, but not synonyms. Follow these steps to add metadata to your relationship types.
 
-1. Choose your data source. 
-    1. Select the *OntologyDataLH* lakehouse and select **Next**. 
-    1. Select the *freezer* table and **Select**.
+1. Start with *Store operates Refrigeration Unit*. Select the Store entity in the **Explorer** to show it on the configuration canvas, and select the *operates* relationship connected to it to open the relationship configuration options.
+1. Scroll down to the **Metadata** section. Select **Edit**.
 
-    :::image type="content" source="media/tutorial-2-enrich-ontology/freezer-binding-3.png" alt-text="Screenshot of the data source selection." lightbox="media/tutorial-2-enrich-ontology/freezer-binding-3.png":::
+    For **Description**, enter *Identifies the refrigeration equipment operating in a store.*
 
-1. Fields from the source table populate the data binding configuration. Observe the sections of the configuration page:
-    * **Entity type key**: Identifies the field (or fields) that can be used to uniquely identify each record of ingested data.
-    * **Binding selection**: Identifies the source table that holds the data for the binding.
-    * **Entity type key mapping**: Identifies the column(s) in the source data table that map to the entity type key property. You can select string and integer columns from your source data as the entity type key. Together, the columns you select uniquely identify a record.
-    * **Properties**: Lists the columns from the source data and corresponding properties on the *Freezer* entity type. The **Source column** side populates automatically with the columns from the *freezer* table, and the **Property name** side lists their corresponding property names on the *Freezer* entity type within ontology. For this tutorial, keep the default property names.
+    :::image type="content" source="media/tutorial-2-enrich-ontology/relationship-metadata.png" alt-text="Screenshot of adding a metadata description to the relationship type." lightbox="media/tutorial-2-enrich-ontology/relationship-metadata.png":::
 
-    :::image type="content" source="media/tutorial-2-enrich-ontology/freezer-binding-4.png" alt-text="Screenshot of the configuration." lightbox="media/tutorial-2-enrich-ontology/freezer-binding-4.png":::
+    Select **Update**.
 
-1. Select **Define entity type key** at the top of the configuration. Select `FreezerId` from the property list and select **Save**.
+1. Use the same steps that you used for the *Store operates Refrigeration Unit* relationship type to add the relationship type metadata described in the following table.
 
-    :::image type="content" source="media/tutorial-2-enrich-ontology/freezer-binding-5-key.png" alt-text="Screenshot of adding an entity type key.":::
+    | Relationship type name | Source > target entity type | Metadata |
+    | --- | --- | --- |
+    | *operates* | Store > Refrigeration Unit | **Description:** *Identifies the refrigeration equipment operating in a store.* |
+    | *deliversTo* | Shipment > Store | **Description:** *Identifies the store receiving the shipment.* |
+    | *occursAt* | Sale > Store | **Description:** *Identifies where the sale occurred.* |
+    | *stockedAt* | Inventory > Store | **Description:** *Represents an active store assortment and its current inventory position, not merely a historical sale.* |
+    | *originatesAt* | Shipment > Distribution Center | **Description:** *Identifies the distribution center sending the shipment.* |
+    | *forProduct* | Sale > Product | **Description:** *Identifies the item sold.* |
+    | *stockedAt* | Product > Inventory | **Description:** *The item is part of the store's active assortment and has a current inventory position there.* |
+    | *suppliedBy* | Product > Supplier | **Description:** *Identifies the supplier responsible for the items.* |
+    | *contains* | Shipment > Product | **Description:** *Identifies the item being replenished.* |
+    | *hasTelemetryReading* | Refrigeration Unit > Refrigeration Telemetry | **Description:** *Identified sensor telemetry readings for refrigeration units.* |
 
-1. **Save** the data binding. Confirm that the entity type updated successfully, then select **Cancel** to close the configuration options.
+## Add rules
 
-1. Back in the **Configure** page for *Freezer*, view the list of properties and see that they're now bound to a data source.
+Next, add some business rules that give more detail about day-to-day operations. Write rules in natural language and link them to entity types, properties, and relationship types so consumers (like AI agents) can discover these rules and use them to ground their responses.
 
-    :::image type="content" source="media/tutorial-2-enrich-ontology/freezer-binding-6.png" alt-text="Screenshot of the data bindings in the Configure page." lightbox="media/tutorial-2-enrich-ontology/freezer-binding-6.png":::
+1. In the **Explorer**, expand **Overview** and select **Rules**.
 
-Now the *Freezer* entity has static data bound to it.
+    :::image type="content" source="media/tutorial-2-enrich-ontology/rules.png" alt-text="Screenshot of opening the Business rules page." lightbox="media/tutorial-2-enrich-ontology/rules.png":::
 
-## Bind time series data to additional properties
+1. Select **+ Create rule**.
+1. Enter the following rule details:
 
-Next, add time series data on the *Freezer* entity, by creating new properties and binding time series data to them in a single data binding operation.
+    1. **Name:** Cold-chain exception
+    1. **Definition:** *A frozen product has a cold-chain exception when the temperature of the refrigeration unit storing it remains above the product’s maximum storage temperature for more than 20 minutes.*
+    1. **Linked ontology concepts:** Frozen Product, Refrigeration Unit
 
-1. In the **Configure** page, expand **Manage property bindings** and select **Add binding and properties** again to reopen the binding configuration.
+    :::image type="content" source="media/tutorial-2-enrich-ontology/rules-configure.png" alt-text="Screenshot of configuring rule details." lightbox="media/tutorial-2-enrich-ontology/rules-configure.png":::
 
-    >[!TIP]
-    >Though this tutorial shows adding static and time series data in separate visits to the configuration page, you could also bind all the data in the first visit to this configuration page, as long as you complete the static binding before the time series one.
+1. Select **Save**. After the rule finishes saving, select **Cancel** to close the configuration details.
+1. You see the rule in the **Business rules** page.
 
-1. Under **Binding selection**, expand **Add data binding** and select **Eventhouse table or materialized view**.
+    :::image type="content" source="media/tutorial-2-enrich-ontology/rules-done.png" alt-text="Screenshot of the new rule on the Business rules page." lightbox="media/tutorial-2-enrich-ontology/rules-done.png":::
 
-    :::image type="content" source="media/tutorial-2-enrich-ontology/freezer-binding-time-series-1.png" alt-text="Screenshot of adding a second data binding to the configuration." lightbox="media/tutorial-2-enrich-ontology/freezer-binding-time-series-1.png":::
+1. Select **New rule** to add more rules. Add two rules with the following details:
 
-1. Choose your data source. 
-    1. Select the *TelemetryDataEH* eventhouse and select **Add**. 
-    1. Select the *FreezerTelemetry* table and **Add**.
-
-1. A **Timeseries data** section appears in the configuration. For **Timestamp column**, select `timestamp`.
-
-    :::image type="content" source="media/tutorial-2-enrich-ontology/freezer-binding-time-series-2.png" alt-text="Screenshot of selecting the timestamp column." lightbox="media/tutorial-2-enrich-ontology/freezer-binding-time-series-2.png":::
-
-1. Scroll down to the **Properties** section, where the `StoreId` shows an error because it is already bound in the static data binding. Use the trash icon to delete the duplicated property.
-
-    :::image type="content" source="media/tutorial-2-enrich-ontology/freezer-binding-time-series-3.png" alt-text="Screenshot of deleting the StoreId property." lightbox="media/tutorial-2-enrich-ontology/freezer-binding-time-series-3.png":::
-
-1. **Save** the data binding. Confirm that the entity type updated successfully, then select **Cancel** to close the configuration options.
-
-1. Back in the **Configure** page for *Freezer*, notice that there are now more entity type properties, and the new ones are bound to the *FreezerTelemetry* data source.
-
-    :::image type="content" source="media/tutorial-2-enrich-ontology/freezer-binding-time-series-4.png" alt-text="Screenshot of all the data bindings in the Configure page." lightbox="media/tutorial-2-enrich-ontology/freezer-binding-time-series-4.png":::
-
-Now the *Freezer* entity has two data bindings: one with static data from the *freezer* lakehouse table and one with streaming data from the *FreezerTelemetry* eventhouse table.
-
-## Add relationship type
-
-Finally, create a new relationship type to represent the connection between a store and its freezers.
-
-### Create Store operates Freezer
-
-1. In the **Configure** page, expand **Manage relationships** and select **Add new relationship**.
-
-    :::image type="content" source="media/tutorial-2-enrich-ontology/relationship-type-1.png" alt-text="Screenshot of adding a new relationship." lightbox="media/tutorial-2-enrich-ontology/relationship-type-1.png":::
-
-1. Enter the following relationship type details and select **Create**.
-    1. **Relationship type name**: *operates*
-    1. **Origin entity type**: *Store*
-    1. **Target entity type**: *Freezer*
-
-    :::image type="content" source="media/tutorial-2-enrich-ontology/relationship-type-2.png" alt-text="Screenshot of entering relationship type details.":::
-
-1. The relationship is added to the **Relationships** section. Select the *operates* relationship on the canvas to open the relationship details configuration. Observe the sections of the configuration page:
-
-    * **Origin entity type**: Lists details of the origin entity (*Store* in this case).
-    * **Relationship type**: Sets details of the relationship type.
-    * **Target entity type**: Lists details of the target entity (*Freezer* in this case).
-
-     :::image type="content" source="media/tutorial-2-enrich-ontology/relationship-type-3.png" alt-text="Screenshot of the relationship type configuration." lightbox="media/tutorial-2-enrich-ontology/relationship-type-3.png":::
-
-1. In the middle section, enter the following details.
-    1. **Mapping table**: Select the *freezer* table. This table in the source data can link *Store* and *Freezer* entities together, because it contains identifying information for both entity types. Each row in this table references a store and a freezer by ID.
-    1. **Matched Store: StoreId**: Select `StoreId`. This setting specifies the column in the relationship source data table (*freezer >* `StoreId`) whose values match the key property defined on the *Store* entity (*dimstore >* `StoreId`). In the tutorial data, the column name is the same (`StoreId`) in both tables.
-    1. **Matched Freezer: FreezerId**: Select `FreezerId`. This setting specifies the column in the relationship source data table whose values match the key property defined on the *Freezer* entity. In this case, the relationship data source and the entity data source both use the *freezer* table, so you're selecting the same column (`FreezerId`).
-
-    :::image type="content" source="media/tutorial-2-enrich-ontology/relationship-type-4.png" alt-text="Screenshot of the completed relationship type configuration." lightbox="media/tutorial-2-enrich-ontology/relationship-type-4.png":::
-
-    >[!IMPORTANT]
-    >Make sure to select the correct source columns that match the entity type key properties.
-
-1. **Save** the relationship type. Confirm that the relationship type updated successfully, then select **Cancel** to close the configuration options.
-
-1. You see the **Configure** page for the entity, where the updated relationship remains visible in the **Relationships** section.
-
-    :::image type="content" source="media/tutorial-2-enrich-ontology/relationship-type-5.png" alt-text="Screenshot of the relationship type on the configuration page." lightbox="media/tutorial-2-enrich-ontology/relationship-type-5.png":::
+    | Name | Definition | Linked concepts |
+    | --- | --- | --- |
+    | Cold-chain exception | *A frozen product has a cold-chain exception when the temperature of the refrigeration unit storing it remains above the product’s maximum storage temperature for more than 20 minutes.* | - Frozen Product <br>- Refrigeration Unit |
+    | Inventory at risk | *A store inventory position is at risk when projected on-hand inventory falls below safety stock before the next scheduled delivery* | - Store <br>- Inventory |
+    | Late replenishment | *A replenishment shipment is late when its estimated arrival is more than four hours after its scheduled arrival.* | Shipment |
 
 ## Next steps
 
-Now your ontology includes a *Freezer* entity type that is bound to both static and time series data, and is connected in the ontology with a relationship.
+Your ontology is now enriched with additional metadata and business rules that give more context about day-to-day operations.
 
-Next, continue to [View the ontology](tutorial-3-preview-ontology.md).
-
+Next, continue to [Explore the ontology](tutorial-3-preview-ontology.md).

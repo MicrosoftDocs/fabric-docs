@@ -18,7 +18,9 @@ You can connect dataflow Gen2 to Amazon Redshift in Fabric by using Power Query 
 1. [Get data in Fabric](#get-data).
 1. [Connect to Amazon Redshift data](#connect-to-amazon-redshift-data).
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
+
+## Summary
 
 The Amazon Redshift connector supports the following authentication types for copy and dataflow Gen2.
 
@@ -27,20 +29,28 @@ The Amazon Redshift connector supports the following authentication types for co
 |Amazon Redshift| n/a | √ |
 |Microsoft Account| n/a | √ |
 
-## Capabilities
-[!INCLUDE [amazon-redshift-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/amazon-redshift/amazon-redshift-capabilities-supported.md)]
-
 ## Prerequisites
-[!INCLUDE [amazon-redshift-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/amazon-redshift/amazon-redshift-prerequisites.md)]
+[!INCLUDE [amazon-redshift-prerequisites](includes/power-query/connectors/includes/amazon-redshift/amazon-redshift-prerequisites.md)]
 
 
-## Get data
+<a id="capabilities"></a>
+
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
+[!INCLUDE [amazon-redshift-capabilities-supported](includes/power-query/connectors/includes/amazon-redshift/amazon-redshift-capabilities-supported.md)]
+
+## Connection settings
+
+### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-## Connect to Amazon Redshift data
+<a id="connect-to-amazon-redshift-data"></a>
 
-[!INCLUDE [amazon-redshift-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/amazon-redshift/amazon-redshift-connect-to-power-query-online.md)]
+### Connection instructions
+
+[!INCLUDE [amazon-redshift-connect-to-power-query-online](includes/power-query/connectors/includes/amazon-redshift/amazon-redshift-connect-to-power-query-online.md)]
 
 ## Related content
 

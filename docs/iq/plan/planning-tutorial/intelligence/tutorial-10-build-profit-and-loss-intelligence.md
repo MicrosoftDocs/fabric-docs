@@ -51,29 +51,36 @@ Create an intelligence sheet, connect the Enterprise Dataset semantic model, add
 
    :::image type="content" source="../../media/planning-tutorial/intelligence/tutorial-10-build-profit-and-loss-intelligence/select-semantic-model.png" alt-text="Screenshot of the Home tab with New Intelligence Sheet selected." lightbox="../../media/planning-tutorial/intelligence/tutorial-10-build-profit-and-loss-intelligence/select-semantic-model.png":::
 
-2. In **OneLake catalog**, select **Enterprise Dataset**, and then select **Add**.
+1. Name the intelligent sheet and select **Create**.
+1. Select the **Data** pane icon on the right to expand it, and then select **Add** under **Semantic Model**.
+
+    :::image type="content" source="../../media/planning-tutorial/intelligence/tutorial-10-build-profit-and-loss-intelligence/open-data-pane.png" alt-text="Screenshot of an intelligence sheet with the Data pane icon and the Add button under Semantic Model highlighted." lightbox="../../media/planning-tutorial/intelligence/tutorial-10-build-profit-and-loss-intelligence/open-data-pane.png":::
+
+1. In **Select Semantic Model**, select **Semantic Model Item** and select the search field to choose a semantic model.
+
+    :::image type="content" source="../../media/planning-tutorial/intelligence/tutorial-10-build-profit-and-loss-intelligence/select-search-field.png" alt-text="Screenshot of the Select Semantic Model dialog with Semantic Model Item selected and the Semantic Model search field highlighted." lightbox="../../media/planning-tutorial/intelligence/tutorial-10-build-profit-and-loss-intelligence/select-search-field.png":::
+
+1. In **OneLake catalog**, select **Enterprise Dataset**, and then select **Add**.
 
    :::image type="content" source="../../media/planning-tutorial/intelligence/tutorial-10-build-profit-and-loss-intelligence/select-enterprise-dataset.png" alt-text="Screenshot of Enterprise Dataset selected in the OneLake catalog semantic model list." lightbox="../../media/planning-tutorial/intelligence/tutorial-10-build-profit-and-loss-intelligence/select-enterprise-dataset.png":::
 
-3. In **Select Semantic Model Connection**, select the shared cloud connection you want to use. If you need a new connection, select **Create Connection** and complete the connection setup.
+1. Verify that **Semantic Model** is selected and that **Enterprise Dataset** is selected, and then select **Connect**.
 
-4. Verify that **Semantic Model** is selected and that **Enterprise Dataset** is selected, and then select **Connect**.
+   :::image type="content" source="../../media/planning-tutorial/intelligence/tutorial-10-build-profit-and-loss-intelligence/connect-semantic-model.png" alt-text="Screenshot of the Select Semantic Model window with Enterprise Dataset and Connect." lightbox="../../media/planning-tutorial/intelligence/tutorial-10-build-profit-and-loss-intelligence/connect-semantic-model.png":::
 
-   :::image type="content" source="../../media/planning-tutorial/intelligence/tutorial-10-build-profit-and-loss-intelligence/connect-semantic-model.png" alt-text="Screenshot of the Select Semantic Model Connection window with Enterprise Dataset and Connect." lightbox="../../media/planning-tutorial/intelligence/tutorial-10-build-profit-and-loss-intelligence/connect-semantic-model.png":::
-
-5. After the semantic model is connected, select **New Intelligence Sheet**.
+1. After the semantic model is connected, select **New Intelligence Sheet**.
 
    :::image type="content" source="../../media/planning-tutorial/intelligence/tutorial-10-build-profit-and-loss-intelligence/create-intelligence-sheet.png" alt-text="Screenshot of the Home tab with New Intelligence Sheet selected after the semantic model is connected." lightbox="../../media/planning-tutorial/intelligence/tutorial-10-build-profit-and-loss-intelligence/create-intelligence-sheet.png":::
 
-6. In **New Intelligence Sheet**, enter `P&L Statement` as the name, and then select **Create**.
+1. In **New Intelligence Sheet**, enter `P&L Statement` as the name, and then select **Create**.
 
    :::image type="content" source="../../media/planning-tutorial/intelligence/tutorial-10-build-profit-and-loss-intelligence/name-intelligence-sheet.png" alt-text="Screenshot of the New Intelligence Sheet window with P&L Statement as the name." lightbox="../../media/planning-tutorial/intelligence/tutorial-10-build-profit-and-loss-intelligence/name-intelligence-sheet.png":::
 
-7. In the **Visualizations** pane, select **Matrix**.
+1. In the **Visualizations** pane, select **Matrix**.
 
    :::image type="content" source="../../media/planning-tutorial/intelligence/tutorial-10-build-profit-and-loss-intelligence/select-matrix-visual.png" alt-text="Screenshot of the Visualizations pane with Matrix selected." lightbox="../../media/planning-tutorial/intelligence/tutorial-10-build-profit-and-loss-intelligence/select-matrix-visual.png":::
 
-8. Map the data to the Matrix visual:
+1. Map the data to the Matrix visual:
 
    - In the **Data** pane, expand **Semantic Model** > **Measure** > **Financial** > **Base Measures**. Add **Actuals** to **Values (AC)** and **Plan** to **Compare to Plan (PL)**.
 
@@ -83,7 +90,7 @@ Create an intelligence sheet, connect the Enterprise Dataset semantic model, add
 
    :::image type="content" source="../../media/planning-tutorial/intelligence/tutorial-10-build-profit-and-loss-intelligence/map-matrix-fields.png" alt-text="Screenshot of the Data pane showing Actuals, Plan, and Account Hierarchy mapped to the Matrix visual." lightbox="../../media/planning-tutorial/intelligence/tutorial-10-build-profit-and-loss-intelligence/map-matrix-fields.png":::
 
-9. On the **Matrix** tab, select **Templates**, and then select **Financial**.
+1. On the **Matrix** tab, select **Templates**, and then select **Financial**.
 
    :::image type="content" source="../../media/planning-tutorial/intelligence/tutorial-10-build-profit-and-loss-intelligence/apply-financial-template.png" alt-text="Screenshot of the Matrix tab with the Financial template selected." lightbox="../../media/planning-tutorial/intelligence/tutorial-10-build-profit-and-loss-intelligence/apply-financial-template.png":::
 

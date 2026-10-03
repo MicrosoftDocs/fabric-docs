@@ -15,6 +15,8 @@ ms.search.form: Source and Destination
 
 This article shows you how to add an Azure SQL Database Change Data Capture (CDC) source to an eventstream.
 
+[!INCLUDE [schema-aware-source-callout](./includes/schema-aware-source-callout.md)]
+
 [!INCLUDE [azure-sql-database-cdc-connector-prerequisites](./includes/connectors/azure-sql-database-change-data-capture-connector-prerequisites.md)]
 - If you don't have an eventstream, [create an eventstream](create-manage-an-eventstream.md). 
 

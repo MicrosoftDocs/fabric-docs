@@ -20,14 +20,10 @@ To use a data agent in Microsoft Fabric, configure the required tenant settings.
 
 ## Access tenant settings
 
-To configure the required settings, you need administrative privileges to access the **Admin Portal** in Microsoft Fabric.
+To configure the required settings, you need administrative privileges to access tenant settings in Microsoft Fabric.
 
 1. **Sign in to Microsoft Fabric** with an admin account.
-1. **Open the Admin Portal**:
-   - Select the gear icon in the top-right corner.
-   - Select **Admin Portal**.
-1. **Navigate to Tenant Settings**:
-   - In the Admin Portal, select **Tenant settings** from the left-hand navigation pane.
+1. Go to **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**.
 
 When you're in **Tenant Settings**, enable the necessary configurations.
 

@@ -9,7 +9,7 @@ ms.date: 07/14/2026
 
 # Git integration tenant settings
 
-The Git integration tenant admin settings are configured in the tenant settings section of the admin portal.  
+Configure the Git integration tenant admin settings in **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**.
 The tenant admin can choose to delegate control of these switches to the workspace admin or capacity admin. If the tenant admin enables delegation, the capacity admin can override the tenant admin's decision to enable or disable the switch. The workspace admin can override the tenant and the capacity settings.
 
 For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
@@ -99,7 +99,7 @@ Delegation is the admin model that lets the tenant admin push control of a tenan
 
 For the Git integration switches, the layered override model is:
  
-- Tenant admin sets the switch in the admin portal (tenant settings) and chooses whether to delegate it.
+- Tenant admin sets the switch in the tenant settings and chooses whether to delegate it.
 - If delegation is enabled, the capacity admin can override the tenant admin's enable or disable decision for their capacity.
 - The workspace admin can override both the tenant and capacity settings for their workspace.
  

@@ -22,7 +22,7 @@ The Azure connections admin settings have the following options:
 
 * [Workspace-level log analytics permissions](#workspace-level-log-analytics-permissions) - Use to configure activity logging in Log Analytics.
 
-To learn how to access the Fabric admin portal settings, see [What is the admin portal?](admin-center.md)
+To access these settings, open the [Govern section of the OneLake catalog](../governance/onelake-catalog-govern.md), and then select **Azure connections**.
 
 ## Tenant-level storage
 
@@ -32,16 +32,16 @@ By default, data used with Power BI is stored in internal storage provided by Po
 
 By default, workspace admins can't connect their own storage account. This feature lets Fabric administrators turn on a setting that allows workspace admins to connect their own storage account.
 
-To activate this feature, go to **Admin portal > Azure connections > Connect to Azure resources > Workspace-level storage permissions**, and check the **Allow workspace admins to connect their own storage account** checkbox.
+To activate this feature, go to **OneLake catalog** > **Govern** > **Azure connections** > **Connect to Azure resources** > **Workspace-level storage permissions**, and check the **Allow workspace admins to connect their own storage account** checkbox.
 
   :::image type="content" source="media/service-admin-portal-azure-connections/connect-own-storage-account-switch.png" alt-text="Screenshot of the Azure connections settings page showing the Allow workspace admins to connect their own Log Analytics workspace checkbox.":::
 
 ## Workspace-level log analytics permissions 
 
-Fabric administrators can find and configure activity logging in **Tenant settings > Audit and usage settings > Azure Log Analytics connections for workspace administrators**. For more information, see [Allow workspace level logging from the admin portal](/power-bi/transform-model/log-analytics/desktop-log-analytics-configure#allow-workspace-level-logging-from-the-admin-portal)
+Fabric administrators can find and configure activity logging in **Tenant settings > Audit and usage settings > Azure Log Analytics connections for workspace administrators**. For more information, see [Configure workspace-level logging](/power-bi/transform-model/log-analytics/desktop-log-analytics-configure#allow-workspace-level-logging-from-the-admin-portal).
 
 ## Related content
 
-- [What is the admin portal?](admin-center.md)
+- [Govern and manage your Fabric data with the OneLake catalog](../governance/onelake-catalog-govern.md)
 - [Configuring dataflow storage to use Azure Data Lake Gen 2](/power-bi/transform-model/dataflows/dataflows-azure-data-lake-storage-integration)
 

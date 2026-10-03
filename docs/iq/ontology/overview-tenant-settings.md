@@ -1,7 +1,7 @@
 ---
 title: Ontology (Preview) Required Tenant Settings
 description: Enable settings on your Fabric tenant before using ontology (preview) features.
-ms.date: 04/30/2026
+ms.date: 09/30/2026
 ms.topic: concept-article
 ---
 
@@ -9,11 +9,21 @@ ms.topic: concept-article
 
 Before you can use all the features of ontology (preview), you must enable certain settings on your Fabric tenant. This article describes required and optional tenant settings for using ontology.
 
-[Fabric administrators](../../admin/roles.md) can grant access to these settings in the [admin portal](../../admin/admin-center.md) under [tenant settings](../../admin/tenant-settings-index.md).
+[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
-## Ontology item (preview)
+[Fabric administrators](../../admin/roles.md) can grant access to these settings in **OneLake catalog** > **Govern** > **Configurations** > [**Tenant settings**](../../admin/tenant-settings-index.md).
 
-This setting is **required** to create ontology (preview) items: *Enable Ontology item (preview)*.
+## Users can create Fabric items
+
+This setting is **required** to create ontology (preview) items with the new experience: *Users can create Fabric items*.
+
+:::image type="content" source="media/overview-tenant-settings/prerequisite-fabric-items.png" alt-text="Screenshot of enabling Fabric items in the admin portal." lightbox="media/overview-tenant-settings/prerequisite-fabric-items.png":::
+
+If you don't enable this setting, you get errors when creating a new ontology item, including while [migrating from the old experience to the new experience](overview.md#migrate-from-old-experience).
+
+## Users can create ontology (preview) items
+
+This setting is **required** to create ontology (preview) items: *Users can create ontology (preview) items*.
 
 :::image type="content" source="media/overview-tenant-settings/prerequisite-ontology.png" alt-text="Screenshot of enabling ontology in the admin portal." lightbox="media/overview-tenant-settings/prerequisite-ontology.png":::
 

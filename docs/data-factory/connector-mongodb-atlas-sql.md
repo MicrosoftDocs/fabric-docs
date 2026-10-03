@@ -14,7 +14,9 @@ ai-usage: ai-assisted
 This article outlines the steps to create a MongoDB Atlas SQL connection.
 
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
+
+## Summary
 
 The MongoDB Atlas SQL connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
@@ -30,21 +32,29 @@ You can connect dataflow Gen2 in Fabric to MongoDB Atlas SQL by using Power Quer
 1. [Get data in Fabric](#get-data).
 1. [Connect to MongoDB Atlas SQL](#connect-to-mongodb-atlas-sql).
 
-### Capabilities
+## Prerequisites
 
-[!INCLUDE [mongodb-atlas-sql-interface-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/mongodb-atlas-sql-interface/mongodb-atlas-sql-interface-capabilities-supported.md)]
+[!INCLUDE [mongodb-atlas-sql-interface-prerequisites](includes/power-query/connectors/includes/mongodb-atlas-sql-interface/mongodb-atlas-sql-interface-prerequisites.md)]
 
-### Prerequisites
+<a id="capabilities"></a>
 
-[!INCLUDE [mongodb-atlas-sql-interface-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/mongodb-atlas-sql-interface/mongodb-atlas-sql-interface-prerequisites.md)]
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
+
+[!INCLUDE [mongodb-atlas-sql-interface-capabilities-supported](includes/power-query/connectors/includes/mongodb-atlas-sql-interface/mongodb-atlas-sql-interface-capabilities-supported.md)]
+
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Connect to MongoDB Atlas SQL
+<a id="connect-to-mongodb-atlas-sql"></a>
 
-[!INCLUDE [mongodb-atlas-sql-interface-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/mongodb-atlas-sql-interface/mongodb-atlas-sql-interface-connect-to-power-query-online.md)]
+### Connection instructions
+
+[!INCLUDE [mongodb-atlas-sql-interface-connect-to-power-query-online](includes/power-query/connectors/includes/mongodb-atlas-sql-interface/mongodb-atlas-sql-interface-connect-to-power-query-online.md)]
 
 
 ## Set up your connection in a pipeline

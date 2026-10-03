@@ -116,6 +116,9 @@ By using Workspace Identity and Service Principal support, your organization can
 
 When you use Workspace Identity or Service Principal authentication, you need to configure the appropriate Microsoft Entra ID and Microsoft Graph permissions to send email on behalf of the desired mailbox. Depending on your organizational requirements, you might also need to set up additional Exchange Online mailbox restrictions and governance policies.
 
+   > [!NOTE]
+   > Service Principal (SPN) and Workspace Identity (WI) use application-level Microsoft Graph permissions to access Outlook. A tenant administrator must explicitly grant the required permissions and provide admin consent before the identity can be used. These permissions can allow the identity to send email on behalf of users in the tenant. Before granting access, tenant administrators should review the permission scope and ensure it aligns with their organization's security policies.
+
 For more information about setting up WI or SPN, see [Workspace identity support in Data Factory](workspace-identity.md) or [Service principal support in Data Factory](service-principals.md).
 
 ## Known limitations

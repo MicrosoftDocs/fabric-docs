@@ -28,7 +28,9 @@ The data lifecycle consists of six stages, and Fabric provides purpose-built too
 
 - **Track and visualize**: Surface insights through interactive reports, monitor live data streams on real-time dashboards, and trigger automated actions when conditions are met.
 
-- **External integration**: Securely connect to external services for automation, collaboration, governance, developer tooling, and CI/CD.
+- **External integration**: Securely connect to external services for automation, collaboration, developer tooling, and CI/CD.
+
+Governance spans every stage of the data lifecycle, helping organizations discover, manage, secure, and monitor their Fabric data estate.
 
 The following diagram shows how these stages connect and which Fabric items participate at each stage. Each stage is covered in depth in a dedicated article. Use the links in each section to explore the capabilities and tools available at that stage.
 
@@ -92,6 +94,10 @@ Use the prepared and modeled data to create reports, dashboards, and real-time a
 
 For more information, see [Track and visualize data](track-visualize-data.md).
 
+## Govern data
+
+The OneLake catalog is the central place for discovery, governance, and security across the Fabric data estate. Its [Govern section](../governance/onelake-catalog-govern.md) provides insights into the data estate and recommended actions to improve its governance posture. Microsoft Purview provides information protection, data loss prevention, audit, and risk and compliance capabilities for supported Fabric data.
+
 ## External integration
 
 Fabric integrates with external systems for both data ingestion and insights delivery:
@@ -101,7 +107,6 @@ Fabric integrates with external systems for both data ingestion and insights del
 - **REST APIs** and **client libraries** provide programmatic access to Fabric resources.
 - **Microsoft Entra ID** handles authentication, conditional access, and service principal support.
 - **Git integration** with Azure DevOps and GitHub enables version control and CI/CD for Fabric items.
-- **Microsoft Purview** provides unified data governance, cataloging, and compliance across the Fabric data estate, including data shared across tenants through OneLake data sharing.
 
 For more information, see [External integration and platform connectivity](external-integration.md).
 
@@ -116,4 +121,5 @@ Natural language support comes in the form of Power BI Copilot, Data Agents, and
 - [Prepare and transform data](prepare-transform-data.md)
 - [Analyze and train data in Microsoft Fabric](analyze-train-data.md)
 - [Track and visualize data](track-visualize-data.md)
+- [Govern in the OneLake catalog](../governance/onelake-catalog-govern.md)
 - [External integration and platform connectivity](external-integration.md)

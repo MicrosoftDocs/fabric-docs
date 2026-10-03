@@ -1,7 +1,7 @@
 ---
 title: High concurrency mode for Lakehouse operations in Microsoft Fabric
 description: Learn how high concurrency mode reuses Spark sessions for Lakehouse load and preview operations to improve start time, throughput, and capacity efficiency in Microsoft Fabric.
-ms.reviewer: saravi
+ms.reviewer: milescole
 ms.topic: concept-article
 ms.date: 03/01/2026
 ai-usage: ai-assisted

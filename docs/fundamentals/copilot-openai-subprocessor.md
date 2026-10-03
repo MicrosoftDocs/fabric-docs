@@ -36,7 +36,7 @@ You can choose to enable OpenAI-operated models so that they're available for yo
 
 To enable the use of OpenAI-operated models:
 
-1. Go to the [Fabric admin portal](https://app.fabric.microsoft.com/admin-portal) and select **Tenant settings**.
+1. Go to **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**.
 1. Under the **Copilot and AI** section, locate **Users can use Copilot, AI Agents, and other AI experiences powered by OpenAI as a Microsoft Subprocessor**.
 1. Toggle the setting to **Enabled**.
 1. Under **Apply to**, select **The entire organization**, or specify security groups to include. Optionally, specify security groups to exclude.
@@ -46,7 +46,7 @@ The following screenshot shows how to configure this setting:
 
 :::image type="content" source="./media/copilot-enable-fabric/openai-model-provider-setting.png" alt-text="Screenshot of the tenant setting to enable the use of OpenAI as a subprocessor." lightbox="./media/copilot-enable-fabric/openai-model-provider-setting.png":::
 
-You can restrict user access to AI provider subprocessors by assigning permissions to specific security groups in the Fabric admin portal. These assignments are applied at the tenant level and enforced across all Fabric Copilot and AI Agent experiences. When access is limited by security group membership, only members of the specified groups can use Copilot features that rely on that AI provider. For more information on tenant settings, see [About tenant settings](../admin/about-tenant-settings.md).
+You can restrict user access to AI provider subprocessors by assigning permissions to specific security groups in tenant settings. These assignments are applied at the tenant level and enforced across all Fabric Copilot and AI Agent experiences. When access is limited by security group membership, only members of the specified groups can use Copilot features that rely on that AI provider. For more information on tenant settings, see [About tenant settings](../admin/about-tenant-settings.md).
 
 ## Disable the use of OpenAI-operated models
 
@@ -56,7 +56,7 @@ You can disable the use of OpenAI-operated models in the Fabric admin portal. Yo
 
 To disable the use of OpenAI-operated models:
 
-1. Go to the [Fabric admin portal](https://app.fabric.microsoft.com/admin-portal) and select **Tenant settings**.
+1. Go to **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**.
 1. Under the **Copilot and AI** section, locate **Users can use Copilot, AI Agents, and other AI experiences powered by OpenAI as a Microsoft Subprocessor**.
 1. Toggle the setting to **Disabled**.
 1. Select **Apply**.
@@ -69,7 +69,7 @@ Data residency can be controlled by the setting **Data sent to OpenAI as a Micro
 
 To configure this setting:
 
-1. Go to the [Fabric admin portal](https://app.fabric.microsoft.com/admin-portal) and select **Tenant settings**.
+1. Go to **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**.
 1. Under the **Copilot and AI** section, locate **Data sent to OpenAI as a Microsoft Subprocessor can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance**.
 1. Toggle the setting to **Enabled** or **Disabled** based on your organization's data residency requirements.
 1. Under **Apply to**, select **The entire organization** or specify security groups. Select **Apply**.
@@ -91,7 +91,7 @@ Capacity-level settings work in conjunction with tenant-level settings:
 
 To delegate the OpenAI subprocessor setting to capacity administrators:
 
-1. Go to the [Fabric admin portal](https://app.fabric.microsoft.com/admin-portal) and select **Tenant settings**.
+1. Go to **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**.
 1. Under the **Copilot and AI** section, locate **Users can use Copilot, AI Agents, and other AI experiences powered by OpenAI as a Microsoft Subprocessor**.
 1. Enable **Allow capacity admins to override this setting**.
 1. Select **Apply**.

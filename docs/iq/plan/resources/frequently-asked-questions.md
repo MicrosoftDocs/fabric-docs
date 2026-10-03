@@ -24,17 +24,21 @@ No—each plan item connects to one semantic model, and you can't change it afte
 
 Ensure that you have at least Viewer access to the workspace where the semantic model is published. The semantic model doesn't need to be in the same Fabric workspace as your report or item, because you can access it across workspaces. Still, you need at least viewer-level permissions on its host workspace to see it in the dialog. If it still doesn't appear, try refreshing the connection or signing out and back in.
 
-## As a contributor, can I create my own semantic model connection?
-
-No, contributors can't create a semantic model connection directly. If you only have contributor access, the workspace admin should create the connection, and you can use it.
-
 ## What is the Fabric SQL database used for?
 
 The Fabric SQL database is where planning in Fabric stores all plan data—inputs, forecasts, scenarios, and writeback entries. It's separate from the semantic model so that you can write plan data back without affecting the underlying actuals or reporting layer.
 
 ## What's the difference between the semantic model connection and the SQL database connection?
 
-The semantic model connection pulls your actuals and reporting data in for planning, whereas the SQL database connection is a separate connection that supports collaboration. You use it to save and share the plan, and you set it up after you build the planning sheet.
+The semantic model connection pulls your actuals and reporting data from the semantic model for planning.
+
+> [!NOTE]
+> The connection-based flow for semantic models is deprecated; you can now connect directly by using your signed-in identity without configuring a shared cloud connection.
+
+A [database connection](../planning-how-to-create-database-connection.md) is separate and is used while configuring writeback destinations in planning sheet and PowerTable sheets' databases.
+
+> [!NOTE]
+> Using the database connection for collaboration on plan items is deprecated. New plan items use OneLake for app metadata storage.
 
 ## Can I reuse an existing connection instead of creating a new one?
 
@@ -88,4 +92,3 @@ Viewing mode isn't purely static. While it locks down the core design of your re
     * Forecasts: Change planning assumptions and distribute the updated impacts across your forecast columns.
     * Comments: Add, update, and manage commentary.
     * Writeback: Commit your data changes back to the backend database—provided the report author already configured an active writeback destination.
-    

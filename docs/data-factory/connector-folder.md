@@ -15,7 +15,9 @@ ms.custom:
 This article outlines the steps to create a folder connection.
 
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
+
+## Summary
 
 The folder connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
@@ -30,19 +32,29 @@ You can connect dataflow Gen2 in Fabric to a folder by using Power Query connect
 1. [Get data in Fabric](#get-data).
 1. [Connect to a folder](#connect-to-a-folder).
 
-### Capabilities
+<a id="capabilities"></a>
 
-[!INCLUDE [folder-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/folder/folder-capabilities-supported.md)]
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
+
+[!INCLUDE [folder-capabilities-supported](includes/power-query/connectors/includes/folder/folder-capabilities-supported.md)]
+
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Connect to a folder
+<a id="connect-to-a-folder"></a>
 
-[!INCLUDE [folder-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/folder/folder-connect-to-power-query-online.md)]
+### Connection steps
+
+[!INCLUDE [folder-connect-to-power-query-online](includes/power-query/connectors/includes/folder/folder-connect-to-power-query-online.md)]
 
 ## Set up your connection in Manage connections and gateways
+
+### Connection properties
 
 The following table summarizes the properties needed for a folder connection:
 
@@ -54,6 +66,8 @@ The following table summarizes the properties needed for a folder connection:
 | **Full path** | The root path of the folder that you want to copy. Use the escape character "" for special characters in the string. 
 | **Authentication method** | Go to [Authentication](#authentication). | Yes |
 | **Privacy level** | The privacy level that you want to apply. Allowed values are `None`, `Organizational`, `Private`, and `Public`. | Yes |
+
+### Connection instructions
 
 For specific instructions to set up your connection in Manage connections and gateways, follow these steps:
 
@@ -86,13 +100,13 @@ For specific instructions to set up your connection in Manage connections and ga
 
 1. Select **Create** to create your connection. Your creation is successfully tested and saved if all the credentials are correct. If not correct, the creation fails with errors.
 
-## Authentication
+### Authentication
 
 This section lists the instructions for each authentication type supported by the folder connector:
 
 - [Windows](#windows-authentication)
 
-### Windows authentication
+#### Windows authentication
 
 Fill in the required properties. You need to specify the Windows username and Windows password when using this authentication.
 

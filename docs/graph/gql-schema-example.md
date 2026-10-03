@@ -10,6 +10,12 @@ ms.reviewer: splantikow
 
 This article provides the complete technical specification for the social network graph type used throughout the GQL documentation. This schema demonstrates many common features of complex graphs and serves as the foundation for all query examples in the GQL language documentation.
 
+The definition uses formal GQL graph-type syntax for reference and isn't
+directly executable in Graph. To create a graph through the supported Fabric
+experience, see [Design a graph schema](design-graph-schema.md). For an
+explanation of the syntax in this example, see [GQL graph
+types](gql-graph-types.md).
+
 > [!NOTE]
 > The social network example is derived from the [LDBC SNB (LDBC Social Network Benchmark)](https://ldbcouncil.org/benchmarks/snb/) published by the [GDC (Graph Data Council)](https://ldbcouncil.org/).
 >
@@ -159,7 +165,7 @@ digraph LDBC_SNB_Schema {
     //// (:Forum)-[:hasMember { creationDate :: ZONED DATETIME, joinDate :: UINT64 }]->(:Person),
     //// (:Forum)-[:hasModerator]->(:Person),
 
-    Forum -> Person [label=<<b>-[:hasMember<br/>{creationDate :: ZONED DATETIME, joinDate :: ZONED DATETIME]-&gt;</b>>];
+    Forum -> Person [label=<<b>-[:hasMember<br/>{creationDate :: ZONED DATETIME, joinDate :: UINT64}]-&gt;</b>>];
     Forum -> Person [label=<<b>-[:hasModerator]-&gt;</b>>];
 
     //// ABSTRACT 
@@ -278,7 +284,8 @@ The social network domain models a comprehensive social platform with the follow
 - **Taxonomy system** with tags and tag classifications
 - **Social and professional relationships** between people and organizations
 
-For a more detailed introduction to the entities of this domain, see [GQL language guide](gql-language-guide.md#a-practical-example-social-network).
+For information about the source tables and data, see the [social network
+dataset](sample-datasets.md#social-network-dataset).
 
 ## Schema features demonstrated
 
@@ -451,6 +458,7 @@ Every node type has a corresponding key constraint ensuring unique identificatio
 
 ## Related content
 
-- [GQL language guide](gql-language-guide.md)
 - [GQL graph types](gql-graph-types.md)
+- [Design a graph schema](design-graph-schema.md)
+- [GQL language guide](gql-language-guide.md)
 - [Try Microsoft Fabric for free](../fundamentals/fabric-trial.md)

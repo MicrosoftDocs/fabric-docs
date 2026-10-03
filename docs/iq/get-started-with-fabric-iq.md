@@ -34,7 +34,7 @@ Find the job that matches your scenario, and then follow the entry article for t
 
 If you'd rather learn by building, follow a guided tutorial that walks through a complete scenario from setup to cleanup.
 
-- **[Ontology tutorial](ontology/tutorial-0-introduction.md)** - Build your first ontology for a fictional retail company. You create entity types and relationships (either by generating them directly from a semantic model or creating them from scratch), bind streaming and static data, and query the ontology from a Fabric data agent using natural language. This tutorial is the best starting point for the operational intelligence layer.
+- **[Ontology tutorial](ontology/tutorial-0-introduction.md)** - Build your first ontology for a fictional retail company. You create entity types and relationships, bind streaming and static data, and explore the ontology using a built-in graph and ontology agent questions in natural language. This tutorial is the best starting point for the operational intelligence layer.
 - **[Graph tutorial](../graph/tutorial-introduction.md)** - Load sample data, model nodes and edges, and query a graph with the query builder and Graph Query Language (GQL).
 - **[Data agent tutorial](../data-science/data-agent-end-to-end-tutorial.md)** - Build a Fabric data agent that reasons over lakehouse data, both interactively and programmatically.
 ## Check tenant settings

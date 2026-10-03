@@ -12,7 +12,7 @@ LocalizationGroup: Administration
 
 # Integration tenant settings
 
-These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
+Configure these settings in **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**. For information about how to access and use tenant settings, see [About tenant settings](tenant-settings-index.md).
 
 <a name='allow-xmla-endpoints-and-analyze-in-excel-with-on-premises-datasets'></a>
 
@@ -124,7 +124,7 @@ An important security-related consideration is that gateway owners have full con
 
 A related consideration applies to VNet data gateways, although through a different vector. While VNet data gateways themselves are maintained by Microsoft (so the OPDG interception vector doesn't apply), a VNet gateway operates within the network perimeter of a VNet owned by the customer. As a result, a malicious VNet owner could theoretically intercept SSO tokens at the network layer — traffic flowing in and out of the gateway is subject to the network security posture of the hosting VNet. Customers should ensure their VNet network controls (NSGs, route tables, peering, and monitoring) follow least-privilege and zero-trust principles to mitigate this risk.
 
-Because of this possible threat, the Microsoft Entra SSO feature is disabled by default for on-premises data gateways. As a Fabric admin, you must enable the **Microsoft Entra single sign-on (SSO) for Gateway** tenant setting in the Fabric admin portal before data sources can be enabled for Microsoft Entra SSO on an on-premises data gateway or VNet gateway. Before enabling the feature, make sure to restrict the ability to deploy on-premises data gateways in your organization to appropriate administrators, and apply equivalent governance to who can deploy VNet data gateways and manage the underlying VNets.  
+Because of this possible threat, the Microsoft Entra SSO feature is disabled by default for on-premises data gateways. As a Fabric admin, you must enable the **Microsoft Entra single sign-on (SSO) for Gateway** setting in **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings** before data sources can be enabled for Microsoft Entra SSO on an on-premises data gateway or VNet gateway. Before enabling the feature, make sure to restrict the ability to deploy on-premises data gateways in your organization to appropriate administrators, and apply equivalent governance to who can deploy VNet data gateways and manage the underlying VNets.
 
 To learn more, see [Microsoft Entra SSO](/power-bi/connect-data/service-gateway-azure-active-directory-sso).
 
@@ -170,7 +170,7 @@ Users in your organization can use Esri's ArcGIS GeoAnalytics for Fabric Runtime
 
 For more information, see [ArcGIS GeoAnalytics for Fabric Runtime](https://go.microsoft.com/fwlink/?linkid=2281344).
 
-## Allow non-Entra ID auth in Eventstream
+## Allow non-Microsoft Entra ID auth in Eventstream
 
 This setting lets users keep key-based authentication enabled in Eventstream custom endpoints. Turning it off restricts Eventstream custom endpoint authentication to Microsoft Entra ID only.
 

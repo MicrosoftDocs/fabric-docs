@@ -20,7 +20,7 @@ This article shows how to set up a data agent in Microsoft Fabric using a lakeho
 [!INCLUDE [data-agent-prerequisites](./includes/data-agent-prerequisites.md)]
 
 > [!IMPORTANT]
-> Ensure the standalone Copilot experience is enabled in the Power BI admin portal (Tenant settings > Copilot > Standalone Copilot experience). If it isn't enabled, you won't be able to use the data agent inside Copilot scenarios even if other Copilot tenant switches are on. For details, see [Copilot in Power BI tenant settings](../admin/service-admin-portal-copilot.md).
+> Ensure the standalone Copilot experience is enabled in **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings** > **Copilot** > **Standalone Copilot experience**. If it isn't enabled, you won't be able to use the data agent inside Copilot scenarios even if other Copilot tenant switches are on. For details, see [Copilot in Power BI tenant settings](../admin/service-admin-portal-copilot.md).
 
 ## Create a lakehouse with AdventureWorksLH
 

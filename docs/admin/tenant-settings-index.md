@@ -1,6 +1,6 @@
 ---
 title: Tenant settings index
-description: A comprehensive index of Microsoft Fabric tenant settings in the Fabric admin portal, including descriptions and links to relevant documentation.
+description: A comprehensive index of Microsoft Fabric tenant settings, including descriptions and links to relevant documentation.
 author: msmimart
 ms.author: mimart
 ms.topic: reference
@@ -15,7 +15,28 @@ ms.date: 08/28/2026
 
 This article lists all Fabric tenant settings, along with a brief description of each, and links to relevant documentation, if available. For more information about tenant settings in general, see [About tenant settings](about-tenant-settings.md).
 
-If you want to get to the tenant settings in the Fabric portal, see [How to get to the tenant settings](./about-tenant-settings.md#how-to-get-to-the-tenant-settings).
+If you want to get to the tenant settings in the Fabric portal, see [How to get to the tenant settings](./about-tenant-settings.md#how-to-get-to-the-tenant-settings). You can also access tenant settings from the Govern tab in the OneLake catalog.
+
+> [!NOTE]
+> The **Govern** tab in the OneLake catalog provides a unified experience for governing and managing your organization's Fabric estate.
+
+## Manage and govern your Fabric estate in Govern
+
+Govern is the centralized experience for managing and governing organizational content in Microsoft Fabric.
+
+In addition to governance capabilities such as domains, endorsements, metadata scanning, policies, and governance insights, Govern also provides access to administrative experiences including workspace management, capacity management, tenant settings, and other organization-wide controls.
+
+Administrators can use Govern as their primary destination for managing and governing their organization's data estate.
+
+## Access tenant settings from the Govern tab
+
+Administrative experiences are now surfaced within the Govern tab. Fabric administrators can access governance insights, tenant configuration, workspace and capacity management, policies, and other administrative controls from a single location.
+
+To open tenant settings, go to **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**. For more information, see [About tenant settings](./about-tenant-settings.md#how-to-get-to-the-tenant-settings).
+
+## Roles required
+
+Every page that names a persona (Fabric Administrator, Capacity Admin, Domain Admin, Workspace Admin, Data Steward, etc.) must acknowledge that a single individual may hold multiple of these responsibilities. Use scenario-based framing (what the person is trying to do) rather than persona-siloed sections.
 
 ## [Microsoft Fabric](./service-admin-portal-microsoft-fabric-tenant-settings.md)
 

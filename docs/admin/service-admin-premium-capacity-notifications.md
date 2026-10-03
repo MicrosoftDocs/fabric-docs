@@ -1,6 +1,6 @@
 ﻿---
 title: Configure Power BI Premium capacity notifications
-description: Learn how you can configure email notifications for your Power BI Premium capacities in the admin portal.
+description: Learn how you can configure email notifications for your Power BI Premium capacities in OneLake catalog Govern.
 author: msmimart
 ms.author: mimart
 ms.topic: how-to
@@ -21,19 +21,17 @@ To calculate when to send emails, Power BI checks the capacity every 15 minutes.
 
 To configure the capacity notification emails, follow these steps:
 
-1. In the Power BI service, go to **Settings** > **Settings** > **Admin portal**.
 
-    :::image type="content" source="media/service-admin-premium-capacity-notifications/admin-portal.png" alt-text="Screenshot showing the Power BI settings menu, with the settings option expanded and the admin portal selection highlighted.":::
 
-2. In the *Admin portal*, select **Capacity settings**.
 
-3. Select the capacity you want to configure notifications for.
 
-4. Expand the **Notifications** section.
+1. In Fabric, select **OneLake catalog** > **Govern** > **Capacities**.
+1. Next to the capacity name, select the **More options** menu > **Settings**.
+1. Expand the **Throttling notifications** section.
 
     :::image type="content" source="media/service-admin-premium-capacity-notifications/admin-portal-notifications.png" alt-text="Screenshot showing the notifications section in the admin portal.":::
 
-5. In the section **Send notifications when**, configure your required notifications as follows:
+1. In the section **Send notifications when**, configure your required notifications as follows:
 
     * **You're using ___% of your available capacity** - A notification is sent after the capacity reaches the threshold you enter.
 
@@ -43,13 +41,13 @@ To configure the capacity notification emails, follow these steps:
 
     * **You've reached your Autoscale maximum** - A notification is sent when all the autoscale v-cores are fully utilized. Throttling is applied to your capacity if it continues to be overloaded.
 
-6. In the section **Send notifications to**, select who you want the notifications to be emailed to:
+1. In the section **Send notifications to**, select who you want the notifications to be emailed to:
 
     * **Capacity admins** - Email notifications are sent to all the admins of this capacity.
 
     * **These contacts** - Enter the emails of the contacts you want to receive notifications.
 
-7. Select **Apply**.
+1. Select **Apply**.
 
 ## Considerations and limitations
 

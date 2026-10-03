@@ -2,7 +2,7 @@
 title: T-SQL Surface Area in Fabric Data Warehouse
 description: T-SQL surface area of the SQL analytics endpoint and warehouse in Microsoft Fabric.
 ms.reviewer: jovanpop, twinklecyril, prlangad
-ms.date: 08/26/2026
+ms.date: 09/16/2026
 ms.topic: concept-article
 ms.search.form: T-SQL Surface area # This article's title should not change. If so, contact engineering.
 ---
@@ -42,10 +42,14 @@ Fabric Data Warehouse supports T-SQL tables, views, stored procedures, functions
    - You can execute supported `ALTER TABLE` statements inside an explicit user-defined transaction in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
 - `MERGE` syntax is supported and is a generally available feature. For more information, see [MERGE T-SQL syntax](/sql/t-sql/statements/merge-transact-sql?view=fabric&preserve-view=true).
 - While Fabric Data Warehouse supports many [AI functions (preview)](ai-functions.md) to enable advanced text processing without leaving your warehouse, the **vector** data type isn't supported.
+- Fabric Data Warehouse and the SQL analytics endpoint support both `SELECT`-first and `FROM`-first T-SQL syntax. For more information, see [FROM - SELECT (Transact-SQL)](/sql/t-sql/queries/from-select-transact-sql?view=fabric&preserve-view=true) and [SELECT (Transact-SQL)](/sql/t-sql/queries/select-clause-transact-sql?view=fabric&preserve-view=true).
+- Fabric Data Warehouse and the SQL analytics endpoint support the `GROUP BY ALL` and `ORDER BY ALL` syntax without a column list. For more information, see [SELECT - GROUP BY clause (Transact-SQL)](/sql/t-sql/queries/select-group-by-transact-sql?view=fabric&preserve-view=true) and [ORDER BY clause (Transact-SQL)](/sql/t-sql/queries/select-order-by-clause-transact-sql?view=fabric&preserve-view=true).
+- Fabric Data Warehouse and the SQL analytics endpoint support the `SELECT - QUALIFY` syntax. For more information, see [SELECT - QUALIFY (Transact-SQL)](/sql/t-sql/queries/select-qualify-clause-transact-sql?view=fabric&preserve-view=true).
+- Fabric Data Warehouse and the SQL analytics endpoint support analytical and aggregate functions specific including [APPROX_MEDIAN](/sql/t-sql/functions/approx-median-transact-sql?view=fabric&preserve-view=true), [APPROX_QUANTILE](/sql/t-sql/functions/approx-quantile-transact-sql?view=fabric&preserve-view=true), [MEDIAN](/sql/t-sql/functions/median-transact-sql?view=fabric&preserve-view=true), and [QUANTILE](/sql/t-sql/functions/quantile-transact-sql?view=fabric&preserve-view=true).
 
 ### Limitations
 
-Currently, the following commands aren't supported. Don't try to use these commands. Even though they might appear to succeed, they could cause problems for your warehouse.
+Currently, the following commands aren't supported. Don't try to use these commands. Even if they appear to succeed, they might cause problems for your warehouse.
 
 - `BULK LOAD`, though `bcp` is supported as a preview feature.
 - `CREATE USER`

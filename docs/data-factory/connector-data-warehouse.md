@@ -13,7 +13,9 @@ ai-usage: ai-assisted
 
 This article outlines the steps to create a warehouse connection.
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
+
+## Summary
 
 The warehouse connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
@@ -29,21 +31,29 @@ You can connect dataflow Gen2 to a warehouse by using Power Query connectors. Fo
 1. [Get data in Fabric](#get-data).
 1. [Connect to a warehouse](#connect-to-a-warehouse).
 
-### Capabilities
+## Prerequisites
 
-[!INCLUDE [warehouse-ccapabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/warehouse/warehouse-capabilities-supported.md)]
+[!INCLUDE [warehouse-prerequisites](includes/power-query/connectors/includes/warehouse/warehouse-prerequisites.md)]
 
-### Prerequisites
+<a id="capabilities"></a>
 
-[!INCLUDE [warehouse-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/warehouse/warehouse-prerequisites.md)]
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
+
+[!INCLUDE [warehouse-ccapabilities-supported](includes/power-query/connectors/includes/warehouse/warehouse-capabilities-supported.md)]
+
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Connect to a Warehouse
+<a id="connect-to-a-warehouse"></a>
 
-[!INCLUDE [warehouse-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/warehouse/warehouse-connect-to-power-query-online.md)]
+### Connection instructions
+
+[!INCLUDE [warehouse-connect-to-power-query-online](includes/power-query/connectors/includes/warehouse/warehouse-connect-to-power-query-online.md)]
 
 ### Using relative references
 

@@ -1,7 +1,7 @@
 ---
 title: 'Digital Twin Builder (Preview) Tutorial Part 5: Create a Power BI Report'
 description: Build Power BI visuals with the data from digital twin builder (preview) tutorial. Part 5 of the digital twin builder (preview) tutorial.
-ms.date: 05/01/2025
+ms.date: 09/11/2026
 ms.topic: tutorial
 ---
 
@@ -23,11 +23,9 @@ In this section, access your digital twin builder (preview) data through the dom
 
     :::image type="content" source="media/tutorial/sql-endpoint.png" alt-text="Screenshot of selecting the SQL analytics endpoint.":::
 
-1. In the SQL analytics endpoint explorer, select the settings icon (shaped like a gear) from the left side of the ribbon across the top, and open the **SQL endpoint** tab.
+1. In the SQL analytics endpoint explorer, select the settings icon (shaped like a gear) from the left side of the ribbon across the top, and open the **SQL connection string** tab.
 
     Copy the **SQL connection string** and the name of the SQL analytics endpoint, *TutorialDTBdtdm*. You need these values to connect to the SQL analytics endpoint in Power BI Desktop.
-
-    :::image type="content" source="media/tutorial/sql-copy.png" alt-text="Screenshot of copying the SQL values.":::
 
 1. Open the Power BI Desktop app on your machine, and sign in with your Microsoft Entra ID. Make sure to select **Microsoft account** for the credential type.
 

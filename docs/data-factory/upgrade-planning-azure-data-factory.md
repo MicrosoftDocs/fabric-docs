@@ -1,0 +1,140 @@
+---
+title: Upgrade Planning for Azure Data Factory to Fabric Data Factory
+description: Plan your ADF-to-Fabric upgrades with steps to evaluate the correct tools and execute your upgrade.
+#customer intent: As an Azure Data Factory customer I want to choose the right upgrade path to Fabric Data Factory, so I can quickly and easily upgrade all my items.
+ms.reviewer: makromer
+ms.date: 08/21/2026
+ms.topic: concept-article
+ai-usage: ai-assisted
+---
+
+# Upgrade planning for Azure Data Factory to Fabric Data Factory
+
+This guide covers upgrade strategies, decision criteria, and step-by-step approaches for moving Azure Data Factory (ADF) pipelines to Fabric Data Factory. For implementation-level best practices for each upgrade component, see [Upgrade best practices](upgrade-best-practices.md).
+
+## Why upgrade?
+
+Upgrading from ADF and Synapse pipelines to Fabric Data Factory is more than a lift-and-shift: it's an opportunity to simplify governance, standardize patterns, and use new capabilities to improve your data integration strategy.
+
+Fabric offers many new features, including:
+
+- Integrated pipeline activities like [email](outlook-activity.md) and [Teams](teams-activity.md) for message routing
+- Built-in CI/CD ([deployment pipelines](cicd-pipelines.md)) without external Git dependencies
+- Seamless workspace integration with [OneLake](../onelake/onelake-overview.md), [Warehouse](../data-warehouse/data-warehousing.md), and [Lakehouse](../data-engineering/lakehouse-overview.md) for unified analytics
+- Streamlined [semantic data model refreshes](semantic-model-refresh-activity.md) that scale to meet both self-service and enterprise data needs
+- Built-in AI capabilities with [Copilot](copilot-fabric-data-factory.md) to help you create and manage pipelines
+
+For a detailed comparison, see [the Azure Data Factory and Fabric Data Factory comparison guide](compare-fabric-data-factory-and-azure-data-factory.md).
+
+## Critical architectural differences
+
+[!INCLUDE [upgrade-critical-differences](includes/upgrade-critical-differences.md)]
+
+## Upgrade paths
+
+Upgrade paths depend on your ADF assets and their feature parity. Options include:
+
+- [Azure Data Factory items in Fabric for continuity.](#azure-data-factory-items-in-your-fabric-workspace) - A live view of your existing Azure Data Factory instance within Fabric, enabling gradual upgrade and testing. This experience is also a good first step before using conversion tools or replatforming.
+- [Use the built-in upgrade experience for Azure Data Factory pipelines](#upgrade-azure-data-factory-pipelines-using-the-built-in-experience) - Assess pipeline readiness directly in Azure Data Factory, review compatibility results, and upgrade supported pipelines to a Fabric workspace using a guided UX.
+- [Manual upgrade for complex environments](#manual-upgrade) - Rebuild pipelines in Fabric to leverage new features and optimize performance. This approach is necessary for pipelines with low parity or custom logic, but it’s also an opportunity to modernize your architecture.
+
+## Azure Data Factory items in your Fabric workspace
+
+**Add an existing ADF to your Fabric workspace** to get immediate visibility and governance while you upgrade incrementally. This approach is ideal for discovery, ownership assignment, and side-by-side testing because teams can see pipelines, organize them under Fabric workspaces, and plan cutovers per domain. Use Azure Data Factory items to catalog what exists, prioritize the highest-value/lowest-risk pipelines first, and establish conventions (naming, folders, connection reuse) that your conversion scripts and partner tools can follow consistently.
+
+You mount in Fabric through the Azure Data Factory item type: [Bring your Azure Data Factory to Fabric](/fabric/data-factory/upgrade-pipelines-azure-data-factory-item).
+
+## Upgrade Azure Data Factory pipelines using the built-in experience
+
+Fabric provides a built-in, assessment-first upgrade experience that you can use to evaluate and upgrade Azure Data Factory pipelines directly through the Azure Data Factory and Fabric user experiences - without scripts or custom tooling.
+This experience helps you:
+
+- Assess pipeline and activity readiness directly in Azure Data Factory.
+- Understand compatibility gaps before upgrading.
+- Mount your Azure Data Factory into a Fabric workspace for side-by-side review.
+- Upgrade supported pipelines incrementally to Fabric from your mounted data factory.
+- Plan remediation or redesign for items that require updates or are coming soon.
+
+Each pipeline and activity is clearly categorized (Ready, Needs review, Coming soon, or Not compatible), helping teams plan upgrades intentionally and validate results before switching production workloads.
+This approach is well-suited for customers who want a guided, low-risk, and incremental upgrade path, while maintaining visibility into unsupported features and next steps.
+For step-by-step guidance, see [Upgrade your Azure Data Factory pipelines to Fabric](how-to-upgrade-your-azure-data-factory-pipelines-to-fabric-data-factory.md).
+
+## Manual upgrade
+
+Manual upgrade is necessary for complex pipelines with low parity, but it's also a chance to modernize your architecture and adopt Fabric’s integrated features. This path requires more upfront planning and development but can yield long-term benefits in maintainability, performance, and cost.
+
+To upgrade effectively, follow these steps:
+
+1. **Assess and inventory**: Catalog all ADF assets, including pipelines, datasets, linked services, and integration runtimes. Identify dependencies and usage patterns.
+1. **Identify duplicates and unused items**: Clean up unused or redundant items in ADF to streamline the upgrade and your data integration environment.
+1. **Identify gaps**: Use the [pipeline assessment tool](how-to-upgrade-your-azure-data-factory-pipelines-to-fabric-data-factory.md) and review [connector parity](connector-parity.md) and [activity parity](activity-parity.md) to identify gaps between your ADF pipelines and Fabric pipelines, and plan for alternatives.
+1. **Review new features**: Use our [data movement decision guide](decision-guide-data-movement.md) and [data integration decision guide](decision-guide-data-integration.md) to decide which Fabric tools will work best for your needs.
+1. **Plan**: Review the [upgrade best practices](upgrade-best-practices.md) for considerations for each of your items, and guidelines for making the most of Fabric's improved capabilities.
+1. **If you use global parameters in ADF, plan to upgrade them to Fabric variable libraries.** See [Convert ADF Global Parameters to Fabric Variable Libraries](convert-global-parameters-to-variable-libraries.md) for detailed steps.
+1. **ADF transition**: Consider [adding an Azure Data Factory item in Microsoft Fabric](#azure-data-factory-items-in-your-fabric-workspace) as a first step in upgrading, allowing for gradual transition in a single platform.
+1. **Prioritize**: Rank your pipelines based on business impact, complexity, and ease of upgrade.
+1. **Automate where you can**: Use the built-in upgrade experience to assess, upgrade, and validate pipelines incrementally before moving production workloads. For more information, see the [Upgrade tool](how-to-upgrade-your-azure-data-factory-pipelines-to-fabric-data-factory.md).
+1. **Consider tooling**: Use these tools to make recreation easier:
+   - Use [Fabric templates](templates.md) as a starting place for pipelines with common data integration scenarios.
+   - Use [parameterization](parameters.md) to create reusable pipelines
+   - Use [Copilot in Fabric Data Factory](copilot-fabric-data-factory.md) to help with pipeline creation
+   - Use [deployment pipelines](cicd-pipelines.md) for CI/CD and version control
+1. **Manual upgrade**: For scenarios not supported by other upgrade methods, rebuild them in Fabric:
+    1. **Recreate connections**: Set up [Connections](connector-overview.md) in Fabric to replace Linked Services in ADF
+    1. **Recreate activities**: Set up your [activities](activity-overview.md) in your pipelines, replacing [unsupported activities](compare-fabric-data-factory-and-azure-data-factory.md#activity-comparison) with Fabric alternatives or using the Invoke pipeline activity
+    1. **Schedule and set triggers**: [Rebuild schedules and event triggers in Fabric](pipeline-runs.md) to match your ADF schedules
+1. **Test thoroughly**: Validate upgraded pipelines against expected outputs, performance benchmarks, and compliance requirements.
+
+## Sample upgrade scenarios
+
+Moving from ADF to Fabric can involve different strategies depending on your use case. This section outlines common upgrade paths and considerations to help you plan effectively.
+
+- [Scenario 1: ADF pipelines and data flows](#scenario-1-adf-pipelines-and-data-flows)
+- [Scenario 2: ADF with CDC, SSIS, and Airflow](#scenario-2-adf-with-cdc-ssis-and-airflow)
+- [Scenario 3: Pipeline upgrade using built-in experience](#scenario-3-pipeline-upgrade-using-the-built-in-experience)
+- [Scenario 4: ADF items in a Fabric workspace](#scenario-4-adf-items-in-a-fabric-workspace)
+
+### Scenario 1: ADF pipelines and data flows
+
+Modernize your ETL environment by moving pipelines and data flows to Fabric. Plan for these elements:
+
+- Recreate Linked Services as Connections
+- Recreate global parameters as variable libraries
+- Define dataset properties inline in pipeline activities
+- Replace SHIRs (self-hosted integration runtimes) with OPDGs (on-premises data gateways) and VNet IRs with virtual network data gateways.
+- Rebuild [unsupported ADF activities](compare-fabric-data-factory-and-azure-data-factory.md#activity-comparison) using Fabric alternatives or the Invoke pipeline activity. Unsupported activities include:
+  - Data Lake Analytics (U-SQL), a deprecated Azure service
+  - Validation activity, which can be rebuilt using Get Metadata, pipeline loops, and If activities
+  - Power Query, which is fully integrated into Fabric as dataflows where M code can be reused
+  - Notebook, Jar, and Python activities can be replaced with the Databricks activity in Fabric
+  - Hive, Pig, MapReduce, Spark, and Streaming activities can be replaced with the HDInsight activity in Fabric
+
+As an example, here's ADF dataset configuration page, with its file path and compression settings:
+
+:::image type="content" source="media/upgrade-planning-azure-data-factory/azure-data-factory-dataset-configuration.png" alt-text="Screenshot of the ADF dataset configuration page.":::
+
+And here's a Copy activity for Data Factory in Fabric, where compression and file path are inline in the activity:
+
+:::image type="content" source="media/upgrade-planning-azure-data-factory/fabric-data-compression-configuration.png" alt-text="Screenshot of the Fabric Copy activity compression configuration.":::
+
+### Scenario 2: ADF with CDC, SSIS, and Airflow
+
+Recreate CDC as [Copy job](create-copy-job.md) items. For Airflow, copy your DAGs into [Fabric’s Apache Airflow offering](cicd-apache-airflow-jobs.md). Execute SSIS packages using ADF pipelines and call them from Fabric.
+
+### Scenario 3: Pipeline upgrade using the built-in experience
+
+This guided, assessment-first experience helps you evaluate readiness, identify compatibility gaps, and upgrade supported pipelines incrementally to a Fabric workspace—all without scripts.
+For more information, see [Upgrade your Azure Data Factory pipelines to Fabric](how-to-upgrade-your-azure-data-factory-pipelines-to-fabric-data-factory.md).
+
+### Scenario 4: ADF items in a Fabric workspace
+
+You can add an entire ADF factory in a Fabric workspace as a native item. This lets you manage ADF factories alongside Fabric artifacts within the same interface. The ADF UI remains fully accessible, allowing you to monitor, manage, and edit your ADF factory items directly from the Fabric workspace. However, execution of pipelines, activities, and integration runtimes still occurs within your Azure resources.
+
+This feature is useful for organizations transitioning to Fabric, as it provides a unified view of both ADF and Fabric resources, simplifying management and planning for the upgrade.
+
+For more information, see [Bring your Azure Data Factory into Fabric](upgrade-pipelines-azure-data-factory-item.md).
+
+## Related content
+
+- [Upgrade best practices](upgrade-best-practices.md)
+- [Connector comparison between ADF and Fabric Data Factory](connector-parity.md)

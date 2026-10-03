@@ -57,6 +57,16 @@ items:
     items:
       - name: Eventstream Overview
         href: event-streams/overview.md
+      - name: Schema-aware Eventstreams (Preview)
+        items:
+          - name: Schema-aware Eventstreams overview
+            href: event-streams/schema-aware-eventstreams-overview.md
+          - name: Create a schema-aware Eventstream
+            href: event-streams/create-schema-aware-eventstream.md
+          - name: Preview data
+            href: event-streams/preview-data-schema-aware.md
+          - name: Classify unschematized events
+            href: event-streams/process-events-with-classifier.md
       - name: Eventstream for Azure Event Hubs and Stream Analytics users
         href: event-streams/migrate-from-azure-event-hubs-stream-analytics.md
       - name: Eventstreams capacity consumption
@@ -117,6 +127,8 @@ items:
             href: event-streams/add-source-confluent-kafka.md
           - name: Cribl
             href: event-streams/add-source-cribl.md
+          - name: Custom Stream Connector (Preview)
+            href: event-streams/add-custom-stream-connector.md
           - name: Custom endpoint
             href: event-streams/add-source-custom-app.md
           - name: Fabric capacity overview events
@@ -145,6 +157,8 @@ items:
             href: event-streams/add-source-postgresql-database-change-data-capture.md
           - name: Real-time weather
             href: event-streams/add-source-real-time-weather.md
+          - name: SAP Datasphere
+            href: event-streams/add-source-sap-datasphere.md
           - name: Sample data
             href: event-streams/add-source-sample-data.md
           - name: Solace PubSub+
@@ -211,6 +225,8 @@ items:
         href: event-streams/get-data-from-eventstream-in-multiple-fabric-items.md
       - name: Develop
         items:
+          - name: Variable library support
+            href: event-streams/variable-library-support.md
           - name: CI/CD
             href: event-streams/eventstream-cicd.md
           - name: REST API
@@ -247,6 +263,10 @@ items:
             href: event-streams/connect-using-managed-identity.md
       - name: Tutorials
         items:
+          - name: Generate building operations sample events
+            href: event-streams/generate-building-operations-sample-events.md
+          - name: Explore and classify events with different schemas
+            href: event-streams/tutorial-explore-classify-schema-aware-events.md
           - name: Stream and consume events using the Apache Kafka endpoint in Eventstream
             href: event-streams/stream-consume-events-use-kafka-endpoint.md
           - name: Stream SQL Change Events to Eventstream for Real-Time Processing
@@ -555,10 +575,18 @@ items:
         href: schema-sets/create-manage-event-schemas.md
       - name: Create and manage schemas in Real-Time hub
         href: schema-sets/create-manage-event-schemas-real-time-hub.md
+      - name: Import event schemas
+        href: schema-sets/import-event-schemas.md
+      - name: View and compare schema versions
+        href: schema-sets/manage-event-schema-versions.md
+      - name: Device telemetry schema example
+        href: schema-sets/device-telemetry-schema-example.md
       - name: Use schemas in eventstreams
         href: schema-sets/use-event-schemas.md
       - name: Schema Registry region availability
         href: schema-sets/schema-registry-region-availability.md
+      - name: Monitor event schema set operations
+        href: schema-sets/event-schema-set-operation-logs.md
       - name: Known limitations
         href: schema-sets/schema-registry-limitations.md
   - name: Eventhouse
@@ -621,16 +649,6 @@ items:
                 href: monitor-logs-query.md
           - name: Monitor activity by application
             href: monitor-eventhouse-activity-by-application.md
-          - name: Metrics
-            href: monitor-metrics.md
-          - name: Command logs
-            href: monitor-logs-command.md
-          - name: Data operation logs
-            href: monitor-logs-data-operation.md
-          - name: Ingestion results logs
-            href: monitor-logs-ingestion-results.md
-          - name: Query logs
-            href: monitor-logs-query.md
       - name: Vector database
         items:
           - name: Eventhouse as a vector database overview
@@ -1098,6 +1116,8 @@ items:
                 href: map/about-lakehouse-layers.md
               - name: Create layers using Kusto data sources
                 href: map/about-kusto-integration.md
+              - name: Create layers from external vector feature services
+                href: map/about-external-feature-services.md
               - name: Create layers using WMS and WMTS imagery sources
                 href: map/about-external-sourced-imagery.md
               - name: Ontology layers in Fabric Maps
@@ -1120,12 +1140,16 @@ items:
         items:
           - name: Create a map
             href: map/create-map.md
+          - name: Configure map settings
+            href: map/configure-map-settings.md
           - name: Layers
             items:
               - name: Create layers from lakehouse data
                 href: map/add-lakehouse-layer.md
               - name: Create layers from Kusto data
                 href: map/create-layers-using-kusto-data.md
+              - name: Create layers from external feature services
+                href: map/add-external-feature-service-layer.md
               - name: Create layers from WMS or WMTS imagery data
                 href: map/add-external-sourced-imagery-layer.md
               - name: Get the WMTS endpoint URL from the MPC Pro geocatalog
@@ -1138,7 +1162,7 @@ items:
                 href: map/filter-data.md
               - name: Migrate KQL Queryset to a Kusto function
                 href: map/migrate-kusto-query-layer.md
-          - name: Customize a map
+          - name: Configure layer settings
             href: map/customize-map.md
           - name: Create a tileset
             href: map/create-tile-sets.md
@@ -1148,6 +1172,8 @@ items:
                 href: map/share-map-direct.md
               - name: Share maps with org apps
                 href: map/share-map-org-apps.md
+              - name: Pin a map to a Real-Time Dashboard
+                href: map/pin-map-to-real-time-dashboard.md
           - name: Manage Map permissions
             href: map/manage-map-permissions.md
           - name: Create and Configure a Fabric Map with REST APIs

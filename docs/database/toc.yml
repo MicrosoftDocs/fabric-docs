@@ -1,6 +1,28 @@
 items:
 - name: Fabric Databases documentation
   href: index.yml
+- name: Database Hub (Preview)
+  items:
+  - name: What is the Database Hub?
+    href: hub/overview.md
+  - name: Database Hub FAQ
+    href: hub/faq.yml
+  - name: Monitor databases in the Database Hub
+    href: hub/monitor.md
+    items:
+    - name: Monitor a Microsoft SQL database
+      href: hub/monitor-sql.md
+    - name: Monitor a Cosmos DB account
+      href: hub/monitor-cosmos-db.md
+    - name: Monitor an Azure Database for PostgreSQL flexible server
+      href: hub/monitor-postgresql.md
+  - name: How to
+    items: 
+    - name: Enable performance monitoring for Microsoft SQL
+      href: hub/add-sql.md
+    - name: Query performance monitoring telemetry
+      href: hub/query-performance-monitoring-telemetry.md
+
 - name: SQL database in Fabric
   items:
   - name: What is SQL database in Fabric?
@@ -211,8 +233,6 @@ items:
     items: 
     - name: SQL database in Fabric Community
       href: https://community.fabric.microsoft.com/t5/SQL-database/bd-p/db_general_discussion
-    - name: What's new in SQL database in Fabric?
-      href: ../fundamentals/whats-new.md#sql-database-in-microsoft-fabric
 - name: Cosmos DB in Fabric
   href: cosmos-db/toc.yml
 - name: Resources

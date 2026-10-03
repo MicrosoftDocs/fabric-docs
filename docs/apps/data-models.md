@@ -198,7 +198,7 @@ Update this type whenever you create a new entity.
 
 ## Apply schema changes
 
-After defining or modifying entities, apply the changes to the database:
+After defining or modifying entities, apply the changes to the database. For the complete deployment and verification workflow, see [Apply and verify schema changes](apply-schema-changes.md).
 
 1. Deploy the updated schema to Fabric:
 
@@ -233,5 +233,6 @@ If relationships don't appear in the API, verify that:
 ## Related content
 
 - [Query data with GraphQL](read-write-data-graphql.md)
+- [Apply and verify schema changes](apply-schema-changes.md)
 - [Define data permissions](data-permissions.md)
 - [Deploy to Fabric](deploy-app.md)

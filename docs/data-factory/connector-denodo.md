@@ -14,7 +14,9 @@ ai-usage: ai-assisted
 This article outlines the steps to create a Denodo connection.
 
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
+
+## Summary
 
 The Denodo connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
@@ -32,21 +34,29 @@ You can connect dataflow Gen2 in Fabric to Denodo using Power Query connectors. 
 1. [Get data in Fabric](#get-data).
 1. [Connect to Denodo data](#connect-to-denodo-data).
 
-### Capabilities
+## Prerequisites
 
-[!INCLUDE [denodo-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/denodo/denodo-capabilities-supported.md)]
+[!INCLUDE [denodo-prerequisites](includes/power-query/connectors/includes/denodo/prerequisites.md)]
 
-### Prerequisites
+<a id="capabilities"></a>
 
-[!INCLUDE [denodo-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/denodo/denodo-prerequisites.md)]
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
+
+[!INCLUDE [denodo-capabilities-supported](includes/power-query/connectors/includes/denodo/capabilities-supported.md)]
+
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Connect to Denodo data
+<a id="connect-to-denodo-data"></a>
 
-[!INCLUDE [denodo-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/denodo/denodo-connect-to-power-query-online.md)]
+### Connection instructions
+
+[!INCLUDE [denodo-connect-to-power-query-online](includes/power-query/connectors/includes/denodo/connect-to-power-query-online.md)]
 
 ## Set up your connection in a pipeline
 

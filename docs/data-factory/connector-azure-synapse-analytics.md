@@ -13,7 +13,9 @@ ai-usage: ai-assisted
 
 This article outlines the steps to create an Azure Synapse Analytics connection in Microsoft Fabric.
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
+
+## Summary
 
 The Azure Synapse Analytics connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
@@ -31,28 +33,38 @@ You can connect dataflow Gen2 to Azure Synapse Analytics in Fabric by using Powe
 1. [Get data in Fabric](#get-data).
 1. [Connect to Azure Synapse Analytics](#connect-to-azure-synapse-analytics).
 
-### Capabilities
+## Prerequisites
 
-[!INCLUDE [synapse-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/synapse/synapse-capabilities-supported.md)]
+[!INCLUDE [synapse-prerequisites](includes/power-query/connectors/includes/synapse/synapse-prerequisites.md)]
 
-### Prerequisites
+<a id="capabilities"></a>
 
-[!INCLUDE [synapse-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/synapse/synapse-prerequisites.md)]
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
+
+[!INCLUDE [synapse-capabilities-supported](includes/power-query/connectors/includes/synapse/synapse-capabilities-supported.md)]
+
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Connect to Azure Synapse Analytics
+<a id="connect-to-azure-synapse-analytics"></a>
 
-[!INCLUDE [azure-sql-data-warehouse-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-sql-data-warehouse/azure-sql-data-warehouse-connect-to-power-query-online.md)]
+### Connection instructions
+
+[!INCLUDE [azure-sql-data-warehouse-connect-to-power-query-online](includes/power-query/connectors/includes/azure-sql-data-warehouse/azure-sql-data-warehouse-connect-to-power-query-online.md)]
 
 
-## More information
+<a id="additional-information"></a>
+
+<a id="more-information"></a>
+
+## Related content
 
 - [Connect using advanced options](/power-query/connectors/azure-sql-data-warehouse#connect-using-advanced-options)
 - [Troubleshooting](/power-query/connectors/azure-sql-data-warehouse#troubleshooting)
-
-## Related content
 
 - [For more information about this connector, see the Azure Synapse Analytics connector documentation.](/power-query/connectors/azure-sql-data-warehouse)

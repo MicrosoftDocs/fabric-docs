@@ -14,7 +14,9 @@ ai-usage: ai-assisted
 This article outlines the steps to create an Eduframe connection.
 
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
+
+## Summary
 
 The Eduframe connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
@@ -31,29 +33,37 @@ You can connect dataflow Gen2 in Fabric to Eduframe using Power Query connectors
 1. [Connect to Eduframe data](#connect-to-eduframe-data).
 1. Check [limitations and considerations](#limitations-and-considerations) for any current restrictions.
 
-### Capabilities
+## Prerequisites
 
-[!INCLUDE [eduframe-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/eduframe/eduframe-capabilities-supported.md)]
+[!INCLUDE [eduframe-prerequisites](includes/power-query/connectors/includes/eduframe/prerequisites.md)]
 
-### Prerequisites
+<a id="capabilities"></a>
 
-[!INCLUDE [eduframe-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/eduframe/eduframe-prerequisites.md)]
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
+
+[!INCLUDE [eduframe-capabilities-supported](includes/power-query/connectors/includes/eduframe/capabilities-supported.md)]
+
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Connect to Eduframe data
+<a id="connect-to-eduframe-data"></a>
 
-[!INCLUDE [eduframe-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/eduframe/eduframe-connect-to-power-query-online.md)]
+### Connection instructions
 
-### Limitations and considerations
-
-[!INCLUDE [eduframe-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/eduframe/eduframe-limitations-and-considerations-include.md)]
+[!INCLUDE [eduframe-connect-to-power-query-online](includes/power-query/connectors/includes/eduframe/connect-to-power-query-online.md)]
 
 ## Set up your connection in a pipeline
 
 Data Factory doesn't currently support Eduframe in pipelines.
+
+## Limitations and considerations
+
+[!INCLUDE [eduframe-limitations-and-considerations](includes/power-query/connectors/includes/eduframe/limitations.md)]
 
 ## Related content
 

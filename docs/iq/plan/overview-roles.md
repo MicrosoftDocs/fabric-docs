@@ -48,6 +48,19 @@ This recommendation helps ensure that:
 * Stakeholders and Viewers can't enter report edit mode.
 * Planning templates and report structures stay safe from unintended modifications.
 
+### How workspace roles and tenant settings work together
+
+Fabric workspace roles and Plan tenant settings control different aspects of access:
+
+- **Workspace roles** determine whether you can access and manage plan items in the workspace. For example, a user with the Viewer workspace role has read-only access to workspace items and can't edit a plan item.
+- **Plan tenant settings** determine which users can upgrade to Planner or Stakeholder sessions. These settings don't grant workspace permissions.
+
+For example, if a user has the Viewer workspace role and belongs to a security group that is allowed to upgrade to a Planner session, the user can upgrade to a Planner session when the required action is performed. However, the Planner session doesn't change the user's workspace role. The user can't edit a plan item unless their workspace permissions allow them to do so.
+
+Similarly, allowing Stakeholder session upgrades doesn't grant a user access to a plan item that they can't access through their workspace permissions.
+
+To perform an action, both the user's workspace permissions and the applicable planning role must allow the action.
+
 ## Dynamic role assignment
 
 Planning assigns planning roles dynamically based on user activity. You typically begin in a Viewer session. As you perform actions that require extra privileges, planning automatically upgrades you to the appropriate role.
@@ -58,7 +71,7 @@ Examples:
 | ------------------------------------------------------------------------| ------------------------|
 | Open and view a planning sheet                                          | Viewer                  |
 | Enter data, write back values, participate in approvals, or collaborate | Stakeholder             |
-| Edit plan items or perform authoring operations                     | Planner                 |
+| Edit plan items or perform authoring operations                         | Planner                 |
 
 With this dynamic model, administrators don't need to manually assign roles. However, they can control which users can upgrade to **Planner** and **Stakeholder** sessions. To learn more, see [Control session upgrades](#control-session-upgrades).
 
@@ -149,7 +162,6 @@ When enabled, the warning appears before users create or upgrade a session that 
 
 ### Relationship between Planner and Stakeholder access
 
-
 * Planner access includes Stakeholder access. Users with Planner access can also upgrade to a Stakeholder session.
 * If the administrator enables Planner access for the entire organization, it also allows all users to upgrade to a Stakeholder session.
 * Administrators can grant Stakeholder access independently to specific users or security groups.
@@ -164,7 +176,7 @@ When enabled, the warning appears before users create or upgrade a session that 
 
 **Session expiry:** Each session automatically expires after 30 days. After the 30-day session expires, a new session begins only when you perform a new action on a plan item. The first successful action determines the persona for the new session:
    * If you only open and view a plan item, the new session starts as a Viewer session.
-   * If you perform a Planner-level action (for example, create a new planning sheet or write back data), the new session starts as a Planner session. Each new session inherits its role from your first successful activity.
+   * If you perform a Planner-level action (for example, create or edit a planning sheet), the new session starts as a Planner session. Each new session inherits its role from your first successful activity.
 
 ## Capabilities by role
 

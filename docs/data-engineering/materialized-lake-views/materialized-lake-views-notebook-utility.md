@@ -3,7 +3,7 @@ title: Materialized lake views notebook utilities (Preview)
 description: Learn how to use notebook utilities for materialized lake views in Fabric.
 ms.topic: how-to
 ms.reviewer: bsankaran, sairamyeturi, nijelsf, hgowrisankar
-ms.date: 08/27/2026
+ms.date: 09/29/2026
 #customer intent: As a data engineer, I want to use notebook utilities for Materialized Lake Views in Fabric so that I can interact with and manage Materialized Lake Views from a notebook.
 ---
 
@@ -15,7 +15,7 @@ This article describes how to use notebook utilities for materialized lake views
 > To create your first materialized lake view, see [Get started with materialized lake views](./get-started-with-materialized-lake-views.md).
 
 > [!NOTE]
-> Materialized lake view notebook utilities are supported with **Spark 4.0**.
+> Materialized lake view notebook utilities are supported in Spark 4.1 for both Python and Scala.
 
 ## Prerequisites
 
@@ -87,7 +87,7 @@ from notebookutils import lakehouse
 
 op = lakehouse.refreshMlv(
     "sales_summary",
-    refreshMode="optimal"
+    "optimal"
 )
 ```
 

@@ -39,6 +39,8 @@ items:
     href: business-events/tutorial-business-events-user-data-function-activation-email.md
   - name: Publish business events using eventstreams and react using Activator
     href: business-events/tutorial-business-events-event-stream-user-data-function-activator.md
+  - name: Publish and validate a sample business event
+    href: business-events/tutorial-publish-sample-business-event.md
   - name: Learn to monitor streaming data
     href: tutorial-monitor-streaming-data.md   
   - name: Orchestrate Fabric jobs with Job events
@@ -105,6 +107,10 @@ items:
       href: business-events/business-events-concepts.md
     - name: Create and manage business events
       href: business-events/create-business-events.md
+    - name: Preview business event data
+      href: business-events/preview-business-event-data.md
+    - name: Publish a sample business event
+      href: business-events/publish-sample-business-event.md
     - name: Manage data access for business events
       href: business-events/manage-business-events-data-access.md
     - name: Business Events limits
@@ -219,11 +225,15 @@ items:
       href: business-events/business-events-eventhouse.md
     - name: Consume business events from Activator
       href: business-events/consume-business-events-from-activator.md
+    - name: Add business events to an eventstream
+      href: add-source-business-events.md
+    - name: Create eventstreams for business events in Real-Time hub
+      href: create-streams-business-events.md
   - name: Subscribe permission for Azure and Fabric events
     href: fabric-events-subscribe-permission.md
   - name: Tenant private links for Azure and Fabric events
     href: private-links-real-time-events.md
-  - name: Workspace private links for Azure and Fabric events
+  - name: Workspace private links for Azure, Fabric, and Business events
     href: workspace-private-links-real-time-events.md
   - name: Outbound access protection for Azure, Fabric, and Business events
     href: ../security/workspace-outbound-access-protection-real-time-events.md
@@ -243,8 +253,18 @@ items:
     href: ../real-time-intelligence/schema-sets/create-manage-event-schemas.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
   - name: Create and manage schemas in Real-Time hub
     href: ../real-time-intelligence/schema-sets/create-manage-event-schemas-real-time-hub.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
+  - name: Import event schemas
+    href: ../real-time-intelligence/schema-sets/import-event-schemas.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
+  - name: View and compare schema versions
+    href: ../real-time-intelligence/schema-sets/manage-event-schema-versions.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
+  - name: Device telemetry schema example
+    href: ../real-time-intelligence/schema-sets/device-telemetry-schema-example.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
   - name: Use schemas in eventstreams
     href: ../real-time-intelligence/schema-sets/use-event-schemas.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
+  - name: Monitor event schema set operations
+    href: ../real-time-intelligence/schema-sets/event-schema-set-operation-logs.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
+  - name: Schema Registry region availability
+    href: ../real-time-intelligence/schema-sets/schema-registry-region-availability.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
   - name: Known limitations
     href: ../real-time-intelligence/schema-sets/schema-registry-limitations.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json                  
 - name: User flows

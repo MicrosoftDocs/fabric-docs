@@ -81,20 +81,22 @@ items:
     items:
       - name: Graph Query Language (GQL)
         items:
-          - name: GQL manual
+          - name: GQL query guide
             items:
             - name: GQL language guide
               href: gql-language-guide.md
-            - name: 'GQL schema example: social network'
-              href: gql-schema-example.md
             - name: GQL graph patterns
               href: gql-graph-patterns.md
             - name: GQL expressions, predicates, and functions
               href: gql-expressions.md
-            - name: GQL graph types
-              href: gql-graph-types.md
             - name: GQL values and value types
               href: gql-values-and-value-types.md
+          - name: GQL graph type reference
+            items:
+            - name: GQL graph types
+              href: gql-graph-types.md
+            - name: 'GQL schema example: social network'
+              href: gql-schema-example.md
           - name: GQL query API    
             href: gql-query-api.md
           - name: GQL reference material

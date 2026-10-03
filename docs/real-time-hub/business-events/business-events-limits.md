@@ -6,7 +6,7 @@ ms.date: 06/25/2026
 ms.topic: reference
 ---
 
-# Business Events limits (Preview)
+# Business Events limits
 
 Use this page to understand the key Business Events limits that can affect how you design, test, and operate event-driven solutions in Fabric.
 

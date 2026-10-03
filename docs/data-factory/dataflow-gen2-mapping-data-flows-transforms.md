@@ -2,7 +2,7 @@
 title: Mapping Data Flow Transforms in Dataflow Gen2 (Preview)
 description: Learn about mapping data flow transforms in Dataflow Gen2, which enable you to author, execute, and monitor Spark-based data transformations in Data Factory in Microsoft Fabric.
 ms.topic: concept-article
-ms.date: 09/11/2026
+ms.date: 09/30/2026
 ms.reviewer: krirukm
 ms.search.form: DataflowGen2
 ms.custom: dataflows
@@ -72,6 +72,9 @@ You can also create new MDF transforms directly in dataflow gen2. This experienc
 - Execute transformations using Fabric data pipelines.
 - Monitor execution through integrated monitoring experiences.
 
+This video demonstrates how to build, preview, run, and monitor Mapping Data Flow transforms in Microsoft Fabric Dataflow Gen2.
+> [!VIDEO https://learn-video.azurefd.net/vod/player?id=90995c93-f086-4a95-b160-09351eb48717]
+
 ## Prerequisites
 
 Before you use MDF transforms in dataflow gen2, ensure the following prerequisites are met:
@@ -103,21 +106,26 @@ The following connectors are currently supported:
 
 | Category | Data store | MDF transforms in dataflow gen2 (source/sink) | Supported Authentication Types |
 | --- | --- | --- | --- |
-| **Azure** | Azure Blob Storage | ✓/✓ | Basic, Managed Identity / Workspace Identity, Service Principal |
-| | Azure Cosmos DB for NoSQL | ✓/✓ | Basic |
-| | Azure Data Explorer | ✓/✓ | Managed Identity / Workspace Identity |
+| **Azure** | Azure Blob Storage | ✓/✓ | Basic, Organizational account, Managed Identity / Workspace Identity, Service Principal |
+| | Azure Cosmos DB for NoSQL | ✓/✓ | Basic, Organizational account |
+| | Azure Data Explorer | ✓/✓ | Organizational account, Managed Identity / Workspace Identity |
 | | Azure Data Lake Storage Gen1 | ✓/✓ | Basic, Managed Identity / Workspace Identity, Service Principal |
-| | Azure Data Lake Storage Gen2 | ✓/✓ | Basic, Managed Identity / Workspace Identity, Service Principal |
+| | Azure Data Lake Storage Gen2 | ✓/✓ | Basic, Organizational account, Managed Identity / Workspace Identity, Service Principal |
 | | Azure Database for MySQL | ✓/✓ | Basic |
 | | Azure Database for PostgreSQL | ✓/✓ | Basic |
 | | Azure Databricks Delta Lake | ✓/✓ Use [delta format](/azure/data-factory/format-delta) | Basic |
-| | Azure SQL Database | ✓/✓ | Basic, Managed Identity / Workspace Identity, Service Principal |
-| | Azure SQL Managed Instance | ✓/✓ | Basic, Managed Identity / Workspace Identity, Service Principal |
-| | Azure Synapse Analytics | ✓/✓ | Basic |
+| | Azure SQL Database | ✓/✓ | Basic, Organizational account, Managed Identity / Workspace Identity, Service Principal |
+| | Azure SQL Managed Instance | ✓/✓ | Basic, Organizational account, Managed Identity / Workspace Identity, Service Principal |
+| | Azure Synapse Analytics | ✓/✓ | Basic, Organizational account |
 | **Database** | Snowflake | ✓/✓ | Basic |
 | **File** | Amazon S3 | ✓/✓ | Basic |
 | | SFTP | ✓/✓ | Basic |
-| | Generic REST | ✓/✓ | Basic, Service Principal |
+| | Generic REST | ✓/✓ | Basic, Organizational account, Service Principal |
+| **Microsoft Fabric** | Fabric Lakehouse| ✓/✓ | Organizational account |
+| | Fabric Warehouse | ✓/✓ | Organizational account |
+
+> [!NOTE]  
+> Organizational account authentication uses the signed-in user's Microsoft Entra organizational identity. Availability can depend on the connector, gateway configuration, and permissions granted to that identity.
 
 During authoring:
 

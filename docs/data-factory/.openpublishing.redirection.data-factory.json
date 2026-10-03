@@ -1,6 +1,51 @@
 {
     "redirections": [
       {
+        "source_path_from_root": "/docs/data-factory/dataflow-gen2-my-queries.md",
+        "redirect_url": "/fabric/data-factory/dataflow-gen2-my-queries-shared-queries",
+        "redirect_document_id": true
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/dataflow-gen2-my-queries-and-shared-queries.md",
+        "redirect_url": "/fabric/data-factory/dataflow-gen2-my-queries-shared-queries",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/migrate-planning-azure-data-factory.md",
+        "redirect_url": "/fabric/data-factory/upgrade-planning-azure-data-factory",
+        "redirect_document_id": true
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/migration-best-practices.md",
+        "redirect_url": "/fabric/data-factory/upgrade-best-practices",
+        "redirect_document_id": true
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/migrate-pipelines-azure-data-factory-item.md",
+        "redirect_url": "/fabric/data-factory/upgrade-pipelines-azure-data-factory-item",
+        "redirect_document_id": true
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/migrate-pipelines-powershell-upgrade-module-for-azure-data-factory-to-fabric.md",
+        "redirect_url": "/fabric/data-factory/upgrade-pipelines-powershell-module-for-azure-data-factory-to-fabric",
+        "redirect_document_id": true
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/migrate-pipelines-powershell-upgrade-module-tutorial.md",
+        "redirect_url": "/fabric/data-factory/upgrade-pipelines-powershell-module-tutorial",
+        "redirect_document_id": true
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/migrate-pipelines-how-to-add-connections-to-resolutions-file.md",
+        "redirect_url": "/fabric/data-factory/upgrade-pipelines-how-to-add-connections-to-resolutions-file",
+        "redirect_document_id": true
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/migrate-pipelines-how-to-find-your-fabric-workspace-id.md",
+        "redirect_url": "/fabric/data-factory/upgrade-pipelines-how-to-find-your-fabric-workspace-id",
+        "redirect_document_id": true
+      },
+      {
         "source_path_from_root": "/docs/data-factory/decision-guide-data-transformation.md",
         "redirect_url": "/fabric/data-factory/dataflow-gen2-cost-performance-benchmarks",
         "redirect_document_id": true
@@ -90,7 +135,7 @@
       },
       {
         "source_path_from_root": "/docs/data-factory/migrate-from-azure-data-factory.md",
-        "redirect_url": "/fabric/data-factory/migrate-planning-azure-data-factory",
+        "redirect_url": "/fabric/data-factory/upgrade-planning-azure-data-factory",
         "redirect_document_id": false
       },
       {
@@ -405,7 +450,7 @@
       },
       {
         "source_path_from_root": "/docs/data-factory/upgrade-paths.md",
-        "redirect_url": "/fabric/data-factory/migrate-planning-azure-data-factory",
+        "redirect_url": "/fabric/data-factory/upgrade-planning-azure-data-factory",
         "redirect_document_id": false
       },
       {

@@ -3,7 +3,7 @@ title: Eventstream CI/CD - Git Integration and Deployment Pipeline
 description: Learn how to use git integration and deployment pipeline for Eventstream.
 ms.reviewer: zhenxilin
 ms.topic: how-to
-ms.date: 4/08/2025
+ms.date: 09/16/2026
 ms.search.form: cicd
 ---
 
@@ -20,7 +20,7 @@ Fabric platform offers Git integration and Deployment pipelines for different sc
 To access the CI/CD features for Eventstream, you need to meet the following requirements:
 
 * A Fabric capacity to use all supported Fabric items. If you don't have one yet, sign up for a free trial.
-* Git integration must be enabled from the Admin portal: [Users can synchronize workspace items with their Git repositories](../../admin/git-integration-admin-settings.md).
+* Git integration must be enabled in **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**: [Users can synchronize workspace items with their Git repositories](../../admin/git-integration-admin-settings.md).
 * Access to an existing repository from **Azure DevOps** or **GitHub**.
 * You're an admin of a Fabric workspace.
 
@@ -91,7 +91,7 @@ You can also use the [Import/Export Item Definitions Batch APIs (preview)](/rest
 
 | Category | Fully Supported | Partially Supported | Not Supported |
 | :--- | :--- | :--- | :--- |
-| **Sources** | Standard GA sources (e.g., Azure Event Hubs, Confluent, Sample Data) |  Azure SQL DB (CDC)<br>Azure SQL Managed Instance (CDC)<br>MySQL DB (CDC)<br>PostgreSQL Database CDC<br>SQL Server on VM (CDC) | Cribl (Preview)<br> Anomaly Detection events (Preview)|
+| **Sources** | Standard GA sources (for example, Azure Event Hubs, Confluent, Sample Data) |  Azure SQL DB (CDC)<br>Azure SQL Managed Instance (CDC)<br>MySQL DB (CDC)<br>PostgreSQL Database CDC<br>SQL Server on VM (CDC) | Cribl<br> Anomaly Detection events (Preview)|
 | **Destinations** | Eventhouse<br>Lakehouse<br>Derived stream<br>Custom endpoint<br>Activator | - | Business events (Preview)<br>Spark Notebook (Preview) |
 | **Operators** |  Filter<br> Manage fields<br>Aggregate<br>Join<br>Group by<br>Union<br>Expand | SQL Code (Custom code) | - |
 | **Features** | General capabilities (e.g., multiple-schema inferencing) | - | Pause/Resume State |

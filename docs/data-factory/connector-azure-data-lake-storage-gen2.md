@@ -15,7 +15,9 @@ ai-usage: ai-assisted
 
 This article outlines the steps to create an Azure Data Lake Storage Gen2 connection for pipelines and dataflow Gen2 in Fabric.
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
+
+## Summary
 
 The Azure Data Lake Storage Gen2 connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
@@ -35,29 +37,29 @@ You can connect dataflow Gen2 to Azure Data Lake Storage Gen2 in Fabric using Po
 1. Go to [Get data](#get-data).
 1. [Connect to Azure Data Lake Storage Gen2](#connect-to-azure-data-lake-storage-gen2).
 
-### Capabilities
+## Prerequisites
 
-[!INCLUDE [data-lake-storage-ccapabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/data-lake-storage/data-lake-storage-capabilities-supported.md)]
+[!INCLUDE [data-lake-storage-prerequisites](includes/power-query/connectors/includes/data-lake-storage/data-lake-storage-prerequisites.md)]
 
-### Prerequisites
+<a id="capabilities"></a>
 
-[!INCLUDE [data-lake-storage-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/data-lake-storage/data-lake-storage-prerequisites.md)]
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
+
+[!INCLUDE [data-lake-storage-ccapabilities-supported](includes/power-query/connectors/includes/data-lake-storage/data-lake-storage-capabilities-supported.md)]
+
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Connect to Azure Data Lake Storage Gen2
+<a id="connect-to-azure-data-lake-storage-gen2"></a>
 
-[!INCLUDE [data-lake-storage-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/data-lake-storage/data-lake-storage-connect-to-power-query-online.md)]
+### Connection instructions
 
-### Limitations and considerations
-
-* Connections for trusted workspace access only work in OneLake shortcuts and pipelines.
-* Connections for trusted workspace access can't be created from the **Manage Gateways and connections** experience.
-* Existing connections that work for trusted workspace access can't be modified in the **Manage Gateways and connections** experience.
-* Connections to firewall-enabled Storage accounts have the status *Offline* in Manage connections and gateways.
-* Checking the status of a connection with workspace identity as the authentication method isn't supported.
+[!INCLUDE [data-lake-storage-connect-to-power-query-online](includes/power-query/connectors/includes/data-lake-storage/data-lake-storage-connect-to-power-query-online.md)]
 
 ## Set up connections for trusted workspace access
 
@@ -198,6 +200,14 @@ To use service principal authentication, follow these steps:
 > [!NOTE]
 > Connections with workspace identity has the status *Offline* in Manage connections and gateways. Checking the status of a connection with workspace identity isn't supported.
 
+
+## Limitations and considerations
+
+* Connections for trusted workspace access only work in OneLake shortcuts and pipelines.
+* Connections for trusted workspace access can't be created from the **Manage Gateways and connections** experience.
+* Existing connections that work for trusted workspace access can't be modified in the **Manage Gateways and connections** experience.
+* Connections to firewall-enabled Storage accounts have the status *Offline* in Manage connections and gateways.
+* Checking the status of a connection with workspace identity as the authentication method isn't supported.
 
 ## Related content
 

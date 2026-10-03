@@ -2,7 +2,8 @@
 title: Overview of Fabric deployment pipelines new user interface
 description: An introduction to the new user interface for deployment pipelines in the Fabric (ALM) tool
 ms.topic: concept-article
-ms.date: 12/15/2025
+ms.date: 09/24/2026
+ai-usage: ai-assisted
 ms.search.form: Deployment pipelines UI
 #customer intent: As a developer, I want to learn about the new user interface for deployment pipelines in the Fabric service so that I can manage my development process efficiently.
 ---
@@ -40,6 +41,13 @@ This is a more consistent and intuitive experience than before. Whereas in the o
 When you select a stage in the new UI, the content of that stage appears on the bottom pane with each item shown next to its [paired item](./intro-to-deployment-pipelines.md#item-pairing) in the source stage and the sync status displayed by default. The source stage is the one shown in the drop-down menu next to the *Deploy* button. Learn more in [Compare stages content](./compare-pipeline-content.md#compare-stages).
 
 :::image type="content" source="./media/deployment-pipelines-new-ui/source-stage.png" alt-text="Screenshot showing where to find the name of the source stage in the new UI. It's next to the deploy button.":::
+
+#### Deploy with a deployment plan
+
+In the new UI, you can optionally attach a [deployment plan](../deployment-plan/deployment-plan-overview.md) in the deployment dialog. By default, the deployment uses the plan in the target workspace. You can instead select a plan from the source workspace.
+
+For the complete deployment procedure, see [Deploy with a deployment plan](deploy-content.md#deploy-with-a-deployment-plan-preview).
+For how item selection, plan relationships, and Fabric lineage work together, see [How a deployment plan works](../deployment-plan/deployment-plan-overview.md#how-a-deployment-plan-works).
 
 ### Enhanced experience
 
@@ -79,3 +87,4 @@ Your selection is saved and will be remembered the next time you visit the page.
 
 * [Overview of deployment pipelines](./intro-to-deployment-pipelines.md)
 * [Get started with deployment pipelines](get-started-with-deployment-pipelines.md)
+* [What is a deployment plan?](../deployment-plan/deployment-plan-overview.md)

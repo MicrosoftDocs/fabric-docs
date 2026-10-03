@@ -3,7 +3,7 @@ title: Pause and resume data streams
 description: Learn how to pause and resume data streams.
 ms.reviewer: xujiang1
 ms.topic: how-to
-ms.date: 07/24/2025
+ms.date: 09/18/2026
 ms.search.form: Pause and Resume
 ---
 
@@ -71,7 +71,7 @@ Here's a detailed table of the nodes that support pause and resume functionality
 | Azure SQL Database CDC                                    | Source        | YES                       | - When streaming was last stopped           |
 | PostgreSQL Database CDC                                   | Source        | YES                       | - When streaming was last stopped           |
 | Oracle Database CDC (preview)                             | Source        | YES                       | - When streaming was last stopped           |
-| MongoDB CDC (preview)                                     | Source        | YES                       | - When streaming was last stopped           |
+| MongoDB CDC                                               | Source        | YES                       | - When streaming was last stopped           |
 | HTTP (preview)                                     | Source        | YES                       | - When streaming was last stopped           |
 | MySQL Database CDC                                        | Source        | YES                       | - When streaming was last stopped           |
 | Azure Cosmos DB CDC                                       | Source        | YES                       | - When streaming was last stopped           |
@@ -89,8 +89,8 @@ Here's a detailed table of the nodes that support pause and resume functionality
 | Fabric capacity overview events (preview)                 | Source        | NO                        |                                             |
 | Azure Blob storage                                        | Source        | NO                        |                                             |
 | MQTT (preview)                                            | Source        | YES                       | - When streaming was last stopped           |
-| Cribl (preview)                                          | Source        | NO                        |                                             |
-| Solace PubSub+ (preview)                                  | Source        | YES                       | - When streaming was last stopped           |
+| Cribl                                                    | Source        | NO                        |                                             |
+| Solace PubSub+                                            | Source        | YES                       | - When streaming was last stopped           |
 | Lakehouse                                                 | Destination   | YES                       | - When streaming was last stopped<br>- Now<br>- Custom time |
 | Eventhouse (Event processing before ingestion)            | Destination   | YES                       | - When streaming was last stopped<br>- Now<br>- Custom time |
 | Custom endpoint | Destination   | NO                        |                                             |

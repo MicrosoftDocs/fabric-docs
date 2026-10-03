@@ -3,7 +3,7 @@ title: Overview of Materialized Lake Views
 description: Learn about the features, availability, and limitations of materialized lake views in Microsoft Fabric.
 ms.reviewer: bsankaran, sairamyeturi, nijelsf, hgowrisankar
 ms.topic: overview
-ms.date: 07/20/2026
+ms.date: 09/30/2026
 ai-usage: ai-assisted
 # customer intent: As a data engineer, I want to understand what materialized lake views are in Microsoft Fabric so that I can use them for building a medallion architecture.
 ---
@@ -56,11 +56,11 @@ Materialized lake views support two authoring approaches:
   > [!NOTE]
   > PySpark-authored views currently perform full refresh only.
 
-## Ingest OneLake files directly into a materialized lake view
+## Ingest files with materialized lake views
 
-A materialized lake view can ingest raw files directly from OneLake into a managed Delta table, without an intermediate `COPY`, pipeline, or notebook load step. This capability makes a file-backed materialized lake view a natural **bronze** layer for a medallion architecture. Point the file-backed materialized lake view at a physical OneLake folder or a OneLake folder shortcut, and downstream silver and gold materialized lake views can build on it with the same lineage, scheduling, and data quality that table-based materialized lake views already use.
+You can use a materialized lake view to ingest raw files directly from OneLake into a managed Delta table without an intermediate `COPY`, pipeline, or notebook load step. Point it at a physical OneLake folder, a OneLake folder shortcut, or one specific CSV or Parquet file. A file-backed materialized lake view is a natural **bronze** layer for a medallion architecture, and it can also filter, shape, validate, and aggregate data during ingestion.
 
-To create a file-backed materialized lake view, use the `USING OneLake_Files` clause instead of an `AS SELECT` query, and describe the source with `OPTIONS`:
+To create a file-ingesting materialized lake view, use `USING OneLake_Files`, describe the source with `OPTIONS`, and optionally add a FROM-less `AS SELECT`:
 
 ```sql
 CREATE MATERIALIZED LAKE VIEW bronze.raw_orders
@@ -68,22 +68,36 @@ USING OneLake_Files
 OPTIONS (
     'format' = 'csv',
     'path'   = 'abfss://<workspace>@<host>/<lakehouse>/Files/orders/',
-    'header' = 'true'
+    'header' = 'true',
+    'multiLine' = 'true',
+    'columnNameOfCorruptRecord' = '_corrupt_record'
 )
 TBLPROPERTIES (
     'schema_mode'  = 'DYNAMIC',
-    'refresh_mode' = 'APPEND_ONLY'
-);
+    'refresh_mode' = 'FULL'
+)
+AS SELECT
+    order_id,
+    region,
+    CAST(amount AS DECIMAL(18,2)) AS amount,
+    _corrupt_record,
+    __filepath__;
 ```
 
-A file-backed materialized lake view has the following characteristics:
+Key characteristics:
 
-- **Supported file formats**: The file-backed materialized lake view supports CSV and Parquet files.
-- **Folder shortcuts as a source**: A OneLake folder shortcut can be the source. Creation includes files available through nested folders. Managed refresh discovers additions at the shortcut root but not additions under nested shortcut folders.
-- **Schema handling**: `DYNAMIC` adds newly discovered columns and supplies `NULL` when a file omits an established column. `FIXED` pins the schema at creation time and rejects schema drift.
-- **File lineage**: Each row carries a `__filepath__` column that records the source file it came from.
-- **Medallion-ready**: Reference the file-backed materialized lake view from downstream silver and gold materialized lake views so that a change at the source flows through the whole pipeline.
-- **Run monitoring**: Each managed run reports the number of files processed and rows added, so you can verify that Fabric materialized the new source files.
+- **Formats**: CSV and Parquet.
+- **Source selection**: Ingest a folder recursively or target one CSV or Parquet file.
+- **Folder shortcuts**: A OneLake folder shortcut can be the source. Creation includes files available through nested folders; managed refresh discovers additions at the shortcut root but not additions under nested shortcut folders.
+- **CSV parsing**: Configure delimiters, quoting, whitespace, multiline fields, date and timestamp patterns, encodings, comments, and schema inference.
+- **Malformed-row inspection**: Route raw malformed CSV rows to a user-named string column with `columnNameOfCorruptRecord`.
+- **Ingestion-time transformation**: Project and filter columns, cast values, add computed columns, aggregate data, and use window or ranking functions in a FROM-less `AS SELECT`.
+- **Data quality**: Enforce row-level constraints with `ON MISMATCH DROP` or `FAIL`.
+- **Physical layout**: Partition the materialized result with `PARTITIONED BY`.
+- **Schema handling**: `DYNAMIC` adds newly discovered columns and supplies `NULL` when a file omits an established column; `FIXED` pins the schema at creation and rejects drift.
+- **File lineage**: Project the `__filepath__` source metadata column when you need per-row file traceability.
+- **Medallion-ready**: Reference the file-backed view from downstream materialized lake views so a change at the source flows through the whole pipeline.
+- **Run monitoring**: Each managed run reports the files processed and rows added, so you can verify that new source files were materialized.
 
 For the full file-ingestion syntax and options, see [Spark SQL reference for materialized lake views](create-materialized-lake-view.md). To trace files through the pipeline, see [Manage Fabric materialized lake views lineage](view-lineage.md).
 

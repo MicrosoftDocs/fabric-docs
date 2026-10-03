@@ -9,70 +9,102 @@ items:
   href: get-started-with-fabric-iq.md
 - name: Ontology
   items:
-  - name: Overview
+  - name: New experience
     items:
-    - name: What is ontology?
-      href: ontology/overview.md
-    - name: Required tenant settings
-      href: ontology/overview-tenant-settings.md
-  - name: Ontology tutorial
-    items:
-    - name: 0- Introduction and environment setup
-      href: ontology/tutorial-0-introduction.md
-    - name: 1- Create an ontology
-      href: ontology/tutorial-1-create-ontology.md
-    - name: 2- Enrich the ontology
-      href: ontology/tutorial-2-enrich-ontology.md
-    - name: 3- View the ontology
-      href: ontology/tutorial-3-preview-ontology.md
-    - name: 4- Consume ontology from agents
-      href: ontology/tutorial-4-create-data-agent.md
-    - name: 5- Conclude and clean up resources
-      href: ontology/tutorial-5-conclusion.md
-  - name: Concepts
-    items:
-    - name: Generating an ontology from semantic model
-      href: ontology/concepts-generate.md
-    - name: Agent integration options
-      href: ontology/concepts-agent-integration.md
-  - name: How-tos
-    items:
-    - name: Create entity types
-      href: ontology/how-to-create-entity-types.md
-    - name: Bind data
-      href: ontology/how-to-bind-data.md
-    - name: Add relationship types
-      href: ontology/how-to-create-relationship-types.md
-    - name: Add semantic enrichment
-      href: ontology/how-to-add-semantic-enrichment.md
-    - name: View entity type details
-      href: ontology/how-to-view-entity-type-details.md
-    - name: Use rules
-      href: ontology/how-to-use-rules.md
-    - name: Use resource links
-      href: ontology/how-to-use-resource-links.md
-    - name: Connect an operations agent
-      href: ontology/how-to-create-operations-agent.md
-    - name: Create a Foundry IQ agent
-      href: ontology/how-to-create-agent-foundry-iq.md
-    - name: Create a Copilot Studio agent
-      href: ontology/how-to-create-agent-copilot-studio.md
-    - name: Use ontology MCP server
-      href: ontology/how-to-use-ontology-mcp-server.md
-  - name: Resources
-    items:
-    - name: Troubleshooting
-      href: ontology/resources-troubleshooting.md
-    - name: Billing and capacity usage
-      href: ontology/resources-capacity-usage.md
-    - name: Glossary
-      href: ontology/resources-glossary.md
-    - name: FAQ
-      href: ontology/resources-frequently-asked-questions.yml
-    - name: Ontology REST API
-      href: /rest/api/fabric/ontology/items
-    - name: CI/CD in Fabric
-      href: ../cicd/cicd-overview.md
+    - name: Get started
+      items:
+      - name: What is ontology?
+        href: ontology/overview.md
+      - name: Required tenant settings
+        href: ontology/overview-tenant-settings.md
+      - name: Ontology tutorial
+        items:
+        - name: 0- Introduction and environment setup
+          href: ontology/tutorial-0-introduction.md
+        - name: 1- Create an ontology
+          href: ontology/tutorial-1-create-ontology.md
+        - name: 2- Enrich the ontology
+          href: ontology/tutorial-2-enrich-ontology.md
+        - name: 3- Explore the ontology
+          href: ontology/tutorial-3-preview-ontology.md
+        - name: 4- Use the ontology agent
+          href: ontology/tutorial-4-use-agent.md
+        - name: 5- Conclude and clean up resources
+          href: ontology/tutorial-5-conclusion.md
+    - name: Create ontology
+      items:
+      - name: Generate from semantic models
+        href: ontology/how-to-generate-from-semantic-models.md
+      - name: Create entity types
+        href: ontology/how-to-create-entity-types.md
+      - name: Bind data
+        href: ontology/how-to-bind-data.md
+      - name: Create relationship types
+        href: ontology/how-to-create-relationship-types.md
+    - name: Enrich ontology
+      items:
+      - name: Add metadata
+        href: ontology/how-to-add-metadata.md
+      - name: Define business rules
+        href: ontology/how-to-use-rules.md
+      - name: Define business metrics
+        href: ontology/how-to-use-metrics.md
+      - name: Model with inheritance 
+        href: ontology/how-to-use-inheritance.md
+      - name: Reuse shared properties
+        href: ontology/how-to-reuse-properties.md
+      - name: Organize with namespaces
+        href: ontology/how-to-use-namespaces.md
+      - name: Link external resources
+        href: ontology/how-to-use-resource-links.md
+    - name: Manage and govern ontology
+      items:
+      - name: View ontology details
+        href: ontology/how-to-view-ontology-details.md
+      - name: Manage ontology graph
+        href: ontology/how-to-use-ontology-graph.md
+      - name: Manage version history
+        href: ontology/how-to-use-version-history.md
+      - name: Import and export
+        href: ontology/how-to-import-export.md
+      - name: Manage permissions and share
+        href: ontology/how-to-share-permissions.md
+      - name: Responsible AI FAQ
+        href: ontology/resources-responsible-ai-faq.md
+      - name: Privacy and compliance FAQ
+        href: ontology/resources-privacy-compliance-faq.md
+    - name: Use ontology in agents
+      items:
+      - name: Understand agent integration options
+        href: ontology/concepts-agent-integration.md
+      - name: Use the ontology agent
+        href: ontology/how-to-use-ontology-agent.md
+      - name: Use ontology MCP server
+        href: ontology/how-to-use-ontology-mcp-server.md
+      - name: Connect a data agent
+        href: ontology/how-to-create-data-agent.md
+      - name: Connect an operations agent
+        href: ontology/how-to-create-operations-agent.md
+      - name: Create a Foundry IQ agent
+        href: ontology/how-to-create-agent-foundry-iq.md
+      - name: Create a Copilot Studio agent
+        href: ontology/how-to-create-agent-copilot-studio.md
+    - name: Resources
+      items:
+      - name: Troubleshooting
+        href: ontology/resources-troubleshooting.md
+      - name: Billing and capacity usage
+        href: ontology/resources-capacity-usage.md
+      - name: Glossary
+        href: ontology/resources-glossary.md
+      - name: FAQ
+        href: ontology/resources-frequently-asked-questions.yml
+      - name: Ontology REST API
+        href: /rest/api/fabric/ontology/items
+      - name: CI/CD in Fabric
+        href: ../cicd/cicd-overview.md
+  - name: Old experience
+    href: ontology/old-experience/toc.yml
 - name: Planning
   items:
   - name: Overview
@@ -117,8 +149,6 @@ items:
     items:
     - name: Prerequisites
       href: plan/overview-prerequisites.md
-    - name: Create a semantic model connection
-      href: plan/planning-how-to-create-semantic-model-connection.md
     - name: Create a database connection for collaboration
       href: plan/planning-how-to-create-database-connection.md
     - name: Create a planning sheet
@@ -129,6 +159,8 @@ items:
       href: plan/intelligence-how-to-get-started.md
     - name: Get started with reporting
       href: plan/intelligence-how-to-get-started-reporting.md
+    - name: Share a plan item with users outside the workspace
+      href: plan/sharing-plan-artifact.md
   - name: Planning sheets
     items:
     - name: Concepts
@@ -261,12 +293,22 @@ items:
                 href: plan/planning-writeback/planning-how-to-configure-destination-settings.md
               - name: Writeback - Configure advanced settings
                 href: plan/planning-writeback/planning-how-to-configure-advanced-settings.md
+              - name: Writeback - Configure semantic model destinations
+                href: plan/planning-writeback/planning-how-to-write-back-semantic-model.md
               - name: Writeback - View writeback logs
                 href: plan/planning-writeback/planning-how-to-view-logs.md
+              - name: Writeback - Create event triggers
+                href: plan/planning-writeback/planning-how-to-configure-event-triggers.md
               - name: Writeback - Enable writeback in reading mode
                 href: plan/planning-writeback/planning-how-to-enable-writeback-reading-mode.md
               - name: Writeback FAQ
-                href: plan/planning-writeback/writeback-faq.md     
+                href: plan/planning-writeback/writeback-faq.md
+        - name: Security and governance
+          items:    
+              - name: Configure security settings
+                href: plan/planning-how-to-manage-security.md
+              - name: Configure role-based home layouts
+                href: plan/planning-how-to-create-manage-home-layouts.md 
         - name: Format and display
           items:
               - name: Change layouts
@@ -481,6 +523,8 @@ items:
           items:
             - name: Set up access control
               href: plan/powertable-how-to-set-up-access-control.md
+            - name: Configure data security settings
+              href: plan/powertable-how-to-configure-security-settings.md
             - name: Approval workflow - Configure approval workflow
               href: plan/powertable-how-to-configure-approval-workflow.md
             - name: Approval workflow - Review changes
@@ -579,12 +623,16 @@ items:
       href: plan/overview-roles.md
     - name: Billing and capacity usage
       href: plan/resources/billing-fabric-plan.md
+    - name: Capacity throttling
+      href: plan/capacity-throttling.md
     - name: Add bookmarks
       href: plan/planning-how-to-add-bookmark.md
     - name: General - Fiscal year setup
       href: plan/planning-concept-fiscal-year-setup.md
     - name: General - Row-level security (RLS)
       href: plan/planning-concept-row-level-security.md
+    - name: General - Create org apps
+      href: plan/resources/how-to-create-org-apps.md
     - name: FAQ
       items:
       - name: Plan general FAQ
@@ -601,11 +649,15 @@ items:
       items:
       - name: Time intelligence
         href: plan/resources/best-practices/time-intelligence.md
+      - name: Configure time interval mapping manually
+        href: plan/resources/how-to-manually-map-time-intervals.md
       - name: Semantic modeling
         href: plan/resources/best-practices/semantic-modeling.md
+      - name: ALM – Variable Library
+        href: plan/alm-variable-library.md
     - name: Troubleshoot
       items:
-          - name: Troubleshoot semantic model connection
+          - name: Troubleshoot semantic model issues
             href: plan/planning-troubleshoot-semantic-model.md
           - name: Error codes and resolutions
             href: plan/resources/error-codes-and-resolutions.md
@@ -627,3 +679,5 @@ items:
     href: connectors/microsoft-365-copilot-overview.md
   - name: Cowork
     href: connectors/cowork-overview.md
+  - name: Microsoft Copilot in PowerBI and Fabric
+    href: connectors/copilot-power-bi-fabric.md

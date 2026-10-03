@@ -13,7 +13,7 @@ metadata:
 
 landingContent:
   # Card
-  - title: About Fabric IQ (preview)
+  - title: Fabric IQ (preview) and its items
     linkLists:
       - linkListType: overview
         links:
@@ -21,10 +21,24 @@ landingContent:
             url: overview.md
           - text: What is ontology (preview)?
             url: ontology/overview.md
+          - text: What is planning in Fabric?
+            url: plan/overview.md
+          - text: What is graph in Microsoft Fabric?
+            url: ../graph/overview.md
+          - text: What is the Fabric data agent?
+            url: ../data-science/concept-data-agent.md
+          - text: Getting started with operations agents
+            url: ../real-time-intelligence/operations-agent.md
+          - text: Power BI semantic models
+            url: ../data-warehouse/semantic-models.md
 
   # Card
   - title: Get started with ontology (preview)
     linkLists:
+      - linkListType: get-started
+        links:
+          - text: What is ontology (preview)?
+            url: ontology/overview.md
       - linkListType: tutorial
         links:
           - text: 0- Introduction and environment setup
@@ -33,16 +47,16 @@ landingContent:
             url: ontology/tutorial-1-create-ontology.md
           - text: 2- Enrich the ontology
             url: ontology/tutorial-2-enrich-ontology.md
-          - text: 3- Preview the ontology
+          - text: 3- Explore the ontology
             url: ontology/tutorial-3-preview-ontology.md
-          - text: 4- Consume ontology from agents
-            url: ontology/tutorial-4-create-data-agent.md
+          - text: 4- Use the ontology agent
+            url: ontology/tutorial-4-use-agent.md
           - text: 5- Conclude and clean up resources
             url: ontology/tutorial-5-conclusion.md
 
 
   # Card
-  - title: Read about ontology (preview) features
+  - title: Learn about ontology (preview) features
     linkLists:
       - linkListType: how-to-guide
         links:
@@ -52,8 +66,10 @@ landingContent:
             url: ontology/how-to-bind-data.md
           - text: Add relationship types
             url: ontology/how-to-create-relationship-types.md
-          - text: View entity type details
-            url: ontology/how-to-view-entity-type-details.md
+          - text: View ontology details
+            url: ontology/how-to-view-ontology-details.md
+          - text: Use ontology in agents
+            url: ontology/concepts-agent-integration.md
 
   # Card
   - title: Integrations
@@ -62,32 +78,16 @@ landingContent:
         links:
           - text: Fabric IQ in Microsoft 365 Copilot Cowork (Frontier)
             url: connectors/cowork-overview.md
-            
-  # Card
-  - title: About graph in Microsoft Fabric
-    linkLists:
-      - linkListType: overview
-        links:
-          - text: Graph overview
-            url: ../graph/overview.md
-          - text: What is a graph database?
-            url: ../graph/graph-database.md
-          - text: Labeled property graph
-            url: ../graph/graph-data-models.md
 
   # Card
   - title: Get started with graph in Microsoft Fabric
     linkLists:
       - linkListType: get-started
         links:
+          - text: What is graph in Microsoft Fabric?
+            url: ../graph/overview.md
           - text: Quickstart guide for graph
             url: ../graph/quickstart.md
-          - text: Try Fabric for free
-            url: /fabric/fundamentals/fabric-trial
-
-  # Card
-  - title: Graph tutorial
-    linkLists:
       - linkListType: tutorial
         links:
           - text: Introduction
@@ -108,6 +108,18 @@ landingContent:
             url: ../graph/tutorial-query-code-editor.md
           - text: 8 - Clean up tutorial resources
             url: ../graph/tutorial-clean-up.md
+
+  # Card
+  - title: Learn about graph in Microsoft Fabric
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Graph overview
+            url: ../graph/overview.md
+          - text: What is a graph database?
+            url: ../graph/graph-database.md
+          - text: Labeled property graph
+            url: ../graph/graph-data-models.md
 
   # Card
   - title: Graph reference

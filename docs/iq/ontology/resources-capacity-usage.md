@@ -1,85 +1,145 @@
 ---
-title: Billing and Capacity Usage
-description: Learn how ontology (preview) capacity usage is billed and reported.
-ms.date: 03/20/2026
+title: Billing and Capacity Usage for the New Ontology Experience
+description: Learn how the new ontology experience in Microsoft Fabric consumes capacity, how operations are billed, and how to monitor usage.
+ms.date: 09/29/2026
 ms.topic: concept-article
 ms.search.form: Ontology Billing
 ---
 
-# Capacity consumption for ontology (preview)
+# Billing and capacity usage for the new ontology experience
 
-This article contains information about how ontology (preview) capacity usage is billed and reported.
+This article applies to the new ontology experience in Microsoft Fabric.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
 ## Consumption rates
 
->[!IMPORTANT]
-> Billing for ontology (preview) is in effect, except where it's specifically noted on this page that charges are only for associated underlying Fabric items.
+A single action can use more than one operation. For example, an agent answering a question might read the ontology, query a child graph or eventhouse item, and use AI to produce a response. Each operation measures a different part of that work.
 
-The following table defines how many capacity units (CU) are consumed when an ontology (preview) item is used.
+| Meter name | Operation name | Description | Rate |
+| --- | --- | --- | --- |
+| Ontology Discovery | `Ontology Discovery` | Read requests that retrieve ontology definition from all interfaces like UI, MCP, Ontology Agent or cache definition through the ontology UI and supported ontology interfaces. | 1,000 CU-seconds per Ontology Discovery |
+| Ontology Logic and Operations | `Ontology Logic and Operations - <child operation name>` | Usage of the ontology's child Eventhouse and Graph items. | The same rate as the child item |
+| Ontology AI | `Ontology AI Reasoning` | Usage of the ontology MCP server and ontology agent. | Dynamic consumption |
 
-| Meter name | Operation name | Description | Unit of measure | Fabric consumption rate |
-| --- | --- | --- | --- | --- |
-| Ontology Modeling | Ontology Modeling | Measures the usage of ontology definitions (including entity types, relationships, properties, and data bindings). | Per ontology definition usage <br><br>*Usage is defined by intervals of at minimum 30 minutes, each time the API is triggered by Create/Update/Delete (CUD) operations to entity types, properties, relationship types, or bindings.* | 0.0039 CU per hour |
-| Ontology Logic and Operations​ | Ontology Logic and Operations​ | Measures the usage for ontology operations, including visualizations, logic, graph creation, ontology exploration, and querying and analyzing with query endpoints (including API and SQL analytics endpoints) | Per min | 0.666667 CU per min <br><br>*This meter is not currently in effect.* |
-| Ontology AI | Ontology AI Operations | Measures the usage of AI for context driven reasoning and query over ontology | (Input) Per 1,000 Tokens <br><br>(Output) Per 1,000 Tokens | (Input) 400 CU seconds <br><br>(Output) 1,600 CU seconds |
-| OneLake Cache | Graph cache storage | Use of graph incurs [graph cache storage](../../graph/overview.md#pricing-and-capacity-units), which is billed at the same rate as [OneLake Cache](https://azure.microsoft.com/pricing/details/microsoft-fabric/). | [OneLake Cache usage per month](https://azure.microsoft.com/pricing/details/microsoft-fabric/) |  [OneLake Cache usage per month](https://azure.microsoft.com/pricing/details/microsoft-fabric/) |
+## Ontology Discovery
 
-## Capacity usage examples
+Ontology Discovery is billed for each read call that retrieves the ontology definition through the ontology item interface or ontology MCP server. The ontology item interface caches the definition and reuses it as you navigate among entities, relationships, rules, bindings, properties, and metrics.
 
-This section contains more details about capacity usage calculations for each ontology (preview) operation, including examples.
+When the cached definition is available and current, browsing and selecting items doesn't generate another Discovery call. The ontology item interface retrieves the definition again when the cached copy is missing or out of date, after a successful save, or during an automatic or manual refresh.
 
-### Ontology Modeling
+### Estimate Discovery usage in the ontology item interface
 
-When a Create/Update/Delete (CUD) operation triggers the ontology API, it initiates a usage window of 30 minutes. Billing starts when the first CUD operation is triggered, and the time will continue for 30 minutes after the last operation is triggered.
+For a typical session that starts without a current cached definition, estimate one initial definition access, caching after successful changes, and any automatic or manual refresh operations.
 
-For example, say you have 1,000 ontology definitions comprised of a combination of entity types, properties, and relationship types. When you edit a property, the consumption is 1,000 definitions * 0.5 hours (unit of measurement for ontology definition usage; 30 minutes represented in hours) * 0.0039 CU/hr (Fabric consumption rate of this operation) = 1.95 CU hours.
+> **Estimated Discovery calls = 1 initial read + post-save caches + automatic or manual refresh reads**
 
-Now, say you trigger a second operation 15 minutes later. The total time calculated is the original 30 minutes from the first operation + (no additional charge for the 15 minutes where the windows are overlapping) + 15 minutes at the end for the remainder of the second operation's window = 45 minutes of measured time, or 0.75 hours. This avoids overlapping or restarting the window, preventing double-counting when summing usage across multiple actions.
+Multiply the number of successfully completed Ontology Discovery requests by 1,000 CU-seconds to estimate Discovery consumption. This calculation is a planning estimate, not a fixed charge for each click or save.
 
-### Ontology Logic and Operations​
+| Action in the ontology item interface | Discovery usage |
+| --- | --- |
+| Open or reload an ontology | Usually one call |
+| Browse, select items, search, or move among ontology pages | Usually no additional calls when the cached definition is available and current. A missing or out-of-date definition can require a read. |
+| Create, update, or delete metadata and save | Normally one follow-up read to retrieve the saved definition |
+| Save a binding without changes | No post-save Discovery read |
+| Keep the ontology item open | Automatic refreshes occur approximately every 20 minutes while the ontology item interface is open. Each successfully completed Ontology Discovery request adds consumption. |
+| Manually refresh or retry | Each successful metered request adds one call. One click doesn't necessarily result in a fixed number of completed requests. |
 
-Ontology Logic and Operations usage is incurred when ontology is actively executing compute operations. Examples of operations that contribute to this meter are changing the properties on an entity that's undergone data binding, traversing the graph, querying data through the entity type overview tiles, refreshing the graph, or exploring the graph through use of the ontology API or SQL. Usage is measured in minutes of CPU uptime. Each query session includes a 20-minute window after the last query.
+Actual usage can vary based on cache state, refresh timing, overlapping saves, and retries. Ontology Discovery usage can occur while the ontology experience remains open because the service may refresh the cached definition automatically. Close the ontology item interface when you finish to avoid extra refreshes.
 
-For example, say you run ontology exploration and workload queries continuously for 2 hours (120 minutes) in a single session. The calculated time for this meter is 140 minutes (120 active minutes + 20-minute window) * 0.666667 CU/min (Fabric consumption rate of this operation) = 93.3 CU minutes (or 1.56 CU hours).
+### How UI updates affect Ontology Discovery usage
 
-*This meter is not currently in effect. Ontology users are only billed for logic and operations according to their underlying [Fabric Graph](../../graph/overview.md#pricing-and-capacity-units) usage.*
+After you save a change, the ontology item interface normally retrieves the updated definition from the service. This request confirms the saved result and updates the ontology item interface's cached definition.
 
-### Ontology AI Operations
+Applications that write directly through an API don't automatically trigger this ontology item interface refresh request. Any metered definition reads that an application makes are counted separately. Metering behavior can differ among definition-access APIs and depends on the operation used.
 
-Ontology AI Operations are classified as **background jobs** to handle a higher volume of requests during peak hours. 
+### Discovery usage examples
 
-Fabric optimizes performance by allowing operations to access more CU (Capacity Unit) resources than are allocated to their capacity. Fabric [smooths](../../enterprise/throttling.md#smoothing-spread-cu-usage-across-future-timepoints), or averages, the CU usage of a *background job* over a 24-hour period. Then, per the Fabric throttling policy, the first phase of throttling begins when a capacity has consumed all its CU resources that are allocated for the next 10 minutes.
+The following examples assume an initial open without a cached definition and successfully completed Ontology Discovery requests. Unless otherwise stated, they exclude overlapping requests, retries, and other workflows.
 
-For example, assume each ontology request has 2,000 input tokens and 500 output tokens. The price for one ontology request is calculated as follows: [[2,000 (number of input tokens) × 400 (Fabric consumption rate of inputs for this operation)] + [500 (number of output tokens) × 1600 (Fabric consumption rate of outputs for this operation)]] / 1,000 (unit of measurement for this operation) = 1,600.00 CU seconds, or 26.67 CU minutes.
+#### Review an ontology without making changes
 
-Since ontology is a background job and usage is averaged over a 24-hour period, this example request that takes 26.67 CU minutes consumes, on average, one CU minute of each hour of a capacity. On an F64 capacity with 64 * 24 = 1,536 CU Hours in a day, if each ontology job consumes 26.67 CU mins = 0.44 CU Hours, you could run over 3,456 of these requests each day before exhausting the capacity.
+You open an ontology, inspect several entities and relationships, and close it before the next automatic refresh:
+
+- Initial open: one call
+- Navigation in the ontology item interface: no additional calls
+- Estimated total: **one Ontology Discovery call, or 1,000 CU-seconds**
+
+#### Navigate an ontology
+
+You open an ontology item and navigate immediately to entities, relationships, and properties without making changes:
+
+- Initial open: one call
+- Navigation to three ontology pages: no additional calls
+- Estimated total: **one Ontology Discovery call, or 1,000 CU-seconds**
+
+#### Make three changes in the ontology item
+
+You open an ontology item and complete three separate successful saves through the interface before the next automatic refresh. Each save is followed by one successful definition read:
+
+- Initial open: one call
+- Three post-save caches: three calls
+- Estimated total: **four Ontology Discovery calls, or 4,000 CU-seconds**
+
+#### Leave the ontology item open for one hour
+
+You open an ontology item and leave the ontology item interface open for approximately one hour without making changes. If three automatic refreshes complete during that period:
+
+- Initial open: one call
+- Automatic refreshes: three calls
+- Estimated total: **about four Ontology Discovery calls, or 4,000 CU-seconds**
+
+Refresh timing can vary.
+
+## Ontology Logic and Operations
+
+Ontology Logic and Operations usage is based on metered work performed by these ontology child items:
+
+- Eventhouse
+- Graph
+
+> **Estimated Logic and Operations usage = total applicable child-item consumption attributed to the ontology**
+
+The operation name in usage reporting includes the child operation name, such as **Ontology Logic and Operations - &lt;child operation name&gt;**. The underlying consumption is attributed to Ontology at the child item's rate.
+
+For more information, see [Eventhouse and KQL Database consumption](../../real-time-intelligence/real-time-intelligence-consumption.md) and [Fabric Graph pricing and capacity units](../../graph/overview.md#pricing-and-capacity-units).
+
+## Ontology AI Reasoning
+
+Ontology AI Reasoning measures usage of the ontology MCP server and ontology agent. Consumption is based on the tokens and resources used to complete an AI task.
+
+### Variable AI capacity consumption
+
+Starting October 1, 2026, the amount of capacity consumed by an impacted AI task can vary based on the work required to complete it. For example, a request that summarizes a narrow dataset with a smaller model can consume a different amount of capacity than a request that retrieves broad business context, uses deeper reasoning, calls multiple services, generates queries, and runs longer.
+
+Capacity consumption can vary based on these factors:
+
+- The AI model used and the reasoning effort required for the task.
+- The context and complexity of the request, including instructions, data sources, conversation history, and business metadata.
+- The tools and services used to complete the request.
+- The orchestration and processing required to run the task from start to finish.
+
+This change doesn't introduce a new billing currency or change how you purchase and manage Fabric capacity. It changes how select AI activity is translated into CU consumption so that consumption more closely reflects the resources required by each task.
+
+### Example ontology AI modeling estimates
+
+Ontology AI Reasoning consumption varies based on ontology size, workspace items, model usage, tool calls, validation, and retries. The following values are example estimates:
+
+| Scenario | Example request | Estimated Ontology AI Reasoning usage |
+| --- | --- | ---: |
+| Light improvement | Add `client` and `buyer` as synonyms for Customer, leaving everything else unchanged. | About **0.5–1 CU-hours** |
+| Heavy generation | Draft an ontology from the workspace, including entities, relationships, measures, and business definitions. | About **20 CU-hours**, depending on ontology complexity |
+
+## Storage
+
+You pay standard OneLake storage and read/write operation charges when you use those services, including for ontology definitions stored in OneLake. These charges are separate from Ontology Discovery, Logic and Operations, and AI Reasoning consumption.
 
 ## Monitor usage
 
-The [Microsoft Fabric Capacity Metrics](../../enterprise/metrics-app.md) app provides visibility into capacity usage for all Fabric workloads in one place. Administrators can use the app to monitor capacity, the performance of workloads, and their usage compared to purchased capacity. The Microsoft Fabric Capacity Metric app shows operations for ontology (preview).
+Use the [Microsoft Fabric Capacity Metrics app](../../enterprise/metrics-app.md) to monitor ontology consumption alongside other workloads on your capacity. A capacity administrator installs the app and grants access to other users.
 
-The Microsoft Fabric Capacity Metrics app must be installed by a capacity admin. Once the app is installed, anyone in the organization can be granted permissions to view the app. For more information about the app, see [Install the Microsoft Fabric Capacity Metrics app](../../enterprise/metrics-app.md#install-the-app).
+Look for **Ontology Discovery** to review Discovery consumption for the ontology item. Review **Ontology Logic and Operations - &lt;child operation name&gt;** and **Ontology AI Reasoning** separately for child-item and AI consumption. OneLake usage is also separate from the per-call Discovery unit.
 
-## Manage usage
+## Changes to Microsoft Fabric workload consumption rates
 
-This section contains tips for managing your ontology (preview) capacity usage.
-
-### Pause and resume activity
-
-Microsoft Fabric allows administrators to [pause and resume](../../enterprise/pause-resume.md) their capacities to enable cost savings. You can pause and resume your capacity as needed.
-
-### Other considerations
-
-Consider the following factors that could potentially affect cost:
-
-* **Modeling:** Charges for the time your ontology model is running. This factor is dependent on the number of definitions, model complexity, size, and usage time.
-* **Ontology logic and operations:** Charges for running queries and associated compute. Operations like indexing, refresh rates, and idle time can affect CU usage.
-* **AI reasoning and query:** Charges for advanced reasoning and natural language queries powered by AI, based on the number of tokens used.
-* **Associated Fabric items:** Charges from associated Fabric items that are being used through ontology, like [Fabric Graph](../../graph/overview.md#pricing-and-capacity-units) and [Fabric Activator](../../real-time-intelligence/data-activator/activator-capacity-usage.md).
-* **Graph refresh:** The [Graph in Microsoft Fabric](../../graph/overview.md) child item of your ontology (preview) item can be set to refresh automatically on a set schedule, and these refreshes contribute to capacity usage. If capacity usage is too high, you can edit or disable the Graph item schedule in your workspace. For more information, see [Refresh the graph model](how-to-view-entity-type-details.md#refresh-the-graph-model). 
-
-### Subject to changes in Microsoft Fabric workload consumption rate
-
-Consumption rates are subject to change at any time. Microsoft provides notice of changes through email and in-product notifications. Changes are effective on the date stated in the release notes and the Microsoft Fabric blog.
+Consumption rates can change at any time. Microsoft uses reasonable efforts to provide notice through email or in-product notifications. Changes are effective on the date stated in the [Microsoft Fabric release notes](https://aka.ms/fabricrm) or the [Microsoft Fabric blog](https://blog.fabric.microsoft.com/blog/). If a change materially increases the Capacity Units (CU) required to use a workload, you can use the cancellation options available for your chosen payment method.

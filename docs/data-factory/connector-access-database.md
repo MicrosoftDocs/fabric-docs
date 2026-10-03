@@ -18,7 +18,9 @@ You can connect your Access database to Microsoft Fabric using Power Query conne
 1. [Get data in Fabric](#get-data).
 1. [Connect to your Access database](#connect-to-your-access-database).
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
+
+## Summary
 
 The Access database connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
@@ -26,19 +28,27 @@ The Access database connector supports the following authentication types for co
 |:---|:---|:---|
 |Organizational account| n/a | √ |
 
-## Capabilities
-[!INCLUDE [access-database-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/access-database/access-database-capabilities-supported.md)]
-
 ## Prerequisites
-[!INCLUDE [access-database-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/access-database/access-database-prerequisites.md)]
+[!INCLUDE [access-database-prerequisites](includes/power-query/connectors/includes/access-database/access-database-prerequisites.md)]
 
-## Get data
+<a id="capabilities"></a>
+
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
+[!INCLUDE [access-database-capabilities-supported](includes/power-query/connectors/includes/access-database/access-database-capabilities-supported.md)]
+
+## Connection settings
+
+### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-## Connect to your Access database
+<a id="connect-to-your-access-database"></a>
 
-[!INCLUDE [access-database-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/access-database/access-database-connect-to-power-query-online.md)]
+### Connection instructions
+
+[!INCLUDE [access-database-connect-to-power-query-online](includes/power-query/connectors/includes/access-database/access-database-connect-to-power-query-online.md)]
 
 ## Related content
 

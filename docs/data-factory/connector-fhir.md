@@ -14,7 +14,9 @@ ai-usage: ai-assisted
 This article outlines the steps to create a FHIR connection.
 
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
+
+## Summary
 
 The FHIR connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
@@ -31,21 +33,29 @@ You can connect dataflow Gen2 in Fabric to FHIR using Power Query connectors. Fo
 1. [Get data in Fabric](#get-data).
 1. [Connect to a FHIR server](#connect-to-a-fhir-server).
 
-### Capabilities
+## Prerequisites
 
-[!INCLUDE [fhir-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/fhir/fhir-capabilities-supported.md)]
+[!INCLUDE [fhir-prerequisites](includes/power-query/connectors/includes/fhir/fhir-prerequisites.md)]
 
-### Prerequisites
+<a id="capabilities"></a>
 
-[!INCLUDE [fhir-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/fhir/fhir-prerequisites.md)]
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
+
+[!INCLUDE [fhir-capabilities-supported](includes/power-query/connectors/includes/fhir/fhir-capabilities-supported.md)]
+
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Connect to a FHIR server
+<a id="connect-to-a-fhir-server"></a>
 
-[!INCLUDE [fhir-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/fhir/fhir-connect-to-power-query-online.md)]
+### Connection instructions
+
+[!INCLUDE [fhir-connect-to-power-query-online](includes/power-query/connectors/includes/fhir/fhir-connect-to-power-query-online.md)]
 
 ## Set up your connection in a pipeline
 

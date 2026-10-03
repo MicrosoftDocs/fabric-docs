@@ -14,7 +14,9 @@ ai-usage: ai-assisted
 
 This article outlines the steps to create a CloudBluePSA connection.
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
+
+## Summary
 
 The CloudBluePSA connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
@@ -29,26 +31,32 @@ You can connect dataflow Gen2 to CloudBluePSA in Fabric by using Power Query con
 1. [Get data in Fabric](#get-data).
 1. [Connect to CloudBluePSA](#connect-to-cloudbluepsa).
 
-### Prerequisites
+## Prerequisites
 
-[!INCLUDE [cloudbluepsa-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/cloudbluepsa-prerequisites.md)]
+[!INCLUDE [cloudbluepsa-prerequisites](includes/power-query/connectors/includes/cloudbluepsa/prerequisites.md)]
+
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Connect to CloudBluePSA
+<a id="connect-to-cloudbluepsa"></a>
 
-[!INCLUDE [cloudbluepsa-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/cloudbluepsa/cloudbluepsa-connect-to-power-query-online.md)]
+### Connection instructions
 
-### More information
-
-- [CloudBluePSA connector capabilities](/power-query/connectors/cloudbluepsa#troubleshooting)
+[!INCLUDE [cloudbluepsa-connect-to-power-query-online](includes/power-query/connectors/includes/cloudbluepsa/connect-to-power-query-online.md)]
 
 ## Set up your connection in a pipeline
 
 Data Factory doesn't currently support CloudBluePSA in pipelines.
 
+<a id="additional-information"></a>
+
+<a id="more-information"></a>
+
 ## Related content
+
+- [CloudBluePSA connector capabilities](/power-query/connectors/cloudbluepsa#troubleshooting)
 
 - [For more information about this connector, see the CloudBluePSA (Beta) connector documentation.](/power-query/connectors/cloudbluepsa)

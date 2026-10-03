@@ -14,7 +14,9 @@ ai-usage: ai-assisted
 This article outlines the steps to create an SAP BW Application Server connection.
 
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
+
+## Summary
 
 The SAP BW Application Server connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
@@ -31,21 +33,29 @@ You can connect a dataflow Gen2 in Fabric to SAP BW Application Server by using 
 1. [Get data in Fabric](#get-data).
 1. [Connect to an SAP BW Application Server](#connect-to-an-sap-bw-application-server).
 
-### Capabilities
+## Prerequisites
 
-[!INCLUDE [sap-bw-application-server-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/sap-bw-application-server/sap-bw-application-server-capabilities-supported.md)]
+[!INCLUDE [sap-bw-application-server-prerequisites](includes/power-query/connectors/includes/sap-bw-application-server/prerequisites.md)]
 
-### Prerequisites
+<a id="capabilities"></a>
 
-[!INCLUDE [sap-bw-application-server-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/sap-bw-application-server/sap-bw-application-server-prerequisites.md)]
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
+
+[!INCLUDE [sap-bw-application-server-capabilities-supported](includes/power-query/connectors/includes/sap-bw-application-server/capabilities-supported.md)]
+
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Connect to an SAP BW Application Server
+<a id="connect-to-an-sap-bw-application-server"></a>
 
-[!INCLUDE [sap-bw-application-server-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/sap-bw-application-server/sap-bw-application-server-connect-to-power-query-online.md)]
+### Connection instructions
+
+[!INCLUDE [sap-bw-application-server-connect-to-power-query-online](includes/power-query/connectors/includes/sap-bw-application-server/connect-to-power-query-online.md)]
 
 ## Set up your connection in a pipeline
 

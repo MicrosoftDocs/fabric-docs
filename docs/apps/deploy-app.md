@@ -3,7 +3,7 @@ title: Deploy a Fabric App to Fabric
 description: Learn how to deploy your Fabric App to Microsoft Fabric using the CLI
 ms.reviewer: mksuni
 ms.topic: how-to
-ms.date: 06/02/2026
+ms.date: 09/15/2026
 ai-usage: ai-assisted
 ms.search.form: Deploy to Fabric
 ---
@@ -147,7 +147,7 @@ After deployment, you can manage your Fabric app directly in the [Fabric portal]
 
 Open the Fabric app in the Fabric portal to see:
 
-- **App URL** — The public URL where your static content is hosted.
+- **App URL** — The URL where your static content is hosted. Access depends on the `assetAccess` setting in `rayfin.yml`.
 - **App backend URL** — The base URL for all backend services.
 
 ### Manage child services

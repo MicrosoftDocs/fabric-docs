@@ -85,7 +85,7 @@ sections:
       - question: | 
           Is Private Link available for SQL database in Fabric?
         answer:
-          Yes, tenant-level [private links](../../security/security-private-links-overview.md) are available for SQL database, but currently, workspace-level private links are not available in SQL database.
+          Yes. Private Links are available at the workspace (preview feature) and tenant level. For more information, see [Private links](../../security/security-private-links-overview.md).
 
   - name: Cost management 
     questions:
@@ -157,5 +157,4 @@ additionalContent: |
   ## Related content
 
   - [SQL database in Fabric](overview.md)
-  - [What's new in Fabric Databases](../../fundamentals/whats-new.md#sql-database-in-microsoft-fabric)
   - [Engage with the Fabric Community for SQL database](https://community.fabric.microsoft.com/t5/SQL-database/bd-p/db_general_discussion)  

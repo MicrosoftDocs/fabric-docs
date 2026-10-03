@@ -14,7 +14,9 @@ ai-usage: ai-assisted
 This article outlines the steps to create a Google Analytics connection.
 
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
+
+## Summary
 
 The Google Analytics connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
@@ -30,29 +32,37 @@ You can connect dataflow Gen2 in Fabric to Google Analytics by using Power Query
 1. [Get data in Fabric](#get-data).
 1. [Connect to Google Analytics data](#connect-to-google-analytics-data).
 
-### Capabilities
+## Prerequisites
 
-[!INCLUDE [google-analytics-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/google-analytics/google-analytics-capabilities-supported.md)]
+[!INCLUDE [google-analytics-prerequisites](includes/power-query/connectors/includes/google-analytics/google-analytics-prerequisites.md)]
 
-### Prerequisites
+<a id="capabilities"></a>
 
-[!INCLUDE [google-analytics-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/google-analytics/google-analytics-prerequisites.md)]
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
+
+[!INCLUDE [google-analytics-capabilities-supported](includes/power-query/connectors/includes/google-analytics/google-analytics-capabilities-supported.md)]
+
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Connect to Google Analytics data
+<a id="connect-to-google-analytics-data"></a>
 
-[!INCLUDE [google-analytics-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/google-analytics/google-analytics-connect-to-power-query-online.md)]
+### Connection instructions
 
-### Limitations and considerations
-
-[!INCLUDE [google-analytics-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/google-analytics/google-analytics-limitations-and-considerations-include.md)]
+[!INCLUDE [google-analytics-connect-to-power-query-online](includes/power-query/connectors/includes/google-analytics/google-analytics-connect-to-power-query-online.md)]
 
 ## Set up your connection in a pipeline
 
 Data Factory doesn't currently support Google Analytics data in pipelines.
+
+## Limitations and considerations
+
+[!INCLUDE [google-analytics-limitations-and-considerations](includes/power-query/connectors/includes/google-analytics/limitations.md)]
 
 ## Related content
 

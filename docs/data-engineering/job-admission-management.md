@@ -1,7 +1,7 @@
 ---
 title: Job admission in Apache Spark for Fabric
 description: Learn about job admission and management for notebooks, Apache Spark job definitions, and lakehouse jobs in Fabric.
-ms.reviewer: saravi
+ms.reviewer: milescole
 ms.topic: concept-article
 ms.date: 03/05/2026
 ai-usage: ai-assisted

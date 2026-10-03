@@ -7,6 +7,7 @@ ms.reviewer: pmahoney, pvenkat, alpowers, seanmirabile, scbradl, gilherau
 ms.topic: how-to
 ms.custom: fabric-cat
 ms.date: 07/30/2024
+ai-usage: ai-assisted
 ---
 
 # Evaluate and optimize your Microsoft Fabric capacity
@@ -41,7 +42,7 @@ Monitoring can reveal to you that throttling is taking place. Throttling can hap
 
 The [Fabric Capacity Metrics App](metrics-app.md) is the best way to monitor and visualize recent utilization. The app breaks down to item type (semantic model, notebook, pipeline, and others), and helps you to identify items or operations that use high levels of compute (so that they can be [optimized](#compute-optimization-by-fabric-experience)).
 
-Administrators can use the [Admin monitoring workspace](../admin/monitoring-workspace.md) to learn about frequently used items (and overall adoption). They can also use the [Monitoring hub](../admin/monitoring-hub.md) to view current and recent activities in the tenant. More information on some operations might also be available from [Log Analytics](/azure/azure-monitor/logs/log-analytics-overview) or the [on-premises data gateway logs](/data-integration/gateway/service-gateway-tshoot).
+Administrators can use the [Govern report in the OneLake catalog](../governance/onelake-catalog-govern.md#govern-report) to learn about frequently used items, feature usage, and overall adoption. The report aggregates broader tenant information from Admin Monitoring storage, including inventory, sharing, protection, and curation insights. Administrators can also use the [Monitoring hub](../admin/monitoring-hub.md) to view current and recent activities in the tenant. More information on some operations might also be available from [Log Analytics](/azure/azure-monitor/logs/log-analytics-overview) or the [on-premises data gateway logs](/data-integration/gateway/service-gateway-tshoot).
 
 ## Manage high compute usage
 

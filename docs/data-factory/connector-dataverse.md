@@ -13,7 +13,9 @@ ai-usage: ai-assisted
 
 This article outlines the steps to create a Dataverse connection.
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
+
+## Summary
 
 The Dataverse connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
@@ -31,29 +33,39 @@ You can connect dataflow Gen2 to Dataverse in Fabric by using Power Query connec
 1. [Find your Dataverse environment URL](#find-your-dataverse-environment-url).
 1. [Connect to Dataverse](#connect-to-dataverse).
 
-### Capabilities
+## Prerequisites
 
-[!INCLUDE [dataverse-ccapabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/dataverse/dataverse-capabilities-supported.md)]
+[!INCLUDE [dataverse-prerequisites](includes/power-query/connectors/includes/dataverse/dataverse-prerequisites.md)]
 
-### Prerequisites
+<a id="capabilities"></a>
 
-[!INCLUDE [dataverse-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/dataverse/dataverse-prerequisites.md)]
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
+
+[!INCLUDE [dataverse-ccapabilities-supported](includes/power-query/connectors/includes/dataverse/dataverse-capabilities-supported.md)]
+
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Find your Dataverse environment URL
+<a id="find-your-dataverse-environment-url"></a>
 
-[!INCLUDE [dataverse-find-environment-url](~/../powerquery-repo/powerquery-docs/connectors/includes/dataverse/dataverse-find-environment-url.md)]
+### Find your environment URL
 
-### Connect to Dataverse
+[!INCLUDE [dataverse-find-environment-url](includes/power-query/connectors/includes/dataverse/dataverse-find-environment-url.md)]
 
-[!INCLUDE [dataverse-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/dataverse/dataverse-connect-to-power-query-online.md)]
+<a id="connect-to-dataverse"></a>
 
-### Limitations and considerations
+### Connection instructions
 
-[!INCLUDE [dataverse-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/dataverse/dataverse-limitations-and-considerations-include.md)]
+[!INCLUDE [dataverse-connect-to-power-query-online](includes/power-query/connectors/includes/dataverse/dataverse-connect-to-power-query-online.md)]
+
+## Limitations and considerations
+
+[!INCLUDE [dataverse-limitations-and-considerations](includes/power-query/connectors/includes/dataverse/limitations.md)]
 
 ## Related content
 

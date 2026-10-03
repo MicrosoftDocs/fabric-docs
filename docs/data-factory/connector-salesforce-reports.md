@@ -14,7 +14,9 @@ ai-usage: ai-assisted
 This article outlines the steps to create a Salesforce reports connection.
 
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
+
+## Summary
 
 The Salesforce reports connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
@@ -30,29 +32,37 @@ You can connect a dataflow Gen2 in Fabric to Salesforce reports by using Power Q
 1. [Get data in Fabric](#get-data).
 1. [Connect to Salesforce Reports](#connect-to-salesforce-reports).
 
-### Capabilities
+## Prerequisites
 
-[!INCLUDE [salesforce-reports-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/salesforce-reports/salesforce-reports-capabilities-supported.md)]
+[!INCLUDE [salesforce-reports-prerequisites](includes/power-query/connectors/includes/salesforce-reports/salesforce-reports-prerequisites.md)]
 
-### Prerequisites
+<a id="capabilities"></a>
 
-[!INCLUDE [salesforce-reports-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/salesforce-reports/salesforce-reports-prerequisites.md)]
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
+
+[!INCLUDE [salesforce-reports-capabilities-supported](includes/power-query/connectors/includes/salesforce-reports/salesforce-reports-capabilities-supported.md)]
+
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Connect to Salesforce Reports
+<a id="connect-to-salesforce-reports"></a>
 
-[!INCLUDE [salesforce-reports-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/salesforce-reports/salesforce-reports-connect-to-power-query-online.md)]
+### Connection instructions
 
-### Limitations and considerations
-
-[!INCLUDE [salesforce-reports-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/salesforce-reports/salesforce-reports-limitations-and-considerations-include.md)]
+[!INCLUDE [salesforce-reports-connect-to-power-query-online](includes/power-query/connectors/includes/salesforce-reports/salesforce-reports-connect-to-power-query-online.md)]
 
 ## Set up your connection in a pipeline
 
 Data Factory doesn't currently support Salesforce reports in pipelines.
+
+## Limitations and considerations
+
+[!INCLUDE [salesforce-reports-limitations-and-considerations](includes/power-query/connectors/includes/salesforce-reports/limitations.md)]
 
 ## Related content
 

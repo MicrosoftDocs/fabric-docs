@@ -18,6 +18,8 @@ If you want to connect your own application with an eventstream, you can add a c
 
 This article shows you how to add a custom endpoint source or a custom app source to an eventstream in Microsoft Fabric.
 
+[!INCLUDE [schema-aware-source-callout](./includes/schema-aware-source-callout.md)]
+
 ## Prerequisites
 
 - Access to the workspace where your eventstream is located. The workspace must be in Fabric capacity or trial mode.
@@ -100,23 +102,7 @@ You also need to make sure that the managed identity of the custom endpoint has 
 
         :::image type="content" source="./media/add-source-custom-app-enhanced/confirm-schema-association-custom-endpoint.png" alt-text="Screenshot that shows the eventstream editor with an eventstream selected and the tab for an associated schema highlighted." lightbox="./media/add-source-custom-app-enhanced/confirm-schema-association-custom-endpoint.png":::
 
-1. Use one of the following options to create a schema:
-
-    - If you have a schema JSON file, select **Upload** to upload the file. For a sample file, see [Download an event schema](../schema-sets/create-manage-event-schemas.md#download-an-event-schema).
-
-        :::image type="content" source="../schema-sets/media/create-manage-event-schemas/upload-button.png" alt-text="Screenshot that shows the upload option to create a schema." lightbox="../schema-sets/media/create-manage-event-schemas/upload-button.png" :::
-
-    - Start building a schema manually by selecting **Add row**. For each row, select the field type, select the field name, and optionally enter a description.
-
-        :::image type="content" source="../schema-sets/media/create-manage-event-schemas/build-schema.png" alt-text="Screenshot that shows the manual way of building a schema." lightbox="../schema-sets/media/create-manage-event-schemas/build-schema.png":::
-
-    - To build a schema by entering JSON code, select the **Code editor** option. If the message **If you choose to use the code editor to create your schema, note that you won't be able to switch back to the UI builder** appears, select **Edit**.
-
-        :::image type="content" source="../schema-sets/media/create-manage-event-schemas/code-editor-schema.png" alt-text="Screenshot that shows the code editor to build a schema." lightbox="../schema-sets/media/create-manage-event-schemas/code-editor-schema.png":::
-
-        Enter the JSON code into the editor.
-
-        :::image type="content" source="../schema-sets/media/create-manage-event-schemas/code-editor-schema-json.png" alt-text="Screenshot that shows JSON code in the code editor to build a schema." lightbox="../schema-sets/media/create-manage-event-schemas/code-editor-schema-json.png":::
+If you need a new schema, [create it in an event schema set](../schema-sets/create-manage-event-schemas.md#add-an-event-schema) or [import an Avro definition](../schema-sets/import-event-schemas.md), and then associate it with the endpoint. For sample definitions, see [Device telemetry schema example](../schema-sets/device-telemetry-schema-example.md).
 
 [!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 

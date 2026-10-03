@@ -14,7 +14,9 @@ ai-usage: ai-assisted
 This article outlines the steps to create a Smartsheet connection.
 
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
+
+## Summary
 
 The Smartsheet connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
@@ -30,21 +32,29 @@ You can connect a dataflow Gen2 in Fabric to Smartsheet using Power Query connec
 1. [Get data in Fabric](#get-data).
 1. [Connect to Smartsheet data](#connect-to-smartsheet-data).
 
-### Capabilities
+## Prerequisites
 
-[!INCLUDE [smartsheet-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/smartsheet/smartsheet-capabilities-supported.md)]
+[!INCLUDE [smartsheet-prerequisites](includes/power-query/connectors/includes/smartsheet/prerequisites.md)]
 
-### Prerequisites
+<a id="capabilities"></a>
 
-[!INCLUDE [smartsheet-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/smartsheet/smartsheet-prerequisites.md)]
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
+
+[!INCLUDE [smartsheet-capabilities-supported](includes/power-query/connectors/includes/smartsheet/capabilities-supported.md)]
+
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Connect to Smartsheet data
+<a id="connect-to-smartsheet-data"></a>
 
-[!INCLUDE [smartsheet-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/smartsheet/smartsheet-connect-to-power-query-online.md)]
+### Connection instructions
+
+[!INCLUDE [smartsheet-connect-to-power-query-online](includes/power-query/connectors/includes/smartsheet/connect-to-power-query-online.md)]
 
 ## Set up your connection in a pipeline
 

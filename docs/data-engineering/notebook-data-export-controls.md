@@ -1,7 +1,7 @@
 ---
 title: Notebook data export controls
 description: Learn how to configure and manage data export controls for Microsoft Fabric notebooks to govern how data leaves your organization's boundaries.
-ms.reviewer: saravi
+ms.reviewer: milescole
 ms.topic: how-to
 ms.date: 03/18/2026
 ms.search.form: Notebook Data Export Controls Security Governance
@@ -21,17 +21,17 @@ Export controls operate at two levels:
 
 ## Prerequisites
 
-- **To configure tenant-level export controls**: You need the **Fabric administrator** role to access tenant settings in the admin portal.
+- **To configure tenant-level export controls**: You need the **Fabric administrator** role to access **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**.
 - **To create notebooks in a workspace**: You need the **Admin** or **Member** workspace role.
 
 ## Configure data export controls for notebooks
 
-Fabric administrators configure export controls from the tenant settings in the admin portal. From there, you can enable or disable export restrictions and optionally delegate control to specific groups or users.
+Fabric administrators configure export controls from **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**. From there, you can enable or disable export restrictions and optionally delegate control to specific groups or users.
 
 ### Access export control settings
 
 1. Go to the [Fabric portal](https://fabric.microsoft.com) and select the settings (gear) icon in the top-right corner.
-1. Select **Admin portal** under **Governance and administration** and then go to the tenant settings.
+1. Go to **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**.
 1. Search for the data export in the **Search** and enable or disable the Data export control for notebooks.
 1. In addition to just enabling, admins can also delegate these settings to a certain group or individual members who can be allowlisted to perform the export.
 

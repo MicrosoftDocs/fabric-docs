@@ -3,7 +3,7 @@ title: Introduction to CI/CD in Microsoft Fabric
 description: An overview of continuous integration and continuous delivery (CI/CD) in Microsoft Fabric, including Git integration, deployment pipelines, the Variable library, the Fabric REST APIs, the Fabric CLI, and infrastructure as code.
 ms.reviewer: NimrodShalit
 ms.topic: concept-article
-ms.date: 07/14/2026
+ms.date: 08/23/2026
 ai-usage: ai-assisted
 #customer intent: As a developer, I want to understand the CI/CD process in Microsoft Fabric so that I can efficiently manage the lifecycle of my applications.
 ---
@@ -22,6 +22,7 @@ The Fabric CI/CD platform spans several core capabilities, all built on the Fabr
 * **Deployment pipelines** - Promote content across Dev, Test, and Prod stages with configuration rules and content comparison.
 * **Fabric REST APIs** - The foundation layer for item CRUD, item definitions, capacity, workspace, access, and job operations.
 * **Variable library** - Configuration as code, with per-stage value sets for CI/CD, managed through the API or the UI.
+* **Deployment plan** - Control the order in which items deploy, and run actions before and after they deploy.
 * **Fabric CLI** - An open-source, scriptable, filesystem-like command-line tool that's ready for GitHub Actions and Azure DevOps.
 * **Terraform and fabric-cicd** - Infrastructure as code for environments, where fabric-cicd is the most widely adopted deployment tool.
 
@@ -39,7 +40,7 @@ All Fabric CI/CD capabilities build on the [Fabric REST APIs](/rest/api/fabric/a
 
 ## Fabric integration and delivery
 
-This layer moves content reliably from development to production through three complementary capabilities.
+This layer moves content reliably from development to production through four complementary capabilities.
 
 > [!NOTE]
 > Some of the items for CI/CD are in preview. See the list of supported items for the [Git integration](./git-integration/intro-to-git-integration.md#supported-items) and [deployment pipeline](./deployment-pipelines/intro-to-deployment-pipelines.md#supported-items) features.
@@ -66,6 +67,12 @@ By using [Variable libraries](./variable-library/variable-library-overview.md), 
 * Use the variables in different places in the product: in item definitions such as queries, as references to other items such as a lakehouse ID, and more.
 * Reuse variables across Fabric workloads and items. For example, several items in the workspace can refer to the same variable.
 * Adjust values based on the release pipeline stage for CI/CD.
+
+### Deployment plan
+
+A [deployment plan](./deployment-plan/deployment-plan-overview.md) controls the order in which items deploy, and runs actions before and after they deploy. You author a plan on a canvas, save it as an item in the workspace, and attach it to a deployment.
+
+Unlike the other capabilities in this layer, a deployment plan isn't a delivery mechanism of its own. It's attached to a deployment that Git integration, deployment pipelines, or the REST APIs perform, and the deployment engine uses it to decide the order and to run the actions the plan defines. Use one when a deployment has to follow an order that item dependencies alone don't express, or when items need work done around them, such as refreshing a semantic model after a warehouse deploys.
 
 ## Source control and CI automation
 

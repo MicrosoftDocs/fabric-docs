@@ -13,7 +13,9 @@ ai-usage: ai-assisted
 
 This article outlines the steps to create an Azure Databricks connection for pipelines and dataflow Gen2 in Fabric.
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
+
+## Summary
 
 The Azure Databricks connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
@@ -30,21 +32,25 @@ You can connect dataflow Gen2 to Azure Databricks in Fabric using Power Query co
 1. [Get data in Fabric](#get-data).
 1. [Connect to Databricks data](#connect-to-databricks-data).
 
-### Capabilities
+<a id="capabilities"></a>
 
-[!INCLUDE [databricks-azure-ccapabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/databricks-azure/databricks-azure-capabilities-supported.md)]
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
+
+[!INCLUDE [databricks-azure-ccapabilities-supported](includes/power-query/connectors/includes/databricks-azure/databricks-azure-capabilities-supported.md)]
+
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Connect to Databricks data
+<a id="connect-to-databricks-data"></a>
 
-[!INCLUDE [databricks-azure-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/databricks-azure/databricks-azure-connect-to-power-query-online.md)]
+### Connection instructions
 
-### Limitations and considerations
-
-[!INCLUDE [databricks-azure-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/databricks-azure/databricks-azure-limitations-and-considerations.md)]
+[!INCLUDE [databricks-azure-connect-to-power-query-online](includes/power-query/connectors/includes/databricks-azure/databricks-azure-connect-to-power-query-online.md)]
 
 ## Set up your connection for a pipeline
 
@@ -53,7 +59,7 @@ The following table contains a summary of the properties needed for a pipeline c
 | Name | Description | Required | Property | Copy |
 | --- | --- | :---: | --- | :---: |
 | **Server Hostname** | The hostname for your Azure Databricks instance. For example: *example.azuredatabricks.net* | Yes |  | ✓ |
-| **HTTP Path** | The http path for your data. For example: */sql/1.0/warehouses/abcdef1234567890* | Yes |  | ✓ |
+| **HTTP Path** | The HTTP path for your data. For example: */sql/1.0/warehouses/abcdef1234567890* | Yes |  | ✓ |
 | **Connection name** | A name for your connection. | Yes |  | ✓ |
 | **Data gateway** | An existing data gateway if your Azure Databricks instance isn't publicly accessible. | No |  | ✓ |
 | **Authentication kind** | Personal access token. | Yes |  | Personal Access token. |
@@ -75,7 +81,7 @@ For specific instructions to set up your connection in a pipeline, follow these 
 1. In the **New connection** pane, specify the following fields:
 
     * **Server Hostname** : The hostname for your Azure Databricks instance. For example: *example.azuredatabricks.net*
-    * **HTTP Path** : The http path for your data. For example: */sql/1.0/warehouses/abcdef1234567890*
+    * **HTTP Path** : The HTTP path for your data. For example: */sql/1.0/warehouses/abcdef1234567890*
     * **Connection**: Select **Create new connection**.
     * **Connection name**: Specify a name for your connection.
 
@@ -85,6 +91,10 @@ For specific instructions to set up your connection in a pipeline, follow these 
 1. Optionally, set the privacy level that you want to apply. Allowed values are **Organizational**, **Privacy**, and **Public**. For more information, see [privacy levels in the Power Query documentation](/power-query/privacy-levels).
 1. Select **Create** to create your connection. Your creation is successfully tested and saved if all the credentials are correct. If not correct, the creation fails with errors.
 
+
+## Limitations and considerations
+
+[!INCLUDE [databricks-azure-limitations-and-considerations](includes/power-query/connectors/includes/databricks-azure/limitations.md)]
 
 ## Related content
 

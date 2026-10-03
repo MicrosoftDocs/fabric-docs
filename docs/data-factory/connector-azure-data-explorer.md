@@ -13,7 +13,9 @@ ai-usage: ai-assisted
 
 This article outlines the steps to create an Azure Data Explorer connection for pipelines and dataflow Gen2 in Fabric.
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
+
+## Summary
 
 The Azure Data Explorer connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
@@ -30,21 +32,29 @@ You can connect dataflow Gen2 to Azure Data Explorer in Fabric using Power Query
 1. [Get data in Fabric](#get-data).
 1. [Connect to Azure Data Explorer](#connect-to-azure-data-explorer).
 
-### Capabilities
+## Prerequisites
 
-[!INCLUDE [azure-data-explorer-ccapabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-data-explorer/azure-data-explorer-capabilities-supported.md)]
+[!INCLUDE [azure-data-explorer-prerequisites](includes/power-query/connectors/includes/azure-data-explorer/azure-data-explorer-prerequisites.md)]
 
-### Prerequisites
+<a id="capabilities"></a>
 
-[!INCLUDE [azure-data-explorer-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-data-explorer/azure-data-explorer-prerequisites.md)]
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
+
+[!INCLUDE [azure-data-explorer-ccapabilities-supported](includes/power-query/connectors/includes/azure-data-explorer/azure-data-explorer-capabilities-supported.md)]
+
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Connect to Azure Data Explorer
+<a id="connect-to-azure-data-explorer"></a>
 
-[!INCLUDE [azure-data-explorer-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-data-explorer/azure-data-explorer-connect-to-power-query-online.md)]
+### Connection instructions
+
+[!INCLUDE [azure-data-explorer-connect-to-power-query-online](includes/power-query/connectors/includes/azure-data-explorer/azure-data-explorer-connect-to-power-query-online.md)]
 
 ## Set up your connection for a pipeline
 

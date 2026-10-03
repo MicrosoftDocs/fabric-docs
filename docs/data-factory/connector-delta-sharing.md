@@ -14,7 +14,9 @@ ai-usage: ai-assisted
 This article outlines the steps to create a Delta Sharing connection.
 
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
+
+## Summary
 
 The Delta Sharing connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
@@ -32,29 +34,37 @@ You can connect dataflow Gen2 in Fabric to Delta Sharing by using Power Query co
 1. [Connect to Delta Sharing data](#connect-to-delta-sharing-data).
 1. Check [limitations and considerations](#limitations-and-considerations) for any current restrictions.
 
-### Capabilities
+## Prerequisites
 
-[!INCLUDE [delta-sharing-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/delta-sharing/delta-sharing-capabilities-supported.md)]
+[!INCLUDE [delta-sharing-prerequisites](includes/power-query/connectors/includes/delta-sharing/delta-sharing-prerequisites.md)]
 
-### Prerequisites
+<a id="capabilities"></a>
 
-[!INCLUDE [delta-sharing-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/delta-sharing/delta-sharing-prerequisites.md)]
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
+
+[!INCLUDE [delta-sharing-capabilities-supported](includes/power-query/connectors/includes/delta-sharing/delta-sharing-capabilities-supported.md)]
+
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Connect to Delta Sharing data
+<a id="connect-to-delta-sharing-data"></a>
 
-[!INCLUDE [delta-sharing-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/delta-sharing/delta-sharing-connect-to-power-query-online.md)]
+### Connection instructions
 
-### Limitations and considerations
-
-[!INCLUDE [delta-sharing-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/delta-sharing/delta-sharing-limitations-and-considerations-include.md)]
+[!INCLUDE [delta-sharing-connect-to-power-query-online](includes/power-query/connectors/includes/delta-sharing/delta-sharing-connect-to-power-query-online.md)]
 
 ## Set up your connection in a pipeline
 
 Data Factory doesn't currently support Delta Sharing in pipelines.
+
+## Limitations and considerations
+
+[!INCLUDE [delta-sharing-limitations-and-considerations](includes/power-query/connectors/includes/delta-sharing/limitations.md)]
 
 ## Related content
 

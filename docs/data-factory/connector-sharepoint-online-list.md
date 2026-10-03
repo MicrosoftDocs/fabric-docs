@@ -15,7 +15,9 @@ ai-usage: ai-assisted
 
 This article outlines the steps to create a SharePoint connection.
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
+
+## Summary
 
 The SharePoint connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
@@ -32,19 +34,29 @@ You can connect a dataflow Gen2 in Fabric to a SharePoint Online list by using P
 1. [Get data in Fabric](#get-data).
 1. [Connect to a SharePoint Online list](#connect-to-a-sharepoint-online-list).
 
-### Capabilities
+<a id="capabilities"></a>
 
-[!INCLUDE [sharepoint-online-list-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/sharepoint-online-list/sharepoint-online-list-capabilities-supported.md)]
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
+
+[!INCLUDE [sharepoint-online-list-capabilities-supported](includes/power-query/connectors/includes/sharepoint-online-list/sharepoint-online-list-capabilities-supported.md)]
+
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Connect to a SharePoint Online list
+<a id="connect-to-a-sharepoint-online-list"></a>
 
-[!INCLUDE [sharepoint-online-list-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/sharepoint-online-list/sharepoint-online-list-connect-to-power-query-online.md)]
+### Connection steps
+
+[!INCLUDE [sharepoint-online-list-connect-to-power-query-online](includes/power-query/connectors/includes/sharepoint-online-list/sharepoint-online-list-connect-to-power-query-online.md)]
 
 ## Set up your connection in Manage connections and gateways
+
+### Connection properties
 
 The following table contains a summary of the properties needed for a SharePoint connection:
 
@@ -55,6 +67,8 @@ The following table contains a summary of the properties needed for a SharePoint
 | **Connection type** | Select **SharePoint** for your connection. | Yes |
 | **Authentication kind** | Go to [Authentication](#authentication). | Yes |
 | **Privacy Level** | The privacy level that you want to apply. Allowed values are **Organizational**, **Private**, **Public**. | Yes |
+
+### Connection instructions
 
 For specific instructions to set up your connection in Manage connections and gateways, follow these steps:
 
@@ -90,7 +104,7 @@ For specific instructions to set up your connection in Manage connections and ga
 
 1. Select **Create** to create your connection. Your creation is successfully tested and saved if all the credentials are correct. If not correct, the creation fails with errors.
 
-## Authentication 
+### Authentication
 
 This section lists the instructions for each authentication type supported by the SharePoint connector:
 
@@ -98,13 +112,13 @@ This section lists the instructions for each authentication type supported by th
 - [Service Principal](#service-principal-authentication)
 - [Workspace identity](#workspace-identity-authentication)
 
-### Organizational account authentication
+#### Organizational account authentication
 
 Select **Edit credentials**, which displays the sign in interface. Enter your account and password to sign in your organizational account. After signing in, go back to the **New connection** page.
 
 :::image type="content" source="media/connector-sharepoint-online-list/organizational-account.png" alt-text="Screenshot showing that organizational account authentication method.":::
 
-### Service Principal authentication
+#### Service Principal authentication
 
 Fill in the required properties. You need to specify the tenant ID, service principal client ID, and service principal key when using this authentication.
 
@@ -114,7 +128,7 @@ Fill in the required properties. You need to specify the tenant ID, service prin
 - **Service principal ID**: The Application (client) ID of the application registered in Microsoft Entra ID.
 - **Service principal key**: The application's key.
 
-### Workspace identity authentication
+#### Workspace identity authentication
 
 Use the workspace’s managed identity for authentication. For more information, see [Workspace identity](../security/workspace-identity.md).
 

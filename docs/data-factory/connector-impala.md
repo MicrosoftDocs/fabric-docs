@@ -14,7 +14,9 @@ ai-usage: ai-assisted
 This article outlines the steps to create an Impala database connection.
 
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
+
+## Summary
 
 The Impala connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
@@ -31,25 +33,33 @@ You can connect dataflow Gen2 in Fabric to Impala using Power Query connectors. 
 1. [Get data in Fabric](#get-data).
 1. [Connect to an Impala database](#connect-to-an-impala-database).
 
-### Capabilities
+<a id="capabilities"></a>
 
-[!INCLUDE [impala-database-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/impala-database/impala-database-capabilities-supported.md)]
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
+
+[!INCLUDE [impala-database-capabilities-supported](includes/power-query/connectors/includes/impala-database/impala-database-capabilities-supported.md)]
+
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Connect to an Impala database
+<a id="connect-to-an-impala-database"></a>
 
-[!INCLUDE [impala-database-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/impala-database/impala-database-connect-to-power-query-online.md)]
+### Connection instructions
 
-### Limitations and considerations
-
-[!INCLUDE [impala-database-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/impala-database/impala-database-limitations-and-considerations-include.md)]
+[!INCLUDE [impala-database-connect-to-power-query-online](includes/power-query/connectors/includes/impala-database/impala-database-connect-to-power-query-online.md)]
 
 ## Set up your connection in a pipeline
 
 Data Factory doesn't currently support an Impala database in pipelines.
+
+## Limitations and considerations
+
+[!INCLUDE [impala-database-limitations-and-considerations](includes/power-query/connectors/includes/impala-database/limitations.md)]
 
 ## Related content
 

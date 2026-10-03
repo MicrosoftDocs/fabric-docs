@@ -14,7 +14,9 @@ ai-usage: ai-assisted
 This article outlines the steps to create a ClickHouse connection.
 
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
+
+## Summary
 
 The ClickHouse connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
@@ -30,21 +32,29 @@ You can connect dataflow Gen2 in Fabric to ClickHouse using Power Query connecto
 1. [Get data in Fabric](#get-data).
 1. [Connect to ClickHouse data](#connect-to-clickhouse-data).
 
-### Capabilities
+## Prerequisites
 
-[!INCLUDE [clickhouse-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/clickhouse/clickhouse-capabilities-supported.md)]
+[!INCLUDE [clickhouse-prerequisites](includes/power-query/connectors/includes/clickhouse/prerequisites.md)]
 
-### Prerequisites
+<a id="capabilities"></a>
 
-[!INCLUDE [clickhouse-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/clickhouse/clickhouse-prerequisites.md)]
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
+
+[!INCLUDE [clickhouse-capabilities-supported](includes/power-query/connectors/includes/clickhouse/capabilities-supported.md)]
+
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Connect to ClickHouse data
+<a id="connect-to-clickhouse-data"></a>
 
-[!INCLUDE [clickhouse-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/clickhouse/clickhouse-connect-to-power-query-online.md)]
+### Connection instructions
+
+[!INCLUDE [clickhouse-connect-to-power-query-online](includes/power-query/connectors/includes/clickhouse/connect-to-power-query-online.md)]
 
 ## Set up your connection in a pipeline
 

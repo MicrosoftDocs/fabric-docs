@@ -1,74 +1,106 @@
 ### YamlMime:Landing
 
 title: Fabric Apps documentation
-summary: Fabric Apps enables developers to build type-safe, data-driven APIs and applications using TypeScript data models, GraphQL queries, and seamless Fabric integration. # < 160 chars
+summary: Build and deploy secure, data-driven applications in Microsoft Fabric by using TypeScript, GraphQL, and AI-assisted development.
 
 metadata:
   title: Fabric Apps documentation
-  description: Fabric Apps enables developers to build type-safe, data-driven APIs and applications using TypeScript data models, GraphQL queries, and seamless Fabric integration. # < 160 chars
+  description: Build and deploy secure, data-driven applications in Microsoft Fabric by using TypeScript, GraphQL, and AI-assisted development.
   ms.subservice: data-engineering
   ms.topic: landing-page
-  ms.date: 04/16/2026
+  ms.date: 08/24/2026
   ai-usage: ai-assisted
-# linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:
-# Cards and links should be based on top customer tasks or top subjects
-# Start card title with a verb
-  # Card 
-  - title: About Fabric Apps
-    linkLists:
-      - linkListType: overview
-        links:
-          - text: What is Fabric Apps?
-            url: overview.md
-          - text: Hosting
-            url: hosting.md
-          - text: Pricing
-            url: pricing.md
-
-  # Card 
   - title: Get started
     linkLists:
       - linkListType: get-started
         links:
           - text: Create your first app
             url: create-app.md
-          - text: Create a Fabric app with the CLI
+          - text: Create and deploy an app with the CLI
             url: create-app-with-cli.md
-          - text: Understand the project structure
-            url: project-structure.md
-          - text: Programming model (SDK)
-            url: programming-model.md
+          - text: Create an app connected to a semantic model
+            url: data-apps-template.md
+          - text: What is Fabric Apps?
+            url: overview.md
+          - text: Review pricing and capacity usage
+            url: pricing.md
+
+  - title: Build with agents
+    linkLists:
+      - linkListType: quickstart
+        links:
+          - text: Create an app with GitHub Copilot
+            url: create-app-with-github-copilot.md
+          - text: Create an app with Claude Code
+            url: create-app-with-claude-code.md
+
+  - title: Data modeling and access
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Define data models
+            url: data-models.md
+          - text: Configure anonymous data access
+            url: anonymous-data-access.md
+          - text: Define data permissions
+            url: data-permissions.md
       - linkListType: how-to-guide
         links:
-          - text: Deploy to Fabric
-            url: deploy-app.md
+          - text: Connect to Fabric data
+            url: connectors.md
+          - text: Read and write data with GraphQL
+            url: read-write-data-graphql.md
+          - text: Apply and verify schema changes
+            url: apply-schema-changes.md
 
-  # Card 
-  - title: Build with data models and APIs
+  - title: Functions
     linkLists:
       - linkListType: overview
         links:
-          - text: Data models overview
-            url: data-models.md
+          - text: Use Functions
+            url: functions.md
       - linkListType: how-to-guide
         links:
-          - text: Read and write data
-            url: read-write-data-graphql.md
-          - text: Configure authentication
-            url: authentication.md
+          - text: Manage function secrets
+            url: manage-function-secrets.md
 
-  # Card 
-  - title: Reference and troubleshooting
+  - title: Authentication
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Understand authentication
+            url: authentication.md
+      - linkListType: how-to-guide
+        links:
+          - text: Configure Fabric SSO
+            url: fabric-authentication.md
+
+  - title: Develop and deploy
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Configure static hosting and access
+            url: hosting.md
+          - text: Deploy to Fabric
+            url: deploy-app.md
+          - text: Deploy by using GitHub Actions
+            url: deploy-github-actions.md
+          - text: Manage development and production environments
+            url: dev-prod-workflow.md
+
+  - title: Explore more
     linkLists:
       - linkListType: reference
         links:
-          - text: CLI command reference
+          - text: Rayfin CLI reference
             url: cli-reference.md
+          - text: JavaScript SDK reference
+            url: /javascript/api/fabric-apps-sdk-javascript/fabric-apps-overview?context=/fabric/apps/context/context
           - text: FAQ
             url: faq.md
       - linkListType: how-to-guide
         links:
-          - text: Troubleshooting
+          - text: Troubleshoot Fabric Apps
             url: troubleshooting.md

@@ -15,30 +15,52 @@ items:
     href: data-apps-template.md
   - name: Create and deploy your first app with the CLI
     href: create-app-with-cli.md
-- name: Concepts
+- name: Build with agents
   items:
-  - name: Understand the project structure
-    href: project-structure.md
-  - name: Programming model (SDK)
-    href: programming-model.md
-  - name: Authentication overview
-    href: authentication.md
-- name: How-to guides
+  - name: Create an app with GitHub Copilot
+    href: create-app-with-github-copilot.md
+  - name: Create an app with Claude Code
+    href: create-app-with-claude-code.md
+- name: Data
   items:
-  - name: Configure hosting
-    href: hosting.md
   - name: Define data models
     href: data-models.md
-  - name: Define data permissions
+  - name: Connect to Fabric data
+    href: connectors.md
+  - name: Schema changes
+    href: apply-schema-changes.md
+  - name: Data permission model
     href: data-permissions.md
   - name: Read and write data
     href: read-write-data-graphql.md
+- name: Auth
+  items:
+  - name: Authentication overview
+    href: authentication.md
   - name: Configure Fabric SSO
     href: fabric-authentication.md
-  - name: Anonymous data access
+  - name: Configure authentication redirect URIs
+    href: configure-authentication-redirect-uris.md
+  - name: Configure anonymous data access
     href: anonymous-data-access.md
+- name: Functions
+  items:
+  - name: Use functions
+    href: functions.md
+  - name: Connect functions to external resources
+    href: functions-connect-external-resources.md
+  - name: Manage function secrets
+    href: manage-function-secrets.md
+- name: Hosting
+  items:
+  - name: Configure hosting and access
+    href: hosting.md
+- name: Deploy
+  items:
   - name: Deploy to Fabric
     href: deploy-app.md
+  - name: Monitor app metrics
+    href: app-metrics.md
   - name: Deploy using GitHub Actions
     href: deploy-github-actions.md
   - name: Manage dev and prod environments
@@ -47,6 +69,10 @@ items:
     href: author-templates.md
 - name: Reference
   items:
+  - name: Understand the project structure
+    href: project-structure.md
+  - name: Programming model (SDK)
+    href: programming-model.md
   - name: CLI command reference
     href: cli-reference.md
   - name: JavaScript SDK reference

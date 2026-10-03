@@ -1,108 +1,274 @@
 items:
-- name: Microsoft Fabric administration
+- name: Governance and administration
   href: index.yml
 - name: Overview
   items:
   - name: Administration overview
     href: admin-overview.md
+  - name: Governance overview
+    href: ../governance/governance-compliance-overview.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
+  - name: Standards compliance
+    href: ../governance/standards-compliance.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
+  - name: Region availability
+    href: region-availability.md
 - name: Get started
   items:
   - name: Enable Fabric for your organization
     href: fabric-switch.md
-  - name: Region availability
-    href: region-availability.md
-  - name: Find your Fabric home region
-    href: find-fabric-home-region.md
-  - name: Manage your Fabric capacity
-    href: capacity-settings.md     
   - name: Understand Fabric admin roles
     href: roles.md 
-  - name: Service interruption notifications      
-    href: service-interruption-notifications.md
-  - name: Diagnostic query text storage
-    href: query-text-storage.md
-- name: Monitor and manage Fabric
-  expanded: false
+  - name: Get started with Fabric governance
+    href: ../governance/get-started-with-fabric-governance.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
+- name: OneLake catalog
   items:
-  - name: Admin monitoring workspace
-    items:    
-    - name: What is the admin monitoring workspace?
-      href: monitoring-workspace.md
-    - name: Feature usage and adoption report
-      href: feature-usage-adoption.md
-    - name: Content sharing report
-      href: content-sharing.md
-  - name: Use the Monitoring hub
-    href: monitoring-hub.md 
-  - name: Track user activities
-    href: track-user-activities.md
-  - name: Operation list
-    href: operation-list.md
-  - name: Find users who signed in
-    href: service-admin-access-usage.md
-  - name: Customize Fabric branding
+  - name: Explore items in the catalog
+    items:
+    - name: OneLake catalog overview
+      href: ../governance/onelake-catalog-overview.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
+    - name: Find and explore data
+      href: ../governance/onelake-catalog-explore.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
+    - name: View item details
+      href: ../governance/onelake-catalog-item-details.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
+  - name: Govern and manage settings in the catalog
+    items:
+    - name: Get governance insights
+      href: ../governance/onelake-catalog-govern.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
+    - name: Manage Fabric settings
+      href: ../governance/onelake-catalog-manage-settings.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
+  - name: Secure user access from the catalog
+    items:
+    - name: Secure your Fabric data
+      href: ../governance/secure-your-data.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
+- name: Data protection
+  items:
+  - name: Fabric policies (preview)
+    items:
+      - name: What are Fabric policies?
+        href: ../governance/fabric-policies-overview.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
+      - name: Get started with Fabric policy sets
+        href: ../governance/fabric-policies-get-started.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
+      - name: Manage policies in OneLake catalog
+        href: ../governance/fabric-policies-manage-onelake-catalog.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
+      - name: Use REST APIs for Fabric policies
+        href: ../governance/fabric-policies-rest-api.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
+      - name: Policy types
+        items:
+          - name: External data sharing policy
+            href: ../governance/fabric-policies-external-data-sharing.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
+          - name: Item creation policy
+            href: ../governance/fabric-policies-item-creation.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
+          - name: Workspace settings editing policy
+            href: ../governance/fabric-policies-edit-workspace-settings.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
+  - name: Microsoft Purview data protection
+    items:
+    - name: Microsoft Purview and Fabric
+      href: ../governance/microsoft-purview-fabric.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
+    - name: Microsoft Purview Information Protection
+      href: ../governance/information-protection.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
+    - name: Sensitivity labels
+      items:
+      - name: Protected sensitivity labels
+        href: ../governance/protected-sensitivity-labels.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
+      - name: Default label policy
+        href: ../governance/sensitivity-label-default-label-policy.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
+      - name: Domain-level default sensitivity labels
+        href: ../governance/domain-default-sensitivity-label.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
+      - name: Mandatory label policy
+        href: ../governance/mandatory-label-policy.md
+      - name: Sensitivity label support for paginated reports
+        href: ../governance/service-security-sensitivity-label-paginated-reports.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
+      - name: Programmatic labeling
+        href: ../governance/service-security-sensitivity-label-inheritance-set-remove-api.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
+      - name: Downstream inheritance
+        href: ../governance/service-security-sensitivity-label-downstream-inheritance.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
+      - name: Inheritance from data sources
+        href: ../governance/service-security-sensitivity-label-inheritance-from-data-sources.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
+      - name: Inheritance upon update and relationship changes
+        href: ../governance/service-security-sensitivity-label-inheritance-upon-update.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
+      - name: Audit schema for sensitivity labels
+        href: ../governance/sensitivity-label-audit-schema.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
+      - name: Troubleshoot sensitivity labels
+        href: ../governance/service-security-sensitivity-label-troubleshooting.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
+    - name: Protection policies
+      items:
+       - name: Protection polices overview
+         href: ../governance/protection-policies-overview.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
+       - name: Create and manage protection policies
+         href: ../governance/protection-policies-create.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
+       - name: Troubleshoot access restrictions
+         href: ../governance/troubleshoot-restricted-access.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
+    - name: Data loss prevention policies
+      items:
+      - name: Get started with Data loss prevention policies for Fabric and Power BI
+        href: /purview/dlp-powerbi-get-started
+      - name: Configure a DLP policy for Fabric
+        href: ../governance/data-loss-prevention-configure.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
+      - name: Respond to a DLP policy violation
+        href: ../governance/data-loss-prevention-respond.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
+      - name: Monitor DLP policy violations
+        href: ../governance/data-loss-prevention-monitor.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
+  - name: Microsoft Defender for Cloud Apps with Power BI
+    href: ../governance/service-security-using-defender-for-cloud-apps-controls.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
+  - name: External data sharing
+    items:
+    - name: Overview
+      href: ../governance/external-data-sharing-overview.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
+    - name: Create an external data share
+      href: ../governance/external-data-sharing-create.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
+    - name: Accept an external data share
+      href: ../governance/external-data-sharing-accept.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
+    - name: Manage external data shares
+      href: ../governance/external-data-sharing-manage.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
+    - name: "Admins: Enable external data sharing"
+      href: ../governance/external-data-sharing-enable.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
+    - name: Support for private link enabled workspaces
+      href: ../governance/support-for-private-link.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
+    - name: Manage embed codes
+      href: service-admin-portal-embed-codes.md
+- name: Governance
+  items:
+  - name: Endorse and certify items
+    items:
+    - name: Endorsement overview
+      href: ../governance/endorsement-overview.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
+    - name: Enable item certification
+      href: endorsement-certification-enable.md
+    - name: Enable master data endorsement
+      href: endorsement-master-data-enable.md
+  - name: Manage domains
+    items:
+    - name: Create and manage domains
+      href: ../governance/domains.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
+    - name: Domain design - best practices
+      href: ../governance/domains-best-practices.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
+    - name: Audit schema for domains
+      href: ../governance/domains-audit-schema.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
+  - name: Use tags
+    items:
+    - name: About tags
+      href: ../governance/tags-overview.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
+    - name: Create and manage a set of tags
+      href: ../governance/tags-define.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
+    - name: Apply tags to items and workspaces
+      href: ../governance/tags-apply.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
+  - name: View data lineage
+    href: ../governance/lineage.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
+  - name: Perform impact analysis
+    href: ../governance/impact-analysis.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
+  - name: Use metadata scanning
+    items:
+    - name: Metadata scanning overview
+      href: ../governance/metadata-scanning-overview.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
+    - name: Set up metadata scanning
+      href: metadata-scanning-setup.md
+    - name: Run metadata scanning
+      href: ../governance/metadata-scanning-run.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
+  - name: Troubleshoot access restrictions
+    href: ../governance/troubleshoot-restricted-access.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
+- name: Administration
+  items:
+  - name: Find your Fabric home region
+    href: find-fabric-home-region.md
+  - name: Manage Fabric capacities
+    items:
+    - name: Manage capacities in OneLake catalog
+      href: ../governance/onelake-catalog-capacities.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
+    - name: Manage capacities in Admin portal
+      href: ../admin/capacity-settings.md
+  - name: Manage tenant settings
+    items:
+    - name: About tenant settings
+      href: about-tenant-settings.md
+    - name: Delegate settings
+      href: delegate-settings.md     
+    - name: Tenant settings index
+      href: tenant-settings-index.md
+    - name: Service interruption notifications      
+      href: service-interruption-notifications.md
+    - name: Diagnostic query text storage
+      href: query-text-storage.md
+    - name: Capacity notifications
+      href: service-admin-premium-capacity-notifications.md
+  - name: Add custom branding
     href: service-admin-custom-branding.md
-  - name: Manage Azure connections
-    href: service-admin-portal-azure-connections.md
-  - name: Manage embed codes
-    href: service-admin-portal-embed-codes.md
-  - name: Manage Fabric identities
-    href: fabric-identities-manage.md
-  - name: Manage featured content
-    href: service-admin-portal-featured-content.md
-  - name: Manage organizational visuals
-    href: service-admin-portal-organizational-visuals.md
-  - name: Manage Power BI visuals admin settings
-    href: organizational-visuals.md 
-  - name: Manage Power BI Premium Per-User
-    href: service-admin-portal-premium-per-user.md
-  - name: Manage users
-    href: service-admin-portal-users.md
-  - name: View audit logs
-    href: service-admin-portal-audit-logs.md
-  - name: View refresh summary
-    href: service-admin-portal-refresh-summary.md
-  - name: View usage metrics
-    href: feature-usage-adoption.md
-- name: Workspace administration
-  items:
-  - name: Manage workspaces
-    href: portal-workspaces.md  
-  - name: Workspace tenant settings
-    href: portal-workspace.md
-  - name: Capacity reassignment restrictions
-    href: portal-workspace-capacity-reassignment.md
-  - name: Retention and recovery
-    href: retention-recovery.md
-  - name: Set up workspace retention
-    href: workspace-retention.md
-  - name: Recover or delete items
-    href: item-recovery.md
-- name: Feature set up
-  items:
-  - name: Enable item certification
-    href: endorsement-certification-enable.md
-  - name: Enable master data endorsement
-    href: endorsement-master-data-enable.md
-  - name: Configure notifications
-    href: service-admin-premium-capacity-notifications.md
-  - name: Set up metadata scanning
-    href: metadata-scanning-setup.md
-  - name: Enable service principal authentication
-    displayName: API, REST, Power BI, read-only
-    href: enable-service-principal-admin-apis.md
   - name: Configure Multi-Geo support
     href: service-admin-premium-multi-geo.md
-- name: Fabric tenant settings
+  - name: Manage Azure connections
+    href: service-admin-portal-azure-connections.md
+  - name: Manage identities and access
+    items:
+    - name: Manage Fabric identities
+      href: fabric-identities-manage.md
+    - name: Manage Power BI Premium Per-User
+      href: service-admin-portal-premium-per-user.md
+    - name: Manage users
+      href: service-admin-portal-users.md
+    - name: Enable service principal authentication
+      displayName: API, REST, Power BI, read-only
+      href: enable-service-principal-admin-apis.md
+  - name: Control visuals and featured content
+    items:
+    - name: Manage featured content
+      href: service-admin-portal-featured-content.md
+    - name: Manage organizational visuals
+      href: service-admin-portal-organizational-visuals.md
+    - name: Manage Power BI visuals admin settings
+      href: organizational-visuals.md 
+  - name: Monitor and audit Fabric
+    items:
+    - name: Admin monitoring workspace
+      items:    
+      - name: What is the admin monitoring workspace?
+        href: monitoring-workspace.md
+      - name: Feature usage and adoption report
+        href: feature-usage-adoption.md
+      - name: Content sharing report
+        href: content-sharing.md
+    - name: Monitor hub
+      items:
+      - name: What is the Monitor hub?
+        href: monitoring-hub.md
+      - name: Monitor job runs
+        href: monitoring-hub-jobs.md
+      - name: Investigate a failed run with the Operations agent (preview)
+        href: monitoring-hub-jobs.md#investigate-a-failed-run-with-the-operations-agent-preview
+      - name: Set up job alerts
+        href: monitoring-hub-alerts.md
+      - name: Monitor applications
+        href: monitoring-hub-applications.md
+      - name: Monitor capacity
+        href: monitoring-hub-capacity.md
+      - name: Monitor agents
+        href: monitoring-hub-agents.md
+    - name: Audit logs
+      items:
+      - name: View audit logs
+        href: service-admin-portal-audit-logs.md
+      - name: Track user activities
+        href: track-user-activities.md
+      - name: Audit log operation list
+        href: operation-list.md
+    - name: Find users who signed in
+      href: service-admin-access-usage.md
+    - name: View refresh summary
+      href: service-admin-portal-refresh-summary.md
+  - name: Workspace administration
+    items:
+    - name: Manage workspaces
+      href: portal-workspaces.md  
+    - name: Workspace tenant settings
+      href: portal-workspace.md
+    - name: Capacity reassignment restrictions
+      href: portal-workspace-capacity-reassignment.md
+    - name: Retention and recovery
+      href: retention-recovery.md
+    - name: Set up workspace retention
+      href: workspace-retention.md
+    - name: Recover or delete items
+      href: item-recovery.md
+- name: Reference
   items:
-  - name: About tenant settings
-    href: about-tenant-settings.md
-  - name: Delegate settings
-    href: delegate-settings.md     
-  - name: Tenant settings index
-    href: tenant-settings-index.md
-  - name: Tenant settings
-    expanded: false
+  - name: Tenant settings reference
     items:
     - name: Microsoft Fabric settings
       href: service-admin-portal-microsoft-fabric-tenant-settings.md

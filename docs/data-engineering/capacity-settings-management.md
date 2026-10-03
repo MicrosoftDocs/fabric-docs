@@ -1,7 +1,7 @@
 ---
 title: Manage settings for data engineering and science capacity
 description: Learn how to configure and manage the capacity administration settings for data engineering and science experiences.
-ms.reviewer: saravi
+ms.reviewer: milescole
 ms.topic: how-to
 ms.date: 06/19/2025
 ---
@@ -27,7 +27,7 @@ Use the following steps to manage the Data Engineering/Science settings for Fabr
 3. You're navigated to the capacity detail pane, where you can view the usage and other admin controls for your capacity. Navigate to the **Data Engineering/Science Settings** section and select **Open Spark Compute**. Configure the following parameters:
 
 > [!NOTE]
-> At least one workspace should be attached to the Fabric Capacity to explore the Data Engineering/Science Settings from the Fabric Capacity Admin Portal.
+> At least one workspace should be attached to the Fabric Capacity to explore the Data Engineering/Science Settings from **OneLake catalog** > **Govern** > **Capacities**.
 
 ---
 
@@ -49,7 +49,7 @@ Fabric supports **3× bursting** for Spark VCores, allowing a single job to temp
 As a capacity admin, you can now control this behavior by using the **"Disable job-level bursting"** switch available in the Admin Portal:
 
 - **Location**:  
-  `Admin Portal → Capacity Settings → [Select Capacity] → Data Engineering/Science Settings → Spark Compute`
+**OneLake catalog** > **Govern** > **Capacities** > [Select Capacity] > **Data Engineering/Science Settings** > **Spark Compute**
 
 - **Behavior**:
   - **Enabled (Default)**: A single Spark job can consume the full burst limit (up to 3× Spark VCores).
