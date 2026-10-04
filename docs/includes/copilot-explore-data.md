@@ -2,39 +2,39 @@
 author: spelluru
 ms.author: spelluru
 ms.topic: include
-ms.date: 04/26/2026
+ms.date: 08/31/2026
 ---
 
-1. Ask a question about the data. For example, "What are the top 5 event types?" or "Which state had the most events?".
+1. If your dashboard contains multiple data sources, optionally select the data source you want to explore. Copilot uses the selected source as the context for the conversation and provides example prompts tailored to the available data.
 
-1. Continue exploring and drilling through the data by asking follow-up questions or making more requests.
+    :::image type="content" source="media/copilot-data-explore/select-data-source.png" alt-text="Screenshot of selecting a data source in the Copilot pane.":::
 
-1. The filtered data appears in the Copilot pane. Select the expand icon to see the results reflected in the **Visual**, **Table**, and **Query** tabs.
+1. Ask a question about the data. For example, "What are the top 10 popular repos?" or "What is the sign-in success rate?".
 
-    :::image type="content" source="media/copilot-data-explore/tile-expand-button.png" alt-text="Screenshot of the expand icon in the Copilot pane.":::
+1. Review the progress updates displayed by Copilot while it analyzes the request.
+
+1. When the analysis is complete, review the generated results, summary, and suggested follow-up prompts. Continue exploring by selecting a suggested prompt or entering your own question.
+
+1. Select the maximize icon to see the results reflected in the **Visual**, **Table**, and **Query** tabs, or use the drop-down menu to choose a specific tab.
+
+    :::image type="content" source="media/copilot-data-explore/tile-expand-button.png" alt-text="Screenshot of the maximize icon in the Copilot pane.":::
 
    ### [Visual](#tab/visual)
 
-    If the tile data was tabular, when you go to the Visual tab, select the format you want to use. For this example, select **Pie chart**.
+    The **Visual** tab displays a visualization generated from the query results. Select the **Visual Options** button to customize the visual format and appearance. For more information, see [Customize Real-Time Dashboard visuals](../real-time-intelligence/dashboard-visuals-customize.md).
 
-    :::image type="content" source="media/copilot-data-explore/dashboard-select-visual-format.png" alt-text="Screenshot of Create a visual.":::
-
-    The Visual tab shows the pie chart for Texas data only.
-
-    :::image type="content" source="media/copilot-data-explore/dashboard-data-explore-visual-texas.png" alt-text="Screenshot of the visual tab showing a pie chart of the storm event types in Texas.":::
+    :::image type="content" source="media/copilot-data-explore/dashboard-select-visual-format.png" alt-text="Screenshot of selecting a visual format in the Copilot pane." lightbox="media/copilot-data-explore/dashboard-select-visual-format.png":::
 
    ### [Table](#tab/table)
 
-    The Table tab shows the tabular data for Texas data only.
+    The **Table** tab displays the tabular results returned by the query.
 
-    :::image type="content" source="media/copilot-data-explore/dashboard-data-explore-table-texas.png" alt-text="Screenshot of the table tab showing the storm even types in Texas in tabular format.":::
+    :::image type="content" source="media/copilot-data-explore/dashboard-select-table-format.png" alt-text="Screenshot of the table tab showing the top 10 repositories in tabular format." lightbox="media/copilot-data-explore/dashboard-select-table-format.png":::
 
    ### [Query](#tab/query)
 
-    :::image type="content" source="media/copilot-data-explore/dashboard-data-explore-query-texas.png" alt-text="Screenshot of the query tab showing the KQL query for Texas data that is run to display the visual and table results.":::
+    The **Query** tab displays the underlying query used to generate the results. 
 
-1. Continue exploring and drilling through the data by asking more questions or modifying the visual manually using the **Visual Options** pane. For more information on customizing the visual, see [Customize Real-Time Dashboard visuals](../real-time-intelligence/dashboard-visuals-customize.md).
+    :::image type="content" source="media/copilot-data-explore/dashboard-select-query-format.png" alt-text="Screenshot of the query tab showing the KQL query for repo data that is run to display the visual and table results." lightbox="media/copilot-data-explore/dashboard-select-query-format.png":::
 
-1. When you're ready to save your insights to the dashboard, select **Save to dashboard**. This action saves the current view and query as a new tile on the dashboard. Optionally, you can save the tile to a different existing dashboard or create a new dashboard for the tile. Each saved tile stays connected to your live data, so as the data updates, your visual does too.
-
-    :::image type="content" source="media/copilot-data-explore/copilot-save-to-dashboard.png" alt-text="Screenshot of the expanded Copilot pane showing the save to dashboard options.":::
+1. Refine the results by asking more questions or [Save and share Copilot exploration insights](../real-time-intelligence/dashboard-explore-data.md#save-and-share-copilot-insights) as needed.
