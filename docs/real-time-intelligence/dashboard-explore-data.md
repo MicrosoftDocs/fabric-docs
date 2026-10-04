@@ -5,81 +5,104 @@ ms.reviewer: mibar
 ms.topic: how-to
 ms.collection: ce-skilling-ai-copilot
 ms.subservice: rti-dashboard
-ms.date: 06/21/2026
+ms.date: 10/04/2026
 ai-usage: ai-assisted
 ---
 
-# Copilot-assisted real-time data exploration (preview)
+# Copilot-assisted real-time data exploration (Preview)
 
-Real-time dashboards show key metrics, help you spot anomalies, and let you make fast, informed decisions. By using Copilot, you can use natural language to explore the live data behind your entire dashboard, specific visuals, or in KQL tables. Ask questions, refine visuals, and uncover and share insights without needing to use KQL query language.
+Real-Time dashboards help you monitor key metrics, detect anomalies, and make informed decisions. By using Copilot, you can explore the live data behind your dashboard by using natural language, without needing to write KQL queries.
 
-After exploring data by using Copilot, save insights to the dashboard for quick access, view streaming or near real-time updates, and [share them with your team](#share-copilot-exploration-insights).
+Ask questions about your data, investigate trends, refine results, and generate visualizations. Copilot can explore data across an entire dashboard, a specific data source, or a particular visual. You can then save or share the resulting insights.
 
- [!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
-
->[!NOTE]
->
-> Currently, Copilot-assisted data exploration in real-time dashboards supports dashboards with a *single* data source and *View mode* only.
+[!INCLUDE [Fabric feature-preview-note](../includes/feature-preview-note.md)]
 
 ## Prerequisites
 
 * A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity).
-* A dashboard with visuals. Learn more in [Create a real-time dashboard](dashboard-real-time-create.md).
+* A dashboard with visuals. For more information, see [Create a Real-Time dashboard](dashboard-real-time-create.md).
 
-## Explore dashboards with Copilot
+## Explore data with Copilot
 
-Use Copilot to explore data in the context of the entire dashboard or of a specific visual. Ask questions about the overall data, request summaries, or seek insights that span multiple visuals.
-For example, you can change the time frame, filter by a column or value, calculate an average or total, or group by a column. 
-Each time you explore the data with Copilot, you can view the data updates in Copilot, and when ready you can save the insights as a new visual in the dashboard or [share them with others](#share-copilot-exploration-insights).
+Use Copilot to explore live dashboard data by using natural language. For example, you can:
+
+* Change the time range.
+* Filter by a column or value.
+* Calculate averages, totals, or counts.
+* Group results by a column.
+* Summarize trends or anomalies across the data.
+
+While Copilot analyzes your request, it provides progress updates so you can follow the exploration process. After the analysis finishes, Copilot summarizes the findings and suggests follow-up questions to help you continue exploring.
 
 :::image type="content" source="media/dashboard-explore-copilot/dashboard-explore-copilot.png" alt-text="Screenshot of a real-time dashboard showing the Explore Data Copilot icon highlighted." lightbox="media/dashboard-explore-copilot/dashboard-explore-copilot.png":::
 
-In your Fabric workspace, select a real-time dashboard, or [create](dashboard-real-time-create.md) a new dashboard, and ensure you're in **Viewing** mode.
+In your Fabric workspace, select a Real-Time dashboard, or [create](dashboard-real-time-create.md) a new dashboard, and ensure you're in **Viewing** mode.
 Use the following steps to explore your data with Copilot:
 
 [!INCLUDE [copilot-explore-data](../includes/copilot-explore-data.md)]
 
-> [!NOTE]
-> By default, the Copilot pane opens in the context of the entire dashboard. You can ask questions and explore insights based on the entire dashboard data. You can also explore data in the [context of a specific visual](#contextual-copilot-data-exploration).
+## Explore the entire dashboard
 
-## Contextual Copilot data exploration
+By default, Copilot explores data in the context of the entire dashboard. This approach lets you ask questions that span multiple visuals and uncover insights across all dashboard data.  
+For example, you can ask:
 
-In addition to exploring data in the context of the entire dashboard, you can also explore data in the context of a specific visual. The visual provides context for your questions, so you can refer to it naturally (for example, “this chart” or “these results”). Copilot uses that context to analyze the broader dataset behind the dashboard, not just the selected visual. You can then save those insights as a new visual on the dashboard or [share them with others](#share-copilot-exploration-insights).
+* Which event types are increasing the most across all visuals?
+* What unusual patterns appeared in the last 24 hours?
+* How did overall performance change compared to the previous week?
+
+## Explore a specific data source
+
+In the Copilot side pane, select a specific data source when you want to focus your investigation on a particular dataset rather than the entire dashboard.
+
+:::image type="content" source="media/dashboard-explore-copilot/select-data-source.png" alt-text="Screenshot of selecting a data source in the Copilot side pane." lightbox="media/dashboard-explore-copilot/select-data-source.png":::
+
+Copilot considers the selected data source as the context for the conversation and generates example prompts tailored to that data source. This approach helps you ask relevant questions and quickly discover insights.
+
+## Explore data from a specific visual
+
+You can also begin an exploration from a specific visual. The selected visual provides context for your questions, so you can naturally refer to "this chart" or "these results." Copilot uses that context to understand your intent while analyzing the underlying dataset behind the visual, rather than only the data shown in the visual.
 
 1. Select the Copilot icon on the visual to explore the data.
 
-    :::image type="content" source="media/dashboard-explore-copilot/dashboard-tile-toolbar.png" alt-text="Screenshot of a dashboard visual showing the Copilot icon highlighted.":::
+    :::image type="content" source="media/dashboard-explore-copilot/dashboard-tile-toolbar.png" alt-text="Screenshot of a dashboard visual showing the Copilot icon highlighted." lightbox="media/dashboard-explore-copilot/dashboard-tile-toolbar.png":::
 
-1. A Copilot dialog opens, so you can ask questions and explore insights specific to that visual's data. To help you get started, the dialog includes suggested queries.
+1. A Copilot pop-up dialog opens with suggested prompts to help you get started exploring the visual's data.
 
-    :::image type="content" source="media/dashboard-explore-copilot/tile-copilot-query.png" alt-text="Screenshot of the selected visual's Copilot dialog.":::
+    :::image type="content" source="media/dashboard-explore-copilot/tile-copilot-query.png" alt-text="Screenshot of the selected visual's Copilot dialog." lightbox="media/dashboard-explore-copilot/tile-copilot-query.png":::
 
-1. After asking questions and exploring the data, a side pane appears displaying your prompt, the results of your queries, and any generated visuals. This pane allows you to review the insights before deciding to save them to the dashboard or [share them with others](#share-copilot-exploration-insights).
+1. In the side pane, follow Copilot's thought process as it analyzes the data and generates insights.
 
-    :::image type="content" source="media/dashboard-explore-copilot/copilot-side-pane.png" alt-text="Screenshot of the Copilot side pane showing the results of queries and generated visuals.":::
+1. Review the results and any generated visuals.
 
-1. Select **Save to dashboard** to save the insights as a new visual on the dashboard. You can also save the visual to a different existing dashboard or create a new dashboard for the visual.
+    :::image type="content" source="media/dashboard-explore-copilot/copilot-side-pane.png" alt-text="Screenshot of the Copilot side pane showing the results of queries and generated visuals." lightbox="media/dashboard-explore-copilot/copilot-side-pane.png":::
 
-    :::image type="content" source="media/dashboard-explore-copilot/tile-copilot-query-result.png" alt-text="Screenshot of the Copilot pane showing the save to dashboard options." lightbox="media/dashboard-explore-copilot/tile-copilot-query-result.png":::
+1. Save or share the generated insights.
 
-## Share Copilot exploration insights
+## Save and share Copilot insights
 
-After you explore data and find insights by using Copilot, share those insights with others by sharing a link to the insight's query. When others open the link, they see the query and results you have. You can optionally include the visual in the shared insights.
+After discovering an insight with Copilot, you can save it to a dashboard or share it with others.
+
+### Save insights to a dashboard
+
+Select **Save to dashboard** to save the current visualization and query as a dashboard tile. You can save the tile to the current dashboard, an existing dashboard, or a new dashboard.
+
+:::image type="content" source="media/dashboard-explore-copilot/tile-copilot-query-result.png" alt-text="Screenshot of the save to dashboard options in the Copilot pane.":::
+
+Saved tiles stay connected to the underlying live data and continue updating as new data arrives.
+
+### Share insights with others
+
+You can share a link to the Copilot exploration with other users.
 
 1. Select the **share** icon in the Copilot pane or in the expanded view.
 
-    :::image type="content" source="media/dashboard-explore-copilot/copilot-data-pane.png" alt-text="Screenshot of the Copilot data results and visual.":::
+    :::image type="content" source="media/dashboard-explore-copilot/share-icon.png" alt-text="Screenshot of the Copilot data results and visual.":::
 
 1. In the share dialog, choose whether to include the visual in the shared insights, and then select **Copy link**.
 
     :::image type="content" source="media/dashboard-explore-copilot/share-dialog.png" alt-text="Screenshot of the Copilot share dialog.":::
 
-1. Share the copied link with others. When they open the link, they see a read-only view of the results and visual, if included. They can do the following tasks with the shared insights:
-    1. Save the query to an existing or new KQL Queryset.
-    1. Run the query, share it again, save to either a new or existing dashboard, and more.
-    1. If the visual is included, they can modify the visual type and customize it.
-
-    :::image type="content" source="media/dashboard-explore-copilot/shared-query.png" alt-text="Screenshot of the shared Copilot query with visual customization options." lightbox="media/dashboard-explore-copilot/shared-query.png":::
+1. Share the copied link with others. Recipients can view the results, rerun the query, save insights to a dashboard, and customize the visual when one is included.
 
 ## Related content
 
