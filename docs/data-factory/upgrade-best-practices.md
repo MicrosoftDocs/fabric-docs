@@ -3,7 +3,7 @@ title: Upgrade Best Practices for Azure Data Factory to Fabric Data Factory
 description: Discover best practices for ADF-to-Fabric upgrades, including inventorying assets, assessing feature parity, and choosing the right upgrade path.
 #customer intent: As an Azure Data Factory customer I want to explore best practices for upgrading to Fabric Data Factory, so I can improve my data integration strategy and ensure a smooth and efficient transition.
 ms.reviewer: makromer
-ms.date: 08/21/2026
+ms.date: 10/05/2026
 ms.topic: concept-article
 ai-usage: ai-assisted
 ---
@@ -19,7 +19,7 @@ Before upgrading, evaluate what to reuse, translate, or redesign. Follow these s
 1. Identify authentication patterns, such as managed identity or key-based authentication.
 1. Review network requirements, including private endpoints and gateways.
 1. Map scheduling and trigger semantics, and align monitoring and alerting setups.
-1. Compare ADF features with their Fabric counterparts, noting any gaps like SSIS or data flows.
+1. Compare ADF features with their Fabric counterparts. For pipelines containing Mapping Data Flows, assess whether they can be upgraded to MDF transforms in Dataflow Gen2 and identify any unsupported connectors, transformations, authentication methods, networking configurations, or other preview limitations. Also note gaps for capabilities such as SSIS.
 1. Define nonfunctional targets, such as SLAs, throughput, cost limits, and observability.
 1. Build a test scenario with sample datasets and expected outputs to objectively compare ADF and Fabric runs.
 1. Plan for secrets rotation, naming conventions, and workspace taxonomy so your migration improves - not just reproduces - your current data integration strategy.
@@ -83,21 +83,20 @@ Fabric often provides more native options for certain tasks. For example, use SQ
 
 For more information, see [Activity continuity between Azure Data Factory and Fabric](compare-fabric-data-factory-and-azure-data-factory.md#activity-comparison).
 
-## Dataflow differences
+## Best practices for upgrading Mapping Data Flows
 
-Azure Data Factory (ADF) **Mapping Data Flows** don’t directly map to Fabric. Instead, you’ll typically rework them using one of the following options:
+The built-in upgrade experience supports eligible Azure Data Factory and Azure Synapse Analytics pipelines that contain Mapping Data Flows. Supported Mapping Data Flows are upgraded to [Mapping Data Flow (MDF) transforms in Dataflow Gen2](dataflow-gen2-mapping-data-flows-transforms.md), preserving their transformation logic and Spark-based execution model. This capability is currently in preview.
 
-- **Dataflow Gen2** for rowset transformations and governed, low-code transformations.
-- **Fabric Warehouse SQL** for set-based ELT tasks, like MERGE or ELT operations close to the data.
-- **Spark notebooks** for advanced transformations, complex logic, or large-scale processing.
+Before upgrading, review the supported connectors, transformations, authentication methods, networking requirements, and [current limitations](dataflow-gen2-mapping-data-flows-transforms.md#limitations). Current preview limitations include flowlets, Data Flow Library, user-defined functions, Managed Virtual Network connectivity, and direct Dataflow Gen2 execution.
 
-When migrating, validate the following:
+For Mapping Data Flows that use unsupported capabilities, consider redesigning the transformation by using:
 
-- Data types and null handling.
-- Surrogate keys and slowly changing dimensions.
-- Idempotent ELT patterns, such as staging and MERGE, to ensure predictable reruns.
+- **Power Query in Dataflow Gen2** for governed, low-code data preparation and rowset transformations.
+- **Fabric Warehouse SQL** for set-based ELT operations.
+- **Spark notebooks** for custom Spark code and advanced transformations.
+- **Fabric pipeline activities or other Fabric items** when they provide a more appropriate implementation.
 
-For migration scenarios, see [Migrate from Dataflow Gen1 to Dataflow Gen2](dataflow-gen2-migrate-from-dataflow-gen1-scenarios.md).
+After upgrading, validate connections, parameters, transformation results, schema, row counts, rerun behavior, monitoring, and performance before production cutover. For requirements and step-by-step instructions, see [Upgrade Azure Data Factory Mapping Data Flow pipelines to Fabric](dataflow-gen2-mapping-data-flows-transforms-upgrade.md).
 
 ## Global parameters in Azure Data Factory
 
@@ -146,4 +145,6 @@ For detailed guidance on upgrade path options (including mounting ADF items for 
 
 ## Related content
 
-[Compare Azure Data Factory to Data Factory in Fabric](compare-fabric-data-factory-and-azure-data-factory.md)
+- [Compare Azure Data Factory to Data Factory in Fabric](compare-fabric-data-factory-and-azure-data-factory.md)
+- [Mapping Data Flow transforms in Dataflow Gen2](dataflow-gen2-mapping-data-flows-transforms.md)
+- [Upgrade Azure Data Factory Mapping Data Flow pipelines to Fabric](dataflow-gen2-mapping-data-flows-transforms-upgrade.md)

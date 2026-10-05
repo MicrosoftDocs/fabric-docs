@@ -3,7 +3,7 @@ title: Differences between Data Factory in Fabric and Azure
 description: Compare Azure Data Factory and Fabric Data Factory features to choose the right data integration solution for your enterprise.
 ms.reviewer: makromer
 ms.topic: concept-article
-ms.date: 06/11/2026
+ms.date: 10/05/2026
 ms.custom:
   - template-concept
   - build-2023
@@ -25,7 +25,7 @@ Here's how the core features stack up between Azure Data Factory and Fabric Data
 |[Azure Data Factory](/azure/data-factory/introduction) |[Fabric Data Factory](data-factory-overview.md) |What's different |
 |:---|:---|:---|
 |Pipeline |Pipeline | **Better integration**: Pipelines in Fabric work seamlessly with lakehouses, warehouses, and other Fabric items right out of the box. Fabric pipelines include more SaaS-based activities and differ in JSON definitions. See our [pipeline feature comparison](#pipeline-feature-comparison) for more details.|
-|Mapping data flow  |Dataflow Gen2 | **Easier to use**: Dataflow Gen2 gives you a simpler experience for building transformations. We're adding more mapping dataflow features to Gen2 all the time. |
+|Mapping data flow |Dataflow Gen2 with [Mapping Data Flow (MDF) transforms](dataflow-gen2-mapping-data-flows-transforms.md) | Use MDF transforms to retain the familiar Mapping Data Flow authoring experience and Spark-based execution model. |
 |Activities |Activities|**More activities coming**: We're working to bring all your favorite ADF activities to Fabric. Plus, you get new ones like the Office 365 Outlook activity that aren't available in ADF. See our [activity comparison](#activity-comparison) for details. |
 |Dataset |Connections only|**Simpler approach**: No more complex dataset configurations. For Fabric Data Factory you use connections to link to your data sources and start working. Fabric eliminates datasets, defining data properties inline within activities. |
 |Linked Service |Connections |**More intuitive**: Connections work like linked services but are easier to set up and manage. |
@@ -54,13 +54,16 @@ Here's how the core features stack up between Azure Data Factory and Fabric Data
 | Pipeline Orchestration | Full-featured pipelines with activities, triggers, parameters | Same orchestration model, re-imagined for Fabric UX |
 | Data Movement | Copy activity, mapping data flows, on-premises IR support, Managed virtual network | Copy activity, dataflows Gen2, built-in connectivity to OneLake and Fabric items, [OneLake shortcuts](../onelake/onelake-shortcuts.md) for live data access without copy, on-premises data gateway, virtual network gateway |
 | Compute / IR | Self-hosted, SSIS and Azure IR (for movement + transformation) | Cloud connections, On-premises, and virtual network gateway |
-| Data Flows | Azure Blob, data lake Storage, SQL, 100+ connectors | Same connectors + native OneLake integration, tighter Fabric workspace alignment |
+| Data Flows | Mapping Data Flows provide low-code, Spark-based transformations with supported source and sink connectors | Dataflow Gen2 provides [MDF transforms](dataflow-gen2-mapping-data-flows-transforms.md) with Spark-based execution. |
 | Monitoring | pipelines and Data Flows in ADF Studio with runs, triggers, alerts | Monitoring Hub and workspace Monitoring with unified views across pipelines, Dataflows, notebooks, Databases, etc. |
 | Triggers | Schedules, tumbling window, event-based triggers | Schedules, event triggers, tumbling window triggers as interval schedules. Pipelines that use live data through OneLake shortcuts and cross-tenant sharing work seamlessly with all Fabric trigger types. |
 | CI/CD | ARM templates + Azure DevOps or GitHub repo integration | Built-in deployment pipelines in Fabric; workspace-level promotion (Dev → Test → Production) and external repo integration |
 | Security | Managed identities, Key Vault integration, private endpoints | Same security model plus Fabric workspace RBAC; OneLake security integration |
 | Data sharing and governance | N/A | [Cross-tenant data sharing](../governance/external-data-sharing-overview.md) via OneLake shortcuts enables governed, live data access across organizational boundaries without duplication |
 | Pricing | Azure utilization-based Pay-as-you-go (per activity run, data movement, and compute) | Capacity-based (Fabric F SKU) with no charges for external or pipeline activities, only activity runs and pipeline data movement |
+
+> [!NOTE]
+> The built-in upgrade experience supports eligible Azure Data Factory and Azure Synapse Analytics pipelines containing Mapping Data Flows. Supported Mapping Data Flows are upgraded to MDF transforms in Dataflow Gen2. Review the supported connectors, transformations, authentication methods, and [current limitations](dataflow-gen2-mapping-data-flows-transforms.md#limitations) before upgrading. For requirements and instructions, see [Upgrade Azure Data Factory Mapping Data Flow pipelines to Fabric](dataflow-gen2-mapping-data-flows-transforms-upgrade.md).
 
 ## Activity comparison
 
@@ -88,7 +91,7 @@ With Data Factory, we continue to maintain a high degree of continuity with Data
 |HDInsight|[Hive activity](/azure/data-factory/transform-data-using-hadoop-hive) &bull; [Pig activity](/azure/data-factory/transform-data-using-hadoop-pig) &bull; [MapReduce activity](/azure/data-factory/transform-data-using-hadoop-map-reduce) &bull; [Spark activity](/azure/data-factory/transform-data-using-spark) &bull; [Streaming activity](/azure/data-factory/transform-data-using-hadoop-streaming)|[HDInsight activity](azure-hdinsight-activity.md)|
 |If condition|[Y](/azure/data-factory/control-flow-if-condition-activity)|[Y](if-condition-activity.md)|
 |Lookup|[Y](/azure/data-factory/control-flow-lookup-activity)|[Y](lookup-activity.md)|
-|Mapping Data Flow|[Y](/azure/data-factory/control-flow-execute-data-flow-activity)|[Dataflow Gen2](tutorial-dataflows-gen2-pipeline-activity.md)|
+|Mapping Data Flow|[Y](/azure/data-factory/control-flow-execute-data-flow-activity)|[MDF transforms in Dataflow Gen2](dataflow-gen2-mapping-data-flows-transforms.md) (Preview). Power Query in [Dataflow Gen2](tutorial-dataflows-gen2-pipeline-activity.md) is also available as an alternative redesign option.|
 |Office 365 Outlook|N/A|[Y](outlook-activity.md)|
 |Power Query (ADF only - Wrangling Dataflow)|Deprecated|N/A|
 |Script|[Y](/azure/data-factory/transform-data-using-script)|[Y](script-activity.md)|
@@ -114,7 +117,7 @@ In addition to maintaining activity continuity, Fabric Data Factory introduces s
 1. **Outlook**: Available in Fabric Data Factory to facilitate integration with Outlook services.
 1. **Teams**: Available in Fabric Data Factory to enable orchestration of Microsoft Teams activities.
 1. **Semantic model refresh**: Available in Fabric Data Factory to enhance Power BI semantic model refresh capabilities.
-1. **Dataflow Gen2**: Available in Fabric Data Factory to empower data orchestration with advanced dataflow capabilities.
+1. **Dataflow Gen2**: Available in Fabric Data Factory for Power Query-based transformations and Spark-based MDF transforms. MDF transforms are currently in preview and are executed through the pipeline Dataflow activity.
 
 For a list of all available Fabric Data Factory activities, see the [Activity overview](activity-overview.md).
 
@@ -227,7 +230,10 @@ Use the **Save as** feature to duplicate any existing pipeline. Use it to create
 
 For more information, see the following resources:
 
-- [Migrate from Azure Data Factory to Fabric Data Factory](migrate-planning-azure-data-factory.md)
+- [Plan your upgrade from Azure Data Factory to Fabric Data Factory](upgrade-planning-azure-data-factory.md)
+- [Upgrade best practices for Azure Data Factory to Fabric Data Factory](upgrade-best-practices.md)
+- [Mapping Data Flow transforms in Dataflow Gen2](dataflow-gen2-mapping-data-flows-transforms.md)
+- [Upgrade Azure Data Factory Mapping Data Flow pipelines to Fabric](dataflow-gen2-mapping-data-flows-transforms-upgrade.md)
+- [A guide to Fabric dataflows for Azure Data Factory Mapping Data Flow users](guide-to-dataflows-for-mapping-data-flow-users.md)
 - [Get the full overview of Fabric Data Factory](data-factory-overview.md)
-- [Migration best practices](migration-best-practices.md)
 - [Build your first data integration in Fabric](transform-data.md)
