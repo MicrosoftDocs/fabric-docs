@@ -112,7 +112,7 @@ Modernize your ETL environment by upgrading pipelines and data flows to Fabric. 
   - Data Lake Analytics (U-SQL), a deprecated Azure service.
   - Validation activity, which you can rebuild by using Get Metadata, pipeline loops, and If activities.
   - Power Query, which is fully integrated into Fabric as dataflows where M code can be reused.
-  - Notebook, Jar, and Python activities, which can be replaced with the Databricks activity in Fabric.
+  - Notebook, Jar, and Python activities, which you can replace with the Databricks activity in Fabric.
   - Hive, Pig, MapReduce, Spark, and Streaming activities, which can be replaced with the HDInsight activity in Fabric.
 
 For requirements and step-by-step instructions, see [Upgrade Azure Data Factory Mapping Data Flow pipelines to Fabric](dataflow-gen2-mapping-data-flows-transforms-upgrade.md).
