@@ -3,7 +3,7 @@ title: Upgrade Planning for Azure Data Factory to Fabric Data Factory
 description: Plan your ADF-to-Fabric upgrades with steps to evaluate the correct tools and execute your upgrade.
 #customer intent: As an Azure Data Factory customer I want to choose the right upgrade path to Fabric Data Factory, so I can quickly and easily upgrade all my items.
 ms.reviewer: makromer
-ms.date: 08/21/2026
+ms.date: 10/05/2026
 ms.topic: concept-article
 ai-usage: ai-assisted
 ---
@@ -53,11 +53,14 @@ This experience helps you:
 - Understand compatibility gaps before upgrading.
 - Mount your Azure Data Factory into a Fabric workspace for side-by-side review.
 - Upgrade supported pipelines incrementally to Fabric from your mounted data factory.
-- Plan remediation or redesign for items that require updates or are coming soon.
+- Upgrade supported Mapping Data Flows in selected pipelines to MDF transforms in Dataflow Gen2.
+- Plan remediation or redesign for items that require updates, use unsupported capabilities, or are coming soon.
 
 Each pipeline and activity is clearly categorized (Ready, Needs review, Coming soon, or Not compatible), helping teams plan upgrades intentionally and validate results before switching production workloads.
 This approach is well-suited for customers who want a guided, low-risk, and incremental upgrade path, while maintaining visibility into unsupported features and next steps.
 For step-by-step guidance, see [Upgrade your Azure Data Factory pipelines to Fabric](how-to-upgrade-your-azure-data-factory-pipelines-to-fabric-data-factory.md).
+
+The built-in upgrade experience also supports eligible pipelines containing Mapping Data Flows. Supported Mapping Data Flows are upgraded to MDF transforms in Dataflow Gen2, preserving their transformation logic and Spark-based execution model. This capability is currently in preview. For requirements, limitations, and upgrade instructions, see [Upgrade Azure Data Factory Mapping Data Flow pipelines to Fabric](dataflow-gen2-mapping-data-flows-transforms-upgrade.md).
 
 ## Manual upgrade
 
@@ -96,18 +99,23 @@ Moving from ADF to Fabric can involve different strategies depending on your use
 
 ### Scenario 1: ADF pipelines and data flows
 
-Modernize your ETL environment by moving pipelines and data flows to Fabric. Plan for these elements:
+Modernize your ETL environment by upgrading pipelines and data flows to Fabric. Plan for these elements:
 
-- Recreate Linked Services as Connections
-- Recreate global parameters as variable libraries
-- Define dataset properties inline in pipeline activities
+- Recreate linked services as Fabric connections, or map linked services to existing Fabric connections during the built-in upgrade experience.
+- Recreate global parameters as variable libraries.
+- Define dataset properties inline in pipeline activities.
 - Replace SHIRs (self-hosted integration runtimes) with OPDGs (on-premises data gateways) and VNet IRs with virtual network data gateways.
+- For eligible pipelines containing Mapping Data Flows, use the built-in upgrade experience to upgrade supported Mapping Data Flows to MDF transforms in Dataflow Gen2.
+- Review the [MDF transform limitations](dataflow-gen2-mapping-data-flows-transforms.md#limitations), supported connectors, transformations, authentication methods, and networking requirements before upgrading.
+- For Mapping Data Flows that use capabilities not supported in the current preview, remediate the unsupported components or redesign the transformation by using Power Query in Dataflow Gen2, Fabric Warehouse SQL, Spark notebooks, or another appropriate Fabric capability.
 - Rebuild [unsupported ADF activities](compare-fabric-data-factory-and-azure-data-factory.md#activity-comparison) using Fabric alternatives or the Invoke pipeline activity. Unsupported activities include:
-  - Data Lake Analytics (U-SQL), a deprecated Azure service
-  - Validation activity, which can be rebuilt using Get Metadata, pipeline loops, and If activities
-  - Power Query, which is fully integrated into Fabric as dataflows where M code can be reused
-  - Notebook, Jar, and Python activities can be replaced with the Databricks activity in Fabric
-  - Hive, Pig, MapReduce, Spark, and Streaming activities can be replaced with the HDInsight activity in Fabric
+  - Data Lake Analytics (U-SQL), a deprecated Azure service.
+  - Validation activity, which can be rebuilt by using Get Metadata, pipeline loops, and If activities.
+  - Power Query, which is fully integrated into Fabric as dataflows where M code can be reused.
+  - Notebook, Jar, and Python activities, which can be replaced with the Databricks activity in Fabric.
+  - Hive, Pig, MapReduce, Spark, and Streaming activities, which can be replaced with the HDInsight activity in Fabric.
+
+For requirements and step-by-step instructions, see [Upgrade Azure Data Factory Mapping Data Flow pipelines to Fabric](dataflow-gen2-mapping-data-flows-transforms-upgrade.md).
 
 As an example, here's ADF dataset configuration page, with its file path and compression settings:
 
@@ -124,7 +132,13 @@ Recreate CDC as [Copy job](create-copy-job.md) items. For Airflow, copy your DAG
 ### Scenario 3: Pipeline upgrade using the built-in experience
 
 This guided, assessment-first experience helps you evaluate readiness, identify compatibility gaps, and upgrade supported pipelines incrementally to a Fabric workspace—all without scripts.
-For more information, see [Upgrade your Azure Data Factory pipelines to Fabric](how-to-upgrade-your-azure-data-factory-pipelines-to-fabric-data-factory.md).
+
+The built-in upgrade experience also supports eligible pipelines containing Mapping Data Flows. Supported Mapping Data Flows are upgraded to MDF transforms in Dataflow Gen2, preserving their transformation logic and Spark-based execution model. This capability is currently in preview.
+
+For more information, see:
+
+- [Upgrade your Azure Data Factory pipelines to Fabric](how-to-upgrade-your-azure-data-factory-pipelines-to-fabric-data-factory.md)
+- [Upgrade Azure Data Factory Mapping Data Flow pipelines to Fabric](dataflow-gen2-mapping-data-flows-transforms-upgrade.md)
 
 ### Scenario 4: ADF items in a Fabric workspace
 
