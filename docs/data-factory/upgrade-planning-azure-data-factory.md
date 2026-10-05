@@ -133,7 +133,7 @@ Recreate CDC as [Copy job](create-copy-job.md) items. For Airflow, copy your DAG
 
 This guided, assessment-first experience helps you evaluate readiness, identify compatibility gaps, and upgrade supported pipelines incrementally to a Fabric workspace—all without scripts.
 
-The built-in upgrade experience also supports eligible pipelines containing Mapping Data Flows. Supported Mapping Data Flows are upgraded to MDF transforms in Dataflow Gen2, preserving their transformation logic and Spark-based execution model. This capability is currently in preview.
+The built-in upgrade experience also supports eligible pipelines that contain Mapping Data Flows. Supported Mapping Data Flows are upgraded to MDF transforms in Dataflow Gen2, preserving their transformation logic and Spark-based execution model. This capability is currently in preview.
 
 For more information, see:
 
