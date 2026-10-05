@@ -38,6 +38,7 @@ After you [enable workspace monitoring](enable-workspace-monitoring.md), you can
 
 | Workload | Fabric artifact name | Supported events and logs |
 |---|---|---|
+| Data Warehouse | Warehouse, SQL analytics endpoint, and warehouse snapshot | <ul><li>[Warehouse query execution logs](../data-warehouse/warehouse-workspace-monitoring.md)</li></ul> |
 | Real-Time hub | Job Events | [Job event logs](item-job-event-logs.md) |
 | Real-Time hub | Event schema set | [Event schema set operation logs](../real-time-intelligence/schema-sets/event-schema-set-operation-logs.md) |
 | Data Engineering | GraphQL API | <ul><li>[Graph QL metrics](../data-engineering/graphql-operations.md)</li><li>[Graph QL operation logs](../data-engineering/graphql-operations.md)</li></ul> |

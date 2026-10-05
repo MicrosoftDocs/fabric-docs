@@ -29,7 +29,11 @@ Before you start:
 - The Dataflow Gen1 must be in a workspace assigned to a [Fabric capacity](../enterprise/licenses.md#capacity).
 - Fabric item creation must be allowed for the relevant scope (the **Users can create Fabric items** admin setting is enabled at the tenant, capacity, or user-group level).
 - You need **Admin**, **Member**, or **Contributor** access to the workspace.
-- You must be the owner of the Dataflow Gen1. If you aren't, the wizard reports the dataflow as **Upgrade unavailable**. Ask the owner to run the upgrade, or use **Take over** to become the owner first.
+- You must be the owner of the Dataflow Gen1. If you aren't, the wizard reports the
+   dataflow as **Upgrade unavailable**. Ask the owner to run the upgrade, or use
+   **Take over** to become the owner first. After **Take over** completes, refresh the
+   Dataflow Gen1. If the refresh fails, fix the issue and confirm that the Dataflow Gen1
+   refreshes successfully before upgrading to Dataflow Gen2 (CI/CD).
 
 > [!IMPORTANT]
 > Your Dataflow Gen1 can't be recovered after the upgrade completes. If you want to keep it, use [Save As](migrate-to-dataflow-gen2-using-save-as.md) to create a new Dataflow Gen2 (CI/CD) with the same content as the original dataflow. The upgrade is in-place: the original Dataflow Gen1 is replaced by a new Dataflow Gen2 (CI/CD) with the same ID and name, and you can't revert it.
@@ -95,7 +99,7 @@ The wizard reports **Upgrade unavailable** when it finds a reason that blocks th
 
 | Reason | Why upgrade is unavailable | What to do |
 | --- | --- | --- |
-| **Not the owner** | You aren't the owner of the dataflow. | Ask the owner to run the upgrade, or use **Take over** to become the owner and run it yourself. |
+| **Not the owner** | You aren't the owner of the dataflow. | Ask the owner to run the upgrade, or use **Take over** to become the owner first. After **Take over**, complete the Gen1 refresh check in [Prerequisites](#prerequisites) before upgrading. |
 | **Unresolved data source connections** | One or more data source connections couldn't be resolved. | Recreate or rebind the connections before upgrading. |
 
 ## After the upgrade

@@ -1,12 +1,12 @@
 ---
-title: "Tutorial: Copy job with SAP ABAP Add-On (Preview)"
+title: "Tutorial: Copy job with SAP ABAP Add-On"
 description: Learn how to use SAP ABAP Add-On to copy data from SAP systems in Copy Job.
 ms.reviewer: ukchrist
 ms.date: 09/16/2026
 ms.topic: tutorial
 ---
 
-# Copy job for SAP via ABAP Add-On (preview)
+# Copy job for SAP via ABAP Add-On
 
 Copy job for SAP via ABAP Add-On extends the built-in SAP connectors (SAP HANA, SAP Table, and SAP BW OpenHub) in Fabric. It extracts data from SAP using a proprietary Microsoft Data Integration ABAP Add-On installed on your SAP server, providing more scalable and flexible data ingestion with advanced capabilities than the classic connector.
 
@@ -56,7 +56,7 @@ Complete the following steps to create a new Copy job to ingest data from SAP vi
 
 1. Select **SAP Table Application Server**, and set up the connection details. You can also choose an existing connection of this type you created upfront.
 
-1. Select the **Use ABAP Add-On (Preview)** option, and configure the tables to copy. The UI offers two ways to select source tables for extraction.
+1. Select the **Use ABAP Add-On** option, and configure the tables to copy. The UI offers two ways to select source tables for extraction.
 
     - **Select from list**
     - **Enter manually**

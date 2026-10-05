@@ -19,6 +19,10 @@ Fabric provides a set of tools to help you:
 - Gain insights into your Fabric capacity to determine when it's time to scale up or down
 - Understand details about running and completed queries
 
+## Workspace monitoring
+
+Workspace monitoring provides workspace-level visibility across warehouses, SQL analytics endpoints, and warehouse snapshots. Query the `WarehouseExecutions` table with KQL to compare performance, investigate failures, and identify where distributed query CPU activity is concentrated. For more information, see [Monitor warehouse activity with workspace monitoring](warehouse-workspace-monitoring.md).
+
 ## Microsoft Fabric Capacity Metrics app
 
 The Microsoft Fabric Capacity Metrics app provides visibility into capacity usage of each warehouse allowing you to see the compute charges for all user-generated and system-generated T-SQL statements within a warehouse and SQL analytics endpoint. For more information on monitoring capacity usage, see [Billing and utilization reporting in Fabric Data Warehouse](usage-reporting.md).
@@ -41,6 +45,7 @@ Use the [Data Warehouse operations skill](skills-for-data-warehouse-operations.m
 
 ## Related content
 
+- [Monitor warehouse activity with workspace monitoring](warehouse-workspace-monitoring.md)
 - [Billing and utilization reporting in Fabric Data Warehouse](usage-reporting.md)
 - [Monitor your running and completed T-SQL queries using Data Warehouse Monitor](monitor.md)
 - [Query insights in Fabric Data Warehouse](query-insights.md)
