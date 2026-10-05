@@ -4,7 +4,7 @@ description: Query performance monitoring telemetry for Microsoft SQL with KQL, 
 author: lcwright
 ms.author: lancewright
 ms.reviewer: wiassaf
-ms.date: 10/01/2026
+ms.date: 10/05/2026
 ms.topic: how-to
 ms.custom:
   - preview
@@ -15,7 +15,7 @@ ai-usage: ai-assisted
 
 **Applies to:** Azure SQL Database, SQL Server on Azure Virtual Machines, SQL Server enabled by Azure Arc
 
-Performance monitoring collects telemetry from dynamic management views (DMVs) on your SQL resources and stores it in a Microsoft-managed Azure Data Explorer cluster. Enabling performance monitoring doesn't incur additional cost. Performance monitoring doesn't collect any personal data or customer content, and the data isn't stored at rest outside the geography of the monitored SQL resource. This article shows you how to query that data directly with Kusto Query Language (KQL). Use the queries to build your own reports, feed your own tools, or let an AI agent investigate performance across your estate.
+Performance monitoring collects telemetry from dynamic management views (DMVs) on your SQL resources and stores it in a Microsoft-managed Azure Data Explorer cluster. Enabling performance monitoring doesn't incur an extra cost. Performance monitoring doesn't collect any personal data or customer content, and the data isn't stored at rest outside the geography of the monitored SQL resource. This article shows you how to query that data directly with Kusto Query Language (KQL). Use the queries to build your own reports, feed your own tools, or let an AI agent investigate performance across your estate.
 
 The same telemetry powers the **Performance** page in the [Database Hub](overview.md). Use the Database Hub for built-in, estate-wide performance views. Use this article when you want to go beyond the built-in views with your own queries, reports, dashboards, or AI agents.
 
@@ -31,16 +31,16 @@ In this article, you:
 
 [!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
 
-The connection endpoint, database schema, and table and column names described in this article are subject to change during the preview. Check this article for updates before you build automation or reports that depend on them.
+The connection endpoint, database schema, and table and column names described in this article can change during the preview. Check this article for updates before you build automation or reports that depend on them.
 
 ## Prerequisites
 
 - **Performance monitoring is enabled** on the resources you want to query. Only resources with monitoring enabled send telemetry. To enable monitoring for Azure SQL Database, SQL Server on Azure VMs, and SQL Server enabled by Azure Arc, see [Enable performance monitoring for Microsoft SQL](add-sql.md).
 - **Azure RBAC access to the subscription.** Your account must be a member of the [Reader](/azure/role-based-access-control/built-in-roles/general#reader) role, or a role with higher privileges, on each subscription that contains the resources you want to query. The endpoint returns rows only for resources your account can access, so two people can run the same query and see different results. The Database Hub uses the same Azure RBAC permissions, so if you can see a resource's performance data in the Database Hub, you can query its telemetry here.
-- **The `Microsoft.AzureArcData` resource provider is registered** on each subscription that contains the resources you want to query. The resource provider is required to query the collected data, for all resource types. For more information, see [Register resource provider](/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider). To register it with the Azure CLI, run:
+- **The `Microsoft.Sql` resource provider is registered** on each subscription that contains the resources you want to query. The resource provider is required to query the collected data, for all resource types. For more information, see [Register resource provider](/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider). To register it with the Azure CLI, run:
 
   ```azurecli
-  az provider register --namespace Microsoft.AzureArcData
+  az provider register --namespace Microsoft.Sql
   ```
 - **A Microsoft Entra ID account** that can sign in to the [Azure Data Explorer web UI](https://dataexplorer.azure.com).
 - **Azure commercial cloud.** Government, sovereign, and air-gapped clouds aren't supported during the preview. For the list of supported Azure regions, see [Regional availability and data handling](add-sql.md#regional-availability-and-data-handling).
@@ -256,8 +256,8 @@ Source: `sys.dm_os_wait_stats`. All time and count columns are **cumulative** si
 
 | Column | Type | Description |
 | --- | --- | --- |
-| `WaitType` | string | Wait type, for example `PAGEIOLATCH_SH` or `WRITELOG` |
-| `WaitCategory` | string | Grouping of wait types, for example `CPU`, `Lock`, `Buffer IO`, `Tran Log IO`, `Idle` |
+| `WaitType` | string | Wait type, such as `PAGEIOLATCH_SH` or `WRITELOG` |
+| `WaitCategory` | string | Grouping of wait types, such as `CPU`, `Lock`, `Buffer IO`, `Tran Log IO`, `Idle` |
 | `WaitTimeMs` | long | Total wait time, including signal wait |
 | `ResourceWaitTimeMs` | long | Time waiting for the resource |
 | `SignalWaitTimeMs` | long | Time waiting for a CPU after the resource became available |
@@ -506,7 +506,7 @@ Source: `sys.dm_exec_sessions`, `sys.dm_exec_connections`, and `sys.dm_exec_requ
 | --- | --- | --- |
 | `DatabaseID` | int16 | Database ID |
 | `DatabaseName` | string | Database name |
-| `SessionID` | int16 | Session ID (SPID) |
+| `SessionID` | int16 | Session ID |
 | `SessionStatus` | string | `running`, `sleeping`, or `dormant` |
 | `ConnectionID` | string | Connection ID |
 
@@ -514,7 +514,7 @@ Source: `sys.dm_exec_sessions`, `sys.dm_exec_connections`, and `sys.dm_exec_requ
 
 - In `SqlServerActiveSessions`, `DatabaseID` is an `int16` column that contains the database ID.
 - In `SqlServerActiveSessions`, `DatabaseName` is a `string` column that contains the database name.
-- In `SqlServerActiveSessions`, `SessionID` is an `int16` column that contains the session ID, also known as the SPID.
+- In `SqlServerActiveSessions`, `SessionID` is an `int16` column that contains the session ID.
 - In `SqlServerActiveSessions`, `SessionStatus` is a `string` column that contains `running`, `sleeping`, or `dormant`.
 - In `SqlServerActiveSessions`, `ConnectionID` is a `string` column that contains the connection ID.
 
@@ -1050,18 +1050,18 @@ The Database Hub covers the most common performance questions across your estate
 | Symptom | Likely cause | What to do |
 | --- | --- | --- |
 | Sign-in fails or the connection can't be added | You're signed in to the wrong tenant, or the connection URI is mistyped | Sign in with the account that has access to your SQL resources. Check that the URI is `https://adx.centralus.arcdataservices.com/kusto/` |
-| Access denied (Forbidden) | Your account doesn't have Reader on the subscription, or the `Microsoft.AzureArcData` resource provider isn't registered | Check the access requirements in [Prerequisites](#prerequisites) |
+| Access denied (Forbidden) | Your account doesn't have Reader on the subscription, or the `Microsoft.Sql` resource provider isn't registered | Check the access requirements in [Prerequisites](#prerequisites) |
 | Query fails with "Failed to resolve" a table or column name | A table or column name is misspelled or doesn't exist | Check names with the queries in [Explore tables and columns](#explore-tables-and-columns) |
-| Query succeeds with no rows | Monitoring isn't enabled, your account doesn't have Reader on the subscription, the `Microsoft.AzureArcData` resource provider isn't registered, the `ResourceID` doesn't match, or the time window is outside retention | Check the [prerequisites](#prerequisites). Run [query 1](#query-1-find-the-resources-you-can-query). Compare `ResourceID` with `=~`. Run [query 2](#query-2-estate-summary-and-available-time-range) to check the time range |
+| Query succeeds with no rows | Monitoring isn't enabled, your account doesn't have Reader on the subscription, the `Microsoft.Sql` resource provider isn't registered, the `ResourceID` doesn't match, or the time window is outside retention | Check the [prerequisites](#prerequisites). Run [query 1](#query-1-find-the-resources-you-can-query). Compare `ResourceID` with `=~`. Run [query 2](#query-2-estate-summary-and-available-time-range) to check the time range |
 | Numbers are far too large | Cumulative counters were summed | Follow [rule 2](#rules-for-correct-results) |
 
 <!-- The following sentences repeat and rephrase the content in the preceding table for maximum context clarity. Keep this prose summary synchronized with the preceding table. -->
 
 - If sign-in fails or the connection can't be added, you might be signed in to the wrong tenant or the connection URI might be mistyped. Sign in with the account that has access to your SQL resources, and confirm that the URI is `https://adx.centralus.arcdataservices.com/kusto/`.
-- If you receive an access denied (`Forbidden`) error, your account might not have the Reader role on the subscription or the `Microsoft.AzureArcData` resource provider might not be registered. Check the access requirements in [Prerequisites](#prerequisites).
+- If you receive an access denied (`Forbidden`) error, your account might not have the Reader role on the subscription or the `Microsoft.Sql` resource provider might not be registered. Check the access requirements in [Prerequisites](#prerequisites).
 - If a query fails because a table or column name can't be resolved, the name might be misspelled or might not exist. Check names with the queries in [Explore tables and columns](#explore-tables-and-columns).
 - If a query succeeds but returns no rows, check the following possible causes:
-  - Monitoring isn't enabled, your account doesn't have the Reader role on the subscription, or the `Microsoft.AzureArcData` resource provider isn't registered. Check the [prerequisites](#prerequisites).
+  - Monitoring isn't enabled, your account doesn't have the Reader role on the subscription, or the `Microsoft.Sql` resource provider isn't registered. Check the [prerequisites](#prerequisites).
   - The `ResourceID` doesn't match. Run [query 1](#query-1-find-the-resources-you-can-query), and compare `ResourceID` with `=~`.
   - The time window is outside retention. Run [query 2](#query-2-estate-summary-and-available-time-range) to check the available time range.
 - If the numbers are far too large, cumulative counters were summed. Follow [rule 2](#rules-for-correct-results).
@@ -1213,14 +1213,14 @@ Each row is an array whose positions match the `Columns` array. Map values by co
 | Status | Likely cause | What to do |
 | --- | --- | --- |
 | `401` | No token, expired token, or wrong audience | Run `az login`, then request a token for `https://kusto.kusto.windows.net` |
-| `403` | The caller doesn't have Reader on the subscription, or the `Microsoft.AzureArcData` resource provider isn't registered | Check the access requirements in [Prerequisites](#prerequisites) |
+| `403` | The caller doesn't have Reader on the subscription, or the `Microsoft.Sql` resource provider isn't registered | Check the access requirements in [Prerequisites](#prerequisites) |
 | `400 with an empty body` | KQL syntax error, a column name that doesn't exist, or a dot command sent to `/v1/rest/query` | Check names with `getschema`. Send dot commands to `/v1/rest/mgmt` |
 | `500` | The request body isn't valid, for example `csl` isn't a plain string | In PowerShell, cast the query with `[string]` before `ConvertTo-Json`. The body must be `{"db": "...", "csl": "..."}` |
 
 <!-- The following sentences repeat and rephrase the content in the preceding table for maximum context clarity. Keep this prose summary synchronized with the preceding table. -->
 
 - An HTTP `401` response means that the token is missing or expired, or that it has the wrong audience. Run `az login`, and then request a token for `https://kusto.kusto.windows.net`.
-- An HTTP `403` response means that the caller doesn't have the Reader role on the subscription or that the `Microsoft.AzureArcData` resource provider isn't registered. Check the access requirements in [Prerequisites](#prerequisites).
+- An HTTP `403` response means that the caller doesn't have the Reader role on the subscription or that the `Microsoft.Sql` resource provider isn't registered. Check the access requirements in [Prerequisites](#prerequisites).
 - An HTTP `400` response with an empty body means that the KQL has a syntax error, a column name doesn't exist, or a dot command was sent to `/v1/rest/query`. Check names with `getschema`, and send dot commands to `/v1/rest/mgmt`.
 - An HTTP `500` response means that the request body isn't valid, such as when `csl` isn't a plain string. In PowerShell, cast the query with `[string]` before `ConvertTo-Json`; the body must be `{"db": "...", "csl": "..."}`.
 
@@ -1238,7 +1238,7 @@ CONNECTION
 - Header: Authorization: Bearer <token>. Get the token at runtime with:
   az account get-access-token --resource https://kusto.kusto.windows.net --query accessToken -o tsv
 - Results: Tables[0].Columns (names) and Tables[0].Rows (positional arrays). Map by name.
-- Access requires Reader (or higher) on the subscription and the Microsoft.AzureArcData
+- Access requires Reader (or higher) on the subscription and the Microsoft.Sql
   resource provider registered on it. On HTTP 403 or unexpectedly empty results, tell the
   user to check both.
 - Tables: run "union withsource=TableName SqlServer* | where SampleTimeUTC > ago(1h)

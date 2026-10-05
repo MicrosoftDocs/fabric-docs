@@ -1,5 +1,5 @@
 ---
-title: Common dbt job patterns in Microsoft Fabric (preview)
+title: Common dbt job patterns in Microsoft Fabric
 description: Learn how to choose a dbt job architecture pattern for warehouse, lakehouse, medallion, and pipeline orchestration scenarios in Microsoft Fabric.
 ms.reviewer: meghasony, abnarain
 ms.service: fabric
@@ -11,7 +11,7 @@ ms.custom:
 ai-usage: ai-assisted  
 ---
 
-# Common dbt job patterns in Microsoft Fabric (preview)
+# Common dbt job patterns in Microsoft Fabric
 
 In Microsoft Fabric, dbt jobs provide a managed way to run dbt projects as part of the Fabric data platform. Use them when teams want modular SQL-based transformations, tests, dependency management, and source-controlled analytics engineering while Fabric provides ingestion, storage, orchestration, monitoring, and consumption.
 
