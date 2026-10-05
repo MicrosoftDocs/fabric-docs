@@ -21,7 +21,7 @@ items:
     - name: Enable performance monitoring for Microsoft SQL
       href: hub/add-sql.md
     - name: Query performance monitoring telemetry
-      href: hub/query-performance-monitoring-telemetry.md
+      href: hub/microsoft-sql-query-performance-monitoring-telemetry.md
 
 - name: SQL database in Fabric
   items:
