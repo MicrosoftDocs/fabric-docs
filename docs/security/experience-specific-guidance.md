@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.reviewer: danzhang, wiassaf
 ms.topic: how-to
-ms.date: 09/24/2026
+ms.date: 10/06/2026
 ai-usage: ai-assisted
 ---
 
@@ -357,6 +357,17 @@ Before a disaster occurs: 
 - Maintain Fabric App source code outside the Fabric region to enable recovery.  
 
 - Application data in the database isn't recovered as part of the Fabric App deployment process and must be restored separately.  You can manually recover a Fabric App after a regional disaster by using the application source code and the Rayfin CLI. 
+
+### Azure Databricks Storage
+
+Azure Databricks Storage data is stored in OneLake. To protect the data against a regional outage, enable the disaster recovery setting on the Fabric capacity that contains the Azure Databricks Storage item. When this setting is enabled, OneLake asynchronously replicates the data to the Azure paired region. 
+
+If OneLake initiates a regional failover, applications can continue to access the replicated data through the OneLake global endpoint after the failover completes. Continued access through the OneLake public APIs doesn’t require creating another Azure Databricks Storage item or copying the data to another workspace. 
+
+Review [OneLake Disaster Recovery and Data Protection](https://learn.microsoft.com/en-us/fabric/onelake/onelake-disaster-recovery) for the applicable behavior, considerations, and limitations. 
+
+For Azure Databricks-specific disaster recovery planning, see [Disaster recovery - Azure Databricks](https://learn.microsoft.com/en-us/azure/databricks/admin/disaster-recovery).
+
 
 ## Data Science
 
