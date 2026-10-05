@@ -94,8 +94,6 @@ The following limitations apply to SQL analytics endpoint automatic schema gener
 
 Data truncation to 8 KB still applies on the tables in SQL analytics endpoint of the lakehouse, including shortcuts to a mirrored item if SQL analytics endpoint is not using new metadata sync.
 
-Since all tables do not support **varchar(max)** joins on these columns may not work as expected if one of the tables still has a data truncation. For example, if you CTAS a table of a newly created mirrored item into a lakehouse table using Spark, then join them using the column with **varchar(max)**, the query results will be different compared to the **varchar(8000)** data type. If you would like to continue to have previous behavior, you can cast the column to **varchar(8000)** in the query.
-
 You can confirm if a table has any **varchar(max)** column from the schema metadata using the following T-SQL query. A `max_length` value of `-1` represents **varchar(max)**:
 
 ```sql
