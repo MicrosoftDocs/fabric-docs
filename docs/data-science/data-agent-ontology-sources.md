@@ -5,11 +5,14 @@ ms.author: shradha
 author: shradha
 ms.reviewer: shradha
 ms.topic: how-to
-ms.date: 09/25/2026
+ms.date: 10/05/2026
 ai-usage: ai-generated
 ---
 
 # Use Ontology as context in Fabric data agent
+
+> [!WARNING]
+> There's an ongoing service outage affecting this feature. You might not be able to add an Ontology to a data agent if the Ontology uses the new experience. For status and details, see [Data Agent can't add an Ontology using the new experience](https://support.fabric.microsoft.com/known-issues/?active=true&fixed=true&sort=published&issueId=1987).
 
 Ontology provides governed business context to a Fabric data agent. It describes business entities, their properties and relationships, definitions, synonyms, mappings, and bindings to underlying data sources.
 
