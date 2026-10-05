@@ -22,7 +22,6 @@ Before adding relationship types to your ontology, make sure you have the follow
 * An ontology (preview) item with [entity types](how-to-create-entity-types.md) created.
 * Relationship source data that meets these guidelines:
     * The data is in [OneLake](../../onelake/onelake-overview.md).
-    * The source data contains keys for both the source and target entity type.
 
 ## Create relationship type
 
