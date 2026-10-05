@@ -110,7 +110,7 @@ Modernize your ETL environment by upgrading pipelines and data flows to Fabric. 
 - For Mapping Data Flows that use capabilities not supported in the current preview, remediate the unsupported components or redesign the transformation by using Power Query in Dataflow Gen2, Fabric Warehouse SQL, Spark notebooks, or another appropriate Fabric capability.
 - Rebuild [unsupported ADF activities](compare-fabric-data-factory-and-azure-data-factory.md#activity-comparison) using Fabric alternatives or the Invoke pipeline activity. Unsupported activities include:
   - Data Lake Analytics (U-SQL), a deprecated Azure service.
-  - Validation activity, which can be rebuilt by using Get Metadata, pipeline loops, and If activities.
+  - Validation activity, which you can rebuild by using Get Metadata, pipeline loops, and If activities.
   - Power Query, which is fully integrated into Fabric as dataflows where M code can be reused.
   - Notebook, Jar, and Python activities, which can be replaced with the Databricks activity in Fabric.
   - Hive, Pig, MapReduce, Spark, and Streaming activities, which can be replaced with the HDInsight activity in Fabric.
