@@ -289,6 +289,8 @@ items:
         items:
           - name: Monitoring overview
             href: monitoring-overview.md
+          - name: Workspace monitoring
+            href: warehouse-workspace-monitoring.md
           - name: Billing and utilization
             href: usage-reporting.md
             displayName: Billing, usage reporting
