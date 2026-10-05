@@ -285,10 +285,12 @@ Currently, Eventstream only supports Workspace Private Link for a limited set of
 
 The following scenarios are unsupported:
 
-* Custom Endpoint as a source isn't supported.
-* Custom Endpoint as a destination isn't supported.
 * Eventhouse as a destination (with direct ingestion mode) isn't supported.
 * Activator as a destination isn't supported.
+
+Support currently applies only to newly created Eventstream artifacts. Migration support for existing Eventstreams is still under development in collaboration with the platform team. At this time, migration is only available for F capacity workspaces, as workspace level private link isn't supported for P capacity workspaces.
+
+Workspace limitation: A maximum of 300 Eventstream artifacts is supported per workspace.
 
 ### Eventhouse support
 

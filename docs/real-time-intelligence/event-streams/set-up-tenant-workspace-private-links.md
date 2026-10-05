@@ -65,7 +65,7 @@ Currently, when tenant or workspace level private link is enabled, you can only 
 |                       |                        | Azure IoT Hub           | Yes          |
 |                       |                        | Azure Service Bus       | Yes          |
 |                       |                        | Azure Data Explorer DB  | Yes          |
-|                       | **Basic**              | Custom Endpoint         | No           |
+|                       | **Basic**              | Custom Endpoint         | Yes           |
 |                       |                        | Sample data             | Yes          |
 |                       |                        | Weather data            | Yes          |
 |                       | **External streams**   | Confluent Cloud for Apache Kafka | Yes |
