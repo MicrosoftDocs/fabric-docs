@@ -63,7 +63,7 @@ The following table shows the adapters supported in dbt jobs, along with the run
 
 - **No build caching**: The service compiles and executes a project fresh from the source. dbt artifacts from previous runs aren't available for recompilation.
 - **Adapter constraints**: Some partner adapters aren't yet supported in Fabric. See [the current supported adapters](#supported-adapters-and-runtime).
-- **Large project import**: dbt projects with more than 5,000 files can't currently be imported. For larger projects, connect the project from GitHub to the dbt job for execution, or split it into smaller projects.
+- **Large project import**: You can't currently import dbt projects with more than 5,000 files. For larger projects, connect the project from GitHub to the dbt job for execution, or split it into smaller projects.
 
 ## Related content
 
