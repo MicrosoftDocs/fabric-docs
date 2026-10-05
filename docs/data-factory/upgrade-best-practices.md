@@ -85,7 +85,7 @@ For more information, see [Activity continuity between Azure Data Factory and Fa
 
 ## Best practices for upgrading Mapping Data Flows
 
-The built-in upgrade experience supports eligible Azure Data Factory and Azure Synapse Analytics pipelines containing Mapping Data Flows. Supported Mapping Data Flows are upgraded to [Mapping Data Flow (MDF) transforms in Dataflow Gen2](dataflow-gen2-mapping-data-flows-transforms.md), preserving their transformation logic and Spark-based execution model. This capability is currently in preview.
+The built-in upgrade experience supports eligible Azure Data Factory and Azure Synapse Analytics pipelines that contain Mapping Data Flows. Supported Mapping Data Flows are upgraded to [Mapping Data Flow (MDF) transforms in Dataflow Gen2](dataflow-gen2-mapping-data-flows-transforms.md), preserving their transformation logic and Spark-based execution model. This capability is currently in preview.
 
 Before upgrading, review the supported connectors, transformations, authentication methods, networking requirements, and [current limitations](dataflow-gen2-mapping-data-flows-transforms.md#limitations). Current preview limitations include flowlets, Data Flow Library, user-defined functions, Managed Virtual Network connectivity, and direct Dataflow Gen2 execution.
 
