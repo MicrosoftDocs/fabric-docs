@@ -104,7 +104,7 @@ else:
 
 ### 2. Create two HC sessions with the same session tag
 
-Create two HC sessions using `sessionTag: "demo-tag"` and set `spark.highConcurrency.max` to `50`. Because both requests use the same tag and Spark configuration, the Fabric API can pack them onto the **same underlying Livy session**. Each session gets its own isolated REPL.
+Create two HC sessions by using `sessionTag: "demo-tag"` and set `spark.highConcurrency.max` to `50`. Because both requests use the same tag and Spark configuration, the Fabric API can pack them onto the **same underlying Livy session**. Each session gets its own isolated REPL.
 
 ```python
 import json
