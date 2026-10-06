@@ -362,7 +362,7 @@ Before a disaster occurs: 
 
 Azure Databricks Storage stores data in OneLake. To protect your data against a regional outage, enable the disaster recovery setting on the Fabric capacity that contains the Azure Databricks Storage item. When you enable this setting, OneLake asynchronously replicates the data to the Azure paired region. 
 
-If OneLake initiates a regional failover, applications can continue to access the replicated data through the OneLake global endpoint after the failover completes. Continued access through the OneLake public APIs doesn’t require creating another Azure Databricks Storage item or copying the data to another workspace. 
+If OneLake initiates a regional failover, applications can continue to access the replicated data through the OneLake global endpoint after the failover finishes. Continued access through the OneLake public APIs doesn't require creating another Azure Databricks Storage item or copying the data to another workspace. 
 
 For the applicable behavior, considerations, and limitations, review [OneLake Disaster Recovery and Data Protection](https://learn.microsoft.com/en-us/fabric/onelake/onelake-disaster-recovery). 
 
