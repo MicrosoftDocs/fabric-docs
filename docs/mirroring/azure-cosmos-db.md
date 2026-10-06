@@ -2,10 +2,11 @@
 title: "Microsoft Fabric Mirrored Databases From Azure Cosmos DB"
 description: Learn about the mirrored databases from Azure Cosmos DB in Microsoft Fabric.
 ms.reviewer: mjbrown, jmaldonado
-ms.date: 12/03/2025
+ms.date: 10/06/2026
 ms.topic: overview
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
+ai-usage: ai-assisted
 ---
 
 # Mirroring Azure Cosmos DB
@@ -151,7 +152,9 @@ You can also mask sensitive data from non admin users using dynamic data masking
 >
 > Mirroring doesn't support customer managed keys (CMK) on OneLake.
 
-Azure Cosmos DB accounts with virtual networks or private endpoints are supported with Fabric mirroring using the Network ACL Bypass feature. This allows your authorized Fabric workspace to access the Cosmos DB account without requiring a data gateway, while maintaining enhanced network security. For detailed configuration instructions, see [Configure private networks for Microsoft Fabric mirrored databases from Azure Cosmos DB](azure-cosmos-db-private-network.md).
+Fabric mirroring supports Azure Cosmos DB accounts with virtual networks or private endpoints. The documented setup for accounts with network restrictions uses a virtual network data gateway connection together with a trusted-workspace network ACL bypass. For accounts with private endpoints, this workflow keeps public network access disabled throughout setup and mirroring.
+
+The Azure Cosmos DB connector runs in the Fabric Replicator service, not on the gateway. Ongoing mirroring data travels over an internal Microsoft network and doesn't use public endpoints. This traffic doesn't traverse your virtual network data gateway or your private endpoint. Support for an account with a private endpoint doesn't mean that ongoing mirroring uses that endpoint. For detailed configuration instructions, including REST-based mirrored database creation, see [Configure mirroring for Azure Cosmos DB accounts with network restrictions](azure-cosmos-db-private-network.md).
 
 ## Disaster recovery and replication latency
 

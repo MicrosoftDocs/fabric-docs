@@ -1,43 +1,47 @@
 ---
-title: "Configure Private Networks for Azure Cosmos DB Fabric Mirroring"
-description: Learn how to mirror an Azure Cosmos DB for NoSQL account into Fabric over a private network by using a virtual network data gateway.
+title: "Configure Mirroring for Azure Cosmos DB Accounts With Network Restrictions"
+description: Learn how to configure Fabric mirroring for Azure Cosmos DB accounts with network restrictions and how ongoing mirroring data travels over an internal network.
 ms.reviewer: jmaldonado, mbrown
-ms.date: 08/10/2026
+ms.date: 10/06/2026
 ms.topic: how-to
 ai-usage: ai-assisted
 ---
 
-# How to: Configure private networks for Azure Cosmos DB Fabric Mirroring
+# Configure mirroring for Azure Cosmos DB accounts with network restrictions
 
-This guide shows you how to mirror an Azure Cosmos DB for NoSQL account into Microsoft Fabric when the account has public network access disabled and is reachable only over a private endpoint or virtual network. Instead of maintaining large DataFactory and Power Query Online IP allow lists, you use a Fabric virtual network data gateway that runs inside your virtual network, together with a trusted-workspace network ACL bypass.
+This guide shows you how to mirror an Azure Cosmos DB for NoSQL account into Microsoft Fabric when the account has public network access disabled and a private endpoint configured. The workflow uses a virtual network data gateway connection together with a trusted-workspace network ACL bypass.
 
 You perform most steps in the [Azure portal](https://portal.azure.com) and the [Fabric portal](https://app.fabric.microsoft.com). Three Azure Cosmos DB account settings don't have a portal control, so this guide provides Azure CLI and Azure PowerShell commands for them.
 
 > [!IMPORTANT]
-> The mirroring interface can't use a virtual network data gateway connection. The **New mirrored Azure Cosmos DB** experience only offers cloud connections, so the gateway connection that you create in [Step 7](#step-7-create-the-azure-cosmos-db-v2-connection) isn't selectable there. As a result, you must create a private-network mirrored database by using the Fabric REST API, as described in [Step 8](#step-8-create-the-mirrored-database-with-the-fabric-rest-api). This behavior is a current product gap in Fabric mirroring, not a configuration error.
+> The mirroring interface can't use a virtual network data gateway connection. The **mirrored Azure Cosmos DB** experience only offers cloud connections, so the gateway connection that you create in [Step 7](#step-7-create-the-azure-cosmos-db-v2-connection) isn't selectable there. As a result, you must create the mirrored database by using the Fabric REST API, as described in [Step 8](#step-8-create-the-mirrored-database-with-the-fabric-rest-api). This behavior is a current product gap in Fabric mirroring, not a configuration error.
 
 ## Why this approach
 
-Fabric needs two kinds of access to mirror an Azure Cosmos DB account that's locked down to a private network:
+The virtual network data gateway-based connection and trusted-workspace network ACL bypass work together to enable access to your Azure Cosmos DB account when public network access is disabled.
 
-- **Control plane** (metadata reads during setup) is handled by the trusted-workspace network ACL bypass that you configure in steps 3 through 5.
-- **Data plane** (replication) is handled by the virtual network data gateway that runs inside your virtual network, which you configure in steps 6 through 8.
+Use the gateway for connection creation and connection testing, and configure the trusted-workspace network ACL bypass to authorize your Fabric workspace to access the account.
 
-Because the gateway reaches Azure Cosmos DB privately, you don't add or maintain Fabric's service-tag IP ranges, and your account's public network access stays disabled the whole time.
+The Azure Cosmos DB connector runs in the Fabric Replicator service, not on the virtual network data gateway. Ongoing mirroring data travels over an internal Microsoft network and doesn't use public endpoints. This traffic doesn't traverse your virtual network data gateway or your private endpoint.
+
+> [!IMPORTANT]
+> This configuration supports mirroring from an account with a private endpoint. It doesn't provide ongoing mirroring through that private endpoint.
+
+For the private endpoint configuration, your account's public network access stays disabled throughout setup and mirroring.
 
 ### Choose how the gateway subnet reaches Azure Cosmos DB
 
-This approach removes the DataFactory and Power Query Online IP allow lists entirely. Only the way the gateway subnet reaches your account differs, based on how you configure private connectivity:
+The gateway subnet reaches your account according to its network configuration:
 
 | Azure Cosmos DB network configuration | Public network access | How the gateway subnet is permitted |
 | --- | --- | --- |
 | **Private endpoint** (validated in this guide) | Disabled | The gateway subnet resolves the account to its private endpoint through private DNS. |
 | **Virtual network service endpoints** | Enabled with **Selected networks** | Enable the `Microsoft.AzureCosmosDB` service endpoint on the gateway's delegated subnet, and then add that subnet as a virtual network rule on the account. |
 
-In both cases, you allow your own subnet or private endpoint, never Fabric's service-tag ranges. The remaining steps are identical.
+The remaining steps apply to both configurations.
 
 > [!NOTE]
-> This guide is written and validated for the private endpoint configuration with public network access disabled. The virtual network service endpoint variant uses the same mechanism, but it isn't separately validated end to end.
+> This guide is written and validated for the private endpoint configuration with public network access disabled. The virtual network service endpoint variant uses the same mechanism.
 
 ## Prerequisites
 
@@ -231,15 +235,18 @@ The `EnableFabricNetworkAclBypass` capability lets an authorized Fabric workspac
 
 # [Azure CLI](#tab/azure-cli)
 
-```azurecli
-az cosmosdb update -g "$RESOURCE_GROUP" -n "$COSMOS_ACCOUNT" --capabilities EnableFabricNetworkAclBypass
+Run these commands in Bash. The `--capabilities` flag replaces the entire capability list. The query retrieves existing capabilities other than `EnableFabricNetworkAclBypass`, which the update includes once. The `&&` operators prevent later commands from running if an earlier command fails.
 
-# Verify.
-az cosmosdb show -g "$RESOURCE_GROUP" -n "$COSMOS_ACCOUNT" --query "capabilities[].name" -o tsv
+```bash
+CURRENT_CAPABILITIES=$(az cosmosdb show -g "$RESOURCE_GROUP" -n "$COSMOS_ACCOUNT" \
+  --query "capabilities[?name!='EnableFabricNetworkAclBypass'].name" -o tsv) &&
+az cosmosdb update -g "$RESOURCE_GROUP" -n "$COSMOS_ACCOUNT" \
+  --capabilities $CURRENT_CAPABILITIES EnableFabricNetworkAclBypass &&
+az cosmosdb show -g "$RESOURCE_GROUP" -n "$COSMOS_ACCOUNT" \
+  --query "capabilities[].name" -o tsv
 ```
 
-> [!IMPORTANT]
-> The `--capabilities` flag replaces the entire capability set. If the account already has other capabilities, list all of them in the same command.
+Leave `$CURRENT_CAPABILITIES` unquoted in the update command so Bash passes each capability name as a separate argument.
 
 # [Azure PowerShell](#tab/azure-powershell)
 
@@ -329,7 +336,7 @@ Complete the following steps in the Fabric portal to create the gateway and conn
     :::image type="content" source="./media/azure-cosmos-db-private-network/fabric-new-connection-cosmos-db.png" alt-text="Screenshot of the Fabric New connection dialog box configured for a virtual network connection to Azure Cosmos DB v2 with OAuth 2.0." lightbox="./media/azure-cosmos-db-private-network/fabric-new-connection-cosmos-db.png":::
 
 > [!NOTE]
-> Private-network mirroring supports OAuth-based authentication only. Selecting **Virtual network** connectivity and a **Gateway cluster name** routes the connection through your virtual network data gateway to the private endpoint.
+> This configuration supports OAuth-based authentication only. When you select **Virtual network** connectivity and a **Gateway cluster name**, you use the gateway for connection creation and connection testing. This selection doesn't move the Azure Cosmos DB connector or ongoing mirroring traffic to the gateway.
 
 > [!WARNING]
 > If you get the error *OAuth login through the data gateway was unsuccessful. The service returned an invalid token.*, the gateway subnet is missing outbound access to Microsoft Entra ID. For the fix, see [Gateway OAuth invalid token error](#gateway-oauth-invalid-token-error).
@@ -424,14 +431,14 @@ After you create the mirrored database, verify that replication works:
 
 1. Select **Refresh** about once a minute, and watch the **Rows replicated** column climb for each table until it matches your source containers. Initial replication can take a few minutes to begin, depending on data volume.
 
-Because Azure Cosmos DB public network access stays disabled throughout, replicating rows proves that Fabric reaches the account through the trusted-workspace bypass over the private gateway.
+These checks confirm that mirroring is running while Azure Cosmos DB public network access remains disabled. They don't establish the network path used by mirroring traffic.
 
 ## Limitations and considerations
 
 When you use a virtual network data gateway with Azure Cosmos DB mirroring, be aware of these limitations:
 
 - The target Fabric workspace region must be the same as the source Azure Cosmos DB account region.
-- Private-network mirroring supports OAuth-based authentication only.
+- This configuration supports OAuth-based authentication only.
 - You must create the mirrored database with the Fabric REST API, because the mirroring interface can't use a virtual network data gateway connection.
 - The gateway subnet must be a dedicated `/27` or larger subnet that's delegated to `Microsoft.PowerPlatform/vnetaccesslinks`, with line of sight to the account and private DNS resolution.
 - The gateway subnet needs outbound access to Microsoft Entra ID for the OAuth sign-in. After March 31, 2026, attach a NAT gateway, because default outbound access is retired.
