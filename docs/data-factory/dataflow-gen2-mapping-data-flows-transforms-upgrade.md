@@ -1,190 +1,195 @@
 ---
-title: Upgrade Azure Data Factory Mapping Data Flows Pipelines to Fabric (Preview)
+title: Upgrade Azure Data Factory pipelines with Mapping Data Flows to Fabric (Preview)
 description: Learn how to upgrade Azure Data Factory pipelines containing Mapping Data Flows to Microsoft Fabric, converting them to mapping data flow transforms in Dataflow Gen2.
 ms.topic: how-to
-ms.date: 06/04/2026
+ms.date: 10/06/2026
 ms.reviewer: krirukm
 ms.search.form: DataflowGen2
 ms.custom: dataflows
 ai-usage: ai-assisted
 ---
 
-# Upgrade Azure Data Factory mapping data flows pipelines to Fabric (Preview)
+# Upgrade Azure Data Factory pipelines with Mapping Data Flows to Fabric (Preview)
 
-> [!IMPORTANT]  
-> The upgrade experience for Azure Data Factory Mapping Data Flows to Fabric is currently in public preview and is subject to change.
+> [!IMPORTANT]
+> Upgrading Azure Data Factory Mapping Data Flows to Fabric is currently in public preview and is subject to change.
 
-Upgrade Azure Data Factory pipelines containing Mapping Data Flows to Microsoft Fabric Data Factory by following the steps in this article. This article covers the migration path for pipelines that use Mapping Data Flows, which are converted to [mapping data flow (MDF) transforms in Dataflow Gen2](dataflow-gen2-mapping-data-flows-transforms.md). To migrate pipelines that don't contain Mapping Data Flows, see [Upgrade your Azure Data Factory pipelines to Fabric](/azure/data-factory/how-to-upgrade-your-azure-data-factory-pipelines-to-fabric-data-factory).
+Use the Azure Data Factory built-in upgrade experience to upgrade eligible pipelines containing Mapping Data Flows to Microsoft Fabric Data Factory. During the upgrade, supported Mapping Data Flows are converted to [mapping data flow (MDF) transforms in Dataflow Gen2](dataflow-gen2-mapping-data-flows-transforms.md), and the associated pipelines are upgraded to Fabric pipelines.
+
+This article describes the additional validation, execution, and monitoring steps for upgraded MDF transforms. For an overview of the complete Azure Data Factory upgrade experience, see [Upgrade your Azure Data Factory pipelines to Fabric Data Factory](how-to-upgrade-your-azure-data-factory-pipelines-to-fabric-data-factory.md).
 
 ## Prerequisites
 
 Before you start the upgrade, make sure you have the following:
 
-- Access to an Azure Data Factory instance containing Mapping Data Flows.
+- An Azure Data Factory instance with at least one pipeline that contains a Mapping Data Flow.
+- Permission to access the Azure Data Factory instance and its pipelines.
 - Access to a [Microsoft Fabric-enabled tenant](/fabric/enterprise/licenses).
-- Contributor or higher permissions to the Fabric workspace.
-- Existing [Fabric connections](/fabric/data-factory/connector-overview) for supported data sources and destinations.
+- A Fabric license. If you don't have one, the **View in Fabric (Preview)** onboarding experience prompts you to sign up for a free license, if self-service sign-up is enabled for your tenant.
+- Access to a Fabric capacity, such as a Trial capacity.
+- Contributor or higher permissions to create and update items in the Fabric workspace.
+- Fabric connections for source and destination data stores that aren't created automatically during the upgrade.
+
+The upgrade experience creates supported Fabric connections automatically when their Azure Data Factory authentication configurations can be mapped safely. For other connections, select an existing Fabric connection or create one before starting the upgrade.
 
 ## Supported upgrade scenarios
 
-The upgrade tool supports the following scenarios:
+The built-in upgrade experience supports eligible Azure Data Factory pipelines that contain Mapping Data Flows. During the upgrade process:
 
-- Azure Data Factory pipelines containing Mapping Data Flows.
-- Azure Synapse Analytics pipelines containing Mapping Data Flows.
-- Lift-and-shift migration of existing Mapping Data Flow workloads to Fabric.
+- The selected Azure Data Factory pipelines are upgraded to Fabric pipelines.
+- Supported Mapping Data Flows are converted to MDF transforms in Dataflow Gen2.
+- Pipelines and their referenced Mapping Data Flows are upgraded together.
+- Supported linked services are mapped to new or existing Fabric connections.
+- The original Azure Data Factory pipelines and Mapping Data Flows remain unchanged.
 
-## Start the migration
+Before upgrading, review the [MDF transform limitations](dataflow-gen2-mapping-data-flows-transforms.md#limitations), supported connectors, transformations, authentication methods, and networking requirements.
 
-You can start migrating Azure Data Factory pipelines containing Mapping Data Flows from either of the following entry points.
+## Upgrade pipelines that contain Mapping Data Flows
 
-| Entry point | Best for | Starting step |
-| --- | --- | --- |
-| From Azure Data Factory | Running an assessment of pipeline readiness before migration | [Option A: Start from Azure Data Factory](#option-a-start-from-azure-data-factory) |
-| From a Fabric workspace | Directly mounting and migrating an Azure Data Factory instance from Fabric | [Option B: Start from Fabric](#option-b-start-from-fabric) |
+Start the upgrade in Azure Data Factory through **View in Fabric (Preview)**. Viewing your factory in Fabric doesn't upgrade or change your pipelines. The upgrade starts only after you review readiness, select pipelines, and explicitly select **Start upgrade (Preview)**.
 
-Both options continue at [Migrate pipelines](#migrate-pipelines).
+### Step 1: View your Azure Data Factory in Fabric
 
-### Option A: Start from Azure Data Factory
+1. Open your Azure Data Factory portal.
+1. Select **View in Fabric (Preview)**.
 
-Use this option when you want to:
+   :::image type="content" source="media/dataflow-gen2-mapping-data-flows-transforms-upgrade/view-in-fabric.png" alt-text="Screenshot showing the View in Fabric Preview entry point in Azure Data Factory." lightbox="media/dataflow-gen2-mapping-data-flows-transforms-upgrade/view-in-fabric.png":::
 
-- Review migration readiness
-- Run migration assessment
-- Evaluate supported pipelines before migration
+1. If this is your first time using the experience, review and accept the terms and conditions, and then select **Try Fabric Data Factory**.
 
-#### Start migration from Azure Data Factory
+      :::image type="content" source="media/dataflow-gen2-mapping-data-flows-transforms-upgrade/try-fabric-data-factory.png" alt-text="Screenshot showing the terms and conditions to try Fabric Data Factory." lightbox="media/dataflow-gen2-mapping-data-flows-transforms-upgrade/try-fabric-data-factory.png":::
+   
+1. Follow the onboarding steps to:
+   - Verify or obtain a Fabric license.
+   - Select a Fabric capacity.
+   - Create or reuse the Fabric workspace associated with your Azure Data Factory.
+   - Surface the Azure Data Factory as an item in the workspace.
+   - Optionally share workspace access with existing Azure Data Factory users and groups.
 
-1. Open the Azure Data Factory portal.
-1. Select **Migrate to Fabric (Preview)**.
-1. Select **Get started**.
+   :::image type="content" source="media/dataflow-gen2-mapping-data-flows-transforms-upgrade/set-up-factory-panel.png" alt-text="Screenshot showing the steps for setting up an Azure Data Factory in Fabric." lightbox="media/dataflow-gen2-mapping-data-flows-transforms-upgrade/set-up-factory-panel.png":::
 
-   :::image type="content" source="media/dataflow-gen2-mapping-data-flows-transforms-upgrade/adf-migrate-to-fabric-entry-get-started.png" alt-text="Screenshot of the Azure Data Factory portal showing the Migrate to Fabric (Preview) option and Get started button.":::
+After setup, your Azure Data Factory is visible in Fabric. Nothing is upgraded, and pipeline execution and billing remain in Azure Data Factory.
 
-#### Review migration assessment
+For complete onboarding details, see [Upgrade your Azure Data Factory pipelines to Fabric Data Factory](how-to-upgrade-your-azure-data-factory-pipelines-to-fabric-data-factory.md#get-started).
 
-1. On the **Fabric Migration Assessment (Preview)** page, review the list of supported pipelines available for migration.
-1. Select **Next**.
+### Step 2: Review readiness
 
-   :::image type="content" source="media/dataflow-gen2-mapping-data-flows-transforms-upgrade/fabric-migration-assessment-page.png" alt-text="Screenshot of the Fabric Migration Assessment page listing pipelines ready for migration.":::
+1. In the Azure Data Factory item in Fabric, select **Assess and upgrade**.
 
-#### Mount Azure Data Factory to Fabric
+   :::image type="content" source="media/dataflow-gen2-mapping-data-flows-transforms-upgrade/assess-and-upgrade.png" alt-text="Screenshot showing the Assess and Upgrade button for an Azure Data Factory item in Fabric." lightbox="media/dataflow-gen2-mapping-data-flows-transforms-upgrade/assess-and-upgrade.png":::
 
-1. Select the Fabric workspace where you want to mount the Azure Data Factory instance.
-1. Select **Mount**.
-1. After the mount operation completes, select **Continue in Fabric**.
+1. Review the readiness assessment.
+1. Identify the pipelines containing Mapping Data Flows that you want to upgrade.
+1. Review any pipelines categorized as **Review** and address unsupported or partially supported capabilities before upgrading.
+1. Select the eligible pipelines that you want to upgrade.
 
-   :::image type="content" source="media/dataflow-gen2-mapping-data-flows-transforms-upgrade/mount-adf-to-fabric-workspace.png" alt-text="Screenshot of the Fabric workspace selection screen used to mount an Azure Data Factory instance.":::
+The assessment is read-only and doesn't modify or upgrade the selected pipelines.
 
-   :::image type="content" source="media/dataflow-gen2-mapping-data-flows-transforms-upgrade/mount-adf-to-fabric-workspace-continue-in-fabric.png" alt-text="Screenshot of the Continue in Fabric screen for opening the mounted Azure Data Factory instance in Microsoft Fabric.":::
+:::image type="content" source="media/dataflow-gen2-mapping-data-flows-transforms-upgrade/readiness-assessment.png" alt-text="Screenshot showing Azure Data Factory pipeline readiness assessment results in Fabric." lightbox="media/dataflow-gen2-mapping-data-flows-transforms-upgrade/readiness-assessment.png":::
 
-### Option B: Start from Fabric
+### Step 3: Review connections
 
-Use this option when you already know which Azure Data Factory instance you want to migrate and want to start directly from Fabric.
-
-#### Mount Azure Data Factory from Fabric
-
-1. Open your Fabric workspace.
-1. Select **New item**.
-1. Select **Azure Data Factory**.
-
-   :::image type="content" source="media/dataflow-gen2-mapping-data-flows-transforms-upgrade/fabric-new-item-adf-selection.png" alt-text="Screenshot of the Microsoft Fabric workspace New item experience showing Azure Data Factory selection.":::
-
-1. Select the Azure Data Factory instance to mount.
-1. Select **OK**.
-
-   :::image type="content" source="media/dataflow-gen2-mapping-data-flows-transforms-upgrade/data-factory-selection-in-mount.png" alt-text="Screenshot of the Azure Data Factory instance selection dialog.":::
-
-## Migrate pipelines
-
-After you mount Azure Data Factory in Fabric, continue with the migration workflow.
-
-### Select pipelines to migrate
-
-1. Open the mounted Azure Data Factory item in Fabric.
-1. Select **Migrate to Fabric (Preview)**.
-
-   :::image type="content" source="media/dataflow-gen2-mapping-data-flows-transforms-upgrade/mounted-adf-migrate-pipelines.png" alt-text="Screenshot of the mounted Azure Data Factory item in Fabric showing the Migrate to Fabric (Preview) option.":::
-
-1. Select the pipeline containing the Mapping Data Flow.
 1. Select **Review connections**.
+1. Review the Azure Data Factory linked services used by the selected pipelines and Mapping Data Flows.
+1. Verify connections that were created automatically.
+1. For connections that weren't created automatically, select an existing Fabric connection or create a new connection.
+1. Confirm that each required source and destination is mapped to a valid Fabric connection.
 
-   :::image type="content" source="media/dataflow-gen2-mapping-data-flows-transforms-upgrade/migrate-to-fabric-review-connections.png" alt-text="Screenshot of the pipeline selection screen showing pipelines ready for migration.":::
+:::image type="content" source="media/dataflow-gen2-mapping-data-flows-transforms-upgrade/map-connections.png" alt-text="Screenshot showing the mapping of Azure Data Factory linked services to Fabric connections." lightbox="media/dataflow-gen2-mapping-data-flows-transforms-upgrade/map-connections.png":::
 
-### Map linked services to Fabric connections
+> [!NOTE]
+> Pipelines can still be upgraded if some connections aren't mapped. Activities that depend on unmapped connections are deactivated. Configure the required Fabric connections and re-enable those activities before running the upgraded pipelines.
 
-1. On the **Map connections** page:
+### Step 4: Start the upgrade
 
-   - Review Azure Data Factory linked services.
-   - Map them to Fabric connections.
+1. Review the selected pipelines and connection mappings.
+1. Select **Start upgrade (Preview)**.
+1. Wait for the upgrade to complete.
+1. Review the status of each upgraded item.
 
-1. Select **Confirm**.
+During the upgrade:
 
-   :::image type="content" source="media/dataflow-gen2-mapping-data-flows-transforms-upgrade/map-adf-linked-services-to-fabric-connections.png" alt-text="Screenshot of the Map connections page for mapping Azure Data Factory linked services to Fabric connections.":::
+- Selected Azure Data Factory pipelines are upgraded to Fabric pipelines.
+- Supported Mapping Data Flows referenced by the selected pipelines are converted to MDF transforms in Dataflow Gen2.
+- Pipelines and their Mapping Data Flows are upgraded together.
+- Upgraded items are placed in a folder prefixed with the source Azure Data Factory name.
+- The source Azure Data Factory pipelines and Mapping Data Flows remain unchanged.
 
-### Review migration results
+:::image type="content" source="media/dataflow-gen2-mapping-data-flows-transforms-upgrade/upgrade-results.png" alt-text="Screenshot showing the results after upgrading Azure Data Factory pipelines to Fabric." lightbox="media/dataflow-gen2-mapping-data-flows-transforms-upgrade/upgrade-results.png":::
 
-After migration completes, the tool:
+## Validate upgraded mapping data flow transforms
 
-- Migrates pipelines and Mapping Data Flows together.
-- Converts Mapping Data Flows to MDF transforms in Dataflow Gen2.
-- Places migrated artifacts in a new folder in the Fabric workspace.
+After the upgrade finishes, open the upgrade results or the folder containing the upgraded items, and validate the MDF transforms before running the pipelines.
 
-Select **View in workspace**.
+### Open the upgraded Dataflow Gen2 item
 
-   :::image type="content" source="media/dataflow-gen2-mapping-data-flows-transforms-upgrade/migration-results-view-in-workspace.png" alt-text="Screenshot of the migration results page showing migrated resources and their statuses.":::
+1. Open the upgraded Dataflow Gen2 item.
+1. Review the upgraded MDF transform logic.
+1. Validate the transformation graph.
 
-## Validate migrated mapping data flow transforms
+   :::image type="content" source="media/dataflow-gen2-mapping-data-flows-transforms-upgrade/mapping-data-flow-transform-canvas-dataflow-gen2.png" alt-text="Screenshot of the mapping data flow transform authoring experience showing the migrated transformation graph." lightbox="media/dataflow-gen2-mapping-data-flows-transforms-upgrade/mapping-data-flow-transform-canvas-dataflow-gen2.png":::
 
-After migration, open the migration folder and validate the upgraded MDF transforms before you run them.
-
-### Open the migrated Dataflow Gen2 item
-
-1. Open the migrated Dataflow Gen2 item.
-1. Review the migrated MDF transform logic.
-1. Validate the transformation graph using the MDF transform toolbar.
-
-   :::image type="content" source="media/dataflow-gen2-mapping-data-flows-transforms-upgrade/mapping-data-flow-transform-canvas-dataflow-gen2.png" alt-text="Screenshot of the mapping data flow transform authoring experience showing the migrated transformation graph.":::
-
-### Save the migrated mapping data flow transform
+### Save the upgraded mapping data flow transform
 
 1. Open the **Save & run** menu.
 1. Select **Save**.
 
-   :::image type="content" source="media/dataflow-gen2-mapping-data-flows-transforms-upgrade/mapping-data-flow-transform-save-menu-preview.png" alt-text="Screenshot of the Save and run menu in the mapping data flow transform authoring experience.":::
+   :::image type="content" source="media/dataflow-gen2-mapping-data-flows-transforms-upgrade/mapping-data-flow-transform-save-menu.png" alt-text="Screenshot of the Save and run menu in the mapping data flow transform authoring experience.":::
 
 > [!NOTE]  
 > Only the **Save** action is currently supported for MDF transforms during public preview.
 
-## Run migrated pipelines
+## Run upgraded pipelines
 
-After validation, run the migrated Fabric pipeline.
+After validation, run the upgraded Fabric pipeline.
 
 ### Configure the pipeline run
 
-1. Open the migrated Fabric pipeline.
+1. Open the upgraded Fabric pipeline.
 1. Select the **Dataflow activity**.
 1. Review the selected MDF transform query.
 1. Configure Spark runtime settings if needed.
 
    :::image type="content" source="media/dataflow-gen2-mapping-data-flows-transforms-upgrade/fabric-pipeline-dataflow-activity.png" alt-text="Screenshot of the pipeline editor showing the Dataflow activity configuration for a mapping data flow transform.":::
 
-### Run the migrated pipeline
+### Run the upgraded pipeline
 
 1. Validate the pipeline.
-1. Run the pipeline manually or configure schedules and triggers.
+1. Verify that all required connections are mapped and authenticated.
+1. Re-enable any activities that you deactivated because of unmapped connections.
+1. Run the pipeline manually.
+1. Compare its results with the original Azure Data Factory pipeline.
+1. After validation, run or configure, and re-enable schedules and triggers as needed.
 
    :::image type="content" source="media/dataflow-gen2-mapping-data-flows-transforms-upgrade/fabric-pipeline-dataflow-activity-run.png" alt-text="Screenshot of the pipeline run and scheduling options for the migrated pipeline.":::
 
-## Monitor migrated mapping data flow transform executions
+## Validate upgrade results
 
-You can monitor migrated pipeline and MDF transform executions through:
+Before production cutover, validate the upgraded workload in a nonproduction environment:
+
+- Confirm that you mapped and authenticated all required Fabric connections.
+- Compare source and sink row counts with the original Azure Data Factory run.
+- Validate schema, data types, null handling, and schema-drift behavior.
+- Validate Mapping Data Flow expressions and transformation results.
+- Verify insert, update, upsert, and delete behavior.
+- Validate parameters and dynamic content.
+- Confirm idempotent behavior when pipelines are rerun.
+- Review error handling and monitoring.
+- Compare runtime behavior and performance without assuming identical execution duration.
+- Re-enable and configure triggers only after completing end-to-end validation.
+
+The original Azure Data Factory pipelines and Mapping Data Flows remain available for side-by-side validation.
+
+## Monitor upgraded mapping data flow transform executions
+
+You can monitor upgraded pipeline and MDF transform executions through:
 
 - Pipeline output pane
 - Monitoring Hub
 - Activity Runs
 - Dataflow activity execution details
 
-:::image type="content" source="media/dataflow-gen2-mapping-data-flows-transforms-upgrade/mapping-data-flow-transform-pipeline-monitoring-from-output.png" alt-text="Screenshot of the pipeline output pane showing the Dataflow activity run status.":::
+:::image type="content" source="media/dataflow-gen2-mapping-data-flows-transforms-upgrade/mapping-data-flow-transform-pipeline-monitoring-from-output.png" alt-text="Screenshot of the pipeline output pane showing the Dataflow activity run status." lightbox="media/dataflow-gen2-mapping-data-flows-transforms-upgrade/mapping-data-flow-transform-pipeline-monitoring-from-output.png":::
 
 To review execution details:
 
@@ -192,27 +197,30 @@ To review execution details:
 1. Select the Dataflow activity from **Activity Runs**.
 1. Review execution status and runtime details.
 
-   :::image type="content" source="media/dataflow-gen2-mapping-data-flows-transforms-upgrade/mapping-data-flow-transforms-monitoring-hub.png" alt-text="Screenshot of the Monitoring Hub showing pipeline activity runs and their statuses.":::
+   :::image type="content" source="media/dataflow-gen2-mapping-data-flows-transforms-upgrade/mapping-data-flow-transforms-monitoring-hub.png" alt-text="Screenshot of the Monitoring Hub showing pipeline activity runs and their statuses." lightbox="media/dataflow-gen2-mapping-data-flows-transforms-upgrade/mapping-data-flow-transforms-monitoring-hub.png":::
 
    :::image type="content" source="media/dataflow-gen2-mapping-data-flows-transforms-upgrade/mapping-data-flow-transforms-detailed-diagnostics.png" alt-text="Screenshot of the Dataflow activity execution details showing processing metrics.":::
 
 ## Limitations
 
-The following limitations currently apply during public preview:
+The general Azure Data Factory upgrade limitations also apply to pipelines containing Mapping Data Flows. Review [Known limitations](how-to-upgrade-your-azure-data-factory-pipelines-to-fabric-data-factory.md#known-limitations) before selecting pipelines to upgrade.
+
+The following limitations currently apply to MDF transforms during public preview:
 
 | Area | Limitation |
 | --- | --- |
 | Flowlets | Not supported. |
 | Data Flow Library | Not supported. |
 | User-defined functions (UDFs) | Not supported. |
-| Dataflow execution | MDF transforms can only be executed through the Pipeline Dataflow activity. Refresh dataflow isn't supported. |
+| Dataflow execution | MDF transforms can only be executed through the pipeline Dataflow activity. Direct Dataflow Gen2 refresh isn't supported. |
 | Managed Virtual Network | Managed Virtual Network support isn't available. |
 | Spark runtime execution | MDF transforms currently use Spark runtime infrastructure similar to Azure Data Factory and Azure Synapse Analytics Mapping Data Flows. |
+| Feature parity | Not all Azure Data Factory Mapping Data Flow capabilities are available in the current preview. |
 
 ## Related content
 
+- [Upgrade your Azure Data Factory pipelines to Fabric Data Factory](how-to-upgrade-your-azure-data-factory-pipelines-to-fabric-data-factory.md)
 - [Mapping data flow transforms in Dataflow Gen2 (Preview)](dataflow-gen2-mapping-data-flows-transforms.md)
-- [Upgrade your Azure Data Factory pipelines to Fabric](/azure/data-factory/how-to-upgrade-your-azure-data-factory-pipelines-to-fabric-data-factory)
-- [Assess your pipelines for migration to Fabric](/azure/data-factory/how-to-assess-your-azure-data-factory-to-fabric-data-factory-migration)
-- [A guide to Fabric dataflows for Mapping Data Flow users](guide-to-dataflows-for-mapping-data-flow-users.md)
+- [Upgrade planning for Azure Data Factory to Fabric Data Factory](upgrade-planning-azure-data-factory.md)
+- [Upgrade best practices for Azure Data Factory to Fabric Data Factory](upgrade-best-practices.md)
 - [Pricing for Dataflow Gen2](pricing-dataflows-gen2.md)
