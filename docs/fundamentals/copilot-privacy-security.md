@@ -59,7 +59,7 @@ Grounding data might include a combination of dataset schema, specific data poin
 
 Interactions with Copilot are specific to each user. This means that Copilot can only access data that the current user has permission to access, and its outputs are only visible to that user unless that user shares the output with others, such as sharing a generated Power BI report or generated code. Copilot doesn't use data from other users in the same tenant or other tenants.
 
-Copilot uses Azure OpenAI—not the publicly available OpenAI services—to process all data, including user inputs, grounding data, and Copilot outputs. Microsoft hosts the OpenAI models in the Microsoft Azure environment, and the Service doesn't interact with any services by OpenAI, such as ChatGPT or the OpenAI API. Your data isn't used to train models and isn't available to other customers. Learn more about [Azure OpenAI](/azure/ai-services/openai/overview).
+By default, Copilot uses Azure OpenAI—not the publicly available OpenAI services—to process all data, including user inputs, grounding data, and Copilot outputs. If your Fabric administrator opts in to the [OpenAI as a Microsoft Subprocessor](../admin/service-admin-portal-copilot.md#copilot-with-openai-subprocessor) tenant setting, designated capacities can instead use OpenAI as a Microsoft subprocessor. Microsoft hosts the OpenAI models in the Microsoft Azure environment, and the Service doesn't interact with any services by OpenAI, such as ChatGPT or the OpenAI API. Your data isn't used to train models and isn't available to other customers. Learn more about [Azure OpenAI](/azure/ai-services/openai/overview).
 
 ## Review the Copilot process
 
