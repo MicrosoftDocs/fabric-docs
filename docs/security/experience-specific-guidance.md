@@ -364,9 +364,9 @@ Azure Databricks Storage data is stored in OneLake. To protect the data against 
 
 If OneLake initiates a regional failover, applications can continue to access the replicated data through the OneLake global endpoint after the failover completes. Continued access through the OneLake public APIs doesn’t require creating another Azure Databricks Storage item or copying the data to another workspace. 
 
-Review [OneLake Disaster Recovery and Data Protection](https://learn.microsoft.com/en-us/fabric/onelake/onelake-disaster-recovery) for the applicable behavior, considerations, and limitations. 
+Review [OneLake disaster recovery](../onelake/onelake-disaster-recovery.md) for the applicable behavior, considerations, and limitations. 
 
-For Azure Databricks-specific disaster recovery planning, see [Disaster recovery - Azure Databricks](https://learn.microsoft.com/en-us/azure/databricks/admin/disaster-recovery).
+For Azure Databricks-specific disaster recovery planning, see [Disaster recovery - Azure Databricks](/azure/databricks/admin/disaster-recovery).
 
 
 ## Data Science
