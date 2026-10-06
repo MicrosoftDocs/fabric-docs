@@ -3,13 +3,13 @@ title: Subscribe permission for Azure and Fabric events
 description: This article describes what permissions are required for subscribing to Fabric events.
 ms.reviewer: robece
 ms.topic: concept-article
-ms.date: 03/03/2025
+ms.date: 10/05/2026
 ai-usage: ai-assisted
 ---
 
 # Subscribe permissions for Azure and Fabric events
 
-The subscribe permission for Azure and Fabric events allows you to manage access to the event listeners, ensuring that only authorized users can subscribe to the events. The subscribe permissions are assessed during creation and for the lifetime of the event listener. This ensures that only authorized users can access and consume events. 
+The subscribe permission for Azure and Fabric events manages access to the event listeners. Only authorized users can subscribe to the events. The system checks the subscribe permissions during creation and for the lifetime of the event listener. This process ensures that only authorized users can access and consume events.
 
 ## Behavior
 If the user doesn't have the subscribe permission, the user can't set up a consumer for the events. If the owner of the event listener loses the subscribe permission, the event listener enters a paused state, pausing the delivery of events to the consumer. While paused, the system retains events for up to 24 hours. If the permission issue is resolved within that period, event delivery resumes automatically.
@@ -40,11 +40,17 @@ To subscribe to OneLake events in Microsoft Fabric, users need **SubscribeOneLak
 
 To subscribe to workspace item events in Microsoft Fabric at the workspace level, you need **Read** permission on the target workspace. To subscribe to workspace item events in Microsoft Fabric at the tenant level, you need the **Global Administrator** role on the tenant.
 
+### Capacity events
+
+For REST API subscriptions to Capacity Overview or Capacity Operation events, the deployment identity needs **capacity administrator** access on the source capacity. Interactive connector permissions are documented in the [capacity overview event instructions](create-streams-fabric-capacity-overview-events.md). Use this REST API guidance for API-created subscriptions. For Capacity Operation event types and source configuration, see the [capacity operation event source example](consume-events-with-event-stream-rest-api.md#fabric-capacity-operation-events-source).
 
 ## Related content
 
-For more information, see the following articles: 
-- [Explore Fabric Job events](explore-fabric-job-events.md).</br>
-- [Explore Fabric OneLake events](explore-fabric-onelake-events.md).</br>
-- [Explore Fabric workspace item events](explore-fabric-workspace-item-events.md).</br>
+For more information, see the following articles:
+
+- [Explore Fabric Job events](explore-fabric-job-events.md).
+- [Explore Fabric OneLake events](explore-fabric-onelake-events.md).
+- [Explore Fabric workspace item events](explore-fabric-workspace-item-events.md).
 - [Explore Azure blob storage events](explore-azure-blob-storage-events.md).
+- [Get Fabric capacity overview events](create-streams-fabric-capacity-overview-events.md).
+- [Configure Fabric capacity operation events with Eventstream REST APIs](consume-events-with-event-stream-rest-api.md#fabric-capacity-operation-events-source).
