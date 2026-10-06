@@ -84,6 +84,16 @@ Select the tab that corresponds with your desired data source type.
 
     Alternatively, close the **OneLake Catalog** window and use the **+ Add data source** menu to connect to a different data source.
 
+### [Ontology](#tab/ontology)
+
+1. Open your Real-Time dashboard.
+
+1. In the upper toolbar, select **Add data source** > **Ontology**.
+
+    :::image type="content" source="media/real-time-dashboard/ontology-source.png" alt-text="Screenshot of the data source menu showing a list of optional data sources with ontology highlighted." lightbox="media/real-time-dashboard/ontology-source.png":::
+
+1. In the **OneLake Catalog** window, select an ontology item and select **Connect**.
+
 ### [Azure Data Explorer](#tab/azure-data-explorer-cluster)
 
 1. Open your Real-Time dashboard.
