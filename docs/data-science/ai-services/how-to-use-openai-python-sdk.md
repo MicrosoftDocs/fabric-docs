@@ -34,18 +34,20 @@ For distributed processing of large datasets, see [Use Azure OpenAI with Synapse
 
 | Option | Setup | When to use it |
 | --- | --- | --- |
-| OpenAI SDK | Install the `openai` package and create an `AzureOpenAI` client with Fabric authentication. | Use this option when you want to work directly with the OpenAI SDK. |
+| OpenAI SDK | Install the `openai` and `httpx` packages and create an `AzureOpenAI` client with Fabric authentication. | Use this option when you want to work directly with the OpenAI SDK. |
 | Built-in Fabric clients | Import AI Functions and access `client_sync` or `client_async`. | Use this option when you want an OpenAI-compatible Python client that's already installed, authenticated, and configured for Fabric. |
 
 Complete either setup before you run the API examples.
 
 ### Use the OpenAI SDK
 
-Install the [OpenAI Python package](https://github.com/openai/openai-python/) in the notebook:
+Install the [OpenAI Python package](https://github.com/openai/openai-python/) and `httpx` in the notebook:
 
 ```python
-%pip install openai==1.99.5
+%pip install openai httpx
 ```
+
+Some Fabric runtimes still require `httpx` for the authentication helper, even when the installed OpenAI SDK uses HTTPX2.
 
 Create an `AzureOpenAI` client with the Fabric-authenticated HTTP client:
 
