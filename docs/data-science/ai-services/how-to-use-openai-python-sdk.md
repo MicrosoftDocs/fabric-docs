@@ -44,8 +44,10 @@ Complete either setup before you run the API examples.
 Install the [OpenAI Python package](https://github.com/openai/openai-python/) and `httpx` in the notebook:
 
 ```python
-%pip install openai httpx
+%pip install -q openai httpx 2>/dev/null
 ```
+
+This command suppresses installation output, including error messages. If installation fails, remove `-q` and `2>/dev/null` to display diagnostics.
 
 Some Fabric runtimes still require `httpx` for the authentication helper, even when the installed OpenAI SDK uses HTTPX2.
 
