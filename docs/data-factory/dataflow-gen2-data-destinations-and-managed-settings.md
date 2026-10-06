@@ -134,7 +134,7 @@ When you're loading into a new table, automatic settings are turned on by defaul
 * **Drop and recreate table**: To allow for these schema changes, the table gets dropped and recreated on every dataflow refresh. Your dataflow refresh might cause the removal of relationships or measures that were added previously to your table.
 
 > [!NOTE]
-> Automatic settings are supported for Lakehouse, Azure SQL database, and Snowflake as data destinations. For Snowflake settings and rollout availability, see [Snowflake destination settings](#snowflake-destination-settings).
+> Automatic settings are supported for Lakehouse, Azure SQL database, and Snowflake as data destinations. For details, see [Snowflake destination settings](#snowflake-destination-settings).
 
 :::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/use-automatic-settings.png" alt-text="Screenshot of the Choose destination settings window with the Use automatic settings option selected.":::
 
@@ -244,8 +244,6 @@ Snowflake supports **Replace** and **Append** as update methods. With **Replace*
 When you use Snowflake as a default destination, managed settings apply to new tables, including automatic mapping and schema updates.
 
 > [!NOTE]
-> Support for Snowflake replace and dynamic schema is rolling out and might not yet be available in every environment.
->
 > To use Snowflake as a data destination through an on-premises data gateway, [install the latest version of the gateway](/data-integration/gateway/service-gateway-install). Older gateway versions don't include the connector changes required for Snowflake destinations.
 
 #### Loading data into the Warehouse
