@@ -47,7 +47,7 @@ Install the [OpenAI Python package](https://github.com/openai/openai-python/) an
 %pip install -q openai httpx 2>/dev/null
 ```
 
-Some Fabric runtimes still require `httpx` for the authentication helper, even when the installed OpenAI SDK uses HTTPX2.
+OpenAI Python SDK 3.0 and later use HTTPX2 instead of HTTPX. Some Fabric setup components, including authentication helpers, still use HTTPX and will be updated to use HTTPX2 in the future. Until then, install `httpx` alongside `openai`.
 
 Create an `AzureOpenAI` client with the Fabric-authenticated HTTP client:
 
