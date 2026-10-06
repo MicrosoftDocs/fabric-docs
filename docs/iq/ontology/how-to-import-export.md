@@ -1,7 +1,7 @@
 ---
 title: Import and Export Ontologies (Preview)
-description: Learn how to import and export ontology (preview) items.
-ms.date: 09/04/2026
+description: Learn how to import and export ontology (preview) items and how Fabric maps supported RDF, RDFS, OWL, and SKOS concepts.
+ms.date: 10/05/2026
 ms.topic: how-to
 ai-usage: ai-assisted
 ---
@@ -72,3 +72,42 @@ When you're done reviewing the import summary, close the summary and confirm tha
 1. Choose the output format: **TTL** or **RDF**. Export doesn't support OWL, which is available only as an import format.
 1. Download the exported file.
 1. Optionally, import the exported file into another new, empty ontology item to confirm round-trip behavior.
+
+## Supported RDF concept mappings
+
+Ontology in Fabric supports importing and exporting a subset of RDF, RDFS, OWL, and SKOS concepts by mapping them to native ontology in Fabric concepts. Some concepts map directly, while Fabric transforms others into the closest supported representation.
+
+### Import mappings
+
+| RDF, RDFS, or OWL concept | Ontology in Fabric concept | Mapping |
+|---|---|---|
+| `owl:Class` | **Entity type** | Imported as a native ontology in Fabric entity type. |
+| `owl:DatatypeProperty` | **Property** | Imported as a native property. |
+| `owl:ObjectProperty` | **Relationship type** | Imported as a native relationship between entity types. |
+| `rdfs:label` | **Display name** | The default-language label is imported. Other-language labels are dropped and logged. |
+| `rdfs:comment` | **Description** | Imported as the description of the corresponding ontology concept. |
+| Single-parent `rdfs:subClassOf` | **Entity type inheritance** | The child entity type is imported, and the parent is mapped as its base entity type. |
+| Multi-parent `rdfs:subClassOf` | **Inheritance and property set membership** | One parent is mapped as the base entity type. Additional parents are represented through property set membership. |
+| `xsd:anyURI` | **String property and semantic metadata** | Because ontology in Fabric doesn't have a native `anyURI` type, the property is imported as a string. The original XSD type is preserved as semantic enrichment metadata. |
+| Invalid or unsupported concept name | **Fabric-compliant concept name** | The concept is automatically renamed to meet Fabric naming requirements. The transformation is logged. |
+
+### Export mappings
+
+Ontology in Fabric serializes supported native concepts to their corresponding RDF, RDFS, OWL, or SKOS representations in the selected TTL or RDF output format.
+
+| Ontology in Fabric concept | RDF, RDFS, OWL, or SKOS concept | Mapping |
+|---|---|---|
+| **Entity type** | `owl:Class` | Exported as an OWL class. |
+| **Property** | `owl:DatatypeProperty` | Exported as a datatype property with `rdfs:domain` identifying the owning entity type and `rdfs:range` representing the property data type. |
+| **Relationship type** | `owl:ObjectProperty` | Exported as an object property with `rdfs:domain` and `rdfs:range` identifying the source and target entity types. |
+| **Entity description** | `rdfs:comment` | Exported as the RDF description of the entity type. |
+| **Entity label** | `rdfs:label` | Exported as the human-readable label for the entity type. |
+| **Synonyms** | `skos:altLabel` | Synonyms stored through semantic enrichment are exported as one `skos:altLabel` triple per synonym. |
+| **Base entity type** | `rdfs:subClassOf` | Single-parent inheritance represented by `BaseEntityTypeId` is exported as a subclass relationship. |
+| **Property set membership** | `rdfs:subClassOf` chain | Property set membership is serialized as an `rdfs:subClassOf` chain to preserve the corresponding inheritance semantics. |
+
+### RDF concepts without a direct ontology in Fabric equivalent
+
+RDF and OWL provide semantic constructs that don't have a direct representation in the ontology in Fabric metamodel. Examples include complex OWL class expressions and restrictions, property characteristics such as transitivity or symmetry, RDF reification, and arbitrary RDF graph structures.
+
+During import, Fabric ignores these constructs, retains them as metadata where supported, or transforms them into an equivalent ontology in Fabric modeling pattern. Import and export preserve commonly used modeling semantics and support interoperability with RDF-based systems, but they don't provide complete or lossless support for the full RDF or OWL specification.

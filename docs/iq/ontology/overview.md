@@ -85,9 +85,9 @@ For more information, see [Use the ontology agent (preview) in Fabric](how-to-us
 
 ### Real-time exploration
 
-You can explore ontology-backed data through entity-focused experiences. The ontology supplies definitions and mappings, while the consuming experience executes the query against the relevant source. This separation lets agent experiences use the same business context without requiring ontology to duplicate their visualization or query engines.
+You can explore ontology-backed data through entity-focused experiences and Real-Time Dashboards. The ontology supplies definitions and mappings, while the consuming experience executes the query against the relevant source. This separation lets dashboard and agent experiences use the same business context without requiring ontology to duplicate their visualization or query engines.
 
-For more information, see [Use the ontology agent (preview) in Fabric](how-to-use-ontology-agent.md).
+For more information about ontology as a Real-Time Dashboard source, see [Real-Time Dashboard supported data sources](../../real-time-intelligence/dashboard-supported-data-sources.md). For more information about ontology agent, see [Use the ontology agent (preview) in Fabric](how-to-use-ontology-agent.md).
 
 ### Optional graph execution
 
@@ -177,6 +177,6 @@ For troubleshooting details, see [Troubleshoot ontology](resources-troubleshooti
 - [Create an ontology manually](tutorial-1-create-ontology.md) or [generate one from a Power BI semantic model](how-to-generate-from-semantic-models.md).
 - [Bind ontology concepts](how-to-bind-data.md) to your enterprise data.
 - Add [metadata](how-to-add-metadata.md), [rules](how-to-use-rules.md), [metrics](how-to-use-metrics.md), [inheritance](how-to-use-inheritance.md), [shared properties](how-to-reuse-properties.md), and [namespaces](how-to-use-namespaces.md).
-- Connect a [supported agent](concepts-agent-integration.md) to consume the ontology context. Or, use the built in [ontology agent](how-to-use-ontology-agent.md) experience.
+- Connect a [supported agent](concepts-agent-integration.md) or [Real-Time Dashboard](../../real-time-intelligence/dashboard-supported-data-sources.md) to consume the ontology context. Or, use the built-in [ontology agent](how-to-use-ontology-agent.md) experience.
 - If you have an existing ontology item that was created with the old experience, review the [migration guidance](#migrate-from-old-experience) and create a copy in the new experience.
 - View ontology known issues on the [Microsoft Fabric known issues site](https://support.fabric.microsoft.com/known-issues/) (search for *ontology*), or view [ontology troubleshooting details](resources-troubleshooting.md).
