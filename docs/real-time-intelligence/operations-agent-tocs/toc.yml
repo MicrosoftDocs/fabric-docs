@@ -14,3 +14,13 @@ items:
   href: ../operations-agent-transparency-note.md
 - name: Workspace outbound access protection for operations agent
   href: ../../security/workspace-outbound-access-protection-operations-agent.md
+- name: Fabric observability investigation
+  items:
+  - name: Overview
+    href: ../operations-agent/fabric-observability-investigation-overview.md
+  - name: Run an investigation
+    href: ../operations-agent/fabric-observability-investigation-run.md
+  - name: Responsible use FAQ
+    href: ../operations-agent/fabric-observability-investigation-responsible-use.md
+  - name: Data, privacy, and governance FAQ
+    href: ../operations-agent/fabric-observability-investigation-governance-faq.md

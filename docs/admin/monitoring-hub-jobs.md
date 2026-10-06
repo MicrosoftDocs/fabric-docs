@@ -3,7 +3,7 @@ title: Monitor job runs in the Monitor hub (preview)
 description: Learn how to use the Jobs page in the Monitor hub to track Fabric job runs, filter to failures, and open run details to investigate problems.
 #customer intent: As a Fabric user, I want to track and investigate my job runs in the Monitor hub so that I can confirm whether scheduled work ran and quickly troubleshoot failures.
 ms.topic: how-to
-ms.date: 09/04/2026
+ms.date: 10/05/2026
 ai-usage: ai-assisted
 ---
 
@@ -99,11 +99,13 @@ On the **Job runs** page, the **Last run status** column provides key informatio
 
 For failed pipeline runs, you can start a read-only investigation directly from the Monitor hub. The Operations agent, a Real-Time Intelligence item, reviews the failed run and surfaces likely root causes without changing your pipeline or its configuration.
 
+In the Monitor hub, the **Job runs** list displays one row per job, and the row-level **Investigate** action applies to the latest run. To investigate a specific failed run, follow these steps:
+
 1. In the **Job runs** list, select a failed pipeline job to open its details.
 1. Under **Run history**, find the failed run.
 1. Select **Investigate** on that run. The Operations agent pane opens and starts a read-only investigation of the run.
 
-For Operations agent setup, prerequisites, governance, responsible AI guidance, limitations, and troubleshooting, see [Create and configure operations agents](../real-time-intelligence/operations-agent.md).
+For prerequisites, governance, responsible AI guidance, limitations, and troubleshooting, see [Run a Fabric observability investigation](../real-time-intelligence/operations-agent/fabric-observability-investigation-run.md).
 
 ## Common tasks
 
