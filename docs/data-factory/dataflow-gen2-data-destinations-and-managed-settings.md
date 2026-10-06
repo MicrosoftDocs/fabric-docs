@@ -239,7 +239,7 @@ To enable staging, right-click on the query and enable staging by selecting the 
 Snowflake supports **Replace** and **Append** as update methods. With **Replace**, new tables support **Dynamic schema** and **Fixed schema**.
 
 * **Managed settings**: For new tables, Dataflow Gen2 manages column mapping and uses **Replace**. When you add, rename, or remove query columns, republish the dataflow. The next refresh updates the destination schema automatically, without requiring you to reconfigure the destination mapping.
-* **Manual settings**: With **Replace** and **Dynamic schema**, update the column mapping when you change your query, then republish the dataflow. The next refresh updates the destination schema. With **Fixed schema** or **Append**, automatic schema changes aren't supported.
+* **Manual settings**: By using **Replace** and **Dynamic schema**, update the column mapping when you change your query, then republish the dataflow. The next refresh updates the destination schema. By using **Fixed schema** or **Append**, automatic schema changes aren't supported.
 
 When you use Snowflake as a default destination, managed settings apply to new tables, including automatic mapping and schema updates.
 
