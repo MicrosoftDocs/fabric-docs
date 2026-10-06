@@ -4,7 +4,7 @@ description: Learn about acquiring high concurrency Spark sessions for the Micro
 ms.reviewer: avinandac
 ms.topic: how-to
 ms.search.form: Get started with high concurrency with the Livy API for Data Engineering
-ms.date: 04/10/2026
+ms.date: 10/06/2026
 ai-usage: ai-assisted
 ---
 # Get started with the Livy API for Fabric high concurrency sessions
@@ -35,6 +35,17 @@ When you create two HC sessions with the same **`sessionTag`**, the Fabric API p
 - **Resource efficiency**: Multiple users share one Spark session instead of each creating their own.
 - **REPL isolation**: Variables and state in one REPL aren't visible to others.
 - **Parallel execution**: Statements on different REPLs can run concurrently.
+
+Use the `spark.highConcurrency.max` Spark configuration to specify how many REPLs the underlying Livy session can host. The maximum supported value is `50`. Acquisition requests must use the same session tag and Spark configuration to be eligible for session packing.
+
+```json
+{
+  "sessionTag": "demo-tag",
+  "conf": {
+    "spark.highConcurrency.max": "50"
+  }
+}
+```
 
 ### Key IDs
 
@@ -93,7 +104,7 @@ else:
 
 ### 2. Create two HC sessions with the same session tag
 
-Create two HC sessions using `sessionTag: "demo-tag"`. Because they share the same tag, the Fabric API packs them onto the **same underlying Livy session**. Each session gets its own isolated REPL.
+Create two HC sessions using `sessionTag: "demo-tag"` and set `spark.highConcurrency.max` to `50`. Because both requests use the same tag and Spark configuration, the Fabric API can pack them onto the **same underlying Livy session**. Each session gets its own isolated REPL.
 
 ```python
 import json
@@ -114,14 +125,20 @@ livy_base_url = (
 
 headers = {"Authorization": f"Bearer {token}"}
 session_tag = "demo-tag"
+session_conf = {"spark.highConcurrency.max": "50"}
 
 print(f"HC session endpoint: {livy_base_url}")
 print(f"Session tag: {session_tag}")
+print(f"Maximum REPLs per Livy session: {session_conf['spark.highConcurrency.max']}")
 print()
 
 # Create HC Session A
 print("Creating HC Session A...")
-resp_a = requests.post(livy_base_url, headers=headers, json={"sessionTag": session_tag})
+resp_a = requests.post(
+    livy_base_url,
+    headers=headers,
+    json={"sessionTag": session_tag, "conf": session_conf},
+)
 assert resp_a.status_code == 202, f"Failed: {resp_a.status_code} — {resp_a.text}"
 session_a = resp_a.json()
 hc_id_a = session_a["id"]
@@ -129,7 +146,11 @@ print(f"  HC session A id: {hc_id_a}  state: {session_a['state']}")
 
 # Create HC Session B
 print("Creating HC Session B...")
-resp_b = requests.post(livy_base_url, headers=headers, json={"sessionTag": session_tag})
+resp_b = requests.post(
+    livy_base_url,
+    headers=headers,
+    json={"sessionTag": session_tag, "conf": session_conf},
+)
 assert resp_b.status_code == 202, f"Failed: {resp_b.status_code} — {resp_b.text}"
 session_b = resp_b.json()
 hc_id_b = session_b["id"]
