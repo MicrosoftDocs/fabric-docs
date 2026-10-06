@@ -3,7 +3,7 @@ title: Create a Real-Time Dashboard
 description: Learn how to create and customize Real-Time Dashboards to visualize data effectively using KQL queries and Copilot for seamless insights.
 ms.reviewer: mibar
 ms.topic: how-to
-ms.date: 09/28/2026
+ms.date: 10/04/2026
 author: spelluru
 ms.author: spelluru
 ms.subservice: rti-dashboard
@@ -12,7 +12,7 @@ ai-usage: ai-assisted
 ---
 # Create a Real-Time Dashboard
 
-A dashboard is a collection of tiles, optionally organized in pages, where each tile has an underlying query and a visual representation. You can natively export Kusto Query Language (KQL) queries to a dashboard as visuals and later modify their underlying queries and visual formatting as needed. In addition to ease of data exploration, this fully integrated dashboard experience provides improved query and visualization performance. Copilot integration in the dashboard editing experience lets you use natural language to create and modify visuals directly, no KQL expertise required.
+Real-Time Dashboards help you monitor, analyze, and share streaming and historical data through an interactive collection of visual tiles. You can create a dashboard from scratch, generate one with Copilot, build it from existing KQL queries, or restore it from a dashboard file. As your dashboard evolves, you can connect data sources, add and customize visuals, organize content using pages and parameters, and share insights with others.
 
 This article shows you how to create a new Real-Time Dashboard, add data sources, and add and edit tiles in the dashboard - manually or using Copilot. You also learn how to enable live refresh, use parameters, and export dashboards.
 
@@ -28,7 +28,13 @@ This article shows you how to create a new Real-Time Dashboard, add data sources
 
 To create a new Real-Time dashboard, select the tab that corresponds with your desired creation method.
 
-## [Manual](#tab/create-manual)
+### Generate with Copilot
+
+Copilot streamlines the creation of Real-Time Dashboards by automating the setup process, making it accessible even to users without advanced technical expertise. By using natural language input, you can describe the dashboard you want, and Copilot uses AI to generate it.
+
+For detailed instructions, see [Generate Real-Time Dashboard Using Copilot](../fundamentals/copilot-generate-dashboard.md).
+
+### Create manually
 
 [!INCLUDE [Real-Time Intelligence create-real-time-dashboard](includes/create-real-time-dashboard.md)]
 
@@ -36,13 +42,7 @@ To create a new Real-Time dashboard, select the tab that corresponds with your d
 
     :::image type="content" source="media/real-time-dashboard/dashboard-new-with-source.png" alt-text="Screenshot of Real-Time Dashboard with all options enabled." lightbox="media/real-time-dashboard/dashboard-new-with-source.png":::
 
-### [Copilot](#tab/create-copilot)
-
-Copilot streamlines the creation of Real-Time Dashboards by automating the setup process, making it accessible even to users without advanced technical expertise. By using natural language input, you can describe the dashboard you want, and Copilot uses AI to generate it. Start by selecting a data table from the Real-Time Hub or a KQL Queryset. Copilot creates a Real-Time Dashboard tailored to your specifications, including an insights page for a high-level summary and a data profile page for in-depth analysis.
-
-For detailed instructions, see [Generate Real-Time Dashboard Using Copilot](../fundamentals/copilot-generate-dashboard.md).
-
-### [Queryset](#tab/create-queryset)
+### Create from a queryset
 
 1. [Open an existing KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
 
@@ -60,13 +60,11 @@ For detailed instructions, see [Generate Real-Time Dashboard Using Copilot](../f
 
 1. To give the tile a name, open the tile options and select **Rename**.
 
-### [Replacing the file](#tab/replacing-file)
+### Replacing the file
 
 Select the **Manage** tab, and then choose **Replace with file**. Select the file you want to use to create a new dashboard, update an existing one, restore a previous version, or use a file received from another user.
 
 :::image type="content" source="media/real-time-dashboard/replace-with-file-button.png" alt-text="Screenshot of the Replace with file option." lightbox="media/real-time-dashboard/replace-with-file-button.png":::
-
-----
 
 ## Add data source
 
@@ -85,6 +83,16 @@ Select the tab that corresponds with your desired data source type.
 1. In the **OneLake Catalog** window, select a KQL database to connect to your KQL queryset, and then select **Connect**.
 
     Alternatively, close the **OneLake Catalog** window and use the **+ Add data source** menu to connect to a different data source.
+
+### [Ontology](#tab/ontology)
+
+1. Open your Real-Time dashboard.
+
+1. In the upper toolbar, select **Add data source** > **Ontology**.
+
+    :::image type="content" source="media/real-time-dashboard/ontology-source.png" alt-text="Screenshot of the data source menu showing a list of optional data sources with ontology highlighted." lightbox="media/real-time-dashboard/ontology-source.png":::
+
+1. In the **OneLake Catalog** window, select an ontology item and select **Connect**.
 
 ### [Azure Data Explorer](#tab/azure-data-explorer-cluster)
 
@@ -161,7 +169,7 @@ You can switch between the two options at any time.
 
 :::image type="content" source="media/real-time-dashboard/tile-editing-panes.png" alt-text="Screenshot of the three panes in the tile editing window: Explorer, Run query, and Copilot." lightbox = "media/real-time-dashboard/tile-editing-panes.png":::
 
-### [Use Copilot to add or edit a tile (preview)](#tab/new-tile-copilot)
+### [Use Copilot to add or edit a tile](#tab/new-tile-copilot)
 
 Describe the insight you're looking for. Start with a broad question and refine it based on the results. You might begin with "Show me all error events" and follow up with "Filter to critical errors only" or "Group by error type." Copilot maintains context within the conversation, so each follow-up builds on your previous requests. For more information, see [Use Copilot for writing KQL queries](copilot-writing-queries.md).
 

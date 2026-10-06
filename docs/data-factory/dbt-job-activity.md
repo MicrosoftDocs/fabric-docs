@@ -9,7 +9,7 @@ ms.date: 04/06/2026
 #customer intent: As a data engineer, I want to orchestrate dbt jobs inside a Fabric pipeline so that I can build end-to-end data workflows without switching tools.
 ---
 
-# Orchestrate a dbt job in a pipeline (Preview)
+# Orchestrate a dbt job in a pipeline
 
 The dbt job activity lets you run a dbt job as part of a Fabric data pipeline. You can select an existing dbt job from your workspace, create a new one inline, and chain it with other activities to build end-to-end data workflows. All dbt job settings support dynamic content, so you can build metadata-driven pipelines with parameterized configurations.
 

@@ -29,7 +29,7 @@ In this quickstart, you:
 
 Confirm these requirements before you start:
 
-- A Fabric workspace assigned to an eligible Fabric capacity
+- A Fabric workspace assigned to an eligible Fabric capacity. Fabric trial SKUs aren't supported.
 - A lakehouse in that workspace
 - Contributor or higher permission on the workspace
 - Enable the following **tenant settings** for your account and capacity:

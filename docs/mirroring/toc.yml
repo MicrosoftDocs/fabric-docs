@@ -282,9 +282,9 @@ items:
   items:
   - name: Extended capabilities overview
     href: extended-capabilities.md
-  - name: Delta change data feed (Preview)
+  - name: Delta change data feed
     href: extended-capabilities-delta-change-data-feed.md
-  - name: Mirroring views (Preview)
+  - name: Mirroring views
     href: extended-capabilities-views.md
   - name: Pricing for extended capabilities
     href: extended-capabilities-billing.md

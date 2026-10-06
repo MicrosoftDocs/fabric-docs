@@ -655,6 +655,8 @@ items:
         href: plan/resources/best-practices/semantic-modeling.md
       - name: ALM – Variable Library
         href: plan/alm-variable-library.md
+      - name: Dimension ID mapping
+        href: plan/resources/best-practices/how-to-create-dimension-id-mapping.md
     - name: Troubleshoot
       items:
           - name: Troubleshoot semantic model issues
