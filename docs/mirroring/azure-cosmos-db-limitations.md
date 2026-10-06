@@ -2,8 +2,9 @@
 title: "Limits and Quotas in Microsoft Fabric Mirrored Databases From Azure Cosmos DB"
 description: This article includes a list of limitations and quotas for Microsoft Fabric mirrored databases from Azure Cosmos DB.
 ms.reviewer: mjbrown, jmaldonado
-ms.date: 12/03/2025
+ms.date: 10/06/2026
 ms.topic: limits-and-quotas
+ai-usage: ai-assisted
 ms.custom:
   - references_regions
 ---
@@ -35,7 +36,7 @@ This article details the current limitations for Azure Cosmos DB accounts mirror
 
 - All current limitations of the continuous backup feature in Azure Cosmos DB also apply to Fabric mirroring.
 
-  - These limitations include, but aren't limited to; the inability to disable continuous backup once enabled and lack of support for multi-region write accounts. For more information, see [Azure Cosmos DB continuous backup limitations](/azure/cosmos-db/continuous-backup-restore-introduction#current-limitations).
+  - These limitations include, but aren't limited to the inability to disable continuous backup once enabled and lack of support for multi-region write accounts. For more information, see [Azure Cosmos DB continuous backup limitations](/azure/cosmos-db/continuous-backup-restore-introduction#current-limitations).
 
   - You can enable both the analytical store and continuous backup features on the same Azure Cosmos DB account.
 
@@ -66,7 +67,7 @@ This article details the current limitations for Azure Cosmos DB accounts mirror
 
 - You can directly share the mirrored database in Fabric.
 
-- Azure Cosmos DB accounts with virtual networks or private endpoints are supported using the Network ACL Bypass feature. This allows your Fabric workspace to access the Cosmos DB account without requiring a data gateway. For more information, see [Configure private networks for Microsoft Fabric mirrored databases from Azure Cosmos DB](azure-cosmos-db-private-network.md).
+- Azure Cosmos DB accounts with virtual networks or private endpoints are supported. The documented setup for accounts with network restrictions uses a virtual network data gateway connection, trusted-workspace network ACL bypass, OAuth authentication, and REST-based mirrored database creation. The Azure Cosmos DB connector runs in the Fabric Replicator service, not on the gateway. Ongoing mirroring data travels over an internal Microsoft network and doesn't use public endpoints. This traffic doesn't traverse your virtual network data gateway or your private endpoint. For more information, see [Configure mirroring for Azure Cosmos DB accounts with network restrictions](azure-cosmos-db-private-network.md).
 
 - Data in OneLake doesn't support private endpoints, customer managed keys, or double encryption.
 
