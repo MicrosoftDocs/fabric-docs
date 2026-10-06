@@ -2,7 +2,7 @@
 title: Monitor an Azure Database for PostgreSQL flexible server in the Database Hub (preview)
 description: Learn how to monitor an Azure Database for PostgreSQL flexible server in the Database Hub in Microsoft Fabric.
 ms.reviewer: amapatil, varundhawan
-ms.date: 09/22/2026
+ms.date: 10/05/2026
 ms.topic: how-to
 ai-usage: ai-assisted
 ---
@@ -32,13 +32,13 @@ The PostgreSQL resource represented in **Estate** is a flexible server instance,
 ## Prerequisites
 
 - In the current preview, ask a Fabric administrator to opt your tenant into the Database Hub preview experience in the Fabric admin portal. In **Tenant settings**, enable **Users can access the Database hub (preview)**.
-- Start with the free experience by signing in with your work or school account. You can enter from the Azure portal or directly from Microsoft Fabric, even if you haven't used Fabric before. Authenticate with a Microsoft Entra identity that has access to the Azure subscriptions and PostgreSQL flexible server resources you want to work with. Azure resource visibility alone doesn't grant permission to query a database. Database Hub uses your existing Microsoft Entra ID and Azure RBAC permissions rather than a separate permission model, so the access you assign here follows [standard Azure role-assignment steps](/azure/role-based-access-control/role-assignments-portal).
+- Start with the free experience by signing in with your work or school account. You can enter from the Azure portal or directly from Microsoft Fabric, even if you didn't use Fabric before. Authenticate with a Microsoft Entra identity that has access to the Azure subscriptions and PostgreSQL flexible server resources you want to work with. Azure resource visibility alone doesn't grant permission to query a database. Database Hub uses your existing Microsoft Entra ID and Azure RBAC permissions rather than a separate permission model, so the access you assign here follows [standard Azure role-assignment steps](/azure/role-based-access-control/role-assignments-portal).
 
     - For discovery and monitoring, your identity needs permission to read the relevant Azure resource metadata and Azure Monitor metrics.
 
     - For discovery and monitoring, your identity needs the **Reader** role, or a role with greater permissions, on each subscription that contains the resources you want to monitor.
 
-- Baseline PostgreSQL monitoring uses existing Azure Monitor metrics. It doesn't require the SQL performance-monitoring extended property, Azure Arc onboarding, or registration of `Microsoft.AzureArcData` for the `PostgreSQL` telemetry path. Query Store and a new customer-managed telemetry pipeline aren't prerequisites for baseline metrics.
+- Baseline PostgreSQL monitoring uses existing Azure Monitor metrics. It doesn't require the SQL performance-monitoring extended property, Azure Arc onboarding, or registering additional resource providers for the PostgreSQL metrics path. Query Store and a new customer-managed telemetry pipeline aren't prerequisites for baseline metrics.
 
 - Database Hub respects your existing access boundaries. The Database Hub doesn't grant additional access. Your visibility to databases is limited to resources your current identity is authorized to view. Sharing a view or sending someone a resource link doesn't grant them access to the underlying server.
 
@@ -57,7 +57,7 @@ Use **Overview** for PostgreSQL CPU, memory, and storage summaries. Use **Perfor
 
 ### Interpret PostgreSQL signals
 
-The dashboard presents a subset of the Azure Monitor metrics available for Flexible Server. Use this reference to interpret a displayed signal and compare it with its source metric.
+The dashboard shows a subset of the Azure Monitor metrics available for Flexible Server. Use this reference to interpret a displayed signal and compare it with its source metric.
 
 | **Signal** | **Azure Monitor metric** | **Interpretation** |
 |----|----|----|
@@ -130,13 +130,15 @@ Use the following steps when the Database Hub displays a security finding that e
 
 During the current preview, PostgreSQL monitoring in the Database Hub has the following limitations:
 
-- Query Store-backed top queries, query plans, wait-event analysis, and log search aren't part of the Database Hub. Use PostgreSQL diagnostic tools for deeper investigation.
-
 - Activator alerting and RTD Copilot query exploration over the REST-backed PostgreSQL metrics aren't included in this preview path. This article doesn't describe all Copilot capabilities elsewhere in Database Hub or Visual Studio Code.
 
 - The Database Hub doesn't automatically resize, tune, or remediate PostgreSQL servers. Changes require the appropriate permissions and your organization's approval process.
 
 - Availability of links, assessments, and creation options depends on the preview experience enabled for your tenant. Check the applicable Database Hub availability guidance before relying on a specific entry point.
+
+- For Azure Database for PostgreSQL flexible server, **Estate** lists flexible server resources, not the individual PostgreSQL databases hosted on each server.
+
+- In the current preview, monitoring for Azure Database for PostgreSQL flexible server uses existing Azure Monitor metrics and doesn't provide query-level diagnostics in Database Hub. Query Store-backed top queries, query plans, wait-event analysis, and log search aren't part of the Database Hub. Use the Azure portal and native PostgreSQL tools to investigate queries.
 
 ## Related PostgreSQL guidance
 
