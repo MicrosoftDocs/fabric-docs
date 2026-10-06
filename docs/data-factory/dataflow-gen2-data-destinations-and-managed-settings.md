@@ -3,7 +3,7 @@ title: Dataflow Gen2 data destinations and managed settings
 description: Describes how to use Dataflow Gen2 to save your data in specific destinations, along with instructions on how to use managed settings.
 ms.reviewer: jeluitwi
 ms.topic: how-to
-ms.date: 09/03/2026
+ms.date: 10/06/2026
 ms.custom: dataflows
 ai-usage: ai-assisted
 ---
@@ -134,7 +134,7 @@ When you're loading into a new table, automatic settings are turned on by defaul
 * **Drop and recreate table**: To allow for these schema changes, the table gets dropped and recreated on every dataflow refresh. Your dataflow refresh might cause the removal of relationships or measures that were added previously to your table.
 
 > [!NOTE]
-> Currently, automatic settings are only supported for Lakehouse and Azure SQL database as data destination.  
+> Automatic settings are supported for Lakehouse, Azure SQL Database, and Snowflake as data destinations. For details, see [Snowflake destination settings](#snowflake-destination-settings).
 
 :::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/use-automatic-settings.png" alt-text="Screenshot of the Choose destination settings window with the Use automatic settings option selected.":::
 
@@ -162,7 +162,6 @@ Schema options on publish only apply when the update method is **replace**. When
 
 > [!NOTE]
 > When loading data into the warehouse, only fixed schema is supported.
-> When loading data into a Snowflake database, only fixed schema is supported. If you change the schema of your source query, you need to reconfigure the destination mapping manually.
 
 :::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/fixed-schema.png" alt-text="Screenshot of the Schema options on publish option, with Fixed schema selected.":::
 
@@ -233,12 +232,16 @@ To enable staging, right-click on the query and enable staging by selecting the 
 
 :::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/disable-staging.png" alt-text="Screenshot of the query drop-down menu with Enable staging emphasized.":::
 
-#### Snowflake destination limitations
+<a id="snowflake-destination-limitations"></a>
 
-Snowflake as a data destination has the following known limitations:
+#### Snowflake destination settings
 
-* **Dynamic schema is not supported.** If you change the columns in your source query (add, rename, or remove columns), you need to manually reconfigure the destination mapping. Other destinations like Fabric Lakehouse support dynamic schema, but Snowflake doesn't yet.
-* **Default destination only works for new tables.** When using the default destination experience with Snowflake, it creates a new table on the first refresh. However, if you later change the schema of your dataflow, the destination schema isn't updated automatically.
+Snowflake supports **Replace** and **Append** as update methods. With **Replace**, new tables support **Dynamic schema** and **Fixed schema**.
+
+* **Managed settings**: For new tables, Dataflow Gen2 manages column mapping and uses **Replace**. When you add, rename, or remove query columns, republish the dataflow. The next refresh updates the destination schema automatically, without requiring you to reconfigure the destination mapping.
+* **Manual settings**: By using **Replace** and **Dynamic schema**, update the column mapping when you change your query, then republish the dataflow. The next refresh updates the destination schema. By using **Fixed schema** or **Append**, automatic schema changes aren't supported.
+
+When you use Snowflake as a default destination, managed settings apply to new tables, including automatic mapping and schema updates.
 
 > [!NOTE]
 > To use Snowflake as a data destination through an on-premises data gateway, [install the latest version of the gateway](/data-integration/gateway/service-gateway-install). Older gateway versions don't include the connector changes required for Snowflake destinations.
