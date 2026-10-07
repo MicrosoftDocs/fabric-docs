@@ -31,9 +31,6 @@ Follow these steps to create entity types in your ontology (preview) item.
 
 1. Enter a name for your entity type, and select **Add Entity Type**.
 
-    >[!NOTE]
-    > Entity type names must be 1–26 characters, contain only alphanumeric characters, hyphens, and underscores, and start and end with an alphanumeric character.
-
 1. The configuration canvas shows your new entity type.
 
     :::image type="content" source="media/how-to-create-entity-types/new-entity-type.png" alt-text="Screenshot of the new entity type on the canvas." lightbox="media/how-to-create-entity-types/new-entity-type.png":::
