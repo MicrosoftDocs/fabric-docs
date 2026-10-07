@@ -208,7 +208,11 @@ items:
               - name: Insert column - Person
                 href: plan/planning-how-to-insert-columns/how-to-insert-person-columns.md
               - name: Insert column - List
-                href: plan/planning-how-to-insert-columns/how-to-insert-dropdown-columns.md
+                items:
+                  - name: Insert dropdown list columns in planning sheet
+                    href: plan/planning-how-to-insert-columns/how-to-insert-dropdown-columns.md
+                  - name: Add dropdown options from semantic models
+                    href: plan/planning-how-to-insert-columns/how-to-add-dropdown-options-from-semantic-models.md
               - name: Insert column - Date
                 href: plan/planning-how-to-insert-columns/how-to-insert-date-columns.md
               - name: Insert column - Simulation
