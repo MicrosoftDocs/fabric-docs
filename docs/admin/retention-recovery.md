@@ -130,7 +130,7 @@ Fabric restores shared data after recovery, but it doesn't restore share permiss
 
 ### Warehouse-specific recovery
 
-When you recover a warehouse, Fabric restores the warehouse along with its associated snapshots, ensuring that warehouse metadata, data, and snapshots are recovered together as part of the recovery process.
+When a warehouse is deleted, Fabric soft-deletes its associated snapshots as part of the same retention lifecycle. During the retention period, those snapshots remain recoverable with the warehouse. When you recover a warehouse, Fabric restores the warehouse along with its associated snapshots, ensuring that warehouse metadata, data, and snapshots are recovered together as part of the recovery process.
 
 ## Billing during the retention period
 
