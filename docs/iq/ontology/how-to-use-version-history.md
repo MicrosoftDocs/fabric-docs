@@ -41,8 +41,8 @@ To capture the current state of the ontology as a version, follow these steps:
 
     :::image type="content" source="media/how-to-use-version-history/create-version.png" alt-text="Screenshot of the Create a version form with Version name and Description fields." lightbox="media/how-to-use-version-history/create-version.png":::
 
-1. Enter a **Version name**. The name is required and can be up to 100 characters. A name with only whitespace isn't allowed.
-1. Enter a **Description**. The description isn't required and can be up to 500 characters.
+1. Enter a **Version name**. The name is required.
+1. Enter a **Description**. The description is optional.
 1. Save the version. The version appears in the list.
 
 ## Browse and filter versions
