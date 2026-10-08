@@ -15,8 +15,6 @@ This article outlines the steps to create a Snowflake database connection.
 
 <a id="supported-authentication-types"></a>
 
-<a id="authentication-supported"></a>
-
 ## Summary
 
 The Snowflake database connector supports the following authentication types for copy and dataflow Gen2 respectively.
@@ -41,7 +39,7 @@ You can connect a dataflow Gen2 in Fabric to Snowflake using Power Query connect
 
 ## Supported capabilities
 
-[!INCLUDE [snowflake-capabilities-supported](includes/power-query/connectors/includes/snowflake/snowflake-capabilities-supported.md)]
+[!INCLUDE [snowflake-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/snowflake/capabilities-supported.md)]
 
 <a id="connect-to-a-snowflake-database"></a>
 
@@ -55,7 +53,7 @@ You can connect a dataflow Gen2 in Fabric to Snowflake using Power Query connect
 
 ### Connection steps
 
-[!INCLUDE [snowflake-connect-to-power-query-online](includes/power-query/connectors/includes/snowflake/snowflake-connect-to-power-query-online.md)]
+[!INCLUDE [snowflake-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/snowflake/connect-online.md)]
 
 ## Set up your connection in Manage connections and gateways
 
@@ -148,15 +146,13 @@ To use Key-pair authentication, you need to configure and create a Key-pair auth
 
 ## Additional information
 
-### Authentication details
-
-[!INCLUDE [snowflake-authentication-types-supported](includes/power-query/connectors/includes/snowflake/snowflake-authentication-types-supported.md)]
+[!INCLUDE [snowflake-authentication-types-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/snowflake/additional-information.md)]
 
 <a id="known-issues-and-limitations"></a>
 
 ## Limitations and considerations
 
-[!INCLUDE [snowflake-limitations-and-considerations](includes/power-query/connectors/includes/snowflake/limitations.md)]
+[!INCLUDE [snowflake-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/snowflake/limitations.md)]
 
 ## Related content
 

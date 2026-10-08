@@ -38,7 +38,7 @@ You can connect dataflow Gen2 to Azure Table Storage in Fabric by using Power Qu
 
 ## Supported capabilities
 
-[!INCLUDE [azure-table-storage-capabilities-supported](includes/power-query/connectors/includes/azure-table-storage/azure-table-storage-capabilities-supported.md)]
+[!INCLUDE [azure-table-storage-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-table-storage/capabilities-supported.md)]
 
 ## Connection settings
 
@@ -48,15 +48,13 @@ You can connect dataflow Gen2 to Azure Table Storage in Fabric by using Power Qu
 
 <a id="copy-your-account-key-for-azure-table-storage"></a>
 
-### Copy your account key
-
-[!INCLUDE [azure-table-storage-copy-account-key](includes/power-query/connectors/includes/azure-table-storage/azure-table-storage-copy-account-key.md)]
+[!INCLUDE [azure-table-storage-copy-account-key](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-table-storage/additional-information.md)]
 
 <a id="connect-to-azure-table-storage"></a>
 
 ### Connection instructions
 
-[!INCLUDE [azure-table-storage-connect-to-power-query-online](includes/power-query/connectors/includes/azure-table-storage/azure-table-storage-connect-to-power-query-online.md)]
+[!INCLUDE [azure-table-storage-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-table-storage/connect-online.md)]
 
 ## Related content
 
