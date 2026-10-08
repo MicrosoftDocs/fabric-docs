@@ -1,23 +1,20 @@
 ---
-title: Workspace outbound access protection for semantic models (preview)
+title: Workspace outbound access protection for semantic models
 description: Learn how workspace outbound access protection secures semantic model connections by enforcing allow lists on bound data connections during refresh and query operations.
 author: kgremban
 ms.author: kgremban
 ms.reviewer: kayu
 ms.topic: concept-article
-ms.date: 05/19/2026
+ms.date: 10/07/2026
 #customer intent: As a workspace admin, I want to control which external data sources my semantic models can connect to, so that I can prevent unauthorized data exfiltration and enforce network security policies.
 ai-usage: ai-assisted
 ---
 
-# Workspace outbound access protection for semantic models (preview)
+# Workspace outbound access protection for semantic models
 
 Semantic models can pull data from sources inside and outside your organization—cloud databases, on-premises systems via gateways, other Fabric workspaces, and external services. Composite models add another dimension: filter values from one source can flow to another during DirectQuery operations, potentially exposing sensitive data in query logs you don't control.
 
 Workspace outbound access protection addresses this risk. When you enable it, every outbound connection from the workspace is blocked by default. Semantic models can only refresh or query data sources that you explicitly allow through data connection rules.
-
-> [!NOTE]
-> This feature is in preview.
 
 ## How enforcement works
 
