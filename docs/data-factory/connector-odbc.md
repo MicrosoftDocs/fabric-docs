@@ -35,7 +35,7 @@ You can connect dataflow Gen2 in Fabric to ODBC using Power Query connectors. Fo
 
 ## Prerequisites
 
-[!INCLUDE [odbc-prerequisites](includes/power-query/connectors/includes/odbc/odbc-prerequisites.md)]
+[!INCLUDE [odbc-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/odbc/prerequisites.md)]
 
 <a id="capabilities"></a>
 
@@ -43,7 +43,7 @@ You can connect dataflow Gen2 in Fabric to ODBC using Power Query connectors. Fo
 
 ## Supported capabilities
 
-[!INCLUDE [odbc-capabilities-supported](includes/power-query/connectors/includes/odbc/odbc-capabilities-supported.md)]
+[!INCLUDE [odbc-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/odbc/capabilities-supported.md)]
 
 ## Connection settings
 
@@ -55,7 +55,7 @@ You can connect dataflow Gen2 in Fabric to ODBC using Power Query connectors. Fo
 
 ### Connection steps
 
-[!INCLUDE [odbc-connect-to-power-query-online](includes/power-query/connectors/includes/odbc/odbc-connect-to-power-query-online.md)]
+[!INCLUDE [odbc-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/odbc/connect-online.md)]
 
 ## Set up your connection in Manage connections and gateways
 
@@ -131,7 +131,7 @@ Select the **Windows** authentication method from the drop-down list.
 
 ## Limitations and considerations
 
-[!INCLUDE [odbc-limitations-and-considerations](includes/power-query/connectors/includes/odbc/limitations.md)]
+[!INCLUDE [odbc-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/odbc/limitations.md)]
 
 ## Related content
 
