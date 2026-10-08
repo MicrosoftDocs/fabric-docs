@@ -34,7 +34,7 @@ You can connect a dataflow Gen2 in Fabric to Salesforce reports by using Power Q
 
 ## Prerequisites
 
-[!INCLUDE [salesforce-reports-prerequisites](includes/power-query/connectors/includes/salesforce-reports/salesforce-reports-prerequisites.md)]
+[!INCLUDE [salesforce-reports-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/salesforce-reports/prerequisites.md)]
 
 <a id="capabilities"></a>
 
@@ -42,7 +42,7 @@ You can connect a dataflow Gen2 in Fabric to Salesforce reports by using Power Q
 
 ## Supported capabilities
 
-[!INCLUDE [salesforce-reports-capabilities-supported](includes/power-query/connectors/includes/salesforce-reports/salesforce-reports-capabilities-supported.md)]
+[!INCLUDE [salesforce-reports-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/salesforce-reports/capabilities-supported.md)]
 
 ## Connection settings
 
@@ -54,7 +54,7 @@ You can connect a dataflow Gen2 in Fabric to Salesforce reports by using Power Q
 
 ### Connection instructions
 
-[!INCLUDE [salesforce-reports-connect-to-power-query-online](includes/power-query/connectors/includes/salesforce-reports/salesforce-reports-connect-to-power-query-online.md)]
+[!INCLUDE [salesforce-reports-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/salesforce-reports/connect-online.md)]
 
 ## Set up your connection in a pipeline
 
@@ -62,7 +62,7 @@ Data Factory doesn't currently support Salesforce reports in pipelines.
 
 ## Limitations and considerations
 
-[!INCLUDE [salesforce-reports-limitations-and-considerations](includes/power-query/connectors/includes/salesforce-reports/limitations.md)]
+[!INCLUDE [salesforce-reports-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/salesforce-reports/limitations.md)]
 
 ## Related content
 
