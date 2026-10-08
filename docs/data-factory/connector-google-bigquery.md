@@ -35,7 +35,7 @@ You can connect dataflow Gen2 in Fabric to Google BigQuery by using Power Query 
 
 ## Prerequisites
 
-[!INCLUDE [google-bigquery-prerequisites](includes/power-query/connectors/includes/google-bigquery/google-bigquery-prerequisites.md)]
+[!INCLUDE [google-bigquery-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/google-bigquery/prerequisites.md)]
 
 <a id="capabilities"></a>
 
@@ -43,7 +43,7 @@ You can connect dataflow Gen2 in Fabric to Google BigQuery by using Power Query 
 
 ## Supported capabilities
 
-[!INCLUDE [google-bigquery-capabilities-supported](includes/power-query/connectors/includes/google-bigquery/google-bigquery-capabilities-supported.md)]
+[!INCLUDE [google-bigquery-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/google-bigquery/capabilities-supported.md)]
 
 ## Connection settings
 
@@ -55,11 +55,11 @@ You can connect dataflow Gen2 in Fabric to Google BigQuery by using Power Query 
 
 ### Connection instructions
 
-[!INCLUDE [google-bigquery-connect-to-power-query-online](includes/power-query/connectors/includes/google-bigquery/google-bigquery-connect-to-power-query-online.md)]
+[!INCLUDE [google-bigquery-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/google-bigquery/connect-online.md)]
 
 ## Limitations and considerations
 
-[!INCLUDE [google-bigquery-limitations-and-considerations](includes/power-query/connectors/includes/google-bigquery/limitations.md)]
+[!INCLUDE [google-bigquery-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/google-bigquery/limitations.md)]
 
 ## Related content
 

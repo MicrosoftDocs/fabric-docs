@@ -150,14 +150,52 @@ Upload the YML file directly to the environment, or switch to **YML editor view*
 > - You can specify **multiple feeds** in the YML file. Fabric searches them in the order listed until the package is found. Public repositories such as PyPI and Conda are searched last automatically, even if they aren't included in the YML file.
 > - If a package in the YML file can't be found in any of the listed feeds, publishing fails. Double-check the package name and version before publishing.
 
+### Add libraries from JFrog Artifactory
+
+You can install packages from a private JFrog Artifactory repository by creating a Data Factory connection and referencing its connection ID in a YML file.
+
+#### Set up a connection for JFrog Artifactory
+
+1. Select the **Settings** gear icon in the top-right corner of the Fabric portal, and then select **Manage connections and gateways**.
+
+1. Create a new connection. Select **+ New**, select **Cloud** as the type, and choose **JFrog Artifactory (Preview)** as the connection type.
+
+1. Enter the JFrog Artifactory repository URL. For example:
+
+    ```text
+    https://{organization}.jfrog.io/artifactory/{repository}
+    ```
+
+1. For the authentication method, select the expected mechanism.
+
+1. Select **Allow Code-First Artifacts like Notebooks to access this connection (Preview)**.
+
+    :::image type="content" source="media\environment-introduction\environment-jfrog-artifactory.png" alt-text="Screenshot that shows a JFrog Artifactory cloud connection with an access token and the code-first artifacts option." lightbox="media\environment-introduction\environment-jfrog-artifactory.png":::
+
+1. Select **Create** to save the connection, and then record its connection ID.
+
+#### Prepare and upload a YML file
+
+In your YML file, reference the connection ID as the index URL instead of including the repository URL and access token:
+
+```YAML
+dependencies:
+  - pip:
+    - fuzzywuzzy==0.18.0
+    - wordcloud==1.9.4
+    - --index-url <YOUR_CONNECTION_ID>
+```
+
+Upload the YML file directly to the environment, or switch to **YML editor view** and paste the content. When you publish the environment, Fabric reads the packages from your repository and persists them. Republish the environment to pick up package updates.
+
 ### Manage external libraries
 
 After you add external libraries, you can manage them from the **External repositories** section.
 
 - **Filter** – Use a package name as a keyword to filter the external libraries list.
-- **Update** – Select a library to update its **name**, **version**, or **source type** in List view. In YML editor view, you can also update the **Azure Artifact Feed connection ID**.
+- **Update** – Select a library to update its **name**, **version**, or **source type** in List view. In YML editor view, you can also update the **Azure Artifact Feed** or **JFrog Artifactory** connection ID.
 - **Delete** – Hover over a library row to see the **Delete** option, or select multiple libraries and then select **Delete**. You can also remove libraries by using the **YML editor view**.
-- **View dependencies** – Hover over a public repository library and select **View Dependencies** to fetch its dependency tree. Dependency information isn't available for private libraries or libraries from an Azure Artifact Feed.
+- **View dependencies** – Hover over a public repository library and select **View Dependencies** to fetch its dependency tree. Dependency information isn't available for private libraries or libraries from Azure Artifact Feed or JFrog Artifactory.
 - **Export to .yml** – Export the full external library list to a `.yml` file and download it to your local directory.
 
 ## Custom libraries
@@ -186,6 +224,7 @@ The following table shows which publish mode each library source supports.
 | Public repository (PyPI/Conda) | Yes | Yes |
 | Private repository (pip/conda) | Yes | No |
 | Azure Artifact Feed | Yes | No |
+| JFrog Artifactory | Yes | No |
 | Custom `.whl`, `.py`, `.tar.gz` | Yes | Yes |
 | Custom `.jar` | Yes | No |
 

@@ -41,7 +41,7 @@ You can connect dataflow Gen2 in Fabric to OData using Power Query connectors. F
 
 ## Supported capabilities
 
-[!INCLUDE [odata-feed-capabilities-supported](includes/power-query/connectors/includes/odata-feed/odata-feed-capabilities-supported.md)]
+[!INCLUDE [odata-feed-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/odata-feed/capabilities-supported.md)]
 
 ## Connection settings
 
@@ -53,7 +53,7 @@ You can connect dataflow Gen2 in Fabric to OData using Power Query connectors. F
 
 ### Connection instructions
 
-[!INCLUDE [odata-feed-load-data-power-query-online](includes/power-query/connectors/includes/odata-feed/odata-feed-load-data-power-query-online.md)]
+[!INCLUDE [odata-feed-load-data-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/odata-feed/connect-online.md)]
 
 ## Set up your connection in a pipeline
 
@@ -141,7 +141,7 @@ The properties in the following table are the supported authentication type.
 
 ## Limitations and considerations
 
-[!INCLUDE [odata-feed-limitations-and-considerations](includes/power-query/connectors/includes/odata-feed/limitations.md)]
+[!INCLUDE [odata-feed-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/odata-feed/limitations.md)]
 
 ## Related content
 

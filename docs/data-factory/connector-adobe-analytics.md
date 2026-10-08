@@ -35,7 +35,7 @@ You can connect dataflow Gen2 in Fabric to Adobe Analytics using Power Query con
 
 ## Prerequisites
 
-[!INCLUDE [adobe-analytics-prerequisites](includes/power-query/connectors/includes/adobe-analytics/adobe-analytics-prerequisites.md)]
+[!INCLUDE [adobe-analytics-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/adobe-analytics/prerequisites.md)]
 
 <a id="capabilities"></a>
 
@@ -43,7 +43,7 @@ You can connect dataflow Gen2 in Fabric to Adobe Analytics using Power Query con
 
 ## Supported capabilities
 
-[!INCLUDE [adobe-analytics-capabilities-supported](includes/power-query/connectors/includes/adobe-analytics/adobe-analytics-capabilities-supported.md)]
+[!INCLUDE [adobe-analytics-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/adobe-analytics/capabilities-supported.md)]
 
 ## Connection settings
 
@@ -55,7 +55,7 @@ You can connect dataflow Gen2 in Fabric to Adobe Analytics using Power Query con
 
 ### Connection instructions
 
-[!INCLUDE [adobe-analytics-connect-to-power-query-online](includes/power-query/connectors/includes/adobe-analytics/adobe-analytics-connect-to-power-query-online.md)]
+[!INCLUDE [adobe-analytics-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/adobe-analytics/connect-online.md)]
 
 ## Set up your connection in a pipeline
 
@@ -63,7 +63,7 @@ Fabric Data Factory doesn't currently support Adobe Analytics in pipelines.
 
 ## Limitations and considerations
 
-[!INCLUDE [adobe-analytics-limitations-and-considerations](includes/power-query/connectors/includes/adobe-analytics/limitations.md)]
+[!INCLUDE [adobe-analytics-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/adobe-analytics/limitations.md)]
 
 ## Related content
 

@@ -38,7 +38,7 @@ Metadata for entity types supports descriptions, synonyms, and additional metada
     | Frozen Product | **Description:** *Filtered items binding where StorageClass = FROZEN.* | |
     | Perishable Product | **Description:** *Filtered items binding where StorageClass = PERISHABLE.* | |
     | Inventory | **Additional metadata:**<br><br> On-Shelf Availability % : On-shelf availability percentage is calculated by dividing the total ShelfAvailableUnits by the total ShelfCapacityUnits. If total ShelfCapacityUnits is zero, the result is blank to avoid division by zero. <br><br> Low On-Shelf Availability : On-Shelf Availability % less than 95 | Additional metadata is entered as key-value pairs. |
-    | Sale | **Description** and **Synonyms** are already added to the entity type from the semantic model import. | Just review the metadata that's already there (no need to add metadata manually). |
+    | Sale | **Description** and **Synonyms** are already added to the entity type from the semantic model import. | Review the metadata that's already there (no need to add metadata manually). |
 
 ### Add entity type property metadata
 
@@ -84,7 +84,6 @@ Metadata for relationship types supports descriptions and additional metadata ke
 
     | Relationship type name | Source > target entity type | Metadata |
     | --- | --- | --- |
-    | *operates* | Store > Refrigeration Unit | **Description:** *Identifies the refrigeration equipment operating in a store.* |
     | *deliversTo* | Shipment > Store | **Description:** *Identifies the store receiving the shipment.* |
     | *occursAt* | Sale > Store | **Description:** *Identifies where the sale occurred.* |
     | *stockedAt* | Inventory > Store | **Description:** *Represents an active store assortment and its current inventory position, not merely a historical sale.* |
@@ -121,7 +120,6 @@ Next, add some business rules that give more detail about day-to-day operations.
 
     | Name | Definition | Linked concepts |
     | --- | --- | --- |
-    | Cold-chain exception | *A frozen product has a cold-chain exception when the temperature of the refrigeration unit storing it remains above the product’s maximum storage temperature for more than 20 minutes.* | - Frozen Product <br>- Refrigeration Unit |
     | Inventory at risk | *A store inventory position is at risk when projected on-hand inventory falls below safety stock before the next scheduled delivery* | - Store <br>- Inventory |
     | Late replenishment | *A replenishment shipment is late when its estimated arrival is more than four hours after its scheduled arrival.* | Shipment |
 

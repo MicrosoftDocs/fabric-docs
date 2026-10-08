@@ -34,7 +34,7 @@ You can connect dataflow Gen2 in Fabric to OneStream using Power Query connector
 
 ## Prerequisites
 
-[!INCLUDE [onestream-prerequisites](includes/power-query/connectors/includes/onestream/prerequisites.md)]
+[!INCLUDE [onestream-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/onestream/prerequisites.md)]
 
 <a id="capabilities"></a>
 
@@ -42,7 +42,7 @@ You can connect dataflow Gen2 in Fabric to OneStream using Power Query connector
 
 ## Supported capabilities
 
-[!INCLUDE [onestream-capabilities-supported](includes/power-query/connectors/includes/onestream/capabilities-supported.md)]
+[!INCLUDE [onestream-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/onestream/capabilities-supported.md)]
 
 ## Connection settings
 
@@ -54,7 +54,7 @@ You can connect dataflow Gen2 in Fabric to OneStream using Power Query connector
 
 ### Connection instructions
 
-[!INCLUDE [onestream-connect-to-power-query-online](includes/power-query/connectors/includes/onestream/connect-to-power-query-online.md)]
+[!INCLUDE [onestream-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/onestream/connect-online.md)]
 
 ## Set up your connection in a pipeline
 

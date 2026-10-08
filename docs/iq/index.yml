@@ -76,7 +76,7 @@ landingContent:
     linkLists:
       - linkListType: concept
         links:
-          - text: Fabric IQ in Microsoft 365 Copilot Cowork (Frontier)
+          - text: Fabric IQ in Copilot Cowork (Frontier)
             url: connectors/cowork-overview.md
 
   # Card
