@@ -35,7 +35,7 @@ You can connect dataflow Gen2 in Fabric to Funnel using Power Query connectors. 
 
 ## Prerequisites
 
-[!INCLUDE [funnel-prerequisites](includes/power-query/connectors/includes/funnel/funnel-prerequisites.md)]
+[!INCLUDE [funnel-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/funnel/prerequisites.md)]
 
 <a id="capabilities"></a>
 
@@ -43,7 +43,7 @@ You can connect dataflow Gen2 in Fabric to Funnel using Power Query connectors. 
 
 ## Supported capabilities
 
-[!INCLUDE [funnel-capabilities-supported](includes/power-query/connectors/includes/funnel/funnel-capabilities-supported.md)]
+[!INCLUDE [funnel-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/funnel/capabilities-supported.md)]
 
 ## Connection settings
 
@@ -55,7 +55,7 @@ You can connect dataflow Gen2 in Fabric to Funnel using Power Query connectors. 
 
 ### Connection instructions
 
-[!INCLUDE [funnel-connect-to-power-query-online](includes/power-query/connectors/includes/funnel/funnel-connect-to-power-query-online.md)]
+[!INCLUDE [funnel-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/funnel/connect-online.md)]
 
 ## Set up your connection in a pipeline
 
@@ -63,7 +63,7 @@ Data Factory doesn't currently support Funnel in pipelines.
 
 ## Limitations and considerations
 
-[!INCLUDE [funnel-limitations-and-considerations](includes/power-query/connectors/includes/funnel/limitations.md)]
+[!INCLUDE [funnel-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/funnel/limitations.md)]
 
 ## Related content
 

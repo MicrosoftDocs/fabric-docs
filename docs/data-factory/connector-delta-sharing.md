@@ -36,7 +36,7 @@ You can connect dataflow Gen2 in Fabric to Delta Sharing by using Power Query co
 
 ## Prerequisites
 
-[!INCLUDE [delta-sharing-prerequisites](includes/power-query/connectors/includes/delta-sharing/delta-sharing-prerequisites.md)]
+[!INCLUDE [delta-sharing-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/delta-sharing/prerequisites.md)]
 
 <a id="capabilities"></a>
 
@@ -44,7 +44,7 @@ You can connect dataflow Gen2 in Fabric to Delta Sharing by using Power Query co
 
 ## Supported capabilities
 
-[!INCLUDE [delta-sharing-capabilities-supported](includes/power-query/connectors/includes/delta-sharing/delta-sharing-capabilities-supported.md)]
+[!INCLUDE [delta-sharing-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/delta-sharing/capabilities-supported.md)]
 
 ## Connection settings
 
@@ -56,7 +56,7 @@ You can connect dataflow Gen2 in Fabric to Delta Sharing by using Power Query co
 
 ### Connection instructions
 
-[!INCLUDE [delta-sharing-connect-to-power-query-online](includes/power-query/connectors/includes/delta-sharing/delta-sharing-connect-to-power-query-online.md)]
+[!INCLUDE [delta-sharing-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/delta-sharing/connect-online.md)]
 
 ## Set up your connection in a pipeline
 
@@ -64,7 +64,7 @@ Data Factory doesn't currently support Delta Sharing in pipelines.
 
 ## Limitations and considerations
 
-[!INCLUDE [delta-sharing-limitations-and-considerations](includes/power-query/connectors/includes/delta-sharing/limitations.md)]
+[!INCLUDE [delta-sharing-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/delta-sharing/limitations.md)]
 
 ## Related content
 

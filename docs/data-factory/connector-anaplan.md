@@ -36,7 +36,7 @@ You can connect dataflow Gen2 in Fabric to Anaplan by using Power Query connecto
 
 ## Prerequisites
 
-[!INCLUDE [anaplan-prerequisites](includes/power-query/connectors/includes/anaplan/prerequisites.md)]
+[!INCLUDE [anaplan-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/anaplan/prerequisites.md)]
 
 <a id="capabilities"></a>
 
@@ -44,7 +44,7 @@ You can connect dataflow Gen2 in Fabric to Anaplan by using Power Query connecto
 
 ## Supported capabilities
 
-[!INCLUDE [anaplan-capabilities-supported](includes/power-query/connectors/includes/anaplan/capabilities-supported.md)]
+[!INCLUDE [anaplan-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/anaplan/capabilities-supported.md)]
 
 ## Connection settings
 
@@ -56,7 +56,7 @@ You can connect dataflow Gen2 in Fabric to Anaplan by using Power Query connecto
 
 ### Connection instructions
 
-[!INCLUDE [anaplan-connect-to-power-query-online](includes/power-query/connectors/includes/anaplan/connect-to-power-query-online.md)]
+[!INCLUDE [anaplan-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/anaplan/connect-online.md)]
 
 ## Set up your connection in a pipeline
 
@@ -64,7 +64,7 @@ Data Factory doesn't currently support Anaplan in pipelines.
 
 ## Limitations and considerations
 
-[!INCLUDE [anaplan-limitations-and-considerations](includes/power-query/connectors/includes/anaplan/limitations.md)]
+[!INCLUDE [anaplan-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/anaplan/limitations.md)]
 
 ## Related content
 

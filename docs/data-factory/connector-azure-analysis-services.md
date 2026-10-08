@@ -31,14 +31,14 @@ The Access database connector supports the following authentication types for co
 |Organizational account| n/a | √ |
 
 ## Prerequisites
-[!INCLUDE [azure-analysis-services-prerequisites](includes/power-query/connectors/includes/azure-analysis-services/azure-analysis-services-prerequisites.md)]
+[!INCLUDE [azure-analysis-services-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-analysis-services/prerequisites.md)]
 
 <a id="capabilities"></a>
 
 <a id="capabilities-supported"></a>
 
 ## Supported capabilities
-[!INCLUDE [azure-analysis-services-capabilities-supported](includes/power-query/connectors/includes/azure-analysis-services/azure-analysis-services-capabilities-supported.md)]
+[!INCLUDE [azure-analysis-services-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-analysis-services/capabilities-supported.md)]
 
 ## Connection settings
 
@@ -46,7 +46,7 @@ The Access database connector supports the following authentication types for co
 
 ### Connection instructions
 
-[!INCLUDE [azure-analysis-services-connect-to-power-query-online](includes/power-query/connectors/includes/azure-analysis-services/azure-analysis-services-connect-to-power-query-online.md)]
+[!INCLUDE [azure-analysis-services-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-analysis-services/connect-online.md)]
 
 ## Related content
 

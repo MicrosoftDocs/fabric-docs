@@ -33,7 +33,7 @@ You can connect a dataflow Gen2 in Fabric to Salesforce objects by using Power Q
 
 ## Prerequisites
 
-[!INCLUDE [salesforce-objects-prerequisites](includes/power-query/connectors/includes/salesforce-objects/salesforce-objects-prerequisites.md)]
+[!INCLUDE [salesforce-objects-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/salesforce-objects/prerequisites.md)]
 
 <a id="capabilities"></a>
 
@@ -41,7 +41,7 @@ You can connect a dataflow Gen2 in Fabric to Salesforce objects by using Power Q
 
 ## Supported capabilities
 
-[!INCLUDE [salesforce-objects-capabilities-supported](includes/power-query/connectors/includes/salesforce-objects/salesforce-objects-capabilities-supported.md)]
+[!INCLUDE [salesforce-objects-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/salesforce-objects/capabilities-supported.md)]
 
 ## Connection settings
 
@@ -53,11 +53,11 @@ You can connect a dataflow Gen2 in Fabric to Salesforce objects by using Power Q
 
 ### Connection instructions
 
-[!INCLUDE [salesforce-objects-connect-to-power-query-online](includes/power-query/connectors/includes/salesforce-objects/salesforce-objects-connect-to-power-query-online.md)]
+[!INCLUDE [salesforce-objects-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/salesforce-objects/connect-online.md)]
 
 ## Limitations and considerations
 
-[!INCLUDE [salesforce-objects-limitations-and-considerations](includes/power-query/connectors/includes/salesforce-objects/limitations.md)]
+[!INCLUDE [salesforce-objects-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/salesforce-objects/limitations.md)]
 
 ## Related content
 
