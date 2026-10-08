@@ -120,7 +120,6 @@ Next, add some business rules that give more detail about day-to-day operations.
 
     | Name | Definition | Linked concepts |
     | --- | --- | --- |
-    | Cold-chain exception | *A frozen product has a cold-chain exception when the temperature of the refrigeration unit storing it remains above the product’s maximum storage temperature for more than 20 minutes.* | - Frozen Product <br>- Refrigeration Unit |
     | Inventory at risk | *A store inventory position is at risk when projected on-hand inventory falls below safety stock before the next scheduled delivery* | - Store <br>- Inventory |
     | Late replenishment | *A replenishment shipment is late when its estimated arrival is more than four hours after its scheduled arrival.* | Shipment |
 
