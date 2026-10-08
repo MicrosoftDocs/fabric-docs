@@ -34,7 +34,7 @@ You can connect dataflow Gen2 in Fabric to ClickHouse using Power Query connecto
 
 ## Prerequisites
 
-[!INCLUDE [clickhouse-prerequisites](includes/power-query/connectors/includes/clickhouse/prerequisites.md)]
+[!INCLUDE [clickhouse-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/clickhouse/prerequisites.md)]
 
 <a id="capabilities"></a>
 
@@ -42,7 +42,7 @@ You can connect dataflow Gen2 in Fabric to ClickHouse using Power Query connecto
 
 ## Supported capabilities
 
-[!INCLUDE [clickhouse-capabilities-supported](includes/power-query/connectors/includes/clickhouse/capabilities-supported.md)]
+[!INCLUDE [clickhouse-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/clickhouse/capabilities-supported.md)]
 
 ## Connection settings
 
@@ -54,7 +54,7 @@ You can connect dataflow Gen2 in Fabric to ClickHouse using Power Query connecto
 
 ### Connection instructions
 
-[!INCLUDE [clickhouse-connect-to-power-query-online](includes/power-query/connectors/includes/clickhouse/connect-to-power-query-online.md)]
+[!INCLUDE [clickhouse-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/clickhouse/connect-online.md)]
 
 ## Set up your connection in a pipeline
 

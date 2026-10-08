@@ -37,7 +37,7 @@ You can connect dataflow Gen2 to Databricks in Fabric using Power Query connecto
 
 ## Prerequisites
 
-[!INCLUDE [databricks-prerequisites](includes/power-query/connectors/includes/databricks/databricks-prerequisites.md)]
+[!INCLUDE [databricks-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/databricks/prerequisites.md)]
 
 <a id="capabilities"></a>
 
@@ -45,7 +45,7 @@ You can connect dataflow Gen2 to Databricks in Fabric using Power Query connecto
 
 ## Supported capabilities
 
-[!INCLUDE [databricks-ccapabilities-supported](includes/power-query/connectors/includes/databricks/databricks-capabilities-supported.md)]
+[!INCLUDE [databricks-ccapabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/databricks/capabilities-supported.md)]
 
 ## Connection settings
 
@@ -57,7 +57,7 @@ You can connect dataflow Gen2 to Databricks in Fabric using Power Query connecto
 
 ### Connection instructions
 
-[!INCLUDE [databricks-connect-to-power-query-online](includes/power-query/connectors/includes/databricks/databricks-connect-to-power-query-online.md)]
+[!INCLUDE [databricks-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/databricks/connect-online.md)]
 
 ## Set up your connection in a pipeline
 

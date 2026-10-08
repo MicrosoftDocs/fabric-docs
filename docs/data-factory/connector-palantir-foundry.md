@@ -35,7 +35,7 @@ You can connect a dataflow Gen2 in Fabric to Palantir Foundry using Power Query 
 
 ## Prerequisites
 
-[!INCLUDE [palantir-foundry-datasets-prerequisites](includes/power-query/connectors/includes/palantir-foundry-datasets/prerequisites.md)]
+[!INCLUDE [palantir-foundry-datasets-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/palantir-foundry-datasets/prerequisites.md)]
 
 <a id="capabilities"></a>
 
@@ -43,7 +43,7 @@ You can connect a dataflow Gen2 in Fabric to Palantir Foundry using Power Query 
 
 ## Supported capabilities
 
-[!INCLUDE [palantir-foundry-datasets-capabilities-supported](includes/power-query/connectors/includes/palantir-foundry-datasets/capabilities-supported.md)]
+[!INCLUDE [palantir-foundry-datasets-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/palantir-foundry-datasets/capabilities-supported.md)]
 
 ## Connection settings
 
@@ -55,7 +55,7 @@ You can connect a dataflow Gen2 in Fabric to Palantir Foundry using Power Query 
 
 ### Connection instructions
 
-[!INCLUDE [palantir-foundry-datasets-connect-to-power-query-online](includes/power-query/connectors/includes/palantir-foundry-datasets/connect-to-power-query-online.md)]
+[!INCLUDE [palantir-foundry-datasets-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/palantir-foundry-datasets/connect-online.md)]
 
 
 ## Set up your connection in a pipeline
