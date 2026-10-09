@@ -552,7 +552,13 @@ items:
             - name: Calendar
               href: plan/powertable-layouts/how-to-configure-calendar-layout.md
             - name: Kanban
-              href: plan/powertable-layouts/how-to-configure-kanban-layout.md
+              items:
+                - name: Configure Kanban layout
+                  href: plan/powertable-layouts/how-to-configure-kanban-layout.md
+                - name: Add and manage tasks
+                  href: plan/powertable-layouts/how-to-add-manage-kanban-tasks.md
+                - name: Customize Kanban layout
+                  href: plan/powertable-layouts/how-to-customize-kanban-layout.md
         - name: Apply conditional formatting
           href: plan/powertable-how-to-apply-conditional-formatting.md
         - name: Comment and collaborate
