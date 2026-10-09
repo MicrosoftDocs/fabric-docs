@@ -1,12 +1,9 @@
 ---
 title: "Tutorial: Configure Microsoft Fabric Mirrored Databases From Azure SQL Database"
 description: Learn how to configure a mirrored database from Azure SQL Database in Microsoft Fabric.
-author: whhender
-ms.author: whhender
-ms.reviewer: imotiwala
-ms.date: 09/25/2025
+ms.reviewer: nanikolic, atodalbagi, wiassaf
+ms.date: 09/22/2026
 ms.topic: tutorial
-ms.custom:
 ---
 
 # Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Database
@@ -25,18 +22,45 @@ ms.custom:
     <!-- - [Enable Mirroring in your Microsoft Fabric tenant](../mirroring/enable-mirroring.md). You need an existing capacity for Fabric. If you don't, [start a Fabric trial](../fundamentals/fabric-trial.md). -->
 - The Fabric capacity needs to be active and running. A paused or deleted capacity will affect Mirroring and no data will be replicated.
 - Fabric tenant settings are required. Ensure the following two [Fabric Tenant settings](../admin/about-tenant-settings.md) are enabled:
-    - [Service principals can use Fabric APIs](../admin/service-admin-portal-developer.md#service-principals-can-use-fabric-apis)
+    - [Service principals can call Fabric public APIs](../admin/service-admin-portal-developer.md#service-principals-can-use-fabric-apis)
     - [Users can access data stored in OneLake with apps external to Fabric](../admin/tenant-settings-index.md#onelake-settings)
 - You need to have a member or admin role in your workspace when you create a mirrored database from the Fabric portal. During creation, the managed identity of Azure SQL server is automatically granted "Read and write" permission on the mirrored database. Users with the contributor role don't have the Reshare permission necessary to complete this step.
+- If inbound access to OneLake is restricted for your workspace, a workspace admin must add the Azure resource ID of your Azure SQL server to the workspace's Resource Instance Rules. This rule allows the server to write mirrored data to OneLake without relying on its dynamic or shared outbound IP addresses. For setup instructions, see [Manage inbound access to OneLake with Resource Instance Rules](../onelake/onelake-manage-inbound-access-trusted-resources.md).
 - Check your networking requirements for Fabric to access your Azure SQL Database: If your Azure SQL Database is not publicly accessible and doesn't [allow Azure services](/azure/azure-sql/database/network-access-controls-overview#allow-azure-services) to connect to it, you can [create a virtual network data gateway](/data-integration/vnet/create-data-gateways) or [install an on-premises data gateway](/data-integration/gateway/service-gateway-install) to mirror the data. Make sure the Azure Virtual Network or the gateway machine's network can connect to the Azure SQL server via [a private endpoint](/azure/azure-sql/database/private-endpoint-overview?view=azuresql-db&preserve-view=true) or is allowed by the firewall rule.
 
-### Enable System Assigned Managed Identity (SAMI) of your Azure SQL logical server
+### Enable Managed Identity
 
-The System Assigned Managed Identity (SAMI) of your Azure SQL logical server must be enabled, and must be the primary identity, to publish data to Fabric OneLake.
+To publish data to Fabric OneLake, either System Assigned Managed Identity (SAMI) or User Assigned Managed Identity (UAMI) needs to be enabled and must be the primary identity on your Azure SQL logical server.  
+
+> [!NOTE]  
+> Support for User Assigned Managed Identity (UAMI) is currently in preview.
+
+#### Enable System Assigned Managed Identity (SAMI) of your Azure SQL logical server
 
 1. To configure or verify that the SAMI is enabled, go to your logical SQL Server in the Azure portal. Under **Security** in the resource menu, select **Identity**.
 1. Under **System assigned managed identity**, select **Status** to **On**.
 1. The SAMI must be the primary identity. Verify the SAMI is the primary identity with the following T-SQL query: `SELECT * FROM sys.dm_server_managed_identities;`
+
+#### Enable User Assigned Managed Identity (UAMI) of your Azure SQL logical server (Preview)
+
+Enable mirroring with UAMI:
+
+When you have not yet enabled mirroring and want to use UAMI:
+
+1. [Create a new UAMI](/entra/identity/managed-identities-azure-resources/manage-user-assigned-managed-identities-azure-portal#create-a-user-assigned-managed-identity) if it does not already exist.
+1. To configure UAMI, go to your logical SQL Server in the Azure portal. Under **Security** in the resource menu, select **Identity**.
+1. Add UAMI as the primary identity on the Azure portal (`identity_type` should be 'User-assigned' upon running `SELECT * FROM sys.dm_server_managed_identities WHERE is_primary = 1`).
+
+When you want to switch to UAMI for databases already enabled for mirroring with SAMI:
+
+1. Create a new UAMI if it does not already exist.
+1. To configure UAMI, go to your logical SQL Server in the Azure portal. Under **Security** in the resource menu, select **Identity**.
+1. Navigate to the mirrored database item in the Fabric portal and grant write permissions for the primary UAMI by following these steps:
+    - Go to the mirrored database item, select the three dots "..." and select **Manage permissions**.
+    - Do **not** drop the old primary managed identity permissions for at least 15 minutes after enabling UAMI.
+    - Select  **Add User** and search using the UAMI name. Ensure AppID matches `client_id` in `sys.dm_server_managed_identities`.
+    - Grant UAMI read and write permissions on the mirrored database item.
+1. Add UAMI as the primary identity on the Azure portal (`identity_type` should be 'User-assigned' upon running `SELECT * FROM sys.dm_server_managed_identities WHERE is_primary = 1`).
 
 ### Database principal for Fabric
 
@@ -49,7 +73,7 @@ You can accomplish this with a [login and mapped database user](#use-a-login-and
 > [!NOTE]
 > Microsoft Entra server principals (logins) are currently in preview for Azure SQL Database. Before using Microsoft Entra ID authentication, review the limitations in [Microsoft Entra server principals](/azure/azure-sql/database/authentication-azure-ad-logins?view=azuresql-db&preserve-view=true#limitations-and-remarks). Database users created using Microsoft Entra logins can experience delays when being granted roles and permissions.
 
-1. Connect to your Azure SQL logical server using [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true).
+1. Connect to your Azure SQL logical server using [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the MSSQL extension for Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true).
 1. Connect to the `master` database. Create a server login and assign the appropriate permissions.
 
     The permissions required for the Fabric login are:
@@ -113,7 +137,6 @@ You can accomplish this with a [login and mapped database user](#use-a-login-and
     GRANT SELECT, ALTER ANY EXTERNAL MIRROR, VIEW DATABASE PERFORMANCE STATE, VIEW DATABASE SECURITY STATE TO [Workspace Identity Name];
     ```
 
-1. TO [fabric_user];
 ## Create a mirrored Azure SQL Database
 
 1. Open the [Fabric portal](https://fabric.microsoft.com).
@@ -169,4 +192,3 @@ For more information and details on the replication states, see [Monitor Fabric 
 - [Mirroring Azure SQL Database](../mirroring/azure-sql-database.md)
 
 - [What is Mirroring in Fabric?](../mirroring/overview.md)
-

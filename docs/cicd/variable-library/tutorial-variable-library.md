@@ -1,20 +1,16 @@
 ---
 title: Learn How to Use Variable Libraries
 description: "Follow the steps for creating a variable library and using variable values in various stages of a deployment pipeline."
-author: billmath
-ms.author: billmath
 ms.reviewer: Lee
-ms.service: fabric
-ms.subservice: cicd
 ms.topic: tutorial
-ms.date: 08/21/2025
+ms.date: 12/15/2025
 ms.search.form: Variable library tutorial
 #customer intent: As a developer, I want to learn how to use a Microsoft Fabric variable library to customize and share item configurations in a workspace, so that I can manage my content lifecycle.
 ---
 
 # Tutorial: Use variable libraries to customize and share item configurations
 
-This tutorial shows you how to use dynamic content in Microsoft Fabric pipelines. When you create a variable library item and add variables to it, you can automate values for various stages of your deployment pipeline. In this tutorial, you copy data from one lakehouse to another. Then you use the variable library to set the source and destination values for the copy activity.
+This tutorial shows you how to use dynamic content in Fabric pipelines. When you create a variable library item and add variables to it, you can automate values for various stages of your deployment pipeline. In this tutorial, you copy data from one lakehouse to another. Then you use the variable library to set the source and destination values for the copy activity.
 
 In this tutorial, you:
 
@@ -37,7 +33,7 @@ The following diagram shows the workspace layout for this tutorial.
 ## Prerequisites
 
 * A Fabric tenant account with an active subscription. [Create an account for free](../../get-started/fabric-trial.md).
-* The following [tenant switch](../../admin/about-tenant-settings.md) is enabled from the admin portal:
+* The following [tenant switch](../../admin/about-tenant-settings.md) is enabled in **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**:
   * [Users can create Fabric items](../../admin/fabric-switch.md)
 
 

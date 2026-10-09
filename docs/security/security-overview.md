@@ -4,8 +4,8 @@ description: Learn how Microsoft Fabric security works, and what features are av
 author: msmimart
 ms.author: mimart
 ms.topic: overview
-ms.custom:
-ms.date: 05/11/2025
+ms.date: 08/13/2026
+ai-usage: ai-assisted
 ---
 
 # Security in Microsoft Fabric
@@ -22,7 +22,7 @@ Fabric security is:
 
 * **Compliant** – Fabric has data sovereignty out of the box with multi geo capacities. Fabric also supports a wide range of compliance standards.
 
-* **Governable** - Fabric comes with a set of governance tools such [data lineage](../governance/lineage.md), [information protection labels](../governance/information-protection.md), [data loss prevention](/purview/dlp-powerbi-get-started) and [purview integration](../governance/use-microsoft-purview-hub.md).  
+* **Governable** - Fabric includes governance tools such as [OneLake Catalog](../governance/onelake-catalog-overview.md), [data lineage](../governance/lineage.md), [information protection labels](../governance/information-protection.md), and [data loss prevention](/purview/dlp-powerbi-get-started).
 
 * **Configurable** - You can configure Fabric security in accordance with your organizational policies.
 
@@ -34,7 +34,7 @@ Microsoft Fabric is a SaaS platform, like many other Microsoft services such as 
 
 ## Understand network security
 
-Fabric is SaaS service that runs in the Microsoft cloud. Some scenarios involve connecting to data that's outside of the Fabric platform. For example, viewing a report from your own network or connecting to data that's in another service. Interactions within Fabric use the internal Microsoft network and traffic outside of the service is protected by default. For more information and a detailed description, see [Data in transit](security-fundamentals.md#data-in-transit).
+Fabric is a SaaS service that runs in the Microsoft cloud. Some scenarios involve connecting to data that's outside of the Fabric platform. For example, viewing a report from your own network or connecting to data that's in another service. Interactions within Fabric use the internal Microsoft network and traffic outside of the service is protected by default. For more information and a detailed description, see [Data in transit](security-fundamentals.md#data-in-transit).
 
 ### Inbound network security
 
@@ -62,14 +62,14 @@ To configure Private Links in Fabric, see [Set up and use private links](../secu
 
 ### Outbound network security
 
-Fabric has a set of tools that allow you to connect to external data sources and bring that data into Fabric in a secure way. This section lists different ways to import and connect to data from a secure network into fabric.
+Fabric has a set of tools that allow you to connect to external data sources and bring that data into Fabric in a secure way. This section lists different ways to import and connect to data from a secure network into Fabric.
 
 #### Trusted workspace access
 
-With Fabric you can access firewall enabled Azure Data Lake Gen 2 accounts securely. Fabric workspaces that have a workspace identity can securely access Azure Data Lake Gen 2 accounts with public network access enabled, from selected virtual networks and IP addresses. You can limit ADLS gen 2 access to specific Fabric workspaces. For more information, see [Trusted workspace access](../security/security-trusted-workspace-access.md).
+With Fabric you can access firewall enabled Azure Data Lake Gen 2 accounts securely. Fabric workspaces that have a workspace identity can securely access Azure Data Lake Gen 2 accounts with public network access enabled, from selected virtual networks and IP addresses. You can limit Azure Data Lake Storage Gen2 access to specific Fabric workspaces. For more information, see [Trusted workspace access](../security/security-trusted-workspace-access.md).
 
 > [!NOTE]
-> Fabric workspace identities can only be created in workspaces associated with a Fabric F SKU capacity. For information about buying a Fabric subscription, see [Buy a Microsoft Fabric subscription](../enterprise/buy-subscription.md). 
+> You can create a workspace identity in any workspace except **My workspace**, regardless of capacity SKU. Trusted workspace access requires a purchased Microsoft Fabric capacity (F SKU). For information about buying Fabric capacity, see [Buy Fabric capacity in Azure](../enterprise/buy-capacity.md).
 
 #### Managed Private Endpoints
 
@@ -119,7 +119,7 @@ Fabric is part of a larger Microsoft ecosystem. If your organization is already 
 
 Fabric ensures that your data is secure across regions when you're working with several tenants that have multiple capacities across a number of geographies.
 
-* **Data logical separation** - The [Fabric platform](security-fundamentals.md#fabric-platform) provide logical isolation between tenants to protect your data.
+* **Data logical separation** - The [Fabric platform](security-fundamentals.md#fabric-platform) provides logical isolation between tenants to protect your data.
 
 * **Data sovereignty** - To start working with multi-geo, see [Configure Multi-Geo support for Fabric](../admin/service-admin-premium-multi-geo.md).
 
@@ -144,7 +144,7 @@ You can [share Fabric items](../fundamentals/share-items.md) with users in your 
 
 You can limit viewer access to data using [row-level security (RLS)](service-admin-row-level-security.md), [column-level security (CLS)](../data-warehouse/column-level-security.md) and [object-level security (OLS)](service-admin-object-level-security.md). With RLS, CLS and OLS, you can create user identities that have access to certain portions of your data, and limit SQL results returning only what the user's identity can access.
 
-You can also add RLS to a DirectLake dataset. If you define security for both SQL and DAX, DirectLake falls back to DirectQuery for tables that have RLS in SQL. In such cases, DAX, or MDX results are limited to the user's identity.
+You can also add RLS to a DirectLake dataset. If you define security for both SQL and DAX, DirectLake falls back to DirectQuery for tables that have RLS in SQL. In such cases, DAX or MDX results are limited to the user's identity.
 
 To expose reports using a DirectLake dataset with RLS without a DirectQuery fallback, use direct dataset sharing or [apps in Power BI](/power-bi/consumer/end-user-apps). With apps in Power BI you can give access to reports without viewer access. This kind of access means that the users can't use SQL. To enable DirectLake to read the data, you need to [switch the data source credential](../fundamentals/direct-lake-fixed-identity.md) from Single Sign On (SSO) to a fixed identity that has access to the files in the lake.
 
@@ -152,7 +152,7 @@ To expose reports using a DirectLake dataset with RLS without a DirectQuery fall
 
 Fabric supports sensitivity labels from Microsoft Purview Information Protection. These are the labels, such as *General*, *Confidential*, and *Highly Confidential* that are widely used in Microsoft Office apps such as Word, PowerPoint, and Excel to protect sensitive information. In Fabric, you can classify items that contain sensitive data using these same sensitivity labels. The sensitivity labels then follow the data automatically from item to item as it flows through Fabric, all the way from data source to business user. The sensitivity label follows even when the data is exported to supported formats such as PBIX, Excel, PowerPoint, and PDF, ensuring that your data remains protected. Only authorized users can open the file. For more information, see [Governance and compliance in Microsoft Fabric](../governance/governance-compliance-overview.md).
 
-To help you govern, protect, and manage your data, you can use [Microsoft Purview](../governance/microsoft-purview-fabric.md). Microsoft Purview and Fabric work together letting you store, analyze, and govern your data from a single location, the [Microsoft Purview hub](../governance/use-microsoft-purview-hub.md).
+Use [Microsoft Purview](../governance/microsoft-purview-fabric.md) to classify and protect sensitive Fabric data, monitor activity, and identify data risks. Purview capabilities for Fabric include Information Protection, Data Loss Prevention, Audit, Insider Risk Management, and security and compliance controls for supported Copilots and agents.
 
 ## Recover data
 
@@ -162,7 +162,7 @@ Fabric data resiliency ensures that your data is available if there is a disaste
 
 As an [administrator in Fabric](../admin/admin-overview.md), you get to control capabilities for the entire organization. Fabric enables delegation of the admin role to capacities, workspaces, and domains. By delegating admin responsibilities to the right people, you can implement a model that lets several key admins control general Fabric settings across the organization, while other admins who are in charge of settings related to specific areas.
 
-Using various tools, admins can also [monitor](../admin/admin-overview.md#monitor) key Fabric aspects such as capacity consumption.
+In the [Govern report in the OneLake catalog](../governance/onelake-catalog-govern.md#govern-report), admins can review data estate insights, including capacity and feature usage information, and recommended actions.
 
 ## Audit Logs
 To view your audit logs, follow the instructions in [Track user activities in Microsoft Fabric](../admin/track-user-activities.md). You can also refer to the [Operation list](../admin/operation-list.md) to see which activities are available for searching in the audit logs.

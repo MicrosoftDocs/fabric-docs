@@ -1,11 +1,8 @@
 ---
 title: Update Eventstream item Definition
 description: Learn how to call APIs to update an Eventstream item definition in Fabric workspace.
-ms.reviewer: spelluru
-ms.author: zhenxilin
-author: alexlzx
+ms.reviewer: zhenxilin
 ms.topic: how-to
-ms.custom:
 ms.date: 09/08/2025
 ms.search.form: Eventstream REST API
 ---
@@ -172,3 +169,5 @@ POST https://api.fabric.microsoft.com/v1/workspaces/aaaabbbb-0000-cccc-1111-dddd
 ## Related content
 
 * [Update Eventstream Definition](/rest/api/fabric/eventstream/items/update-eventstream-definition)
+
+

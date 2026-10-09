@@ -1,17 +1,16 @@
 ---
-title: Configure SQL server in a copy activity
-description: This article explains how to copy data using SQL server.
-author: jianleishen
-ms.author: jianleishen
+title: Configure SQL Server in a Copy Activity
+description: This article explains how to copy data using SQL Server.
+ms.reviewer: jianleishen
 ms.topic: how-to
-ms.date: 12/18/2024
-ms.custom: 
+ms.date: 01/22/2026
+ms.custom:
   - pipelines
   - template-how-to
   - connectors
 ---
 
-# Configure SQL server in a copy activity
+# Configure SQL Server in a copy activity
 
 This article outlines how to use the copy activity in a pipeline to copy data from and to SQL server.
 
@@ -61,7 +60,7 @@ Under **Advanced**, you can specify the following fields:
 
     :::image type="content" source="./media/connector-sql-server/isolation-level.png" alt-text="Screenshot showing Isolation level settings.":::
 
-- **Partition option**: Specify the data partitioning options used to load data from SQL server. Allowed values are: **None** (default), **Physical partitions of table**, and **Dynamic range**. When a partition option is enabled (that is, not **None**), the degree of parallelism to concurrently load data from an SQL server is controlled by **Degree of copy parallelism** in copy activity settings tab.
+- **Partition option**: Specify the data partitioning options used to load data from SQL server. Allowed values are: **None** (default), **Physical partitions of table**, and **Dynamic range**. When a partition option is enabled (that is, not **None**), the degree of parallelism to concurrently load data from a SQL server is controlled by **Degree of copy parallelism** in copy activity settings tab.
 
   - **None**: Choose this setting to not use a partition.
   - **Physical partitions of table**: When using a physical partition, the partition column and mechanism are automatically determined based on your physical table definition.
@@ -90,7 +89,7 @@ The following properties are supported for SQL server under the **Destination** 
 
 The following properties are **required**:
 
-- **Connection**: Select an SQL server connection from the connection list. If the connection doesn't exist, then create a new SQL server connection by selecting **New**.
+- **Connection**: Select a SQL server connection from the connection list. If the connection doesn't exist, then create a new SQL server connection by selecting **New**.
 - **Connection type**: Select **SQL server**.
 - **Table option**: You can choose **Use existing** to use the table specified. Or choose **Auto create table** to automatically create a destination table if the table doesn't exist in the source schema, and note that this selection is not supported when stored procedure is used as the write behavior.
 
@@ -143,9 +142,9 @@ Under **Advanced**, you can specify the following fields:
 
 ### Mapping
 
-For the **Mapping** tab configuration, if you don't apply SQL server with auto create table as your destination, go to [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab).
+For the **Mapping** tab configuration, if you don't apply SQL server with auto create table as your destination, go to [Mapping](copy-data-activity.md#configure-your-mappings-under-the-mapping-tab).
 
-If you apply SQL Server with auto create table as your destination, except the configuration in [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab), you can edit the type for your destination columns. After selecting **Import schemas**, you can specify the column type in your destination.
+If you apply SQL Server with auto create table as your destination, except the configuration in [Mapping](copy-data-activity.md#configure-your-mappings-under-the-mapping-tab), you can edit the type for your destination columns. After selecting **Import schemas**, you can specify the column type in your destination.
 
 For example, the type for *ID* column in source is int, and you can change it to float type when mapping to the destination column.
 
@@ -153,7 +152,51 @@ For example, the type for *ID* column in source is int, and you can change it to
 
 ### Settings
 
-For **Settings** tab configuration, go to [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
+For **Settings** tab configuration, go to [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-the-settings-tab).
+
+## Data type mapping for SQL Server
+
+When copying data from SQL Server, the following mappings are used from SQL Server data types to interim data types used by the service internally.
+
+| SQL Server data type | Interim service data type |
+|:--- |:--- |
+| bigint |Int64 |
+| binary |Byte[] |
+| bit |Boolean |
+| char |String, Char[] |
+| date |DateTime |
+| Datetime |DateTime |
+| datetime2 |DateTime |
+| Datetimeoffset |DateTimeOffset |
+| Decimal |Decimal |
+| FILESTREAM attribute (varbinary(max)) |Byte[] |
+| Float |Double |
+| image |Byte[] |
+| int |Int32 |
+| money |Decimal |
+| nchar |String, Char[] |
+| ntext |String, Char[] |
+| numeric |Decimal |
+| nvarchar |String, Char[] |
+| real |Single |
+| rowversion |Byte[] |
+| smalldatetime |DateTime |
+| smallint |Int16 |
+| smallmoney |Decimal |
+| sql_variant |Object |
+| text |String, Char[] |
+| time |TimeSpan |
+| timestamp |Byte[] |
+| tinyint |Int16 |
+| uniqueidentifier |Guid |
+| varbinary |Byte[] |
+| varchar |String, Char[] |
+| xml |String |
+
+>[!NOTE]
+> For data types that map to the Decimal interim type, currently Copy activity supports precision up to 28. If you have data that requires precision larger than 28, consider converting to a string in a SQL query.  
+>
+> When copying data from SQL Server using Fabric Data Factory, the bit data type is mapped to the Boolean interim data type. If you have data that need to be kept as the bit data type, use queries with [T-SQL CAST or CONVERT](/sql/t-sql/functions/cast-and-convert-transact-sql?view=sql-server-ver15&preserve-view=true).
 
 ## Parallel copy from SQL database
 
@@ -227,7 +270,7 @@ See the following table for the summary and more information for the SQL server 
 |**Table**|Your destination data table.| \<name of your table\> |Yes |schema <br> table|
 |**Write behavior** |The write behavior for copy activity to load data into SQL server database..|• Insert<br>• Upsert<br>• Stored procedure|No |writeBehavior:<br>• insert<br>• upsert<br>sqlWriterStoredProcedureName, sqlWriterTableType, storedProcedureTableTypeParameterName, storedProcedureParameters|
 |**Use TempDB** | Whether to use a global temporary table or physical table as the interim table for upsert. |selected (default) or unselected  |No |useTempDB:<br>true (default) or false |
-|**Select user DB schema** | The interim schema for creating interim table if physical table is used. Note: user need to have the permission for creating and deleting table. By default, interim table will share the same schema as destination table. Apply when you don't select **Use TempDB**. |selected (default) or unselected  |No |interimSchemaName|
+|**Select user DB schema** | The interim schema for creating interim table if physical table is used. Note: user needs to have the permission for creating and deleting table. By default, interim table will share the same schema as destination table. Apply when you don't select **Use TempDB**. |selected (default) or unselected  |No |interimSchemaName|
 |**Key columns** | The column names for unique row identification. Either a single key or a series of keys can be used. If not specified, the primary key is used. |< your key column> |No |keys|
 |**Stored procedure name** |The name of the stored procedure that defines how to apply source data into a target table. This stored procedure is *invoked per batch*. For operations that run only once and have nothing to do with source data, for example, delete or truncate, use the **Pre-copy script** property.|< your stored procedure name > |No |sqlWriterStoredProcedureName|
 |**Table type** | The table type name to be used in the stored procedure. The copy activity makes the data being moved available in a temporary table with this table type. Stored procedure code can then merge the data that's being copied with existing data.|< your table type name > |No | sqlWriterTableType |

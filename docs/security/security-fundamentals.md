@@ -4,8 +4,8 @@ description: "Learn about Microsoft Fabric security fundamentals and how the mai
 author: msmimart
 ms.author: mimart
 ms.reviewer: sergeig, vparasuraman, amasingh
-ms.date: 01/14/2024
-ms.topic: conceptual
+ms.date: 11/21/2025
+ms.topic: concept-article
 ms.custom: fabric-cat
 ---
 
@@ -63,7 +63,7 @@ For performance reasons, Fabric sometimes encapsulates authorization information
 
 In Fabric, a tenant is assigned to a home metadata platform cluster, which is located in a single region that meets the data residency requirements of that region's geography. Tenant metadata, which can include customer data, is stored in this cluster.
 
-Customers can control where their [workspaces](../fundamentals/workspaces.md) are located. They can choose to locate their workspaces in the same geography as their metadata platform cluster, either explicitly by assigning their workspaces on capacities in that region or implicitly by using Fabric Trial, Power BI Pro, or Power BI Premium Per User [license mode](../fundamentals/workspaces.md#license-mode). In the latter case, all customer data is stored and processed in this single geography. For more information, see [Microsoft Fabric concepts and licenses](../enterprise/licenses.md).
+Customers can control where their [workspaces](../fundamentals/workspaces.md) are located. They can choose to locate their workspaces in the same geography as their metadata platform cluster, either explicitly by assigning their workspaces on capacities in that region or implicitly by using Fabric Trial, Power BI Pro, or Power BI Premium Per-User (PPU) [workspace type](../fundamentals/workspaces.md#workspace-type). In the latter case, all customer data is stored and processed in this single geography. For more information, see [Microsoft Fabric concepts and licenses](../enterprise/licenses.md).
 
 Customers can also create [Multi-Geo capacities](../admin/service-admin-premium-multi-geo.md) located in geographies (geos) other than their home region. In this case, compute and storage (including [OneLake](../onelake/onelake-overview.md) and experience-specific storage) is located in the multi-geo region. The tenant metadata remains in the home region. Customer data will only be stored and processed in these two geographies. For more information, see [Configure Multi-Geo support for Fabric](../admin/service-admin-premium-multi-geo.md).
 
@@ -83,7 +83,7 @@ You can also use [Workspace customer managed keys](workspace-customer-managed-ke
 
 Data in transit between Microsoft services is always encrypted with at least TLS 1.2. Fabric negotiates to TLS 1.3 whenever possible. Traffic between Microsoft services always routes over the [Microsoft global network](/azure/networking/microsoft-global-network).
 
-Inbound Fabric communication also enforces TLS 1.2 and negotiates to TLS 1.3, whenever possible. Outbound Fabric communication to customer-owned infrastructure prefers secure protocols but might fall back to older, insecure protocols (including TLS 1.0) when newer protocols aren't supported.
+Inbound Fabric communication also enforces TLS 1.2 and negotiates to TLS 1.3, whenever possible. Outbound Fabric communication to customer-owned infrastructure now requires TLS 1.2 or later; older protocols (including TLS 1.0 and TLS 1.1) are no longer supported.
 
 ## Telemetry
 

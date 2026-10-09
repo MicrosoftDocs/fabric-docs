@@ -1,8 +1,7 @@
 ---
 title: Request Units in Cosmos DB Database
 description: Learn how request units function as a currency and how to estimate request unit requirements in your Cosmos DB database within Microsoft Fabric.
-author: markjbrown
-ms.author: mjbrown
+ms.reviewer: mjbrown
 ms.topic: concept-article
 ms.date: 10/29/2025
 ---
@@ -73,3 +72,4 @@ While you estimate the number of RUs consumed by your workload, consider the fol
 
 - [Configure a container in Cosmos DB in Microsoft Fabric](how-to-configure-container.md)
 - [Explore autoscale throughput in Cosmos DB in Microsoft Fabric](autoscale-throughput.md)
+

@@ -1,11 +1,9 @@
 ---
 title: In-memory and disk caching
 description: Learn more about fully transparent in-memory and disk caching in Fabric Data Warehouse.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: fipopovi, emtehran
 ms.date: 06/11/2025
-ms.topic: conceptual
+ms.topic: concept-article
 ms.search.form: Optimization # This article's title should not change. If so, contact engineering.
 ---
 # In-memory and disk caching
@@ -54,5 +52,5 @@ When the cache reaches its capacity threshold and fresh data is being read for t
 
 ## Related content
 
-- [Result set caching (preview)](result-set-caching.md)
+- [Result set caching](result-set-caching.md)
 - [Fabric Data Warehouse performance guidelines](guidelines-warehouse-performance.md)

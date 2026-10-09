@@ -1,13 +1,10 @@
 ---
 title: Activator (Reflex) - Git
 description: Learn about the Git integration for Fabric Activator, which is formerly called Reflex.
-ms.author: spelluru
-author: spelluru
 ms.topic: concept-article
-ms.custom:
 ms.date: 05/29/2025
 ms.search.form: Activator
-# customer intent: I want to understand the integration of Activator with Microsoft Fabric's deployment pipelines and git, and how to configure and manage them in the ALM system.
+#customer intent: I want to understand the integration of Activator with Microsoft Fabric's deployment pipelines and git, and how to configure and manage them in the ALM system.
 ---
 
 # Activator (also called Reflex) - GitHub integration

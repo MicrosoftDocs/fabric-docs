@@ -1,11 +1,10 @@
 ---
 title: Troubleshooting guide - Diagnose and resolve "capacity limit exceeded" errors
 description: Troubleshoot and resolve capacity limit exceeded errors in Microsoft Fabric by confirming overload, checking throttling, and identifying the affected workspace and item. Learn how to prevent future errors - read the full guide. 
-author: JulCsc 
-ms.author: juliacawthra
+author: dknappettmsft
+ms.author: daknappe
 ms.reviewer: cnovak 
 ms.topic: troubleshooting 
-ms.custom: 
 ms.date: 07/10/2025 
 ---
 
@@ -74,7 +73,7 @@ The following table outlines the steps for stage 1:
 
 | Step | Description or action | Explanation |
 |------|--------|-------------|
-| **1** | Identify the **workspace** and **capacity** in question, and the **approximate time** the error occurred. | Having the workspace name and the time of the error is crucial. Use this information to filter the metrics to the right capacity and timeframe. Make sure you know which capacity the workspace is on. If you're unsure, check the workspace settings in the Fabric admin portal. |
+| **1** | Identify the **workspace** and **capacity** in question, and the **approximate time** the error occurred. | Having the workspace name and the time of the error is crucial. Use this information to filter the metrics to the right capacity and timeframe. Make sure you know which capacity the workspace is on. If you're unsure, check the workspace in **OneLake catalog** > **Govern** > **Workspaces**. |
 | **2** | Open the **Microsoft Fabric Capacity Metrics** app. | The [**Microsoft Fabric Capacity Metrics** app](metrics-app.md) is a Power BI app for monitoring Fabric capacities. It shows detailed consumption and performance metrics for your capacities, helping admins monitor usage and make informed decisions, like when to scale up or enable autoscale. |
 | **3** | In the Metrics app, go to the **Compute** page. | The [**Compute** page](metrics-app-compute-page.md) is the main dashboard for capacity performance. It shows an overview of the capacity’s usage over the last 14 days, including visuals for utilization and throttling. This page has a top section with charts and a bottom section with a table of items. |
 | **4** | Select the **Capacity name** from the drop-down at the top.| The app can show data for multiple capacities if you administer more than one. Use the capacity selector field at the top to choose the capacity where the error was reported. All the visuals on the page then load data for that capacity. |
@@ -135,6 +134,7 @@ After you identify the workspace and item causing the overload:
 - Optimize the dataset (semantic model), report, or query.
 - Adjust schedules for heavy workloads.
 - Scale up capacity or move workloads to different capacities.
+- Consider enabling the Fabric capacity overage feature to prevent throttling; however, it's charged at 3x the normal capacity rate. For more details, see [Enable capacity overage](enable-capacity-overage.md).
 
 For immediate actions, see [How to stop throttling when it occurs](throttling.md#how-to-stop-throttling-when-it-occurs).
 

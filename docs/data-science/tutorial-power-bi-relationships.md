@@ -1,12 +1,8 @@
 ﻿---
 title: 'Tutorial: Discover relationships in a Power BI semantic model using semantic link'
 description: This article shows how to interact with Power BI from a Jupyter notebook with the help of the SemPy library.
-ms.author: jburchel
-author: jonburchel
 ms.reviewer: alsavelv
-reviewer: alsavelv
 ms.topic: tutorial
-ms.custom: 
 ms.date: 08/26/2025
 ai.usage: ai-assisted
 ---

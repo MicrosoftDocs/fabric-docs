@@ -1,8 +1,7 @@
 ---
 title: Mirrored database operation logs
 description: View a set of Mirrored database operation logs that you can query in your Fabric workspace monitoring database.
-author: linda33wj
-ms.author: jingwang
+ms.reviewer: jingwang
 ms.topic: reference
 ms.date: 05/12/2025
 ---
@@ -63,3 +62,4 @@ You can find sample queries in the [fabric-samples](https://github.com/microsoft
 * [What is workspace monitoring?](../fundamentals/workspace-monitoring-overview.md)
 * [Enable monitoring in your workspace](../fundamentals/enable-workspace-monitoring.md)
 * [Monitor Fabric mirrored database replication](../mirroring/monitor.md)
+

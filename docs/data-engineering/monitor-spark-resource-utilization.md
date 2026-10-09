@@ -2,8 +2,6 @@
 title: Monitor Apache Spark Applications Resource Utilization
 description: Learn how to monitor Apache Spark applications using resource utilization.
 ms.reviewer: jejiang
-ms.author: eur
-author: eric-urban
 ms.topic: how-to
 ms.date: 12/31/2024
 ms.search.form: Monitor Spark application using resource utilization
@@ -43,7 +41,7 @@ The resource utilization graph is interactive. When you hover your mouse over th
 
 ## Related content
 
-For an overview of Fabric Spark monitoring, Spark application monitoring, and Notebook contextual monitoring, you can refer to: 
+For an overview of Fabric Spark monitoring, Spark application monitoring, and notebook contextual monitoring, you can refer to:
 
 - [Apache Spark monitoring overview](spark-monitoring-overview.md)
 - [Apache Spark application detail monitoring](spark-detail-monitoring.md)

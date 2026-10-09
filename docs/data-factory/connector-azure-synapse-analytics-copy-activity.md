@@ -1,11 +1,10 @@
 ---
 title: Configure Azure Synapse Analytics in a copy activity
 description: This article explains how to copy data using Azure Synapse Analytics.
-author: jianleishen
-ms.author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: how-to
 ms.date: 02/27/2024
-ms.custom: 
+ms.custom:
   - pipelines
   - template-how-to
   - connectors
@@ -164,9 +163,9 @@ If your source data store and format isn't originally supported by a COPY comman
 
 ### Mapping
 
-For the **Mapping** tab configuration, if you don't apply Azure Synapse Analytics with auto create table as your destination, go to [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab).
+For the **Mapping** tab configuration, if you don't apply Azure Synapse Analytics with auto create table as your destination, go to [Mapping](copy-data-activity.md#configure-your-mappings-under-the-mapping-tab).
 
-If you apply Azure Synapse Analytics with auto create table as your destination, except the configuration in [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab), you can edit the type for your destination columns. After selecting **Import schemas**, you can specify the column type in your destination.
+If you apply Azure Synapse Analytics with auto create table as your destination, except the configuration in [Mapping](copy-data-activity.md#configure-your-mappings-under-the-mapping-tab), you can edit the type for your destination columns. After selecting **Import schemas**, you can specify the column type in your destination.
 
 For example, the type for *ID* column in source is int, and you can change it to float type when mapping to the destination column.
 
@@ -174,7 +173,7 @@ For example, the type for *ID* column in source is int, and you can change it to
 
 ### Settings
 
-For **Settings** tab configuration, go to [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
+For **Settings** tab configuration, go to [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-the-settings-tab).
 
 ## Parallel copy from Azure Synapse Analytics
 

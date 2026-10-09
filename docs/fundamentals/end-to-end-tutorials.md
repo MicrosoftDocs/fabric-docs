@@ -1,13 +1,11 @@
 ---
 title: End-to-end tutorials in Microsoft Fabric
 description: This article lists the end-to-end tutorials in Microsoft Fabric. They walk you through a scenario, starting from data acquisition to data consumption and help you with a foundational understanding of Fabric.
-ms.reviewer: sngun
-ms.author: sngun
 author: SnehaGunda
-ms.topic: conceptual
-ms.custom:
+ms.author: sngun
+ms.topic: overview
 ms.search.form: product-trident
-ms.date: 11/25/2024
+ms.date: 02/09/2026
 ---
 
 # End-to-end tutorials in Microsoft Fabric
@@ -21,7 +19,7 @@ The following table lists tutorials that span multiple Fabric experiences.
 |Tutorial name  |Scenario |
 |---------|---------|
 |[Lakehouse](../data-engineering/tutorial-lakehouse-introduction.md) | In this tutorial, you ingest, transform, and load the data of a fictional retail company, Wide World Importers, into the lakehouse and analyze sales data across various dimensions.  |
-|[Data Science](../data-science/tutorial-data-science-introduction.md)    |  In this tutorial, you explore, clean, and transform a taxicab trip semantic model, and build a machine learning model to predict trip duration at scale on a large semantic model.   |
+|[Data Science](../data-science/tutorial-data-science-introduction.md)    |  In this tutorial, you explore, clean, and transform a dataset of 10,000 bank customers, and build a machine learning model to predict which customers are likely to churn.   |
 |[Real-Time Intelligence](../real-time-intelligence/tutorial-introduction.md)   | In this tutorial, you use the streaming and query capabilities of Real-Time Intelligence to analyze London bike share data. You learn how to stream and transform the data, run KQL queries, build a Real-Time Dashboard and a Power BI report to gain insights and respond to this real-time data. |
 |[Digital twin builder (preview) in Real-Time Intelligence](../real-time-intelligence/digital-twin-builder/tutorial-rti-0-introduction.md) | In this tutorial, you set up a digital twin builder (preview) item and use it to contextualize sample data streamed from Real-Time Intelligence. Then you project your data to Eventhouse using a Fabric notebook, and extract further insights by running KQL queries and visualizing the digital twin builder data in a Real-Time Dashboard. |
 |[Data warehouse](../data-warehouse/tutorial-introduction.md) |  In this tutorial, you build an end-to-end data warehouse for the fictional Wide World Importers company. You ingest data into data warehouse, transform it using T-SQL and pipelines, run queries, and build reports. |
@@ -40,8 +38,11 @@ The following tutorials walk you through scenarios within specific Fabric experi
 | [Data Science - Price prediction with R](../data-science/r-avocado.md) | In this tutorial, you build a machine learning model to analyze and visualize the avocado prices in the US and predict future prices. |
 | [Application lifecycle management](../cicd/cicd-tutorial.md) | In this tutorial, you learn how to use deployment pipelines together with git integration to collaborate with others in the development, testing, and publication of your data and reports. |
 | [Digital twin builder (preview)](../real-time-intelligence/digital-twin-builder/tutorial-0-introduction.md) | In this tutorial, you model and contextualize data from multiple sources into a digital twin builder (preview) ontology. You explore the ontology with queries, then create a Power BI dashboard to visualize the data. |
+| [Graph in Microsoft Fabric (preview)](../graph/tutorial-introduction.md) | In this tutorial, you load sample data into a lakehouse and build a graph model with nodes and edges. You then query the graph using both the visual query builder and GQL (Graph Query Language) to explore relationships and patterns in the data. |
 
 ## Related content
 
 * [Create a workspace](../fundamentals/create-workspaces.md)
-* Discover data items in the [OneLake data hub](../governance/onelake-catalog-overview.md)
+* Discover data items in the [OneLake catalog](../governance/onelake-catalog-overview.md)
+
+

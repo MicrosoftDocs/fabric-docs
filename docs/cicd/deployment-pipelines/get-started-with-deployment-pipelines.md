@@ -1,21 +1,17 @@
 ---
 title: Get started using deployment pipelines, the Fabric Application lifecycle management (ALM) tool
 description: Learn how to use deployment pipelines, the Fabric Application lifecycle management (ALM) tool.
-author: billmath
-ms.author: billmath
-ms.service: fabric
-ms.subservice: cicd
 ms.topic: how-to
 ms.custom:
   - intro-get-started
-ms.date: 11/14/2024
+ms.date: 12/15/2025
 ms.search.form: Create deployment pipeline, Create a deployment pipeline, Introduction to Deployment pipelines
-# customer intent: As a developer, I want to know how to use deployment pipelines, the Fabric Application lifecycle management (ALM) tool, so that I can manage my content more efficiently.
+#customer intent: As a developer, I want to know how to use deployment pipelines, the Fabric Application lifecycle management (ALM) tool, so that I can manage my content more efficiently.
 ---
 
 # Get started with deployment pipelines
 
-This article walks you through the basic settings required for using deployment pipelines in Microsoft Fabric. We recommend reading the [deployment pipelines introduction](intro-to-deployment-pipelines.md) and understanding [which items can be deployed](./intro-to-deployment-pipelines.md#supported-items) before you proceed.
+This article walks you through the basic settings required for using deployment pipelines in Fabric. Before you proceed, read the [deployment pipelines introduction](intro-to-deployment-pipelines.md) and understand [which items can be deployed](./intro-to-deployment-pipelines.md#supported-items).
 
 > [!NOTE]
 >
@@ -30,7 +26,7 @@ In a deployment pipeline, one Premium workspace is assigned to each stage. Befor
 
 To access the deployment pipelines feature, you must meet the following conditions:
 
-* You have a [Microsoft Fabric subscription](../../enterprise/licenses.md)
+* You have a [Fabric subscription](../../enterprise/licenses.md).
 
 * You're an admin of a Fabric [workspace](../../fundamentals/create-workspaces.md)
 

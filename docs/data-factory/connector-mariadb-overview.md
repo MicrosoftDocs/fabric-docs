@@ -1,8 +1,6 @@
 ---
 title: MariaDB connector overview
 description: This article provides an overview of the supported capabilities of the MariaDB connector.
-author: whhender
-ms.author: whhender
 ms.topic: how-to
 ms.date: 09/29/2024
 ms.custom:

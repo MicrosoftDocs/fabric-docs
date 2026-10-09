@@ -1,12 +1,10 @@
 ---
 title: Explore Anomaly Detection Events in Fabric Real-Time Hub
 description: This article shows how to explore anomaly detection events in Fabric Real-Time hub.
-author: hzargari-ms
-ms.author: v-hzargari
-ms.reviewer: tessahurr
+ms.reviewer: v-hzargari, tessahurr
 ms.topic: how-to
 ms.date: 09/15/2025
-ms.search.form: Explore Anomaly Detection Events, Anomaly Detection Events
+ms.search.form: Anomaly Detection Explore Anomaly Detection Events
 ---
 
 # Explore anomaly detection events in Fabric Real-Time hub (Preview)
@@ -22,8 +20,6 @@ Anomaly detection in Real-Time hub helps you automatically identify unusual patt
     :::image type="content" source="media/explore-anomaly-detection/fabric-events.png" alt-text="Screenshot that shows the Fabric events page in Real-Time hub.":::
 
 1. Select **Anomaly detection events** from the list.
-
-    :::image type="content" source="media/explore-anomaly-detection/anomaly-detection-events.png" alt-text="Screenshot that shows the selection of anomaly detection events on the Fabric events page.":::
 
 1. In the **Anomaly detection events** page, select an event to view its details or select **Set alert** to set an alert for the event.
 

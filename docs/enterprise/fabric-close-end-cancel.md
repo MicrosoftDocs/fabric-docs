@@ -1,11 +1,12 @@
 ---
 title: Fabric and Power BI, end, close, cancel
 description: Learn how to end a Microsoft Fabric or Power BI trial, cancel a subscription, and close an account in Fabric and Power BI. 
-author: JulCsc
-ms.author: juliacawthra
+author: dknappettmsft
+ms.author: daknappe
 ms.topic: how-to
-ms.date: 03/06/2025
+ms.date: 06/23/2026
 ms.custom: licensing support
+ai-usage: ai-assisted
 LocalizationGroup: Get started
 
 #customer intent: As a user or an admin, I want to know how to close my account, cancel my subscription, or end my trial in Microsoft Fabric and Power BI.
@@ -65,19 +66,21 @@ The Fabric trial capacity lasts 60 days. [Cancel a Fabric capacity trial](../fun
 
 ### Delete a Fabric capacity and Fabric trial capacity
 
-The Capacity administrator can delete Fabric capacities using the Fabric admin portal. Fabric items in workspaces assigned to the capacity become unusable unless the workspaces are assigned to a different Fabric capacity within seven days. To learn more, see [Delete a capacity](../admin/capacity-settings.md#delete-a-capacity) and 
+The Capacity administrator can delete Fabric capacities using **OneLake catalog** > **Govern** > **Capacities**. Fabric items in workspaces assigned to the capacity become unusable unless the workspaces are assigned to a different Fabric capacity within seven days. To learn more, see [Delete a capacity](../admin/capacity-settings.md#delete-a-capacity) and
 [Fabric capacity deletion.](../admin/capacity-settings.md#delete-a-capacity)
 
 ### Buy a Fabric trial capacity
 
-You can [purchase a Fabric capacity](buy-subscription.md) at any time. You don't have to wait for your trial to end. 
+You can [purchase a Fabric capacity](buy-capacity.md) at any time. You don't have to wait for your trial to end. 
 
-### Migrate an expiring P SKU capacity
+### Migrate from a retired P SKU capacity
 
-> [!NOTE]
-> Power BI Premium is transitioning to Microsoft Fabric. Power BI Premium is now part of Fabric. At the end of your current agreement with Microsoft, work with your Microsoft account representatives to migrate your P SKU purchase to an F SKU purchase. No immediate action is required. You can continue using your existing Power BI Premium capacity until the time of your next renewal. You can use Power BI in Fabric alongside all the other Fabric workloads. Because of this change, the Power BI Premium SKUs are being retired.
+Power BI Premium per-capacity (P SKU) subscriptions are retiring. To keep your Power BI workloads running, migrate to Microsoft Fabric capacity (F SKUs).
 
-If a Premium subscription or capacity license expires, you have 90 days of full access to your capacity. During these 90 days, migrate your workspaces to your new F SKU capacity without losing access to your existing work. However, once the workspace is reassigned, all currently active jobs are canceled. Rerun those jobs after migration. Migration doesn't impact scheduled jobs. If you don't migrate your workspaces, your content reverts to a shared capacity where it continues to be accessible. However, you can't view reports that are based on semantic models that are greater than 1 GB or reports that require Premium capacities to render.
+- [Power BI Premium to Microsoft Fabric migration overview](/power-bi/support/premium-migration-overview) - Why migrate, what changes, and the end-to-end journey.
+- [Power BI Premium P SKU migration decision guide](/power-bi/support/premium-migration-decision-guide) - Retirement timeline, P-to-F SKU mapping, right-sizing, and region decisions.
+- [Migrate workspaces from Power BI Premium to Microsoft Fabric](/power-bi/support/premium-migration-how-to) - Step-by-step procedure to inventory, reassign, validate, and decommission.
+- [Power BI Premium to Microsoft Fabric migration FAQ](/power-bi/support/premium-migration-faq) - Common migration questions.
 
 ## Subscriptions
 
@@ -97,7 +100,7 @@ Cancel an A SKU subscription in Azure.
 
 ## Disable Fabric
 
-Fabric administrators can turn off Fabric for an entire organization, individuals, and security groups. See [Can I disable Microsoft Fabric?](../admin/fabric-switch.md#can-i-disable-microsoft-fabric). At the tenant level, the Fabric admin uses the Admin portal **Settings.** The Fabric administrator can also delegate a Capacity administrator to disable Fabric at the capacity level using the Admin portal **Capacity settings.**
+Fabric administrators can turn off Fabric for an entire organization, individuals, and security groups. See [Can I disable Microsoft Fabric?](../admin/fabric-switch.md#can-i-disable-microsoft-fabric). At the tenant level, the Fabric admin uses **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**. The Fabric administrator can also delegate a Capacity administrator to disable Fabric at the capacity level using **OneLake catalog** > **Govern** > **Capacities**.
 
 ## Licenses
 

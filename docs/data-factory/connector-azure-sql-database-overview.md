@@ -1,8 +1,7 @@
 ---
 title: Azure SQL Database connector overview
 description: This article explains the overview of using Azure SQL Database.
-author: jianleishen
-ms.author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: how-to
 ms.date: 07/09/2025
 ms.custom:
@@ -20,7 +19,7 @@ The Azure SQL Database connector is supported in Data Factory for [!INCLUDE [pro
 |----------------------------------------------------------------------------------------|--------------------------------|------------------|
 | **Dataflow Gen2** (source/destination)                                                 | None<br> On-premises<br> Virtual network | Basic<br> Organizational account |
 | **Pipeline** <br>- [Copy activity](connector-azure-sql-database-copy-activity.md) (source/destination)<br>- Lookup activity<br>- Get Metadata activity<br>- Script activity<br>- Stored procedure activity | None<br> On-premises<br> Virtual network | Basic<br> Organizational account<br> Service principal<br>Workspace identity |
-| **Copy job** (source/destination) <br>- Full load<br>- Incremental load<br>- CDC<br>- Append<br>- Merge | None<br> On-premises<br> Virtual network | Basic<br> Organizational account<br> Service principal<br>Workspace identity |
+| **Copy job** (source/destination) <br>- Full load<br>- Incremental load<br>- CDC<br>- Append<br>- Override <br>- Upsert <br>- CDC Merge | None<br> On-premises<br> Virtual network | Basic<br> Organizational account<br> Service principal<br>Workspace identity |
 
 ## Related content
 

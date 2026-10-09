@@ -1,33 +1,64 @@
 ---
 title: Set up your Salesforce objects connection
 description: This article provides information about how to create a Salesforce objects connection in Microsoft Fabric.
-author: whhender
-ms.author: whhender
 ms.topic: how-to
-ms.date: 06/16/2025
+ms.date: 03/13/2026
 ms.custom:
   - template-how-to
   - connectors
+ai-usage: ai-assisted
 ---
 
 # Set up your Salesforce objects connection
 
 This article outlines the steps to create a Salesforce objects connection.
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
 
-The Salesforce objects connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+## Summary
+
+The Salesforce objects connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
 |Organizational account| √ | √ |
 
-## Set up your connection in Dataflow Gen2
+## Set up your connection for Dataflow Gen2
+You can connect a dataflow Gen2 in Fabric to Salesforce objects by using Power Query connectors. Follow these steps to create your connection:
 
-Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow Gen2 to Salesforce objects. The following links provide the specific Power Query connector information you need to connect to Salesforce objects in Dataflow Gen2:
+1. Check [capabilities](#capabilities), [limitations, and considerations](#limitations-and-considerations) to make sure your scenario is supported.
+1. [Complete prerequisites for Salesforce objects](#prerequisites).
+1. [Get data in Fabric](#get-data).
+1. [Connect to Salesforce Objects](#connect-to-salesforce-objects).
 
-- To get started using the Salesforce objects connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
-- Be sure to install or set up any [Salesforce objects prerequisites](/power-query/connectors/salesforce-objects#prerequisites) before connecting to the Salesforce objects connector.
-- To connect to the Salesforce objects connector from Power Query, go to [Connect to Salesforce objects from Power Query Online](/power-query/connectors/salesforce-objects#connect-to-salesforce-objects-from-power-query-online).
+## Prerequisites
 
-In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
+[!INCLUDE [salesforce-objects-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/salesforce-objects/prerequisites.md)]
+
+<a id="capabilities"></a>
+
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
+
+[!INCLUDE [salesforce-objects-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/salesforce-objects/capabilities-supported.md)]
+
+## Connection settings
+
+### Get data
+
+[!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
+
+<a id="connect-to-salesforce-objects"></a>
+
+### Connection instructions
+
+[!INCLUDE [salesforce-objects-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/salesforce-objects/connect-online.md)]
+
+## Limitations and considerations
+
+[!INCLUDE [salesforce-objects-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/salesforce-objects/limitations.md)]
+
+## Related content
+
+- [For more information about this connector, see the Salesforce objects connector documentation.](/power-query/connectors/salesforce-objects)

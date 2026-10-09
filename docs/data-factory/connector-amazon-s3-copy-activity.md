@@ -1,11 +1,10 @@
 ---
 title: Configure Amazon S3 in a copy activity
 description: This article explains how to copy data using Amazon S3.
-author: jianleishen
-ms.author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: how-to
-ms.date: 12/18/2024
-ms.custom: 
+ms.date: 11/11/2025
+ms.custom:
   - pipelines
   - template-how-to
   - connectors
@@ -18,6 +17,8 @@ This article outlines how to use the copy activity in a pipeline to copy data fr
 ## Required permissions
 
 To copy data from Amazon S3, make sure you've been granted the following permissions for Amazon S3 object operations: `s3:GetObject` and `s3:GetObjectVersion`.
+
+To copy data to Amazon S3, make sure you've been granted the `s3:PutObject` permission for Amazon S3 object operations.
 
 In addition, `s3:ListAllMyBuckets` and `s3:ListBucket`/`s3:GetBucketLocation` permissions are required for operations like testing connection and browsing from root.
 
@@ -141,11 +142,11 @@ Under **Advanced**, you can specify the following fields:
 
 ### Mapping
 
-For **Mapping** tab configuration, go to [Configure your mappings under mapping tab](copy-data-activity.md#configure-your-mappings-under-mapping-tab). If you choose Binary as your file format, mapping will not be supported.
+For **Mapping** tab configuration, go to [Configure your mappings under mapping tab](copy-data-activity.md#configure-your-mappings-under-the-mapping-tab). If you choose Binary as your file format, mapping will not be supported.
 
 ### Settings
 
-For the **Settings** tab configuration, go to [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
+For the **Settings** tab configuration, go to [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-the-settings-tab).
 
 ## Table summary
 

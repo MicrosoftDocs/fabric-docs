@@ -1,0 +1,56 @@
+---
+title: Manage and Refresh Data in graph in Microsoft Fabric
+description: Learn how to refresh graph data manually and configure a scheduled refresh in Microsoft Fabric, including workspace settings and refresh history monitoring.
+ms.topic: how-to
+ms.date: 09/15/2026
+---
+
+# Manage data in graph in Microsoft Fabric
+
+This article shows you how to save your graph model, refresh graph data, and configure scheduled refresh in Microsoft Fabric.
+
+## Save your graph model
+
+When you select **Save** in the graph model editor, graph in Microsoft Fabric performs two operations:
+
+1. **Persists your graph model** – Saves the current configuration, including node types, edge types, and column mappings.
+1. **Triggers data ingestion** – Ingests data from the underlying lakehouse tables and constructs the queryable graph based on the updated model.
+
+Because save and ingestion are a single operation, every save refreshes your graph data. Save your model whenever you add or modify node types, edge types, or mappings.
+
+> [!NOTE]
+> A graph model that you create and define entirely through the REST API is schema-complete but isn't queryable until you open it once in the graph model editor in the Fabric portal. The portal provisions the internal loading infrastructure on first open. Until then, a refresh fails because the required internal configuration doesn't exist. After the one-time portal initialization, you can refresh and query the graph normally.
+
+## Configure scheduled refresh
+
+If your underlying lakehouse receives updated data regularly, you can configure scheduled refreshes so the graph automatically stays in sync.
+
+To configure scheduled refresh in a shared workspace:
+
+1. In [Microsoft Fabric](https://fabric.microsoft.com/), select **Workspaces** in the navigation pane.
+1. Select the workspace that contains your graph.
+1. Locate your graph item in the workspace content list.
+1. Select the **...** (More options) menu that appears next to the graph item when you hover over it.
+1. Select **Schedule**.
+
+   :::image type="content" source="./media/how-to/schedule-option.png" alt-text="Screenshot showing how to access the schedule option for a graph." lightbox="./media/how-to/schedule-option.png":::
+
+1. Select **Add schedule** in the **Schedules** menu.
+1. Configure the refresh frequency to match how often your lakehouse data updates (for example, every *n* hours).
+1. Select **Save** to save the schedule.
+
+You can schedule refreshes to run by the minute, hourly, daily, weekly, or monthly. The following image shows an example of a refresh schedule configured to run hourly:
+
+:::image type="content" source="./media/how-to/scheduled-refresh.png" alt-text="Screenshot showing a configured scheduled refresh for a graph." lightbox="./media/how-to/scheduled-refresh.png":::
+
+To edit or delete a scheduled refresh, select the **Edit** option in the **Schedules** menu.
+
+> [!NOTE]
+> Scheduled refresh is available for graphs in shared workspaces. The schedule option isn't available in **My Workspace**.
+
+## Related content
+
+- [Design a graph schema](design-graph-schema.md)
+- [Graph overview](overview.md)
+- [Monitor graph status](monitoring-overview.md)
+- [Troubleshooting and FAQ](troubleshooting-and-faq.md)

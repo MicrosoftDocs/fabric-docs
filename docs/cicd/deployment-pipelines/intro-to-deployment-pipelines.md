@@ -1,13 +1,9 @@
 ---
 title: Overview of Fabric deployment pipelines
 description: An introduction to deployment pipelines in the Fabric Application lifecycle management (ALM) tool. Learn which items can be deployed, the structure of a pipeline, and how to pair items.
-author: billmath
-ms.author: billmath
-ms.service: fabric
-ms.subservice: cicd
 ms.topic: overview
-ms.custom:
-ms.date: 02/13/2025
+ms.date: 09/24/2026
+ai-usage: ai-assisted
 ms.search.form: Create deployment pipeline, View deployment pipeline, Introduction to Deployment pipelines
 #customer intent: As a developer, I want to learn about deployment pipelines in the Fabric service so that I can manage my development process efficiently.
 ---
@@ -17,7 +13,9 @@ ms.search.form: Create deployment pipeline, View deployment pipeline, Introducti
 > [!NOTE]
 > The articles in this section describe how to deploy content to your app. For version control, see the [Git integration](../git-integration/intro-to-git-integration.md) documentation.
 
-Microsoft Fabric's deployment pipelines tool provides content creators with a production environment where they can collaborate with others to manage the lifecycle of organizational content. Deployment pipelines enable creators to develop and test content in the service before it reaches the users. See the full list of [Supported item types](#supported-items) that you can deploy.
+Fabric's deployment pipelines tool provides content creators with a production environment where they can collaborate with others to manage the lifecycle of organizational content. Deployment pipelines enable creators to develop and test content in the service before it reaches the users. See the full list of [Supported item types](#supported-items) that you can deploy.
+
+For deployments that require an explicit item order or actions before or after an item deploys, you can attach an optional [deployment plan](../deployment-plan/deployment-plan-overview.md). The items you select remain the deployment scope, while the plan adds order and actions to the deployment process.
 
 > [!NOTE]
 >
@@ -32,15 +30,22 @@ You can learn how to use the deployment pipelines tool by following these links.
 
 * [Get started with deployment pipelines](./get-started-with-deployment-pipelines.md) - An article that explains how to create a pipeline and perform key functions such as deployment, comparing content in different stages, and creating deployment rules.
 
+* [What is a deployment plan?](../deployment-plan/deployment-plan-overview.md) - An overview of how a plan controls deployment order and runs actions.
+
+* [Deploy with a deployment plan](./deploy-content.md#deploy-with-a-deployment-plan-preview) - Instructions for attaching a plan in the deployment dialog.
+
 ## Supported items
 
 When you deploy content from one pipeline stage to another, the copied content can contain the following items:
+
+>[!IMPORTANT]
+>Beginning February 12, 2026, Fabric deployment pipelines retire support for semantic models that aren't upgraded to Enhanced Metadata. For more information, see [Retirement of semantic model support for deployment pipelines](../troubleshoot-cicd.md#retirement-of-semantic-model-support-for-deployment-pipelines).
 
 * Data Engineering items:
 
   * [Environment](../../data-engineering/environment-git-and-deployment-pipeline.md#set-up-a-deployment-pipeline-for-an-environment)
   * [GraphQL](../../data-engineering/graphql-source-control-and-deployment.md#api-for-graphql-in-deployment-pipeline)
-  * [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md#lakehouse-in-deployment-pipelines) *(preview)*
+  * [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md#what-is-tracked)
   * [Notebook](../../data-engineering/notebook-source-control-deployment.md#notebook-in-deployment-pipelines)
   * [Spark Job Definitions](../../data-engineering/spark-job-definition-source-control.md)
   * [User Data Functions](../../data-engineering/user-data-functions/user-data-functions-overview.md)
@@ -48,7 +53,7 @@ When you deploy content from one pipeline stage to another, the copied content c
 * Data Science items:
   * [Machine learning experiments](../../data-science/machine-learning-artifacts-git-deployment-pipelines.md#machine-learning-experiments-and-models-in-deployment-pipelines) *(preview)*
   * [Machine learning models](../../data-science/machine-learning-artifacts-git-deployment-pipelines.md#machine-learning-experiments-and-models-in-deployment-pipelines) *(preview)*
-  * [Data Agents](../../data-science/how-to-create-data-agent.md) *(preview)*
+  * [Data Agents](../../data-science/how-to-create-data-agent.md)
 
 * Data Factory items:
 
@@ -58,32 +63,33 @@ When you deploy content from one pipeline stage to another, the copied content c
   * [Mirrored database](../../mirroring/mirrored-database-cicd.md#mirrored-database-in-deployment-pipelines)
   * [Mount ADF](../../data-factory/tutorial-bring-azure-data-factory-to-fabric.md)
   * [Mirrored snowflake](../../mirroring/snowflake.md) *(preview)*
+  * [Airflow](../../data-factory/apache-airflow-jobs-concepts.md) *(preview)*
+  * [dbt Job](../../data-factory/dbt-job-overview.md) *(preview)*
+  * [Operations Agent](../../data-factory/operations-agent-for-pipelines.md) *(preview)*
   
 
-* Real-time Intelligence items:
+* Real-Time Intelligence items:
 
-  * [Activator](../../real-time-intelligence/git-deployment-pipelines.md) *(preview)*
+  * [Activator](../../real-time-intelligence/git-deployment-pipelines.md)
   * [Digital twin builder](../../real-time-intelligence/digital-twin-builder/overview.md) *(preview)*
   * [Eventhouse](../../real-time-intelligence/git-deployment-pipelines.md)
-  * [EventStream](../../real-time-intelligence/event-streams/eventstream-cicd.md#deploy-eventstream-items-from-one-stage-to-another)
+  * [Eventstream](../../real-time-intelligence/event-streams/eventstream-cicd.md#deploy-eventstream-items-from-one-stage-to-another)
   * [KQL database](../../real-time-intelligence/git-deployment-pipelines.md)
-  * [KQL Queryset](../../real-time-intelligence/git-deployment-pipelines.md)
-  * [Real-time Dashboard](../../real-time-intelligence/git-deployment-pipelines.md)
+  * [KQL queryset](../../real-time-intelligence/git-deployment-pipelines.md)
+  * [Real-Time Dashboard](../../real-time-intelligence/git-deployment-pipelines.md)
+  * [Maps](../../real-time-intelligence/map/about-fabric-maps.md)
   * [Event Schema Set](../../real-time-intelligence/schema-sets/create-manage-event-schemas.md) *(preview)*
-  * [Maps](/azure/azure-maps/) *(preview)*
   * [Anomaly detection](../../real-time-intelligence/multivariate-anomaly-overview.md) *(preview)*
 
 * Data Warehouse items:
 
-  * [Warehouse](../../data-warehouse/source-control.md#deployment-pipelines) *(preview)
+  * [Warehouse](../../data-warehouse/development-deployment.md#fabric-deployment-pipelines)
   * Mirrored Azure Databricks Catalog 
-
 
 * Power BI items:
 
   * Dashboard *(preview)*
   * Dataflow *(preview)*
-  * Datamart *(preview)*
   * [Org app](/power-bi/consumer/org-app-items/org-app-cicd) *(preview)*
   * Paginated report *(preview)*
   * Report (based on supported semantic models) *(preview)*
@@ -91,8 +97,17 @@ When you deploy content from one pipeline stage to another, the copied content c
 
 * Database items:
 
-  * [SQL database](../../database/sql/deployment-pipelines.md) *(preview)*
+  * [SQL database](../../database/sql/deployment-pipelines.md)
   * [Cosmos database](../../database/cosmos-db/overview.md) *(preview)*
+
+* Graph:
+  * [Graph Model](../../graph/overview.md)
+  * [Graph QuerySet](../../graph/overview.md)
+
+* CI/CD items:
+
+  * [Variable Library](../variable-library/variable-library-overview.md)
+  * [Deployment plan](../deployment-plan/deployment-plan-overview.md) *(preview)*
 
 * Industry solutions:
 
@@ -102,6 +117,7 @@ When you deploy content from one pipeline stage to another, the copied content c
 * IQ (preview) items:
 
   * [Ontology](../../iq/ontology/overview.md) *(preview)*
+  * [Plan](../../iq/plan/overview.md) *(preview)*
 
 ## Pipeline structure
 
@@ -165,7 +181,7 @@ Deployment pipelines provide content creators with a production environment wher
 
 The deployment pipeline is composed of stages.  You decide how many stages you want in your deployment pipeline. There can be anywhere from two to 10 stages. The default is 3.
 
-The deployment process lets you clone content from one stage in the deployment pipeline to another, typically from development to test, and from test to production. During deployment, Microsoft Fabric copies the content from the source stage to the target stage.
+The deployment process lets you clone content from one stage in the deployment pipeline to another, typically from development to test, and from test to production. During deployment, Fabric copies the content from the source stage to the target stage.
 
 Folders enable users to efficiently organize and manage workspace items in a familiar way. When you deploy content that contains folders to a different stage, the folder hierarchy of the applied items is automatically applied.
 
@@ -181,11 +197,22 @@ After you select **Deploy**, you get a confirmation message.
 
 Learn more about [which item properties are copied to the next stage](understand-the-deployment-process.md#item-properties-copied-during-deployment), and which properties aren't copied, in [Understand the deployment process](understand-the-deployment-process.md#item-properties-that-are-not-copied).
 
+### Control deployment order and actions with a deployment plan (preview)
+
+By default, deployment pipelines use Fabric lineage to determine the dependencies and order required to deploy the selected content. When a deployment requires an explicit order or work that item deployment alone can't perform, attach a deployment plan in the deployment dialog.
+
+When you attach a plan, deployment pipelines use the deployment plan in the target workspace by default. In the deployment dialog, you can instead select a deployment plan from the source workspace.
+
+For plan components and action behavior, see [Deployment plan actions](../deployment-plan/deployment-plan-actions.md). For how the selected items, plan relationships, Fabric lineage, and actions determine the deployment, see [How a deployment plan works](../deployment-plan/deployment-plan-overview.md#how-a-deployment-plan-works).
+
 ## Automation
 
-You can also deploy content programmatically, using the [deployment pipelines REST APIs](/rest/api/power-bi/pipelines). Learn more about the automation process in [Automate your deployment pipeline using APIs and DevOps](pipeline-automation.md).
+You can also deploy content programmatically by using the Power BI or Fabric deployment pipelines REST APIs. To attach a deployment plan through automation, use the Fabric deployment pipelines deploy API. Learn more in [Automate your deployment pipeline with Fabric APIs](pipeline-automation-fabric.md) and [Automate your deployment pipeline for Power BI items](pipeline-automation.md).
 
 ## Related content
 
 * [Understand the deployment pipelines process](understand-the-deployment-process.md)
 * [Get started with deployment pipelines](get-started-with-deployment-pipelines.md)
+* [Deploy content to the next stage](deploy-content.md)
+* [What is a deployment plan?](../deployment-plan/deployment-plan-overview.md)
+* [Deployment plan actions](../deployment-plan/deployment-plan-actions.md)

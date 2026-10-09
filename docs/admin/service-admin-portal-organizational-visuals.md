@@ -3,8 +3,6 @@ title: Manage organizational visuals
 description: Learn how to manage Power BI organizational visuals by using the admin settings and learn where to find more information.
 author: msmimart
 ms.author: mimart
-ms.reviewer: ''
-
 ms.custom:
   - admin-portal
 ms.topic: how-to
@@ -22,5 +20,5 @@ All the Power BI visuals admin settings, including Power BI visuals tenant setti
 
 ## Related content
 
-- [What is the admin portal?](admin-center.md)
+- [Govern and manage your Fabric data with the OneLake catalog](../governance/onelake-catalog-govern.md)
 - [Manage Power BI visuals admin settings](organizational-visuals.md)

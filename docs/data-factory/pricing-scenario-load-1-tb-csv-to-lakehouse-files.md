@@ -1,10 +1,8 @@
 ---
 title: Pricing scenario - Pipelines load 1 TB of CSV data to Lakehouse files
 description: This article provides an example pricing scenario for loading 1 TB of CSV data to Lakehouse files with binary copy using Data Factory in Microsoft Fabric.
-ms.reviewer: whhender
-ms.author: whhender
-author: whhender
-ms.topic: conceptual
+ms.reviewer: susabat
+ms.topic: concept-article
 ms.custom: configuration
 ms.date: 11/15/2023
 ---
@@ -19,7 +17,7 @@ The prices used in the following example are hypothetical and don’t intend to 
 
 To accomplish this scenario, you need to create a pipeline with the following configuration:
 
-:::image type="content" source="media/pricing-scenarios/load-1-tb-csv-to-lakehouse-files.png" alt-text="Screenshot showing the configuration of a pipeline copying CSV data to a Lakehouse table.":::
+:::image type="content" source="media/pricing-scenarios/load-1-tb-csv-to-lakehouse-files.png" alt-text="Screenshot showing the configuration of a pipeline copying CSV data to Lakehouse files.":::
 
 ## Cost estimation using the Fabric Metrics App
 

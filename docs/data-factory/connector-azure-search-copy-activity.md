@@ -1,11 +1,10 @@
 ---
 title: Configure Azure AI Search in copy activity
 description: This article explains how to copy data using Azure AI Search.
-author: jianleishen
-ms.author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: how-to
 ms.date: 07/24/2024
-ms.custom: 
+ms.custom:
   - pipelines
   - template-how-to
   - connectors
@@ -56,11 +55,11 @@ Azure AI Search service supports writing documents as a batch. A batch can conta
 
 ### Mapping
 
-For **Mapping** tab configuration, see [Configure your mappings under mapping tab](copy-data-activity.md#configure-your-mappings-under-mapping-tab).
+For **Mapping** tab configuration, see [Configure your mappings under mapping tab](copy-data-activity.md#configure-your-mappings-under-the-mapping-tab).
 
 ### Settings
 
-For **Settings** tab configuration, go to [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
+For **Settings** tab configuration, go to [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-the-settings-tab).
 
 ## Table summary
 

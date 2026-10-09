@@ -1,8 +1,6 @@
 ---
 title: IBM Db2 database connector overview
 description: This article provides an overview of the supported capabilities of the IBM Db2 database connector.
-author: whhender
-ms.author: whhender
 ms.topic: how-to
 ms.date: 08/12/2025
 ms.custom:

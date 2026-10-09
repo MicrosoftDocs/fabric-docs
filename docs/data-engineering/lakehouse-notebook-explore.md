@@ -2,10 +2,7 @@
 title: Explore the lakehouse data with a notebook
 description: Learn how to use a notebook to explore lakehouse data, connect a lakehouse and a notebook, and generate code cells in a notebook.
 ms.reviewer: qixwang
-ms.author: eur
-author: eric-urban
 ms.topic: how-to
-ms.custom:
 ms.date: 05/23/2023
 ---
 
@@ -17,7 +14,7 @@ In this tutorial, learn how to explore the data in your lakehouse with a noteboo
 
 To get started, you need the following prerequisites:
 
-- A [!INCLUDE [product-name](../includes/product-name.md)] tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
+- A Fabric tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
 - Read the [Lakehouse overview](lakehouse-overview.md).
 
 ## Open or create a notebook from a lakehouse
@@ -42,7 +39,7 @@ You can add multiple lakehouses to the same notebook. By switching the available
 
 :::image type="content" source="media\lakehouse-notebook-explore\select-different-lakehouse.png" alt-text="Screenshot showing a list of available files in the Lake view." lightbox="media\lakehouse-notebook-explore\select-different-lakehouse.png":::
 
-In the lakehouse list, the pin icon next to the name of a lakehouse indicates that it's the default lakehouse in your current notebook. In the notebook code, if only a relative path is provided to access the data from the [!INCLUDE [product-name](../includes/product-name.md)] OneLake, then the default lakehouse is served as the root folder at run time.
+In the lakehouse list, the pin icon next to the name of a lakehouse indicates that it's the default lakehouse in your current notebook. In the notebook code, if only a relative path is provided to access the data from OneLake, then the default lakehouse is served as the root folder at run time.
 
 To switch to a different default lakehouse, move the pin icon.
 
@@ -55,7 +52,7 @@ To switch to a different default lakehouse, move the pin icon.
 
 Selecting the **X** icon next to a lakehouse name removes it from the notebook, but the lakehouse item still exists in the workspace.
 
-To remove all the lakehouses from the notebook, click "Remove all Lakehouses" in the lakehouse list.
+To remove all the lakehouses from the notebook, click "Remove all lakehouses" in the lakehouse list.
 
 :::image type="content" source="media\lakehouse-notebook-explore\remove-lakehouse.png" alt-text="Screenshot showing where to remove a lakehouse." lightbox="media\lakehouse-notebook-explore\remove-lakehouse.png":::
 
@@ -65,7 +62,7 @@ Select **Add lakehouse** to add more lakehouses to the notebook. You can either 
 
 ## Explore the lakehouse data
 
-The structure of the Lakehouse shown in the Notebook is the same as the one in the Lakehouse view. For the detail please check [Lakehouse overview](lakehouse-overview.md). When you select a file or folder, the content area shows the details of the selected item.
+The structure of the lakehouse shown in the notebook is the same as the one in the lakehouse view. For the detail please check [Lakehouse overview](lakehouse-overview.md). When you select a file or folder, the content area shows the details of the selected item.
 
 :::image type="content" source="media\lakehouse-notebook-explore\content-area.png" alt-text="Screenshot showing the location of the content area." lightbox="media\lakehouse-notebook-explore\content-area.png":::
 

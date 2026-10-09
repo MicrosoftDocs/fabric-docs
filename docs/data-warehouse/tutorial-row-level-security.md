@@ -1,17 +1,15 @@
 ---
-title: Implement Row-Level Security in Microsoft Fabric Data Warehousing
-description: A guide to use row-level security in Fabric Data Warehousing
-author: WilliamDAssafMSFT
-ms.author: wiassaf
+title: Implement Row-Level Security in Fabric Data Warehouse
+description: A guide to use row-level security in Fabric Data Warehouse.
 ms.reviewer: dhsundar
 ms.date: 01/16/2025
 ms.topic: how-to
 ---
-# Implement row-level security in Microsoft Fabric data warehousing
+# Implement row-level security
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-Row-level security (RLS) in Fabric Warehouse and SQL analytics endpoint allows you to control access to rows in a database table based on user roles and predicates. For more information, see [Row-level security in Fabric data warehousing](row-level-security.md).
+Row-level security (RLS) in Fabric Warehouse and SQL analytics endpoint allows you to control access to rows in a database table based on user roles and predicates. For more information, see [Row-level security in Fabric Data Warehouse](row-level-security.md).
 
 This guide will walk you through the steps to implement row-level security in Microsoft Fabric Warehouse or SQL analytics endpoint.
 
@@ -85,5 +83,5 @@ Regularly monitor and update your row-level security policies as your security r
 
 ## Related content
 
-- [Row-level security in Fabric data warehousing](row-level-security.md)
-- [Column-level security for Fabric data warehousing](column-level-security.md)
+- [Row-level security in Fabric Data Warehouse](row-level-security.md)
+- [Column-level security for Fabric Data Warehouse](column-level-security.md)

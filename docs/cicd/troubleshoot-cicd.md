@@ -1,15 +1,11 @@
 ---
 title: Troubleshoot the Fabric lifecycle management tools.
 description: Troubleshoot problems with deployment pipelines, the Fabric Application lifecycle management (ALM) tools.
-author: billmath
-ms.author: billmath
 ms.reviewer: NimrodShalit
 ms.topic: troubleshooting
-ms.service: fabric
-ms.subservice: cicd
 ms.custom: sfi-image-nochange
-ms.date: 02/27/2025
-ms.search.form: Deployment pipelines troubleshooting, View deployment pipeline, Deployment pipelines operations, Deployment rules
+ms.date: 09/23/2026
+ms.search.form: Deployment pipelines troubleshooting, View deployment pipeline, Deployment pipelines operations, Deployment rules, Deployment plan
 ---
 
 # Troubleshoot lifecycle management issues
@@ -18,13 +14,13 @@ Use this article to troubleshoot issues in the lifecycle management process.
 
 To understand the considerations and limitations of various lifecycle management issues, review the links in the following table:
 
-| Topic | Git integration  | Deployment pipelines |
-|--------|------------------|---------------------|
-| **General limitations** | [general Git limitations](./git-integration/git-integration-process.md#considerations-and-limitations) | [deployment pipelines limitations](deployment-pipelines/understand-the-deployment-process.md#considerations-and-limitations) |
-| **Permissions needed** | [permissions](./git-integration/git-integration-process.md#permissions) | [permissions](deployment-pipelines/understand-the-deployment-process.md#permissions) |
-| **Workspace limitations** | [workspaces](./git-integration/git-integration-process.md#workspace-limitations) | [workspaces](deployment-pipelines/assign-pipeline.md#considerations-and-limitations) |
-| **Supported Fabric items** | [supported items](./git-integration/intro-to-git-integration.md#supported-items) | [supported items](deployment-pipelines/intro-to-deployment-pipelines.md#supported-items) |
-| **Semantic model** |   | [Semantic model limitations](deployment-pipelines/understand-the-deployment-process.md#semantic-model-limitations)
+| Topic | Git integration  | Deployment pipelines | Deployment plans |
+|--------|------------------|---------------------|------------------|
+| **General limitations** | [general Git limitations](./git-integration/git-integration-process.md#considerations-and-limitations) | [deployment pipelines limitations](deployment-pipelines/understand-the-deployment-process.md#considerations-and-limitations) | [deployment plan limitations](deployment-plan/deployment-plan-overview.md#considerations-and-limitations) |
+| **Permissions needed** | [permissions](./git-integration/git-integration-process.md#permissions) | [permissions](deployment-pipelines/understand-the-deployment-process.md#permissions) | [permissions](deployment-plan/deployment-plan-permissions.md) |
+| **Workspace limitations** | [workspaces](./git-integration/git-integration-process.md#workspace-limitations) | [workspaces](deployment-pipelines/assign-pipeline.md#considerations-and-limitations) | |
+| **Supported Fabric items** | [supported items](./git-integration/intro-to-git-integration.md#supported-items) | [supported items](deployment-pipelines/intro-to-deployment-pipelines.md#supported-items) | [supported action types](deployment-plan/deployment-plan-actions.md) |
+| **Semantic model** |   | [Semantic model limitations](deployment-pipelines/understand-the-deployment-process.md#semantic-model-limitations) | |
 
 * [Git integration](#git-integration)  
 
@@ -37,9 +33,9 @@ To understand the considerations and limitations of various lifecycle management
 * [Deployment pipelines](#deployment-pipelines)  
   * [Paginated reports](#paginated-reports)  
   * [Dataflows](#dataflows)  
-  * [Datamarts](#datamarts)  
   * [Permissions](#permissions)  
   * [Rules](#rules)
+* [Deployment plans](#deployment-plans)
 
 ## Git integration
 
@@ -104,7 +100,7 @@ To understand the considerations and limitations of various lifecycle management
 
 **Description of problem**: I don't see the workspace I want to connect to in the branching out tab of the **Source control** panel.  
 **Cause**: The branching out list only shows workspaces that you have permission to view.  
-**Solution**: Check that the workspace you want exists and that you have permission to view it. If not, ask the owner of the workspace to give you permission. See [Branch limitations](./git-integration/git-integration-process.md#branching-out-limitations) for more information.
+**Solution**: Check that the workspace you want exists and that you have permission to view it. If not, ask the owner of the workspace to give you permission. See [Branch limitations](./git-integration/branched-workspace.md#branching-out-limitations) for more information.
 
 #### Branching out: My new workspace wasn’t synced with my Git repository
 
@@ -112,9 +108,15 @@ To understand the considerations and limitations of various lifecycle management
 **Cause**: The [Git integration switch](../admin/git-integration-admin-settings.md) might be enabled for your source workspace, but not for the whole tenant as the tenant admin can delegate control of the switch to workspace admins. If this is the case, your new workspace won't have Git integration enabled and you'll need to manually enable it from the workspace settings before syncing the workspace with Git.
 **Solution**: Enable Git integration from the workspace settings of your new workspace.
 
+#### Switch branch or Checkout new branch is unavailable for a contributor or member
+
+**Description of problem**: As a Contributor or Member (non-admin), I can't switch branches or check out a new branch from the **Source control** panel.  
+**Cause**: By default, branch switching and new-branch creation are restricted to workspace admins. A Contributor can perform these actions only when the workspace-level **Allow users with at least Contributor role to change Git branch** setting is enabled, the workspace has an active Git connection, and the Contributor has write access to all items in the workspace.  
+**Solution**: Ask a workspace admin to enable the **Allow users with at least Contributor role to change Git branch** setting in the workspace settings. For more information, see [Allow Contributors and Members to switch branches](./git-integration/git-get-started.md#allow-contributors-and-members-to-switch-branches)
+
 ### Connect folder issues
 
-#### Connect failure: It's asking if I want to create a new folder when I try to connect to a Git branch
+#### Connect failure: I am prompted to create a new folder when connecting to a Git branch.
 
 **Description of problem**: After selecting **Connect** in the Git integration tab, a dialog pops up indicating an invalid folder path.
 
@@ -134,6 +136,19 @@ To understand the considerations and limitations of various lifecycle management
 **Cause**: If your workspace has folders and the connected Git folder doesn't yet have subfolders, they are considered to be different. If your workspace has folders but the Git branch doesn't, you see the *uncommitted changes* message. If you try to update the workspace before committing the changes, you get a conflict. Once the Git folder has the same folder structure as the workspace, you won't get this message anymore.
 
 **Solution**: To resolve the issue, [commit](./git-integration/git-get-started.md#commit-changes-to-git) changes to Git. If you can't make changes directly to the connected branch, we recommend using the [checkout branch](./git-integration/git-integration-process.md#handling-folder-changes-safely) option. For more information, see [Handling folder changes safely](./git-integration/git-integration-process.md#handling-folder-changes-safely).
+
+#### My workspace shows uncommitted changes on a report I didn't modify
+
+**Description of problem**: I notice uncommitted changes for a report in my workspace, even though I didn't manually modify any items.
+
+**Cause**: This behavior can happen when a report name includes special characters such as `:`, `#`, `[`, or `]`, and the report has a dependency-by-path on a semantic model. Special characters in item names cause the system to autocorrect the dependency paths. These automatic adjustments are expected behavior and ensure the report stays correctly linked to its semantic model in the Git branch.
+
+**Solution**: Commit the changes so the Git branch stays aligned with the item's true state. If you want more certainty before committing, use the **Commit to new branch** option in the source control pane, and then compare the differences between:
+
+* the item currently stored in your Git branch
+* the newly generated item committed to the new branch
+
+Review the diff to confirm that only dependency paths were adjusted and that no unintended logic or structural changes were introduced. This workflow gives you a safe validation step before you merge the changes into your working branch.
 
 ### Commit issues
 
@@ -196,11 +211,11 @@ For more information, see [Manually Update from Git](./git-integration/partial-u
 
 **Description of problem**: After updating from Git, when looking at the lineage view, the dependencies of some items aren't as expected. For example, the proxy model no longer points to the correct model.
 
-Reason: Git Integration doesn't support Direct Query and proxy models at this time.
+**Cause**: Git integration doesn't support DirectQuery and proxy models at this time.
 
 **Solution**: To fix the dependencies, do one of the following actions:
 
-* Edit the *bim* file of the ProxyDataset in the Git repository so that it points to the correct dataset, and then, in the workspace, update from Git to receive the change.
+* Edit the *bim* file of the proxy semantic model in the Git repository so that it points to the correct semantic model. Then, in the workspace, update from Git to receive the change.
 * Use the [Update Datasource API](/rest/api/power-bi/datasets/update-datasources-in-group) to update the connection details of the proxy model in the workspace.
 
 ### Resolve error issues
@@ -217,7 +232,7 @@ Reason: Git Integration doesn't support Direct Query and proxy models at this ti
 
 * If you have write permission to the repository, select **Fix with direct commit**. A new branch is automatically created. Change the logical ID of the copied item in the new branch, and then commit the changes.
 
-* If you don't have write permission to the repository, select *Create branch and go to Git**. A new branch is automatically created. Change the logical ID of the copied item in the new branch, and then create a pull request to merge the changes.
+* If you don't have write permission to the repository, **select Create branch and go to Git**. A new branch is automatically created. Change the logical ID of the copied item in the new branch, and then create a pull request to merge the changes.
 
 ### Undo issues
 
@@ -446,17 +461,6 @@ When you deploy a paginated report that's connected to a Fabric semantic model, 
 
 **Solution**: This behavior doesn't affect deployment pipelines.
 
-### Datamarts
-
-#### Deployment problem: I can't deploy a datamart in the pipeline
-
-**Solution**: To deploy a datamart, you must be the owner of the datamart.
-
-#### Deployment problem: My datamart deployment failed because of a circular dependency
-
-:::image type="content" source="./media/troubleshoot-cicd/circular-dependency.png" alt-text="Screenshot of error message about circular or self dependencies.":::
-
-**Solution**: There's either an item that references itself, or more than one item involved in a circular chain of references (for example, item A references item B and item B references item A). To deploy the datamart, remove the circular dependency and redeploy.
 
 ### Permissions
 
@@ -511,13 +515,11 @@ To deploy successfully, fix or remove the broken rules, and redeploy.
 
 **Solution**: To apply deployment rules, you have to deploy the semantic models from the source stage to the target stage which includes the created deployment rules. After configuring deployment rules, and before you deploy, the *different* indicator is shown next to the semantic model with the configured rules. This indicates that you need to deploy that semantic model from the source stage to the target stage. Once you deploy, if no other changes were made, the *different* indicator disappears signifying that the rules were applied successfully.
 
-#### Deployment rules are greyed out
+#### Deployment rules are grayed out
 
-**Solution**: To create a [deployment rule](deployment-pipelines/create-rules.md), you must be the owner of the item you're creating a deployment rule for. If you're not the owner of the item, deployment rules are greyed out.
+**Solution**: To create a [deployment rule](deployment-pipelines/create-rules.md), you must be the owner of the item you're creating a deployment rule for. If you're not the owner of the item, deployment rules are grayed out.
 
-:::image type="content" border="true" source="media/troubleshoot-cicd/rules-greyed-out.png" alt-text="A screenshot showing deployment pipelines deployment rules greyed out.":::
-
-If one of the rule options is greyed out, it could be because of the following reasons:
+If one of the rule options is grayed out, it could be because of the following reasons:
 
 * **Data source rules** - There are no data sources that a rule can be configured on.
 
@@ -537,6 +539,84 @@ If one of the rule options is greyed out, it could be because of the following r
 
 **Solution**: Format the semantic model connection in Power BI Desktop so that the semantic model source appears in the first row. Then, republish the semantic model.
 
+
+
+### Retirement of semantic model support for deployment pipelines
+To improve reliability and consistency across pipeline stages, Fabric deployment pipelines is retiring support for semantic models that aren't upgraded to enhanced metadata (Git supports only the Enhanced Metadata format). This change supports strategic improvements in semantic model management, including XMLA read/write and Analysis Services migration, and ensures consistency across environments (see Using enhanced semantic model metadata).
+
+#### What change is Microsoft making to semantic model support in deployment pipelines?
+**Solution**: Beginning February 12, 2026, Fabric deployment pipelines retire support for semantic models that aren't upgraded to Enhanced Metadata. Deployment pipelines and Git integration require Enhanced Metadata for improved reliability, consistency, and alignment with ongoing platform investments such as XMLA read/write and Analysis Services migration.
+
+#### Why is this change happening?
+**Solution**: Enhanced Metadata provides a consistent, modernized model structure that enables:
+
+- More reliable deployments across environments
+- Compatibility with Git (which supports only Enhanced Metadata)
+- Improved XMLA read/write experiences
+- Future migration paths aligned with Analysis Services
+- Greater consistency across the unified Fabric platform
+
+
+#### Who is impacted?
+**Solution**:  Any organization using Fabric deployment pipelines with semantic models still using legacy (non‑enhanced) metadata. This change also applies to Power BI semantic models within Fabric.
+
+#### What happens if we try to deploy models that haven’t been upgraded?
+**Solution**: 
+
+- Deployment of legacy metadata models will fail.
+- .pbix files opened in the latest Power BI Desktop are automatically upgraded.
+- If a report has unapplied query changes or upgrade errors, users will see a warning and must upgrade manually.
+- Some legacy queries (especially for SQL Server, Oracle, Teradata, SAP HANA) may not convert cleanly and could generate errors like:
+- "Unable to convert an M query in table 'Dimension City' into a native source query."
+
+
+#### Are there any exceptions?
+**Solution**:  Yes. ASLC (Analysis Services Live Connection) semantic models—which use external AS servers—cannot be upgraded because they rely on non‑enhanced metadata. Deployment pipelines will continue to support ASLC models.
+
+#### How can I check whether a semantic model still uses legacy metadata?
+**Solution**: 
+
+- **Deployment failure:** If a deployment error says the semantic model wasn't upgraded, it still uses legacy metadata.
+- **Workspace check:** In the workspace, hover over Open Semantic Model in the item's menu. If it's grayed out with an "upgrade required" tooltip, the model is likely not using Enhanced Metadata.
+ :::image type="content" source="media/troubleshoot-cicd/retire-1.png" alt-text="Screenshot of workspace check." lightbox="media/troubleshoot-cicd/retire-1.png":::
+
+#### What should my organization do to prepare?
+**Solution**: 
+
+- Upgrade all source‑stage semantic models to Enhanced Metadata before February 2026.
+- Inform helpdesk and internal support teams about the coming change.
+- Update internal documentation and workflows to reflect the new requirement.
+- Review limitations and troubleshooting steps in the Using enhanced semantic model metadata guidance.
+
+
+#### How do I convert a legacy semantic model to Enhanced Metadata?
+**Recommended method:** Republish via Power BI Desktop
+
+1. Download the model from the ALM source stage.
+2. Open it using the latest Power BI Desktop.
+3. Save the file—this triggers conversion to Enhanced Metadata.
+Republish to Power BI.
+
+**Alternative method:** Convert using XMLA read/write (SSMS)
+
+Using XMLA, update the model:
+
+1. Set `compatibilityLevel` to 1520
+2. Add `"defaultPowerBIDataSourceVersion": "powerBI_V3"` inside the "model" object
+
+
+See [Semantic model connectivity and management with the XMLA endpoint in Power BI](../enterprise/powerbi/service-premium-connect-tools.md) for details.
+
+>[!NOTE]
+> Even after a successful conversion, the Open Semantic Model option may remain grayed out. However, deployments will succeed.
+
+
+
+
+
+
+
+
 ## Troubleshooting errors
 
 Use this section to troubleshoot pipeline [rules](deployment-pipelines/create-rules.md) you created. If you don't see a rule error message name, review the [deployment rule limitations](deployment-pipelines/create-rules.md#considerations-and-limitations) and the [supported data sources for dataflow and semantic model rules](deployment-pipelines/create-rules.md#supported-data-sources-for-dataflow-gen1-and-semantic-model-rules), and try to reconfigure the rule.
@@ -550,8 +630,50 @@ Use this section to troubleshoot pipeline [rules](deployment-pipelines/create-ru
 |Multiple data sources aren't supported |A semantic model rule can't be applied due to its data source configuration. Either remove the rule, or rewrite the semantic model queries using standard Power BI Desktop tools. |
 |Target semantic model can only be changed by its owner |Your rule will overwrite some semantic models in the destination workspace. You must be the owner of any semantic model that will be overwritten. |  
 
+## Deployment plans
+
+A deployment plan controls the order in which items deploy, and runs actions before or after they deploy. A plan can be attached to Git integration, a deployment pipeline, or the APIs, so a plan problem can surface on any of those surfaces.
+
+For the full list, see [Troubleshoot deployment plans](deployment-plan/deployment-plan-troubleshoot.md).
+
+### My plan isn't in the list when I try to attach it
+
+The picker on each attach surface only lists plans you have access to. Confirm that the deployment plan item type is enabled for your tenant, that the plan is saved, and that you have at least the Contributor role on the workspace that holds the plan. For more information, see [The plan isn't in the picker](deployment-plan/deployment-plan-troubleshoot.md#the-plan-isnt-in-the-picker).
+
+### I can't save my plan
+
+A plan is validated when it's saved, and some problems block the save. The most common are a cycle between deployment groups, a duplicate name, a dependency that names something the plan doesn't contain, and the same item appearing in more than one group.
+
+The canvas prevents most of these while you edit, so you're most likely to meet them when a plan arrives another way, such as through the REST API or a pull from Git. For the full list, see [The plan can't be saved](deployment-plan/deployment-plan-troubleshoot.md#the-plan-cant-be-saved).
+
+### My plan saved, but it shows warnings
+
+Warnings depend on the workspace the plan points at rather than on the plan itself, so they don't block saving or attaching. They usually mean the plan references an item that doesn't exist in the target workspace yet. For more information, see [The plan can be saved, but shows warnings](deployment-plan/deployment-plan-troubleshoot.md#the-plan-can-be-saved-but-shows-warnings).
+
+### The deployment stopped partway through and some items deployed
+
+This is expected behavior. When a deployed item or an action fails, the deployment halts. Whatever already deployed stays in the target workspace, and the items later in the order don't deploy. There's no automatic rollback.
+
+For recovery guidance, see [The deployment stopped partway through](deployment-plan/deployment-plan-troubleshoot.md#the-deployment-stopped-partway-through).
+
+### An action failed the first time I deployed into a new workspace
+
+A deployment carries item definitions. It doesn't carry workspace settings, and neither does a plan. A new workspace, such as a branch-out workspace or a newly created pipeline stage, starts with default settings, so the items deploy correctly and then the first action fails.
+
+Workspace identity, Spark settings, and connections are all workspace-level and must be configured on the target before the first deployment. For more information, see [An action failed because the workspace isn't configured](deployment-plan/deployment-plan-troubleshoot.md#an-action-failed-because-the-workspace-isnt-configured).
+
+### An action failed and I can't tell why from the deployment
+
+An action is a normal Fabric item run, so its failure details live with the item rather than with the plan. The deployment reports an error that identifies the action that failed. Open that item and review its run history.
+
+### A variable reference in my plan couldn't be resolved
+
+Variable resolution is evaluated with your permissions, so a reference can resolve for one user and fail for another. For the meaning of each resolution status, see [Variable reference resolution failures](variable-library/variable-reference-resolution-failure.md).
+
 ## Related content
 
 * [Get started with deployment pipelines](deployment-pipelines/get-started-with-deployment-pipelines.md)
 * [Assign a workspace to a pipeline stage](deployment-pipelines/assign-pipeline.md)
 * [Deployment history](deployment-pipelines/deployment-history.md)
+* [Troubleshoot deployment plans](deployment-plan/deployment-plan-troubleshoot.md)
+* [Deployment plan permissions](deployment-plan/deployment-plan-permissions.md)

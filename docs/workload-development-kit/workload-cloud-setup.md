@@ -1,11 +1,8 @@
 ---
 title: Set up workload cloud mode
 description: Learn the prerequisites and steps to use a cloud environment with Microsoft Fabric Workload Development Kit.
-author: KesemSharabi
-ms.author: kesharab
 ms.topic: how-to
-ms.custom:
-ms.date: 08/12/2024
+ms.date: 04/29/2026
 ---
 
 # Set up workload cloud mode
@@ -113,3 +110,4 @@ Here's an example:
 WORKLOAD_NAME=Fabric.WorkloadSample
 WORKLOAD_BE_URL=beserver.datafactory.contoso.com
 ```
+

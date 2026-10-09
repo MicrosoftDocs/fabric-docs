@@ -2,11 +2,9 @@
 title: Troubleshoot the FTP, SFTP and HTTP connectors
 titleSuffix: Azure Data Factory & Azure Synapse
 description: Learn how to troubleshoot issues with the FTP, SFTP and HTTP connectors in Fabric Data Factory and Azure Synapse Analytics.
-author: jianleishen
-ms.subservice: data-movement
 ms.topic: troubleshooting
 ms.date: 11/05/2024
-ms.author: jianleishen
+ms.reviewer: jianleishen
 ms.custom: has-adal-ref, synapse, connectors
 ---
 
@@ -215,6 +213,6 @@ This article provides suggestions to troubleshoot common problems with the FTP, 
 ## Related content
 
 For more troubleshooting help, try these resources:
-- [Data Factory blog](https://blog.fabric.microsoft.com/blog/category/data-factory)
-- [Data Factory community](https://community.fabric.microsoft.com/t5/Data-Factory-preview-Community/ct-p/datafactory)
+- [Fabric blog](https://community.fabric.microsoft.com/category/fabricupdatesblogs/blog/fbc_fabricupdatesblogs)
+- [Data Factory forums | Fabric Community](https://community.fabric.microsoft.com/category/datafactory)
 - [Data Factory feature requests](https://ideas.fabric.microsoft.com/)

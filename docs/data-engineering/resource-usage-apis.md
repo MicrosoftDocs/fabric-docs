@@ -1,8 +1,6 @@
 ---
 title: Resource usage APIs
 description: Learn more on how to get resource usage APIs.
-author: eric-urban
-ms.author: eur
 ms.reviewer: jejiang
 ms.topic: tutorial
 ms.date: 05/12/2025
@@ -20,7 +18,7 @@ The caller must have "read" permission on the item.
 
 Item.Read.All or Item.ReadWrite.All or one of the following 3 groups (according to the item which triggered the Spark application)
 
-- Notebook.Read.All or Notebook.ReadWrite.All 
+- Notebook.Read.All or Notebook.ReadWrite.All
 - SparkJobDefinition.Read.All or SparkJobDefinition.ReadWrite.All
 - Lakehouse.Read.All or Lakehouse.ReadWrite.All
 
@@ -66,7 +64,7 @@ GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|spark
 | Name | In | Required | Type | Description |
 | --- | --- | --- | --- | --- |
 | workspaceId | path | True | string uuid | The workspace ID. | 
-| itemId | path | True | string uuid | The item ID of the notebook or Spark job definition or Lakehouse. | 
+| itemId | path | True | string uuid | The item ID of the notebook or Spark job definition or lakehouse. |
 | livyId | path | True | string uuid | The Livy session ID. | 
 | appId | path | True | string | The Spark application ID, like application_1111111111111_0001. |
 | attemptId | path | False | int | The attempt ID of that application ID. If not specified, the ID of last attempt is used. |
@@ -217,7 +215,7 @@ GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|spark
 | Name | In | Required | Type | Description |
 | --- | --- | --- | --- | --- |
 | workspaceId | path | True | string uuid | The workspace ID. | 
-| itemId | path | True | string uuid | The item ID of the notebook or Spark job definition or Lakehouse. | 
+| itemId | path | True | string uuid | The item ID of the notebook or Spark job definition or lakehouse. |
 | livyId | path | True | string uuid | The Livy session ID. | 
 | appId | path | True | string | The Spark application ID, like application_1111111111111_0001. | 
 | attemptId | path | False | int | The attempt ID of that application ID. If not specified, the ID of last attempt is used. |

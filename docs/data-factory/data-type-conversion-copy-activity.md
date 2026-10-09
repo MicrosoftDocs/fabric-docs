@@ -1,8 +1,7 @@
 ---
 title: Data type conversion in a copy activity
 description: Learn how to configure advanced mapping settings.
-ms.author: jianleishen
-author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: how-to
 ms.custom: pipelines
 ms.date: 09/29/2025
@@ -10,7 +9,7 @@ ms.date: 09/29/2025
 
 # Data type conversion in a copy activity
 
-This article describes how to configure advanced settings in a copy activity **Mappings** tab besides the basic settings introduced in [Configure your mappings under mapping tab](copy-data-activity.md#configure-your-mappings-under-mapping-tab).
+This article describes how to configure advanced settings in a copy activity **Mappings** tab besides the basic settings introduced in [Configure your mappings under mapping tab](copy-data-activity.md#configure-your-mappings-under-the-mapping-tab).
 
 ## Configure your type conversion
 

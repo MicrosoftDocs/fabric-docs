@@ -1,15 +1,14 @@
 ### YamlMime:FAQ
 metadata:
-  title: "Frequently asked questions for SQL database in Microsoft Fabric"
+  title: "Frequently asked questions for SQL database"
   description: This article answers frequently asked questions about SQL database in Microsoft Fabric.
-  author: WilliamDAssafMSFT
-  ms.author: wiassaf
   ms.reviewer: nzagorac, antho, sukkaur, amapatil
   ms.topic: faq
-  ms.custom:
-  ms.date: 09/18/2025
+  ms.date: 05/20/2026
   ms.search.form: SQL database Overview
-title: "Frequently asked questions for SQL database in Microsoft Fabric"
+
+title: "Frequently asked questions for SQL database in Fabric"
+
 summary: |
   **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 
@@ -66,7 +65,7 @@ sections:
       - question: |
           How to stop/disable replication of data from SQL database in Fabric to OneLake?  
         answer: |
-          For SQL database in Fabric, the replication of data to OneLake can't be disabled. 
+          You can [stop and start SQL database mirroring with the Fabric REST API](start-stop-mirroring-api.md).
 
       - question: | 
           Are system objects such as system views and dynamic management views the same as Fabric database mirroring?
@@ -86,7 +85,7 @@ sections:
       - question: | 
           Is Private Link available for SQL database in Fabric?
         answer:
-          Yes. Private Links are available at the tenant level. For more information, see [Private links](../../security/security-private-links-overview.md).
+          Yes. Private Links are available at the workspace (preview feature) and tenant level. For more information, see [Private links](../../security/security-private-links-overview.md).
 
   - name: Cost management 
     questions:
@@ -131,7 +130,7 @@ sections:
       - question: | 
           What region is my SQL database located in?
         answer: |
-          The SQL database is located in the region of your Fabric workspace. The region of your workspace based on the license capacity, which is displayed in **Workspace settings**, in the **License info** page. 
+          The SQL database is located in the region of your Fabric workspace. The region of your workspace based on the license capacity, which is displayed in **Workspace settings**, in the **Workspace type** page. 
 
       - question: |
           Where is SQL database in Fabric available?
@@ -158,5 +157,4 @@ additionalContent: |
   ## Related content
 
   - [SQL database in Fabric](overview.md)
-  - [What's new in Fabric Databases](../../fundamentals/whats-new.md#sql-database-in-microsoft-fabric)
   - [Engage with the Fabric Community for SQL database](https://community.fabric.microsoft.com/t5/SQL-database/bd-p/db_general_discussion)  

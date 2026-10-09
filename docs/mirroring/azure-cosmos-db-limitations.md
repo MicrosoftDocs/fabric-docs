@@ -1,11 +1,10 @@
 ---
 title: "Limits and Quotas in Microsoft Fabric Mirrored Databases From Azure Cosmos DB"
 description: This article includes a list of limitations and quotas for Microsoft Fabric mirrored databases from Azure Cosmos DB.
-author: seesharprun
-ms.author: sidandrews
-ms.reviewer: jmaldonado
-ms.date: 10/23/2025
+ms.reviewer: mjbrown, jmaldonado
+ms.date: 10/06/2026
 ms.topic: limits-and-quotas
+ai-usage: ai-assisted
 ms.custom:
   - references_regions
 ---
@@ -19,15 +18,17 @@ This article details the current limitations for Azure Cosmos DB accounts mirror
 - [!INCLUDE [fabric-mirroreddb-supported-regions](./includes/fabric-mirroreddb-supported-regions.md)]
 
 - Mirroring is only available for these Azure Cosmos DB account types listed here.
+
   | Azure Cosmos DB account type | Available |
-  | --- | --- |
+  |---|---|
   | **API for NoSQL** | Yes |
   | **API for MongoDB (RU-based)** | No |
-  | **API for MongoDB (vCore-based)** | No |
   | **API for Apache Gremlin** | No |
   | **API for Table** | No |
   | **API for Apache Cassandra (RU-based)** | No |
   | **Managed Instance for Apache Cassandra** | No |
+  | **DocumentDB (vCore-based)** | No |
+  | **Sovereign Cloud (Azure Government and Azure China)** | No |
 
 ## Account and database limitations
 
@@ -35,7 +36,7 @@ This article details the current limitations for Azure Cosmos DB accounts mirror
 
 - All current limitations of the continuous backup feature in Azure Cosmos DB also apply to Fabric mirroring.
 
-  - These limitations include, but aren't limited to; the inability to disable continuous backup once enabled and lack of support for multi-region write accounts. For more information, see [Azure Cosmos DB continuous backup limitations](/azure/cosmos-db/continuous-backup-restore-introduction#current-limitations).
+  - These limitations include, but aren't limited to the inability to disable continuous backup once enabled and lack of support for multi-region write accounts. For more information, see [Azure Cosmos DB continuous backup limitations](/azure/cosmos-db/continuous-backup-restore-introduction#current-limitations).
 
   - You can enable both the analytical store and continuous backup features on the same Azure Cosmos DB account.
 
@@ -44,6 +45,8 @@ This article details the current limitations for Azure Cosmos DB accounts mirror
 - You can't enable continuous backup on an Azure Cosmos DB account that previously disabled the analytical store feature for a container.
 
 ## Security limitations
+
+- Mirroring doesn't support customer managed keys (CMK) on OneLake.
 
 - Azure Cosmos DB read-write account keys and Microsoft Entra ID authentication with role-based access control are the only supported mechanisms to connect to the source account. Read-only account keys and managed identities aren't supported.
 
@@ -64,11 +67,7 @@ This article details the current limitations for Azure Cosmos DB accounts mirror
 
 - You can directly share the mirrored database in Fabric.
 
-- The source Azure Cosmos DB account must enable **public network access** for **all networks**.
-
-- Private endpoints aren't supported for Azure Cosmos DB accounts.
-
-- Network isolation using techniques and features like IP addresses or service endpoints aren't supported for Azure Cosmos DB accounts.
+- Azure Cosmos DB accounts with virtual networks or private endpoints are supported. The documented setup for accounts with network restrictions uses a virtual network data gateway connection, trusted-workspace network ACL bypass, OAuth authentication, and REST-based mirrored database creation. The Azure Cosmos DB connector runs in the Fabric Replicator service, not on the gateway. Ongoing mirroring data travels over an internal Microsoft network and doesn't use public endpoints. This traffic doesn't traverse your virtual network data gateway or your private endpoint. For more information, see [Configure mirroring for Azure Cosmos DB accounts with network restrictions](azure-cosmos-db-private-network.md).
 
 - Data in OneLake doesn't support private endpoints, customer managed keys, or double encryption.
 
@@ -107,3 +106,4 @@ This article details the current limitations for Azure Cosmos DB accounts mirror
 - [Mirroring Azure Cosmos DB](../mirroring/azure-cosmos-db.md)
 - [FAQ: Microsoft Fabric mirrored databases from Azure Cosmos DB](../mirroring/azure-cosmos-db-faq.yml)
 - [Troubleshooting: Microsoft Fabric mirrored databases from Azure Cosmos DB](../mirroring/azure-cosmos-db-troubleshooting.yml)
+

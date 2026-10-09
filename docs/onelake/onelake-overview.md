@@ -1,80 +1,147 @@
 ---
-title: OneLake, the OneDrive for data
-description: OneLake is included with every Microsoft Fabric tenant and is designed to be the single place for all your analytics data. Learn more.
-ms.reviewer: eloldag
-ms.author: eloldag
-author: eloldag
+title: OneLake, the unified data lake
+description: OneLake is included with every Microsoft Fabric tenant and is designed to be the single place for all your analytics data.
+ms.reviewer: eloldag # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.topic: overview
-ms.custom:
-ms.date: 07/25/2024
+ms.date: 03/09/2026
+ai-usage: ai-assisted
 #customer intent: As a data analyst, I want to understand the benefits of using OneLake so that I can effectively manage and analyze all the analytics data for my organization.
 ---
 
-# OneLake, the OneDrive for data
+# What is OneLake?
 
-OneLake is a single, unified, logical data lake for your whole organization. A data lake processes large volumes of data from various sources. Like OneDrive, OneLake comes automatically with every Microsoft Fabric tenant and is designed to be the single place for all your analytics data. OneLake brings customers:
+Microsoft OneLake is a unified data lake for your whole organization. Every Microsoft Fabric tenant automatically includes OneLake, and it's the single place for all your analytics data. It's a central repository where you can store, manage, and govern all your data for analytics and AI workloads across the organization.
 
-- **One data lake** for the entire organization
-- **One copy of data** for use with multiple analytical engines
+OneLake is built on Azure Data Lake Storage and stores tables in Delta Parquet or Iceberg format, two open standards that any tool can read. This approach means your data isn't locked into proprietary formats.
 
-## One data lake for the entire organization
+OneLake provides:
 
-Before OneLake, it was easier for customers to create multiple lakes for different business groups rather than collaborating on a single lake, even with the extra overhead of managing multiple resources. OneLake focuses on removing these challenges by improving collaboration. Every customer tenant has exactly one OneLake. There can never be more than one and if you have Fabric, there can never be zero. Every Fabric tenant automatically provisions OneLake, with no extra resources to set up or manage.
+* **Unified data storage** for the entire organization with built-in governance and security
+* **One copy of data** to use with multiple analytical engines without duplication
+* **Flexible connectivity** through file explorer, ADLS Gen2 APIs, and Azure service integrations
+* **Data protection and monitoring** with built-in redundancy, disaster recovery, and access diagnostics
 
-### Governed by default with distributed ownership for collaboration
+## Unified data storage
 
-The concept of a tenant is a unique benefit of a SaaS service. Knowing where a customer’s organization begins and ends provides a natural governance and compliance boundary, which is under the control of a tenant admin. Any data that lands in OneLake is governed by default. While all data is within the boundaries set by the tenant admin, it's important that this admin doesn't become a central gatekeeper preventing other parts of the organization from contributing to OneLake.
+Before OneLake, organizations often created multiple lakes for different business groups, which led to extra overhead for managing multiple resources. This siloed approach made it difficult to collaborate across teams, slowed down data projects, and increased the risk of duplication.
 
-Within a tenant, you can create any number of workspaces. Workspaces enable different parts of the organization to distribute ownership and access policies. Each workspace is part of a capacity that is tied to a specific region and is billed separately.
+OneLake solves these challenges by giving you a central data access point for the entire organization. Every Fabric tenant comes with a single OneLake instance. You can't delete OneLake or create multiple OneLakes, and there's no infrastructure to provision or manage. Departments, teams, and projects can store or connect to their data in this unified lake and organize it using Fabric domains, sub-domains, and workspaces - each with their own administrator. This model maintains data ownership and enables federated governance, while still allowing authorized users to discover and use data without friction.
+
+### Centrally managed with distributed ownership
+
+Fabric data exists in the following hierarchy for organization and governance:
+
+* **Tenant**: Tenant-level policies automatically protect any data that lands in OneLake for security, compliance, and data management.
+* **Workspace**: You can create any number of workspaces in your tenant to organize your data. Workspaces enable different parts of the organization to distribute ownership and access policies. Each workspace is part of a capacity that's tied to a specific region and billed separately.
+* **Data items**: Workspaces contain data items like lakehouses, warehouses, eventhouses, and KQL databases. Each item type is purpose-built for specific workloads like Spark-based analytics, T-SQL queries, real-time streaming, and more.
 
 :::image type="content" source="media\onelake-overview\onelake-foundation-for-fabric.png" alt-text="Diagram showing the function and structure of OneLake." lightbox="media\onelake-overview\onelake-foundation-for-fabric.png":::
 
-Within a workspace, you can create data items and you access all data in OneLake through data items. Similar to how Office stores Word, Excel, and PowerPoint files in OneDrive, Fabric stores lakehouses, warehouses, and other items in OneLake. Items can give tailored experiences for each persona, such the Apache Spark developer experience in a lakehouse.
+For more information, see [Workspaces](../fundamentals/workspaces.md).
 
-For more information on how to get started using OneLake, see [Creating a lakehouse with OneLake](create-lakehouse-onelake.md).
+### Discover and govern with the OneLake catalog
 
-### Open at every level
+The OneLake catalog is the single place for data professionals and business users to discover, manage, and govern the data they own and can access across OneLake.
 
-OneLake is open at every level. OneLake is built on top of Azure Data Lake Storage (ADLS) Gen2 and can support any type of file, structured or unstructured. All Fabric data items like data warehouses and lakehouses store their data automatically in OneLake in Delta Parquet format. If a data engineer loads data into a lakehouse using Apache Spark, and then a SQL developer uses T-SQL to load data in a fully transactional data warehouse, both are contributing to the same data lake. OneLake stores all tabular data in Delta Parquet format.
+Users can filter by domain, workspace, item type, endorsements, and more to locate exactly what they need, with each data item enriched by metadata such as descriptions, owners, schema, lineage, and usage metrics.
 
-OneLake supports the same ADLS Gen2 APIs and SDKs to be compatible with existing ADLS Gen2 applications, including Azure Databricks. You can address data in OneLake as if it's one big ADLS storage account for the entire organization. Every workspace appears as a container within that storage account, and different data items appear as folders within those containers.
+Data owners can get insights and recommended actions to improve data quality and compliance, including visibility into sensitivity label coverage, tagging, endorsements, and data location.
 
-:::image type="content" source="media\onelake-overview\access-onelake-data-other-tools.png" alt-text="Diagram showing how you can access OneLake data with APIs and SDKs." lightbox="media\onelake-overview\access-onelake-data-other-tools.png":::
+For more information, see [OneLake catalog](../governance/onelake-catalog-overview.md).
 
-For more information on APIs and endpoints, see [OneLake access and APIs](onelake-access-api.md). For examples of OneLake integrations with Azure, see [Azure Synapse Analytics](onelake-azure-synapse-analytics.md), [Azure storage explorer](onelake-azure-storage-explorer.md), [Azure Databricks](onelake-azure-databricks.md), and [Azure HDInsight](onelake-azure-hdinsight.md) articles.
+### Security
 
-### OneLake file explorer for Windows
+OneLake’s security model lets you share data broadly without exposing sensitive information. By using OneLake security roles, you can define granular permissions on data items, down to specific folders, tables, or even rows and columns. For example, you could share a sales dataset with a team but restrict access to the `Cost` column, or you could allow a partner to see only rows where `Region = "US"`. OneLake stores these roles and automatically enforces them across all analytics experiences. So, if a user has access to only part of a dataset, that rule applies whether they query via SQL, run a Spark notebook, or view a Power BI report. OneLake ensures they see only what they’re permitted to see.
 
-OneLake is the OneDrive for data. Just like OneDrive, you can easily explore OneLake data from Windows using the [OneLake file explorer](onelake-file-explorer.md) for Windows. You can navigate all your workspaces and data items, easily uploading, downloading, or modifying files just like you do in Office. The OneLake file explorer simplifies working with data lakes, allowing even nontechnical business users to use them.
+This unified approach to security means users don't have to maintain separate permissions across different engines. It also means the original data owners always maintain control over who can access the data source, even if the data is passed to a lakehouse or workspace owned by someone else.
 
-For more information, see [OneLake file explorer](onelake-file-explorer.md).
+You can apply sensitivity labels to OneLake items just like you would to a document, and those labels enforce encryption or access restrictions even if the data is exported to Excel or another tool. Likewise, data loss prevention (DLP) policies can detect sensitive data uploads or downloads from OneLake and prevent or alert on potential data leaks.
+
+For more information, see [Get started securing your data in OneLake](security/get-started-security.md).
 
 ## One copy of data
 
-OneLake aims to give you the most value possible out of a single copy of data without data movement or duplication. You no longer need to copy data just to use it with another engine or to break down silos so you can analyze the data with data from other sources.
+All Fabric analytics engines work with data directly in OneLake. You don't need to copy data to use it with another engine or analyze data from multiple sources.
 
-### Shortcuts connect data across domains without data movement
+### Shortcuts
 
-Shortcuts allow your organization to easily share data between users and applications without having to move and duplicate information unnecessarily. When teams work independently in separate workspaces, shortcuts enable you to combine data across different business groups and domains into a virtual data product to fit a user’s specific needs.
+A shortcut is a reference to data stored in other file locations. These file locations can be within the same workspace, a different workspace in OneLake, or external to OneLake. You can use shortcuts for OneLake, Azure Data Lake Storage, Azure Blob storage, Amazon S3 and S3 compatible sources, Iceberg-compatible sources, Microsoft Dataverse, on-premises sources, and more. No matter the location, shortcuts make files and folders look like you have them stored locally.
 
-A shortcut is a reference to data stored in other file locations. These file locations can be within the same workspace or across different workspaces, within OneLake or external to OneLake in ADLS, S3, or Dataverse — with more target locations coming soon. No matter the location, shortcuts make files and folders look like you have them stored locally.
+Shortcuts allow your organization to unify data across clouds and domains without copying it. Teams can work independently in separate workspaces and use shortcuts to share data with each other instead of duplicating it. For example, one team could create a shortcut to a dataset in another team’s workspace or to an external S3 bucket, and then combine that data with their own in OneLake. The shortcut points to the source, so when the source data updates, those changes are immediately visible through OneLake. This way, you can create virtual products or views that pull together data from multiple business groups to fit a specific need, without moving or duplicating the data. By using shortcut transformations, you can even apply automatic changes to the data like converting the data format or removing personally identifiable information (PII).
 
 :::image type="content" source="media\onelake-overview\fabric-shortcuts-structure-onelake.png" alt-text="Diagram showing how shortcuts connect data across workspaces and items." lightbox="media\onelake-overview\fabric-shortcuts-structure-onelake.png":::
 
 For more information on how to use shortcuts, see [OneLake shortcuts](onelake-shortcuts.md).
 
-### One copy of data with multiple analytical engines
+### Mirroring
 
-While applications might have separation of storage and computing, the data is often optimized for a single engine, which makes it difficult to reuse the same data for multiple applications. With Fabric, the different analytical engines (T-SQL, Apache Spark, Analysis Services, etc.) store data in the open Delta Parquet format to allow you to use the same data across multiple engines.
+Mirroring in Fabric makes an external database or catalog available through OneLake without requiring you to build and operate data movement pipelines. Mirroring always adds the source catalog metadata to Fabric. How it makes the underlying data available depends on the source.
 
-There's no longer a need to copy data just to use it with another engine. You're always able to choose the best engine for the job that you're trying to do. For example, imagine you have a team of SQL engineers building a fully transactional data warehouse. They can use the T-SQL engine and all the power of T-SQL to create tables, transform data, and load the data to tables. If a data scientist wants to make use of this data, they no longer need to go through a special Spark/SQL driver. OneLake stores all data in Delta Parquet format. Data scientists can use the full power of the Spark engine and its open-source libraries directly over the data.
+- **Database mirroring** continuously replicates data from an operational database into OneLake as analytics-ready Delta tables.
+- **Metadata mirroring** synchronizes an external catalog and uses shortcuts to access its open-format data in place without copying it.
 
-Business users can build Power BI reports directly on top of OneLake using the new Direct Lake mode in the Analysis Services engine. The Analysis Services engine is what powers Power BI semantic models, and it has always offered two modes of accessing data: import and direct query. Direct Lake mode gives users all the speed of import without needing to copy the data, combining the best of import and direct query. For more information, see [Direct Lake](https://aka.ms/DirectLake).
+For guidance on choosing between shortcuts and mirroring and using them together, see [Unify data with OneLake shortcuts and mirroring](unify-data.md). For mirroring concepts and supported sources, see [What is mirroring in Fabric?](../mirroring/overview.md)
 
-:::image type="content" source="media\onelake-overview\use-same-copy-of-data.png" alt-text="Diagram showing how multiple items and engines use the same copy of data." lightbox="media\onelake-overview\use-same-copy-of-data.png":::
+### Collaborate in multiple analytical engines
 
-*Example diagram showing loading data using Spark, querying using T-SQL, and viewing the data in a Power BI report.*
+The Fabric analytical engines (T-SQL, Apache Spark, Analysis Services, and others) all store data in OneLake in the open Delta Parquet format. This standardization allows you to use the same data across multiple engines. You don't need to copy data just to use it with another engine or feel stuck with using a particular engine because that's where your data is.
+
+For example, a team of SQL engineers builds a fully transactional data warehouse. They use the T-SQL engine to create tables, transform data, and load the data to tables. If a data scientist wants to make use of this data, they can attach a Spark notebook to OneLake and read those tables directly. Because OneLake stores the tables in Delta format, Spark can load them without any special connectors or data exports. Both the SQL queries and the Spark jobs operate on the one copy of the data in OneLake.
+
+Additionally, business users can build Power BI reports on top of OneLake by using the Direct Lake mode in the Analysis Services engine. Direct Lake mode is a data access mode that loads and refreshes large volumes of data quickly without making a copy. For more information, see [Direct Lake overview](/power-bi/enterprise/directlake-overview).
+
+:::image type="content" source="media\onelake-overview\use-same-copy-of-data.png" alt-text="Example diagram showing loading data using Spark, querying using T-SQL, and viewing the data in a Power BI report." lightbox="media\onelake-overview\use-same-copy-of-data.png":::
+
+### Open table format interoperability
+
+OneLake supports both Delta Lake and Apache Iceberg table formats through **metadata virtualization**. This feature automatically generates virtual metadata so that Iceberg tables can be read as Delta Lake tables across Fabric workloads, and Delta Lake tables can be read by external Iceberg readers. You can write Iceberg tables directly to OneLake or create shortcuts to Iceberg tables stored externally, and OneLake makes them available to all Fabric engines without manual conversion. Similarly, any Delta Lake table in OneLake can be accessed by Iceberg-compatible services like Snowflake.
+
+For more information, see [Use Iceberg tables with OneLake](onelake-iceberg-tables.md).
+
+## Connect to OneLake
+
+You can access OneLake data from the Fabric portal, Windows, existing Azure tools, or any application that supports ADLS Gen2 APIs.
+
+### OneLake file explorer for Windows
+
+You can explore OneLake data from Windows by using the OneLake file explorer for Windows. You can navigate all your workspaces and data items, easily uploading, downloading, or modifying files just like you do in Office. The OneLake file explorer simplifies working with data lakes, so even nontechnical business users can use them.
+
+For more information, see [OneLake file explorer](onelake-file-explorer.md).
+
+### ADLS Gen2 APIs and SDKs
+
+OneLake supports Azure Data Lake Storage (ADLS) Gen2 APIs and SDKs, so you can use existing ADLS Gen2 applications. Every workspace appears as a container, and data items appear as folders within those containers. For more information, see [OneLake access and APIs](onelake-access-api.md).
+
+:::image type="content" source="media\onelake-overview\access-onelake-data-other-tools.png" alt-text="Diagram showing how you can access OneLake data with APIs and SDKs." lightbox="media\onelake-overview\access-onelake-data-other-tools.png":::
+
+Because OneLake is compatible with ADLS Gen2 applications, you can connect to OneLake from Azure services. For example:
+
+* [Azure Synapse Analytics](onelake-azure-synapse-analytics.md)
+* [Azure Storage Explorer](onelake-azure-storage-explorer.md)
+* [Azure Databricks](onelake-azure-databricks.md)
+* [Microsoft Foundry](onelake-foundry-knowledge.md)
+
+## Data protection and monitoring
+
+OneLake includes built-in capabilities to keep your data safe and give you visibility into how it's being used.
+
+### Disaster recovery and data protection
+
+OneLake automatically protects your data with built-in redundancy. In regions that support availability zones, OneLake uses zone-redundant storage (ZRS) to replicate data across multiple datacenters. In other regions, it uses locally redundant storage (LRS). For additional protection against region-wide outages, you can enable business continuity and disaster recovery (BCDR) on a capacity to geo-replicate your data to a paired Azure region. OneLake also supports soft delete, which retains deleted files for seven days so you can recover from accidental deletions.
+
+For more information, see [Disaster recovery and data protection for OneLake](onelake-disaster-recovery.md).
+
+### Diagnostics
+
+OneLake diagnostics provides visibility into how data is accessed and used across your Fabric environment. When you enable diagnostics at the workspace level, it streams data access events as logs into a lakehouse. You can track who accessed what data, when, and how. This logging covers user actions in the Fabric UI, programmatic access via APIs and analytics engines, and cross-workspace access through shortcuts.
+
+For more information, see [OneLake diagnostics](onelake-diagnostics-overview.md).
 
 ## Related content
 
-- [Creating a lakehouse with OneLake](create-lakehouse-onelake.md)
+* [Quickstart: Get data into OneLake](quickstart-get-data.md)
+* [OneLake patterns and foundational capabilities](architecture-patterns.md)
+* [Unify data with OneLake shortcuts and mirroring](unify-data.md)
+* [OneLake file explorer for Windows](onelake-file-explorer.md)

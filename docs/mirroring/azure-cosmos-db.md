@@ -1,19 +1,17 @@
 ---
-title: "Microsoft Fabric Mirrored Databases From Azure Cosmos DB (Preview)"
+title: "Microsoft Fabric Mirrored Databases From Azure Cosmos DB"
 description: Learn about the mirrored databases from Azure Cosmos DB in Microsoft Fabric.
-author: seesharprun
-ms.author: sidandrews
-ms.reviewer: jmaldonado
-ms.date: 05/07/2025
+ms.reviewer: mjbrown, jmaldonado
+ms.date: 10/06/2026
 ms.topic: overview
-ms.custom:
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
+ai-usage: ai-assisted
 ---
 
-# Mirroring Azure Cosmos DB (Preview)
+# Mirroring Azure Cosmos DB
 
-[Mirroring in Microsoft Fabric](../mirroring/overview.md) provides a seamless no-ETL experience to integrate your existing Azure Cosmos DB data with the rest of your data in Microsoft Fabric. 
+[Mirroring in Microsoft Fabric](../mirroring/overview.md) provides a seamless no-ETL experience to integrate your existing Azure Cosmos DB data with the rest of your data in Microsoft Fabric for true Hybrid Transactional/Analytical Processing (HTAP) with complete workload isolation between transactional and analytical systems.
 Your Azure Cosmos DB data is continuously replicated directly into Fabric OneLake in near real-time, without any performance impact on your transactional workloads or consuming Request Units (RUs). 
 
 Data in OneLake is stored in the open-source delta format and automatically made available to all analytical engines on Fabric. 
@@ -22,7 +20,7 @@ You can use built-in Power BI capabilities to access data in OneLake in DirectLa
 In addition to Power BI, you can use T-SQL to run complex aggregate queries or use Spark for data exploration. You can seamlessly access the data in notebooks and use data science to build machine learning models.
 
 > [!IMPORTANT]
-> Mirroring for Azure Cosmos DB is currently in [preview](../fundamentals/preview.md). Production workloads aren't supported during preview. Currently, only Azure Cosmos DB for NoSQL accounts are supported.
+> Currently, only Azure Cosmos DB for NoSQL accounts are supported. Mirroring isn't available in sovereign clouds (Azure Government and Azure China).
 
 ## Why use mirroring in Fabric?
 
@@ -48,7 +46,7 @@ Mirrored databases are an item in **Fabric Data Warehousing** distinct from the 
 Every Mirrored Azure Cosmos DB item creates these items you can interact with in your Fabric workspace:  
 
 - The mirrored database item. Mirroring manages the replication of data into [OneLake](../onelake/onelake-overview.md) and conversion to Parquet, in an analytics-ready format. This enables downstream scenarios like data engineering, data science, and more.
-- [SQL analytics endpoint](../data-warehouse/get-started-lakehouse-sql-analytics-endpoint.md), which is automatically generated
+- [SQL analytics endpoint](../data-engineering/lakehouse-sql-analytics-endpoint.md), which is automatically generated
 
 ### Mirrored database
 
@@ -64,11 +62,11 @@ You can perform the following actions in the SQL analytics endpoint:
 - Join and query data in other mirrored databases, Warehouses, and Lakehouses in the same workspace.
 - You can easily visualize and build BI reports based on SQL queries or views. 
 
-In addition to the [SQL query editor](../data-warehouse/sql-query-editor.md), there's a broad ecosystem of tooling. These tools include [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true), [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms), and even GitHub Copilot. You can supercharge analysis and insights generation from the tool of your choice.
+In addition to the [SQL query editor](../data-warehouse/sql-query-editor.md), there's a broad ecosystem of tooling. These tools include [the MSSQL extension for Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true), [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms), and even GitHub Copilot. You can supercharge analysis and insights generation from the tool of your choice.
 
 ### Semantic model
 
-You can create a Power BI Semantic Model on the database to allow business metrics to be created, shared, and reused. For more information, see [Create a Power BI semantic model](../data-warehouse/semantic-models.md#create-a-new-power-bi-semantic-model).
+You can create a Power BI Semantic Model on the database to allow business metrics to be created, shared, and reused. For more information, see [Create a Power BI semantic model](../data-warehouse/create-semantic-model.md).
 
 ## How does near real-time replication work?
 
@@ -91,7 +89,7 @@ There are a few considerations and supported scenarios you should consider befor
 To mirror a database, it should already be provisioned in Azure. You must enable continuous backup on the account as a prerequisite.
 
 - You can only mirror each database individually at a time. You can choose which database to mirror.
-- You can mirror the same database multiple times within the same workspace. As a best practice, a single copy of database can be reused across lakehouses, warehouses, or other mirrored databases. You shouldn't need to set up multiple mirrors to the same database.
+- You can mirror the same database multiple times within the same workspace. As a best practice, a single copy of database can be reused across lakehouses, warehouses, or other mirrored databases. You don't need to set up multiple mirrors to the same database.
 - You can also mirror the same database across different Fabric workspaces or tenants.
 - You can select which containers to mirror within your database.
 - Changes to Azure Cosmos DB containers, such as adding new containers and deleting existing ones, are replicated seamlessly to Fabric. You can start mirroring an empty database with no containers, for example, and mirroring seamlessly picks up the containers added at a later point in time.
@@ -100,10 +98,7 @@ To mirror a database, it should already be provisioned in Azure. You must enable
 
 Nested data is shown as a JSON string in SQL analytics endpoint tables. You can use `OPENJSON`, `CROSS APPLY`, and `OUTER APPLY` in T-SQL queries or views to expand this data selectively. If you're using Power Query, you can also apply the `ToJson` function to expand this data.
 
-Through auto schema inference, nested data can be flattened through `OPENJSON` without having to explicitely define the nested schema. This is especially useful for workloads with dynamic or unpredictable nested schemas. For more information, see [how to query nested data](../mirroring/azure-cosmos-db-how-to-query-nested.md).
-
-> [!NOTE]
-> Fabric has a limitation for string columns of 8 KB in size. For more information and our current workaround, see [data warehouse limitations](azure-cosmos-db-limitations.md#data-warehouse-limitations).
+Through auto schema inference, nested data can be flattened through `OPENJSON` without having to explicitly define the nested schema. This is especially useful for workloads with dynamic or unpredictable nested schemas. For more information, see [how to query nested data](../mirroring/azure-cosmos-db-how-to-query-nested.md).
 
 ### Handle schema changes
 
@@ -129,7 +124,7 @@ For more details, explore the documentation on [Vector Search and Indexing for C
 
 ## Security
 
-You can connect to a source acocunt using Microsoft Entra ID and role-based access control or account-level keys.
+You can connect to a source account using Microsoft Entra ID and role-based access control or account-level keys.
 
 If you use keys and rotate or regenerate the keys, you need to update the connections to ensure replication works. For more information, see [connections](../data-factory/connector-azure-cosmosdb-for-nosql.md). Account keys aren't directly visible to other Fabric users once the connection is set up. You can limit who has access to the connections created in Fabric. Writes aren't permitted to Azure Cosmos DB database either from the data explorer or analytics endpoint in your mirrored database. Mirroring doesn't currently support authentication using read-only account keys.
 
@@ -153,7 +148,13 @@ You can also mask sensitive data from non admin users using dynamic data masking
 
 ### Network security
 
-Currently, mirroring doesn't support private endpoints or customer managed keys (CMK) on OneLake. Mirroring isn't supported for Azure Cosmos DB accounts with network security configurations less permissive than **all networks**, using service endpoints, using private endpoints, using IP addresses, or using any other settings that could limit public network access to the account. Azure Cosmos DB accounts should be open to all networks to work with mirroring.
+> [!NOTE]
+>
+> Mirroring doesn't support customer managed keys (CMK) on OneLake.
+
+Fabric mirroring supports Azure Cosmos DB accounts with virtual networks or private endpoints. The documented setup for accounts with network restrictions uses a virtual network data gateway connection together with a trusted-workspace network ACL bypass. For accounts with private endpoints, this workflow keeps public network access disabled throughout setup and mirroring.
+
+The Azure Cosmos DB connector runs in the Fabric Replicator service, not on the gateway. Ongoing mirroring data travels over an internal Microsoft network and doesn't use public endpoints. This traffic doesn't traverse your virtual network data gateway or your private endpoint. Support for an account with a private endpoint doesn't mean that ongoing mirroring uses that endpoint. For detailed configuration instructions, including REST-based mirrored database creation, see [Configure mirroring for Azure Cosmos DB accounts with network restrictions](azure-cosmos-db-private-network.md).
 
 ## Disaster recovery and replication latency
 
@@ -193,9 +194,10 @@ If you're using the data explorer in Fabric mirroring, you accrue typical costs 
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Configure Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)](../mirroring/azure-cosmos-db-tutorial.md)
+> [Tutorial: Configure Microsoft Fabric mirrored databases from Azure Cosmos DB](../mirroring/azure-cosmos-db-tutorial.md)
 
 ## Related content
 
-- [Limitations in Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)](../mirroring/azure-cosmos-db-limitations.md)
+- [Limitations in Microsoft Fabric mirrored databases from Azure Cosmos DB](../mirroring/azure-cosmos-db-limitations.md)
 - [FAQ: Microsoft Fabric mirrored databases from Azure Cosmos DB](../mirroring/azure-cosmos-db-faq.yml)
+

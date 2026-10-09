@@ -1,10 +1,10 @@
 ---
 title: Use Fabric Home to Find, Personalize, and Manage Content
 description: Learn how to quickly find content, search, filter, multitask with tabs, personalize settings, and get help in Fabric—boost productivity and get started now.
-author: julcsc
-ms.author: juliacawthra
+author: SnehaGunda
+ms.author: sngun
 ms.topic: overview
-ms.date: 11/07/2025
+ms.date: 09/11/2026
 ai-usage: ai-assisted
 #customer intent: As a new Fabric user, I want to quickly find my content, understand navigation, personalize settings, and get help.
 ---
@@ -66,9 +66,9 @@ To explore:
 More about workloads: [Workloads in Fabric](../workload-development-kit/more-workloads-add.md).
 
 <a id="multitask-with-tabs-and-object-explorer"></a>
-## Multitask with tabbed navigation to access resources (preview)
+## Multitask with tabbed navigation to access resources
 
-The tabbed navigation allows you to work with multiple items and workspaces at the same time. It enhances navigation and reduces the need to switch context.
+The tabbed navigation allows you to work with multiple items, monitoring pages, and workspaces at the same time. It enhances navigation and reduces the need to switch context.
 
 ### Tabs for open items
 
@@ -91,9 +91,29 @@ You can open and work across multiple workspaces side by side. Items are color-c
 
 The object explorer provides a structured view of items across all your currently open workspaces. Use it to quickly locate and open resources without having to switch between pages. You can pin the object explorer for easy access. Use the filter option to view items of a specific type or search for an item by a keyword. The items are organized by the hierarchy they belong to.
 
-:::image type="content" source="media/fabric-home/tabs-object-explorer.png" alt-text="Screenshot showing the object explorer & multiple tabs to quickly locate and open resources.":::
+:::image type="content" source="media/fabric-home/tabs-object-explorer.png" alt-text="Screenshot of the object explorer and multiple tabs to quickly locate and open resources.":::
 
-### Keyboard shortcuts for Object Explorer and Horizontal Tabs
+### Customize horizontal tab display
+
+You can also configure how horizontal tabs are displayed. Right-click any tab and select **Open horizontal tab setting** menu and choose the display style that fits your needs.
+
+:::image type="content" source="media/fabric-home/horizontal-tab-settings.png" alt-text="Screenshot of the horizontal tab settings menu.":::
+
+You can choose from the following two tab display patterns:
+
+1. **Full tab names**
+   - Displays the complete name of each tab.
+   - Ideal when clarity and readability of item names are most important.
+   - Tabs expand to fit their full text for easy identification.
+
+1. **Adaptive truncated names**
+   - Automatically shortens tab names when horizontal space becomes limited.
+   - Keeps more tabs visible at the same time. It's useful for multitasking or complex development workflows.
+   - The layout intelligently adapts to your window size and the number of open tabs.
+
+After you make a selection, changes apply instantly, it's not required to refresh the browser or tabs. When the number of open tabs exceeds the limit that can be displayed on the screen, an overflow menu appears. This menu provides a complete list of currently open tabs, allowing you to quickly navigate to any item without losing track of your work.
+
+### Keyboard shortcuts for object explorer and horizontal tabs
 
 Use keyboard shortcuts in horizontal tabs and object explorer to switch between items, expand or collapse folders, and jump to specific tabs. This functionality is similar to an IDE environment.
 
@@ -115,18 +135,23 @@ Object explorer helps you browse workspaces, folders, and items. Use the followi
 
 **Use keyboard shortcuts in horizontal tabs**
 
-Horizontal tabs lets you switch between multiple open items. Use the following shortcuts to move efficiently across tabs:
+Horizontal tabs let you switch between multiple open items. Use the following shortcuts to move efficiently across tabs:
 
 | Action | Shortcut |
 |--------|----------|
-| Navigate to the Nth tab | * Windows: Alt + Number (1–9)<br>* MacOS: Control + Number (1–9) |
+| Navigate to the Nth tab | * Windows: Alt + Number (1–9)<br>* macOS: Control + Number (1–9) |
 
 ### More open items
 
-The previous limit of 10 open items has been increased. You can keep more resources active at once. This is especially useful for complex workflows that require multiple pipelines, notebooks, or reports.
+The previous limit of 10 open items has been increased to 20. You can now keep up to 20 resources active at once. This is especially useful for complex workflows that require multiple pipelines, notebooks, or reports.
+
+### Multitasking across browser tabs 
+
+Fabric now helps you multitask by carrying your current work into additional browser tabs. When you open Fabric in another tab using the same browser profile, your open items, tab order, pinned items, and tab groups are available there. 
+Any items inherited into the new browser tab count toward the 20 concurrent open item limit. If you use multiple browser tabs for separate tasks, we recommend closing items that you no longer need to avoid hitting this limit. Your multitasking context is retained in the same browser profile. It isn't carried over when you use a different browser, browser profile, or device. 
 
 > [!NOTE]
-> These multitasking features are rolling out in phases starting mid September 2025. Availability might vary across tenants as the rollout progresses.
+> Context carryover is currently applied automatically. Based on customer feedback we’ve received since launching this feature, we're working on rolling out a setting that will let you choose whether opening Fabric in another browser tab carries over your existing context or starts with a clean context. 
 
 ## Maximize editing space with focus mode
 
@@ -134,7 +159,7 @@ Focus mode helps developers create a distraction-free workspace by hiding the na
 
 To enable focus mode, open the item you want to edit and select **Focus Mode** from the global header. The navigation sidebar and object explorer are collapsed, maximizing the editor pane.
 
-:::image type="content" source="media/fabric-home/focus-mode.png" alt-text="Screenshot showing how to enable the focus mode." lightbox="media/fabric-home/focus-mode.png":::
+:::image type="content" source="media/fabric-home/focus-mode.png" alt-text="Screenshot of the option to enable focus mode in the Fabric global header." lightbox="media/fabric-home/focus-mode.png":::
 
 To exit, select **Exit Focus Mode**, the same toggle control turns it off.
 
@@ -173,13 +198,16 @@ Select the gear icon in the top bar to open settings. Links shown depend on your
 |---------|------------------|
 | Preferences | Set display language, personalize UI behavior, manage notifications, configure item settings (per item type), enable developer mode (where applicable). |
 | Resources and extensions | Manage personal and group storage, Power BI item settings, connections and gateways, embed codes, Azure Analysis Services migrations.|
-| Governance and insights | Access the Admin portal (if permitted) and Microsoft Purview hub (preview) for governance and compliance insights. |
+| Governance and insights | Open OneLake Catalog and select **Govern** for governance and administration. If OneLake Catalog and Govern aren't yet available in your region, use the **Admin portal**. |
+
+Learn more: [Govern in OneLake Catalog](../governance/onelake-catalog-govern.md) • [Fabric administration](../admin/admin-overview.md)
+You can also select region-specific English language variants, including English (United States), English (United Kingdom), and English (Canada), from the language settings. Each variant applies its associated date and time format throughout the Fabric experience, making it easier to display dates and times in the format commonly used in your region.
 
 Learn more: [Admin portal](../admin/admin-center.md) • [Microsoft Purview hub (preview)](../governance/use-microsoft-purview-hub.md)
 
 ## Manage your account, notifications, and feedback
 
-- Account manager (profile photo): View license info, trial status, organizational context
+- Account manager (profile photo): View Workspace type, trial status, organizational context
 - Notifications: Alerts, system messages, subscriptions
 - Feedback: Send product feedback to Microsoft
 - Settings: Open the settings pane

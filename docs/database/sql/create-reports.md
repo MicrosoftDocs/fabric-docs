@@ -1,8 +1,6 @@
 ---
 title: "Create Reports on Your SQL Database in Power BI"
 description: Learn how to create reports on your SQL database in Power BI.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: sukkaur, zoedouglas
 ms.date: 08/01/2025
 ms.topic: how-to

@@ -1,20 +1,15 @@
 ---
 title: Git source code format
 description: This article describes the format of items in Microsoft Fabric's Git integration tool and how they're structured in the folder.
-author: billmath
-ms.author: billmath
 ms.reviewer: NimrodShalit
-ms.service: fabric
-ms.subservice: cicd
 ms.topic: concept-article
-ms.date: 01/23/2025
-ms.custom: 
+ms.date: 12/15/2025
 #customer intent: As a developer, I want to understand how the items in Microsoft Fabric's Git integration tool are structured so that I can use it effectively.
 ---
 
 # Git integration source code format
 
-Items in Microsoft Fabric are stored in a folder. The folder containing the item can either be in the root directory or a subdirectory. When you connect your workspace to git, connect to the folder containing the items. Each item in the folder is represented in its own subdirectory.
+Items in Fabric are stored in a folder. The folder containing the item can either be in the root directory or a subdirectory. When you connect your workspace to git, connect to the folder containing the items. Each item in the folder is represented in its own subdirectory.
 
 ## Directory name
 
@@ -37,7 +32,7 @@ The following directories are created in the Git repository:
 
 :::image type="content" source="./media/source-code-format/item-directory-names-git.png" alt-text="Screenshot of names of the Git directories containing the Fabric items.":::
 
-- Once created, Git integration never changes the name of a directory. Even if you change the name of the item, the directory name stays the same.
+- Once created, the item name in Git and the workspace stay in sync. If you manually change the directory name in Git, the names will no longer sync automatically. See more about [changing item names](#platform-file).
 - If you manually change the name of an item directory, make sure to take the item's dependencies into account. For example, if you change a semantic model's directory then you should make sure to update the path of the semantic model in the report's dependency file. Keep in mind that dependency locations vary between different Fabric experiences. Changing the directory name *doesn't* cause an incoming change in the workspace.
 
 ## Directory content
@@ -48,13 +43,14 @@ Each item directory contains the [item definition files](#item-definition-files)
 
 Each item's directory has specific, required files that define that item.
 
-The following items are currently supported in Microsoft Fabric:
+The following items are currently supported in Fabric:
 
 - [Mirrored databases](#mirrored-databases)
 - [Notebook](#notebook-files)
 - [Paginated report](#paginated-report-files)
 - [Report](#report-files)
 - [Semantic model](#semantic-model-files)
+- [User data functions](#user-data-functions-files)
 
 #### Mirrored databases
 
@@ -92,6 +88,16 @@ Semantic model folders contain the following files:
 - \definition folder with TMDL files
 
 For more information about semantic model folders and a complete list of their contents, see [Power BI Desktop project semantic model folder](/power-bi/developer/projects/projects-dataset).
+
+#### User data functions files
+
+User data functions folders contain the following files:
+
+- **function-app.py** - Your Python function code. This is the main file you edit.
+- **definitions.json** - Item definitions such as connections and library references.
+- **resources/functions.json** - Metadata about connections, libraries, and functions within the item. Don't edit this file manually.
+
+For instructions on using Git integration with user data functions, see [User data functions source control and deployment](../../data-engineering/user-data-functions/git-and-deployment-pipelines.md).
 
 ### Automatically generated system files
 
@@ -132,7 +138,7 @@ The `.platform` file contains the following attributes:
 - `displayName`: (string) The name of the item.
 - `description`: (optional string) Description of the item.
 
- If you rename the artifact in the workspace and the artifact folder in Git has a '.' suffix, then after committing, the `displayName` and directory name in Git will match.
+ If you rename the item in the workspace and the item folder in Git has a '.' suffix, the `displayName` and directory name in Git match after committing.
 
 The logicalId connects an item in a workspace with its corresponding item in a Git branch. Items with the same logicalIds are assumed to be the same. The logicalId preserves the link even if the name or directory change. Since a branch can be synced to multiple workspaces, it’s possible to have items in different workspaces with the same logicalId, but a single workspace can’t have two items with the same logicalId. The logicalId is created when the workspace is connected to a Git branch or a new item is synced. The logicalId is necessary for Git integration to function properly. Therefore, it’s essential not to change it in any way.
 
@@ -207,4 +213,5 @@ The logicalId connects an item in a workspace with its corresponding item in a G
 
 ## Related content
 
-[Get started with Git integration.](./git-get-started.md)
+- [Get started with Git integration](./git-get-started.md)
+- [Understand dependency binding in cross-workspace deployment](../cross-workspace-dependency-binding.md)

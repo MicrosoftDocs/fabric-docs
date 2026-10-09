@@ -1,8 +1,6 @@
 ---
 title: Create Reports in Power BI
 description: Follow steps to create reports in the Power BI Desktop and Power BI service in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: salilkanadey
 ms.date: 07/15/2025
 ms.topic: how-to
@@ -45,5 +43,5 @@ The OneLake catalog integration in Power BI Desktop lets you connect to the Ware
 ## Related content
 
 - [Warehouse connectivity in Microsoft Fabric](connectivity.md)
-- [Create reports on data warehousing in Microsoft Fabric](create-reports.md)
+- [Create reports on Fabric Data Warehouse](create-reports.md)
 - [Tutorial: Get started creating in the Power BI service](/power-bi/fundamentals/service-get-started)

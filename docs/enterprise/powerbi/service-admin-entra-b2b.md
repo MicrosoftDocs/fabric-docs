@@ -1,10 +1,8 @@
-﻿---
+---
 title: Distribute Power BI Content to External Guest Users with Microsoft Entra B2B
 description: "Learn how to share Power BI content with external guest users through Microsoft Entra B2B collaboration. Configure invitations, manage licensing, and enable secure external sharing."
-author: JulCsc
-ms.author: juliacawthra
-manager: kfollis
-ms.reviewer: juliacawthra
+author: dknappettmsft
+ms.author: daknappe
 ms.service: powerbi
 ms.subservice: powerbi-admin
 ms.topic: how-to
@@ -30,7 +28,7 @@ Make sure you enable the [Invite external users to your organization](../../admi
 Most email addresses are supported for guest user invitations, including personal email accounts like gmail.com, outlook.com, and hotmail.com. Microsoft Entra B2B calls these addresses *social identities*.
 
 > [!NOTE]
-> In Microsoft Entra ID, external users can be set to UserType Member. In Power BI, support for UserType Member is currently in preview. Microsoft Purview Information Protection isn't supported for external members. Admins in the provider tenant shouldn't enable information protection for external members. In some situations, external members might see errors during their first sign-in attempt on the provider tenant. To unblock these external members, grant them permission to a Power BI item, such as a workspace, semantic model, or report, and then have them sign in again.
+> In Microsoft Entra ID, external users can be set to UserType Member. Microsoft Purview Information Protection isn't supported for external members. Admins in the provider tenant shouldn't enable information protection for external members.
 
 ## Invite guest users
 
@@ -233,3 +231,5 @@ To use in-place semantic model sharing, tenant admins need to enable the followi
 - For information about Microsoft Entra B2B, see [What is Microsoft Entra B2B collaboration?](/entra/external-id/what-is-b2b)
 - For information about in-place semantic model sharing, see [Power BI in-place semantic model sharing with guest users in external organizations (preview)](/power-bi/collaborate-share/service-dataset-external-org-share-about).
 - For information about government clouds, see [Power BI for US Government](service-government-us-overview.md).
+
+

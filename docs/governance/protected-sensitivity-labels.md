@@ -3,8 +3,7 @@ title: Protected sensitivity labels in Fabric and Power BI
 description: Learn about protected sensitivity labels in Fabric and Power BI and how they control what you can do with files.
 author: msmimart
 ms.author: mimart
-ms.topic: conceptual
-ms.custom:
+ms.topic: concept-article
 ms.date: 02/18/2024
 ---
 # Protected sensitivity labels in Fabric and Power BI
@@ -63,8 +62,9 @@ If no user has even these usage rights, nobody can change or remove the label fr
 
 To avoid this situation, the Fabric admin can enable the **Allow workspace admins to override automatically applied sensitivity labels** tenant setting. This makes it possible for workspace admins to override automatically applied sensitivity labels without regard to label change enforcement rules.
 
-To enable this setting, go to: **Admin portal > Tenant settings > Information protection**, and enable the toggle on the **Allow workspace admins to override automatically applied sensitivity labels** setting.
+To enable this setting, go to **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings** > **Information protection**, and enable the toggle on the **Allow workspace admins to override automatically applied sensitivity labels** setting.
 
 ## Related content
 
 - [Information protection](information-protection.md)
+- [Set or remove sensitivity labels using Power BI REST admin APIs](service-security-sensitivity-label-inheritance-set-remove-api.md)

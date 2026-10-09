@@ -1,13 +1,12 @@
 ---
 title: Set up your MongoDB Atlas SQL (Beta) connection
 description: This article provides information about how to create a MongoDB Atlas SQL connection in Microsoft Fabric.
-author: whhender
-ms.author: whhender
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 03/13/2026
 ms.custom:
   - template-how-to
   - connectors
+ai-usage: ai-assisted
 ---
 
 # Set up your MongoDB Atlas SQL (Beta) connection
@@ -15,24 +14,53 @@ ms.custom:
 This article outlines the steps to create a MongoDB Atlas SQL connection.
 
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
 
-The MongoDB Atlas SQL connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+## Summary
+
+The MongoDB Atlas SQL connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
 |Basic (Username/Password)| n/a | √ |
 
-## Set up your connection in Dataflow Gen2
+## Set up your connection for Dataflow Gen2
+You can connect dataflow Gen2 in Fabric to MongoDB Atlas SQL by using Power Query connectors. Follow these steps to create your connection:
 
-Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow Gen2 to a MongoDB Atlas SQL database. The following links provide the specific Power Query connector information you need to connect to a MongoDB Atlas SQL database in Dataflow Gen2:
+1. Check [capabilities](#capabilities) to make sure your scenario is supported.
+1. [Complete prerequisites for MongoDB Atlas SQL (Beta)](#prerequisites).
+1. [Get data in Fabric](#get-data).
+1. [Connect to MongoDB Atlas SQL](#connect-to-mongodb-atlas-sql).
 
-- To get started using the MongoDB Atlas SQL connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
-- Be sure to install or set up any [MongoDB Atlas SQL prerequisites](/power-query/connectors/mongodb-atlas-sql-interface#prerequisites) before connecting to the MongoDB Atlas SQL connector.
-- To connect to the MongoDB Atlas SQL connector from Power Query, go to [Connect to MongoDB Atlas federated database using Atlas SQL interface from Power Query Online](/power-query/connectors/mongodb-atlas-sql-interface#connect-to-mongodb-atlas-federated-database-using-atlas-sql-interface-from-power-query-online).
+## Prerequisites
 
-In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
+[!INCLUDE [mongodb-atlas-sql-interface-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/mongodb-atlas-sql-interface/prerequisites.md)]
+
+<a id="capabilities"></a>
+
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
+
+[!INCLUDE [mongodb-atlas-sql-interface-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/mongodb-atlas-sql-interface/capabilities-supported.md)]
+
+## Connection settings
+
+### Get data
+
+[!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
+
+<a id="connect-to-mongodb-atlas-sql"></a>
+
+### Connection instructions
+
+[!INCLUDE [mongodb-atlas-sql-interface-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/mongodb-atlas-sql-interface/connect-online.md)]
+
 
 ## Set up your connection in a pipeline
 
-Data Factory in Microsoft Fabric doesn't currently support a MongoDB Atlas SQL database in pipelines.
+Data Factory doesn't currently support a MongoDB Atlas SQL database in pipelines.
+
+## Related content
+
+- [For more information about this connector, see the MongoDB Atlas SQL (Beta) connector documentation.](/power-query/connectors/mongodb-atlas-sql-interface)

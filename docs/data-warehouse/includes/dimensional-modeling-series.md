@@ -1,6 +1,4 @@
 ---
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.date: 04/06/2025
 ms.topic: include
 ms.custom:

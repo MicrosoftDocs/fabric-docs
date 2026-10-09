@@ -1,13 +1,8 @@
 ---
 title: Create deployment rules for Fabric's ALM
 description: Learn how to create rules to simplify deploying content with Fabric's Application lifecycle management (ALM) tool.
-author: billmath
-ms.author: billmath
-ms.service: fabric
-ms.subservice: cicd
 ms.topic: concept-article
-ms.custom:
-ms.date: 10/27/2024
+ms.date: 09/01/2026
 ms.search.form: Deployment rules
 #customer intent: As a developer, I want to learn how to create deployment rules in Fabric's Application lifecycle management (ALM) tool so that I can simplify deploying content between stages in my deployment pipeline.
 ---
@@ -27,7 +22,6 @@ You can configure data source rules, parameter rules, and default lakehouse rule
 |---------|:-------:|:---------:|:--------:|------|
 |**Dataflow gen1**         |✅ |✅ |❌ |Use to determine the values of the data sources or parameters for a specific dataflow gen1. |
 |**Semantic model**          |✅ |✅ |❌ |Use to determine the values of the data sources or parameters for a specific semantic model.         |
-|**Datamart**         |✅ |✅ |❌ |Use to determine the values of the data sources or parameters for a specific datamart.         |
 |**Paginated report** |✅ |❌ |❌ |Defined for the data sources of each paginated report. Use to determine the data sources of the paginated report. |
 |**Mirrored database** |✅ |❌ |❌ |Defined for the data sources of each mirrored database. |
 |**Notebook** |❌ |❌ |✅ |Use to determine the default lakehouse for a specific notebook. |
@@ -45,9 +39,9 @@ To create a deployment rule, follow the steps in this section. After you create 
 
     :::image type="content" source="media/create-rules/deployment-settings-screenshot-new.png" alt-text="A screenshot of the deployment rules button, located in the deployment stage menu.":::
 
-1. A list of items you can set rules for appear in the window. Not all items in the pipeline are listed. Only items of a type that you can create rules for are listed (dataflows gen1, semantic model, datamarts, notebooks, and paginated reports). To find the item you want to set a rule for, use the search or filter functionalities.
+1. A list of items you can set rules for appear in the window. Not all items in the pipeline are listed. Only items of a type that you can create rules for are listed (dataflows gen1, semantic model, notebooks, and paginated reports). To find the item you want to set a rule for, use the search or filter functionalities.
 
-    :::image type="content" source="media/create-rules/deployment-rules-new.png" alt-text="A screenshot of the deployment rules pane in the new UI, showing that you can set rules for dataflows gen1, datasets, datamarts, and paginated reports.":::
+    :::image type="content" source="media/create-rules/deployment-rules-new.png" alt-text="A screenshot of the deployment rules pane in the new UI, showing that you can set rules for dataflows gen1, datasets, and paginated reports.":::
 
 1. Select the item you want to create a rule for. The types of rules you can create for that item are displayed. So, for example, if you're creating a rule for a dataflow gen1, you can create a data source rule or a parameter rule. If you're creating a rule for a notebook, you can create a default lakehouse rule.
 
@@ -81,9 +75,9 @@ To create a deployment rule, follow the steps in this section. After you create 
 
     :::image type="content" source="media/create-rules/deployment-settings-screenshot.png" alt-text="A screenshot of the deployment rules button, located in the deployment rules.":::
 
-1. A list of items you can set rules for appear in the window. Not all items in the pipeline are listed. Only items of a type that you can create rules for are listed (dataflows gen1, semantic model, datamarts, notebooks, and paginated reports). To find the item you want to set a rule for, use the search or filter functionalities.
+1. A list of items you can set rules for appear in the window. Not all items in the pipeline are listed. Only items of a type that you can create rules for are listed (dataflows gen1, semantic model, notebooks, and paginated reports). To find the item you want to set a rule for, use the search or filter functionalities.
 
-    :::image type="content" source="media/create-rules/deployment-rules.png" alt-text="A screenshot of the deployment rules pane, showing that you can set rules for dataflows gen1, datasets, datamarts, and paginated reports.":::
+    :::image type="content" source="media/create-rules/deployment-rules.png" alt-text="A screenshot of the deployment rules pane, showing that you can set rules for dataflows gen1, datasets, and paginated reports.":::
 
 1. Select the item you want to create a rule for. The types of rules you can create for that item are displayed. So, for example, if you're creating a rule for a dataflow gen1, you can create a data source rule or a parameter rule. If you're creating a rule for a notebook, you can create a default lakehouse rule.
 
@@ -124,11 +118,11 @@ Data source rules can be defined for the following data sources:
 * SQL server
 * Odata Feed
 * Oracle
-* SapHana (import mode only; not direct query mode)
+* SapHana (Import mode only; not DirectQuery mode)
 * SharePoint
 * Teradata
 
-For other data sources, we recommend [using parameters to configure your data source](../best-practices-cicd.md#use-parameters-for-configurations-that-will-change-between-stages).
+For other data sources, use [parameters](understand-the-deployment-process.md#autobinding-and-parameters) to configure your data source.
 
 ## Considerations and limitations
 
@@ -156,6 +150,8 @@ This section lists the limitations for the deployment rules.
   * Creating data source rules on a semantic model that uses Native query and DirectQuery together.
   * Parameter rules aren't supported for paginated reports.
   * Adding data source rules for semantic models and dataflows gen1 on data sources which are parametrized.
+
+* Power Query Online (PQO) data source rules aren't supported for paginated reports. Data source rules are only supported for paginated reports that use non-PQO connection types, such as direct connection strings. If your paginated report uses a PQO-based data source, you can't override it with a deployment rule.
 
 ## Related content
 

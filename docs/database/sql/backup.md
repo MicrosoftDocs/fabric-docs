@@ -1,8 +1,6 @@
 ---
 title: "Automatic backups in SQL database"
 description: Learn about automatic backups for SQL database in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: strrodic, dnethi
 ms.date: 09/25/2025
 ms.topic: concept-article

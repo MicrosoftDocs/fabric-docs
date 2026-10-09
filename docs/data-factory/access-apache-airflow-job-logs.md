@@ -1,9 +1,7 @@
 ---
 title: Access Apache Airflow Job Logs
 description: This article explains how to access Apache Airflow Job logs through Apache Airflow Job UI.
-ms.reviewer: xupxhou
-ms.author: abnarain
-author: abnarain
+ms.reviewer: xupxhou, abnarain
 ms.topic: how-to
 ms.date: 10/10/2024
 ms.custom: airflows
@@ -11,8 +9,7 @@ ms.custom: airflows
 
 # Access Apache Airflow Job Logs
 
-> [!NOTE]
-> Apache Airflow job is powered by [Apache Airflow](https://airflow.apache.org/).
+[!INCLUDE[apache-airflow-note](includes/apache-airflow-note.md)]
 
 This article shows you how to access Apache Airflow job logs through the Apache Airflow Job UI. 
 
@@ -20,9 +17,9 @@ This article shows you how to access Apache Airflow job logs through the Apache 
 
 To get started, you must complete the following prerequisites:
 
-- Create or use an existing workspace in Microsoft Fabric.
+- Create or use an existing workspace in Fabric.
 
-- [Create or use an existing Apache Airflow job in Microsoft Fabric.](../data-factory/create-apache-airflow-jobs.md)
+- [Create or use an existing Apache Airflow job in Fabric.](../data-factory/create-apache-airflow-jobs.md)
 
 ### Create and Run the Apache Airflow Job
 

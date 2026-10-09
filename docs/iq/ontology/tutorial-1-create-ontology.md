@@ -1,315 +1,230 @@
 ---
-title: "Tutorial: Create an ontology"
-description: Create an ontology (preview) item with data from a semantic model or OneLake.
-author: baanders
-ms.author: baanders
-ms.reviewer: baanders
-ms.date: 10/31/2025
+title: "Tutorial Part 1: Create an Ontology (Preview)"
+description: Create an ontology (preview) item with data from OneLake. Part 1 of the ontology (preview) tutorial.
+ms.date: 09/11/2026
 ms.topic: tutorial
-zone_pivot_group_filename: iq/ontology/zone-pivot-groups.json
-zone_pivot_groups: create-ontology-scenario
 ---
 
 # Ontology (preview) tutorial part 1: Create an ontology
 
-In this step of the tutorial, you generate a new ontology that represents the Lakeshore Retail scenario.
+In this step of the tutorial, you create a new ontology (preview) item that represents the Lakeshore Retail scenario. Then you add entity types, data bindings, and relationships to build out the ontology.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
-
-This tutorial contains two options for setting up the ontology (preview) item: automatically **generate it from a semantic model**, or manually **build it from OneLake data**. 
-
-Choose your preferred scenario by using the selector at the beginning of the article.
-
-::: zone pivot="semantic-model"
-## About generating an ontology from a semantic model
-
-A [semantic model](../../data-warehouse/semantic-models.md) in Fabric is a logical description of an analytical domain (like a business). They can be created from lakehouse tables, and hold information about your data and the relationships among that data.
-
-When your data is represented by a semantic model, you can generate an ontology directly from that semantic model. 
-
-Ontology generation automatically performs the following actions:
-* Creates a new **ontology (preview) item** in your Fabric workspace, with a name of your choosing
-* Creates an **entity type** in the ontology for each table in your semantic model
-* Creates **static properties** on each entity type based on the columns in your tables, and **binds data** to them based on data rows
-* Creates **relationship types** between entity types that follow relationships defined in the semantic model
-
-After generating an ontology, complete these actions manually:
-* Bind **time series data** to entity types (properties for time series data aren't created automatically)
-* Review **entity type keys** and add them if missing (especially for multi-key scenarios)
-* Bind **relationship types** to data
-* Review the entire ontology to make sure entity types, their properties and data bindings, and relationships are complete
-
-In this tutorial step, you generate an ontology from the sample semantic model that you set up in the [previous step](tutorial-0-introduction.md?pivots=semantic-model#prepare-the-power-bi-semantic-model).
-
-### Support for semantic model modes
-
-This section describes support in ontology (preview) for different semantic model modes. For more information about semantic models and their modes, see [Power BI semantic models in Microsoft Fabric](../../data-warehouse/semantic-models.md).
-
-| Ontology (preview) | Import mode | Direct Lake mode | DirectQuery mode |
-| --- | --- | --- | --- |
-| Generating entity type definitions | Supported | Supported | Supported |
-| Generating property definitions | Supported | Supported | Supported |
-| Generating relationship definitions | Supported | Supported | Supported |
-| Generating entity type bindings to data sources | Not supported | Supported | Not Supported |
-| Generating relationship type bindings to data sources | Not supported | Supported only if primary key is identified (the primary key is used as the entity type key for the ontology) | Not Supported |
-| Querying data using bindings to data sources | Not supported | Supported (without measures and calculated columns) | Not Supported |
-
-## Generate ontology
-
-1. Go to the *RetailSalesModel* semantic model in Fabric. From the top ribbon, select **Generate Ontology**.
-
-    :::image type="content" source="media/tutorial-1-create-ontology/semantic-model/generate-ontology.png" alt-text="Screenshot of Generate ontology button in the ribbon." lightbox="media/tutorial-1-create-ontology/semantic-model/generate-ontology-crop.png":::
-
-1. Select your **Workspace** and enter *RetailSalesOntology* for the **Name**. Select **Create**.
-
-    :::image type="content" source="media/tutorial-1-create-ontology/semantic-model/generate-ontology-2.png" alt-text="Screenshot of Generate ontology details.":::
-
-    >[!TIP]
-    >Ontology names can include numbers, letters, and underscores (no spaces or dashes).
-
-The ontology (preview) item opens when it's ready.
-
-:::image type="content" source="media/tutorial-1-create-ontology/semantic-model/ontology-start.png" alt-text="Screenshot of new ontology.":::
-
-Next, review the entity types, data bindings, and relationships that were generated from your semantic model. In the following sections, you make a few edits to complete the ontology configuration, and verify that generated items are correct.
-
-## Verify entity types
-
-Entity types represent types of objects in a business. The **Entity Types** pane lists all four entity types in the ontology, named after the data tables:
-* *dimdate*
-* *factsales*
-* *dimstore*
-* *dimproduct*
-
->[!TIP] 
->If you don't see any entities in the ontology, make sure your semantic model is published, the tables in the semantic model are visible (not hidden), and relationships are defined. To revisit the setup steps for the semantic model, see [Prepare the Power BI Semantic Model ](tutorial-0-introduction.md#prepare-the-power-bi-semantic-model).
-
-### Rename entity types
-
-Follow these steps to rename each entity type to a friendlier name.
-1. Select the entity type.
-1. In the **Entity type configuration** pane, select the edit icon next to the **Entity type name**.
-
-    :::image type="content" source="media/tutorial-1-create-ontology/semantic-model/rename-entity-types.png" alt-text="Screenshot of renaming an entity type.":::
-
-    Enter the new name from the following table.
-
-    | Old name | New name |
-    | --- | --- |
-    | *dimdate* | *CalendarDate* |
-    | *factsales* | *SaleEvent* |
-    | *dimstore* | *Store* |
-    | *dimproduct* | *Product* |
-
-When you're done renaming all the entity types, they look like this (they might be listed in a different order).
-
-:::image type="content" source="media/tutorial-1-create-ontology/semantic-model/all-entity-types.png" alt-text="Screenshot of the renamed entity types.":::
-
-## Verify properties
-
-To view the properties of an entity type, select it from the **Entity types** pane. This action opens the **Entity type configuration** pane, where the entity type's properties are listed on the **Properties** tab.
-
-Verify that each entity type has the properties described in the following table.
-
-| Entity type | Key | Properties |
-| --- | --- | --- |
-| *CalendarDate* | `Date` | `Date`, `Day`, `Month`, `Quarter`, `Year` |
-| *SaleEvent* |  | `Date`, `ProductId`, `RevenueUSD`, `StoreId`, `Units` |
-| *Store* | `StoreId` | `City`, `Region`, `Latitude`, `Longitude`, `StoreId`, `StoreName` |
-| *Product* | `ProductId` |  `Brand`, `Category`, `ProductId`, `ProductName`, `Subcategory` |
-
-Here's an example of what entity type properties look like.
-
-:::image type="content" source="media/tutorial-1-create-ontology/semantic-model/verify-properties.png" alt-text="Screenshot of the Product entity type and its properties." lightbox="media/tutorial-1-create-ontology/semantic-model/verify-properties.png":::
-
-### Add SaleEvent key
-
-The *SaleEvent* entity type doesn't have a key that was imported from the source data, so you need to add it manually.
-
-1. Open the *SaleEvent* entity type.
-1. In the **Entity type configuration** pane, select **Add entity type key**.
-
-    :::image type="content" source="media/tutorial-1-create-ontology/semantic-model/add-key.png" alt-text="Screenshot of adding entity type key.":::
-
-1. Add the multiple selections of `StoreId`, `ProductId`, and `Date`. **Select the properties in the order listed, as order is significant when there are multiple keys.**
-1. When the key is saved, it looks like this:
-
-    :::image type="content" source="media/tutorial-1-create-ontology/semantic-model/sale-event-key.png" alt-text="Screenshot of the sale event key.":::
-
-## Verify bindings
-
-To view data bindings for an entity type, look in the **Entity type configuration** pane and switch to the **Bindings** tab. Data bindings connect an entity type to a data source so that instances of it can be created and populated with data.
-
-Verify that each entity type is successfully bound to the data sources described in the following table.
-
-| Entity type | Source table |
-| --- | --- |
-| *CalendarDate* | *dimdate* |
-| *SaleEvent* | *factsales* |
-| *Store* | *dimstore* |
-| *Product* | *dimproduct* |
-
-Here's an example of what the bindings look like.
-
-:::image type="content" source="media/tutorial-1-create-ontology/semantic-model/verify-bindings.png" alt-text="Screenshot of the Sale Event entity type and its data bindings.":::
-
-## Verify and configure relationship types
-
-Finally, verify the relationship types between entity types. Relationship types represent how entity types are related to each other in a business context. The relationship types that were imported from the semantic model are defined, but not fully configured and bound to data. 
-
-Select the *SaleEvent* entity type to display it and its relationship types on the canvas. 
-
-:::image type="content" source="media/tutorial-1-create-ontology/semantic-model/sale-event-relationships.png" alt-text="Screenshot of the sale event entity type and its relationships." lightbox="media/tutorial-1-create-ontology/semantic-model/sale-event-relationships.png":::
-
-Select each of the three relationship types and update its details to match the following table. First, rename the relationship type to the provided friendlier name. Next, set the correct order of source and target entity types. Finally, bind the relationship type to the source data table.
-
->[!NOTE]
->To prevent unexpected behavior from a known issue, make sure the correct source and target entity types are set before choosing the source data table to bind.
-
-The final relationship details match the following table.
-
-| Old name | New name | Source entity type | Target entity type | Source data table |
-| --- | --- | --- | --- | --- |
-| *factsales_has_dimproduct* | *soldIn* | *Product*<br>- Source column `ProductId` (matching entity type key property) | *SaleEvent*<br>- Source columns `StoreId`, `ProductId`, and `Date` (matching entity type key properties) | Tutorial workspace > *OntologyDataLH* > *factsales* |
-| *factsales_has_dimstore* | *has* | *Store*<br>- Source column `StoreId` (matching entity type key property) | *SaleEvent*<br>- Source columns `StoreId`, `ProductId`, and `Date` (matching entity type key properties) | Tutorial workspace > *OntologyDataLH* > *factsales* |
-| *factsales_has_dimdate* | *occursOn* | *CalendarDate*<br>- Source column `Date` (matching entity type key property) | *SaleEvent*<br>- Source columns `StoreId`, `ProductId`, and `Date` (matching entity type key properties) | Tutorial workspace > *OntologyDataLH* > *factsales* |
-
-Here's an example of what an updated relationship type looks like.
-
-:::image type="content" source="media/tutorial-1-create-ontology/semantic-model/verify-relationship-types.png" alt-text="Screenshot of a relationship on SaleEvent." lightbox="media/tutorial-1-create-ontology/semantic-model/verify-relationship-types.png":::
-
-::: zone-end
-
-::: zone pivot="onelake"
-## About building an ontology from OneLake
-
-When your data is stored in OneLake, you can build an ontology from the OneLake data tables.
-
-That manual process involves these steps:
-* Create an **ontology item**
-* Create **entity types**
-* Create **data bindings** for the entity types
-    * Select **entity type keys**
-* Create **relationship types** between entity types, and bind them to source data
-
-In this tutorial step, you build an ontology from the sample OneLake data that you set up in the [previous step](tutorial-0-introduction.md).
 
 ## Create ontology (preview) item
 
 1. In your Fabric workspace, select **+ New item**. Search for and select the **Ontology (preview)** item.
 
-   :::image type="content" source="media/tutorial-1-create-ontology/onelake/new-ontology.png" alt-text="Screenshot of the ontology (preview) item." lightbox="media/tutorial-1-create-ontology/onelake/new-ontology.png":::
+    :::image type="content" source="media/tutorial-1-create-ontology/new-ontology.png" alt-text="Screenshot of the ontology (preview) item." lightbox="media/tutorial-1-create-ontology/new-ontology.png":::
 
-1. Enter *RetailSalesOntology* for the **Name** of your ontology and select **Create**.
-
-    >[!TIP]
-    >Ontology names can include numbers, letters, and underscores (no spaces or dashes).
+1. In the **New Ontology** dialog, enter a **Name** of *LakeshoreOntology*. Set the **Location** to your workspace. Select **Create**.
 
 The ontology opens when it's ready.
 
-:::image type="content" source="media/tutorial-1-create-ontology/onelake/ontology-blank.png" alt-text="Screenshot of empty ontology.":::
+:::image type="content" source="media/tutorial-1-create-ontology/ontology-blank.png" alt-text="Screenshot of empty ontology in Fabric item." lightbox="media/tutorial-1-create-ontology/ontology-blank.png":::
 
-Next, create entity types, data bindings, and relationships based on data from your lakehouse tables. 
+>[!NOTE]
+> If you see an error that Fabric is unable to create the ontology (preview) item, ensure that all the required settings are enabled for your tenant, as described in the [Tutorial prerequisites](tutorial-0-introduction.md?pivots=onelake#prerequisites).
+
+Next, create entity types, data bindings, and relationships based on data from your lakehouse tables.
 
 ## Create entity types and data bindings
 
-First create entity types, which represent types of objects in a business. This scenario contains four entity types: *Store*, *Product*, *CalendarDate*, and *SaleEvent*. After you create the entity types, you create their properties by binding source data columns in the *OntologyDataLH* lakehouse tables.
+First, create entity types. Entity types represent types of objects in a business. After you create the entity types, create their properties by binding source data columns from the *LakeshoreStaticDataLH* lakehouse tables.
 
-### Add first entity type (Store)
+### Add base entity type (Location)
 
-1. From the top ribbon or the center of the canvas, select **Add entity type**.
+1. From the top ribbon, select **+ Add entity type**.
 
-    :::image type="content" source="media/tutorial-1-create-ontology/onelake/add-entity-type.png" alt-text="Screenshot of adding entity type.":::
+    :::image type="content" source="media/tutorial-1-create-ontology/add-entity-type.png" alt-text="Screenshot of adding entity type from the top ribbon." lightbox="media/tutorial-1-create-ontology/add-entity-type.png":::
 
-1. Enter *Store* for the name of your entity type and select **Add Entity Type**.
-1. The *Store* entity type is added to the canvas, and the **Entity type configuration** pane is visible.
+1. Enter *Location* for the entity type name and select **Add Entity Type**.
+1. The Location entity type appears on the configuration canvas.
 
-    :::image type="content" source="media/tutorial-1-create-ontology/onelake/entity-type-configuration.png" alt-text="Screenshot of the Entity type configuration pane.":::
+    :::image type="content" source="media/tutorial-1-create-ontology/location-entity-type.png" alt-text="Screenshot of the new Location entity type." lightbox="media/tutorial-1-create-ontology/location-entity-type.png":::
 
-1. To create entities from existing source data, switch to the **Bindings** tab. Select **Add data to entity type**.
+#### Bind Location data
 
-    :::image type="content" source="media/tutorial-1-create-ontology/onelake/binding-1.png" alt-text="Screenshot of the Bindings tab.":::
+1. On the configuration canvas or the Explorer, select **...** next to the entity name and select **Bind data**.
 
-1. Next, choose your data source. 
-    1. Select the *OntologyDataLH* lakehouse and select **Connect**. 
-    1. Select the *dimstore* table and select **Next**.
+    :::image type="content" source="media/tutorial-1-create-ontology/location-bind-data.png" alt-text="Screenshot of selecting Bind data for Location." lightbox="media/tutorial-1-create-ontology/location-bind-data.png":::
 
-    :::image type="content" source="media/tutorial-1-create-ontology/onelake/binding-2.png" alt-text="Screenshot of the data source selection.":::
+1. Select **Add** to add a data source.
 
-1. Configure a static data binding for the following properties.
-    1. For **Binding type**, leave the default selection of **Static**.
-    1. Under **Bind your properties**, the columns from the *dimstore* table populate automatically. The **Source column** side lists their names in the source data, and the **Property name** side lists their corresponding property names on the *Store* entity type within ontology. Leave the default property names, which match the source column names.
-    1. Select **Save**.
+1. Find the data source in the OneLake catalog. Expand *LakeshoreStaticDataLH* > *dbo* and select the *dimlocations* table. Confirm with **Select table**.
+1. The data source loads.
 
-    :::image type="content" source="media/tutorial-1-create-ontology/onelake/binding-3.png" alt-text="Screenshot of saving the data binding." lightbox="media/tutorial-1-create-ontology/onelake/binding-3.png":::
+    :::image type="content" source="media/tutorial-1-create-ontology/location-bind-data-source.png" alt-text="Screenshot of the data source after it is loaded." lightbox="media/tutorial-1-create-ontology/location-bind-data-source.png":::
 
-1. Back in the **Entity type configuration** pane, the data binding is visible. Next, select **Add entity type key**.
+1. Select **Entity type properties** to see properties of the entity type. The columns from the *dimlocations* table automatically populate as proposed properties.
 
-    :::image type="content" source="media/tutorial-1-create-ontology/onelake/entity-type-key-1.png" alt-text="Screenshot of adding entity type key.":::
+    :::image type="content" source="media/tutorial-1-create-ontology/location-bind-data-properties.png" alt-text="Screenshot of properties automatically populated on the entity type." lightbox="media/tutorial-1-create-ontology/location-bind-data-properties.png":::
 
-1. Select **StoreId** as the key property and select **Save**.
+1. Without making any changes to the properties, select **Create** to save the data binding. You see a banner confirming that **Entity type updated successfully**.
 
-    :::image type="content" source="media/tutorial-1-create-ontology/onelake/entity-type-key-2.png" alt-text="Screenshot of selecting the entity type key.":::
+1. Select **Cancel** to close the property binding dialog.
 
-Now the *Store* entity type is ready. Continue to the next section to create the remaining three entity types.
+1. You see the **Configure** page of the entity type details. This page surfaces information about the entity type, including its properties and data bindings. View your configured data bindings.
 
-### Add other entity types (Product, CalendarDate, SaleEvent)
+    :::image type="content" source="media/tutorial-1-create-ontology/location-bind-data-done.png" alt-text="Screenshot of the data bindings in the Configure page." lightbox="media/tutorial-1-create-ontology/location-bind-data-done.png":::
 
-Follow the same steps that you used for the *Store* entity type to create the entity types described in the following table. Each entity has a static data binding with the default columns from its source table.
+Now the Location entity type is complete.
 
-| Entity type name | Source table in *OntologyDataLH* | Entity type key |
-| --- | --- | --- |
-| *Product* | *dimproduct* | `ProductId` |
-| *CalendarDate* | *dimdate* | `Date` |
-| *SaleEvent* | *factsales* | Multiple selections of `StoreId`, `ProductId`, and `Date`<br>**Select the properties in the order listed, as order is significant when there are multiple keys.** |
+### Add inherited entity type (Store)
 
-When you're done, you see four entity types listed in the **Entity Types** pane. 
+Next, add an inherited entity type. The Store entity inherits from Location, which automatically gives it all of Location's properties.
 
-:::image type="content" source="media/tutorial-1-create-ontology/onelake/all-entity-types.png" alt-text="Screenshot of the scenario entity types.":::
+1. Select **Home** to return to the configuration canvas where you can add new entity types.
+
+    :::image type="content" source="media/tutorial-1-create-ontology/home.png" alt-text="Screenshot of returning home to the configuration canvas." lightbox="media/tutorial-1-create-ontology/home.png":::
+
+1. From the top ribbon, select **+ Add entity type**.
+1. Enter *Store* for the **Entity type name**. Expand **Additional configuration** and set **Choose entity to inherit from** to *Location*. Select **Add Entity Type**.
+
+    :::image type="content" source="media/tutorial-1-create-ontology/add-store.png" alt-text="Screenshot of adding the Store entity type that inherits from Location." lightbox="media/tutorial-1-create-ontology/add-store.png":::
+
+1. The Store entity type appears on the configuration canvas.
+1. Select the Store entity type and select **View Entity Type details**.
+
+    :::image type="content" source="media/tutorial-1-create-ontology/store-entity-type-details.png" alt-text="Screenshot of opening entity type details for the Store entity type." lightbox="media/tutorial-1-create-ontology/store-entity-type-details.png":::
+
+1. In the **Configure** tab, confirm that the Store entity type already has properties. These properties are inherited from the Location parent, but you still need to bind them to a source.
+
+    :::image type="content" source="media/tutorial-1-create-ontology/store-properties-unbound.png" alt-text="Screenshot of the Store entity type's inherited properties." lightbox="media/tutorial-1-create-ontology/store-properties-unbound.png":::
+
+#### Bind Store data
+
+1. Select **Manage property bindings** > **Add binding and properties**.
+
+    :::image type="content" source="media/tutorial-1-create-ontology/store-add-binding.png" alt-text="Screenshot of adding binding and properties to the Store entity type." lightbox="media/tutorial-1-create-ontology/store-add-binding.png":::
+
+    The property binding page opens.
+
+1. **Add** the *LakeshoreStaticDataLH* > *dbo* > *dimlocations* table as a data source.
+1. Select **Entity type properties**, verify that properties have a populated source column, and select **Create**.
+
+    :::image type="content" source="media/tutorial-1-create-ontology/store-add-binding-source-column.png" alt-text="Screenshot of source columns in the data binding." lightbox="media/tutorial-1-create-ontology/store-add-binding-source-column.png":::
+
+1. Select **Cancel** to return to the **Configure** page for the entity type.
+
+Now the Store entity type is complete. Continue to the next section to create the rest of the entity types in the sample scenario.
+
+### Add other entity types
+
+Use the same steps that you used for the Location and Store entity types to create the entity types described in the following table. Add all of their source columns as properties.
+
+| Entity type name | Inherits from | Data source table | Notes |
+| --- | --- | --- | --- |
+| Distribution Center | Location | *LakeshoreStaticDataLH* > *dimlocations* | |
+| Product | | *LakeshoreStaticDataLH* > *dimproducts* |  |
+| Frozen Product | Product | *LakeshoreStaticDataLH* > *dimproducts* | |
+| Perishable Product | Product | *LakeshoreStaticDataLH* > *dimproducts* | |
+| Inventory | | *LakeshoreStaticDataLH* > *fact_inventory_positions* | |
+| Supplier | | *LakeshoreStaticDataLH* > *dimsuppliers* | |
+| Shipment | | *LakeshoreStaticDataLH* > *factshipments* | |
+| Refrigeration Unit | | *LakeshoreStaticDataLH* > *dim_refrigeration_units* | |
+| Refrigeration Telemetry | | *LakeshoreTelemetryDataEH* > *RefrigerationTelemetry* | This entity type uses the eventhouse table, not a lakehouse table, as its data source. |
+
+When you finish, you see all the entity types listed in the **Explorer** in the configuration canvas.
+
+:::image type="content" source="media/tutorial-1-create-ontology/all-entity-types.png" alt-text="Screenshot of the scenario entity types." lightbox="media/tutorial-1-create-ontology/all-entity-types.png":::
+
+### Add Sale with the ontology agent
+
+Finally, add one more entity type: Sale. Unlike the other entity types, Sale's source data is in a semantic model and has associated DAX measures. To bind this Sale data without having to recreate it manually, use the ontology agent.
+
+1. Select **Ontology agent** from the top ribbon. The ontology agent opens in **Plan** mode.
+
+    :::image type="content" source="media/tutorial-1-create-ontology/ontology-agent.png" alt-text="Screenshot of opening the ontology agent in Plan mode." lightbox="media/tutorial-1-create-ontology/ontology-agent.png":::
+
+1. Send the following query: *Create a new entity type called Sale, bound to data in the Sales table from the SalesReport semantic model inside this workspace.*
+1. The ontology agent reasons and creates a plan for adding the new entity type.
+
+    :::image type="content" source="media/tutorial-1-create-ontology/ontology-agent-plan.png" alt-text="Screenshot of the ontology agent's plan for adding the entity type." lightbox="media/tutorial-1-create-ontology/ontology-agent-plan.png":::
+
+1. Toggle to **Act** mode and send *Apply the entity type plan*.
+1. The ontology agent adds the Sale entity type to the canvas.
+
+    :::image type="content" source="media/tutorial-1-create-ontology/ontology-agent-sale.png" alt-text="Screenshot of the ontology agent's success message and the Sale entity type added to the canvas." lightbox="media/tutorial-1-create-ontology/ontology-agent-sale.png":::
+
+1. With the new Sale entity type highlighted, select **View Entity Type details**.
+1. Verify that **Properties** are populated and bound to the semantic model data source.
+
+    :::image type="content" source="media/tutorial-1-create-ontology/sale-details.png" alt-text="Screenshot of the Sale entity properties." lightbox="media/tutorial-1-create-ontology/sale-details.png":::
+
+1. Scroll down to view the **Metrics** section and verify that two metrics are added. Ontology metrics are based on DAX measures from the semantic model source.
+
+    :::image type="content" source="media/tutorial-1-create-ontology/sale-metrics.png" alt-text="Screenshot of the Sale entity metrics with two entries." lightbox="media/tutorial-1-create-ontology/sale-metrics.png":::
+
+Now you have all entity types for the scenario created and bound to source data.
 
 ## Create relationship types
 
 Next, create relationship types between the entity types to represent contextual connections in your data.
 
-### Add first relationship type (Store has SaleEvent)
+### Store operates Refrigeration Unit
 
-1. Select **Add relationship** from the top ribbon.
+1. Select the Store entity type from the **Explorer**.
 
-    :::image type="content" source="media/tutorial-1-create-ontology/onelake/relationship-type-1.png" alt-text="Screenshot of adding a relationship type.":::
+1. Select **Add relationship** from the menu ribbon or the Explorer, or **Add relationship type** from the entity on the configuration canvas.
 
-1. Enter the following relationship type details and select **Add relationship type**.
-    1. **Relationship type name**: *has*
-    1. **Source entity type**: *Store*
-    1. **Target entity type**: *SaleEvent*
+    :::image type="content" source="media/tutorial-1-create-ontology/store-add-relationship.png" alt-text="Screenshot of adding a relationship type." lightbox="media/tutorial-1-create-ontology/store-add-relationship.png":::
 
-    :::image type="content" source="media/tutorial-1-create-ontology/onelake/relationship-type-2.png" alt-text="Screenshot of entering relationship type details.":::
+1. Enter the following relationship type details and select **Create**.
+    1. **Relationship type name**: *operates*
+    1. **Origin entity type**: *Store*
+    1. **Target entity type**: *Refrigeration Unit*
 
-1. The **Relationship configuration** pane opens, where you can configure additional information. Enter the following details (some fields become visible based on other selections) and select **Create**.
-    1. **Source data**: Select your tutorial workspace, the *OntologyDataLH* lakehouse, and the *factsales* table.
-    1. **Source entity type > Source column**: Select `StoreId`.
-    1. **Target entity type > Source column**: Select `StoreId`, `ProductId`, and `Date` for the corresponding entity type key properties.
+    :::image type="content" source="media/tutorial-1-create-ontology/add-new-relationship.png" alt-text="Screenshot of entering relationship type details." lightbox="media/tutorial-1-create-ontology/add-new-relationship.png":::
 
-    :::image type="content" source="media/tutorial-1-create-ontology/onelake/relationship-type-3.png" alt-text="Screenshot of the relationship type configuration." lightbox="media/tutorial-1-create-ontology/onelake/relationship-type-3.png":::
+1. The relationship appears on the semantic canvas. Select it to open the relationship details configuration.
+1. Observe the sections of the configuration page:
 
-Now the first relationship is created, and bound to data in your source table. Continue to the next section to create the remaining two relationship types.
+    * **Origin entity type**: Lists details of the origin entity type (Store)
+    * **Relationship**: Sets details of the relationship type (*operates*)
+    * **Target entity type**: Lists details of the target entity type (Refrigeration Unit)
 
-### Add other relationship types (Product soldIn SaleEvent, CalendarDate occursOn SaleEvent)
+    :::image type="content" source="media/tutorial-1-create-ontology/relationship-configuration.png" alt-text="Screenshot of the relationship type configuration." lightbox="media/tutorial-1-create-ontology/relationship-configuration.png":::
 
-Follow the same steps that you used for the first relationship type to create the relationship types described in the following table. All relationships use the *factsales* table, and their source columns match the **Entity type key property** fields.
+1. In the **Origin entity type** section, expand **Property** and select `LocationId`.
 
-| Relationship type name | Source entity type | Target entity type |
+    In the **Target entity type** section, expand **Property** and select `StoreId`. These fields indicate that the `LocationId` on a Store can be matched to the `StoreId` on a Refrigeration Unit to relate them to each other.
+
+    :::image type="content" source="media/tutorial-1-create-ontology/relationship-configuration-done.png" alt-text="Screenshot of the details filled out in the relationship type configuration." lightbox="media/tutorial-1-create-ontology/relationship-configuration-done.png":::
+
+1. **Save** the relationship type. You see a banner confirming that the ontology **Successfully updated the relationship type**. Select **Cancel** to close the configuration options.
+
+1. You see the **Configure** page for the Store entity type, where the new relationship is visible in the **Relationships** section.
+
+    :::image type="content" source="media/tutorial-1-create-ontology/relationship-done.png" alt-text="Screenshot of the relationship type in the Configure page." lightbox="media/tutorial-1-create-ontology/relationship-done.png":::
+
+Now the first relationship is complete. Continue to the next section to create the rest of the relationship types in the sample scenario.
+
+### Add other relationship types
+
+Select **Home** to return to the configuration canvas where you can add new relationship types.
+
+Follow the same steps that you used for the first relationship type to create the relationship types described in the following table.
+
+| Relationship type name | Origin entity type (Property) | Target entity type (Property) |
 | --- | --- | --- |
-| *soldIn* | *Product* | *SaleEvent* |
-| *occursOn* | *CalendarDate* | *SaleEvent* |
+| *operates* | Store (`LocationId`) | Refrigeration Unit (`StoreId`) |
+| *deliversTo* | Shipment (`ToStoreId`) | Store (`LocationId`) |
+| *occursAt* | Sale (`StoreId`) | Store (`LocationId`) |
+| *stockedAt* | Inventory (`StoreId`) | Store (`LocationId`) |
+| *originatesAt* | Shipment (`FromLocationId`) | Distribution Center (`LocationId`) |
+| *forProduct* | Sale (`ProductId`) | Product (`ProductId`) |
+| *stockedAt* | Product (`ProductId`) | Inventory (`ProductId`) |
+| *suppliedBy* | Product (`SupplierId`) | Supplier (`SupplierId`) |
+| *contains* | Shipment (`ProductId`) | Product (`ProductId`) |
+| *hasTelemetryReading* | Refrigeration Unit (`UnitId`) | Refrigeration Telemetry (`UnitId`) |
 
-When you're done, you have three relationships targeting the *SaleEvent* entity type. To see the relationships, select the **SaleEvent** entity type from the **Entity Types** pane. You see three relationships to it on the canvas.
+When you're done, the relationship types are visible on the configuration canvas.
 
-:::image type="content" source="media/tutorial-1-create-ontology/onelake/all-relationship-types.png" alt-text="Screenshot of the scenario relationship types." lightbox="media/tutorial-1-create-ontology/onelake/all-relationship-types-crop.png":::
-
-::: zone-end
+:::image type="content" source="media/tutorial-1-create-ontology/all-relationship-types.png" alt-text="Screenshot of the scenario relationship types." lightbox="media/tutorial-1-create-ontology/all-relationship-types.png":::
 
 ## Next steps
 
-In this step, you created an ontology (preview) item and populated it with entity types, their properties, and relationship types between them. Next, enrich the entities further by adding a *Freezer* entity that's bound to time series data.
+In this step, you created an ontology (preview) item and populated it with entity types, their properties, and relationship types between them. Next, enrich the entity types with more detail.
 
-Next, continue to [Enrich the ontology with time series data](tutorial-2-enrich-ontology.md).
+Next, continue to [Enrich the ontology with additional data](tutorial-2-enrich-ontology.md).

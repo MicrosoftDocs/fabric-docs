@@ -1,20 +1,16 @@
 ---
 title: Get Started with Variable Libraries
 description: Learn how to manage Microsoft Fabric variable libraries to customize and share item configurations in a workspace.
-author: billmath
-ms.author: billmath
 ms.reviewer: NimrodShalit
-ms.service: fabric
-ms.subservice: cicd
 ms.topic: quickstart
-ms.date: 03/20/2025
+ms.date: 12/15/2025
 ms.search.form: Create and use variable library
 #customer intent: As a developer, I want to learn how to use a Microsoft Fabric variable library to customize and share item configurations in a workspace, so that I can manage my content lifecycle.
 ---
 
 # Create and manage variable libraries
 
-Microsoft Fabric variable libraries enable developers to customize and share item configurations within a workspace, with a goal of streamlining content lifecycle management. This article explains how to create, manage, and consume variable libraries.
+Fabric variable libraries enable developers to customize and share item configurations within a workspace, with the goal of streamlining content lifecycle management. This article explains how to create, manage, and consume variable libraries.
 
 For a more detailed walkthrough of the process, see the [tutorial for using variable libraries](./tutorial-variable-library.md).
 
@@ -23,12 +19,9 @@ For a more detailed walkthrough of the process, see the [tutorial for using vari
 To create variable library items in Fabric, you need:
 
 * A Fabric tenant account with an active subscription. [Create an account for free](../../get-started/fabric-trial.md).
-* A [workspace](../../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity).
-* The following [tenant switches](../../admin/about-tenant-settings.md) enabled from the Admin portal:
+* A [workspace](../../get-started/create-workspaces.md) with a Fabric-enabled [capacity](../../enterprise/licenses.md#capacity).
+* The following [tenant switches](../../admin/about-tenant-settings.md) enabled in **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**:
   * [Users can create Fabric items](../../admin/fabric-switch.md)
-  * **Users can work with variable libraries**
-
-    :::image type="content" source="./media/get-started-variable-libraries/variable-library-switch.png" alt-text="Screenshot of a tenant switch for working with variable libraries.":::
 
   The tenant admin, capacity admin, or workspace admin can enable these switches, depending on your [organization's settings](../../admin/delegate-settings.md).
 
@@ -47,6 +40,20 @@ To mitigate these risks, follow these key practices:
 
 For more information, see [Variable library permissions](./variable-library-permissions.md).
 
+## Naming conventions
+
+### Variable library name
+
+The name of a variable library item itself must follow these conventions:
+
+- Isn't empty
+- Doesn't have leading or trailing spaces
+- Starts with a letter
+- Can include letters, numbers, underscores, hyphens, and spaces
+- Doesn't exceed 256 characters in length
+
+The variable library name is *not* case sensitive.
+
 ## Create a variable library item
 
 You can create a variable library item from the Fabric home page or from inside your workspace:
@@ -59,7 +66,7 @@ You can create a variable library item from the Fabric home page or from inside 
 
    :::image type="content" source="./media/get-started-variable-libraries/create-from-home.png" alt-text="Screenshot of the Fabric interface that shows the location of variable libraries in the data factory section." lightbox="./media/get-started-variable-libraries/create-from-home.png":::
 
-1. Name the new variable library and then select **Create**. Make sure that the name conforms to the required [naming conventions](./variable-types.md#variable-library-name).
+1. Name the new variable library and then select **Create**. Make sure that the name conforms to the required [naming conventions](#naming-conventions).
 
 ### [Workspace](#tab/workspace)
 
@@ -68,7 +75,7 @@ You can create a variable library item from the Fabric home page or from inside 
 
    :::image type="content" source="./media/get-started-variable-libraries/create-from-workspace.png" alt-text="Screenshot of the Fabric interface for creating a variable library item from an existing workspace." lightbox="./media/get-started-variable-libraries/create-from-workspace.png":::
 
-1. Name the new variable library and then select **Create**. Make sure that the name conforms to the required [naming conventions](./variable-types.md#variable-library-name).
+1. Name the new variable library and then select **Create**. Make sure that the name conforms to the required [naming conventions](#naming-conventions).
 
 ---
 
@@ -87,8 +94,8 @@ You can manage the variables in the variable library from the top menu bar.
 To add a new variable to the library:
 
 1. Select **+ New variable**.
-1. Enter a name. Make sure that it follows the [naming conventions](./variable-types.md#variable-name).
-1. In the dropdown list, select a type. [See a list of supported variable types](./variable-types.md#variable-types).
+1. Enter a name. Make sure that it follows the [naming conventions](variable-types.md#naming-conventions).
+1. In the dropdown list, select a type. [See a list of supported variable types](variable-types.md#supported-types-in-variable-libraries).
 1. Enter a default value.
 1. Add a note that explains what the variable is for or how to use it (optional).
 1. Select **Save**.
@@ -108,7 +115,7 @@ To add another value set that you can use in a different stage:
 
 1. Select **Add value set**.
 
-1. Name the value set. Make sure that it follows the [naming conventions](./variable-types.md#variable-types). Give it a description (optional) of up to 2,048 characters.
+1. Name the value set. Make sure that it follows the [naming conventions](value-sets.md#naming-conventions-for-value-sets). Give it a description (optional) of up to 2,048 characters.
 
 1. If you want to use this value to be the currently active value set in this workspace, select **Set as active**.
 

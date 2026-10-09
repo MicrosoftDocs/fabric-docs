@@ -1,10 +1,8 @@
 ---
 title: Supported sources for Fabric Real-Time hub  
 description: Learn about the supported sources, including Azure Event Hubs and Azure IoT Hub, for creating data streams in Fabric Real-Time hub.
-author: ahartoon
-ms.author: anboisve
+ms.reviewer: anboisve
 ms.topic: how-to
-ms.custom:
 ms.date: 07/16/2025
 ai-usage: ai-assisted
 ---
@@ -36,3 +34,4 @@ Real-Time hub also allows you to set alerts based on events and specify actions 
 - [Set alerts on data streams](set-alerts-data-streams.md): Learn how to configure alerts for real-time data streams.  
 - [Set alerts on Azure Blob Storage events](set-alerts-azure-blob-storage-events.md): Discover how to monitor and respond to Azure Blob Storage events.  
 - [Set alerts on Fabric workspace item events](set-alerts-fabric-workspace-item-events.md): Explore ways to track changes in Fabric workspace items.
+

@@ -1,12 +1,11 @@
 ---
 title: Data Virtualization in SQL Database
 description: Learn more about data virtualization in SQL database in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: hudequei
 ms.date: 10/22/2025
-ms.topic: conceptual
+ms.topic: how-to
 ms.update-cycle: 180-days
+ms.search.form: Ingesting data into SQL database
 ---
 # Data virtualization (preview)
 
@@ -27,7 +26,6 @@ Fabric SQL Database supports the following data virtualization capabilities:
 - [CREATE EXTERNAL FILE FORMAT](/sql/t-sql/statements/create-external-file-format-transact-sql?view=fabric-sqldb&preserve-view=true)
 - [CREATE EXTERNAL TABLE](/sql/t-sql/statements/create-external-table-transact-sql?view=fabric-sqldb&preserve-view=true)
 - [OPENROWSET (BULK)](/sql/t-sql/functions/openrowset-bulk-transact-sql?view=fabric-sqldb&preserve-view=true)
-- [SELECT INTO .. FROM OPENROWSET](/sql/t-sql/functions/openrowset-transact-sql?view=fabric-sqldb&preserve-view=true)
 - Metadata functions: [filename()](/sql/t-sql/functions/openrowset-bulk-transact-sql?view=fabric-sqldb&preserve-view=true#filename-function), [filepath()](/sql/t-sql/functions/openrowset-bulk-transact-sql?view=fabric-sqldb&preserve-view=true#filepath-function), [sp_describe_first_result_set()](/sql/relational-databases/system-stored-procedures/sp-describe-first-result-set-transact-sql?view=fabric-sqldb&preserve-view=true)
 
 ## Authentication
@@ -69,11 +67,11 @@ To create a Fabric Lakehouse data source, you need to provide workspace ID, tena
 
 ## Examples
 
-The following sample scripts use a Fabric Lakehouse named `Cold_Lake` that hosts Contoso store and customer data in parquet and csv files. 
+The following sample scripts use a Fabric Lakehouse named `Cold_Lake` that hosts Contoso store and customer data in Parquet and CSV files. 
 
 :::image type="content" source="media/data-virtualization/onelake-contoso.png" alt-text="Screenshot of the sample Lakehouse named Cold _ Lake." lightbox="media/data-virtualization/onelake-contoso.png":::
 
-### A. Query a parquet file with OPENROWSET
+### A. Query a Parquet file with OPENROWSET
 
 The following example demonstrates the use of `OPENROWSET` to retrieve sample data from a Parquet file. 
 
@@ -180,9 +178,9 @@ FROM OPENROWSET(
 ) AS customer_dataset; 
 ``` 
 
-### D. Create external table for parquet
+### D. Create external table for Parquet
 
-The following sample demonstrates how to set up an external file format, then create an external table specifically for parquet data. 
+The following sample demonstrates how to set up an external file format, then create an external table specifically for Parquet data. 
 
 ```sql
 CREATE EXTERNAL FILE FORMAT Parquetff WITH (FORMAT_TYPE=PARQUET); 
@@ -283,7 +281,7 @@ The `sp_describe_first_result_set` function uses a sample of the data to estimat
 ```sql
 EXEC sp_describe_first_result_set N'  
    SELECT * FROM OPENROWSET(  
-      BULK ''[abfss://<workspace ID>@<tenant>.dfs.fabric.microsoft.com/<lakehouse ID>/Files/Contoso/store.parquet](mailto:abfss://%3cworkspaceid%3e@%3ctenant%3e.dfs.fabric.microsoft.com/%3clakehouseid%3e/Files/Contoso/store.parquet)'',  
+      BULK ''abfss://<workspace ID>@<tenant>.dfs.fabric.microsoft.com/<lakehouse ID>/Files/Contoso/store.parquet'',  
       FORMAT = ''parquet''  
    ) AS DATA'; 
 ```
@@ -294,20 +292,20 @@ For more information, see [sp_describe_first_result_set()](/sql/relational-datab
 
 Fabric SQL database also makes available `filename()` and `filepath()` functions for folder and file exploration, and dynamic query creation, which can also be used for virtual columns in combination with OPENROWSET to data files across multiple subfolders. 
 
-The following example lists all the parquet files and its location.
+The following example lists all the Parquet files and their locations.
 
 ```sql
 SELECT 
   r.filename() as file_name
 , r.filepath() as full_path 
 FROM OPENROWSET
-   (BULK '[abfss://<workspace ID>@<tenant>.dfs.fabric.microsoft.com/<lakehouse ID>/Files/*/*.parquet](mailto:abfss://%3cworkspaceid%3e@%3ctenant%3e.dfs.fabric.microsoft.com/%3clakehouseid%3e/Files/*/*.parquet)',  
+   (BULK 'abfss://<workspace ID>@<tenant>.dfs.fabric.microsoft.com/<lakehouse ID>/Files/*/*.parquet',  
     FORMAT = 'parquet'  
    ) AS r 
 GROUP BY r.filename(), r.filepath() 
 ORDER BY file_name;  
 ```
- 
+
 For more information, see [filename()](/sql/t-sql/functions/openrowset-bulk-transact-sql?view=fabric-sqldb&preserve-view=true#filename-function) and [filepath()](/sql/t-sql/functions/openrowset-bulk-transact-sql?view=fabric-sqldb&preserve-view=true#filepath-function).
 
 ## Related content

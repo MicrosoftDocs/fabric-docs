@@ -1,0 +1,26 @@
+### YamlMime:TOC
+items:
+- name: Getting started with operations agents
+  href: ../operations-agent.md
+- name: Operations agent actions
+  href: ../operations-agent-actions.md
+- name: Operations agent performance dashboard
+  href: ../operations-agent-performance-dashboard.md
+- name: Operations agents billing
+  href: ../operations-agent-billing.md
+- name: Operations agents limitations
+  href: ../operations-agent-limitations.md
+- name: Operations agent transparency note
+  href: ../operations-agent-transparency-note.md
+- name: Workspace outbound access protection for operations agent
+  href: ../../security/workspace-outbound-access-protection-operations-agent.md
+- name: Fabric observability investigation
+  items:
+  - name: Overview
+    href: ../operations-agent/fabric-observability-investigation-overview.md
+  - name: Run an investigation
+    href: ../operations-agent/fabric-observability-investigation-run.md
+  - name: Responsible use FAQ
+    href: ../operations-agent/fabric-observability-investigation-responsible-use.md
+  - name: Data, privacy, and governance FAQ
+    href: ../operations-agent/fabric-observability-investigation-governance-faq.md

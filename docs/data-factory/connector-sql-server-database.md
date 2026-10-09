@@ -1,13 +1,12 @@
 ---
 title: Set up your SQL Server database connection
 description: This article provides information about how to create a SQL Server database connection in Microsoft Fabric.
-author: whhender
-ms.author: whhender
 ms.topic: how-to
-ms.date: 04/18/2025
+ms.date: 03/13/2026
 ms.custom:
   - template-how-to
   - connectors
+ai-usage: ai-assisted
 ---
 
 # Set up your SQL Server database connection
@@ -15,9 +14,11 @@ ms.custom:
 This article outlines the steps to create a SQL Server database connection.
 
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
 
-The SQL Server database connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+## Summary
+
+The SQL Server database connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
@@ -27,12 +28,44 @@ The SQL Server database connector supports the following authentication types fo
 |Windows| √ (When use on-premises data gateway) | √ |
 |Workspace identity | n/a | √ |
 
-## Set up your connection in Dataflow Gen2
+## Set up your connection for Dataflow Gen2
+You can connect a dataflow Gen2 in Fabric to a SQL Server database using Power Query connectors. Follow these steps to create your connection:
 
-Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow Gen2 to a SQL Server database. The following links provide the specific Power Query connector information you need to connect to a SQL Server database in Dataflow Gen2:
+1. Check [capabilities](#capabilities), [limitations, and considerations](#limitations-and-considerations) to make sure your scenario is supported.
+1. [Get data in Fabric](#get-data).
+1. [Connect to SQL Server database](#connect-to-sql-server-database).
 
-- To get started using the SQL Server database connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
-- Be sure to install or set up any [SQL Server database prerequisites](/power-query/connectors/sql-server#prerequisites) before connecting to the SQL Server database connector.
-- To connect to the SQL Server database connector from Power Query, go to [Connect to SQL Servers database from Power Query Online](/power-query/connectors/sql-server#connect-to-sql-server-database-from-power-query-online).
 
-In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
+<a id="capabilities"></a>
+
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
+
+[!INCLUDE [sql-server-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/sql-server/capabilities-supported.md)]
+
+<a id="connect-to-sql-server-database"></a>
+
+<a id="connect-from-power-query-online"></a>
+
+## Connection settings
+
+### Get data
+
+[!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
+
+### Connection instructions
+
+[!INCLUDE [sql-server-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/sql-server/connect-online.md)]
+
+## Limitations and considerations
+
+[!INCLUDE [sql-server-limitations](~/../powerquery-repo/powerquery-docs/connectors/includes/sql-server/limitations.md)]
+
+## Troubleshooting
+
+[!INCLUDE [sql-server-troubleshooting](~/../powerquery-repo/powerquery-docs/connectors/includes/sql-server/troubleshoot.md)]
+
+## Related content
+
+- [For more information about this connector, see the SQL Server database connector documentation.](/power-query/connectors/sql-server)

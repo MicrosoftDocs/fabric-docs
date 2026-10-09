@@ -1,105 +1,125 @@
 ---
-title: "Tutorial: Preview the ontology"
-description: Preview the ontology by observing its entity instances and relationship graphs.
-author: baanders
-ms.author: baanders
-ms.reviewer: baanders
-ms.date: 10/18/2025
+title: "Tutorial Part 3: Explore the Ontology (Preview)"
+description: Explore the ontology in canvas views, entity instance view, and graph view. Part 3 of the ontology (preview) tutorial.
+ms.date: 09/18/2026
 ms.topic: tutorial
 ---
 
-# Ontology (preview) tutorial part 3: Preview the ontology
+# Ontology (preview) tutorial part 3: Explore the ontology
 
-In this tutorial step, explore your ontology with the preview experience. Inspect entity instances that instantiate your entity types with data, and explore graph-shaped context across sales and device streaming data.
+In this tutorial step, explore your ontology in different ways. View the ontology in multiple canvas views, explore its entity instances, and explore the ontology's integrated graph.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
-## Preview entity instances 
+[!INCLUDE [Explore ontology (preview) canvas views](includes/explore-canvas-views.md)]
 
-When you bound data to your entity types in previous tutorial steps, ontology automatically created instances of those entities that are tied to the source data rows. In this section, you use the preview experience to view those entity instances.
+## Explore entity instances
 
-1. Select the *SaleEvent* entity type, and select **Entity type overview** from the top ribbon.
+When you bound data to your entity types in [part 1 of the tutorial](tutorial-1-create-ontology.md), ontology automatically created instances of those entity types that map to the source data rows. View the entity instances with these steps:
 
-    :::image type="content" source="media/tutorial-3-preview-ontology/open-preview.png" alt-text="Screenshot of opening the preview experience.":::
+1. Start in the Home configuration canvas of ontology. Select an entity type, and **View Entity Type details** from the top ribbon.
 
-    It may take a few minutes for the ontology overview to load the first time.
+    :::image type="content" source="media/tutorial-3-preview-ontology/view-entity-type-details.png" alt-text="Screenshot of opening the entity type details for Inventory." lightbox="media/tutorial-3-preview-ontology/view-entity-type-details.png":::
 
-1. Look for the **Entity instances** section. Verify that it shows entity instances, with unit counts and revenue populated from the *factsales* lakehouse table.
+1. Open the **Instances** tab. You see a list of entity instances with data populated from the original lakehouse table data source. For example, the Inventory entity type instances have columns like `ProductId`, `OnHandQuantity`, and `ShelfAvailableUnits`.
 
-    :::image type="content" source="media/tutorial-3-preview-ontology/entity-instances.png" alt-text="Screenshot of the entity instances." lightbox="media/tutorial-3-preview-ontology/entity-instances.png":::
+    :::image type="content" source="media/tutorial-3-preview-ontology/instances.png" alt-text="Screenshot of the Inventory instances." lightbox="media/tutorial-3-preview-ontology/instances.png":::
 
     >[!TIP]
     >If data bindings don't load, confirm that the source data tables exist with matching column names, and that your Fabric identity has data access.
 
-1. Open the *Freezer* entity type in the preview experience, by selecting it in the **Entity Types** pane and selecting **Entity type overview** from the top ribbon.
+## Explore ontology graph
 
-1. Update the time range from the default of *Last 30 minutes* to a custom date range that begins on *Fri Aug 01 2025 at 12:00 AM*, ends on *Mon Aug 04 2025 at 12:00 AM*, and has a **Time granularity** of *1 minute*.
+Ontology comes with an optional built-in instance of [graph in Microsoft Fabric](../../graph/overview.md). This feature isn't required for your ontology to work, but you can set it up to add another option for viewing and exploring your ontology details.
 
-    :::image type="content" source="media/tutorial-3-preview-ontology/freezer-telemetry-edit-time.png" alt-text="Screenshot of the time selector." lightbox="media/tutorial-3-preview-ontology/freezer-telemetry-edit-time-crop.png":::
+This section shows how to create an optional materialized graph from your existing ontology by selecting eligible entities and relationships and materializing the projection. Then, utilize the materialized graph to explore and discover connected data insights.
 
-1. Observe the time series data that's visible from different *Freezer* entity instances.
+### Prepare the graph
 
-    :::image type="content" source="media/tutorial-3-preview-ontology/freezer-telemetry.png" alt-text="Screenshot of the time series tiles." lightbox="media/tutorial-3-preview-ontology/freezer-telemetry.png":::
+1. Prepare data for graph visualization by defining an *entity type key* for each entity type. An entity type key shows which field uniquely identifies a row of sample data.
 
-## Preview ontology graph
+    >[!NOTE]
+    > Entity types must have entity type keys defined to be eligible for graph projection.
 
-The preview experience also contains a **Relationship graph**, which you use to visualize your ontology in a graph of nodes and edges.
+    1. Select an entity type in the canvas and select **View Entity Type details**.
+    1. Select **Define entity type key**.
 
-1. Start with the *SaleEvent* entity type selected in the preview experience. In the **Relationship graph** tile, select **Expand**.
+        :::image type="content" source="media/tutorial-3-preview-ontology/entity-type-key.png" alt-text="Screenshot of selecting an entity type key." lightbox="media/tutorial-3-preview-ontology/entity-type-key.png":::
 
-    :::image type="content" source="media/tutorial-3-preview-ontology/relationship-graph.png" alt-text="Screenshot of expanding the relationship graph.":::
+    1. Select the right key from the following table. Select **Save**.
 
-1. In the graph, observe the details of the three relationships to the *SaleEvent* entity type from *CalendarDate*, *Store*, and *Freezer*.
+        | Entity type | Entity type key |
+        | --- | --- |
+        | Location | `LocationId` |
+        | Store | `LocationId` |
+        | Distribution Center | `LocationId` |
+        | Product | `ProductId` |
+        | Frozen Product | `ProductId` |
+        | Perishable Product | `ProductId` |
+        | Sale | *skip* |
+        | Inventory | `StoreId`, `ProductId` (multi-select) |
+        | Refrigeration Unit | `UnitId` |
+        | Shipment | `ShipmentId` |
+        | Supplier | `SupplierId` |
+        | Refrigeration Telemetry | *skip* |
 
-    :::image type="content" source="media/tutorial-3-preview-ontology/relationship-graph-expanded.png" alt-text="Screenshot of data in the expanded relationship graph." lightbox="media/tutorial-3-preview-ontology/relationship-graph-expanded.png":::
+    1. Repeat for each entity type until all entity types have keys.
 
-1. Use the tabs across the top of the preview experience to switch to the *Store* entity type, and **Expand** its relationship graph.
-1. In the graph, observe the relationship between *Store* and *SaleEvent*, and the relationship between *Store* and *Freezer*. Then, select **Run query** in the query builder ribbon to run the default query and see a graph of entity instances and their connections.
+1. Set up the graph instance. From the home canvas ribbon, select **Manage graph**.
 
-    :::image type="content" source="media/tutorial-3-preview-ontology/relationship-default-query.png" alt-text="Screenshot of the Store relationship graph and instances." lightbox="media/tutorial-3-preview-ontology/relationship-default-query.png":::
+    :::image type="content" source="media/tutorial-3-preview-ontology/manage-graph.png" alt-text="Screenshot of opening the manage graph option from the ribbon." lightbox="media/tutorial-3-preview-ontology/manage-graph.png":::
 
->[!TIP]
->If the graph looks sparse, check the entity type keys in the data bindings and verify that they match the keys defined in [Create entity types and data bindings](tutorial-1-create-ontology.md#create-entity-types-and-data-bindings). For example, the key for the *SaleEvent* entity type is `StoreId`, `ProductId`, and `Date`.
+1. The **Configure Graph** page loads with the default selection of **Use the entire Ontology**. You can see all entity types in the **Entities** section, and the **Preview** section shows what the graph looks like. Each entity type is projected as a graph node, and each relationship type is projected as a graph edge.
 
-## Query graph instances
+    :::image type="content" source="media/tutorial-3-preview-ontology/configure-graph.png" alt-text="Screenshot of configuring the graph by projecting the entire ontology." lightbox="media/tutorial-3-preview-ontology/configure-graph.png":::
 
-In the relationship graph view, you can query your ontology for entity instances that meet certain criteria. Use the **Query builder** filters in the top ribbon to craft queries.
+1. Notice that *Sale* and *Refrigeration_Telemetry* entity types can't be added to the graph. The graph in ontology doesn't currently support semantic model and eventhouse data sources.
 
-:::image type="content" source="media/tutorial-3-preview-ontology/query-builder.png" alt-text="Screenshot of selecting the query builder.":::
+    Verify that all entity types are selected except *Sale* and *Refrigeration_Telemetry*. Select **Continue**.
 
-First, craft this query: *Show all freezers that are operated in the Paris store.*
-1. In the *Store* entity's relationship graph, select **Add filter > Store > StoreId** from the query builder ribbon. Set the filter for `StoreId = S-PAR-01`. This value is the store ID for the Paris store.
+    >[!NOTE]
+    > Currently, only delta tables from lakehouses or mirrored databases are supported data sources for the graph view.
 
-    :::image type="content" source="media/tutorial-3-preview-ontology/add-filter-store.png" alt-text="Screenshot of filtering by Store ID." lightbox="media/tutorial-3-preview-ontology/add-filter-store.png":::
+1. On the **Projection Summary** page, you see 10 entities. Select **Materialize**. Creating the graph model might take several minutes.
 
-1. In the **Components** pane, ensure the only checked fields are **Nodes > Store**, **Nodes > Freezer**, and **Edges > operates**.
+    :::image type="content" source="media/tutorial-3-preview-ontology/materialize-graph.png" alt-text="Screenshot of selecting to materialize the graph." lightbox="media/tutorial-3-preview-ontology/materialize-graph.png":::
 
-    :::image type="content" source="media/tutorial-3-preview-ontology/components.png" alt-text="Screenshot of filtering the components." lightbox="media/tutorial-3-preview-ontology/components.png":::
+1. When the graph finishes provisioning, return to the home canvas view. <!--What opens automatically when the graph is done provisioning?-->
 
-1. Select **Run query** and verify that the instance graph shows two freezers connected to the *Paris* store.
+### Explore the graph
 
-    :::image type="content" source="media/tutorial-3-preview-ontology/store-freezers.png" alt-text="Screenshot of the freezers that are connected to the filtered store." lightbox="media/tutorial-3-preview-ontology/store-freezers.png":::
+1. From the top ribbon, select **Explore graph**. This button is visible now that the graph is materialized.
 
-1. Select **Clear query** to reset the query builder.
+    :::image type="content" source="media/tutorial-3-preview-ontology/explore-graph.png" alt-text="Screenshot of opening the explore graph option from the ribbon." lightbox="media/tutorial-3-preview-ontology/explore-graph.png":::
 
-Next, craft this query: *Show all stores that have made a sale with a revenue greater than 150.*
-1. Select **Add a node** and add a node for *SaleEvent*.
+1. The graph queryset view opens. On the right side of the queryset, select the puzzle piece icon to expand the **Components** pane. The Components pane shows the list of nodes and edges that are available in your graph.
 
-    :::image type="content" source="media/tutorial-3-preview-ontology/add-node.png" alt-text="Screenshot of adding nodes to a new query.":::
+    :::image type="content" source="media/tutorial-3-preview-ontology/graph-components.png" alt-text="Screenshot of the Components pane." lightbox="media/tutorial-3-preview-ontology/graph-components.png":::
 
-1. In the **Components** pane, check the boxes next to **Nodes > Store** and **Edges > storeSale** to add them to the graph.
-1. From the query builder ribbon, select **Add filter > SaleEvent > RevenueUSD**. Set the filter for `RevenueUSD > 150`.
+1. Under **Nodes**, select **Store**, **Product**, and **Shipment**. Under **Edges**, select **Shipment_Store** and **Shipment_Product**. The nodes and relationships are added to the canvas.
 
-    :::image type="content" source="media/tutorial-3-preview-ontology/add-filter-sale.png" alt-text="Screenshot of filtering by sale revenue.":::
+    :::image type="content" source="media/tutorial-3-preview-ontology/graph-components-selected.png" alt-text="Screenshot of entities and relationships selected in the Components pane." lightbox="media/tutorial-3-preview-ontology/graph-components-selected.png":::
 
-1. Select **Run query** and verify that the instance graph shows two stores that meet the filter for their connected sale events. You can also select the nodes in the graph to get details of the specific sale events
+1. Select **Path query** from the top ribbon and confirm the **Switch** when prompted. In this view, you can create complex path-finding queries.
 
-    :::image type="content" source="media/tutorial-3-preview-ontology/sale-event-stores.png" alt-text="Screenshot of the stores that meet the filter for their connected sale events." lightbox="media/tutorial-3-preview-ontology/sale-event-stores.png":::
+1. Enter the following query details to search for nodes within two hops of the Seattle store's relationship with the supplier Cascade Fresh Products.
 
-This process allows you to inspect the paths that connect operational issues (like rising freezer temperature at certain stores) to business outcomes (sales).
+    * **Start node:** Store
+    * **End node:** Supplier
+    * **Filter start node:** *City = Seattle*
+    * **Filter end node:** *SupplierName = Cascade Fresh Products*
+    * **Max hops:** 2
+
+    :::image type="content" source="media/tutorial-3-preview-ontology/path-query.png" alt-text="Screenshot of building a path query with a start node, direction, and end node." lightbox="media/tutorial-3-preview-ontology/path-query.png":::
+
+1. Select **Run** to run the query and render the result in both the query result canvas and the path results pane.
+
+    :::image type="content" source="media/tutorial-3-preview-ontology/path-query-results.png" alt-text="Screenshot of the path query results." lightbox="media/tutorial-3-preview-ontology/path-query-results.png":::
+
+If you want, try more queries and [graph features](../../graph/overview.md) to explore the ontology further before continuing with the tutorial.
 
 ## Next steps
 
-In this step, you previewed the instances connected to your ontology and explored the data they contain. Next, create a data agent to explore the data further with natural language queries. 
+In this step, you explored the ontology, including the canvas, entity type instances, and graph view. Next, use the ontology agent to explore the data further with natural language queries.
 
-Continue to [Create data agent](tutorial-4-create-data-agent.md).
+Continue to [Consume ontology from agents](tutorial-4-use-agent.md).

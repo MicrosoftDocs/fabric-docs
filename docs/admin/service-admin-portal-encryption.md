@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.date: 05/19/2025
 LocalizationGroup: Administration
 
-# Customer intent: As a Microsoft Fabric administrator, I want to configure the encryption admin settings in Fabric, to enable the workspace customer-managed keys feature.
+#customer intent: As a Microsoft Fabric administrator, I want to configure the encryption admin settings in Fabric, to enable the workspace customer-managed keys feature.
 ---
 
 # Encryption tenant setting
 
-These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
+These settings are configured in **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
 
 ## Apply customer-managed keys
 

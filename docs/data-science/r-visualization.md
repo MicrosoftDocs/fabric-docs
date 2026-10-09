@@ -1,19 +1,17 @@
-﻿---
+---
 title: Visualize data in R
 description: How to create R visualizations.
-ms.reviewer: None
 ms.author: lagayhar
-author: lgayhardt
+ms.reviewer: scottpolly
 ms.topic: how-to
-ms.custom: 
-ms.date: 06/30/2025
+ms.date: 08/31/2026
+ai-usage: ai-assisted
 ms.search.form: R Language
-reviewer: sdgilley
 ---
 
 # Visualize data in R
 
-The R ecosystem offers multiple graphing libraries that come packed with many different features. By default, every Apache Spark Pool in [!INCLUDE [product-name](../includes/product-name.md)] contains a set of curated and popular open-source libraries. Add or manage extra libraries or versions by using the [!INCLUDE [product-name](../includes/product-name.md)] [library management capabilities](r-library-management.md).
+The R ecosystem offers multiple graphing libraries with different features. By default, each Spark instance in [!INCLUDE [product-name](../includes/product-name.md)] includes a set of curated, popular open-source libraries. Add or manage libraries and versions by using the [!INCLUDE [product-name](../includes/product-name.md)] [library management capabilities](r-library-management.md).
 
 
 
@@ -98,3 +96,4 @@ hchart(mtcars, "scatter", hcaes(wt, mpg, z = drat, color = hp)) %>%
 - [R library management](./r-library-management.md)
 - [Tutorial: avocado price prediction](./r-avocado.md)
 - [Tutorial: flight delay prediction](./r-flight-delay.md)
+

@@ -113,7 +113,7 @@ Task flows can be exported as *.json* files from the workspace they were created
 
 1. In the empty task flow area, choose **Import a task flow**.
 
-    :::image type="content" source="./media/task-flow-create/import-task-flow.png" alt-text="Screenshot showing the option to import an existing taskflow.":::
+    :::image type="content" source="./media/task-flow-create/import-task-flow.png" alt-text="Screenshot showing the option to import an existing task flow.":::
 
 1. In the **Open** window that appears, navigate to the desired *.json* file and open it. The task flow will appear on the canvas, with the task flow details pane at the side.
 

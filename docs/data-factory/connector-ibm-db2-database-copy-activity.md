@@ -1,8 +1,6 @@
 ---
 title: Configure IBM Db2 database in a copy activity
 description: This article explains how to copy data using IBM Db2 database.
-author: whhender
-ms.author: whhender
 ms.topic: how-to
 ms.date: 08/12/2025
 ms.custom:
@@ -58,11 +56,11 @@ Under **Advanced**, you can specify the following fields:
 
 ### Mapping
 
-For **Mapping** tab configuration, go to [Configure your mappings under mapping tab](copy-data-activity.md#configure-your-mappings-under-mapping-tab).
+For **Mapping** tab configuration, go to [Configure your mappings under mapping tab](copy-data-activity.md#configure-your-mappings-under-the-mapping-tab).
 
 ### Settings
 
-For **Settings** tab configuration, go to [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
+For **Settings** tab configuration, go to [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-the-settings-tab).
 
 ## Table summary
 

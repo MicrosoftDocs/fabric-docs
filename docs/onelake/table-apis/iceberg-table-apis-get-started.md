@@ -1,33 +1,31 @@
 ---
-title: "Getting started with OneLake table APIs for Iceberg"
+title: "Iceberg table API samples"
 description: "Quickstart and client configuration for using the OneLake REST API endpoint with Apache Iceberg REST Catalog (IRC) APIs in Microsoft Fabric."
-ms.reviewer: mahi
-ms.author: mahi
-author: matt1883
+ms.reviewer: mahi # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.date: 10/01/2025
 ms.topic: how-to
 #customer intent: As a OneLake user, I want to learn how to quickly configure my tools and applications to connect to OneLake table APIs using the Apache Iceberg REST Catalog standard, so that I can access, explore, and interact with my Fabric data using familiar open-source clients and libraries.
 ---
 
-# Getting started with OneLake table APIs for Iceberg
+# Iceberg table API samples
 
-OneLake offers a REST API endpoint for interacting with tables in Microsoft Fabric. This endpoint supports read-only metadata operations for Apache Iceberg tables in Fabric. These operations are compatible with [the Iceberg REST Catalog (IRC) API open standard](https://iceberg.apache.org/rest-catalog-spec/).
-
-[!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
+OneLake offers a REST API endpoint for interacting with tables in Fabric. This endpoint supports read-only metadata operations for Apache Iceberg tables in Fabric. These operations are compatible with [the Iceberg REST Catalog (IRC) API open standard](https://iceberg.apache.org/rest-catalog-spec/).
 
 ## Prerequisites
 
-Learn more about [OneLake table APIs for Iceberg](./iceberg-table-apis-overview.md) and make sure to review the [prerequisite information](./table-apis-overview.md#prerequisites). 
+Learn more about the [Iceberg metadata API](./iceberg-table-apis-overview.md) and make sure to review the [prerequisite information](./table-apis-overview.md#prerequisites).
 
 ## Client quickstart examples
 
-Review these samples to learn how to set up existing Iceberg REST Catalog (IRC) clients or libraries for use with the new OneLake table endpoint.
+Review these samples to learn how to set up existing Iceberg REST Catalog (IRC) clients or libraries for use with the OneLake table endpoint.
 
 ### PyIceberg
 
 Use the following sample Python code to configure [PyIceberg](https://py.iceberg.apache.org/) to use the OneLake table API endpoint. Then, list schemas and tables within a data item.
 
-This code assumes there is a default AzureCredential available for a currently signed-in user. Alternatively, you can use the [MSAL Python library](/entra/msal/python/) to obtain a token.
+This code assumes there's a default AzureCredential available for a currently signed-in user. Alternatively, you can use the [Microsoft Authentication Python library](/entra/msal/python/) to obtain a token.
 
 ```python
 from pyiceberg.catalog import load_catalog
@@ -67,7 +65,7 @@ for schema in schemas:
 
 ### Snowflake
 
-Use the following sample code to create a new **catalog-linked database** in Snowflake. This database will automatically include any schemas and tables found within the connected Fabric data item. This involves the creation of a [catalog integration](https://docs.snowflake.com/en/user-guide/tables-iceberg-configure-catalog-integration-rest), an [external volume](https://docs.snowflake.com/en/user-guide/tables-iceberg-configure-external-volume-azure), and a [database](https://docs.snowflake.com/en/sql-reference/sql/create-database-catalog-linked).
+Use the following sample code to create a new **catalog-linked database** in Snowflake. This database automatically includes any schemas and tables found within the connected Fabric data item. This involves the creation of a [catalog integration](https://docs.snowflake.com/en/user-guide/tables-iceberg-configure-catalog-integration-rest), an [external volume](https://docs.snowflake.com/en/user-guide/tables-iceberg-configure-external-volume-azure), and a [database](https://docs.snowflake.com/en/sql-reference/sql/create-database-catalog-linked).
 
 ```sql
 -- Create catalog integration object
@@ -96,7 +94,7 @@ CREATE OR REPLACE EXTERNAL VOLUME IRC_EXVOL
             NAME = 'IRC_EXVOL'
             STORAGE_PROVIDER = 'AZURE'
             STORAGE_BASE_URL = 'azure://onelake.dfs.fabric.microsoft.com/12345678-abcd-4fbd-9e50-3937d8eb1915/98765432-dcba-4209-8ac2-0821c7f8bd91'
-            AZURE_TENANT_ID='81ba0d80-2361-40bb-9c1f-bf1c84027025' --tenant id
+            AZURE_TENANT_ID='11122233-1122-4138-8485-a47dc5d60435' -- Entra tenant id
         )
     )
     ALLOW_WRITES = FALSE;
@@ -128,7 +126,7 @@ SELECT * FROM IRC_CATALOG_LINKED."dbo"."sentiment";
 
 Use the following sample Python code to configure [DuckDB](https://duckdb.org/docs/stable/clients/python/overview.html) to list schemas and tables within a data item.
 
-This code assumes there is a default `AzureCredential` available for a currently signed-in user. Alternatively, you can use the [MSAL Python library](/entra/msal/python/) to obtain a token.
+This code assumes there's a default `AzureCredential` available for a currently signed-in user. Alternatively, you can use the [MSAL Python library](/entra/msal/python/) to obtain a token.
 
 ```python
 import duckdb
@@ -195,7 +193,7 @@ For each of these operations:
 - `<BaseUrl>` is `https://onelake.table.fabric.microsoft.com/iceberg`
 - `<Warehouse>` is `<Workspace>/<DataItem>`, which can be:
     - `<WorkspaceID>/<DataItemID>`, such as `12345678-abcd-4fbd-9e50-3937d8eb1915/98765432-dcba-4209-8ac2-0821c7f8bd91`
-    - `<WorkspaceName>/<DataItemName>.<DataItemType>`, such as `MyWorkspace/MyItem.Lakehouse`, as long as both names do not contain special characters.
+    - `<WorkspaceName>/<DataItemName>.<DataItemType>`, such as `MyWorkspace/MyItem.Lakehouse`, as long as both names don't contain special characters.
 - `<Prefix>` is returned by the Get configuration call, and its value is usually the same as `<Warehouse>`.
 - `<Token>` is the access token value returned by Entra ID upon successful authentication.
 
@@ -450,5 +448,6 @@ List Iceberg catalog configuration settings.
 ## Related content
 
 - Learn more about [OneLake table APIs](./table-apis-overview.md).
-- Learn more about [OneLake table APIs for Iceberg](./iceberg-table-apis-overview.md).
+- Learn more about the [Iceberg metadata API](./iceberg-table-apis-overview.md).
+- [Read OneLake table data](./read-table-data-rest-api.md).
 - Set up [automatic Delta Lake to Iceberg format conversion](../onelake-iceberg-tables.md#virtualize-delta-lake-tables-as-iceberg).

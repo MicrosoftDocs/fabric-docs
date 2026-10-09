@@ -1,8 +1,6 @@
 ---
 title: "Tutorial: Configure Microsoft Fabric Mirrored Databases from Azure Database for PostgreSQL Flexible Server"
 description: Learn how to configure a mirrored database from Azure Database for PostgreSQL flexible server in Microsoft Fabric.
-author: whhender
-ms.author: whhender
 ms.reviewer: scoriani, maghan
 ms.date: 11/17/2025
 ms.topic: tutorial
@@ -13,7 +11,7 @@ ms.topic: tutorial
 [Mirroring in Fabric](../mirroring/overview.md) (now generally available) is an enterprise, cloud-based, zero-ETL, SaaS technology. In this section, you learn how to create a mirrored Azure Database for PostgreSQL flexible server, which creates a read-only, continuously replicated copy of your PostgreSQL data in OneLake.
 
 > [!IMPORTANT]  
-> Newly created Azure Database for PostgreSQL flexible servers after Ignite 2025 automatically include the latest general availability version of mirroring components. Existing servers upgrade progressively as part of the next maintenance cycles without requiring manual intervention. You don't need to disable and re-enable mirroring to receive updates.
+> Newly created Azure Database for PostgreSQL flexible servers after November 2025 automatically include the latest general availability version of mirroring components. Existing servers upgrade progressively as part of the next maintenance cycles without requiring manual intervention. You don't need to disable and re-enable mirroring to receive updates.
 
 ## Prerequisites
 
@@ -76,7 +74,7 @@ You can accomplish this by specifying a database role for connecting to your sou
     ```
 
 
-The database user created with one of the two previous methods also needs to be `owner` of the tables to replicate in the mirrored database. This means that tables have been created by that user, or that the ownership of those tables has been changed using `ALTER TABLE <table name here> OWNER TO <user>;`.
+The database user created with one of the two previous methods also needs to be `owner` of the tables to replicate in the mirrored database (this is inherited from [CREATE PUBLICATION requirements in PostgreSQL](https://www.postgresql.org/docs/current/sql-createpublication.html)). This means that tables have been created by that user, or that the ownership of those tables has been changed using `ALTER TABLE <table name here> OWNER TO <user>;`.
 
 - When switching ownership to new user, you might need to grant to that user all privileges on `public` schema before. For more information regarding user account management, see Azure Database for PostgreSQL [user management](/azure/postgresql/flexible-server/how-to-create-users) documentation, PostgreSQL product documentation for [Database Roles and Privileges](https://www.postgresql.org/docs/current/static/user-manag.html), [GRANT Syntax](https://www.postgresql.org/docs/current/static/sql-grant.html), and [Privileges](https://www.postgresql.org/docs/current/static/ddl-priv.html).
 
@@ -88,13 +86,13 @@ The database user created with one of the two previous methods also needs to be 
 1. Open the [Fabric portal](https://fabric.microsoft.com).
 1. Use an existing workspace, or create a new workspace.
 1. Navigate to the **Create** pane or select the **New item** button. Select the **Create** icon.
-1. Scroll to the **Data Warehouse** section and then select **Mirrored Azure Database for PostgreSQL (preview)**.
+1. Scroll to the **Data Warehouse** section and then select **Mirrored Azure Database for PostgreSQL**.
 
 ## Connect to your Azure Database for PostgreSQL flexible server
 
 The following steps guide you through the process of creating the connection to your Azure Database for PostgreSQL flexible server:
 
-1. Under **New sources**, select **Azure Database for PostgreSQL (preview)**. Or, select an existing Azure Database for PostgreSQL flexible server connection from the OneLake hub.
+1. Under **New sources**, select **Azure Database for PostgreSQL**. Or, select an existing Azure Database for PostgreSQL flexible server connection from the OneLake hub.
 1. If you selected **New connection**, enter the connection details to the Azure Database for PostgreSQL flexible server.
    - **Server**: You can find the **Server name** by navigating to the Azure Database for PostgreSQL flexible server **Overview** page in the Azure portal. For example, `<server-name>.postgres.database.azure.com`.
    - **Database**: Enter the name of your Azure Database for PostgreSQL flexible server.
@@ -121,7 +119,7 @@ The following steps guide you through the process of creating the connection to 
 1. Now that your data is up and running, there are various analytics scenarios available across all of Fabric.
 
 > [!IMPORTANT]
-> Any granular security established in the source database must be reconfigured in the mirrored database in Microsoft Fabric. See [SQL granular permissions in Microsoft Fabric](../data-warehouse/sql-granular-permissions.md).
+> Any granular security established in the source database must be reconfigured in the mirrored database in Microsoft Fabric. See [SQL granular permissions in Fabric Data Warehouse](../data-warehouse/sql-granular-permissions.md).
 
 ## Monitor Fabric mirroring
 
@@ -132,3 +130,4 @@ Once mirroring is configured, you're directed to the **Mirroring Status** page. 
 - [Troubleshoot Fabric mirrored databases from Azure Database for PostgreSQL flexible server](../mirroring/azure-database-postgresql-troubleshoot.md)
 - [Mirroring Azure Database for PostgreSQL flexible server](../mirroring/azure-database-postgresql.md)
 - [What is Mirroring in Fabric?](../mirroring/overview.md)
+

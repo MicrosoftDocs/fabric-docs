@@ -1,10 +1,8 @@
 ---
 title: Explore Azure sources in Fabric Real-Time hub
 description: This article shows how to explore Microsoft sources in Fabric Real-Time hub. It provides details on the Microsoft sources page in the Real-Time hub user interface.
-author: mystina
-ms.author: majia
+ms.reviewer: majia
 ms.topic: how-to
-ms.custom:
 ms.date: 07/22/2025
 ---
 
@@ -67,3 +65,4 @@ For more information, see [Microsoft sources](supported-sources.md#azure-sources
 
 - [Explore Azure blob storage events](get-azure-blob-storage-events.md)
 - [Explore Fabric workspace item events](create-streams-fabric-workspace-item-events.md)
+

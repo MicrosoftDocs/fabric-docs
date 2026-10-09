@@ -3,11 +3,8 @@ title: Mandatory label policy in Fabric and Power BI
 description: Learn how organizations can require users to apply sensitivity labels to items with a mandatory label policy in Fabric and Power BI.
 author: msmimart
 ms.author: mimart
-ms.service: fabric
-ms.subservice: governance
-ms.topic: conceptual
-ms.custom:
-ms.date: 08/14/2024
+ms.topic: concept-article
+ms.date: 12/02/2025
 LocalizationGroup: Data from files
 ---
 
@@ -36,7 +33,6 @@ To help ensure comprehensive protection and governance of sensitive data, you ca
 
 Mandatory labeling in Fabric and Power BI is supported for all item types except:
 
-* RDL report
 * Scorecard
 * Dataflow Gen 1
 * Dataflow Gen 2

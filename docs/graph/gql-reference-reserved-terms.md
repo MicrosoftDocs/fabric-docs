@@ -1,25 +1,22 @@
 ---
-title: List of GQL reserved words
-description: Complete list GQL language reserved words for graph in Microsoft Fabric
+title: GQL reserved words reference for graph in Microsoft Fabric
+description: Review the complete list of GQL reserved words and keywords in graph in Microsoft Fabric, including standard GQL and implementation-specific reserved words.
 ms.topic: reference
-ms.date: 10/10/2025
-author: eric-urban
-ms.author: eur
+ms.date: 09/17/2026
 ms.reviewer: splantikow
-ms.service: fabric
-ms.subservice: graph
+ai-usage: ai-assisted
 ---
 
 # GQL reserved words reference
 
-[!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
-
 This article provides a comprehensive reference of GQL (Graph Query Language) reserved words for [graph in Microsoft Fabric](overview.md). Reserved words are keywords that have special meaning in GQL and can't be used as identifiers, such as names for variables or properties.
 
-The alphabetical list includes both standard GQL reserved words and those specific to graph in Microsoft Fabric. 
+The alphabetical list includes both standard GQL reserved words and reserved words specific to graph.
 
 > [!NOTE]
-> Items marked "Graph in Microsoft Fabric only" are reserved for potential Microsoft-specific extensions to GQL. Items marked "GQL standard prereserved" are reserved for future use in the GQL standard.
+> Items marked "graph only" are reserved by Graph, including words used by Microsoft-specific extensions to GQL. Items marked "GQL standard prereserved" are reserved for future use in the GQL standard.
+
+`CASEFOLD`, `NONE`, and `SINGLE` are recognized as function names but aren't reserved words. You can use them as identifiers without backticks.
 
 Use this reference to avoid conflicts when naming objects in your GQL queries and scripts.
 
@@ -28,6 +25,7 @@ Use this reference to avoid conflicts when naming objects in your GQL queries an
 - **ABS** - GQL standard
 - **ABSTRACT** - GQL standard prereserved
 - **ACOS** - GQL standard
+- **ACYCLIC** - GQL standard
 - **AGGREGATE** - GQL standard prereserved
 - **AGGREGATES** - GQL standard prereserved
 - **ALL** - GQL standard
@@ -74,11 +72,13 @@ Use this reference to avoid conflicts when naming objects in your GQL queries an
 - **CLONE** - GQL standard prereserved
 - **CLOSE** - GQL standard
 - **COALESCE** - GQL standard
+- **COLLECT_ELEMENTS** - graph only
 - **COLLECT_LIST** - GQL standard
+- **COLLECT_ONE** - graph only
 - **COMMIT** - GQL standard
 - **CONSTRAINT** - GQL standard prereserved
-- **CONSTRUCT** - Graph in Microsoft Fabric only
-- **CONTAINS** - Graph in Microsoft Fabric only
+- **CONSTRUCT** - graph only
+- **CONTAINS** - graph only
 - **COPY** - GQL standard
 - **COS** - GQL standard
 - **COSH** - GQL standard
@@ -100,13 +100,13 @@ Use this reference to avoid conflicts when naming objects in your GQL queries an
 - **DATE** - GQL standard
 - **DATETIME** - GQL standard
 - **DEC** - GQL standard
-- **DECIMAL** - GQL standard
-- **DECLARE** - Graph in Microsoft Fabric only
+- **DECLARE** - graph only
 - **DEGREES** - GQL standard
 - **DELETE** - GQL standard
 - **DESC** - GQL standard
 - **DESCENDING** - GQL standard
 - **DETACH** - GQL standard
+- **DIFFERENT** - GQL standard
 - **DIRECTORY** - GQL standard prereserved
 - **DISTINCT** - GQL standard
 - **DOUBLE** - GQL standard
@@ -117,16 +117,16 @@ Use this reference to avoid conflicts when naming objects in your GQL queries an
 
 ## E
 
-- **EDGE** - Graph in Microsoft Fabric only
-- **EDGES** - Graph in Microsoft Fabric only
-- **ELEMENT** - Graph in Microsoft Fabric only
-- **ELEMENTS** - Graph in Microsoft Fabric only
+- **EDGE** - GQL standard
+- **EDGES** - GQL standard
+- **ELEMENT** - GQL standard
+- **ELEMENTS** - GQL standard
 - **ELEMENT_ID** - GQL standard
 - **ELSE** - GQL standard
 - **END** - GQL standard
-- **ENDS** - Graph in Microsoft Fabric only
-- **ENUM** - Graph in Microsoft Fabric only
-- **EXACT** - Graph in Microsoft Fabric only
+- **ENDS** - graph only
+- **ENUM** - graph only
+- **EXACT** - graph only
 - **EXCEPT** - GQL standard
 - **EXISTING** - GQL standard prereserved
 - **EXISTS** - GQL standard
@@ -145,12 +145,12 @@ Use this reference to avoid conflicts when naming objects in your GQL queries an
 - **FLOOR** - GQL standard
 - **FOR** - GQL standard
 - **FROM** - GQL standard
-- **FULLTEXT** - Graph in Microsoft Fabric only
+- **FULLTEXT** - graph only
 - **FUNCTION** - GQL standard prereserved
 
 ## G
 
-- **GQL** - Graph in Microsoft Fabric only
+- **GQL** - graph only
 - **GQLSTATUS** - GQL standard prereserved
 - **GRANT** - GQL standard prereserved
 - **GROUP** - GQL standard
@@ -166,8 +166,8 @@ Use this reference to avoid conflicts when naming objects in your GQL queries an
 
 - **IF** - GQL standard
 - **IN** - GQL standard
-- **INCLUDE** - Graph in Microsoft Fabric only
-- **INDEX** - Graph in Microsoft Fabric only
+- **INCLUDE** - graph only
+- **INDEX** - graph only
 - **INFINITY** - GQL standard prereserved
 - **INSERT** - GQL standard
 - **INSTANT** - GQL standard prereserved
@@ -181,8 +181,8 @@ Use this reference to avoid conflicts when naming objects in your GQL queries an
 - **INTEGER32** - GQL standard
 - **INT64** - GQL standard
 - **INTEGER64** - GQL standard
-- **INT96** - Graph in Microsoft Fabric only
-- **INTEGER96** - Graph in Microsoft Fabric only
+- **INT96** - graph only
+- **INTEGER96** - graph only
 - **INT128** - GQL standard
 - **INTEGER128** - GQL standard
 - **INT256** - GQL standard
@@ -193,17 +193,17 @@ Use this reference to avoid conflicts when naming objects in your GQL queries an
 
 ## J
 
-- **JSON** - Graph in Microsoft Fabric only
+- **JSON** - graph only
 
 ## K
 
-- **KEY** - Graph in Microsoft Fabric only
-- **KEYS** - Graph in Microsoft Fabric only
+- **KEY** - graph only
+- **KEYS** - graph only
 
 ## L
 
-- **LABEL** - Graph in Microsoft Fabric only
-- **LABELS** - Graph in Microsoft Fabric only
+- **LABEL** - graph only
+- **LABELS** - graph only
 - **LEADING** - GQL standard
 - **LEFT** - GQL standard
 - **LET** - GQL standard
@@ -224,17 +224,17 @@ Use this reference to avoid conflicts when naming objects in your GQL queries an
 
 - **MATCH** - GQL standard
 - **MAX** - GQL standard
-- **MERGE** - Graph in Microsoft Fabric only
-- **MICROSOFT** - Graph in Microsoft Fabric only
+- **MERGE** - graph only
+- **MICROSOFT** - graph only
 - **MIN** - GQL standard
 - **MOD** - GQL standard
-- **MSFTGQL** - Graph in Microsoft Fabric only
+- **MSFTGQL** - graph only
 
 ## N
 
 - **NEXT** - GQL standard
-- **NODE** - Graph in Microsoft Fabric only
-- **NODES** - Graph in Microsoft Fabric only
+- **NODE** - graph only
+- **NODES** - graph only
 - **NODETACH** - GQL standard
 - **NORMALIZE** - GQL standard
 - **NOT** - GQL standard
@@ -267,11 +267,11 @@ Use this reference to avoid conflicts when naming objects in your GQL queries an
 - **PATHS** - GQL standard
 - **PERCENTILE_CONT** - GQL standard
 - **PERCENTILE_DISC** - GQL standard
-- **POINT** - Graph in Microsoft Fabric only
+- **POINT** - graph only
 - **POWER** - GQL standard
-- **PRAGMA** - Graph in Microsoft Fabric only
+- **PRAGMA** - graph only
 - **PRECISION** - GQL standard
-- **PREPARE** - Graph in Microsoft Fabric only
+- **PREPARE** - graph only
 - **PROCEDURE** - GQL standard prereserved
 - **PRODUCT** - GQL standard prereserved
 - **PROJECT** - GQL standard prereserved
@@ -284,16 +284,22 @@ Use this reference to avoid conflicts when naming objects in your GQL queries an
 ## R
 
 - **RADIANS** - GQL standard
-- **RANGE** - Graph in Microsoft Fabric only
+- **RANGE** - graph only
 - **REAL** - GQL standard
 - **RECORD** - GQL standard
 - **RECORDS** - GQL standard prereserved
 - **REFERENCE** - GQL standard prereserved
-- **REGEXP_CONTAINS** - Graph in Microsoft Fabric only
-- **RELATIONSHIP** - Graph in Microsoft Fabric only
-- **RELATIONSHIPS** - Graph in Microsoft Fabric only
+- **REGEXP_CONTAINS** - GQL standard
+- **REGEXP_COUNT** - graph only
+- **REGEXP_INSTR** - graph only
+- **REGEXP_LIKE** - graph only
+- **REGEXP_REPLACE** - graph only
+- **REGEXP_SUBSTR** - graph only
+- **RELATIONSHIP** - GQL standard
+- **RELATIONSHIPS** - GQL standard
 - **REMOVE** - GQL standard
 - **RENAME** - GQL standard prereserved
+- **REPEATABLE** - GQL standard
 - **REPLACE** - GQL standard
 - **RESET** - GQL standard
 - **RETURN** - GQL standard
@@ -310,8 +316,10 @@ Use this reference to avoid conflicts when naming objects in your GQL queries an
 - **SESSION** - GQL standard
 - **SESSION_USER** - GQL standard
 - **SET** - GQL standard
-- **SHOW** - Graph in Microsoft Fabric only
+- **SHORTEST** - GQL standard
+- **SHOW** - graph only
 - **SIGNED** - GQL standard
+- **SIMPLE** - GQL standard
 - **SIN** - GQL standard
 - **SINH** - GQL standard
 - **SIZE** - GQL standard
@@ -320,11 +328,11 @@ Use this reference to avoid conflicts when naming objects in your GQL queries an
 - **SMALLINT** - GQL standard
 - **SQRT** - GQL standard
 - **START** - GQL standard
-- **STARTS** - Graph in Microsoft Fabric only
+- **STARTS** - graph only
 - **STDDEV_POP** - GQL standard
 - **STDDEV_SAMP** - GQL standard
 - **STRING** - GQL standard
-- **STRING_JOIN** - Graph in Microsoft Fabric only
+- **STRING_JOIN** - graph only
 - **SUBSTRING** - GQL standard prereserved
 - **SUM** - GQL standard
 - **SYSTEM_USER** - GQL standard prereserved
@@ -334,12 +342,14 @@ Use this reference to avoid conflicts when naming objects in your GQL queries an
 - **TAN** - GQL standard
 - **TANH** - GQL standard
 - **TEMPORAL** - GQL standard prereserved
-- **TEXT** - Graph in Microsoft Fabric only
+- **TEMPLATE** - graph only
+- **TEXT** - graph only
 - **THEN** - GQL standard
 - **TIME** - GQL standard
 - **TIMESTAMP** - GQL standard
-- **TO_JSON** - Graph in Microsoft Fabric only
-- **TO_JSON_STRING** - Graph in Microsoft Fabric only
+- **TO_JSON** - graph only
+- **TO_JSON_STRING** - graph only
+- **TRAIL** - GQL standard
 - **TRAILING** - GQL standard
 - **TRIM** - GQL standard
 - **TYPED** - GQL standard
@@ -358,11 +368,11 @@ Use this reference to avoid conflicts when naming objects in your GQL queries an
 - **UNIQUE** - GQL standard prereserved
 - **UNIT** - GQL standard prereserved
 - **UNSIGNED** - GQL standard
-- **UPDATE** - Graph in Microsoft Fabric only
+- **UPDATE** - graph only
 - **UPPER** - GQL standard
 - **USE** - GQL standard
 - **USMALLINT** - GQL standard
-- **USING** - Graph in Microsoft Fabric only
+- **USING** - graph only
 
 ## V
 
@@ -371,12 +381,13 @@ Use this reference to avoid conflicts when naming objects in your GQL queries an
 - **VARBINARY** - GQL standard
 - **VARCHAR** - GQL standard
 - **VARIABLE** - GQL standard
-- **VECTOR** - Graph in Microsoft Fabric only
-- **VERTEX** - Graph in Microsoft Fabric only
-- **VERTICES** - Graph in Microsoft Fabric only
+- **VECTOR** - graph only
+- **VERTEX** - graph only
+- **VERTICES** - graph only
 
 ## W
 
+- **WALK** - GQL standard
 - **WHEN** - GQL standard
 - **WHERE** - GQL standard
 - **WITH** - GQL standard
@@ -397,5 +408,5 @@ Use this reference to avoid conflicts when naming objects in your GQL queries an
 
 ## Related content
 
-- [Try Microsoft Fabric for free](/fabric/fundamentals/fabric-trial)
-- [End-to-end tutorials in Microsoft Fabric](/fabric/fundamentals/end-to-end-tutorials)
+- [Try Microsoft Fabric for free](../fundamentals/fabric-trial.md)
+- [End-to-end tutorials in Microsoft Fabric](../fundamentals/end-to-end-tutorials.md)

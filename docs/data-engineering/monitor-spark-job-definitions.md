@@ -1,8 +1,6 @@
 ---
 title: Monitor Spark job definition
 description: Learn how to monitor the progress and status of a running Spark job definition, and how to view the status and duration of previous runs.
-author: eric-urban
-ms.author: eur
 ms.reviewer: jejiang
 ms.topic: overview
 ms.date: 05/23/2023
@@ -41,6 +39,6 @@ To view all the Spark applications related to a Spark job definition, go to the 
 
 ## Related content
 
-The next step after viewing the details of an Apache Spark application is to view Spark job progress below the Notebook cell. You can refer to
+The next step after viewing the details of an Apache Spark application is to view Spark job progress below the notebook cell. You can refer to
 
 * [Spark application detail monitoring](spark-detail-monitoring.md)

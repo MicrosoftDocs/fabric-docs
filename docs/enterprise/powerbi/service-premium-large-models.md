@@ -1,9 +1,8 @@
 ﻿---
 title: Large semantic models in Power BI Premium
 description: The large semantic model storage format allows semantic models in Power BI Premium to grow beyond 10 GB in size.
-author: JulCsc
-ms.author: juliacawthra
-ms.reviewer: ''
+author: dknappettmsft
+ms.author: daknappe
 ms.service: powerbi
 ms.subservice: powerbi-premium
 ms.topic: how-to

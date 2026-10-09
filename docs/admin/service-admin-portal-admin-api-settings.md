@@ -3,18 +3,16 @@ title: Admin API admin settings
 description: Learn how to configure Admin API settings in Fabric.
 author: msmimart
 ms.author: mimart
-ms.reviewer: ''
-
 ms.custom:
   - tenant-setting
 ms.topic: how-to
-ms.date: 11/02/2023
+ms.date: 06/26/2026
 LocalizationGroup: Administration
 ---
 
 # Admin API tenant settings
 
-These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
+These settings are configured in **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
 
 ## Service principals can access read-only admin APIs
 
@@ -23,6 +21,16 @@ Web apps registered in Microsoft Entra ID use an assigned service principal to a
 :::image type="content" source="media/tenant-settings/allow-service-principals-tenant-setting.png" alt-text="Screenshot of allow service principals tenant setting.":::
 
 To learn more, see [Allow service principals to use read-only admin APIs](/power-bi/enterprise/read-only-apis-service-principal-authentication)
+
+> [!NOTE]
+> This setting is also required to run Fabric data risk assessments in [Microsoft Purview Data Security Posture Management (DSPM) for AI](/purview/dspm-for-ai-considerations#prerequisites-for-fabric-data-risk-assessments).
+
+## Service principals can access admin APIs used for updates
+
+Web apps registered in Microsoft Entra ID use an assigned service principal to access Fabric admin APIs used for updates without a signed-in user. To allow an app to use service principal authentication, include its service principal in an allowed security group.
+
+> [!NOTE]
+> This setting is also required to run Fabric data risk assessments in [Microsoft Purview DSPM for AI](/purview/dspm-for-ai-considerations#prerequisites-for-fabric-data-risk-assessments).
 
 ## Enhance admin APIs responses with detailed metadata
 

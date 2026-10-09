@@ -2,17 +2,14 @@
 title: Workspace roles and permissions in lakehouse
 description: Learn how workspace roles and permissions work in your Microsoft Fabric lakehouse, including what roles are available.
 ms.reviewer: tvilutis
-ms.author: eur
-author: eric-urban
-ms.topic: conceptual
-ms.custom:
+ms.topic: concept-article
 ms.date: 09/22/2025
 ms.search.form: Lakehouse Workspace roles Permissions
 ---
 
 # Workspace roles in Lakehouse
 
-Workspace roles define what users can do with Microsoft Fabric items. Roles can be assigned to individuals or security groups from workspace view. For more information about how to manage workspace roles, see [Give users access to workspaces](../fundamentals/give-access-workspaces.md).
+Workspace roles define what users can do with Fabric items. Roles can be assigned to individuals or security groups from workspace view. For more information about how to manage workspace roles, see [Give users access to workspaces](../fundamentals/give-access-workspaces.md).
 
 ## Lakehouse workspace roles and item-specific functions
 
@@ -43,4 +40,4 @@ The following matrix shows which actions each workspace role can perform on lake
 
 - [Roles in workspaces](../fundamentals/roles-workspaces.md)
 - [OneLake data access permissions](../onelake/security/get-started-onelake-security.md)
-- [Fabric and OneLake Security](../onelake/security/fabric-onelake-security.md)
+- [Fabric and OneLake security](../onelake/security/fabric-onelake-security.md)

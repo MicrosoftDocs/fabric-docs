@@ -1,12 +1,9 @@
 ---
 title: "Troubleshoot mirroring from Fabric SQL database"
 description: Troubleshooting scenarios, workarounds, and links for mirroring Fabric SQL database.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: nzagorac
 ms.date: 10/15/2024
 ms.topic: troubleshooting
-ms.custom:
 ---
 # Troubleshoot mirroring from Fabric SQL database
 

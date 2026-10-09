@@ -1,9 +1,9 @@
 ---
 title: What is the Fabric SKU Estimator (preview)?
 description: Learn about the Microsoft Fabric SKU Estimator, a tool that helps you estimate the SKU needed for your workloads.
-author: JulCsc
-ms.author: juliacawthra
-ms.topic: conceptual
+author: dknappettmsft
+ms.author: daknappe
+ms.topic: how-to
 ms.date: 05/05/2025
 ---
 

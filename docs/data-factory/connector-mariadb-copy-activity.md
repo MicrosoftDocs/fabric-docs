@@ -1,17 +1,16 @@
 ---
-title: Configure MariaDB in copy activity
+title: Configure MariaDB in a Copy Activity
 description: This article explains how to copy data using MariaDB.
-author: jianleishen
-ms.author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: how-to
-ms.date: 09/29/2024
-ms.custom: 
+ms.date: 01/22/2026
+ms.custom:
   - pipelines
   - template-how-to
   - connectors
 ---
 
-# Configure MariaDB in copy activity
+# Configure MariaDB in a copy activity
 
 This article outlines how to use the copy activity in a pipeline to copy data from MariaDB.
 
@@ -54,11 +53,59 @@ Under **Advanced**, you can specify the following fields:
 
 ### Mapping
 
-For **Mapping** tab configuration, see [Configure your mappings under mapping tab](copy-data-activity.md#configure-your-mappings-under-mapping-tab).
+For **Mapping** tab configuration, see [Configure your mappings under mapping tab](copy-data-activity.md#configure-your-mappings-under-the-mapping-tab).
 
 ### Settings
 
-For **Settings** tab configuration, go to [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
+For **Settings** tab configuration, go to [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-the-settings-tab).
+
+## Data type mapping for MariaDB
+
+When copying data from MariaDB, the following mappings are used from MariaDB data types to interim data types used by the service internally.
+
+| MariaDB data type | Interim service data type |
+|-------------------|---------------------------|
+| BIGINT | Int64 |
+| BIGINT UNSIGNED | UInt64 |
+| BIT(1) | UInt64 |
+| BIT(M), M>1 | UInt64 |
+| BLOB | Byte[] |
+| BOOL | Boolean <br/>(If TreatTinyAsBoolean=false, it is mapped as SByte. TreatTinyAsBoolean is true by default) |
+| CHAR | String |
+| DATE | Datetime |
+| DATETIME | Datetime |
+| DECIMAL | Decimal |
+| DOUBLE | Double |
+| DOUBLE PRECISION | Double |
+| ENUM | String |
+| FLOAT | Single |
+| INT | Int32 |
+| INT UNSIGNED | Int64 |
+| INTEGER | Int32 |
+| INTEGER UNSIGNED | UInt32 |
+| JSON | String |
+| LONG VARBINARY | Byte[] |
+| LONG VARCHAR | String |
+| LONGBLOB | Byte[] |
+| LONGTEXT | String |
+| MEDIUMBLOB | Byte[] |
+| MEDIUMINT | Int32 |
+| MEDIUMINT UNSIGNED | UInt32 |
+| MEDIUMTEXT | String |
+| NUMERIC | Decimal |
+| REAL | Double |
+| SET | String |
+| SMALLINT | Int16 |
+| SMALLINT UNSIGNED | UInt16 |
+| TEXT | String |
+| TIME | TimeSpan |
+| TIMESTAMP | Datetime |
+| TINYBLOB | Byte[] |
+| TINYINT | SByte |
+| TINYINT unsigned | Int16 |
+| TINYTEXT | String |
+| VARCHAR | String |
+| YEAR | Int |
 
 ## Table summary
 

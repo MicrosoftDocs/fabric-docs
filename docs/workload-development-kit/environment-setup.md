@@ -1,11 +1,8 @@
 ---
 title: Set up your Microsoft Fabric development environment
 description: Learn how to set up your Microsoft Fabric Workload Development Kit environment so that you can start developing your workloads.
-author: KesemSharabi
-ms.author: kesharab
 ms.topic: how-to
-ms.custom:
-ms.date: 04/09/2025
+ms.date: 04/29/2026
 ---
 
 # Set up your environment
@@ -30,7 +27,7 @@ To begin development, the *Workspace admins can develop partner workloads* [tena
 
 To enable the *Workspace admins can develop partner workloads* tenant setting, follow these steps:
 
-1. In Fabric, go to **Settings > Admin portal > Tenant settings**.
+1. In Fabric, go to **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**.
 
 2. In the tenant settings, go to the **Additional workloads** section.
 
@@ -75,3 +72,4 @@ Download and install these tools before you start developing your workload.
 
 * * [Quickstart - Run a workload sample](quickstart-sample.md)
 * [Authentication overview](./authentication-concept.md)
+

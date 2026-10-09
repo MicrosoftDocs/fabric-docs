@@ -1,8 +1,7 @@
 ---
 title: Customize indexing policies in Cosmos DB Database
 description: Create a custom indexing policy for a container within a database in Cosmos DB in Microsoft Fabric.
-author: markjbrown
-ms.author: mjbrown
+ms.reviewer: mjbrown
 ms.topic: how-to
 ms.date: 10/30/2025
 ai-usage: ai-assisted
@@ -193,3 +192,4 @@ await container.ReplaceContainerAsync(properties);
 - [Review indexing policies in Cosmos DB in Microsoft Fabric](indexing-policies.md)
 - [Explore sample indexing policies in Cosmos DB in Microsoft Fabric](sample-indexing-policies.md)
 - [Configure a Cosmos DB database container in Microsoft Fabric](how-to-configure-container.md)
+

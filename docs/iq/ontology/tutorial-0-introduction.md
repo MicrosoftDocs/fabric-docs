@@ -1,130 +1,119 @@
 ---
-title: "Tutorial: Introduction and environment setup"
-description: Get started with ontology (preview) with this tutorial featuring a sample retail scenario.
-author: baanders
-ms.author: baanders
-ms.reviewer: baanders
-ms.date: 10/29/2025
+title: "Tutorial Part 0: Introduction and Environment Setup (Preview)"
+description: Get started with ontology (preview) by setting up a sample retail scenario. Part 0 of the ontology (preview) tutorial.
+ms.date: 09/11/2026
 ms.topic: tutorial
-zone_pivot_group_filename: iq/ontology/zone-pivot-groups.json
-zone_pivot_groups: create-ontology-scenario
+ms.search.form: Ontology Tutorial
 ---
 
 # Ontology (preview) tutorial part 0: Introduction and environment setup
 
-This tutorial shows how to create your first ontology (preview) in Microsoft Fabric, either by generating it from an existing **Power BI semantic model** or by **building it from your OneLake data**. Then, enrich the ontology with live operational data and explore it with both graph preview and natural-language (NL) queries with a Fabric data agent. 
+This tutorial shows how to create your first ontology (preview) in Microsoft Fabric. You create ontology elements manually and with the help of the ontology agent, and bind them to data from multiple OneLake data sources. You enrich the ontology with additional metadata and information, and explore the completed ontology in the visual experience as well as through ontology agent queries.  
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
-The example scenario for this tutorial is a fictional company called Lakeshore Retail. Lakeshore is a retail ice cream seller that keeps data on sales and freezer streaming data. In the tutorial, you generate entity types (like *Store*, *Product*, and *SaleEvent*), bind streaming data (like *freezer temperature*) from Eventhouse, and answer questions like: "Which stores have fewer ice cream sales when their freezer temperature rises higher than -18°C?"
-
-## Choose scenario for creating ontology
-
-This tutorial contains two options for setting up the ontology (preview) item: automatically **generate it from a semantic model**, or manually **build it from OneLake data**. 
-
-Choose your preferred scenario by using the selector at the beginning of the article.
+The example scenario for this tutorial is a fictional company called Lakeshore Retail. Lakeshore is a retail ice cream seller that keeps data on sales and refrigerator streaming data. In the tutorial, you create entity types like *Store*, *Products*, and *Sale*. You bind streaming data like refrigerator temperature from an eventhouse, and answer questions like: "What is the top product by revenue across all stores?"
 
 ## Prerequisites
 
-* A [workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity). Use this workspace for all resources created in the tutorial.
-* **Ontology item (preview)**, **Graph (preview)**, and **Data agent item types (preview)** enabled on your tenant.
-    * [Fabric administrators](../../admin/roles.md) can grant access to ontology in the [admin portal](../../admin/admin-center.md). In the [tenant settings](../../admin/tenant-settings-index.md), enable *Ontology item (preview)*, *Graph (preview)*, and *Data agent item types (preview)*.
+* A [workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity). Use this workspace for all resources you create in the tutorial.
+* The *Users can create ontology (preview) items* and *Users can create Fabric items* settings enabled on your Fabric tenant.
 
-        :::image type="content" source="media/tutorial-0-introduction/prerequisite-ontology.png" alt-text="Screenshot of enabling ontology in the admin portal.":::
+    A [Fabric administrator](../../admin/roles.md) can enable the settings in **OneLake catalog** > **Govern** > **Configurations** > [**Tenant settings**](../../admin/tenant-settings-index.md):
 
-        :::image type="content" source="media/tutorial-0-introduction/prerequisite-data-agent.png" alt-text="Screenshot of enabling data agents in the admin portal.":::
+    :::image type="content" source="media/overview-tenant-settings/prerequisite-ontology.png" alt-text="Screenshot of enabling ontology in the admin portal." lightbox="media/overview-tenant-settings/prerequisite-ontology.png":::
 
-        :::image type="content" source="media/tutorial-0-introduction/prerequisite-graph.png" alt-text="Screenshot of enabling graph in the admin portal.":::
+    :::image type="content" source="media/overview-tenant-settings/prerequisite-fabric-items.png" alt-text="Screenshot of enabling Fabric items in the admin portal." lightbox="media/overview-tenant-settings/prerequisite-fabric-items.png":::
 
-## Download sample data 
+## Scenario
 
-Download the contents of this GitHub folder: [Ontology samples](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/other).
+Lakeshore Retail is a multi-region retailer that sells general merchandise, perishable goods, and frozen products through stores supplied by regional distribution centers. Store operations teams need to maintain product availability without increasing waste, while frozen products must remain within safe storage temperatures throughout the retail cold chain.
 
-It contains the following sample CSV files. The data contains static entity details about the Lakeshore Retail scenario and streaming data from its freezers.
-* *DimStore.csv*
-* *DimProduct.csv*
-* *DimDate.csv*
-* *FactSales.csv*
-* *Freezer.csv*
-* *FreezerTelemetry.csv*
+This tutorial works toward one concrete operational outcome: *Which high-priority stores in the West have frozen products below safety stock, a recent refrigeration-temperature exception, and on-shelf availability below target? For each store, show the next inbound shipment and its expected arrival.*
 
-## Prepare the lakehouse 
+With a robust ontology, the ontology agent can answer this question. Design an ontology that helps the agent understand that a frozen product is a type of product, what below safety stock and temperature exception mean, how products are stocked at stores, which refrigeration units operate at each store, how inbound shipments connect distribution centers to stores, and how the governed Power BI measure for on-shelf availability should be calculated.
 
-First, create a new lakehouse called *OntologyDataLH* in your Fabric workspace (make sure the checkbox for **Lakehouse schemas (Public Preview)** is not enabled).
+The ontology in this tutorial connects operational signals, business definitions, governed metrics, and business relationships so that an agent can explain where intervention is needed and why.
 
-Then, upload five (out of the six) sample CSV files to your lakehouse, and load each one to a new delta table. These files contain entity details about business objects in the Lakeshore Retail scenario.
-* *DimStore.csv*
-* *DimProduct.csv*
-* *DimDate.csv*
-* *FactSales.csv*
-* *Freezer.csv*
-* (**NOT** *FreezerTelemetry.csv*. This file is uploaded to Eventhouse in a later step.)
+### Ontology
 
-For detailed instructions on loading files to lakehouse tables, see the first three sections of [CSV file upload to Delta table for Power BI reporting](../../data-engineering/get-started-csv-upload.md).
+The Lakeshore Retail elements in this tutorial comprise the following ontology. Review the diagram to understand the entity types and relationships that are involved in the scenario.
 
-The lakehouse looks like this when you're done:
+:::image type="content" source="media/tutorial-0-introduction/scenario.png" alt-text="Diagram showing entity types like Store, Shipment, and Product connected by relationships like deliversTo and stockedAt ." lightbox="media/tutorial-0-introduction/scenario.png":::
 
-:::image type="content" source="media/tutorial-0-introduction/lakehouse-tables.png" alt-text="Screenshot of the tables in the lakehouse.":::
+## Download sample data
 
-::: zone pivot="semantic-model"
-## Prepare the Power BI semantic model 
+Download the contents of the **New experience** folder from ontology samples in GitHub: [Ontology samples](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/iq/ontology/new-experience).
 
-This section prepares you to generate an ontology from a semantic model. If you're not following the semantic model scenario and you want to build the ontology manually from OneLake, use the selector at the beginning of the article to change to the OneLake scenario.
+The sample data includes a set of CSV files containing static entity details about the Lakeshore Retail scenario and streaming data from its refrigerators, as well as a Power BI semantic model containing sales data.
 
-1. From the lakehouse ribbon, select **New semantic model**.
+## Prepare the lakehouse
 
-    :::image type="content" source="media/tutorial-0-introduction/new-semantic-model.png" alt-text="Screenshot of creating a new semantic model.":::
+Follow these steps to prepare the sample tutorial data in a lakehouse.
 
-1. In the **New semantic model** pane, set the following details.
-    * **Direct Lake semantic model name**: *RetailSalesModel*
-    * **Workspace**: Your tutorial workspace is chosen by default.
-    * **Select or deselect tables for the semantic model.** Select four tables:
-        * *dimdate*
-        * *dimproduct*
-        * *dimstore*
-        * *factsales*
-        * (**NOT** *freezer*. This entity is created manually in a later step.)
+1. Start in your Fabric workspace. Use the **+ New item** button to create a new **Lakehouse** item.
 
-    Select **Confirm**.
+    :::image type="content" source="media/tutorial-0-introduction/lakehouse-new.png" alt-text="Screenshot of creating a new lakehouse item." lightbox="media/tutorial-0-introduction/lakehouse-new.png":::
 
-1. Open the semantic model in **Editing** mode when it's ready. From the ribbon, select **Manage relationships**.
+1. For the lakehouse **Name**, enter *LakeshoreStaticDataLH*. For **Location**, select your workspace. Keep the **Lakehouse schemas** checkbox selected (default) and select **Create**.
 
-    :::image type="content" source="media/tutorial-0-introduction/manage-relationships.png" alt-text="Screenshot of the semantic model ribbon." lightbox="media/tutorial-0-introduction/manage-relationships.png":::
+1. The new lakehouse opens when it's ready. From the lakehouse ribbon, select **Get data > Upload files**.
 
-1. In the **Manage relationships** pane, use the **+ New relationship** button to create three relationships with the following details.
+    :::image type="content" source="media/tutorial-0-introduction/lakehouse-upload.png" alt-text="Screenshot of uploading files to the lakehouse." lightbox="media/tutorial-0-introduction/lakehouse-upload.png":::
 
-    | From table | To table | Cardinality | Cross-filter direction | Make this relationship active? |
-    |---|---|---|---|---|
-    | *factsales*, select `StoreId` | *dimstore*, select `StoreId` | Many to one (*:1) | Single | Yes |
-    | *factsales*, select `ProductId` | *dimproduct*, select `ProductId` | Many to one (*:1) | Single | Yes |
-    | *factsales*, select `Date` | *dimdate*, select `Date` | Many to one (*:1) | Single | Yes |
+1. Upload **all except one of the sample CSV files** to your lakehouse. Don't upload *refrigeration_telemetry.csv* (you upload this file to eventhouse instead in a later step), or *SalesReport.pbix* (you import this data through the ontology agent in a later step).
 
-    The relationships look like this when you're done:
+1. Expand the **Files** folder in the Explorer to view your uploaded files. Next, load each file to a delta table.
 
-    :::image type="content" source="media/tutorial-0-introduction/manage-relationships-2.png" alt-text="Screenshot of the created relationships.":::
+    For each file, select **...** next to the file name, then **Load to Tables > New table**.
 
-    Select **Close**.
+    :::image type="content" source="media/tutorial-0-introduction/lakehouse-new-table.png" alt-text="Screenshot of the load to tables dialog in lakehouse." lightbox="media/tutorial-0-introduction/lakehouse-new-table.png":::
 
-Now the semantic model is ready to import into ontology.
+    Continue through the table creation dialog, keeping the default settings.
 
-::: zone-end
-::: zone pivot="onelake"
-::: zone-end
+The lakehouse looks like the following image when you're done. The default table names reflect the file names in all lowercase.
 
-## Prepare the eventhouse 
+:::image type="content" source="media/tutorial-0-introduction/lakehouse-tables.png" alt-text="Screenshot of the tables in the lakehouse." lightbox="media/tutorial-0-introduction/lakehouse-tables.png":::
 
-Finally, follow these steps to upload the device streaming data file to a KQL database in Eventhouse.
+## Prepare the eventhouse
 
-1. Create a new eventhouse called *TelemetryDataEH* in your Fabric workspace. A default KQL database is created with the same name. For detailed instructions, see [Create an eventhouse](../../real-time-intelligence/create-eventhouse.md).
-1. The eventhouse opens when it's ready. Open the KQL database by selecting its name.
-1. Create a new table called *FreezerTelemetry* that uses the *FreezerTelemetry.csv* sample file as a source. For detailed instructions, see [Get data from file](../../real-time-intelligence/get-data-local-file.md).
+Follow these steps to upload the device streaming data file to a KQL database in an eventhouse.
 
-The KQL database shows the *FreezerTelemetry* table when you're done:
+1. In your Fabric workspace, select **+ New item** to create a new eventhouse called *LakeshoreTelemetryDataEH*. Fabric creates a default KQL database with the same name.
+1. The eventhouse opens when it's ready. Open the KQL database by selecting its name in the explorer.
 
-:::image type="content" source="media/tutorial-0-introduction/eventhouse-table.png" alt-text="Screenshot of the table in the database.":::
+    :::image type="content" source="media/tutorial-0-introduction/eventhouse-database.png" alt-text="Screenshot of the KQL database in the eventhouse." lightbox="media/tutorial-0-introduction/eventhouse-database.png":::
+
+1. Next, create a new table called *RefrigerationTelemetry* that uses the *refrigeration_telemetry.csv* sample file as a source.
+
+    In the menu ribbon, select **Get data > Local file**.
+
+    :::image type="content" source="media/tutorial-0-introduction/eventhouse-get-data.png" alt-text="Screenshot of the data source options for the database." lightbox="media/tutorial-0-introduction/eventhouse-get-data.png":::
+
+    Create a **New table** called *RefrigerationTelemetry* and browse for the *refrigeration_telemetry.csv* file that you downloaded earlier.
+
+    :::image type="content" source="media/tutorial-0-introduction/eventhouse-get-data-table.png" alt-text="Screenshot of uploading the csv file and creating the table." lightbox="media/tutorial-0-introduction/eventhouse-get-data-table.png":::
+
+    Continue through the table creation dialog, keeping the default settings.
+
+When you're done, the KQL database shows the *RefrigerationTelemetry* table with data:
+
+:::image type="content" source="media/tutorial-0-introduction/eventhouse-table.png" alt-text="Screenshot of the table in the database." lightbox="media/tutorial-0-introduction/eventhouse-table.png":::
+
+## Upload the semantic model
+
+Finally, upload the sample semantic model to your workspace.
+
+1. In your Fabric workspace, select **Import** > **Report, Paginated Report or Workbook** > **From this computer**.
+
+    :::image type="content" source="media/tutorial-0-introduction/import.png" alt-text="Screenshot of importing a report into a workspace." lightbox="media/tutorial-0-introduction/import.png":::
+
+    Find the *SalesReport.pbix* file that you downloaded and select **Open**.
+
+1. The report is visible in your workspace, and a semantic model is created with the same name.
+
+    :::image type="content" source="media/tutorial-0-introduction/workspace-semantic-model.png" alt-text="Screenshot of the report now visible in the workspace." lightbox="media/tutorial-0-introduction/workspace-semantic-model.png":::
 
 ## Next steps
 
-Now your sample scenario is set up in Fabric. Next, create an ontology (preview) item, either by generating it automatically from a semantic model or building it manually from the OneLake data source.
-
-Both scenario options are available in the next step, [Create an ontology](tutorial-1-create-ontology.md).
+Now your sample scenario is set up in Fabric. Next, create an ontology (preview) item and add elements to it that connect to these data sources: [Create an ontology](tutorial-1-create-ontology.md).

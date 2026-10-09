@@ -1,12 +1,8 @@
 ---
 title: Manage Objects in Your Fabric Data Warehouse
 description: Learn about the object explorer in Fabric Data Warehouse.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: pvenkat, fresantos
 ms.date: 09/24/2025
-ms.service: fabric
-ms.subservice: data-warehouse
 ms.topic: how-to
 ms.search.form: Query editor # This article's title should not change. If so, contact engineering.
 ---
@@ -49,9 +45,13 @@ Use **Explorer** to create, alter, and drop objects using T-SQL templates. You c
 
 ### Manage objects in other tools
 
-You can manage your warehouse objects in other tools, including [Connect using SQL Server Management Studio (SSMS)](how-to-connect.md#connect-using-sql-server-management-studio-ssms) or the [SQL Database Projects extension](/sql/tools/visual-studio-code-extensions/sql-database-projects/sql-database-projects-extension?view=fabric&preserve-view=true) in [Visual Studio Code](https://visualstudio.microsoft.com/downloads/). The SQL Projects extension enables capabilities for source control, database testing, and schema validation. To connect to your warehouse, see [Connectivity to data warehousing in Microsoft Fabric](connectivity.md).
+You can manage your warehouse objects in other tools, including [Connect using SQL Server Management Studio (SSMS)](how-to-connect.md#connect-using-sql-server-management-studio-ssms) or the [SQL Database Projects extension](/sql/tools/visual-studio-code-extensions/sql-database-projects/sql-database-projects-extension?view=fabric&preserve-view=true) in [Visual Studio Code](https://visualstudio.microsoft.com/downloads/). The SQL Projects extension enables capabilities for source control, database testing, and schema validation. To connect to your warehouse, see [Connectivity to Fabric Data Warehouse](connectivity.md).
 
-For more information on source control for warehouses in Microsoft Fabric, including Git integration and deployment pipelines, see [Source control with Warehouse](source-control.md).
+For more information on source control for warehouses in Microsoft Fabric, see:
+
+- [Development and deployment overview](development-deployment.md)
+- [Git integration](git-integration.md) 
+- [Deploy a Fabric Warehouse using deployment pipelines](deploy-pipelines.md)
 
 ## Queries
 

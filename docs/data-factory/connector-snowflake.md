@@ -1,45 +1,134 @@
 ---
 title: Set up your Snowflake database connection
 description: This article provides information about how to create a Snowflake database connection in Microsoft Fabric.
-author: whhender
-ms.author: whhender
 ms.topic: how-to
-ms.date: 11/04/2025
+ms.date: 04/21/2026
 ms.custom:
   - template-how-to
   - connectors
+ai-usage: ai-assisted
 ---
 
 # Set up your Snowflake database connection
 
 This article outlines the steps to create a Snowflake database connection.
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
 
-The Snowflake database connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+## Summary
+
+The Snowflake database connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
 |Snowflake| √ | √ |
 |Microsoft Account| √ | √ |
 |Key-pair | √ | √ |
+|Service Principal (SPN)|  | √ |
 
-## Set up your connection in Dataflow Gen2
+## Set up your connection for Dataflow Gen2
+You can connect a dataflow Gen2 in Fabric to Snowflake using Power Query connectors. Follow these steps to create your connection:
 
-Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow Gen2 to a Snowflake database. The following links provide the specific Power Query connector information you need to connect to Snowflake database in Dataflow Gen2:
+1. Check [capabilities](#capabilities), [limitations, and considerations](#limitations-and-considerations) to make sure your scenario is supported.
+1. [Get data in Fabric](#get-data).
+1. [Connect to a Snowflake database](#connect-to-a-snowflake-database).
 
-- To get started using the Snowflake database connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
-- To connect to the Snowflake database connector from Power Query, go to [Connect to a Snowflake database from Power Query Online](/power-query/connectors/snowflake#connect-to-a-snowflake-database-from-power-query-online).
+<a id="capabilities"></a>
 
-In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
+<a id="capabilities-supported"></a>
 
-## Authentication
+## Supported capabilities
 
-The Snowflake connector supports multiple authentication types. This section describes how to configure Key-pair authentication.
+[!INCLUDE [snowflake-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/snowflake/capabilities-supported.md)]
 
-- [Key-pair](connector-snowflake.md#key-pair-authentication)
+<a id="connect-to-a-snowflake-database"></a>
 
-### Key-pair authentication
+<a id="connect-from-power-query-online"></a>
+
+## Connection settings
+
+### Get data
+
+[!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
+
+### Connection steps
+
+[!INCLUDE [snowflake-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/snowflake/connect-online.md)]
+
+## Set up your connection in Manage connections and gateways
+
+### Connection properties
+
+[!INCLUDE [snowflake-connection-settings](includes/connector-snowflake-connection-settings.md)]
+
+### Connection instructions
+
+For specific instructions to set up your connection in Manage connections and gateways, follow these steps:
+
+1. From the page header in Data Integration service, select **Settings** :::image type="icon" source="./media/connector-common/settings.png"::: > **Manage connections and gateways**
+
+   :::image type="content" source="media/connector-common/manage-connections-gateways.png" alt-text="Screenshot showing how to open manage gateway.":::
+
+1. Select **New** at the top of the ribbon to add a new data source.
+
+   :::image type="content" source="./media/connector-common/add-new-connection.png" alt-text="Screenshot showing the new page." lightbox="./media/connector-common/add-new-connection.png":::
+
+   The **New connection** pane shows up on the left side of the page.
+
+   :::image type="content" source="./media/connector-common/new-connection-pane.png" alt-text="Screenshot showing the New connection pane." lightbox="./media/connector-common/new-connection-pane.png":::
+
+1. In the **New connection** pane, choose **Cloud**, and specify the following fields:
+
+   :::image type="content" source="media/connector-snowflake/connection-details.png" alt-text="Screenshot showing how to set a new connection.":::
+
+   - **Connection name**: Specify a name for your connection.
+   - **Connection type**: Select a type for your connection.
+   - **Server**: Specify the host name of the Snowflake account. For example, `contoso.snowflakecomputing.com`.
+   - **Warehouse**: Specify the default virtual warehouse used for the session after connecting. For example, `CONTOSO_WH`.
+
+1. Under **Authentication method**, select your authentication from the drop-down list and complete the related configuration. The Snowflake connector supports the following authentication types:
+
+   - [Snowflake](#snowflake-authentication)
+   - [Microsoft Account](#microsoft-account-authentication)
+   - [Key-pair](#key-pair-authentication)
+
+   :::image type="content" source="./media/connector-snowflake/authentication-method.png" alt-text="Screenshot showing the authentication method for Snowflake.":::
+
+1. Optionally, set the privacy level that you want to apply. Allowed values are None, Organizational, Privacy, and Public. For more information, see [privacy levels in the Power Query documentation](/power-query/privacy-levels).
+
+1. Advanced Options are used for test connection only. Items that use this connection must specify these options in queries.
+
+   :::image type="content" source="./media/connector-snowflake/advanced-options.png" alt-text="Screenshot showing the advanced options for Snowflake.":::
+
+    - **Specify a text value to use as Role name**: Enter a text value to use as Role name.
+    - **Connection timeout in seconds**: Specify the time to wait (in seconds) while trying to establish a connection before terminating the attempt and generating an error.
+    - **Command timeout in seconds**: Specify the time to wait (in seconds) while trying to execute a command before terminating the attempt and generating an error.
+    - **Implementation**: Specify your implementation modes for test connection.
+
+1. Select **Create** to create your connection. Your creation is successfully tested and saved if all the credentials are correct. If not correct, the creation fails with errors.
+
+### Authentication
+
+This section lists the instructions for each authentication type supported by the Snowflake connector:
+
+- [Snowflake](#snowflake-authentication)
+- [Microsoft Account](#microsoft-account-authentication)
+- [Key-pair](#key-pair-authentication)
+
+#### Snowflake authentication
+
+:::image type="content" source="media/connector-snowflake/snowflake-authentication.png" alt-text="Screenshot showing that Snowflake method for Snowflake.":::
+
+- **Username**: Specify the login name for the Snowflake user.
+- **Password**: Specify the password for the Snowflake user.
+
+#### Microsoft Account authentication
+
+:::image type="content" source="media/connector-snowflake/microsoft-account-authentication.png" alt-text="Screenshot showing that Microsoft Account method for Snowflake.":::
+
+Select **Edit credentials**, which displays the sign in interface. Enter your account and password to sign in your organizational account. After signing in, go back to the New connection page.
+
+#### Key-pair authentication
 
 :::image type="content" source="media/connector-snowflake/key-pair-authentication.png" alt-text="Screenshot showing that Key-pair authentication method for Snowflake.":::
 
@@ -52,6 +141,22 @@ To use Key-pair authentication, you need to configure and create a Key-pair auth
 
     :::image type="content" source="media/connector-snowflake/key-pair-authentication-passphrase.png" alt-text="Screenshot showing the passphrase option.":::
 
+
+<a id="remarks"></a>
+
+## Additional information
+
+[!INCLUDE [snowflake-authentication-types-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/snowflake/additional-information.md)]
+
+<a id="known-issues-and-limitations"></a>
+
+## Limitations and considerations
+
+[!INCLUDE [snowflake-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/snowflake/limitations.md)]
+
+[!INCLUDE [snowflake-fabric-limitations](includes/connector-snowflake-fabric-limitations.md)]
+
 ## Related content
 
+- [For more information about this connector, see the Snowflake database connector documentation.](/power-query/connectors/snowflake)
 - [Configure Snowflake in a copy activity](connector-snowflake-copy-activity.md)

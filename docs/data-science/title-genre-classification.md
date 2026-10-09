@@ -1,19 +1,17 @@
-﻿---
+---
 title: 'Tutorial: Create, evaluate, and score a text classification model'
 description: This tutorial demonstrates training and evaluating a text classification model by using a sample dataset of metadata for digitized books.
 ms.author: lagayhar
-author: lgayhardt
-ms.reviewer: None
+ms.reviewer: scottpolly
 ms.topic: tutorial
 ms.custom: sfi-image-nochange
-ms.date: 04/16/2025
+ms.date: 08/31/2026
 #customer intent: As a data scientist, I want to build a text classification model so I can predict a category based on a single attribute.
-reviewer: s-polly
 ---
 
 # Tutorial: Create, evaluate, and score a text classification model
 
-This tutorial presents an end-to-end example of a [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] workflow for a text classification model, in [!INCLUDE [product-name](../includes/product-name.md)]. The scenario uses both Word2vec natural language processing (NLP), and logistic regression, on Spark, to determine the genre of a book from the British Library book dataset. The determination is solely based on the title of the book.
+This tutorial presents an end-to-end example of a [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] workflow for a text classification model, in [!INCLUDE [product-name](../includes/product-name.md)]. The scenario uses both Word2vec natural language processing (NLP) and logistic regression on Spark to determine the genre of a book from the British Library book dataset. The determination is solely based on the title of the book.
 
 This tutorial covers these steps:
 
@@ -99,7 +97,7 @@ EXPERIMENT_NAME = "sample-aisample-textclassification"  # MLflow experiment name
 The following code snippet downloads a publicly available version of the dataset, and then stores it in a Fabric lakehouse:
 
 > [!IMPORTANT]
-> [Add a lakehouse](https://aka.ms/fabric/addlakehouse) to the notebook before you run it. Failure to do so resultS in an error.
+> [Add a lakehouse](https://aka.ms/fabric/addlakehouse) to the notebook before you run it. Otherwise, you get an error.
 
 ```python
 if not IS_CUSTOM_DATA:
@@ -190,7 +188,7 @@ mlflow.set_experiment(EXPERIMENT_NAME)
 mlflow.autolog(disable=True)  # Disable Mlflow autologging
 ```
 
-### Read raw date data from the lakehouse
+### Read raw data from the lakehouse
 
 ```python
 raw_df = spark.read.csv(f"{DATA_FOLDER}/raw/{DATA_FILE}", header=True, inferSchema=True)
@@ -451,7 +449,7 @@ Microsoft Fabric allows users to operationalize machine learning models with the
 
 From our evaluation results, model 1 has the largest metrics for both Area Under the Precision-Recall Curve (AUPRC) and for Area Under the Curve Receiver Operating Characteristic (AUC-ROC). Therefore, you should use model 1 for prediction.
 
-The AUC-ROC measure is widely used to measure binary classifiers performance. However, it sometimes becomes more appropriate to evaluate the classifier based on AUPRC measurements. The AUC-ROC chart visualizes the trade-off between true positive rate (TPR) and false positive rate (FPR). The AUPRC curve combines both precision (positive predictive value or PPV) and recall (true positive rate or TPR) in a single visualization. The following code snippets cover these steps:
+The AUC-ROC measure is widely used to measure binary classifier performance. However, it sometimes becomes more appropriate to evaluate the classifier based on AUPRC measurements. The AUC-ROC chart visualizes the trade-off between true positive rate (TPR) and false positive rate (FPR). The AUPRC curve combines both precision (positive predictive value or PPV) and recall (true positive rate or TPR) in a single visualization. The following code snippets cover these steps:
 
 ```python
 # Load the best model

@@ -1,9 +1,7 @@
 ---
 title: ArcGIS GeoAnalytics for Microsoft Fabric (Generally Available)
 description: Learn how to use the ArcGIS GeoAnalytics library in Microsoft Fabric, including data import, enrichment, visualization, and support resources.
-ms.reviewer: sngun
-ms.author: arali
-author: ms-arali
+ms.reviewer: arali
 ms.topic: concept-article
 ms.date: 10/31/2025
 #customer intent: As a data scientist or Spark developer, I want to use ArcGIS GeoAnalytics in Microsoft Fabric to perform spatial data transformation and analysis.
@@ -11,32 +9,32 @@ ms.date: 10/31/2025
 
 # ArcGIS GeoAnalytics for Microsoft Fabric (Generally Available)
 
-Microsoft and [Esri](https://www.esri.com/) have partnered to integrate spatial analytics into Microsoft Fabric. The ArcGIS GeoAnalytics library is available in Fabric. This library enables spatial analytics in Spark notebooks and Spark Job Definitions for Data Engineering and Data Science workloads. This integration allows Spark developers and data scientists to use Esri's ArcGIS GeoAnalytics functions and tools within Fabric Spark for spatial data transformation and analysis. You don't need any separate installation to use these capabilities.
+Microsoft and [Esri](https://www.esri.com/) have partnered to integrate spatial analytics into Fabric. The ArcGIS GeoAnalytics library is available in Fabric. This library enables spatial analytics in Spark notebooks and Spark job definitions for Data Engineering and Data Science workloads. This integration allows Spark developers and data scientists to use Esri's ArcGIS GeoAnalytics functions and tools within Fabric Spark for spatial data transformation and analysis. You don't need any separate installation to use these capabilities.
 
 ## Enable ArcGIS GeoAnalytics
 
-Tenant administrators can enable or disable the ArcGIS GeoAnalytics library in the Fabric Runtime for all users. To do so, sign in to the Fabric portal and navigate to **Settings** > **Admin Portal**. In the **Tenant settings**, enable **ArcGIS GeoAnalytics for Fabric Runtime**. When disabled, it won't be available in Spark notebooks or Spark job definitions.
+Tenant administrators can enable or disable the ArcGIS GeoAnalytics library in the Fabric Runtime for all users. To do so, sign in to the Fabric portal and go to **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**. Enable **ArcGIS GeoAnalytics for Fabric Runtime**. When disabled, it won't be available in Spark notebooks or Spark job definitions.
 
 :::image type="content" source="media\spark-arcgis-geoanalytics\enable-arcgis-tenant.png" alt-text="Screenshot showing how to enable ArcGIS GeoAnalytics from Tenant settings." lightbox="media/spark-arcgis-geoanalytics/enable-arcgis-tenant.png":::
 
-Additionally, if you are a Capacity administrator you can enable or disable the ArcGIS GeoAnalytics library in the Fabric Runtime for all users using your specific capacity. By default, capacity level settings are inherited from tenant level settings however you as a capacity administrator can choose to override it at the capacity level by navigating to **Settings** > **Admin Portal** > **Capacity settings** and choose your capacity. Next, under **Delegated tenant settings** > **Integration settings**, you can override and enable or disable **ArcGIS GeoAnalytics for Fabric Runtime**.
+Additionally, if you are a Capacity administrator you can enable or disable the ArcGIS GeoAnalytics library in the Fabric Runtime for all users using your specific capacity. By default, capacity level settings are inherited from tenant level settings however you as a capacity administrator can choose to override it at the capacity level by going to **OneLake catalog** > **Govern** > **Capacities** and choosing your capacity. Next, under **Delegated tenant settings** > **Integration settings**, you can override and enable or disable **ArcGIS GeoAnalytics for Fabric Runtime**.
 
 :::image type="content" source="media\spark-arcgis-geoanalytics\enable-arcgis-capacity.png" alt-text="Screenshot showing how to enable ArcGIS GeoAnalytics from Capacity settings." lightbox="media/spark-arcgis-geoanalytics/enable-arcgis-capacity.png":::
 
 ## Licensing and cost
 
-ArcGIS GeoAnalytics for Microsoft Fabric is a proprietary technology from Esri. Though this library has been natively integrated into Microsoft Fabric Spark to reduce the friction in onboarding, you need to bring your own license to use these capabilities within Microsoft Fabric. You can learn more about licensing and cost from [Marketplace offering](https://go.esri.com/arcgis-geoanalytics-for-fabric-marketplace) page.
+ArcGIS GeoAnalytics for Fabric is a proprietary technology from Esri. Though this library has been natively integrated into Fabric Spark to reduce the friction in onboarding, you need to bring your own license to use these capabilities within Fabric. You can learn more about licensing and cost from [Marketplace offering](https://go.esri.com/arcgis-geoanalytics-for-fabric-marketplace) page.
 
 > [!NOTE]
 > ArcGIS GeoAnalytics is a non-Microsoft product, and you understand and agree that use of ArcGIS is subject to the Esri [Master Agreement](https://www.esri.com/content/dam/esrisites/media/legal/ma-full/ma-full.pdf) and [Privacy Statement](https://www.esri.com/en-us/privacy/privacy-statements/privacy-statement). The current integration is offered and governed under marketplace terms and conditions.
 
 ## Authentication
 
-Though ArcGIS GeoAnalytics library is preinstalled and preconfigured and you can import the modules to start using it immediately, the usage must be authorized with a valid license before running any function or tool. You can authorize the module with a GeoAnalytics for Microsoft Fabric username and password, or an API key provided by Esri. If the module is not authorized, functions and tools will fail to run with the following error: `com.esri.geoanalytics.internal.AuthError: Not authorized.` Here you can learn more about [Authorization](https://developers.arcgis.com/geoanalytics-fabric/authorization/).
+Though ArcGIS GeoAnalytics library is preinstalled and preconfigured and you can import the modules to start using it immediately, the usage must be authorized with a valid license before running any function or tool. You can authorize the module with a GeoAnalytics for Fabric username and password, or an API key provided by Esri. If the module is not authorized, functions and tools will fail to run with the following error: `com.esri.geoanalytics.internal.AuthError: Not authorized.` Here you can learn more about [Authorization](https://developers.arcgis.com/geoanalytics-fabric/authorization/).
 
 ## ArcGIS GeoAnalytics Capabilities
 
-ArcGIS provides extensive geospatial capabilities for various applications. Esri is integrating ArcGIS spatial analytics capabilities into Microsoft Fabric, offering ArcGIS GeoAnalytics functions and tools in the Fabric Spark environment. This integration can help you analyze events, visualize spatial relationships, and gain insights from your data. These capabilities enable a variety of spatiotemporal analytics, including the following tasks:
+ArcGIS provides extensive geospatial capabilities for various applications. Esri is integrating ArcGIS spatial analytics capabilities into Fabric, offering ArcGIS GeoAnalytics functions and tools in the Fabric Spark environment. This integration can help you analyze events, visualize spatial relationships, and gain insights from your data. These capabilities enable a variety of spatiotemporal analytics, including the following tasks:
 
 | Task type | Description |
 |---------|---------|
@@ -140,13 +138,14 @@ Support for ArcGIS GeoAnalytics can be found through the [Esri Community](https:
 
   * When writing to Delta, ArcGIS GeoAnalytics converts geometry to a well-known binary format. When reading these Delta tables, check the column type and use functions like [ST_GeomFromBinary](https://developers.arcgis.com/geoanalytics-fabric/sql-functions/st_geom_from_binary/) to convert back to geometry.
 
-* For authentication and usage tracking, the ArcGIS GeoAnalytics engine makes calls to Esri services outside of Fabric and hence currently it is not supported when [Outbound Access Protection](https://learn.microsoft.com/fabric/security/workspace-outbound-access-protection-overview) is enabled. 
+* For authentication and usage tracking, the ArcGIS GeoAnalytics engine makes calls to Esri services outside of Fabric and hence currently it is not supported when [Outbound Access Protection](../security/workspace-outbound-access-protection-overview.md) is enabled. 
 
 ### Related content
 
 * [Apache Spark runtime in Fabric](runtime.md)
 * [How to use notebooks](how-to-use-notebook.md)
 * [Native Execution Engine (NEE)](native-execution-engine-overview.md)
-* [ArcGIS GeoAnalytics for Microsoft Fabric](https://go.esri.com/geoanalytics-in-ms-fabric-overview)
-* [Developer documentation for ArcGIS GeoAnalytics for Microsoft Fabric](https://developers.arcgis.com/geoanalytics-fabric)
-* [ArcGIS GeoAnalytics for Microsoft Fabric Community](https://community.esri.com/t5/arcgis-geoanalytics-for-microsoft-fabric/ct-p/arcgis-geoanalytics-for-microsoft-fabric)
+* [ArcGIS GeoAnalytics for Fabric](https://go.esri.com/geoanalytics-in-ms-fabric-overview)
+* [Developer documentation for ArcGIS GeoAnalytics for Fabric](https://developers.arcgis.com/geoanalytics-fabric)
+* [ArcGIS GeoAnalytics for Fabric Community](https://community.esri.com/t5/arcgis-geoanalytics-for-microsoft-fabric/ct-p/arcgis-geoanalytics-for-microsoft-fabric)
+

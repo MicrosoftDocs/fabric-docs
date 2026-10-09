@@ -1,18 +1,22 @@
 ---
 title: Set alerts on Azure Blob Storage events in Real-Time hub
 description: This article describes how to set alerts on Azure Blob Storage events in Real-Time hub.
-author: mystina
-ms.author: majia
+ms.reviewer: majia
 ms.topic: how-to
-ms.custom:
-ms.date: 10/13/2025
+ms.date: 12/14/2025
 ---
 
 # Set alerts on Azure Blob Storage events in Real-Time hub
 
 This article describes how to set alerts on Azure Blob Storage events in Real-Time hub.
 
-[!INCLUDE [consume-fabric-events-regions](./includes/consume-fabric-events-regions.md)]
+[!INCLUDE [consume-fabric-events-regions](../real-time-intelligence/event-streams/includes/connectors/consume-fabric-events-regions.md)]
+
+[!INCLUDE [outbound-access-protection-note](./includes/outbound-access-protection-note.md)]
+
+[!INCLUDE [tenant-private-links-note](./includes/tenant-private-links-note.md)]
+
+[!INCLUDE [workspace-private-links-note](./includes/workspace-private-links-note.md)]
 
 ## Navigate to Real-Time hub
 
@@ -30,10 +34,10 @@ Do steps from one of the following sections, which opens a side panel where you 
 
 1. In Real-Time hub, select **Azure events** under **Subscribe to** category.
 1. Move the mouse over **Azure blob storage events**, and do one of the following steps:
-    - Select the **Alert** button
+    - Select the **Set alert** button
     - Select **ellipsis (...)**, and select **Set alert**.
     
-    :::image type="content" source="./media/set-alerts-azure-blob-storage-events/set-alert-from-list.png" alt-text="Screenshot that shows the Azure events page with Set alert pages for Azure blob storage events." lightbox="./media/set-alerts-azure-blob-storage-events/set-alert-from-list.png":::
+    :::image type="content" source="./media/set-alerts-azure-blob-storage-events/set-alerts-azure.png" alt-text="Screenshot that shows the Azure events page with Set alert pages for Azure blob storage events." lightbox="./media/set-alerts-azure-blob-storage-events/set-alerts-azure.png":::
 
 ### Launch from the event detail page
 
@@ -43,7 +47,7 @@ Do steps from one of the following sections, which opens a side panel where you 
     :::image type="content" source="./media/set-alerts-azure-blob-storage-events/set-alert-from-detail-page.png" alt-text="Screenshot that shows the Azure blob storage events detail page with Set alert button selected." lightbox="./media/set-alerts-azure-blob-storage-events/set-alert-from-detail-page.png":::
 
 
-[!INCLUDE [rule-details](./includes/rule-details.md)]
+[!INCLUDE [rule-details](../real-time-intelligence/data-activator/includes/rule-details.md)]
 
 ## Monitor section
 
@@ -73,11 +77,11 @@ Do steps from one of the following sections, which opens a side panel where you 
     :::image type="content" source="./media/set-alerts-azure-blob-storage-events/save-event-stream.png" alt-text="Screenshot that shows the review + connect page after the eventstream is successfully created." lightbox="./media/set-alerts-azure-blob-storage-events/save-event-stream.png":::                    
 
 
-[!INCLUDE [rule-condition-events](./includes/rule-condition-events.md)]
+[!INCLUDE [rule-condition-events](../real-time-intelligence/data-activator/includes/rule-condition-events.md)]
 
-[!INCLUDE [rule-action](./includes/rule-action.md)]
+[!INCLUDE [rule-action](../real-time-intelligence/data-activator/includes/rule-action.md)]
 
-[!INCLUDE [rule-save-location](./includes/rule-save-location.md)]
+[!INCLUDE [rule-save-location](../real-time-intelligence/data-activator/includes/rule-save-location.md)]
 
 ## Create alert
 
@@ -104,3 +108,4 @@ Do steps from one of the following sections, which opens a side panel where you 
 
 - [Set alerts on Fabric workspace item events](set-alerts-fabric-workspace-item-events.md)
 - [Set alerts on data streams](set-alerts-data-streams.md)
+

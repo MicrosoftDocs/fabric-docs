@@ -1,14 +1,9 @@
 ---
 title: CI/CD workflow options in Fabric
 description: Learn about different options for building and using deployment pipelines based on customer experiences. 
-author: billmath
-ms.author: billmath
 ms.reviewer: NimrodShalit
-ms.service: fabric
-ms.subservice: cicd
 ms.topic: concept-article
-ms.date: 09/25/2024
-ms.custom:
+ms.date: 03/18/2026
 #customer intent: As a developer, I want to learn how to use deployment pipelines in Fabric so that I can manage my development process efficiently.
 ---
 
@@ -20,11 +15,16 @@ While this article outlines several distinct options, many organizations take a 
 
 ## Prerequisites
 
-To access the deployment pipelines feature, you must meet the following conditions:
+To build a CI/CD process using the options in this article, you need:
 
-* You have a [Microsoft Fabric subscription](../enterprise/licenses.md)
+* A [Microsoft Fabric subscription](../enterprise/licenses.md)
 
-* You're an admin of a Fabric [workspace](../fundamentals/create-workspaces.md)
+* A Fabric [workspace](../fundamentals/create-workspaces.md) (you must be a workspace admin to configure deployment)
+
+* For Git-based options (1, 2, and 4), a supported Git provider (Azure DevOps or GitHub) connected through [Git integration](./git-integration/intro-to-git-integration.md)
+
+> [!NOTE]
+> Option 3 uses Fabric deployment pipelines. To use that option, you also need access to the [deployment pipelines](./deployment-pipelines/intro-to-deployment-pipelines.md) feature and permission to create and manage a pipeline.
 
 ## Development process
 
@@ -36,7 +36,20 @@ The development process is the same in all deployment scenarios, and is independ
 
 The release process starts once new updates are complete and the pull request (PR) merged into the team’s shared branch (such as *Main*, *Dev* etc.). From this point, there are different options to build a release process in Fabric.
 
-### Option 1 - Git- based deployments
+The following table summarizes the options to help you choose. Many teams combine more than one.
+
+| Option | Source of truth | Branching strategy | Deployment mechanism | Per-stage configuration | Best for |
+|---|---|---|---|---|---|
+| [1 - Git integration](#option-1---definition-based-deployments-using-git-integration) | Git | *Gitflow* (a primary branch per stage) | [Fabric Git APIs](/rest/api/fabric/core/git/update-from-git) (`update-from-git`) | Separate per-stage branches | Teams that want Git as the single source of truth and follow Gitflow |
+| [2 - Fabric Items APIs](#option-2---definition-based-deployments-using-fabric-items-apis) | Git (single *Main* branch)¹ | *Trunk-based* | [Fabric Items APIs](/rest/api/fabric/core/items) (fabric-cicd or Bulk Import Item Definitions API) | Build-environment scripts | Trunk-based teams that need to transform item definitions before deployment |
+| [3 - Deployment pipelines](#option-3---deploy-using-fabric-deployment-pipelines) | Fabric workspace (Git only through *dev*) | *Trunk-based* | [Deployment pipelines APIs](/rest/api/fabric/core/deployment-pipelines) | Deployment rules and autobinding | Teams that prefer a Fabric-native, low-code deployment between workspaces |
+| [4 - CI/CD for ISVs](#option-4---cicd-for-isvs-in-fabric-managing-multiple-customerssolutions) | Git (single *Main* branch) | *Trunk-based* | [Fabric Items APIs](/rest/api/fabric/core/items) (per customer workspace) | Per-customer release parameters | ISVs that manage many per-customer workspaces |
+
+¹ In Option 2, the stage workspaces (including *Test* and *Prod*) aren't connected to Git. Item definitions are pushed to them through the Fabric Items APIs from the *Main* branch.
+
+A [deployment plan](./deployment-plan/deployment-plan-overview.md) isn't a separate workflow option. You can use a plan with supported Git operations in option 1 or with deployment pipelines in option 3. The plan controls deployment order, dependencies, and actions, while the selected workflow continues to define the source of truth, branching strategy, and stage configuration.
+
+### Option 1 - Definition-based deployments using Git integration
 
 :::image type="content" source="./media/manage-deployment/git-based-deployment.png" alt-text="Diagram showing how the Git based deployment works.":::
 
@@ -44,7 +57,7 @@ With this option, all deployments originate from the Git repository. Each stage 
 
 Once a PR to the *Dev* branch is approved and merged:
 
-1. A release pipeline is triggered to update the content of the *Dev* workspace. This process also can include a *Build* pipeline to run unit tests, but the actual upload of files is done directly from the repo into the workspace, using [Fabric Git APIs](/rest/api/fabric/core/git/update-from-git). You might need to call other Fabric APIs for post-deployment operations that set specific configurations for this workspace, or ingest data.
+1. A release pipeline is triggered to update the content of the *Dev* workspace. This process also can include a *Build* pipeline to run unit tests, but the actual upload of files is done directly from the repo into the workspace, using [Fabric Git APIs](/rest/api/fabric/core/git/update-from-git). You might need to call other Fabric APIs for post-deployment operations that set specific configurations for this workspace, or ingest data. Some item dependencies bind automatically through logical IDs when synced to a new workspace, while others require these post-deployment updates. For details, see [Understand dependency binding in cross-workspace deployment](./cross-workspace-dependency-binding.md).
 1. A PR is then created to the *Test* branch. In most cases, the PR is created using a release branch that can cherry pick the content to move into the next stage. The PR should include the same review and approval processes as any other in your team or organization.
 1. Another *Build* and *release* pipeline is triggered to update the *Test* workspace, using a process similar to the one described in the first step.
 1. A PR is created to *Prod* branch, using a process similar to the one described in step #2.
@@ -56,17 +69,21 @@ Once a PR to the *Dev* branch is approved and merged:
 * When your team follows *Gitflow* as the branching strategy, including multiple primary branches.
 * The upload from the repo goes directly into the workspace, as we don’t need *build environments* to alter the files before deployments. You can change this by calling APIs or running items in the workspace after deployment.
 
-### Option 2 - Git- based deployments using Build environments
+### Option 2 - Definition-based deployments using Fabric Items APIs
 
 :::image type="content" source="./media/manage-deployment/git-build.png" alt-text="Diagram showing the flow of Git based deployment using build environments.":::
 
-With this option, all deployments originate from the same branch of the Git repository (*Main*). Each stage in the release pipeline has a dedicated *build* and *Release* pipeline. These pipelines might use a *Build environment* to run unit tests and scripts that change some of the definitions in the items before they're uploaded to the workspace. For example, you might want to change the data source connection, the connections between items in the workspace, or the values of parameters to adjust configuration for the right stage.
+With this option, all deployments originate from the same branch of the Git repository (*Main*). Each stage in the release pipeline has a dedicated *build* and *Release* pipeline. These pipelines might use a *Build environment* to run unit tests and scripts that change some of the definitions in the items before they're uploaded to the workspace. For example, you might want to change the data source connection, the connections between items in the workspace, or the values of parameters to adjust configuration for the right stage. Not all item dependencies require these changes. Some bind automatically through logical IDs when deployed to a new workspace. To understand which dependencies bind automatically and which need manual parameterization, see [Understand dependency binding in cross-workspace deployment](./cross-workspace-dependency-binding.md).
 
 Once a PR to the *dev* branch is approved and merged:
 
 1. A *build* pipeline is triggered to spin up a new *Build environment* and run unit tests for the *dev* stage. Then, a *release* pipeline is triggered to upload the content to a *Build environment*, run scripts to change some of the configuration, adjust the configuration to *dev* stage, and use Fabric’s [Update item definition](/rest/api/fabric/core/items/update-item) APIs to upload the files into the Workspace.
 1. When this process is complete, including ingesting data and approval from release managers, the next *build* and *release* pipelines for *test* stage can be created. These stages are created in a process similar to that described in the first step. For *test* stage, other automated or manual tests might be required after the deployment, to validate the changes are ready to be released to *Prod* stage.
 1. When all automated and manual tests are complete, the release manager can approve and kick off the *build* and *release* pipelines to *Prod* stage. As the *Prod* stage usually has different configurations than *test/Dev* stages, it's important to also test out the changes after the deployment. Also, the deployment should trigger any more ingestion of data, based on the change, to minimize potential non availability to consumers.
+
+#### Which components can be used to implement option #2?
+* [Fabric-cicd](https://microsoft.github.io/fabric-cicd) - a Python library designed for use with Microsoft Fabric workspaces. This library supports code-first Continuous Integration / Continuous Deployment (CI/CD) automations to seamlessly integrate workspaces into a deployment framework. For a complete end-to-end example follow our [fabric-cicd and Azure DevOps tutorial](tutorial-fabric-cicd-azure-devops.md).
+* [Bulk-Import-Item-Definitions-API](/rest/api/fabric/core/items/bulk-import-item-definitions) - The API supports both creating new items and updating existing ones in place, while relying on Fabric’s built‑in dependency handling to ensure items are deployed in the correct order. This enables consistent, repeatable deployments into test and production environments without manual intervention. For a sample tutorial follow our [Fabric CI/CD with Bulk Import Item Definitions API](tutorial-bulkapi-cicd.md).
 
 #### When should you consider using option #2?
 
@@ -80,6 +97,8 @@ Once a PR to the *dev* branch is approved and merged:
 :::image type="content" source="./media/manage-deployment/deployment-pipelines.png" alt-text="Diagram showing the flow of Git based deployment using deployment pipelines.":::
 
 With this option, Git is connected only until the *dev* stage. From the *dev* stage, deployments happen directly between the workspaces of *Dev/Test/Prod*, using Fabric deployment pipelines. While the tool itself is internal to Fabric, developers can use the [deployment pipelines APIs](/rest/api/fabric/core/deployment-pipelines) to orchestrate the deployment as part of their Azure release pipeline, or a GitHub workflow. These APIs enable the team to build a similar *build* and *release* process as in other options, by using automated tests (that can be done in the workspace itself, or before *dev* stage), approvals etc.
+
+When the deployment requires a specific order, related items, or actions, you can [attach a deployment plan](./deployment-plan/deployment-plan-attach.md) to a deployment between stages. Deployment rules and autobinding continue to manage stage-specific configuration.
 
 Once the PR to the *main* branch is approved and merged:
 
@@ -100,7 +119,7 @@ Once the PR to the *main* branch is approved and merged:
 
 This option is different from the others. It's most relevant for Independent Software Vendors (ISV) who build SaaS applications for their customers on top of Fabric. ISVs usually have a separate workspace for each customer and can have as many as several hundred or thousands of workspaces. When the structure of the analytics provided to each customer is similar and out-of-the-box, we recommend having a centralized development and testing process that splits off to each customer only in the *Prod* stage.
 
-This option is based on [option #2](#option-2---git--based-deployments-using-build-environments). Once the PR to *main* is approved and merged:
+This option is based on [option #2](#option-2---definition-based-deployments-using-fabric-items-apis). Once the PR to *main* is approved and merged:
 
 1. A *build* pipeline is triggered to spin up a new *Build environment* and run unit tests for *dev* stage. When tests are complete, a *release* pipeline is triggered. This pipeline can upload the content to a *Build environment*, run scripts to change some of the configuration, adjust the configuration to *dev* stage, and then use Fabric’s [Update item definition](/rest/api/fabric/core/items/update-item) APIs to upload the files into the Workspace.
 1. After this process is complete, including ingesting data and approval from release managers, the next *build* and *release* pipelines for *test* stage can kick off. This process is similar to that described in the first step. For *test* stage, other automated or manual tests might be required after the deployment, to validate the changes are ready to be release to *Prod* stage in high-quality.
@@ -125,4 +144,5 @@ The same goes for tooling. While we mention different tools here, you might choo
 * [Manage Git branches](./git-integration/manage-branches.md)
 * [Automate Git integration by using APIs and Azure DevOps](./git-integration/git-automation.md)
 * [Automate deployment pipeline by using Fabric APIs](./deployment-pipelines/pipeline-automation-fabric.md)
-* [Best practices for lifecycle management in Fabric](./best-practices-cicd.md)
+* [Understand dependency binding in cross-workspace deployment](./cross-workspace-dependency-binding.md)
+* [What is a deployment plan in Microsoft Fabric?](./deployment-plan/deployment-plan-overview.md)

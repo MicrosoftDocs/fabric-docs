@@ -1,8 +1,6 @@
 ---
 title: "Data Warehouse Tutorial: Create a Warehouse"
 description: "In this tutorial, learn how to create a Warehouse in Microsoft Fabric."
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: scbradl
 ms.date: 04/06/2025
 ms.topic: tutorial

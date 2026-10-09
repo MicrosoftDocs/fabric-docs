@@ -1,17 +1,16 @@
 ---
 title: Access OneLake shortcuts in an Apache Spark notebook
-description: Learn how to access Microsoft Fabric OneLake shortcuts as folders and as tables in an Apache Spark notebook.
-ms.reviewer: eloldag
-ms.author: trolson
-author: TrevorLOlson
+description: Learn how to access Microsoft OneLake shortcuts as folders and as tables in an Apache Spark notebook.
+ms.reviewer: eloldag # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.search.form: Shortcuts
 ms.topic: how-to
-ms.custom:
 ms.date: 11/15/2023
 #customer intent: As a data analyst, I want to learn how to access OneLake shortcuts in an Apache Spark notebook so that I can easily read data from shortcuts and use them in my Spark analysis.
 ---
 
-# Access Fabric OneLake shortcuts in an Apache Spark notebook
+# Access OneLake shortcuts in an Apache Spark notebook
 
 For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md).
 
@@ -37,7 +36,7 @@ To access a shortcut as a folder:
 
 ## Access shortcuts as tables in a Spark notebook
 
-Microsoft Fabric automatically recognizes shortcuts in the **Tables** section of the lakehouse that have data in the Delta\Parquet format as tables. You can reference these tables directly from a Spark notebook.
+Fabric automatically recognizes shortcuts in the **Tables** section of the lakehouse that have data in the Delta\Parquet format as tables. You can reference these tables directly from a Spark notebook.
 
 To access a shortcut as a table:
 
@@ -61,7 +60,7 @@ To access a shortcut as a table:
 
 You can also access shortcuts through the Azure Blob Filesystem (ABFS) driver or REST endpoint directly. Copy these paths from the lakehouse.
 
-1. Open a Lakehouse containing shortcuts.
+1. Open a lakehouse that contains shortcuts.
 
 1. Right-click on a shortcut and select **Properties**.
 

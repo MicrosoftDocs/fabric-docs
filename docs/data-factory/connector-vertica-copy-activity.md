@@ -1,11 +1,10 @@
 ---
 title: Configure Vertica in a copy activity
 description: This article explains how to copy data using Vertica.
-author: jianleishen
-ms.author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: how-to
 ms.date: 09/06/2024
-ms.custom: 
+ms.custom:
   - pipelines
   - template-how-to
   - connectors
@@ -74,11 +73,11 @@ Under **Advanced**, you can specify the following fields:
 
 ### Mapping
 
-For the **Mapping** tab configuration, go to [Configure your mappings under mapping tab](copy-data-activity.md#configure-your-mappings-under-mapping-tab).
+For the **Mapping** tab configuration, go to [Configure your mappings under mapping tab](copy-data-activity.md#configure-your-mappings-under-the-mapping-tab).
 
 ### Settings
 
-For the **Settings** tab configuration, go to [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
+For the **Settings** tab configuration, go to [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-the-settings-tab).
 
 ## Table summary
 

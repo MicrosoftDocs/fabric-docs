@@ -2,12 +2,11 @@
 title: Get data from file
 description: Learn how to get data from a local file in a KQL database in Real-Time Intelligence.
 ms.reviewer: tzgitlin
-ms.author: spelluru
-author: spelluru
 ms.topic: how-to
-ms.custom:
-ms.date: 03/02/2025
+ms.subservice: rti-eventhouse
+ms.date: 08/20/2026
 ms.search.form: Get data in a KQL Database
+ai-usage: ai-assisted
 ---
 
 # Get data from file
@@ -27,7 +26,8 @@ In this article, you learn how to get data from a local file into either a new o
 
 1. Select the data source from the available list. In this example, you're ingesting data from **Local file**.
 
-    [!INCLUDE [get-data-kql](includes/get-data-kql.md)]
+    :::image type="content" source="media/get-data-file/get-data-file-tile.png" alt-text="Screenshot of the get data tiles with the Local file option highlighted.":::
+    
 
 ## Configure
 
@@ -53,6 +53,15 @@ To complete the ingestion process, select **Finish**.
 :::image type="content" source="media/get-data-file/inspect-data.png" alt-text="Screenshot of the inspect tab." lightbox="media/get-data-file/inspect-data.png":::
 [!INCLUDE [get-data-inspect](includes/get-data-inspect.md)]
 
+(6) Select **Allow large values** to ingest `string` or `dynamic` columns with cell values up to 20 MB. This checkbox is automatically selected if a large value is detected in the first 1,000 rows of data. For more information, see [Large message support (preview)](get-data-overview.md#large-message-support-preview).
+
+> [!NOTE]
+> Schema inference in the Get Data wizard is based on scanning the first 1,000 records in the preview data. AVRO, Parquet, and TXT formats aren't scanned for large messages during this configuration wizard. For these formats, you must manually select **Allow large values** if you expect `string` or `dynamic` values to exceed 1 MB per cell.
+> Large Message Support isn't supported for shortcuts (external tables), tables with Query acceleration over OneLake shortcuts. 
+> OneLake data availability for tables with large value columns depends on the target size limits.
+
+:::image type="content" source="media/get-data-file/local-file-wizard.png" alt-text="Screenshot of the allow large values option highlighted." lightbox="media/get-data-file/local-file-wizard.png":::
+
 [!INCLUDE [get-data-edit-columns](includes/get-data-edit-columns.md)]
 
 :::image type="content" source="media/get-data-file/edit-columns.png" alt-text="Screenshot of columns open for editing." lightbox="media/get-data-file/edit-columns.png":::
@@ -69,5 +78,5 @@ In the **Data preparation** window, all three steps are marked with green check 
 
 ## Related content
 
-* To manage your database, see [Manage data](data-management.md)
-* To create, store, and export queries, see [Query data in a KQL queryset](kusto-query-set.md)
+* To manage your database, see [Manage data](data-management.md).
+* To create, store, and export queries, see [Query data in a KQL queryset](kusto-query-set.md).

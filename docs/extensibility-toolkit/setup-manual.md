@@ -1,11 +1,9 @@
 ---
 title: Manual Step by step guid to configure the development environment
 description: This article helps you to set up a development environment manually
-author: gsaurer
-ms.author: billmath
+ms.reviewer: gesaur
 ms.topic: tutorial
-ms.custom:
-ms.date: 09/04/2025
+ms.date: 12/15/2025
 ---
 
 # Manual setup guide
@@ -14,7 +12,7 @@ We recommend using the [Setup Guide](./setup-guide.md) instead of following thes
 
 ## Create the configuration files
 
-The repository takes the configuration values from the .env.{ENVIROMENT} files in the repository. For this you first need to copy the [.env.template](https://github.com/microsoft/fabric-extensibility-toolkit/blob/main/Workload/.env.template) file to `.env.dev`, `.env.test`, and `.env.prod` in the same directory and populate the values. The values in those files are used in creating the Manifest. For local development only the .env.dev file is normally needed.
+The repository takes the configuration values from the .env.{ENVIRONMENT} files in the repository. For this you first need to copy the [.env.template](https://github.com/microsoft/fabric-extensibility-toolkit/blob/main/Workload/.env.template) file to `.env.dev`, `.env.test`, and `.env.prod` in the same directory and populate the values. The values in those files are used in creating the Manifest. For local development only the .env.dev file is normally needed.
 
 Decide on a WorkloadName and fill it out in .env.dev file.
 
@@ -22,7 +20,7 @@ Decide on a WorkloadName and fill it out in .env.dev file.
 
 You can use the [CreateDevAADApp.ps1](https://github.com/microsoft/fabric-extensibility-toolkit/blob/main/scripts/Setup/CreateDevAADApp.ps1) to create a new Microsoft Entra app or you can follow the steps.
 
-1. Navigate to App registrations in the Azure Admin Portal.
+1. Navigate to App registrations in the Microsoft Entra IDmin Portal.
 2. Create a new Multitenant application.
 
  :::image type="content" source="media/setup-manual/manual-1.png" alt-text="Screenshot of app registration." lightbox="media/setup-manual/manual-1.png":::

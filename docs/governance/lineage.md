@@ -4,7 +4,6 @@ description: Learn how to view the lineage of Fabric items.
 author: msmimart
 ms.author: mimart
 ms.topic: how-to
-ms.custom:
 ms.date: 11/06/2023
 ---
 
@@ -18,9 +17,6 @@ In lineage view, you see the lineage relationships between all the items in a wo
 
 Every workspace automatically has a lineage view.
 
-> [!NOTE]
-> Lineage in Fabric is in preview, and not all connections between items are fully supported yet. It is possible that the lineage between some items will be incorrectly shown.
-
 ## Permissions
 
 Any user with a [role in a workspace](../fundamentals/roles-workspaces.md) can access that workspace's lineage view. However, users with the *Viewer* role won't see data sources.
@@ -33,7 +29,7 @@ Lineage is accessible from multiple locations. Typically, you can get to it
 
     :::image type="content" source="./media/lineage/lineage-workspace.png" alt-text="Screenshot of lineage view option in workspace menu.":::
 
-* From an item's option menu (for instance, in the OneLake data hub)
+* From an item's option menu (for instance, in the OneLake catalog)
 
     :::image type="content" source="./media/lineage/lineage-options-menu.png" alt-text="Screenshot of lineage view option in options menu.":::
 
@@ -80,6 +76,12 @@ Lineage view is an interactive canvas. You can use the mouse and touchpad to nav
 * To have more room for the graph itself, use the full screen option at the bottom-right corner.
 
     :::image type="content" source="./media/lineage/lineage-zoom.png" alt-text="Screenshot of zoom in or out, or full screen options." border="false":::
+
+## Accessibility 
+
+Lineage supports keyboard navigation and screen readers.
+
+Tab navigation follows a depth‑first search (DFS) traversal of the graph, which may differ from the visual layout. Screen readers announce node relationships to help understand lineage dependencies.
 
 ## Considerations and limitations
 

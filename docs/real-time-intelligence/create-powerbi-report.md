@@ -1,28 +1,25 @@
 ---
-title:  Visualize data in a Power BI report
+title:  Visualize Data in a Power BI Report
 description: Learn how to visualize data from a KQL queryset in a Power BI report.
 ms.reviewer: tzgitlin
-ms.author: spelluru
-author: spelluru
 ms.topic: how-to
-ms.custom:
-ms.date: 11/19/2024
+ms.date: 03/22/2026
 ---
 
 # Visualize data in a Power BI report
 
-In this article, you learn how to build a Power BI report using a KQL Queryset. The output of your query is used as the semantic model of your report.
+In this article, you learn how to build a Power BI report using a KQL Queryset. You use the output of your query as the semantic model for your report.
 
 To use multiple tables to build your Power BI report, see [Use data from a KQL database in Power BI Desktop](power-bi-data-connector.md).
 
 ## Prerequisites
 
-* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-* A [KQL database](create-database.md) with editing permissions
+* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity).
+* A [KQL database](create-database.md) with editing permissions.
 
 ## Create a report
 
-There are three possible ways to create a report:
+You can create a report in three ways:
 
 1. **Option 1:** Browse to a KQL queryset.
 1. **Option 2:** Open the **Explore your data** window from a KQL database.
@@ -38,22 +35,22 @@ There are three possible ways to create a report:
     :::image type="content" source="media/create-powerbi-report/build-report-from-table.png" alt-text="Screenshot of building a Power BI report from a table. The table menu is open with Build Power BI report selected.":::
 
 >[!NOTE]
-> When you build a report, a semantic model is created and saved in your workspace. You can create multiple reports from a single semantic model.
+> When you build a report, you create and save a semantic model in your workspace. You can create multiple reports from a single semantic model.
 >
-> If you delete the semantic model, your reports will also be removed.
+> If you delete the semantic model, you also delete your reports.
 
 ### Report preview
 
-You can add visualizations in the report's preview. In the **Data** pane, expand **Kusto Query Result** to see a summary of your query. For more information, see [Power BI visualizations](/power-bi/visuals/power-bi-report-visualizations).
+You can add visualizations in the report preview. In the **Data** pane, expand **Kusto Query Result** to see a summary of your query. For more information, see [Power BI visualizations](/power-bi/visuals/power-bi-report-visualizations).
 
-When you're satisfied with the visualizations, select **File** on the ribbon, and then **Save this report** to name and save your report in a workspace.
+When you're satisfied with the visualizations, select **File** on the ribbon, and then select **Save this report** to name and save your report in a workspace.
 
 :::image type="content" source="media/create-powerbi-report/report-preview.png" alt-text="Screenshot of Power BI report preview window showing a preview of the semantic model visualization. The Save button is highlighted." lightbox="media/create-powerbi-report/report-preview.png":::
 
 ### Report details
 
-1. In **Name your file in Power BI**, give your file a name.
-1. Select the workspace in which to save this report. The report can be a different workspace than the one you started in.
+1. In **Name your file in Power BI**, enter a name for your file.
+1. Select the workspace where you want to save this report. You can choose a different workspace from the one you started in.
 
     :::image type="content" source="media/create-powerbi-report/report-details.png" alt-text="Screenshot of report details showing the report's name and the workspace it's saved in. The button titled Continue is highlighted." lightbox="media/create-powerbi-report/report-details.png":::
 

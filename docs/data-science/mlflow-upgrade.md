@@ -1,12 +1,9 @@
 ---
 title: Machine learning tracking system update
 description: Learn how to upgrade the machine learning tracking system
-ms.author: ruxu
-author: ruixinxu
-ms.reviewer: 
-reviewer: 
 ms.topic: how-to
-ms.custom: 
+ms.reviewer: scottpolly
+reviewer: s-polly
 ms.date: 11/06/2025
 ms.search.form: ML Experiment, ML Model
 ---
@@ -17,7 +14,7 @@ Microsoft Fabric integrates MLflow, an open-source machine learning tracking pla
 
 ## Upgrade to the latest machine learning tracking experience
 
-Starting November 2025, we're introducing an enhanced machine learning experiment tracking experience for your workspace. This upgrade is optional and available on-demand. If you choose not to upgrade manually, we'll automatically update your system by the end of Q1 2026.
+Starting November 2025, we're introducing an enhanced machine learning experiment tracking experience for your workspace. This upgrade is optional and available on-demand. 
 
 ## How to upgrade your workspace
 
@@ -46,3 +43,4 @@ If you encounter any issues or have questions during the upgrade process, don't 
 - [Run machine learning experiments in Microsoft Fabric](./machine-learning-experiment.md)
 - [Track and manage machine learning models](machine-learning-model.md)
 - [Learn about MLflow Experiment APIs](https://www.mlflow.org/docs/latest/python_api/mlflow.html)
+

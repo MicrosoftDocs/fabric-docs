@@ -1,9 +1,7 @@
 ---
 title: Azure Batch activity
 description: Learn how to add an Azure Batch activity to a pipeline and use it to connect to an Azure Batch instance and run a command.
-ms.reviewer: xupxhou
-ms.author: abnarain
-author: nabhishek
+ms.reviewer: xupxhou, abnarain
 ms.topic: how-to
 ms.custom: pipelines
 ms.date: 11/15/2023
@@ -11,14 +9,13 @@ ms.date: 11/15/2023
 
 # Use the Azure Batch activity to run a command on an Azure Batch instance
 
-The Azure Batch activity in Data Factory for Microsoft Fabric allows you to run a command against an Azure Batch instance.
+The Azure Batch activity in Fabric Data Factory allows you to run a command against an Azure Batch instance. If you are migrating to Fabric Data Factory from Azure Data Factory or Azure Synapse, this activity is called Custom activity.
 
 ## Prerequisites
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
-- A workspace is created.
+[!INCLUDE[basic-prerequisites](includes/basic-prerequisites.md)]
 
 ## Add an Azure Batch activity to a pipeline with UI
 
@@ -44,13 +41,38 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 Select the **Settings** tab, then you can choose an existing or create a new **Azure Batch connection**, provide a **Command** to be executed, and a **Resource connection** to a storage account. You can also specify a specific **Folder path** within the storage account and a **Retention time in days** for data to be retained there, as well as add extended properties of your own.
 
+The Azure Batch activity supports WI, SPN, and OAuth connection types.
+
 :::image type="content" source="media/azure-batch-activity/azure-batch-activity-settings.png" alt-text="Screenshot showing the Settings tab of the Azure Batch activity.":::
+
+#### Using Fabric workspace identity in the Azure Batch activity
+
+1. **Create the workspace identity**
+
+   You must enable workspace identity in your workspace (this may take a moment to load). Create a workspace identity in your Fabric workspace. Note that the workspace identity should be created in the same workspace as your pipeline.
+   
+   Check out the docs on [workspace identity](../security/workspace-identity.md).
+
+1. **Enable tenant-level settings**
+
+   Enable the following tenant setting (it's disabled by default): _Service principals can call Fabric public APIs._
+
+   You can enable this setting in the [Fabric admin portal](/fabric/admin/admin-center#how-to-get-to-the-admin-portal). For more information about this setting, see [the enable service principal authentication for admin APIs article](../admin/enable-service-principal-admin-apis.md).
+
+1. **Grant workspace permissions to the workspace identity**
+
+   Open the workspace, select Manage access, and assign permissions to the workspace identity. Contributor access is sufficient for most scenarios.
+
+   Check out the docs on [Give users access to workspaces](../fundamentals/give-access-workspaces.md).
 
 ## Save and run or schedule the pipeline
 
-After you configure any other activities required for your pipeline, switch to the **Home** tab at the top of the pipeline editor, and select the save button to save your pipeline. Select **Run** to run it directly, or **Schedule** to schedule it. You can also view the run history here or configure other settings.
+[!INCLUDE[save-run-schedule-pipeline](includes/save-run-schedule-pipeline.md)]
 
-:::image type="content" source="media/lookup-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted.":::
+## Known issues
+- The workspace identity option in connections settings does not surface in some instances. This is a bug that a fix is being worked on at the moment.
+- Using Service Principal to run a notebook that contains Semantic Link code has functional limitations and supports only a subset of semantic link features. See the [supported semantic link functions](../data-science/semantic-link-service-principal-support.md#supported-semantic-link-functions) for details. To use other capabilities, you're recommended to [manually authenticate semantic link with a service principal](../data-science/semantic-link-service-principal-support.md#manually-authenticate-semantic-link-with-a-service-principal).
+- Some customers may not see the workspace identity dropdown, or may see it but be unable to create a connection. This behavior is due to a known issue in one of our underlying platform components. The fix is currently being worked on.
 
 ## Related content
 

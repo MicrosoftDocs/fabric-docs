@@ -3,8 +3,6 @@ title: Q&A admin settings
 description: Learn how to configure Q&A admin settings in Fabric.
 author: msmimart
 ms.author: mimart
-ms.reviewer: ''
-
 ms.custom:
   - tenant-setting
 ms.topic: how-to
@@ -14,7 +12,7 @@ LocalizationGroup: Administration
 
 # Q&A tenant settings
 
-These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
+These settings are configured in **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
 
 ## Review questions
 

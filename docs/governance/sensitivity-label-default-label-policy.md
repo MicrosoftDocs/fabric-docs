@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.service: powerbi
 ms.subservice: powerbi-eim
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
 ms.date: 03/03/2025
 LocalizationGroup: Data from files

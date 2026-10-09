@@ -1,8 +1,6 @@
 ---
 title: "Query labels"
 description: This tutorial explains how to query labels for diagnostics and query tuning in Fabric Data Warehouse.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: periclesrocha
 ms.date: 11/11/2025
 ms.topic: how-to

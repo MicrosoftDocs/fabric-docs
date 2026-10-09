@@ -3,12 +3,9 @@ title: "Audit schema for sensitivity labels in Microsoft Fabric"
 description: "This article documents the information in the Fabric auditing schema that's specific to sensitivity labels."
 author: msmimart
 ms.author: mimart
-ms.service: fabric
-ms.topic: concept-article #Don't change.
+ms.topic: concept-article
 ms.date: 08/04/2024
-
 #customer intent: As a member of a security and compliance team, I want to know which sensitivity label operations are audited and understand the information that appears in the audit entries.
-
 ---
 
 # Audit schema for sensitivity labels in Fabric

@@ -1,11 +1,9 @@
 ---
 title: Extend the Microsoft Fabric frontend
 description: Learn how to edit files in the developer sample repository to build the frontend of a customized Microsoft Fabric workload. Learn about the Microsoft Fabric Workload Development Kit and how to use it by following a detailed example.
-author: KesemSharabi
-ms.author: kesharab
 ms.topic: how-to
 ms.custom: sfi-image-nochange
-ms.date: 05/21/2024
+ms.date: 04/29/2026
 #customer intent: As a developer, I want to understand how to build the frontend of a customized Microsoft Fabric workload and how to use the Microsoft Fabric Workload Development Kit so that I can create customized user experiences.
 ---
 
@@ -42,7 +40,7 @@ In this package, the [frontend manifest files](https://github.com/microsoft/Micr
 
 ## Enable the workload development feature in Fabric
 
-The tenant administrator must first enable the workload development feature in the Microsoft Fabric admin portal. The feature can be enabled for the entire organization or for specific groups within the organization. For a tenant admin, to enable the workload development feature for specific groups, complete the steps that are described in [Enable the development tenant setting](/fabric/workload-development-kit/environment-setup#enable-the-development-tenant-setting).
+The tenant administrator must first enable the workload development feature in tenant settings. The feature can be enabled for the entire organization or for specific groups within the organization. For a tenant admin, to enable the workload development feature for specific groups, complete the steps that are described in [Enable the development tenant setting](/fabric/workload-development-kit/environment-setup#enable-the-development-tenant-setting).
 
 :::image type="content" source="./media/extensibility-front-end/tenant-switch.png" alt-text="Screenshot of the workloads development tenant switch.":::
 
@@ -421,3 +419,4 @@ For more information, see [@ms-fabric/workload-client package](https://go.micros
 
 * [Workload Development Kit overview](development-kit-overview.md)
 * [Backend configuration guide](extensibility-back-end.md)
+

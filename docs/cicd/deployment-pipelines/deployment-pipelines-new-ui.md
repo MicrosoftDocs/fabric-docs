@@ -1,18 +1,16 @@
 ---
 title: Overview of Fabric deployment pipelines new user interface
 description: An introduction to the new user interface for deployment pipelines in the Fabric (ALM) tool
-author: billmath
-ms.author: billmath
-ms.topic: conceptual
-ms.custom:
-ms.date: 03/07/2024
+ms.topic: concept-article
+ms.date: 09/24/2026
+ai-usage: ai-assisted
 ms.search.form: Deployment pipelines UI
 #customer intent: As a developer, I want to learn about the new user interface for deployment pipelines in the Fabric service so that I can manage my development process efficiently.
 ---
 
 # New deployment pipelines user interface
 
-The user interface for Microsoft Fabric's Deployment pipelines is undergoing a change to improve the user experience. The new UI is designed to be more focused, easier to navigate, and have a smoother flow. The functionality has stayed the same, and anything you can do with the original UI you can do with the new UI.
+The user interface for Fabric's Deployment pipelines is changing to improve the user experience. The new UI is more focused, easier to navigate, and has a smoother flow. The functionality stays the same, and you can do everything in the new UI that you can do in the original UI.
 
 > [!NOTE]
 > The new UI is currently in preview and is available to all users. The old UI is still available and can be accessed by using the [toggle switch](#begin-using-the-new-ui) in the upper right corner of the page.
@@ -43,6 +41,13 @@ This is a more consistent and intuitive experience than before. Whereas in the o
 When you select a stage in the new UI, the content of that stage appears on the bottom pane with each item shown next to its [paired item](./intro-to-deployment-pipelines.md#item-pairing) in the source stage and the sync status displayed by default. The source stage is the one shown in the drop-down menu next to the *Deploy* button. Learn more in [Compare stages content](./compare-pipeline-content.md#compare-stages).
 
 :::image type="content" source="./media/deployment-pipelines-new-ui/source-stage.png" alt-text="Screenshot showing where to find the name of the source stage in the new UI. It's next to the deploy button.":::
+
+#### Deploy with a deployment plan
+
+In the new UI, you can optionally attach a [deployment plan](../deployment-plan/deployment-plan-overview.md) in the deployment dialog. By default, the deployment uses the plan in the target workspace. You can instead select a plan from the source workspace.
+
+For the complete deployment procedure, see [Deploy with a deployment plan](deploy-content.md#deploy-with-a-deployment-plan-preview).
+For how item selection, plan relationships, and Fabric lineage work together, see [How a deployment plan works](../deployment-plan/deployment-plan-overview.md#how-a-deployment-plan-works).
 
 ### Enhanced experience
 
@@ -82,3 +87,4 @@ Your selection is saved and will be remembered the next time you visit the page.
 
 * [Overview of deployment pipelines](./intro-to-deployment-pipelines.md)
 * [Get started with deployment pipelines](get-started-with-deployment-pipelines.md)
+* [What is a deployment plan?](../deployment-plan/deployment-plan-overview.md)

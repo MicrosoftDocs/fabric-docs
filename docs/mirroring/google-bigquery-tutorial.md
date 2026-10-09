@@ -1,14 +1,12 @@
 ---
-title: "Set up Mirroring for Google BigQuery (Preview)"
+title: "Set up Mirroring for Google BigQuery"
 description: Learn how to configure a mirrored database from Google BigQuery in Microsoft Fabric.
-author: MichaelaIsaacs
-ms.author: misaacs
-ms.reviewer: whhender
-ms.date: 09/09/2025
+ms.reviewer: misaacs
+ms.date: 08/18/2026
 ms.topic: tutorial
 ---
  
-# Tutorial: Set up mirroring for Google BigQuery (Preview)
+# Tutorial: Set up mirroring for Google BigQuery
 
 In this tutorial, you'll configure a Fabric mirrored database from Google BigQuery.
 
@@ -39,7 +37,7 @@ You can use an existing workspace (not My Workspace) or create a new workspace.
 ## Connect to your BigQuery instance in any cloud
 
 > [!NOTE]
-> You might need to alter the cloud firewall to allow Mirroring to connect to the BigQuery instance. We support Mirroring for Google BigQuery for OPDG version 3000.286.6 or greater.
+> You might need to alter the cloud firewall to allow Mirroring to connect to the BigQuery instance. We support Mirroring for Google BigQuery for OPDG version 3000.286.6 or greater. We also support VNET.
 
 1. Select **BigQuery** under **New connection** or selected an existing connection.
 1. If you selected **New connection**, enter the connection details to the BigQuery database.
@@ -76,7 +74,6 @@ You can use an existing workspace (not My Workspace) or create a new workspace.
 1. Now that your data is up and running, there are various analytics scenarios available across all of Fabric.
 
 > [!IMPORTANT]
-> * Mirroring for Google BigQuery has a ~15-minute delay in change reflection. This is a limitation from Google BigQuery's Change Data Capture (CDC) technology.
 > * Any granular security established in the source database must be reconfigured in the mirrored database in Microsoft Fabric.
 
 ## Monitor Fabric mirroring

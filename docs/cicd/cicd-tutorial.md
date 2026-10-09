@@ -1,19 +1,15 @@
 ---
-title: Lifecycle management tutorial
+title: Application lifecycle management tutorial
 description: Understand the workflow of using Git integration with deployment pipelines to manage the lifecycle of your apps.
-author: billmath
-ms.author: billmath
 ms.reviewer: NimrodShalit
-ms.search.form: Variable library tutorial
+ms.search.form: Application lifecycle management tutorial
 ms.topic: tutorial
-ms.service: fabric
-ms.subservice: cicd
 ms.custom: sfi-image-nochange
-ms.date: 07/10/2024
+ms.date: 07/24/2026
 #customer intent: As a developer, I want to understand how to use Git integration with deployment pipelines to manage the lifecycle of my apps.
 ---
 
-# Tutorial: Lifecycle management in Fabric
+# Tutorial: Application lifecycle management in Fabric
 
 In this tutorial, you go through the whole process of loading data into your workspace, and using deployment pipelines together with Git integration to collaborate with others in the development, testing, and publication of your data and reports.
 
@@ -28,11 +24,11 @@ In this tutorial, you go through the whole process of loading data into your wor
 
 If you already have admin rights to a workspace with data, you can skip to [step 3](#step-3-connect-the-teams-development-workspace-to-git).
 
-## Step 1: Create a Premium workspace
+## Step 1: Create a workspace
 
 To create a new workspace and assign it a license:
 
-1. From the left navigation bar of the **Power BI** experience, select **Workspaces > + New workspace**.
+1. From the left navigation bar of the **Power BI** workload, select **Workspaces > + New workspace**.
 
    :::image type="content" source="media/cicd-tutorial/create-workspace.png" alt-text="Screenshot of Create workspace user interface.":::
 
@@ -41,10 +37,9 @@ To create a new workspace and assign it a license:
 
    :::image type="content" source="media/cicd-tutorial/name-workspace.png" alt-text="Screenshot of new workspace with name. The name is FoodSalesWS.":::
 
-1. Expand the **Advanced** section to reveal **License mode**.
-1. Select either **Trial** or **Premium capacity**.
+1. Expand the **Advanced** section to reveal **Workspace type**.
 
-   :::image type="content" source="media/cicd-tutorial/license-mode.png" alt-text="Screenshot of new workspace with license mode.":::
+1. Select either **Fabric Trial** or **Fabric capacity**.
 
 1. Select **Apply**.
 
@@ -110,7 +105,7 @@ Let's connect this workspace to the main branch of your Git repo so all team mem
 
 1. Select **Connect and sync**.
 
-After you connect, the Workspace displays information about source control that allows you to view the connected branch, the status of each item in the branch and the time of the last sync. The Source control icon shows `0` because the items in the workspace Git repo are identical.
+After you connect, the workspace displays information about source control that you can use to view the connected branch, the status of each item in the branch, and the time of the last sync. The Source control icon shows `0` because the items in the workspace Git repo are identical.
 
 :::image type="content" source="./media/cicd-tutorial/git-sync-information.png" alt-text="Screenshot of source control icon and other Git information.":::
 
@@ -262,7 +257,7 @@ Once the changes have been merged to the main branch, you can safely delete the 
 
 ## Step 10: Update shared workspace
 
-Go back to the shared workspace connected to the dev stage of the deployment pipeline (the one we created in [Step 1](#step-1-create-a-premium-workspace)) and refresh the page.  
+Go back to the shared workspace connected to the dev stage of the deployment pipeline (the one we created in [Step 1](#step-1-create-a-workspace)) and refresh the page.  
 The source control icon now shows 1 because one item in the Git repo was changed and is different from the items in the FoodSales workspace. The FoodSales semantic model shows a status of *Update required*.
 
 :::image type="content" source="media/cicd-tutorial/update-required-icon.png" alt-text="Screenshot of source control icon showing one difference.":::
@@ -317,3 +312,4 @@ In particular, you learned how to:
 
 * [Power BI Desktop projects and Azure DevOps build pipelines](/power-bi/developer/projects/projects-build-pipelines)
 * [Manage Git branches](./git-integration/manage-branches.md)
+* [Tutorial: End-to-end automation in Fabric](./tutorial-end-to-end-automation.md)

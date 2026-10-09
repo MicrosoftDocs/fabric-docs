@@ -1,8 +1,6 @@
 ---
 title: Spark connector for Microsoft Fabric Data Warehouse
 description: Learn how to use a Spark connector to access and work with data from a Microsoft Fabric warehouse and the SQL analytics endpoint of a lakehouse.
-author: eric-urban
-ms.author: eur
 ms.reviewer: arali
 ms.topic: how-to
 ms.custom:
@@ -15,27 +13,27 @@ ms.date: 04/11/2025
 The Spark connector for Fabric Data Warehouse enables Spark developers and data scientists to access and work with data from [a warehouse and the SQL analytics endpoint of a lakehouse](../data-warehouse/data-warehousing.md#data-warehousing-items). The connector offers the following capabilities:
 
 * You can work with data from a warehouse or SQL analytics endpoint in the same workspace or across multiple workspaces.
-* The SQL analytics endpoint of a Lakehouse is automatically discovered based on workspace context.
+* The SQL analytics endpoint of a lakehouse is automatically discovered based on workspace context.
 * The connector has a simplified Spark API, abstracts the underlying complexity, and operates with just one line of code.
 * While you're accessing a table or a view, the connector upholds security models defined at the SQL engine level. These models include object-level security (OLS), row-level security (RLS), and column-level security (CLS).
 * The connector comes preinstalled within the Fabric runtime, which eliminates the need for separate installation.
 
 ## Authentication
 
-Microsoft Entra authentication is an integrated authentication approach. Users sign in to the Microsoft Fabric workspace, and their credentials are automatically passed to the SQL engine for authentication and authorization. The credentials are automatically mapped, and users aren't required to provide specific configuration options.
+Microsoft Entra authentication is an integrated authentication approach. Users sign in to the Fabric workspace, and their credentials are automatically passed to the SQL engine for authentication and authorization. The credentials are automatically mapped, and users aren't required to provide specific configuration options.
 
 > [!NOTE]
-> The Spark connector for Fabric Data Warehouse only supports interactive Microsoft Entra user authentication. Service principal authentication isn't supported. 
+> The Spark connector for Fabric Data Warehouse only supports interactive Microsoft Entra user authentication. Service principal authentication isn't supported.
 
 ### Permissions
 
-To connect to the SQL engine, users need at least Read permission (similar to CONNECT permission in SQL Server) on the warehouse or SQL analytics endpoint (item level). Users also need granular object-level permissions to read data from specific tables or views. To learn more, see [Security for data warehousing in Microsoft Fabric](../data-warehouse/security.md).
+To connect to the SQL engine, users need at least Read permission (similar to CONNECT permission in SQL Server) on the warehouse or SQL analytics endpoint (item level). Users also need granular object-level permissions to read data from specific tables or views. To learn more, see [Security in Fabric Data Warehouse](../data-warehouse/security.md).
 
 ## Code templates and examples
 
 ### Use a method signature
 
-The following command shows the `synapsesql` method signature for the read request. The three-part `tableName` argument is required for accessing tables or views from a warehouse and the SQL analytics endpoint of a lakehouse. Update the argument with the following names, based on your scenario:
+The following command shows the `synapsesql` method signature for the Read request. The three-part `tableName` argument is required for accessing tables or views from a warehouse and the SQL analytics endpoint of a lakehouse. Update the argument with the following names, based on your scenario:
 
 * Part 1: Name of the warehouse or lakehouse.
 * Part 2: Name of the schema.
@@ -139,7 +137,7 @@ This connector employs a two-phase write process to a Fabric DW table. Initially
 Following save modes are supported when writing source data of a dataframe to a destination table in warehouse:
 
 * ErrorIfExists (default save mode): If destination table exists, then the write is aborted with an exception returned to the callee. Else, a new table is created with data.
-* Ignore: If the destination table exists, then the write will ignore the write request without returning an error. Else, a new table is created with data.
+* Ignore: If the destination table exists, then the write ignores the write request without returning an error. Else, a new table is created with data.
 * Overwrite: If the destination table exists, then existing data in the destination is replaced with data. Else, a new table is created with data.
 * Append: If the destination table exists, then the new data is appended to it. Else, a new table is created with data.
 
@@ -154,7 +152,29 @@ df.write.mode("append").synapsesql("<warehouse/lakehouse name>.<schema name>.<ta
 df.write.mode("overwrite").synapsesql("<warehouse/lakehouse name>.<schema name>.<table name>")
 ```
 > [!NOTE]
-> The connector supports writing to a Fabric DW table only as the SQL analytics endpoint of a Lakehouse is read-only.
+> The connector supports writing to a Fabric DW table only as the SQL analytics endpoint of a lakehouse is read-only.
+
+### Parallelizing Reads for Improved Performance
+This connector supports parallelized reads to improve query performance when loading large tables. Similar to [spark.read.jdbc](https://spark.apache.org/docs/latest/sql-data-sources-jdbc.html), you can enable parallelism by specifying a partition column and its value range. Spark will then split the read operation into multiple partitions that are processed concurrently.
+
+The following code shows how to enable parallel reads using a Spark notebook:
+
+```python
+import com.microsoft.spark.fabric.tds.implicits.read.FabricSparkTDSImplicits._
+import com.microsoft.spark.fabric.tds.implicits.write.FabricSparkTDSImplicits._
+import com.microsoft.spark.fabric.Constants
+import org.apache.spark.sql.SaveMode 
+
+val df = spark.read.option("partitionColumn", <SomeColumn>)
+
+        .option("lowerBound",  <ColumnValuesLowerLimit>)
+
+        .option("upperBound", <ColumnValuesUpperLimit>)
+
+        .option("numPartitions", <NumberOfPartitionsDesired>).synapsesql(<Table>)
+```
+
+
 
 ## Troubleshoot
 
@@ -165,15 +185,16 @@ Upon completion, the read response snippet appears in the cell's output. Failure
 Currently, the connector:
 
 * Supports data retrieval or read from Fabric warehouses and SQL analytics endpoints of lakehouse items.
-* Supports writing data to a warehouse table using different save modes - this is only available with the latest GA runtime, i.e., [Runtime 1.3](runtime-1-3.md). 
-* With `Private Link` enabled at tenant level write operation is not supported and with `Private Link` enabled at workspace level, both read and write operations are not supported. 
+* Supports writing data to a warehouse table by using different save modes - this feature is available only with the latest GA runtime, [Runtime 2.0](runtime-2-0.md).
+* With `Private Link` enabled, read and write operations are supported at both tenant and workspace levels. Writes use JDBC batch insert strategies. For more information, see [Private Link support for the Spark connector](spark-data-warehouse-connector-private-link.md).
 * Fabric DW now supports `Time Travel` however this connector doesn't work for a query with time travel syntax. 
 * Retains the usage signature like the one shipped with Apache Spark for Azure Synapse Analytics for consistency. However, it's not backward compatible to connect and work with a dedicated SQL pool in Azure Synapse Analytics.
-* Column names with special characters will be handled by adding escape character before the query, based on 3 part table/view name, is submitted. In case of a custom or passthrough-query based read, users are required to escape column names that would contain special characters.
+* Column names with special characters will be handled by adding escape character before the query, based on 3 part table/view name, is submitted. In a custom or passthrough-query based read, users are required to escape column names that would contain special characters.
 
 ## Related content
 
+* [Private link support for the Spark connector](spark-data-warehouse-connector-private-link.md)
 * [Apache Spark runtimes in Fabric](runtime.md)
 * [Apache Spark monitoring overview](spark-monitoring-overview.md)
-* [Security for data warehousing in Fabric](../data-warehouse/security.md)
+* [Security in Fabric Data Warehouse](../data-warehouse/security.md)
 * [SQL granular permissions in Fabric](../data-warehouse/sql-granular-permissions.md)

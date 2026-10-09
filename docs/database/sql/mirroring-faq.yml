@@ -2,13 +2,12 @@
 metadata:
   title: "Frequently asked questions for Mirroring Fabric SQL database"
   description: This article answers frequently asked questions about Mirroring of Fabric SQL database.
-  author: WilliamDAssafMSFT
-  ms.author: wiassaf
   ms.reviewer: nzagorac
   ms.topic: faq
-  ms.custom:
   ms.date: 10/14/2024
+
 title: "Frequently asked questions for Mirroring Fabric SQL database"
+
 summary: |
   This article answers frequently asked questions about Mirroring Fabric SQL database.
 

@@ -1,26 +1,24 @@
-﻿---
+---
 title: Use prebuilt Text Analytics with REST API
 description: How to use prebuilt text analytics in Fabric with REST API
-ms.author: lagayhar
-author: lgayhardt
-ms.reviewer: ruxu
-reviewer: ruixinxu
+ms.author: singhrana
+ms.reviewer: scottpolly
 ms.topic: how-to
-ms.custom: 
-ms.date: 08/20/2025
+ms.date: 09/02/2026
+ai-usage: ai-assisted
 ms.update-cycle: 180-days
 ms.search.form: 
 ms.collection: ce-skilling-ai-copilot
 ---
 
 
-# Use Azure AI Language text analytics in Fabric with REST API and SynapseML (preview)
+# Use Azure Language in Foundry Tools text analytics in Fabric with REST API and SynapseML (preview)
 
 [!INCLUDE [feature-preview](../../includes/feature-preview-note.md)]
 
-[Azure AI Language](/azure/ai-services/language-service/) is an [Azure AI service](/azure/ai-services/) that enables you to perform text mining and text analysis with Natural Language Processing (NLP) features.
+[Azure Language in Foundry Tools](/azure/ai-services/language-service/) is a [Microsoft Foundry tool](/azure/ai-services/) that enables you to perform text mining and text analysis with Natural Language Processing (NLP) features.
 
-In this article, you learn how to use Azure AI Language services directly in Microsoft Fabric to analyze text. By the end of this article, you're able to:
+In this article, you learn how to use Language services directly in Microsoft Fabric to analyze text. By the end of this article, you're able to:
 
 -   Detect sentiment labels at the sentence or document level
 -   Identify the language for a given text input
@@ -36,7 +34,7 @@ In this article, you learn how to use Azure AI Language services directly in Mic
 * Attach your notebook to a lakehouse. On the left side of your notebook, select **Add** to add an existing lakehouse or create a new one.
 
 > [!NOTE]
-> This article uses Microsoft Fabric's built-in prebuilt AI services, which handle authentication automatically. You don't need to obtain a separate Azure AI services key - the authentication is managed through your Fabric workspace. For more information, see [Prebuilt AI models in Fabric (preview)](ai-services-overview.md#prebuilt-ai-models-in-fabric-preview).
+> This article uses Microsoft Fabric's built-in prebuilt Foundry Tools, which handle authentication automatically. You don't need to obtain a separate Foundry Tools key - the authentication is managed through your Fabric workspace. For more information, see [Prebuilt AI models in Fabric (preview)](ai-services-overview.md#prebuilt-ai-models-in-fabric-preview).
 
 The code samples in this article use libraries that are preinstalled in Microsoft Fabric notebooks:
 
@@ -50,7 +48,7 @@ The code samples in this article use libraries that are preinstalled in Microsof
 
 ## Choose your approach
 
-This article provides two ways to use Azure AI Language services in Fabric:
+This article provides two ways to use Language services in Fabric:
 
 - **REST API approach**: Direct HTTP calls to the service (recommended for beginners)
 - **SynapseML approach**: Using Spark DataFrames for larger-scale processing
@@ -62,10 +60,10 @@ This article provides two ways to use Azure AI Language services in Fabric:
 
 ###  Set up authentication and endpoints
 
-Copy and paste this code into the first cell of your Fabric notebook to set up the connection to Azure AI Language services:
+Copy and paste this code into the first cell of your Fabric notebook to set up the connection to Language services:
 
 > [!NOTE]
-> This code uses Fabric's built-in authentication. The `get_fabric_env_config ` function automatically retrieves your workspace credentials and connects to the prebuilt AI services. No API key is required.
+> This code uses Fabric's built-in authentication. The `get_fabric_env_config` function automatically retrieves your workspace credentials and connects to the prebuilt Foundry Tools. No API key is required.
 
 ``` python
 # Get workload endpoints and access token
@@ -77,11 +75,11 @@ import requests
 fabric_env_config = get_fabric_env_config().fabric_env_config
 auth_header = TokenUtils().get_openai_auth_header()
 
-# Make a RESful request to AI service
+# Make a RESTful request to a Foundry tool
 prebuilt_AI_base_host = fabric_env_config.ml_workload_endpoint + "cognitive/textanalytics/"
-print("Workload endpoint for AI service: \n" + prebuilt_AI_base_host)
+print("Workload endpoint for Foundry tool: \n" + prebuilt_AI_base_host)
 
-service_url = prebuilt_AI_base_host + "language/:analyze-text?api-version=2022-05-01"
+service_url = prebuilt_AI_base_host + "language/:analyze-text?api-version=2024-11-01"
 print("Service URL: \n" + service_url)
 
 auth_headers = {
@@ -118,7 +116,7 @@ from pyspark.sql.functions import col
 
 # [Rest API](#tab/rest)
 
-The Sentiment Analysis feature provides a way for detecting the sentiment labels (such as "negative," "neutral" and "positive") and confidence scores at the sentence and document-level. This feature also returns confidence scores between 0 and 1 for each document and sentences within it for positive, neutral, and negative sentiment. See the [Sentiment Analysis and Opinion Mining language support](/azure/ai-services/language-service/sentiment-opinion-mining/language-support) for the list of enabled languages.
+The Sentiment Analysis feature provides a way to detect the sentiment labels (such as "negative," "neutral," and "positive") and confidence scores at the sentence and document level. This feature also returns confidence scores between 0 and 1 for each document and sentences within it for positive, neutral, and negative sentiment. For the list of enabled languages, see the [Sentiment Analysis and Opinion Mining language support](/azure/ai-services/language-service/sentiment-opinion-mining/language-support).
 
 ### Analyze sentiment of text
 
@@ -129,7 +127,7 @@ payload = {
     "kind": "SentimentAnalysis",
     "parameters": {
         "modelVersion": "latest",
-        "opinionMining": "True"
+      "opinionMining": True
     },
     "analysisInput":{
         "documents":[
@@ -293,6 +291,7 @@ df = spark.createDataFrame([
 ], ["text"])
 
 model = (AnalyzeText()
+        .setApiVersion("2024-11-01")
         .setTextCol("text")
         .setKind("SentimentAnalysis")
         .setOutputCol("response"))
@@ -374,6 +373,7 @@ df = spark.createDataFrame([
 ], ["text"])
 
 model = (AnalyzeText()
+        .setApiVersion("2024-11-01")
         .setTextCol("text")
         .setKind("LanguageDetection")
         .setOutputCol("response"))
@@ -383,6 +383,95 @@ result = model.transform(df)\
         .withColumn("detectedLanguage", col("documents.detectedLanguage.name"))
 
 display(result.select("text", "detectedLanguage"))
+```
+
+---
+
+## PII detection
+
+# [REST API](#tab/rest)
+
+PII detection identifies, categorizes, and redacts sensitive information in text. This example uses API and model version `2026-05-01`, the latest generally available versions for text PII detection.
+
+``` python
+pii_service_url = prebuilt_AI_base_host + "language/:analyze-text?api-version=2026-05-01"
+
+payload = {
+    "kind": "PiiEntityRecognition",
+    "parameters": {
+        "modelVersion": "2026-05-01"
+    },
+    "analysisInput": {
+        "documents": [
+            {
+                "id": "1",
+                "language": "en",
+                "text": "Contact Ada at ada@example.com or 425-555-0100."
+            }
+        ]
+    }
+}
+
+response = requests.post(pii_service_url, json=payload, headers=auth_headers)
+
+# Output all information of the request process
+print_response(response)
+```
+
+### Output
+
+```json
+{
+  "kind": "PiiEntityRecognitionResults",
+  "results": {
+    "documents": [
+      {
+        "redactedText": "Contact *** at *************** or ************.",
+        "id": "1",
+        "entities": [
+          {
+            "text": "Ada",
+            "category": "Person",
+            "confidenceScore": 0.95
+          },
+          {
+            "text": "ada@example.com",
+            "category": "Email",
+            "confidenceScore": 0.8
+          },
+          {
+            "text": "425-555-0100",
+            "category": "PhoneNumber",
+            "confidenceScore": 1.0
+          }
+        ],
+        "warnings": []
+      }
+    ],
+    "errors": [],
+    "modelVersion": "2026-05-01"
+  }
+}
+```
+
+# [SynapseML](#tab/synapseml)
+
+``` Python
+df = spark.createDataFrame([
+    ("Contact Ada at ada@example.com or 425-555-0100.",)
+], ["text"])
+
+model = (AnalyzeText()
+        .setApiVersion("2026-05-01")
+        .setTextCol("text")
+        .setKind("PiiEntityRecognition")
+        .setOutputCol("response"))
+
+result = model.transform(df)\
+        .withColumn("documents", col("response.documents"))\
+        .withColumn("redactedText", col("documents.redactedText"))
+
+display(result.select("text", "redactedText"))
 ```
 
 ---
@@ -452,6 +541,7 @@ df = spark.createDataFrame([
 ], ["language", "text"])
 
 model = (AnalyzeText()
+        .setApiVersion("2024-11-01")
         .setTextCol("text")
         .setKind("KeyPhraseExtraction")
         .setOutputCol("response"))
@@ -469,7 +559,7 @@ display(result.select("text", "keyPhrases"))
 
 # [Rest API](#tab/rest)
 
-Named Entity Recognition (NER) is the ability to identify different entities in text and categorize them into predefined classes or types such as: person, location, event, product, and organization. See the [NER language support](/azure/ai-services/language-service/named-entity-recognition/language-support?tabs=ga-api) for the list of enabled languages.
+Named Entity Recognition (NER) is the ability to identify different entities in text and categorize them into predefined classes or types such as person, location, event, product, and organization. See the [NER language support](/azure/ai-services/language-service/named-entity-recognition/language-support?tabs=ga-api) for the list of enabled languages.
 
 ``` python
 payload = {
@@ -543,7 +633,7 @@ print_response(response)
 
 
 Named Entity Recognition (NER) is the ability to identify different entities in text and categorize them into predefined classes or types
-such as: person, location, event, product, and organization. See the [NER language support](/azure/ai-services/language-service/named-entity-recognition/language-support?tabs=ga-api) for the list of enabled languages.
+such as person, location, event, product, and organization. See the [NER language support](/azure/ai-services/language-service/named-entity-recognition/language-support?tabs=ga-api) for the list of enabled languages.
 
 
 ``` Python
@@ -553,6 +643,7 @@ df = spark.createDataFrame([
 ], ["language", "text"])
 
 model = (AnalyzeText()
+        .setApiVersion("2024-11-01")
         .setTextCol("text")
         .setKind("EntityRecognition")
         .setOutputCol("response"))
@@ -576,7 +667,7 @@ No steps for REST API in this section.
 # [SynapseML](#tab/synapseml)
 
 Entity linking identifies and disambiguates the identity of entities found in text. For example, in the sentence "We went to Seattle last
-week.", the word "Seattle" would be identified, with a link to more information on Wikipedia. See [Supported languages for entity linking](/azure/ai-services/language-service/entity-linking/language-support) for the list of enabled languages.
+week.", the word "Seattle" is identified, with a link to more information on Wikipedia. See [Supported languages for entity linking](/azure/ai-services/language-service/entity-linking/language-support) for the list of enabled languages.
 
 
 ``` Python
@@ -586,6 +677,7 @@ df = spark.createDataFrame([
 ], ["language", "text"])
 
 model = (AnalyzeText()
+        .setApiVersion("2024-11-01")
         .setTextCol("text")
         .setKind("EntityLinking")
         .setOutputCol("response"))
@@ -602,10 +694,10 @@ display(result)
 ## Related content
 
 - [Use prebuilt Text Analytics in Fabric with SynapseML](how-to-use-text-analytics.md)
-- [Use prebuilt Azure AI Translator in Fabric with REST API](how-to-use-text-translator.md)
-- [Use prebuilt Azure AI Translator in Fabric with SynapseML](how-to-use-text-translator.md)
+- [Use prebuilt Azure Translator in Foundry Tools in Fabric with REST API](how-to-use-text-translator.md)
+- [Use prebuilt Translator in Fabric with SynapseML](how-to-use-text-translator.md)
 - [Use prebuilt Azure OpenAI in Fabric with REST API](how-to-use-openai-via-rest-api.md)
-- [Use prebuilt Azure OpenAI in Fabric with Python SDK](how-to-use-openai-sdk-synapse.md)
-- [Use prebuilt Azure OpenAI in Fabric with SynapseML](how-to-use-openai-sdk-synapse.md)
+- [Use Azure OpenAI with OpenAI Python SDK](how-to-use-openai-python-sdk.md)
+- [Use prebuilt Azure OpenAI in Fabric with SynapseML](how-to-use-openai-synapse-ml.md)
 - [SynapseML GitHub repository](https://github.com/microsoft/SynapseML) - Source code and documentation for SynapseML
-- [Azure AI Language documentation](/azure/ai-services/language-service/) - Complete reference for Azure AI Language service
+- [Language documentation](/azure/ai-services/language-service/) - Complete reference for Language service

@@ -1,15 +1,15 @@
----
+﻿---
 title: Track user activities in Microsoft Fabric
 description: Learn how to track user activities in Microsoft Fabric using the audit log.
 author: msmimart
 ms.author: mimart
 ms.topic: overview
-ms.date: 02/04/2025
+ms.date: 02/12/2026
 ---
 
 # Track user activities in Microsoft Fabric
 
-Knowing who is taking what action on which item in Microsoft Fabric, can be critical in helping your organization fulfill requirements such as meeting regulatory compliance and records management. This article discusses tracking user activities using the [audit log](/purview/audit-log-activities).
+Knowing who is taking what action on which item in Fabric, can be critical in helping your organization fulfill requirements such as meeting regulatory compliance and records management. This article discusses tracking user activities using the [audit log](/purview/audit-log-activities).
 
 ## Prerequisites
 
@@ -17,7 +17,7 @@ You must be assigned the Audit Logs role in Exchange Online to access the audit 
 
 ## Access
 
-To access the audit logs, go to [Microsoft Purview](https://compliance.microsoft.com/auditlogsearch).
+To access the audit logs, go to the [Microsoft Purview portal](https://purview.microsoft.com/audit/).
 
 ### Search the audit logs
 
@@ -31,7 +31,7 @@ You can search the audit logs using the Microsoft Purview filters. When you comb
 
 * **File, folder, or site** - Search by file name, folder name, or URL.
 
-You can also use PowerShell to view audit logs. TO use PowerShell, [Connect to Exchange Online PowerShell](/powershell/exchange/connect-to-exchange-online-powershell). You can also use the blog post [Using Power BI Audit Log and PowerShell to assign Power BI Pro licenses](https://powerbi.microsoft.com/blog/using-power-bi-audit-log-and-powershell-to-assign-power-bi-pro-licenses/) as a reference.
+You can also use PowerShell to view audit logs. TO use PowerShell, [Connect to Exchange Online PowerShell](/powershell/exchange/connect-to-exchange-online-powershell). You can also use the blog post [Using Power BI Audit Log and PowerShell to assign Power BI Pro workspace types](https://powerbi.microsoft.com/blog/using-power-bi-audit-log-and-powershell-to-assign-power-bi-pro-licenses/) as a reference.
 
 ## Audit log list
 

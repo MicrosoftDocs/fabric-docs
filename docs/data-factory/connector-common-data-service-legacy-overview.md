@@ -1,8 +1,7 @@
 ---
 title: Common Data Service (Legacy) connector overview
 description: This article provides an overview of the supported capabilities of the Common Data Service (Legacy) connector.
-author: jianleishen
-ms.author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: how-to
 ms.date: 11/15/2023
 ms.custom:
@@ -14,10 +13,12 @@ ms.custom:
 
 The Common Data Service (Legacy) connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
-## Support in Dataflow Gen2
+## Supported capabilities
 
-To learn about how to connect to Common Data Service (Legacy) in Dataflow Gen2, go to [Set up your Common Data Service (Legacy) connection](connector-common-data-service-legacy.md).
+| Supported capabilities | Gateway | Authentication |
+|---------| --------| --------|
+| **Dataflow Gen2** (source/-) | None | Organizational account |
 
-## Support in pipelines
+## Related content
 
-Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support Common Data Service (Legacy) in pipelines.
+To learn about how to connect to Common Data Service (Legacy), go to [Set up your Common Data Service (Legacy) connection](connector-common-data-service-legacy.md).

@@ -1,25 +1,23 @@
-﻿---
-title: Use Azure AI Translator with REST API
+---
+title: Use Azure Translator in Foundry Tools with REST API
 description: How to use prebuilt Azure AI translator in Fabric with REST API
-ms.author: lagayhar
-author: lgayhardt
-ms.reviewer: ruxu
-reviewer: ruixinxu
+ms.author: singhrana
+ms.reviewer: scottpolly
 ms.topic: how-to
-ms.custom: 
-ms.date: 07/31/2025
+ms.date: 09/02/2026
 ms.update-cycle: 180-days
 ms.search.form: 
 ms.collection: ce-skilling-ai-copilot
+ai-usage: ai-assisted
 ---
 
-# Use prebuilt Azure AI Translator in Fabric with REST API and SynapseML (preview)
+# Use prebuilt Azure Translator in Foundry Tools in Fabric with REST API and SynapseML (preview)
 
 [!INCLUDE [feature-preview](../../includes/feature-preview-note.md)]
 
-[Azure AI Translator](/azure/ai-services/translator/) is an [Azure AI services](/azure/ai-services/) that enables you to perform language translation and other language-related operations.
+[Azure Translator in Foundry Tools](/azure/ai-services/translator/) is a [Microsoft Foundry tool](/azure/ai-services/) that enables you to perform language translation and other language-related operations.
 
-This sample shows use, with RESTful APIs, of the prebuilt Azure AI translator, in Fabric:
+This sample shows how to use the prebuilt Azure AI translator in Fabric with RESTful APIs to:
 
 -   Translate text
 -   Transliterate text
@@ -33,7 +31,7 @@ This sample shows use, with RESTful APIs, of the prebuilt Azure AI translator, i
 * Attach your notebook to a lakehouse. On the left side of your notebook, select **Add** to add an existing lakehouse or create a new one.
 
 > [!NOTE]
-> This article uses Microsoft Fabric's built-in prebuilt AI services, which handle authentication automatically. You don't need to obtain a separate Azure AI services key - the authentication is managed through your Fabric workspace. For more information, see [Prebuilt AI models in Fabric (preview)](ai-services-overview.md#prebuilt-ai-models-in-fabric-preview).
+> This article uses Microsoft Fabric's built-in prebuilt Foundry Tools, which handle authentication automatically. You don't need to obtain a separate Foundry Tools key - the authentication is managed through your Fabric workspace. For more information, see [Prebuilt AI models in Fabric (preview)](ai-services-overview.md#prebuilt-ai-models-in-fabric-preview).
 
 
 The code samples in this article use libraries that are preinstalled in Microsoft Fabric notebooks:
@@ -42,7 +40,7 @@ The code samples in this article use libraries that are preinstalled in Microsof
   - `synapse.ml.core` - Core SynapseML functionality
   - `synapse.ml.fabric.service_discovery` - Fabric service discovery utilities
   - `synapse.ml.fabric.token_utils` - Authentication token utilities
-  - `synapse.ml.services` - AI services integration (includes Translate, Transliterate classes)
+  - `synapse.ml.services` - Foundry Tools integration (includes Translate, Transliterate classes)
 - **PySpark**: Available by default in Fabric Spark compute
   - `pyspark.sql.functions` - DataFrame transformation functions (`col`, `flatten`)
 - **Standard Python libraries**: Built into Python runtime
@@ -64,12 +62,9 @@ import requests
 fabric_env_config = get_fabric_env_config().fabric_env_config
 auth_header = TokenUtils().get_openai_auth_header()
 
-# Make a RESTful request to AI service
+# Make a RESTful request to Foundry tool
 prebuilt_AI_base_host = fabric_env_config.ml_workload_endpoint + "cognitive/texttranslation/"
-print("Workload endpoint for AI service: \n" + prebuilt_AI_base_host)
-
-service_url = prebuilt_AI_base_host + "language/:analyze-text?api-version=2022-05-01"
-print("Service URL: \n" + service_url)
+print("Workload endpoint for Foundry tool: \n" + prebuilt_AI_base_host)
 
 auth_headers = {
     "Authorization" : auth_header
@@ -82,7 +77,7 @@ def print_response(response):
             result = response.json()
             print(json.dumps(result, indent=2, ensure_ascii=False))
         except:
-            print(f"pasre error {response.content}")
+            print(f"parse error {response.content}")
     else:
         print(f"error message: {response.content}")
 ```
@@ -104,10 +99,12 @@ from pyspark.sql.functions import col, flatten
 
 Text translation is the core operation of the Translator service.
 
+> [!NOTE]
+> The prebuilt Fabric endpoint currently uses Translator Text API v3.0 for translation. API version `2026-06-06` isn't a drop-in replacement, and its translation operation isn't currently available through this endpoint. For migration details, see [Migrate to Translator Text API 2026-06-06](/azure/ai-services/translator/text-translation/how-to/migrate-to-2026-06-06).
 
 ``` python
 service_url = prebuilt_AI_base_host + "translate?api-version=3.0&to=fr"
-post_body = [{'Text':'Hello, friend.'}]
+post_body = [{"Text": "Hello, friend."}]
 
 response = requests.post(service_url, json=post_body, headers=auth_headers)
 
@@ -166,12 +163,17 @@ display(result.select("text", "translation"))
 
 Transliteration converts a word or phrase from the script (alphabet) of one language to another, based on phonetic similarity.
 
+> [!NOTE]
+> The prebuilt Fabric endpoint supports API version `2026-06-06` for transliteration and supported-language retrieval.
+
 ``` python
-service_url = prebuilt_AI_base_host + "transliterate?api-version=3.0&language=ja&fromScript=Jpan&toScript=Latn"
-post_body = [
-    {"Text":"こんにちは"},
-    {"Text":"さようなら"}
-]
+service_url = prebuilt_AI_base_host + "transliterate?api-version=2026-06-06&language=ja&fromScript=Jpan&toScript=Latn"
+post_body = {
+    "inputs": [
+        {"text": "こんにちは", "script": "Jpan"},
+        {"text": "さようなら", "script": "Jpan"}
+    ]
+}
 
 response = requests.post(service_url, json=post_body, headers=auth_headers)
 
@@ -181,16 +183,18 @@ print_response(response)
 ### Output
 ```
     HTTP 200
-    [
-      {
-        "text": "Kon'nichiwa​",
-        "script": "Latn"
-      },
-      {
-        "text": "sayonara",
-        "script": "Latn"
-      }
-    ]
+    {
+      "value": [
+        {
+          "text": "Kon'nichiwa​",
+          "script": "Latn"
+        },
+        {
+          "text": "sayonara",
+          "script": "Latn"
+        }
+      ]
+    }
 
 ```
 
@@ -225,7 +229,7 @@ display(result.select("text", "script"))
 Returns a list of languages that Translator operations support.
 
 ``` python
-service_url = prebuilt_AI_base_host + "languages?api-version=3.0"
+service_url = prebuilt_AI_base_host + "languages?api-version=2026-06-06"
 
 response = requests.get(service_url, headers=auth_headers)
 
@@ -243,5 +247,5 @@ No steps for SynapseML in this section.
 
 - [Use prebuilt Text Analytics in Fabric with REST API and SynapseML](how-to-use-text-analytics.md)
 - [Use prebuilt Azure OpenAI in Fabric with REST API](how-to-use-openai-via-rest-api.md)
-- [Use prebuilt Azure OpenAI in Fabric with Python SDK](how-to-use-openai-sdk-synapse.md)
-- [Use prebuilt Azure OpenAI in Fabric with SynapseML](how-to-use-openai-sdk-synapse.md)
+- [Use Azure OpenAI with OpenAI Python SDK](how-to-use-openai-python-sdk.md)
+- [Use prebuilt Azure OpenAI in Fabric with SynapseML](how-to-use-openai-synapse-ml.md)

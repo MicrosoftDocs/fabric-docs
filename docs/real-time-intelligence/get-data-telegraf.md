@@ -1,10 +1,9 @@
 ---
 title: Ingest Data from Telegraf into Microsoft Fabric Eventhouse
 description: In this article, you learn how to ingest (load) data into Microsoft Fabric Eventhouse from Telegraf.
-ms.reviewer: aksdi
-author: spelluru
-ms.author: spelluru
 ms.topic: how-to
+ms.reviewer: aksdi
+ms.subservice: rti-eventhouse
 ms.date: 08/25/2025
 
 #Customer intent: As an integration developer, I want to build integration pipelines from Telegraf into Microsoft Fabric Eventhouse, so I can make data available for near real-time analytics.

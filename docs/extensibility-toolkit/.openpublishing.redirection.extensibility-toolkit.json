@@ -1,0 +1,9 @@
+{
+    "redirections": [
+        {
+            "source_path_from_root": "/docs/extensibility-toolkit/publish-workload-flow.md",
+            "redirect_url": "/fabric/extensibility-toolkit/publishing-overview",
+            "redirect_document_id": true
+        }
+    ]
+}

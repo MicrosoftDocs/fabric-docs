@@ -1,0 +1,168 @@
+---
+title: Migration Strategy and Planning for Azure Synapse Dedicated SQL pools to Fabric
+description: Learn how to plan a migration from an Azure Synapse Analytics dedicated SQL pool to Microsoft Fabric Data Warehouse.
+ms.reviewer: arturv, johoang
+ms.date: 03/16/2026
+ms.topic: concept-article
+ai-usage: ai-assisted
+ms.custom:
+  - fabric-cat
+---
+
+# Migration planning: Azure Synapse Analytics dedicated SQL pools to Fabric Data Warehouse
+
+**Applies to:** [!INCLUDE [fabric-dw](../data-warehouse/includes/applies-to-version/fabric-dw.md)]
+
+This article describes strategies, considerations, and methods for migrating from Azure Synapse Analytics dedicated SQL pools to Microsoft Fabric Data Warehouse.
+
+> [!TIP]
+> Use the [Fabric Migration Assistant for Data Warehouse](migration-assistant.md) for an automated migration experience from Azure Synapse Analytics dedicated SQL pools. This article contains important strategic and planning information.
+
+## Migration introduction
+
+[Microsoft Fabric](../fundamentals/microsoft-fabric-overview.md) is an all-in-one SaaS analytics solution for enterprises. It offers a comprehensive suite of services, including [Data Factory](../data-factory/data-factory-overview.md), [Data Engineering](../data-engineering/data-engineering-overview.md), [Data Warehousing](../data-warehouse/data-warehousing.md), [Data Science](../data-science/data-science-overview.md), [Real-Time Intelligence](../real-time-intelligence/overview.md), and [Power BI](/power-bi/fundamentals/power-bi-overview).
+
+This article describes options for schema (DDL), database code (DML), and data migration and helps you choose an option for your scenario. It uses the TPC-DS industry benchmark for illustration and performance testing. Your results might vary depending on factors such as data types, table width, and source latency.
+
+## Prepare for migration
+
+Carefully plan your migration project before you get started, and ensure that your schema, code, and data are compatible with Fabric Data Warehouse. Consider the [limitations](limitations.md). Quantify the work required to refactor incompatible items and any other resources needed to deliver the migration.
+
+Another key goal of planning is to adjust your design so that your solution takes full advantage of Fabric Data Warehouse query performance. Designing data warehouses for scale introduces unique design patterns, so traditional approaches aren't always the best. Review the [performance guidelines](guidelines-warehouse-performance.md). Although you can make some design adjustments after migration, making changes earlier saves time and effort. Migration from one technology or environment to another is always a major effort.
+
+The following diagram shows the migration lifecycle and the tasks associated with its five pillars: **Assess and Evaluate**, **Plan and Design**, **Migrate**, **Monitor and Govern**, and **Optimize and Modernize**.
+
+:::image type="content" source="media/migration-synapse-dedicated-sql-pool-planning/warehouse-migration-lifecycle.png" alt-text="Diagram of the migration lifecycle, including Assess and Evaluate, Plan and Design, Migrate, Monitor and Govern, and Optimize and Modernize." lightbox="media/migration-synapse-dedicated-sql-pool-planning/warehouse-migration-lifecycle.png":::
+
+## Runbook for migration
+
+Consider the following activities as a planning runbook for your migration from Synapse dedicated SQL pools to Fabric Data Warehouse.
+
+1. **Assess and Evaluate**
+    1. Identify objectives and motivations. Establish clear desired outcomes.
+    1. Discover, assess, and baseline the existing architecture.
+    1. Identify key stakeholders and sponsors.
+    1. Define the scope of what to migrate.
+        1. Start small and simple, and prepare for multiple small migrations.
+        1. Begin to monitor and document all stages of the process.
+        1. Build an inventory of data and processes for migration.
+        1. Define data model changes, if any.
+        1. Set up the Fabric workspace.
+    1. Assess your team's skill set and preferences.
+        1. Automate wherever possible.
+        1. Use Azure built-in tools and features to reduce migration effort.
+    1. Train staff early on the new platform.
+        1. Identify upskilling needs and training assets, including [Microsoft Learn](/training/paths/get-started-fabric/).
+1. **Plan and Design**
+    1. Define the desired architecture. 
+    1. Select the [methods and tools for the migration](migration-synapse-dedicated-sql-pool-methods.md) to accomplish the following tasks:
+        1. Data extraction from the source.
+        1. Schema (DDL) conversion, including metadata for tables and views.
+        1. Data ingestion, including historical data.
+            1. If necessary, re-engineer the data model by using new platform performance and scalability.
+        1. Database code (DML) migration.
+            1. Migrate or refactor stored procedures and business processes.
+    1. Inventory and extract the security features and object permissions from the source.
+    1. Design and plan to replace or modify existing ETL/ELT processes for incremental load.
+        1. Create parallel ETL/ELT processes to the new environment.
+    1. Prepare a detailed migration plan.
+        1. Map the current state to the desired state.
+1. **Migrate**
+    1. Perform schema, data, and code migration.
+        1. Data extraction from the source.
+        1. Schema (DDL) conversion.
+        1. [Data ingestion](migration-synapse-dedicated-sql-pool-methods.md#data-ingestion-into-fabric-data-warehouse)
+        1. Database code (DML) migration.
+    1. If necessary, scale the dedicated SQL pool resources up temporarily to aid speed of migration.
+    1. Apply security and permissions.
+    1. Migrate existing ETL/ELT processes for incremental load.
+        1. Migrate or refactor ETL/ELT incremental load processes.
+        1. Test and compare parallel incremental load processes.
+    1. Adapt the detailed migration plan as necessary.
+1. **Monitor and Govern**
+    1. Run in parallel, and compare against your source environment.
+        1. Test applications, business intelligence platforms, and query tools.
+        1. Benchmark and optimize query performance.
+        1. Monitor and manage cost, security, and performance.
+    1. Perform a governance benchmark and assessment.
+1. **Optimize and Modernize**
+    1. When the business is comfortable, transition applications and primary reporting platforms to Fabric.
+        1. Scale resources up or down as the workload shifts from Azure Synapse Analytics to Microsoft Fabric.
+        1. Build a repeatable template from the experience gained for future migrations. Iterate.
+        1. Identify opportunities for cost optimization, security, scalability, and operational excellence.
+        1. Identify opportunities to modernize your data estate with the [latest Fabric features](../fundamentals/whats-new.md).
+
+## Lift and shift or modernize?
+
+In general, there are two types of migration scenarios, regardless of the purpose and scope of the planned migration: lift and shift as-is, or a phased approach that incorporates architectural and code changes.
+
+### Lift and shift
+
+In a lift and shift migration, you migrate an existing data model with minor changes to the new Fabric Data Warehouse. This approach minimizes risk and migration time by reducing the new work needed to realize the benefits of migration.
+
+Lift and shift migration is a good fit for these scenarios:
+
+- You have an existing environment with a small number of warehouses to migrate.
+- You have an existing environment with data that's already in a well-designed star or snowflake schema.
+- You're under time and cost pressure to move to Fabric Data Warehouse.
+
+In summary, this approach works well for workloads that are optimized for your current Azure Synapse dedicated SQL pool environment and don't require major changes in Fabric.
+
+### Modernize in a phased approach with architectural changes
+
+If a legacy data warehouse evolved over a long period of time, you might need to re-engineer it to maintain the required performance levels.
+
+You might also want to redesign the architecture to take advantage of the new engines and features available in the Fabric workspace.
+
+<a id="design-differences-synapse-dedicated-sql-pools-and-fabric-warehouse"></a>
+
+## Design differences: Synapse dedicated SQL pools and Fabric Data Warehouse
+
+Consider the following Azure Synapse and Microsoft Fabric data warehousing differences, comparing dedicated SQL pools to the Fabric Data Warehouse.
+
+### Table considerations
+
+When you migrate tables between different environments, typically only the raw data and the metadata physically migrate. You usually don't migrate other database elements from the source system, such as indexes, because they might be unnecessary or implemented differently in the new environment.
+
+Performance optimizations in the source environment, such as indexes, indicate where you might need optimization in a new environment. Fabric manages these optimizations automatically.
+
+### T-SQL considerations
+
+There are several Data Manipulation Language (DML) syntax differences to consider. Review the [T-SQL surface area in Fabric Data Warehouse](tsql-surface-area.md) and perform a [code assessment when you choose a method for migrating database code](migration-synapse-dedicated-sql-pool-methods.md).
+
+Depending on the parity differences at the time of the migration, you might need to rewrite parts of your T-SQL DML code.
+
+### Data type mapping differences
+
+Fabric Data Warehouse has several data type differences from Azure Synapse Analytics dedicated SQL pools. For more information, see [Data types in Microsoft Fabric](data-types.md).
+
+The following table shows the mapping of supported data types from Azure Synapse dedicated SQL pools to Fabric Data Warehouse.
+
+|Synapse dedicated SQL pools | Fabric Data Warehouse |
+|:--|:--|
+| **money** |     **decimal(19,4)** |
+| **smallmoney** |     **decimal(10,4)** |
+| **smalldatetime** |     **datetime2** |
+| **datetime** |     **datetime2** |
+| **nchar** |     **char** |
+| **nvarchar** |     **varchar** |
+| **tinyint** |     **smallint** |
+| **binary** |     **varbinary** |
+| **datetimeoffset**\* |     **datetime2** |
+
+\* **Datetime2** doesn't store the extra time zone offset information that **datetimeoffset** stores. Since Fabric Data Warehouse doesn't currently support the **datetimeoffset** data type, you need to extract the time zone offset data into a separate column.
+
+> [!TIP]
+> **Ready to migrate?**
+>
+> To get started with an automated migration experience, see [Fabric Migration Assistant for Data Warehouse](migration-assistant.md).
+>
+> For more manual migration steps and details, see [Migration methods for Azure Synapse Analytics dedicated SQL pools to Fabric Data Warehouse](migration-synapse-dedicated-sql-pool-methods.md).
+
+## Related content
+
+- [Create a Warehouse in Microsoft Fabric](create-warehouse.md)
+- [Fabric Data Warehouse performance guidelines](guidelines-warehouse-performance.md)
+- [Security in Fabric Data Warehouse](security.md)
+- [Blog: Mapping Azure Synapse dedicated SQL pools to Fabric Data Warehouse compute](https://blog.fabric.microsoft.com/blog/mapping-azure-synapse-dedicated-sql-pools-to-fabric-data-warehouse-compute/)
+- [Microsoft Fabric Migration Overview](../fundamentals/migration.md)

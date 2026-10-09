@@ -1,8 +1,7 @@
 ---
 title: Cosmos DB Database Limitations
 description: Learn about the current limitations and restrictions when using Cosmos DB databases in Microsoft Fabric phase.
-author: markjbrown
-ms.author: mjbrown
+ms.reviewer: mjbrown
 ms.topic: concept-article
 ms.date: 10/29/2025
 ms.search.form: Databases Limitations
@@ -27,9 +26,9 @@ This article lists current limitations for Cosmos DB in Microsoft Fabric.
     > Maximum throughput more than 50,000 RU/s can be increased with a support ticket.
     > Maximum containers more than 25 can be increased with a support ticket.
 
-## Customer managed keys (preview)
+## Customer managed keys
 
-- Customer managed key (CMK) encryption is available in preview and must be enabled before creating any Cosmos DB artifacts. CMK also cannot be disabled once a Cosmos DB artifact exists within the workspace. For more information see, [Customer managed keys for Cosmos DB in Microsoft Fabric (preview)](customer-managed-keys.md)
+- Customer managed key (CMK) encryption is not currently available in Cosmos DB in Microsoft Fabric.
 
 ## Artifact renaming
 
@@ -41,7 +40,7 @@ This article lists current limitations for Cosmos DB in Microsoft Fabric.
 
 ## Authorization
 
-- Setting Fabric [item permissions](../../security/permission-model.md#item-permissions) is currently not supported.
+- Setting Fabric [item permissions](../../security/permission-model.md#item-permissions) is currently  supported. However, they will be applied to all Cosmos DB artifacts within the workspace.
 
 ## Localization and accessibility
 
@@ -88,3 +87,4 @@ Currently Microsoft Fabric does not support `run-as` functionality with Workspac
 
 - [Learn about Cosmos DB in Microsoft Fabric](overview.md)
 - [Frequently asked questions about Cosmos DB in Microsoft Fabric](faq.yml)
+

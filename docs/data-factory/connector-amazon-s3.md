@@ -1,8 +1,7 @@
 ---
 title: Set up your Amazon S3 connection
 description: This article provides information about how to create an Amazon S3 connection in Microsoft Fabric.
-author: pennyzhou-msft
-ms.author: xupzhou
+ms.reviewer: xupzhou
 ms.topic: how-to
 ms.date: 10/31/2025
 ms.custom:
@@ -17,7 +16,7 @@ This article outlines the steps to create an Amazon S3 connection for pipelines 
 
 ## Supported authentication types
 
-The Amazon S3 connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+The Amazon S3 connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|

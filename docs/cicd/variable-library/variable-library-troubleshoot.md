@@ -1,11 +1,8 @@
 ---
 title: Troubleshoot Variable Libraries
 description: Troubleshoot common errors and problems when you work with variable libraries in Microsoft Fabric.
-author: billmath
-ms.author: billmath
-ms.service: fabric
 ms.topic: troubleshooting-problem-resolution
-ms.date: 02/16/2025
+ms.date: 12/15/2025
 
 #customer intent: As a developer, I want to learn how to troubleshoot variable libraries so that I can manage my content lifecycle.
 
@@ -13,20 +10,10 @@ ms.date: 02/16/2025
 
 # Troubleshoot variable libraries 
 
-This article provides solutions for common errors and problems that you might encounter when you work with Microsoft Fabric variable libraries.
+This article provides solutions for common errors and problems that you might encounter when you work with variable libraries in Fabric.
 
 
 ## Failure to manage a variable library
-
-### I can't find the icon for creating a variable library
-
-**Description of the problem**: I want to create a variable library, but I can't find the **Create** icon.
-
-**Cause**: The **Create** icon is available only if the **Users can create variable libraries** [tenant switch](../../admin/service-admin-portal-microsoft-fabric-tenant-settings.md) is enabled in the admin portal.
-
-**Solution**: If you're an admin, go to the admin portal and enable the **Users can create variable libraries** tenant switch. If you're not an admin, contact your admin. Wait awhile, refresh the browser, clean the cache, and check again. Note that the change can take up to an hour to take effect.
-
-:::image type="content" source="./media/variable-library-troubleshoot/create-variable-library-enabled.png" alt-text="Screenshot of the tenant switch that enables users to create variable libraries.":::
 
 ### I can't create a variable library item
 
@@ -34,7 +21,7 @@ This article provides solutions for common errors and problems that you might en
 
 **Cause**: The name of the variable library isn't valid.
 
-**Solution**: Rename the variable library according to [naming conventions](./variable-types.md#variable-library-name).
+**Solution**: Rename the variable library according to [naming conventions](variable-library-overview.md#naming-conventions).
 
 ### I can't save my variable library
 
@@ -50,7 +37,7 @@ This article provides solutions for common errors and problems that you might en
 **Solution**: Depending on the cause, you can try the following solutions:
 
 - Review the errors on the validation pane and fix them so that no required value is missing or mismatched with the variable type.
-- Ensure that all variables and value sets are named according to the [naming conventions](./variable-types.md#variable-library-name).
+- Ensure that all variables and value sets are named according to the [variables naming convention](variable-types.md#naming-conventions) and the [value sets naming convention](value-sets.md#naming-conventions-for-value-sets).
 - Reduce the size of the variable library item to less than 1 MB by removing unused variables or by splitting the variable list into several variable libraries.
 
 ## Deployment pipeline failure
@@ -63,7 +50,7 @@ This article provides solutions for common errors and problems that you might en
 
 **Cause**: The active value set in the target stage is missing in the deployed variable library. A possible reason is that you removed or renamed the active value set in the source or target stage.
 
-**Solution**: Change the active value set in the target stage, or rename the current value set to one that exists in the source.
+**Solution**: Change the active value set in the target stage, or rename the active value set to one that exists in the source.
 
 ## Variable reference failure
 
@@ -92,3 +79,4 @@ After you find and fix the problem, remove the current reference and replace it 
 ## Related content
 
 - [Create and manage variable libraries](./get-started-variable-libraries.md)
+- [Variable reference resolution failures](./variable-reference-resolution-failure.md)

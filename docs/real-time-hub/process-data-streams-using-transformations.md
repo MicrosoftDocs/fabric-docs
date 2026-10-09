@@ -1,10 +1,8 @@
 ---
 title: Process data streams in Real-Time hub
 description: This article describes how to process data streams in Real-Time hub. Process using transformations in eventstreams, add Eventhouse destination to send it to a KQL table and analyze it, and set alerts.
-author: mystina
-ms.author: majia
+ms.reviewer: majia
 ms.topic: how-to
-ms.custom:
 ms.date: 11/18/2024
 ---
 
@@ -39,3 +37,4 @@ After you open the eventstream in an editor, you can add transformations such as
 ## Related content
 
 After you process data in the stream, you can send the output data to [destinations](../real-time-intelligence/event-streams/add-manage-eventstream-destinations.md)  supported by Fabric eventstreams.
+

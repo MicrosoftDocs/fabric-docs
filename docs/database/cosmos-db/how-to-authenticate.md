@@ -1,8 +1,7 @@
 ---
 title: Authenticate to Cosmos DB Database From Azure Services
 description: Use Microsoft Entra authentication and the Azure SDK to connect to Cosmos DB in Microsoft Fabric.
-author: markjbrown
-ms.author: mjbrown
+ms.reviewer: mjbrown
 ms.topic: how-to
 ms.date: 10/30/2025
 ms.search.form: Get Started with Cosmos DB
@@ -173,11 +172,15 @@ for (const item of response.resources) {
 
 :::zone pivot="dev-lang-csharp"
 
+> [!NOTE] 
+> Cosmos DB in Fabric supports only Gateway connection mode. Because the .NET SDK defaults to Direct mode, you must explicitly set ConnectionMode.Gateway in CosmosClientOptions.
+
 ```csharp
 using Azure.Identity;
 using Microsoft.Azure.Cosmos;
 
 string endpoint = "<cosmos-db-fabric-endpoint>";
+CosmosClientOptions = new() { ConnectionMode = ConnectionMode.Gateway };
 DefaultAzureCredential credential = new();
 using CosmosClient client = new(endpoint, credential);
 
@@ -210,3 +213,4 @@ while (iterator.HasMoreResults)
 
 - [Learn about Cosmos DB in Microsoft Fabric](overview.md)
 - [Manage authorization in Cosmos DB in Microsoft Fabric](authorization.md)
+

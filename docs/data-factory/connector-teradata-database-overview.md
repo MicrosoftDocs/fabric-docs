@@ -1,10 +1,8 @@
 ---
 title: Teradata database connector overview
 description: This article provides an overview of the supported capabilities of the Teradata database connector.
-author: whhender
-ms.author: whhender
 ms.topic: how-to
-ms.date: 09/12/2025
+ms.date: 02/25/2026
 ms.custom:
   - template-how-to
   - connectors
@@ -19,6 +17,7 @@ The Teradata database connector is supported in Data Factory for [!INCLUDE [prod
 |----------------------------------------------------------------------------------------|--------------------------------|------------------|
 | **Dataflow Gen2** (source/-)                                                 | On-premises| Basic<br> Windows |
 | **Pipeline** <br>- [Copy activity](connector-teradata-copy-activity.md) (source/destination)<br>- Lookup activity        | On-premises | Basic<br> Windows |
+| **Copy job** (source/destination)         | On-premises | Basic<br> Windows |
 
 ## Related content
 

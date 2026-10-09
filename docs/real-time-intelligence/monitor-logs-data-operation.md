@@ -1,10 +1,7 @@
 ---
 title: Data operation logs
 description: View and analyze the log of data operations of an Eventhouse KQL database within Real-Time Intelligence.
-author: spelluru
-ms.author: spelluru
 ms.topic: reference
-ms.custom:
 ms.date: 11/06/2024
 ---
 
@@ -61,6 +58,10 @@ The following table describes the columns stored in the **EventhouseDataOperatio
 ## Sample queries
 
 You can find sample queries in the [fabric-samples](https://github.com/microsoft/fabric-samples) GitHub repository.
+
+## Templates
+
+You can explore and visualize the logs using Real-Time dashboards built-in templates by following the [Visualize workspace monitoring](../fundamentals/sample-gallery-workspace-monitoring.md?tabs=built-in-templates.md) guide.
 
 ## Related content
 

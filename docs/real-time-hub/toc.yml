@@ -7,72 +7,146 @@ items:
     href: real-time-hub-overview.md
   - name: What are Azure and Fabric Events?
     href: fabric-events-overview.md
+  - name: What are Business Events?
+    href: business-events/business-events-overview.md
 - name: Get started
   items:
   - name: Get started with Real-Time hub
     href: get-started-real-time-hub.md
+  - name: Streaming data page
+    href: streaming-data-page.md
+  - name: Add data page
+    href: add-data-page.md
+  - name: Business events page
+    href: business-events-page.md
+  - name: Fabric events page
+    href: fabric-events-page.md
+  - name: Azure events page
+    href: azure-events-page.md
+  - name: Rules page (preview)
+    href: rules-page.md
+  - name: Event schema registry page
+    href: event-schema-registry-page.md
 - name: Tutorials
   items:
-  - name: Build event-driven pipelines 
+  - name: Build event-driven pipelines with Azure and Fabric Events 
     href: tutorial-build-event-driven-data-pipelines.md
-- name: Create data streams
+  - name: Monitor Fabric Capacity health with Capacity Overview Events 
+    href: tutorial-monitor-capacity-threshold.md
+  - name: Publish business events using Notebook and react using Activator
+    href: business-events/tutorial-business-events-notebook-user-data-function-activator.md
+  - name: Publish business events using User Data Function and react using Activator
+    href: business-events/tutorial-business-events-user-data-function-activation-email.md
+  - name: Publish business events using eventstreams and react using Activator
+    href: business-events/tutorial-business-events-event-stream-user-data-function-activator.md
+  - name: Publish and validate a sample business event
+    href: business-events/tutorial-publish-sample-business-event.md
+  - name: Learn to monitor streaming data
+    href: tutorial-monitor-streaming-data.md   
+  - name: Orchestrate Fabric jobs with Job events
+    href: tutorial-orchestrate-jobs-with-job-events.md
+- name: Create data streams and events
   items:
   - name: Supported sources
     href: supported-sources.md
+  - name: Azure sources
+    items:
+    - name: Azure Data Explorer Database
+      href: add-source-azure-data-explorer-database.md
+    - name: Azure Data Explorer shortcut
+      href: add-source-azure-data-explorer.md
+    - name: Azure diagnostic logs and metrics
+      href: add-source-azure-diagnostic-logs-metrics.md
+    - name: Azure Event Grid
+      href: add-source-azure-event-grid.md
+    - name: Azure Event Hubs
+      href: add-source-azure-event-hubs.md
+    - name: Azure IoT Hub
+      href: add-source-azure-iot-hub.md
+    - name: Azure Service Bus
+      href: add-source-azure-service-bus.md
+  - name: Change Data Capture (CDC) sources
+    items:
+    - name: Azure Cosmos DB CDC
+      href: add-source-azure-cosmos-db-cdc.md
+    - name: Azure SQL Database CDC
+      href: add-source-azure-sql-database-cdc.md
+    - name: Azure SQL Managed Instance CDC
+      href: add-source-azure-sql-managed-instance-cdc.md
+    - name: MySQL Database CDC
+      href: add-source-mysql-database-cdc.md
+    - name: MongoDB CDC
+      href: add-source-mongodb-change-data-capture.md
+    - name: Oracle Database CDC
+      href: add-source-oracle-database-change-data-capture.md
+    - name: PostgreSQL Database CDC
+      href: add-source-postgresql-database-cdc.md
+    - name: SQL Server on Virtual Machine Database CDC
+      href: add-source-sql-server-on-vm-db-cdc.md
+  - name: Fabric events
+    items:
+    - name: Create streams for anomaly detection events
+      href: create-streams-anomaly-detection-events.md
+    - name: Create streams for Fabric capacity overview events
+      href: create-streams-fabric-capacity-overview-events.md
+    - name: Create streams for Fabric capacity operation events
+      href: create-streams-fabric-capacity-operation-events.md
+    - name: Create streams for Fabric job events
+      href: create-streams-fabric-job-events.md
+    - name: Create streams for Fabric OneLake events
+      href: create-streams-fabric-onelake-events.md
+    - name: Create streams for workspace item events
+      href: create-streams-fabric-workspace-item-events.md
+  - name: Azure events
+    items:
+    - name: Create streams for Azure Blob Storage events
+      href: get-azure-blob-storage-events.md
+  - name: Business Events
+    items:
+    - name: Key concepts and terminology
+      href: business-events/business-events-concepts.md
+    - name: Create and manage business events
+      href: business-events/create-business-events.md
+    - name: Preview business event data
+      href: business-events/preview-business-event-data.md
+    - name: Publish a sample business event
+      href: business-events/publish-sample-business-event.md
+    - name: Manage data access for business events
+      href: business-events/manage-business-events-data-access.md
+    - name: Business Events limits
+      href: business-events/business-events-limits.md
+    - name: Publish business events using Activator
+      href: business-events/business-events-activator.md
+    - name: Publish business events using Notebook
+      href: business-events/business-events-notebook.md
+    - name: Publish business events using User Data Function
+      href: business-events/business-events-user-data-function.md
+    - name: Publish business events using Eventstreams
+      href: business-events/business-events-event-stream-publisher.md 
+  - name: Public feeds
+    items:
+    - name: HTTP
+      href: add-source-http.md
+    - name: Real-time weather
+      href: add-source-real-time-weather.md
   - name: Amazon Kinesis Data Streams 
     href: add-source-amazon-kinesis-data-streams.md
   - name: Amazon Managed Streaming for Kafka
     href: add-source-amazon-managed-streaming-for-kafka.md
   - name: Apache Kafka
     href: add-source-apache-kafka.md
-  - name: Azure Blob Storage events
-    href: get-azure-blob-storage-events.md
-  - name: Azure Cosmos DB Change Data Capture
-    href: add-source-azure-cosmos-db-cdc.md
-  - name: Azure Data Explorer database table
-    href: add-source-azure-data-explorer-database.md
-  - name: Azure Data Explorer shortcut
-    href: add-source-azure-data-explorer.md
-  - name: Azure diagnostic logs and metrics
-    href: add-source-azure-diagnostic-logs-metrics.md
-  - name: Azure Event Grid
-    href: add-source-azure-event-grid.md
-  - name: Azure Event Hubs
-    href: add-source-azure-event-hubs.md
-  - name: Azure IoT Hub
-    href: add-source-azure-iot-hub.md
-  - name: Azure Service Bus
-    href: add-source-azure-service-bus.md
-  - name: Azure SQL Database Change Data Capture (CDC)
-    href: add-source-azure-sql-database-cdc.md
-  - name: Azure SQL Managed Instance Change Data Capture
-    href: add-source-azure-sql-managed-instance-cdc.md
-  - name: Confluent Cloud Kafka
+  - name: Confluent Cloud for Apache Kafka
     href: add-source-confluent-kafka.md
-  - name: Fabric Capacity overview events
-    href: create-streams-fabric-capacity-overview-events.md
-  - name: Fabric Job events
-    href: create-streams-fabric-job-events.md
-  - name: Fabric OneLake events
-    href: create-streams-fabric-onelake-events.md
-  - name: Fabric workspace item events
-    href: create-streams-fabric-workspace-item-events.md
+  - name: Cribl
+    href: add-source-cribl.md
   - name: Google Cloud Pub/Sub
     href: add-source-google-cloud-pub-sub.md
-  - name: MQTT
+  - name: Message Queuing Telemetry Transport (MQTT)
     href: add-source-mqtt.md
-  - name: MySQL Database Change Data Capture
-    href: add-source-mysql-database-cdc.md
-  - name: PostgreSQL Database Change Data Capture
-    href: add-source-postgresql-database-cdc.md
-  - name: Real-time weather
-    href: add-source-real-time-weather.md
-  - name: Sample data source
-    href: add-source-sample-data.md
   - name: Solace PubSub+
     href: add-source-solace-pub-sub.md
-  - name: SQL Server on Virtual Machine Database CDC
-    href: add-source-sql-server-on-vm-db-cdc.md      
+  - name: Sample data
+    href: add-source-sample-data.md
 - name: Explore data streams and events
   items:
   - name: View data stream details
@@ -83,6 +157,8 @@ items:
     href: endorse-data-streams.md
   - name: Explore all data streams
     href: explore-all-data-streams.md
+  - name: Explore table data with Copilot
+    href: explore-data-tables-copilot.md
   - name: Explore Microsoft sources
     href: explore-microsoft-sources.md
   - name: Explore Azure events
@@ -99,12 +175,20 @@ items:
       href: explore-anomaly-detection.md
     - name: Explore Fabric capacity overview events
       href: explore-fabric-capacity-overview-events.md      
+    - name: Explore Fabric capacity operation events
+      href: explore-fabric-capacity-operation-events.md
     - name: Explore Fabric workspace item events
       href: explore-fabric-workspace-item-events.md
     - name: Explore Fabric OneLake events
       href: explore-fabric-onelake-events.md
     - name: Explore Fabric Job events
       href: explore-fabric-job-events.md
+  - name: Explore business events
+    items:
+    - name: Business events page
+      href: business-events/business-events-page.md    
+    - name: Business event details page
+      href: business-events/business-event-details-page.md
 - name: Consume data streams and events
   items:
   - name: Consume data streams
@@ -121,6 +205,10 @@ items:
       href: set-alerts-anomaly-detection.md
     - name: Set alerts on Fabric capacity overview events
       href: set-alerts-fabric-capacity-overview-events.md  
+    - name: Create custom alerts on Fabric capacity overview events
+      href: set-custom-alerts-fabric-capacity-overview-events.md
+    - name: Set alerts on Fabric capacity operation events
+      href: set-alerts-fabric-capacity-operation-events.md
     - name: Set alerts on Fabric workspace item events
       href: set-alerts-fabric-workspace-item-events.md
     - name: Set alerts on Fabric OneLake item events
@@ -131,10 +219,50 @@ items:
     items:
     - name: Set alerts on Azure Blob Storage events
       href: set-alerts-azure-blob-storage-events.md
-  - name: Subscribe permission for Fabric/Azure events
-    href: fabric-events-subscribe-permission.md   
-  - name: Microsoft Fabric events capacity consumption
-    href: fabric-events-capacity-consumption.md
+  - name: Consume Business events
+    items:
+    - name: Add business events to an eventstream
+      href: add-source-business-events.md
+    - name: Create eventstreams for business events in Real-Time hub
+      href: create-streams-business-events.md
+    - name: Eventhouse and Real-Time Dashboard integration
+      href: business-events/business-events-eventhouse.md
+    - name: Consume business events from Activator
+      href: business-events/consume-business-events-from-activator.md
+  - name: Azure, Fabric, and Business events
+    items:
+    - name: Develop
+      items:
+      - name: Overview
+        href: automate-event-consumption-rest-api-cicd.md
+      - name: Create Business events and manage data access
+        href: create-business-events-rest-api.md
+      - name: Publish Business events with APIs
+        href: publish-business-events.md
+      - name: Consume events with Eventstream REST APIs
+        href: consume-events-with-event-stream-rest-api.md
+      - name: Consume events with Activator REST APIs
+        href: consume-events-activator-rest-api.md
+      - name: Filter events
+        href: configure-event-filters-rest-api.md
+    - name: Secure
+      items:
+      - name: Subscribe permission for Azure and Fabric events
+        href: fabric-events-subscribe-permission.md
+      - name: Tenant private links for Azure and Fabric events
+        href: private-links-real-time-events.md
+      - name: Workspace private links for Azure, Fabric, and Business events
+        href: workspace-private-links-real-time-events.md
+      - name: Outbound access protection for Azure, Fabric, and Business events
+        href: ../security/workspace-outbound-access-protection-real-time-events.md
+    - name: Monitor and troubleshoot
+      items:
+      - name: Paused event configurations
+        href: fabric-events-paused-state.md
+      - name: Events capacity consumption
+        href: fabric-events-capacity-consumption.md
+      - name: Events delivery guarantees
+        href: fabric-event-delivery-guarantees.md
 - name: Register and use schemas
   items:
   - name: Schema Registry in Real-Time hub
@@ -145,8 +273,18 @@ items:
     href: ../real-time-intelligence/schema-sets/create-manage-event-schemas.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
   - name: Create and manage schemas in Real-Time hub
     href: ../real-time-intelligence/schema-sets/create-manage-event-schemas-real-time-hub.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
+  - name: Import event schemas
+    href: ../real-time-intelligence/schema-sets/import-event-schemas.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
+  - name: View and compare schema versions
+    href: ../real-time-intelligence/schema-sets/manage-event-schema-versions.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
+  - name: Device telemetry schema example
+    href: ../real-time-intelligence/schema-sets/device-telemetry-schema-example.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
   - name: Use schemas in eventstreams
     href: ../real-time-intelligence/schema-sets/use-event-schemas.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
+  - name: Monitor event schema set operations
+    href: ../real-time-intelligence/schema-sets/event-schema-set-operation-logs.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
+  - name: Schema Registry region availability
+    href: ../real-time-intelligence/schema-sets/schema-registry-region-availability.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
   - name: Known limitations
     href: ../real-time-intelligence/schema-sets/schema-registry-limitations.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json                  
 - name: User flows
@@ -159,4 +297,7 @@ items:
     href: ../real-time-intelligence/user-flow-3.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
   - name: Set alerts based on Fabric and Azure events
     href: ../real-time-intelligence/user-flow-5.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json     
-    
+- name: Resources    
+  items:
+  - name: Fabric Events developer site
+    href: https://microsoft.github.io/fabric-events/home/

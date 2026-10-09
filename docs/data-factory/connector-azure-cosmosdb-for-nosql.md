@@ -1,8 +1,7 @@
 ---
 title: Set up your Azure Cosmos DB for NoSQL connection
 description: This article provides information about how to create an Azure Cosmos DB for NoSQL connection in Microsoft Fabric.
-author: pennyzhou-msft
-ms.author: xupzhou
+ms.reviewer: xupzhou
 ms.topic: how-to
 ms.date: 10/30/2025
 ms.custom:
@@ -13,7 +12,7 @@ ms.custom:
 
 # Set up your Azure Cosmos DB for NoSQL connection
 
-This article outlines the steps to create an Azure Cosmos DB for NoSQL connection in Microsoft Fabric pipelines.
+This article outlines the steps to create an Azure Cosmos DB for NoSQL connection in Fabric pipelines.
 
 ## Supported authentication types
 
@@ -25,13 +24,13 @@ The Azure Cosmos DB for NoSQL connector supports the following authentication ty
 
 ## Set up your connection for Dataflow Gen2
 
-The Azure Cosmos DB for NoSQL connector isn't currently supported in Dataflow Gen2.
+The Azure Cosmos DB for NoSQL connector isn't currently supported in dataflow Gen2.
 
 ## Set up your connection for a pipeline
 
-To create a connection for a Microsoft Fabric pipeline:
+To create a connection for a Fabric pipeline:
 
-1. From the page header in Microsoft Fabric, select **Settings** :::image type="icon" source="media/connector-common/settings.png"::: > **Manage connections and gateways**.
+1. From the page header in Fabric, select **Settings** :::image type="icon" source="media/connector-common/settings.png"::: > **Manage connections and gateways**.
 
    :::image type="content" source="media/connector-common/manage-connections-gateways.png" alt-text="Screenshot showing how to open the manage connections and gateways menu.":::
 

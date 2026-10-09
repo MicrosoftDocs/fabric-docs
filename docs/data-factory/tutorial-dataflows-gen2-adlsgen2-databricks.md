@@ -1,10 +1,9 @@
 ---
 title: Use a dataflow to bring data into databricks
 description: This article describes how to use a dataflow to write data to adls gen2 and read it from databricks.
-author: luitwieler
 ms.topic: tutorial
 ms.date: 10/20/2025
-ms.author: jeluitwi
+ms.reviewer: jeluitwi
 ms.custom:
     - dataflows
 ---

@@ -1,22 +1,23 @@
 ---
 title: Set up your Azure Databricks connection
 description: This article provides information about how to create an Azure Databricks connection in Microsoft Fabric.
-author: whhender
-ms.author: whhender
 ms.topic: how-to
-ms.date: 10/31/2025
+ms.date: 03/13/2026
 ms.custom:
   - template-how-to
   - connectors
+ai-usage: ai-assisted
 ---
 
 # Set up your Azure Databricks connection
 
-This article outlines the steps to create an Azure Databricks connection for pipelines and Dataflow Gen2 in Microsoft Fabric.
+This article outlines the steps to create an Azure Databricks connection for pipelines and dataflow Gen2 in Fabric.
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
 
-The Azure Databricks connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+## Summary
+
+The Azure Databricks connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
@@ -25,16 +26,31 @@ The Azure Databricks connector supports the following authentication types for c
 |Microsoft Entra ID| n/a | √ |
 
 ## Set up your connection for Dataflow Gen2
+You can connect dataflow Gen2 to Azure Databricks in Fabric using Power Query connectors. Follow these steps to create your connection:
 
-You can connect Dataflow Gen2 to Azure Databricks in Microsoft Fabric using Power Query connectors. Follow these steps to create your connection:
+1. Check [capabilities](#capabilities), [limitations, and considerations](#limitations-and-considerations) to make sure your scenario is supported.
+1. [Get data in Fabric](#get-data).
+1. [Connect to Databricks data](#connect-to-databricks-data).
 
-1. [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
-1. [Connect to Databricks data](/power-query/connectors/databricks-azure#connect-to-databricks-data-from-power-query-online).
+<a id="capabilities"></a>
 
-### Learn more about this connector
+<a id="capabilities-supported"></a>
 
-- [Supported capabilities](/power-query/connectors/databricks-azure#capabilities-supported)
-- [Limitations](/power-query/connectors/databricks-azure#limitations)
+## Supported capabilities
+
+[!INCLUDE [databricks-azure-ccapabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/databricks-azure/capabilities-supported.md)]
+
+## Connection settings
+
+### Get data
+
+[!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
+
+<a id="connect-to-databricks-data"></a>
+
+### Connection instructions
+
+[!INCLUDE [databricks-azure-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/databricks-azure/connect-online.md)]
 
 ## Set up your connection for a pipeline
 
@@ -43,7 +59,7 @@ The following table contains a summary of the properties needed for a pipeline c
 | Name | Description | Required | Property | Copy |
 | --- | --- | :---: | --- | :---: |
 | **Server Hostname** | The hostname for your Azure Databricks instance. For example: *example.azuredatabricks.net* | Yes |  | ✓ |
-| **HTTP Path** | The http path for your data. For example: */sql/1.0/warehouses/abcdef1234567890* | Yes |  | ✓ |
+| **HTTP Path** | The HTTP path for your data. For example: */sql/1.0/warehouses/abcdef1234567890* | Yes |  | ✓ |
 | **Connection name** | A name for your connection. | Yes |  | ✓ |
 | **Data gateway** | An existing data gateway if your Azure Databricks instance isn't publicly accessible. | No |  | ✓ |
 | **Authentication kind** | Personal access token. | Yes |  | Personal Access token. |
@@ -65,18 +81,22 @@ For specific instructions to set up your connection in a pipeline, follow these 
 1. In the **New connection** pane, specify the following fields:
 
     * **Server Hostname** : The hostname for your Azure Databricks instance. For example: *example.azuredatabricks.net*
-    * **HTTP Path** : The http path for your data. For example: */sql/1.0/warehouses/abcdef1234567890*
+    * **HTTP Path** : The HTTP path for your data. For example: */sql/1.0/warehouses/abcdef1234567890*
     * **Connection**: Select **Create new connection**.
     * **Connection name**: Specify a name for your connection.
 
 1. Under **Data gateway**, select an existing data gateway if your Azure Databricks instance isn't publicly accessible.
-
 1. For **Authentication kind**, a personal access token is the available authentication kind for copy activity. Specify your personal access token in the related configuration. For more information, see [Personal access token authentication](/azure/databricks/dev-tools/auth/pat).
 
 1. Optionally, set the privacy level that you want to apply. Allowed values are **Organizational**, **Privacy**, and **Public**. For more information, see [privacy levels in the Power Query documentation](/power-query/privacy-levels).
-
 1. Select **Create** to create your connection. Your creation is successfully tested and saved if all the credentials are correct. If not correct, the creation fails with errors.
+
+
+## Limitations and considerations
+
+[!INCLUDE [databricks-azure-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/databricks-azure/limitations.md)]
 
 ## Related content
 
+- [For more information about this connector, see the Azure Databricks connector documentation.](/power-query/connectors/databricks-azure)
 - [Configure Azure Databricks in a copy activity](connector-azure-databricks-copy-activity.md)

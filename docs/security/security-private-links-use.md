@@ -188,7 +188,7 @@ If you disable public access for Fabric, certain constraints on access to Fabric
 > [!IMPORTANT]
 > When you turn on *Block Internet Access*, some unsupported Fabric items become disabled. Learn the full list of limitations and considerations in [About private links](./security-private-links-overview.md).
 
-To disable public access for Fabric, sign in to [Fabric](https://app.fabric.microsoft.com/?pbi_source=learn-security-security-private-links-use) as an administrator, and navigate to the **Admin portal**. Select **Tenant settings** and scroll to the **Advanced networking** section. Enable the toggle button in the **Block Public Internet Access** tenant setting.
+To disable public access for Fabric, sign in to [Fabric](https://app.fabric.microsoft.com/?pbi_source=learn-security-security-private-links-use) as an administrator, and go to **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**. Scroll to the **Advanced networking** section and enable the toggle button in the **Block Public Internet Access** tenant setting.
 
 :::image type="content" source="./media/security-private-links-use/block-public-internet-access-tenant-setting.png" alt-text="Screenshot showing the Block Public Internet Access tenant setting enabled.":::
 
@@ -226,6 +226,16 @@ More questions? [Ask the Fabric Community](https://community.fabric.microsoft.co
 If you want to disable the Private Link setting, make sure that all the private endpoints you created and the corresponding private DNS zone are deleted before disabling the setting. If your virtual network has private endpoints set up but Private Link is disabled, connections from this virtual network could fail.
 
 If you're going to disable the Private Link setting, it's recommended to do so during nonbusiness hours. It might take up to 15 minutes of downtime for some scenarios to reflect the change. 
+
+## Disable Private Link for tenant migration
+
+If you have tenant-level private link, clean it up fully before [tenant migration](/power-bi/support/service-admin-region-move). Follow these steps:
+
+1. In the Fabric portal, enable public internet access: **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings** > **Public Internet Access**.
+1. In the Azure portal, delete all associated private endpoints you created.
+1. In the Azure portal, delete all corresponding private DNS zones.
+1. In the Azure portal, delete the private link service **Microsoft.PowerBI/privateLinkServicesForPowerBI**. There should be only one. Turn on **Show hidden types** when exploring Resource Groups.
+1. In the Fabric portal, disable tenant-level private link: **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings** > **Tenant-level Private Link**.
 
 ## Related content
 

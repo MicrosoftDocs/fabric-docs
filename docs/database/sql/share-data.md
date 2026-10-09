@@ -1,12 +1,11 @@
 ---
 title: "Share data in your SQL database"
 description: Learn how to share data in a SQL database in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: dlevy
 ms.date: 11/06/2024
 ms.topic: how-to
 ms.custom: sfi-image-nochange
+ms.search.form: SQL Database sharing
 ---
 # Share data and manage access to your SQL database in Microsoft Fabric
 

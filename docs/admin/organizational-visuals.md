@@ -3,8 +3,8 @@ title: Organizational visuals
 description: Learn about admin organizational visual capabilities and how to customize Power BI visuals based on the needs of your organization.
 author: billmath
 ms.author: billmath
-ms.topic: conceptual
-ms.date: 10/23/2025
+ms.topic: how-to
+ms.date: 09/01/2026
 ms.custom: sfi-image-nochange
 #customer intent: As a Fabric administrator for your organization, I want to control the type of Power BI visuals that users can access across the organization and limit the actions users can perform so that I can ensure compliance with company policies and security standards.
 ---
@@ -13,11 +13,14 @@ ms.custom: sfi-image-nochange
 
 As a Fabric administrator for your organization, you can control the type of Power BI visuals that users can access across the organization and limit the actions users can perform.
 
-To manage Power BI visuals, you must be a Fabric administrator. For more information about the Fabric administrator role, see [Understand Microsoft Fabric admin roles](roles.md).
+To manage Power BI visuals, you must be a Fabric administrator. For more information about the Fabric administrator role, see [Understand Fabric admin roles](roles.md).
 
 ## Power BI visuals tenant settings
 
-To manage the tenant settings for Power BI visuals from the admin portal, go to **Tenant settings** and scroll down to **Power BI visuals**.
+To manage the tenant settings for Power BI visuals, sign in to [Fabric](https://app.fabric.microsoft.com) using your admin account credentials. Open the **OneLake catalog** and go to the **Govern** tab > **Configurations** > **Tenant settings**. Then scroll to **Power BI visuals**.
+
+> [!NOTE]
+> Manage these settings in **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**. These settings aren't available in the Power Platform admin center.
 
 :::image type="content" source="media/organizational-visuals/power-bi-visuals-tenant-settings.png" alt-text="Screenshot of the Power BI visuals tenant settings location.":::
 
@@ -67,7 +70,7 @@ UI changes to tenant settings apply only to the Power BI service. To enable user
 
 When you enable this setting, only certified Power BI visuals render in your organization's reports and dashboards. Power BI visuals from AppSource or files that aren't certified return an error message. This setting is disabled by default and doesn't apply to visuals in your [organizational store](/power-bi/developer/visuals/power-bi-custom-visuals#organizational-store).
 
-1. From the admin portal, select **Add and use certified visuals only**.
+1. Expand the **Add and use certified visuals only** setting.
 
 1. Select **Enabled**.
 
@@ -105,7 +108,7 @@ When you enable this setting, users can download data from a custom visual into 
 
 1. Select **Apply**.
 
-UI changes to tenant settings apply only to the Power BI service. To enable users in your organization to download data from custom visuals in Power BI Desktop, use AD Group Policy.
+UI changes to tenant settings apply both for Power BI Service and Power BI Desktop. To enable users in your organization to download data from custom visuals in Power BI Desktop, use AD Group Policy.
 
 |Key  |Value name  |Value  |
 |---------|---------|---------|
@@ -113,7 +116,7 @@ UI changes to tenant settings apply only to the Power BI service. To enable user
 
 When `AllowCVToExportDataToFile` is set to *1*, the custom visual can export data to a file only if:
 
-* The feature switch in the admin portal is enabled.
+* The feature switch in the tenant settings is enabled.
 * The user is signed in.
 
 ### Local storage
@@ -154,7 +157,7 @@ When you enable this setting, AppSource Custom Visuals can get [Microsoft Entra 
 
 ## Organizational visuals
 
-As a Fabric admin, you can manage the list of Power BI visuals available in your organization's [organizational store](/power-bi/developer/visuals/power-bi-custom-visuals#organizational-store). The **Organizational visuals** tab, in the *Admin portal*, allows you to add and remove visuals and decide which visuals automatically display in the visualization pane of your organization's users. You can add to the list any type of visual including uncertified visuals and *.pbiviz* visuals, even if they contradict the [tenant settings](#power-bi-visuals-tenant-settings) of your organization.
+As a Fabric admin, you can manage the list of Power BI visuals available in your organization's [organizational store](/power-bi/developer/visuals/power-bi-custom-visuals#organizational-store). The **Organizational visuals** tab, in the *Admin portal*, allows you to add and remove visuals and decide which visuals automatically display in the visualizations pane of your organization's users. You can add to the list any type of visual including uncertified visuals and *.pbiviz* visuals, even if they contradict the [tenant settings](#power-bi-visuals-tenant-settings) of your organization.
 
 Organizational visuals settings automatically deploy to Power BI Desktop.
 
@@ -200,9 +203,9 @@ AppSource Power BI visuals automatically update. Users in your organization alwa
 
 1. In the **Power BI visuals** window, find the AppSource visual you want to add, and select **Add**. After it uploads, the visual displays in the organizational visuals list.
 
-### Add a visual to the visualization pane
+### Add a visual to the visualizations pane
 
-You can pick visuals from the organizational visuals page to automatically show on the visualization pane of all the users in your organization.
+You can pick visuals from the organizational visuals page to automatically show on the visualizations pane of all the users in your organization.
 
 1. Select the visual you want to add.
 
@@ -250,9 +253,9 @@ Sometimes an organization develops its own Power BI visual and distributes it in
 
 1. Add the visual from AppSource into the organizational store.
 
-1. Open the report that contains this visual. Both the visual uploaded from a file and the AppSource visual are visible in the visualization pane.
+1. Open the report that contains this visual. Both the visual uploaded from a file and the AppSource visual are visible in the visualizations pane.
 
-1. In the report, highlight the visual uploaded from a file and in the visualization pane, select the AppSource visual to replace it. The visuals are swapped automatically. To verify that you're using the AppSource visual, in the visualization pane right-click the visual and select *about*.
+1. In the report, highlight the visual uploaded from a file and in the visualizations pane, select the AppSource visual to replace it. The visuals are swapped automatically. To verify that you're using the AppSource visual, in the visualizations pane right-click the visual and select *about*.
 
 1. Complete **step 3** for all the reports that contain the visual in your organization.
 
@@ -260,6 +263,6 @@ Sometimes an organization develops its own Power BI visual and distributes it in
 
 ## Related content
 
-* [What is the admin portal?](admin-center.md)
+* [Administration overview](admin-overview.md)
 * [Visuals in Power BI](/power-bi/developer/visuals/power-bi-custom-visuals)
 * [Organizational visuals in Power BI](/power-bi/developer/visuals/power-bi-custom-visuals-organization)

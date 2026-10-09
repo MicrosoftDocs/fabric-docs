@@ -1,8 +1,7 @@
 ---
 title: Indexing in Cosmos DB Database
 description: Explore how indexing works under the hood within Cosmos DB in Microsoft Fabric.
-author: markjbrown
-ms.author: mjbrown
+ms.reviewer: mjbrown
 ms.topic: concept-article
 ms.date: 10/30/2025
 ---
@@ -586,3 +585,4 @@ Queries with the following aggregate functions must rely exclusively on the inde
 
 - [Explore indexing policies in Cosmos DB in Microsoft Fabric](indexing-policies.md)
 - [Customize an indexing policy for a container in Cosmos DB in Microsoft Fabric](how-to-customize-indexing-policy.md)
+

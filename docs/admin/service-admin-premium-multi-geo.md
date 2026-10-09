@@ -1,18 +1,17 @@
----
+﻿---
 title: Multi-Geo support for Fabric
 description: Learn how you can deploy content to data centers in regions other than the home region of the Fabric tenant.
 author: msmimart
 ms.author: mimart
-ms.reviewer: ''
-ms.custom:
 ms.topic: how-to
-ms.date: 09/19/2025
+ms.date: 08/13/2026
+ai-usage: ai-assisted
 LocalizationGroup: Premium
 ---
 
 # Configure Multi-Geo support for Fabric
 
-Multi-Geo is a Microsoft Fabric feature that helps multinational customers address regional, industry-specific, or organizational data residency requirements. As a Fabric customer, you can deploy content to data centers in regions other than the home region of the Fabric tenant. A geo (geography) can contain more than one region. For example, the United States is a geo, and West Central US and South Central US are regions in the United States. You might choose to deploy content to any of the following geographies (geos) defined in the [Azure geography map](https://azure.microsoft.com/global-infrastructure/geographies/).
+Multi-Geo is a Fabric feature that helps multinational customers address regional, industry-specific, or organizational data residency requirements. As a Fabric customer, you can deploy content to data centers in regions other than the home region of the Fabric tenant. A geo (geography) can contain more than one region. For example, the United States is a geo, and West Central US and South Central US are regions in the United States. You might choose to deploy content to any of the following geographies (geos) defined in the [Azure geography map](https://azure.microsoft.com/global-infrastructure/geographies/).
 
 * Sovereign clouds support Multi-Geo across regions within that cloud.
 
@@ -20,7 +19,7 @@ Multi-Geo is a Microsoft Fabric feature that helps multinational customers addre
 
 * Power BI Embedded supports Multi-Geo.
 
-* Power BI Premium Per User (PPU) isn't supported for Multi-Geo.
+* Power BI Premium Per-User (PPU) isn't supported for Multi-Geo.
 
 ## Enable and configure
 
@@ -34,9 +33,9 @@ Follow these steps to change the default capacity region when you're creating a 
 
 1. In Fabric, select **settings** (&#9881;) and from the menu select **Admin portal**.
 
-2. In the *Admin portal*, select **Capacity settings**.
+2. Go to **OneLake catalog** > **Govern** > **Capacities**.
 
-3. Select **Set up new capacity**.
+3. Select **New capacity**.
 
 4. From the **Region** dropdown menu, select the region you want to use for this capacity.
 
@@ -44,9 +43,9 @@ Follow these steps to change the default capacity region when you're creating a 
 
 1. In Fabric, select **settings** (&#9881;) and from the menu select **Admin portal**.
 
-2. In the *Admin portal*, select **Capacity settings**.
+2. Go to **OneLake catalog** > **Govern** > **Capacities**.
 
-3. Select **Set up new capacity**.
+3. Select **New capacity**.
 
 4. From the **Region** dropdown menu, select the region you want to use for this capacity.
 
@@ -70,11 +69,12 @@ For information about selecting a region for your trial capacity, refer to step 
 
 Follow the steps below to move workspaces from one capacity to another in the same region. During migration, certain operations might fail, such as publishing new semantic models or scheduled data refresh.
 
-When you're performing a migration, don't delete or pause either the source or destination workspace capacities. Deleting or pausing a capacity during migration, can result in missing items. If you deleted or paused your capacity before the migration is finished and you have missing items in the migrated workspace, try migrating the workspace again.
+> [!IMPORTANT]
+> Before you start a migration, both the source and destination capacities must be active. Migration isn't supported if either capacity is paused or deleted when the migration starts. Don't pause or delete either capacity before or during a migration. If a capacity is paused or deleted at any point before the migration finishes, the migrated workspace can have missing items or fail to migrate completely. If this condition occurs, resume the capacities as needed and run the migration again.
 
 1. Open the [workspace settings](../fundamentals/workspaces.md#workspace-settings).
 
-2. From the side bar, select **License info**.
+2. From the side bar, select **Workspace type**.
 
 3. From the **License capacity** dropdown menu, select the capacity you want to move the workspace to.
 
@@ -100,13 +100,8 @@ Large-storage format semantic models shouldn't be moved from the region where th
 
 * Confirm that any movement you initiate between regions follows all corporate and government compliance requirements prior to initiating data transfer.
 
-* When you're using Multi-Geo, the following items are stored in the region that isn't your home region:
-    * SQL databases
-    * Models (*.ABF* files) for import and DirectQuery semantic models
-    * Query cache
-    * R images
+* When you're using Multi-Geo, compute and storage (including OneLake and experience-specific storage) is located in the multi-geo region, yet some tenant metadata remains in the home region, including the following:
 
-    These items remain in the home region of the tenant:
     * Push datasets
     * Dashboard/report metadata: tile names, tile queries, and any other data
     * Service buses for gateway queries or scheduled refresh jobs

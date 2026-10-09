@@ -1,10 +1,8 @@
 ---
 title: Sources don't support data preview by Fabric event streams
 description: This include file has the info of sources don't support data preview by Fabric event streams. 
-ms.author: xujiang1
-author: wenyangshi
+ms.reviewer: xujiang1
 ms.topic: include
-ms.custom:
 ms.date: 03/25/2025
 ---
 

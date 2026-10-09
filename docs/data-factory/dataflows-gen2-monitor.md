@@ -1,16 +1,15 @@
 ---
-title: An overview of refresh history and monitoring for dataflows.
-description: An overview of refresh history and monitoring for dataflows features.
-author: luitwieler
-ms.topic: conceptual
-ms.date: 12/18/2024
-ms.author: jeluitwi
+title: View Dataflow Gen2 refresh history and monitoring
+description: Learn how to review Dataflow Gen2 refresh history, download detailed logs, and monitor refresh status in Microsoft Fabric.
+ms.topic: concept-article
+ms.date: 08/07/2026
+ms.reviewer: jeluitwi
 ms.custom: dataflows, sfi-image-nochange
 ---
 
 # View refresh history and monitor your dataflows
 
-Monitoring your dataflow refreshes is key in ensuring that your dataflows are running as expected. Refresh history and monitoring hub allows you to evaluate in detail what happened during the refresh of your dataflow. This article provides you with an overview of the features that are available in the refresh history and monitoring hub. We also provide you with some guidance on how to use these features.
+To make sure your dataflows run as expected, monitor your dataflow refreshes. Refresh history and the monitoring hub provide details about what happens during a refresh. This article explains the available monitoring features and how to use them.
 
 ## Refresh history
 
@@ -27,17 +26,33 @@ When you open your dataflow refresh history, you first notice a list of all your
 
 :::image type="content" source="./media/dataflows-gen2-monitor/refresh-history.png" alt-text="Screenshot of the refresh history screen." lightbox="./media/dataflows-gen2-monitor/refresh-history.png":::
 
-We show you up to 50 refresh histories or up to 6 months back (which ever comes first) and store up to 250 refresh histories or 6 months back in the onelake. You can take some actions right away from this page like start a new refresh, schedule a refresh, or edit the dataflow. 
+The refresh history page shows up to 50 refreshes or up to six months of history, whichever comes first. OneLake stores up to 250 refreshes or six months of history. From this page, you can start a new refresh, schedule a refresh, or edit the dataflow.
 
 ### Download a CSV file of the refresh
 
-Some times you might need to get a CSV file of your refresh. To get this file, take the following steps:
+Sometimes you need a CSV file for one or more refreshes. To download the file:
 
-1. Open the refresh history of the dataflow.
-1. Select the run you want to get a CSV file from.
+1. Open the recent runs of the dataflow.
+1. Select the run(s) you want to get a CSV file from.
 1. Download the CSV.
 
    :::image type="content" source="./media/dataflows-gen2-monitor/download-csv.png" alt-text="Screenshot emphasizing the particular refresh you want to download, and the download as CSV selection." lightbox="./media/dataflows-gen2-monitor/download-csv.png":::
+
+### Download detailed logs of the refresh
+
+Detailed logs contain diagnostic information from the Power Query Mashup engine. Use them to troubleshoot a refresh or to provide more context when you contact Microsoft support. To download the logs:
+
+1. Open the recent runs of the dataflow.
+1. Select the run you want to get detailed logs from.
+1. On the bottom left of the details screen, select the **Download detailed logs** button.
+
+    :::image type="content" source="./media/dataflows-gen2-monitor/download-detailed-logs.png" alt-text="Screenshot emphasizing the particular refresh you want to download, and the download detailed logs selection." lightbox="./media/dataflows-gen2-monitor/download-detailed-logs.png":::
+
+The ZIP archive contains multiple Mashup engine log files for the selected refresh. The logs become available a few minutes after the refresh completes and remain available for up to 28 days. You need at least the Viewer role in the workspace to download them.
+
+To learn how the archive is organized and how to interpret its JSON Lines records, see [Understand Dataflow Gen2 detailed refresh logs](dataflow-gen2-detailed-refresh-logs.md).
+
+To download the detailed logs for dataflows that are refreshed using a gateway, you need to enable the [Admin consent for gateway diagnostics](/data-integration/gateway/service-gateway-log-files) feature on the gateway level.
 
 ### Reviewing your dataflow refresh from the UI
 
@@ -78,6 +93,14 @@ This screen gives you more clarity in what happened during the activity. For exa
 
 To investigate what happened, you can drill down into an activity or table. The following screen provides you with general information about the refresh and errors. If you're drilling into an activity, you're presented with how much data got processed and sent to your output destination. Some connectors report on the number of rows and some report on the number of bytes. The statistics are shown in the **Activity statistics** section.
 
+## Workspace status
+
+In the workspace, you can view the status of all dataflows in your workspace. You can find this information in the **Status** column in the workspace view. The column shows the status of the last refresh and the last time changes were saved and validated. If either action fails, you see a red exclamation mark. Hover over the icon to get more details about the failure.
+
+:::image type="content" source="./media/dataflows-gen2-monitor/workspace-status.png" alt-text="Screenshot of the workspace view, showing the status column." lightbox="./media/dataflows-gen2-monitor/workspace-status.png":::
+
+When the refresh failed, you can go into the refresh history to investigate what went wrong. When the save or validate action failed, you can open the dataflow in the dataflow editor to investigate what went wrong and run a validation from there.
+
 ## Monitoring hub
 
 The monitoring hub is available using the side menu. You can access it by selecting the **Monitoring hub** button.
@@ -102,5 +125,6 @@ This dashboard provides you with the following information:
 
 ## Related content
 
+- [Understand Dataflow Gen2 detailed refresh logs](dataflow-gen2-detailed-refresh-logs.md)
 - [Compare differences between Dataflow Gen1 and Gen2 in Data Factory](dataflows-gen2-overview.md)
 - [Save dataflows as a draft](dataflows-gen2-save-draft.md)

@@ -2,11 +2,9 @@
 title: Use a Notebook with Kqlmagic to Query a KQL database
 description: Kqlmagic tutorial. Learn how to import the NYCtaxicab notebook to query the KQL database.
 ms.reviewer: tzgitlin
-ms.author: spelluru
-author: spelluru
 ms.topic: tutorial
-ms.custom:
 ms.date: 06/29/2025
+ms.subservice: rti-eventhouse
 ms.search.form: notebook kqlmagic Jupyter
 ---
 # Tutorial: Use a Fabric notebook with Kqlmagic to query a KQL database

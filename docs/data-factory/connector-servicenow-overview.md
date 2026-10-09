@@ -1,8 +1,7 @@
 ---
 title: ServiceNow connector overview
-description: This article explains the overview of using ServiceNow.
-author: jianleishen
-ms.author: jianleishen
+description: This article provides an overview of the supported capabilities of the ServiceNow connector.
+ms.reviewer: jianleishen
 ms.topic: how-to
 ms.date: 11/19/2024
 ms.custom:

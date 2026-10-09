@@ -1,8 +1,7 @@
 ---
 title: Configure Continuous Integration and Continuous Deployment
 description: Understand how to set up continuous integration and deployment for Cosmos DB databases in Microsoft Fabric phase.
-author: markjbrown
-ms.author: mjbrown
+ms.reviewer: mjbrown
 ms.topic: how-to
 ms.date: 10/28/2025
 ms.search.form: Deploy and monitor Cosmos DB
@@ -70,3 +69,4 @@ Git integration streamlines the process of collaboration using version control f
 ## Related content
 
 - [Configure a container in Cosmos DB in Microsoft Fabric](how-to-configure-container.md)
+

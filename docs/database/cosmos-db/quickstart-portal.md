@@ -1,8 +1,6 @@
 ---
 title: 'Quickstart Create a Cosmos DB Database'
 description: Get started quickly with Cosmos DB in Microsoft Fabric by creating a new instance in the Microsoft Fabric portal.
-author: seesharprun
-ms.author: sidandrews
 ms.topic: quickstart
 ms.date: 07/29/2025
 ms.search.form: Databases Get Started,Get Started with Cosmos DB
@@ -28,9 +26,9 @@ First, go to the Fabric portal and create a new Cosmos DB database within your w
 
     :::image type="content" source="media/quickstart-portal/create-option-full.png" lightbox="media/quickstart-portal/create-option-full.png" alt-text="Screenshot of the option to 'Create' a new resource in the Fabric portal.":::
 
-1. If the option to create an **Cosmos DB** account isn't initially available, select **See all**.
+1. If the option to create a **Cosmos DB database** isn't initially available, select **See all**.
 
-1. Within the **Databases** category, select **Cosmos DB (preview)**.
+1. Within the **Databases** category, select **Cosmos DB database**.
 
     :::image type="content" source="media/quickstart-portal/cosmos-db-database-option.png" lightbox="media/quickstart-portal/cosmos-db-database-option-full.png" alt-text="Screenshot of the option to specifically create a Cosmos DB database in the Fabric portal.":::
 
@@ -96,7 +94,7 @@ Finally, perform a NoSQL query to test the sample data in the **SampleData** con
         "product": "ProCore X3 Elite Workstation - Computers, Workstations",
         "currentPrice": 8486.6
       },
-      // Ommitted for brevity
+      // Omitted for brevity
     ]
     ```    
 

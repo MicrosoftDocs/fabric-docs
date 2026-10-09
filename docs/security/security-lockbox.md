@@ -3,7 +3,7 @@ title: Lockbox for Microsoft Fabric
 description: Customer Lockbox for Microsoft Fabric is a service that allows customers to control how Microsoft engineers access their data.
 author: msmimart
 ms.author: mimart
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom: sfi-image-nochange
 ms.date: 01/07/2024
 ---
@@ -27,6 +27,9 @@ To enable Customer Lockbox for [!INCLUDE [product-name](../includes/product-name
     :::image type="content" source="media/security-lockbox/enable-lockbox.png" alt-text="Screenshot of enabling Customer Lockbox for Microsoft Azure in the Customer Lockbox for Microsoft Azure administration tab." lightbox="media/security-lockbox/enable-lockbox.png":::
 
 ## Microsoft access request
+
+> [!NOTE]
+> To ensure the request is visible, the user must have an active Global Administrator role in Entra ID before the lockbox request is initiated by Microsoft.
 
 In cases where the Microsoft engineer can't troubleshoot your issue by using standard tools, elevated permissions are requested using the [Just-In-Time](/azure/azure-resource-manager/managed-applications/request-just-in-time-access) (JIT) access service. The request can come from the original support engineer, or from a different engineer.
 
@@ -74,7 +77,7 @@ Customer Lockbox has two type of logs:
 
     :::image type="content" source="media/security-lockbox/customer-lockbox-activity-logs-thumbnail.png" alt-text="Screenshot of the activity logs in Customer Lockbox for Microsoft Azure." lightbox="media/security-lockbox/customer-lockbox-activity-logs.png":::
 
-* **Audit logs** - Available from the Microsoft Purview compliance portal. You can see the audit logs in the [admin portal](/power-bi/admin/service-admin-portal-audit-logs).
+* **Audit logs** - Available from the Microsoft Purview portal. You can see the audit logs in the [admin portal](/power-bi/admin/service-admin-portal-audit-logs).
 
     Customer Lockbox for [!INCLUDE [product-name](../includes/product-name.md)] has four [audit logs](/power-bi/admin/service-admin-auditing):
 
@@ -117,6 +120,8 @@ Access to data varies according to the Microsoft Fabric experience your request 
     * Executor logs
  
 * **Data Factory** - The Data Factory engineer will have access to pipeline definitions linked to your request, if permission is granted.
+
+* **OneLake** - When a support or investigation scenario requires Microsoft engineer access to customer data stored in OneLake, Customer Lockbox governs access where applicable. Customer approval is required before access is granted, and approved access is time-bound.
 
 ## Related content
 

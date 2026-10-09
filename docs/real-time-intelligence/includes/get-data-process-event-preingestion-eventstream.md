@@ -1,10 +1,7 @@
 ---
 title: Include file for the Edit column heading in Real-Time Intelligence
 description: Include file for the Edit column heading in the Get data hub in Real-Time Intelligence
-author: spelluru
-ms.author: spelluru
 ms.topic: include
-ms.custom: 
 ms.date: 04/21/2024
 ---
 ### Process event before ingestion in Eventstream

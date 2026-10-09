@@ -1,11 +1,8 @@
 ---
 title: Eventstream REST API
 description: Learn how to call APIs to create and manage an Eventstream item in Fabric workspace.
-ms.reviewer: spelluru
-ms.author: zhenxilin
-author: alexlzx
+ms.reviewer: zhenxilin
 ms.topic: how-to
-ms.custom:
 ms.date: 09/08/2025
 ms.search.form: Eventstream REST API
 ---
@@ -18,7 +15,7 @@ In Fabric, an **item** represents a set of capabilities within a specific experi
 
 This article offers a comprehensive guide on using the Microsoft Fabric REST APIs to create and manage Eventstream items within your Fabric workspace. You find detailed specifications for each Eventstream API operation, along with instructions for setting up and configuring your API calls.
 
-For a complete overview of Microsoft Fabric REST APIs, visit: [Using the Microsoft Fabric REST APIs](/rest/api/fabric/articles/using-fabric-apis)
+For a complete overview of Microsoft Fabric REST APIs, visit: [Using the Microsoft Fabric REST APIs](/rest/api/fabric/articles/get-started/using-fabric-apis)
 
 ## Supported Eventstream APIs
 
@@ -46,7 +43,7 @@ To work with Fabric APIs, you first need to get a Microsoft Entra token for Fabr
 
 **Option 1: Get token using MSAL.NET**
 
-If your application needs to access Fabric APIs using a **service principal**, you can use the MSAL.NET library to acquire an access token. Follow the [Fabric API quickstart](/rest/api/fabric/articles/get-started/fabric-api-quickstart) to create a C# console app, which acquires an Azure AD (AAD) token using MSAL.Net library, then use C# HttpClient to call List workspaces API.
+If your application needs to access Fabric APIs using a **service principal**, you can use the MSAL.NET library to acquire an access token. Follow the [Fabric API quickstart](/rest/api/fabric/articles/get-started/fabric-api-quickstart) to create a C# console app, which acquires an Azure AD token using MSAL.Net library, then use C# HttpClient to call List workspaces API.
 
 **Option 2: Get token using the Fabric Portal**
 
@@ -57,6 +54,9 @@ powerBIAccessToken
 ```
 
 Copy the token and paste it into your application.
+
+> [!NOTE] 
+> If the eventstream you create includes any sources that use a cloud connection, make sure the identity you use to get the token has [permission to access that cloud connection](../../data-factory/data-source-management.md#add-users-to-a-data-source), whether it is a service principal or a user.
 
 ### Step 2: Prepare for an Eventstream body in JSON
 
@@ -73,7 +73,18 @@ Use the [API templates in GitHub](https://github.com/microsoft/fabric-event-stre
 
 You can refer to [this Swagger document](/rest/api/fabric/eventstream/topology/get-eventstream-topology?tabs=HTTP#definitions) for details on each API property, and it also guides you in defining an Eventstream API payload.
 
-If you're using **Eventhouse direct ingestion mode** destination, ensure that the `connectionName` and `mappingRuleName` property is correctly specified. To find the correct `connectionName`, navigate to your Eventhouse KQL database, select **Data streams**, and copy the desired `connectionName`. For detailed instructions on creating ingestion mappings, see [Mapping with ingestionMappingReference](/kusto/management/mappings?#mapping-with-ingestionmappingreference).
+#### Eventhouse Direct Ingestion Mode
+
+When using **Eventhouse direct ingestion mode** as a destination in your Eventstream API payload, make sure you provide the Eventhouse-specific properties in the destination definition, such as `connectionName` and `mappingRuleName`.
+
+For the complete setup flow, including how to:
+
+- create the Eventhouse,
+- get the KQL database properties,
+- create the table and JSON mapping rule, and
+- create the Eventstream in DirectIngestion mode by using APIs,
+
+see [Create an Eventstream with an Eventhouse DirectIngestion destination by using APIs](api-kusto-pull-destination.md).
 
 For more details about defining an Eventstream item, check out [Eventstream item definition](#eventstream-item-definition) section.
 
@@ -276,6 +287,9 @@ Example of Eventstream source in API body:
 }
 ```
 
+> [!NOTE]
+> A `SampleData` source's `properties` object must include a `type` field that names the sample dataset, for example `"properties": { "type": "StockMarket" }`. Allowed values include `Bicycles`, `YellowTaxi`, `StockMarket`, and `Buses`. An empty `properties: {}` is rejected because the required `type` property is missing.
+
 ### Destinations
 
 To define an Eventstream destination in the API body, make sure each field and property is specified correctly according to the table.
@@ -288,7 +302,15 @@ To define an Eventstream destination in the API body, make sure each field and p
 | `properties` | Object         | Other settings specific to the selected destination type. | Required    | Example for `Eventhouse` type: `"dataIngestionMode"`, `"workspaceId"`, `"itemId"`, `"databaseName"`  |
 | `inputNodes` | Array         | A reference to the input nodes for the destination, such as your Eventstream name or an operator name. | Required     | Example: `eventstream-1`   |
 
-Again, if you're using **Eventhouse direct ingestion mode** destination, ensure that the `connectionName` and `mappingRuleName` property is correctly specified. To find the correct `connectionName`, navigate to your Eventhouse KQL database, select **Data streams**, and copy the desired `connectionName`. For detailed instructions on creating ingestion mappings, see [Mapping with ingestionMappingReference](/kusto/management/mappings?#mapping-with-ingestionmappingreference).
+If you're using an **Eventhouse direct ingestion mode** destination, ensure that `connectionName` and `mappingRuleName` are correctly specified. For the end-to-end setup steps, see [Create an Eventstream with an Eventhouse DirectIngestion destination by using APIs](api-kusto-pull-destination.md).
+
+> [!IMPORTANT]
+> An Eventhouse destination has two `dataIngestionMode` values, and each mode requires a **different** set of properties:
+>
+> - `ProcessedIngestion` (the Eventstream provisions ingestion itself): `dataIngestionMode`, `workspaceId`, `itemId`, `databaseName`, `tableName`, and `inputSerialization`.
+> - `DirectIngestion` (references a pre-existing Kusto data connection and ingestion mapping on the Eventhouse): `dataIngestionMode`, `workspaceId`, `itemId`, `connectionName`, and `mappingRuleName`.
+>
+> Supplying the wrong combination — for example `DirectIngestion` with `tableName`/`inputSerialization` but no `connectionName`/`mappingRuleName` — is accepted by the API but leaves the destination in a `Warning` state that ingests no rows and reports no error. Verify that the property set matches the mode you selected.
 
 ---
 
@@ -418,5 +440,7 @@ Example of stream in API body:
 
 ## Related content
 
-* [Using the Microsoft Fabric REST APIs](/rest/api/fabric/articles/using-fabric-apis)
+* [Using the Microsoft Fabric REST APIs](/rest/api/fabric/articles/get-started/using-fabric-apis)
 * [Eventstream item definition](/rest/api/fabric/articles/item-management/definitions/eventstream-definition)
+
+

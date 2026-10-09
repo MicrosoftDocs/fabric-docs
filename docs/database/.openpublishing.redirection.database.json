@@ -310,6 +310,16 @@
       "source_path_from_root": "/docs/database/sql/enable.md",
       "redirect_url": "/fabric/database/sql/create",
       "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/database/cosmos-db/customer-managed-keys.md",
+      "redirect_url": "/fabric/database/cosmos-db",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/database/cosmos-db/troubleshoot-vector-indexing-customer-managed-keys.md",
+      "redirect_url": "/fabric/database/cosmos-db",
+      "redirect_document_id": false
     }
   ]
 }

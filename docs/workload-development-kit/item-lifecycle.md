@@ -1,11 +1,8 @@
 ---
 title: Item lifecycle
 description: Learn about item lifecycle in Microsoft Fabric.
-author: KesemSharabi
-ms.author: kesharab
 ms.topic: concept-article
-ms.custom:
-ms.date: 05/21/2024
+ms.date: 04/29/2026
 ---
 # Item life cycle
 
@@ -52,3 +49,4 @@ Once the item metadata is loaded, an editing session can start. Either in the be
 
 * [Introducing workloads](workload-environment.md)
 * [Manage a workload in Fabric](manage-workload.md)
+

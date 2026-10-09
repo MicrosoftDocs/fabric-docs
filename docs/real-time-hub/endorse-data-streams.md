@@ -1,11 +1,9 @@
 ---
 title: Endorse streams in Fabric Real-Time hub
 description: This article shows how to endorse streams in Fabric Real-Time hub.
-author: mystina
-ms.author: majia
+ms.reviewer: majia
 ms.topic: how-to
-ms.custom:
-ms.date: 07/22/2025
+ms.date: 12/11/2025
 ---
 
 # Endorse streams in Fabric Real-Time hub
@@ -28,7 +26,7 @@ You can endorse data in a data stream using the following steps:
 1. Move the mouse over the stream in the list, select ... (ellipsis)
 1. Select **Endorse**.
 
-    :::image type="content" source="./media/endorse-data-streams/endorse-from-data-streams-menu.png" alt-text="Screenshot that shows the Endorse data link from the Real-Time hub All data streams page." lightbox="./media/endorse-data-streams/endorse-from-data-streams-menu.png":::
+    :::image type="content" source="./media/endorse-data-streams/endorse.png" alt-text="Screenshot that shows the Endorse data link from the Real-Time hub All data streams page." lightbox="./media/endorse-data-streams/endorse.png":::
 
 ### Stream details page
 
@@ -48,7 +46,7 @@ You can endorse data in a data stream using the following steps:
 1. Move the mouse over the stream in the list, select ... (ellipsis)
 1. Select **Endorse**.
 
-    :::image type="content" source="./media/endorse-data-streams/endorse-table-from-data-streams-menu.png" alt-text="Screenshot that shows the Endorse data link for a KQL table in the Real-Time hub All data streams page." lightbox="./media/endorse-data-streams/endorse-table-from-data-streams-menu.png":::
+    :::image type="content" source="./media/endorse-data-streams/endorse.png" alt-text="Screenshot that shows the Endorse data link for a KQL table in the Real-Time hub All data streams page." lightbox="./media/endorse-data-streams/endorse.png":::
 
 ### Stream details page
 
@@ -60,3 +58,4 @@ You can endorse data in a data stream using the following steps:
 ## Related content
 
 For details on endorsing data, see [Endorsement in Fabric](../fundamentals/endorsement-promote-certify.md).
+

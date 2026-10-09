@@ -1,0 +1,290 @@
+---
+title: Read and write data with GraphQL in Fabric Apps
+description: Learn how to read and write data using the type-safe GraphQL client in Microsoft Fabric Apps, including filtering, pagination, and relationship navigation.
+ms.reviewer: mksuni
+ms.topic: how-to
+ms.date: 06/02/2026
+ai-usage: ai-generated
+---
+
+# Read and write data with GraphQL in Fabric Apps
+
+Fabric Apps provides a type-safe GraphQL client that lets you perform create, read, update, and delete operations without writing raw queries. The client generates GraphQL automatically from your method calls and returns typed entities based on your data model definitions.
+
+## Prerequisites
+
+- A Fabric Apps project with data models defined. See [Define data models](data-models.md).
+- The backend services running locally or deployed to Fabric.
+
+## Initialize the client
+
+Instantiate `RayfinClient` with your backend URL, publishable key, and schema type:
+
+```typescript
+import { RayfinClient } from '@microsoft/rayfin-client';
+import type { Note } from '../rayfin/data/Note';
+import type { Notebook } from '../rayfin/data/Notebook';
+
+type AppSchema = { 
+  Note: Note;
+  Notebook: Notebook;
+};
+
+const client = new RayfinClient<AppSchema>({
+  baseUrl: import.meta.env.VITE_RAYFIN_API_URL ?? 'http://localhost:5168',
+  publishableKey: 'pk-your-project-key',
+});
+```
+
+The generic type argument enables TypeScript to provide autocomplete and type checking for all data operations.
+
+## Read data
+
+Access entity collections through `client.data.<EntityName>`. The fluent API provides methods for querying, filtering, sorting, and pagination.
+
+### Fetch all records
+
+```typescript
+const notes = await client.data.Note.select([
+  'id',
+  'title',
+  'content',
+  'createdAt',
+  'isPinned',
+]).execute();
+```
+
+### Fetch a single record by primary key
+
+```typescript
+const note = await client.data.Note.findByPk('00000000-0000-0000-0000-000000000000');
+```
+
+This returns the complete entity or `null` if no record with that ID exists.
+
+### Filter records
+
+Use the `where()` method to filter results:
+
+```typescript
+const pinnedNotes = await client.data.Note.select([
+  'id',
+  'title',
+  'isPinned',
+])
+  .where({ isPinned: { eq: true } })
+  .execute();
+```
+
+#### Filter operators
+
+| Operator | Description | Example |
+|----------|-------------|---------|
+| `eq` | Equals | `{ status: { eq: 'active' } }` |
+| `ne` | Not equals | `{ status: { ne: 'archived' } }` |
+| `gt` | Greater than | `{ age: { gt: 18 } }` |
+| `gte` | Greater than or equal | `{ age: { gte: 21 } }` |
+| `lt` | Less than | `{ price: { lt: 100 } }` |
+| `lte` | Less than or equal | `{ price: { lte: 50 } }` |
+| `contains` | Contains substring | `{ title: { contains: 'draft' } }` |
+
+### Sort results
+
+Use `orderBy()` to sort query results:
+
+```typescript
+const notes = await client.data.Note.select([
+  'id',
+  'title',
+  'createdAt',
+])
+  .orderBy({ createdAt: 'desc' })
+  .execute();
+```
+
+Sort by multiple columns:
+
+```typescript
+const notes = await client.data.Note.select([
+  'id',
+  'title',
+  'isPinned',
+  'createdAt',
+])
+  .orderBy({ isPinned: 'desc' })
+  .orderBy({ createdAt: 'desc' })
+  .execute();
+```
+
+### Navigate relationships
+
+When you define relationships with `@one()` and `@many()` decorators, you can include related entity fields in the same query:
+
+```typescript
+const notes = await client.data.Note.select([
+  'id',
+  'title',
+  'content',
+  'notebook.id',
+  'notebook.name',
+  'notebook.color',
+])
+  .execute();
+```
+
+Each note includes its associated notebook data without requiring a separate query.
+
+## Paginate large result sets
+
+Use cursor-based pagination for large lists:
+
+```typescript
+const page = await client.data.Note.select([
+  'id',
+  'title',
+  'createdAt',
+])
+  .orderBy({ createdAt: 'desc' })
+  .first(25)
+  .executePaginated();
+
+console.log('Items:', page.items);
+console.log('Has next page:', page.hasNextPage);
+console.log('End cursor:', page.endCursor);
+```
+
+Fetch the next page using the cursor:
+
+```typescript
+if (page.hasNextPage) {
+  const nextPage = await client.data.Note.select([
+    'id',
+    'title',
+    'createdAt',
+  ])
+    .orderBy({ createdAt: 'desc' })
+    .first(25)
+    .after(page.endCursor)
+    .executePaginated();
+}
+```
+
+> [!NOTE]
+> The `totalCount` property appears on the `PagedResult` type but isn't populated by the backend. Use `items.length` to count results in the current page.
+
+## Create records
+
+Use the `create()` method to insert new records:
+
+```typescript
+const newNote = await client.data.Note.create({
+  title: 'Meeting notes',
+  content: 'Discussion points from the team sync',
+  isPinned: false,
+  isArchived: false,
+  createdAt: new Date(),
+  updatedAt: new Date(),
+  user_id: 'user-123',
+});
+```
+
+The method returns the created entity with all fields populated, including the autogenerated `id`.
+
+### Create records with relationships
+
+When creating entities that have relationships, pass either the full related object or an object with just the primary key:
+
+```typescript
+// Option 1: Pass just the ID
+const note = await client.data.Note.create({
+  title: 'Weekly summary',
+  content: 'Summary of this week',
+  notebook: { id: 'notebook-456' },
+  isPinned: false,
+  isArchived: false,
+  createdAt: new Date(),
+  updatedAt: new Date(),
+});
+
+// Option 2: Pass the full object
+const notebook = await client.data.Notebook.findByPk('notebook-456');
+const note = await client.data.Note.create({
+  title: 'Weekly summary',
+  content: 'Summary of this week',
+  notebook: notebook,
+  isPinned: false,
+  isArchived: false,
+  createdAt: new Date(),
+  updatedAt: new Date(),
+});
+```
+
+Both forms produce the same result. Use the first form when you already know the related entity's ID and want to avoid an extra fetch.
+
+## Update records
+
+Use the `update()` method to modify existing records. Pass a filter object and an object containing the fields to update:
+
+```typescript
+await client.data.Note.update(
+  { id: 'note-123' },
+  {
+    title: 'Updated title',
+    updatedAt: new Date(),
+  }
+);
+```
+
+### Update relationships
+
+To change a relationship, pass the new related entity or just its ID:
+
+```typescript
+// Move a note to a different notebook
+await client.data.Note.update(
+  { id: 'note-123' },
+  { notebook: { id: 'new-notebook-789' } }
+);
+```
+
+## Delete records
+
+Use the `delete()` method to remove records matching a filter:
+
+```typescript
+await client.data.Note.delete({ id: 'note-123' });
+```
+
+The method resolves when the backend confirms deletion. If no records match the filter, the method still succeeds.
+
+## Handle authentication
+
+When authentication is enabled, sign in before performing data operations:
+
+```typescript
+await client.auth.signIn({ email, password });
+
+// All subsequent data calls include authentication context
+const notes = await client.data.Note.select(['id', 'title']).execute();
+```
+
+The client automatically attaches the authentication session to all data API calls. You don't need to pass tokens manually.
+
+## Best practices
+
+- **Select only needed fields** – Fetch only the fields you use to reduce payload size and improve performance.
+- **Use pagination for large lists** – Avoid fetching thousands of records at once by using `first()` and `executePaginated()`.
+- **Batch relationship queries** – Include related entity fields in the same query rather than making separate requests.
+- **Cache frequently accessed data** – Store static reference data in memory to reduce API calls.
+
+## Current limitations
+
+- The `count()` method isn't available on the fluent client. Select minimal fields and use `results.length` instead.
+- Many-to-many relationships aren't supported. Use an explicit join entity with two `@one()` navigation decorators.
+- The `totalCount` property on `PagedResult` isn't populated by the backend.
+
+## Related content
+
+- [Define data models](data-models.md)
+- [Configure authentication](authentication.md)
+- [Deploy to Fabric](deploy-app.md)

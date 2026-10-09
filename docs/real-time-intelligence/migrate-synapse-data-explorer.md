@@ -1,14 +1,11 @@
 ---
 title: Migrate from Azure Synapse Data Explorer to Fabric (preview)
 description: Learn about migrating from Azure Synapse Data Explorer to Microsoft Fabric, including key considerations and different migration scenarios.
-author: spelluru
-ms.author: spelluru
 ms.reviewer: sharmaanshul
 ms.topic: how-to
 ms.date: 03/26/2025
 #customer intent: As a data engineer, I want to understand the migration process from Azure Synapse Data Explorer to Fabric Eventhouse so that I can effectively transition my workloads.
 ---
-
 
 # Migrate from Azure Synapse Data Explorer to Fabric Eventhouse (preview)
 
@@ -54,7 +51,7 @@ Before you migrate, consider the following key points:
 | System-assigned managed identities | :x: | Not supported in Eventhouse. |
 | Cluster Azure RBAC roles | :heavy_check_mark: |  |
 | Data connections, such as Event Hubs, IoT Hub, Event Grid | :x: | Not all data connections available in Synapse Data Explorer are supported in Eventhouse. You must remove them before migration and re-create supported data connections in the new eventhouse. |
-| Data export operations | :x: | Data export operations, such as `.export` commands and continous export, aren't migrated automatically. You must manaully add them in the new eventhouse.|
+| Data export operations | :x: | Data export operations, such as `.export` commands and continuous export, aren't migrated automatically. You must manually add them in the new eventhouse.|
 | Follower and leader clusters | :x: | You must manually remove them before migration. |
 | Database pretty names | :x: | You must manually add them in the new eventhouse. |
 | Customer-managed keys | :x: | You must manually remove them before migration. |
@@ -73,7 +70,7 @@ The migration process is performed using Fabric REST API endpoints. The recommen
 1. **Validate**: Use the [Validate migration to Eventhouse](migrate-api-validate-synapse-data-explorer.md) endpoint to check whether the Azure Synapse Analytics Data Explorer cluster can be migrated to an eventhouse.
 1. **Migrate**: Use the [Migrate to Eventhouse](migrate-api-to-eventhouse.md) with the `migrationSourceClusterUrl` payload to create an eventhouse with the migration source cluster URL. The process runs asynchronously to create a new eventhouse and migrate all databases from the source cluster to the eventhouse.
 1. **Monitor**: Use the [Monitor migration progress](migrate-api-to-eventhouse.md#monitor-migration-progress) to track the progress of your migration.
-1. **Verify**: Verify the migration by checking the [eventhouse state](manage-monitor-eventhouse.md#view-system-overview) is **Running**, and that the migrated databases appear in the [KQL database list](manage-monitor-eventhouse.md#view-databases-overview).
+1. **Verify**: Verify the migration by checking the [eventhouse state](manage-monitor-eventhouse.md#system-overview) is **Running**, and that the migrated databases appear in the [KQL database list](manage-monitor-eventhouse.md#view-databases).
 
     > [!IMPORTANT]
     > Make sure to update queries and ingestion processes to point to new [Eventhouse endpoints](access-database-copy-uri.md#copy-uri) within 90 days of migration. After 90 days, the source cluster is deleted and its endpoints stop redirecting to the eventhouse and it will not be recoverable.

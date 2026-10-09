@@ -1,8 +1,6 @@
 ---
 title: Monitor Apache Spark run series
 description: The Spark run series categorizes your Spark applications based on recurring pipeline activities, manual notebook runs, or Spark job runs.
-author: eric-urban
-ms.author: eur
 ms.reviewer: jejiang
 ms.topic: overview
 ms.date: 05/21/2024
@@ -23,7 +21,7 @@ The run series feature visually represents the duration trend for each Spark app
 
 You can access the monitor run series feature from the **Monitoring hub's historical view**:
 
-1. Open the Microsoft Fabric portal and go to **Monitoring hub** menu.
+1. Open the Fabric portal and go to **Monitoring hub** menu.
 2. Open your Spark job definition or notebook and expand its **More options** drop-down list and then select **Historical runs**.
 3. Select the job you want to view and expand **More options**, then select **Monitor run series**.
 
@@ -31,7 +29,7 @@ You can access the monitor run series feature from the **Monitoring hub's histor
 
 You can access the monitor run series feature from the notebook or Spark job definition's **Recent runs** panel:
 
-1. Open the Microsoft Fabric homepage and select a workspace where you want to view the job.
+1. Open the Fabric homepage and select a workspace where you want to view the job.
 2. Selecting **Spark job definition** or **Notebook item context** menu shows the recent run option.
 3. Select **Recent runs**.
 4. select an application and expand its **More options** drop-down list and then select **Monitor run series**.
@@ -66,11 +64,15 @@ When you select an instance of the notebook/Spark job definition activity run in
 
 **Focus mode** lets you expand a visual to see more details. Maybe you have a visual that is a little crowded and you want to zoom in on it. This function is a perfect use of focus mode.
 
-:::image type="content" source="media\apache-spark-monitor-run-series\focus-mode.png" alt-text="Screenshot showing the focus mode to view detials." lightbox="media\apache-spark-monitor-run-series\focus-mode.png" border="true":::
+:::image type="content" source="media\apache-spark-monitor-run-series\focus-mode.png" alt-text="Screenshot showing the focus mode to view details." lightbox="media\apache-spark-monitor-run-series\focus-mode.png" border="true":::
 
 If the bar is marked red, an exception has been detected for that run instance. You can view the following information: **Total duration**, **Expected duration**, and **Potential causes** for this instance in the Anomalies panel.
 
 :::image type="content" source="media\apache-spark-monitor-run-series\anomalies-panel.png" alt-text="Screenshot showing the anomalies panel.png." lightbox="media\apache-spark-monitor-run-series\anomalies-panel.png" border="true":::
+
+> [!NOTE]
+>
+> A minimum run duration of five minutes is required for anomaly detection. Spark application runs shorter than five minutes are excluded from anomaly analysis.
 
 ## Related content
 

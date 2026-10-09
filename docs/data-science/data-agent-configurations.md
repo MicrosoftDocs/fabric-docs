@@ -1,27 +1,42 @@
-﻿---
+---
 title: Data agent configurations
 description: Overview of the various configurations for the data agent.
-ms.author: jburchel
-author: jonburchel
+ms.author: scottpolly
+author: s-polly
 ms.reviewer: midesa
-reviewer: midesa
-ms.topic: conceptual
-ms.date: 06/12/2025
+ms.topic: concept-article
+ms.date: 08/31/2026
+ai-usage: ai-assisted
 ---
 
 # Configure your data agent
 
-The Data Agent is a powerful tool designed to enhance the accuracy of data results and provide creators with a means to incorporate business context into their data queries. By using the data agent, users can interact with data through natural language, making complex data operations more accessible and actionable.
+A data agent lets users interact with data through natural language. To improve the accuracy of results, add business context that shapes how the agent interprets questions and builds queries. This context helps you create customized solutions that reflect your organization's processes, scenarios, and business logic, so the insights the agent generates are both accurate and contextually relevant.
 
-Additionally, the data agent facilitates the creation, curation, and configuration of data experts, enabling organizations to build customized solutions that reflect their unique processes, scenarios, and business logic. This customization ensures that the insights generated aren't only accurate but also contextually relevant.
+This article describes the configurations you can use to enhance your data agent.
 
-This article describes the various configurations you can use to enhance your data agent.
+## Data agent schema selection
+
+Schema selection controls which objects in a data source the data agent can use to answer questions. The selected schema provides context for query generation and limits generated queries to approved objects.
+
+After you add a data source, use the **Explorer** to review and select its available objects. You can:
+
+- Search for a specific schema element.
+- Use checkboxes to select individual elements.
+- Select a parent-level item to automatically select all its child items.
+- Choose **Select all** to make all available elements in the data source available to the data agent.
+
+The objects you can select depend on the data source type. For the schema selection options available for each type, see [Add and configure data sources in a Fabric data agent](data-agent-add-datasources.md).
+
+Select only the objects that the data agent needs to answer its intended questions. A focused schema reduces ambiguity, helps the agent route questions to the appropriate data source, and improves query generation. For more guidance, see [Best practices for improving data agent query generation](data-agent-configuration-best-practices.md#limit-the-selected-schema).
+
+:::image type="content" source="./media/how-to-create-data-agent/data-agent-table-selection-and-search.gif" alt-text="Screenshot showing how to search, select a single table, and select multiple elements at once." lightbox="./media/how-to-create-data-agent/data-agent-table-selection-and-search.gif":::
 
 ## Data agent instructions
 
 Data agent instructions guide the agent in generating accurate and relevant responses to user questions. These instructions can specify which data sources to prioritize, outline how to handle certain types of queries, and provide helpful terminology or context for interpreting user intent.
 
-Here is a recommended starting format for writing effective agent-level instructions:
+Use this recommended format to write effective agent-level instructions:
 
 ```md
 
@@ -39,7 +54,7 @@ Here is a recommended starting format for writing effective agent-level instruct
 
 ## Response guidelines
 // Set expectations for how the agent should format or present answers.
-// Example: ""
+// Example: "Present results as a short summary followed by a table of the supporting data."
 
 ## Handling common topics
 // Provide special handling rules or context for frequently asked topics.
@@ -66,19 +81,52 @@ Use the following template as a starting point:
 
 ## When asked about
 // Provide query-specific logic or table preferences for certain topics. 
-// Example: “When asked about shoe sales, always use the SalesProduct table.”
+// Example: "When asked about shoe sales, always use the SalesProduct table."
 
 ```
 
 :::image type="content" source="media/how-to-create-data-agent/configuration-data-source-instructions.png" alt-text="Screenshot of adding data source level instructions to the data agent" lightbox="media/how-to-create-data-agent/configuration-data-source-instructions.png":::
 
+## Data source description
+
+Data source descriptions help creators provide high-level context about each data source so the data agent can intelligently route questions. A description should summarize what the data source contains, the types of questions it can answer, and any business-specific nuances that help distinguish it from other sources. The agent uses this information during its reasoning process to determine which source is the most relevant to a user's query.
+
+:::image type="content" source="media/how-to-create-data-agent/configuration-data-source-description.png" alt-text="Screenshot of adding data source descriptions to the data agent." lightbox="media/how-to-create-data-agent/configuration-data-source-description.png":::
+
+> [!NOTE]
+> The data agent also considers metadata such as the description, schema, and example queries to determine which data source to use when answering a particular question.
+
 ## Data source example queries
 
-Example queries, also known as few shot examples, are used by data agent tools to improve the quality of generated queries. They allow creators to pass example query logic that the agent can reference when forming a response. When a data source is used, the corresponding tool automatically looks up the most relevant example queries for the user’s question and passes the top three to the data agent tool. These examples are incorporated into the generation process, helping the agent produce more accurate and contextually appropriate query results.
+Example queries, also known as few-shot examples, are used by data agent tools to improve the quality of generated queries. They allow creators to pass example query logic that the agent can reference when forming a response. When a data source is used, the corresponding tool automatically looks up the most relevant example queries for the user's question and passes the top three to the data agent tool. These examples are incorporated into the generation process, helping the agent produce more accurate and contextually appropriate query results.
 
 :::image type="content" source="media/how-to-create-data-agent/data-agent-adding-examples-sql.png" alt-text="Screenshot of adding example queries to the data agent" lightbox="media/how-to-create-data-agent/data-agent-adding-examples-sql.png":::
+
+## Schema object descriptions (Preview)
+
+For SQL data sources, schema object descriptions provide business context for tables, columns, and other elements in a data source schema. The data agent uses these descriptions to interpret large or ambiguous schemas and understand what each element represents, which helps it generate more accurate queries.
+
+> [!NOTE]
+> Schema object descriptions are available only when your data agent uses the [preview runtime](data-agent-runtime.md#preview-runtime).
+
+:::image type="content" source="media/how-to-create-data-agent/data-agent-schema-object-descriptions.png" alt-text="Screenshot of editing a table description in the Schema object descriptions pane of a data agent." lightbox="media/how-to-create-data-agent/data-agent-schema-object-descriptions.png":::
+
+To learn how to add and manage descriptions, see [Add schema object descriptions (Preview)](data-agent-schema-object-descriptions.md).
+
+## Topics (Preview)
+
+Topics provide large, topic-based instructions to NL2SQL. The data agent searches the instructions for content relevant to a user's question and sends only the matching sections to the NL2SQL tool.
+
+Use topics when your instructions are large, can be organized by subject, and apply only when a question relates to that subject. Use data source instructions instead for context and rules that you must send whenever the agent queries the data source.
+
+> [!NOTE]
+> Topics are available only for SQL data sources when your data agent uses the [preview runtime](data-agent-runtime.md#preview-runtime).
+
+:::image type="content" source="media/data-agent-topics/data-agent-topics.png" alt-text="Screenshot of the Data source topics editor showing Markdown topic instructions and an outline." lightbox="media/data-agent-topics/data-agent-topics.png":::
+
+To learn how to organize and add topic-based instructions, see [Use topics in a Fabric data agent (preview)](data-agent-topics.md).
 
 ## Next steps
 
 - [Data agent concept](concept-data-agent.md)
-- [Data agent scenario](data-agent-scenario.md)
+- [Add and configure data sources in a Fabric data agent](data-agent-add-datasources.md)

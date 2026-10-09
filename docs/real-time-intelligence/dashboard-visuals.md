@@ -1,12 +1,10 @@
 ---
 title: Real-Time Dashboard specific visuals
 description: Learn about Real-Time Dashboard-specific visuals.
-ms.author: spelluru
-author: spelluru
 ms.reviewer: gabil
 ms.topic: how-to
-ms.custom:
-ms.date: 11/19/2024
+ms.subservice: rti-dashboard
+ms.date: 08/05/2026
 ---
 # Real-Time Dashboard-specific visuals
 
@@ -17,3 +15,9 @@ To learn how to customize any dashboard visuals, see [Customize dashboard visual
 For general information on Real-Time Dashboards, see [Visualize data with Real-Time Dashboards](dashboard-real-time-create.md).
 
 [!INCLUDE [dashboard visuals](~/../kusto-repo/data-explorer/includes/cross-repo/dashboard-visuals.md)]
+
+## Related content
+
+* [Real-Time Dashboard supported visuals](dashboard-supported-visuals.md)
+* [Customize Real-Time Dashboard visuals](dashboard-visuals-customize.md)
+* [Troubleshoot Real-Time Dashboard visual errors](troubleshoot-dashboard-tile-error.md)

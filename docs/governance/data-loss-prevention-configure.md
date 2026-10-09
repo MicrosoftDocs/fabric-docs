@@ -3,9 +3,7 @@ title: "Configure data loss prevention policies for Microsoft Fabric"
 description: "Learn how to configure Purview data loss prevention policies for Microsoft Fabric."
 author: msmimart
 ms.author: mimart
-ms.service: fabric
-ms.subservice: governance
-ms.topic: how-to #Don't change
+ms.topic: how-to
 ms.date: 10/21/2025
 
 #customer intent: As a Purview compliance administrator, I want to learn how to configure DLP policies for Fabric so that my organization can detect leakage of sensitive data from Fabric items.
@@ -45,7 +43,7 @@ Before you get started with DLP for Fabric and Power BI, you should confirm your
     :::image type="content" source="./media/data-loss-prevention-configure/create-policy.png" alt-text="Screenshot of D L P create policy page.":::
 
     > [!NOTE]
-    > The **+ Create policy** option is only available if the prerequistes have been met.
+    > The **+ Create policy** option is only available if the prerequisites have been met.
 
 1. Choose the **Custom** category and then the **Custom policy** template. When done, select **Next**.
     

@@ -1,11 +1,8 @@
 ---
 title: Add a Microsoft Fabric workload
 description: Learn how to add, remove, and use a workload in the Microsoft Fabric workload hub.
-author: KesemSharabi
-ms.author: kesharab
-ms.topic: conceptual
-ms.custom:
-ms.date: 05/21/2024
+ms.topic: how-to
+ms.date: 04/29/2026
 ---
 
 # Add a workload in the workload hub
@@ -86,3 +83,4 @@ To add an unverified workload, a user must be included in both of the following 
 
 * "Capacity admins and contributors can add and remove Partner workloads"
 * "Users can see and work with unvalidated partner workloads"
+

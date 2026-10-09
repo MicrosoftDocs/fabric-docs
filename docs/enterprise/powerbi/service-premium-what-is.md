@@ -1,13 +1,12 @@
 ﻿---
 title: What is Power BI Premium?
 description: Power BI Premium provides streamlined use and management of capacities for your organization.
-author: JulCsc
-ms.author: juliacawthra
-ms.reviewer: ''
+author: dknappettmsft
+ms.author: daknappe
 ms.service: powerbi
 ms.subservice: powerbi-premium
-ms.topic: conceptual
-ms.date: 09/02/2025
+ms.topic: concept-article
+ms.date: 06/15/2026
 ms.custom: licensing support, intro-overview
 LocalizationGroup: Premium
 ai-usage: ai-assisted
@@ -70,6 +69,8 @@ With *Power BI Premium* and [Power BI Embedded](/power-bi/developer/embedded/emb
 | F512  | 200 | 200 | 10 - 20 | 240    | 20 |   320 | 12,000 | Unlimited |
 | F1024 | 400 | 200 | 12 - 24 | 480    | 40 |   640 | 24,000 | Unlimited |
 | F2048 | 400 | 200 | 12 - 24 | 960    | 40 | 1,280 | 24,000 | Unlimited |
+| F4096 | 400 | 200 | 12 - 24 | 960    | 40 | 1,280 | 24,000 | Unlimited |
+| F8192 | 400 | 200 | 12 - 24 | 960    | 40 | 1,280 | 24,000 | Unlimited |
 
 <sup>1</sup> The [Microsoft Fabric Capacity Metrics app](/fabric/enterprise/metrics-app) doesn't currently expose these metrics.
 
@@ -80,7 +81,7 @@ With *Power BI Premium* and [Power BI Embedded](/power-bi/developer/embedded/emb
 <sup>4</sup> These limits apply to Direct Lake tables and models, and are guardrails that affect fallback to DirectQuery. Direct Lake semantic models have additional constraints that are based on SKUs, as listed in [fallback](/fabric/get-started/direct-lake-overview#fallback).
 
 > [!NOTE]
-> While SKU limitations define the maximum memory available for semantic models, administrators can manage memory allocation through capacity settings in the Power BI admin portal. For details on adjusting memory settings, see [Configure workloads in Power BI Premium](service-admin-premium-workloads.md).
+> While SKU limitations define the maximum memory available for semantic models, administrators can manage memory allocation through **OneLake catalog** > **Govern** > **Capacities**. For details on adjusting memory settings, see [Configure workloads in Power BI Premium](service-admin-premium-workloads.md).
 
 ### Semantic model memory usage
 
@@ -89,12 +90,6 @@ Semantic model operations such as queries are subject to individual memory limit
 - **Loading the semantic model**: The first action is loading the semantic model into the memory.
 - **Refreshing the semantic model**: The second action is refreshing the semantic model after it's loaded into the memory. The refresh operation causes the memory used by the semantic model to more than double, because in addition to the memory used by the refresh operation, the original copy of data remains available for active queries while another copy is being processed by the refresh. Once the refresh transaction commits, the memory footprint is reduced.
 - **Interacting with the report**: The third action is caused by the user's interaction with the report. During the semantic model refresh, report interactions execute DAX queries. Each DAX query consumes a certain amount of temporary memory required to produce the results. Each query can consume a different amount of memory. The memory used to query the semantic model is added to the memory needed to load the semantic model, and refresh it.
-
-#### Handling low memory situations
-
-Load balancing across semantic models is managed automatically by the system. In some cases, the capacity might temporarily run low on memory during high-demand periods. When this occurs, you might encounter memory-related errors. The system typically recovers quickly as resources become available. If you receive a memory error, wait a moment and retry your operation.
-
-If memory errors occur frequently or persist, your capacity might require additional resources. In such cases, contact Microsoft Support to investigate capacity sizing and optimization options for your workload.
 
 ## Refreshes
 
@@ -138,6 +133,8 @@ Each SKU can run a set number of Dataflows [parallel tasks](/power-query/dataflo
 | F512       | 64                           | 1536                         |
 | F1024      | 64                           | 1536                         |
 | F2048      | 64                           | 1536                         |
+| F4096      | 64                           | 1536                         |
+| F8192      | 64                           | 1536                         |
 
 To learn about Dataflow Gen2, see [Getting from Dataflow Generation 1 to Dataflow Generation 2](/fabric/data-factory/dataflows-gen2-overview).
 

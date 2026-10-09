@@ -2,20 +2,41 @@
 title: CI/CD for pipelines in Data Factory
 #customer intent: As a developer, I want to set up CI/CD for pipelines in Data Factory so that I can automate integration, testing, and deployment.
 description: This article describes how to set up continuous integration and delivery (CI/CD) for pipelines in Data Factory for Microsoft Fabric.
-author: conxu-ms
-ms.author: conxu
+ms.reviewer: conxu
 ms.topic: how-to
-ms.date: 10/01/2024
+ms.date: 06/10/2025
 ms.custom: pipelines
+ai-usage: ai-assisted
 ---
 
 # CI/CD for pipelines in Data Factory in Microsoft Fabric
 
-In Fabric Data Factory, CI/CD (continuous integration and continuous development) helps teams work faster and more reliably by automatically handling code changes—from testing to deployment.
+In Fabric Data Factory, CI/CD (continuous integration and continuous development) helps teams work faster and more reliably by automatically handling code changes, from testing to deployment.
 
-Right now, Fabric supports two key features for CI/CD, built in partnership with the Application Lifecycle Management (ALM) team: Git integration and deployment pipelines. These tools let you import and export workspace resources one at a time, so you can update only what you need.
+Right now, Fabric supports two key features for CI/CD, built in partnership with the Application Lifecycle Management (ALM) team: Git integration and deployment pipelines. These tools let you import and export workspace resources individually, and you can also use the Import/Export Item Definitions Batch APIs (preview) to synchronize multiple items at scale. This flexibility lets you update only what you need or promote changes in bulk.
 
-Unlike Azure Data Factory, which typically updates the entire factory using ARM templates, Fabric’s approach gives you more control. You can update specific pipelines without pausing everything. Both Git integration (bring your own Git) and deployment pipelines (built-in CI/CD) link one workspace to one environment. So, you’ll want to set up separate workspaces for development, testing, and production.
+Unlike Data Factory, which typically updates the entire factory using ARM templates, Fabric's approach gives you more control. You can update specific pipelines without pausing everything. Both Git integration (bring your own Git) and deployment pipelines (built-in CI/CD) link one workspace to one environment. So, you want to set up separate workspaces for development, testing, and production.
+
+## Summary
+
+This article guides you through setting up CI/CD for Data Factory pipelines in Fabric using two approaches: Git integration and deployment pipelines. You'll learn the fundamentals of CI/CD, understand how Git version control works with pipelines, and implement automated deployment workflows.
+
+First, review the [Understanding CI/CD, Git, and deployment pipelines](#understanding-cicd-git-and-deployment-pipelines) section to learn the core concepts of continuous integration, continuous deployment, and how Git version control integrates with deployment pipelines.
+
+**To set up Git integration for pipelines**, follow these steps:
+
+1. [Connect to a Git repository](#step-1-connect-to-a-git-repository) - Link your Fabric workspace to Azure DevOps or GitHub
+1. [Connect to a workspace](#step-2-connect-to-a-workspace) - Specify branch and folder details
+1. [Commit changes to Git](#step-3-commit-changes-to-git) - Track and version your pipeline changes
+1. [Update the workspace from Git](#step-4-optional-update-the-workspace-from-git) - Sync changes from your Git repository (optional)
+
+**To set up deployment pipelines**, follow these steps:
+
+1. [Create a deployment pipeline](#step-1-create-a-deployment-pipeline) - Define your CI/CD pipeline structure
+1. [Name the pipeline and assign stages](#step-2-name-the-pipeline-and-assign-stages) - Configure development, test, and production stages
+1. [Assign a workspace to the deployment pipeline](#step-3-assign-a-workspace-to-the-deployment-pipeline) - Add content to manage
+1. [Deploy to an empty stage](#step-4-deploy-to-an-empty-stage) - Move content through pipeline stages
+1. [Deploy content from one stage to another](#step-5-deploy-content-from-one-stage-to-another) - Promote changes across environments
 
 ## Why developers use CI/CD
 
@@ -40,13 +61,17 @@ Focuses on deploying verified changes to production developments through structu
 
 ## Git integration with Data Factory pipelines
 
-Git is a version control system that allows developers to track changes in their codebase (or JSON code definitions, in the case of pipelines) and collaborate with others. It provides a centralized repository where code changes are stored and managed. Currently, Git is supported in Fabric via GitHub or Azure DevOps.
+Git is a version control system that allows developers to track changes in their codebase (or JSON code definitions for pipelines) and collaborate with others. It provides a centralized repository where code changes are stored and managed. Currently, Git is supported in Fabric via GitHub or Azure DevOps.
 There are a few key workflow essentials to understand when working with Git.
 
 - **Main branch**: The main branch, sometimes named the _master&nbsp;branch_, holds production ready code.
 - **Feature branches**: These branches are separate from the main branch and allow for isolated development without changing the main branch.
 - **Pull requests (PRs)**: PRs allow users to propose, review, and discuss changes before integration.
 - **Merging**: This occurs when changes are approved. Git integrates these changes, continuously updating the project.
+
+### Recent Git integration enhancements
+
+Fabric Git integration now includes selective branch mapping per workspace or folder, so you can target a specific branch for each workspace without affecting other workspaces in the same repository. The **Source control** pane also provides a built-in diff experience that lets you compare workspace items against branch commits before committing or pulling updates. These improvements help teams review changes more clearly and manage branched workspaces with greater confidence.
 
 ## Deployment pipelines
 
@@ -66,20 +91,9 @@ Take the following steps to set up Git integration for your pipelines in Data Fa
 
 ### Prerequisites for Git integration
 
-To access Git with your Microsoft Fabric workspace, ensure the following prerequisites for both Fabric and Git.
+To access Git with your Fabric workspace, ensure the following prerequisites for both Fabric and Git.
 
-- Either a [Power BI Premium license](/power-bi/enterprise/service-premium-what-is) or [Fabric capacity](../enterprise/licenses.md#capacity).
-- Enabled the following tenant switches from the admin portal:
-  - [Users can create Fabric items](../admin/fabric-switch.md)
-  - [Users can synchronize workspace items with their Git repositories](../admin/git-integration-admin-settings.md#users-can-synchronize-workspace-items-with-their-git-repositories)
-  - (For GitHub users only) [Users can synchronize workspace items with GitHub repositories](../admin/git-integration-admin-settings.md#users-can-sync-workspace-items-with-github-repositories)
-- Either an Azure DevOps or GitHub account.
-  - For an Azure DevOps account:
-    - An active Azure account registered to the same user that is using the Fabric workspace. [Create a free account](https://azure.microsoft.com/products/devops/).
-    - Access to an existing repository
-  - For a GitHub account:
-    - An active GitHub account. [Create a free account](https://github.com/).
-    - Either a [fine grained token](https://github.com/settings/personal-access-tokens/new) with _read_ and _write_ permissions for _Contents_, under repository permissions, or a [GitHub classic token](https://github.com/settings/tokens/new) with repo scopes enabled.
+[!INCLUDE [cicd-git-prerequisites](includes/cicd-git-prerequisites.md)]
 
 ### Step 1: Connect to a Git repository
 
@@ -88,7 +102,7 @@ To use Git integration with Data Factory pipelines in Fabric, you first need to 
 1. Sign into Fabric and navigate to the workspace you want to connect to Git.
 1. Select **Workspace settings**.
 
-   :::image type="content" source="media/cicd-data-pipelines/workspace-settings.png" alt-text="Screenshot showing where to select Workspace settings in the Fabric UI.":::
+   :::image type="content" source="media/cicd-data-pipelines/workspace-settings.png" alt-text="Screenshot showing where to select workspace settings in the Fabric UI.":::
 
 1. Select **Git integration**.
 1. Select your Git provider. Currently, Fabric only supports _Azure DevOps_ or _GitHub_. If you use GitHub, you need to select **Add account** to connect your GitHub account. After you sign in, select Connect to allow Fabric to access your GitHub account.
@@ -115,7 +129,7 @@ Once you connect to a Git repository, you need to connect to a workspace, as des
 
 1. Select **Connect and sync**.
 
-1. After you connect, the Workspace displays information about source control that allows users to view the connected branch, the status of each item in the branch, and the time of the last sync. 
+1. After you connect, the workspace displays information about source control that allows users to view the connected branch, the status of each item in the branch, and the time of the last sync.
 
    :::image type="content" source="media/cicd-data-pipelines/workspace-git-status.png" lightbox="media/cicd-data-pipelines/workspace-git-status.png" alt-text="Screenshot showing the Fabric workspace with Git status and other details reported for pipelines.":::
 
@@ -156,7 +170,7 @@ Take the following steps to use Git deployment pipelines with your Fabric worksp
 
 Before you get started, be sure to set up the following prerequisites:
 
-- An active [Microsoft Fabric subscription](../enterprise/licenses.md).
+- An active [Fabric subscription](../enterprise/licenses.md).
 - Admin access of a [Fabric workspace](../fundamentals/create-workspaces.md).
 
 ### Step 1: Create a deployment pipeline
@@ -170,11 +184,11 @@ Before you get started, be sure to set up the following prerequisites:
 ### Step 2: Name the pipeline and assign stages
 
 1. In the **Create deployment pipeline** dialog box, enter a name and description for the pipeline, and select **Next**.
-1. Set your deployment pipeline’s structure by defining the required stages for your deployment pipeline. By default, the pipeline has three stages: _Development_, _Test_, and _Production_.
+1. Set your deployment pipeline's structure by defining the required stages for your deployment pipeline. By default, the pipeline has three stages: _Development_, _Test_, and _Production_.
 
    :::image type="content" source="media/cicd-data-pipelines/default-deployment-pipeline-stages.png" alt-text="Screenshot showing the default deployment pipeline stages.":::
 
-   You can add another stage, delete stages, or rename them by typing a new name in the box. Select **Create** (or **Create and continue**) when you’re done.
+   You can add another stage, delete stages, or rename them by typing a new name in the box. Select **Create** (or **Create and continue**) when you're done.
 
    :::image type="content" source="media/cicd-data-pipelines/sample-deployment-pipeline.png" alt-text="Screenshot showing a populated sample deployment pipeline.":::
 
@@ -199,13 +213,38 @@ After creating a pipeline, you need to add content you want to manage to the pip
 
 ## Scheduled pipeline CI/CD integration
 
-When you create a schedule for a pipeline, it is automatically added to the Git repository connected to your workspace and store in a *.schedules* file in the pipeline definition.
+When you create a schedule for a pipeline, it's automatically added to the Git repository connected to your workspace and store in a *.schedules* file in the pipeline definition.
 
 :::image type="content" source="media/pipeline-runs/pipeline-job-scheduler-git.png" alt-text="Screenshot of the .schedules file for a scheduled pipeline in Fabric Data Factory." lightbox="media/pipeline-runs/pipeline-job-scheduler-git.png":::
 
+## Automate CI/CD with Fabric CLI and Azure DevOps Pipelines
+
+The [Azure DevOps Pipelines extension for Fabric](https://marketplace.visualstudio.com/items?itemName=ms-fabric.fabric-devops-pipelines) provides native tasks that run [Fabric CLI](https://go.microsoft.com/fwlink/?linkid=2313665) commands inside Azure DevOps pipeline jobs. You can use these tasks to automate workspace synchronization and deployment steps as part of your CI/CD workflow.
+
+To get started:
+
+1. Install the Azure DevOps pipelines extension for Fabric from the Visual Studio Marketplace.
+1. Create a service connection in your Azure DevOps project that authenticates against your Fabric tenant.
+1. Add Fabric CLI tasks to your pipeline YAML or classic pipeline definition to run commands such as workspace sync, item export, or deployment promotion.
+
+This approach lets you combine Fabric's deployment pipelines with automated DevOps workflows, giving you more control over when and how changes are promoted across environments.
+
+## Bulk synchronization via APIs (preview)
+
+The Import/Export Item Definitions Batch APIs (preview) let you programmatically export and import multiple item definitions (including pipelines) in a single operation. You can use these APIs to streamline environment promotion scenarios where many items need to move between workspaces at once.
+
+Consider using batch APIs when:
+
+- You're promoting a large number of items across development, test, and production workspaces.
+- You need programmatic control over which items are included in each synchronization cycle.
+- You want to integrate bulk export/import into scripts or automation pipelines.
+
+> [!NOTE]
+> These APIs are in preview. Use them judiciously alongside deployment pipelines, and review the [Fabric REST API documentation](/rest/api/fabric/) for current limits and authentication requirements.
+
 ## Known limitations
 
-The following known limitations apply to CI/CD for pipelines in Data Factory in Microsoft Fabric:
+The following known limitations apply to CI/CD for pipelines in Data Factory:
 
 - **Workspace variables**: CI/CD doesn't currently support workspace variables.
 - **Git Integration limited support**: Currently, Fabric only supports Git integration with Azure DevOps and GitHub. Azure DevOps Git integration is recommended as GitHub Git integration has more limitations.
@@ -214,7 +253,10 @@ The following known limitations apply to CI/CD for pipelines in Data Factory in 
 
 ## Related content
 
+- [Configure CI/CD for dbt jobs using Variable Library](simplify-cicd-for-dbt-jobs.md)
 - [Introduction to the CI/CD process as part of the ALM cycle in Microsoft Fabric](../cicd/cicd-overview.md?source=recommendations)
 - [Get started with Git integration, the Fabric Application Lifecycle Management (ALM) tool](../cicd/git-integration/git-get-started.md?tabs=azure-devops%2CAzure%2Ccommit-to-git)
 - [Get started using deployment pipelines, the Fabric Application Lifecycle Management (ALM) tool](../cicd/deployment-pipelines/get-started-with-deployment-pipelines.md?tabs=from-fabric%2Cnew%2Cstage-settings-new)
-- [Blog: Exploring CI/CD Capabilities in Microsoft Fabric: A Focus on pipelines](https://blog.fabric.microsoft.com/blog/exploring-ci-cd-capabilities-in-microsoft-fabric-a-focus-on-data-pipelines?ft=All)
+- [Blog: Exploring CI/CD Capabilities in Fabric: A Focus on pipelines](https://blog.fabric.microsoft.com/blog/exploring-ci-cd-capabilities-in-microsoft-fabric-a-focus-on-data-pipelines?ft=All)
+- [Azure DevOps Pipelines extension for Fabric](https://marketplace.visualstudio.com/items?itemName=ms-fabric.fabric-devops-pipelines)
+- [Fabric CLI overview](https://go.microsoft.com/fwlink/?linkid=2313665)

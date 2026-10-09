@@ -1,10 +1,8 @@
 ---
 title: How to Connect
 description: Follow steps to connect SSMS to a warehouse item in your Microsoft Fabric workspace.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: fresantos, salilkanade
-ms.date: 08/27/2025
+ms.date: 05/13/2026
 ms.topic: how-to
 ms.search.form: Warehouse connectivity # This article's title should not change. If so, contact engineering.
 ms.custom: sfi-image-nochange
@@ -20,11 +18,12 @@ To get started, you need access to a [[!INCLUDE [fabric-se](includes/fabric-se.m
 
 ## Find the warehouse connection string
 
-1. Open the **Settings** of your warehouse or SQL analytics endpoint.
-1. In the **Settings** window, select the **SQL endpoint** page.
-1. Copy the **SQL connection string** and use it to connect externally to the item from Power BI desktop, applications, or client tools.
+To find the server name of your warehouse item:
 
-   :::image type="content" source="media/how-to-connect/connection-string.png" alt-text="Screenshot from the Fabric portal of the Settings window, SQL endpoint page.":::
+1. Open the **Settings** of your warehouse or SQL analytics endpoint.
+1. In the **Settings** window, select the **SQL connection string** page.
+1. Copy the **SQL connection string** and use it to connect externally to the item from Power BI desktop, applications, or client tools. This is the server name of your warehouse.
+1. You should provide the warehouse item name as the **Initial Catalog** or **Database name** when you connect. If you don't provide [the `InitialCatalog` connection string property](connectivity.md#connection-behavior-for-initialcatalog), your initial connection context will be to the `master` warehouse.
 
 ## Connect using SQL Server Management Studio (SSMS)
 
@@ -34,15 +33,17 @@ The following steps detail how to start at the [!INCLUDE [product-name](../inclu
 
    :::image type="content" source="media/connectivity/object-explorer-connect-menu.png" alt-text="Screenshot showing where to select Database Engine on the Connect menu.":::
 
-1. Once the **Connect to Server** window is open, paste the connection string copied from the previous section of this article into the **Server name** box. Select **Connect** and proceed with the appropriate credentials for authentication.
+1. Once the **Connect to Server** window is open, paste the connection string copied from the previous section of this article into the **Server name** box. Your server name looks something like `<unique identifier>.datawarehouse.fabric.microsoft.com`. Select **Connect** and proceed with the appropriate credentials for authentication.
 
    :::image type="content" source="media/connectivity/connect-server-window.png" alt-text="Screenshot showing the Connect to server window.":::
+
+1. Provide the warehouse name you intend to connect to. The valid warehouse name does not include the `<unique identifier>.datawarehouse.fabric.microsoft.com` needed for the **Server name**. If your warehouse name is `NYC Taxi`, your **Initial Catalog** is `NYC Taxi`.
 
 1. Once the connection is established, Object Explorer displays the connected warehouse from the workspace and its respective tables and views, all of which are ready to be queried.
 
    :::image type="content" source="media/connectivity/object-explorer-example.png" alt-text="Screenshot showing where the connected server name appears in the Object Explorer pane.":::
 
-When connecting via SSMS (or ADS), you see both a [!INCLUDE [fabric-se](includes/fabric-se.md)] and [!INCLUDE [fabric-dw](includes/fabric-dw.md)] listed as warehouses. Adopt a naming convention that allows you to easily distinguish between the two item types when you work in tools outside of the [!INCLUDE [product-name](../includes/product-name.md)] portal experience. Only SSMS 19 or higher is supported.
+When you connect through SSMS or Visual Studio Code, you see both a [!INCLUDE [fabric-se](includes/fabric-se.md)] and [!INCLUDE [fabric-dw](includes/fabric-dw.md)] listed as warehouses. Adopt a naming convention that you can easily distinguish between the two item types when you work in tools outside of the [!INCLUDE [product-name](../includes/product-name.md)] portal experience. Only SSMS 19 or higher is supported.
 
 ## Connect using Power BI
 
@@ -52,7 +53,7 @@ A [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or Lakehouse [!INCLUDE [fabric-s
 1. Choose entities.
 1. Load Data - choose a data connectivity mode: [import or DirectQuery](/power-bi/connect-data/desktop-directquery-about).
 
-For more information, see [Create reports on data warehousing in Microsoft Fabric](create-reports.md).
+For more information, see [Create reports on Fabric Data Warehouse](create-reports.md).
 
 ## Connect using OLE DB
 

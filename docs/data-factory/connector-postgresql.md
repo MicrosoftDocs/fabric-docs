@@ -1,13 +1,12 @@
 ---
 title: Set up your PostgreSQL database connection
 description: This article provides information about how to create a PostgreSQL database connection in Microsoft Fabric.
-author: whhender
-ms.author: whhender
 ms.topic: how-to
-ms.date: 12/18/2024
+ms.date: 07/21/2026
 ms.custom:
   - template-how-to
   - connectors
+ai-usage: ai-assisted
 ---
 
 # Set up your PostgreSQL database connection
@@ -15,20 +14,51 @@ ms.custom:
 This article outlines the steps to create a PostgreSQL database connection.
 
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
 
-The PostgreSQL database connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+## Summary
+
+The PostgreSQL database connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
 |Basic (Username/Password)| n/a | √ |
 
-## Set up your connection in Dataflow Gen2
+## Set up your connection for Dataflow Gen2
+You can connect a dataflow Gen2 in Fabric to a PostgreSQL database by using Power Query connectors. Follow these steps to create your connection:
 
-Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow Gen2 to a PostgreSQL database. The following links provide the specific Power Query connector information you need to connect to a PostgreSQL database in Dataflow Gen2:
+1. Check [capabilities](#capabilities) to make sure your scenario is supported.
+1. [Complete prerequisites for PostgreSQL database](#prerequisites).
+1. [Get data in Fabric](#get-data).
+1. [Connect to a PostgreSQL database](#connect-to-a-postgresql-database).
 
-- To get started using the PostgreSQL database connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
-- Be sure to install or set up any [PostgreSQL database prerequisites](/power-query/connectors/postgresql#prerequisites) before connecting to the PostgreSQL database connector.
-- To connect to the PostgreSQL database connector from Power Query, go to [Connect to a PostgreSQL database from Power Query Online](/power-query/connectors/postgresql#connect-to-a-postgresql-database-from-power-query-online).
+## Prerequisites
 
-In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
+[!INCLUDE [postgresql-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/postgresql/prerequisites.md)]
+
+> [!IMPORTANT]
+> To use PostgreSQL as a Dataflow Gen2 data destination through an on-premises data gateway, install the [June 2026 gateway update (version 3000.322)](/data-integration/gateway/service-gateway-monthly-updates#june-2026-update-3000322) or later.
+
+<a id="capabilities"></a>
+
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
+
+[!INCLUDE [postgresql-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/postgresql/capabilities-supported.md)]
+
+## Connection settings
+
+### Get data
+
+[!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
+
+<a id="connect-to-a-postgresql-database"></a>
+
+### Connection instructions
+
+[!INCLUDE [postgresql-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/postgresql/connect-online.md)]
+
+## Related content
+
+- [For more information about this connector, see the PostgreSQL database connector documentation.](/power-query/connectors/postgresql)

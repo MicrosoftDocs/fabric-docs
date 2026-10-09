@@ -1,8 +1,6 @@
 ---
 title: "Options to create a SQL database"
 description: Learn how to create a SQL database in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: antho, sukkaur, dlevy
 ms.date: 07/02/2025
 ms.topic: how-to

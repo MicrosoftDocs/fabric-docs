@@ -1,23 +1,25 @@
 ---
 title: Set up your Oracle database connection
 description: This article provides information about how to create an Oracle database connection in Microsoft Fabric.
-author: jianleishen
-ms.author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: how-to
-ms.date: 07/31/2024
+ms.date: 04/01/2026
 ms.custom:
 - template-how-to
 - connectors
 - sfi-image-nochange
+ai-usage: ai-assisted
 ---
 
 # Set up your Oracle database connection
 
 This article outlines the steps to create an Oracle database connection.
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
 
-The Oracle database connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+## Summary
+
+The Oracle database connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
@@ -25,31 +27,58 @@ The Oracle database connector supports the following authentication types for co
 
 ## Prerequisites
 
-- Install an on-premises data gateway by following this [guidance](/data-integration/gateway/service-gateway-install?toc=%2Ffabric%2Fdata-factory%2Ftoc.json).  
+If you connect to the Oracle database through on-premises gateway, you need to install Oracle Client for Microsoft Tools (OCMT) on the computer running on-premises data gateway. Here are the steps:
 
-- To use Oracle database connector, install Oracle Client for Microsoft Tools (OCMT) on the computer running on-premises data gateway. Here are the steps:
+1. Download 64-bit OCMT from the [Oracle Client for Microsoft Tools page](https://www.oracle.com/database/technologies/appdev/ocmt.html).
+1. Open the downloaded .exe to start the installation.
+    1. Select **Next** button.
 
-    1. Download 64-bit OCMT from the [Oracle Client for Microsoft Tools page](https://www.oracle.com/database/technologies/appdev/ocmt.html).
-    1. Open the downloaded .exe to start the installation.
-        1. Select **Next** button.
+        :::image type="content" source="./media/connector-oracle-database/start-install.png" alt-text="Screenshot showing the install start page.":::
 
-            :::image type="content" source="./media/connector-oracle-database/start-install.png" alt-text="Screenshot showing the install start page.":::
+    1. Choose the **Default** Oracle Client setup type.
 
-        1. Choose the **Default** Oracle Client setup type.
+        :::image type="content" source="./media/connector-oracle-database/setup-type-default.png" alt-text="Screenshot showing the Oracle Client setup type page.":::
 
-            :::image type="content" source="./media/connector-oracle-database/setup-type-default.png" alt-text="Screenshot showing the Oracle Client setup type page.":::
+    1. Enter the **Destination Folder** where the Oracle Client will be installed on your machine.
+    
+        :::image type="content" source="./media/connector-oracle-database/choose-destination-location.png" alt-text="Screenshot showing the Choose Destination Location page.":::        
 
-        1. Enter the **Destination Folder** where the Oracle Client will be installed on your machine.
-        
-            :::image type="content" source="./media/connector-oracle-database/choose-destination-location.png" alt-text="Screenshot showing the Choose Destination Location page.":::        
+    1. Enter the directory where ODP.NET can find its Oracle Client configuration files.
 
-        1. Enter the directory where ODP.NET can find its Oracle Client configuration files.
+        :::image type="content" source="./media/connector-oracle-database/oracle-configuration-file-directory.png" alt-text="Screenshot showing the Oracle Configuration File Directory page."::: 
 
-            :::image type="content" source="./media/connector-oracle-database/oracle-configuration-file-directory.png" alt-text="Screenshot showing the Oracle Configuration File Directory page."::: 
+    1. Select **Install** button to proceed.
 
-        1. Select **Install** button to proceed.
+        :::image type="content" source="./media/connector-oracle-database/click-install.png" alt-text="Screenshot showing the Install page."::: 
 
-            :::image type="content" source="./media/connector-oracle-database/click-install.png" alt-text="Screenshot showing the Install page."::: 
+## Set up your connection for Dataflow Gen2
+
+You can connect a dataflow Gen2 in Fabric to an Oracle database by using Power Query connectors. Follow these steps to create your connection:
+
+1. Check [capabilities](#capabilities), [limitations, and considerations](#limitations-and-considerations) to make sure your scenario is supported.
+1. [Complete prerequisites for Oracle database](#prerequisites).
+1. [Get data in Fabric](#get-data).
+1. [Connect to an Oracle database](#connect-to-an-oracle-database).
+
+<a id="capabilities"></a>
+
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
+
+[!INCLUDE [oracle-database-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/oracle-database/capabilities-supported.md)]
+
+## Connection settings
+
+### Get data
+
+[!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
+
+<a id="connect-to-an-oracle-database"></a>
+
+### Connection instructions
+
+[!INCLUDE [oracle-database-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/oracle-database/connect-online.md)]
 
 ## Set up your connection in a pipeline
 
@@ -62,7 +91,7 @@ You have two ways to browse to this page:
 - In copy assistant, browse to this page after selecting the connector.
 - In a pipeline, browse to this page after selecting **More** in Connection section and selecting the connector.
 
-### Step 1: Specify the server, connection, connection name and data gateway
+### Step 1: Specify the server, connection, connection name, and data gateway
 
    :::image type="content" source="media/connector-oracle-database/connection-details.png" alt-text="Screenshot showing how to set new connection.":::
 
@@ -122,6 +151,12 @@ The following table contains properties for the supported authentication type.
 |- User name |The Oracle database user name.|Yes ||
 |- Password |The Oracle database password.|Yes ||
 
+
+## Limitations and considerations
+
+[!INCLUDE [oracle-database-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/oracle-database/limitations.md)]
+
 ## Related content
 
+- [For more information about this connector, see the Oracle database connector documentation.](/power-query/connectors/oracle-database)
 - [Configure in a pipeline copy activity](connector-oracle-database-copy-activity.md)

@@ -1,10 +1,9 @@
 ---
 title: Billing and Utilization Data For Cosmos DB Database
 description: Learn about billing concepts for compute and storage and how to monitor usage for Cosmos DB in Microsoft Fabric.
-author: markjbrown
-ms.author: mjbrown
+ms.reviewer: mjbrown
 ms.topic: concept-article
-ms.date: 10/28/2025
+ms.date: 06/15/2026
 show_latex: true
 ---
 
@@ -62,6 +61,8 @@ Reference this example table for sizing estimations for Cosmos DB in Fabric base
 | `512` | `764,179.10` |
 | `1024` | `1,528,358.21` |
 | `2048` | `3,056,716.42` |
+| `4096` | `6,113,432.84` |
+| `8192` | `12,226,865.68` |
 
 For more information about Fabric capacity planning, see [plan your capacity size in Microsoft Fabric](../../enterprise/plan-capacity.md).
 
@@ -76,3 +77,4 @@ The app has the ability to filter usage to Cosmos DB databases in Fabric. Once a
 ## Related content
 
 * [Monitor Cosmos DB in Microsoft Fabric](how-to-monitor.md)
+

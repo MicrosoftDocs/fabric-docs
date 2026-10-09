@@ -1,18 +1,15 @@
 ---
 title: Automate deployment pipeline by using Fabric APIs
 description: Learn how to automate your deployment pipeline, the Microsoft Fabric Application lifecycle management (ALM) tool, by using Fabric APIs.
-author: billmath
-ms.author: billmath
-ms.service: fabric
-ms.subservice: cicd
 ms.topic: concept-article
-ms.date: 04/28/2025
+ms.date: 09/24/2026
+ai-usage: ai-assisted
 #customer intent: As a developer, I want to automate my deployment pipeline using Fabric APIs so that I can streamline the release process.
 ---
 
 # Automate your deployment pipeline with Fabric APIs
 
-The Microsoft Fabric [deployment pipelines](intro-to-deployment-pipelines.md) tool enables teams to build an efficient and reusable release process for their Fabric content.
+The Fabric [deployment pipelines](intro-to-deployment-pipelines.md) tool enables teams to build an efficient and reusable release process for their Fabric content.
 
 Use the [deployment pipelines Fabric REST APIs](/rest/api/fabric/core/deployment-pipelines) to integrate Fabric into your organization's automation process. Here are a few examples of what can be done by using the APIs:
 
@@ -47,6 +44,7 @@ The [deployment pipelines Fabric REST APIs](/rest/api/fabric/core/deployment-pip
 * [Deploy Stage Content](/rest/api/fabric/core/deployment-pipelines/deploy-stage-content): Deploys items from the specified stage of the specified deployment pipeline.
 
   * Use this API to deploy all items or to select specific items to deploy. If no specific items are selected, all items are deployed.
+  * You can optionally attach a [deployment plan](../deployment-plan/deployment-plan-overview.md) to control deployment order and run predeployment and post-deployment actions. For request guidance, see [Automate deployments with a deployment plan](../deployment-plan/deployment-plan-automation.md).
   * To find the relevant stage ID to deploy, use the [List Deployment Pipeline Stages](/rest/api/fabric/core/deployment-pipelines/list-deployment-pipeline-stages) API.
   * This API is integrated with the [Long Running Operations APIs](/rest/api/fabric/core/long-running-operations) to monitor the deployment status.
 
@@ -67,6 +65,10 @@ The [deployment pipelines Fabric REST APIs](/rest/api/fabric/core/deployment-pip
 * [List deployment pipeline operations](/rest/api/fabric/core/deployment-pipelines/list-deployment-pipeline-operations): List all operations for a deployment pipeline.
 
 You can also use other [Fabric REST API](/rest/api/fabric/) calls, to complete related operations.
+
+## Deploy stage content with a deployment plan (preview)
+
+You can optionally attach a deployment plan when you call the Deploy Stage Content API. For the request format and requirements, see [Automate deployments with a deployment plan](../deployment-plan/deployment-plan-automation.md). For shared execution behavior, see [How a deployment plan works](../deployment-plan/deployment-plan-overview.md#how-a-deployment-plan-works).
 
 ## PowerShell examples
 
@@ -131,5 +133,7 @@ When using the deployment pipelines APIs, consider the following limitations:
 ## Related content
 
 * [Get started with deployment pipelines](get-started-with-deployment-pipelines.md)
-* [Deployment pipelines best practices](../best-practices-cicd.md)
+* [What is a deployment plan?](../deployment-plan/deployment-plan-overview.md)
+* [Attach a deployment plan](../deployment-plan/deployment-plan-attach.md)
+* [Automate deployments with a deployment plan](../deployment-plan/deployment-plan-automation.md)
 * [Troubleshooting deployment pipelines](../troubleshoot-cicd.md)

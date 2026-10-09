@@ -4,8 +4,8 @@ description: "Learn about Microsoft Fabric security concepts and features that c
 author: msmimart
 ms.author: mimart
 ms.reviewer: vparasuraman, amasingh
-ms.date: 12/12/2024
-ms.topic: conceptual
+ms.date: 06/12/2026
+ms.topic: concept-article
 ms.custom: fabric-cat, security-guidance
 ---
 
@@ -90,7 +90,7 @@ You also have some data sources that are in Azure SQL Database. You need to conn
 
 If you're developing or migrating your data ingestion framework in Spark, then you can connect to data sources in Azure securely and privately from Fabric [notebooks](../data-engineering/how-to-use-notebook.md) and jobs with the help of [managed private endpoints](security-managed-private-endpoints-overview.md). Managed private endpoints can be created in your Fabric workspaces to connect to data sources in Azure that have blocked public internet access. They support private endpoints, such as Azure SQL Database and Azure Storage. Managed private endpoints are provisioned and managed in a [managed VNet](security-managed-vnets-fabric-overview.md) that's dedicated to a Fabric workspace. Unlike your typical [Azure Virtual Networks](/azure/virtual-network/virtual-networks-overview), managed VNets and managed private endpoints won't be found in the Azure portal. That's because they're fully managed by Fabric, and you find them in your workspace settings.
 
-Because you already have a lot of data stored in [Azure Data Lake Storage (ADLS) Gen2](/azure/storage/blobs/data-lake-storage-introduction) accounts, you now only need to connect Fabric workloads, such as Spark and Power BI, to it. Also, thanks to OneLake [ADLS shortcuts](../onelake/onelake-shortcuts.md#adls-shortcuts), you can easily connect to your existing data from any Fabric experience, such as data integration pipelines, data engineering notebooks, and Power BI reports.
+Because you already have a lot of data stored in [Azure Data Lake Storage (ADLS) Gen2](/azure/storage/blobs/data-lake-storage-introduction) accounts, you now only need to connect Fabric workloads, such as Spark and Power BI, to it. Also, thanks to OneLake [ADLS shortcuts](../onelake/create-adls-shortcut.md), you can easily connect to your existing data from any Fabric experience, such as data integration pipelines, data engineering notebooks, and Power BI reports.
 
 Fabric workspaces that have a [workspace identity](workspace-identity.md) can securely access ADLS Gen2 storage accounts, even when you've disabled the public network. That's made possible by [trusted workspace access](security-trusted-workspace-access.md). It allows Fabric to securely connect to the storage accounts by using a Microsoft backbone network. That means communication doesn't use the public internet, which allows you to disable public network access to the storage account but still allow certain Fabric workspaces to connect to them.
 
@@ -98,7 +98,7 @@ Fabric workspaces that have a [workspace identity](workspace-identity.md) can se
 
 You want to use Fabric to securely ingest, store, process, and analyze your data in the cloud, while maintaining compliance with the regulations of your industry and the policies of your organization.
 
-Fabric is part of Microsoft Azure Core Services, and it's governed by the [Microsoft Online Services Terms](https://www.microsoft.com/licensing/terms/product/PrivacyandSecurityTerms/MPSA) and the [Microsoft Enterprise Privacy Statement](https://privacy.microsoft.com/privacystatement). While certifications typically occur after a product launch (Generally Available, or GA), Microsoft integrates compliance best practices from the outset and throughout the development lifecycle. This proactive approach ensures a strong foundation for future certifications, even though they follow established audit cycles. In simpler terms, we prioritize building compliance in from the start, even when formal certification comes later.
+Fabric is part of Microsoft Azure Core Services, and it's governed by the [Microsoft Online Services Terms](https://www.microsoft.com/licensing/terms/product/PrivacyandSecurityTerms/MPSA) and the [Microsoft Enterprise Privacy Statement](https://go.microsoft.com/fwlink/?LinkId=521839). While certifications typically occur after a product launch (Generally Available, or GA), Microsoft integrates compliance best practices from the outset and throughout the development lifecycle. This proactive approach ensures a strong foundation for future certifications, even though they follow established audit cycles. In simpler terms, Microsoft prioritizes building compliance in from the start, even when formal certification comes later.
 
 Fabric is compliant with many industry standards such as ISO 27001, 27017, 27018 and 27701. Fabric is also [HIPAA](/azure/compliance/offerings/offering-hipaa-us) compliant, which is critical to healthcare data privacy and security. You can check the Appendix A and B in the [Microsoft Azure Compliance Offerings](https://aka.ms/azurecompliance) for detailed insight into which cloud services are in scope for the certifications. You can also access the audit documentation from the [Service Trust Portal (STP)](https://servicetrust.microsoft.com/).
 
@@ -122,7 +122,9 @@ In addition to encryption, network traffic between Microsoft services always rou
 
 :::image type="content" source="media/security-scenario/fabric-shortcuts-cmk-scenario.svg" alt-text="Diagram shows a high-level representation of using CMK by using Fabric OneLake shortcuts.":::
 
-If you have a requirement to use CMK to encrypt data-at-rest, you have two options. You can use [Workspace customer managed keys](../security/workspace-customer-managed-keys.md) to configure a CMK stored in an Azure Key Vault to encrypt data at rest in your Fabric workspace. Or, you can use other cloud storage services (ADLS Gen2, AWS S3, GCS) with CMK encryption enabled and access data from Microsoft Fabric using [OneLake shortcuts](../onelake/onelake-shortcuts.md). In this pattern, your data continues to reside on a cloud storage service or an external storage solution where encryption at rest using CMK is enabled, and you can perform in-place read operations from Fabric whilst staying compliant. Once a shortcut has been created, within Fabric, the data can be accessed by other Fabric experiences.
+If you have a requirement to use CMK to encrypt data-at-rest, you have two options. You can use [Workspace customer managed keys](../security/workspace-customer-managed-keys.md) to configure a CMK stored in an Azure Key Vault or Azure Key Vault Managed HSM to encrypt data at rest in your Fabric workspace. When using either key store, you must assign the required permissions to the Power BI service and Microsoft Fabric to access the keys for encryption operations. Or, you can use other cloud storage services (ADLS Gen2, AWS S3, GCS) with CMK encryption enabled and access data from Microsoft Fabric using [OneLake shortcuts](../onelake/onelake-shortcuts.md). In this pattern, your data continues to reside on a cloud storage service or an external storage solution where encryption at rest using CMK is enabled, and you can perform in-place read operations from Fabric whilst staying compliant. Once a shortcut has been created, within Fabric, the data can be accessed by other Fabric experiences.
+
+Workspace-level CMK is supported in all Fabric capacities, including BYOK-enabled ones. When using BYOK and CMK together, you can use the same key or separate keys. Capacity-level BYOK encrypts Power BI semantic models, while workspace-level CMK encrypts other Fabric items such as lakehouses, pipelines, and notebooks.
 
 There are some considerations for using this pattern:
 
@@ -133,8 +135,21 @@ There are some considerations for using this pattern:
 - AWS S3 supports encryption at-rest using [customer-managed keys](https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html). Fabric can perform in-place reads on S3 buckets using [S3 shortcut](../onelake/create-s3-shortcut.md); however, write operations using a shortcut to AWS S3 are not supported.
 - Google cloud storage supports data encryption using [customer-managed keys](https://cloud.google.com/storage/docs/encryption). Fabric can perform in-place reads on GCS; however, write operations using a shortcut to GCS are not supported.
 - Enable [audit](/power-bi/transform-model/log-analytics/desktop-log-analytics-overview) for Microsoft Fabric to keep track of activities.
-- In Microsoft Fabric, Power BI supports customer-managed key with [Bring your own encryption keys for Power BI](/power-bi/enterprise/service-encryption-byok).
+- In Microsoft Fabric, Power BI uses [Bring your own encryption keys (BYOK)](/power-bi/enterprise/service-encryption-byok) to encrypt Power BI semantic models at the capacity level, while workspace-level CMK encrypts other Fabric items at the workspace level. Together, these capabilities enable layered encryption controls tailored to your security architecture.
 - Disable the [shortcut caching](../onelake/onelake-shortcuts.md#caching) feature for S3, GCS, and S3-compatible shortcuts, as the cached data is persisted on OneLake.
+
+### Microsoft Fabric and malware scanning
+
+For enterprises that require malware scanning before data is processed by Microsoft Fabric, use Azure Storage (ADLS or Blob) with Defender for Storage enabled.
+
+> [!NOTE]
+> Native OneLake malware scanning is on the roadmap - see the [Fabric public roadmap](https://roadmap.fabric.microsoft.com/?product=onelake) for timelines.
+
+This pattern leverages Azure Storage's native integration with [Microsoft Defender](/azure/defender-for-cloud/defender-for-storage-introduction) and Microsoft Fabric.
+
+Files are first written to Azure Storage, where Microsoft Defender for Storage performs malware scanning upon upload. After the scan, Fabric workloads can access the scanned files through ADLS or Blob shortcuts. Alternatively, you can use data pipelines in Fabric to ingest data into OneLake for further processing.
+
+:::image type="content" source="media/security-scenario/malware-scan.png" lightbox="media/security-scenario/malware-scan.png" alt-text="Diagram of Fabric reading from Azure Storage integrated with Microsoft Defender" border="false":::
 
 ## Data residency
 

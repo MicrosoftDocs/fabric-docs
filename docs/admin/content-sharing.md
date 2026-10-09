@@ -3,18 +3,22 @@ title: Content sharing report
 description: Learn how to use the Microsoft content sharing report.
 author: msmimart
 ms.author: mimart
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
   - build-2023
   - ignite-2023
 ms.date: 08/07/2024
+ai-usage: ai-assisted
 ---
 
 # Content sharing report (preview)
 
+> [!IMPORTANT]
+> The [Govern report in the OneLake catalog](../governance/onelake-catalog-govern.md#govern-report) is generally available (GA). Use the Govern report for tenant-wide governance and administration insights. The Content sharing report remains in preview, won't become GA, and won't be expanded with additional data.
+
 The *content sharing* report is aimed at admins who want to understand how Fabric items are distributed and shared across the organization. As an admin, the report insights can help you govern your Fabric tenant and take action if needed.
 
-You can access the report from the [Admin monitoring](monitoring-workspace.md) workspace. To access the workspace, you must be a [Fabric administrator](microsoft-fabric-admin.md#power-platform-and-fabric-admin-roles) or a [Microsoft 365 global administrator](/microsoft-365/admin/add-users/about-admin-roles).
+You can access the report from the [Admin monitoring](monitoring-workspace.md) workspace. To access the workspace, you must be a [Fabric administrator](roles.md#power-platform-and-fabric-admin-roles) or a [Microsoft 365 global administrator](/microsoft-365/admin/add-users/about-admin-roles).
 
 You can also have an admin share the report or semantic model directly with you. With build permissions to the semantic model, users can design a custom report that relies on the same underlying data.
 
@@ -111,7 +115,7 @@ You can export data from the Details page, or any other visual, by clicking _Mor
 You can also navigate directly to an item or its workspace using the hyperlinks in the data table.
 
 > [!NOTE]
-> Workspaces can only be accessed if you have a valid workspace role, else you are redirected to your *My workspace*. Item urls currently only support legacy Power BI items and some Fabric items.
+> Workspaces can only be accessed if you have a valid workspace role, else you're redirected to your *My workspace*. Item urls currently only support legacy Power BI items and some Fabric items.
 
 ## Measures
 
@@ -128,7 +132,7 @@ The following measures are used in visuals throughout the *content sharing* repo
 | Total access count    | The number of individual users, service principals, and group members with access to an item. *Total access counts* for workspaces, capacities, and domains are a sum of access counts for all underlying items, not the container itself. *Total access counts* include both individual access to an item and access through a group, so users are double counted if they have access to an item in both scenarios.   |
 
 > [!NOTE]
-> Access counts include access to an item through _Manage permissions_, or access inherited through a workspace role. Access counts also include service principals and sharing links for a specific persons or group.
+> Access counts include access to an item through _Manage permissions_, or access inherited through a workspace role. Access counts include service principals and sharing links for a specific persons or group. Access counts include permissions to an item through a related item, such as permissions to a semantic model through org app access.
 
 ## Considerations and limitations
 
@@ -140,27 +144,31 @@ This section lists the report's considerations and limitations.
 
 * The report retains information for 28 days, including deleted capacities, workspaces, and other items.
 
-* Deleted workspaces with extended retention don't appear in the report after 28 days. They can be seen in the admin portal until they're permanently deleted.
+* Deleted workspaces with extended retention don't appear in the report after 28 days. They can be seen in Fabric until they're permanently deleted.
 
 * Items created and deleted within a 24 hour period may have incomplete information.
 
 * Reports and dashboards embedded in apps appear twice. Use the _Item ID_ value to differentiate.
 
-### Pro and Premium Per User (PPU)
+### Power BI Pro and Power BI Premium Per-User (PPU)
 
-Semantic models in *Pro* and *Premium Per User* (PPU) workspaces are hosted on internal logical capacities.
+Semantic models in *Power BI Pro* and *Power BI Premium Per-User* (PPU) workspaces are hosted on internal logical capacities.
 
   * **Pro** - Appear as *Reserved Capacity for Pro Workspaces* with the capacity SKU value *Pro*.
 
-  * **PPU** - Appear as *Reserved Capacity for Premium Per User Workspaces* with the capacity SKU value *PPU*.
+  * **PPU** - Appear as *Reserved Capacity for Power BI Premium Per-User (PPU) Workspaces* with the capacity SKU value *PPU*.
 
 ### Counting logic
 
 * All *My workspaces* are counted as separate records as part of the _Total workspaces_ measure.
 * Trial Fabric capacities are counted as separate records as part of the _Total capacities_ measure. Trial capacities can be filtered out using the Capacity SKU filter with the value _FT1_.
 
+### Model limitations
+
+* The semantic model is read-only and can't be used with Fabric data agents.
+
 ## Related content
 
 * [What is the Admin monitoring workspace?](monitoring-workspace.md)
 
-* [Admin overview](microsoft-fabric-admin.md)
+* [Admin overview](admin-overview.md)

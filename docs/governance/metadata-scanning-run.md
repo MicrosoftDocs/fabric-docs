@@ -4,7 +4,6 @@ description: Learn how to run metadata scanning on your organization's workspace
 author: msmimart
 ms.author: mimart
 ms.topic: how-to
-ms.custom:
 ms.date: 05/01/2024
 ---
 

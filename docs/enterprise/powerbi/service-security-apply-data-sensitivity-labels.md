@@ -1,8 +1,8 @@
 ﻿---
 title: How to apply sensitivity labels in Power BI
 description: Learn how to apply sensitivity labels on your Power BI reports, dashboards, semantic models, dataflows, and .pbix files.
-author: JulCsc
-ms.author: juliacawthra
+author: dknappettmsft
+ms.author: daknappe
 ms.service: powerbi
 ms.subservice: powerbi-eim
 ms.custom: video-RE4M5Gj
@@ -105,7 +105,7 @@ After you apply the sensitivity label, it's visible in the status bar.
 
 ### Work with sensitivity labels on uploaded or downloaded files
 
-When you publish a .pbix file to the Power BI service from Power BI Desktop, or when you upload a .pbix file to the Power BI service directly via the **OneLake data hub**, the .pbix file's label is applied to both the report and the semantic model that are created in the service.
+When you publish a .pbix file to the Power BI service from Power BI Desktop, or when you upload a .pbix file to the Power BI service directly via the **OneLake catalog**, the .pbix file's label is applied to both the report and the semantic model that are created in the service.
 
 If the .pbix file you're publishing or uploading replaces existing assets (that is, the file has the same name as the .pbix file), you see a dialog prompt. At the prompt, choose whether to keep the labels on the assets or have the .pbix file's label overwrite those labels. If the .pbix file is unlabeled, the labels in the service are retained.
 

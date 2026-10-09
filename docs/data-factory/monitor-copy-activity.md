@@ -1,8 +1,7 @@
 ---
 title: Monitor Copy activity
 description: Learn how to monitor Copy activity in pipelines in Data Factory for Microsoft Fabric.
-ms.author: jianleishen
-author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: how-to
 ms.custom: pipelines, sfi-image-nochange
 ms.date: 09/19/2025

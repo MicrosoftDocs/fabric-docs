@@ -1,18 +1,14 @@
 ---
-title: "Mirror Oracle Databases in Microsoft Fabric (Preview)"
+title: "Mirror Oracle Databases in Microsoft Fabric"
 description: Learn how to mirror your Oracle databases in Microsoft Fabric for analytics.
-author: shaween18
-ms.author: sbahadur
-ms.reviewer: whhender
+ms.reviewer: sbahadur
 ms.date: 08/22/2025
 ms.topic: overview
 ms.search.form: Oracle overview
 ai-usage: ai-assisted
 ---
 
-# Mirroring Oracle Databases (Preview)
-
-[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
+# Mirroring Oracle Databases
 
 [Mirroring in Fabric](overview.md) lets you mirror your Oracle databases into a unified analytics platform. When you mirror your Oracle data, you can analyze it together with data from other sources in near real-time with minimal latency and cost.
 
@@ -20,21 +16,21 @@ ai-usage: ai-assisted
 
 We support these Oracle Server environments:
 
-* Oracle versions 11 and above with LogMiner enabled
+* Oracle versions 10 and above with LogMiner enabled
 * Oracle on-premises (VM, Azure VM)
 * Oracle Cloud Infrastructure (OCI)
+* Oracle Database@Azure
 * Oracle Exadata
 
 >[!NOTE]
 >* LogMiner needs to be enabled on your Oracle server. This tool helps track changes in your Oracle database for real-time mirroring.
->* Oracle Autonomous Database isn't supported in this preview.
 
 ## Built-in analytics features
 
 When you mirror an Oracle database, Fabric creates:
 
 * A mirrored database in [OneLake](../onelake/onelake-overview.md) that handles data replication
-* A [SQL analytics endpoint](../data-warehouse/get-started-lakehouse-sql-analytics-endpoint.md) for data analysis
+* A [SQL analytics endpoint](../data-engineering/lakehouse-sql-analytics-endpoint.md) for data analysis
 
 The SQL analytics endpoint lets you:
 
@@ -60,6 +56,10 @@ Before you set up Oracle mirroring, you need:
 * [Supplemental logging](oracle-tutorial.md#set-up-oracle-permissions-and-enable-supplemental-logging) configured
 * [On-Premises Data Gateway](oracle-tutorial.md#install-the-on-premises-data-gateway) installed and set up
 * [Required user permissions](oracle-limitations.md#required-permissions)
+* Ensure your databases are in write mode since LogMiner doesn't work on read mode databases
+
+>[!NOTE]
+>* To ensure that you have the latest performance enhancements and updates, make sure that you have the upgraded to the latest version of the [On-Premises Data Gateway](oracle-tutorial.md#install-the-on-premises-data-gateway). To review recent updates, refer to the [Currently supported monthly updates](/data-integration/gateway/service-gateway-monthly-updates).
 
 For complete setup instructions and requirements, see:
 

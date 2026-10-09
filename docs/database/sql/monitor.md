@@ -1,11 +1,9 @@
 ---
 title: "Monitor SQL database performance and utilization trends"
 description: Learn what tools to use to analyze database performance, utilization, trends, and history.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
-ms.reviewer: amar.patil # Microsoft alias
+ms.reviewer: amar.patil
 ms.date: 01/22/2025
-ms.topic: conceptual
+ms.topic: concept-article
 ms.search.form: Performance monitoring in SQL database
 ---
 # Monitor SQL database in Microsoft Fabric
@@ -30,7 +28,7 @@ Users are provided a one-stop view of the performance status of the database. Th
 
 ## Query DMVs with T-SQL
 
-You can also [use the SQL query editor](query-editor.md), [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric-sqldb&preserve-view=true), [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms), or other tools to query the same internal dynamic management views (DMVs) as used by Azure SQL Database. For T-SQL query examples and applicable DMVs, see:
+You can also [use the SQL query editor](query-editor.md), [the MSSQL extension for Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric-sqldb&preserve-view=true), [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms), or other tools to query the same internal dynamic management views (DMVs) as used by Azure SQL Database. For T-SQL query examples and applicable DMVs, see:
 
 - [Monitor performance using dynamic management views](/azure/azure-sql/database/monitoring-with-dmvs?view=fabricsql&preserve-view=true)
 - [Troubleshoot memory issues](/azure/azure-sql/database/troubleshoot-memory-errors-issues?view=fabricsql&preserve-view=true)

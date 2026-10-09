@@ -168,7 +168,7 @@ Now, use the SQL analytics endpoint to create a query that can handle simple nes
     ```
 
     > [!TIP]
-    > When choosing the data types in `OPENJSON`, using `varchar(max)` for string types could worsen query performance. Instead, use `varchar(n)` wher `n` could be any number. The lower `n` is, the more likely you will see better query performance.
+    > When choosing the data types in `OPENJSON`, using `varchar(max)` for string types could worsen query performance. Instead, use `varchar(n)` where `n` could be any number. The lower `n` is, the more likely you will see better query performance.
 
 1. Use `CROSS APPLY` in the next query to only show items with an `items` array.
 
@@ -191,7 +191,7 @@ Now, use the SQL analytics endpoint to create a query that can handle simple nes
 ## Query basic nested data with auto schema inference
 Follow steps 1-3 in the previous example. With the same data set, we can create a query to flatten the data without having to explicitly define the schema.
 
-1. Run this query to expand on the `items` array with `OPENJSON` without defining the schema. This flattens the item array one level by seperating each nested object into a new row.
+1. Run this query to expand on the `items` array with `OPENJSON` without defining the schema. This flattens the item array one level by separating each nested object into a new row.
 
     ```sql
     SELECT
@@ -203,7 +203,7 @@ Follow steps 1-3 in the previous example. With the same data set, we can create 
     CROSS APPLY OPENJSON(t.items) p
     ```
 
-1. Run this query to further expand on the `items` array with `OPENJSON` without defining the schema. This flattens the item array two levels by seperating each property within each nested object into a new row.
+1. Run this query to further expand on the `items` array with `OPENJSON` without defining the schema. This flattens the item array two levels by separating each property within each nested object into a new row.
 
     ```sql
     SELECT

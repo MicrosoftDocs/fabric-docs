@@ -1,9 +1,7 @@
 ---
 title: Delete data activity
 description: Learn how to add a Delete data activity to a pipeline and use it to delete data from a data source.
-ms.reviewer: whhender
-ms.author: yexu
-author: dearandyxu
+ms.reviewer: yexu
 ms.topic: how-to
 ms.custom: pipelines
 ms.date: 12/18/2024
@@ -19,8 +17,7 @@ You can use the Delete Activity in Data Factory to delete files or folders from 
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
-- A workspace is created.
+[!INCLUDE[basic-prerequisites](includes/basic-prerequisites.md)]
 
 ## Add a lookup activity to a pipeline with UI
 
@@ -72,11 +69,7 @@ Now you are using the Delete activity to delete folder or files by the combinati
 
 ## Save and run or schedule the pipeline
 
-1. Switch to the **Home** tab at the top of the pipeline editor, and select the save button to save your pipeline.
-1. Select **Run** to run it directly, or **Schedule** to schedule it.  
-1. You can also view the run history here or configure other settings.
-
-:::image type="content" source="media/delete-data-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted.":::
+[!INCLUDE[save-run-schedule-pipeline](includes/save-run-schedule-pipeline.md)]
 
 ## Related content
 

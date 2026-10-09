@@ -1,10 +1,8 @@
 ---
 title: Restore In-Place of a Warehouse from a Restore Point with the Fabric Portal
 description: Learn about how to perform a restore in-place of a warehouse in the Fabric portal.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: sosivara
-ms.date: 07/17/2024
+ms.date: 04/22/2026
 ms.topic: how-to
 ms.search.form: Warehouse Restore # This article's title should not change. If so, contact engineering.
 ---
@@ -81,7 +79,7 @@ For more information, see [Restore point retention](restore-in-place.md#restore-
 1. Go to Warehouse **Settings** -> **Restore points** to view all restore points.
 1. A unique restore point is identified by **Time(UTC)** value. Sort this column to identify the latest restore points.
 1. If your warehouse has been restored, select **Details** for more information. The **Details of last restoration** popup provides details on latest restoration, including who performed the restore, when it was performed, and which restore point was restored.
-    - If the restore point is over 30 days old and was deleted, the details of the banner will show as `N/A`.
+    - If the restore point is older than the [configured retention period](data-retention.md) and was deleted, the details of the banner will show as `N/A`.
 
     :::image type="content" source="media/restore-in-place-portal/viewer.png" alt-text="Screenshot from the Fabric portal showing restore points." lightbox="media/restore-in-place-portal/viewer.png":::
 

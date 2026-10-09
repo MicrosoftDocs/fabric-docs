@@ -1,11 +1,8 @@
 ---
 title: Create eventstreams for discrete events
 description: Learn how to create Fabric event streams for discrete events.
-ms.reviewer: spelluru
-ms.author: xujiang1
-author: xujxu
+ms.reviewer: xujiang1
 ms.topic: how-to
-ms.custom:
 ms.date: 11/18/2024
 ms.search.form: Source and Destination
 ---
@@ -80,3 +77,5 @@ Once completed, the eventstream starts capturing discrete events as they occur. 
 
 - [Azure Blob Storage events](add-source-azure-blob-storage.md)
 - [Add Fabric workspace item events to an eventstream](add-source-fabric-workspace.md)
+
+

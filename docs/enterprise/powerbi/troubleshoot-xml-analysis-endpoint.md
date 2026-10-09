@@ -1,9 +1,8 @@
-﻿---
+---
 title: Troubleshoot XMLA endpoint connectivity in Power BI
 description: Describes how to troubleshoot connectivity through the XMLA endpoint.
-author: JulCsc
-ms.author: juliacawthra
-ms.reviewer: juliacawthra
+author: dknappettmsft
+ms.author: daknappe
 ms.service: powerbi
 ms.subservice: powerbi-admin
 ms.topic: troubleshooting
@@ -266,7 +265,7 @@ Users trying to create a new Live Connected model or open an existing Live Conne
 
 :::image type="content" source="media/troubleshoot-xml-analysis-endpoint/cannot-load-model.png" alt-text="Screenshot of cannot load model error.":::
 
-The error can occur when a proxy is configured in the user's environment and the proxy is preventing access to the Power BI service. Beginning with the March 2024 version of Power BI Desktop, the userâ€™s environment must allow connections to the Power BI service at endpoint ***.pbidedicated.windows.net** or the corresponding Power BI service endpoints for sovereign clouds.
+The error can occur when a proxy is configured in the user's environment and the proxy is preventing access to the Power BI service. Beginning with the March 2024 version of Power BI Desktop, the user's environment must allow connections to the Power BI service at endpoint ***.pbidedicated.windows.net** or the corresponding Power BI service endpoints for sovereign clouds.
 
 To validate whether the issue is a result of proxy settings, try the **SQL Server Analysis Services** connector in Power BI Desktop or any first-party or third-party external tool, such as **SQL Server Management Studio**, to connect to any premium workspace.
 
@@ -304,11 +303,11 @@ Typically, the effective memory limit for a command is calculated on the memory 
 
 If the command operation attempts to consume more memory than allowed by the limit, the operation can fail, and an error is returned. For example, the following error describes an effective memory limit of 25 GB (P1 capacity) has been exceeded because the semantic model already consumed 12 GB (12288 MB) when the command started execution, and an effective limit of 13 GB (13312 MB) was applied for the command operation:
 
-**"Resource governing: This operation was canceled because there wasnâ€™t enough memory to finish running it. Either increase the memory of the Premium capacity where this semantic model is hosted or reduce the memory footprint of your semantic model by doing things like limiting the amount of imported data. More details: consumed memory 13312 MB, memory limit 13312 MB, database size before command execution 12288 MB. Learn more: `https://go.microsoft.com/fwlink/?linkid=2159753`."**
+  `Resource governing: This operation was canceled because there wasn't enough memory to finish running it. Either increase the memory of the Premium capacity where this semantic model is hosted or reduce the memory footprint of your semantic model by doing things like limiting the amount of imported data. More details: consumed memory 13312 MB, memory limit 13312 MB, database size before command execution 12288 MB. Learn more: `https://go.microsoft.com/fwlink/?linkid=2159753`.`
 
 In some cases, as shown in the following error, "consumed memory" is 0 but the amount shown for "database size before command execution" is already greater than the effective memory limit. This means the operation failed to begin execution because the amount of memory already used by the semantic model is greater than the memory limit for the SKU.
 
-**"Resource governing: This operation was canceled because there wasn't enough memory to finish running it. Either increase the memory of the Premium capacity where this semantic model is hosted or reduce the memory footprint of your semantic model by doing things like limiting the amount of imported data. More details: consumed memory 0 MB, memory limit 25600 MB, database size before command execution 26000 MB. Learn more: `https://go.microsoft.com/fwlink/?linkid=2159753`."**
+  `Resource governing: This operation was canceled because there wasn't enough memory to finish running it. Either increase the memory of the Premium capacity where this semantic model is hosted or reduce the memory footprint of your semantic model by doing things like limiting the amount of imported data. More details: consumed memory 0 MB, memory limit 25600 MB, database size before command execution 26000 MB. Learn more: `https://go.microsoft.com/fwlink/?linkid=2159753`.`
 
 ### Understanding memory errors and recovery
 
@@ -316,18 +315,12 @@ Load balancing across semantic models is managed automatically by the system. Me
 
 If memory errors persist or occur frequently, this indicates that your capacity might require additional resources or optimization. In such cases, consider the following mitigation strategies or contact Microsoft Support for assistance with capacity sizing and workload optimization.
 
-### Mitigation strategies
-
-To potentially avoid exceeding the effective memory limit:
-
-- Upgrade to a larger Premium capacity (SKU) size for the semantic model.
-- Reduce the memory footprint of your semantic model by limiting the amount of data loaded with each refresh.
-- For refresh operations through the XMLA endpoint, reduce the number of partitions being processed in parallel. Too many partitions being processed in parallel with a single command can exceed the effective memory limit.
-
 ## Related content
 
 - [Semantic model connectivity with the XMLA endpoint](service-premium-connect-tools.md)  
 - [Automate Premium workspace and semantic model tasks with service principals](service-premium-service-principal.md)  
 - [Troubleshooting Analyze in Excel](/power-bi/collaborate-share/desktop-troubleshooting-analyze-in-excel)  
 - [Tabular model solution deployment](/analysis-services/deployment/tabular-model-solution-deployment?view=power-bi-premium-current&preserve-view=true)
+
+
 

@@ -1,10 +1,8 @@
 ---
 title: Overview of Fabric Workload Authentication Guidelines 
 description: This article describes important concepts and guidelines when you're working with authentication in Microsoft Fabric workloads.
-author: KesemSharabi
-ms.author: kesharab
 ms.topic: best-practice
-ms.date: 11/03/2024
+ms.date: 05/08/2026
 #customer intent: As a developer, I want to understand what the best practices are for working with authentication to grant users the optimal experience.
 ---
 
@@ -84,7 +82,7 @@ To be able to work with those APIs, the workload backend needs to exchange token
 * For writing to a lakehouse file: `https://storage.azure.com/user_impersonation`  
 
 > [!NOTE]
-> You can find scopes needed for each Fabric API in [this reference article](/rest/api/fabric/articles/using-fabric-apis).
+> You can find scopes needed for each Fabric API in [this reference article](/rest/api/fabric/articles/get-started/using-fabric-apis).
 
 The scopes mentioned earlier need to be configured on the workload application under **API permissions**.
 
@@ -152,3 +150,4 @@ The workload frontend can extract the error code from the URL and handle it acco
 
 > [!NOTE]
 > In both scenarios (error and success), the workload must always close the window immediately, with no latency.
+

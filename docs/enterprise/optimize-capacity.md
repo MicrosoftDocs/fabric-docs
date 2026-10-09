@@ -1,12 +1,13 @@
 ---
 title: "Evaluate and optimize your Microsoft Fabric capacity"
 description: "This article explains how to evaluate and optimize the load on your Microsoft Fabric capacities."
-author: JulCsc
-ms.author: juliacawthra
+author: dknappettmsft
+ms.author: daknappe
 ms.reviewer: pmahoney, pvenkat, alpowers, seanmirabile, scbradl, gilherau
 ms.topic: how-to
 ms.custom: fabric-cat
 ms.date: 07/30/2024
+ai-usage: ai-assisted
 ---
 
 # Evaluate and optimize your Microsoft Fabric capacity
@@ -41,7 +42,7 @@ Monitoring can reveal to you that throttling is taking place. Throttling can hap
 
 The [Fabric Capacity Metrics App](metrics-app.md) is the best way to monitor and visualize recent utilization. The app breaks down to item type (semantic model, notebook, pipeline, and others), and helps you to identify items or operations that use high levels of compute (so that they can be [optimized](#compute-optimization-by-fabric-experience)).
 
-Administrators can use the [Admin monitoring workspace](../admin/monitoring-workspace.md) to learn about frequently used items (and overall adoption). They can also use the [Monitoring hub](../admin/monitoring-hub.md) to view current and recent activities in the tenant. More information on some operations might also be available from [Log Analytics](/azure/azure-monitor/logs/log-analytics-overview) or the [on-premises data gateway logs](/data-integration/gateway/service-gateway-tshoot).
+Administrators can use the [Govern report in the OneLake catalog](../governance/onelake-catalog-govern.md#govern-report) to learn about frequently used items, feature usage, and overall adoption. The report aggregates broader tenant information from Admin Monitoring storage, including inventory, sharing, protection, and curation insights. Administrators can also use the [Monitoring hub](../admin/monitoring-hub.md) to view current and recent activities in the tenant. More information on some operations might also be available from [Log Analytics](/azure/azure-monitor/logs/log-analytics-overview) or the [on-premises data gateway logs](/data-integration/gateway/service-gateway-tshoot).
 
 ## Manage high compute usage
 
@@ -93,7 +94,7 @@ Here are some points to consider to help minimize compute.
 - Ensure statistics exist and that they're up to date. Statistics play a vital role in generating the most optimal execution plan. They're [created automatically](../data-warehouse/statistics.md#automatic-statistics-at-query) at runtime but you might need to [manually update](../data-warehouse/statistics.md#manual-statistics-for-all-tables) them, especially after data is loaded or updated. Consider creating statistics by using the `FULLSCAN` option rather than relying on the auto-generated statistics that use sampling.
 - Use built-in views to monitor queries and usage, especially when troubleshooting issues.
   - The [sys.dm_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-requests-transact-sql?view=sql-server-ver16&preserve-view=true) dynamic management view (DMV) provides information about all actively executing queries, but it doesn't store any historical information. The [Fabric Toolbox](https://aka.ms/FabricToolbox) provides a query that uses this DMV and makes the query result user friendly by joining to other views to provide details like the query text.
-  - [Query insights](../data-warehouse/query-insights.md), which is a feature of Fabric data warehousing, provides a holistic view of historical query activity on the SQL analytics endpoint. Specifically, the [queryinsights.exec_requests_history](/sql/relational-databases/system-views/queryinsights-exec-requests-history-transact-sql?view=fabric&preserve-view=true) view provides information about each complete SQL request. It presents all the relevant details for each query execution that can be correlated with the operation IDs found in the capacity metrics app. The most important columns for monitoring capacity usage are: **distributed_statement_id**, **command (query text)**, **start_time**, and **end_time**.
+  - [Query insights](../data-warehouse/query-insights.md), which is a feature of Fabric data warehousing, provides a holistic view of historical query activity on the SQL analytics endpoint. Specifically, the [queryinsights.exec_requests_history](/sql/relational-databases/system-views/queryinsights-exec-requests-history-transact-sql?view=fabric&preserve-view=true) view provides information about each completed SQL request. The most important columns for monitoring capacity usage are: **distributed_statement_id**, **command (query text)**, **sql_pool_name**, **allocated_cpu_time_ms**, **start_time**, and **end_time** columns.
 
 <a id="synapse-data-engineering-and-synapse-data-science"></a>
 
@@ -101,11 +102,11 @@ Here are some points to consider to help minimize compute.
 
 The Data Engineering and Data Science experiences use Spark compute to process, analyze, and store data in a Fabric lakehouse. Spark compute is set up and measured in terms of vCores. However, Fabric uses CUs as a measure of compute consumed by various items, including Spark notebooks, Spark job definitions, and lakehouse jobs.
 
-In Spark, one CU translates to two spark vCores of compute. For example, when a customer purchases an F64 SKU, 128 spark v-cores are available for Spark experiences.
+In Spark, one CU translates to two Spark vCores of compute. For example, when a customer purchases an F64 SKU, 128 Spark vCores are available for Spark experiences.
 
 All Spark operations are background operations, and they're [smoothed](../data-warehouse/compute-capacity-smoothing-throttling.md#smoothing) over a 24-hour period.
 
-For more information, see [Billing and utilization reporting in Fabric Spark](../data-engineering/billing-capacity-management-for-spark.md#fabric-capacity).
+For more information, see [Billing and utilization reporting in Fabric Spark](../data-engineering/billing-capacity-management-for-spark.md#how-spark-billing-works-on-fabric-capacity).
 
 Here are some points to consider to help minimize compute.
 

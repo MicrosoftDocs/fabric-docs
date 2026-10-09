@@ -1,8 +1,7 @@
 ---
 title: Azure Cosmos DB v2 Connector Limitations
 description: Learn about the current limitations and restrictions when using the Azure Cosmos DB v2 Connector in Microsoft Fabric.
-author: jilmal
-ms.author: jmaldonado
+ms.reviewer: jmaldonado
 ms.topic: concept-article
 ms.date: 10/31/2025
 ms.search.form: Azure Cosmos DB v2 Connector Limitations
@@ -76,3 +75,4 @@ This article lists current limitations for the Azure Cosmos DB v2 connector in M
 - [Power BI reporting with Cosmos DB in Fabric](./how-to-create-reports.md)
 - [Limitations for Cosmos DB in Fabric](./limitations.md)
 - [Cosmos DB in Fabric FAQ](./faq.yml)
+

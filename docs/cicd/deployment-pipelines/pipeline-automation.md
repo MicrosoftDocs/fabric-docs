@@ -1,13 +1,8 @@
 ---
 title: Automate deployment pipelines with APIs for Power BI items
 description: Learn how to automate your deployment pipeline, the Microsoft Fabric Application lifecycle management (ALM) tool, by using APIs and Azure DevOps.
-author: billmath
-ms.author: billmath
-ms.service: fabric
-ms.subservice: cicd
-ms.topic: concept-article
-ms.custom:
-ms.date: 04/17/2025
+ms.topic: how-to
+ms.date: 09/01/2026
 ms.search.form: Deployment pipelines APIs, Automate deployment pipelines, Power BI automation tools, Azure DevOps 
 #customer intent: As a developer, I want to automate my deployment pipeline using APIs and Azure DevOps so that I can streamline the release process.
 ---
@@ -17,7 +12,7 @@ ms.search.form: Deployment pipelines APIs, Automate deployment pipelines, Power 
 The Microsoft Power BI [deployment pipelines](intro-to-deployment-pipelines.md) tool enables business intelligence teams to build an efficient and reusable release process for their Power BI content.
 
 > [!NOTE]
-> The deployment pipelines APIs listed here only apply to Power BI items. For Fabric APIs, see the [Fabric API documentation](pipeline-automation-fabric.md).
+> The deployment pipelines APIs listed here only apply to Power BI items and don't support attaching a deployment plan. To attach a deployment plan to an API deployment, use the Fabric [Deploy Stage Content](/rest/api/fabric/core/deployment-pipelines/deploy-stage-content) API. For Fabric API guidance, see [Automate your deployment pipeline with Fabric APIs](pipeline-automation-fabric.md).
 
 To achieve continuous integration and continuous delivery (CI/CD) of content, many organizations use automation tools, including [Azure DevOps](/azure/devops/user-guide/what-is-azure-devops). Organizations that use Azure DevOps, can use the [Power BI automation tools](#use-the-power-bi-automation-tools-extension) extension, which supports many of the deployment pipelines API operations.
 
@@ -39,7 +34,7 @@ You can use the [deployment pipelines Power BI REST APIs](/rest/api/power-bi/pip
 
 Before you use the deployment pipelines APIs, make sure of the following:
 
-* The *user* or *service principal* that calls the APIs has [pipeline and workspace permissions](understand-the-deployment-process.md#permissions) and access to an [Microsoft Entra application](/entra/identity-platform/how-applications-are-added).
+* The *user* or *service principal* that calls the APIs has [pipeline and workspace permissions](understand-the-deployment-process.md#permissions) and access to a [Microsoft Entra application](/entra/identity-platform/how-applications-are-added).
 
 * If you're using PowerShell scripts, install the Power BI PowerShell cmdlets [Install-Module MicrosoftPowerBIMgmt](/powershell/power-bi/overview).
 
@@ -194,5 +189,4 @@ To run a PowerShell script that performs a deployment, you need the following co
 ## Related content
 
 * [Get started with deployment pipelines](get-started-with-deployment-pipelines.md)
-* [Deployment pipelines best practices](../best-practices-cicd.md)
 * [Troubleshooting deployment pipelines](../troubleshoot-cicd.md)

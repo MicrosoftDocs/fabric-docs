@@ -1,24 +1,20 @@
 ---
 title: Result Set Caching
 description: Learn more about result set caching, a performance optimization for the Fabric Data Warehouse and Lakehouse SQL analytics endpoint.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: emtehran, fipopovi
-ms.date: 09/15/2025
-ms.topic: conceptual
+ms.date: 09/22/2026
+ms.topic: concept-article
 ms.search.form: Optimization # This article's title should not change. If so, contact engineering.
 ---
-# Result set caching (preview)
+# Result set caching
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-Result set caching (preview) is a built-in performance optimization for Fabric Data Warehouse and Lakehouse SQL analytics endpoints that improves read latency. 
+Result set caching is a built-in performance optimization for Fabric Data Warehouse and Lakehouse SQL analytics endpoints that improves read latency. 
 
 Result set caching works by persisting the final result sets for applicable `SELECT` T-SQL queries, so that subsequent runs that "hit" cache will process just the final result set. This can bypass complex compilation and data processing of the original query and return subsequent queries faster.
 
-Data warehousing scenarios typically involve analytical queries that process large amounts of data to produce a relatively small result. For example, a `SELECT` query that contains multiple joins and performs reads and shuffles on millions of rows of data might result in an aggregation that is only a few rows long. For workloads like reports or dashboards that tend to trigger the same analytical queries repeatedly, the same heavy computation can be triggered multiple times, even though the final result remains the same. Result set caching improves performance in this and similar scenarios for roughly the same cost.
-
-[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
+Data warehousing scenarios typically involve analytical queries that process large amounts of data to produce a relatively small result. For example, a `SELECT` query that contains multiple joins and performs reads and shuffles on millions of rows of data might result in an aggregation that is only a few rows long. For workloads like reports or dashboards that tend to trigger the same analytical queries repeatedly, the same heavy computation can be triggered multiple times, even though the final result remains the same. Result set caching improves performance in this and similar scenarios.
 
 ## Automatic management of cache
 
@@ -30,21 +26,19 @@ In addition, as your data changes, result consistency is ensured by invalidating
 
 ## Configure result set caching
 
-Result set caching is configurable at the item level. 
+Result set caching is configurable at the item level, and enabled by default for all Fabric Warehouses and Lakehouse SQL Analytics Endpoints.
 
 Once enabled, it can then be disabled at the item level or for individual queries, if needed. 
 
-During the preview, result set caching is off by default for all items.
-
 ### Item-level configuration
-
+<!--
 Use the [ALTER DATABASE SET](/sql/t-sql/statements/alter-database-transact-sql-set-options?view=fabric&preserve-view=true) T-SQL command to enable result set caching for a lakehouse or warehouse. Use the SQL analytics endpoint of a Lakehouse to connect and run T-SQL queries.
 
 ```sql
 ALTER DATABASE <Fabric_item_name>
 SET RESULT_SET_CACHING ON;
 ```
-
+-->
 The setting value can be checked in [sys.databases](/sql/relational-databases/system-catalog-views/sys-databases-transact-sql?view=fabric&preserve-view=true), for example to see the value for the current context in Fabric Warehouse or Lakehouse SQL analytics endpoint:
 
 ```sql
@@ -108,7 +102,6 @@ The following list contains common disqualifications for result set caching in F
 - Query doesn't reference at least one table of at least 100,000 rows
 - Query references an object outside the currently connected Fabric item (for example, cross-database query)
 - Query is within an explicit transaction or a `WHILE` loop
-- Query output contains an unsupported datatype. See [Data types in Fabric Data Warehouse](data-types.md)
 - Query contains a `CAST` or `CONVERT` that has some reference to **date** or **sql_variant** data type
 - Query contains runtime constants (such as `CURRENT_USER` or `GETDATE()`)
 - Query result is estimated to be > 10,000 rows

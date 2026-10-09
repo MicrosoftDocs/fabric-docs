@@ -2,10 +2,7 @@
 title: Add a query visualization in Real-Time Intelligence
 description: Learn how to add a query visualization in Real-Time Intelligence.
 ms.reviewer: mibar
-ms.author: spelluru
-author: spelluru
 ms.topic: how-to
-ms.custom:
 ms.date: 11/19/2024
 ---
 # Add and modify a query visualization
@@ -63,4 +60,4 @@ If you've created a visual using the [render operator](/kusto/query/render-opera
 ## Related content
 
 * [Customize Real-Time Dashboard visuals](dashboard-visuals-customize.md)
-* [Use parameters in Real-Time Dashboards](dashboard-parameters.md)
+* [Use parameters in Real-Time Dashboard queries](dashboard-parameters.md)

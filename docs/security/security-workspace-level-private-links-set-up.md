@@ -5,8 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.reviewer: karthikeyana
 ms.topic: how-to
-ms.custom:
-ms.date: 09/22/2025
+ms.date: 02/04/2026
 
 #customer intent: As a workspace admin, I want to configure workspace-level Private Link on my workspace to prevent access to the workspace from the public internet.
 
@@ -14,13 +13,13 @@ ms.date: 09/22/2025
 
 # Set up and use workspace-level private links
 
-Private links improve security by routing traffic through Azure Private Link and private endpoints, ensuring data stays on Microsoft’s private network rather than the public internet. Microsoft Fabric offers private links at two scopes: tenant-level and workspace-level. [Tenant-level private links](./security-private-links-overview.md) secure all workspaces within a tenant, while [workspace-level private links](./security-workspace-level-private-links-overview.md) allow you to manage network access for specific workspaces individually. 
+Private links improve security by routing traffic through Azure Private Link and private endpoints, ensuring data stays on Microsoft's private network rather than the public internet. Microsoft Fabric offers private links at two scopes: tenant-level and workspace-level. [Tenant-level private links](./security-private-links-overview.md) secure all workspaces within a tenant, while [workspace-level private links](./security-workspace-level-private-links-overview.md) allow you to manage network access for specific workspaces individually. 
 
 This article provides instructions for setting up workspace-level private links in Fabric.
 
 ## Prerequisites
 
-* The workspace must be assigned to a Fabric capacity (F SKUs). Other capacities, such as premium (P SKU) and trial capacities, aren't supported.
+* The workspace must be assigned to a Fabric capacity (F SKUs). Other capacities, such as premium (P SKU) and trial capacities, aren't supported. You can check assignment by going to the workspace settings and selecting **Workspace type**, as described in Step 1 of [Reassign a workspace to a different capacity](../fundamentals/workspace-license-mode.md#reassign-a-workspace-to-a-different-capacity-1).
 * A Fabric administrator must enable the tenant setting **Configure workspace-level inbound network rules**. For details, see [Enable workspace inbound access protection for your tenant](security-workspace-enable-inbound-access-protection.md).
 * You need the workspace ID. Find it in the URL after `group`.
 * You need the tenant ID. In the Fabric portal, select the question mark in the upper right corner, then select **About Power BI**. The tenant ID is the **ctid** part of the **Tenant URL**.
@@ -86,7 +85,7 @@ We recommend reserving at least 10 IP addresses for each workspace-level private
 
 ## Step 5. Create a private endpoint
 
-Create a managed private endpoint in the virtual network you created in step 3, and point to the private link service you created in step 2.
+Create a private endpoint in the virtual network you created in step 3, and point to the private link service you created in step 2.
 
 1. In the search box at the top of the portal, enter **Private endpoint**. Select **Private endpoints**.
 
@@ -123,14 +122,14 @@ Create a managed private endpoint in the virtual network you created in step 3, 
     |Setting       |Value    |
     |---------------|---------|
     |**Virtual network**|Select virtual network name you created earlier (for example *vnet-1*). |
-    |**Subnet**	|Select the subnet name you created earlier (for example *subnet-1*). |
+    |**Subnet**    |Select the subnet name you created earlier (for example *subnet-1*). |
 
 1. Select **Next: DNS**. Under **Private DNS Integration**, enter or select the following information.
 
-    |Setting |	Value |
+    |Setting |    Value |
     |-------------------|---------|
     |**Integrate with private DNS zone**| Select **Yes**. |
-    |**Private DNS Zone**	|Select <br> *(New)privatelink.fabric.microsoft.com* <br> |
+    |**Private DNS Zone**    |Select <br> *(New)privatelink.fabric.microsoft.com* <br> |
 
       :::image type="content" source="media/security-workspace-level-private-links-set-up/create-endpoint-dns-tab.png" alt-text="Screenshot of the DNS tab in Create a private endpoint.":::
 
@@ -156,7 +155,7 @@ Next, access Fabric privately from the virtual machine you created in the previo
 
    `nslookup {workspaceid}.z{xy}.w.api.fabric.microsoft.com`
 
-   where *workspaceid* is the workspace object ID without dashes, and *xy* represents the first two characters of the workspace object ID.
+   where *workspaceid* is the workspace object ID without dashes, and *xy* represents the first two characters of the workspace object ID. The `z` is a literal inclusion in the connection string, and the brackets are not included, so for example `zab` or `z44`. 
 
 1. The private IP address is returned.
 
@@ -172,11 +171,14 @@ You can optionally deny public access to the workspace. When the workspace is se
 1. In the Fabric portal, select the workspace you want to configure.
 1. Select **Workspace settings**.
 1. Select **Inbound networking**.
-1. Under **Workspace connection settings**, select **Allow connections only from workspace level private links**.
+1. Under **Workspace connection settings**, select **Allow connections from selected networks and workspace level private links**.
 
    :::image type="content" source="media/security-workspace-level-private-links-set-up/workspace-connection-settings.png" alt-text="Screenshot showing the Workspace connection settings with the radio button selected for the option Allow connections only from workspace level private links." lightbox="media/security-workspace-level-private-links-set-up/workspace-connection-settings.png":::
 
-1. Select **Apply**.
+1. Select **Apply**. Public internet access is now blocked, and only connections through workspace-level private links can access the workspace. 
+
+> [!NOTE]
+> To grant specific public IP addresses access to the workspace, create an allow list by editing the **Address configurations**. For more information, see [Set up and manage workspace IP firewall rules](./security-workspace-level-firewall-set-up.md).
 
 ### [API](#tab/api)
 

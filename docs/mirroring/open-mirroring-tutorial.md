@@ -1,8 +1,6 @@
 ---
 title: "Tutorial: Configure Open Mirroring"
 description: Learn how to configure an open mirrored database in Microsoft Fabric.
-author: whhender
-ms.author: whhender
 ms.reviewer: tinglee, sbahadur, marakiketema, maprycem
 ms.date: 06/04/2025
 ms.topic: tutorial
