@@ -22,6 +22,10 @@ The Snowflake connector is supported in Data Factory for [!INCLUDE [product-name
 | **Pipeline**<br>- [Copy activity](connector-snowflake-copy-activity.md) (source/destination) <br>- Lookup activity  <br>- Script activity |None<br> On-premises<br> Virtual network |Snowflake<br> Microsoft Account <br> Key-pair |
 | **Copy job** (source/destination) <br>- Full load<br>- Incremental load<br>- CDC<br>- Append <br>- Override <br>- CDC Merge |None<br> On-premises<br> Virtual network |Snowflake<br> Microsoft Account <br> Key-pair |
 
+## Known limitations
+
+[!INCLUDE [snowflake-fabric-limitations](includes/connector-snowflake-fabric-limitations.md)]
+
 ## Related content
 
 To learn about how to connect to a Snowflake database in Dataflow Gen2, go to [Set up your Snowflake connection](connector-snowflake.md).
