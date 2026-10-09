@@ -154,6 +154,8 @@ To use Key-pair authentication, you need to configure and create a Key-pair auth
 
 [!INCLUDE [snowflake-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/snowflake/limitations.md)]
 
+[!INCLUDE [snowflake-fabric-limitations](includes/connector-snowflake-fabric-limitations.md)]
+
 ## Related content
 
 - [For more information about this connector, see the Snowflake database connector documentation.](/power-query/connectors/snowflake)
