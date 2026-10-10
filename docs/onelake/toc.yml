@@ -100,8 +100,10 @@ items:
     items:
     - name: What are table APIs?
       href: ./table-apis/table-apis-overview.md
-    - name: Read table metadata
+    - name: Work with table metadata
       items:
+      - name: Additional table metadata (preview)
+        href: ./table-apis/additional-table-metadata.md
       - name: Iceberg metadata API
         href: ./table-apis/iceberg-table-apis-overview.md
       - name: Iceberg metadata API samples
