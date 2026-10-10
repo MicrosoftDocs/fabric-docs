@@ -6,7 +6,7 @@ ms.date: 08/17/2026
 ms.topic: how-to
 ---
 
-# Add and manage tasks
+# Add and manage tasks in resource layout
 
 Use the resource layout to manage tasks throughout their lifecycle. You can [add](#add-a-task) tasks, [update](#edit-a-task) task details, [view](#view-task-effort-and-history) task information, and [delete](#delete-a-task) tasks when they're no longer required.
 
