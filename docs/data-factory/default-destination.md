@@ -3,8 +3,9 @@ title: Dataflow Gen2 default destination
 description: Learn about default data destination configurations and settings in Dataflow Gen2.
 ms.reviewer: jeluitwi
 ms.topic: concept-article
-ms.date: 03/13/2026
+ms.date: 10/06/2026
 ms.custom: dataflows
+ai-usage: ai-assisted
 ---
 
 # Dataflow Gen2 default destination
@@ -14,7 +15,7 @@ When you have a Lakehouse, Warehouse, KQL Database, or Snowflake database and yo
 We have made it easier to get data into your Lakehouse, Warehouse, KQL Database, or Snowflake database by creating a Dataflow Gen2 directly from the Lakehouse, Warehouse, or KQL Database experience, or by setting a default destination in the editor. This is a great way to get started with Dataflow Gen2 and load data into your workspace. Additionally, you can use the new default destination experience within the editor to quickly set a default destination for your dataflow. This article describes the two ways to create a Dataflow Gen2 and set a default destination to speed up your dataflow creation process.
 
 > [!NOTE]
-> When using Snowflake as a default destination, the default destination only works for new tables. If you change the schema of your dataflow after the initial publish, the Snowflake destination schema isn't updated automatically. You need to reconfigure the destination mapping manually.
+> When you use Snowflake as a default destination, managed settings apply to new tables. Dataflow Gen2 replaces the data on each refresh and updates the destination schema automatically after you change your query and republish the dataflow. You don't need to reconfigure the destination mapping. For details, see [Snowflake destination settings](dataflow-gen2-data-destinations-and-managed-settings.md#snowflake-destination-settings).
 
 ## Set a default destination in Dataflow Gen2
 

@@ -3,7 +3,7 @@ title: Sharing Microsoft Fabric Maps
 description: Learn about sharing maps in Microsoft Fabric.
 ms.reviewer: smunk, limingchen
 ms.topic: concept-article
-ms.date: 09/28/2026
+ms.date: 10/06/2026
 ms.search.form: Share map 
 ---
 
@@ -71,15 +71,15 @@ For more information on how to share maps using org apps, see [How to share a ma
 
 ## Pin a map to a real-time dashboard
 
-Pin a Fabric map to a new or existing real-time dashboard when you want to display the authored map alongside real-time metrics. The resulting Fabric Maps tile references the source map item and renders its existing data sources, queries, layers, and styling. Reload the dashboard page to display saved map configuration changes.
+Pin a Fabric map to a new or existing real-time dashboard when you want to display the authored map alongside real-time metrics. The resulting Fabric Maps visual references the source map item and renders its existing data sources, queries, layers, and styling. Reload the dashboard page to display saved map configuration changes.
 
-The Fabric Maps tile is view-only. Dashboard viewers can zoom, pan, hover, use basic tooltips, and interact with map-layer filters as they can in Fabric Maps view mode. They can add, modify, or remove unlocked filters, but they can't remove locked filters. Filter changes made in the dashboard are temporary and aren't saved to the source map item. Queries, data sources, layers, and styling remain authored in the source map and can't be edited from the dashboard. Real-Time Dashboard parameters don't filter or otherwise modify the Fabric Maps tile.
+The Fabric Maps visual is view-only. Dashboard viewers can zoom, pan, hover, use basic tooltips, and interact with map-layer filters as they can in Fabric Maps view mode. They can add, modify, or remove unlocked filters, but they can't remove locked filters. Filter changes made in the dashboard are temporary and aren't saved to the source map item. Queries, data sources, layers, and styling remain authored in the source map and can't be edited from the dashboard. Real-Time Dashboard parameters don't filter or otherwise modify the Fabric Maps visual.
 
-After pinning the map, use the destination Real-Time Dashboard to choose the tile's page, rename it, and adjust its size. Pinning a map that is already present in the dashboard creates another Fabric Maps tile.
+After pinning the map, use the destination Real-Time Dashboard to choose the tile's page, rename it, and adjust its size. Pinning a map that is already present in the dashboard creates another Fabric Maps visual.
 
 Pinning a map to a dashboard doesn't grant access to the dashboard, map item, or the map's underlying data sources. A viewer must have access to all three, and the viewer's identity and permissions are used for authorization.
 
-For instructions, see [Pin a Fabric map to a real-time dashboard](pin-map-to-real-time-dashboard.md).
+For more information, see [Pin a Fabric map to a real-time dashboard](pin-map-to-real-time-dashboard.md).
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 

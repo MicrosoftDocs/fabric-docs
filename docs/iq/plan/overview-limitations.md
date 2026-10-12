@@ -2,7 +2,7 @@
 title: Known Limitations in Planning
 description: This article lists known issues and limitations present in planning in Fabric.
 ms.topic: concept-article
-ms.date: 09/23/2026
+ms.date: 10/09/2026
 #customer intent: As a user, I want to know the limitations present in planning.
 ---
 
@@ -12,17 +12,12 @@ Review the following known issues and limitations before you begin working with 
 
 Supported limits might vary depending on client resources, Fabric capacity, and Power BI XMLA query limits.
 
-## B2B user support
-
-Planning in Fabric doesn't support Microsoft Entra B2B IDs.
-
 ## Private link support
 
-Workspaces or tenants that use [private links](../../security/security-private-links-overview.md#what-is-a-private-endpoint) don't support plan items.
+Workspaces that use [private links](../../security/security-private-links-overview.md#what-is-a-private-endpoint) don't support plan items, whereas tenant-level private links are supported.
 
 ## Semantic model
 
-* You must have *Read* and *Build* permissions on the semantic model to attach it to a plan. *Read* permission is sufficient to read model data in a plan.
 * Each plan item connects to one semantic model, and you can't change it after you connect it. If you need to plan against different data sources, you must create separate plan items.
 * Semantic models published in *My workspace* aren't supported.
 * Composite models are supported in Planning, while support for individual configurations depends on the capabilities of the underlying semantic model, including storage modes, data sources, and authentication.
@@ -35,24 +30,12 @@ Workspaces or tenants that use [private links](../../security/security-private-l
 
 ## Writeback limitations
 
-* Planning in Fabric supports writeback only to Fabric SQL databases.
-* Writeback stores planning data separately in Fabric SQL. It doesn't update the connected semantic model.
 * For Long and Wide writeback formats, subsequent writeback replaces existing rows when all dimension columns and values match. To retain previous values as change history, use Long with Changes or Wide with Changes.
 * Deleting a row in a planning sheet doesn't delete the corresponding row from the destination Fabric SQL table. To remove data from the SQL database, you must delete it directly in the database.
-
-## Capacities supported
-
-Power BI Pro and Power BI Premium Per User (PPU) aren't supported for planning scenarios that use XMLA endpoints. Similarly, lower-capacity SKUs that don't support XMLA endpoints are also unsupported.
 
 ## PowerTable limitations
 
 The following limitations apply to PowerTable sheets.
-
-### DMTS connection recovery
-
-If you delete the DMTS connection that you configured for a PowerTable sheet, or if it becomes unavailable, you can't open the sheet to update the connection. The connection recovery screen doesn't appear, and you see the message "DMTS connection is deleted or not found."
-
-To recover, create a new PowerTable sheet by using the **Existing Table** option and configure the same table again.
 
 ### Excel export limitations
 
@@ -121,12 +104,11 @@ If you encounter a "Something went wrong" error that could be caused by a databa
 
 ## Workspace renaming
 
-Don't rename a workspace that contains a plan item. Renaming the
-workspace breaks the plan item, and the item no longer opens.
+Don't rename a workspace that contains a plan item. Renaming the workspace breaks the plan item, and the item no longer opens.
 
 ## Bulk data input limit
 
-Bulk data input supports up to 1 million rows. Uploading more than 1 million rows from an Excel or CSV file isn't supported and might cause the upload to fail.
+Bulk data input supports up to 10 million rows. Uploading more than 10 million rows from an Excel or CSV file isn't supported and might cause the upload to fail.
 
 ## Maximum number of sheets per item
 
@@ -138,9 +120,9 @@ A plan item supports up to 50 visuals. Keep the number of visuals within this li
 
 ## Infobridge cell limit
 
-Each Infobridge query in a planning sheet supports up to 1.2 million cells. Queries that exceed this limit might fail to load or process.
+Each Infobridge query in a planning sheet supports up to 10 million cells. Queries that exceed this limit might fail to load or process.
 
-To work with larger datasets, split the data across multiple planning sheets and append the queries. This approach supports a consolidated workbook of up to about 5 million cells (for example, across five planning sheets).
+To work with larger datasets, split the data across multiple planning sheets and append the queries. This approach supports a consolidated workbook of up to about 10 million cells (for example, across five planning sheets).
 
 ## Writeback cell limit
 

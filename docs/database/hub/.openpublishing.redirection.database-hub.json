@@ -4,6 +4,11 @@
       "source_path_from_root": "/docs/database/hub/index.yml",
       "redirect_url": "/fabric/database/hub/overview",
       "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/database/hub/query-performance-monitoring-telemetry.md",
+      "redirect_url": "/fabric/database/hub/microsoft-sql-query-performance-monitoring-telemetry",
+      "redirect_document_id": true
     }
   ]
 }

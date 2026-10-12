@@ -35,7 +35,7 @@ You can connect a dataflow Gen2 in Fabric to an SAP HANA database by using Power
 
 ## Prerequisites
 
-[!INCLUDE [sap-hana-database-prerequisites](includes/power-query/connectors/includes/sap-hana-database/sap-hana-database-prerequisites.md)]
+[!INCLUDE [sap-hana-database-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/sap-hana-database/prerequisites.md)]
 
 <a id="capabilities"></a>
 
@@ -43,7 +43,7 @@ You can connect a dataflow Gen2 in Fabric to an SAP HANA database by using Power
 
 ## Supported capabilities
 
-[!INCLUDE [sap-hana-database-capabilities-supported](includes/power-query/connectors/includes/sap-hana-database/sap-hana-database-capabilities-supported.md)]
+[!INCLUDE [sap-hana-database-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/sap-hana-database/capabilities-supported.md)]
 
 ## Connection settings
 
@@ -55,7 +55,7 @@ You can connect a dataflow Gen2 in Fabric to an SAP HANA database by using Power
 
 ### Connection steps
 
-[!INCLUDE [sap-hana-database-connect-to-power-query-online](includes/power-query/connectors/includes/sap-hana-database/sap-hana-database-connect-to-power-query-online.md)]
+[!INCLUDE [sap-hana-database-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/sap-hana-database/connect-online.md)]
 
 ## Set up your connection in Manage connections and gateways
 
@@ -111,7 +111,7 @@ For specific instructions to set up your connection in Manage connections and ga
 1. Optionally, in **Single sign-on**, select one or more SSO options based on your scenario:
 
    - **Use SSO via Kerberos for DirectQuery queries**: This option will only be applied for DirectQuery queries. Import will use the Username and Password specified in the data source details. For more information, see this [article](/power-bi/connect-data/service-gateway-sso-kerberos).
-   - **Use SSO via Kerberos for DirectQuery and Import queries**: For Import, it will use the Dataset owner's windows credentials. For more information, see this [article](/power-bi/connect-data/service-gateway-sso-kerberos).
+   - **Use SSO via Kerberos for DirectQuery and Import queries**: For Import, it will use the Dataset owner's Windows credentials. For more information, see this [article](/power-bi/connect-data/service-gateway-sso-kerberos).
    - **Use SSO via SAML for DirectQuery queries**
 
 1. In **General**, set the privacy level that you want to apply. Allowed values are None, Organizational, Private, and Public. For more information, see [privacy levels in the Power Query documentation](/power-query/privacy-levels).
@@ -141,7 +141,7 @@ This section lists the instructions for each authentication type supported by th
 
 ## Limitations and considerations
 
-[!INCLUDE [sap-hana-database-limitations-and-considerations](includes/power-query/connectors/includes/sap-hana-database/sap-hana-database-limitations.md)]
+[!INCLUDE [sap-hana-database-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/sap-hana-database/limitations.md)]
 
 
 ## Related content

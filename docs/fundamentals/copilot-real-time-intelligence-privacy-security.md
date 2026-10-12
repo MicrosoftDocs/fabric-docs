@@ -5,50 +5,124 @@ author: spelluru
 ms.author: spelluru
 ms.reviewer: mibar
 ms.topic: concept-article
-ms.date: 11/19/2024
+ms.date: 10/07/2026
 ms.update-cycle: 180-days
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
+ai-usage: ai-assisted
 ---
 
 # Privacy, security, and responsible use of Copilot for Real-Time Intelligence
 
-In this article, learn how Copilot for Real-Time Intelligence works, how it keeps your business data secure and adheres to privacy requirements, and how to use generative AI responsibly. For an overview of these topics for Copilot in Fabric, see [Privacy, security, and responsible use for Copilot](copilot-privacy-security.md).
+Copilot for Real-Time Intelligence uses generative AI to help you query, explore, visualize, and present real-time data. This article explains how Copilot uses data, how Microsoft evaluates its features, which limitations to consider, and how to use Copilot responsibly.
 
-This feature  leverages the power of OpenAI to seamlessly translate natural language queries into Kusto Query Language (KQL), a specialized language for querying large datasets. In essence, it acts as a bridge between users' everyday language and the technical intricacies of KQL removing adoption barriers for users unfamiliar with the language. By harnessing OpenAI's advanced language understanding, this feature empowers users to submit business questions in a familiar, natural language format, which are then converted into KQL queries.  
+## About Copilot for Real-Time Intelligence
 
-Copilot accelerates productivity by simplifying the query creation process but also provides a user-friendly and efficient approach to data analysis. 
+Copilot for Real-Time Intelligence is a shared generative AI capability used across Microsoft Fabric Real-Time Intelligence experiences. Depending on the experience and workflow, Copilot can help you create or modify KQL queries, explore data, generate analytical results and visualizations, and create or modify Real-Time Dashboards. For an overview of these topics for Copilot in Fabric, see [Privacy, security, and responsible use for Copilot](copilot-privacy-security.md).
 
-## Copilot for Real-Time Intelligence intended use
+The capabilities available to you depend on the feature, experience, permissions, data source, and release stage.
 
-Kusto Copilot accelerates data scientists’ and analysts’ data exploration process, by translating natural language business questions into KQL queries, based on the underlying dataset column names / schema.
+Copilot for Real-Time Intelligence helps you query, analyze, visualize, and explore real-time data by using natural language.
+
+- Depending on the experience, you can use Copilot to:
+
+- Author or modify KQL queries.
+- Ask questions and explore data conversationally.
+- Generate tables, visualizations, and natural-language insights.
+- Create or modify dashboard tiles.
+- Generate an initial Real-Time Dashboard from a description of the intended dashboard.
+- Save or share generated analytical results.
+
+Copilot reduces the need for specialized KQL knowledge, but you're responsible for reviewing generated content before using, saving, sharing, or applying it.
+
+## Intended use of Copilot for Real-Time Intelligence
+
+Copilot for Real-Time Intelligence helps authorized users query, explore, visualize, and present real-time or operational data.
+
+Example uses include:
+
+- Generating and refining KQL queries in a KQL queryset.
+- Creating or modifying the query and visualization for a dashboard tile.
+- Exploring data associated with a dashboard, visual, table, or other supported data context.
+- Generating an initial dashboard based on available data and the user's described intent.
+- Refining generated results through follow-up questions or instructions.
+
+Copilot is an assistive, human-directed capability. It isn't designed to autonomously make consequential decisions or take actions in external systems.
 
 ## What can Copilot for Real-Time Intelligence do?
 
-Kusto Copilot is powered by generative AI models developed by OpenAI and Microsoft. Specifically, it uses OpenAI’s Embedding and Completion APIs to build the natural language prompt and to generate KQL queries.
+Copilot uses generative AI models, including GPT-5 in supported experiences, to interpret natural-language instructions together with contextual information supplied by the product experience.
 
-## Data use of Copilot for Real-Time Intelligence
+Depending on the feature, this context can include the connected database schema, tables and columns, user-defined functions, data samples, an existing KQL query, dashboard configuration, a selected visual, previous conversation messages, and the user's dashboard description.
 
-Copilot for Real-Time Intelligence has access to data that is accessible to the Copilot user, for example the database schema, user-defined functions, and data sampling of the connected database. The Copilot refers to whichever database is currently connected to the KQL queryset.  The Copilot doesn't store any data.
+Copilot can generate one or more of the following:
 
-## Evaluation of Copilot for Real-Time Intelligence
+- KQL queries and query modifications.
+- Tabular query results.
+- Visualizations and visual configuration.
+- Natural-language insights or summaries.
+- Starter and follow-up prompts.
+- Dashboard tiles.
+- An initial Real-Time Dashboard.
 
-* Following a thorough research period in which several configurations and methods have been tested, the OpenAI integration method had been proven to generate highest accuracy KQL queries. Copilot doesn't automatically run the generated KQL query, and users are advised to run the queries at their own discretion.
-* Kusto Copilot doesn’t automatically run any generated KQL query, and users are advised to run the queries at their own discretion.
+Some experiences execute generated queries to display results, while others present generated KQL for the user to review and run. The product experience indicates which behavior applies.
+
+## How Copilot for Real-Time Intelligence uses data
+
+Copilot processes the user's prompt together with contextual information required for the selected experience. Depending on the feature, this information can include database schema, user-defined functions, data samples, an existing query, dashboard or visual configuration, underlying query results, and previous messages in the current Copilot interaction.
+
+Copilot operates within the user's existing permissions and doesn't grant additional access to data. Users can only use Copilot with data and items that the product experience authorizes them to access.
+
+Customer data, including dashboard data, isn't used to train foundation models. Microsoft Fabric service terms govern prompt processing. Prompts and responses might be retained for abuse monitoring and service protection.
+
+Fabric tenant administrators can control whether Copilot capabilities are enabled. Additional tenant settings might be required when data is processed outside the capacity's geographic region, compliance boundary, or national cloud instance.
+
+## How Microsoft evaluates Copilot for Real-Time Intelligence
+
+Before release, Microsoft evaluates Copilot features based on their specific inputs, outputs, user interactions, and potential risks. Evaluations can include query quality, grounding, harmful content, prompt injection and jailbreak attempts, cross-prompt injection, protected material, and other risks relevant to the feature.
+
+Because Copilot experiences perform different tasks, evaluation methods and datasets can differ between features. For example, a feature that generates KQL is evaluated differently from a feature that generates a dashboard or modifies an existing visualization.
+
+Evaluation results reduce risk but don't guarantee that every generated query, result, visualization, insight, or dashboard is correct. Review generated content and validate important results against the underlying data.
 
 ## Limitations of Copilot for Real-Time Intelligence
 
-* Complex and long user input might be misunderstood by Copilot, resulting in potentially inaccurate or misleading suggested KQL queries.
-* User input which directs to database entities which are not KQL tables or materialized views (for example, a KQL function), may result in potentially inaccurate or misleading suggested KQL queries.
-* More than 10,000 concurrent users within an org will most likely fail or result in major performance hit.  
-* The KQL query should be validated by user before executing for preventing insecure KQL query execution.
+- Copilot can misunderstand ambiguous, complex, lengthy, or insufficiently detailed instructions.
+- Generated KQL can be syntactically valid but fail to represent the user's intended business logic.
+- Generated results depend on the quality and clarity of schema metadata, table and column names, dashboard context, data samples, and underlying data.
+- Copilot might not understand organizational definitions, business rules, exceptions, or causal relationships that aren't represented in its available context.
+- Generated insights, visualizations, tiles, or dashboards can be incomplete, inaccurate, or unsuitable for the intended purpose.
+- Similar instructions can result in different valid queries, visualizations, or dashboard designs.
+- Generated content can overwrite or conflict with manual changes in experiences that modify an existing item. Review the updated item before keeping the generated changes.
+- Prompt-injection attempts can try to redirect model behavior. Testing and mitigations reduce but don't eliminate this risk.
+- Feature availability, supported data sources, authoring operations, and administrative requirements vary by Copilot experience.
+- Don't use Copilot as the sole basis for consequential or high-impact decisions.
 
 ## Tips for working with Copilot for Real-Time Intelligence
 
-* We recommend you provide detailed and relevant natural language queries. Furthermore, you should provide concise and simple requests to the copilot to avoid inaccurate or misleading suggested KQL queries. You should also restrict questions to databases which are KQL tables or materialized views.
-* For example, if you're asking about a specific column, provide the column name and the type of data it contains. If you want to use specific operators or functions, this will also help. The more information you provide, the better the Copilot answer will be. 
+- Clearly describe the task and intended result.
+- Specify relevant tables, columns, metrics, filters, time periods, operators, or visual types when known.
+- Use meaningful table and column descriptions to help Copilot interpret the schema.
+- Break complex analytical or authoring tasks into focused requests and use follow-up instructions to refine the result.
+- Inspect generated KQL before relying on it.
+- Compare generated explanations and visualizations with the query results and underlying data.
+- Review generated or modified dashboards before saving or sharing them.
+- Don't include passwords, credentials, secrets, or unnecessary personal information in prompts.
+- Validate important outputs before using them to support business or operational decisions.
+- Use the available feedback controls to report incorrect or inappropriate results.
+
+## Copilot experiences in Real-Time Intelligence
+
+Copilot for Real-Time Intelligence supports multiple experiences, including:
+
+- **KQL query authoring**: Generate and refine KQL in Querysets and supported dashboard editors.
+- **Data exploration**: Ask questions about supported dashboard or table data, refine the analysis, and inspect query, table, and visual results.
+- **Dashboard tile creation and editing**: Create or modify a dashboard tile through natural-language instructions.
+- **Dashboard generation**: Generate an initial Real-Time Dashboard based on selected data and a description of the intended dashboard.
+
+Additional Copilot experiences might be introduced over time. The relevant product documentation describes the capabilities, prerequisites, controls, and limitations of each experience.
 
 ## Related content
 
-* [What is Microsoft Fabric?](../fundamentals/microsoft-fabric-overview.md)
-* [Copilot in Fabric: FAQ](copilot-faq-fabric.yml)
+- [What is Microsoft Fabric?](../fundamentals/microsoft-fabric-overview.md)
+- [Copilot in Fabric: FAQ](copilot-faq-fabric.yml)

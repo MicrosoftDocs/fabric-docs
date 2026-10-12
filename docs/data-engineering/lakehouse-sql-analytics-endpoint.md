@@ -3,7 +3,7 @@ title: What is the SQL analytics endpoint for a lakehouse?
 description: Learn about the SQL analytics endpoint and how to run SQL queries directly on Fabric lakehouse tables.
 ms.reviewer: tvilutis
 ms.topic: concept-article
-ms.date: 05/19/2026
+ms.date: 10/01/2026
 ms.search.form: Lakehouse SQL Analytics Endpoint
 ---
 
@@ -90,11 +90,9 @@ The following limitations apply to SQL analytics endpoint automatic schema gener
 
 - Scalar UDFs are supported when inlineable. For more information, see [CREATE FUNCTION](/sql/t-sql/statements/create-function-sql-data-warehouse?view=fabric&preserve-view=true) and [Scalar UDF inlining](/sql/relational-databases/user-defined-functions/scalar-udf-inlining?view=fabric&preserve-view=true).
 
-- The **varchar(max)** data type is only supported in SQL analytics endpoints of mirrored items and Fabric databases, and not for lakehouses. Tables created after November 10, 2025 will automatically be mapped with **varchar(max)**. Tables created before November 10, 2025 need to be recreated to adopt a new data type, or will be automatically upgraded to **varchar(max)** during the next schema change.
+- The **varchar(max)** data type is only supported in SQL analytics endpoints enabled with the new metadata sync.
 
-Data truncation to 8 KB still applies on the tables in SQL analytics endpoint of the lakehouse, including shortcuts to a mirrored item.
-
-Since all tables do not support **varchar(max)** joins on these columns may not work as expected if one of the tables still has a data truncation. For example, if you CTAS a table of a newly created mirrored item into a lakehouse table using Spark, then join them using the column with **varchar(max)**, the query results will be different compared to the **varchar(8000)** data type. If you would like to continue to have previous behavior, you can cast the column to **varchar(8000)** in the query.
+Data truncation to 8 KB still applies on the tables in SQL analytics endpoint of the lakehouse, including shortcuts to a mirrored item if SQL analytics endpoint is not using new metadata sync.
 
 You can confirm if a table has any **varchar(max)** column from the schema metadata using the following T-SQL query. A `max_length` value of `-1` represents **varchar(max)**:
 

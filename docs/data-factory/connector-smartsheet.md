@@ -34,7 +34,7 @@ You can connect a dataflow Gen2 in Fabric to Smartsheet using Power Query connec
 
 ## Prerequisites
 
-[!INCLUDE [smartsheet-prerequisites](includes/power-query/connectors/includes/smartsheet/prerequisites.md)]
+[!INCLUDE [smartsheet-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/smartsheet/prerequisites.md)]
 
 <a id="capabilities"></a>
 
@@ -42,7 +42,7 @@ You can connect a dataflow Gen2 in Fabric to Smartsheet using Power Query connec
 
 ## Supported capabilities
 
-[!INCLUDE [smartsheet-capabilities-supported](includes/power-query/connectors/includes/smartsheet/capabilities-supported.md)]
+[!INCLUDE [smartsheet-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/smartsheet/capabilities-supported.md)]
 
 ## Connection settings
 
@@ -54,7 +54,7 @@ You can connect a dataflow Gen2 in Fabric to Smartsheet using Power Query connec
 
 ### Connection instructions
 
-[!INCLUDE [smartsheet-connect-to-power-query-online](includes/power-query/connectors/includes/smartsheet/connect-to-power-query-online.md)]
+[!INCLUDE [smartsheet-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/smartsheet/connect-online.md)]
 
 ## Set up your connection in a pipeline
 

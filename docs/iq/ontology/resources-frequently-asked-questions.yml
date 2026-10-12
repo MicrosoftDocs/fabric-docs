@@ -3,7 +3,7 @@ metadata:
   title: "Ontology (Preview) Frequently Asked Questions"
   description: "Frequently asked questions about ontology (preview)."
   ms.topic: faq
-  ms.date: 01/27/2026
+  ms.date: 10/05/2026
 
 title: "Ontology (Preview) Frequently Asked Questions"
 summary: "This article contains answers to frequently asked questions about ontology (preview)."
@@ -15,7 +15,7 @@ sections:
         answer: Yes, you can bind data from Fabric Eventstream to ontology (preview) by landing that eventstream data in an eventhouse that is used as the ontology binding data source. For a walkthrough of this process, see the [ontology (preview) tutorial](tutorial-0-introduction.md).
 
       - question: Does ontology (preview) support ontology management like versioning?
-        answer: No, versioning isn't currently available.
+        answer: Yes, versioning is available in the ontology new experience. For more information, see [Manage version history in ontology (preview)](how-to-use-version-history.md).
 
       - question: Does ontology (preview) support importing from industry-specific database templates from Azure Synapse?
         answer: No, import from industry-specific templates isn't currently available.

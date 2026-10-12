@@ -4,7 +4,7 @@ metadata:
   description: This article answers frequently asked questions about Database Hub in Fabric.
   ms.reviewer: amapatil, jmaldonado, varundhawan, ivujic, lancewright
   ms.topic: faq
-  ms.date: 09/30/2026
+  ms.date: 10/05/2026
 
 title: "Frequently asked questions about Database Hub in Fabric (preview)"
 
@@ -82,6 +82,10 @@ sections:
           Observability focuses on estate-level health and pressure signals such as CPU, I/O, connectivity, error conditions, posture, and utilization. These signals roll up into severity states that surface issues before charts.
 
           The goal is to identify where attention is needed and create a scoped view that people or agents can analyze. Advanced, engine-specific diagnostics remain available through native tools and are accessible through drill-through actions.
+      - question: |
+          Can I filter, save, and share the Estate view?
+        answer:
+          Filter the **Estate** view by subscription or resource group, then save and share the custom view. Sharing a view shares its configuration, not access to the underlying resources. Recipients see only the resources their existing permissions allow.
       - question: |
           How is Database Hub different from third-party monitoring tools?
         answer:
@@ -218,15 +222,17 @@ sections:
       - question: |
           Can I investigate slow queries directly in the Performance dashboard?
         answer:
-          Currently, Database Hub doesn't provide Query Store-backed top queries, query plans, wait-event analysis, or log search. Use the Azure portal and PostgreSQL tools for those investigations.
+          Currently in the preview, PostgreSQL monitoring uses existing Azure Monitor metrics and doesn't include query-level diagnostics in Database Hub, such as Query Store-backed top queries, query plans, wait-event analysis, or log search. Use the Azure portal and native PostgreSQL tools for query-level investigations.
       - question: |
           Can I use SQL monitoring templates or Activator with PostgreSQL metrics?
         answer:
           The SQL-specific monitoring templates and SQL ADX proxy are not part of the PostgreSQL Azure Monitor path. Activator alerting over these PostgreSQL metrics isn't currently supported. This limitation doesn't remove the service's separate Azure Monitor alerting options.
       - question: |
-          Are Entra authentication, CMK, and auditing assessed identically across engines?
+          What security posture checks does Database Hub evaluate for PostgreSQL?
         answer:
-          Do not assume parity. PostgreSQL supports these service features, but Database Hub assessment coverage is engine-specific. Review the applicable assessment and current server configuration. An unavailable CMK assessment doesn't mean encryption is disabled.
+          In the current preview, Database Hub checks whether Microsoft Entra authentication is enabled, Microsoft Entra authentication is enforced, encryption at rest uses customer-managed keys, and public network access is disabled.
+
+          These checks aren't a complete compliance audit. Validate security requirements by using the authoritative Azure service and security tools.
       - question: |
           Does Database Hub replace Microsoft Defender or automatically fix findings?
         answer:

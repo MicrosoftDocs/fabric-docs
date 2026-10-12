@@ -95,6 +95,14 @@ You can edit a namespace's metadata—its name, description, and prefix—withou
 
 You can delete a namespace only when it has no remaining references. If any concept still references the namespace, the ontology blocks the deletion until you remove or reassign those references. This behavior helps you make safe rename, delete, and lifecycle changes as the model evolves.
 
+## Group and filter by namespace
+
+You can group and filter the **Explorer** view by namespace.
+
+In the **Explorer** pane, select the **...** option menu next to the filter search box. From here you can select whether to group by or filter by namespace.
+
+:::image type="content" source="media/how-to-use-namespaces/filter.png" alt-text="Screenshot of filtering the Explorer view by namespace." lightbox="media/how-to-use-namespaces/filter.png":::
+
 ## Related content
 
 - [What is ontology (preview)?](overview.md)

@@ -37,7 +37,7 @@ You can connect dataflow Gen2 in Fabric to Microsoft Exchange Online using Power
 
 ## Supported capabilities
 
-[!INCLUDE [microsoft-exchange-online-capabilities-supported](includes/power-query/connectors/includes/microsoft-exchange-online/microsoft-exchange-online-capabilities-supported.md)]
+[!INCLUDE [microsoft-exchange-online-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/microsoft-exchange-online/capabilities-supported.md)]
 
 ## Connection settings
 
@@ -49,7 +49,7 @@ You can connect dataflow Gen2 in Fabric to Microsoft Exchange Online using Power
 
 ### Connection instructions
 
-[!INCLUDE [microsoft-exchange-online-connect-to-power-query-online](includes/power-query/connectors/includes/microsoft-exchange-online/microsoft-exchange-online-connect-to-power-query-online.md)]
+[!INCLUDE [microsoft-exchange-online-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/microsoft-exchange-online/connect-online.md)]
 
 ## Set up your connection in a pipeline
 

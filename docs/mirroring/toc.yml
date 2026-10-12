@@ -72,8 +72,8 @@ items:
       - name: FAQ about mirrored Azure Cosmos DB 
         displayName: Frequently asked questions about mirrored Azure Cosmos DB
         href: azure-cosmos-db-faq.yml
-      - name: Configure private networks
-        displayName: Configure private networks for Azure Cosmos DB mirroring
+      - name: Mirror accounts with network restrictions
+        displayName: Configure mirroring for Azure Cosmos DB accounts with network restrictions
         href: azure-cosmos-db-private-network.md
       - name: Limitations
         displayName: Limitations in mirrored Azure Cosmos DB

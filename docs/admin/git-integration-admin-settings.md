@@ -4,7 +4,8 @@ description: Learn about what the feature switches affecting Git integration do 
 author: billmath
 ms.author: billmath
 ms.topic: how-to
-ms.date: 07/14/2026
+ms.date: 10/07/2026
+ai-usage: ai-assisted
 ---
 
 # Git integration tenant settings
@@ -62,7 +63,10 @@ To get started with Git integration, see [Manage a workspace with Git](../cicd/g
 ## Users can export items to Git repositories in other geographical locations
 
 If a workspace capacity is in one geographic location (for example, Central US) while the *Azure DevOps* repo is in another location (for example, West Europe), the Fabric admin can decide whether to allow users to commit metadata (or perform other Git actions) to another geographical location. Only the metadata of the item is exported. Item data and user related information are not exported.  
-Enable this setting to allow all users, or a specific group or users, to export metadata to other geographical locations.
+Enable this setting to allow all users, or a specific group of users, to export metadata to other geographical locations.
+
+> [!IMPORTANT]
+> Tenant settings apply to the Fabric user who performs the Git operation, not the account used to connect to the repository. If you enable this setting for specific security groups, include every Fabric user who needs this capability in an allowed group, even when a different account is used to connect the Git repository.
 
 :::image type="content" source="./media/git-integration-admin-settings/multi-geo-switch.png" alt-text="Screenshot of the multi geo switch enabled.":::
 

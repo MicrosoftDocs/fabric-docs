@@ -61,7 +61,7 @@ Before binding data to your ontology, make sure you have the following prerequis
 
 1. In the **Properties** section, add, rename, or delete properties as needed. Property names can match the source column names or be different. If you have existing properties defined on the entity type, you can select their names from the dropdown menu.
 
-    Custom property names must be 1–26 characters, contain only alphanumeric characters, hyphens, and underscores, and start and end with an alphanumeric character. Property names must be unique across all entity types.
+    Property names must be unique across all entity types.
 
 1. When you finish configuring properties, select **Create** to save the data binding. You see a banner confirming that **Entity type updated successfully**.
 

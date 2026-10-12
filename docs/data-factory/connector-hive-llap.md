@@ -35,7 +35,7 @@ You can connect dataflow Gen2 in Fabric to Hive LLAP using Power Query connector
 
 ## Prerequisites
 
-[!INCLUDE [hive-llap-prerequisites](includes/power-query/connectors/includes/hive-llap/hive-llap-prerequisites.md)]
+[!INCLUDE [hive-llap-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/hive-llap/hive-llap-prerequisites.md)]
 
 <a id="capabilities"></a>
 
@@ -43,7 +43,7 @@ You can connect dataflow Gen2 in Fabric to Hive LLAP using Power Query connector
 
 ## Supported capabilities
 
-[!INCLUDE [hive-llap-capabilities-supported](includes/power-query/connectors/includes/hive-llap/hive-llap-capabilities-supported.md)]
+[!INCLUDE [hive-llap-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/hive-llap/hive-llap-capabilities-supported.md)]
 
 ## Connection settings
 
@@ -55,7 +55,7 @@ You can connect dataflow Gen2 in Fabric to Hive LLAP using Power Query connector
 
 ### Connection instructions
 
-[!INCLUDE [hive-llap-connect-to-power-query-online](includes/power-query/connectors/includes/hive-llap/hive-llap-connect-to-power-query-online.md)]
+[!INCLUDE [hive-llap-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/hive-llap/hive-llap-connect-to-power-query-online.md)]
 
 ## Set up your connection in a pipeline
 

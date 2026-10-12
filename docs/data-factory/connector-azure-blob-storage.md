@@ -40,7 +40,7 @@ You can connect dataflow Gen2 to Azure Blobs by using Power Query connectors. Fo
 
 ## Prerequisites
 
-[!INCLUDE [azure-blob-storage-prerequisites](includes/power-query/connectors/includes/azure-blob-storage/azure-blob-storage-prerequisites.md)]
+[!INCLUDE [azure-blob-storage-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-blob-storage/prerequisites.md)]
 
 <a id="capabilities"></a>
 
@@ -48,7 +48,7 @@ You can connect dataflow Gen2 to Azure Blobs by using Power Query connectors. Fo
 
 ## Supported capabilities
 
-[!INCLUDE [azure-blob-storage-capabilities-supported](includes/power-query/connectors/includes/azure-blob-storage/azure-blob-storage-capabilities-supported.md)]
+[!INCLUDE [azure-blob-storage-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-blob-storage/capabilities-supported.md)]
 
 ## Connection settings
 
@@ -58,15 +58,13 @@ You can connect dataflow Gen2 to Azure Blobs by using Power Query connectors. Fo
 
 <a id="copy-your-account-key-for-azure-blob-storage"></a>
 
-### Copy your account key
-
-[!INCLUDE [azure-blob-storage-copy-account-key](includes/power-query/connectors/includes/azure-blob-storage/azure-blob-storage-copy-account-key.md)]
+[!INCLUDE [azure-blob-storage-copy-account-key](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-blob-storage/additional-information.md)]
 
 <a id="connect-to-azure-blob-storage"></a>
 
 ### Connection instructions
 
-[!INCLUDE [azure-blob-storage-connect-to-power-query-online](includes/power-query/connectors/includes/azure-blob-storage/azure-blob-storage-connect-to-power-query-online.md)]
+[!INCLUDE [azure-blob-storage-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-blob-storage/connect-online.md)]
 
 ## Set up your connection for a pipeline
 
@@ -181,7 +179,7 @@ To use service principal authentication, follow these steps:
 
 ## Limitations and considerations
 
-[!INCLUDE [azure-blob-storage-limitations-and-considerations](includes/power-query/connectors/includes/azure-blob-storage/limitations.md)]
+[!INCLUDE [azure-blob-storage-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-blob-storage/limitations.md)]
 
 
 ## Related content

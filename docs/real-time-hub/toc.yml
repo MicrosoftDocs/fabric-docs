@@ -221,28 +221,48 @@ items:
       href: set-alerts-azure-blob-storage-events.md
   - name: Consume Business events
     items:
-    - name: Eventhouse and Real-Time Dashboard integration
-      href: business-events/business-events-eventhouse.md
-    - name: Consume business events from Activator
-      href: business-events/consume-business-events-from-activator.md
     - name: Add business events to an eventstream
       href: add-source-business-events.md
     - name: Create eventstreams for business events in Real-Time hub
       href: create-streams-business-events.md
-  - name: Subscribe permission for Azure and Fabric events
-    href: fabric-events-subscribe-permission.md
-  - name: Tenant private links for Azure and Fabric events
-    href: private-links-real-time-events.md
-  - name: Workspace private links for Azure, Fabric, and Business events
-    href: workspace-private-links-real-time-events.md
-  - name: Outbound access protection for Azure, Fabric, and Business events
-    href: ../security/workspace-outbound-access-protection-real-time-events.md
-  - name: Paused event configurations
-    href: fabric-events-paused-state.md
-  - name: Events capacity consumption
-    href: fabric-events-capacity-consumption.md
-  - name: Events delivery guarantees
-    href: fabric-event-delivery-guarantees.md
+    - name: Eventhouse and Real-Time Dashboard integration
+      href: business-events/business-events-eventhouse.md
+    - name: Consume business events from Activator
+      href: business-events/consume-business-events-from-activator.md
+  - name: Azure, Fabric, and Business events
+    items:
+    - name: Develop
+      items:
+      - name: Overview
+        href: automate-event-consumption-rest-api-cicd.md
+      - name: Create Business events and manage data access
+        href: create-business-events-rest-api.md
+      - name: Publish Business events with APIs
+        href: publish-business-events.md
+      - name: Consume events with Eventstream REST APIs
+        href: consume-events-with-event-stream-rest-api.md
+      - name: Consume events with Activator REST APIs
+        href: consume-events-activator-rest-api.md
+      - name: Filter events
+        href: configure-event-filters-rest-api.md
+    - name: Secure
+      items:
+      - name: Subscribe permission for Azure and Fabric events
+        href: fabric-events-subscribe-permission.md
+      - name: Tenant private links for Azure and Fabric events
+        href: private-links-real-time-events.md
+      - name: Workspace private links for Azure, Fabric, and Business events
+        href: workspace-private-links-real-time-events.md
+      - name: Outbound access protection for Azure, Fabric, and Business events
+        href: ../security/workspace-outbound-access-protection-real-time-events.md
+    - name: Monitor and troubleshoot
+      items:
+      - name: Paused event configurations
+        href: fabric-events-paused-state.md
+      - name: Events capacity consumption
+        href: fabric-events-capacity-consumption.md
+      - name: Events delivery guarantees
+        href: fabric-event-delivery-guarantees.md
 - name: Register and use schemas
   items:
   - name: Schema Registry in Real-Time hub

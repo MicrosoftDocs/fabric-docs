@@ -35,7 +35,7 @@ You can connect dataflow Gen2 in Fabric to Eduframe using Power Query connectors
 
 ## Prerequisites
 
-[!INCLUDE [eduframe-prerequisites](includes/power-query/connectors/includes/eduframe/prerequisites.md)]
+[!INCLUDE [eduframe-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/eduframe/prerequisites.md)]
 
 <a id="capabilities"></a>
 
@@ -43,7 +43,7 @@ You can connect dataflow Gen2 in Fabric to Eduframe using Power Query connectors
 
 ## Supported capabilities
 
-[!INCLUDE [eduframe-capabilities-supported](includes/power-query/connectors/includes/eduframe/capabilities-supported.md)]
+[!INCLUDE [eduframe-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/eduframe/capabilities-supported.md)]
 
 ## Connection settings
 
@@ -55,7 +55,7 @@ You can connect dataflow Gen2 in Fabric to Eduframe using Power Query connectors
 
 ### Connection instructions
 
-[!INCLUDE [eduframe-connect-to-power-query-online](includes/power-query/connectors/includes/eduframe/connect-to-power-query-online.md)]
+[!INCLUDE [eduframe-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/eduframe/connect-online.md)]
 
 ## Set up your connection in a pipeline
 
@@ -63,7 +63,7 @@ Data Factory doesn't currently support Eduframe in pipelines.
 
 ## Limitations and considerations
 
-[!INCLUDE [eduframe-limitations-and-considerations](includes/power-query/connectors/includes/eduframe/limitations.md)]
+[!INCLUDE [eduframe-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/eduframe/limitations.md)]
 
 ## Related content
 

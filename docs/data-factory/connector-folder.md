@@ -38,7 +38,7 @@ You can connect dataflow Gen2 in Fabric to a folder by using Power Query connect
 
 ## Supported capabilities
 
-[!INCLUDE [folder-capabilities-supported](includes/power-query/connectors/includes/folder/folder-capabilities-supported.md)]
+[!INCLUDE [folder-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/folder/capabilities-supported.md)]
 
 ## Connection settings
 
@@ -50,7 +50,7 @@ You can connect dataflow Gen2 in Fabric to a folder by using Power Query connect
 
 ### Connection steps
 
-[!INCLUDE [folder-connect-to-power-query-online](includes/power-query/connectors/includes/folder/folder-connect-to-power-query-online.md)]
+[!INCLUDE [folder-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/folder/connect-online.md)]
 
 ## Set up your connection in Manage connections and gateways
 

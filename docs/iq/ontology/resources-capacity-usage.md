@@ -108,9 +108,9 @@ For more information, see [Eventhouse and KQL Database consumption](../../real-t
 
 Ontology AI Reasoning measures usage of the ontology MCP server and ontology agent. Consumption is based on the tokens and resources used to complete an AI task.
 
-### Variable AI capacity consumption
+### Dynamic AI capacity consumption
 
-Starting October 1, 2026, the amount of capacity consumed by an impacted AI task can vary based on the work required to complete it. For example, a request that summarizes a narrow dataset with a smaller model can consume a different amount of capacity than a request that retrieves broad business context, uses deeper reasoning, calls multiple services, generates queries, and runs longer.
+The amount of capacity consumed by an impacted AI task can vary based on the work required to complete it. For example, a request that summarizes a narrow dataset with a smaller model can consume a different amount of capacity than a request that retrieves broad business context, uses deeper reasoning, calls multiple services, generates queries, and runs longer.
 
 Capacity consumption can vary based on these factors:
 

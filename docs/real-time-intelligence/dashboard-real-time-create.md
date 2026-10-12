@@ -84,6 +84,16 @@ Select the tab that corresponds with your desired data source type.
 
     Alternatively, close the **OneLake Catalog** window and use the **+ Add data source** menu to connect to a different data source.
 
+### [Ontology](#tab/ontology)
+
+1. Open your Real-Time dashboard.
+
+1. In the upper toolbar, select **Add data source** > **Ontology**.
+
+    :::image type="content" source="media/real-time-dashboard/ontology-source.png" alt-text="Screenshot of the data source menu showing a list of optional data sources with ontology highlighted." lightbox="media/real-time-dashboard/ontology-source.png":::
+
+1. In the **OneLake Catalog** window, select an ontology item and select **Connect**.
+
 ### [Azure Data Explorer](#tab/azure-data-explorer-cluster)
 
 1. Open your Real-Time dashboard.
@@ -173,7 +183,11 @@ Describe the insight you're looking for. Start with a broad question and refine 
 
 1. In the Copilot pane, enter a description of the tile in natural language. For example, "Compare security screening lane volumes."
 
-    :::image type="content" source="media/real-time-dashboard/new-tile-copilot-response.png" alt-text="Screenshot of the copilot pane with the results displayed in a table." lightbox="media/real-time-dashboard/new-tile-copilot-response.png":::
+    :::image type="content" source="media/real-time-dashboard/new-tile-copilot-response.png" alt-text="Screenshot of entering a tile description for copilot." lightbox="media/real-time-dashboard/new-tile-copilot-response.png":::
+
+    If you have ontology added as a data source, you see the ontology entity types in the left pane. They provide context about the ontology structure during tile editing.
+
+    :::image type="content" source="media/real-time-dashboard/ontology-tile.png" alt-text="Screenshot of the entity types visible in the left pane while entering a tile description for copilot." lightbox="media/real-time-dashboard/ontology-tile.png":::
 
 1. View the result. Refine the result by asking Copilot a follow-up request. In this example, ask Copilot to "Create a time chart comparing the top 5 security screening lanes."
 
@@ -199,7 +213,7 @@ In the tile editing pane, you can manually create or edit the KQL query and visu
 
 1. Select the visual type you want to create from the dashboard canvas or **New visual** from the top menu bar.
 
-   :::image type="content" source="media/real-time-dashboard/add-tile-button.png" alt-text="Screenshot showing the selection of the Add tile button." lightbox="media/real-time-dashboard/add-tile-button.png"::::::
+   :::image type="content" source="media/real-time-dashboard/add-tile-button.png" alt-text="Screenshot showing the selection of the Add tile button." lightbox="media/real-time-dashboard/add-tile-button.png":::
 
 1. To edit an existing tile, select the pencil icon or open the tile options and select **Edit**.
 

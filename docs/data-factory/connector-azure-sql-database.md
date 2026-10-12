@@ -37,7 +37,7 @@ You can connect dataflow Gen2 to Azure SQL Database from Fabric using Power Quer
 
 ## Prerequisites
 
-[!INCLUDE [azure-sql-database-prerequisites](includes/power-query/connectors/includes/azure-sql-database/azure-sql-database-prerequisites.md)]
+[!INCLUDE [azure-sql-database-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-sql-database/prerequisites.md)]
 
 <a id="capabilities"></a>
 
@@ -45,7 +45,7 @@ You can connect dataflow Gen2 to Azure SQL Database from Fabric using Power Quer
 
 ## Supported capabilities
 
-[!INCLUDE [azure-sql-database-ccapabilities-supported](includes/power-query/connectors/includes/azure-sql-database/azure-sql-database-capabilities-supported.md)]
+[!INCLUDE [azure-sql-database-ccapabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-sql-database/capabilities-supported.md)]
 
 ## Connection settings
 
@@ -57,7 +57,7 @@ You can connect dataflow Gen2 to Azure SQL Database from Fabric using Power Quer
 
 ### Connection instructions
 
-[!INCLUDE [azure-sql-database-connect-to-power-query-online](includes/power-query/connectors/includes/azure-sql-database/azure-sql-database-connect-to-power-query-online.md)]
+[!INCLUDE [azure-sql-database-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-sql-database/connect-online.md)]
 
 ## Set up your connection for a pipeline
 

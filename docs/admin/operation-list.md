@@ -134,6 +134,7 @@ To audit OneLake data access and storage operations, use [OneLake diagnostics](.
 | Create subfolder | :::no-loc text="CreateSubfolder"::: |   |
 | Create task flow | :::no-loc text="CreateTaskFlow"::: |   |
 | Create virtual network data   gateway proxy | :::no-loc text="CreateVirtualNetworkDataGatewayProxy"::: | Create HTTP proxy for virtual network data gateway |
+| Created Artifact Definition | :::no-loc text="CreatedArtifactDefinition"::: | OneLake operation. Generated when a Fabric External Sources artifact definition is created (shared across item types such as MirroredStorage and AWS Databricks Catalog). |
 | Created AWS Databricks Catalog | :::no-loc text="CreatedAWSDatabricksCatalog"::: | OneLake operation. Generated when a Fabric AWS Databricks Catalog item is created, capturing the bound AWS Databricks workspace ConnectionId and the initial MirroredScope (catalogs/schemas/tables selected for mirroring). |
 | Created MirroredStorage | :::no-loc text="CreatedMirroredStorage"::: | OneLake operation. Generated when a user or service principal creates a Fabric MirroredStorage item, linking an external storage source to a workspace as OneLake shortcuts. |
 | Created Power BI app | :::no-loc text="CreateApp"::: |   |
@@ -700,6 +701,7 @@ To audit OneLake data access and storage operations, use [OneLake diagnostics](.
 | Update the current set of DLP policies applied on the Tenant | :::no-loc text="UpdateTenantDlpPolicies"::: | Update the current set of DLP policies applied on the Tenant |
 | Update virtual network data   gateway proxy | :::no-loc text="UpdateVirtualNetworkDataGatewayProxy"::: | Update HTTP proxy for virtual network data gateway |
 | Update workspace role | :::no-loc text="UpdateWorkspaceRoleViaAdminApi"::: | Update workspace role |
+| Updated Artifact Definition | :::no-loc text="UpdatedArtifactDefinition"::: | OneLake operation. Generated when a Fabric External Sources artifact definition is updated via the update-item-definition API (shared across item types such as MirroredStorage and AWS Databricks Catalog). |
 | Updated AWS Databricks Catalog Definition | :::no-loc text="UpdatedAWSDatabricksCatalogDefinition"::: | OneLake operation. Generated when the item's Databricks workspace connection or mirrored scope (catalogs/schemas/tables) is updated via the update-item-definition API. |
 | Updated MirroredStorage definition | :::no-loc text="UpdatedMirroredStorageDefinition"::: | OneLake operation. Generated when a user or service principal modifies the mirroring scope of an existing MirroredStorage item, changing which external paths are exposed in OneLake. |
 | Updated Power BI access request settings | :::no-loc text="UpdateAccessRequestSettings"::: |  |

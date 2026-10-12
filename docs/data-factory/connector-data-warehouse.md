@@ -33,7 +33,7 @@ You can connect dataflow Gen2 to a warehouse by using Power Query connectors. Fo
 
 ## Prerequisites
 
-[!INCLUDE [warehouse-prerequisites](includes/power-query/connectors/includes/warehouse/warehouse-prerequisites.md)]
+[!INCLUDE [warehouse-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/warehouse/prerequisites.md)]
 
 <a id="capabilities"></a>
 
@@ -41,7 +41,7 @@ You can connect dataflow Gen2 to a warehouse by using Power Query connectors. Fo
 
 ## Supported capabilities
 
-[!INCLUDE [warehouse-ccapabilities-supported](includes/power-query/connectors/includes/warehouse/warehouse-capabilities-supported.md)]
+[!INCLUDE [warehouse-ccapabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/warehouse/capabilities-supported.md)]
 
 ## Connection settings
 
@@ -53,7 +53,7 @@ You can connect dataflow Gen2 to a warehouse by using Power Query connectors. Fo
 
 ### Connection instructions
 
-[!INCLUDE [warehouse-connect-to-power-query-online](includes/power-query/connectors/includes/warehouse/warehouse-connect-to-power-query-online.md)]
+[!INCLUDE [warehouse-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/warehouse/connect-online.md)]
 
 ### Using relative references
 

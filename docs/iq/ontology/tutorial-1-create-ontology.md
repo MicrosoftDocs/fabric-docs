@@ -19,9 +19,6 @@ In this step of the tutorial, you create a new ontology (preview) item that repr
 
 1. In the **New Ontology** dialog, enter a **Name** of *LakeshoreOntology*. Set the **Location** to your workspace. Select **Create**.
 
-    >[!TIP]
-    > Ontology names must be under 90 characters, begin with a letter, and include only numbers, letters, and underscores. Don't use spaces or dashes.
-
 The ontology opens when it's ready.
 
 :::image type="content" source="media/tutorial-1-create-ontology/ontology-blank.png" alt-text="Screenshot of empty ontology in Fabric item." lightbox="media/tutorial-1-create-ontology/ontology-blank.png":::

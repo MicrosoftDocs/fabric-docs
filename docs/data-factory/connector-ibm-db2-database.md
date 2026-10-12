@@ -35,7 +35,7 @@ You can connect dataflow Gen2 in Fabric to an IBM Db2 database by using Power Qu
 
 ## Prerequisites
 
-[!INCLUDE [ibm-db2-database-prerequisites](includes/power-query/connectors/includes/ibm-db2-database/ibm-db2-database-prerequisites.md)]
+[!INCLUDE [ibm-db2-database-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/ibm-db2-database/prerequisites.md)]
 
 <a id="capabilities"></a>
 
@@ -43,7 +43,7 @@ You can connect dataflow Gen2 in Fabric to an IBM Db2 database by using Power Qu
 
 ## Supported capabilities
 
-[!INCLUDE [ibm-db2-database-capabilities-supported](includes/power-query/connectors/includes/ibm-db2-database/ibm-db2-database-capabilities-supported.md)]
+[!INCLUDE [ibm-db2-database-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/ibm-db2-database/capabilities-supported.md)]
 
 ## Connection settings
 
@@ -55,11 +55,11 @@ You can connect dataflow Gen2 in Fabric to an IBM Db2 database by using Power Qu
 
 ### Connection instructions
 
-[!INCLUDE [ibm-db2-database-connect-to-power-query-online](includes/power-query/connectors/includes/ibm-db2-database/ibm-db2-database-connect-to-power-query-online.md)]
+[!INCLUDE [ibm-db2-database-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/ibm-db2-database/connect-online.md)]
 
 ## Limitations and considerations
 
-[!INCLUDE [ibm-db2-database-limitations-and-considerations](includes/power-query/connectors/includes/ibm-db2-database/limitations.md)]
+[!INCLUDE [ibm-db2-database-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/ibm-db2-database/limitations.md)]
 
 ## Related content
 

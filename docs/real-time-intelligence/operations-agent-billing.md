@@ -28,6 +28,9 @@ The following sections cover dedicated operations, usage categories, and the pau
 
 - **OneLake storage** refers to the cost associated with retaining Fabric items and events. Data monitored by the agent is stored within Fabric for 30 days, incurring the applicable OneLake storage charges, which are billed per GB per hour.
 
+>[!NOTE]
+> Billing is not currently enabled for [observability investigation](operations-agent/fabric-observability-investigation-overview.md).
+
 ### Usage categories
 
 Operations agent consumes capacity based on the following factors:

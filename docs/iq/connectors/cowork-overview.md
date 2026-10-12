@@ -1,18 +1,18 @@
 ---
-title: Fabric IQ in Microsoft 365 Copilot Cowork
-description: Learn how the Fabric IQ plugin brings Microsoft Fabric and Power BI data into Microsoft 365 Copilot Cowork, including supported scenarios, limitations, and tenant prerequisites.
-ms.date: 09/15/2026
+title: Fabric IQ in Copilot Cowork
+description: Learn how the Fabric IQ plugin brings Microsoft Fabric and Power BI data into Copilot Cowork, including supported scenarios, limitations, and tenant prerequisites.
+ms.date: 10/8/2026
 ms.topic: concept-article
 ai-usage: ai-assisted
-#customer intent: As a Fabric or Power BI user, I want to understand what the Fabric IQ plugin in Microsoft 365 Copilot Cowork does so I can use Power BI and Fabric data inside Cowork chats.
+#customer intent: As a Fabric or Power BI user, I want to understand what the Fabric IQ plugin in Copilot Cowork does so I can use Power BI and Fabric data inside Cowork chats.
 ---
 
-# Fabric IQ in Microsoft 365 Copilot Cowork
+# Fabric IQ in Copilot Cowork
 
-The **Fabric IQ** plugin connects [Microsoft 365 Copilot Cowork](/microsoft-365/copilot/cowork/get-started) to your Microsoft Fabric and Power BI data. When you enable the plugin, a Power BI report isn't the end of a workflow - it's the starting point. You can ground a Cowork chat in trusted business data, then chain that data into the other Cowork skills you already use, like drafting emails, creating documents, or scheduling reviews, without leaving the conversation.
+The **Fabric IQ** plugin connects [Copilot Cowork](/microsoft-365/copilot/cowork/get-started) to your Microsoft Fabric and Power BI data. When you enable the plugin, a Power BI report isn't the end of a workflow - it's the starting point. You can ground a Cowork chat in trusted business data, then chain that data into the other Cowork skills you already use, like drafting emails, creating documents, or scheduling reviews, without leaving the conversation.
 
 > [!IMPORTANT]
-> The Fabric IQ plugin in Microsoft 365 Copilot Cowork is a generally available (GA) feature of Microsoft Fabric.
+> The Fabric IQ plugin in Copilot Cowork is a generally available (GA) feature of Microsoft Fabric.
 
 [Fabric IQ](../overview.md) is the Microsoft Fabric workload that gives analytics, AI agents, and apps a consistent business vocabulary on top of unified OneLake data. The Cowork plugin brings that experience into the everyday flow of Microsoft 365 work, starting with Power BI reports and semantic models.
 
@@ -96,7 +96,7 @@ The plugin doesn't currently support grounding on:
 > [!IMPORTANT]
 > Cowork doesn't include citations back to the source Power BI report or semantic model in its data answers today. If you plan to share a number from a Cowork response in an email, document, or meeting, open the source report yourself to confirm the value before you act on it.
 
-- **Data loss prevention:** Data loss prevention (DLP) isn't currently supported in Cowork. Review [Microsoft Purview support for Microsoft 365 Copilot Cowork](/purview/ai-copilot-cowork) for the current list of supported data security and compliance capabilities.
+- **Data loss prevention:** Data loss prevention (DLP) isn't currently supported in Cowork. Review [Microsoft Purview support for Copilot Cowork](/purview/ai-copilot-cowork) for the current list of supported data security and compliance capabilities.
 
 <!-- TODO_REVIEWER: Confirm whether the "tenant admin can't disable the plugin today" limitation should be called out here for customers, or whether it should stay internal until the admin control ships. Removed from public copy for now. -->
 
@@ -116,7 +116,7 @@ Two tenant settings affect this feature: one in the Microsoft 365 admin center a
 
 To use the Fabric IQ plugin in Cowork:
 
-- You can access Microsoft 365 Copilot Cowork. Cowork uses a usage-based (consumption) billing model, so your organization must have the required Microsoft 365 Copilot licensing and usage-based Cowork billing enabled for your account. For the current licensing and billing requirements, see [Get started with Copilot Cowork](/microsoft-365/copilot/cowork/get-started).
+- You can access Copilot Cowork. Cowork uses a usage-based (consumption) billing model, so your organization must have the required Microsoft 365 Copilot licensing and usage-based Cowork billing enabled for your account. For the current licensing and billing requirements, see [Get started with Copilot Cowork](/microsoft-365/copilot/cowork/get-started).
 - You have at least **Read** permission on the Power BI reports and underlying semantic models you want to ask about, in your home Fabric tenant.
 
 No additional Fabric capacity, F SKU, or Power BI Premium per user (PPU) license is required for the Fabric IQ plugin itself, beyond what your Power BI content already requires.

@@ -2,7 +2,7 @@
 title: Enable performance monitoring for Microsoft SQL (preview)
 description: Learn how to enable and disable performance monitoring for Microsoft SQL services so that performance data appears in the Database Hub.
 ms.reviewer: amapatil, lancewright
-ms.date: 10/01/2026
+ms.date: 10/05/2026
 ms.topic: how-to
 ms.custom: references_regions
 ai-usage: ai-assisted
@@ -13,7 +13,7 @@ This article explains how to enable and disable performance monitoring for Micro
 
 [!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
 
-The steps to turn on performance monitoring differ by service. After you turn on monitoring, every service sends performance data to the same telemetry pipeline. The Database Hub uses this data to help identify performance issues and create dashboards. You can also query the telemetry directly with KQL. For more information, see [Query performance monitoring telemetry](query-performance-monitoring-telemetry.md). This article covers the following services:
+The steps to turn on performance monitoring differ by service. After you turn on monitoring, every service sends performance data to the same telemetry pipeline. The Database Hub uses this data to help identify performance issues and create dashboards. You can also query the telemetry directly with KQL. For more information, see [Query performance monitoring telemetry](microsoft-sql-query-performance-monitoring-telemetry.md). This article covers the following services:
 
 - [Azure SQL Database](#enable-performance-monitoring-for-azure-sql-database)
 - [SQL Server on Azure VMs](#enable-performance-monitoring-for-sql-server-on-azure-vms)
@@ -79,18 +79,20 @@ Performance monitoring is available for Microsoft SQL resources in the following
 
 Performance monitoring collects performance data from dynamic management views (DMVs) on your SQL resources. Performance monitoring doesn't collect any personal data or customer content, and the data isn't stored at rest outside the geography of the monitored SQL resource.
 
-## Register the Azure resource provider
+<a id="register-the-azure-resource-provider"></a>
 
-To view performance monitoring data, register the `Microsoft.AzureArcData` resource provider in each subscription that contains database resources you want to monitor. For more information, see [az provider register](/cli/azure/provider#az-provider-register).
+## Register the SQL resource provider
+
+To view performance monitoring data, register the `Microsoft.Sql` resource provider in each subscription that contains database resources you want to monitor. For more information, see [az provider register](/cli/azure/provider#az-provider-register).
 
 ```azurecli
-az provider register --namespace Microsoft.AzureArcData
+az provider register --namespace Microsoft.Sql
 ```
 
 To check the registration state, run the following command. Registration is complete when the command returns `Registered`.
 
 ```azurecli
-az provider show --namespace Microsoft.AzureArcData --query "registrationState" --output tsv
+az provider show --namespace Microsoft.Sql --query "registrationState" --output tsv
 ```
 
 ## Enable performance monitoring for Azure SQL Database
@@ -138,7 +140,7 @@ For verification, troubleshooting, and the full list of collected datasets, see 
 - You must install the [SQL IaaS Agent extension](/azure/azure-sql/virtual-machines/windows/sql-server-iaas-agent-extension-automate-management?view=azuresql-vm&preserve-view=true) version `2.0.229.0` or later in full management mode. You must enable the extension, and its provisioning state must be **Succeeded**.
 - The VM must have a [system-assigned managed identity](/entra/identity/managed-identities-azure-resources/how-to-configure-managed-identities#enable-system-assigned-managed-identity-on-an-existing-vm) enabled.
 - The SQL Server instance resource must be available through [unified inventory](/azure/azure-sql/virtual-machines/windows/unified-inventory-sql-vm?view=azuresql-vm&preserve-view=true).
-- You must [register](#register-the-azure-resource-provider) the `Microsoft.AzureArcData` resource provider for the subscription.
+- You must [register](#register-the-sql-resource-provider) the `Microsoft.Sql` resource provider for the subscription.
 - The VM must allow outbound HTTPS connectivity on port `443` to `telemetry.<region>.arcdataservices.com`, where `<region>` is the Azure region that hosts the VM.
 - You need the latest version of the [Azure CLI](/cli/azure/install-azure-cli).
 - You need permission to view and update extensions on the VM, such as membership in the [Virtual Machine Contributor](/azure/role-based-access-control/built-in-roles/compute#virtual-machine-contributor) role.
@@ -244,7 +246,7 @@ az vm extension show `
   --output tsv
 ```
 
-When performance monitoring is running and uploading data successfully, the status includes `DatabaseMonitorArcPlugin: {"State":"Running","MetricsUploadStatus":"OK"}`. To confirm that the data is available, run the connection test query in [Query performance monitoring telemetry](query-performance-monitoring-telemetry.md#connect-to-the-telemetry).
+When performance monitoring is running and uploading data successfully, the status includes `DatabaseMonitorArcPlugin: {"State":"Running","MetricsUploadStatus":"OK"}`. To confirm that the data is available, run the connection test query in [Query performance monitoring telemetry](microsoft-sql-query-performance-monitoring-telemetry.md#connect-to-the-telemetry).
 
 ### Disable performance monitoring for SQL Server on Azure VMs
 
@@ -331,7 +333,7 @@ az resource update --ids "/subscriptions/<sub_id>/resourceGroups/<resource_group
 ## Related content
 
 - [What is the Database Hub?](overview.md)
-- [Query performance monitoring telemetry (preview)](query-performance-monitoring-telemetry.md)
+- [Query performance monitoring telemetry (preview)](microsoft-sql-query-performance-monitoring-telemetry.md)
 - [Enable performance monitoring for SQL Server on Azure VMs](/azure/azure-sql/virtual-machines/windows/enable-performance-monitoring-sql-vm?view=azuresql-vm&preserve-view=true)
 - [Monitor SQL Server enabled by Azure Arc](/sql/sql-server/azure-arc/sql-monitoring?view=sql-server-ver17&preserve-view=true)
 - [SQL Server enabled by Azure Arc](/sql/sql-server/azure-arc/overview)

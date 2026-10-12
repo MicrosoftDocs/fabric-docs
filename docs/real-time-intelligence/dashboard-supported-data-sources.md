@@ -20,6 +20,12 @@ This article describes each data source supported by Real-Time Dashboard.
 
 To connect, select **Add data source** > **KQL Database** in your dashboard, and then choose a KQL database from the **OneLake Catalog**. For step-by-step instructions, see [Add data source](dashboard-real-time-create.md#add-data-source).
 
+## Ontology
+
+[Ontology](../iq/ontology/overview.md) is an item in Fabric IQ that lets you define entity types, relationships, properties, and other constraints to organize data according to your business vocabulary. Entity types are bound to real data, enabling downstream tools to share the same language. Both humans and AI agents can use this language for cross-domain reasoning and decision-ready actions.
+
+To connect, select **Add data source** > **Ontology**, select your ontology item, and select **Connect**. For step-by-step instructions, see [Add data source](dashboard-real-time-create.md#add-data-source).
+
 ## Azure Data Explorer
 
 [Azure Data Explorer](/azure/data-explorer/data-explorer-overview) is a fast and highly scalable data exploration service for log and telemetry data. Use it to query and analyze large volumes of data in near real time, such as application logs, security events, or IoT telemetry stored outside Fabric.

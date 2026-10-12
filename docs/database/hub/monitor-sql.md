@@ -2,7 +2,7 @@
 title: Monitor a Microsoft SQL Database in the Database Hub (Preview)
 description: Learn how to monitor a Microsoft SQL database in the Database Hub in Microsoft Fabric.
 ms.reviewer: amapatil
-ms.date: 09/22/2026
+ms.date: 10/05/2026
 ms.topic: how-to
 ai-usage: ai-assisted
 ---
@@ -30,10 +30,10 @@ Your SQL databases remain in their existing subscriptions, resource groups, and 
 ## Prerequisites
 
 - In the current preview, ask a Fabric administrator to opt your tenant into the Database Hub preview experience in the Fabric admin portal. In **Tenant settings**, enable **Users can access the Database hub (preview)**.
-- Start with the free experience by signing in with your work or school account. You can enter from the Azure portal or directly from Microsoft Fabric, even if you haven't used Fabric before. Database Hub uses your existing Microsoft Entra ID and Azure RBAC permissions rather than a separate permission model, so the access you assign here follows [standard Azure role-assignment steps](/azure/role-based-access-control/role-assignments-portal).
+- Start with the free experience by signing in with your work or school account. You can enter from the Azure portal or directly from Microsoft Fabric, even if you didn't use Fabric before. Database Hub uses your existing Microsoft Entra ID and Azure RBAC permissions rather than a separate permission model, so the access you assign here follows [standard Azure role-assignment steps](/azure/role-based-access-control/role-assignments-portal).
     - For discovery and monitoring, your identity needs permission to read the relevant Azure resource metadata and Azure Monitor metrics.
     - For discovery and monitoring, your identity needs to be a member of the **Reader** role, or a role with greater permissions, on each subscription that contains the resources you want to monitor.
-- To view performance monitoring data for Microsoft SQL resources in the Database Hub, you need to [register the Azure resource provider](add-sql.md#register-the-azure-resource-provider) and [enable performance monitoring for each service](add-sql.md).
+- To view performance monitoring data for Microsoft SQL resources in the Database Hub, you need to [register the SQL resource provider](add-sql.md#register-the-azure-resource-provider) and [enable performance monitoring for each service](add-sql.md).
     - In the current preview, the **Performance** tab supports Azure SQL Database (all service tiers), SQL Server on Azure VMs, and SQL Server enabled by Azure Arc.
         - The **Performance** tab doesn't currently support Azure SQL Managed Instance or SQL database in Fabric.
 - To appear in the Database Hub, SQL Server instances in Azure VMs must have the [Windows SQL Server IaaS Agent extension](/azure/azure-sql/virtual-machines/windows/sql-server-iaas-agent-extension-automate-management?view=azuresql-vm&preserve-view=true) installed.
@@ -132,7 +132,7 @@ Currently, Database Hub evaluates the following Microsoft SQL platform security 
 | **Issue** | **What to check** |
 |----|----|
 | Expected databases are missing | Confirm subscription access, your Azure RBAC, supported resource type, and resource provider registration. Verify that you have [registered an Azure resource provider in each subscription](add-sql.md#register-the-azure-resource-provider).|
-| Performance data is missing | Confirm **Reader** access, `Microsoft.AzureArcData` registration, and that [performance monitoring is enabled](add-sql.md) for the resource. |
+| Performance data is missing | Confirm **Reader** access, `Microsoft.Sql` registration, and that [performance monitoring is enabled](add-sql.md) for the resource. |
 | A warning doesn't clear | Confirm the native change completed successfully, allow time for signal refresh, and refresh **Database Hub**. |
 | **Open in SSMS** opens without full context | Copy the issue summary and evidence into SSMS manually and continue with the authorized diagnostic workflow. |
 | Recommendation conflicts with evidence | Don't apply the change. Recheck the scoped resource, time range, captured evidence, and approval path. |

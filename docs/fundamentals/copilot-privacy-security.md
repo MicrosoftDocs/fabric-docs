@@ -24,8 +24,8 @@ This article provides answers to common questions related to business data secur
 
 ### Business data is secure
 
-- Copilot features use [Azure OpenAI Service](/azure/ai-services/openai/overview), which is fully controlled by Microsoft. Your data isn't used to train models and isn't available to other customers.
-- You retain control over where your data is processed. Data processed by Copilot in Fabric stays within your capacity's geographic region, unless you explicitly allow data to be processed outside your region—for example, to let your users use Copilot when Azure OpenAI isn't available in your region or availability is limited due to high demand. Learn more about [admin settings for Copilot](../admin/service-admin-portal-copilot.md).
+- By default, Copilot features use [Azure OpenAI Service](/azure/ai-services/openai/overview), which is fully controlled by Microsoft. If your admin opts in to the [OpenAI as a Microsoft Subprocessor](../admin/service-admin-portal-copilot.md#copilot-with-openai-subprocessor) tenant setting, designated capacities can use OpenAI as a Microsoft subprocessor instead. Your data isn't used to train models and isn't available to other customers.
+- You retain control over where your data is processed. Data processed by Copilot in Fabric stays within your capacity's geographic region, unless you explicitly allow data to be processed outside your region—for example, to let your users use Copilot when the underlying AI service isn't available in your region or availability is limited due to high demand. Learn more about [admin settings for Copilot](../admin/service-admin-portal-copilot.md).
 - Copilot doesn't store your data for abuse monitoring. To enhance privacy and trust, we've updated our approach to abuse monitoring: previously, we retained data from Copilot in Fabric, containing prompt inputs and outputs, for up to 30 days to check for abuse or misuse. Following customer feedback, we've eliminated this 30-day retention. Now, we no longer store prompt related data, demonstrating our unwavering commitment to your privacy and security.
 
 ### Check Copilot outputs
@@ -39,7 +39,7 @@ This article provides answers to common questions related to business data secur
 
 ## How Copilot works
 
-In this article, *Copilot* refers to a range of generative AI features and capabilities in Fabric that are powered by Azure OpenAI Service.
+In this article, *Copilot* refers to a range of generative AI features and capabilities in Fabric that are powered by Azure OpenAI Service (or, if your admin opts in, OpenAI as a Microsoft subprocessor).
 
 In general, these features are designed to generate natural language, code, or other content based on:
 
@@ -49,7 +49,7 @@ In general, these features are designed to generate natural language, code, or o
 
 For example, Power BI, Data Factory, and data science offer Copilot chats where you can ask questions and get responses that are contextualized on your data. Copilot for Power BI can also create reports and other visualizations. Copilot for Data Factory can transform your data and explain what steps it has applied. Data science offers Copilot features outside of the chat pane, such as custom IPython magic commands in notebooks. Copilot chats might be added to other experiences in Fabric, along with other features that are powered by Azure OpenAI under the hood.
 
-This information is sent to Azure OpenAI Service, where it's processed and an output is generated. Therefore, data processed by Azure OpenAI can include:
+This information is sent to the AI service that powers Copilot (Azure OpenAI Service by default), where it's processed and an output is generated. Therefore, data processed by the service can include:
 
 - The user's [prompt or input](#prompt-or-input).
 - [Grounding data](#grounding).
@@ -59,7 +59,7 @@ Grounding data might include a combination of dataset schema, specific data poin
 
 Interactions with Copilot are specific to each user. This means that Copilot can only access data that the current user has permission to access, and its outputs are only visible to that user unless that user shares the output with others, such as sharing a generated Power BI report or generated code. Copilot doesn't use data from other users in the same tenant or other tenants.
 
-Copilot uses Azure OpenAI—not the publicly available OpenAI services—to process all data, including user inputs, grounding data, and Copilot outputs. Copilot currently uses a combination of GPT models, including GPT 3.5. Microsoft hosts the OpenAI models in the Microsoft Azure environment, and the Service doesn't interact with any services by OpenAI, such as ChatGPT or the OpenAI API. Your data isn't used to train models and isn't available to other customers. Learn more about [Azure OpenAI](/azure/ai-services/openai/overview).
+By default, Copilot uses Azure OpenAI—not the publicly available OpenAI services—to process all data, including user inputs, grounding data, and Copilot outputs. If your Fabric administrator opts in to the [OpenAI as a Microsoft Subprocessor](../admin/service-admin-portal-copilot.md#copilot-with-openai-subprocessor) tenant setting, designated capacities can instead use OpenAI as a Microsoft subprocessor. Unless your admin opts in to the subprocessor setting, Microsoft hosts the OpenAI models in the Microsoft Azure environment, and the service doesn't interact with any services by OpenAI, such as the OpenAI API. Your data isn't used to train models and isn't available to other customers. Learn more about [Azure OpenAI](/azure/ai-services/openai/overview).
 
 ## Review the Copilot process
 
@@ -94,7 +94,7 @@ To generate a response, Copilot uses:
 - The user's prompt or input and, when appropriate,
 - Additional data that is retrieved through the grounding process.
 
-This information is sent to Azure OpenAI Service, where it's processed and an output is generated. Therefore, data processed by Azure OpenAI can include:
+This information is sent to the AI service that powers Copilot (Azure OpenAI Service by default), where it's processed and an output is generated. Therefore, data processed by the service can include:
 
 - The user's prompt or input.
 - Grounding data.
@@ -104,7 +104,7 @@ Grounding data might include a combination of dataset schema, specific data poin
 
 Interactions with Copilot are specific to each user. This means that Copilot can only access data that the current user has permission to access, and its outputs are only visible to that user unless that user shares the output with others, such as sharing a generated Power BI report or generated code. Copilot doesn't use data from other users in the same tenant or other tenants.
 
-Copilot uses Azure OpenAI—not OpenAI's publicly available services—to process all data, including user inputs, grounding data, and Copilot outputs. Copilot currently uses a combination of GPT models, including GPT 3.5. Microsoft hosts the OpenAI models in Microsoft's Azure environment and the Service doesn't interact with any services by OpenAI (for example, ChatGPT or the OpenAI API). Your data isn't used to train models and isn't available to other customers. Learn more about [Azure OpenAI](/azure/ai-services/openai/overview).
+By default, Copilot uses Azure OpenAI—not OpenAI's publicly available services—to process all data, including user inputs, grounding data, and Copilot outputs. If your Fabric administrator opts in to the [OpenAI as a Microsoft Subprocessor](../admin/service-admin-portal-copilot.md#copilot-with-openai-subprocessor) tenant setting, designated capacities can instead use OpenAI as a Microsoft subprocessor. Unless your admin opts in, Microsoft hosts the OpenAI models in Microsoft's Azure environment and the service doesn't interact with any services by OpenAI (such as the OpenAI API). Your data isn't used to train models and isn't available to other customers. Learn more about [Azure OpenAI](/azure/ai-services/openai/overview).
 
 ### Abuse monitoring of prompts
 
@@ -112,9 +112,9 @@ Copilot and AI experiences in Fabric are currently **not** onboarded to any auto
 
 ### Data residency and compliance
 
-*You retain control over where your data is processed.* Data processed by Copilot in Fabric stays within your capacity's geographic region, unless you explicitly allow data to be processed outside your region—for example, to let your users use Copilot when Azure OpenAI isn't available in your region or availability is limited due to high demand. (See [where Azure OpenAI is currently available.](/azure/ai-services/openai/concepts/models#model-summary-table-and-region-availability))
+*You retain control over where your data is processed.* Data processed by Copilot in Fabric stays within your capacity's geographic region, unless you explicitly allow data to be processed outside your region—for example, to let your users use Copilot when the underlying AI service isn't available in your region or availability is limited due to high demand. (See [where Azure OpenAI is currently available.](/azure/ai-services/openai/concepts/models#model-summary-table-and-region-availability))
 
-To allow data to be processed elsewhere, your admin can turn on the setting **Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance**. Learn more about [admin settings for Copilot](../admin/service-admin-portal-copilot.md).
+To allow data to be processed elsewhere, your admin can turn on the setting **Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance**. If you opted in to OpenAI as a Microsoft subprocessor, the equivalent setting is **Data sent to OpenAI as a Microsoft Subprocessor can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance**. Learn more about [admin settings for Copilot](../admin/service-admin-portal-copilot.md).
 
 ## What should I know to use Copilot responsibly?
 

@@ -208,7 +208,11 @@ items:
               - name: Insert column - Person
                 href: plan/planning-how-to-insert-columns/how-to-insert-person-columns.md
               - name: Insert column - List
-                href: plan/planning-how-to-insert-columns/how-to-insert-dropdown-columns.md
+                items:
+                  - name: Insert dropdown list columns in planning sheet
+                    href: plan/planning-how-to-insert-columns/how-to-insert-dropdown-columns.md
+                  - name: Add dropdown options from semantic models
+                    href: plan/planning-how-to-insert-columns/how-to-add-dropdown-options-from-semantic-models.md
               - name: Insert column - Date
                 href: plan/planning-how-to-insert-columns/how-to-insert-date-columns.md
               - name: Insert column - Simulation
@@ -548,7 +552,13 @@ items:
             - name: Calendar
               href: plan/powertable-layouts/how-to-configure-calendar-layout.md
             - name: Kanban
-              href: plan/powertable-layouts/how-to-configure-kanban-layout.md
+              items:
+                - name: Configure Kanban layout
+                  href: plan/powertable-layouts/how-to-configure-kanban-layout.md
+                - name: Add and manage tasks
+                  href: plan/powertable-layouts/how-to-add-manage-kanban-tasks.md
+                - name: Customize Kanban layout
+                  href: plan/powertable-layouts/how-to-customize-kanban-layout.md
         - name: Apply conditional formatting
           href: plan/powertable-how-to-apply-conditional-formatting.md
         - name: Comment and collaborate
