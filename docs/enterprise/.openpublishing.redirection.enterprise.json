@@ -1,6 +1,11 @@
 {
     "redirections": [
         {
+            "source_path_from_root": "/docs/enterprise/metrics-app-preview-user-journeys.md",
+            "redirect_url": "/fabric/enterprise/metrics-app-monitor-capacity-throttling",
+            "redirect_document_id": false
+        },
+        {
             "source_path_from_root": "/docs/enterprise/service-interruption-notifications.md",
             "redirect_url": "/fabric/admin/service-interruption-notifications",
             "redirect_document_id": false

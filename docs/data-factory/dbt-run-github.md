@@ -100,6 +100,8 @@ Use the logs to verify the run and troubleshoot any failures.
 ## Known limitations
 
 - Currently, dbt projects connected through GitHub can't be authored or modified in the Fabric UI. Fabric only supports running dbt commands.
+- The `dbt_project.yml` file must be in the root directory of the GitHub repository. Fabric doesn't currently support dbt projects located in a subdirectory.
+- Only classic GitHub personal access tokens (PATs) are currently supported for connecting to a GitHub repository.
 
 ## Related content
 
