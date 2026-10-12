@@ -65,35 +65,45 @@ items:
       href: enable-capacity-overage.md
   - name: Metrics app
     items:
-    - name: What is the Microsoft Fabric Capacity Metrics app?
+    - name: Fabric Capacity Metrics app overview
       href: metrics-app.md
-    - name: Install the Microsoft Fabric Capacity Metrics app
+    - name: Install the Fabric Capacity Metrics app
       href: metrics-app-install.md
-    - name: Understand the Health page
+    - name: Health page
       href: metrics-app-health-page.md
-    - name: Understand the Compute page
+    - name: Health page (preview)
+      href: metrics-app-preview-health-page.md
+    - name: Compute page
       href: metrics-app-compute-page.md
-    - name: Understand the Storage page
+    - name: Compute page (preview)
+      href: metrics-app-preview-compute-page.md
+    - name: Storage page
       href: metrics-app-storage-page.md
-    - name: Understand the Workspace Blocked Details page
+    - name: Storage page (preview)
+      href: metrics-app-preview-storage-page.md
+    - name: Workspace Blocked Details page
       href: metrics-app-workspace-blocked-details.md
-    - name: Understand the Timepoint page
+    - name: Timepoint page
       href: metrics-app-timepoint-page.md
-    - name: Understand the Timepoint summary page
+    - name: Timepoint summary page
       href: metrics-app-timepoint-summary-page.md
-    - name: Understand the Timepoint item detail page
+    - name: Timepoint item detail page
       href: metrics-app-timepoint-item-detail-page.md
-    - name: Understand the Autoscale compute for Spark page
+    - name: Autoscale compute for Spark page
       href: metrics-app-feature-autoscale-page.md
-    - name: Understand the Autoscale compute for Spark detail page
+    - name: Autoscale compute for Spark detail page
       href: metrics-app-feature-autoscale-detail-page.md
-    - name: Understand the Item history page
+    - name: Item history page
       href: metrics-app-item-history-page.md
+    - name: Item details page (preview)
+      href: metrics-app-preview-item-details-page.md
+    - name: Monitor capacity and throttling (preview)
+      href: metrics-app-monitor-capacity-throttling.md
     - name: Plan your capacity size
       href: plan-capacity.md    
     - name: Monitor a paused capacity
       href: monitor-paused-capacity.md
-    - name: Understand metrics app calculations
+    - name: Metrics app calculations
       href: metrics-app-calculations.md
   - name: Chargeback app
     items:
