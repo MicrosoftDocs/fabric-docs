@@ -9,7 +9,7 @@ ms.date: 03/23/2025
 
 # Understand the metrics app storage page
 
-The Microsoft Fabric Capacity Metrics app's storage page provides capacity storage information, showing data for the last 30 days.
+The Microsoft Fabric Capacity Metrics app's storage page provides capacity storage information, showing data for the last 30 days. This article describes the storage page in the generally available capacity metrics report. For the redesigned storage page, see the [storage page in the capacity metrics preview app](metrics-app-preview-storage-page.md).
 
 ## Filters
 

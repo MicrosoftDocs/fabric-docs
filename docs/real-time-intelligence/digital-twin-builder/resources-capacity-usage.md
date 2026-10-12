@@ -28,7 +28,7 @@ The following table defines how many capacity units (CU) are consumed when digit
 
 The [Microsoft Fabric Capacity Metrics](../../enterprise/metrics-app.md) app provides visibility into capacity usage for all Fabric workloads in one place. Administrators can use the app to monitor capacity, the performance of workloads, and their usage compared to purchased capacity. 
 
-Initially, you must be a capacity admin to install the Microsoft Fabric Capacity Metrics app. Once the app is installed, anyone in the organization can be granted permissions to view the app. For more information about the app, see [Install the Microsoft Fabric Capacity Metrics app](../../enterprise/metrics-app.md#install-the-app). 
+Initially, you must be a capacity admin to install the Microsoft Fabric Capacity Metrics app. After you install the app, you can grant permissions to view the app to anyone in the organization. For more information about the app, see [Install the Microsoft Fabric Capacity Metrics app](../../enterprise/metrics-app-install.md). 
 
 In the Fabric Capacity Metric app, you see operations for digital twin builder (preview) and digital twin builder flow. To see the operation details, select digital twin builder under the item type. All the data stored within Fabric storage incurs Fabric storage costs.
 
