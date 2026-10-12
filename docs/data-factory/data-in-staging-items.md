@@ -57,7 +57,7 @@ Staging items aren't designed for direct access by users. Dataflow Gen2 manages 
 >
 > Staging is a cache, not a system of record. Keep a durable copy of any data that can't be recreated from your source systems.
 >
-> Where possible, use a [data destination](dataflow-gen2-data-destinations-and-managed-settings.md), such as a lakehouse or warehouse, to create an explicit, governed copy for downstream consumption. This is a recommendation, not a requirement.
+> Where possible, use a [data destination](dataflow-gen2-data-destinations-and-managed-settings.md), such as a lakehouse or warehouse, to create an explicit, governed copy for downstream consumption. This recommendation isn't a requirement.
 
 Removing data from the staging items can be forced by one of the following actions:
 
