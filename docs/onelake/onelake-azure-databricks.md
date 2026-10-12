@@ -6,7 +6,7 @@ ms.reviewer: preshah # Product team ms alias(es)
 # ms.author: Do not use - assigned by folder in docfx file
 ms.topic: how-to
 ai-usage: ai-assisted
-ms.date: 04/30/2026
+ms.date: 10/12/2026
 ms.search.form: Databricks Storage overview
 #customer intent: As a data engineer, I want to learn how to integrate OneLake with Azure Databricks so that I can read and write data to a Microsoft Fabric lakehouse from my Azure Databricks workspace.
 ---
