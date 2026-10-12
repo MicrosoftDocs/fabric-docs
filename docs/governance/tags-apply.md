@@ -19,6 +19,7 @@ For more information about tags, see [Tags in Microsoft Fabric](tags-overview.md
 
 ## Prerequisites
 
+- One or more tags must be created and managed by a tenant or domain administrator before they can be applied to workspaces or items. If no tags have been defined, the Tags tab is not shown.
 - You must be a workspace admin to apply or remove tags on a workspace. All workspace roles (Viewer, Member, Contributor, and Admin) can view workspace tags, but only workspace admins can modify them.
 - You must have Write or Contributor permissions on an item to apply or remove tags from it.
 - The tags available in the dropdown are defined and managed by your tenant or domain admins. If you don't see the expected tags, contact your admin. For more information, see [Create and manage a set of tags](tags-define.md).
