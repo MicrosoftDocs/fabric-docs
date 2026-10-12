@@ -4,7 +4,8 @@ description: Learn how to install the Microsoft Fabric capacity metrics app.
 author: dknappettmsft
 ms.author: daknappe
 ms.topic: how-to
-ms.date: 09/01/2025
+ms.date: 08/14/2026
+ai-usage: ai-assisted
 ---
 
 # Install the Microsoft Fabric capacity metrics app
@@ -59,6 +60,11 @@ To upgrade a previous installation of the *Microsoft Fabric Capacity Metrics* ap
 1. Select **Install**.
 
 ---
+
+Starting with version 3.0, after you install or upgrade the app, the navigation pane includes two reports:
+
+- [**Microsoft Fabric Capacity Metrics**](metrics-app.md): The existing report, which remains the default report.
+- [**Fabric Capacity Metrics Preview**](metrics-app.md#fabric-capacity-metrics-app-preview-report): A redesigned report that provides a new monitoring experience and expanded metrics for capacity health, compute usage, item activity, and storage consumption.
 
 ## Run the app for the first time
 
@@ -115,6 +121,21 @@ After installing the app, if it's not showing data or can't refresh, follow thes
 1. Delete the old app.
 1. Reinstall the latest version of the app.
 1. Update the semantic model credentials.
+
+## Share the Fabric Capacity Metrics report
+
+When you install the Microsoft Fabric Capacity Metrics app, it creates a workspace in your Microsoft Fabric tenant. To share the report, you must be a capacity admin.
+
+To share the Fabric Capacity Metrics report, follow these steps:
+
+1. Open the Microsoft Fabric Capacity Metrics app.
+1. Go to the workspace where you installed the app.
+1. Select **Share**.
+
+You can choose to share with *users in your organization* or with *business-to-business (B2B) users from an external organization who are invited into your tenant as guests (via Azure B2B collaboration)*. This option is useful when you want someone outside your organization, like a consultant or partner, to view Fabric Capacity Metrics without moving them into your internal tenant.
+
+> [!NOTE]
+> Without sharing, even if you add the B2B user to the tenant, they can't access the report.
 
 ## Related content
 

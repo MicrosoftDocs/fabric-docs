@@ -136,7 +136,7 @@ You pay standard OneLake storage and read/write operation charges when you use t
 
 ## Monitor usage
 
-Use the [Microsoft Fabric Capacity Metrics app](../../enterprise/metrics-app.md) to monitor ontology consumption alongside other workloads on your capacity. A capacity administrator installs the app and grants access to other users.
+Use the [Microsoft Fabric Capacity Metrics app](../../enterprise/metrics-app.md) to monitor ontology consumption alongside other workloads on your capacity. A capacity admin must install the Microsoft Fabric Capacity Metrics app. Once the app is installed, you can grant permissions to view the app to anyone in the organization. For more information about the app, see [Install the Microsoft Fabric Capacity Metrics app](../../enterprise/metrics-app-install.md).
 
 Look for **Ontology Discovery** to review Discovery consumption for the ontology item. Review **Ontology Logic and Operations - &lt;child operation name&gt;** and **Ontology AI Reasoning** separately for child-item and AI consumption. OneLake usage is also separate from the per-call Discovery unit.
 

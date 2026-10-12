@@ -21,7 +21,7 @@ To get started using `sqldw-cli`, describe the problem in natural language. The 
 - Register the Fabric SQL endpoint MCP server if your installation doesn't configure it.
 - You need to be a member of the Contributor workspace role or higher to read Query Insights and view complete query text.
 - Provide the workspace and warehouse or SQL analytics endpoint name.
-- Install the [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md#install-the-app) for capacity investigations.
+- Install the [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md) for capacity investigations.
 - Use `VIEW DEFINITION` on a lakehouse SQL analytics endpoint for table-health analysis.
 
 ## Supported diagnostics
