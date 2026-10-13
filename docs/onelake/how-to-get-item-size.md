@@ -74,7 +74,7 @@ For more information about OneLake capacity consumption, see [OneLake consumptio
 
 ### Storage report limitations  
 
-* The soft-deleted category only includes files that have been soft-deleted. When a folder is soft-deleted, the contents of that folder are inaccessible and therefore ignored by all list operations, including by the storage report. 
+* The soft-deleted category only includes files that are soft-deleted. When you soft-delete a folder, all list operations, including the storage report, can't access the contents of that folder and ignore them. 
 
 ## Use PowerShell
 
