@@ -74,7 +74,7 @@ To identify a specific line on your bill, find its meter group in the following 
 | `Ontology AI` | Fabric IQ | Fabric IQ ontology AI operations. |
 | `Ontology Logic and Operations` | Fabric IQ | Fabric IQ ontology logic and operations. |
 | `Ontology Modeling` | Fabric IQ | Fabric IQ ontology modeling. |
-| `Ontology Modeling` | Fabric IQ | Fabric IQ ontology discovery of ontology definition. |
+| `Ontology Discovery` | Fabric IQ | Fabric IQ ontology discovery of ontology definition. |
 | `Operations Agents Autonomous Reasoning` | Fabric IQ | Operations agent autonomous reasoning. |
 | `Operations Agents Compute` | Fabric IQ | Operations agent compute. |
 | `Power BI` | Power BI | Power BI queries, refreshes, and report rendering. |
