@@ -60,7 +60,7 @@ Fabric Data Warehouse supports [IDENTITY columns](identity.md) in tables to auto
 
 Similarly, you can modify existing tables with the [ALTER TABLE (Transact-SQL)](/sql/t-sql/statements/alter-table-transact-sql?view=fabric&preserve-view=true) T-SQL syntax.
 
-Metadata for views in the warehouse can become outdated because of changes to the underlying tables upon which the view depends. To refresh a view's metadata, use [sys.sp_refreshview (Transact-SQL)](../../relational-databases/system-stored-procedures/sp-refreshview-transact-sql.md?view=fabric&preserve-view=true). Views created with `SCHEMABINDING` will block changes to underlying objects. If you don't create a view with `SCHEMABINDING`, run `sp_refreshview` when you make changes to the objects underlying the view that affect the definition of the view. Otherwise, the view might return unexpected results when you query it.
+Metadata for views in the warehouse can become outdated because of changes to the underlying tables upon which the view depends. To refresh a view's metadata, use [sys.sp_refreshview (Transact-SQL)](../../relational-databases/system-stored-procedures/sp-refreshview-transact-sql.md?view=fabric&preserve-view=true).  Views created with `SCHEMABINDING` block changes to underlying objects when those changes affect the view definition. If you don't create a view with `SCHEMABINDING`, run `sp_refreshview` when you make changes to the objects underlying the view that affect the definition of the view. Otherwise, the view might return unexpected results when you query it.
 
 ### Schema names
 
