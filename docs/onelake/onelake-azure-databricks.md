@@ -24,7 +24,7 @@ For related Databricks integration scenarios, see the following resources:
 | -------- | ------------- |
 | Query OneLake data from Unity Catalog without copying it | [Enable OneLake catalog federation](/azure/databricks/query-federation/onelake) |
 | Access Databricks Unity Catalog data from Fabric | [Mirroring Azure Databricks Unity Catalog](../mirroring/azure-databricks.md) |
-| Write to OneLake using External location | [Direct writes to OneLake](/azure/databricks/connect/unity-catalog/cloud-storage/external-locations-onelake) |
+| Write to OneLake by using a Unity Catalog external location | [Direct writes to OneLake](/azure/databricks/connect/unity-catalog/cloud-storage/external-locations-onelake) |
 
 ## Prerequisites
 
