@@ -3,7 +3,7 @@ title: Lakehouse git integration and deployment pipelines
 description: Learn what lakehouse metadata is tracked in git-connected workspaces and deployment pipelines in Microsoft Fabric.
 ms.reviewer: dacoelho
 ms.topic: concept-article
-ms.date: 05/08/2026
+ms.date: 10/13/2026
 ms.search.form: lakehouse git deployment pipelines alm ci cd
 ai-usage: ai-assisted
 ---
@@ -26,6 +26,11 @@ The following table summarizes which lakehouse items and subitems are tracked in
 | Tables (Delta and non-Delta) | ❌ Not tracked | ❌ Not overwritten | Not supported | Data always preserved during operations |
 | Spark views | ❌ Not tracked | ❌ Not overwritten | Not supported | Data always preserved during operations |
 | Folders in Files section | ❌ Not tracked | ❌ Not overwritten | Not supported | Data always preserved during operations |
+
+> [!NOTE]  
+>
+> Shortcuts transformations definitions aren't tracked in git and aren't supported in deployment pipelines.
+
 
 ## Choose which object types to track
 

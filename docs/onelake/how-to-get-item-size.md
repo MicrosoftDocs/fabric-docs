@@ -74,7 +74,7 @@ For more information about OneLake capacity consumption, see [OneLake consumptio
 
 ### Storage report limitations  
 
-* The storage report doesn't currently include any OneLake diagnostic events stored within a lakehouse.
+* The soft-deleted category only includes files that are soft-deleted. When you soft-delete a folder, all list operations, including the storage report, can't access the contents of that folder and ignore them. 
 
 ## Use PowerShell
 
