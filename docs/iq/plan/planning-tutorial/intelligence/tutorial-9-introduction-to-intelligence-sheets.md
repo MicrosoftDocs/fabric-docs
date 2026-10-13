@@ -393,4 +393,3 @@ You now have an interactive enterprise dashboard that:
 
 :::image type="content" source="../../media/planning-tutorial/intelligence/tutorial-9-introduction-to-intelligence-sheets/final-dashboard-preview.jpg" alt-text="Screenshot of the completed SaaS Enterprise financial performance dashboard with variance, trend, KPI, matrix, date filter, and header." lightbox="../../media/planning-tutorial/intelligence/tutorial-9-introduction-to-intelligence-sheets/final-dashboard-preview.jpg":::
 
-:::image type="content" source="../../media/planning-tutorial/intelligence/tutorial-10-build-profit-and-loss-intelligence/open-data-pane.png" alt-text="Screenshot of an intelligence sheet with the Data pane open and the Add button under Semantic Model highlighted." lightbox="../../media/planning-tutorial/intelligence/tutorial-10-build-profit-and-loss-intelligence/open-data-pane.png":::
