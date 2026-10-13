@@ -5,7 +5,7 @@ ms.author: shradha
 author: shradha
 ms.reviewer: shradha
 ms.topic: how-to
-ms.date: 10/12/2026
+ms.date: 10/13/2026
 ai-usage: ai-generated
 ---
 
@@ -18,6 +18,9 @@ The data agent uses this context to interpret a question and identify a relevant
 Ontology is a context source in this integration. It provides semantic meaning but isn't the query execution endpoint.
 
 [!INCLUDE [Fabric feature-preview-note](../includes/feature-preview-note.md)]
+
+> [!IMPORTANT]
+> For the best experience when using Ontology context, use the [preview runtime](data-agent-runtime.md#preview-runtime).
 
 ## How Ontology context works
 
