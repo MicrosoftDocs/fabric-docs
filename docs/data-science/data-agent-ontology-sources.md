@@ -125,7 +125,6 @@ Consider the following limitations during preview:
 - The documented source-native query languages are SQL, KQL, and DAX.
 - The data agent retrieves the latest Ontology context every 10 minutes, so a change such as adding an entity can take up to 10 minutes to appear unless you manually refresh the context.
 - The initial experience doesn't support entity selection within an Ontology.
-- A question routes to a relevant underlying source. Don't assume that a single question performs cross-source joins or federated execution.
 
 ## Related content
 
