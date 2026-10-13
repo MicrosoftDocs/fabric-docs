@@ -1,17 +1,16 @@
 ---
 title: Custom SQL Pools
 description: Learn more about how custom SQL pools relate to workload management in Fabric Data Warehouse.
-ms.reviewer: brmyers, sosivara
-ms.date: 03/11/2026
+ms.reviewer: twcyril
+ms.date: 09/23/2026
 ms.topic: concept-article
 ms.search.form: Warehouse Custom SQL pools, Optimization # This article's title should not change. If so, contact engineering.
+ai-usage: ai-assisted
 ---
 
 # Custom SQL pools
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
-
-[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
 Custom SQL pools allow administrators to have more control over how backend compute resources are allocated to their warehouse and SQL analytics endpoint in a workspace.
 
@@ -22,6 +21,7 @@ Fabric Data Warehouse provides autonomous workload management that segregates co
 By default, the isolation boundaries are ingestion (non-`SELECT` statement types) and query processing (`SELECT` statements). With custom SQL pools, administrators can:
 
 - Change the number of isolation boundaries (add more custom SQL pools).
+- Classify workloads by statement type and control the resource allocation for `SELECT` and non-`SELECT` statements.
 - Create application name-specific custom workload classifications.
 - Control resource allocation of each pool, via a max resource percentage.
 
@@ -62,7 +62,7 @@ This scenario applies when high Fabric capacity consumption causes throttling th
 | Configuration       | None (out of the box)      | - Web UI<br> - APIs  |
 | Permissions         | N/A                        | Workspace administrator  |
 | Scope               | Workspace - includes both warehouse and SQL analytics endpoint | Workspace - includes both warehouse and SQL analytics endpoint |
-| Classification method | Statement type (`SELECT` or other) | - Application name<br> - Application name regular expression |
+| Classification method | Statement type (`SELECT` or other) | - Statement type<br> - Application name<br> - Application name regular expression |
 | Unit of Measure | N/A | Percentage of the total backend nodes |
 | SQL pools | `SELECT` or other | User-defined allocation |
 | Burstable capacity | Managed by Fabric (up to 12x per SQL pool, 24x total) | User defined based on percentage of backend nodes allocated. The total amount of resources is still 24x. |
@@ -79,9 +79,15 @@ Fabric Data Warehouse provides three ways to classify requests:
 
 | Classifier type | Description | Configuration |
 | --------------- | ----------- | ------------------------ |
-| Statement type  | Classifies requests into either `SELECT` (query) or non-`SELECT` (all DML, DDL statements) | Autonomous workload management only |
+| Statement type  | Classifies requests into either `SELECT` (query) or non-`SELECT` (all DML and DDL statements) |  - Autonomous workload management <BR> - Creates exactly two custom SQL pools with fixed `SELECT` and `NONSELECT` classifier values. The initial maximum resource percentage is 50% for each pool. You can adjust the percentages, but their sum must be 100% or less. |
 | Application name |  - App (or program name) used in the connection string when connecting to the Fabric Warehouse or SQL Analytics Endpoint.<br> - Supports multiple application names per custom SQL pool<br> - 128 characters or less <BR> - Mutually exclusive between custom SQL pools | Custom SQL pools only |
 | Application name regex | -  Regular expression used to match value for the application name.<br> -  Only first value in the list is evaluated for regular expression| Custom SQL pools only |
+
+### Statement type classification
+
+Statement type classification lets you control the compute available to query and data modification workloads separately. When you select **Statement type** as the classifier, Fabric creates one pool for `SELECT` statements and another pool for non-`SELECT` statements, including DML and DDL statements. You can change each pool's maximum resource percentage to protect query performance, limit the resources available to ingestion and data modification workloads, or balance both workload types to meet your business requirements.
+
+Statement type classification applies to requests that use distributed SQL processing through a warehouse or SQL analytics endpoint. Operations that don't use the distributed SQL path aren't assigned to the `SELECT` or `NONSELECT` pool.
 
 Guidelines:
 
@@ -169,4 +175,3 @@ If downscaling forces a SQL pool to zero nodes assigned, the following error dis
 - [Workload Management](workload-management.md)
 - [Performance guidelines in Fabric Data Warehouse](guidelines-warehouse-performance.md)
 - [How to configure custom SQL pools by using the Fabric REST API](configure-custom-sql-pools-api.md)
-
