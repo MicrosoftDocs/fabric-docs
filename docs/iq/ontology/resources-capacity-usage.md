@@ -135,7 +135,7 @@ Ontology AI Reasoning consumption varies based on ontology size, workspace items
 You pay standard OneLake storage and read/write operation charges when you use those services, including for ontology definitions stored in OneLake. These charges are separate from Ontology Discovery, Logic and Operations, and AI Reasoning consumption.
 
 ## Choosing a starting capacity for evaluation
-Start with F8/F16 for an Ontology evaluation with Ontology Agent. F4 might suit light testing. Monitor sessions in Capacity Metrics and adjust accordingly.
+Start with an F8 or F16 capacity to evaluate the ontology agent. An F4 capacity might suit light testing. Monitor consumption in the Microsoft Fabric Capacity Metrics app, and adjust the capacity as needed.
 
 ## Monitor usage
 
