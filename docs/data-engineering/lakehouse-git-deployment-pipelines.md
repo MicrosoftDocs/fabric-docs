@@ -29,7 +29,7 @@ The following table summarizes which lakehouse items and subitems are tracked in
 
 > [!NOTE]  
 >
-> Shortcuts transformations definitions are not tracked in git and not supported in Deployment Pipelines.
+> Shortcuts transformations definitions aren't tracked in git and aren't supported in deployment pipelines.
 
 
 ## Choose which object types to track
