@@ -72,9 +72,9 @@ To identify a specific line on your bill, find its meter group in the following 
 | `OneLake Table Read via API` | OneLake | OneLake table reads through the API. |
 | `OneLake Write Operations` | OneLake | Write and shortcut-write transactions against OneLake. |
 | `Ontology AI` | Fabric IQ | Fabric IQ ontology AI operations. |
+| `Ontology Discovery` | Fabric IQ | Fabric IQ read requests that retrieve ontology definitions. |
 | `Ontology Logic and Operations` | Fabric IQ | Fabric IQ ontology logic and operations. |
 | `Ontology Modeling` | Fabric IQ | Fabric IQ ontology modeling. |
-| `Ontology Discovery` | Fabric IQ | Fabric IQ ontology discovery of ontology definition. |
 | `Operations Agents Autonomous Reasoning` | Fabric IQ | Operations agent autonomous reasoning. |
 | `Operations Agents Compute` | Fabric IQ | Operations agent compute. |
 | `Power BI` | Power BI | Power BI queries, refreshes, and report rendering. |
