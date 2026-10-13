@@ -4,7 +4,7 @@ description: Learn how to navigate your Azure bill for a Fabric capacity, includ
 author: dknappettmsft
 ms.author: daknappe
 ms.topic: concept-article
-ms.date: 08/03/2026
+ms.date: 10/13/2026
 ai-usage: ai-assisted
 #customer intent: As a Fabric capacity administrator, I want to understand the meters on my Azure bill so that I can reconcile my charges with my Fabric usage.
 ---
@@ -72,6 +72,7 @@ To identify a specific line on your bill, find its meter group in the following 
 | `OneLake Table Read via API` | OneLake | OneLake table reads through the API. |
 | `OneLake Write Operations` | OneLake | Write and shortcut-write transactions against OneLake. |
 | `Ontology AI` | Fabric IQ | Fabric IQ ontology AI operations. |
+| `Ontology Discovery` | Fabric IQ | Fabric IQ read requests that retrieve ontology definitions. |
 | `Ontology Logic and Operations` | Fabric IQ | Fabric IQ ontology logic and operations. |
 | `Ontology Modeling` | Fabric IQ | Fabric IQ ontology modeling. |
 | `Operations Agents Autonomous Reasoning` | Fabric IQ | Operations agent autonomous reasoning. |
