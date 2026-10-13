@@ -77,7 +77,6 @@ The following item types support soft-delete and recovery:
 - ML model
 - Notebook
 - Ontology *(preview)*
-- Operational agent *(preview)*
 - Real-Time Dashboard
 - Spark job definition
 - SQL database *(preview)*
