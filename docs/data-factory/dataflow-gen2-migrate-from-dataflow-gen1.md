@@ -13,10 +13,10 @@ ai-usage: ai-assisted
 This article targets Power BI dataflow creators. It provides them with guidance and rationale to help migrate their dataflows to Dataflow Gen2 in [Data Factory](data-factory-overview.md) for Microsoft Fabric.
 
 > [!NOTE]
-> Power BI Dataflow Gen1 is now in a legacy state and won't receive new feature investment.
+> Power BI Dataflow Gen1 is now in a legacy state and doesn't receive new feature investment.
 > For Premium customers with Fabric access, [Dataflow Gen2](dataflows-gen2-overview.md) is the
 > recommended path, offering improvements in performance, scale, reliability, functionality,
-> and built-in AI. Pro/PPU customers can continue to use Gen1 as Gen2 guidance for these
+> and built-in AI. Pro and PPU customers can continue to use Gen1 as Gen2 guidance for these
 > scenarios is evolving.
 
 ## Background
