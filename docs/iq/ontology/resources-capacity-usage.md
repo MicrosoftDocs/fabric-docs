@@ -18,13 +18,13 @@ A single action can use more than one operation. For example, an agent answering
 
 | Meter name | Operation name | Description | Rate | Billable |
 | --- | --- | --- | --- | --- |
-| Ontology Discovery | `Ontology Discovery` | Read requests that retrieve ontology definition from all interfaces like UI, MCP, Ontology Agent or cache definition through the ontology UI and supported ontology interfaces. | 1,000 CU-seconds per Ontology Discovery | [No](https://learn.microsoft.com/fabric/enterprise/metrics-app#considerations-and-limitations) |
+| Ontology Discovery | `Ontology Discovery` | Read requests that retrieve ontology definition from all interfaces like UI, MCP, Ontology Agent or cache definition through the ontology UI and supported ontology interfaces. | 1,000 CU-seconds per Ontology Discovery | [No](../../enterprise/metrics-app.md#considerations-and-limitations) |
 | Ontology Logic and Operations | `Ontology Logic and Operations - <child operation name>` | Usage of the ontology's child Eventhouse and Graph items. | The same rate as the child item | Yes |
-| Ontology AI | `Ontology AI Reasoning` | Usage of the ontology MCP server and ontology agent. | Dynamic consumption | [No](https://learn.microsoft.com/fabric/enterprise/metrics-app#considerations-and-limitations) |
+| Ontology AI | `Ontology AI Reasoning` | Usage of the ontology MCP server and ontology agent. | Dynamic consumption | [No](../../enterprise/metrics-app.md#considerations-and-limitations) |
 
 ## Ontology Discovery
 
-Ontology Discovery is billed for each read call that retrieves the ontology definition through the ontology item interface or ontology MCP server. The ontology item interface caches the definition and reuses it as you navigate among entities, relationships, rules, bindings, properties, and metrics.
+Ontology Discovery applies to each read call that retrieves the ontology definition through the ontology item interface or ontology MCP server. The ontology item interface caches the definition and reuses it as you navigate among entities, relationships, rules, bindings, properties, and metrics.
 
 When the cached definition is available and current, browsing and selecting items doesn't generate another Discovery call. The ontology item interface retrieves the definition again when the cached copy is missing or out of date, after a successful save, or during an automatic or manual refresh.
 
