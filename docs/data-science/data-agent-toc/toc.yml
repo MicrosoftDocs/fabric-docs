@@ -68,6 +68,8 @@ items:
     items:
       - name: Observe with Microsoft Foundry
         href: ../fabric-data-agent-foundry-observability.md
+      - name: Get user feedback for a Fabric data agent in Microsoft Copilot
+        href: ../data-agent-microsoft-copilot-feedback.md
   - name: Source Control, CI/CD, and ALM for Fabric data agent
     href: ../data-agent-source-control.md
   - name: Service Principal for Fabric data agent
