@@ -17,7 +17,7 @@ Before you begin, ensure you have:
 
 - Access to a Microsoft Fabric workspace where you can create a plan and upload a semantic model.
 - Permission to create and edit an intelligence sheet.
-- The Enterprise Dataset sample PBIX file. Download it from the [Fabric samples GitHub repository](https://github.com/jagan0506/fabric-samples/blob/add-plan-enterprise-dataset/docs-samples/iq/plan/Enterprise%20Dataset.pbix).
+- The Enterprise Dataset sample PBIX file. Download it from the [Fabric samples GitHub repository](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/iq/plan/Enterprise%20Dataset.pbix).
 
 ## Business context
 
