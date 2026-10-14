@@ -1,7 +1,7 @@
 ---
 title: Billing and Capacity Usage for the New Ontology Experience
 description: Learn how the new ontology experience in Microsoft Fabric consumes capacity, how operations are billed, and how to monitor usage.
-ms.date: 09/29/2026
+ms.date: 10/13/2026
 ms.topic: concept-article
 ms.search.form: Ontology Billing
 ---
@@ -16,15 +16,15 @@ This article applies to the new ontology experience in Microsoft Fabric.
 
 A single action can use more than one operation. For example, an agent answering a question might read the ontology, query a child graph or eventhouse item, and use AI to produce a response. Each operation measures a different part of that work.
 
-| Meter name | Operation name | Description | Rate |
-| --- | --- | --- | --- |
-| Ontology Discovery | `Ontology Discovery` | Read requests that retrieve ontology definition from all interfaces like UI, MCP, Ontology Agent or cache definition through the ontology UI and supported ontology interfaces. | 1,000 CU-seconds per Ontology Discovery |
-| Ontology Logic and Operations | `Ontology Logic and Operations - <child operation name>` | Usage of the ontology's child Eventhouse and Graph items. | The same rate as the child item |
-| Ontology AI | `Ontology AI Reasoning` | Usage of the ontology MCP server and ontology agent. | Dynamic consumption |
+| Meter name | Operation name | Description | Rate | Billable |
+| --- | --- | --- | --- | --- |
+| Ontology Discovery | `Ontology Discovery` | Read requests that retrieve ontology definition from all interfaces like UI, MCP, Ontology Agent or caching through the ontology UI and supported ontology interfaces. | 1,000 CU-seconds per Ontology Discovery | [No](../../enterprise/metrics-app.md#considerations-and-limitations) |
+| Ontology Logic and Operations | `Ontology Logic and Operations - <child operation name>` | Usage of the ontology's child eventhouse and graph items. | The same rate as the child item | Yes |
+| Ontology AI | `Ontology AI Reasoning` | Usage of the ontology MCP server and ontology agent. | Dynamic consumption | [No](../../enterprise/metrics-app.md#considerations-and-limitations) |
 
 ## Ontology Discovery
 
-Ontology Discovery is billed for each read call that retrieves the ontology definition through the ontology item interface or ontology MCP server. The ontology item interface caches the definition and reuses it as you navigate among entities, relationships, rules, bindings, properties, and metrics.
+Ontology Discovery applies to each read call that retrieves the ontology definition through the ontology item interface or ontology MCP server. The ontology item interface caches the definition and reuses it as you navigate among entities, relationships, rules, bindings, properties, and metrics.
 
 When the cached definition is available and current, browsing and selecting items doesn't generate another Discovery call. The ontology item interface retrieves the definition again when the cached copy is missing or out of date, after a successful save, or during an automatic or manual refresh.
 
@@ -133,6 +133,9 @@ Ontology AI Reasoning consumption varies based on ontology size, workspace items
 ## Storage
 
 You pay standard OneLake storage and read/write operation charges when you use those services, including for ontology definitions stored in OneLake. These charges are separate from Ontology Discovery, Logic and Operations, and AI Reasoning consumption.
+
+## Choosing a starting capacity for evaluation
+Start with an F8 or F16 capacity to evaluate the ontology agent. An F4 capacity might suit light testing. Monitor consumption in the Microsoft Fabric Capacity Metrics app, and adjust the capacity as needed.
 
 ## Monitor usage
 
