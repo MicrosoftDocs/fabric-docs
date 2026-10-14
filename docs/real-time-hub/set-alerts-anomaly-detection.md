@@ -3,6 +3,7 @@ title: Set alerts on anomaly detection events in Real-Time hub
 description: This article describes how to set alerts on anomaly detection events in Real-Time hub.
 ms.reviewer: v-hzargari, tessahurr
 ms.topic: how-to
+ai-usage: ai-assisted
 ms.date: 10/14/2025
 ms.search.form: Anomaly Detection Set Alerts On Anomaly Detection Events
 ---
@@ -18,6 +19,8 @@ This article walks you through how to configure alerts for anomaly detection eve
 [!INCLUDE [workspace-private-links-note](./includes/workspace-private-links-note.md)]
 
 ## How to set alerts on anomaly detection events
+
+[!INCLUDE [event-consumer-region-note](./includes/event-consumer-region-note.md)]
 
 ### Launch the Set alert page
 

@@ -14,6 +14,8 @@ This article shows you how to create an eventstream for a business event from th
 
 ## Prerequisites
 
+[!INCLUDE [business-event-consumer-region-note](./includes/business-event-consumer-region-note.md)]
+
 Before you begin, make sure that you have:
 
 - Access to a workspace in Fabric capacity or Trial license mode with Contributor or higher permissions.

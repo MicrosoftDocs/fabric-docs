@@ -95,6 +95,8 @@ For Azure resource prerequisites and supported event types, see [Get Azure Blob 
 
 ## Fabric Job events source
 
+[!INCLUDE [event-consumer-region-note](./includes/event-consumer-region-note.md)]
+
 ```json
 {
   "name": "FabricJobEventsSource",
@@ -115,6 +117,8 @@ For Azure resource prerequisites and supported event types, see [Get Azure Blob 
 ```
 
 ## Fabric OneLake events source
+
+[!INCLUDE [event-consumer-region-note](./includes/event-consumer-region-note.md)]
 
 ```json
 {
@@ -165,6 +169,8 @@ For capacity prerequisites and event type descriptions, see [Get Fabric capacity
 
 ## Fabric capacity operation events source
 
+[!INCLUDE [event-consumer-region-note](./includes/event-consumer-region-note.md)]
+
 ```json
 {
   "name": "FabricCapacityOperationEventsSource",
@@ -181,6 +187,8 @@ For capacity prerequisites and event type descriptions, see [Get Fabric capacity
 ```
 
 ## Fabric anomaly detection events source
+
+[!INCLUDE [event-consumer-region-note](./includes/event-consumer-region-note.md)]
 
 The Anomaly Detector and its configuration must already exist. Use the Anomaly Detector item ID and the configuration ID from the source environment.
 

@@ -4,6 +4,7 @@ description: Learn how to add business events as a source to an existing Microso
 author: robece
 ms.author: robece
 ms.topic: how-to
+ai-usage: ai-assisted
 ms.date: 08/10/2026
 #customer intent: As a user, I want to add business events to an eventstream so that I can transform and route business signals in real time.
 ---
@@ -13,6 +14,8 @@ ms.date: 08/10/2026
 This article shows you how to add business events as a source to an existing Fabric eventstream.
 
 ## Prerequisites
+
+[!INCLUDE [business-event-consumer-region-note](./includes/business-event-consumer-region-note.md)]
 
 Before you begin, ensure that you have:
 

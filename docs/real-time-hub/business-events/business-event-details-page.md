@@ -64,6 +64,8 @@ The Event schema pane shows the schema of the events for this business event. Th
 
 ## Add consumer
 
+[!INCLUDE [business-event-consumer-region-note](../includes/business-event-consumer-region-note.md)]
+
 When you select a business event from the list, you can also take the following actions to add a consumer for the business event:
 
 - Set alert for the business event.
