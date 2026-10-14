@@ -82,7 +82,7 @@ Use the following comparisons to understand the data sources and capabilities su
 | SQL database in Fabric | Supported | Supported |
 | Mirrored database | Supported | Supported |
 | Mirrored Azure Databricks catalog | Supported | Supported |
-| Snowflake database | Not supported | Supported |
+| Snowflake database | Supported | Supported |
 | Cosmos DB in Fabric | Supported | Not supported |
 | KQL database <sup>1</sup> | Supported | Not supported |
 | Warehouse snapshot | Not supported | Not supported |
