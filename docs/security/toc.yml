@@ -151,6 +151,8 @@ items:
                     href: workspace-outbound-access-protection-eventhouse.md
                   - name: Eventstream (preview)
                     href: workspace-outbound-access-protection-eventstream.md
+                  - name: Azure, Fabric, and Business events
+                    href: workspace-outbound-access-protection-real-time-events.md
                   - name: KQL queryset (preview)
                     href: workspace-outbound-access-protection-queryset.md
                   - name: Real-Time Dashboard (preview)
