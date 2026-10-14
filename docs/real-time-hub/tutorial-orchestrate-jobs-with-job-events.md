@@ -27,6 +27,8 @@ In this tutorial, you:
 
 ## Prerequisites
 
+[!INCLUDE [event-consumer-region-note](./includes/event-consumer-region-note.md)]
+
 - A [Microsoft Fabric workspace](../fundamentals/create-workspaces.md) with a Fabric capacity.
 - Permissions to create items in the workspace and to set alerts on Fabric events.
 

@@ -18,6 +18,8 @@ This article describes how to set alerts on Job events in Real-Time hub.
 
 ## Navigate to Real-Time hub
 
+[!INCLUDE [event-consumer-region-note](./includes/event-consumer-region-note.md)]
+
 [!INCLUDE [navigate-to-real-time-hub](./includes/navigate-to-real-time-hub.md)]
 
 

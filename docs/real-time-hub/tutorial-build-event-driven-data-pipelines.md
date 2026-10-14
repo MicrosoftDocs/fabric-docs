@@ -25,6 +25,12 @@ This event-driven workflow enables:
 
 ## Automatically ingest and process files with an event-driven pipeline
 
+For the OneLake events configuration in this tutorial:
+
+[!INCLUDE [event-consumer-region-note](./includes/event-consumer-region-note.md)]
+
+This same-region requirement doesn't apply to Azure Blob Storage events.
+
 In this tutorial you develop a solution that performs the following operations: 
 
 1. Monitors a folder in OneLake for new CSV files

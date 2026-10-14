@@ -33,6 +33,8 @@ You can take the following actions on the **Business events** page:
 
 For step-by-step instructions, see [Create and manage business events](business-events/create-business-events.md).
 
+[!INCLUDE [business-event-consumer-region-note](./includes/business-event-consumer-region-note.md)]
+
 ## Next step
 
 Go to the [Fabric events page](fabric-events-page.md) to learn how to subscribe and respond to events from Fabric workspaces.
