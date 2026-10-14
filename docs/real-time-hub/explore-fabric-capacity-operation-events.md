@@ -16,6 +16,8 @@ Fabric capacity operation events provide granular, per-operation information abo
 
 ## View Fabric capacity operation events detail page
 
+[!INCLUDE [event-consumer-region-note](./includes/event-consumer-region-note.md)]
+
 1. In **Real-Time hub**, select **Fabric events**.
 1. Select **Fabric capacity operation events** from the list.
 

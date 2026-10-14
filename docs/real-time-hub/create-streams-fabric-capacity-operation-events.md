@@ -3,6 +3,7 @@ title: Capacity Operation Events in Fabric Real-Time Hub
 description: Fabric capacity operation events let you monitor per-operation capacity consumption in Real-Time hub. Learn how to create eventstreams from capacity operation events step by step.
 ms.reviewer: geguirgu
 ms.topic: how-to
+ai-usage: ai-assisted
 ms.date: 08/21/2026
 author: sruikar
 ms.author: sruikar
@@ -36,6 +37,8 @@ For more information, see [Explore Capacity operation events](explore-fabric-cap
 [!INCLUDE [workspace-private-links-note](./includes/workspace-private-links-note.md)]
 
 ## Prerequisites
+
+[!INCLUDE [event-consumer-region-note](./includes/event-consumer-region-note.md)]
 
 - Access to a workspace in the Fabric capacity license mode or the Trial license mode with Contributor or higher permissions.  
 - A Fabric capacity where you have capacity admin role.
