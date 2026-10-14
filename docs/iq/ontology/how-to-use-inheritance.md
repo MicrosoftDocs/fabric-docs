@@ -1,7 +1,7 @@
 ---
 title: Entity Type Inheritance
 description: Learn about modeling inheritance in an ontology (preview) item to create type hierarchies.
-ms.date: 09/21/2026
+ms.date: 10/14/2026
 ms.topic: how-to
 ai-usage: ai-generated
 ---
