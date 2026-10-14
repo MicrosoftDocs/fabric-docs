@@ -127,6 +127,8 @@ items:
         href: query-label.md
       - name: Regular expressions
         href: regular-expressions.md
+      - name: String similarity comparison
+        href: string-similarity.md
       - name: Transactions
         href: transactions.md
       - name: Warehouse collation
