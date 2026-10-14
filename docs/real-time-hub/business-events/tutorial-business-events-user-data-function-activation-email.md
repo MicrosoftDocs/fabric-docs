@@ -58,6 +58,8 @@ This tutorial walks you through an end-to-end workflow for publishing business e
 
 ## Configure user data function to publish business events
 
+[!INCLUDE [business-event-publisher-region-note](../includes/business-event-publisher-region-note.md)]
+
 1. After creating the business event, open another tab in your web browser, and go to your workspace.
 
 1. Select **+ New item** and then search for **User data functions** and select it.
@@ -161,6 +163,8 @@ This tutorial walks you through an end-to-end workflow for publishing business e
 
 
 ## Create an Activator trigger to consume events and send email notifications
+
+[!INCLUDE [business-event-consumer-region-note](../includes/business-event-consumer-region-note.md)]
 
 1. Select the Real-Time hub icon in the left navigation pane of the Fabric portal.
 

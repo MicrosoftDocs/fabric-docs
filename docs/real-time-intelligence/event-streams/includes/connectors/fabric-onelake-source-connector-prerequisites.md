@@ -3,6 +3,7 @@ title: Fabric OneLake events connector - prerequisites
 description: The include file has the prerequisites for using Fabric OneLake events connector for Fabric event streams
 ms.reviewer: robece
 ms.topic: include
+ai-usage: ai-assisted
 ms.date: 04/02/2026
 ---
 
@@ -23,6 +24,8 @@ Here are the supported OneLake events:
 | Microsoft. Fabric.OneLake.FolderRenamed | Raised when a folder is renamed in OneLake. | 
 
 ## Prerequisites
+
+[!INCLUDE [event-consumer-region-note](../../../../real-time-hub/includes/event-consumer-region-note.md)]
 
 - Get access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions.
 - SusbcribeOneLakeEvent permission on the data sources.
