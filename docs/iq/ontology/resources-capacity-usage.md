@@ -1,7 +1,7 @@
 ---
 title: Billing and Capacity Usage for the New Ontology Experience
 description: Learn how the new ontology experience in Microsoft Fabric consumes capacity, how operations are billed, and how to monitor usage.
-ms.date: 10/13/2026
+ms.date: 10/14/2026
 ms.topic: concept-article
 ms.search.form: Ontology Billing
 ---
@@ -18,7 +18,7 @@ A single action can use more than one operation. For example, an agent answering
 
 | Meter name | Operation name | Description | Rate | Billable |
 | --- | --- | --- | --- | --- |
-| Ontology Discovery | `Ontology Discovery` | Read requests that retrieve ontology definition from all interfaces like UI, MCP, Ontology Agent or caching through the ontology UI and supported ontology interfaces. | 1,000 CU-seconds per Ontology Discovery | [No](../../enterprise/metrics-app.md#considerations-and-limitations) |
+| Ontology Discovery | `Ontology Discovery` | Read requests that retrieve ontology definition from interfaces like UI, MCP, Ontology Agent or caching through the ontology UI and supported ontology interfaces. | 1,000 CU-seconds per Ontology Discovery | [No](../../enterprise/metrics-app.md#considerations-and-limitations) |
 | Ontology Logic and Operations | `Ontology Logic and Operations - <child operation name>` | Usage of the ontology's child eventhouse and graph items. | The same rate as the child item | Yes |
 | Ontology AI | `Ontology AI Reasoning` | Usage of the ontology MCP server and ontology agent. | Dynamic consumption | [No](../../enterprise/metrics-app.md#considerations-and-limitations) |
 
