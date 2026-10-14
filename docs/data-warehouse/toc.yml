@@ -125,6 +125,8 @@ items:
         href: fabric-user-data-functions.md
       - name: Query labels
         href: query-label.md
+      - name: Regular expressions
+        href: regular-expressions.md
       - name: Transactions
         href: transactions.md
       - name: Warehouse collation
