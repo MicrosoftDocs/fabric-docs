@@ -17,7 +17,7 @@ ms.collection: ce-skilling-ai-copilot
 The Fabric data agent Python SDK provides programmatic access to Fabric data agent artifacts. It's designed for code-first users who want to create, configure, update, and publish data agents without using the Fabric portal. You can run the SDK inside a Microsoft Fabric notebook, or from your own environment after you authenticate to Fabric.
 
 > [!IMPORTANT]
-> The Fabric Data Agent SDK has transitioned from the OpenAI Assistants API to the OpenAI Responses API for querying data agents.
+> The Fabric Data Agent SDK transitioned from the OpenAI Assistants API to the OpenAI Responses API for querying data agents.
 > If you still query a data agent with the Fabric OpenAI client, use the MCP endpoint or Fabric OpenAI Responses client. This change only affects your querying code. Creating,
 > configuring, and publishing data agents stay the same. For migration steps and a runnable example, see the [Responses API sample notebook](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/data-agent-sdk/responses-api/responses-api-notebook.ipynb).
 
