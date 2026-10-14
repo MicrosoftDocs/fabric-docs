@@ -168,11 +168,19 @@ items:
       - name: Ingest data with pipelines
         href: ingest-data-pipelines.md
       - name: Ingest data with T-SQL
-        href: ingest-data-tsql.md
+        items:
+            - name: T-SQL ingestion overview
+              href: ingest-data-tsql.md
+            - name: Ingest Delta Lake tables
+              href: ingest-delta-lake-tsql.md
+            - name: Ingest from warehouse tables and mirrored databases
+              href: ingest-data-warehouse-tables-tsql.md
+            - name: Ingest lake files with OPENROWSET
+              href: ingest-transform-lake-data-openrowset-tsql.md
+            - name: Troubleshoot ingestion errors
+              href: troubleshoot-ingestion-errors.md
       - name: Ingest data with BCP API (Preview)
         href: ingest-data-bulk-copy.md
-      - name: Troubleshoot ingestion errors
-        href: troubleshoot-ingestion-errors.md
       - name: Use dbt with data warehouse
         href: tutorial-setup-dbt.md
   - name: Create models and build Power BI reports
