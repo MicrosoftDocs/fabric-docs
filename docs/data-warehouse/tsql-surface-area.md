@@ -66,6 +66,7 @@ Currently, the following commands aren't supported. Don't try to use these comma
 - `sp_showspaceused`
 - Synonyms
 - Triggers
+- [T-SQL regular expression scalar functions](regular-expressions.md) are available as a preview feature in Fabric Data Warehouse. T-SQL regular expression table-valued functions are not available in Fabric Data Warehouse.
 - Vector data type and search functions
 
 ## Related content
