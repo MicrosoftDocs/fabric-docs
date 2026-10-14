@@ -1,7 +1,7 @@
 ---
 title: Entity Type Inheritance
 description: Learn about modeling inheritance in an ontology (preview) item to create type hierarchies.
-ms.date: 09/21/2026
+ms.date: 10/14/2026
 ms.topic: how-to
 ai-usage: ai-generated
 ---
@@ -72,12 +72,6 @@ Because inheritance is live rather than copied, an edit you make to a base prope
 ## Polymorphic query
 
 Inheritance carries meaning into query. A **polymorphic query** against a base entity type returns instances of the base *and* of its directly derived entity types in a single result set. A question about "all vehicles" returns Vehicle, Car, and Truck instances, and a question about "all customers" returns both the North-American and South-American customers. Polymorphic query resolves one hop: it includes the base and its direct children.
-
-## Cross-ontology reuse
-
-You can derive an entity type from a base entity type defined in a different ontology. Cross-ontology inheritance behaves the same as inheritance within a single ontology.
-
-Cross-ontology reuse requires read permission on every element in the reuse path, including the source ontology and the source base entity type. If any element in the path isn't readable, the operation fails with a permission error that identifies the missing element.
 
 ## Related content
 
