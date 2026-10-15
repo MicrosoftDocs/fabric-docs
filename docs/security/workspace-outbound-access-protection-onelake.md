@@ -8,7 +8,7 @@ ms.date: 01/20/2026
 ms.topic: how-to
 ---
 
-# Workspace outbound access protection for OneLake (preview)
+# Workspace outbound access protection for OneLake
 
 Workspace outbound access protection helps safeguard your data by controlling outbound connections from OneLake items in your workspace to external data sources. When this feature is enabled, [Onelake items](#supported-onelake-item-types) are restricted from making outbound connections unless access is explicitly granted. 
 

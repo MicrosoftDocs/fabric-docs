@@ -40,7 +40,7 @@ The following table shows the support status for each Fabric item. A check mark 
 |  | On-premises data gateway: Pipeline/Copy Job | ✓ | - | ✓ |
 |  | On-premises data gateway: Dataflow Gen2 | -| - | ✓ |
 |  | Data Workflow (previously Airflow) | - | - | - |
-|  | Data Build Tool job | - | - | - |
+|  | Data Build Tool job | - | - | Preview |
 | **Data Science** | ML Model | ✓ | ✓ | ✓ |
 |  | Experiment | ✓ | ✓ | ✓ |
 |  | Data Agent | ✓ | - | Preview |
@@ -51,10 +51,11 @@ The following table shows the support status for each Fabric item. A check mark 
 |  | Deployment Pipeline |  | - | ✓ |
 |  | Git Integration | ✓ | - | ✓ |
 |  | Variable Library | ✓ | - | ✓ |
+|  | Deployment Plan | - | - | ✓ |
 | **Governance and Security** | Sensitivity Label | - | - | - |
 |  | Share item | - | - | - |
-| **Fabric IQ** | Graph model  | - | - | Preview |
-|  | Graph queryset | - | - | Preview |
+| **Fabric IQ** | Graph model  | - | - | ✓ |
+|  | Graph queryset | - | - | ✓ |
 |  | Ontology | - | - | - |
 |  | Operations agent | - | - | Preview |
 | **Industry Solutions** | Healthcare data solutions | - | ✓ | - |
@@ -77,7 +78,7 @@ The following table shows the support status for each Fabric item. A check mark 
 |  | Open Mirroring | ✓ | ✓ | ✓ |
 | **Fabric Databases** | SQL database in Fabric | Preview | ✓ | - |
 |  | Cosmos DB |  | - | - |
-|  | Snowflake database | - | - | - |
+|  | Snowflake database | - | - | Preview |
 | **OneLake** | Shortcut | ✓ | ✓ | ✓ |
 | **Power BI** | Power BI Report | - | - | Preview |
 |  | Dashboard | - | - | - |
@@ -90,14 +91,14 @@ The following table shows the support status for each Fabric item. A check mark 
 |  | Exploration | - | - | - |
 |  | Org App | - | - | - |
 |  | Metric Set | - | - | - |
-| **Real-Time Intelligence** | KQL Queryset | ✓ | Preview | Preview |
-|  | Activator | ✓ | - | Preview |
-|  | Eventhouse/KQL DB | ✓ | Preview | Preview |
+| **Real-Time Intelligence** | KQL Queryset | ✓ | Preview | ✓ |
+|  | Activator | ✓ | - | ✓ |
+|  | Eventhouse/KQL DB | ✓ | Preview | ✓ |
 |  | Eventstream | ✓ | - | Preview |
-|  | Real-Time Dashboard | ✓ | Preview | Preview |
+|  | Real-Time Dashboard | ✓ | Preview | ✓ |
 |  | Anomaly detector  | - | - | - |
 |  | Digital Twin Builder | - | - | - | 
-|  | Event Schema Set  | - | - | - |
+|  | Event Schema Set  | - | - | ✓ |
 |  | Map | - | - | Preview |
 
 ## Related links
