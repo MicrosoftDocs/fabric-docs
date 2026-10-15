@@ -30,7 +30,7 @@ The following table lists all Azure regions where Power BI or Fabric is availabl
 
 | Geography    | Region               | Power BI | All Fabric<br> workloads | Unavailable Fabric features |
 |--|--|:--:|:--:|--|
-| Americas     | Brazil South         | ✅ | ✅ | Not available: <br> [Fabric App (preview)](../apps/overview.md) |
+| Americas     | Brazil South         | ✅ | ✅ |  |
 | Americas     | Canada Central       | ✅ | ✅ | Not available: <br> [Fabric App (preview)](../apps/overview.md) |
 | Americas     | Canada East          | ✅ | ✅ | Not available: <br> [Fabric App (preview)](../apps/overview.md) |
 | Americas     | Chile Central        | ✅ | ❌ | Power BI only region |
