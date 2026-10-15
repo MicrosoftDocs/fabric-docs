@@ -774,6 +774,32 @@ The recreated database is an independent database from the original database and
 
 The recreated database is an independent database.  Data added to the recreated database wouldn't be reflected in the original database.  If you plan to failback to the original database when the home region becomes available, you need to consider manually reconciling data from the recreated database to the original database.
 
+### HorizonDB database
+
+To protect against a regional failure, users of HorizonDB databases can take proactive measures to periodically export their data and use the exported data to recreate the database in a new workspace when needed.
+
+Use the PostgreSQL `pg_dump` and `pg_restore` command-line tools to back up and restore the database.
+
+1. Use `pg_dump` to export the database to a custom-format dump file. Replace the placeholder values with the connection details for your HorizonDB database:
+
+    ```bash
+    pg_dump "host=<source-host> port=5432 dbname=<source-database> user=<user> sslmode=require" --format=custom --file=<source-database>.dump
+    ```
+
+1. Store the dump file in a secure location that's in a different region than the database. Examples include storing the file in a lakehouse that's in a different region, using a geo-redundant Azure storage account, or using another secure off-region storage location.
+
+1. If the HorizonDB database and region are unavailable, create a HorizonDB database in a workspace in a new region—Workspace C2.W2 in Region B as described in the sample scenario. Then use `pg_restore` to restore the dump file into the new database:
+
+    ```bash
+    pg_restore --dbname="host=<target-host> port=5432 dbname=<target-database> user=<user> sslmode=require" --no-owner <source-database>.dump
+    ```
+
+The recreated database is independent from the original database and reflects the state of the data at the time of the `pg_dump` operation. The dump contains one database and doesn't include cluster-wide objects, such as roles. Recreate any required roles and permissions in the new region.
+
+#### Failback considerations
+
+Data added to the recreated database isn't reflected in the original database. If you plan to fail back to the original database when the home region becomes available, manually reconcile data from the recreated database with the original database.
+
 ## Platform
 
 Platform refers to the underlying shared services and architecture that apply to all workloads. This section describes recovery procedures for shared Fabric capabilities.
