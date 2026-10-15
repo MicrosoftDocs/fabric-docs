@@ -265,6 +265,12 @@ items:
                 href: plan/planning-forecasting/planning-how-to-extend-time.md
         - name: Planning tools
           items:
+              - name: Allocation rules and controls
+                items:
+                  - name: Overview of allocation rules and controls
+                    href: plan/planning-allocation-rules-controls/overview-allocation-rules-controls.md
+                  - name: Locking rule
+                    href: plan/planning-allocation-rules-controls/how-to-use-locking-rules.md
               - name: Set up scenarios
                 href: plan/planning-how-to-set-up-scenarios.md
               - name: Optimize inputs - Fundamentals
