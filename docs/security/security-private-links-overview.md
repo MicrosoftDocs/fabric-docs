@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.reviewer: karthikeyana
 ms.topic: concept-article
-ms.date: 08/26/2026
+ms.date: 10/13/2026
 ---
 
 # Private links for Fabric tenants
@@ -158,9 +158,9 @@ Customers can provision and utilize Healthcare data solutions in Microsoft Fabri
 
 Fabric events (such as Job events, Workspace item events, and OneLake events) support Private Link at the tenant level without affecting event delivery, because they originate from within the tenant. However, when [workspace-level private links](security-workspace-level-private-links-overview.md) are configured to block public access on the workspace where the events originate (the source workspace), event consumers such as Activator alerts or eventstreams in other workspaces are blocked from consuming those events unless a private link is established from the consumer's network to the source workspace.
 
-Azure events (such as Azure Blob Storage events) are affected by both tenant-level and workspace-level private links. When the **Block Public Internet Access** tenant setting is enabled, Azure event sources outside the tenant are blocked from delivering events into Fabric entirely:
+Azure events (such as Azure Blob Storage events) are affected by both tenant-level and workspace-level private links. When you enable the **Block Public Internet Access** tenant setting, Azure event sources outside the tenant are blocked from delivering events into Fabric by default:
 * New configurations to consume Azure events are blocked.
-* Existing configurations consuming Azure events stop delivering events because the events are dropped at the Azure source. The consumer doesn't enter a paused state.
+* Existing configurations consuming Azure events stop delivering events because the events are dropped at the Azure source. The consumer doesn't enter a paused state. If the Event Grid system topic and Fabric workspace are in the same Microsoft Entra tenant, you can restore delivery by adding the system topic to the workspace's Resource Instance Rules. For instructions, see [Allow Azure event sources through inbound trusted resources](../real-time-hub/private-links-real-time-events.md#allow-azure-event-sources-through-inbound-trusted-resources).
 
 Additionally, when you configure a consumer to receive Azure events, an eventstream item is created in a Fabric workspace to represent the Azure source. Workspace-level private links affect Azure event consumption in the same way as Fabric events: if the workspace containing this eventstream item blocks public network access, consumers in other workspaces are blocked unless a private link is established.
 
