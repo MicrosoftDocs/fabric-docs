@@ -27,7 +27,7 @@ Fabric introduces the concept of a *refresh hint* that you use to declare the un
 Add a `REFRESH_HINT` clause when you create a materialized lake view.
 
 > [!NOTE]
-> Before you create a materialized lake view, set the Spark configuration `spark.materialized.lake.views.dv.auto.create.enabled` to `true`.
+> Before you create a materialized lake view with refresh hint, set the Spark configuration `spark.materialized.lake.views.dv.auto.create.enabled` to `true`.
 
 ```sql
 CREATE [OR REPLACE] MATERIALIZED LAKE VIEW <view_name>
