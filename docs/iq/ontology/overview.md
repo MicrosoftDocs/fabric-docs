@@ -148,7 +148,7 @@ The new ontology experience is the default experience for new ontology items.
 
 The new ontology experience lays the groundwork for future ontology investments across Microsoft Fabric, as well as related agent and operational intelligence experiences. It enables more flexible business modeling, support for a wider range of data sources, greater reuse of semantic models, enhanced developer tooling, and deeper integration with agents and downstream experiences.
 
-To take advantage of these updates, customers who use the old experience for their ontology items should migrate to the new experience, by using the in-product action to create a copy of their ontology in the new experience. This copy flow preserves the original item while creating a separate new ontology item based on its supported definitions.
+To take advantage of these updates, customers who use the old experience for their ontology items should migrate to the new experience. Use the in-product action to create a copy of your ontology in the new experience. This copy flow preserves the original item while creating a separate new ontology item based on its supported definitions.
 
 :::image type="content" source="media/overview/migrate-banner.png" alt-text="Screenshot of the banner in the old ontology with a button to create a copy in the new experience." lightbox="media/overview/migrate-banner.png":::
 
