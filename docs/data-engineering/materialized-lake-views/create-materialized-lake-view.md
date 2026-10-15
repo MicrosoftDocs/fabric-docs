@@ -26,7 +26,10 @@ CREATE [OR REPLACE] MATERIALIZED LAKE VIEW [IF NOT EXISTS] [workspace.lakehouse.
 [( 
     CONSTRAINT constraint_name1 CHECK (condition expression1) [ON MISMATCH DROP | FAIL],  
     CONSTRAINT constraint_name2 CHECK (condition expression2) [ON MISMATCH DROP | FAIL] 
-)] 
+)]
+[(
+    REFRESH_HINT <hint_name> UNIQUE (<column1> [, <column2>, ...])
+)]
 [PARTITIONED BY (col1, col2, ... )] 
 [COMMENT "description or comment"] 
 [TBLPROPERTIES ("key1"="val1", "key2"="val2", ... )] 
@@ -34,6 +37,7 @@ AS select_statement
 ```
 
 > [!NOTE]
+> - The `REFRESH_HINT` is in preview. For more details about using refresh hints, see [Enable optimal refresh for deletes and updates in materialized lake views (preview)](./optimal-refresh-handling-deletes-updates.md).
 > - If your workspace name contains spaces, enclose it in backticks: `` `My Workspace`.lakehouse.schema.view_name ``
 > - Materialized lake view names are case-insensitive and converted to lowercase (for example, `MyTestView` becomes `mytestview`).
 
@@ -46,6 +50,7 @@ AS select_statement
 | `MLV_Identifier` | Name of the materialized lake view. Can be fully qualified as `workspace.lakehouse.schema.name`. |
 | `CONSTRAINT ... CHECK` | Defines a data quality rule. The `CHECK` clause specifies a Boolean expression that each row must satisfy. You can define multiple constraints. |
 | `ON MISMATCH` | Action to take when a row violates a constraint. `DROP` silently removes the row; `FAIL` stops the refresh with an error. Default is `FAIL`. |
+| `REFRESH_HINT` | Declares one or more columns that uniquely identify rows for incremental processing of updates and deletes (preview). |
 | `PARTITIONED BY` | Columns to partition the materialized lake view by, which can improve query performance for filtered reads. |
 | `COMMENT` | Free-text description stored with the materialized lake view definition. |
 | `TBLPROPERTIES` | Key-value pairs stored as metadata on the materialized lake view. |
