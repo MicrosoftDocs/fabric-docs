@@ -5,6 +5,7 @@ ms.reviewer: amapatil, varundhawan
 ms.date: 10/05/2026
 ms.topic: how-to
 ai-usage: ai-assisted
+ms.search.form: Database Hub Estate, Database Hub Performance
 ---
 # Monitor an Azure Database for PostgreSQL flexible server in the Database Hub (preview)
 

@@ -5,6 +5,7 @@ ms.reviewer: amapatil, jmaldonado, varundhawan, ivujic, lancewright
 ms.date: 09/29/2026
 ms.topic: overview
 ai-usage: ai-assisted
+ms.search.form: Database Hub Overview, Database Hub Performance
 ---
 # Monitor databases in the Database Hub (preview)
 
