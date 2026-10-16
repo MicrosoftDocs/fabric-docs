@@ -21,7 +21,6 @@ Interact with the agent inside the ontology item. The agent explains what it's d
 
 Before you start, organize the workspace and source data so the agent can discover the right information and generate grounded proposals.
 
-- **Keep relevant items together:** Place the ontology in the same workspace as the lakehouses, eventhouses, and semantic models you want the agent to use. If you need data from another workspace, create a shortcut to the source in the ontology workspace.
 - **Remove unrelated clutter:** Move experiments, archived items, and unrelated sources to another workspace when possible. A focused workspace helps the agent identify the relevant business domain.
 - **Confirm source access:** The agent uses your identity. Ensure you can read every source that you want the agent to consider, including sources reached through shortcuts.
 - **Define the scope:** If the workspace includes multiple business domains, tell the agent whether to model all of them, one primary domain, or a smaller group. State any change in scope explicitly during the conversation.
@@ -123,7 +122,6 @@ The agent uses your identity (delegated access) when it reads or writes data in 
 | **Lakehouse** | Discovers tables and columns; samples rows; binds entity types to lakehouse tables; executes SQL queries. |
 | **Eventhouse** | Discovers databases, tables, and columns; samples rows; binds entity types to KQL tables (including time-series bindings); executes KQL queries. |
 | **Semantic model** | Reads measures, tables, columns, and relationships through XML for Analysis (XMLA) for business-context grounding; executes DAX queries against grounded semantic-model content. The agent doesn't bind ontology entities directly to semantic models during preview. |
-| **GraphModel** | Executes ISO GQL queries for relationship and traversal questions, when a GraphModel exists for the ontology. |
 
 > [!NOTE]
 > The semantic-model grounding that an ontology carries is available only to the ontology agent. Fabric data agent can query a Power BI semantic model that you configure directly as its data source, but it doesn't use the semantic-model grounding that an ontology carries.
