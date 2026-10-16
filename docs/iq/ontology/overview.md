@@ -1,7 +1,7 @@
 ---
 title: What Is Ontology (Preview)?
 description: Learn about core concepts and features of the ontology (preview) item.
-ms.date: 10/15/2026
+ms.date: 10/16/2026
 ms.topic: overview
 ms.search.form: Ontology Overview
 ---
@@ -14,6 +14,9 @@ The **ontology (preview)** item in Microsoft Fabric IQ provides a shared, machin
 
 >[!IMPORTANT]
 > For ontology known issues, see the [Microsoft Fabric known issues site](https://support.fabric.microsoft.com/known-issues/) and search for *ontology*. For troubleshooting details, see [Troubleshoot ontology (preview)](resources-troubleshooting.md).
+
+>[!IMPORTANT]
+> The old experience of ontology retires on Jan 31, 2027. For more, see [Migrate from old experience](#migrate-from-old-experience).
 
 Ontology helps bridge the gap between how data is physically stored and how your business understands it. Instead of requiring every consumer to interpret tables, columns, measures, and joins independently, an ontology supplies reusable business concepts and source mappings across domains. This shared context can support analytics, real-time operational experiences, and AI agents that need consistent definitions and relationships.
 
@@ -164,8 +167,6 @@ After you create the new experience item, review these elements manually and re-
 
 Your old ontology stays in your workspace and is available until the old experience retires.
 
->[!IMPORTANT]
-> The old experience of ontology retires on Jan 31, 2027.
 
 ## Troubleshooting and known issues
 
