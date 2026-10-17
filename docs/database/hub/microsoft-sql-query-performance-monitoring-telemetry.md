@@ -9,6 +9,7 @@ ms.topic: how-to
 ms.custom:
   - preview
 ai-usage: ai-assisted
+ms.search.form: Database Hub Performance
 ---
 
 # Query performance monitoring telemetry (preview)
