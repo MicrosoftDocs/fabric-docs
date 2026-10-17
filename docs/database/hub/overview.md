@@ -5,7 +5,7 @@ ms.reviewer: amapatil, jmaldonado, varundhawan, ivujic, lancewright, mjbrown
 ms.date: 10/05/2026
 ms.topic: overview
 ai-usage: ai-assisted
-ms.search.form: product-databases, Databases Overview, Database Hub
+ms.search.form: product-databases, Databases Overview, Database Hub, Database Hub Overview, Database Hub Estate, Database Hub Performance
 ---
 # What is the Database Hub?
 
