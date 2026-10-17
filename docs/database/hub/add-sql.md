@@ -6,6 +6,7 @@ ms.date: 10/05/2026
 ms.topic: how-to
 ms.custom: references_regions
 ai-usage: ai-assisted
+ms.search.form: Database Hub Overview, Database Hub Estate, Database Hub Performance
 ---
 # Enable performance monitoring for Microsoft SQL (preview)
 
