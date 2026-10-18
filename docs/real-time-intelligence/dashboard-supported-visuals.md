@@ -3,7 +3,7 @@ title: Real-Time Dashboard supported visuals
 description: Learn about the visuals supported in Real-Time Dashboard in Microsoft Fabric, including common use cases and visual examples.
 ms.reviewer: mibar, v-hzargari
 ms.topic: concept-article
-ms.date: 08/20/2026
+ms.date: 10/14/2026
 ms.search.form: Overview
 ai-usage: ai-assisted
 ---
@@ -36,6 +36,7 @@ The following table describes each supported visual, along with common use cases
 | **Stat** | A tile that displays a single numeric value. | Highlight one key metric prominently, such as total revenue. | ![Screenshot of a stat visual.](media/dashboard-visuals/stat.png) |
 | **Table** | A grid that displays rows and columns of data. | Review detailed or raw records, such as the most recent transactions. | ![Screenshot of a table visual.](media/dashboard-visuals/table.png) |
 | **Time chart** | A line chart with time plotted on the x-axis. | Monitor how a metric evolves over time, such as CPU usage. | ![Screenshot of a time chart.](media/dashboard-visuals/time-chart.png) |
+| **[Time pivot](/kusto/query/visualization-timepivot)** | An interactive visualization that displays hierarchical events or spans over time, showing their parent-child relationships. | Explore distributed traces and identify timing, latency, or dependency issues across related operations.| ![Screenshot of a time pivot visual.](media/dashboard-visuals/time-pivot.png) |
 | **[Time series chart (preview)](dashboard-time-series.md)** | A chart that plots multiple time-based measures and categories, with interactive drill-down. | Monitor several related time series together and drill into specific entities or time ranges. | ![Screenshot of a time series chart.](media/dashboard-visuals/time-series-chart.png) |
 
 ## Related content
