@@ -2,7 +2,7 @@
 title: Use locking rules in planning in Fabric
 description: Learn how to configure locking rules to prevent changes to selected measures, rows, and columns in a planning sheet.
 ms.topic: how-to
-ms.date: 10/15/2026
+ms.date: 10/18/2026
 ---
 
 # Use locking rules in planning in Fabric
@@ -13,9 +13,9 @@ Locking rules preserve selected values during distribution and forecasting. You 
 
 ## Create a locking rule
 
-1. In the planning sheet, select **Locking Rule** to open the **Add Rule** pane.
+1. In the planning sheet, on the **Model** tab, in the **Controls** group, select **Locking rule** to open the **Add Rule** pane.
 
-   :::image type="content" source="../media/planning-allocation-rules-controls/how-to-use-locking-rules/open-locking-rule-panel.png" alt-text="Screenshot of the planning sheet with the Locking Rule command selected and the Add Rule pane open." lightbox="../media/planning-allocation-rules-controls/how-to-use-locking-rules/open-locking-rule-panel.png":::
+   :::image type="content" source="../media/planning-allocation-rules-controls/how-to-use-locking-rules/open-locking-rule-panel.png" alt-text="Screenshot of the planning sheet with the Model tab selected and the Add Rule pane open." lightbox="../media/planning-allocation-rules-controls/how-to-use-locking-rules/open-locking-rule-panel.png":::
 
 2. In **Rule Name**, enter a name for the rule.
 
