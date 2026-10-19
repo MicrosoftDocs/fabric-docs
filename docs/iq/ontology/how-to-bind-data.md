@@ -1,7 +1,7 @@
 ---
 title: Bind Data (Preview)
 description: Learn about the data binding process in ontology (preview).
-ms.date: 09/21/2026
+ms.date: 10/18/2026
 ms.topic: how-to
 ---
 
@@ -28,9 +28,7 @@ Before binding data to your ontology, make sure you have the following prerequis
   * The data is organized and has gone through any necessary ETL required by your business. It contains all the information required to model it. For more information, see [Core concept: Data binding](overview.md#data-binding).
   * The data is in Microsoft Fabric. Supported sources include eventhouse, KQL database, lakehouse, mirrored database, semantic model, SQL database, or warehouse.
     * For semantic models, you need both [Read and Build permissions](/power-bi/connect-data/service-datasets-permissions#what-are-the-semantic-model-permissions) to bind the data to an ontology.
-  * Time series data is in *columnar* format, meaning it appears in a table with a row for each timestamped observation. Columns contain time stamps and property values (like temperature or pressure).
-  * Lakehouse tables conform to ontology (preview)'s data binding [limitations](#limitations-and-troubleshooting): They're **managed** and don't have column mapping enabled.
-
+  
 ## Add data binding
 
 1. You can start a data binding from either the Home configuration canvas or the **Configure** tab of the entity type details.
@@ -114,18 +112,3 @@ The following data source types support data binding in ontology (preview):
 :::image type="content" source="media/how-to-bind-data/source-types.png" alt-text="Screenshot of the data source types in the OneLake catalog." lightbox="media/how-to-bind-data/source-types.png":::
 
 [!INCLUDE [Supported property types](includes/supported-property-types.md)]
-
-## Limitations and troubleshooting
-
-Data binding has the following limitations:
-
-* Ontology only supports **managed** lakehouse tables (located in the same OneLake directory as the lakehouse), not **external** tables that show in the lakehouse but reside in a different location.
-* Changing the lakehouse table name after you create mappings might result in problems accessing data in the entity type details.
-* The ontology graph doesn't support delta tables with column mapping enabled. You can enable column mapping manually, or the system enables it automatically on lakehouse tables where column names have certain special characters, including `,`, `;`, `{}`, `()`, `\n`, `\t`, `=`, and space. It also happens automatically on the delta tables that store data for import mode semantic model tables.
-* Each entity type supports one **static** data binding. You can't combine static data from multiple sources for a single entity type.
-    * You must use OneLake-backed sources for static data.
-    * Entity types **do** support bindings from multiple **time series** sources. You can bind time series data from both eventhouse and lakehouse sources.
-
-### Troubleshooting
-
-For troubleshooting tips related to data binding, see [Troubleshoot ontology (preview)](resources-troubleshooting.md#troubleshoot-data-binding).
