@@ -28,9 +28,7 @@ Before binding data to your ontology, make sure you have the following prerequis
   * The data is organized and has gone through any necessary ETL required by your business. It contains all the information required to model it. For more information, see [Core concept: Data binding](overview.md#data-binding).
   * The data is in Microsoft Fabric. Supported sources include eventhouse, KQL database, lakehouse, mirrored database, semantic model, SQL database, or warehouse.
     * For semantic models, you need both [Read and Build permissions](/power-bi/connect-data/service-datasets-permissions#what-are-the-semantic-model-permissions) to bind the data to an ontology.
-  * Time series data is in *columnar* format, meaning it appears in a table with a row for each timestamped observation. Columns contain time stamps and property values (like temperature or pressure).
-  * Lakehouse tables conform to ontology (preview)'s data binding [limitations](#limitations-and-troubleshooting): They're **managed** and don't have column mapping enabled.
-
+  
 ## Add data binding
 
 1. You can start a data binding from either the Home configuration canvas or the **Configure** tab of the entity type details.
