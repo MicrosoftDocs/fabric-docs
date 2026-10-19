@@ -1,7 +1,7 @@
 ---
 title: Bind Data (Preview)
 description: Learn about the data binding process in ontology (preview).
-ms.date: 09/21/2026
+ms.date: 10/18/2026
 ms.topic: how-to
 ---
 
