@@ -130,7 +130,7 @@ END;
 GO
 ```
 
-Initialize the variable to the result for no matching row. The `SELECT` statement the value only when a row is found, which removes the need to inspect `@@ROWCOUNT`:
+Initialize the variable to the result for no matching row. The `SELECT` statement changes the value only when a row is found, which removes the need to inspect `@@ROWCOUNT`:
 
 ```sql
 CREATE OR ALTER FUNCTION dbo.CustomerExists (@CustomerID INT)
