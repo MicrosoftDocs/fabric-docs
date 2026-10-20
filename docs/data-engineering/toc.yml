@@ -244,6 +244,8 @@ items:
       href: copilot-notebooks-overview.md
     - name: Use the Copilot chat panel (preview)
       href: copilot-notebooks-chat-pane.md
+    - name: Develop notebooks with Fabric Notebook Toolkit (preview)
+      href: fabric-notebook-toolkit.md
 - name: Ingest
   items:
   - name: Get data into a lakehouse
