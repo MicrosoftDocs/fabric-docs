@@ -5,14 +5,11 @@ ms.author: shradha
 author: shradha
 ms.reviewer: shradha
 ms.topic: how-to
-ms.date: 10/05/2026
+ms.date: 10/13/2026
 ai-usage: ai-generated
 ---
 
 # Use Ontology as context in Fabric data agent
-
-> [!WARNING]
-> There's an ongoing service outage affecting this feature. You might not be able to add an Ontology to a data agent if the Ontology uses the new experience. For status and details, see [Data Agent can't add an Ontology using the new experience](https://support.fabric.microsoft.com/known-issues/?active=true&fixed=true&sort=published&issueId=1987).
 
 Ontology provides governed business context to a Fabric data agent. It describes business entities, their properties and relationships, definitions, synonyms, mappings, and bindings to underlying data sources.
 
@@ -21,6 +18,9 @@ The data agent uses this context to interpret a question and identify a relevant
 Ontology is a context source in this integration. It provides semantic meaning but isn't the query execution endpoint.
 
 [!INCLUDE [Fabric feature-preview-note](../includes/feature-preview-note.md)]
+
+> [!IMPORTANT]
+> For the best experience when using Ontology context, use the [preview runtime](data-agent-runtime.md#preview-runtime).
 
 ## How Ontology context works
 
@@ -125,7 +125,6 @@ Consider the following limitations during preview:
 - The documented source-native query languages are SQL, KQL, and DAX.
 - The data agent retrieves the latest Ontology context every 10 minutes, so a change such as adding an entity can take up to 10 minutes to appear unless you manually refresh the context.
 - The initial experience doesn't support entity selection within an Ontology.
-- A question routes to a relevant underlying source. Don't assume that a single question performs cross-source joins or federated execution.
 
 ## Related content
 

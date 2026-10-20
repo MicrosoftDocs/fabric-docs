@@ -14,6 +14,8 @@ Business events in Microsoft Fabric empower organizations to define, explore, an
 
 ## Prerequisites 
 
+[!INCLUDE [business-event-publisher-region-note](../../real-time-hub/includes/business-event-publisher-region-note.md)]
+
 - Access to a workspace in the Microsoft Fabric capacity license mode or the Trial license mode with Contributor or higher permissions. 
 
 - If you plan to use an existing business event type, access to the workspace where the event schema set with the business event type is located, with viewer or higher permissions. 

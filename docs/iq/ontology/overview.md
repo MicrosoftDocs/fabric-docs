@@ -1,7 +1,7 @@
 ---
 title: What Is Ontology (Preview)?
 description: Learn about core concepts and features of the ontology (preview) item.
-ms.date: 09/15/2026
+ms.date: 10/16/2026
 ms.topic: overview
 ms.search.form: Ontology Overview
 ---
@@ -14,6 +14,9 @@ The **ontology (preview)** item in Microsoft Fabric IQ provides a shared, machin
 
 >[!IMPORTANT]
 > For ontology known issues, see the [Microsoft Fabric known issues site](https://support.fabric.microsoft.com/known-issues/) and search for *ontology*. For troubleshooting details, see [Troubleshoot ontology (preview)](resources-troubleshooting.md).
+
+>[!IMPORTANT]
+> The old experience of ontology retires on Jan 31, 2027. For more, see [Migrate from old experience](#migrate-from-old-experience).
 
 Ontology helps bridge the gap between how data is physically stored and how your business understands it. Instead of requiring every consumer to interpret tables, columns, measures, and joins independently, an ontology supplies reusable business concepts and source mappings across domains. This shared context can support analytics, real-time operational experiences, and AI agents that need consistent definitions and relationships.
 
@@ -146,7 +149,9 @@ The new ontology experience is the default experience for new ontology items.
 >[!NOTE]
 > You can't create new instances of the old ontology experience through the ontology interface in Fabric. It's still possible to create instances of the old experience by using the ontology APIs and CI/CD.
 
-If you already have an ontology that you created in the old experience, use the in-product action to **create a copy in the new experience**. The copy flow preserves the original item while creating a separate ontology item based on its supported definitions.
+The new ontology experience lays the groundwork for future ontology investments across Microsoft Fabric, as well as related agent and operational intelligence experiences. It enables more flexible business modeling, support for a wider range of data sources, greater reuse of semantic models, enhanced developer tooling, and deeper integration with agents and downstream experiences.
+
+To take advantage of these updates, customers who use the old experience for their ontology items should migrate to the new experience. Use the in-product action to create a copy of your ontology in the new experience. This copy flow preserves the original item while creating a separate new ontology item based on its supported definitions.
 
 :::image type="content" source="media/overview/migrate-banner.png" alt-text="Screenshot of the banner in the old ontology with a button to create a copy in the new experience." lightbox="media/overview/migrate-banner.png":::
 
@@ -162,8 +167,6 @@ After you create the new experience item, review these elements manually and re-
 
 Your old ontology stays in your workspace and is available until the old experience retires.
 
->[!IMPORTANT]
-> The old experience of ontology retires on Jan 31, 2027.
 
 ## Troubleshooting and known issues
 

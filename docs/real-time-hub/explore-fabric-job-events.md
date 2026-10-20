@@ -16,6 +16,8 @@ Job events allow you to monitor job results in time and set up alerts using Acti
 
 ## View Job events detail page
 
+[!INCLUDE [event-consumer-region-note](./includes/event-consumer-region-note.md)]
+
 1. In **Real-Time hub**, select **Fabric events**.
 1. Select **Job events** from the list.
 

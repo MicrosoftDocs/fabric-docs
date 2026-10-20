@@ -265,6 +265,12 @@ items:
                 href: plan/planning-forecasting/planning-how-to-extend-time.md
         - name: Planning tools
           items:
+              - name: Allocation rules and controls
+                items:
+                  - name: Overview of allocation rules and controls
+                    href: plan/planning-allocation-rules-controls/overview-allocation-rules-controls.md
+                  - name: Locking rule
+                    href: plan/planning-allocation-rules-controls/how-to-use-locking-rules.md
               - name: Set up scenarios
                 href: plan/planning-how-to-set-up-scenarios.md
               - name: Optimize inputs - Fundamentals
@@ -552,7 +558,13 @@ items:
             - name: Calendar
               href: plan/powertable-layouts/how-to-configure-calendar-layout.md
             - name: Kanban
-              href: plan/powertable-layouts/how-to-configure-kanban-layout.md
+              items:
+                - name: Configure Kanban layout
+                  href: plan/powertable-layouts/how-to-configure-kanban-layout.md
+                - name: Add and manage tasks
+                  href: plan/powertable-layouts/how-to-add-manage-kanban-tasks.md
+                - name: Customize Kanban layout
+                  href: plan/powertable-layouts/how-to-customize-kanban-layout.md
         - name: Apply conditional formatting
           href: plan/powertable-how-to-apply-conditional-formatting.md
         - name: Comment and collaborate

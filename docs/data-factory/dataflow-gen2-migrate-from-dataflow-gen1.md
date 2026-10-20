@@ -13,9 +13,11 @@ ai-usage: ai-assisted
 This article targets Power BI dataflow creators. It provides them with guidance and rationale to help migrate their dataflows to Dataflow Gen2 in [Data Factory](data-factory-overview.md) for Microsoft Fabric.
 
 > [!NOTE]
-> Dataflow Gen2 is a new generation of dataflows that delivers new features and improved experiences. Gen2 dataflows reside alongside Power BI dataflows, which are now known as _Dataflow Gen1_.
->
-> To understand the differences between Dataflow Gen1 and Dataflow Gen2, see [Getting from Dataflow Generation 1 to Dataflow Generation 2](dataflows-gen2-overview.md).
+> Power BI Dataflow Gen1 is now in a legacy state and doesn't receive new feature investment.
+> For Premium customers with Fabric access, [Dataflow Gen2](dataflows-gen2-overview.md) is the
+> recommended path, offering improvements in performance, scale, reliability, functionality,
+> and built-in AI. Pro and PPU customers can continue to use Gen1 as Gen2 guidance for these
+> scenarios is evolving.
 
 ## Background
 
@@ -31,11 +33,6 @@ Naturally, customers are now asking whether there's an opportunity to consolidat
 - What's Microsoft's roadmap for enterprise data ingestion?
 
 Answers to many of these questions are described in this article.
-
-> [!NOTE]
-> The decision to migrate to Fabric capacity depends on the requirements of each customer. Customers should carefully evaluate the benefits in order to make an informed decision. We expect to see organic migration to Dataflow Gen2 over time, and our intention is that it happens on terms that the customer is comfortable with.
->
-> To be clear, currently there aren't any plans to deprecate Power BI dataflows or Power Platform dataflows. However, there's a priority to focus investment on Dataflow Gen2 for enterprise data ingestion, and so the value provided by Fabric capacity will increase over time. Customers that choose Fabric capacity can expect to benefit from alignment with the [Microsoft Fabric product roadmap](https://aka.ms/fabricrm).
 
 ### Convergence of self-service and enterprise data integration
 

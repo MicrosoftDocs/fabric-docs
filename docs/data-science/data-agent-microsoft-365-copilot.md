@@ -1,6 +1,6 @@
 ---
-title: Consume a data agent from Microsoft 365 Copilot (preview)
-description: Learn how to consume a data agent from Microsoft 365 Copilot.
+title: Consume a data agent from Microsoft Copilot (preview)
+description: Learn how to consume a data agent from Microsoft Copilot.
 ms.author: scottpolly
 author: s-polly
 ms.reviewer: amjafari
@@ -9,31 +9,31 @@ ms.date: 05/12/2026
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
 ai-usage: ai-assisted
-#customer intent: As an Analyst, I want to consume a Fabric data agent from Microsoft 365 Copilot.
+#customer intent: As an Analyst, I want to consume a Fabric data agent from Microsoft Copilot.
 ---
 
-# Consume Fabric data agent in Microsoft 365 Copilot
+# Consume Fabric data agent in Microsoft Copilot
 
-Microsoft 365 provides a comprehensive set of productivity tools that help organizations collaborate, communicate, and make data-driven decisions. With Teams at the center of communication and collaboration, users can access their organization's knowledge and insights in one unified workspace. Therefore, Microsoft 365 isn't just a suite of applications, but a platform that connects people to the information they need to act confidently.
+Microsoft Copilot provides a comprehensive set of productivity tools that help organizations collaborate, communicate, and make data-driven decisions. With Teams at the center of communication and collaboration, users can access their organization's knowledge and insights in one unified workspace. Therefore, Microsoft Copilot isn't just a suite of applications, but a platform that connects people to the information they need to act confidently.
 
 > [!IMPORTANT]  
 > This feature is in [preview](../fundamentals/preview.md).
 
 > [!IMPORTANT]
-> When you configure Fabric data agents to be consumed within Microsoft 365, responses returned by Fabric data agents may be sent outside of Fabric's compliance boundary or geographic region, and processed and/or stored according to the Microsoft 365's terms and data handling policies.
+> When you configure Fabric data agents to be consumed within Microsoft Copilot, responses returned by Fabric data agents might be sent outside of Fabric's compliance boundary or geographic region. Microsoft Copilot might process and store these responses according to its terms and data handling policies.
 
 [!INCLUDE [data-agent-prerequisites](./includes/data-agent-prerequisites.md)]
-- Microsoft 365 Copilot license or Office 365 commercial subscription
-- User licenses for each individual using Fabric data agent in Microsoft 365 Copilot. 
-- Both the Fabric data agent and Microsoft 365 Copilot must be on the same tenant and must sign in to both with the same account.
+- Microsoft Copilot license or Office 365 commercial subscription
+- User licenses for each individual using Fabric data agent in Microsoft Copilot. 
+- Both the Fabric data agent and Microsoft Copilot must be on the same tenant and must sign in to both with the same account.
 
 ## How it works
 
-With Fabric data agents, business users can now tap into organizational knowledge stored in Fabric OneLake to get actionable insights. After creating and validating a Fabric data agent, you can publish it to make it available to others. As part of the publish process, you can also make the agent available to the Agent Store in Microsoft 365 Copilot by selecting **Publish to Agent Store**.
+By using Fabric data agents, business users can tap into organizational knowledge stored in Fabric OneLake to get actionable insights. After creating and validating a Fabric data agent, you can publish it to make it available to others. As part of the publish process, you can also make the agent available to the Agent Store in Microsoft Copilot by selecting **Publish to Agent Store**.
 
-:::image type="content" source="./media/data-agent-microsoft-365-copilot/data-agent-publish-microsoft-365.png" alt-text="Screenshot showing publishing to the agent store in Microsoft 365 copilot." lightbox="./media/data-agent-microsoft-365-copilot/data-agent-publish-microsoft-365.png":::
+:::image type="content" source="./media/data-agent-microsoft-365-copilot/data-agent-publish-microsoft-365.png" alt-text="Screenshot showing publishing to the agent store in Microsoft copilot." lightbox="./media/data-agent-microsoft-365-copilot/data-agent-publish-microsoft-365.png":::
 
-Once published, the Fabric data agent appears in the Agent Store in Microsoft 365 Copilot, allowing users to interact with it directly from Teams.  
+Once published, the Fabric data agent appears in the Agent Store in Microsoft Copilot, allowing users to interact with it directly from Teams.  
 
    > [!NOTE]
    > It might take a few seconds for your Fabric data agent to appear in the Agent Store. If it doesn't show up immediately, select the **Expand Navigation** button on the left side of the window to refresh the list of agents.
@@ -55,26 +55,26 @@ You can also share the agent with colleagues. To do this, select the agent name,
 :::image type="content" source="./media/data-agent-microsoft-365-copilot/data-agent-share-agent-store.png" alt-text="Screenshot showing how to share in Microsoft 365 copilot." lightbox="./media/data-agent-microsoft-365-copilot/data-agent-share-agent-store.png":::
 
    > [!NOTE]
-   > When sharing a Fabric data agent in Microsoft 365 Copilot, you need to make sure that the recipients have access not only to the data agent but also to the underlying data sources it connects to.
+   > When sharing a Fabric data agent in Microsoft Copilot, you need to make sure that the recipients have access not only to the data agent but also to the underlying data sources it connects to.
    
-It's important to note that when you interact with the Fabric data agent in Microsoft 365 Copilot, you only see results based on your access to the underlying data and all row-level and column-level security settings are fully respected.
+It's important to note that when you interact with the Fabric data agent in Microsoft Copilot, you only see results based on your access to the underlying data and all row-level and column-level security settings are fully respected.
 
-Additionally, users can use the **code interpreter** in Microsoft 365 Copilot to generate visualizations from results returned by the Fabric data agent. This enables users to explore insights visually and interactively, helping them understand trends, patterns, and metrics directly within Teams.
+Additionally, users can use the **code interpreter** in Microsoft Copilot to generate visualizations from results returned by the Fabric data agent. This enables users to explore insights visually and interactively, helping them understand trends, patterns, and metrics directly within Teams.
 
 :::image type="content" source="./media/data-agent-microsoft-365-copilot/data-agent-code-interpreter.png" alt-text="Screenshot showing how to use data agent with CI in Microsoft 365 copilot." lightbox="./media/data-agent-microsoft-365-copilot/data-agent-code-interpreter.png":::
 
 By publishing your Fabric data agent to the Agent Store in Microsoft 365 Copilot, you provide business users with a seamless way to access organizational knowledge from Fabric OneLake, collaborate more effectively, and make informed decisions faster.
 
-## Control how Microsoft 365 Copilot handles the output from Fabric data agent
+## Control how Microsoft Copilot handles the output from Fabric data agent
 
-When you publish a Fabric data agent to Microsoft 365 Copilot, the agent runs inside Microsoft 365 Copilot environment that has its own orchestrator. The orchestrator uses the chat context, user intent, and its own model's reasoning to shape the final response.
+When you publish a Fabric data agent to Microsoft Copilot, the agent runs inside the Microsoft Copilot environment that has its own orchestrator. The orchestrator uses the chat context, user intent, and its own model's reasoning to shape the final response.
 
-If you want to minimize the amount of change applied to the Fabric data agent's responses in Microsoft 365 Copilot, you can add specific instructions when you publish the Fabric data agent. The description becomes the `description_for_model` in Microsoft 365 Copilot, and it influences how the orchestrator handles the Fabric data agent's output.
+If you want to minimize the amount of change applied to the Fabric data agent's responses in Microsoft Copilot, add specific instructions when you publish the Fabric data agent. The description becomes the `description_for_model` in Microsoft Copilot, and it influences how the orchestrator handles the Fabric data agent's output.
 
    > [!NOTE]
    > You can add to the publishing description that the output from Fabric data agent should be delivered as-is, without summarizing, rephrasing, or adding extra interpretation.
 
-Note that these instructions aim to reduce the variation in response. However, the model behind the Microsoft 365 Copilot orchestrator will still reason over the grounding data returned by the Fabric data agent to generate the final response and some level of change is inevitable.
+These instructions aim to reduce the variation in response. However, the model behind the Microsoft Copilot orchestrator still reasons over the grounding data returned by the Fabric data agent to generate the final response, and some level of change is inevitable.
 
 ## Related content
 

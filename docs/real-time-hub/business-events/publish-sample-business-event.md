@@ -4,6 +4,7 @@ description: Learn how to publish a sample business event in Fabric Real-Time hu
 #customer intent: As a Fabric user, I want to publish a sample business event so that I can validate my event schema and event flow before configuring a full publisher integration.
 ms.date: 08/17/2026
 ms.topic: how-to
+ai-usage: ai-assisted
 ---
 
 # Publish a sample business event in Fabric Real-Time hub
@@ -13,6 +14,8 @@ Use **Publish sample event** to send a test payload without configuring a Notebo
 Use sample events for development, testing, and troubleshooting. For production workloads, configure a supported publisher that generates events from your business logic or data.
 
 ## Prerequisites
+
+[!INCLUDE [business-event-publisher-region-note](../includes/business-event-publisher-region-note.md)]
 
 Before you start, ensure that:
 

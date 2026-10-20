@@ -1126,6 +1126,8 @@ items:
                 href: map/about-data-filtering.md
           - name: Tilesets in Fabric Maps
             href: map/about-tile-sets.md
+          - name: Activator alerts in Fabric Maps
+            href: map/about-activator-alerts.md
           - name: Sharing maps
             href: map/sharing-maps.md
           - name: Permissions in Fabric Maps
@@ -1166,6 +1168,8 @@ items:
             href: map/customize-map.md
           - name: Create a tileset
             href: map/create-tile-sets.md
+          - name: Create Activator alerts from a Fabric map
+            href: map/create-activator-alerts.md
           - name: Map sharing
             items:
               - name: Share maps directly

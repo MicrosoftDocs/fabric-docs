@@ -16,6 +16,14 @@ Fabric events allow users to subscribe to events produced by Fabric and Azure re
 
 **Subscriptions**: Subscriptions (also known as notifications) enable filtering of events per subscription and distribution of selected events to trigger the desired destination when the event occurs. Subscriptions can deliver events via push.
  
+## Regional requirements
+
+For Job, OneLake, capacity operation, and anomaly detection events:
+
+[!INCLUDE [event-consumer-region-note](./includes/event-consumer-region-note.md)]
+
+This same-region requirement doesn't apply to Azure Blob Storage events, Workspace item events, or Capacity overview events.
+
 ## Common scenarios
 
 ### Use Workspace item events
