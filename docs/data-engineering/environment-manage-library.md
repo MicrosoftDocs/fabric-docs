@@ -154,6 +154,14 @@ Upload the YML file directly to the environment, or switch to **YML editor view*
 
 You can install packages from a private JFrog Artifactory repository by creating a Data Factory connection and referencing its connection ID in a YML file.
 
+> [!NOTE]
+> Installing libraries from JFrog Artifactory requires Runtime 2.0 (Spark 4.1) or later.
+> It isn't supported in workspaces with Private Link or outbound access protection (OAP)
+> enabled. For alternatives, see
+> [Manage libraries with limited network access in Fabric](environment-manage-library-with-outbound-access-protection.md).
+> Only PyPI and Conda packages are supported, and you must use **Full** publish mode.
+> Maven packages aren't supported through a JFrog Artifactory connection.
+
 #### Set up a connection for JFrog Artifactory
 
 1. Select the **Settings** gear icon in the top-right corner of the Fabric portal, and then select **Manage connections and gateways**.
@@ -167,6 +175,8 @@ You can install packages from a private JFrog Artifactory repository by creating
     ```
 
 1. For the authentication method, select the expected mechanism.
+
+   For a Conda repository, provide both a username and a token in the connection.
 
 1. Select **Allow Code-First Artifacts like Notebooks to access this connection (Preview)**.
 
@@ -185,6 +195,12 @@ dependencies:
     - wordcloud==1.9.4
     - --index-url <YOUR_CONNECTION_ID>
 ```
+
+Only the bare connection ID is supported for a JFrog Artifactory index or channel.
+Don't embed a username or token before the host in an `--index-url` URL. Fabric rejects
+custom index or channel URLs with embedded credentials with the error
+"Custom index/channel URLs must not embed credentials". Store credentials in the connection
+instead.
 
 Upload the YML file directly to the environment, or switch to **YML editor view** and paste the content. When you publish the environment, Fabric reads the packages from your repository and persists them. Republish the environment to pick up package updates.
 

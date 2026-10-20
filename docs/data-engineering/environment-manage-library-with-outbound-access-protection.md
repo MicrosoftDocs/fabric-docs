@@ -11,6 +11,14 @@ ms.search.form: Manage libraries when private links and OAP enabled.
 
 Normally, when you add a Python library to an environment in the Fabric portal, the underlying Spark compute resolves and downloads the package and its dependencies from PyPI. However, when an admin enables [outbound access protection](/fabric/security/security-managed-vnets-fabric-overview) for a workspace, the Spark compute is blocked from making outbound internet connections. Any attempt to install a package through the portal fails because the compute can't reach PyPI or conda.
 
+> [!NOTE]
+> Installing libraries through JFrog Artifactory or Azure Artifact Feed connections isn't
+> supported in workspaces with outbound access protection (OAP) enabled. For connection
+> requirements and limitations, see
+> [Add libraries from JFrog Artifactory](environment-manage-library.md#add-libraries-from-jfrog-artifactory)
+> and [Add libraries from an Azure Artifact Feed](environment-manage-library.md#add-libraries-from-an-azure-artifact-feed).
+> Use one of the following approaches instead.
+
 To install Python libraries when outbound access protection is enabled, you need to get the packages into Fabric through a path that doesn't require outbound internet access from the Spark compute. This article covers two approaches:
 
 - **[Upload custom libraries](#upload-custom-library-files-recommended)** (recommended) — Download the specific wheel files you need on a separate machine and upload them directly to your Fabric environment. Best when you need a small number of packages and want minimal infrastructure overhead.
