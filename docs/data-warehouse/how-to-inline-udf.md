@@ -2,7 +2,7 @@
 title: "Create scalar user-defined functions"
 description: Learn how to create scalar user-defined functions, make functions inlineable, and rewrite calling queries for scalar UDF inlining in Microsoft Fabric Data Warehouse.
 ms.reviewer: srdjanmatin
-ms.date: 10/11/2026
+ms.date: 10/20/2026
 ms.topic: how-to
 # customer intent: Learn how to create scalar user-defined functions, make functions inlineable, and rewrite calling queries for scalar UDF inlining in Microsoft Fabric Data Warehouse.
 ---
