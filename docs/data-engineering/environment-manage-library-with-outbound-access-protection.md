@@ -11,6 +11,14 @@ ms.search.form: Manage libraries when private links and OAP enabled.
 
 Normally, when you add a Python library to an environment in the Fabric portal, the underlying Spark compute resolves and downloads the package and its dependencies from PyPI. However, when an admin enables [outbound access protection](/fabric/security/security-managed-vnets-fabric-overview) for a workspace, the Spark compute is blocked from making outbound internet connections. Any attempt to install a package through the portal fails because the compute can't reach PyPI or conda.
 
+> [!NOTE]
+> Installing libraries through JFrog Artifactory or Azure Artifact Feed connections isn't
+> supported in workspaces with outbound access protection (OAP) enabled. For connection
+> requirements and limitations, see
+> [Add libraries from JFrog Artifactory](environment-manage-library.md#add-libraries-from-jfrog-artifactory)
+> and [Add libraries from an Azure Artifact Feed](environment-manage-library.md#add-libraries-from-an-azure-artifact-feed).
+> Use one of the following approaches instead.
+
 To install Python libraries when outbound access protection is enabled, you need to get the packages into Fabric through a path that doesn't require outbound internet access from the Spark compute. This article covers two approaches:
 
 - **[Upload custom libraries](#upload-custom-library-files-recommended)** (recommended) — Download the specific wheel files you need on a separate machine and upload them directly to your Fabric environment. Best when you need a small number of packages and want minimal infrastructure overhead.
@@ -18,15 +26,15 @@ To install Python libraries when outbound access protection is enabled, you need
 
 ## Upload custom library files (recommended)
 
-When outbound access protection is enabled, Fabric can't reach PyPI to install packages directly. This approach lets you download the specific packages you need — along with their dependencies — on a separate machine that has internet access, and then upload those wheel files to your Fabric environment as custom libraries.
+When outbound access protection is enabled, Fabric can't reach PyPI to install packages directly. This approach lets you download the specific packages you need - along with their dependencies - on a separate machine that has internet access, and then upload those wheel files to your Fabric environment as custom libraries.
 
 You build a local Python environment that matches the Fabric runtime so that `pip` resolves the correct dependency versions. Then you use `pip download` to fetch only the additional packages your workload requires (not the packages already included in the runtime).
 
 ### Prerequisites
 
-Before you begin, make sure you have the following:
+Before you begin, ensure you have the following items:
 
-- **A Linux machine with internet access** — You need a Linux environment to build a local Python environment and download wheel files. Fabric's Spark compute runs on Linux ([Azure Linux/Mariner](runtime.md)), so you must use Linux to ensure conda resolves the correct platform-specific packages and `pip download` fetches compatible wheels. You can use any of the following:
+- **A Linux machine with internet access** — You need a Linux environment to build a local Python environment and download wheel files. Fabric's Spark compute runs on Linux ([Azure Linux/Mariner](runtime.md)), so you must use Linux to ensure conda resolves the correct platform-specific packages and `pip download` fetches compatible wheels. You can use any of the following options:
   - [Windows Subsystem for Linux (WSL)](/windows/wsl/install) on your Windows PC
   - A Linux PC or laptop
   - An [Azure Linux VM](/azure/virtual-machines/linux/quick-create-portal?tabs=ubuntu)
@@ -40,7 +48,7 @@ Before you begin, make sure you have the following:
 
 ### Step 1: Create a requirements file
 
-Create a `requirements.txt` file listing the additional packages your workload needs that aren't already included in the Fabric runtime. For example:
+Create a `requirements.txt` file that lists the extra packages your workload needs which aren't already included in the Fabric runtime. For example:
 
 ```text
 catboost==1.2.8
@@ -85,9 +93,9 @@ The runtime YML file contains Microsoft-hosted private libraries that pip can't 
 
 ### Step 3: Create a local Python environment that matches the Fabric runtime
 
-On your Linux machine, set up a conda environment that mirrors the Fabric runtime. This ensures `pip` resolves the correct dependency versions for your packages.
+On your Linux machine, set up a conda environment that mirrors the Fabric runtime. This setup ensures `pip` resolves the correct dependency versions for your packages.
 
-1. Download and install Miniconda:
+1. Download and install Miniconda.
 
    ```shell
    wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
@@ -95,7 +103,7 @@ On your Linux machine, set up a conda environment that mirrors the Fabric runtim
    export PATH="$HOME/miniconda3/bin:$PATH"
    ```
 
-1. Install the C/C++ compilers that some Python packages require during installation. On Ubuntu/Debian:
+1. Install the C/C++ compilers that some Python packages require during installation. On Ubuntu/Debian, use the following command:
 
    ```shell
    sudo apt-get update
@@ -120,7 +128,7 @@ mkdir wheels
 pip download -r requirements.txt -d wheels
 ```
 
-After the command completes, the `wheels` directory contains `.whl` files for each package and its dependencies.
+When the command finishes, the `wheels` directory contains `.whl` files for each package and its dependencies.
 
 ### Step 5: Upload the wheel files to your Fabric environment
 
@@ -170,13 +178,13 @@ pip install bandersnatch
 
 Create a Bandersnatch configuration file. See the [example configuration](https://github.com/pypa/bandersnatch/blob/main/src/bandersnatch/example.conf) for reference.
 
-Then run the mirror command. This performs a one-time sync that downloads packages from PyPI to your local file system:
+Then run the mirror command. This command performs a one-time sync that downloads packages from PyPI to your local file system:
 
 ```shell
 bandersnatch --config <path-to-bandersnatch.conf> mirror
 ```
 
-After the sync completes, the mirror directory contains the package files and index structure that `pip` requires:
+After the sync finishes, the mirror directory contains the package files and index structure that `pip` requires:
 
 ```
 /home/trusted-service-user/bandersnatch1/web/
@@ -201,11 +209,11 @@ pip install <package-name> --index-url http://localhost:8000/simple
 
 ### Step 4: Upload the mirror to Azure Storage
 
-Enable **Static website** hosting on your Azure Storage account. This lets you host the PyPI index pages that `pip` needs to resolve packages. Enabling this feature automatically creates a `$web` container.
+Enable **Static website** hosting on your Azure Storage account. This feature lets you host the PyPI index pages that `pip` needs to resolve packages. Enabling this feature automatically creates a `$web` container.
 
 :::image type="content" source="media\environment-library-management\outbound-access-protection-storage-account.png" alt-text="Screenshot that shows the storage account with Static website enabled." lightbox="media\environment-library-management\outbound-access-protection-storage-account.png":::
 
-Using Azure CLI, AzCopy, or Blobfuse2, upload all five folders (**simple**, **pypi**, **packages**, **local-stats**, and **json**) to the **$web** container. All folders must be in the same container because the index pages in `simple/` use relative links to reference files in `packages/`.
+Using Azure CLI, AzCopy, or Blobfuse2, upload all five folders (**simple**, **pypi**, **packages**, **local-stats**, and **json**) to the **$web** container. You must place all folders in the same container because the index pages in `simple/` use relative links to reference files in `packages/`.
 
 ### Step 5: Connect Fabric to the mirror
 
@@ -213,7 +221,7 @@ To let Fabric's Spark compute reach your storage account, add two managed privat
 
 :::image type="content" source="media\environment-library-management\outbound-access-protection-private-endpoints.png" alt-text="Screenshot that shows the managed private endpoints configuration." lightbox="media\environment-library-management\outbound-access-protection-private-endpoints.png":::
 
-Then install packages from the mirror using your storage account's static website URL. To find this URL, go to your storage account in the Azure portal and select **Static website** under **Data management**. The URL looks like `https://<storage-account-name>.z<number>.web.core.windows.net`, where the zone number varies by region.
+Then install packages from the mirror by using your storage account's static website URL. To find this URL, go to your storage account in the Azure portal and select **Static website** under **Data management**. The URL looks like `https://<storage-account-name>.z<number>.web.core.windows.net`, where the zone number varies by region.
 
 You can point `pip` to this mirror through an environment YAML file or an inline `%pip` command in a notebook:
 
