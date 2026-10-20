@@ -5,15 +5,16 @@ author: msmimart
 ms.author: mimart
 ms.reviewer: yaronc
 ms.topic: overview
-ms.date: 02/18/2026
+ms.date: 10/08/2026
+ai-usage: ai-assisted
 #customer intent: As data engineer, data scientist, analyst, decision maker, or business user, I want to use OneLake catalog's Explore to discover, manage, and use the content I need.
 ---
 
 # Find and explore data in the OneLake catalog
 
-OneLake catalog's explore tab helps you find, explore, and use the Fabric items you need. It features an items list with an in-context item details view that makes it possible to browse through and explore items without losing your list context. The explore tab also features selectors and filters to narrow down and focus the list, making it easier to find what you need.
+The OneLake catalog's explore tab helps you find, explore, and use the Fabric items you need. It features an items list with an in-context item details view that makes it possible to browse through and explore items without losing your list context. The explore tab also features selectors and filters to narrow down and focus the list, making it easier to find what you need.
 
-:::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-tab-general-view.png" alt-text="Screenshot showing the main parts of the OneLake catalog explore tab." lightbox="./media/onelake-catalog-explore/onelake-catalog-explore-tab-general-view.png" border="false"::: 
+:::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-tab-general-view.png" alt-text="Screenshot of the main parts of the OneLake catalog explore tab." lightbox="./media/onelake-catalog-explore/onelake-catalog-explore-tab-general-view.png" border="false"::: 
 
 The explore tab provides
 
@@ -29,7 +30,7 @@ This article explains what you see in the explore tab and describes how to use i
 
 To open the explore tab, select the OneLake catalog icon in the Fabric navigation pane and then select the explore tab. The Explore tab surfaces lakehouses, warehouses, Fabric databases, mirrored items, and other supported item types.
 
-:::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-open.png" alt-text="Screenshot showing how to open the OneLake catalog." lightbox="./media/onelake-catalog-explore/onelake-catalog-explore-open.png":::
+:::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-open.png" alt-text="Screenshot of how to open the OneLake catalog." lightbox="./media/onelake-catalog-explore/onelake-catalog-explore-open.png":::
 
 ## Find items in the items list
 
@@ -60,6 +61,21 @@ The following table describes the list columns.
 > * Semantic models that are configured as [discoverable](/power-bi/collaborate-share/service-discovery).
 > * Power BI reports whose associated semantic model violates a [data loss prevention policy that restricts access](/purview/dlp-powerbi-get-started#how-do-dlp-policies-for-fabric-work).
 
+## Browse objects in the items list
+
+Some Fabric items contain objects, such as schemas and tables. Supported items have an expand arrow next to their name in the items list. Select the arrow to browse their objects.
+
+Items are collapsed by default, and objects load one level at a time as you expand them. Select the arrow again to collapse a level.
+
+The hierarchy depends on the item type. You can browse as far as tables in the items list. To see a table's columns, select the table to open its details page.
+
+:::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-browse-objects.png" alt-text="Screenshot of the OneLake catalog items list with a lakehouse expanded to show schemas and tables." lightbox="./media/onelake-catalog-explore/onelake-catalog-explore-browse-objects.png":::
+
+> [!NOTE]
+> The items list includes items you have access to and items you can request access to. To browse an item's objects, you need Read or higher control-plane permission on the item. If there are no objects to display or you don't have permission to retrieve them, a message appears when you expand the item.
+
+To learn what you can see and do with an object, see [View object details](./onelake-catalog-item-details.md#view-object-details).
+
 ## Scope the catalog to a particular domain
 
 If your organization defines domains, use the OneLake catalog's domain selector to select a domain or subdomain. The explore tab displays only workspaces and items belonging to the selected domain or subdomain. Your selection persists for subsequent sessions.
@@ -76,13 +92,13 @@ The filters pane contains several [predefined filters](#filter-items-by-predefin
 
 ### Filter items by predefined filters
 
-The filters pane contains several predefined filters. These filters operate across workspaces. They show all the applicable items from across your tenant or domain, as long as you select **All workspaces** as the workspaces filter. They're described in the following table.
+The filters pane contains several predefined filters. These filters work across workspaces. They show all the applicable items from across your tenant or domain, as long as you select **All workspaces** as the workspaces filter. They're described in the following table.
 
 |Filter  |Description  |
 |:-------------------------|:----------------------------------------------------|
-| **All Items**                  | Items that you're allowed to find.  |
+| **All Items**                  | Items that you can find.  |
 | **My items**              | Items that you own.      |
-| **Endorsed items** | Endorsed items in your organization that you're allowed to find. Certified data items are listed first, followed by promoted data items. For more information about endorsement, see the [Endorsement overview](../governance/endorsement-overview.md) |
+| **Endorsed items** | Endorsed items in your organization that you can find. Certified data items are listed first, followed by promoted data items. For more information about endorsement, see the [Endorsement overview](../governance/endorsement-overview.md). |
 | **Favorites** | Items you marked as favorites. |
 
 ### Find items by item type category
@@ -102,7 +118,7 @@ Use the tags selector to display items tagged with the tags you select.
 
 ### Filter items by workspace
 
-Related items are often grouped together in a workspace. To find items by workspace, find and select the workspace you're interested in under the **Workspaces** heading in the filters pane. The items you're allowed to see in that workspace appear in the items list.
+Related items are often grouped together in a workspace. To find items by workspace, find and select the workspace you're interested in under the **Workspaces** heading in the filters pane. The items you can see in that workspace appear in the items list.
 
 > [!TIP]
 > The workspace filter can help you find the workspace you're looking for. Select the magnifying glass icon to open the filter.
