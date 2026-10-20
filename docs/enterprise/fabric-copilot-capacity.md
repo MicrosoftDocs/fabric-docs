@@ -4,7 +4,7 @@ description: Learn how to set up a Fabric Copilot capacity to bill all Copilot a
 author: dknappettmsft
 ms.author: daknappe
 ms.topic: concept-article
-ms.date: 06/24/2026
+ms.date: 10/20/2026
 ms.collection: ce-skilling-ai-copilot
 ms.update-cycle: 180-days
 ai-usage: ai-assisted
@@ -47,7 +47,7 @@ Enabling a Fabric Copilot capacity involves both the Fabric administrator and th
 
 * The capacity administrator assigns a group of users as [Fabric Copilot capacity users](../admin/capacity-settings.md) on their capacity.
 
-After a user is assigned to a Fabric Copilot capacity, they don't need to take any extra steps. Fabric bills their Copilot usage to the assigned capacity automatically.
+After a user is assigned to a Fabric Copilot capacity, they don't need to take any extra steps. Their assigned Fabric Copilot capacity takes precedence over the workspace's Fabric capacity for Copilot and data-agent usage and billing. Other workspace workloads continue to use the workspace's Fabric capacity.
 
 ## Considerations and limitations
 
