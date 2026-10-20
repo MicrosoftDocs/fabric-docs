@@ -127,6 +127,7 @@ When connected and synced, the workspace structure is mirrored in the Git reposi
 - Empty folders in Git are deleted automatically.
 - Empty folders in the workspace aren't deleted automatically even if all items are moved to different folders.
 - Folder structure is retained up to 10 levels deep.
+- Renaming a folder by changing only the letter casing isn't supported. For example, renaming SalesFolder to salesFolder in Git can't be applied to the workspace using Update from Git.
 
 #### Handling folder changes safely
 
