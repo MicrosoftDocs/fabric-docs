@@ -1,7 +1,7 @@
 ---
 title: Bind Data (Preview)
 description: Learn about the data binding process in ontology (preview).
-ms.date: 10/18/2026
+ms.date: 10/20/2026
 ms.topic: how-to
 ---
 
@@ -58,8 +58,6 @@ Before binding data to your ontology, make sure you have the following prerequis
     :::image type="content" source="media/how-to-bind-data/entity-type-properties.png" alt-text="Screenshot of the populated properties." lightbox="media/how-to-bind-data/entity-type-properties.png":::
 
 1. In the **Properties** section, add, rename, or delete properties as needed. Property names can match the source column names or be different. If you have existing properties defined on the entity type, you can select their names from the dropdown menu.
-
-    Property names must be unique across all entity types.
 
 1. When you finish configuring properties, select **Create** to save the data binding. You see a banner confirming that **Entity type updated successfully**.
 

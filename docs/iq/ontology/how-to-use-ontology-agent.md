@@ -1,7 +1,7 @@
 ---
 title: Use the Ontology Agent (Preview)
 description: Learn how to use the ontology agent in Fabric to create and operate ontologies over your Fabric workspace data through a chat interface.
-ms.date: 09/06/2026
+ms.date: 10/20/2026
 ms.topic: how-to
 ai-usage: ai-assisted
 ---
@@ -121,10 +121,8 @@ The agent uses your identity (delegated access) when it reads or writes data in 
 |-------------|------------------------------|
 | **Lakehouse** | Discovers tables and columns; samples rows; binds entity types to lakehouse tables; executes SQL queries. |
 | **Eventhouse** | Discovers databases, tables, and columns; samples rows; binds entity types to KQL tables (including time-series bindings); executes KQL queries. |
-| **Semantic model** | Reads measures, tables, columns, and relationships through XML for Analysis (XMLA) for business-context grounding; executes DAX queries against grounded semantic-model content. The agent doesn't bind ontology entities directly to semantic models during preview. |
+| **Semantic model** | Reads measures, tables, columns, and relationships through XML for Analysis (XMLA) for business-context grounding; executes DAX queries against grounded semantic-model content. |
 
-> [!NOTE]
-> The semantic-model grounding that an ontology carries is available only to the ontology agent. Fabric data agent can query a Power BI semantic model that you configure directly as its data source, but it doesn't use the semantic-model grounding that an ontology carries.
 
 ### Regions
 
@@ -137,12 +135,10 @@ The ontology agent has the same regional availability as ontology items.
 
 Keep in mind these limitations during preview:
 
-- Each conversation operates on a single ontology in a single workspace. The agent can't span multiple ontologies in one conversation.
+- Each conversation operates on a single ontology in a single workspace. Cross-ontology queries aren't supported, even when the ontologies are in the same workspace.
 - The ontology agent doesn't support customer-managed keys (CMK) for conversation data at this time. The service encrypts data by using Microsoft-managed keys, in alignment with Fabric data protection standards.
-- Applying ontology changes adds or updates items in place. There's no built-in rollback; to restore an earlier definition, reapply it.
-- Due to current known issues, these experiences are unavailable for query through the ontology agent:
-    - querying the parent entity and getting the instances of the inheriting entities (also not available through MCP)
-    - ask_ontology does not consider rules in the response (list rules is available through the [MCP tool](how-to-use-ontology-mcp-server.md))
+- Applying ontology changes adds or updates items in place. There's no per-operation undo in the agent conversation. To restore a previously saved definition, use [version history](how-to-use-version-history.md#edit-restore-or-delete-a-version). Restoring a version replaces the ontology definition rather than undoing an individual agent operation.
+- Polymorphic queries aren't supported. Querying a parent entity type doesn't automatically return instances of derived entity types. This limitation also applies through MCP.
 
 ### Responsible AI
 

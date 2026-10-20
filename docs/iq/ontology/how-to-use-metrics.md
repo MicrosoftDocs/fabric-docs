@@ -1,7 +1,7 @@
 ---
 title: Define Metrics in Ontology (Preview)
 description: Learn how to use the metrics feature in ontology (preview).
-ms.date: 09/04/2026
+ms.date: 10/20/2026
 ms.topic: how-to
 ai-usage: ai-assisted
 ---
@@ -62,9 +62,9 @@ Select a metric to open its details. The details include the description, the so
 
 You can perform these actions from the detail page:
 
-* Edit the metric formula or description.
+* Edit the metric description when description editing is available. The metric formula is read-only in ontology. To change the DAX expression, edit the measure in the source semantic model.
     >[!NOTE]
-    > The ontology stores the change only, where agents use it; it doesn't change the semantic model.
+    > The ontology stores description changes locally, where agents use them; these changes don't modify the semantic model.
 * Select **Resolve underlying DAX** to pull the original DAX expression from the semantic model. Viewing the original expression requires **write** permission on the source semantic model. The first pull is slower because Fabric fetches all measures; later ones load quickly.
 * Select the **Source model** link to open the semantic model in a new tab.
 
