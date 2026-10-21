@@ -7,7 +7,7 @@ ms.reviewer: svredevoogd
 ms.service: fabric
 ms.subservice: iq
 ms.topic: get-started
-ms.date: 09/14/2026
+ms.date: 10/21/2026
 ai-usage: ai-assisted
 ---
 
@@ -99,7 +99,10 @@ Don't add an `Authorization` bearer token to the recommended configuration. A co
 
 Fabric IQ MCP uses delegated OAuth 2.0 authentication through Microsoft Entra ID.
 
-All clients require the delegated `Item.Read.All`, `Item.Execute.All`, and `Dataset.Read.All` permissions from the Power BI Service API. Service-principal and application-only authentication aren't supported.
+All clients require the delegated `Item.Read.All` and `Item.Execute.All` permissions from the Power BI Service API. Service-principal and application-only authentication aren't supported.
+
+> [!NOTE]
+> The Power BI tenant setting **Users can use the Power BI Model Context Protocol server endpoints (preview)** controls the Power BI Model Authoring MCP experience. It doesn't apply to Fabric IQ MCP. Fabric IQ MCP is read-only, uses the signed-in user's existing Power BI and Fabric permissions, and isn't enabled or disabled by this setting.
 
 ### GitHub Copilot CLI
 
@@ -129,12 +132,12 @@ If your MCP client doesn't provide a preregistered Microsoft Entra application w
 1. Enter a name and select **Accounts in this organizational directory only** to create a single-tenant application.
 1. Under **Authentication**, add the redirect URI required by your MCP client.
 1. Under **API permissions**, select **Add a permission** > **APIs my organization uses** > **Power BI Service**.
-1. Select **Delegated permissions**, add `Item.Read.All`, `Item.Execute.All`, and `Dataset.Read.All`, and then select **Add permissions**.
+1. Select **Delegated permissions**, add `Item.Read.All` and `Item.Execute.All`, and then select **Add permissions**.
 1. Provide the application (client) ID and tenant ID to the MCP client if it requests them.
 1. Start the Fabric IQ MCP connection and complete the browser sign-in flow.
 
 > [!NOTE]
-> The `Item.Read.All`, `Item.Execute.All`, and `Dataset.Read.All` permissions don't require administrator consent by default. Users can consent when tenant settings allow it. A tenant administrator can restrict user consent or require requests to use the admin approval workflow. Authentication permissions apply to the endpoint as a whole.
+> The `Item.Read.All` and `Item.Execute.All` permissions don't require administrator consent by default. Users can consent when tenant settings allow it. A tenant administrator can restrict user consent or require requests to use the admin approval workflow. Authentication permissions apply to the endpoint as a whole.
 
 ## Test your connection
 
@@ -264,7 +267,7 @@ Use the same value for `initialize`, `tools/list`, and `tools/call`. When a newe
 | Symptom | Likely cause | What to check |
 | --- | --- | --- |
 | The browser sign-in doesn't open. | The client doesn't support automatic OAuth discovery, or it requires an app registration. | Check the client's OAuth setup and configure a single-tenant app registration if required. |
-| Authentication fails. | The token is missing, expired, has the wrong audience, lacks `Item.Read.All`, `Item.Execute.All`, or `Dataset.Read.All` permissions, or requires approval under the tenant consent policy. | Reauthenticate and check the app registration, Power BI Service permissions, and tenant consent policy. |
+| Authentication fails. | The token is missing, expired, has the wrong audience, lacks `Item.Read.All` or `Item.Execute.All` permissions, or requires approval under the tenant consent policy. | Reauthenticate and check the app registration, Power BI Service permissions, and tenant consent policy. |
 | `tools/list` doesn't show the expected tools. | The server connection is stale. | Restart the connection and check the runtime tool list. |
 | Fabric IQ tools don't match the documented list. | The `X-Variants` header is missing or has an incorrect value. | Configure `X-Variants` as `Fabric.Routing.FabricIQ.V1`, and then reconnect. |
 | A known report or semantic model isn't found. | The caller lacks access, the item type isn't supported, or the name is ambiguous. | Verify Fabric access, use a more specific name, or provide a supported report or semantic model browser URL. |
