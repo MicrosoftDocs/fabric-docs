@@ -4,7 +4,7 @@ description: Learn how to set up a Fabric Copilot capacity to bill all Copilot a
 author: dknappettmsft
 ms.author: daknappe
 ms.topic: concept-article
-ms.date: 06/24/2026
+ms.date: 10/20/2026
 ms.collection: ce-skilling-ai-copilot
 ms.update-cycle: 180-days
 ai-usage: ai-assisted
@@ -56,6 +56,8 @@ After a user is assigned to a Fabric Copilot capacity, they don't need to take a
 * The Fabric Copilot capacity must reside on at least an F2 or P1 [SKU](licenses.md#capacity).
 
 * Users assigned to a Fabric Copilot capacity can use Copilot with Power BI on workspaces with the following license modes: **Pro**, **Trial**, **Premium per-user (PPU)**, **Premium capacity**, and **Fabric capacity**. Capacities with the **Embedded** license mode aren't supported.
+
+* A Fabric Copilot capacity assigned to a user takes precedence over the workspace's Fabric capacity.
 
 * Only one Fabric Copilot capacity is supported per user. If a user is assigned to multiple Copilot capacities, the most recently created Copilot capacity registers the user's Copilot usage.
 
