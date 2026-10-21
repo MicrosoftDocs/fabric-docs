@@ -139,6 +139,16 @@
       "source_path_from_root": "/docs/iq/plan/planning-how-to-create-semantic-model-connection.md",
       "redirect_url": "/fabric/iq/plan/planning-how-to-get-started/#add-the-semantic-model",
       "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/iq/plan/planning-reference-formulas/math-functions/random-lookup-functions.md",
+      "redirect_url": "/fabric/iq/plan/planning-reference-formulas/math-functions/random-functions",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/iq/plan/planning-reference-formulas/time-intelligence-functions/time-shifting-lookup.md",
+      "redirect_url": "/fabric/iq/plan/planning-reference-formulas/time-intelligence-functions/time-shifting",
+      "redirect_document_id": true
     }
   ]
 }
