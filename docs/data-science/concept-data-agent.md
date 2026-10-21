@@ -23,7 +23,7 @@ You can also add organization-specific instructions, examples, and guidance to f
 
 ### Governance considerations
 
-Fabric data agents access underlying data sources using the requesting user's identity and permissions. Microsoft Purview policies that restrict that user's access to a supported Fabric item also constrain the agent's access to that item. Configuring or sharing a data agent doesn't grant access to its underlying data sources.
+Fabric data agents access underlying data sources by using the requesting user's identity and permissions. Microsoft Purview policies that restrict that user's access to a supported Fabric item also constrain the agent's access to that item. Configuring or sharing a data agent doesn't grant access to its underlying data sources.
 
 For more information, see [Get started with data loss prevention policies for Fabric and Power BI](/purview/dlp-powerbi-get-started) and [Protection policies in Microsoft Fabric](../governance/protection-policies-overview.md).
 
