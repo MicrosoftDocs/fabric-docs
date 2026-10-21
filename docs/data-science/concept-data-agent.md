@@ -21,12 +21,6 @@ You can also add organization-specific instructions, examples, and guidance to f
 
 [!INCLUDE [data-agent-prerequisites](./includes/data-agent-prerequisites.md)]
 
-### Governance considerations
-
-Fabric data agents access underlying data sources by using the requesting user's identity and permissions. Microsoft Purview policies that restrict that user's access to a supported Fabric item also constrain the agent's access to that item. Configuring or sharing a data agent doesn't grant access to its underlying data sources.
-
-For more information, see [Get started with data loss prevention policies for Fabric and Power BI](/purview/dlp-powerbi-get-started) and [Protection policies in Microsoft Fabric](../governance/protection-policies-overview.md).
-
 ## How the Fabric data agent works
 
 The Fabric data agent uses large language models (LLMs) to help users interact with their data naturally. The Fabric data agent applies Azure OpenAI Assistant APIs and behaves like an agent. It processes user questions, determines the most relevant data source (Lakehouse, Warehouse, Power BI dataset, KQL databases, ontology, or Microsoft Graph), and invokes the appropriate tool to generate, validate, and execute queries. Users can then ask questions in plain language and receive structured, human-readable answers. This approach eliminates the need to write complex queries and ensures accurate and secure data access.
@@ -116,9 +110,9 @@ The product team rigorously evaluated the quality and safety of Fabric data agen
 
 ## Governance and security
 
-Microsoft Purview integration provides governance controls for Fabric data agents. When you configure a data agent, Purview governance policies apply to the underlying data sources the agent can access. This integration helps ensure that data access through agents follows the same compliance and classification rules as direct access.
+Fabric data agents access underlying data sources by using the requesting user's identity and permissions. Microsoft Purview policies that restrict that user's access to a supported Fabric item also constrain the agent's access to that item. Configuring or sharing a data agent doesn't grant access to its underlying data sources.
 
-**Microsoft Purview policies**: Purview policies such as data access controls and sensitivity labels apply to data sources that agents query. If a Purview policy restricts access to a lakehouse or warehouse, the agent respects that restriction when processing user queries.
+For supported workloads, policy configuration, and limitations, see [Data loss prevention policies for Fabric and Power BI](/purview/dlp-powerbi-get-started) and [Protection policies in Microsoft Fabric](../governance/protection-policies-overview.md).
 
 **Outbound access protection**: Fabric data agents operate within workspace outbound access protection boundaries. Workspace administrators can manage permitted outbound connections through the workspace settings to control which external endpoints the data agent can reach.
 
