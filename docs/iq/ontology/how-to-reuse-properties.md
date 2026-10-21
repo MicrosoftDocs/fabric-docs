@@ -1,7 +1,7 @@
 ---
 title: Reuse shared properties
 description: Learn how to define and reference shared properties across entity types in an ontology (preview) item.
-ms.date: 09/21/2026
+ms.date: 10/20/2026
 ms.topic: how-to
 ai-usage: ai-generated
 ---
@@ -88,12 +88,6 @@ Because a property on an entity type can come from several places, the **Configu
 - **Shared** — composed from a shared property.
 
 :::image type="content" source="media/how-to-reuse-properties/property-sources.png" alt-text="Screenshot of filterable property sources." lightbox="media/how-to-reuse-properties/property-sources.png":::
-
-## Cross-ontology reuse
-
-You can reference a shared property defined in a different ontology. Cross-ontology references behave the same as their same-ontology counterparts.
-
-Cross-ontology reuse requires read permission on every element in the reuse path, including the source ontology and the source shared property. If any element in the path isn't readable, the operation fails with a permission error that identifies the missing element.
 
 ## Related content
 

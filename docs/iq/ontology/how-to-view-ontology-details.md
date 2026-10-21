@@ -1,8 +1,9 @@
 ---
 title: View Ontology Details (Preview)
 description: Learn about the configuration canvas and entity type details view in ontology (preview).
-ms.date: 09/14/2026
+ms.date: 10/20/2026
 ms.topic: how-to
+ai-usage: ai-assisted
 ---
 
 # View ontology details in ontology (preview)
@@ -17,7 +18,7 @@ Before viewing entity type details, make sure you have the following prerequisit
 
 * A [Fabric workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity).
 * **Ontology item (preview)** enabled on your tenant.
-* An ontology (preview) item with [data binding](how-to-bind-data.md) completed.
+* An ontology (preview) item with entity types defined. You can inspect and configure entity definitions without binding data. To view populated entity instances, complete [data binding](how-to-bind-data.md) for the entity type.
 
 [!INCLUDE [Explore canvas views](includes/explore-canvas-views.md)]
 
