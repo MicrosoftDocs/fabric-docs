@@ -285,6 +285,8 @@ items:
                 href: plan/planning-how-to-bulk-edit.md
               - name: Pivot data
                 href: plan/planning-how-to-pivot-data.md
+              - name: Configure filter context awareness
+                href: plan/planning-how-to-configure-filter-context.md
               - name: Configure approval workflows
                 href: plan/planning-how-to-configure-approval-workflows.md
         - name: Collaboration and export
