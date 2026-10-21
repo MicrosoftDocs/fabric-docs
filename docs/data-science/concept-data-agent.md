@@ -21,12 +21,11 @@ You can also add organization-specific instructions, examples, and guidance to f
 
 [!INCLUDE [data-agent-prerequisites](./includes/data-agent-prerequisites.md)]
 
-### Governance prerequisites
+### Governance considerations
 
-If your tenant or workspace is governed by Microsoft Purview policies, agents must operate within those policies. The following Purview policies can limit agent access and the results that agents return, based on sensitivity and policy configuration:
+Fabric data agents access underlying data sources using the requesting user's identity and permissions. Microsoft Purview policies that restrict that user's access to a supported Fabric item also constrain the agent's access to that item. Configuring or sharing a data agent doesn't grant access to its underlying data sources.
 
-- **Purview DLP policies in Fabric Data Warehouse** (generally available): DLP policies can detect and restrict access to sensitive data in warehouse assets that the agent queries.
-- **Access restriction policies** (preview) for Fabric KQL Database, Fabric SQL Database, and Fabric Data Warehouse: These policies can prevent the agent from accessing or returning results from assets that are classified as sensitive.
+For more information, see [Get started with data loss prevention policies for Fabric and Power BI](/purview/dlp-powerbi-get-started) and [Protection policies in Microsoft Fabric](../governance/protection-policies-overview.md).
 
 ## How the Fabric data agent works
 
@@ -154,7 +153,7 @@ To maintain ongoing quality and policy alignment, consider these operational pra
 - The Fabric data agent can't execute queries when the data source's workspace capacity is in a different region than the data agent's workspace capacity. For example, a lakehouse with capacity in North Europe fails if the Data Agent's capacity is in France Central.
 - Users can provide up to 100 example queries per data source in their Data Agent.
 - Fabric Data Agents are currently designed for conversational insights rather than for returning complete datasets. To ensure concise and performant responses, chat outputs automatically limit and/or summarize the data returned. At present, responses are capped at a maximum of 25 rows and 25 columns. Please note that previous chat history can influence subsequent responses. For example, if you ask to "show all rows for this year," the agent will still return a maximum of 25 rows. Follow‑up questions may then be answered based on this already limited context, which can affect the result. In such cases, starting a new chat session is recommended.
-- Agent responses might be truncated or blocked if Microsoft Purview DLP or access restriction policies apply to the underlying data sources. The specific behavior depends on your organization's policy configuration.
+- Microsoft Purview DLP or access restriction policies on underlying data sources can prevent queries or lead to incomplete answers. The specific behavior depends on your organization's policy configuration.
 - Assets that are marked as sensitive by Purview policies might be inaccessible to the agent, which can result in incomplete answers or an inability to query certain data sources.
 - Agent interactions might be logged and discoverable through Microsoft Purview Audit and eDiscovery. Organizations should consider these governance controls when deploying agents for sensitive workloads.
 - Access to Power BI semantic models through a data agent is governed by Read permission on the model and doesn't require workspace-level access. Row-Level Security (RLS) and Column-Level Security (CLS) still apply.
