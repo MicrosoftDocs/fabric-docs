@@ -1,15 +1,15 @@
 ---
-title: 'Time Intelligence Functions: Time Shifting and Lookup'
-description: Learn how to use time shifting and lookup functions in planning to retrieve values from different time periods. Compare historical and future data, shift dates across periods, and access measure values using SHIFT and VALUEAT.
+title: 'Time Intelligence Functions: Time Shifting'
+description: Learn how to use time shifting functions in planning to retrieve values from different time periods. Compare historical and future data, shift dates across periods, and access measure values using SHIFT and VALUEAT.
 ms.date: 08/19/2026
 ms.topic: reference
 ms.search.form: Time Intelligence functions
 customer intent: Learn how to use Time Intelligence functions in planning to shift dates across months, quarters, and years, retrieve measure values from previous or future periods, and perform comparative and trend analysis using SHIFT and VALUEAT.
 ---
 
-# Time shifting and lookup
+# Time shifting
 
-Planning supports time shifting and lookup functions that retrieve values from different time periods. These functions help you shift between time periods and access measure values for comparative and trend analysis.
+Planning supports time shifting functions that retrieve values from different time periods. These functions help you shift between time periods and access measure values for comparative and trend analysis.
 
 ## SHIFT
 
@@ -38,7 +38,7 @@ SHIFT(COLUMN.CURRENT_PERIOD, "2M")
 
 Returns the date two months after the current period. For example, if the current period is **January**, the function returns the corresponding date in **March**.
 
-:::image type="content" source="../../media/planning-reference-formulas/time-intelligence-functions/time-shifting-lookup/shift-current-period.png" alt-text="Screenshot of the Formula Measure pane with SHIFT formula using COLUMN.CURRENT_PERIOD." lightbox="../../media/planning-reference-formulas/time-intelligence-functions/time-shifting-lookup/shift-current-period.png":::
+:::image type="content" source="../../media/planning-reference-formulas/time-intelligence-functions/time-shifting/shift-current-period.png" alt-text="Screenshot of the Formula Measure pane with SHIFT formula using COLUMN.CURRENT_PERIOD." lightbox="../../media/planning-reference-formulas/time-intelligence-functions/time-shifting/shift-current-period.png":::
 
 > [!NOTE]
 > Set the **Data type** to **Date** when configuring the **`SHIFT`** function to view the shifted date. Otherwise, the function returns a **`#VALUE!`** error.
@@ -49,7 +49,7 @@ The following formula shifts each *Open Date* by two months. For example, if the
 SHIFT([Open Date], "2M")
 ```
 
-:::image type="content" source="../../media/planning-reference-formulas/time-intelligence-functions/time-shifting-lookup/shift-date.png" alt-text="Screenshot showing the SHIFT formula shifting Open Date by two months." lightbox="../../media/planning-reference-formulas/time-intelligence-functions/time-shifting-lookup/shift-date.png":::
+:::image type="content" source="../../media/planning-reference-formulas/time-intelligence-functions/time-shifting/shift-date.png" alt-text="Screenshot showing the SHIFT formula shifting Open Date by two months." lightbox="../../media/planning-reference-formulas/time-intelligence-functions/time-shifting/shift-date.png":::
 
 You can also use the *SHIFT* function with forecast open and closed periods. For example, you can shift the forecast open period end date backward by two quarters.
 
@@ -57,7 +57,7 @@ You can also use the *SHIFT* function with forecast open and closed periods. For
 SHIFT([Forecast].OPEN_END, "-2Q")
 ```
 
-:::image type="content" source="../../media/planning-reference-formulas/time-intelligence-functions/time-shifting-lookup/shift-forecast.png" alt-text="Screenshot showing the SHIFT formula shifting the forecast open period end date back two quarters in a planning sheet." lightbox="../../media/planning-reference-formulas/time-intelligence-functions/time-shifting-lookup/shift-forecast.png":::
+:::image type="content" source="../../media/planning-reference-formulas/time-intelligence-functions/time-shifting/shift-forecast.png" alt-text="Screenshot showing the SHIFT formula shifting the forecast open period end date back two quarters in a planning sheet." lightbox="../../media/planning-reference-formulas/time-intelligence-functions/time-shifting/shift-forecast.png":::
 
 ## VALUEAT
 
@@ -86,7 +86,7 @@ VALUEAT([Sales], "-1M")
 
 Returns the *Sales* value from the previous month.
 
-:::image type="content" source="../../media/planning-reference-formulas/time-intelligence-functions/time-shifting-lookup/valueat-previous-month.png" alt-text="Screenshot showing VALUEAT measure returning previous month Sales values." lightbox="../../media/planning-reference-formulas/time-intelligence-functions/time-shifting-lookup/valueat-previous-month.png":::
+:::image type="content" source="../../media/planning-reference-formulas/time-intelligence-functions/time-shifting/valueat-previous-month.png" alt-text="Screenshot showing VALUEAT measure returning previous month Sales values." lightbox="../../media/planning-reference-formulas/time-intelligence-functions/time-shifting/valueat-previous-month.png":::
 
 ```
 VALUEAT([Sales], "1Q")
@@ -94,4 +94,4 @@ VALUEAT([Sales], "1Q")
 
 Returns the *Sales* value from the next quarter.
 
-:::image type="content" source="../../media/planning-reference-formulas/time-intelligence-functions/time-shifting-lookup/valueat-next-quarter.png" alt-text="Screenshot showing VALUEAT measure returning next quarter Sales values across 2025 and 2026 quarters." lightbox="../../media/planning-reference-formulas/time-intelligence-functions/time-shifting-lookup/valueat-next-quarter.png":::
+:::image type="content" source="../../media/planning-reference-formulas/time-intelligence-functions/time-shifting/valueat-next-quarter.png" alt-text="Screenshot showing VALUEAT measure returning next quarter Sales values across 2025 and 2026 quarters." lightbox="../../media/planning-reference-formulas/time-intelligence-functions/time-shifting/valueat-next-quarter.png":::

@@ -1,15 +1,15 @@
 ---
-title: Random and Lookup Functions
-description: Learn about random and lookup functions in planning and how to use them to generate random numbers and retrieve positional values.
+title: Random Functions
+description: Learn about random functions in planning and how to use them to generate random numbers and retrieve positional values.
 ms.date: 06/04/2026
 ms.topic: reference
-ms.search.form: Random and lookup functions
-#customer intent: As a user, I want to understand random and lookup functions and how to use them in calculations.
+ms.search.form: Random functions
+#customer intent: As a user, I want to understand random functions and how to use them in calculations.
 ---
 
-# Random and lookup functions
+# Random functions
 
-Random functions let you generate random numbers and lookup functions retrieve positional values in reports. These functions are commonly used to create sample data, generate randomized results, and identify the position of values within a list.
+Random functions let you generate random numbers and retrieve positional values in reports. These functions are commonly used to create sample data, generate randomized results, and identify the position of values within a list.
 
 In planning, these functions help you create calculations in simulations, testing, dynamic analysis, and positional data evaluation.
 
@@ -40,7 +40,7 @@ INDEXOF([2025.Q2.Actuals, 2025.Q3.Actuals, 2025.Q4.Actuals], 2025.Q1.Actuals)
 
 In this example, the INDEXOF function is used to identify whether the *Q1 Actuals* value of 2025 exists in the *Q2 Actuals*, *Q3 Actuals*, and *Q4 Actuals* values of 2025 and returns its index position.
 
-:::image type="content" source="../../media/planning-reference-formulas/math-functions/random-lookup-functions/indexof.png" alt-text="Screenshot of INDEXOF function." lightbox="../../media/planning-reference-formulas/math-functions/random-lookup-functions/indexof.png":::
+:::image type="content" source="../../media/planning-reference-formulas/math-functions/random-functions/indexof.png" alt-text="Screenshot of INDEXOF function." lightbox="../../media/planning-reference-formulas/math-functions/random-functions/indexof.png":::
 
 ## RAND
 
@@ -64,7 +64,7 @@ RAND()
 
 In this example, the *Rand* measure is created using the RAND function, which generates a random decimal number between 0 and 1 each time the report is evaluated or refreshed.
 
-:::image type="content" source="../../media/planning-reference-formulas/math-functions/random-lookup-functions/rand.png" alt-text="Screenshot of RAND function." lightbox="../../media/planning-reference-formulas/math-functions/random-lookup-functions/rand.png":::
+:::image type="content" source="../../media/planning-reference-formulas/math-functions/random-functions/rand.png" alt-text="Screenshot of RAND function." lightbox="../../media/planning-reference-formulas/math-functions/random-functions/rand.png":::
 
 ### Excel equivalent
 
@@ -97,7 +97,7 @@ RANDBETWEEN(52, 110)
 
 In this example, the RANDBETWEEN function generates a random integer between 52 and 110.
 
-:::image type="content" source="../../media/planning-reference-formulas/math-functions/random-lookup-functions/randbetween.png" alt-text="Screenshot of RANDBETWEEN function." lightbox="../../media/planning-reference-formulas/math-functions/random-lookup-functions/randbetween.png":::
+:::image type="content" source="../../media/planning-reference-formulas/math-functions/random-functions/randbetween.png" alt-text="Screenshot of RANDBETWEEN function." lightbox="../../media/planning-reference-formulas/math-functions/random-functions/randbetween.png":::
 
 ### Excel equivalent
 
