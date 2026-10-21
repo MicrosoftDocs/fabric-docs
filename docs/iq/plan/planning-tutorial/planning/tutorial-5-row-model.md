@@ -60,7 +60,7 @@ In this section, you build a P&L hierarchy from scratch using Row Model Builder,
 
     This action adds *Gross Revenue* as a child node under *Net Revenue.*
 
-    :::image type="content" source="../../media/planning-tutorial/planning/tutorial-5-row-model/net-revenue-data-source-gross-revenue.png" alt-text="Screenshot of the Gross Revenue data source row added as a child node under Net Revenue in the row model." lightbox="../../media/planning-tutorial/planning/tutorial-5-row-model/net-revenue-data-source-gross-revenue.png":::
+    :::image type="content" source="../../media/planning-tutorial/planning/tutorial-5-row-model/gross-revenue-child-node-net-revenue.png" alt-text="Screenshot of the Gross Revenue data source row added as a child node under Net Revenue in the row model." lightbox="../../media/planning-tutorial/planning/tutorial-5-row-model/gross-revenue-child-node-net-revenue.png":::
 
 1. Select *Gross Revenue*. Select **Add Sibling** > **Data Source**. Select the edit icon, and name the row *Returns and Breakage.*
 1. Select **Choose Close Period Source Row,** search for and select *Returns and Breakage* from the semantic model. Select **Apply**.
