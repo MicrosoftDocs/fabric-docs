@@ -419,8 +419,8 @@ items:
                   href: plan/planning-reference-formulas/math-functions/exponential-logarithmic-functions.md
                 - name: Financial
                   href: plan/planning-reference-formulas/math-functions/financial-functions.md
-                - name: Random and lookup
-                  href: plan/planning-reference-formulas/math-functions/random-lookup-functions.md
+                - name: Random
+                  href: plan/planning-reference-formulas/math-functions/random-functions.md
                 - name: Rounding and formatting
                   href: plan/planning-reference-formulas/math-functions/rounding-formatting-functions.md
             - name: Text formatting functions
@@ -443,8 +443,8 @@ items:
                   href: plan/planning-reference-formulas/time-intelligence-functions/period-to-date-calculations.md
                 - name: Time-based aggregations
                   href: plan/planning-reference-formulas/time-intelligence-functions/time-based-aggregations.md
-                - name: Time shifting and lookup
-                  href: plan/planning-reference-formulas/time-intelligence-functions/time-shifting-lookup.md
+                - name: Time shifting
+                  href: plan/planning-reference-formulas/time-intelligence-functions/time-shifting.md
             - name: Statistical functions
               items:
                 - name: Measures of central tendency
