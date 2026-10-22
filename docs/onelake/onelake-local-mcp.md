@@ -1,18 +1,22 @@
 ---
-title: Use AI agents with OneLake through MCP
-description: Learn how to use the Fabric MCP server to explore and manage OneLake data through AI agents using the Model Context Protocol (MCP).
+title: Use the local Fabric MCP server with OneLake
+description: Install and use the local Fabric MCP server to explore OneLake with AI agents, or choose the hosted OneLake MCP server for setup without a local installation.
 ms.reviewer: tompeplow # Product team ms alias(es)
 # author: Do not use - assigned by folder in docfx file
 # ms.author: Do not use - assigned by folder in docfx file
 ms.topic: how-to
-ms.date: 04/08/2026
+ms.date: 10/21/2026
+ai-usage: ai-assisted
 ---
 
-# Use AI agents with OneLake through MCP
+# Use the local Fabric MCP server with OneLake
 
-The [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) is an open standard that lets AI agents connect to external tools and data sources. The [Fabric MCP server](https://github.com/microsoft/mcp/blob/main/servers/Fabric.Mcp.Server/README.md) includes OneLake tools that give AI agents direct access to your OneLake data — browsing workspaces, reading files, discovering table schemas, and managing directories — all through natural-language conversation.
+By using the local [Fabric MCP server](https://github.com/microsoft/mcp/blob/main/servers/Fabric.Mcp.Server/README.md), AI agents can browse workspaces, read files, inspect table schemas, and manage directories in OneLake through natural-language conversation. The server runs on your machine and connects your agent to OneLake through the [Model Context Protocol (MCP)](https://modelcontextprotocol.io/).
 
-Fabric items use open formats to store their data in OneLake — from lakehouses to mirrored databases, and even KQL databases and semantic models with OneLake availability enabled. The OneLake MCP tools let AI agents explore all of these through a single set of commands.
+> [!TIP]
+> For an easier setup, start with the [hosted OneLake MCP server](onelake-hosted-mcp.md) when it's available for your item and supports the tools you need. You connect over HTTPS without installing a local MCP server. The hosted and local servers expose different tools; this article describes the local server.
+
+Fabric items use open formats to store their data in OneLake. These items include lakehouses, mirrored databases, and KQL databases and semantic models with OneLake availability enabled. The local server's OneLake tools let AI agents explore these items through a single set of commands.
 
 ## Prerequisites
 
@@ -20,15 +24,15 @@ Fabric items use open formats to store their data in OneLake — from lakehouses
 - [Azure CLI](/cli/azure/install-azure-cli) installed and signed in (`az login`).
 - [Visual Studio Code](https://code.visualstudio.com/) with an MCP-compatible AI extension (such as [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot)).
 
-## Install the Fabric MCP server
+## Install the local Fabric MCP server
 
-The simplest way to get started is with the [Fabric MCP server VS Code extension](https://marketplace.visualstudio.com/items?itemName=fabric.vscode-fabric-mcp-server). Install the extension and the OneLake tools are available automatically.
+To install the local server in Visual Studio Code, use the [Fabric MCP server VS Code extension](https://marketplace.visualstudio.com/items?itemName=fabric.vscode-fabric-mcp-server). Install the extension and the OneLake tools are available automatically.
 
 For manual configuration or use outside VS Code, see the setup instructions in the [Fabric MCP Server README](https://github.com/microsoft/mcp/blob/main/servers/Fabric.Mcp.Server/README.md).
 
 ## Authentication and permissions
 
-The OneLake tools use your existing Azure identity and Fabric permissions. Your AI agent can only access workspaces and items you already have permission to view. You don't need any additional roles or permissions beyond your normal workspace access.
+The local server's OneLake tools use your existing Azure identity and Fabric permissions. Your AI agent can only access workspaces and items you already have permission to view. You don't need any additional roles or permissions beyond your normal workspace access.
 
 Sign in with the Azure CLI before using the tools:
 
@@ -36,7 +40,7 @@ Sign in with the Azure CLI before using the tools:
 az login
 ```
 
-## OneLake MCP tool capabilities
+## Local OneLake MCP tool capabilities
 
 The tools cover three areas of OneLake:
 
@@ -52,7 +56,7 @@ For the full command reference with parameters and example output, see the [OneL
 
 ## Example: explore a lakehouse
 
-After you install the Fabric MCP server, ask your AI agent to explore your data. For example:
+After you install the local Fabric MCP server, ask your AI agent to explore your data. For example:
 
 > *"List the tables in my Sales lakehouse and tell me about the schema of each one."*
 
@@ -72,6 +76,7 @@ Other tasks you can ask your AI agent to complete:
 
 ## Related content
 
+- [Connect AI agents to the hosted OneLake MCP server](onelake-hosted-mcp.md)
 - [Fabric MCP Server — GitHub README](https://github.com/microsoft/mcp/blob/main/servers/Fabric.Mcp.Server/README.md)
 - [OneLake tools — full command reference](https://github.com/microsoft/mcp/tree/main/tools/Fabric.Mcp.Tools.OneLake)
 - [Connect to OneLake](onelake-access-api.md)
