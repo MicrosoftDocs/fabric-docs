@@ -3,7 +3,7 @@ title: What is Real-Time Dashboard?
 description: Learn about Real-Time Dashboard in Microsoft Fabric.
 ms.reviewer: mibar, v-hzargari
 ms.topic: concept-article
-ms.date: 08/20/2026
+ms.date: 10/11/2026
 ms.search.form: Overview
 ai-usage: ai-assisted
 ---
@@ -49,6 +49,8 @@ You can also embed a Real-Time Dashboard in your own web application by using Fa
 * **Visual customization and conditional formatting:** [Customize the appearance and behavior of dashboard visuals](dashboard-visuals-customize.md), and apply [conditional formatting](dashboard-conditional-formatting.md) to highlight values with colors, tags, and icons based on rules you define. This feature helps you draw attention to the values that matter most.
 
 * **Time series analysis:** Use the [Time series visual](dashboard-time-series.md) and KQL time series capabilities to explore how data changes over time, spot trends, and drill into specific entities or time ranges. This feature helps you go beyond simple monitoring to deeper trend analysis.
+
+* **Geospatial visualization:** Display spatial context alongside real-time metrics by using a Fabric Maps visual. Unlike the built-in Map visual, a Fabric Maps visual references a separately authored map item. For more information, see [Fabric map visual](dashboard-fabric-maps-tile.md).
 
 ## Supported data sources
 
