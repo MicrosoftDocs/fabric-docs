@@ -1,18 +1,18 @@
 ---
-title: Understand Autoscale compute for Spark detail page
-description: Learn how to read the Microsoft Fabric Capacity Metrics app's Autoscale compute for Spark detail page.
+title: Understand On-demand Compute for Spark detail page
+description: Learn how to read the Microsoft Fabric Capacity Metrics app's On-demand Compute for Spark detail page.
 author: dknappettmsft
 ms.author: daknappe
 ms.topic: how-to
 ms.date: 03/24/2025
 no-loc: [Copilot]
 
-#customer intent: As a Fabric admin, I want to understand how to read the Microsoft Fabric Capacity Metrics app's Autoscale compute for Spark detail page.
+#customer intent: As a Fabric admin, I want to understand how to read the Microsoft Fabric Capacity Metrics app's On-demand Compute for Spark detail page.
 ---
  
-# Understand Autoscale compute for Spark detail page
+# Understand On-demand Compute for Spark detail page
 
-Autoscale operations in your capacity are ranked according to their compute impact. The compute impact of all your capacity operations is your capacity usage, and it's measured using capacity units (CUs). Use this page to understand which autoscale operations contributed to your capacity's usage.
+On-demand operations in your capacity are ranked according to their compute impact. The compute impact of all your capacity operations is your capacity usage, and it's measured using capacity units (CUs). Use this page to understand which on-demand operations contributed to your capacity's usage.
 
 ## Top row visuals
 
@@ -50,7 +50,7 @@ A table showing capacity usage in CUs for Spark operations in the viewed timepoi
 
 * **Timepoint CU (s)** - The number of CU seconds assigned to the operation in the current timepoint.
 
-* **Max CU Limit 1 Minute** - Displays workload autoscale limits for the operation.
+* **Max CU Limit 1 Minute** - Displays workload on-demand limits for the operation.
 
 * **Billing type** - Displays information if the item is billable or not.
 
@@ -62,6 +62,6 @@ A table showing capacity usage in CUs for Spark operations in the viewed timepoi
 
 ## Related content
 
-* [Understand the metrics app Autoscale compute for Spark page](metrics-app-feature-autoscale-page.md)
+* [Understand the metrics app On-demand Compute for Spark page](metrics-app-on-demand-compute-for-spark-page.md)
 
 * [Understand the metrics app compute page?](metrics-app-compute-page.md)

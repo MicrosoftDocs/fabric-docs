@@ -1,22 +1,22 @@
 ---
-title: Understand the metrics app autoscale compute for Spark page
-description: Learn how to read the Microsoft Fabric Capacity metrics app's Autoscale compute for Spark page.
+title: Understand the metrics app On-demand Compute for Spark page
+description: Learn how to read the Microsoft Fabric Capacity Metrics app's On-demand Compute for Spark page.
 author: dknappettmsft
 ms.author: daknappe
 ms.topic: how-to
 ms.date: 03/24/2025
 
-#customer intent: As a Fabric admin, I want to understand how to read the Microsoft Fabric Capacity Metrics app's Autoscale compute for Spark page.
+#customer intent: As a Fabric admin, I want to understand how to read the Microsoft Fabric Capacity Metrics app's On-demand Compute for Spark page.
 ---
  
-# Understand the metrics app Autoscale compute for Spark page
+# Understand the metrics app On-demand Compute for Spark page
 
-The Microsoft Fabric Capacity Metrics app's Autoscale Compute for Spark page provides an overview of capacities that have autoscale billing for Apache Spark enabled. Operations that aren't billed using Apache Spark autoscale, are displayed on the [compute](./metrics-app-compute-page.md) page. If there are no operations that used Spark autoscale in the selected capacity, there's a note in the Matrix by item visual, and no data is displayed.
+The Microsoft Fabric Capacity Metrics app's **On-demand Compute for Spark** page provides an overview of capacities that have on-demand billing for Apache Spark enabled. Operations that aren't billed using Apache Spark on-demand compute are displayed on the [compute](./metrics-app-compute-page.md) page. If there are no operations that used Spark on-demand compute in the selected capacity, there's a note in the Matrix by item visual, and no data is displayed.
 
 The page is divided into three visuals: the top two include a ribbon chart and a line and stacked column chart, and the bottom visual features a matrix table.
 
 >[!NOTE]
->Spark autoscale data isn't smoothed.
+>Spark on-demand compute data isn't smoothed.
 
 At the top of each page, the **Capacity Name** field allows you to select the capacity the app shows results for.
 
@@ -28,7 +28,7 @@ The CU metric column ribbon displays the Capacity Units (CU) processing time in 
 
 ## CU (s) usage over time
 
-This visual displays CU usage over time. Hovering over a timepoint shows a tooltip with additional details about the Autoscale CU usage percentage for that specific time.
+This visual displays CU usage over time. Hovering over a timepoint shows a tooltip with additional details about the On-demand CU usage percentage for that specific time.
 
 To toggle how the visual is displayed, use the tabs at the top right corner of the visual.
 
