@@ -17,9 +17,11 @@ items:
     - name: Monitor an Azure Database for PostgreSQL flexible server
       href: hub/monitor-postgresql.md
   - name: How to
-    items: 
+    items:
     - name: Enable performance monitoring for Microsoft SQL
       href: hub/add-sql.md
+    - name: Create Activator alerts for Microsoft SQL (preview)
+      href: hub/sql-activator-alerts.md
     - name: Query performance monitoring telemetry
       href: hub/microsoft-sql-query-performance-monitoring-telemetry.md
 
@@ -36,7 +38,7 @@ items:
   - name: "Decision guide: Choose a data movement strategy"
     href: ../data-factory/decision-guide-data-movement.md?toc=/fabric/database/toc.json&bc=/fabric/database/toc.json
   - name: Best use cases
-    items: 
+    items:
     - name: AI applications
       href: sql/use-case-ai-application.md
     - name: Operational data store
@@ -59,7 +61,7 @@ items:
       href: /sql/sql-server/ai/vectors-frequently-asked-questions?toc=/fabric/database/toc.json&bc=/fabric/breadcrumb/toc.json&view=fabric-sqldb&preserve-view=true
   - name: Copilot
     items:
-    - name: What is Copilot in Fabric SQL database? 
+    - name: What is Copilot in Fabric SQL database?
       href: sql/copilot-sql-database.md
     - name: Chat pane
       href: sql/copilot-chat-pane.md
@@ -70,7 +72,7 @@ items:
     - name: FAQ
       href: sql/copilot-faq.yml
   - name: Get started
-    items: 
+    items:
     - name: 1. Create a SQL database
       href: sql/create.md
     - name: 2. Load AdventureWorks sample Data
@@ -88,7 +90,7 @@ items:
     - name: 8. Share data
       href: sql/share-data.md
   - name: Tutorial
-    items: 
+    items:
     - name: SQL database in Fabric tutorial introduction
       href: sql/tutorial-introduction.md
     - name: 1. Create a workspace
@@ -116,7 +118,7 @@ items:
     - name: Restore
       href: sql/restore.md
   - name: Deploy
-    items: 
+    items:
     - name: Options to create a SQL database
       href: sql/create-options.md
     - name: Deploy via REST API
@@ -143,10 +145,10 @@ items:
       href: sql/sqlpackage.md
     - name: Connect App Service
       href: sql/tutorial-service-connector.md
-    - name: Connect .NET Aspire application 
+    - name: Connect .NET Aspire application
       href: sql/connect-your-dotnet-aspire-application-to-fabric-sql-database.md
   - name: Integrate with Fabric services
-    items: 
+    items:
     - name: Data virtualization
       href: sql/data-virtualization.md
     - name: Fabric User data functions
@@ -199,7 +201,7 @@ items:
       href: ./sql/usage-reporting.md
   - name: Secure
     items:
-    - name: Overview 
+    - name: Overview
       href: sql/security-overview.md
     - name: Auditing for SQL database
       href: sql/auditing.md
@@ -212,13 +214,13 @@ items:
     - name: Share your SQL database and manage item permissions
       href: sql/share-sql-manage-permission.md
     - name: Configure granular access control for a SQL database
-      href: sql/configure-sql-access-controls.md     
+      href: sql/configure-sql-access-controls.md
     - name: Protect sensitive data with Microsoft Purview protection policies
-      href: sql/protect-databases-with-protection-policies.md 
+      href: sql/protect-databases-with-protection-policies.md
     - name: Encryption-at-rest with customer-managed keys
-      href: sql/encryption.md  
+      href: sql/encryption.md
   - name: Troubleshoot
-    items: 
+    items:
     - name: Limitations
       href: sql/limitations.md
     - name: Start/stop mirroring with REST API
@@ -226,11 +228,11 @@ items:
     - name: Control compute usage
       href: sql/control-compute-usage.md
   - name: Reference
-    items: 
+    items:
     - name: T-SQL Reference for Fabric
       href: /sql/t-sql/language-reference?view=fabric-sqldb&preserve-view=true
   - name: Resources
-    items: 
+    items:
     - name: SQL database in Fabric Community
       href: https://community.fabric.microsoft.com/t5/SQL-database/bd-p/db_general_discussion
 - name: Cosmos DB in Fabric
@@ -244,13 +246,13 @@ items:
     - name: Microsoft Q & A >>
       href: /answers/
     - name: Submit feedback >>
-      href: https://feedback.azure.com/    
+      href: https://feedback.azure.com/
   - name: Ideas
     href: https://ideas.fabric.microsoft.com/
   - name: Community
     href: https://community.fabric.microsoft.com/
   - name: Service updates
-    href: https://azure.microsoft.com/updates/    
+    href: https://azure.microsoft.com/updates/
   - name: Azure Status
     href: https://azure.status.microsoft/
   - name: Learn
