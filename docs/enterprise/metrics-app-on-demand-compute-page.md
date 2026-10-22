@@ -177,6 +177,6 @@ This tooltip provides granular visibility into what types of operations are driv
 
 ## Related content
 
-- [Understand the metrics app compute page](https://learn.microsoft.com/en-us/fabric/enterprise/metrics-app-compute-page)
-- [Understand the metrics app storage page](https://learn.microsoft.com/en-us/fabric/enterprise/metrics-app-storage-page)
-- [KQL Database consumption](https://learn.microsoft.com/en-us/fabric/real-time-intelligence/kql-database-consumption)
+- [Understand the metrics app compute page](metrics-app-compute-page.md)
+- [Understand the metrics app storage page](metrics-app-storage-page.md)
+- [Real-Time Intelligence consumption](../real-time-intelligence/real-time-intelligence-consumption.md)
