@@ -75,6 +75,8 @@ items:
       href: metrics-app-preview-health-page.md
     - name: Compute page
       href: metrics-app-compute-page.md
+    - name: On-Demand compute page
+      href: metrics-app-on-demand-compute-page.md
     - name: Compute page (preview)
       href: metrics-app-preview-compute-page.md
     - name: Storage page
@@ -89,10 +91,10 @@ items:
       href: metrics-app-timepoint-summary-page.md
     - name: Timepoint item detail page
       href: metrics-app-timepoint-item-detail-page.md
-    - name: Autoscale compute for Spark page
-      href: metrics-app-feature-autoscale-page.md
-    - name: Autoscale compute for Spark detail page
-      href: metrics-app-feature-autoscale-detail-page.md
+    - name: On-demand Compute for Spark page
+      href: metrics-app-on-demand-compute-for-spark-page.md
+    - name: On-demand Compute for Spark detail page
+      href: metrics-app-on-demand-compute-for-spark-detail-page.md
     - name: Item history page
       href: metrics-app-item-history-page.md
     - name: Item details page (preview)

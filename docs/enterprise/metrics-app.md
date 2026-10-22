@@ -37,6 +37,8 @@ The default report provides various features and functionalities to help you mon
 
 - **Compute** page: Get a 14-day view of your capacity’s compute performance. Visuals include ribbon charts, utilization trends, and a matrix of operations, helping you analyze usage patterns, peak loads, and throttling events. AI Functions appears as a distinct operation category in ribbon charts, utilization trends, and the matrix of operations, tracked separately from Spark and Dataflows Gen2. For more information, see [Understand the metrics app compute page](metrics-app-compute-page.md).
 
+- **On-Demand Compute** page: Monitor on-demand workload consumption, track 24-hour rolling cumulative usage against configured billing limits, and identify periods when workloads are at risk of rejection. For more information, see [Understand the metrics app on-demand compute page](metrics-app-on-demand-compute-page.md).
+
 - **Storage** page: Monitor storage usage over the past 30 days. View current and billable storage by workspace, track soft-deleted data, and explore trends through column charts and detailed tables. For more information, see [Understand the metrics app storage page](metrics-app-storage-page.md).
 
 - **Timepoint** page: Drill into a specific 30-second timepoint to see which operations (interactive or background) consumed the most compute. The operation breakdown includes a dedicated AI Functions operation group, so you can see AI Functions usage at a given 30-second interval. Use this page to diagnose overloads and understand autoscale or throttling behavior. For more information, see [Understand the metrics app timepoint page](metrics-app-timepoint-page.md).
@@ -45,9 +47,9 @@ The default report provides various features and functionalities to help you mon
 
 - **Timepoint item detail** page: Provides granular detail on operations within a specific item at a timepoint. Includes filters for operation ID, user, and CU thresholds that are useful for root-cause analysis and performance tuning. For more information, see [Understand the metrics app timepoint item detail page](metrics-app-timepoint-item-detail-page.md).
 
-- **Autoscale compute for Spark** page: This page provides insights into the autoscaling behavior of Spark workloads, helping you optimize performance and resource allocation. For more information, see [Understand the metrics app Autoscale compute for Spark page](metrics-app-feature-autoscale-page.md).
+- **On-demand Compute for Spark** page: This page provides insights into the on-demand compute behavior of Spark workloads, helping you optimize performance and resource allocation. For more information, see [Understand the metrics app On-demand Compute for Spark page](metrics-app-on-demand-compute-for-spark-page.md).
 
-- **Autoscale compute for Spark detail** page: Dive deeper into autoscale operations to understand which workloads triggered scaling and how they contributed to overall capacity usage. For more information, see [Understand Autoscale compute for Spark detail page](metrics-app-feature-autoscale-detail-page.md).
+- **On-demand Compute for Spark detail** page: Dive deeper into on-demand operations to understand which workloads triggered scaling and how they contributed to overall capacity usage. For more information, see [Understand On-demand Compute for Spark detail page](metrics-app-on-demand-compute-for-spark-detail-page.md).
 
 - **Plan capacity**: Learn how to estimate the right capacity SKU for your workloads by using the metrics app and the Fabric SKU Estimator. Helps avoid over- or underprovisioning. For more information, see [Plan your capacity size](plan-capacity.md).
 
@@ -68,7 +70,7 @@ The Fabric Capacity Metrics preview report offers a redesigned monitoring experi
 
 - **Storage**: Review current and average storage consumption by storage type and workspace. For more information, see [Understand the Storage Preview page](metrics-app-preview-storage-page.md).
 
-- **Autoscale for Spark**: Review Autoscale for Spark usage.
+- **On-demand Compute for Spark**: Review On-demand Compute for Spark usage.
 
 - **Help**: Access contextual guidance for report visuals, columns, icons, and thresholds.
 
