@@ -7,7 +7,7 @@ metadata:
   ms.reviewer: jmaldonado
   ms.subservice: data-warehouse
   ms.topic: faq
-  ms.date: 10/22/2025
+  ms.date: 10/21/2026
 title: |
   Frequently asked questions for Microsoft Fabric mirrored databases from Azure Cosmos DB
 summary: | 
@@ -51,7 +51,7 @@ sections:
       - question: |
           How are egress fees handled for mirroring Azure Cosmos DB?
         answer: |
-          Egress fees are only charged if your Azure Cosmos DB account is in a different region than your Fabric capacity. Fabric mirrors from the geographically closest Azure region to Fabric's capacity region in scenarios where an Azure Cosmos DB account has multiple read regions. For more information, see [replication limitations](azure-cosmos-db-limitations.md#replication-limitations).
+          Egress fees are only charged if your Azure Cosmos DB account is in a different region than your Fabric capacity. Fabric mirrors from the Azure write region (hub). For more information, see [replication limitations](azure-cosmos-db-limitations.md#replication-limitations).
   - name: Azure Synapse Link and analytical store
     questions:
       - question: |
@@ -158,6 +158,20 @@ sections:
           How long does initial replication of Azure Cosmos DB data take?
         answer: |
           The latency of initial and continuous replication varies based on the volume of data. In most cases, latency can be a few minutes but it can be longer for large volumes of data.
+      - question: |
+          I changed a property's data type in the source Azure Cosmos DB container, but mirroring still shows the old type or `null`. Why?
+        answer: |
+          Mirroring uses the source Azure Cosmos DB account's continuous backup as the source for the initial replication of existing data. Continuous backup takes a full backup on or before every seven days, and the exact cadence varies based on container activity and other factors. When you start (or restart) mirroring, the initial backfill is read from the most recent backup, which can be up to seven days old. After this one-time initial backfill, mirroring switches to reading incremental inserts, updates, and deletes directly from the live container in near real-time.
+
+          Because of this, type changes you made to items that already existed before mirroring started might not appear until a backup that includes those changes is taken. The continuous backup retention setting (7-day or 30-day) controls how far back PITR can restore; it doesn't change how often backups are taken or how fresh the initial backfill is.
+
+          To make a recent type change visible:
+
+          1. Update or insert documents in the source container so the property has the desired type.
+          1. Wait for the next backup, then start (or stop and restart) mirroring. Restarting mirroring reseeds the target tables from the latest backup.
+          1. If you can't wait for the next scheduled backup, [open a support ticket](/power-bi/support/service-support-options) to request a manual backup of the container, and restart mirroring after the backup completes.
+
+          Avoid storing mixed data types for the same property across items. When a property has multiple types, the inferred column type in the mirrored table isn't guaranteed.
       - question: |
           How long does it take to replicate Azure Cosmos DB insert, update, and delete operations?
         answer: |
