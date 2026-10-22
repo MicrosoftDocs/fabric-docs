@@ -100,6 +100,8 @@ items:
     items:
     - name: What are table APIs?
       href: ./table-apis/table-apis-overview.md
+    - name: Discover item endpoints
+      href: ./table-apis/endpoint-discovery-api.md
     - name: Work with table metadata
       items:
       - name: Additional table metadata (preview)
