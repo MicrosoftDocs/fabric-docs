@@ -143,8 +143,10 @@ items:
   items:
   - name: Microsoft Foundry knowledge
     href: onelake-foundry-knowledge.md
-  - name: AI agents (MCP)
+  - name: Local MCP server
     href: onelake-local-mcp.md
+  - name: Hosted MCP server
+    href: onelake-hosted-mcp.md
 - name: Secure data
   items:
   - name: Data security
