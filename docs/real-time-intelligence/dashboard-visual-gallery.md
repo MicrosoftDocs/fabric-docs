@@ -5,7 +5,7 @@ ms.reviewer: gabil, mbar
 ms.topic: reference
 ms.subservice: rti-dashboard
 ms.custom:
-ms.date: 08/23/2026
+ms.date: 10/11/2026
 ai-usage: ai-assisted
 ---
 
@@ -17,28 +17,31 @@ This article provides an overview of the visual capabilities available in Real-T
 
 ## Choose the right visual for your data
 
-Each dashboard tile combines a Kusto Query Language (KQL) query with a visual representation of the query results. Different visual types help answer different questions. For example:
+Most dashboard visual tiles combine a Kusto Query Language (KQL) query with a visual representation of the query results. Real-Time Dashboards can also display referenced Fabric items, such as Fabric Maps.
+
+Different visual types are suited for different types of data and analysis needs. For example:
 
 - Use time-based charts to monitor trends and detect changes over time.
 - Use bar, column, pie, and funnel charts to compare categories and distributions.
 - Use tables to inspect detailed records.
 - Use KPI, Stat, and Multi Stat visuals to highlight important metrics.
-- Use maps to visualize geographical data.
+- Use the built-in Map visual to display geographic data returned by a tile's KQL query. 
+- Use a Fabric Map visual to display a separately authored, multilayer Fabric map.
 - Use heatmaps to identify concentration and patterns across dimensions.
 
 For a complete list of supported visual types and their use cases, see [Supported visuals in Real-Time Dashboards](dashboard-supported-visuals.md).
 
 ## Build and edit dashboard visuals
 
-Dashboard authors can add new visuals, modify existing tiles, and update the underlying query at any time. In editing mode, you can:
+Dashboard authors can add new tiles and modify existing tiles. For query-backed visual tiles, authors can also update the underlying query and configure how the query results are displayed. In editing mode, you can:
 
-- Add new visual tiles.
-- Change a visual type.
+- Add new tiles.
+- Change the visual type of a query-backed tile.
 - Edit the underlying KQL query.
 - Configure visual-specific settings.
 - Update formatting and display options.
 
-Real-Time Dashboards also support Copilot-assisted authoring, allowing you to create and modify visuals using natural language prompts.
+Real-Time Dashboards also support Copilot-assisted authoring for query-backed visuals, allowing you to create and modify visuals using natural language prompts.
 
 ## Organize your dashboard layout
 
@@ -86,6 +89,7 @@ Some scenarios benefit from dashboard-specific visuals and capabilities, includi
 - [KPI visuals](dashboard-visuals-customize.md#kpi-visualization) for operational monitoring and threshold tracking.
 - [Time Series visuals](dashboard-time-series.md) for analyzing multiple measures over time.
 - [Markdown visuals](dashboard-markdown-visual.md) for contextual information and documentation.
+- [Fabric Map visuals](dashboard-fabric-maps-tile.md) for displaying separately authored, multilayer Fabric maps.
 
 Each visual type includes its own configuration options and best practices.
 
