@@ -1,20 +1,23 @@
 ---
-title: Discover item endpoints with the OneLake API
-description: Use the OneLake endpoint discovery API to find connection details, authentication audiences, MCP servers, and skills for a Microsoft Fabric item.
+title: Discover item endpoints with the OneLake API (preview)
+description: Use the OneLake endpoint discovery API (preview) to find connection details, authentication audiences, MCP servers, and skills for a Microsoft Fabric item.
 ms.service: fabric
 ms.subservice: onelake
 ms.topic: reference
-ms.date: 10/20/2026
+ms.date: 10/22/2026
 ai-usage: ai-assisted
 ---
 
-# Discover item endpoints with the OneLake API
+# Discover item endpoints with the OneLake API (preview)
 
 Use the OneLake endpoint discovery API to find how your application or agent can connect to a Microsoft Fabric item. One request returns connection details grouped by engine, including authentication audiences, Model Context Protocol (MCP) servers, and agent skills where available.
 
 Instead of maintaining a list of endpoints for each item type, your integration reads the discovery response and selects a connection it supports. For example, an application can discover a lakehouse's SQL connection details, while an agent can discover its recommended MCP server.
 
 Discovery returns connection metadata. It doesn't run queries, return table rows, or grant access to the returned services.
+
+> [!IMPORTANT]
+> The OneLake endpoint discovery API is currently in **public preview**. Features and behavior might change before general availability.
 
 ## Prerequisites
 

@@ -100,7 +100,7 @@ items:
     items:
     - name: What are table APIs?
       href: ./table-apis/table-apis-overview.md
-    - name: Discover item endpoints
+    - name: Discover item endpoints (preview)
       href: ./table-apis/endpoint-discovery-api.md
     - name: Work with table metadata
       items:
@@ -147,7 +147,7 @@ items:
     href: onelake-foundry-knowledge.md
   - name: Local MCP server
     href: onelake-local-mcp.md
-  - name: Hosted MCP server
+  - name: Hosted MCP server (preview)
     href: onelake-hosted-mcp.md
 - name: Secure data
   items:
