@@ -95,6 +95,8 @@ items:
       href: metrics-app-feature-autoscale-detail-page.md
     - name: Item history page
       href: metrics-app-item-history-page.md
+    - name: Workspace Detail page (preview)
+      href: metrics-app-preview-workspace-detail-page.md
     - name: Item details page (preview)
       href: metrics-app-preview-item-details-page.md
     - name: Monitor capacity and throttling (preview)

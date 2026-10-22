@@ -66,6 +66,8 @@ The Fabric Capacity Metrics preview report offers a redesigned monitoring experi
 
 - **Compute**: Analyze capacity utilization and capacity unit (CU) consumption at the capacity, workspace, item-kind, and item levels. Drill through from an item to review its operation history on the Item details page. For more information, see [Understand the Compute Preview page](metrics-app-preview-compute-page.md) and [Understand the Item details Preview page](metrics-app-preview-item-details-page.md).
 
+- **Workspace Detail**: Investigate the items in a selected workspace and review their CU consumption, operations, duration, and users. For more information, see [Understand the Workspace Detail page](metrics-app-preview-workspace-detail-page.md).
+
 - **Storage**: Review current and average storage consumption by storage type and workspace. For more information, see [Understand the Storage Preview page](metrics-app-preview-storage-page.md).
 
 - **Autoscale for Spark**: Review Autoscale for Spark usage.
