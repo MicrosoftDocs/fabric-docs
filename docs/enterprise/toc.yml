@@ -75,7 +75,7 @@ items:
       href: metrics-app-preview-health-page.md
     - name: Compute page
       href: metrics-app-compute-page.md
-    - name: On-Demand compute page
+    - name: On-demand Compute page
       href: metrics-app-on-demand-compute-page.md
     - name: Compute page (preview)
       href: metrics-app-preview-compute-page.md

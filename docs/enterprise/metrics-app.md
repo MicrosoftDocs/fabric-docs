@@ -37,7 +37,7 @@ The default report provides various features and functionalities to help you mon
 
 - **Compute** page: Get a 14-day view of your capacity’s compute performance. Visuals include ribbon charts, utilization trends, and a matrix of operations, helping you analyze usage patterns, peak loads, and throttling events. AI Functions appears as a distinct operation category in ribbon charts, utilization trends, and the matrix of operations, tracked separately from Spark and Dataflows Gen2. For more information, see [Understand the metrics app compute page](metrics-app-compute-page.md).
 
-- **On-Demand Compute** page: Monitor on-demand workload consumption, track 24-hour rolling cumulative usage against configured billing limits, and identify periods when workloads are at risk of rejection. For more information, see [Understand the metrics app on-demand compute page](metrics-app-on-demand-compute-page.md).
+- **On-demand Compute** page: Monitor on-demand workload consumption, track 24-hour rolling cumulative usage against configured billing limits, and identify periods when workloads are at risk of rejection. For more information, see [Understand the metrics app on-demand compute page](metrics-app-on-demand-compute-page.md).
 
 - **Storage** page: Monitor storage usage over the past 30 days. View current and billable storage by workspace, track soft-deleted data, and explore trends through column charts and detailed tables. For more information, see [Understand the metrics app storage page](metrics-app-storage-page.md).
 
