@@ -270,7 +270,7 @@ spark.conf.set("spark.native.enabled", "true")
 In the Spark UI, look for node names ending in `Transformer`, `NativeFileScan`, or `VeloxColumnarToRowExec`. The execution graph uses green for NEE operations and light blue for JVM engine operations. You can also use `df.explain()` to inspect the physical plan for these suffixes.
 
 > [!IMPORTANT]
-> If you're using runtime 1.2, NEE support isn't available. Upgrade to runtime 1.3 to re-enable native acceleration.
+> If you're using Runtime 1.2, NEE support isn't available. Validate workload compatibility and upgrade to [Runtime 2.0](./runtime-2-0.md), the latest generally available (GA) and default runtime, to use native acceleration.
 
 ## Resource profiles
 
