@@ -19,16 +19,16 @@ Just like for [Azure Storage](/azure/storage/common/storage-redundancy), LRS rep
 
 Meanwhile, ZRS provides fault tolerance to datacenter failures by copying data synchronously across three Azure availability zones in the primary region. ZRS offers a durability of at least 99.9999999999% (12 nines) over a year.
 
-This article provides guidance on how to further protect your data from rare region-wide outages.
+LRS and ZRS provide data protection within the primary region. To protect your data from a region-wide outage, you can enable disaster recovery to replicate your OneLake data to a secondary geographic region.
 
 ## Disaster recovery
 
 You can enable or disable disaster recovery (DR) for a specific capacity through the [capacity admin portal](/azure/reliability/reliability-fabric#disaster-recovery-capacity-setting). If your capacity has DR enabled, your data is duplicated and stored in two geographic regions so that it's geo-redundant. The standard region pairings in Azure determine the choice of the secondary region. You can't modify the secondary region.
 
 > [!IMPORTANT]
-> Enabling disaster recovery might take an extended period of time in East US 2, Central US, East US, West US, Japan East, Japan West, Europe North, and Europe West. To check status, go to **capacity settings** and review **Workspaces assigned to this capacity**. The **OneLake Geo-replication** column shows the enablement status for each workspace.
+> Enabling disaster recovery might take an extended period of time depending on current resource demands in the region, data size, and other factors. To check status, go to **capacity settings** and review **Workspaces assigned to this capacity**. The **OneLake Geo-replication** column shows the enablement status for each workspace.
 
-If a disaster makes the primary region unrecoverable, OneLake might initiate a regional failover. After the failover finishes, you can use the OneLake APIs through the [global endpoint](onelake-access-api.md) to read and write data in the secondary region. Data replication to the secondary region is asynchronous, so any data not copied during the disaster is lost. After a failover, the new primary datacenter has local redundancy only.
+If a disaster makes the primary region unrecoverable, OneLake might initiate a regional failover. After the failover finishes, you can use the OneLake APIs through the [global endpoint](onelake-access-api.md) to read and write data in the secondary region. Data replication to the secondary region is asynchronous and occurs at the file level. As a result, a regional failover can result in data loss and inconsistencies between files. The secondary region might not contain a point-in-time-consistent copy of the data. For example, a newer file might be present while an older file that didn't yet replicate is missing.
 
 > [!NOTE]
 > This recovery guidance applies only when the primary region has an Azure‑paired secondary region and Fabric is supported in the paired region.

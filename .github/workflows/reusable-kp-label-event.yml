@@ -1,0 +1,74 @@
+# TEMPORARY: This workflow limits the initial stale-bot rollout to Ignite PRs.
+# Remove it after Ignite, when Knowledge Partnership reminders expand to all PRs.
+# In the same change, remove the caller job, its dependencies/output references,
+# and event-label checks/filters from reminders and cleanup. Keep next-action
+# labels and exemptions; expanding eligibility does not remove those rules.
+# Review the general stale bot's exclusions to prevent duplicate handling.
+# Add the event label to rollout PRs; never remove labels or execute PR code.
+# The main workflow owns PR/scheduled/manual triggers and supplies the label and prefix.
+name: KP - Label PRs
+
+on:
+  workflow_call:
+    inputs:
+      event-label:
+        description: Existing label to add to rollout PRs
+        type: string
+        required: true
+      rollout-branch-prefix:
+        description: Target branch prefix to label
+        type: string
+        required: true
+
+permissions:
+  issues: read
+  pull-requests: write
+
+jobs:
+  label-event-prs:
+    name: Add the event label to matching open PRs
+    if: github.repository == 'MicrosoftDocs/fabric-docs-pr'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      EVENT_NAME: ${{ github.event_name }}
+      PR_NUMBER: ${{ github.event.pull_request.number }}
+      EVENT_LABEL: ${{ inputs.event-label }}
+      ROLLOUT_BRANCH_PREFIX: ${{ inputs.rollout-branch-prefix }}
+
+    steps:
+      # Labels are maintained manually; fail rather than create a missing label.
+      - name: Validate the event label and branch prefix
+        shell: bash
+        run: |
+          if [[ -z "$ROLLOUT_BRANCH_PREFIX" ]]; then
+            echo "::error::A nonempty rollout branch prefix is required."
+            exit 1
+          fi
+          label_names=$(gh api --paginate "repos/$GH_REPO/labels?per_page=100" --jq '.[].name')
+          if ! grep -Fxq -- "$EVENT_LABEL" <<< "$label_names"; then
+            echo "::error::Required event label '$EVENT_LABEL' is missing. Create it before running this workflow."
+            exit 1
+          fi
+
+      # PR events inspect one PR; reusable and manual runs backfill all open PRs.
+      # Skip already-labeled PRs, and leave every other label unchanged.
+      - name: Label new or existing rollout PRs
+        shell: bash
+        run: |
+          if [[ "$EVENT_NAME" == pull_request_target ]]; then
+            pull_requests=$(gh api "repos/$GH_REPO/pulls/$PR_NUMBER" --jq '[.]')
+          else
+            pull_requests=$(gh api --paginate "repos/$GH_REPO/pulls?state=open&per_page=100")
+          fi
+          pr_numbers=$(jq -r --arg prefix "$ROLLOUT_BRANCH_PREFIX" --arg label "$EVENT_LABEL" '
+            .[] | select(.state == "open") |
+            select(.base.ref | startswith($prefix)) |
+            select(any(.labels[]; .name == $label) | not) | .number
+          ' <<< "$pull_requests")
+          while read -r pr_number; do
+            [[ -z "$pr_number" ]] && continue
+            gh pr edit "$pr_number" --add-label "$EVENT_LABEL"
+          done <<< "$pr_numbers"
