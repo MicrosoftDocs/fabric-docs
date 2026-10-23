@@ -49,7 +49,7 @@ For planning guidance, migration patterns, and feature comparison, see [Phase 1:
 - **1.1** Complete Spark asset inventory: Spark pools, notebooks, Spark job definitions, lake databases, Hive Metastore (HMS) databases, and linked services used in notebooks.
 - **1.2** Review Synapse vs. Fabric feature differences. Flag blockers: GPU workloads, unsupported catalog APIs, linked service dependencies.
 - **1.3** Run the pre-refactoring audit: search all notebooks for Synapse-specific patterns (`spark.synapse.linkedService`, `getSecretWithLS`, `TokenLibrary`, `synapsesql`). Count affected notebooks.
-- **1.4** Check library compatibility: run `pip freeze` on Synapse pools, compare against Fabric Runtime 1.3 built-in libraries. List libraries that need to be pre-installed.
+- **1.4** Check library compatibility: run `pip freeze` on Synapse pools and compare against the built-in libraries for your target Fabric runtime. [Runtime 2.0](./runtime-2-0.md) is the latest GA and default runtime. List missing libraries and incompatible versions to resolve before migration.
 - **1.5** Create Fabric workspace(s), provision capacity, and create target Lakehouse items.
 - **1.6** Export Spark pool configurations, custom libraries, and Spark properties from Synapse Studio.
 
