@@ -6,7 +6,7 @@
 # Review the general stale bot's exclusions to prevent duplicate handling.
 # Add the event label to rollout PRs; never remove labels or execute PR code.
 # The main workflow owns PR/scheduled/manual triggers and supplies the label and prefix.
-name: Label Knowledge Partnership event PRs
+name: KP - Label PRs
 
 on:
   workflow_call:

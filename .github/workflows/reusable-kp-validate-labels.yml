@@ -1,7 +1,7 @@
 # Read-only preflight check called by the main Knowledge Partnership workflow.
 # The caller supplies every label name from its top-level settings.
 # Create the labels manually; this workflow never creates or applies labels.
-name: Validate Knowledge Partnership labels
+name: KP - Validate labels exist
 
 on:
   workflow_call:

@@ -44,7 +44,7 @@
 # New activity clears the reminder marker on a later scan and restarts the wait.
 # No author-action label is required. Another 3 inactive days can trigger a reminder.
 # Reviewer automation is paused. This workflow never closes PRs.
-name: Stale PR - KnowledgePartnership
+name: KP - Stale PR
 
 # Source of truth: supporting workflows receive these settings as inputs.
 env:

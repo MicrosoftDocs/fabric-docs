@@ -1,6 +1,6 @@
 # Supporting workflow for author reminders; reviewer automation is paused.
 # The caller validates labels and completes status cleanup before calling this.
-name: Send a Knowledge Partnership reminder
+name: KP - Add reminder
 
 on:
   workflow_call:
