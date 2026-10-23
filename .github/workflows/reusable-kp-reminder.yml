@@ -1,0 +1,148 @@
+# Supporting workflow for author reminders; reviewer automation is paused.
+# The caller validates labels and completes status cleanup before calling this.
+name: Send a Knowledge Partnership reminder
+
+on:
+  workflow_call:
+    inputs:
+      inactivity-days:
+        description: Number of inactive days before sending a reminder
+        type: number
+        required: true
+      operations-per-run:
+        description: Positive whole-number operation budget for this reminder invocation
+        type: number
+        required: true
+      reminder-type:
+        description: Reminder to send; only author is currently enabled
+        type: string
+        required: true
+      event-label:
+        description: Label required for a PR to participate in the rollout
+        type: string
+        required: true
+      author-action-label:
+        description: Label indicating that the author owns the next action
+        type: string
+        required: true
+      # reviewer-action-label:
+      #   description: Label indicating that a reviewer owns the next action
+      #   type: string
+      #   required: true
+      author-reminder-label:
+        description: Label recording an author inactivity reminder
+        type: string
+        required: true
+      # reviewer-reminder-label:
+      #   description: Label recording a reviewer inactivity reminder
+      #   type: string
+      #   required: true
+      exempt-label:
+        description: Label excluding a PR from routine reminders
+        type: string
+        required: true
+
+permissions:
+  # actions/stale v11 restores and replaces its processing-progress cache.
+  actions: write
+  # GitHub PRs are a type of issue. actions/stale discovers them through the
+  # Issues API, so read access is required even when issue reminders are disabled.
+  issues: read
+  pull-requests: write
+
+jobs:
+  send-reminders:
+    name: Send ${{ inputs.reminder-type }} reminders
+    if: github.repository == 'MicrosoftDocs/fabric-docs-pr'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      EVENT_LABEL: ${{ inputs.event-label }}
+      AUTHOR_ACTION_LABEL: ${{ inputs.author-action-label }}
+      # REVIEWER_ACTION_LABEL: ${{ inputs.reviewer-action-label }}
+      AUTHOR_REMINDER_LABEL: ${{ inputs.author-reminder-label }}
+      # REVIEWER_REMINDER_LABEL: ${{ inputs.reviewer-reminder-label }}
+      EXEMPT_LABEL: ${{ inputs.exempt-label }}
+
+    steps:
+      - name: Validate reminder settings
+        env:
+          REMINDER_TYPE: ${{ inputs.reminder-type }}
+          OPERATIONS_PER_RUN: ${{ inputs.operations-per-run }}
+        shell: bash
+        run: |
+          case "$REMINDER_TYPE" in
+            author) ;;
+            # reviewer) ;; # Restore with reviewer automation.
+            *)
+              echo "::error::Invalid or disabled reminder type '$REMINDER_TYPE'. Only 'author' is enabled."
+              exit 1
+              ;;
+          esac
+          if [[ ! "$OPERATIONS_PER_RUN" =~ ^[1-9][0-9]*$ ]]; then
+            echo "::error::operations-per-run must be a positive whole number."
+            exit 1
+          fi
+
+      # 3. Author reminders: use the caller's inactivity threshold.
+      # New PR activity restarts the wait and clears the marker on a later run.
+      # Require conference-event, not kp-author-addresscomments, for reminders.
+      # Apply the author reminder marker; never close PRs or delete branches.
+      - name: Remind authors to address outstanding comments
+        if: inputs.reminder-type == 'author'
+        uses: actions/stale@4391f3da665fdf50b6810c1a66712fb9ba21aa93 # v11.0.0
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          only-pr-labels: ${{ env.EVENT_LABEL }}
+          exempt-pr-labels: ${{ env.EXEMPT_LABEL }}
+          # Restore the reviewer ownership exclusion with reviewer automation:
+          # exempt-pr-labels: ${{ format('{0},{1}', env.EXEMPT_LABEL, env.REVIEWER_ACTION_LABEL) }}
+          stale-pr-label: ${{ env.AUTHOR_REMINDER_LABEL }}
+          exempt-draft-pr: true
+          days-before-issue-stale: -1
+          days-before-issue-close: -1
+          days-before-pr-stale: ${{ inputs.inactivity-days }}
+          days-before-pr-close: -1
+          days-before-close: -1
+          delete-branch: false
+          remove-pr-stale-when-updated: true
+          stale-pr-message: |-
+            ### Knowledge Partnership - Author action needed
+
+            <br>
+
+            Thanks for your work on this pull request. Comments may need your attention, or your branch may need to be synced with its target branch. Please check the latest comments and validation results and update the PR as needed. If anything is unclear, let us know in the PR, and we will help identify the best next step.
+
+            **Need help?** Visit [Knowledge Partnership support](https://aka.ms/kp-support).
+          debug-only: false
+          operations-per-run: ${{ inputs.operations-per-run }}
+          enable-statistics: true
+
+      # 4. Reviewer reminders are paused until next-action ownership is agreed.
+      # - name: Remind reviewers to provide input
+      #   if: inputs.reminder-type == 'reviewer'
+      #   uses: actions/stale@4391f3da665fdf50b6810c1a66712fb9ba21aa93 # v11.0.0
+      #   with:
+      #     repo-token: ${{ secrets.GITHUB_TOKEN }}
+      #     only-pr-labels: ${{ format('{0},{1}', env.EVENT_LABEL, env.REVIEWER_ACTION_LABEL) }}
+      #     exempt-pr-labels: ${{ format('{0},{1}', env.EXEMPT_LABEL, env.AUTHOR_ACTION_LABEL) }}
+      #     stale-pr-label: ${{ env.REVIEWER_REMINDER_LABEL }}
+      #     exempt-draft-pr: true
+      #     days-before-issue-stale: -1
+      #     days-before-issue-close: -1
+      #     days-before-pr-stale: ${{ inputs.inactivity-days }}
+      #     days-before-pr-close: -1
+      #     days-before-close: -1
+      #     delete-branch: false
+      #     remove-pr-stale-when-updated: true
+      #     stale-pr-message: |-
+      #       ### Knowledge Partnership - Reviewer input needed
+      #
+      #       <br>
+      #
+      #       This pull request is waiting for reviewer input and has had no activity for ${{ inputs.inactivity-days }} days. Reviewers, please review the changes and provide feedback or approval. If the review is blocked, comment with the blocker and next step.
+      #
+      #       **Need help?** Visit [Knowledge Partnership support](https://aka.ms/kp-support).
+      #     debug-only: false
+      #     operations-per-run: ${{ inputs.operations-per-run }}
+      #     enable-statistics: true

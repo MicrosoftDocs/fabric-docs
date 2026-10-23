@@ -21,7 +21,8 @@ jobs:
         days-before-pr-close: 14
         stale-pr-label: inactive
         close-pr-label: auto-close
-        exempt-pr-labels: keep-open
+        # Knowledge Partnership handles event PRs; this bot skips them entirely.
+        exempt-pr-labels: keep-open,conference-event
         stale-pr-message: >
           This pull request has been inactive for 14 days, and an `inactive` label has been added. If you are finished with your changes don't forget to sign off in the comments of the pull request to request a review and merge. If you want to continue working without merging, simply add a comment about why you want to keep this PR open. If this PR is inactive with no comments for 14 more days, it will be closed automatically.
           <br/>
