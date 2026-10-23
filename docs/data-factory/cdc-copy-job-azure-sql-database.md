@@ -1,9 +1,9 @@
 ---
 title: Change data capture from Azure SQL Database using Copy job
 description: This tutorial guides you through how to use CDC in copy job to move data from Azure SQL Database.
-ms.reviewer: yexu
+ms.reviewer: ukchrist
 ms.topic: tutorial
-ms.date: 04/24/2026
+ms.date: 10/23/2026
 ms.search.form: copy-job-tutorials
 ms.custom: copy-job
 ai-usage: ai-assisted
@@ -92,6 +92,10 @@ Complete the following steps to create a new copy job to ingest data from Azure 
 1. Run the copy job again to capture and replicate all changes, including inserted, updated, and deleted rows, to the destination.
 
    :::image type="content" source="media/copy-job/monitor-cdc-second-run.png" alt-text="Screenshot showing the copy job panel where you can monitor capturing and replicating all changes.":::
+
+> [!NOTE]
+> For Microsoft SQL Server, Azure SQL Database and Azure SQL Managed Instance, Copy job supports custom capture instances. You can select the capture instance from which your Copy job reads in the **Read settings** tab of **Advanced Settings**.
+
 
 ## Related content
 
