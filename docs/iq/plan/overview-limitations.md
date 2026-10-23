@@ -2,7 +2,7 @@
 title: Known Limitations in Planning
 description: This article lists known issues and limitations present in planning in Fabric.
 ms.topic: concept-article
-ms.date: 10/09/2026
+ms.date: 10/23/2026
 #customer intent: As a user, I want to know the limitations present in planning.
 ---
 
@@ -36,6 +36,10 @@ Workspaces that use [private links](../../security/security-private-links-overvi
 ## PowerTable limitations
 
 The following limitations apply to PowerTable sheets.
+
+### Column limit
+
+PowerTable supports a maximum of 1,022 columns for bulk uploads. The underlying database supports up to 1,024 columns, of which two are reserved for internal functionality.
 
 ### Excel export limitations
 
