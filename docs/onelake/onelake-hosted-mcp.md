@@ -1,17 +1,20 @@
 ---
-title: Connect AI agents to the hosted OneLake MCP server
-description: Connect to the hosted OneLake MCP server to browse files, inspect table metadata, and get file-transfer instructions. Includes tools and parameters.
+title: Connect AI agents to the hosted OneLake MCP server (preview)
+description: Connect to the hosted OneLake MCP server (preview) to browse files, inspect table metadata, and get file-transfer instructions. Includes tools and parameters.
 ms.reviewer: tompeplow
 ms.topic: how-to
-ms.date: 10/21/2026
+ms.date: 10/22/2026
 ai-usage: ai-generated
 ---
 
-# Connect AI agents to the hosted OneLake MCP server
+# Connect AI agents to the hosted OneLake MCP server (preview)
 
 The hosted OneLake Model Context Protocol (MCP) server lets AI agents browse files, inspect table metadata, and manage directories in a Fabric item without installing a local MCP server. Connect an MCP-compatible client to the item's HTTPS endpoint, then use natural-language requests or call the tools directly.
 
 The hosted server provides an item data-plane connection and is an alternative to the [local Fabric MCP server](onelake-local-mcp.md). For workspace and item management, OneLake shortcuts, and OneLake data access roles, use the [Fabric Core MCP server](/rest/api/fabric/articles/mcp-servers/core-remote/overview-core-mcp-server). Connect to each server for the operations you need.
+
+> [!IMPORTANT]
+> The hosted OneLake MCP server is currently in **public preview**. Features and behavior might change before general availability.
 
 ## Prerequisites
 
