@@ -5,7 +5,7 @@ ms.author: midesa
 author: midesa
 ms.reviewer: jonburchel
 ms.topic: concept-article
-ms.date: 10/13/2026
+ms.date: 10/22/2026
 ai-usage: ai-assisted
 ---
 
@@ -59,6 +59,7 @@ The following updates are included in the preview runtime today. This list chang
 | More accurate complex question handling | [Advanced DAX generation](semantic-model-best-practices.md#advanced-dax-generation-preview) | DAX generation reasons across multiple steps, inspects results, resolves ambiguity, and refines its approach to answer complex questions more accurately. |
 | More reliable filter generation | [Advanced DAX generation](semantic-model-best-practices.md#advanced-dax-generation-preview) | DAX generation searches values within semantic model columns to identify the correct filter values and generate more reliable queries. |
 | Improved cross-source joins | [Ontology as context](data-agent-ontology-sources.md) | Improves responses to questions that require joining data across multiple sources within an Ontology. |
+| Larger query results | - | The data agent can return up to 1,000 rows from a query, up from 25. |
 
 You can also switch a data agent to the preview runtime programmatically by using the Fabric data agent Python SDK:
 

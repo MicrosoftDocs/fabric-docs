@@ -3,7 +3,7 @@ title: Runtime 1.2 in Fabric
 description: Gain a deep understanding of the Apache Spark-based Runtime 1.2 available in Fabric. Understand its unique features, capabilities, and best practices.
 ms.reviewer: arali
 ms.topic: overview
-ms.date: 03/18/2026
+ms.date: 10/22/2026
 ---
 
 # Fabric Runtime 1.2 (EOS)
@@ -11,7 +11,7 @@ ms.date: 03/18/2026
 > [!CAUTION]
 > Microsoft Fabric Runtime 1.2 reached end of support on March 31, 2026. Although it might continue to run for a limited period beyond that date, it's no longer a supported runtime and no longer receives bug fixes, security updates, or vulnerability remediations. As a result, workloads running on Runtime 1.2 are exposed to increasing operational and security risks over time.
 >
-> In addition, the phased disablement of Runtime 1.2 jobs begins shortly, and there's no guarantee that Runtime 1.2 jobs will continue to run in the future. To ensure continued support, security compliance, and platform reliability, [upgrade your Fabric workspace](/fabric/data-engineering/runtime) and environments to [Runtime 1.3 (Apache Spark 3.5 and Delta Lake 3.2)](/fabric/data-engineering/runtime-1-3) as soon as possible to avoid disruption to your business.
+> In addition, the phased disablement of Runtime 1.2 jobs begins shortly, and there's no guarantee that Runtime 1.2 jobs will continue to run in the future. To ensure continued support, security compliance, and platform reliability, [upgrade your Fabric workspace](./runtime.md) and environments to [Runtime 2.0](./runtime-2-0.md), the latest generally available (GA) and default runtime, as soon as possible to avoid disruption to your business.
 >
 > **Note:** Starter Pool isn't supported or available with a deprecated runtime. When you use Runtime 1.2, it uses an on-demand pool and your session startup might take a couple of minutes.
 
