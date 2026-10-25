@@ -853,14 +853,18 @@ items:
           href: dashboard-visuals.md
         - name: Embed a Fabric Map
           href: dashboard-fabric-maps-tile.md
-        - name: Time series visual
-          href: dashboard-time-series.md
-        - name: Markdown visual
-          href: dashboard-markdown-visual.md
         - name: Visuals requiring cloud connection
           href: dashboard-cloud-connection-visuals.md
         - name: Troubleshoot visual errors
           href: troubleshoot-dashboard-tile-error.md
+        - name: Visual types
+          items:
+          - name: Markdown visual
+            href: dashboard-markdown-visual.md
+          - name: Time series visual
+            href: dashboard-time-series.md
+          - name: Custom AI visual (preview)
+            href: dashboard-ai-custom-visual.md
       - name: Customize dashboard
         items:
         - name: Conditional formatting
