@@ -8,11 +8,15 @@ ms.search.form: Overview
 ai-usage: ai-assisted
 ---
 
+
 # Real-Time Dashboard supported visuals
 
 Real-Time Dashboard supports most visualizations available through the [render operator](/kusto/query/render-operator?context=/fabric/context/context-rta&pivots=fabric), as well as the following [dashboard-specific visuals](dashboard-visuals.md): funnel chart, and heatmap.
 
 This article describes each supported visual, along with common use cases and a visual example, so you can choose the right visual for your data and monitoring scenario.
+
+> [!NOTE]
+> The [Custom visual (preview)](dashboard-ai-custom-visual.md) requires dashboard editor identity through an associated cloud connection. For more information, see [Dashboard visuals that require cloud connection](dashboard-cloud-connection-visuals.md).
 
 ## Supported visuals
 
@@ -24,6 +28,7 @@ The following table describes each supported visual, along with common use cases
 | **Area chart** | A line chart with the area beneath each line filled in, showing values accumulating over time. | Show trends in volume or magnitude over time, such as total requests processed per hour. | ![Screenshot of an area chart.](media/dashboard-visuals/area-chart.png) |
 | **Bar chart** | A chart that represents categories as horizontal bars, with length proportional to value. | Compare values across categories with long or many labels, such as errors by service name. | ![Screenshot of a bar chart.](media/dashboard-visuals/bar-chart.png) |
 | **Column chart** | A chart that represents categories as vertical bars, with height proportional to value. | Compare values across categories or discrete time buckets, such as daily sign-ups. | ![Screenshot of a column chart.](media/dashboard-visuals/column-chart.png) |
+| **[Custom visual (preview)](dashboard-ai-custom-visual.md)** | A Copilot-generated visualization built from a natural-language description, rendered as an HTML-based tile. | Create a purpose-built visual for a specific operational question without writing a query or chart configuration yourself. | ![Screenshot of a generated custom visual.](media/dashboard-ai-custom-visual/generated-ai-custom-visual-query-and-visual.png) |
 | [Fabric map](dashboard-fabric-maps-tile.md) | A visual that references a pre-authored Fabric map item and displays real-time and historical spatial data through configurable map layers. | Explore patterns and relationships across space and time, such as the locations and movement of assets or events. | [![Screenshot of a Fabric map.](media/dashboard-visuals/fabric-map.png)](media/dashboard-visuals/fabric-map.png) |
 | **Funnel chart** | A chart that shows values decreasing through sequential stages, shaped like a funnel. | Track drop-off through a multistep process, such as conversions through a sign-up flow. | ![Screenshot of a funnel chart.](media/dashboard-visuals/funnel-chart.png) |
 | **Heatmap** | A grid that uses color intensity to represent the magnitude of a value across two dimensions. | Identify patterns or concentrations across two categories, such as activity by hour and day of week. | ![Screenshot of a heatmap.](media/dashboard-visuals/heatmap.png) |
