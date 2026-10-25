@@ -1,72 +1,13 @@
-# Goals and actions:
-# - Run only in MicrosoftDocs/fabric-docs-pr, never its public mirror or forks.
-# - Add conference-event to Ignite PRs targeting release-ignite26-*.
-# - Check hourly; after 3 days without PR activity, post a progress reminder
-#   and add kp-author-stalepr.
-# - New comments, commits, and other PR updates like label changes restart the three-day wait.
-# - Skip drafts and kp-stale-exempt PRs; clean obsolete reminder markers.
-# - Apply changes automatically; never close PRs.
-#
-# Knowledge Partnership flow in this PR (two independent entry points):
-#
-# 1. PR opened, reopened, edited, updated, or marked ready for review
-#         |
-#         v
-#    Target branch starts with release-ignite26-?
-#        NO --> No enrollment action
-#        YES --> Validate required labels; add conference-event if missing
-#         |
-#         v
-#    Stop: PR events never send reminders.
-#
-# 2. Hourly scheduled scan (minute 0 UTC); manual live runs are also available
-#         |
-#         v
-#    Validate labels; backfill conference-event on matching open PRs
-#         |
-#         v
-#    Labels-only selected? YES --> Stop after labeling
-#         NO
-#         |
-#         v
-#    Clean obsolete author reminder markers
-#         |
-#         v
-#    Open, non-draft PR with conference-event, without kp-stale-exempt?
-#        NO --> Skip reminder
-#        YES --> No PR activity for at least 3 days?
-#                    NO --> No reminder
-#                    YES --> Already marked kp-author-stalepr?
-#                                YES --> No repeat while still inactive
-#                                NO --> Post progress reminder; add marker
-#
-# Scheduled and manual runs apply changes; no dry-run mode is provided.
-# New activity clears the reminder marker on a later scan and restarts the wait.
-# No author-action label is required. Another 3 inactive days can trigger a reminder.
-# Reviewer automation is paused. This workflow never closes PRs.
-name: KP - Stale PR
-
-# Source of truth: supporting workflows receive these settings as inputs.
-env:
-  # Days without PR activity before a reminder.
-  INACTIVITY_DAYS: "3"
-  # Per reminder invocation, not a PR count or a fix for shared checkpoints.
-  OPERATIONS_PER_RUN: "350"
-  ROLLOUT_BRANCH_PREFIX: release-ignite26-
-  EVENT_LABEL: conference-event
-  AUTHOR_ACTION_LABEL: kp-author-addresscomments
-  # Reviewer automation is paused until next-action ownership is agreed.
-  # REVIEWER_ACTION_LABEL: kp-reviewer-inputneeded
-  AUTHOR_REMINDER_LABEL: kp-author-stalepr
-  # REVIEWER_REMINDER_LABEL: kp-reviewer-stalepr
-  EXEMPT_LABEL: kp-stale-exempt
+# Hourly/manual scans validate labels, backfill missed enrollment, clean obsolete
+# markers, and send reminders. PR-event enrollment has its own workflow/history.
+# Settings and reminder behavior are unchanged; manual runs are live, not previews.
+name: stale-comment-knowledgepartnership
+run-name: >-
+  ${{ github.event_name == 'schedule' && 'KP - Hourly stale reminder scan' ||
+      (inputs.labels-only && 'KP - Manual enrollment backfill (no reminders)' ||
+      'KP - Manual stale reminder scan') }}
 
 on:
-  # PR events only validate and label matching PRs; they never send reminders.
-  # Never check out or execute contributor code in this privileged workflow.
-  # Check the configured prefix in the jobs rather than duplicating it here.
-  pull_request_target:
-    types: [opened, reopened, ready_for_review, edited, synchronize]
   schedule:
     # Once per hour
     - cron: "0 * * * *"
@@ -86,60 +27,23 @@ permissions:
   issues: read
   pull-requests: write
 
-# Serialize reminder runs; label-only PR events use separate per-PR groups.
 # An active run finishes rather than being canceled by a newer run.
 concurrency:
-  group: knowledge-partnership-${{ github.event_name == 'pull_request_target' && format('label-pr-{0}', github.event.pull_request.number) || 'reminders' }}
+  group: knowledge-partnership-reminders
   cancel-in-progress: false
 
 jobs:
-  # Reusable-workflow calls can't read the caller's env context directly.
-  # Export the settings as job outputs so every call uses the values above.
   configuration:
     name: Share workflow settings
     if: github.repository == 'MicrosoftDocs/fabric-docs-pr'
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
     permissions: {}
-    outputs:
-      inactivity-days: ${{ env.INACTIVITY_DAYS }}
-      operations-per-run: ${{ env.OPERATIONS_PER_RUN }}
-      rollout-branch-prefix: ${{ env.ROLLOUT_BRANCH_PREFIX }}
-      event-label: ${{ env.EVENT_LABEL }}
-      author-action-label: ${{ env.AUTHOR_ACTION_LABEL }}
-      # reviewer-action-label: ${{ env.REVIEWER_ACTION_LABEL }}
-      author-reminder-label: ${{ env.AUTHOR_REMINDER_LABEL }}
-      # reviewer-reminder-label: ${{ env.REVIEWER_REMINDER_LABEL }}
-      exempt-label: ${{ env.EXEMPT_LABEL }}
-    steps:
-      - name: Check shared settings
-        shell: bash
-        run: |
-          for setting in INACTIVITY_DAYS OPERATIONS_PER_RUN ROLLOUT_BRANCH_PREFIX EVENT_LABEL AUTHOR_ACTION_LABEL \
-                         AUTHOR_REMINDER_LABEL EXEMPT_LABEL; do
-            if [[ -z "${!setting}" ]]; then
-              echo "::error::Required setting '$setting' must not be empty."
-              exit 1
-            fi
-          done
-          if [[ ! "$INACTIVITY_DAYS" =~ ^(0|[1-9][0-9]*)$ ]]; then
-            echo "::error::INACTIVITY_DAYS must be a nonnegative whole number."
-            exit 1
-          fi
-          if [[ ! "$OPERATIONS_PER_RUN" =~ ^[1-9][0-9]*$ ]]; then
-            echo "::error::OPERATIONS_PER_RUN must be a positive whole number."
-            exit 1
-          fi
+    uses: ./.github/workflows/reusable-kp-configuration.yml
 
   # Check that all manually created labels exist before labeling or reminders.
-  # Ignore unrelated PR events; scheduled and manual runs always validate.
   validate-labels:
     name: Validate Knowledge Partnership labels
     needs: configuration
-    if: >-
-      github.repository == 'MicrosoftDocs/fabric-docs-pr' &&
-      (github.event_name != 'pull_request_target' ||
-      startsWith(github.event.pull_request.base.ref, needs.configuration.outputs.rollout-branch-prefix))
+    if: github.repository == 'MicrosoftDocs/fabric-docs-pr'
     uses: ./.github/workflows/reusable-kp-validate-labels.yml
     with:
       event-label: ${{ needs.configuration.outputs.event-label }}
@@ -151,7 +55,7 @@ jobs:
 
   # Backfill event labels only after process-label validation succeeds.
   label-event-prs:
-    name: Label rollout PRs
+    name: Backfill enrollment (no reminders)
     needs: [configuration, validate-labels]
     if: github.repository == 'MicrosoftDocs/fabric-docs-pr'
     uses: ./.github/workflows/reusable-kp-label-event.yml
@@ -165,11 +69,13 @@ jobs:
     needs: [configuration, validate-labels, label-event-prs]
     if: >-
       github.repository == 'MicrosoftDocs/fabric-docs-pr' &&
-      github.event_name != 'pull_request_target' && !inputs.labels-only
+      !inputs.labels-only
     runs-on: ubuntu-latest
     timeout-minutes: 15
-    # Scheduled and manual runs perform cleanup; PR events skip this job.
     env:
+      EVENT_LABEL: ${{ needs.configuration.outputs.event-label }}
+      AUTHOR_REMINDER_LABEL: ${{ needs.configuration.outputs.author-reminder-label }}
+      EXEMPT_LABEL: ${{ needs.configuration.outputs.exempt-label }}
       GH_TOKEN: ${{ github.token }}
       GH_REPO: ${{ github.repository }}
 
