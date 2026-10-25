@@ -89,6 +89,7 @@ Some scenarios benefit from dashboard-specific visuals and capabilities, includi
 - [KPI visuals](dashboard-visuals-customize.md#kpi-visualization) for operational monitoring and threshold tracking.
 - [Time Series visuals](dashboard-time-series.md) for analyzing multiple measures over time.
 - [Markdown visuals](dashboard-markdown-visual.md) for contextual information and documentation.
+- [Custom visuals (preview)](dashboard-ai-custom-visual.md) for generating a purpose-built visualization from a natural-language description.
 - [Fabric Map visuals](dashboard-fabric-maps-tile.md) for displaying separately authored, multilayer Fabric maps.
 
 Each visual type includes its own configuration options and best practices.
