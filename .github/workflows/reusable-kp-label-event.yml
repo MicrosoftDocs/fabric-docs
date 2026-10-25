@@ -5,7 +5,7 @@
 # labels and exemptions; expanding eligibility does not remove those rules.
 # Review the general stale bot's exclusions to prevent duplicate handling.
 # Add the event label to rollout PRs; never remove labels or execute PR code.
-# The main workflow owns PR/scheduled/manual triggers and supplies the label and prefix.
+# Enrollment and scan entry points supply the label and prefix from shared settings.
 name: KP - Label PRs
 
 on:
