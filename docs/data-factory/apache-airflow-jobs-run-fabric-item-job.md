@@ -173,7 +173,7 @@ Replace the following placeholders:
 - `item_id`: The item ID of the item you want to run. For example, a notebook ID or a pipeline ID.
 - `job_type`: The type of item you want to run. For example, for notebook use "RunNotebook", for Spark job definitions use "sparkjob" and for pipelines use "Pipeline". This is case sensitive.
 - `wait_for_termination`: If set to True, the operator waits for the item run to complete before proceeding to the next task.
-- `deferrable`: If set to True, the operator can free up resources while waiting for the item run to complete.
+- `deferrable`: If set to `True`, the operator can free up resources while waiting for the item run to complete.
 
 
 ## Monitor your DAG
