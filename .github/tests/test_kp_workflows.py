@@ -72,6 +72,26 @@ class KnowledgePartnershipWorkflows(unittest.TestCase):
             self.assertEqual(caller["jobs"]["configuration"]["uses"], f"./.github/workflows/{CONFIG}")
             self.assertEqual(caller["jobs"]["configuration"]["permissions"], {})
 
+    def test_stale_bots_share_single_keep_open_exemption(self):
+        self.assertEqual(self.config["env"]["EXEMPT_LABEL"], "keep-open")
+        general_steps = self.workflows["stale.yml"]["jobs"]["stale"]["steps"]
+        general = next(step["with"] for step in general_steps if "uses" in step)
+        self.assertIn("keep-open", general["exempt-pr-labels"].split(","))
+        for caller in [self.scan, self.enroll]:
+            for job in caller["jobs"].values():
+                if "exempt-label" in job.get("with", {}):
+                    self.assertEqual(
+                        job["with"]["exempt-label"],
+                        "${{ needs.configuration.outputs.exempt-label }}",
+                    )
+        reminder = self.workflows["reusable-kp-reminder.yml"]["jobs"]["send-reminders"]
+        self.assertEqual(reminder["env"]["EXEMPT_LABEL"], "${{ inputs.exempt-label }}")
+        action = next(step["with"] for step in reminder["steps"] if "uses" in step)
+        self.assertEqual(action["exempt-pr-labels"], "${{ env.EXEMPT_LABEL }}")
+        self.assertEqual(action["exempt-draft-pr"], "true")
+        validation = self.workflows["reusable-kp-validate-labels.yml"]["jobs"]["validate-labels"]
+        self.assertEqual(validation["env"]["EXEMPT_LABEL"], "${{ inputs.exempt-label }}")
+
     def test_scan_preserves_backfill_cleanup_and_reminder_order(self):
         jobs = self.scan["jobs"]
         self.assertEqual(jobs["label-event-prs"]["needs"], ["configuration", "validate-labels"])

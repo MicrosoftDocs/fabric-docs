@@ -36,7 +36,7 @@ remain unchanged. In particular:
   remains 350, not a PR-count limit.
 - The hourly scan backfills enrollment before reminder processing, so missed PR
   events don't permanently exclude a matching PR.
-- The reminder action skips drafts and PRs with `kp-stale-exempt`. Enrollment
+- The reminder action skips drafts and PRs with `keep-open`. Enrollment
   retains its existing open-PR branch-prefix filter.
 - Existing reminder comments, markers, activity handling, disabled closure, and
   paused reviewer automation aren't changed by the workflow split.
