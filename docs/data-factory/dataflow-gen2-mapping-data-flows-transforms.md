@@ -2,7 +2,7 @@
 title: Mapping Data Flow Transforms in Dataflow Gen2 (Preview)
 description: Learn about mapping data flow transforms in Dataflow Gen2, which enable you to author, execute, and monitor Spark-based data transformations in Data Factory in Microsoft Fabric.
 ms.topic: concept-article
-ms.date: 09/30/2026
+ms.date: 10/26/2026
 ms.reviewer: krirukm
 ms.search.form: DataflowGen2
 ms.custom: dataflows
@@ -303,6 +303,9 @@ To view monitoring details:
 1. Review execution status and runtime details.
 
 :::image type="content" source="media/dataflow-gen2-mapping-data-flows-transforms/mapping-data-flow-transform-monitoring-page.png" alt-text="Screenshot of the mapping data flow transform monitoring page showing execution status and runtime details." lightbox="media/dataflow-gen2-mapping-data-flows-transforms/mapping-data-flow-transform-monitoring-page.png":::
+
+> [!IMPORTANT]
+> Before deleting a Dataflow Gen2 item that uses Mapping Data Flow transforms, remove any Dataflow activities that reference it from Fabric pipelines, or delete the dependent pipelines. If you delete a pipeline, permanently delete it from the recycle bin as well. After these dependencies are removed, delete the Dataflow Gen2 item.
 
 ## Related content
 
