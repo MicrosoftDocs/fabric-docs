@@ -141,7 +141,7 @@ On your Apache Airflow job canvas, there are three tiles. Select **Run Fabric ar
 
    :::image type="content" source="media/apache-airflow-jobs/set-fabric-provider-dag.png" lightbox="media/apache-airflow-jobs/set-fabric-provider-dag.png" alt-text="Screenshot to create the DAG you want to run Fabric providers using the pop-up.":::
 
-You also have the option to create a new DAG in the 'dags' folder in Fabric managed storage with the following code:
+You also have the option to create a new DAG in the `dags` folder in Fabric managed storage with the following code:
 
 ```python
 from airflow import DAG
