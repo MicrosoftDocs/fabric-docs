@@ -288,13 +288,13 @@ These APIs help you:
 
 | Operation | API |
 | --- | --- |
-| List all connections in the tenant | [`GET /v1/admin/connections`](https://learn.microsoft.com/en-us/rest/api/fabric/admin/connections/list-connections) |
-| Get a single connection | [`GET /v1/admin/connections/{connectionId}`](https://learn.microsoft.com/en-us/rest/api/fabric/admin/connections/get-connection) |
-| Delete a connection | [`DELETE /v1/admin/connections/{connectionId}`](https://learn.microsoft.com/en-us/rest/api/fabric/admin/connections/delete-connection) |
-| List the role assignments on a connection | [`GET /v1/admin/connections/{connectionId}/roleAssignments`](https://learn.microsoft.com/en-us/rest/api/fabric/admin/connections/list-connection-role-assignments) |
-| Add a role assignment (assign an owner) | [`POST /v1/admin/connections/{connectionId}/roleAssignments`](https://learn.microsoft.com/en-us/rest/api/fabric/admin/connections/add-connection-role-assignment) |
-| Update a role assignment | [`PATCH /v1/admin/connections/{connectionId}/roleAssignments/{connectionRoleAssignmentId}`](https://learn.microsoft.com/en-us/rest/api/fabric/admin/connections/update-connection-role-assignment) |
-| Delete a role assignment | [`DELETE /v1/admin/connections/{connectionId}/roleAssignments/{connectionRoleAssignmentId}`](https://learn.microsoft.com/en-us/rest/api/fabric/admin/connections/delete-connection-role-assignment) |
+| List all connections in the tenant | [`GET /v1/admin/connections`](/rest/api/fabric/admin/connections/list-connections) |
+| Get a single connection | [`GET /v1/admin/connections/{connectionId}`](/rest/api/fabric/admin/connections/get-connection) |
+| Delete a connection | [`DELETE /v1/admin/connections/{connectionId}`](/rest/api/fabric/admin/connections/delete-connection) |
+| List the role assignments on a connection | [`GET /v1/admin/connections/{connectionId}/roleAssignments`](/rest/api/fabric/admin/connections/list-connection-role-assignments) |
+| Add a role assignment (assign an owner) | [`POST /v1/admin/connections/{connectionId}/roleAssignments`](/rest/api/fabric/admin/connections/add-connection-role-assignment) |
+| Update a role assignment | [`PATCH /v1/admin/connections/{connectionId}/roleAssignments/{connectionRoleAssignmentId}`](/rest/api/fabric/admin/connections/update-connection-role-assignment) |
+| Delete a role assignment | [`DELETE /v1/admin/connections/{connectionId}/roleAssignments/{connectionRoleAssignmentId}`](/rest/api/fabric/admin/connections/delete-connection-role-assignment) |
 
 
 _The admin connection API reference is being published. Until it's available, use the endpoint and examples in this section._
