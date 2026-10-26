@@ -579,6 +579,8 @@ items:
           items:
             - name: Configure automation workflows
               href: plan/powertable-how-to-create-automation/how-to-configure-automation-workflows.md
+            - name: Integrations in automation
+              href: plan/powertable-how-to-create-automation/how-to-configure-integrations.md            
             - name: Create a sample automation
               href: plan/powertable-how-to-create-automation/how-to-create-sample-automation.md 
         - name: Configure slowly changing dimensions

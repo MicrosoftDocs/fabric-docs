@@ -15,6 +15,8 @@ on:
         value: ${{ jobs.configuration.outputs.author-action-label }}
       author-reminder-label:
         value: ${{ jobs.configuration.outputs.author-reminder-label }}
+      reminder-due-label:
+        value: ${{ jobs.configuration.outputs.reminder-due-label }}
       exempt-label:
         value: ${{ jobs.configuration.outputs.exempt-label }}
 
@@ -27,6 +29,7 @@ env:
   EVENT_LABEL: conference-event
   AUTHOR_ACTION_LABEL: kp-author-addresscomments
   AUTHOR_REMINDER_LABEL: kp-author-stalepr
+  REMINDER_DUE_LABEL: kp-reminder-due
   EXEMPT_LABEL: keep-open
 
 jobs:
@@ -42,13 +45,14 @@ jobs:
       event-label: ${{ env.EVENT_LABEL }}
       author-action-label: ${{ env.AUTHOR_ACTION_LABEL }}
       author-reminder-label: ${{ env.AUTHOR_REMINDER_LABEL }}
+      reminder-due-label: ${{ env.REMINDER_DUE_LABEL }}
       exempt-label: ${{ env.EXEMPT_LABEL }}
     steps:
       - name: Check shared settings
         shell: bash
         run: |
           for setting in INACTIVITY_DAYS OPERATIONS_PER_RUN ROLLOUT_BRANCH_PREFIX EVENT_LABEL AUTHOR_ACTION_LABEL \
-                         AUTHOR_REMINDER_LABEL EXEMPT_LABEL; do
+                         AUTHOR_REMINDER_LABEL REMINDER_DUE_LABEL EXEMPT_LABEL; do
             if [[ -z "${!setting}" ]]; then
               echo "::error::Required setting '$setting' must not be empty."
               exit 1

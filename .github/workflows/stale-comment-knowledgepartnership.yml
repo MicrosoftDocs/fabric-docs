@@ -1,6 +1,6 @@
 # Hourly/manual scans validate labels, backfill missed enrollment, clean obsolete
 # markers, and send reminders. PR-event enrollment has its own workflow/history.
-# Settings and reminder behavior are unchanged; manual runs are live, not previews.
+# Manual runs are live, not previews; reminders use the business-day eligibility clock.
 name: stale-comment-knowledgepartnership
 run-name: >-
   ${{ github.event_name == 'schedule' && 'KP - Hourly stale reminder scan' ||
@@ -22,6 +22,7 @@ on:
 
 # Read label definitions and allow the bot to update PR labels and comments.
 permissions:
+  contents: read
   # Allow the reusable reminder workflow to maintain actions/stale progress.
   actions: write
   issues: read
@@ -136,6 +137,7 @@ jobs:
     uses: ./.github/workflows/reusable-kp-reminder.yml
     with:
       reminder-type: author
+      reminder-due-label: ${{ needs.configuration.outputs.reminder-due-label }}
       inactivity-days: ${{ fromJSON(needs.configuration.outputs.inactivity-days) }}
       operations-per-run: ${{ fromJSON(needs.configuration.outputs.operations-per-run) }}
       event-label: ${{ needs.configuration.outputs.event-label }}
