@@ -35,11 +35,15 @@ You can now use these SQL strings in your connection area for tools such as Powe
 
 ## Power BI visualization creation
 
-As you work with the SQL analytics endpoint, it creates a Data model of the assets. This is an abstracted view of your data and how it's displayed and the relationship between entities. Some of the defaults the system takes might not be as you desire, so you'll now change one portion of the data model for this SQL analytics endpoint to have a specific outcome.
+To analyze the data in your SQL analytics endpoint in Power BI, create a semantic model that provides a logical view of your data, including the tables, relationships, and measures used for analysis. After creating the semantic model, customize it to meet your analytical requirements.
 
-1. In your SQL analytics endpoint view, select the **Model layouts** button in the ribbon.
+1. In your SQL analytics endpoint view, select the **New semantic model** button in the ribbon. 
 
-    :::image type="content" source="media/tutorial-create-visualizations/model-layouts-button.png" alt-text="Screenshot from the Fabric portal of the SQL database explorer and menu. The Model layouts button is highlighted.":::
+    :::image type="content" source="media/tutorial-create-visualizations/new-semantic-model-button.png" alt-text="Screenshot from the Fabric portal of the SQL database explorer and menu. The New semantic model button is highlighted." lightbox="media/tutorial-create-visualizations/new-semantic-model-button.png":::
+
+1. From the resulting view, provide a name for your semantic model. Select all tables and the views created in the previous tutorial, including `SupplyChain.vTotalProductsByVendorLocation`, and select **Confirm**.
+
+    :::image type="content" source="media/tutorial-create-visualizations/new-semantic-model-page.png" alt-text="Screenshot of the new semantic model creation page." lightbox="media/tutorial-create-visualizations/new-semantic-model-page.png":::
 
 1. From the resulting view, zoom in and scroll over until you see the `vTotalProductsByVendorLocation` object. Select it.
 
@@ -49,19 +53,11 @@ As you work with the SQL analytics endpoint, it creates a Data model of the asse
 
 ### Create a report
 
-Inside the SQL analytics endpoint view, you have a menu option for **Reporting**. You'll now create a report based on the [views you created in the SQL analytics endpoint in a previous tutorial step](tutorial-use-analytics-endpoint.md#query-data-with-the-sql-analytics-endpoint).
+In the semantic model view, use the menu option for **New report**. Create a report based on the [views you created in the SQL analytics endpoint in a previous tutorial step](tutorial-use-analytics-endpoint.md#query-data-with-the-sql-analytics-endpoint).
 
-1. Select the **Reporting** button in the menu bar and then the **New report** button in the ribbon.
+1. Select the **New report** button in the ribbon.
 
-    :::image type="content" source="media/tutorial-create-visualizations/reporting-tab-new-report-button.png" alt-text="Screenshot from the Fabric portal of the Reporting tab, New report button." lightbox="media/tutorial-create-visualizations/reporting-tab-new-report-button.png":::
-
-1. From the **New report with all available data** that appears, select the **Continue** button.
-
-    :::image type="content" source="media/tutorial-create-visualizations/new-report-with-all-available-data.png" alt-text="Screenshot of the New report with all available data window.":::
-
-   The Power BI canvas appears, and you're presented with the option to use the Copilot to create your report. Feel free to explore what Copilot can come up with. For the rest of this tutorial, we'll create a new report with objects from earlier steps.
-
-    :::image type="content" source="media/tutorial-create-visualizations/create-a-report-with-copilot.png" alt-text="Screenshot shows the Create a report with copilot option." lightbox="media/tutorial-create-visualizations/create-a-report-with-copilot.png":::
+    :::image type="content" source="media/tutorial-create-visualizations/new-report-button.png" alt-text="Screenshot from the Fabric portal of the Reporting tab, New report button." lightbox="media/tutorial-create-visualizations/new-report-button.png":::
 
 1. Expand the `vTotalProductsByVendor` data object. Select each of the fields you see there. The report takes a moment to gather the results to a text view. You can size this text box if desired.
 
