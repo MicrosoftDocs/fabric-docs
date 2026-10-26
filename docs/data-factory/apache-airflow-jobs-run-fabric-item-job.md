@@ -111,7 +111,7 @@ Apache Airflow connection is used to store the credentials required to authent
 
 ## Create a DAG to trigger Microsoft Fabric item run
 
-On your Apache Airflow job canvas, there are three tiles. Select **Run Fabric artifact**. This opens a new pop-up that is accessible when no DAG is opened.
+On your Apache Airflow job canvas, there are three tiles. Select **Run Fabric artifact**. This selection opens a new pop-up that is accessible when no DAG is opened.
 
 :::image type="content" source="media/apache-airflow-jobs/run-fabric-artifact.png" lightbox="media/apache-airflow-jobs/run-fabric-artifact.png" alt-text="Screenshot of canvas tile for running Fabric items.":::
 
