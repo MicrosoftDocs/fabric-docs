@@ -111,7 +111,7 @@ Apache Airflow connection is used to store the credentials required to authent
 
 ## Create a DAG to trigger Microsoft Fabric item run
 
-On your Apache Airflow job canvas, there are three tiles. Select **Run Fabric artifact**. This opens a new pop-up. (Accessible when no DAG is opened)
+On your Apache Airflow job canvas, there are three tiles. Select **Run Fabric artifact**. This opens a new pop-up that is accessible when no DAG is opened.
 
 :::image type="content" source="media/apache-airflow-jobs/run-fabric-artifact.png" lightbox="media/apache-airflow-jobs/run-fabric-artifact.png" alt-text="Screenshot of canvas tile for running Fabric items.":::
 
@@ -141,14 +141,7 @@ On your Apache Airflow job canvas, there are three tiles. Select **Run Fabric ar
 
    :::image type="content" source="media/apache-airflow-jobs/set-fabric-provider-dag.png" lightbox="media/apache-airflow-jobs/set-fabric-provider-dag.png" alt-text="Screenshot to create the DAG you want to run Fabric providers using the pop-up.":::
 
-Create a new DAG file in the 'dags' folder in Fabric managed storage with the following code. Replace the following placeholders:
-
-- `fabric_conn_id`: The connection ID you created in the previous step.
-- `workspace_id`: The workspace ID where the item is located.
-- `item_id`: The item ID of the item you want to run. For example, a notebook ID or a pipeline ID.
-- `job_type`: The type of item you want to run. For example, for notebook use "RunNotebook", for Spark job definitions use "sparkjob" and for pipelines use "Pipeline". This is case sensitive.
-- `wait_for_termination`: If set to True, the operator waits for the item run to complete before proceeding to the next task.
-- `deferrable`: If set to True, the operator can free up resources while waiting for the item run to complete.
+You also have the option to create a new DAG in the 'dags' folder in Fabric managed storage with the following code:
 
 ```python
 from airflow import DAG
@@ -174,6 +167,14 @@ with DAG(
 
   run_fabric_item
 ```
+Replace the following placeholders:
+- `fabric_conn_id`: The connection ID you created in the previous step.
+- `workspace_id`: The workspace ID where the item is located.
+- `item_id`: The item ID of the item you want to run. For example, a notebook ID or a pipeline ID.
+- `job_type`: The type of item you want to run. For example, for notebook use "RunNotebook", for Spark job definitions use "sparkjob" and for pipelines use "Pipeline". This is case sensitive.
+- `wait_for_termination`: If set to True, the operator waits for the item run to complete before proceeding to the next task.
+- `deferrable`: If set to True, the operator can free up resources while waiting for the item run to complete.
+
 
 ## Monitor your DAG
 
