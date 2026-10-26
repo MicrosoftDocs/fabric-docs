@@ -27,7 +27,7 @@ env:
   EVENT_LABEL: conference-event
   AUTHOR_ACTION_LABEL: kp-author-addresscomments
   AUTHOR_REMINDER_LABEL: kp-author-stalepr
-  EXEMPT_LABEL: kp-stale-exempt
+  EXEMPT_LABEL: keep-open
 
 jobs:
   configuration:
