@@ -3,7 +3,7 @@ title: Run a Fabric item using Apache Airflow DAG.
 description: Learn to run Microsoft Fabric items using Apache Airflow DAGs.
 ms.reviewer: noelleli
 ms.topic: tutorial
-ms.date: 09/02/2026
+ms.date: 10/26/2026
 ms.custom: Airflows, sfi-image-nochange
 ---
 
@@ -153,7 +153,7 @@ Create a new DAG file in the 'dags' folder in Fabric managed storage with the fo
 ```python
 from airflow import DAG
 from datetime import datetime
-from apache_airflow_microsoft_fabric_plugin.operators.fabric import FabricRunItemOperator
+from airflow.providers.microsoft.fabric.operators.run_item import MSFabricRunJobOperator
 
 with DAG(
   dag_id="Run_Fabric_Item",
@@ -162,7 +162,7 @@ with DAG(
   catchup=False,
 ) as dag:
 
-  run_fabric_item = FabricRunItemOperator(
+  run_fabric_item = MSFabricRunJobOperator(
     task_id="run_fabric_item",
     fabric_conn_id="fabric_conn",
     workspace_id="<workspace_id>",
