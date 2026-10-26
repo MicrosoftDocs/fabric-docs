@@ -163,6 +163,114 @@ class KnowledgePartnershipWorkflows(unittest.TestCase):
                 remaining.difference_update(ready)
                 complete.update(ready)
 
+    def test_target_changes_reconcile_current_participation_only(self):
+        workflow = self.workflows["stale-reconcile-knowledgepartnership.yml"]
+        self.assertEqual(workflow["on"], {"pull_request_target": {"types": ["edited"]}})
+        self.assertEqual(workflow["permissions"], self.enroll["permissions"])
+        self.assertEqual(workflow["concurrency"], self.enroll["concurrency"])
+        configuration = workflow["jobs"]["configuration"]
+        self.assertEqual(configuration["uses"], f"./.github/workflows/{CONFIG}")
+        self.assertEqual(configuration["permissions"], {})
+        reconcile = workflow["jobs"]["reconcile-participation"]
+        self.assertEqual(reconcile["needs"], "configuration")
+        for job in workflow["jobs"].values():
+            self.assertIn(f"github.repository == '{PRIVATE_REPO}'", job["if"])
+            for step in job.get("steps", []):
+                self.assertNotIn("actions/checkout", step.get("uses", ""))
+        for variable, output in [("EVENT_LABEL", "event-label"),
+                                 ("ROLLOUT_BRANCH_PREFIX", "rollout-branch-prefix")]:
+            self.assertEqual(reconcile["env"][variable],
+                             "${{ needs.configuration.outputs." + output + " }}")
+        runner = r"""
+const assert = require('node:assert/strict');
+const {script, condition} = JSON.parse(require('node:fs').readFileSync(0, 'utf8'));
+const run = new (Object.getPrototypeOf(async function(){}).constructor)(
+  'github', 'context', script);
+process.env.EVENT_LABEL = 'conference-event';
+process.env.ROLLOUT_BRANCH_PREFIX = 'release-ignite26-';
+const baseline = {
+  number: 42, state: 'open', base: {ref: 'main'},
+  labels: [{name: 'conference-event'}, {name: 'kp-author-stalepr'},
+    {name: 'kp-author-addresscomments'}, {name: 'kp-stale-exempt'}]
+};
+// GitHub edited payload: changes.base.ref.from, not changes.base.from.
+const targetChange = {base: {ref: {from: 'release-ignite26-test'}, sha: {from: 'oldsha'}}};
+for (const repo of ['MicrosoftDocs/fabric-docs-pr', 'diberry/fabric-docs-pr']) {
+  for (const changes of [targetChange, {}, {title: {from: 'Old title'}},
+      {body: {from: 'Old body'}}, {base: {sha: {from: 'oldsha'}}}]) {
+    // Missing properties in Actions expressions evaluate to an empty value.
+    const empty = new Proxy({}, {get: (_, key) =>
+      key === Symbol.toPrimitive ? () => '' : empty});
+    const wrap = value => new Proxy(value, {
+      get: (target, key) => key in target
+        ? (typeof target[key] === 'object' ? wrap(target[key]) : target[key])
+        : key === Symbol.toPrimitive ? () => '' : empty
+    });
+    const selected = new Function('github', `return (${condition});`)(
+      wrap({repository: repo, event: {changes}}));
+    assert.equal(selected, repo === 'MicrosoftDocs/fabric-docs-pr' && changes === targetChange);
+  }
+}
+async function check(fresh, expected, failRead = false, failWrite = false) {
+  const calls = [];
+  const github = {rest: {
+    issues: {
+      removeLabel: async args => {
+        calls.push(['remove', args]);
+        if (failWrite) throw new Error('Removal denied');
+      }
+    },
+    pulls: {
+      get: async args => {
+        calls.push(['get', args]);
+        if (failRead) throw new Error('Read denied');
+        return {data: fresh};
+      }
+    }
+  }};
+  // Deliberately stale event target: decisions must use the current API response.
+  const execution = run(github, {repo: {owner: 'MicrosoftDocs', repo: 'fabric-docs-pr'},
+    payload: {pull_request: {number: 42, base: {ref: 'release-ignite26-test'}}}});
+  if (failRead || failWrite) {
+    await assert.rejects(execution, failRead ? /Read denied/ : /Removal denied/);
+    if (failRead) assert.equal(calls.length, 1);
+    return;
+  }
+  await execution;
+  assert.deepEqual(calls.map(([name]) => name), expected ? ['get', 'remove'] : ['get']);
+  assert.equal(calls[0][1].pull_number, 42);
+  if (expected) {
+    assert.deepEqual(calls[1][1], {owner: 'MicrosoftDocs', repo: 'fabric-docs-pr',
+      issue_number: 42, name: 'conference-event'});
+  }
+}
+(async () => {
+  for (const branch of ['main', 'release-other-test', 'release-ignite26-test',
+      'release-ignite26-', 'release-ignite26-another']) {
+    for (const labeled of [false, true]) {
+      for (const state of ['open', 'closed']) {
+        await check({...baseline, state, base: {ref: branch},
+          labels: labeled ? baseline.labels : baseline.labels.slice(1)},
+          state === 'open' && labeled && !branch.startsWith('release-ignite26-'));
+      }
+    }
+  }
+  await check({...baseline, draft: true}, true);
+  await check(baseline, false, true);
+  await check(baseline, false, false, true);
+  console.log('Verified target-change routing, fresh participation, no-ops, and errors.');
+})().catch(error => {console.error(error); process.exitCode = 1;});
+"""
+        result = subprocess.run(
+            ["node", "-e", runner], input=json.dumps({
+                "script": reconcile["steps"][0]["with"]["script"],
+                "condition": configuration["if"],
+            }),
+            text=True, capture_output=True,
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("Verified target-change routing", result.stdout)
+
     def test_trigger_and_job_routing_matrix(self):
         cases = [
             {"repo": repo, "event": event, "action": action, "branch": branch, "labelsOnly": labels}
