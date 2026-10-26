@@ -305,7 +305,7 @@ To view monitoring details:
 :::image type="content" source="media/dataflow-gen2-mapping-data-flows-transforms/mapping-data-flow-transform-monitoring-page.png" alt-text="Screenshot of the mapping data flow transform monitoring page showing execution status and runtime details." lightbox="media/dataflow-gen2-mapping-data-flows-transforms/mapping-data-flow-transform-monitoring-page.png":::
 
 > [!IMPORTANT]
-> Before deleting a Dataflow Gen2 item that uses Mapping Data Flow transforms, remove any Dataflow activities that reference it from Fabric pipelines, or delete the dependent pipelines. If you delete a pipeline, permanently delete it from the recycle bin as well. After these dependencies are removed, delete the Dataflow Gen2 item.
+> Before deleting a Dataflow Gen2 item that uses Mapping Data Flow transforms, remove any Dataflow activities that reference it from Fabric pipelines, or delete the dependent pipelines. If you delete a pipeline, permanently delete it from the recycle bin as well. After you remove these dependencies, delete the Dataflow Gen2 item.
 
 ## Related content
 
