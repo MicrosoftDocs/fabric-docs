@@ -86,9 +86,11 @@ class KnowledgePartnershipWorkflows(unittest.TestCase):
                     )
         reminder = self.workflows["reusable-kp-reminder.yml"]["jobs"]["send-reminders"]
         self.assertEqual(reminder["env"]["EXEMPT_LABEL"], "${{ inputs.exempt-label }}")
-        action = next(step["with"] for step in reminder["steps"] if "uses" in step)
-        self.assertEqual(action["exempt-pr-labels"], "${{ env.EXEMPT_LABEL }}")
-        self.assertEqual(action["exempt-draft-pr"], "true")
+        actions = [step["with"] for step in reminder["steps"]
+                   if step.get("uses", "").startswith("actions/stale@")]
+        for action in actions:
+            self.assertEqual(action["exempt-pr-labels"], "${{ env.EXEMPT_LABEL }}")
+            self.assertEqual(action["exempt-draft-pr"], "true")
         validation = self.workflows["reusable-kp-validate-labels.yml"]["jobs"]["validate-labels"]
         self.assertEqual(validation["env"]["EXEMPT_LABEL"], "${{ inputs.exempt-label }}")
 
@@ -126,7 +128,10 @@ class KnowledgePartnershipWorkflows(unittest.TestCase):
             for job in workflow["jobs"].values():
                 self.assertIn(f"github.repository == '{PRIVATE_REPO}'", job["if"])
                 for step in job.get("steps", []):
-                    self.assertNotIn("actions/checkout", step.get("uses", ""))
+                    if step.get("uses", "").startswith("actions/checkout"):
+                        self.assertEqual(filename, "reusable-kp-reminder.yml")
+                        self.assertEqual(step["with"]["ref"], "${{ github.sha }}")
+                        self.assertEqual(step["with"]["persist-credentials"], "false")
         self.assertNotIn("actions", self.enroll["permissions"])
         self.assertEqual(self.enroll["permissions"], {"issues": "read", "pull-requests": "write"})
         self.assertEqual(self.scan["permissions"]["actions"], "write")
@@ -137,6 +142,42 @@ class KnowledgePartnershipWorkflows(unittest.TestCase):
         )
         for workflow in [self.scan, self.enroll]:
             self.assertEqual(workflow["concurrency"]["cancel-in-progress"], "false")
+
+    def test_business_day_gate_preserves_stock_stale_lifecycle(self):
+        reminder = self.workflows["reusable-kp-reminder.yml"]["jobs"]["send-reminders"]
+        steps = reminder["steps"]
+        actions = [step["with"] for step in steps
+                   if step.get("uses", "").startswith("actions/stale@")]
+        self.assertEqual(len(actions), 1)
+        posting = actions[0]
+        self.assertEqual(posting["only-pr-labels"], "${{ env.EVENT_LABEL }}")
+        self.assertEqual(posting["any-of-pr-labels"],
+                         "${{ format('{0},{1}', env.REMINDER_DUE_LABEL, env.AUTHOR_REMINDER_LABEL) }}")
+        self.assertEqual(posting["days-before-pr-stale"], "0")
+        for action in actions:
+            self.assertEqual(action["remove-pr-stale-when-updated"], "true")
+            self.assertEqual(action["days-before-pr-close"], "-1")
+            self.assertEqual(action["stale-pr-label"], "${{ env.AUTHOR_REMINDER_LABEL }}")
+            self.assertEqual(action["stale-pr-message"], "${{ env.AUTHOR_REMINDER_MESSAGE }}")
+            self.assertEqual(action["operations-per-run"], "${{ inputs.operations-per-run }}")
+        relevant = [step["name"] for step in steps if step.get("name") in {
+            "Reconcile business-day reminder eligibility",
+            "Remind authors to address outstanding comments"}]
+        self.assertEqual(relevant, [
+            "Reconcile business-day reminder eligibility",
+            "Remind authors to address outstanding comments"])
+        self.assertEqual(self.config["env"]["REMINDER_DUE_LABEL"], "kp-reminder-due")
+
+    def test_private_checkout_has_contents_read_through_reusable_call(self):
+        reusable = self.workflows["reusable-kp-reminder.yml"]
+        caller_job = self.scan["jobs"]["send-author-reminder"]
+        checkout_job = reusable["jobs"]["send-reminders"]
+        self.assertEqual(self.scan["permissions"]["contents"], "read")
+        self.assertEqual(reusable["permissions"]["contents"], "read")
+        for workflow, job in [(self.scan, caller_job), (reusable, checkout_job)]:
+            effective = job.get("permissions", workflow["permissions"])
+            self.assertEqual(effective.get("contents"), "read")
+        self.assertNotIn("contents", self.enroll["permissions"])
 
     def test_reusable_input_contracts_and_dependency_graphs_resolve(self):
         for workflow in self.workflows.values():
