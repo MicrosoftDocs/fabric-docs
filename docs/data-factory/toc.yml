@@ -1173,6 +1173,8 @@
           href: dbt-job-how-to.md
         - name: Configure a dbt job
           href: dbt-job-configure.md
+        - name: Generate a dbt starter project from a Fabric warehouse or lakehouse (Preview)
+          href: generate-dbt-starter-project-from-fabric-source.md
         - name: Connect to Azure HorizonDB
           href: dbt-connect-azure-horizondb.md
         - name: Run dbt projects from GitHub
