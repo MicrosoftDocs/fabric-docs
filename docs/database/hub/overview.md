@@ -342,7 +342,6 @@ What appears in Database Hub depends on the service, configuration, region, tena
 
 [!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
 
-- **Regional availability:** [Database Hub doesn't currently support Fabric capacities located in **North Europe** or **West Europe**](../../admin/region-availability.md).   If **My workspace** is assigned to a capacity in either region, the **Overview** page might load, but you might encounter errors when using Database Hub. To use the preview, assign **My workspace** to a Fabric capacity in a supported region. This limitation applies to the Fabric capacity hosting the experience, not the location of the database resources you want to monitor.
 - You can view resources in the Database Hub from Azure, Fabric, and on-premises, including: Azure SQL Database, SQL database in Fabric, Azure SQL Elastic pools, Azure SQL Managed Instance, SQL Server enabled by Azure Arc, SQL Server instances in Azure VMs, Azure Database for PostgreSQL flexible server, and Azure Cosmos DB. 
 - Not currently supported in the Database Hub: Cosmos DB in Fabric, mirrored databases in Fabric, Fabric Data Warehouse.   
 - Currently, for a Microsoft SQL database service to appear in the **Overview** and **Estate** pages of the Database Hub, an additional step is necessary to [register an Azure resource provider in each subscription](add-sql.md#register-the-azure-resource-provider). This resource provider might already be in place for your subscription.
