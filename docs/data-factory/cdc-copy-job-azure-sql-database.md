@@ -94,7 +94,7 @@ Complete the following steps to create a new copy job to ingest data from Azure 
    :::image type="content" source="media/copy-job/monitor-cdc-second-run.png" alt-text="Screenshot showing the copy job panel where you can monitor capturing and replicating all changes.":::
 
 > [!NOTE]
-> For Microsoft SQL Server, Azure SQL Database and Azure SQL Managed Instance, Copy job supports custom capture instances. You can select the capture instance from which your Copy job reads in the **Read settings** tab of **Advanced Settings**.
+> For Microsoft SQL Server, Azure SQL Database, and Azure SQL Managed Instance, Copy job supports custom capture instances. You can select the capture instance from which your Copy job reads in the **Read settings** tab of **Advanced Settings**.
 
 
 ## Related content
