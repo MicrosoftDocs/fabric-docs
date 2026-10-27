@@ -111,7 +111,7 @@ Review and commit these changes to Git before moving or deploying the plan item 
 
 The following screenshot shows an example of semantic model reference normalization in the **Review and commit changes** view.
 
-:::image type="content" source="media/overview-limitations/example-git-diff.png" alt-text="Screenshot of the Review and commit changes view showing semantic model reference changes between Git and the workspace." lightbox="true":::
+:::image type="content" source="media/overview-limitations/example-git-diff.png" alt-text="Screenshot of the Review and commit changes view showing semantic model reference changes between Git and the workspace." lightbox="media/overview-limitations/example-git-diff.png":::
 
 ## Deployment pipelines will fail with 100 Data Input items
 
