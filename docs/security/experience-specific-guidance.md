@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.reviewer: danzhang, wiassaf
 ms.topic: how-to
-ms.date: 10/06/2026
+ms.date: 10/27/2026
 ai-usage: ai-assisted
 ---
 
@@ -20,7 +20,7 @@ Many guidance sections in this article use the following sample scenario for pur
 Let's say you have a capacity C1 in region A that has a workspace W1. If you've [turned on disaster recovery](./disaster-recovery-guide.md#disaster-recovery-capacity-setting) for capacity C1, OneLake data is replicated to a backup in region B. If region A faces disruptions, the Fabric service in C1 fails over to region B. 
 
 > [!NOTE]
-> This recovery guidance applies only when the primary region has an Azure‑paired secondary region and Fabric is supported in the paired region.
+> This recovery guidance applies only when the primary region has an Azure‑paired secondary region and Fabric is supported in the paired region. For regions without a paired region, customers who require cross-region disaster recovery must implement and manage their own recovery solution in a supported secondary region.
 
 The following image illustrates this scenario. The box on the left shows the disrupted region. The box in the middle represents the continued availability of the data after failover, and the box on the right shows the fully covered situation after the customer acts to restore their services to full function.
 
