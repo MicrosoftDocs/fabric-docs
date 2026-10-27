@@ -1,11 +1,11 @@
 ---
-title: Consume a data agent from Microsoft Copilot (preview)
+title: Consume a data agent from Microsoft Copilot
 description: Learn how to consume a data agent from Microsoft Copilot.
 ms.author: scottpolly
 author: s-polly
 ms.reviewer: amjafari
 ms.topic: how-to
-ms.date: 05/12/2026
+ms.date: 10/26/2026
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
 ai-usage: ai-assisted
@@ -15,9 +15,6 @@ ai-usage: ai-assisted
 # Consume Fabric data agent in Microsoft Copilot
 
 Microsoft Copilot provides a comprehensive set of productivity tools that help organizations collaborate, communicate, and make data-driven decisions. With Teams at the center of communication and collaboration, users can access their organization's knowledge and insights in one unified workspace. Therefore, Microsoft Copilot isn't just a suite of applications, but a platform that connects people to the information they need to act confidently.
-
-> [!IMPORTANT]  
-> This feature is in [preview](../fundamentals/preview.md).
 
 > [!IMPORTANT]
 > When you configure Fabric data agents to be consumed within Microsoft Copilot, responses returned by Fabric data agents might be sent outside of Fabric's compliance boundary or geographic region. Microsoft Copilot might process and store these responses according to its terms and data handling policies.
