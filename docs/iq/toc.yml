@@ -653,6 +653,8 @@ items:
       href: plan/planning-concept-row-level-security.md
     - name: General - Create org apps
       href: plan/resources/how-to-create-org-apps.md
+    - name: CI/CD for Fabric Planning
+      href: plan/resources/cicd-planning.md
     - name: FAQ
       items:
       - name: Plan general FAQ
