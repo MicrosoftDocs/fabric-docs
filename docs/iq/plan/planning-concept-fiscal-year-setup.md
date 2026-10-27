@@ -152,10 +152,10 @@ Include `Fiscal Year` whenever the dataset spans multiple fiscal years. Keep the
 
 Configure these settings before creating forecast measures or extending time periods.
 
-1. After assigning the fiscal hierarchy, go to **Format** > **Appearance** > **Misc.**
+1. After assigning the fiscal hierarchy, go to **Model** > **Fiscal Year**.
 1. Configure both these fiscal settings: [Fiscal Year Start Month](#fiscal-year-start-month) and [Fiscal Year Convention](#fiscal-year-convention).
 
-:::image type="content" source="media/planning-concept-fiscal-year-setup/configure-fiscal-start-convention.png" alt-text="Screenshot of the Format tab Appearance pane with Misc. selected, highlighting Fiscal Year Start Month set to April and Fiscal Year Convention set to Prior." lightbox="media/planning-concept-fiscal-year-setup/configure-fiscal-start-convention.png":::
+:::image type="content" source="media/planning-concept-fiscal-year-setup/configure-fiscal-start-convention.png" alt-text="Screenshot of the Model tab Fiscal Year dropdown menu selected, highlighting Fiscal Year Start Month set to April and Fiscal Year Convention set to Prior." lightbox="media/planning-concept-fiscal-year-setup/configure-fiscal-start-convention.png":::
 
 ### Fiscal year start month
 
