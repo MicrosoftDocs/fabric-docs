@@ -31,61 +31,61 @@ The following table lists all Azure regions where Power BI or Fabric is availabl
 | Geography    | Region               | Power BI | All Fabric<br> workloads | Unavailable Fabric features |
 |--|--|:--:|:--:|--|
 | Americas     | Brazil South         | ✅ | ✅ |  |
-| Americas     | Canada Central       | ✅ | ✅ | Not available: <br> [Fabric App (preview)](../apps/overview.md) |
+| Americas     | Canada Central       | ✅ | ✅ | Not available: <br> [Fabric App (preview)](../apps/overview.md) <br> [Observability in Fabric](../fundamentals/enable-workspace-monitoring.md) |
 | Americas     | Canada East          | ✅ | ✅ |  |
-| Americas     | Chile Central        | ✅ | ❌ | Power BI only region |
+| Americas     | Chile Central        | ✅ | ❌ | Power BI only region <br> Not available: <br> [Observability in Fabric](../fundamentals/enable-workspace-monitoring.md) |
 | Americas     | Mexico Central       | ✅ | ✅ | Not available: <br> [Fabric App (preview)](../apps/overview.md) |
 | Americas     | US - Central US      | ✅ | ✅ |  |
-| Americas     | US - East US         | ✅ | ✅ |Not available:  <br> [Operations agent (preview)](../real-time-intelligence/operations-agent.md)|
-| Americas     | US - East US 2       | ✅ | ✅ |  |
+| Americas     | US - East US         | ✅ | ✅ |Not available:  <br> [Operations agent (preview)](../real-time-intelligence/operations-agent.md) <br> [Observability in Fabric](../fundamentals/enable-workspace-monitoring.md)|
+| Americas     | US - East US 2       | ✅ | ✅ | Not available: <br> [Observability in Fabric](../fundamentals/enable-workspace-monitoring.md) |
 | Americas     | US - North Central US| ✅ | ✅ |  |
-| Americas     | US - South Central US| ✅ | ✅ | Not available: <br> [Digital twin builder (preview)](../real-time-intelligence/digital-twin-builder/overview.md) <br> [Ontology (preview)](../iq/ontology/overview.md) <br> [Operations agent](../real-time-intelligence/operations-agent.md) <br> [Schema  Registry (preview)](../real-time-intelligence/schema-sets/schema-registry-region-availability.md) |
-| Americas     | US - West US         | ✅ | ✅ |  |
+| Americas     | US - South Central US| ✅ | ✅ | Not available: <br> [Digital twin builder (preview)](../real-time-intelligence/digital-twin-builder/overview.md) <br> [Ontology (preview)](../iq/ontology/overview.md) <br> [Operations agent](../real-time-intelligence/operations-agent.md) <br> [Schema  Registry (preview)](../real-time-intelligence/schema-sets/schema-registry-region-availability.md) <br> [Observability in Fabric](../fundamentals/enable-workspace-monitoring.md) |
+| Americas     | US - West US         | ✅ | ✅ | Not available: <br> [Observability in Fabric](../fundamentals/enable-workspace-monitoring.md) |
 | Americas     | US - West US 2       | ✅ | ✅ |  |
 | Americas     | US - West US 3       | ✅ | ✅ |  |
 | **Geography**| **Region** | **Power BI** | **All Fabric workloads** | **Unavailable Fabric features** |
-| Austria      | Austria East         | ✅ | ❌ | Power BI only region |
-| Belgium      | Belgium Central      | ✅ | ❌ | Power BI only region |
-| Denmark      | Denmark East         | ✅ | ❌ | Power BI only region |
-| Europe       | Europe - North Europe| ✅ | ✅ | Not available: <br> [Digital twin builder (preview)](../real-time-intelligence/digital-twin-builder/overview.md) |
-| Europe       | Europe - West Europe | ✅ | ✅ | |
-| Europe       | France Central       | ✅ | ✅ |  |
+| Austria      | Austria East         | ✅ | ❌ | Power BI only region <br> Not available: <br> [Observability in Fabric](../fundamentals/enable-workspace-monitoring.md) |
+| Belgium      | Belgium Central      | ✅ | ❌ | Power BI only region <br> Not available: <br> [Observability in Fabric](../fundamentals/enable-workspace-monitoring.md) |
+| Denmark      | Denmark East         | ✅ | ❌ | Power BI only region <br> Not available: <br> [Observability in Fabric](../fundamentals/enable-workspace-monitoring.md) |
+| Europe       | Europe - North Europe| ✅ | ✅ | Not available: <br> [Digital twin builder (preview)](../real-time-intelligence/digital-twin-builder/overview.md) <br> [Observability in Fabric](../fundamentals/enable-workspace-monitoring.md) |
+| Europe       | Europe - West Europe | ✅ | ✅ | Not available: <br> [Observability in Fabric](../fundamentals/enable-workspace-monitoring.md) |
+| Europe       | France Central       | ✅ | ✅ | Not available: <br> [Observability in Fabric](../fundamentals/enable-workspace-monitoring.md) |
 | Europe       | France South         | ✅ | ❌ | Power BI only region |
-| Europe       | Germany North        | ✅ | ❌ | Power BI only region |
-| Europe       | Germany West Central | ✅ | ✅ |  |
+| Europe       | Germany North        | ✅ | ❌ | Power BI only region <br> Not available: <br> [Observability in Fabric](../fundamentals/enable-workspace-monitoring.md) |
+| Europe       | Germany West Central | ✅ | ✅ | Not available: <br> [Observability in Fabric](../fundamentals/enable-workspace-monitoring.md) |
 | Europe       | Italy North          | ✅ | ✅ |  |
 | Europe       | Norway East          | ✅ | ✅ |  |
-| Europe       | Norway West          | ✅ | ❌ | Power BI only region |
+| Europe       | Norway West          | ✅ | ❌ | Power BI only region <br> Not available: <br> [Observability in Fabric](../fundamentals/enable-workspace-monitoring.md) |
 | Europe       | Poland Central       | ✅ | ✅ | Not available: <br> [Fabric App (preview)](../apps/overview.md) |
 | Europe       | Spain Central        | ✅ | ✅ | Not available: <br> [Fabric App (preview)](../apps/overview.md) |
 | Europe       | Sweden Central       | ✅ | ✅ | Not available by default for Power BI: <br> [Business Continuity Disaster Recovery (BCDR)](/azure/reliability/reliability-fabric#cross-region-disaster-recovery-and-business-continuity).<br> Power BI is supported in the region but not in its paired region |
 | Europe       | Switzerland North    | ✅ | ✅ |  |
 | Europe       | Switzerland West     | ✅ | ✅ | Not available: <br> [Fabric App (preview)](../apps/overview.md) |
-| Europe       | UK South             | ✅ | ✅ | Not available: <br> [Fabric App (preview)](../apps/overview.md) |
+| Europe       | UK South             | ✅ | ✅ | Not available: <br> [Fabric App (preview)](../apps/overview.md) <br> [Observability in Fabric](../fundamentals/enable-workspace-monitoring.md) |
 | Europe       | UK West              | ✅ | ✅ |  |
 | **Geography**| **Region** | **Power BI** | **All Fabric workloads** | **Unavailable Fabric features** |
-| Qatar        | Qatar Central        | ✅ | ❌ | Power BI only region |
-| UAE          | UAE Central          | ✅ | ❌ | Power BI only region |
+| Qatar        | Qatar Central        | ✅ | ❌ | Power BI only region <br> Not available: <br> [Observability in Fabric](../fundamentals/enable-workspace-monitoring.md) |
+| UAE          | UAE Central          | ✅ | ❌ | Power BI only region <br> Not available: <br> [Observability in Fabric](../fundamentals/enable-workspace-monitoring.md) |
 | UAE          | UAE North            | ✅ | ✅ |  |
 | South Africa | South Africa North   | ✅ | ✅ |  |
-| South Africa | South Africa West    | ✅ | ❌ | Power BI only region |
+| South Africa | South Africa West    | ✅ | ❌ | Power BI only region <br> Not available: <br> [Observability in Fabric](../fundamentals/enable-workspace-monitoring.md) |
 | Asia Pacific | Asia - East Asia     | ✅ | ✅ |  |
 | Asia Pacific | Asia - Southeast Asia| ✅ | ✅ |  |
 | Asia Pacific | Australia East       | ✅ | ✅ |  |
 | Asia Pacific | Australia Southeast  | ✅ | ✅ | |
 | Asia Pacific | India - Central India| ✅ | ✅ |  |
-| Asia Pacific | India - India West   | ✅ | ❌ | Power BI only region |
+| Asia Pacific | India - India West   | ✅ | ❌ | Power BI only region <br> Not available: <br> [Observability in Fabric](../fundamentals/enable-workspace-monitoring.md) |
 | Asia Pacific | India - South India  | ✅ | ✅ |  |
 | Asia Pacific | Indonesia Central    | ✅ | ✅ | Not available: <br> [Fabric App (preview)](../apps/overview.md) |
 | Asia Pacific | Israel Central       | ✅ | ✅ | Not available: <br> [Digital twin builder (preview)](../real-time-intelligence/digital-twin-builder/overview.md) <br> [Fabric App (preview)](../apps/overview.md) |
 | Asia Pacific | Japan East           | ✅ | ✅ |  |
 | Asia Pacific | Japan West           | ✅ | ✅ | Not available: <br> [Digital twin builder (preview)](../real-time-intelligence/digital-twin-builder/overview.md) <br> [Fabric App (preview)](../apps/overview.md) |
 | Asia Pacific | Korea Central        | ✅ | ✅ |  |
-| Asia Pacific | Korea South          | ✅ | ❌ | Power BI only region |
+| Asia Pacific | Korea South          | ✅ | ❌ | Power BI only region <br> Not available: <br> [Observability in Fabric](../fundamentals/enable-workspace-monitoring.md) |
 | Asia Pacific | Malaysia West        | ✅ | ✅ | Not available: <br> [Fabric App (preview)](../apps/overview.md) |
 | Asia Pacific | New Zealand North    | ✅ | ✅ | Not available: <br> [Fabric App (preview)](../apps/overview.md) |
-| Asia Pacific | Taiwan North         | ✅ | ✅ | Not available: <br> [Fabric App (preview)](../apps/overview.md) |
-| Asia Pacific | Taiwan Northwest     | ✅ | ✅ | Not available: <br> [Fabric App (preview)](../apps/overview.md) |
+| Asia Pacific | Taiwan North         | ✅ | ✅ | Not available: <br> [Fabric App (preview)](../apps/overview.md) <br> [Observability in Fabric](../fundamentals/enable-workspace-monitoring.md) |
+| Asia Pacific | Taiwan Northwest     | ✅ | ✅ | Not available: <br> [Fabric App (preview)](../apps/overview.md) <br> [Observability in Fabric](../fundamentals/enable-workspace-monitoring.md) |
 
 <!-- TODO: Confirm the Geography values for Taiwan North and Taiwan Northwest when Azure lists these regions. -->
 
