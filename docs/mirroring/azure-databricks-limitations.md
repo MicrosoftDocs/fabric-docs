@@ -25,8 +25,7 @@ The following table types are not supported:
 - Tables with RLS/CLM policies
 - Lakehouse federated tables
 - Delta sharing tables
-- Streaming tables
-- Views, Materialized views
+- Views
 
 ### Supported regions
 
