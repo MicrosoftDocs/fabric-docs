@@ -1,8 +1,8 @@
 ---
 title: "Microsoft Fabric Mirrored Catalog From Azure Databricks"
 description: Learn about the mirrored databases from Azure Databricks in Microsoft Fabric.
-ms.reviewer: sheppardshep, mspreshah, wiassaf
-ms.date: 10/24/2025
+ms.reviewer: sheppardshep
+ms.date: 10/24/2026
 ms.topic: overview
 ms.search.form: Databricks overview
 ---
@@ -15,7 +15,7 @@ For a tutorial on configuring your Azure Databricks Workspace for mirroring the 
 
 By using [Mirroring in Fabric](../mirroring/overview.md), you can enjoy a highly integrated, end-to-end, and easy-to-use product that simplifies your analytics needs and is built for openness and collaboration between Microsoft Fabric and Azure Databricks.
 
-When you use Fabric to read data that is registered in Unity Catalog, there is no data movement or data replication. Only the Azure Databricks catalog structure is mirrored to Fabric and the underlying catalog data is accessed through shortcuts. Changes to the underlying data may not appear in Fabric immediately. Propagation can take anywhere from a few seconds to several minutes, as described in the [SQL analytics endpoint performance documentation](../data-engineering/sql-analytics-endpoint-performance.md).
+When you use Fabric to read data that is registered in Unity Catalog, there is no data movement or data replication. Only the Azure Databricks catalog structure is mirrored to Fabric and the underlying catalog data is accessed through shortcuts. Changes to the underlying data might not appear in Fabric immediately. Propagation can take anywhere from a few seconds to several minutes, as described in the [SQL analytics endpoint performance documentation](../data-engineering/sql-analytics-endpoint-performance.md).
 
 ## What analytics experiences are built in
 
@@ -37,20 +37,20 @@ When you create a new mirror from Azure Databricks in Fabric, the **Automaticall
 
 - Addition of schemas to a catalog.
 - Deletion of schemas from a catalog.
-- Addition of tables to a schema.
-- Deletion of tables from a schema.
+- Addition of tables, materialized views, and streaming tables to a schema.
+- Deletion of tables, materialized views, and streaming tables from a schema.
 
-Schema/table selection:
+Schema and table selection:
 
-- By default, the entire catalog is selected when the user adds the catalog.
-- The user can exclude certain tables within the schema.
+- By default, the entire catalog is selected when you add the catalog.
+- You can exclude certain tables within the schema.
 - Unselecting a schema unselects all the tables within the schema.
-- If the user goes back and selects the schema, all tables within the schema are selected again.
-- Same selection behavior applies to schemas within a catalog.
+- If you go back and select the schema, all tables within the schema are selected again.
+- The same selection behavior applies to schemas within a catalog.
 
-There are other filtration conditions that are applied to catalogs/schemas/tables:
+The following filtration rules apply to the catalogs and schemas:
 
-- Materialized views and streaming tables will not be displayed.
+- Views and metric views don't appear.
 - External tables that don't support Delta format will not be displayed.
 
 ## Related content

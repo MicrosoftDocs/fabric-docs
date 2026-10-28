@@ -118,3 +118,6 @@ Sessions continue to be recorded even if the capacity is exhausted through other
 ### What if too many users are assigned to a small-capacity SKU?
 
 If the number of active sessions exceeds what the SKU supports, you overcommit the SKU. This condition is particularly relevant for smaller SKUs such as F2 and F4, as well as for capacities shared with other Fabric workloads. You might need to dynamically control the number of users assigned to a capacity to avoid overcommitting the SKU.
+
+### What happens when using an F0 capacity SKU?
+When using an F0 capacity, capacity consumption is billed at 1.5x the base CU-hours assigned to each session type (Planner, Stakeholder, or Viewer). Otherwise, it behaves like any other standard Fabric (F) SKU.
