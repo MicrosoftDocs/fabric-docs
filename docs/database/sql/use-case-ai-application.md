@@ -2,7 +2,7 @@
 title: Use SQL Database in AI Applications
 description: Learn how to use SQL database in Fabric to build AI-powered applications with vector search, RAG patterns, and integration with LangChain and Semantic Kernel.
 ms.reviewer: pamela, antho, yoleichen, pookam
-ms.date: 09/15/2026
+ms.date: 10/28/2026
 ms.topic: solution-overview
 ai-usage: ai-assisted
 ---
@@ -122,8 +122,8 @@ Use [CREATE EXTERNAL MODEL](/sql/t-sql/statements/create-external-model-transact
 
 ```sql
 CREATE DATABASE SCOPED CREDENTIAL [https://my-azure-openai-endpoint.cognitiveservices.azure.com/]
-    WITH IDENTITY = 'Managed Identity',
-    SECRET = '{"resourceid":"https://cognitiveservices.azure.com"}';
+    WITH IDENTITY = 'HTTPEndpointHeaders',
+    SECRET = '{"api-key":"<OpenAIKey>"}';
 GO
 ```
 
