@@ -163,7 +163,7 @@ The following table describes the schema of `FabricDataPipelinesActivityRunsLogs
 > - Review pipeline configurations for sensitive values.
 > - Encourage pipeline authors to use **Secure Input** and **Secure Output** when handling sensitive information.
 >
-> **Important:** Secure Input and Secure Output help protect activity-level information but should not be treated as a guarantee that all sensitive information is automatically removed from every monitoring field.
+> **Important:** Secure Input and Secure Output help protect activity-level information but shouldn't be treated as a guarantee that all sensitive information is automatically removed from every monitoring field.
 
 ## Related content
 
