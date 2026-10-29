@@ -44,6 +44,7 @@ To audit OneLake data access and storage operations, use [OneLake diagnostics](.
 | Applied a change to model in Power BI | :::no-loc text="ApplyChangeToPowerBIModel"::: | A user makes a change to an existing model. This occurs whenever any edit is made to the model (ex: write a DAX measure, manage relationships, etc.)  |
 | Applied sensitivity label to Power BI item | :::no-loc text="SensitivityLabelApplied"::: |   |
 | Apply CMK encryption to your workspace | :::no-loc text="ApplyWorkspaceEncryption"::: | Triggered when CMK encryption is applied to a workspace |
+| Assign warehouse server alias|:::no-loc text="AssignWarehouseServerAlias":::| A workspace administrator assigned a server alias to a Fabric Warehouse workspace.|
 | Assign Workspace To Alm Pipeline | :::no-loc text="AssignWorkspaceToAlmPipeline"::: |   |
 | Assigned a workspace to a deployment pipeline | :::no-loc text="AssignWorkspaceToPipeline"::: | Not currently used  |
 | Attach Notebook Environment | :::no-loc text="AttachNotebookEnvironment"::: | Attach the environment for Notebook.  |
@@ -604,6 +605,9 @@ To audit OneLake data access and storage operations, use [OneLake diagnostics](.
 | Set dataflow storage location for a workspace | :::no-loc text="SetDataflowStorageLocationForWorkspace"::: |   |
 | Set scheduled refresh on Power BI dataflow | :::no-loc text="SetScheduledRefreshOnDataflow"::: |   |
 | Set scheduled refresh on Power BI semantic model | :::no-loc text="SetScheduledRefresh"::: |   |
+| Set warehouse connection mode to automatic|:::no-loc text="SetWarehouseConnectionModeToAutomatic":::|A workspace administrator set the Fabric Warehouse SQL connection mode to Automatic.|
+| Set warehouse connection mode to proxy|:::no-loc text="SetWarehouseConnectionModeToProxy":::| A workspace administrator set the Fabric Warehouse SQL connection mode to Proxy.|
+| Set warehouse connection mode to redirect|:::no-loc text="SetWarehouseConnectionModeToRedirect":::|A workspace administrator set the Fabric Warehouse SQL connection mode to Redirect.|
 | Set warehouse hardware acceleration|:::no-loc text="SetWarehouseHardwarePlatform":::|Changed the current hardware acceleration settings for warehouses in a workspace.|
 | Share Artifact | :::no-loc text="ShareArtifact"::: |   |
 | Share Datamart | :::no-loc text="ShareDatamart"::: |   |
@@ -627,6 +631,7 @@ To audit OneLake data access and storage operations, use [OneLake diagnostics](.
 | Took ownership of Power BI dataflow | :::no-loc text="TookOverDataflow"::: |   |
 | Take over a Fabric item | :::no-loc text="TakeOverArtifact"::: |   |
 | Trial License Extension | :::no-loc text="TrialLicenseExtension"::: | Extend user trials by user list or tenant  |
+| Unassign warehouse server alias | :::no-loc text="UnassignWarehouseServerAlias"::: | A workspace administrator unassigned the server alias from a Fabric Warehouse workspace.  |
 | Unassign Workspace From Alm Pipeline | :::no-loc text="UnassignWorkspaceFromAlmPipeline"::: |   |
 | Undelete blob | :::no-loc text="UndeleteBlob"::: | OneLake operation. Restore a soft deleted blob. |
 | Undo Git | :::no-loc text="UndoGit"::: | Undo Git is an item activity, which is generated when users undo changes done to item.  |
