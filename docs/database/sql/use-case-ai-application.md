@@ -118,11 +118,13 @@ The SQL Database Engine provides built-in T-SQL functions for generating embeddi
 
 ### Register an embedding model
 
+Step 1: Before you proceed follow the steps in this document to [create an Open AI resource and deploy the emdedding model](/azure/foundry-classic/openai/how-to/create-resource?pivots=web-portal).
+
 Use [CREATE EXTERNAL MODEL](/sql/t-sql/statements/create-external-model-transact-sql?view=fabric-sqldb&preserve-view=true) to register an Azure OpenAI embedding endpoint as a database object. This example uses the `text-embedding-ada-002` deployment with HTTPEndpointHeader as identity authentication. 
 
-Note: Use the API key from Azure open AI Project in place of OpenAIKey:
+Note: Use the API key from Azure open AI Project :
 
-![alt text](image.png)
+Step 2:
 
 ```sql
 CREATE DATABASE SCOPED CREDENTIAL [https://my-azure-openai-endpoint.cognitiveservices.azure.com/]
@@ -132,6 +134,8 @@ GO
 ```
 
 Then, create an external model:
+
+Step 3:
 
 ```sql
 CREATE EXTERNAL MODEL MyEmbeddingModel
