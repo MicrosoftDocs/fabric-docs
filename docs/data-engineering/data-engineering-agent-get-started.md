@@ -1,16 +1,16 @@
 ---
-title: Get started with Fabric data engineering agent (Project Osmos) (preview)
+title: Get started with Fabric data engineering agent (Project Osmos) - preview
 description: Install the data engineering agent (Project Osmos) skill for GitHub Copilot CLI, Claude Code, or Codex, create your first Fabric task, and monitor it in Fabric or your client.
 author: vsarad
 ms.author: vijaykris
-ms.date: 09/25/2026
+ms.date: 10/23/2026
 ms.topic: get-started
 ms.service: fabric
 ms.subservice: data-engineering
 ai-usage: ai-assisted
 ---
 
-# Get started with Fabric data engineering agent (Project Osmos) (preview)
+# Get started with Fabric data engineering agent (Project Osmos) - preview
 
 In this quickstart, you install the Fabric data engineering agent (Project Osmos) skill for GitHub Copilot CLI, Claude Code, or Codex, create a task for a Fabric lakehouse, and open the task in Fabric.
 
@@ -46,6 +46,21 @@ Confirm these requirements before you start:
   - Codex and Git
 
 For configuration guidance, see [Enable and configure Copilot in Microsoft Fabric](/fabric/fundamentals/copilot-enable-fabric).
+
+### Understand the OpenAI subprocessor setting
+
+The setting **Users can use Copilot, AI Agents, and other AI experiences powered by OpenAI as a Microsoft Subprocessor** controls access to models that OpenAI operates. These models are distinct from Azure OpenAI models, which Microsoft operates.
+
+For Project Osmos, the setting has the following effect:
+
+| Setting | Effect on Project Osmos |
+| --- | --- |
+| Enabled for your account and capacity | Permits the use of OpenAI-operated models, subject to model and regional availability and the other required settings. |
+| Disabled | Project Osmos can still be used with the required Azure OpenAI setting enabled, but OpenAI-operated models aren't available through this setting. |
+
+This optional setting doesn't replace **Users can use Copilot and other features powered by Azure OpenAI** or the applicable regional-processing and storage settings. Its display name doesn't mean that disabling it disables every Copilot or AI experience.
+
+Before enabling it, review your organization's data-processing requirements and [OpenAI as a subprocessor in Microsoft Fabric](../fundamentals/copilot-openai-subprocessor.md). For tenant and delegated capacity configuration, see [Copilot and Agent tenant settings](../admin/service-admin-portal-copilot.md).
 
 ## Install the data engineering agent (Project Osmos) skill
 
@@ -172,6 +187,8 @@ After you accept the settings, Fabric data engineering agent (Project Osmos) run
 - Agent activity
 
 Because the task runs in Fabric on SparkCore instead of your local machine, it continues when your computer is off. To monitor progress, select your lakehouse in Fabric, and then select the task in the lakehouse explorer. You can also ask your local agent for the task status.
+
+Task execution uses both language model tokens and Spark compute, including testing and validation runs. Before launching several tasks on a shared capacity, review [Project Osmos capacity consumption](data-engineering-agent-consumption.md) and [Plan for shared-capacity usage](data-engineering-agent-best-practices.md#plan-for-shared-capacity-usage).
 
 ## Usage guidance
 
@@ -325,5 +342,6 @@ For Codex, run `codex plugin marketplace upgrade fabric-collection`, and then ru
 
 - [Fabric data engineering agent (Project Osmos) overview](data-engineering-agent-overview.md)
 - [Best practices for Fabric data engineering agent (Project Osmos)](data-engineering-agent-best-practices.md)
+- [Fabric data engineering agent (Project Osmos) capacity consumption](data-engineering-agent-consumption.md)
 - [Fabric data engineering agent (Project Osmos) repository](https://github.com/microsoft/project-osmos)
 - [Sign in with Azure CLI](/cli/azure/authenticate-azure-cli-interactively)
