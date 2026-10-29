@@ -2,7 +2,7 @@
 title: Known Limitations in Planning
 description: This article lists known issues and limitations present in planning in Fabric.
 ms.topic: concept-article
-ms.date: 10/23/2026
+ms.date: 10/27/2026
 #customer intent: As a user, I want to know the limitations present in planning.
 ---
 
@@ -97,6 +97,21 @@ Gantt and Resource Layout support up to 30,000 rows. Gantt and Resource Layout a
 
 > [!NOTE]
 > Application database creation for plan items is now supported when using a service principal with deployment pipelines.
+
+## Semantic model reference changes for existing plan items
+
+Plan items created before August 2026 might show changes to the semantic model reference in Git, even when the connected semantic model hasn't changed. These changes are expected and result from backfilling and normalizing the semantic model reference.
+
+Review and commit these changes to Git before moving or deploying the plan item to another workspace. This ensures that Git contains the normalized semantic model reference and that the plan item can be moved to other workspaces as expected.
+
+> [!NOTE]
+> The Git diff might include changes to `artifactId`, `datasetRelations`, `semanticModelId`, `semanticModelWorkspaceId`, `semanticModelWorkspaceName`, and `url`. These changes represent normalized reference values, not changes made by the user to the semantic model.
+
+### Example Git diff
+
+The following screenshot shows an example of semantic model reference normalization in the **Review and commit changes** view.
+
+:::image type="content" source="media/overview-limitations/example-git-diff.png" alt-text="Screenshot of the Review and commit changes view showing semantic model reference changes between Git and the workspace." lightbox="media/overview-limitations/example-git-diff.png":::
 
 ## Deployment pipelines will fail with 100 Data Input items
 
