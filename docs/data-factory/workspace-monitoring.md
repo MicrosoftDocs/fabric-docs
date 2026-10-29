@@ -153,7 +153,7 @@ The following table describes the schema of `FabricDataPipelinesActivityRunsLogs
 > [!IMPORTANT]
 > **Review potential sensitive data exposure before enabling workspace monitoring.**
 >
-> Workspace monitoring collects execution logs from supported Fabric items, including data pipelines. Depending on the logged fields and pipeline configuration, these logs may contain customer-provided information, such as pipeline parameters, activity inputs and outputs, and error messages.
+> Workspace monitoring collects execution logs from supported Fabric items, including data pipelines. Depending on the logged fields and pipeline configuration, these logs might contain customer-provided information, such as pipeline parameters, activity inputs and outputs, and error messages.
 >
 > These values may include sensitive information, personally identifiable information (PII), or credentials if customers explicitly include them in their pipeline configurations or runtime values.
 >
