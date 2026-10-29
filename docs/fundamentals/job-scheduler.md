@@ -5,7 +5,8 @@ ms.reviewer: zhaya
 author: msmimart
 ms.author: mimart
 ms.topic: how-to
-ms.date: 05/13/2026
+ms.date: 10/29/2026
+ai-usage: ai-assisted
 
 #customer intent: As a Fabric user, I want to understand how to use the job scheduler to automate tasks and manage schedules for my items in Fabric.
 
@@ -69,6 +70,14 @@ To ensure your schedule is valid:
 
 > [!IMPORTANT]
 > Schedules become expired if a user doesn't log in to Fabric for 90 consecutive days. For more information, see [Refresh tokens in the Microsoft identity platform](/entra/identity-platform/refresh-tokens).
+
+## Schedule ownership and item takeover
+
+Schedule ownership is tracked separately from ownership of the Fabric item. The schedule owner is the identity that created or last modified the schedule, as described in the [ItemSchedule resource](/rest/api/fabric/core/job-scheduler/update-item-schedule#itemschedule). This distinction applies to schedules configured in the Fabric portal as well as through APIs.
+
+Taking over a Fabric item doesn't transfer ownership of its existing schedules or update their authentication context. Similarly, updating connections used by an item doesn't transfer schedule ownership.
+
+After you [take ownership of an item](item-ownership-take-over.md), review its existing schedules separately. A successful on-demand run doesn't confirm that an existing schedule can run successfully. If a scheduled run fails, review its error details in the [monitoring hub](../admin/monitoring-hub.md) to identify the cause.
 
 ## Receive notifications for failed scheduled jobs
 
