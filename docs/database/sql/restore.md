@@ -80,8 +80,6 @@ You can restore a database into any point in time between these two restore poin
 
 Current limitations when restoring a SQL database in Microsoft Fabric:
 
-- Retention of backups is seven days for a live database.
-- Restoring backups from dropped databases isn't currently possible after the retention period of seven days.
 - Cross-workspace restore isn't supported.
 - Cross-region restore isn't supported.
 - If you delete the database during the restore, the restore operation is canceled. You can't recover the data from deleted database.
