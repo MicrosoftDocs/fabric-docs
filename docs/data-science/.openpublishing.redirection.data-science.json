@@ -155,6 +155,11 @@
       "source_path": "docs/data-science/data-agent-copilot-powerbi.md",
       "redirect_url": "/fabric/data-science/data-agent-foundry",
       "redirect_document_id": false
-    }
+    },
+      {
+        "source_path_from_root": "/docs/data-science/consume-data-agent-python.md",
+        "redirect_url": "/fabric/data-science/data-agent-mcp-server",
+        "redirect_document_id": false
+      }
     ]
 }
