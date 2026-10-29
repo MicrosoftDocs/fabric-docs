@@ -3,7 +3,7 @@ title: Dataflow Gen2 with CI/CD and Git integration
 description: Learn how to use Dataflow Gen2 with CI/CD and Git integration in Fabric Data Factory.
 ms.reviewer: jeluitwi
 ms.topic: how-to
-ms.date: 02/25/2026
+ms.date: 10/29/2026
 ms.custom: dataflows
 ai-usage: ai-assisted
 ---
@@ -83,6 +83,9 @@ Refreshing a Dataflow Gen2 ensures your data is up-to-date. You can [refresh man
    :::image type="content" source="media/dataflow-gen2-cicd-and-git-integration/settings-schedule-refresh.png" alt-text="Screenshot of the dataflow's settings screen with the Schedule tab selected and the Refresh button emphasized.":::
 
 1. To refresh immediately, select **Refresh**.
+
+> [!IMPORTANT]
+> Taking over a Dataflow Gen2 changes ownership of the dataflow, but doesn't transfer ownership of its existing schedules or update their authentication context. Review existing schedules separately after takeover, even if an on-demand refresh succeeds. For more information, see [Schedule ownership and item takeover](../fundamentals/job-scheduler.md#schedule-ownership-and-item-takeover).
 
 ## View refresh history and settings
 
