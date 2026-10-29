@@ -5,7 +5,7 @@ author: dknappettmsft
 ms.author: daknappe
 ms.topic: reference
 ms.custom:
-ms.date: 09/08/2026
+ms.date: 10/23/2026
 ms.update-cycle: 180-days
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
@@ -219,11 +219,13 @@ The usage for each operation is reported in CU processing time in seconds. Eight
 
 ### Project Osmos
 
-[The data engineering agent (Project Osmos)](../data-engineering/data-engineering-agent-overview.md) operations are listed in this table. You can find the consumption rates in [Project Osmos consumption](../data-engineering/data-engineering-agent-consumption.md).
+[The data engineering agent (Project Osmos)](../data-engineering/data-engineering-agent-overview.md) operations are listed in this table. For billing and monitoring guidance, see [Project Osmos consumption](../data-engineering/data-engineering-agent-consumption.md).
 
 | Operation | Description | Item | Azure billing meter | Type |
 | --- | --- | --- | --- | --- |
 | Project Osmos | Language model input and output used by autonomous data engineering tasks | Lakehouse | Copilot and AI | Background |
+
+The **Project Osmos** operation covers language model consumption, not Spark execution. Tasks also use Spark for code execution, testing, and validation. Review Spark usage separately under the applicable [Spark operations](#spark) and [Spark billing model](../data-engineering/billing-capacity-management-for-spark.md).
 
 ### Real-Time Intelligence
 
