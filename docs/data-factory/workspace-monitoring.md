@@ -159,7 +159,7 @@ The following table describes the schema of `FabricDataPipelinesActivityRunsLogs
 >
 > Before enabling workspace monitoring, workspace administrators should:
 >
-> - Review the information that may be captured in monitoring logs.
+> - Review the information that might be captured in monitoring logs.
 > - Ensure that access to the monitoring Eventhouse and its data is appropriately restricted.
 > - Review pipeline configurations for sensitive values.
 > - Encourage pipeline authors to use **Secure Input** and **Secure Output** when handling sensitive information.
