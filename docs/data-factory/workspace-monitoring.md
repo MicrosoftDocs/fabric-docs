@@ -145,9 +145,26 @@ The following table describes the schema of `FabricDataPipelinesActivityRunsLogs
 - Use workspace monitoring for deep analysis and custom reporting.
 - Combine workspace monitoring with the monitoring hub for quick operational checks across workspaces.
 
-## Known limitations
+## Considerations and known limitations
 
 - Error details and diagnostics aren't supported.
+### Security and sensitive data considerations
+
+> [!IMPORTANT]
+> **Review potential sensitive data exposure before enabling workspace monitoring.**
+>
+> Workspace monitoring collects execution logs from supported Fabric items, including data pipelines. Depending on the logged fields and pipeline configuration, these logs may contain customer-provided information, such as pipeline parameters, activity inputs and outputs, and error messages.
+>
+> These values may include sensitive information, personally identifiable information (PII), or credentials if customers explicitly include them in their pipeline configurations or runtime values.
+>
+> Before enabling workspace monitoring, workspace administrators should:
+>
+> - Review the information that may be captured in monitoring logs.
+> - Ensure that access to the monitoring Eventhouse and its data is appropriately restricted.
+> - Review pipeline configurations for sensitive values.
+> - Encourage pipeline authors to use **Secure Input** and **Secure Output** when handling sensitive information.
+>
+> **Important:** Secure Input and Secure Output help protect activity-level information but should not be treated as a guarantee that all sensitive information is automatically removed from every monitoring field.
 
 ## Related content
 
