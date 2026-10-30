@@ -62,6 +62,20 @@ Set up the Teams activity by following these steps:
 
 - The Teams activity will be inactive when using CI/CD.
 
+### Connection authentication and ownership
+
+The Microsoft Teams activity uses user-based authentication. Each Teams connection is associated with the identity and authentication token of the user who created it.
+
+The following considerations apply when configuring Teams connections:
+
+- **User-specific connections:** Each user who wants to run a pipeline that sends Teams messages must create and authenticate their own Teams connection.
+- **Connection sharing:** Teams connections cannot be shared across users. Creating a connection using an administrator account does not allow other users to reuse it.
+- **Workspace configuration:** When deploying pipelines across workspaces, ensure that the appropriate Teams connection is configured and authenticated for the user running the pipeline.
+- **Production environments:** Teams activity requires user authentication and does not currently support service principal (SPN) or workspace identity (WI) authentication. Production pipelines that use Teams activity must therefore rely on a user-authenticated connection.
+
+> [!NOTE]
+> Teams connections are tied to the authenticated user's identity, regardless of whether the account has administrator privileges. For production scenarios, consider your organization's identity management and governance requirements when determining which account will create and maintain the connection.
+
 ## Related content
 
 - [Run, schedule, and trigger pipelines](pipeline-runs.md)
