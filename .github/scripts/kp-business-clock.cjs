@@ -37,38 +37,158 @@ function readClock(comment) {
   if (!Number.isFinite(Date.parse(clock.activityAt)) ||
       !Number.isFinite(Date.parse(clock.observedAt)) ||
       !/^[a-f0-9]{64}$/.test(clock.fingerprint)) throw new Error('Invalid persisted KP clock');
+  if (clock.commentIds !== undefined) validateCommentIdentities(clock.commentIds);
   return clock;
 }
 
-async function activity(github, repo, pr, comment, comments, settings) {
-  const clock = readClock(comment);
+async function activity(github, repo, pr, comment, comments, settings, now = Date.now()) {
   const hash = fingerprint(pr, settings.managedLabels);
-  if (hash !== clock.fingerprint) return {activityAt: pr.updated_at, fingerprint: hash};
-  if (pr.updated_at <= clock.observedAt || pr.updated_at === comment.updated_at) {
-    return {activityAt: clock.activityAt, fingerprint: hash};
-  }
+  const clock = comment ? readClock(comment) : {
+    activityAt: pr.updated_at, fingerprint: hash
+  };
+  if (!Number.isFinite(Date.parse(clock.activityAt))) throw new Error('Missing PR update time');
+  const summaries = [];
+  let after = null;
+  const cursors = new Set();
+  do {
+    const edited = await github.graphql(`query($owner:String!,$repo:String!,$number:Int!,$after:String) {
+      repository(owner:$owner,name:$repo) { pullRequest(number:$number) {
+        lastEditedAt reviews(first:100,after:$after) {
+          nodes { submittedAt lastEditedAt } pageInfo { hasNextPage endCursor }
+        }
+      } }
+    }`, {...repo, number: pr.number, after});
+    const record = edited.repository?.pullRequest;
+    if (!record || (record.lastEditedAt !== null && !Number.isFinite(Date.parse(record.lastEditedAt)))) {
+      throw new Error(`Missing or invalid server PR edit time on #${pr.number}`);
+    }
+    summaries.push({updated_at: record.lastEditedAt});
+    const connection = record.reviews;
+    if (!Array.isArray(connection?.nodes) || typeof connection.pageInfo?.hasNextPage !== 'boolean') {
+      throw new Error(`Missing review-summary activity on #${pr.number}`);
+    }
+    for (const review of connection.nodes) {
+      if (review.submittedAt === null) continue;
+      if (!Number.isFinite(Date.parse(review.submittedAt)) ||
+          (review.lastEditedAt !== null && !Number.isFinite(Date.parse(review.lastEditedAt)))) {
+        throw new Error(`Invalid review-summary time on #${pr.number}`);
+      }
+      summaries.push({updated_at: review.submittedAt}, {updated_at: review.lastEditedAt});
+    }
+    if (!connection.pageInfo.hasNextPage) break;
+    after = connection.pageInfo.endCursor;
+    if (typeof after !== 'string' || !after || cursors.has(after)) {
+      throw new Error(`Invalid review-summary pagination on #${pr.number}`);
+    }
+    cursors.add(after);
+  } while (true);
   const events = await github.paginate(github.rest.issues.listEventsForTimeline, {
     ...repo, issue_number: pr.number, per_page: 100
   });
-  const ownTimes = new Set([comment.updated_at]);
+  const reviews = await github.paginate(github.rest.pulls.listReviewComments, {
+    ...repo, pull_number: pr.number, per_page: 100
+  });
+  const commentIds = commentIdentities(comments, reviews, settings);
+  if (!Number.isFinite(now)) throw new Error('Invalid comment observation time');
   let latest = clock.activityAt;
-  for (const event of [...events, ...comments]) {
+  if (clock.commentIds && ['issue', 'review'].some(kind => {
+    const current = new Set(commentIds[kind]);
+    return clock.commentIds[kind].some(id => !current.has(id));
+  }) && now > Date.parse(latest)) {
+    latest = new Date(now).toISOString();
+  }
+  let bookkeeping = false;
+  for (const event of [...events, ...comments, ...reviews, ...summaries]) {
+    if (event.event === 'committed') continue;
     const time = event.updated_at || event.created_at || event.submitted_at;
-    if (!time || time <= clock.observedAt || time > pr.updated_at) continue;
+    if (!time) continue;
     const actor = event.actor?.login || event.user?.login;
     const ownLabel = ['labeled', 'unlabeled'].includes(event.event) &&
-      settings.managedLabels.includes(event.label?.name);
-    const ownComment = event.body?.startsWith(PREFIX) ||
-      event.body === settings.message;
-    if (actor === BOT && (ownLabel || ownComment)) ownTimes.add(time);
-    else if (time > latest) latest = time;
+      [settings.event, ...settings.managedLabels].includes(event.label?.name);
+    const ownComment = event.body?.startsWith(PREFIX) || event.body === settings.message;
+    if (actor === BOT && (ownLabel || ownComment)) bookkeeping = true;
+    else if (Date.parse(time) > Date.parse(latest)) latest = time;
   }
-  // An update absent from the timeline (for example, a body edit) still resets.
-  if (!ownTimes.has(pr.updated_at)) latest = pr.updated_at;
-  return {activityAt: latest, fingerprint: hash};
+  // Fingerprints detect PR edits absent from timeline; bot timestamp skew is not activity.
+  if (hash !== clock.fingerprint || (!comment && !bookkeeping)) {
+    if (Date.parse(pr.updated_at) > Date.parse(latest)) latest = pr.updated_at;
+  }
+  return {activityAt: latest, fingerprint: hash, commentIds};
 }
 
-async function reconcile({github, context, core, now = Date.now()}) {
+function validateCommentIdentities(value) {
+  if (!value || typeof value !== 'object' ||
+      Object.keys(value).sort().join(',') !== 'issue,review' ||
+      !['issue', 'review'].every(kind => Array.isArray(value[kind]) &&
+        value[kind].every((id, index, ids) => Number.isSafeInteger(id) && id > 0 &&
+          (index === 0 || id > ids[index - 1])))) {
+    throw new Error('Invalid persisted KP comment identities');
+  }
+}
+
+function commentIdentities(comments, reviews, settings) {
+  const result = {};
+  for (const [kind, entries] of [['issue', comments], ['review', reviews]]) {
+    if (!Array.isArray(entries)) throw new Error('Missing paginated KP comments');
+    result[kind] = entries.filter(item => !(item.user?.login === BOT &&
+      (item.body?.startsWith(PREFIX) || item.body === settings.message))).map(item => item.id)
+      .sort((left, right) => left - right);
+  }
+  validateCommentIdentities(result);
+  return result;
+}
+
+async function initialize({github, context, core, pr, eventLabel, managedLabels}) {
+  const comments = await github.paginate(github.rest.issues.listComments, {
+    ...context.repo, issue_number: pr.number, per_page: 100
+  });
+  if (selectClock(comments, core, pr.number)) return;
+  if (!Number.isFinite(Date.parse(pr.updated_at)) ||
+      !eventLabel || managedLabels.some(label => !label)) throw new Error('Invalid enrollment clock settings');
+  const enrolled = {...pr, labels: [...pr.labels, {name: eventLabel}]};
+  const clock = {activityAt: pr.updated_at, fingerprint: fingerprint(enrolled, managedLabels),
+    observedAt: pr.updated_at};
+  await github.rest.issues.createComment({
+    ...context.repo, issue_number: pr.number, body: PREFIX + JSON.stringify(clock) +
+      '\n-->\nBusiness-day reminder clock (managed by the documentation bot).'
+  });
+  core.info(`Preserved pre-enrollment activity for #${pr.number}.`);
+}
+
+function selectClock(comments, core, number) {
+  const clocks = comments.filter(item =>
+    item.user?.login === BOT && item.body?.startsWith(PREFIX));
+  const ids = new Set();
+  for (const comment of clocks) {
+    readClock(comment);
+    if (!Number.isSafeInteger(comment.id) || comment.id <= 0 || ids.has(comment.id)) {
+      throw new Error(`Invalid KP clock comment identity on #${number}`);
+    }
+    ids.add(comment.id);
+  }
+  clocks.sort((left, right) => left.id - right.id);
+  if (clocks.length > 1) {
+    core.info(`Concurrent KP initialization on #${number}; using oldest clock comment ${clocks[0].id}.`);
+  }
+  return clocks[0];
+}
+
+async function saveClock(github, repo, core, pr, comment, clock) {
+  const previous = comment && readClock(comment);
+  if (previous && previous.activityAt === clock.activityAt && previous.fingerprint === clock.fingerprint &&
+      JSON.stringify(previous.commentIds) === JSON.stringify(clock.commentIds)) {
+    return comment;
+  }
+  const body = PREFIX + JSON.stringify({...clock, observedAt: pr.updated_at}) +
+    '\n-->\nBusiness-day reminder clock (managed by the documentation bot).';
+  const response = comment
+    ? await github.rest.issues.updateComment({...repo, comment_id: comment.id, body})
+    : await github.rest.issues.createComment({...repo, issue_number: pr.number, body});
+  core.info(`Recorded business-day activity clock for #${pr.number}.`);
+  return response.data;
+}
+
+function configuration() {
   const settings = {
     event: process.env.EVENT_LABEL,
     due: process.env.REMINDER_DUE_LABEL,
@@ -82,6 +202,11 @@ async function reconcile({github, context, core, now = Date.now()}) {
       !Number.isInteger(days) || days < 0) {
     throw new Error('Invalid KP business clock settings');
   }
+  return {settings, days};
+}
+
+async function reconcile({github, context, core, now = Date.now()}) {
+  const {settings, days} = configuration();
   // Label definitions remain manually managed. Fail before changing any PR.
   await github.rest.issues.getLabel({...context.repo, name: settings.due});
   for await (const page of github.paginate.iterator(github.rest.pulls.list, {
@@ -96,24 +221,9 @@ async function reconcile({github, context, core, now = Date.now()}) {
       const comments = await github.paginate(github.rest.issues.listComments, {
         ...context.repo, issue_number: pr.number, per_page: 100
       });
-      const clocks = comments.filter(comment =>
-        comment.user?.login === BOT && comment.body?.startsWith(PREFIX));
-      if (clocks.length > 1) throw new Error(`Multiple KP clock comments on #${pr.number}`);
-      let comment = clocks[0];
-      let clock = comment
-        ? await activity(github, context.repo, pr, comment, comments, settings)
-        : {activityAt: pr.updated_at, fingerprint: fingerprint(pr, settings.managedLabels)};
-      const previous = comment && readClock(comment);
-      if (!previous || previous.activityAt !== clock.activityAt ||
-          previous.fingerprint !== clock.fingerprint) {
-        const body = PREFIX + JSON.stringify({...clock, observedAt: pr.updated_at}) +
-          '\n-->\nBusiness-day reminder clock (managed by the documentation bot).';
-        const response = comment
-          ? await github.rest.issues.updateComment({...context.repo, comment_id: comment.id, body})
-          : await github.rest.issues.createComment({...context.repo, issue_number: pr.number, body});
-        comment = response.data;
-        core.info(`Recorded business-day activity clock for #${pr.number}.`);
-      }
+      let comment = selectClock(comments, core, pr.number);
+      let clock = await activity(github, context.repo, pr, comment, comments, settings, now);
+      comment = await saveClock(github, context.repo, core, pr, comment, clock);
       const has = label => pr.labels.some(item => item.name === label);
       // Never touch a marker here. Stock stale owns posting and cleanup.
       const due = !pr.draft && !has(settings.exempt) && isDue(clock.activityAt, now, days) &&
@@ -131,4 +241,43 @@ async function reconcile({github, context, core, now = Date.now()}) {
   }
 }
 
-module.exports = {isDue, fingerprint, readClock, activity, reconcile, PREFIX};
+
+async function canPost({github, context, core, number, now = Date.now()}) {
+  const {settings, days} = configuration();
+  const {data: pr} = await github.rest.pulls.get({...context.repo, pull_number: number});
+  if (pr.state !== 'open') {
+    core.info(`Skipping reminder for closed PR #${number}.`);
+    return false;
+  }
+  const comments = await github.paginate(github.rest.issues.listComments, {
+    ...context.repo, issue_number: number, per_page: 100
+  });
+  const comment = selectClock(comments, core, number);
+  if (!comment) throw new Error(`Expected one KP clock before posting on #${number}`);
+  const clock = await activity(github, context.repo, pr, comment, comments, settings, now);
+  const {data: latest} = await github.rest.pulls.get({...context.repo, pull_number: number});
+  const has = label => latest.labels.some(item => item.name === label);
+  const stable = latest.updated_at === pr.updated_at &&
+    latest.comments === pr.comments && latest.review_comments === pr.review_comments &&
+    fingerprint(latest, settings.managedLabels) === fingerprint(pr, settings.managedLabels);
+  if (!stable) {
+    core.info(`Skipped reminder for #${number} because activity changed during validation; no bookkeeping written.`);
+    return false;
+  }
+  const due = latest.state === 'open' && !latest.draft &&
+    has(settings.event) && has(settings.due) && !has(settings.marker) &&
+    !has(settings.exempt) && isDue(clock.activityAt, now, days);
+  if (!due) {
+    if (latest.state === 'open' && has(settings.due)) {
+      await saveClock(github, context.repo, core, pr, comment, clock);
+      await github.rest.issues.removeLabel({
+        ...context.repo, issue_number: number, name: settings.due
+      });
+    }
+    core.info(`Skipped reminder for #${number} after fresh activity/eligibility checks.`);
+  }
+  if (due) await saveClock(github, context.repo, core, pr, comment, clock);
+  return due;
+}
+
+module.exports = {isDue, fingerprint, readClock, activity, reconcile, canPost, initialize, PREFIX};

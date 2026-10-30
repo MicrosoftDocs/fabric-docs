@@ -26,6 +26,9 @@ on:
       #   description: Label recording a reviewer inactivity reminder
       #   type: string
       #   required: true
+      reminder-due-label:
+        type: string
+        required: true
       exempt-label:
         description: Label excluding a PR from routine reminders
         type: string
@@ -48,6 +51,7 @@ jobs:
       # REVIEWER_ACTION_LABEL: ${{ inputs.reviewer-action-label }}
       AUTHOR_REMINDER_LABEL: ${{ inputs.author-reminder-label }}
       # REVIEWER_REMINDER_LABEL: ${{ inputs.reviewer-reminder-label }}
+      REMINDER_DUE_LABEL: ${{ inputs.reminder-due-label }}
       EXEMPT_LABEL: ${{ inputs.exempt-label }}
 
     steps:
@@ -60,7 +64,7 @@ jobs:
           # Reviewer labels aren't required while reviewer automation is paused.
           for required_label in "$EVENT_LABEL" "$AUTHOR_ACTION_LABEL" \
                                 "$AUTHOR_REMINDER_LABEL" \
-                                "$EXEMPT_LABEL"; do
+                                "$REMINDER_DUE_LABEL" "$EXEMPT_LABEL"; do
             if ! grep -Fxq -- "$required_label" <<< "$label_names"; then
               echo "::error::Required label '$required_label' is missing. Create it in the repository before running this workflow."
               missing=1
