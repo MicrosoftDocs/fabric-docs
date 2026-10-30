@@ -16,7 +16,7 @@ To learn how to define security rules, see [Create and manage OneLake security r
 
 ## Engines that can read secured data
 
-Fabric engines can read tables that have RLS or CLS rules applied, but filtering support varies by engine. Eventhouse supports RLS filtering only. Data access to OneLake happens in one of two ways:
+Fabric engines can read tables that have RLS or CLS rules applied, but filtering support varies by engine. Data access to OneLake happens in one of two ways:
 
 * **Through a query engine:** Fabric engines and [authorized third-party engines](./onelake-security-integrations-overview.md) apply RLS and CLS filtering, so you see only the rows and columns you're allowed to see.
 * **Through user access:** Queries from nonauthorized external engines are treated as user access. If you aren't permitted to see all the rows or columns in a table, the query is blocked.
