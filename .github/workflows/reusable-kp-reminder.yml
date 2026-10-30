@@ -113,10 +113,49 @@ jobs:
             const {reconcile} = require('./.github/scripts/kp-business-clock.cjs');
             await reconcile({github, context, core});
 
+      - name: Check out the pinned stale action
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          repository: actions/stale
+          ref: 4391f3da665fdf50b6810c1a66712fb9ba21aa93
+          path: .kp-stale-action
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /action.yml
+            /package.json
+            /dist/
+
+      - name: Isolate KP reminder progress
+        shell: bash
+        run: |
+          node <<'NODE'
+          const fs = require('node:fs');
+          const {createHash} = require('node:crypto');
+          const root = '.kp-stale-action/';
+          const expected = {
+            'action.yml': '42c2129639c5e66ee659a85f3ab6bc67a05f46f1691f9fc1d2575035e30d06f4',
+            'package.json': 'f97133fb86d6112b7f32ce81089227eff4b89a79a8b8942b2e8d12dc91975e25',
+            'dist/index.js': 'b82d1121447dd601777e30e806db7d052bffddc35ef33bd3695fa10a3ddec34b'
+          };
+          for (const [file, hash] of Object.entries(expected)) {
+            const actual = createHash('sha256').update(fs.readFileSync(root + file)).digest('hex');
+            if (actual !== hash) throw new Error('Unexpected pinned stale content: ' + file);
+          }
+          const file = root + 'dist/index.js';
+          const original = fs.readFileSync(file, 'utf8');
+          const old = "const CACHE_KEY = '_state';";
+          if (original.split(old).length !== 2) throw new Error('Unexpected stale cache-key contract');
+          const posting = "async _markStale(issue, staleMessage, staleLabel, skipMessage) {\n        const issueLogger = new IssueLogger(issue);";
+          if (original.split(posting).length !== 2) throw new Error('Unexpected stale posting contract');
+          fs.writeFileSync(file, original.replace(old, "const CACHE_KEY = 'kp-author-reminders-v1';")
+            .replace(posting, posting + "\n        try {\n            const load = __WEBPACK_EXTERNAL_createRequire(import.meta.url);\n            const {canPost} = load(load('node:path').join(\n                process.env.GITHUB_WORKSPACE, '.github/scripts/kp-business-clock.cjs'));\n            if (!await canPost({\n                github: this.client, context: github_context, number: issue.number,\n                core: {info: message => issueLogger.info(message)}\n            })) return;\n        } catch (error) {\n            process.exitCode = 1;\n            throw error;\n        }\n"));
+          NODE
+
       # Existing markers must reach stock cleanup even after due is removed.
       - name: Remind authors to address outstanding comments
         if: inputs.reminder-type == 'author'
-        uses: actions/stale@4391f3da665fdf50b6810c1a66712fb9ba21aa93 # v11.0.0
+        uses: ./.kp-stale-action
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           only-pr-labels: ${{ env.EVENT_LABEL }}
