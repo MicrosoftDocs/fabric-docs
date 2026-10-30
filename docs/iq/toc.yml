@@ -703,6 +703,8 @@ items:
   items:
   - name: Fabric IQ MCP
     href: connectors/fabric-iq-mcp.md
+  - name: Agent Builder
+    href: connectors/agent-builder-overview.md
   - name: Copilot Chat
     href: connectors/microsoft-365-copilot-overview.md
   - name: Cowork
