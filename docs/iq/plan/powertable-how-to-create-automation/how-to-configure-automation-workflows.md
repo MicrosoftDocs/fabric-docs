@@ -128,6 +128,16 @@ Use this action to run a stored procedure that you created in the database.
 1. Configure the rules.
 1. Select the stored procedure that you want to run.
 
+### Clear semantic data cache
+
+Use the **Clear semantic data cache** action to clear cached semantic data so that subsequent queries from the planning sheet retrieve the latest available values.
+
+For example, a semantic model uses a database table as its source, and you update that table through a PowerTable sheet. If the semantic model is used in a planning sheet, clearing the semantic data cache can help the planning sheet retrieve updated values without requiring a manual refresh.
+
+To automate cache clearing, add the **Clear semantic data cache** action to an automation workflow and configure a suitable trigger, such as **Record created**, **Record updated**, **Record deleted**, or **Form submitted**. When the trigger occurs, the action clears the cached semantic data, allowing subsequent queries from the planning sheet to retrieve the latest available values.
+
+:::image type="content" source="../media/powertable-how-to-create-automation/how-to-configure-automation-workflows/clear-semantic-data-cache.png" alt-text="Screenshot of the automation editor with the Add Action menu open and the Clear Semantic Data Cache action highlighted under Miscellaneous." lightbox="../media/powertable-how-to-create-automation/how-to-configure-automation-workflows/clear-semantic-data-cache.png":::
+
 ### Conditional Group
 
 **Conditional Group** defines **If/Otherwise** branching logic. It evaluates one or more conditions and runs the corresponding actions based on the conditions that are met.

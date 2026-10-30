@@ -460,7 +460,11 @@ items:
             - name: Identifiers
               href: plan/planning-reference-formulas/identifiers.md
             - name: Lookup functions
-              href: plan/planning-reference-formulas/lookup-functions.md
+              items:
+                - name: Lookup values from another planning sheet
+                  href: plan/planning-reference-formulas/lookup-functions/lookup.md
+                - name: Lookup values based on a condition
+                  href: plan/planning-reference-formulas/lookup-functions/xlookup.md
             - name: Other operators
               href: plan/planning-reference-formulas/planning-reference-other-operators.md
   - name: PowerTable sheets

@@ -35,6 +35,9 @@ You can also access the scheduler from within an item's settings by selecting th
 
 ## Set up your schedule
 
+> [!IMPORTANT]
+> Time zone changes take effect November 1, 2026, in affected Canadian regions. If your schedules follow local time in these regions, review the [Canadian time zone guidance](canadian-time-zone-changes.md) before the transition.
+
 After you open the scheduler for an item:
 
 1. Toggle the scheduler **On** to enable scheduling.
