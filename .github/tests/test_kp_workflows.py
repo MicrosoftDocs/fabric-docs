@@ -87,7 +87,7 @@ class KnowledgePartnershipWorkflows(unittest.TestCase):
         reminder = self.workflows["reusable-kp-reminder.yml"]["jobs"]["send-reminders"]
         self.assertEqual(reminder["env"]["EXEMPT_LABEL"], "${{ inputs.exempt-label }}")
         actions = [step["with"] for step in reminder["steps"]
-                   if step.get("uses", "").startswith("actions/stale@")]
+                   if (step.get("uses", "").startswith("actions/stale@") or step.get("uses") == "./.kp-stale-action")]
         for action in actions:
             self.assertEqual(action["exempt-pr-labels"], "${{ env.EXEMPT_LABEL }}")
             self.assertEqual(action["exempt-draft-pr"], "true")
@@ -129,11 +129,11 @@ class KnowledgePartnershipWorkflows(unittest.TestCase):
                 self.assertIn(f"github.repository == '{PRIVATE_REPO}'", job["if"])
                 for step in job.get("steps", []):
                     if step.get("uses", "").startswith("actions/checkout"):
-                        self.assertEqual(filename, "reusable-kp-reminder.yml")
-                        self.assertEqual(step["with"]["ref"], "${{ github.sha }}")
+                        self.assertIn(filename, {"reusable-kp-reminder.yml", "reusable-kp-label-event.yml"})
+                        self.assertEqual(step["with"]["ref"], "4391f3da665fdf50b6810c1a66712fb9ba21aa93" if step["with"].get("repository") == "actions/stale" else ("${{ steps.trusted-clock-source.outputs.result }}" if filename == "reusable-kp-label-event.yml" else "${{ github.sha }}"))
                         self.assertEqual(step["with"]["persist-credentials"], "false")
         self.assertNotIn("actions", self.enroll["permissions"])
-        self.assertEqual(self.enroll["permissions"], {"issues": "read", "pull-requests": "write"})
+        self.assertEqual(self.enroll["permissions"], {"contents": "read", "issues": "read", "pull-requests": "write"})
         self.assertEqual(self.scan["permissions"]["actions"], "write")
         self.assertEqual(self.scan["concurrency"]["group"], "knowledge-partnership-reminders")
         self.assertEqual(
@@ -147,7 +147,7 @@ class KnowledgePartnershipWorkflows(unittest.TestCase):
         reminder = self.workflows["reusable-kp-reminder.yml"]["jobs"]["send-reminders"]
         steps = reminder["steps"]
         actions = [step["with"] for step in steps
-                   if step.get("uses", "").startswith("actions/stale@")]
+                   if (step.get("uses", "").startswith("actions/stale@") or step.get("uses") == "./.kp-stale-action")]
         self.assertEqual(len(actions), 1)
         posting = actions[0]
         self.assertEqual(posting["only-pr-labels"], "${{ env.EVENT_LABEL }}")
@@ -177,7 +177,7 @@ class KnowledgePartnershipWorkflows(unittest.TestCase):
         for workflow, job in [(self.scan, caller_job), (reusable, checkout_job)]:
             effective = job.get("permissions", workflow["permissions"])
             self.assertEqual(effective.get("contents"), "read")
-        self.assertNotIn("contents", self.enroll["permissions"])
+        self.assertEqual(self.enroll["permissions"]["contents"], "read")
 
     def test_reusable_input_contracts_and_dependency_graphs_resolve(self):
         for workflow in self.workflows.values():
@@ -207,7 +207,7 @@ class KnowledgePartnershipWorkflows(unittest.TestCase):
     def test_target_changes_reconcile_current_participation_only(self):
         workflow = self.workflows["stale-reconcile-knowledgepartnership.yml"]
         self.assertEqual(workflow["on"], {"pull_request_target": {"types": ["edited"]}})
-        self.assertEqual(workflow["permissions"], self.enroll["permissions"])
+        self.assertEqual(workflow["permissions"], {key: value for key, value in self.enroll["permissions"].items() if key != "contents"})
         self.assertEqual(workflow["concurrency"], self.enroll["concurrency"])
         configuration = workflow["jobs"]["configuration"]
         self.assertEqual(configuration["uses"], f"./.github/workflows/{CONFIG}")
@@ -377,6 +377,177 @@ console.log(`Verified ${cases.length * 2} entry-point routing cases.`);
         )
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertIn("Verified 384 entry-point routing cases.", result.stdout)
+
+    def test_review_fixes_recover_membership_and_isolate_stock_cache(self):
+        workflows = self.workflows
+        membership = workflows["reusable-kp-label-event.yml"]["jobs"]["label-event-prs"]["steps"][-1]
+        self.assertIn("actions/github-script@", membership["uses"])
+        reminder = workflows["reusable-kp-reminder.yml"]["jobs"]["send-reminders"]["steps"]
+        checkout = next(step for step in reminder if step.get("with", {}).get("repository") == "actions/stale")
+        self.assertEqual(checkout["with"]["ref"], "4391f3da665fdf50b6810c1a66712fb9ba21aa93")
+        self.assertEqual(checkout["with"]["path"], ".kp-stale-action")
+        self.assertEqual(checkout["with"]["persist-credentials"], "false")
+        self.assertIn("/package.json", checkout["with"]["sparse-checkout"])
+        isolation = next(step for step in reminder if step.get("name") == "Isolate KP reminder progress")
+        posting = next(step for step in reminder if step.get("uses") == "./.kp-stale-action")
+        self.assertLess(reminder.index(checkout), reminder.index(isolation))
+        self.assertLess(reminder.index(isolation), reminder.index(posting))
+        self.assertEqual(posting["with"]["days-before-pr-close"], "-1")
+        runner = r"""
+const assert = require('node:assert/strict');
+const vm = require('node:vm');
+const input = JSON.parse(require('node:fs').readFileSync(0, 'utf8'));
+const executeMembership = new (Object.getPrototypeOf(async function(){}).constructor)(
+  'github', 'context', 'core', 'require', input.membership);
+const action = (github, context) => executeMembership(github, context, {info() {}},
+  () => ({initialize: async () => {}}));
+process.env.EVENT_LABEL = 'conference-event';
+process.env.ROLLOUT_BRANCH_PREFIX = 'release-ignite26-';
+process.env.EVENT_NAME = 'schedule';
+async function check(pr, expected, failure) {
+  const writes = [], reads = [];
+  const github = {rest: {pulls: {
+    list() {},
+    get: async args => {reads.push(args); if (failure === 'read') throw Error('Read failed'); return {data: pr};}
+  }, issues: {
+    addLabels: async args => {if (failure === 'write') throw Error('Write failed'); writes.push(['add', args]);},
+    removeLabel: async args => {if (failure === 'write') throw Error('Write failed'); writes.push(['remove', args]);}
+  }}, paginate: {iterator: async function* () {
+    yield {data: []};
+    yield {data: [{number: 42, base: {ref: 'stale-event-target'}}]};
+  }}};
+  const promise = action(github, {repo: {owner: 'owner', repo: 'private'}});
+  if (failure) {await assert.rejects(promise, failure === 'read' ? /Read failed/ : /Write failed/); return;}
+  await promise;
+  assert.equal(reads.length, 1);
+  assert.equal(reads[0].pull_number, 42);
+  assert.deepEqual(writes.map(item => item[0]), expected ? [expected] : []);
+  if (expected) assert.equal(writes[0][1].issue_number, 42);
+  if (expected === 'remove') assert.equal(writes[0][1].name, 'conference-event');
+  if (expected === 'add') assert.deepEqual(writes[0][1].labels, ['conference-event']);
+}
+(async () => {
+  for (const state of ['open', 'closed']) for (const member of [false, true])
+    for (const eligible of [false, true]) {
+      const pr = {number: 42, state, base: {ref: eligible ? 'release-ignite26-test' : 'main'},
+        labels: member ? [{name: 'conference-event'}, {name: 'keep-open'}] : [{name: 'keep-open'}]};
+      await check(pr, state !== 'open' ? null : eligible && !member ? 'add' : !eligible && member ? 'remove' : null);
+    }
+  const pr = {number: 42, state: 'open', base: {ref: 'main'}, labels: [{name: 'conference-event'}]};
+  await check(pr, null, 'read');
+  await check(pr, null, 'write');
+  for (const mode of ['already-absent', 'still-present', 'read-failed', 'forbidden', 'server-error']) {
+    let reread = false;
+    const visited = [];
+    const removalError = Object.assign(new Error('Removal failed'), {
+      status: mode === 'forbidden' ? 403 : mode === 'server-error' ? 500 : 404
+    });
+    const github = {rest: {pulls: {
+      list() {},
+      get: async ({pull_number}) => {
+        visited.push(pull_number);
+        if (pull_number === 43) return {data: {...pr, number: 43, labels: []}};
+        if (reread && mode === 'read-failed') throw new Error('Reread failed');
+        return {data: {...pr, labels: reread && mode === 'already-absent' ? [] : pr.labels}};
+      }
+    }, issues: {
+      removeLabel: async () => {reread = true; throw removalError;},
+      addLabels: async () => {throw new Error('Unexpected enrollment');}
+    }}, paginate: {iterator: async function* () {
+      yield {data: [{number: 42}, {number: 43}]};
+    }}};
+    const promise = action(github, {repo: {owner: 'owner', repo: 'private'}});
+    if (mode === 'already-absent') {
+      await promise;
+      assert.deepEqual(visited, [42, 42, 43]);
+    } else {
+      await assert.rejects(promise, mode === 'read-failed' ? /Reread failed/ : /Removal failed/);
+      assert.deepEqual(visited, mode === 'forbidden' || mode === 'server-error' ? [42] : [42, 42]);
+    }
+  }
+  const script = input.isolation.split("\n").slice(1, -2).join("\n") + "\n";
+  const anchor = "async _markStale(issue, staleMessage, staleLabel, skipMessage) {\n        const issueLogger = new IssueLogger(issue);";
+  const original = "const CACHE_KEY = '_state';\n" + anchor;
+  function isolate(tamper = false, content = original) {
+    let result;
+    const mockFs = {
+      readFileSync(file, encoding) {
+        const text = file.endsWith('action.yml') ? 'manifest' : file.endsWith('package.json') ? 'package' : content;
+        return encoding ? text : Buffer.from(text);
+      },
+      writeFileSync(file, text) {assert.equal(file, '.kp-stale-action/dist/index.js'); result = text;}
+    };
+    const hashes = {
+      manifest: '42c2129639c5e66ee659a85f3ab6bc67a05f46f1691f9fc1d2575035e30d06f4',
+      package: 'f97133fb86d6112b7f32ce81089227eff4b89a79a8b8942b2e8d12dc91975e25',
+      [content]: 'b82d1121447dd601777e30e806db7d052bffddc35ef33bd3695fa10a3ddec34b'
+    };
+    vm.runInNewContext(script, {require: name => name === 'node:fs' ? mockFs : {
+      createHash: () => ({update: data => ({digest: () => tamper ? 'wrong' : hashes[data.toString()]})})
+    }});
+    return result;
+  }
+  const patched = isolate();
+  const guard = patched.slice(patched.indexOf(anchor) + anchor.length);
+  assert.equal(patched.slice(0, -guard.length), original.replace("'_state'", "'kp-author-reminders-v1'"));
+  assert.match(guard, /canPost/);
+  const beforePost = new (Object.getPrototypeOf(async function(){}).constructor)(
+    'issue', 'issueLogger', '__WEBPACK_EXTERNAL_createRequire', 'process', 'github_context',
+    guard.replace('import.meta.url', '"file:///fixture.js"') + '\nreturn "post";');
+  for (const result of [true, false, 'error']) {
+    const client = {}, context = {repo: {owner: 'owner', repo: 'private'}};
+    const fakeProcess = {env: {GITHUB_WORKSPACE: '/trusted'}};
+    let calls = 0;
+    const load = name => name === 'node:path' ? require('node:path') : {
+      canPost: async args => {
+        calls++;
+        assert.equal(args.github, client); assert.equal(args.context, context); assert.equal(args.number, 42);
+        if (result === 'error') throw Error('Read failed');
+        return result;
+      }
+    };
+    const promise = beforePost.call({client}, {number: 42}, {info() {}}, () => load, fakeProcess, context);
+    if (result === 'error') {
+      await assert.rejects(promise, /Read failed/);
+      assert.equal(fakeProcess.exitCode, 1);
+    } else assert.equal(await promise, result ? 'post' : undefined);
+    assert.equal(calls, 1);
+  }
+  assert.throws(() => isolate(true), /Unexpected pinned stale content/);
+  assert.throws(() => isolate(false, original + original), /cache-key contract/);
+  assert.throws(() => isolate(false, 'no key'), /cache-key contract/);
+  assert.throws(() => isolate(false, original.replace(anchor, 'no posting method')), /posting contract/);
+  console.log('Verified review fixes with mocks');
+})().catch(error => {console.error(error); process.exitCode = 1;});
+"""
+        result = subprocess.run(["node", "-e", runner], text=True, capture_output=True,
+                                input=json.dumps({"membership": membership["with"]["script"],
+                                                  "isolation": isolation["run"]}))
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("Verified review fixes with mocks", result.stdout)
+
+    def test_due_validation_and_prelabel_clock_are_wired_before_enrollment(self):
+        validator = self.workflows["reusable-kp-validate-labels.yml"]
+        self.assertEqual(validator["on"]["workflow_call"]["inputs"]["reminder-due-label"]["required"], "true")
+        job = validator["jobs"]["validate-labels"]
+        self.assertEqual(job["env"]["REMINDER_DUE_LABEL"], "${{ inputs.reminder-due-label }}")
+        self.assertIn('"$REMINDER_DUE_LABEL"', job["steps"][0]["run"])
+        for caller in [self.scan, self.enroll]:
+            self.assertEqual(caller["jobs"]["validate-labels"]["with"]["reminder-due-label"],
+                             "${{ needs.configuration.outputs.reminder-due-label }}")
+            self.assertIn("validate-labels", caller["jobs"]["label-event-prs"]["needs"])
+            for key in ["reminder-due-label", "author-reminder-label"]:
+                self.assertEqual(caller["jobs"]["label-event-prs"]["with"][key],
+                                 "${{ needs.configuration.outputs." + key + " }}")
+        membership = self.workflows["reusable-kp-label-event.yml"]
+        self.assertEqual(membership["permissions"]["contents"], "read")
+        self.assertEqual(membership["jobs"]["label-event-prs"]["concurrency"],
+                         {"group": "knowledge-partnership-membership-${{ github.event_name == 'pull_request_target' && 'enrollment' || 'scan' }}", "cancel-in-progress": "false"})
+        steps = membership["jobs"]["label-event-prs"]["steps"]
+        self.assertIn("github.rest.repos.getBranch", steps[0]["with"]["script"])
+        self.assertEqual(steps[1]["with"]["ref"], "${{ steps.trusted-clock-source.outputs.result }}")
+        script = steps[-1]["with"]["script"]
+        self.assertLess(script.index("await initialize("), script.index("await github.rest.issues.addLabels("))
 
 
 if __name__ == "__main__":
