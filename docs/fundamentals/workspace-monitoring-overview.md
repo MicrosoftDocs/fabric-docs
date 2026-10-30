@@ -38,22 +38,21 @@ After you [enable workspace monitoring](enable-workspace-monitoring.md), you can
 
 | Workload | Fabric artifact name | Supported events and logs |
 |---|---|---|
-| Data Warehouse | Warehouse, SQL analytics endpoint, and warehouse snapshot | <ul><li>[Warehouse query execution logs](../data-warehouse/warehouse-workspace-monitoring.md)</li></ul> |
-| Real-Time hub | Job Events | [Job event logs](item-job-event-logs.md) |
-| Real-Time hub | Event schema set | [Event schema set operation logs](../real-time-intelligence/schema-sets/event-schema-set-operation-logs.md) |
+| Database | SQL database | <ul><li>SQL DB native perf used storage metrics</li><li>SQL DB native perf CPU metrics</li></ul> |
 | Data Engineering | GraphQL API | <ul><li>[Graph QL metrics](../data-engineering/graphql-operations.md)</li><li>[Graph QL operation logs](../data-engineering/graphql-operations.md)</li></ul> |
 | Data Factory | Copy job | [Copy job activity run details logs](../data-factory/copy-job-workspace-monitoring.md) |
 | Data Factory | Dataflow Gen2 | [Dataflow Gen2 logs](../data-factory/dataflow-gen2-workspace-monitoring.md) |
 | Data Factory | Pipeline activity logs | [Pipeline activity run logs](../data-factory/workspace-monitoring.md) |
+| Data Warehouse | Warehouse, SQL analytics endpoint, and warehouse snapshot |[Warehouse query execution logs](../data-warehouse/warehouse-workspace-monitoring.md) |
+| Mirroring | Mirrored database | [Mirrored database execution logs](../mirroring/monitor-logs.md) |
+| Power BI | Semantic models | [Semantic model operation logs](../enterprise/powerbi/semantic-model-operations.md) |
+| Real-Time hub | Job Events | [Job event logs](item-job-event-logs.md) |
+| Real-Time hub | Event schema set | [Event schema set operation logs](../real-time-intelligence/schema-sets/event-schema-set-operation-logs.md) |
 | Real-Time Intelligence | Activator | [Activator rule notifications](../real-time-intelligence/data-activator/activator-workspace-monitoring.md) |
 | Real-Time Intelligence | Eventhouse | <ul><li>[Metric operation logs](../real-time-intelligence/monitor-metrics.md)</li><li>[Command logs](../real-time-intelligence/monitor-logs-command.md)</li><li>[Data operation logs](../real-time-intelligence/monitor-logs-data-operation.md)</li><li>[Query logs](../real-time-intelligence/monitor-logs-query.md)</li><li>[Ingestion results logs](../real-time-intelligence/monitor-logs-ingestion-results.md)</li><li>[Capacity throttling logs](../real-time-intelligence/monitor-logs-capacity-throttling.md)</li><li>[Sub-optimal size logs](../real-time-intelligence/monitor-logs-sub-optimal-size.md)</li><li>[Scale-out event logs](../real-time-intelligence/monitor-logs-scaleout-events.md)</li></ul> |
 | Real-Time Intelligence | Eventstream | <ul><li>[Eventstream node status](../real-time-intelligence/event-streams/fabric-workspace-monitoring.md)</li><li>[Eventstream metrics](../real-time-intelligence/event-streams/fabric-workspace-monitoring.md)</li><li>[Eventstream error metrics](../real-time-intelligence/event-streams/fabric-workspace-monitoring.md)</li></ul> |
 | Real-Time Intelligence | KQL Queryset | Queryset operation logs |
 | Real-Time Intelligence | Real-Time Dashboards | Real-Time Dashboard operation logs |
-| Mirroring | Mirrored database | [Mirrored database execution logs](../mirroring/monitor-logs.md) |
-| Power BI | Semantic models | [Semantic model operation logs](../enterprise/powerbi/semantic-model-operations.md) |
-| Mirroring | Mirrored database | [Mirrored database execution logs](../mirroring/monitor-logs.md) |
-| Power BI | Semantic model | [Semantic model operation logs](../enterprise/powerbi/semantic-model-operations.md) |
 
 ## Sample queries
 
