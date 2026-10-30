@@ -47,6 +47,7 @@ jobs:
     if: github.repository == 'MicrosoftDocs/fabric-docs-pr'
     uses: ./.github/workflows/reusable-kp-validate-labels.yml
     with:
+      reminder-due-label: ${{ needs.configuration.outputs.reminder-due-label }}
       event-label: ${{ needs.configuration.outputs.event-label }}
       author-action-label: ${{ needs.configuration.outputs.author-action-label }}
       # reviewer-action-label: ${{ needs.configuration.outputs.reviewer-action-label }}
@@ -61,6 +62,8 @@ jobs:
     if: github.repository == 'MicrosoftDocs/fabric-docs-pr'
     uses: ./.github/workflows/reusable-kp-label-event.yml
     with:
+      reminder-due-label: ${{ needs.configuration.outputs.reminder-due-label }}
+      author-reminder-label: ${{ needs.configuration.outputs.author-reminder-label }}
       event-label: ${{ needs.configuration.outputs.event-label }}
       rollout-branch-prefix: ${{ needs.configuration.outputs.rollout-branch-prefix }}
 
