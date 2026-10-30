@@ -631,7 +631,7 @@ mssparkutils.runtime.context
 
 ## Multiprocessing limitation
 
-Concurrent import or use of Spark-backed MSSparkUtils or NotebookUtils APIs from multiple independent Python processes within the same Spark driver application isn't supported. This includes concurrent imports from `pytest-xdist` worker processes. Importing the package can initialize Spark runtime dependencies, even if you don't subsequently call a utility API.
+Concurrent import or use of Spark-backed MSSparkUtils or NotebookUtils APIs from multiple independent Python processes within the same Spark driver application isn't supported. This limitation includes concurrent imports from `pytest-xdist` worker processes. Importing the package can initialize Spark runtime dependencies, even if you don't subsequently call a utility API.
 
 For tests that require the actual utility APIs, run the tests in the original Spark driver process with process-based parallelism disabled. For business-logic unit tests, use mocks or fakes to isolate these dependencies and avoid importing the actual package in worker processes.
 
