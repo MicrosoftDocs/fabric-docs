@@ -38,7 +38,7 @@ After you [enable workspace monitoring](enable-workspace-monitoring.md), you can
 
 | Workload | Fabric artifact name | Supported events and logs |
 |---|---|---|
-| Database | SQL database | <ul><li>SQL DB native perf used storage metrics</li><li>SQL DB native perf CPU metrics</li></ul> |
+| Databases | SQL database in Fabric | <ul><li>SQL DB native perf used storage metrics</li><li>SQL DB native perf CPU metrics</li></ul> |
 | Data Engineering | GraphQL API | <ul><li>[Graph QL metrics](../data-engineering/graphql-operations.md)</li><li>[Graph QL operation logs](../data-engineering/graphql-operations.md)</li></ul> |
 | Data Factory | Copy job | [Copy job activity run details logs](../data-factory/copy-job-workspace-monitoring.md) |
 | Data Factory | Dataflow Gen2 | [Dataflow Gen2 logs](../data-factory/dataflow-gen2-workspace-monitoring.md) |
