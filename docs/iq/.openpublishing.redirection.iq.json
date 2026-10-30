@@ -149,6 +149,11 @@
       "source_path_from_root": "/docs/iq/plan/planning-reference-formulas/time-intelligence-functions/time-shifting-lookup.md",
       "redirect_url": "/fabric/iq/plan/planning-reference-formulas/time-intelligence-functions/time-shifting",
       "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/iq/plan/planning-reference-formulas/lookup-functions.md",
+      "redirect_url": "/fabric/iq/plan/planning-reference-formulas/lookup-functions/xlookup",
+      "redirect_document_id": true
     }
   ]
 }
