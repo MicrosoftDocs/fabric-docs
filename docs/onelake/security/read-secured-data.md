@@ -25,7 +25,6 @@ The following table lists which engines support RLS and CLS filtering:
 
 | Engine | RLS/CLS filtering | Status |
 | --- | --- | --- |
-
 | Graph in Fabric | Yes | GA |
 | Lakehouse | Yes | GA |
 | [Semantic models using Direct Lake on OneLake mode](../../fundamentals/direct-lake-develop.md) | Yes | GA |
@@ -33,7 +32,7 @@ The following table lists which engines support RLS and CLS filtering:
 | [SQL analytics endpoint in **user's identity access mode**](./sql-analytics-endpoint-onelake-security.md#change-the-onelake-access-mode) | Yes | GA |
 | Eventhouse | Yes | GA |
 | [Authorized third-party engines](./onelake-security-integrations-overview.md) | Yes (when the engine implements it) | Public preview |
-| Any engine via [Table Read API](../../table-apis/read-table-data-rest-api.md) | Yes | Public preview |
+| Any engine via [Table Read API](../table-apis/read-table-data-rest-api.md) | Yes | Public preview |
 
 ## Engine-specific requirements
 
