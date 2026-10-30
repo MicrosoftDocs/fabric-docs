@@ -88,6 +88,8 @@ items:
     href: apply-sensitivity-labels.md
   - name: Schedule recurring jobs
     href: job-scheduler.md
+  - name: 2026 Canadian Time Zone Updates
+    href: canadian-time-zone-changes.md
   - name: Delta Lake in Microsoft Fabric overview
     href: delta-lake-overview.md
   - name: Use Delta Lake interoperability
