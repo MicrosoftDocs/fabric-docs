@@ -69,7 +69,7 @@ The Microsoft Teams activity uses user-based authentication. Each Teams connecti
 The following considerations apply when configuring Teams connections:
 
 - **User-specific connections:** Each user who wants to run a pipeline that sends Teams messages must create and authenticate their own Teams connection.
-- **Connection sharing:** Teams connections cannot be shared across users. Creating a connection using an administrator account does not allow other users to reuse it.
+- **Connection sharing:** Teams connections can't be shared across users. Creating a connection by using an administrator account doesn't allow other users to reuse it.
 - **Workspace configuration:** When deploying pipelines across workspaces, ensure that the appropriate Teams connection is configured and authenticated for the user running the pipeline.
 - **Production environments:** Teams activity requires user authentication and does not currently support service principal (SPN) or workspace identity (WI) authentication. Production pipelines that use Teams activity must therefore rely on a user-authenticated connection.
 
