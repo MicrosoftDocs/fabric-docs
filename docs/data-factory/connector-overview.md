@@ -62,8 +62,8 @@ Fabric supports these connectors in dataflow Gen2, pipelines, and copy jobs. Sel
 | [Azure Databricks](connector-azure-databricks-overview.md) | ✓/− | ✓/✓ |  |
 | [Azure Files](connector-azure-files-overview.md) |  | ✓/✓ |  ✓/✓ |
 | [Azure HDInsight (HDFS)](/power-query/connectors/azure-hdinsight#connect-to-azure-hdinsight-from-power-query-online) | ✓/− |  |  |
-| Azure HDInsight Spark | ✓/- |  |  |
-| [Azure HorizonDB Database](/power-query/connectors/azure-horizondb) | ✓/- |  |  |
+| Azure HDInsight Spark | ✓/- | | |
+| [Azure HorizonDB Database](/power-query/connectors/azure-horizondb) | ✓/- | | |
 | [Azure Resource Graph](/power-query/connectors/azure-resource-graph#connect-to-azure-resource-graph-from-power-query-online) | ✓/− |  |  |
 | [Azure SQL database](connector-azure-sql-database-overview.md) | ✓/✓ | ✓/✓ | ✓/✓ |
 | [Azure SQL Managed Instance](connector-azure-sql-managed-instance-overview.md) |  | ✓/✓ | ✓/✓ |
