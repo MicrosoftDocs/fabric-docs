@@ -3,7 +3,7 @@ title: Connector overview
 description: Learn about the available data connectors for Data Factory in Microsoft Fabric.
 ms.reviewer: jianleishen
 ms.topic: overview
-ms.date: 07/21/2026
+ms.date: 10/30/2026
 ms.search.form: product-data-factory
 ms.custom: connectors
 ---
@@ -58,7 +58,7 @@ Fabric supports these connectors in dataflow Gen2, pipelines, and copy jobs. Sel
 | [Azure Data Explorer (Kusto)](connector-azure-data-explorer-overview.md) | ✓/✓ | ✓/✓ | ✓/✓ |
 | [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2-overview.md) | ✓/− | ✓/✓ | ✓/✓ |
 | [Azure Database for MySQL](connector-azure-database-for-mysql-overview.md) |  | ✓/✓ | ✓/✓ |
-| [Azure Database for PostgreSQL](connector-azure-database-for-postgresql-overview.md) |  | ✓/✓ | ✓/✓ |
+| [Azure Database for PostgreSQL](connector-azure-database-for-postgresql-overview.md) | ✓/- | ✓/✓ | ✓/✓ |
 | [Azure Databricks](connector-azure-databricks-overview.md) | ✓/− | ✓/✓ |  |
 | [Azure Files](connector-azure-files-overview.md) |  | ✓/✓ |  ✓/✓ |
 | [Azure HDInsight (HDFS)](/power-query/connectors/azure-hdinsight#connect-to-azure-hdinsight-from-power-query-online) | ✓/− |  |  |
