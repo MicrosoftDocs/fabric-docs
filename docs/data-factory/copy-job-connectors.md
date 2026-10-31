@@ -3,7 +3,7 @@ title: Connectors for Copy Job
 description: This article covers the supported connectors for copy jobs in Microsoft Fabric, including source, destination, CDC replication, automatic table creation, and truncate on destination capabilities.
 ms.reviewer: yexu
 ms.topic: how-to
-ms.date: 06/15/2026
+ms.date: 10/30/2026
 ms.search.form: copy-job-tutorials 
 ms.custom: copy-job
 ai-usage: ai-assisted
@@ -22,6 +22,9 @@ Copy job supports the following functionalities:
 ## Copy job sources and destinations
 
 The following table shows which connectors are supported as sources and destinations in a copy job, and whether they support different read and write modes.
+> [!IMPORTANT]
+> Authentication methods, gateway requirements, supported versions, data type mappings, and limitations vary by connector. Before you configure a copy job, review the connector's overview and configuration articles in [Data Factory connectors](connector-overview.md). For private-network connectivity, see [Use Copy Job with a virtual network data gateway](copy-job-with-virtual-network-data-gateway.md). For connector-specific errors and known issues, see [Troubleshoot connectors](connector-troubleshoot-overview.md).
+
 
 - **Read - Full load**: Read the entire data from the source.
 - **Read - Incremental load (watermark based)**: Read only the changed data from the source using a watermark column.
