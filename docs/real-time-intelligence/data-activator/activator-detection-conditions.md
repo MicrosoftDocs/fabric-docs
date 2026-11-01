@@ -3,7 +3,7 @@ title: Detection settings in Activator
 description: Understand how detection settings in Activator rules operate and learn how to configure them effectively.
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
-ms.date: 05/04/2026
+ms.date: 10/29/2026
 ms.search.form: Data Activator Detection Settings
 ai-usage: ai-assisted
 ---
@@ -12,13 +12,13 @@ ai-usage: ai-assisted
 
 This article describes the range of detection settings available when you create a rule. You learn how detection settings operate in Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] and how to configure them effectively. The various detection settings work together to pinpoint the exact data that you're interested in tracking.
 
-The examples in this article use the **Package delivery events** sample eventstream. It specifically references the **Temperature** attribute and **Too hot for medicine** rule created in the [tutorial](activator-tutorial.md).
+The examples in this article use a package delivery scenario, such as a rule that monitors the temperature of packages in transit, to show how each setting works.
 
 ## Detection setting options
 
 You configure detection settings in the **Definition** pane, which appears on the right side of [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]. The pane opens when you select a rule in the **Explorer** pane on the left. The detection settings in **Summarization**, **Condition**, and **Property filter** work together to define exactly which data events trigger the rule. Each setting is described in the sections that follow.
 
-The following image shows the **Definition** pane with the detection settings for the **Temperature** attribute of the **Too hot for medicine** rule.
+The following image shows an example of the Definition pane with detection settings for a rule that monitors package temperature.
 
 :::image type="content" source="media/activator-detection-conditions/data-activator-detection-pane.png" alt-text="Screenshot of Definition pane in Activator showing the detection settings of the Temperature attribute for the Too hot for medicine rule." lightbox="media/activator-detection-conditions/data-activator-detection-pane.png":::
 
