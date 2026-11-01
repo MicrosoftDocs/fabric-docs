@@ -3,14 +3,14 @@ title: Assign data to objects in Activator
 description: Learn how to assign eventstream data to new or existing objects in Fabric Activator so you can monitor entities like packages, stores, or devices.
 ms.topic: how-to
 ms.search.form: Activator Object Creation
-ms.date: 05/05/2026
+ms.date: 10/29/2026
 ai-usage: ai-assisted
 #customer intent: As a Fabric Activator user, I want to assign eventstream data to objects so that I can track entities and create rules on them.
 ---
 
 # Assign data to objects in Activator
 
-After you set up a [data source](ingestion/ingestion-overview.md) for Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)], assign your events to objects. Assign events to objects when there's a distinct entity you want to track, such as a device, machine, package, or store. Each object uses a **Unique Identifier** to track individual instances over time. The examples in this article use the **Package delivery events** sample that comes with Fabric Activator, where packages are the entities being tracked. Substitute your own values when working with your own data.
+After you set up a [data source](ingestion/ingestion-overview.md) for Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)], assign your events to objects. Assign events to objects when there's a distinct entity you want to track, such as a device, machine, package, or store. Each object uses a **Unique Identifier** to track individual instances over time. The following examples use a package delivery scenario, where packages are the entities being tracked. Substitute your own values when working with your own data.
 
 > [!NOTE]
 > If you use a **query-based source** (Power BI, KQL queryset, or Real-Time Dashboard), Activator handles data binding differently and might create objects automatically. This article applies primarily to **streaming sources** such as eventstreams, Fabric events, and Azure events.
@@ -22,12 +22,12 @@ After you set up a [data source](ingestion/ingestion-overview.md) for Fabric [!I
 
 ## Assign data to a new object
 
-1. Open an Activator item that has a streaming data source connected to it, or [create a sample activator](activator-tutorial.md#create-a-sample-activator) to use the **Package delivery events** sample eventstream.
+1. Open an Activator item that has a streaming data source connected to it, or [create a sample activator](activator-tutorial.md#create-a-sample-activator) to use a sample eventstream.
 
    > [!NOTE]
    > The Activator item must be running for **New object** to be available in the ribbon. If it isn't started, select **Start** from the ribbon, then go back to your workspace and reopen the Activator item.
 
-1. In the Explorer pane, select the eventstream you want to assign to an object. For example, select the **Package delivery events** eventstream.
+1. In the Explorer pane, select the eventstream you want to assign to an object.
 
 1. Select **New object** from the ribbon. The **Build object** pane opens with **Create a new object** selected by default. Provide the following values:
 
@@ -54,7 +54,7 @@ For a complete walkthrough using two eventstreams, see [Combine multiple eventst
 
 ## Assign an event source to multiple objects
 
-You can assign columns from a single event source to multiple objects. Assigning one event source to multiple objects is useful when your event source contains data for more than one entity. For example, the sample *Packages* eventstream contains both a **PackageID** and a **City** column. Creating a *Package* object lets you track and set rules on individual packages. For example, alert when a specific package's temperature exceeds a threshold. Creating a separate *City* object from the same stream lets you track conditions at the city level. For example, monitor the total number of packages in transit across a city or detect when a city's delivery volume drops unexpectedly. Each object type has its own rules and properties, so you can monitor and act on both the individual and aggregate level from a single eventstream.
+You can assign columns from a single event source to multiple objects. Assigning one event source to multiple objects is useful when your event source contains data for more than one entity. For example, a package delivery eventstream might contain both a *PackageID* and a *City column*. Creating a *Package* object lets you track and set rules on individual packages. For example, alert when a specific package's temperature exceeds a threshold. Creating a separate *City* object from the same stream lets you track conditions at the city level. For example, monitor the total number of packages in transit across a city or detect when a city's delivery volume drops unexpectedly. Each object type has its own rules and properties, so you can monitor and act on both the individual and aggregate level from a single eventstream.
 
 1. Follow the steps in [Assign data to a new object](#assign-data-to-a-new-object) to create your first object. For example, create a *Package* object using **PackageID** as the unique identifier.
 
