@@ -3,7 +3,8 @@ title: Configure REST in a copy activity
 description: This article explains how to copy data using REST.
 ms.reviewer: jianleishen
 ms.topic: how-to
-ms.date: 05/21/2026
+ms.date: 11/01/2026
+ai-usage: ai-assisted
 ms.custom:
   - pipelines
   - template-how-to
@@ -19,6 +20,31 @@ Specifically, this generic REST connector supports:
 - Copying data from a REST endpoint by using the **GET** or **POST** methods and copying data to a REST endpoint by using the **POST**, **PUT** or **PATCH** methods.
 - **Pagination** in the REST APIs.
 - For REST as a source, copy the REST JSON response as-is or parse it by using schema mapping. Only the response payload in **JSON** is supported.
+
+## REST request URL validation
+
+> [!IMPORTANT]
+> **Breaking change:** A REST connector security update enforces URL boundaries for Copy activity. Request URLs must use the same scheme, host, and port as the REST connection's base URL. **Relative URL** must also resolve to the base URL's path or a path beneath it. Configurations that previously used **Relative URL** to override these boundaries now fail with `HttpInvalidUrlAddress`. This is an expected security behavior change, not a functional regression.
+
+### Mitigate `HttpInvalidUrlAddress`
+
+If a previously working REST copy activity fails with `HttpInvalidUrlAddress`, check whether its resolved request URL is outside the connection's URL boundaries. To address this validation failure:
+
+1. [Configure a REST connection](connector-rest.md) with a base URL that matches the intended target's scheme, host, port, and base path. Verify that the connection's authentication is appropriate for that target.
+1. Select that connection in the copy activity's **Source** or **Destination** tab, as applicable.
+1. Set **Relative URL** to only the remaining relative path, with query parameters if needed. Don't use an absolute URL to a different host or a path that escapes the configured base path.
+1. If you access multiple hosts, use a separate REST connection for each target and update the affected copy activities.
+1. Rerun the copy activity to validate the updated configuration.
+
+For example, instead of combining a connection base URL of `https://api.example.com/` with **Relative URL** set to `https://target.example.com/v1/orders`, use:
+
+| Property | Value |
+|:--- |:--- |
+| Connection base URL | `https://target.example.com/v1/` |
+| **Relative URL** | `orders` |
+| Resolved request URL | `https://target.example.com/v1/orders` |
+
+Pagination request URLs must also use the same scheme, host, and port as the connection's base URL. An absolute URL in a pagination rule doesn't allow a request to a different host.
 
 ## Supported configuration
 
@@ -47,7 +73,7 @@ The following first three properties are **required**:
         :::image type="content" source="./media/connector-rest/additional-connection-properties.png" alt-text="Screenshot showing additional connection properties for source.":::
 
 - **Connection type**: Select **REST**.
-- **Relative URL**: A relative URL to the resource that contains the data. When this property isn't specified, only the URL that's specified in the connection definition is used. The HTTP connector copies data from the combined URL: `[URL specified in connection]/[relative URL specified]`.
+- **Relative URL**: A relative URL to the resource that contains the data. When this property isn't specified, only the URL that's specified in the connection definition is used. The REST connector copies data from the combined URL: `[URL specified in connection]/[relative URL specified]`. The resolved URL must stay within the connection's scheme, host, port, and base path. See [REST request URL validation](#rest-request-url-validation).
 
 Under **Advanced**, you can specify the following fields:
 
@@ -82,7 +108,7 @@ The following first three properties are **required**:
         :::image type="content" source="./media/connector-rest/additional-connection-properties.png" alt-text="Screenshot showing additional connection properties for source.":::
 
 - **Connection type**: Select **REST**.
-- **Relative URL**: A relative URL to the resource that contains the data. When this property isn't specified, only the URL that's specified in the connection definition is used. The HTTP connector copies data from the combined URL: `[URL specified in connection]/[relative URL specified]`.
+- **Relative URL**: A relative URL to the resource that contains the data. When this property isn't specified, only the URL that's specified in the connection definition is used. The REST connector copies data from the combined URL: `[URL specified in connection]/[relative URL specified]`. The resolved URL must stay within the connection's scheme, host, port, and base path. See [REST request URL validation](#rest-request-url-validation).
 
 Under **Advanced**, you can specify the following fields:
 
@@ -113,7 +139,7 @@ The following tables contain more information about the copy activity in REST.
 |:---|:---|:---|:---|:---|
 |**Connection** |Your connection to the source data store.|\<your connection> |Yes|connection|
 |**Connection type** | Your connection type. Select **REST**.|**REST**|Yes |type:<br>RestResource|
-|**Relative URL** |A relative URL to the resource that contains the data. When this property isn't specified, only the URL that's specified in the connection definition is used. The HTTP connector copies data from the combined URL: `[URL specified in connection]/[relative URL specified]`.| \<your relative url> |No |relativeUrl|
+|**Relative URL** |A relative URL to the resource that contains the data. When this property isn't specified, only the URL that's specified in the connection definition is used. The REST connector copies data from the combined URL: `[URL specified in connection]/[relative URL specified]`. The resolved URL must stay within the connection's scheme, host, port, and base path. See [REST request URL validation](#rest-request-url-validation).| \<your relative url> |No |relativeUrl|
 |**Request method** |The HTTP method. Allowed values are **GET** (default) and **POST**.|• **GET**<br>• **POST**|No |requestMethod|
 |**Request timeout** |The timeout (the timespan value) for the HTTP request to get a response. This value is the timeout to get a response, not the timeout to read response data. The default value is 00:01:40.| timespan |No |httpRequestTimeout|
 |**Request interval (ms)** |The interval time between different requests for multiple pages in milliseconds. Request interval value should be a number between [10, 60000].| [10, 60000]|No |requestInterval|
@@ -127,7 +153,7 @@ The following tables contain more information about the copy activity in REST.
 |:---|:---|:---|:---|:---|
 |**Connection** |Your connection to the source data store.|\<your connection> |Yes|connection|
 |**Connection type** | Your connection type. Select **REST**.|**REST**|Yes |type:<br>RestResource|
-|**Relative URL** |A relative URL to the resource that contains the data. When this property isn't specified, only the URL that's specified in the connection definition is used. The HTTP connector copies data from the combined URL: `[URL specified in connection]/[relative URL specified]`.|\<your relative url> |No |relativeUrl|
+|**Relative URL** |A relative URL to the resource that contains the data. When this property isn't specified, only the URL that's specified in the connection definition is used. The REST connector copies data from the combined URL: `[URL specified in connection]/[relative URL specified]`. The resolved URL must stay within the connection's scheme, host, port, and base path. See [REST request URL validation](#rest-request-url-validation).|\<your relative url> |No |relativeUrl|
 |**Request method** |The HTTP method. Allowed values are **POST** (default), **PUT**, and **PATCH**.|• **POST**<br>• **GET**<br>• **PATCH**|No |requestMethod|
 |**Request timeout** |The timeout (the timespan value) for the HTTP request to get a response. This value is the timeout to get a response, not the timeout to read response data. The default value is 00:01:40.|timespan |No |httpRequestTimeout|
 |**Request interval (ms)** |The interval time between different requests for multiple pages in milliseconds. Request interval value should be a number between [10, 60000].| [10, 60000] |No |requestInterval|

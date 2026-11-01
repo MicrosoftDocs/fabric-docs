@@ -3,7 +3,8 @@ title: REST connector overview
 description: This article explains the overview of using REST.
 ms.reviewer: jianleishen
 ms.topic: how-to
-ms.date: 07/01/2025
+ms.date: 11/01/2026
+ai-usage: ai-assisted
 ms.custom:
   - template-how-to
   - connectors
@@ -12,6 +13,9 @@ ms.custom:
 # REST connector overview
 
 The REST connector is supported in Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
+
+> [!IMPORTANT]
+> A REST connector security update introduces a breaking change for Copy activity configurations that use **Relative URL** to override the connection's scheme, host, port, or base path. If your activity fails with `HttpInvalidUrlAddress`, follow the mitigation in [REST request URL validation](connector-rest-copy-activity.md#rest-request-url-validation).
 
 ## Supported capabilities
 
