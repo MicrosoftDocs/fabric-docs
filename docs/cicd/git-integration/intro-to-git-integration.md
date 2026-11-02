@@ -81,7 +81,7 @@ The following items currently support Git integration:
   * [Mount ADF](../../data-factory/tutorial-bring-azure-data-factory-to-fabric.md)
   * [Mirrored snowflake](../../mirroring/snowflake.md) *(preview)*
   * [Airflow](../../data-factory/apache-airflow-jobs-concepts.md) *(preview)*
-  * [dbt Job](../../data-factory/dbt-job-overview.md) *(preview)*
+  * [dbt Job](../../data-factory/dbt-job-overview.md)
   * [Operations Agent](../../data-factory/operations-agent-for-pipelines.md) *(preview)*
 
 * Real-Time Intelligence items:
@@ -93,7 +93,7 @@ The following items currently support Git integration:
   * [KQL queryset](../../real-time-intelligence/git-deployment-pipelines.md)
   * [Real-Time Dashboard](../../real-time-intelligence/git-deployment-pipelines.md)
   * [Maps](../../real-time-intelligence/map/about-fabric-maps.md)
-  * [Event Schema Set](../../real-time-intelligence/schema-sets/create-manage-event-schemas.md) *(preview)*
+  * [Event Schema Set](../../real-time-intelligence/schema-sets/create-manage-event-schemas.md)
   * [Digital twin builder](../../real-time-intelligence/digital-twin-builder/overview.md) *(preview)*
   * [Anomaly detection](../../real-time-intelligence/multivariate-anomaly-overview.md) *(preview)*
 
@@ -113,7 +113,7 @@ The following items currently support Git integration:
 * Database items:
 
   * [SQL database](../../database/sql/source-control.md)
-  * [Cosmos database](../../database/cosmos-db/overview.md) *(preview)*
+  * [Cosmos database](../../database/cosmos-db/overview.md)
 
 * Graph:
   * [Graph Model](../../graph/overview.md)
@@ -123,6 +123,11 @@ The following items currently support Git integration:
 
   * [Deployment plan](../deployment-plan/deployment-plan-overview.md) *(preview)*
   * [Variable Library](../variable-library/variable-library-overview.md)
+
+* Platform items:
+
+  * [Fabric policies](../../governance/fabric-policies-overview.md) *(preview)*
+  * [Workspace monitoring](../../fundamentals/workspace-monitoring-overview.md) *(preview)*
 
 * IQ (preview) items:
 
