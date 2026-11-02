@@ -4,7 +4,7 @@ description: This article provides a list of all the operations available in Fab
 author: msmimart
 ms.author: mimart
 ms.topic: reference
-ms.date: 09/08/2026
+ms.date: 11/12/2026
 ---
 # Operation list
 
@@ -782,6 +782,23 @@ To audit OneLake data access and storage operations, use [OneLake diagnostics](.
 | Disabled external data share access for inbound access restricted workspaces | :::no-loc text="ExternalDataSharesBypassForWorkspaceDisabled"::: | |
 | Updated Git connection settings | :::no-loc text="GitConnectionSettingsUpdated"::: | Updated Git connection settings |
 | Branch workspace configuration updated | :::no-loc text="GitBranchWorkspaceConfigured"::: | Branch workspace configuration updated |
+| Create an entity type in Ontology |:::no-loc text="DigitalOperationsEntityTypeCreated"::: | |
+| Update an entity type in Ontology |:::no-loc text="DigitalOperationsEntityTypeUpdated"::: | |
+| Delete an entity type in Ontology |:::no-loc text="DigitalOperationsEntityTypeDeleted"::: | |
+| Create an entity relationship in Ontology |:::no-loc text="DigitalOperationsRelationshipTypeCreated"::: | |
+| Update an entity relationship in Ontology |:::no-loc text="DigitalOperationsRelationshipTypeUpdated"::: | |
+| Delete an entity relationship in Ontology |:::no-loc text="DigitalOperationsRelationshipTypeDeleted"::: | |
+| Create a data source in Ontology |:::no-loc text="DigitalOperationsDataBindingCreated"::: | |
+| Update a data source in Ontology |:::no-loc text="DigitalOperationsDataBindingUpdated"::: | |
+| Delete a data source in Ontology |:::no-loc text="DigitalOperationsDataBindingDeleted"::: | |
+| Import an RDF ontology, or import from a semantic model during Ontology provisioning |:::no-loc text="DigitalOperationsOntologyImported"::: | |
+| Create an Ontology Agent conversation |:::no-loc text="DigitalOperationsOntologyAgentConversationCreated"::: | |
+| Send an Ontology Agent message |:::no-loc text="DigitalOperationsOntologyAgentMessageSent"::: | |
+| Cancel an in-progress Ontology Agent conversation turn |:::no-loc text="DigitalOperationsOntologyAgentConversationCancelled"::: | |
+| Create a namespace, expression, or rule in Ontology |:::no-loc text="CreateArtifact"::: | |
+| Read/list audited ontology resources; retrieve the definition, TMDL, or public ontology model |:::no-loc text="ReadArtifact"::: | |
+| Update a namespace, expression, or rule; replace/clear the ontology definition; apply a script; clear/detach entity-type data sources; replace the public ontology model |:::no-loc text="UpdateArtifact"::: | |
+| Delete a namespace, expression, or rule in Ontology |:::no-loc text="DeleteArtifact"::: | |
 
 ## Considerations and limitations
 
