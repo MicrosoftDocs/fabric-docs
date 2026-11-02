@@ -30,7 +30,6 @@ Use the storage report to:
 * Sort and search your items, including by data size
 * Break down storage costs across visible, hidden, and soft-deleted data
 
-
 ### Open the storage report
 
 The OneLake storage report is available in the OneLake section of any workspace's settings.
