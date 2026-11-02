@@ -127,7 +127,7 @@ items:
             href: event-streams/add-source-confluent-kafka.md
           - name: Cribl
             href: event-streams/add-source-cribl.md
-          - name: Custom Stream Connector (Preview)
+          - name: Custom stream connector (preview)
             href: event-streams/add-custom-stream-connector.md
           - name: Custom endpoint
             href: event-streams/add-source-custom-app.md
