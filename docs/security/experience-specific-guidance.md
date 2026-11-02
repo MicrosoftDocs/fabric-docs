@@ -783,7 +783,7 @@ Use the PostgreSQL `pg_dump` and `pg_restore` command-line tools to back up and 
 1. Install the [Azure CLI](/cli/azure/install-azure-cli), and sign in with a Microsoft Entra identity that has permission to read the source database. Replace `<tenant-id>` with the ID of the tenant that contains your HorizonDB database:
 
     ```bash
-    az login --tenant <tenant-id>
+    az login --tenant <tenant-id> --allow-no-subscriptions
     ```
 
 1. Obtain a Microsoft Entra access token for PostgreSQL and set it as the `PGPASSWORD` environment variable. The following commands use Bash:
