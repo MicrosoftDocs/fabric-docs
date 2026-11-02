@@ -508,7 +508,7 @@ This section lists most of the limitations in deployment pipelines.
   * Native query and DirectQuery together aren't supported. This limitation includes proxy semantic models.
   * The datasource connection must be the first step in the mashup expression.
 
-* When you deploy a Direct Lake semantic model, it doesn't automatically bind to items in the target stage. For example, if a lakehouse is a source for a Direct Lake semantic model and they're both deployed to the next stage, the Direct Lake semantic model in the target stage still binds to the lakehouse in the source stage. Use datasource rules to bind it to an item in the target stage. Other types of semantic models automatically bind to the paired item in the target stage.
+* When you deploy a Direct Lake semantic model, it doesn't automatically bind to items in the target stage. For example, if a lakehouse is a source for a Direct Lake semantic model and they're both deployed to the next stage, the Direct Lake semantic model in the target stage still binds to the lakehouse in the source stage. For Direct Lake on SQL, use data source rules to bind it to an item in the target stage. For Direct Lake on OneLake, use [M parameters and parameter rules](../../fundamentals/direct-lake-develop.md#use-m-parameters-with-deployment-pipelines) instead. Other types of semantic models automatically bind to the paired item in the target stage.
 * Deployment of a semantic model that uses 'Dataflow Gen 2 (CI/CD)' item as a datasource is not supported.
 
 ### Dataflow limitations

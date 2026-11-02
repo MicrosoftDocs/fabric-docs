@@ -92,6 +92,49 @@ When you connect to a Direct Lake semantic model with the XMLA endpoint, the met
   - **Direct Lake on SQL** — The expression points to the SQL analytics endpoint of the lakehouse or warehouse. Direct Lake uses the SQL analytics endpoint to discover schema and security information, but it loads the data directly from OneLake (unless it [falls back to DirectQuery](direct-lake-how-it-works.md#directquery-fallback) mode for any reason).
   - **Direct Lake on OneLake** — The expression points directly to the OneLake storage location of the Fabric data source. Direct Lake uses the OneLake APIs for schema discovery, security checks, and data loading. Direct Lake on OneLake doesn't fall back to DirectQuery mode.
 
+## Use M parameters with deployment pipelines
+
+For Direct Lake on OneLake, use text M parameters to change the OneLake source location between deployment pipeline stages. Data source rules don't support rebinding these connections, but parameter rules can set the parameter values for each target stage. Deploying a Direct Lake semantic model doesn't automatically bind it to a lakehouse or warehouse in the target stage.
+
+The following Tabular Model Definition Language (TMDL) example defines text parameters for the workspace and lakehouse IDs and references them in the connection expression:
+
+```tmdl
+createOrReplace
+	expression 'DirectLake - Sales' =
+			let
+			    Source = AzureStorage.DataLake("https://onelake.dfs.fabric.microsoft.com/" & WorkspaceId & "/" & LakehouseId, [HierarchicalNavigation = true])
+			in
+			    Source
+
+	expression WorkspaceId = "<workspace-id>" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = "Text"]
+
+	expression LakehouseId = "<lakehouse-id>" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = "Text"]
+```
+
+To parameterize the full URL instead, replace the two ID parameters with this expression:
+
+```tmdl
+expression OneLakeSourceUrl = "https://onelake.dfs.fabric.microsoft.com/<workspace-id>/<item-id>" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = "Text"]
+```
+
+In the Direct Lake connection expression, use `AzureStorage.DataLake(OneLakeSourceUrl, [HierarchicalNavigation = true])`. Replace the placeholders with the workspace and lakehouse or warehouse IDs. When adding the parameter to the preceding script, indent its declaration at the same level as the connection expression. Configure one deployment parameter rule for `OneLakeSourceUrl` instead of separate rules for the IDs.
+
+To adapt this example to your model:
+
+1. Open the semantic model for editing in [Power BI Desktop](direct-lake-power-bi-desktop.md#live-edit-a-semantic-model-with-direct-lake) or [web modeling](direct-lake-web-modeling.md). In **TMDL view**, open the shared expression that contains the `AzureStorage.DataLake` connection.
+
+1. Add the text parameter expressions and update the connection expression as shown in the example. Keep the existing connection expression's name, annotations, and any additional connection options unchanged so that existing partitions continue to reference it. Replace `<workspace-id>` and `<lakehouse-id>` with the source workspace and lakehouse IDs, not full URLs. For a warehouse source, use a `WarehouseId` parameter containing the warehouse ID and reference it instead of `LakehouseId`. Don't use the SQL analytics endpoint ID. All `expression` declarations must be at the same indentation level.
+
+1. Apply the script. Parameters must have type `Text` to use them for rebinding through parameter rules. Multiple connections can share a workspace parameter while using separate item ID parameters.
+
+1. In the target pipeline stage, configure a [deployment parameter rule](../cicd/deployment-pipelines/create-rules.md#create-a-deployment-rule) for each value that changes. For example, set `WorkspaceId` to the target workspace ID and `LakehouseId` to the target lakehouse ID. If the model isn't in the target stage yet, deploy it there first so you can configure the rules.
+
+1. Deploy the semantic model from the source stage to the target stage to apply the rules. Refresh the target model and verify that it queries the intended source.
+
+The target source must contain the tables and columns that the model references. Changing the parameters doesn't create those tables or grant access to them. Ensure the target model's connection and permissions allow access to the target data.
+
+For composite models, you can create the text parameters in Power Query instead of TMDL. The Direct Lake connection expression isn't available in Power Query. After creating the parameters, update that expression in **TMDL view**, as in the preceding steps.
+
 ## Post-publication tasks
 
 After you publish a Direct Lake semantic model, you should complete some setup tasks. For more information, see [Manage Direct Lake semantic models](direct-lake-manage.md#post-publication-tasks).
