@@ -121,7 +121,7 @@ In the Direct Lake connection expression, use `AzureStorage.DataLake(OneLakeSour
 
 To adapt this example to your model:
 
-1. Open the semantic model for editing in [Power BI Desktop](direct-lake-power-bi-desktop.md#live-edit-a-semantic-model-with-direct-lake) or [web modeling](direct-lake-web-modeling.md). In **TMDL view**, open the shared expression that contains the `AzureStorage.DataLake` connection.
+1. In [web modeling](direct-lake-web-modeling.md), go to [**TMDL view**](/power-bi/transform-model/desktop-tmdl-view#script-to-tmdl) and open the shared expression that contains the `AzureStorage.DataLake` connection.
 
 1. Add the text parameter expressions and update the connection expression as shown in the example. Keep the existing connection expression's name, annotations, and any additional connection options unchanged so that existing partitions continue to reference it. Replace `<workspace-id>` and `<lakehouse-id>` with the source workspace and lakehouse IDs, not full URLs. For a warehouse source, use a `WarehouseId` parameter containing the warehouse ID and reference it instead of `LakehouseId`. Don't use the SQL analytics endpoint ID. All `expression` declarations must be at the same indentation level.
 
