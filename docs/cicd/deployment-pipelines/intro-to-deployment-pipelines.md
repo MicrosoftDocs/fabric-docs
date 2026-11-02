@@ -92,6 +92,7 @@ When you deploy content from one pipeline stage to another, the copied content c
   * Dataflow *(preview)*
   * [Org app](/power-bi/consumer/org-app-items/org-app-cicd)
   * Paginated report *(preview)*
+  * [Plan](../../iq/plan/overview.md) *(preview)*
   * Report (based on supported semantic models)
   * Semantic model (that originates from a .pbix file and isn't a PUSH dataset) *(preview)*
 
@@ -122,7 +123,6 @@ When you deploy content from one pipeline stage to another, the copied content c
 * IQ (preview) items:
 
   * [Ontology](../../iq/ontology/overview.md) *(preview)*
-  * [Plan](../../iq/plan/overview.md) *(preview)*
 
 ## Pipeline structure
 
