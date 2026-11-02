@@ -29,8 +29,6 @@ Statistics are persisted objects that represent data in your tables' columns. Th
 > [!TIP]
 > For Lakehouse users, the ACE-Cardinality statistic can use information from your tables' Delta log files to be more accurate. Ensure your Spark generated Delta tables include table row-counts with: `spark.conf.set("spark.databricks.delta.stats.collect", "true")`. For more information, see [Configure and manage Automated Table Statistics in Fabric Spark](../data-engineering/automated-table-statistics.md).
 
-When filtering lakehouse tables on timestamp column before Apache Spark runtime 3.5.0, rowgroup-level statistics for timestamp columns aren't generated. This lack of statistics makes it difficult for systems, like Fabric Warehouse, to apply rowgroup elimination (also known as data skipping or predicate pushdown), which is performance optimization that skips irrelevant rowgroups during query execution. Without these statistics, filtering queries that involve timestamp columns might need to scan more data, leading to significant performance degradation. You can upgrade [the Apache Spark runtime in Fabric](../data-engineering/runtime.md). Apache Spark 3.5.0 and higher versions can generate rowgroup-level statistics for timestamp columns. You then need to recreate the table and ingest the data to have rowgroup level statistics generated.
-
 ### Cold cache performance
 
 The *first execution* of a query in Fabric Data Warehouse can be unexpectedly slower than subsequent runs. This slowdown is known as a *cold start*. A cold start happens because of system initialization or scaling activities that prepare the environment for processing. 
@@ -60,6 +58,8 @@ Distinct from in-memory and disk caching, result set caching is a built-in optim
 
 For more information, see [Result set caching](result-set-caching.md).
 -->
+
+When filtering lakehouse tables on timestamp column before Apache Spark runtime 3.5.0, rowgroup-level statistics for timestamp columns aren't generated. This lack of statistics makes it difficult for systems, like Fabric Warehouse, to apply rowgroup elimination (also known as data skipping or predicate pushdown), which is performance optimization that skips irrelevant rowgroups during query execution. Without these statistics, filtering queries that involve timestamp columns might need to scan more data, leading to significant performance degradation. You can upgrade [the Apache Spark runtime in Fabric](../data-engineering/runtime.md). Apache Spark 3.5.0 and higher versions can generate rowgroup-level statistics for timestamp columns. You then need to recreate the table and ingest the data to have rowgroup level statistics generated.
 
 ### Queries on tables with string columns  
 
