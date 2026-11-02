@@ -6,9 +6,11 @@ ms.author: bwatts
 ms.reviewer: 
 ms.date: 4/15/2026
 ms.topic: concept-article
+ai-usage: ai-assisted
+ms.custom: msecd-doc-authoring-1030
 ---
 
-# Data Encryption in Fabric Eventhouse (Preview)
+# Data encryption in Fabric Eventhouse
 
 Fabric Eventhouse encrypts all data at rest by default, ensuring that your information is protected through Microsoft-managed keys.
 
@@ -33,6 +35,8 @@ Before enabling CMK for your Fabric Eventhouse, review the following considerati
 - When enable, Eventhouse scales to a minimum of 16 virtual cores and could affect Capacity Units (CU) consumption.
 
 - Queries against the Fabric Eventhouse are not encrypted with CMK.
+
+- Each Fabric eventhouse runs on dedicated resources in a single region. All data is stored within that region.
 
 ## Related content
 
