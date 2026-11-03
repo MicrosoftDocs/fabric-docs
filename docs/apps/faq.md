@@ -66,8 +66,9 @@ The client SDK provides type-safe APIs for all frameworks.
 
 | Environment | Supported methods |
 | ------------- | ------------------- |
-| Local development | Microsoft Entra SSO and Email/password |
-| Deployed to Fabric | Microsoft Entra SSO only |
+| Local frontend targeting Fabric | Microsoft Entra sign-in through the Fabric broker or delegated token exchange. |
+| Local backend | Email and password for development. |
+| Deployed to Fabric | Microsoft Entra sign-in through Fabric popup/iframe handoff, direct delegated token exchange, or an external parent host. |
 
 >[!NOTE]
 >Email and password authentication doesn't work after deploying to Fabric.
@@ -75,7 +76,17 @@ The client SDK provides type-safe APIs for all frameworks.
 
 ### Can I use custom authentication providers?
 
-No. Fabric Apps supports Microsoft Entra single sign-on (SSO) and email/password only. You can't integrate other providers.
+Fabric Apps doesn't support arbitrary identity providers. An application that already has a delegated Microsoft Entra token can use `signInWithEntraToken()` in a browser or Node.js. This method provides another Entra sign-in path, not a custom provider.
+
+Enable `services.auth.fabric.externalEntraExchange`, and use a delegated token for the deployment's Fabric/Power BI audience with `Item.Execute.All`, issued in the item's owning tenant. The user also needs **Execute** permission on the app item. This exchange doesn't support app-only service principal tokens. Your identity library handles token acquisition and consent.
+
+For server-side integrations, use separate memory-only sessions per user and never share a mutable authenticated client between users. See [Sign in with an existing Microsoft Entra token](fabric-authentication.md#sign-in-with-an-existing-microsoft-entra-token).
+
+### Can an external portal embed and sign in my app?
+
+Yes. The parent can use `createEmbedHost()` from `@microsoft/rayfin-embed-host` with a delegated Entra token and an exact origin allow list. Enable external Entra exchange and satisfy the same token and item permission prerequisites. Register the host before loading the iframe, and await `initEmbeddedAuth()` in the iframe before restoring a stored user.
+
+The host validates the iframe origin and return origin and passes a single-use handoff code, not the parent's Entra token. Dispose of the host when removing the iframe. See [Embed in an external parent portal](fabric-authentication.md#embed-in-an-external-parent-portal).
 
 ## Deployment
 
@@ -143,7 +154,7 @@ Yes. Implement client-side caching in your frontend application. The backend doe
 
 ### What are the current limitations?
 
-- `count()` isn't available on the fluent GraphQL client
+- A standalone `count()` isn't available on the fluent GraphQL client. Use numeric-field `aggregate()` and `groupBy()`, or count records across all pages; one page's length isn't a matching-record total.
 - Many-to-many relationships aren't supported
 - Composite primary keys aren't supported
 - Custom authentication providers aren't supported
