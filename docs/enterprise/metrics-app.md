@@ -45,9 +45,9 @@ The default report provides various features and functionalities to help you mon
 
 - **Timepoint item detail** page: Provides granular detail on operations within a specific item at a timepoint. Includes filters for operation ID, user, and CU thresholds that are useful for root-cause analysis and performance tuning. For more information, see [Understand the metrics app timepoint item detail page](metrics-app-timepoint-item-detail-page.md).
 
-- **Autoscale compute for Spark** page: This page provides insights into the autoscaling behavior of Spark workloads, helping you optimize performance and resource allocation. For more information, see [Understand the metrics app Autoscale compute for Spark page](metrics-app-feature-autoscale-page.md).
+- **On-demand Compute for Spark** page: This page provides insights into the on-demand compute behavior of Spark workloads, helping you optimize performance and resource allocation. For more information, see [Understand the metrics app On-demand Compute for Spark page](metrics-app-on-demand-compute-for-spark-page.md).
 
-- **Autoscale compute for Spark detail** page: Dive deeper into autoscale operations to understand which workloads triggered scaling and how they contributed to overall capacity usage. For more information, see [Understand Autoscale compute for Spark detail page](metrics-app-feature-autoscale-detail-page.md).
+- **On-demand Compute for Spark detail** page: Dive deeper into on-demand operations to understand which workloads triggered scaling and how they contributed to overall capacity usage. For more information, see [Understand On-demand Compute for Spark detail page](metrics-app-on-demand-compute-for-spark-detail-page.md).
 
 - **Plan capacity**: Learn how to estimate the right capacity SKU for your workloads by using the metrics app and the Fabric SKU Estimator. Helps avoid over- or underprovisioning. For more information, see [Plan your capacity size](plan-capacity.md).
 
@@ -66,9 +66,11 @@ The Fabric Capacity Metrics preview report offers a redesigned monitoring experi
 
 - **Compute**: Analyze capacity utilization and capacity unit (CU) consumption at the capacity, workspace, item-kind, and item levels. Drill through from an item to review its operation history on the Item details page. For more information, see [Understand the Compute Preview page](metrics-app-preview-compute-page.md) and [Understand the Item details Preview page](metrics-app-preview-item-details-page.md).
 
+- **Workspace Detail**: Investigate the items in a selected workspace and review their CU consumption, operations, duration, and users. For more information, see [Understand the Workspace Detail page](metrics-app-preview-workspace-detail-page.md).
+
 - **Storage**: Review current and average storage consumption by storage type and workspace. For more information, see [Understand the Storage Preview page](metrics-app-preview-storage-page.md).
 
-- **Autoscale for Spark**: Review Autoscale for Spark usage.
+- **On-demand Compute for Spark**: Review On-demand Compute for Spark usage.
 
 - **Help**: Access contextual guidance for report visuals, columns, icons, and thresholds.
 
