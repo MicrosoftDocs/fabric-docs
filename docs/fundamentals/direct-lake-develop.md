@@ -94,7 +94,7 @@ When you connect to a Direct Lake semantic model with the XMLA endpoint, the met
 
 ## Use M parameters for parameter rules with deployment pipelines
 
-For Direct Lake on OneLake, data source rules are not available in deployment pipelines. Instead, you can use text M parameters to change the OneLake source location between deployment pipeline stages.
+For Direct Lake on OneLake, deployment pipelines don't provide data source rules. Instead, use text M parameters to change the OneLake source location between deployment pipeline stages.
 
 The following Tabular Model Definition Language (TMDL) example defines text parameters for the workspace and lakehouse IDs and references them in the connection expression:
 
