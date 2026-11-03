@@ -92,7 +92,7 @@ When you connect to a Direct Lake semantic model with the XMLA endpoint, the met
   - **Direct Lake on SQL** — The expression points to the SQL analytics endpoint of the lakehouse or warehouse. Direct Lake uses the SQL analytics endpoint to discover schema and security information, but it loads the data directly from OneLake (unless it [falls back to DirectQuery](direct-lake-how-it-works.md#directquery-fallback) mode for any reason).
   - **Direct Lake on OneLake** — The expression points directly to the OneLake storage location of the Fabric data source. Direct Lake uses the OneLake APIs for schema discovery, security checks, and data loading. Direct Lake on OneLake doesn't fall back to DirectQuery mode.
 
-## Use M parameters for parameter rules with deployment pipelines
+## Use M parameters with deployment pipelines
 
 For Direct Lake on OneLake, deployment pipelines don't provide data source rules. Instead, use text M parameters to change the OneLake source location between deployment pipeline stages.
 
