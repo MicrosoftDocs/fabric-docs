@@ -4,7 +4,8 @@ description: Learn how to read the Microsoft Fabric Capacity Metrics app's Timep
 author: dknappettmsft
 ms.author: daknappe
 ms.topic: how-to
-ms.date: 06/06/2025
+ms.date: 10/29/2026
+ai-usage: ai-assisted
 no-loc: [Copilot]
 ---
 
@@ -25,6 +26,24 @@ This section describes the visuals displayed in the top row of the **Timepoint I
 * **Item kind** - Displays the type of the item referenced above.
 * **Workspace name** - Displays the workspace name to which the item referenced above belongs.
 * **Operation** - Displays the name of the operation used to drill through to this page.
+
+## Monitor in warehouse
+
+To access warehouse monitoring, you must be an admin in the workspace that contains the selected item. For more information, see [Monitor prerequisites](../data-warehouse/monitor.md#prerequisites).
+
+When you drill through to this page with a supported query operation, select the **Monitor in warehouse** button to investigate its query activity. The button opens warehouse monitoring for the associated item, with the relevant time range already selected. You don't need to select a record first, but selecting one can narrow the time range to that operation.
+
+The button appears only for warehouse items with a supported query operation.
+
+The following operations are supported:
+
+* **Warehouse Query** - T-SQL statements in a warehouse.
+* **Warehouse Query (Accelerated)** - T-SQL statements in a warehouse with workspace query acceleration enabled.
+* **SQL Endpoint Query** - T-SQL statements in a lakehouse's SQL analytics endpoint.
+* **SQL Endpoint Query (Accelerated)** - T-SQL statements in a lakehouse's SQL analytics endpoint with workspace query acceleration enabled.
+* **Warehouse Snapshot Query** - T-SQL statements on a warehouse snapshot.
+
+For more information, see [Data Warehouse operations](fabric-operations.md#data-warehouse).
 
 ## Filters
 
