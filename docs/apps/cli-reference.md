@@ -41,7 +41,7 @@ npm create @microsoft/rayfin@latest my-app --workspace <workspace name>
 
 ## Command reference
 
-The commands and flags in this article were verified from the locally installed CLI help output.
+Commands and flags can vary by CLI version. This reference calls out version-dependent behavior; use `npx rayfin <command> --help` to check the options available in your installed version.
 
 ## Top-level commands
 
@@ -144,9 +144,14 @@ Adds a connector declaration and scaffolds its project files.
 | `--workspace-id <id>` | Fabric workspace ID. |
 | `--item-id <id>` | Fabric item ID. |
 | `--operations <ops>` | Comma-separated subset of allowed operations. |
+| `--auth <type>` | On CLI versions that expose this flag, select `application` or `delegated`, subject to the connector type's allowed modes. See the version note below. |
 | `-v, --verbose` | Enable verbose output. |
 | `-y, --yes` | Automatically accept confirmations. |
 | `--json` | Emit JSON output. |
+
+In CLI 1.36.2, SQL connector types (`fabric-sqlanalytics`, `fabric-warehouse`, and `fabric-sqldatabase`) default to `auth.type: application`. Set `auth.type: delegated` explicitly in `rayfin/rayfin.yml` for caller-based source access. Semantic models remain delegated-only.
+
+The `--auth` creation flag isn't present in CLI 1.36.2. Check `npx rayfin connector add --help` before using it; use the YAML setting on versions without the flag. Application mode requires source permissions for the app identity, currently the app item owner; delegated mode requires source permissions for each caller. See [Choose the source identity](connectors.md#choose-the-source-identity).
 
 ### `rayfin connector list`
 

@@ -9,26 +9,49 @@ ai-usage: ai-assisted
 
 # Fabric Apps project structure
 
-Fabric Apps projects use a consistent folder layout so you can quickly find data models, backend configuration, and frontend code. This article explains the files and folders you're most likely to work with after you create a project.
+Fabric Apps projects separate backend configuration, data models, and frontend code. The exact layout depends on the template. The default `blankapp` template resolves to **Universal App**, an npm workspace with separate frontend, data, and shared packages.
 
 ## Folder layout
 
-When you create a new Fabric Apps project, the template generates the following structure:
+The default Universal App scaffold has the following structure:
 
 ```text
 your-project/
 ├── rayfin/
-│   ├── data/
-│   │   ├── schema.ts
-│   │   └── *.ts
 │   ├── .env
 │   ├── rayfin.yml
 │   └── tsconfig.json
-├── src/
+├── packages/
+│   ├── frontend/
+│   │   ├── src/
+│   │   └── package.json
+│   ├── data/
+│   │   └── src/index.ts
+│   └── shared/
+│       └── src/index.ts
 ├── package.json
 ├── tsconfig.json
 └── README.md
 ```
+
+| Location | Ownership |
+| --- | --- |
+| `rayfin/` | Backend configuration and active environment values. |
+| `packages/frontend/` | Browser UI, client initialization, and frontend build. |
+| `packages/data/` | Decorated runtime entity classes and schema registration. |
+| `packages/shared/` | Isomorphic record contracts and schema types shared with the frontend. Don't put backend-only code here. |
+
+Data is disabled in the base scaffold. Enable it when your app needs persisted records:
+
+```bash
+npm run pack:add -- data-modeling
+```
+
+The capability adds a starter entity and shared contract and enables the data service. For entity authoring and MSSQL dialect configuration, see [Define data models](data-models.md).
+
+### Flat-template alternative
+
+Some templates and existing apps use a flat layout with frontend code in root `src/`, entities in `rayfin/data/`, and a schema type map in `rayfin/data/schema.ts`. This layout remains valid. Don't move files or create duplicate packages just to match another template. Read the service paths in `rayfin/rayfin.yml` to find the directories your project actually builds.
 
 ## Key configuration files
 
@@ -36,7 +59,7 @@ your-project/
 
 The `rayfin/rayfin.yml` file is the main configuration file for your Fabric Apps backend. It controls which services run during local development and supports environment variable interpolation for dynamic configuration values.
 
-Full example:
+The default workspace uses explicit service paths. The following example shows those paths with Data enabled for an app that needs a database:
 
 ```yaml
 id: my-app
@@ -45,54 +68,28 @@ version: 1.0.0
 services:
   auth:
     enabled: true
-    expiryInMinutes: 60
-    refreshToken:
-      lifetimeInDays: 30
-    customClaims:
-      tenant: "default"
-    scopes:
-      - read:data
-      - write:data
     allowedRedirectUris:
       - http://localhost:5173
-      - http://localhost:5173/auth/callback
-    password:
-      enabled: true
     fabric:
+      enabled: true
+      externalEntraExchange: true
+    password:
       enabled: false
-    passwordless:
-      magicLink:
-        enabled: false
-        expiryMinutes: 15
-      smsOtp:
-        enabled: false
-    email:
-      enabled: false
-      provider: smtp
-      senderName: Rayfin Platform
-      verificationTokenExpirationHours: 24
-      passwordResetTokenExpirationMinutes: 30
-      smtp:
-        host: maildev
-        port: 1025
-        senderEmail: noreply@rayfin.local
-        username: ""
-        password: ""
-        useSsl: false
-        useStartTls: false
-        webPort: 1080
   data:
     enabled: true
     dialect: mssql
-  storage:
-    enabled: false
+    path: packages/data
+    buildCommand: npm run build
   staticHosting:
     enabled: true
-    root: .
+    path: packages/frontend
     folder: dist
-    buildCommand: npm run build
+    buildCommand: npm run build:fabric
     indexDocument: index.html
+    assetAccess: protected
 ```
+
+Service `path` values are relative to the project root. Build commands run from the resolved service directory. Functions initialization also records `services.functions.path` when it selects a workspace package such as `packages/functions`. Flat projects can use the existing `rayfin/functions` location. See [Use Functions](functions.md#understand-the-project-layout).
 
 The configuration includes these key fields:
 
@@ -110,6 +107,9 @@ The configuration includes these key fields:
 | Field | Type | Default | Description |
 | --- | --- | --- | --- |
 | `enabled` | `boolean` | `false` | Enable the data service. |
+| `dialect` | `string` | — | Use `mssql` for a SQL database in Fabric. Required when Data is enabled. |
+| `path` | `string` | — | Data package directory relative to the project root, such as `packages/data`. Flat templates can use `rayfin/data`. |
+| `buildCommand` | `string` | — | Build command for the configured data package. |
 
 #### `services.auth`
 
@@ -133,14 +133,16 @@ The configuration includes these key fields:
 | Field | Type | Default | Description |
 | --- | --- | --- | --- |
 | `enabled` | `boolean` | `false` | Enable Fabric brokered authentication (Microsoft Entra ID SSO). |
+| `externalEntraExchange` | `boolean` | — | Enable direct delegated Entra token exchange and external-parent-host authentication when supported by the target environment. |
 
 #### `services.staticHosting`
 
 | Field | Type | Default | Description |
 | --- | --- | --- | --- |
 | `enabled` | `boolean` | `false` | Enable static content hosting. |
-| `root` | `string` | — | Root directory of the frontend project (relative to the project root). |
-| `folder` | `string` | `"dist"` | Directory containing built static assets (relative to `root`). |
+| `path` | `string` | — | Frontend package directory relative to the project root. |
+| `root` | `string` | — | Legacy frontend root used by flat configurations. |
+| `folder` | `string` | `"dist"` | Directory containing built static assets relative to the resolved frontend path. |
 | `buildCommand` | `string` | — | Shell command to run before packaging (for example, `npm run build`). |
 | `indexDocument` | `string` | — | Default document served for the root path (for example, `index.html`). |
 
@@ -149,21 +151,31 @@ The configuration includes these key fields:
 
 ### rayfin/.env
 
-The `rayfin/.env` file is an optional environment file used to supply values to `rayfin.yml` through interpolation. Don't commit secrets to your repository. Instead, create a `rayfin/.env.example` file for documentation purposes and add `.env` to your `.gitignore` file.
+The `rayfin/.env` file contains the active runtime and deployment values and supplies values to `rayfin.yml` through interpolation. The CLI writes framework-neutral `RAYFIN_PUBLIC_*` values for the active backend. Only variables with that prefix are projected into generated frontend environment files. Never put secrets in `RAYFIN_PUBLIC_*` variables.
+
+Keep `rayfin/.env` out of source control. Use `rayfin/.env.example` to document expected variables with placeholders.
+
+### rayfin/.deployments.json
+
+The deployment registry records backend URLs, hosting URLs, item IDs, and workspace IDs for your project's deployments. It isn't a frontend environment file. Keep it out of source control. Use `npx rayfin up list` to list recorded deployments and `npx rayfin up switch <name>` to switch the active deployment and regenerate its environment values.
 
 ### rayfin/tsconfig.json
 
-The `rayfin/tsconfig.json` file is a project-reference TypeScript configuration used by the Fabric Apps CLI to compile your entity definitions. It extends your root `tsconfig.json` and overrides the settings that Fabric Apps needs, such as `composite: true` and Node.js module resolution. You shouldn't need to edit this file directly.
+Templates provide TypeScript configuration for their layout. Workspace packages have their own configurations and project references; flat templates can compile entities through `rayfin/tsconfig.json`. Preserve the scaffold's references and use its build and type-check scripts rather than assuming a single root compilation.
 
 ## Data model files
 
-### rayfin/data/*.ts
+Keep runtime registration and client-facing types aligned for your chosen layout.
 
-Files in the `rayfin/data/` folder define your entities. Entities are TypeScript classes decorated with `@entity()` plus field decorators like `@uuid()` and `@text()`. Each entity file exports a class that represents a data model in your application.
+### Workspace entities and shared contracts
 
-### rayfin/data/schema.ts
+In Universal App, files under `packages/data/src/` define decorated entity classes. Register the runtime classes in the `schema` array exported by `packages/data/src/index.ts`.
 
-The `rayfin/data/schema.ts` file maps entity names to their classes. The Rayfin SDK client uses this map to provide type-safe access to entities through `client.data.<Entity>`. When you add a new entity, you must register it in this schema file.
+Maintain matching record interfaces and the `UniversalAppSchema` type in `packages/shared/src/index.ts`. The frontend imports this contract from `@rayfin-app/shared` instead of importing decorated backend classes.
+
+### Flat-template entities
+
+In a flat template, `rayfin/data/*.ts` defines entities and `rayfin/data/schema.ts` maps entity names to types for `client.data.<Entity>`. Follow the registration mechanism supplied by that template.
 
 ## Generated artifacts
 
@@ -176,14 +188,31 @@ The `rayfin/.temp/` folder contains generated backend artifacts that are created
 
 ## Frontend structure
 
-The `src/` folder contains your frontend application code. The exact structure depends on which template you chose when creating your project, such as React or Vue.
+The default frontend is in `packages/frontend/src/`. Flat templates can use root `src/`. The `services.staticHosting.path` setting identifies the frontend package.
 
-Fabric Apps templates use the following Vite environment variables for frontend configuration:
+### Active environment and framework mapping
 
-- `VITE_RAYFIN_API_URL` – Base URL pointing the frontend at the Fabric Apps backend. Set this environment variable before running `npm run dev` to override the default.
-- `VITE_RAYFIN_PUBLISHABLE_KEY` – Publishable key used for client authentication.
-- `VITE_FABRIC_ITEM_ID` – Fabric item ID set by `rayfin up`. Written to `.env.fabric-<workspacename>` (and `.env.fabric`) during deployment. Used for Fabric brokered authentication.
-- `VITE_FABRIC_WORKSPACE_ID` – Fabric workspace ID set by `rayfin up`. Written alongside `VITE_FABRIC_ITEM_ID` during deployment.
+`rayfin dev` and `rayfin up` generate framework-specific `.env.local` values from `rayfin/.env`. For a nested frontend, the file is written under `services.staticHosting.path`, such as `packages/frontend/.env.local`; flat projects use the project root.
+
+| Source in `rayfin/.env` | Vite output in `.env.local` | Next.js output in `.env.local` |
+| --- | --- | --- |
+| `RAYFIN_PUBLIC_API_URL` | `VITE_RAYFIN_API_URL` | `NEXT_PUBLIC_RAYFIN_API_URL` |
+| `RAYFIN_PUBLIC_PUBLISHABLE_KEY` | `VITE_RAYFIN_PUBLISHABLE_KEY` | `NEXT_PUBLIC_RAYFIN_PUBLISHABLE_KEY` |
+| `RAYFIN_PUBLIC_ITEM_ID` | `VITE_FABRIC_ITEM_ID` | `NEXT_PUBLIC_FABRIC_ITEM_ID` |
+| `RAYFIN_PUBLIC_WORKSPACE_ID` | `VITE_FABRIC_WORKSPACE_ID` | `NEXT_PUBLIC_FABRIC_WORKSPACE_ID` |
+| `RAYFIN_PUBLIC_PORTAL_URL` | `VITE_FABRIC_PORTAL_URL` | `NEXT_PUBLIC_FABRIC_PORTAL_URL` |
+
+Edit the source values in `rayfin/.env`, not the generated file. To regenerate without deploying:
+
+```bash
+npx rayfin env --framework vite
+```
+
+Use `--framework nextjs` or `--framework plain` for other supported mappings. Use `--output <dir>` to choose an output directory or `--show` to inspect the public mapping without writing. Keep generated `.env.local` files out of source control.
+
+### Migrate an older environment layout
+
+Older projects might contain `.env.fabric` or `.env.fabric-<workspace>` files. These files aren't the active environment files in the current layout. Run `npx rayfin up` to use the current environment workflow. Review any migration messages, and copy custom values into `rayfin/.env` as needed. The deployment registry replaces per-workspace environment files. Don't configure new apps to depend on them.
 
 ## Related content
 

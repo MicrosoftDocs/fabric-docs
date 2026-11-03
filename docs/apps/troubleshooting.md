@@ -470,7 +470,7 @@ Use `--down` instead of `--purge` to preserve data.
 
 For current limitations and recommended workarounds, see:
 
-- `count()` isn't available on the fluent GraphQL client—use `results.length`.
+- A standalone `count()` isn't available on the fluent GraphQL client. Use a numeric-field aggregation or count records across all pages; `results.length` counts only the current page. See [Aggregate and group data](read-write-data-graphql.md#aggregate-and-group-data).
 - Many-to-many relationships aren't supported—use an explicit join entity.
 - Session objects are opaque—check `isAuthenticated` or `user` properties.
 - After enabling or disabling auth in `rayfin.yml`, restart the backend.

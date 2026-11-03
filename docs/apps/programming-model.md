@@ -37,14 +37,16 @@ When you create a Fabric app, your code flows through these stages:
 
 You define your data structure using TypeScript classes and decorators from `@microsoft/rayfin-core`:
 
+The default `blankapp` scaffold resolves to the Universal App workspace. Enable Data with `npm run pack:add -- data-modeling`, define entities in `packages/data/src/`, register runtime classes in `packages/data/src/index.ts`, and maintain client-facing contracts in `packages/shared/src/index.ts`. Flat templates can use `rayfin/data/` and `rayfin/data/schema.ts` instead. Service paths in `rayfin/rayfin.yml` determine which layout the CLI builds.
+
 ```typescript
 import { entity, uuid, text, int } from '@microsoft/rayfin-core';
 
 @entity()
 export class Product {
   @uuid() id!: string;
-  @text() name!: string;
-  @text({ optional: true }) description?: string;
+  @text({ max: 200 }) name!: string;
+  @text({ optional: true, max: 2000 }) description?: string;
   @int() price!: number;
 }
 ```
@@ -63,16 +65,20 @@ GraphQL APIs are available to perform CRUD operations on your database. Rayfin S
 
 ```typescript
 import { RayfinClient } from '@microsoft/rayfin-client';
+import type { UniversalAppSchema } from '@rayfin-app/shared';
 
-const client = new RayfinClient();
+const client = new RayfinClient<UniversalAppSchema>({
+  baseUrl: import.meta.env.VITE_RAYFIN_API_URL,
+  publishableKey: import.meta.env.VITE_RAYFIN_PUBLISHABLE_KEY,
+});
 
-// TypeScript knows about Product fields
-const products = await client.data.products.query()
+// Register Product in the data package and shared schema first.
+const products = await client.data.Product
   .select(['id', 'name', 'price'])
   .execute();
 
 // Compile-time error if field doesn't exist
-const invalid = await client.data.products.query()
+const invalid = await client.data.Product
   .select(['nonexistentField'])  // ❌ TypeScript error
   .execute();
 ```
@@ -92,7 +98,7 @@ Rayfin SDK provides decorators for common data modeling patterns:
 | Decorator | Database type | TypeScript type |
 | ----------- |--------------- |----------------- |
 | `@uuid()` | UNIQUEIDENTIFIER | `string` |
-| `@text()` | NVARCHAR | `string` |
+| `@text({ max: n })` | NVARCHAR(n) | `string` |
 | `@int()` | INT | `number` |
 | `@decimal()` | DECIMAL | `number` |
 | `@bool()` | BIT | `boolean` |
@@ -113,7 +119,7 @@ Create one `UserDataFunctions` instance, and register each function by calling `
 Follow these rules when you define a function:
 
 - Place the `RayfinContext` parameter anywhere in the handler signature. The runtime identifies it by type, injects it, and excludes it from the generated function inputs.
-- Declare a connection for each delegated token the function needs. Omit the connections array for functions that only access app data or don't need delegated tokens.
+- Declare external resource audiences in `RayfinContext<Schema, Audiences>` and use the app identity's resource tokens through `ctx.Tokens`. Pass `[]` as the third argument to `udf.func()` when declaring those audiences. See [Connect Functions to external resources](functions-connect-external-resources.md).
 
 The following example registers a plain function and a function that uses the invocation context:
 
@@ -123,10 +129,7 @@ import {
   type RayfinContext,
 } from '@microsoft/fabric-user-data-functions';
 
-// Match rayfin/data/schema.ts so getDataClient() is fully typed.
-import type { TripPlan } from '../../data/TripPlan.js';
-
-type AppSchema = { TripPlan: TripPlan };
+import type { UniversalAppSchema } from '@rayfin-app/shared';
 
 const udf = new UserDataFunctions();
 
@@ -136,7 +139,7 @@ udf.func('greet', async (name: string): Promise<string> => {
 
 udf.func(
   'whoAmI',
-  async (ctx: RayfinContext<AppSchema>): Promise<string> => {
+  async (ctx: RayfinContext<UniversalAppSchema>): Promise<string> => {
     return ctx.accessToken ? 'authenticated' : 'anonymous';
   },
 );
@@ -176,8 +179,8 @@ Permissions are defined alongside your data models using the `@role` decorator:
 })
 export class UserDocument {
   @uuid() id!: string;
-  @text() userId!: string;
-  @text() content!: string;
+  @text({ max: 255 }) userId!: string;
+  @text({ max: 4000 }) content!: string;
 }
 ```
 
