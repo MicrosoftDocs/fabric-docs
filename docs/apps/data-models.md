@@ -21,6 +21,16 @@ For authorization and access control guidance, see [Define data permissions](dat
 
 ## Define an entity
 
+The default `blankapp` template creates a Universal App workspace with Data disabled. Enable it with the template's data-modeling capability:
+
+```bash
+npm run pack:add -- data-modeling
+```
+
+This step adds a starter entity and shared contract. Put entity classes in `packages/data/src/`, register them in `packages/data/src/index.ts`, and maintain their client-facing contracts in `packages/shared/src/index.ts`. The data service uses `services.data.path: packages/data` in `rayfin/rayfin.yml`. When you configure Data manually for Fabric, also set `enabled: true` and `dialect: mssql`.
+
+Flat templates can instead keep entities in `rayfin/data/` and use `rayfin/data/schema.ts`. Follow your configured service paths rather than creating a second data folder. See [Project structure](project-structure.md).
+
 To create a data model, add the `@entity()` decorator to a TypeScript class. Then import the required decorators from `@microsoft/rayfin-core`:
 
 ```typescript
@@ -29,14 +39,17 @@ import { entity, uuid, text, date } from '@microsoft/rayfin-core';
 @entity()
 export class Todo {
   @uuid() id!: string;
-  @text() title!: string;
-  @text({ optional: true }) description?: string;
+  @text({ max: 200 }) title!: string;
+  @text({ optional: true, max: 2000 }) description?: string;
   @date() createdAt!: Date;
   @date() updatedAt!: Date;
 }
 ```
 
 This entity generates a `Todo` table with columns for `id`, `title`, `description`, `createdAt`, and `updatedAt`.
+
+> [!IMPORTANT]
+> Give persisted text fields an explicit maximum length appropriate for your data. On Microsoft SQL Server, text without `max` generates `NVARCHAR(MAX)`, which can prevent GraphQL metadata generation. The examples use bounded text, including owner and foreign key strings. See [Troubleshoot data model issues](troubleshooting.md#data-api-returns-an-internal-server-error-after-deployment).
 
 ## Primary keys
 
@@ -50,8 +63,8 @@ Every entity uses a UUID `string` field named `id` as its primary key. If you do
 @entity()
 export class Note {
   @uuid() id!: string;  // UUID primary key, auto-generated when omitted
-  @text() title!: string;
-  @text() content!: string;
+  @text({ max: 200 }) title!: string;
+  @text({ max: 4000 }) content!: string;
 }
 ```
 
@@ -62,7 +75,7 @@ Use these decorators to define field types:
 | Decorator | Type | Description |
 | ----------- | ------ | ------------ |
 | `@uuid()` | string | Unique identifier field. |
-| `@text()` | string | Text field with optional length constraints. |
+| `@text({ max: n })` | string | Text field with an explicit maximum length for persisted MSSQL columns. |
 | `@int()` | number | Integer field. |
 | `@decimal()` | number | Decimal or numeric field. |
 | `@boolean()` | boolean | True or false field. |
@@ -78,7 +91,7 @@ import { entity, uuid, text, int, decimal, boolean, date, set } from '@microsoft
 @entity()
 export class Product {
   @uuid() id!: string;
-  @text() name!: string;
+  @text({ max: 200 }) name!: string;
   @decimal() price!: number;
   @int() stockQuantity!: number;
   @boolean() isAvailable!: boolean;
@@ -108,7 +121,7 @@ Add modifiers to field decorators to configure validation and constraints:
 @entity()
 export class User {
   @uuid() id!: string;
-  @email({ unique: true }) email!: string;
+  @email({ unique: true, max: 254 }) email!: string;
   @text({ min: 3, max: 50 }) username!: string;
   @text({ optional: true, max: 500 }) bio?: string;
   @int({ min: 0, max: 150 }) age!: number;
@@ -132,7 +145,7 @@ import { entity, uuid, text, date, one, many } from '@microsoft/rayfin-core';
 @entity()
 export class Notebook {
   @uuid() id!: string;
-  @text() name!: string;
+  @text({ max: 200 }) name!: string;
   @date() createdAt!: Date;
   @many(() => Note) notes?: Note[];
 }
@@ -140,10 +153,10 @@ export class Notebook {
 @entity()
 export class Note {
   @uuid() id!: string;
-  @text() title!: string;
-  @text() content!: string;
+  @text({ max: 200 }) title!: string;
+  @text({ max: 4000 }) content!: string;
   @date() createdAt!: Date;
-  @text() notebook_id!: string;
+  @text({ max: 36 }) notebook_id!: string;
   @one(() => Notebook) notebook?: Notebook;
 }
 ```
@@ -158,7 +171,7 @@ When you define a foreign key field, use the `{property}_id` naming convention:
 @entity()
 export class Note {
   @uuid() id!: string;
-  @text() notebook_id!: string;      // Foreign key field
+  @text({ max: 36 }) notebook_id!: string;      // Foreign key field
   @one(() => Notebook) notebook?: Notebook;  // Navigation property
 }
 ```
@@ -167,14 +180,14 @@ Custom foreign key names (`foreignKey`, `targetKey` options) aren't supported.
 
 ### Reference system entities
 
-Fabric Apps doesn't support `@one()` relationships that point to system entities such as the built-in `USER` entity. To associate a row with the signed-in user, add a plain `user_id` field of type `@text()` and populate it from the auth claims (typically `claims.sub`):
+Fabric Apps doesn't support `@one()` relationships that point to system entities such as the built-in `USER` entity. To associate a row with the signed-in user, add a bounded `user_id` text field and populate it from the auth claims (typically `claims.sub`):
 
 ```typescript
 @entity()
 export class Task {
   @uuid() id!: string;
-  @text() title!: string;
-  @text() user_id!: string;  // System user ID from claims.sub
+  @text({ max: 200 }) title!: string;
+  @text({ max: 255 }) user_id!: string;  // System user ID from claims.sub
 }
 ```
 
@@ -182,7 +195,18 @@ Filter rows by `user_id` in your role policies to enforce per-user access.
 
 ## Register entities in the schema
 
-Add all entity classes to `rayfin/data/schema.ts` so the client can generate GraphQL proxies:
+In a Universal App workspace, register runtime entity classes in `packages/data/src/index.ts`:
+
+```typescript
+import { Note } from './Note.js';
+import { Notebook } from './Notebook.js';
+
+export const schema = [Note, Notebook];
+```
+
+Keep the corresponding record interfaces and `UniversalAppSchema` map in `packages/shared/src/index.ts` aligned with those entities. The frontend imports `UniversalAppSchema` from `@rayfin-app/shared`; it doesn't import decorated runtime classes. Add `Product` to both registrations if you use the numeric aggregation examples in [Read and write data](read-write-data-graphql.md#aggregate-and-group-data).
+
+For a **flat-template alternative**, map entity types in `rayfin/data/schema.ts`:
 
 ```typescript
 import type { Note } from './Note.js';
@@ -194,7 +218,7 @@ export type NotesAppSchema = {
 };
 ```
 
-Update this type whenever you create a new entity.
+Update the registrations and schema types for your chosen layout whenever you create a new entity.
 
 ## Apply schema changes
 
@@ -228,7 +252,7 @@ After defining or modifying entities, apply the changes to the database. For the
 If relationships don't appear in the API, verify that:
 
 - The navigation decorator (`@one()` or `@many()`) is present.
-- The entity is registered in `rayfin/data/schema.ts`.
+- The entity is registered in your configured data package and shared schema, or in `rayfin/data/schema.ts` for a flat template.
 
 ## Related content
 
