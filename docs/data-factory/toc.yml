@@ -23,6 +23,8 @@
             href: pricing-copy-job.md
           - name: Pricing Apache Airflow job
             href: pricing-apache-airflow-job.md
+          - name: dbt job pricing
+            href: dbt-job-pricing.md
           - name: Pricing examples
             items: 
               - name: Pipelines
