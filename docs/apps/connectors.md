@@ -79,7 +79,9 @@ Run the exact install command printed by the CLI. This keeps the connector packa
 > [!NOTE]
 > Schema discovery is best effort. The connector can be added even if discovery doesn't complete. If the CLI displays a discovery warning, resolve it before you define entities from the generated `metadata.json` file.
 
-The generated configuration uses delegated authentication. A warehouse and semantic model configuration resembles the following example:
+SQL connector types (`fabric-sqlanalytics`, `fabric-warehouse`, and `fabric-sqldatabase`) default to **application** authentication in CLI 1.36.2. They access the source as the app identity, currently the app item owner. You can explicitly choose **delegated** authentication to use each signed-in caller's source permissions instead. Semantic models support delegated authentication only.
+
+A default warehouse and semantic model configuration resembles:
 
 ```yaml
 connectors:
@@ -89,7 +91,7 @@ connectors:
       workspaceId: "<workspace-id>"
       itemId: "<warehouse-item-id>"
     auth:
-      type: delegated
+      type: application
     operations:
       - name: read
 
@@ -106,6 +108,23 @@ connectors:
 ```
 
 Keep the semantic model `version` value that the CLI generates.
+
+### Choose the source identity
+
+| Mode | Source permissions | When to use it |
+| --- | --- | --- |
+| `application` | Grant the app identity access to the source item and the required SQL permissions. App users still need app access and entity permissions. | SQL connectors that expose app-controlled access to shared source data. |
+| `delegated` | Each caller needs access to the source item and permission for the requested operation. Semantic model queries require the caller's applicable model permissions, including Build. | Per-user source authorization, or any semantic model connector. |
+
+For delegated SQL access in CLI 1.36.2, set `auth.type: delegated` on that connector in `rayfin/rayfin.yml` before deploying. CLI versions whose `connector add --help` exposes `--auth` can select it at creation time:
+
+```bash
+npx rayfin connector add --type fabric-warehouse --workspace-id <workspace-id> --item-id <warehouse-item-id> --name inventory --operations read --auth delegated
+```
+
+The `--auth` flag isn't available in CLI 1.36.2; use the YAML setting with that release. Where the flag is supported, it accepts `application` or `delegated` only if the connector type supports that mode. Don't configure application authentication for a semantic model.
+
+Changing the mode doesn't grant source permissions. Developer sign-in and schema discovery use the developer's access and don't prove that the deployed runtime identity can access the source. Existing declarations aren't automatically migrated to the new default; keep `auth.type` explicit. After re-adding a connector, review the generated mode before deploying.
 
 ## Configure an entity connector
 
@@ -240,7 +259,7 @@ Use these controls together:
 - Limit the connector's operations in `rayfin.yml` to the actions the app needs.
 - Add `@role` declarations to connector entities to control which signed-in users can perform each operation.
 - Add row policies or field include and exclude rules when users need access to only part of an entity.
-- Keep delegated authentication enabled so connector requests use the signed-in user's access.
+- Choose the source identity deliberately. With application authentication, enforce per-user access through app and entity permissions rather than assuming that source permissions are checked for each caller. With delegated authentication, also verify each caller's source access.
 
 Client-side TypeScript types improve development safety, but they aren't an authorization boundary. Enforce access in the connector configuration and entity roles.
 
@@ -252,7 +271,7 @@ Deploy the app and connector configuration:
 npx rayfin up
 ```
 
-Test the deployed app with a user who has the expected permissions on both the Fabric app and the connected item.
+Test the deployed app with the expected app users and runtime source identity. For application authentication, verify the app identity's source permissions; for delegated authentication, verify each caller's source permissions.
 
 ## Related content
 
