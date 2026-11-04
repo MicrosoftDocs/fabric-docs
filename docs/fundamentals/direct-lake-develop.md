@@ -94,7 +94,7 @@ When you connect to a Direct Lake semantic model with the XMLA endpoint, the met
 
 ## Use M parameters with deployment pipelines
 
-For Direct Lake on OneLake, use text M parameters to change the OneLake source location between deployment pipeline stages. Data source rules don't support rebinding these connections, but parameter rules can set the parameter values for each target stage. Deploying a Direct Lake semantic model doesn't automatically bind it to a lakehouse or warehouse in the target stage.
+For Direct Lake on OneLake, deployment pipelines don't provide data source rules. Instead, use text M parameters to change the OneLake source location between deployment pipeline stages.
 
 The following Tabular Model Definition Language (TMDL) example defines text parameters for the workspace and lakehouse IDs and references them in the connection expression:
 
@@ -129,7 +129,9 @@ To adapt this example to your model:
 
 1. In the target pipeline stage, configure a [deployment parameter rule](../cicd/deployment-pipelines/create-rules.md#create-a-deployment-rule) for each value that changes. For example, set `WorkspaceId` to the target workspace ID and `LakehouseId` to the target lakehouse ID. If the model isn't in the target stage yet, deploy it there first so you can configure the rules.
 
-1. Deploy the semantic model from the source stage to the target stage to apply the rules. Refresh the target model and verify that it queries the intended source.
+1. Deploy the semantic model from the source stage to the target stage to apply the rules.
+
+1. Refresh the target model, verify the lineage, and ensure it queries the intended source.
 
 The target source must contain the tables and columns that the model references. Changing the parameters doesn't create those tables or grant access to them. Ensure the target model's connection and permissions allow access to the target data.
 
