@@ -131,7 +131,7 @@ To adapt this example to your model:
 
 1. Deploy the semantic model from the source stage to the target stage to apply the rules.
 
-1. Refresh the target model, verify the lineage and that it queries the intended source.
+1. Refresh the target model, verify the lineage, and ensure it queries the intended source.
 
 The target source must contain the tables and columns that the model references. Changing the parameters doesn't create those tables or grant access to them. Ensure the target model's connection and permissions allow access to the target data.
 
