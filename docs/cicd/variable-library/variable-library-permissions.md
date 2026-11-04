@@ -3,7 +3,7 @@ title: Microsoft Fabric Variable Library Permissions
 description: Understand who can access variable libraries and their values.
 ms.reviewer: Lee
 ms.topic: concept-article
-ms.date: 10/14/2026
+ms.date: 11/04/2026
 ms.search.form: Introduction to variable libraries, manage variable libraries, variable library permissions, variable types
 #customer intent: As a developer, I want to learn how to use variable libraries and who has permission to view and edit them.
 ---
@@ -59,7 +59,7 @@ When calling consumption APIs (such as Resolve or Discover), the request does no
 ### Missing permissions or nonexistent items
 If the caller lacks READ permissions or the item doesn't exist, the variable value will still be returned, but without extended metadata. 
 
-## Connection reference variable type (preview)
+## Connection reference variable type
 The following section provides permissions information on connection reference variables.
 
 ### Permissions requirements
