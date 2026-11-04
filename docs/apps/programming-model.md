@@ -59,7 +59,7 @@ The Rayfin CLI (`npx rayfin`) analyzes your decorated classes and generates:
 - **API configuration** - GraphQL endpoint definitions
 - **Permission policies** - Row-level security and field-level access control
 
-### 4. Type-safe client usage
+### 3. Type-safe client usage
 
 GraphQL APIs are available to perform CRUD operations on your database. Rayfin SDK provides a data client operation out of the box to read or write or delete data.
 
