@@ -40,6 +40,8 @@ items:
         href: shortcuts/create-blob-shortcut.md
       - name: Dataverse shortcut
         href: create-dataverse-shortcut.md
+      - name: Salesforce Data 360 shortcut
+        href: shortcuts/create-salesforce-data-360-shortcut.md
       - name: OneDrive or SharePoint shortcut
         href: shortcuts/create-onedrive-sharepoint-shortcut.md
       - name: Amazon S3 shortcut
