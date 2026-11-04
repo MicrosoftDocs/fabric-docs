@@ -47,13 +47,13 @@ You need access to the Capacity Metrics app and the workspace Admin role for the
 
 If you start from the [timepoint item detail page](../enterprise/metrics-app-timepoint-item-detail-page.md#monitor-in-warehouse), you don't need to select a record first. For a supported query operation, select **Monitor in warehouse** to open the associated item with the relevant time range. Select a record first if you want to narrow the range to that operation.
 
-The button supports these query operations:
+The following operations are supported:
 
-- **Warehouse Query**.
-- **Warehouse Query (Accelerated)**.
-- **SQL Endpoint Query**.
-- **SQL Endpoint Query (Accelerated)**.
-- **Warehouse Snapshot Query**.
+- **Warehouse Query** - T-SQL statements in a warehouse.
+- **Warehouse Query (Accelerated)** - T-SQL statements in a warehouse with workspace query acceleration enabled.
+- **SQL Endpoint Query** - T-SQL statements in a lakehouse's SQL analytics endpoint.
+- **SQL Endpoint Query (Accelerated)** - T-SQL statements in a lakehouse's SQL analytics endpoint with workspace query acceleration enabled.
+- **Warehouse Snapshot Query** - T-SQL statements on a warehouse snapshot.
 
 For operation definitions, see [Data Warehouse operations](../enterprise/fabric-operations.md#data-warehouse).
 
