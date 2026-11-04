@@ -763,6 +763,7 @@ To audit OneLake data access and storage operations, use [OneLake diagnostics](.
 | Viewed Power BI report | :::no-loc text="ViewReport"::: | A report is also generated per page when exporting a report. Some fields such as CapacityID and CapacityName, will return null if the report or dashboard is viewed from a Power BI app, rather than a Power BI workspace. |
 | Viewed Power BI tile | :::no-loc text="ViewTile"::: |  |
 | Viewed Power BI usage metrics | :::no-loc text="ViewUsageMetrics"::: |  |
+| Viewed Workspace App | :::no-loc text="ViewedWorkspaceApp"::: | Viewed Workspace App is generated when a user opens a Power BI workspace app. |
 | View or modify CMK encryption settings | :::no-loc text="GetWorkspaceEncryption"::: | Logged when the encryption settings page is opened in the portal, modified, or applied to items. |
 | disable workspace | :::no-loc text="DisableWorkspaceViaAdminApi"::: | Disables the workspace |
 | Disable CMK encryption for your workspace | :::no-loc text="DisableWorkspaceEncryption"::: | Triggered when CMK encryption is disabled for a workspace |
