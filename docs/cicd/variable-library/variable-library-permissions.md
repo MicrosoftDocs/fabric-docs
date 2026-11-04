@@ -3,7 +3,7 @@ title: Microsoft Fabric Variable Library Permissions
 description: Understand who can access variable libraries and their values.
 ms.reviewer: Lee
 ms.topic: concept-article
-ms.date: 12/15/2025
+ms.date: 10/14/2026
 ms.search.form: Introduction to variable libraries, manage variable libraries, variable library permissions, variable types
 #customer intent: As a developer, I want to learn how to use variable libraries and who has permission to view and edit them.
 ---
@@ -35,7 +35,7 @@ For more information about workspace roles, see [Roles in workspaces in Fabric](
 
 
 
-## Item reference variable type (preview)
+## Item reference variable type
 The following section provides permissions information on item reference variables.
 
 ### Permissions Requirements
