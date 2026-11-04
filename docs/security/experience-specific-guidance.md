@@ -850,6 +850,9 @@ A regional disruption can cause a migration to fail in three ways:
 
     If the Migration Assistant can't retrieve migration history, it reports that migration information is no longer available. Progress saved in the current browser is preserved, and the target database isn't affected. Refresh the page to load the migration history again.
 
+### Workspace outbound access protection
+Workspace outbound access protection in Microsoft Fabric lets admins secure the outbound data connections from items in their workspaces to external resources. With this feature, admins can block all outbound connections, and then allow only approved connections to external resources through secure connections. If Fabric becomes inaccessible or inoperable in a region, you can still read the workspace level OAP rules (block outbound access settings, git integration in OAP, and data connection rules). The connection rules infrastructure fails over to a backup instance. Spark Jobs from the primary region remain unavailable to customers. 
+
 ## OneLake
 
 This section walks you through the recovery procedures for OneLake features. For more information on disaster recovery for OneLake data, see [OneLake disaster recovery](/fabric/onelake/onelake-disaster-recovery).
