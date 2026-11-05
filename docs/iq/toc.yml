@@ -683,6 +683,8 @@ items:
         href: plan/alm-variable-library.md
       - name: Dimension ID mapping
         href: plan/resources/best-practices/how-to-create-dimension-id-mapping.md
+      - name: Use parameters to create interactive reports
+        href: plan/resources/best-practices/parameters/how-to-configure-parameters.md
     - name: Troubleshoot
       items:
           - name: Troubleshoot semantic model issues
