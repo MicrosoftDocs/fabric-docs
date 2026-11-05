@@ -1,9 +1,9 @@
 ---
 title: "Schedule a Materialized Lake View Refresh"
-description: Learn how to schedule a materialized lake view refresh
+description: Learn how to schedule a materialized lake view refresh, configure advanced settings, and email people or groups when a time-based refresh fails.
 ms.topic: how-to
 ms.reviewer: bsankaran, sairamyeturi, nijelsf, hgowrisankar
-ms.date: 09/08/2026
+ms.date: 11/05/2026
 ai-usage: ai-assisted
 ---
 
@@ -97,6 +97,7 @@ When creating or editing a schedule, expand **Advanced settings** to fine-tune h
 |---|---|---|
 | **Spark environment** | The Spark environment used for the refresh. You can select any Spark environment you have access to within the same capacity (including environments in a different workspace). | Workspace default |
 | **Optimal refresh** | When **On**, Fabric chooses incremental or full refresh per view automatically. When **Off**, every view is fully rebuilt. | On |
+| **Failure notification** | When **On**, Fabric sends an email to the selected people or groups if a time-based refresh fails. | On for new schedules |
 
 Settings follow a priority order: per-schedule settings override lakehouse-level defaults, which override system defaults.
 
@@ -114,11 +115,35 @@ If the Spark environment is deleted, the environment dropdown shows an error and
 > [!NOTE]
 > You can select any Spark environment you have access to within the same capacity. It can be in a different workspace.
 
+### Failure notification
+
+The **Failure notification** feature sends an email when a time-based refresh fails. The email includes error details, run information, and a link to the failed run in Fabric. Review the run in [Recent runs](./run-history.md).
+
+For a new schedule, **Failure notification** is **On** by default, and Fabric adds you as a recipient. For an existing schedule, set **Failure notification** to **On** and add recipients.
+
+> [!NOTE]
+> **Failure notification** is available only for time-based schedules.
+
+1. Create or edit a time-based schedule.
+
+1. Expand **Advanced settings**.
+
+1. For a new schedule, leave **Failure notification** **On**. For an existing schedule, set it to **On**.
+
+1. Confirm the recipients. For a new schedule, you are already selected. For an existing schedule, search for and select the Microsoft Entra users or groups that should receive the notification. You can select up to 100 people and groups.
+
+    :::image type="content" source="media/schedule-lineage-run/failure-notification.png" alt-text="Screenshot showing Failure notification turned on in Create new schedule, with a person and a group selected." border="true" lightbox="media/schedule-lineage-run/failure-notification.png":::
+
+1. Select **Save**.
+
+> [!NOTE]
+> Select at least one person or group before you save. Set **Failure notification** to **Off** to stop notifications for that schedule.
+
 ## Manage schedules
 
 From the **Manage schedules** pane, search by name or filter by **Active**/**Inactive** to find a schedule.
 
-- **Edit**: Select the pencil icon, update views, recurrence, or date range, and then select **Save**.
+- **Edit**: Select the pencil icon, update views, recurrence, date range, or failure notification, and then select **Save**.
 - **Pause or resume**: Toggle the **On/Off** switch. Use this option during maintenance or while investigating issues.
 - **Delete**: Select the trash can icon and confirm. This action permanently removes the schedule.
 
