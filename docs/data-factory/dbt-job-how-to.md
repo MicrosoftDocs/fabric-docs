@@ -23,7 +23,6 @@ This tool is designed to help data engineers and analysts:
 
 Before you create a dbt job in Fabric, make sure your environment is set up correctly:
 
-- [Enable dbt jobs](dbt-job-overview.md#enable-dbt-jobs)
 - [Create a workspace](/fabric/fundamentals/create-workspaces) if you don't have one.
 - [Set up a Fabric Data Warehouse](/fabric/data-warehouse/create-warehouse) if you don't have one.
 - [Set permissions and access](dbt-job-overview.md#required-permissions-and-access)
