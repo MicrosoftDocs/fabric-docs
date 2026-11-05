@@ -693,6 +693,18 @@ items:
             href: plan/resources/error-codes-and-resolutions.md
     - name: Known limitations
       href: plan/overview-limitations.md
+- name: Share
+  items:
+  - name: IQ Sharing overview
+    href: ../onelake/iq-share/onelake-share-overview.md?toc=/fabric/iq/toc.json
+  - name: Create a Share with IQ Sharing
+    href: ../onelake/iq-share/create-share.md?toc=/fabric/iq/toc.json
+  - name: Accept an IQ Sharing invitation
+    href: ../onelake/iq-share/accept-share.md?toc=/fabric/iq/toc.json
+  - name: Manage a Share with IQ Sharing
+    href: ../onelake/iq-share/manage-share.md?toc=/fabric/iq/toc.json
+  - name: Manage a Share Subscription in IQ Sharing
+    href: ../onelake/iq-share/manage-share-subscription.md?toc=/fabric/iq/toc.json
 - name: Graph
   href: ../graph/toc.yml
 - name: Data agent

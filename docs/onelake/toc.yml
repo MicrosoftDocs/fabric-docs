@@ -84,6 +84,18 @@ items:
       href: ../mirroring/overview.md?toc=/fabric/onelake/toc.json&bc=/fabric/onelake/toc.json
     - name: Mirroring documentation
       href: ../mirroring/index.yml
+  - name: IQ Sharing
+    items:
+    - name: IQ Sharing overview
+      href: iq-share/onelake-share-overview.md
+    - name: Create a Share with IQ Sharing
+      href: iq-share/create-share.md
+    - name: Accept an IQ Sharing invitation
+      href: iq-share/accept-share.md
+    - name: Manage a Share with IQ Sharing
+      href: iq-share/manage-share.md
+    - name: Manage a Share Subscription in IQ Sharing
+      href: iq-share/manage-share-subscription.md
 - name: Access and work with data
   items:
   - name: File APIs
