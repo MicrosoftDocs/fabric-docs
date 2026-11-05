@@ -143,6 +143,8 @@ items:
                 href: workspace-outbound-access-protection-semantic-models.md
               - name: Power BI reports (preview)
                 href: workspace-outbound-access-protection-power-bi-reports.md
+              - name: Paginated reports
+                href: workspace-outbound-access-protection-paginated-reports.md
               - name: Real-Time Intelligence (preview)
                 items:
                   - name: Activator
