@@ -66,7 +66,7 @@ The following table summarizes the supported workloads and item types that can b
 | Mirrored databases | Data connection rules | <ul><li>Mirrored databases</li></ul> | [Workspace outbound access protection for mirrored databases](workspace-outbound-access-protection-mirrored-databases.md) |
 | OneLake | Managed private endpoints | <ul><li>OneLake shortcuts</li></ul> | [Workspace outbound access protection for OneLake](workspace-outbound-access-protection-onelake.md) |
 | Real-Time Events (preview) | Data connection rules | <ul><li>Azure, Fabric, and Business events</li></ul> | [Workspace outbound access protection for Real-Time Events](workspace-outbound-access-protection-real-time-events.md) |
-| Power BI | Data connection rules | <ul><li>Semantic models</li></ul> | [Workspace outbound access protection for semantic models](workspace-outbound-access-protection-semantic-models.md) |
+| Power BI | Data connection rules for semantic models and paginated reports; same-workspace semantic model binding for interactive reports | <ul><li>Semantic models</li><li>Interactive reports</li><li>Paginated reports</li></ul> | Workspace outbound access protection for Power BI: [Semantic models](workspace-outbound-access-protection-semantic-models.md), [Interactive reports](workspace-outbound-access-protection-power-bi-reports.md), and [Paginated reports](workspace-outbound-access-protection-paginated-reports.md) |
 
 ## Considerations and limitations
 
@@ -96,7 +96,7 @@ This section outlines important considerations and limitations when using worksp
 
 * Workspace outbound access protection isn't currently compatible with [Fabric external data sharing](/fabric/governance/external-data-sharing-overview). Cross-tenant allow lists aren't supported with workspace outbound access protection. 
 
-* Power BI items other than semantic models don't yet support outbound access protection. You can't create these items in workspaces with outbound access protection enabled. If these items already exist in a workspace, you can't enable outbound access protection on that workspace.
+* Power BI items other than semantic models, interactive reports, and paginated reports don't yet support outbound access protection. You can't create unsupported items in workspaces with outbound access protection enabled. If unsupported items already exist in a workspace, you can't enable outbound access protection on that workspace.
 
 ### Data connection rules
 
