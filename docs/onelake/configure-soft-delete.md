@@ -44,7 +44,7 @@ Use the Fabric REST API to view or update file-level soft-delete retention for a
 To view the current setting, send the following request:
 
 ```http
-GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/onelake/softDeleteRetention
+GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/onelake/settings
 ```
 
 When retention is on, the response includes the status and retention period:
@@ -56,10 +56,10 @@ When retention is on, the response includes the status and retention period:
 }
 ```
 
-To update the setting, send a `PATCH` request to the same endpoint. To turn on retention and set the retention period, use the following request body:
+To update the setting, send a `POST` request to the following endpoint. To turn on retention and set the retention period, use the following request body:
 
 ```http
-PATCH https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/onelake/softDeleteRetention
+POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/onelake/settings/modifyFileSoftDelete
 ```
 
 ```json
