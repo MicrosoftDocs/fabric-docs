@@ -17,7 +17,7 @@ Power BI reports in a workspace with outbound access protection (OAP) enabled ar
 Most report features are client-side features. They run in the browser, not in the Fabric service, so they fall outside the scope of OAP. These client-side features remain enabled for reports in protected workspaces. OAP doesn't constrain them. Use local network security rules to block unwanted outbound client connections.
 
 > [!NOTE]
-> This feature is in preview. Only interactive Power BI reports (`.pbix`) are supported. Paginated reports, dashboards, and scorecards aren't supported in workspaces with outbound access protection enabled and can't be created in these workspaces.
+> This feature is in preview. This article covers interactive Power BI reports (`.pbix`). Paginated reports use different OAP rules; see [Workspace outbound access protection for paginated reports](workspace-outbound-access-protection-paginated-reports.md). Dashboards and scorecards aren't supported in workspaces with outbound access protection enabled and can't be created in these workspaces.
 
 ## How enforcement works
 
@@ -82,7 +82,7 @@ There's no report-specific configuration. To use Power BI reports in a protected
 ## Considerations and limitations
 
 - **Same-workspace semantic model only**: Reports in a protected workspace can only query semantic models in the same workspace. Cross-workspace model bindings aren't supported and can't be allowed through configuration.
-- **Interactive reports only**: Only interactive Power BI reports (`.pbix`) are supported. Paginated reports, dashboards, and scorecards aren't supported in protected workspaces and can't be created in them.
+- **Report types**: The rules in this article apply to interactive Power BI reports (`.pbix`). For paginated reports, see [Workspace outbound access protection for paginated reports](workspace-outbound-access-protection-paginated-reports.md). Dashboards and scorecards aren't supported in protected workspaces and can't be created in them.
 - **Client-side features aren't constrained**: Custom visuals, image URLs, web content, maps, web URL actions, R and Python visuals, drillthrough URLs, User Data Functions, exports, subscriptions, alerts, and the RDL visual continue to function in protected workspaces. OAP doesn't block them.
 - **F SKU required**: Outbound access protection requires Fabric capacity. Power BI Premium (P SKUs), Embedded (EM SKUs), and Pro workspaces aren't supported.
 - **Propagation delay**: Policy changes can take about 15 minutes to take effect.
