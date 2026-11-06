@@ -269,8 +269,10 @@ items:
                 items:
                   - name: Overview of allocation rules and controls
                     href: plan/planning-allocation-rules-controls/overview-allocation-rules-controls.md
-                  - name: Locking rule
+                  - name: Configure a locking rule
                     href: plan/planning-allocation-rules-controls/how-to-use-locking-rules.md
+                  - name: Configure a min-max rule
+                    href: plan/planning-allocation-rules-controls/how-to-use-min-max-rule.md
               - name: Set up scenarios
                 href: plan/planning-how-to-set-up-scenarios.md
               - name: Optimize inputs - Fundamentals
@@ -469,6 +471,16 @@ items:
               href: plan/planning-reference-formulas/planning-reference-other-operators.md
         - name: Scripting functions
           items:
+            - name: SHOW_VISUAL
+              href: plan/scripting-functions/show-visual.md
+            - name: REFRESH_REPORT
+              href: plan/scripting-functions/refresh-report.md
+            - name: REFRESH_VISUAL
+              href: plan/scripting-functions/refresh-visual.md
+            - name: SETLAYOUT
+              href: plan/scripting-functions/setlayout.md
+            - name: SETVISIBILITY
+              href: plan/scripting-functions/setvisibility.md
             - name: OPEN_SHEET
               href: plan/scripting-functions/open-sheet.md
             - name: OPEN_LINK
@@ -705,8 +717,12 @@ items:
         href: plan/alm-variable-library.md
       - name: Dimension ID mapping
         href: plan/resources/best-practices/how-to-create-dimension-id-mapping.md
-      - name: Use parameters to create interactive reports
-        href: plan/resources/best-practices/parameters/how-to-configure-parameters.md
+      - name: Create interactive controls
+        items:
+          - name: Configure parameters
+            href: plan/resources/best-practices/parameters/how-to-configure-parameters.md
+          - name: Create numeric input parameters
+            href: plan/resources/best-practices/parameters/how-to-create-number-parameters.md
     - name: Troubleshoot
       items:
           - name: Troubleshoot semantic model issues
