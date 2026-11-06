@@ -125,8 +125,8 @@ When you integrate with Fabric Data Warehouse, use this option to call your func
 
 1. Paste the generated code into a new SQL query and run it to create the T-SQL proxy function in your warehouse.
 
-> [!IMPORTANT]
-> To execute this code, you need permission to create external functions in Fabric Data Warehouse.
+   > [!IMPORTANT]
+   > To execute this code, you need permission to create external functions in Fabric Data Warehouse.
  
 1. Call the function from a T-SQL query. For example:
 
