@@ -469,6 +469,16 @@ items:
               href: plan/planning-reference-formulas/planning-reference-other-operators.md
         - name: Scripting functions
           items:
+            - name: SHOW_VISUAL
+              href: plan/scripting-functions/show-visual.md
+            - name: REFRESH_REPORT
+              href: plan/scripting-functions/refresh-report.md
+            - name: REFRESH_VISUAL
+              href: plan/scripting-functions/refresh-visual.md
+            - name: SETLAYOUT
+              href: plan/scripting-functions/setlayout.md
+            - name: SETVISIBILITY
+              href: plan/scripting-functions/setvisibility.md
             - name: OPEN_SHEET
               href: plan/scripting-functions/open-sheet.md
             - name: OPEN_LINK
