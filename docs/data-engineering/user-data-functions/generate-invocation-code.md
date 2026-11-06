@@ -15,6 +15,7 @@ Choose the code generation option based on your integration scenario:
 
 - **Fabric Notebooks code** (Python) - For invoking functions from within Fabric Notebooks, which is one way to integrate with Fabric items. For other Fabric items like Pipelines and Activator, see the [integration documentation](./user-data-functions-overview.md#invoke-from-fabric-items).
 - **Client application code** (Python, C#, Node.js) - For calling your functions from external applications via the unique REST endpoint that each function exposes. This enables integration with web apps, services, or any system outside Fabric.
+- **Fabric Data Warehouse code** (T-SQL) - For invoking functions from T-SQL queries in Fabric Data Warehouse. For information about creating proxy functions, using functions in T-SQL queries, and configuring batch mode execution, see [Use user data functions in Fabric Data Warehouse (preview)](../../data-warehouse/fabric-user-data-functions.md).
 - **OpenAPI specification** (JSON, YAML) - For API management platforms, AI agents, or generating client SDKs. Use this to integrate your functions with Azure API Management, configure AI systems, or generate libraries for external applications.
 
 ## Prerequisites
@@ -93,6 +94,47 @@ When integrating with external applications, use this option to call your functi
 
 For a complete walkthrough including production authentication setup, see [Invoke User Data Functions from a Python application](./tutorial-invoke-from-python-app.md).
 
+## Generate code for Fabric Data Warehouse
+
+When you integrate with Fabric Data Warehouse, use this option to call your functions from T-SQL queries. The generated code creates a T-SQL proxy function in your warehouse that references the published Fabric User Data Function. This approach allows you to invoke your functions directly from T-SQL queries and apply them to data in your warehouse.
+
+1. Open your User Data Functions item in the Fabric portal.
+
+1. On the **Home** tab, select **Generate invocation code** > **Client code**.
+
+1. Under **Invoke from**, select **Data Warehouse** from the dropdown.
+
+1. Select the function name you want to invoke.
+
+1. The code is automatically generated in T-SQL.
+
+   ``` sql
+   -- Creating a function
+   CREATE OR ALTER FUNCTION dbo.your_function_name
+   AS EXTERNAL FUNCTION your_function_set_name.your_function_name;
+   GO
+   
+   -- Invocation code
+   SELECT dbo.your_function_name(  )
+   ```
+
+1. Copy the generated code snippet.
+
+1. Open the Fabric Data Warehouse where you want to use the function.
+
+1. Paste the generated code into a new SQL query and run it to create the T-SQL proxy function in your warehouse.
+
+1. Call the function from a T-SQL query. For example:
+
+   ```sql
+   SELECT *, your_function_name(column)
+   FROM mytable;
+   ```
+
+1. Run the query to invoke your function.
+
+For more information, see [Use User Data Functions in Fabric Data Warehouse (preview)](../../data-warehouse/fabric-user-data-functions.md).
+
 ## Generate OpenAPI specification
 
 When you need to integrate your functions with API management platforms, AI agents, or generate client SDKs for external applications, use this option to create an [OpenAPI specification](https://swagger.io/docs/specification/v3_0/about/). The OpenAPI spec provides a machine-readable description of your function's REST endpoints, making it easy for tools and systems to discover and integrate with your functions programmatically.
@@ -161,3 +203,4 @@ Once you've generated your invocation code, you can use it to integrate your fun
 - [Fabric Notebook utilities](../notebookutils/notebookutils-user-data-function.md) - Reference for calling functions from notebooks
 - [Integration with Fabric pipelines](./create-functions-activity-data-pipelines.md) - Use functions in data pipelines
 - [Python programming model](./python-programming-model.md) - Learn how to write functions with proper docstrings
+- [Invoke User Data Functions in Fabric Data Warehouse (preview)](../../data-warehouse/fabric-user-data-functions.md).
