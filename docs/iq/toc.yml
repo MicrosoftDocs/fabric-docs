@@ -269,8 +269,10 @@ items:
                 items:
                   - name: Overview of allocation rules and controls
                     href: plan/planning-allocation-rules-controls/overview-allocation-rules-controls.md
-                  - name: Locking rule
+                  - name: Configure a locking rule
                     href: plan/planning-allocation-rules-controls/how-to-use-locking-rules.md
+                  - name: Configure a min-max rule
+                    href: plan/planning-allocation-rules-controls/how-to-use-min-max-rule.md
               - name: Set up scenarios
                 href: plan/planning-how-to-set-up-scenarios.md
               - name: Optimize inputs - Fundamentals
