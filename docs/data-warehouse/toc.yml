@@ -149,6 +149,8 @@ items:
             href: tutorial-identity.md
           - name: Create inline scalar UDFs
             href: how-to-inline-udf.md
+          - name: Create Fabric UDFs
+            href: ../data-engineering/user-data-functions/create-user-data-functions-portal.md
   - name: Dimensional modeling
     items:
       - name: Overview

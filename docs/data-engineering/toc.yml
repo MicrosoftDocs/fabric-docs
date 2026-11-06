@@ -894,6 +894,8 @@ items:
         href: ../real-time-hub/business-events/tutorial-business-events-user-data-function-activation-email.md
       - name: Invoke functions using Python
         href: ./user-data-functions/tutorial-invoke-from-python-app.md
+      - name: Integrate with Fabric Data Warehouse
+        href: ../data-warehouse/fabric-user-data-functions.md
    - name: Manage
      items:
       - name: Manage public and private libraries
