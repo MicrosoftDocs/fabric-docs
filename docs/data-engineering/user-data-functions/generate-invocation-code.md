@@ -106,7 +106,7 @@ When you integrate with Fabric Data Warehouse, use this option to call your func
 
 1. Select the function name you want to invoke.
 
-1. The code is automatically generated in T-SQL.
+1. Review the code that's automatically generated in T-SQL.
 
    ``` sql
    -- Creating a function
@@ -115,7 +115,8 @@ When you integrate with Fabric Data Warehouse, use this option to call your func
    GO
    
    -- Invocation code
-   SELECT dbo.your_function_name(  )
+   -- Replace <arguments> with input values required by the selected function.
+   SELECT dbo.your_function_name(<arguments>);
    ```
 
 1. Copy the generated code snippet.
@@ -127,7 +128,7 @@ When you integrate with Fabric Data Warehouse, use this option to call your func
 1. Call the function from a T-SQL query. For example:
 
    ```sql
-   SELECT *, your_function_name(column)
+   SELECT *, dbo.your_function_name([column])
    FROM mytable;
    ```
 
