@@ -2,7 +2,8 @@
 title: "Limitations and Behaviors for Fabric Mirrored Databases From Azure SQL Database"
 description: A detailed list of limitations for mirrored databases from Azure SQL Database in Microsoft Fabric.
 ms.reviewer: sbahadur, drskwier, nanikolic, atodalbagi, wiassaf
-ms.date: 02/26/2026
+ms.date: 10/08/2026
+ai-usage: ai-assisted
 ms.topic: concept-article
 ms.custom:
   - references_regions
@@ -45,6 +46,8 @@ For troubleshooting, see:
 - The Azure SQL Database service principal name (SPN) contributor permissions shouldn't be removed from the Fabric mirrored database item.
 - Mirroring across [Microsoft Entra](/entra/fundamentals/new-name) tenants isn't supported where an Azure SQL Database and the Fabric workspace are in separate tenants.  
 - Microsoft Purview Information Protection/sensitivity labels defined in Azure SQL Database aren't cascaded and mirrored to Fabric OneLake.
+- A [network security perimeter](/azure/azure-sql/database/network-security-perimeter) (preview) on the Azure SQL logical server evaluates both Fabric's inbound connection and the database's outbound connection to OneLake. In enforced mode, both directions need an access rule. Fabric can't connect without an inbound rule for the `DataFactory`, `PowerBI`, and `PowerQueryOnline` service tags, and replication stops without an outbound rule for the OneLake destination. For more information, see [Network security perimeter (preview)](azure-sql-database-how-to-data-security.md#network-security-perimeter-preview).
+- Setting public network access on the logical server to `Secured by Perimeter` means transition mode isn't honored. Mirroring defers to the outbound access rules to allow or block publishing.
 
 ## Table level
 
