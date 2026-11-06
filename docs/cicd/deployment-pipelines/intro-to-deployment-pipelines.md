@@ -64,7 +64,7 @@ When you deploy content from one pipeline stage to another, the copied content c
   * [Mount ADF](../../data-factory/tutorial-bring-azure-data-factory-to-fabric.md)
   * [Mirrored snowflake](../../mirroring/snowflake.md) *(preview)*
   * [Airflow](../../data-factory/apache-airflow-jobs-concepts.md) *(preview)*
-  * [dbt Job](../../data-factory/dbt-job-overview.md) *(preview)*
+  * [dbt Job](../../data-factory/dbt-job-overview.md)
   * [Operations Agent](../../data-factory/operations-agent-for-pipelines.md) *(preview)*
   
 
