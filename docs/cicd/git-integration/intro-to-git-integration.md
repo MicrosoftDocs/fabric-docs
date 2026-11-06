@@ -81,7 +81,7 @@ The following items currently support Git integration:
   * [Mount ADF](../../data-factory/tutorial-bring-azure-data-factory-to-fabric.md)
   * [Mirrored snowflake](../../mirroring/snowflake.md) *(preview)*
   * [Airflow](../../data-factory/apache-airflow-jobs-concepts.md) *(preview)*
-  * [dbt Job](../../data-factory/dbt-job-overview.md) *(preview)*
+  * [dbt Job](../../data-factory/dbt-job-overview.md)
   * [Operations Agent](../../data-factory/operations-agent-for-pipelines.md) *(preview)*
 
 * Real-Time Intelligence items:

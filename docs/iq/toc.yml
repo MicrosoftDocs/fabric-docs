@@ -467,6 +467,28 @@ items:
                   href: plan/planning-reference-formulas/lookup-functions/xlookup.md
             - name: Other operators
               href: plan/planning-reference-formulas/planning-reference-other-operators.md
+        - name: Scripting functions
+          items:
+            - name: OPEN_SHEET
+              href: plan/scripting-functions/open-sheet.md
+            - name: OPEN_LINK
+              href: plan/scripting-functions/open-link.md
+            - name: HIDE_VISUAL
+              href: plan/scripting-functions/hide-visual.md
+            - name: SETSCALING
+              href: plan/scripting-functions/setscaling.md
+            - name: SETTOPN
+              href: plan/scripting-functions/settopn.md
+            - name: SETBOTTOMN
+              href: plan/scripting-functions/setbottomn.md
+            - name: SETTOPBOTTOMN
+              href: plan/scripting-functions/settopbottomn.md
+            - name: SETNUMBERFORMATTING
+              href: plan/scripting-functions/setnumberformatting.md
+            - name: SHOW_MESSAGE
+              href: plan/scripting-functions/show-message.md
+            - name: SHOWCLOSEDFORECAST
+              href: plan/scripting-functions/showclosedforecast.md
   - name: PowerTable sheets
     items:
     - name: Concepts
