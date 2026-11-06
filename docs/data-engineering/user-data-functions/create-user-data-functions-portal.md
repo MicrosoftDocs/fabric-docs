@@ -147,20 +147,20 @@ You can add this function to your code editor alongside the existing functions. 
 
 ## Add batch mode support
 
-If you plan to call your function from [Fabric Data Warehouse](../../data-warehouse/fabric-user-data-functions.md), you should enable batch mode on the functions. Batch mode allows Fabric Data Warehouse to send multiple function calls in a single request, which can significantly improve performance when a function is applied to many rows in a T-SQL query.
+If you plan to call your function from [Fabric Data Warehouse](../../data-warehouse/fabric-user-data-functions.md), enable batch mode on the functions. Batch mode allows Fabric Data Warehouse to send multiple function calls in a single request. This feature can significantly improve performance when a function applies to many rows in a T-SQL query.
 
-Every runnable function requires the `@udf.function()` decorator before the function definition. To enable batch mode, replace this decorator with `@udf.function(max_batch_size=900)`, where `max_batch_size` specifies the maximum batch size that Fabric Data Warehouse can send to the function.
+Every runnable function requires the `@udf.function()` decorator before the function definition. To enable batch mode, replace this decorator with `@udf.function(max_batch_size=900)`. The `max_batch_size` parameter specifies the maximum batch size that Fabric Data Warehouse can send to the function.
 
 The basic syntax is:
 
 ``` python
 @udf.function(max_batch_size=900)
 def your_function_name(parameter: type) -> return_type:
-    # Your function logic here
-    return result
+    # Your function logic here
+    return result
 ```
 
-A batch size of 900 is recommended for most scenarios. Enabling batch mode doesn't change how the function behaves when it's invoked with a single value.
+A batch size of 900 is recommended for most scenarios. Enabling batch mode doesn't change how the function behaves when you invoke it with a single value.
 
 > [!IMPORTANT]
 > You might need to decrease `max_batch_size` when your function accepts large input values, such as long text strings. A smaller batch size can help keep the request payload within supported limits.
@@ -168,11 +168,11 @@ A batch size of 900 is recommended for most scenarios. Enabling batch mode doesn
 After you publish the function and configure it for use from Fabric Data Warehouse, you can call it from a T-SQL query. For example:
 
 ```sql
-SELECT *, your_function_name(column)
+SELECT *, dbo.your_function_name([column])
 FROM mytable;
 ```
 
-Batch mode is especially useful when the function is applied to hundreds or thousands of rows in the same query.
+Batch mode is especially useful when the function applies to hundreds or thousands of rows in the same query.
 
 For more information, see [Use user data functions in Fabric Data Warehouse (preview)](../../data-warehouse/fabric-user-data-functions.md).
 
@@ -361,4 +361,4 @@ To expand your skills, explore these resources:
 - [Learn about the User data functions programming model](./python-programming-model.md) - Dive deeper into the Python SDK and advanced features
 - [Invoke user data functions from a Python application](./tutorial-invoke-from-python-app.md) - Call your functions from external applications via REST APIs
 - [Manage libraries for user data functions](./how-to-manage-libraries.md) - Learn advanced library management techniques
-- [Use user data functions in Fabric Data Warehouse (preview)](../../data-warehouse/fabric-user-data-functions.md) - Learn how to call user data function from the T-SQL code in Fabric Data Warehouse
+- [Use user data functions in Fabric Data Warehouse (preview)](../../data-warehouse/fabric-user-data-functions.md) - Learn how to call user data function from the T-SQL code in Fabric Data Warehouse.
