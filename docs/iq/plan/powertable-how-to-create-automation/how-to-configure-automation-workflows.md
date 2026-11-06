@@ -1,14 +1,16 @@
 ---
-title: Configure Workflow Triggers, Actions, and Conditions
-description: Configure automation workflows to trigger actions when records change. Learn how to add triggers, create and update records, add conditions, and save your flow.
-#customer intent: As a PowerTable user, I want to create an automation workflow so that I can run tasks automatically without manual work.
-ms.date: 07/31/2026
+title: Configure Automation Workflow Triggers, Conditions, and Actions
+description: Configure automation workflows to trigger actions when records change or an event occurs. Learn how to add triggers and conditions, configure actions, create and update records, and save your flow.
+#customer intent: As a PowerTable user, I want to create an automation workflow so that I can run tasks automatically during certain events without manual work.
+ms.date: 11/02/2026
 ms.topic: how-to
 ---
 
 # Configure automation workflows
 
-This article explains how to create an automation workflow. You learn how to configure workflow triggers and actions to automate tasks such as creating records and cascading updates across related tables.
+This article explains how to create an automation workflow. You learn how to configure workflow triggers and actions to automate tasks such as creating records, finding records, and cascading updates across related tables.
+
+Use event triggers in automation to run downstream processes within Microsoft Fabric such as executing a dataflow, pipeline, notebook, or a semantic model refresh based on certain events. You can also integrate Microsoft Teams in your workflow so users get timely notifications.
 
 > [!NOTE]
 > To learn about the concept of automation, see [Automation](../powertable-concept-automation.md).
@@ -31,13 +33,16 @@ This article explains how to create an automation workflow. You learn how to con
 
     :::image type="content" source="../media/powertable-how-to-create-automation/how-to-configure-automation-workflows/add-trigger.png" alt-text="Screenshot of the Automations editor with the Add Trigger button and pencil rename icon highlighted." lightbox="../media/powertable-how-to-create-automation/how-to-configure-automation-workflows/add-trigger.png":::
 
-    * **When a record is created:** Triggers the workflow when a user creates a record.
-    * **When a record is updated:** Triggers the workflow when a user updates a record.
-    * **When a record is deleted:** Triggers the workflow when a user deletes a record.
-    * **When a form is submitted:** Triggers the workflow when a user submits a form that creates a record.
-    * **When a button is clicked:** Triggers the workflow when a user selects a button in a button column.
+    | Trigger                  | Description                                                                       |
+    | ------------------------ | --------------------------------------------------------------------------------- |
+    | When a record is created | Triggers an automation flow when a user creates a record in the PowerTable table. |
+    | When a record is updated | Triggers an automation flow when a user updates an existing record.               |
+    | When a record is deleted | Triggers an automation flow when a user deletes a record.                         |
+    | When a form is submitted | Triggers an automation flow when a user submits a form that creates a record.     |
+    | When a button is clicked | Triggers an automation flow when a user selects a button in a button column.      |
 
     > [!NOTE]
+    >
     > All triggers monitor events in the current table where you configure the automation.
 
 1. After you select a trigger, the **Properties** pane opens.
@@ -53,7 +58,9 @@ This article explains how to create an automation workflow. You learn how to con
 
 ## Add actions
 
-Select **Add Action** to add one or more actions. Each action type is explained in the following sections.
+Select **Add Action** to add one or more actions. You can trigger an action on related databases or Fabric items such as semantic models, notebooks, dataflows, or data pipelines. You can also integrate external applications such as Microsoft Teams to send notifications to users.
+
+Each action type is explained in the following sections.
 
 :::image type="content" source="../media/powertable-how-to-create-automation/how-to-configure-automation-workflows/automation-add-action-menu-options.png" alt-text="Screenshot of the Add Action button highlighted with a menu listing Conditional Group, Repeating Group, Create Record, Update Record, Delete Record, Find Records, Bulk Create Record, and Execute Stored Procedure.":::
 
@@ -193,43 +200,8 @@ After you complete all configurations, the **Save** option is enabled. Select **
 
 :::image type="content" source="../media/powertable-how-to-create-automation/how-to-configure-automation-workflows/save-workflow.png" alt-text="Screenshot of the Automations workflow editor with the Save button highlighted in the top-right corner." lightbox="../media/powertable-how-to-create-automation/how-to-configure-automation-workflows/save-workflow.png":::
 
-## Manage automations
-
-You can create multiple automation workflows for a table. To view the workflows that you created, select **Setup** > **Automations**.
-
-* **Enable or disable a workflow:** Use the toggle to enable or disable a workflow.
-* **Duplicate a workflow:** Select **More options** (**...**), and then select **Duplicate** to create a copy of a workflow. Modify the copied workflow as needed instead of creating one from scratch.
-* **Delete a workflow:** Select **More options** (**...**), and then select **Delete** to permanently remove a workflow. You must disable a workflow before you can delete it.
-* **Search**: Use the search box to find a specific automation flow by name.
-
-    :::image type="content" source="../media/powertable-how-to-create-automation/how-to-configure-automation-workflows/manage-automations.png" alt-text="Screenshot of the Automations list showing two workflows with the enable/disable toggle and More options highlighted." lightbox="../media/powertable-how-to-create-automation/how-to-configure-automation-workflows/manage-automations.png":::
-
-## View run history
-
-Use the **Run History** pane to monitor workflow executions and review the status of each run. You can see the users who initiated the automations, when they initiated them, the duration and time of automation, and whether it succeeded or failed.
-
-Failed automations trigger Microsoft Teams notifications for the user who initiated the automation.
-
-Open the required automation workflow and select **Run History**.
-
-:::image type="content" source="../media/powertable-how-to-create-automation/how-to-configure-automation-workflows/view-run-history.png" alt-text="Screenshot of the Get Order automation with the Run History pane open, listing eight runs with Job ID, Started At, Status, Duration, and Details." lightbox="../media/powertable-how-to-create-automation/how-to-configure-automation-workflows/view-run-history.png":::
-
-The pane lists all workflow runs along with details such as:
-
-| Column | Description |
-| --- | --- |
-| **Job ID** | Unique identifier for the workflow run. |
-| **Started At** | Date and time when the workflow started. |
-| **Status** | Current execution status, such as **Success** or **Failed**. |
-| **Duration** | Total time taken to complete the workflow run. |
-| **Started By** | User who triggered the workflow. |
-| **Details** | Select **View Details** to view the full execution details for the workflow run. |
-
-You can also use the following options:
-
-* **Retry**: Failed runs display a **Retry** option. Select it to rerun the workflow after resolving the issue.
-* **Refresh**: Use **Refresh** to refresh the run history and display the status of latest workflow runs.
-
 ## Related content
 
-[Create a sample automation](./how-to-create-sample-automation.md).
+* [Integrations in automation](./how-to-configure-integrations.md).
+* [Manage Automation](./how-to-manage-automation.md).
+* [Create a sample automation](./how-to-create-sample-automation.md).
