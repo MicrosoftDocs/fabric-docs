@@ -4,10 +4,12 @@ description: Learn how to create a KQL database in Microsoft Fabric Real-Time In
 ms.reviewer: tzgitlin
 ms.topic: how-to
 ms.subservice: rti-eventhouse
-ms.date: 05/18/2026
+ms.date: 11/05/2026
 author: spelluru
 ms.author: spelluru
 ms.search.form: KQL Database
+ms.custom: msecd-doc-authoring-1030
+ai-usage: ai-assisted
 ---
 # Create a KQL database
 
@@ -28,7 +30,9 @@ In this article, you learn how to create a new KQL database. Once your KQL datab
 
       :::image type="content" source="media/create-database/create-database.png" alt-text="Screenshot showing the eventhouse KQL Databases section.":::
 
-1. Enter your database name, select your database type, either **New database (default)** or **New shortcut database (follower)**, and then select **Create**. For information about follower databases, see [Create a database shortcut](database-shortcut.md).
+1. Enter your database name, select **New database (default)**, and then select **Create**.
+
+    To create a database shortcut instead, follow [Create a database shortcut](database-shortcut.md). A database shortcut can include all source subitems or only selected tables, shortcut tables, materialized views, and functions. For the OneLake catalog and cluster URI methods, use **Shared entities** to choose what to include. For an invitation token, the data provider predefines the shared subitems.
 
     > [!NOTE]
     > The database name can contain alphanumeric characters, underscores, periods, and hyphens. Special characters aren't supported.
