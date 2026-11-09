@@ -7,7 +7,7 @@ ms.reviewer: abnarain
 ms.service: fabric
 ms.subservice: data-factory
 ms.topic: how-to
-ms.date: 09/14/2026
+ms.date: 10/29/2026
 ---
 
 # Data connection policies (preview)
@@ -26,7 +26,7 @@ Data connection policies close both gaps by introducing centralized allowlists t
 
 - **Role**: Fabric tenant administrator.
 - **Scope**: Policies apply tenant-wide to all existing and new cloud connections.
-- **Connection types affected**: Cloud connections. Under **Cloud connection policies**, you can set a rule for any individual cloud connection kind (for example, Web, Web v2, or Azure DevOps – Source control), and an **All other connection kinds** rule acts as a catch-all for everything else. This means every cloud connection kind is governable&mdash;either by a specific rule or the catch-all.
+- **Connection types affected**: Cloud connections. The authentication-method and tenant allowlists govern supported cloud connections.
 
 ## Where to find it
 
@@ -34,32 +34,12 @@ Data connection policies close both gaps by introducing centralized allowlists t
 1. In the left navigation, select **Data Policies**.
 1. Open the **Data connection policies** page.
 
-The page has three tabs:
+The page has two tabs:
 
 | Tab | Purpose |
 | --- | --- |
-| **Data policies** | Block or allow specific connection kinds. Includes a master **Enable all data connection policies** toggle and per-kind rules under **Cloud connection policies** (for example, Azure DevOps – Source control set to **Blocked**, All other connection kinds set to **Allowed**). A blocked kind can define endpoint-level exceptions (specific allowed endpoints); some kinds don't support endpoints. |
 | **Authentication allowlist** | Restrict which authentication methods cloud connections can use. |
 | **Tenant allowlist** | Restrict which Microsoft Entra ID tenants cloud connections can target. |
-
-## Data policies
-
-Use the **Data policies** tab to block or allow specific cloud connection kinds, with optional endpoint-level exceptions for kinds that support them.
-
-### Turn on and configure a data policy
-
-1. Go to **Admin portal** > **Data Policies** > **Data connection policies** > **Data policies**.
-1. Turn on **Enable all data connection policies**.
-1. Under **Cloud connection policies**, select **Add new rule**.
-1. Select a connection kind (for example, **Azure DevOps – Source control**) and set it to **Blocked** or **Allowed**.
-1. For a blocked kind that supports endpoints, optionally add endpoint-level exceptions that specify the endpoints to allow. Some kinds don't support endpoints.
-1. Use the **All other connection kinds** catch-all rule to set the default behavior for every kind that doesn't have a specific rule.
-1. Select **Save**.
-
-> [!TIP]
-> Select **Refresh** to reload the current policy state.
-
-:::image type="content" source="media/data-connection-policies/data-policies-tab.png" alt-text="Screenshot of the Data policies tab blocking the Azure DevOps – Source control connection kind with an endpoint-level exception." lightbox="media/data-connection-policies/data-policies-tab.png":::
 
 ## Authentication allowlist
 
@@ -67,7 +47,7 @@ Use the **Authentication allowlist** to define the set of authentication methods
 
 ### Turn on and configure an authentication allowlist
 
-1. Go to **Admin portal** > **Data Policies** > **Data connection policies** > **Authentication allowlist**.
+1. Go to **Admin portal** > **Data Policies** > **Data connection policies** > **Authentication allowlist**.
 1. Turn on **Restrict to allowlist**. When enabled, only the authentication methods in the allowlist can be used for connections.
 1. In **Select authentication method**, choose a method and select **Add authentication method**.
 1. Repeat to add each method you want to permit. Added methods appear in the **Authentication method** list. Use the delete (trash) icon to remove one.
