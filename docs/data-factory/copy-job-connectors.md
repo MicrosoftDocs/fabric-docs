@@ -11,7 +11,7 @@ ai-usage: ai-assisted
 
 # Connectors for copy jobs
 
-With [Copy job](what-is-copy-job.md), you can move your data between cloud data stores or from on-premises sources that are behind a firewall or inside a virtual network using a gateway.
+By using [Copy job](what-is-copy-job.md), you can move your data between cloud data stores or from on-premises sources that are behind a firewall or inside a virtual network using a gateway.
 
 Copy job supports the following functionalities:
 
@@ -43,7 +43,7 @@ For more information about each of these modes, see [the copy job overview](what
 > - Azure SQL Managed Instance
 > - Azure Synapse Analytics
 > - warehouse in Fabric
-> - SQL Server On-premises
+> - SQL Server on-premises
 
 ## CDC replication
 
@@ -55,7 +55,7 @@ For more information about using CDC replication in copy jobs, see [Change data 
 
 ## Automatic table creation and truncate on destination
 
-Copy jobs can automatically create tables in the destination if they don’t already exist. You can also optionally truncate destination data before the full load, ensuring their source and destination are fully synchronized without duplicates. This table outlines the connectors that support automatic table creation and truncate on destination in copy jobs.
+Copy jobs can automatically create tables in the destination if they don't already exist. You can also optionally truncate destination data before the full load, ensuring their source and destination are fully synchronized without duplicates. This table outlines the connectors that support automatic table creation and truncate on destination in copy jobs.
 
 For more information about these features, see [the copy job overview](what-is-copy-job.md).
 
