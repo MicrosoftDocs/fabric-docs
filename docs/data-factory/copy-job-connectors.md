@@ -1,9 +1,9 @@
 ---
 title: Connectors for Copy Job
 description: This article covers the supported connectors for copy jobs in Microsoft Fabric, including source, destination, CDC replication, automatic table creation, and truncate on destination capabilities.
-ms.reviewer: yexu
+ms.reviewer: ukchrist
 ms.topic: how-to
-ms.date: 10/30/2026
+ms.date: 11/09/2026
 ms.search.form: copy-job-tutorials 
 ms.custom: copy-job
 ai-usage: ai-assisted
@@ -45,7 +45,7 @@ For more information about each of these modes, see [the copy job overview](what
 > - warehouse in Fabric
 > - SQL Server On-premises
 
-## CDC Replication (Preview)
+## CDC Replication
 
 Change data capture (CDC) in copy jobs enables automated replication of changed data (including inserted, updated, and deleted records) from a source to a destination. This table outlines the connectors that support CDC replication in copy jobs, including whether they can be used as CDC sources, CDC destinations, and whether they support SCD Type 2 for full history tracking.
 
