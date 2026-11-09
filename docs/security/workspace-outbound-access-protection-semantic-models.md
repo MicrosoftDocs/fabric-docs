@@ -5,7 +5,7 @@ author: kgremban
 ms.author: kgremban
 ms.reviewer: kayu
 ms.topic: concept-article
-ms.date: 10/07/2026
+ms.date: 11/08/2026
 #customer intent: As a workspace admin, I want to control which external data sources my semantic models can connect to, so that I can prevent unauthorized data exfiltration and enforce network security policies.
 ai-usage: ai-assisted
 ---
@@ -28,6 +28,12 @@ The same enforcement applies to all storage modes:
 - **Direct Lake on OneLake (DL/OL) models**: The ADLS Gen2 connection to OneLake is evaluated. If the workspace's OneLake URL isn't allowed, the model can't access its Delta tables.
 
 Policy changes propagate within about 15 minutes. Until propagation completes, existing connections might continue to work.
+
+## Reports in other workspaces
+
+An interactive Power BI report in an OAP-protected workspace can query a semantic model in another workspace when the report workspace has a **Power BI Semantic Model** exception for the semantic model workspace. The report workspace policy controls the report-to-model connection.
+
+The semantic model workspace policy separately controls the model's connections to cloud databases, on-premises systems through gateways, lakehouses, warehouses, and other sources. Enable OAP on both workspaces and configure the applicable rules in each workspace. For report configuration, see [Workspace outbound access protection for Power BI reports](workspace-outbound-access-protection-power-bi-reports.md).
 
 ## Intra-workspace connections require explicit exceptions
 
@@ -72,7 +78,7 @@ You can publish semantic models to a protected workspace through any of the stan
 
 ## Considerations and limitations
 
-- **Interactive and paginated reports are supported**: Interactive Power BI reports (`.pbix`) and paginated reports can coexist with semantic models in a protected workspace. Dashboards and scorecards aren't supported. See [Workspace outbound access protection for Power BI reports](workspace-outbound-access-protection-power-bi-reports.md) and [Workspace outbound access protection for paginated reports](workspace-outbound-access-protection-paginated-reports.md).
+- **Interactive and paginated reports are supported**: Interactive Power BI reports (`.pbix`) and paginated reports can coexist with semantic models in a protected workspace. An interactive report can also reside in another protected workspace when its workspace has an exception for the semantic model workspace. Dashboards and scorecards aren't supported. See [Workspace outbound access protection for Power BI reports](workspace-outbound-access-protection-power-bi-reports.md) and [Workspace outbound access protection for paginated reports](workspace-outbound-access-protection-paginated-reports.md).
 - **Same-workspace connections need exceptions**: Data sources in the same workspace, including lakehouses, warehouses, and SQL databases, require explicit SQL Server and ADLS Gen2 connection rules. Some connectors, such as the connector for KQL databases in eventhouses, don't support workspace-level or endpoint-granular exceptions yet. To use those sources from a semantic model, you have to allow the entire connector type.
 - **F SKU required**: Outbound access protection requires Fabric capacity. Power BI Premium (P SKUs), Embedded (EM SKUs), and Pro workspaces aren't supported.
 - **Propagation delay**: Policy changes take about 15 minutes to take effect.

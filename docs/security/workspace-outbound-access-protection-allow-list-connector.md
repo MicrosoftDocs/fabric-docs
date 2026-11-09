@@ -4,7 +4,8 @@ description: "Learn how to create an allow list using data connection rules on M
 author: msmimart
 ms.author: mimart
 ms.topic: how-to
-ms.date: 12/01/2025
+ms.date: 11/08/2026
+ai-usage: ai-assisted
 
 #customer intent: As a data platform administrator, I want to set up outbound access protection and create an allow list using data connection rules so that I can control and secure how my workspace resources connect to external networks.
 
@@ -12,7 +13,7 @@ ms.date: 12/01/2025
 
 # Create an allow list using data connection rules
 
-When outbound access protection is enabled for a workspace, all outbound connections are blocked by default. For Data Factory workloads, you can permit access to external data sources by configuring data connection rules. These rules let you allow or block specific cloud connections or data gateways: 
+When you enable outbound access protection for a workspace, it blocks all outbound connections by default. For supported workloads, including Power BI, you can permit access to approved destinations by configuring data connection rules. These rules let you allow or block specific cloud connections or data gateways:
 
 - **Cloud connections**: You can configure different types of cloud connections, such as lakehouses, databases, and SaaS services. Some connection types can only be fully allowed or fully blocked. Others let you block the connection type by default, but specify exceptions. For example, you can block the Lakehouse connection type for all workspaces except workspaces you explicitly allow.
 
@@ -21,7 +22,7 @@ When outbound access protection is enabled for a workspace, all outbound connect
 This article describes how to use data connection rules in the workspace settings to allow cloud connections and data gateways.
 
 > [!NOTE]
-> Data connection rules are available for Data Factory workloads. For Data Engineering or OneLake, use [managed private endpoints](./workspace-outbound-access-protection-allow-list-endpoint.md) to allow outbound access.
+> Data connection rules are available for supported workloads, including Data Factory and Power BI. For Data Engineering or OneLake, use [managed private endpoints](./workspace-outbound-access-protection-allow-list-endpoint.md) to allow outbound access.
 
 ## How to create an allow list using data connection rules
 
@@ -45,7 +46,9 @@ When you enable the **Block outbound public access** setting in the outbound acc
 
    - If no exceptions can be configured for the connection type, select **Add**, and then set the toggle to **Allowed**. Select **Save**.
 
-   - If the connection type allows you to configure exceptions (for example Lakehouse), use the drop-down to select the exception (for example, a workspace) you want to allow. Then select **Add**. Leave the toggle for the connection type set to **Blocked**, and select **Save**. This configuration blocks the connection type overall, but allows the exception you selected.
+   - If the connection type allows you to configure exceptions (for example, Lakehouse), use the dropdown list to select the exception (for example, a workspace) you want to allow. Then select **Add**. Leave the toggle for the connection type set to **Blocked**, and select **Save**. This configuration blocks the connection type overall, but allows the exception you selected.
+
+     For an interactive Power BI report that uses a semantic model in another workspace, configure this rule in the report workspace. Select **Power BI Semantic Model** as the connection kind, and then select the semantic model workspace under **Workspace exception**. You configure one exception for each approved destination workspace, not for each report. For paginated reports, use the **Analysis Services** connector instead; see [Workspace outbound access protection for paginated reports](workspace-outbound-access-protection-paginated-reports.md#data-connection-rules).
 
       > [!NOTE]
       > Exceptions can only be added one at a time. To add more exceptions (even to the same connection type), start again from step 1.
