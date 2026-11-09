@@ -16,7 +16,7 @@ By using [Copy job](what-is-copy-job.md), you can move your data between cloud d
 Copy job supports the following functionalities:
 
 - [Copy sources and destinations](#copy-job-sources-and-destinations)
-- [Change data capture (CDC) replication (Preview)](#cdc-replication-preview)
+- [Change data capture (CDC) replication](#cdc-replication)
 - [Automatic table creation and truncate on destination](#automatic-table-creation-and-truncate-on-destination)
 
 ## Copy job sources and destinations
