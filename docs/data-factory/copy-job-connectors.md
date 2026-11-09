@@ -45,7 +45,7 @@ For more information about each of these modes, see [the copy job overview](what
 > - warehouse in Fabric
 > - SQL Server On-premises
 
-## CDC Replication
+## CDC replication
 
 Change data capture (CDC) in copy jobs enables automated replication of changed data (including inserted, updated, and deleted records) from a source to a destination. This table outlines the connectors that support CDC replication in copy jobs, including whether they can be used as CDC sources, CDC destinations, and whether they support SCD Type 2 for full history tracking.
 
