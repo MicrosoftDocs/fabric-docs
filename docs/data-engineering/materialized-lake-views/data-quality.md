@@ -3,7 +3,7 @@ title: "Data Quality in Materialized Lake Views in a Lakehouse in Microsoft Fabr
 description: Learn about data quality in materialized lake views in a lakehouse in Microsoft Fabric
 ms.reviewer: bsankaran, sairamyeturi, nijelsf, hgowrisankar
 ms.topic: concept-article
-ms.date: 03/18/2026
+ms.date: 11/09/2026
 ai-usage: ai-assisted
 #customer intent: As a data engineer, I want to implement data quality in materialized lake views in a lakehouse so that I can ensure the integrity and reliability of my data.
 ---
@@ -341,6 +341,10 @@ In this example, define column-level data quality checks for the `sales_db.daily
 Put the suite registration and its entry functions in a single data quality cell. The following example runs **two checks** in one validation pass — `customer_id` must be complete (no nulls) and `order_id` must be unique:
 
 ```python
+import os
+os.environ["SPARK_VERSION"] = "3.5"   # works on both 3.5 and 4.1
+import fmlv
+
 # Entry function — returns a PyDeequ VerificationResult DataFrame
 def completeness_and_uniqueness(df):
     from pydeequ.checks import Check, CheckLevel
@@ -367,6 +371,10 @@ def daily_orders_dq():
 **Add metrics without failing the run.** Stack an `@fmlv.analyze` pass to compute column metrics (size, completeness, mean, …) for observability. Analyze results are always recorded and never block a run — useful while validation rules are still evolving.
 
 ```python
+import os
+os.environ["SPARK_VERSION"] = "3.5"   # works on both 3.5 and 4.1
+import fmlv
+
 # Entry function — returns a PyDeequ AnalyzerContext metrics DataFrame
 def column_profiling(df):
     from pydeequ.analyzers import AnalysisRunner, AnalyzerContext, Size, Completeness, Mean
