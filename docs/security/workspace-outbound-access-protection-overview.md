@@ -4,7 +4,7 @@ description: "This article describes workspace outbound access protection in Mic
 author: msmimart
 ms.author: mimart
 ms.topic: overview
-ms.date: 02/09/2026
+ms.date: 11/08/2026
 
 #customer intent: As a Fabric administrator, I want to control and secure outbound connections from workspace artifacts so that I can protect organizational data and ensure compliance with security policies.
 
@@ -66,7 +66,7 @@ The following table summarizes the supported workloads and item types that can b
 | Mirrored databases | Data connection rules | <ul><li>Mirrored databases</li></ul> | [Workspace outbound access protection for mirrored databases](workspace-outbound-access-protection-mirrored-databases.md) |
 | OneLake | Managed private endpoints | <ul><li>OneLake shortcuts</li></ul> | [Workspace outbound access protection for OneLake](workspace-outbound-access-protection-onelake.md) |
 | Real-Time Events (preview) | Data connection rules | <ul><li>Azure, Fabric, and Business events</li></ul> | [Workspace outbound access protection for Real-Time Events](workspace-outbound-access-protection-real-time-events.md) |
-| Power BI | Data connection rules for semantic models and paginated reports; same-workspace semantic model binding for interactive reports | <ul><li>Semantic models</li><li>Interactive reports</li><li>Paginated reports</li></ul> | Workspace outbound access protection for Power BI: [Semantic models](workspace-outbound-access-protection-semantic-models.md), [Interactive reports](workspace-outbound-access-protection-power-bi-reports.md), and [Paginated reports](workspace-outbound-access-protection-paginated-reports.md) |
+| Power BI | Data connection rules for semantic models, interactive report-to-model connections, and paginated reports | <ul><li>Semantic models</li><li>Interactive reports</li><li>Paginated reports</li></ul> | Workspace outbound access protection for Power BI: [Semantic models](workspace-outbound-access-protection-semantic-models.md), [Interactive reports](workspace-outbound-access-protection-power-bi-reports.md), and [Paginated reports](workspace-outbound-access-protection-paginated-reports.md) |
 
 ## Considerations and limitations
 
@@ -120,6 +120,7 @@ Workspace admins can specify which workspaces are allowed as destinations for ce
 * Warehouse
 * Notebook
 * Spark Job Definition
+* Power BI Semantic Model
 
 Other Fabric connection types, such as Datamarts, KQL Database, Fabric Data Pipelines, and CopyJob, don't support workspace-level granularity. For these connection types, admins can't specify individual workspaces in the allow list.
 
@@ -158,6 +159,7 @@ The following table summarizes the level of granularity supported by different c
 | Fabric SQL Database             | Workspace  |
 | Notebook                        | Workspace  |
 | Spark Job Definition            | Workspace  |
+| Power BI Semantic Model          | Workspace  |
 
 ## Tenant admin API for workspace network policies
 
