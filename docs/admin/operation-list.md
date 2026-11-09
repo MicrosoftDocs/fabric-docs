@@ -461,8 +461,8 @@ To audit OneLake data access and storage operations, use [OneLake diagnostics](.
 | Post Notebook Comment | :::no-loc text="PostNotebookComment"::: |   |
 | Post configure credentials | :::no-loc text="PostGitProviderCredentials"::: | Configure git provider credentials for a specific user |
 | Posted Power BI comment | :::no-loc text="PostComment"::: |   |
-| Power BI MCP tool called to modify the semantic model. | :::no-loc text="ModifiedByPowerBIMCP"::: | Power BI MCP tool called to modify the semantic model. |
-| Power BI MCP tool called to read semantic model metadata. | :::no-loc text="ReadByPowerBIMCP"::: | Power BI MCP tool called to read semantic model metadata. |
+| Modified by Power BI MCP | :::no-loc text="ModifiedByPowerBIMCP"::: | Power BI MCP tool called to modify the semantic model. |
+| Read by Power BI MCP | :::no-loc text="ReadByPowerBIMCP"::: | Power BI MCP tool called to read semantic model metadata. |
 | Preview Lakehouse Table | :::no-loc text="PreviewLakehouseTable"::: |   |
 | Printed Power BI Dashboard | :::no-loc text="PrintDashboard"::: |   |
 | Printed Power BI report page | :::no-loc text="PrintReport"::: |   |
