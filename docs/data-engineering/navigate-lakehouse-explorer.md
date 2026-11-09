@@ -37,6 +37,18 @@ When you select a table, the main view shows the table data in a preview datagri
 
 You can switch between table view and file view without going back to the explorer pane.
 
+### Table overview (preview)
+
+The Table Overview page brings a Lakehouse table’s business context, structure, and key metadata into one place. Its Summary card combines an editable table description with details such as table type, row count, storage size, Delta version, and maintenance timestamps.
+
+The Columns card lets you explore column names, data types, and descriptions, while the Security and permissions card provides visibility into table access.
+
+Authorized users can update table and column descriptions to capture data meaning and business context, making tables easier for colleagues and AI experiences to interpret.
+
+:::image type="content" source="media\lakehouse-overview\lakehouse-table-overview-view.png" alt-text="Screenshot of the Lakehouse explorer main view showing a table in overview." lightbox="media\lakehouse-overview\lakehouse-table-overview-view.png":::
+
+Learn more about how to [read and write additional table metadata](../onelake/table-apis/additional-table-metadata.md) by using the API.
+
 ### Table deep links
 
 You can generate a unique URL for any table so that others can open the Lakehouse explorer with that table already previewed. Select **...** next to the table and choose **Copy URL**.
