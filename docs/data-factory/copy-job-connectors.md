@@ -11,7 +11,7 @@ ai-usage: ai-assisted
 
 # Connectors for copy jobs
 
-By using [Copy job](what-is-copy-job.md), you can move your data between cloud data stores or from on-premises sources that are behind a firewall or inside a virtual network using a gateway.
+By using [Copy job](what-is-copy-job.md), you can move your data between cloud data stores or from on-premises sources that are behind a firewall or inside a virtual network by using a gateway.
 
 Copy job supports the following functionalities:
 
