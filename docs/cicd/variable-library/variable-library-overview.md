@@ -64,6 +64,7 @@ The following items support the variable library:
 - [Eventstream](/fabric/real-time-intelligence/event-streams/overview)
 - [Deployment plan](../deployment-plan/deployment-plan-overview.md) action parameters
 - [Plan](../../iq/plan/overview.md)
+- [Catalog mirroring](../../mirroring/catalog-mirroring/dremio.md)
 
 ## Naming conventions
 The name of variable library item itself must follow these conventions:

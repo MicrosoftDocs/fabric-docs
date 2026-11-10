@@ -1176,6 +1176,8 @@ items:
             href: map/customize-map.md
           - name: Create a tileset
             href: map/create-tile-sets.md
+          - name: Monitor Fabric Maps with workspace monitoring
+            href: map/workspace-monitoring.md
           - name: Create Activator alerts from a Fabric map
             href: map/create-activator-alerts.md
           - name: Map sharing

@@ -47,3 +47,5 @@ OPEN_LINK("https://www.microsoft.com")
     :::image type="content" source="../media/scripting-functions/open-link/open-link-configuration.png" alt-text="Screenshot of the button configuration for the OPEN_LINK function." lightbox="../media/scripting-functions/open-link/open-link-configuration.png":::
 
     When a user selects **Open Website**, the planning item opens the specified URL in the browser.
+
+    :::image type="content" source="../media/scripting-functions/open-link/open-link-result.png" alt-text="Screenshot of the planning item after the OPEN_LINK function opens the Microsoft website in a browser." lightbox="../media/scripting-functions/open-link/open-link-result.png":::
