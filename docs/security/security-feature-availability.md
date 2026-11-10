@@ -40,7 +40,7 @@ The following table shows the support status for each Fabric item. A check mark 
 |  | On-premises data gateway: Pipeline/Copy Job | ✓ | - | ✓ |
 |  | On-premises data gateway: Dataflow Gen2 | -| - | ✓ |
 |  | Data Workflow (previously Airflow) | - | - | - |
-|  | Data Build Tool job | - | - | Preview |
+|  | Data Build Tool job | - | - | - |
 | **Data Science** | ML Model | ✓ | ✓ | ✓ |
 |  | Experiment | ✓ | ✓ | ✓ |
 |  | Data Agent | ✓ | - | Preview |
@@ -67,6 +67,7 @@ The following table shows the support status for each Fabric item. A check mark 
 |  | Mirrored Azure Databricks Catalog | - | - | - |
 |  | Mirrored Azure SQL Database | ✓ | ✓ | ✓ |
 |  | Mirrored Azure SQL Managed Instance | ✓ | ✓ | ✓ |
+|  | Mirrored Azure Monitor | - | - | Preview |
 |  | Mirrored Dataverse | - | - | - |
 |  | Mirrored Google Bigquery | - | ✓ | ✓ |
 |  | Mirrored Oracle | - | ✓ | ✓ |
@@ -76,6 +77,11 @@ The following table shows the support status for each Fabric item. A check mark 
 |  | Mirrored SQL Server 2016-2022 | - | ✓ | ✓ |
 |  | Mirrored SQL Server 2025 | ✓ | ✓ | ✓ |
 |  | Open Mirroring | ✓ | ✓ | ✓ |
+|  | Mirrored CONNECT by AVEVA | - | - | Preview |
+|  | Mirrored AWS Glue Catalog | - | - | Preview |
+|  | Mirrored Dremio Catalog | - | - | Preview |
+|  | Mirrored Sentinel Catalog | - | - | Preview |
+|  | Mirrored Google Lakehouse runtime catalog | - | - | Preview |
 | **Fabric Databases** | SQL database in Fabric | Preview | ✓ | - |
 |  | Cosmos DB |  | - | - |
 |  | Snowflake database | - | - | Preview |
@@ -90,6 +96,7 @@ The following table shows the support status for each Fabric item. A check mark 
 |  | Datamart | - | - | - |
 |  | Exploration | - | - | - |
 |  | Org App | - | - | - |
+|  | Metric Set | - | - | - |
 | **Real-Time Intelligence** | KQL Queryset | ✓ | Preview | ✓ |
 |  | Activator | ✓ | - | ✓ |
 |  | Eventhouse/KQL DB | ✓ | Preview | ✓ |

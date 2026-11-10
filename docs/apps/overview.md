@@ -79,6 +79,10 @@ The endpoint exposes a path for each service:
 
 After deployment, you can manage your Fabric app directly in the Fabric portal.
 
+A Fabric administrator can temporarily block other users from loading your app. As the app owner, you can still open the app. For more information, see [Block and unblock Fabric apps](../governance/block-unblock-fabric-apps.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json).
+
+If you own or use a blocked app, see [What happens when an app is blocked](../governance/block-unblock-fabric-apps.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json#what-happens-when-an-app-is-blocked).
+
 ### View item properties
 
 Open the Fabric app in the portal to see:

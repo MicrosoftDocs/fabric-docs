@@ -50,7 +50,7 @@ To allow a semantic model to connect to a lakehouse or warehouse in its own work
 1. Confirm prerequisites:
    - The workspace is assigned to a Fabric capacity (F SKU).
    - The tenant setting **Configure workspace-level outbound network rules** is enabled.
-   - The workspace contains only items that support outbound access protection. Remove any dashboards, scorecards, or other unsupported items first.
+   - The workspace contains only items that support outbound access protection. Remove any paginated reports, dashboards, scorecards, or other unsupported items first.
 
 1. Enable outbound access protection for the workspace by following the steps in [Enable workspace outbound access protection](workspace-outbound-access-protection-set-up.md).
 
@@ -78,7 +78,7 @@ You can publish semantic models to a protected workspace through any of the stan
 
 ## Considerations and limitations
 
-- **Interactive and paginated reports are supported**: Interactive Power BI reports (`.pbix`) and paginated reports can coexist with semantic models in a protected workspace. An interactive report can also reside in another protected workspace when its workspace has an exception for the semantic model workspace. Dashboards and scorecards aren't supported. See [Workspace outbound access protection for Power BI reports](workspace-outbound-access-protection-power-bi-reports.md) and [Workspace outbound access protection for paginated reports](workspace-outbound-access-protection-paginated-reports.md).
+- **Interactive reports are supported; other Power BI items aren't**: Interactive Power BI reports (`.pbix`) can coexist with semantic models in a protected workspace and can be published directly. An interactive report can also reside in another protected workspace when its workspace has an exception for the semantic model workspace. Paginated reports, dashboards, and scorecards aren't supported. See [Workspace outbound access protection for Power BI reports](workspace-outbound-access-protection-power-bi-reports.md).
 - **Same-workspace connections need exceptions**: Data sources in the same workspace, including lakehouses, warehouses, and SQL databases, require explicit SQL Server and ADLS Gen2 connection rules. Some connectors, such as the connector for KQL databases in eventhouses, don't support workspace-level or endpoint-granular exceptions yet. To use those sources from a semantic model, you have to allow the entire connector type.
 - **F SKU required**: Outbound access protection requires Fabric capacity. Power BI Premium (P SKUs), Embedded (EM SKUs), and Pro workspaces aren't supported.
 - **Propagation delay**: Policy changes take about 15 minutes to take effect.

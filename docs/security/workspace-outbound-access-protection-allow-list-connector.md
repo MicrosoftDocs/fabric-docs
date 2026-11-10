@@ -48,7 +48,7 @@ When you enable the **Block outbound public access** setting in the outbound acc
 
    - If the connection type allows you to configure exceptions (for example, Lakehouse), use the dropdown list to select the exception (for example, a workspace) you want to allow. Then select **Add**. Leave the toggle for the connection type set to **Blocked**, and select **Save**. This configuration blocks the connection type overall, but allows the exception you selected.
 
-     For an interactive Power BI report that uses a semantic model in another workspace, configure this rule in the report workspace. Select **Power BI Semantic Model** as the connection kind, and then select the semantic model workspace under **Workspace exception**. You configure one exception for each approved destination workspace, not for each report. For paginated reports, use the **Analysis Services** connector instead; see [Workspace outbound access protection for paginated reports](workspace-outbound-access-protection-paginated-reports.md#data-connection-rules).
+     For an interactive Power BI report that uses a semantic model in another workspace, configure this rule in the report workspace. Select **Power BI Semantic Model** as the connection kind, and then select the semantic model workspace under **Workspace exception**. You configure one exception for each approved destination workspace, not for each report.
 
       > [!NOTE]
       > Exceptions can only be added one at a time. To add more exceptions (even to the same connection type), start again from step 1.
