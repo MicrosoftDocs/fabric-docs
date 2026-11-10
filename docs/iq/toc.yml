@@ -719,12 +719,12 @@ items:
         href: plan/alm-variable-library.md
       - name: Dimension ID mapping
         href: plan/resources/best-practices/how-to-create-dimension-id-mapping.md
-      - name: Create interactive controls
-        items:
-          - name: Configure parameters
-            href: plan/resources/best-practices/parameters/how-to-configure-parameters.md
-          - name: Create numeric input parameters
-            href: plan/resources/best-practices/parameters/how-to-create-number-parameters.md
+      - name: Parameters - Create interactive controls
+        href: plan/resources/best-practices/parameters/how-to-configure-parameters.md
+      - name: Parameters - Create numeric input parameters
+        href: plan/resources/best-practices/parameters/how-to-create-number-parameters.md
+      - name: Parameters - Create text parameters
+        href: plan/resources/best-practices/parameters/how-to-create-text-parameters.md
     - name: Troubleshoot
       items:
           - name: Troubleshoot semantic model issues
