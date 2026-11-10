@@ -74,7 +74,6 @@ Moving workspaces from one capacity to another has the following restrictions:
     * Org app**
     * Dataflow Gen1
     * Paginated Report
-    * Metric set*
     * Exploration**
     * Datamart*
     * Scorecard

@@ -5,6 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.topic: reference
 ms.date: 11/12/2026
+ms.custom: msecd-doc-authoring-1032
 ---
 # Operation list
 
@@ -113,7 +114,6 @@ To audit OneLake data access and storage operations, use [OneLake diagnostics](.
 | Create Link Goals | :::no-loc text="CreateLinkGoals"::: |   |
 | Create Managed Private   Endpoint | :::no-loc text="CreateManagedPrivateEndpoint"::: | Create a private endpoint within a managed virtual network for   a workspace |
 | Create Managed VNet | :::no-loc text="CreateManagedVNet"::: | Create managed virtual network for a workspace |
-| Create MetricSet Metric   Endpoint | :::no-loc text="CreateMetricSetMetric"::: | Create metric in a metricset endpoint |
 | Create Notebook Resource | :::no-loc text="CreateNotebookResource"::: | Create resources in notebook.  |
 | Create Org App | :::no-loc text="CreateOrgApp"::: |   |
 | Create Personal Datasource | :::no-loc text="CreatePersonalDatasource"::: |   |
@@ -196,7 +196,6 @@ To audit OneLake data access and storage operations, use [OneLake diagnostics](.
 | Delete Link Goals | :::no-loc text="DeleteLinkGoals"::: |   |
 | Delete Managed Private   Endpoint | :::no-loc text="DeleteManagedPrivateEndpoint"::: | Delete a private endpoint within a managed virtual network for   a workspace |
 | Delete Managed VNet | :::no-loc text="DeleteManagedVNet"::: | Delete managedvirtual network for a workspace |
-| Delete MetricSet Metric   Endpoint | :::no-loc text="DeleteMetricSetMetric"::: | Delete metric in a metricset endpoint |
 | Delete Model Version | :::no-loc text="DeleteModelVersion"::: | Triggered when a Machine Learning Model version is removed   |
 | Delete Notebook Resource | :::no-loc text="DeleteNotebookResource"::: | Update resources in notebook.  |
 | Delete Scorecard Hierarchy | :::no-loc text="DeleteScorecardHierarchy"::: | Triggered when a [scorecard hierarchy](/power-bi/create-reports/service-metrics-get-started-hierarchies) is deleted. That is, the hierarchy's metadata is deleted, not the values of the goals in it. |
@@ -351,7 +350,6 @@ To audit OneLake data access and storage operations, use [OneLake diagnostics](.
 | Get Hierarchy Goal Values | :::no-loc text="GetHierarchyGoalValues"::: |   |
 | Get item sizes for workspace | :::no-loc text="GetItemsSize"::: | Retrieves the computed sizes of all items in the workspace. Does not refresh the data |
 | Get Lakehouse Table Details | :::no-loc text="GetLakehouseTableDetails"::: |   |
-| Get MetricSet Metric Endpoint | :::no-loc text="GetMetricSetMetric"::: | Read metric in a metricset endpoint |
 | Get Model Diagram Layouts | :::no-loc text="GetPowerBIDataModelDiagramLayouts"::: | Get diagram layouts when open data model in web model view.  |
 | Get Model SAS Token via Lockbox | :::no-loc text="GetModelSASTokenViaLockbox"::: | Gets the SAS Token for a given model in a tenant via Lockbox  |
 | Get My Goals | :::no-loc text="GetMyGoals"::: |   |
@@ -388,7 +386,6 @@ To audit OneLake data access and storage operations, use [OneLake diagnostics](.
 | Get Workspaces Via Admin Api | :::no-loc text="GetWorkspacesViaAdminApi"::: |   |
 | Get a task flow | :::no-loc text="GetTaskFlow"::: |   |
 | Get all connections | :::no-loc text="GetAllConnections"::: | Get all connections |
-| Get all metric sets Endpoint | :::no-loc text="GetAllMetricSets"::: | Get all metric sets endpoint |
 | Get data artifact table   details | :::no-loc text="GetDataArtifactTableDetails"::: | Get the details (for example, schema) for a data item table |
 | Get datasource share policy | :::no-loc text="GetDatasourceShareTenantPolicy"::: | Retrieve the datasource share policy set by the tenant  |
 | Get delegated capacity tenant setting overrides | :::no-loc text="GetCapacityDelegatedTenantSettingOverridesViaAdminApi"::: | Get capacity delegated tenant setting overrides  |
@@ -460,6 +457,8 @@ To audit OneLake data access and storage operations, use [OneLake diagnostics](.
 | Post Notebook Comment | :::no-loc text="PostNotebookComment"::: |   |
 | Post configure credentials | :::no-loc text="PostGitProviderCredentials"::: | Configure git provider credentials for a specific user |
 | Posted Power BI comment | :::no-loc text="PostComment"::: |   |
+| Modified by Power BI MCP | :::no-loc text="ModifiedByPowerBIMCP"::: | Power BI MCP tool called to modify the semantic model. |
+| Read by Power BI MCP | :::no-loc text="ReadByPowerBIMCP"::: | Power BI MCP tool called to read semantic model metadata. |
 | Preview Lakehouse Table | :::no-loc text="PreviewLakehouseTable"::: |   |
 | Printed Power BI Dashboard | :::no-loc text="PrintDashboard"::: |   |
 | Printed Power BI report page | :::no-loc text="PrintReport"::: |   |
@@ -674,7 +673,6 @@ To audit OneLake data access and storage operations, use [OneLake diagnostics](.
 | Update Hierarchy Goal Value | :::no-loc text="UpdateHierarchyGoalValue"::: |   |
 | Update Hierarchy Note | :::no-loc text="UpdateHierarchyNote"::: |   |
 | Update In Place Sharing Settings | :::no-loc text="UpdateInPlaceSharingSettings"::: |  |
-| Update MetricSet Metric   Endpoint | :::no-loc text="UpdateMetricSetMetric"::: | Update metric in a metricset endpoint |
 | Update Notebook Library | :::no-loc text="UpdateNotebookLibrary"::: |  |
 | Update Notebook Resource | :::no-loc text="UpdateNotebookResource"::: | Update resources in notebook. |
 | Update Notebook Spark Property | :::no-loc text="UpdateNotebookSparkProperty"::: |  |
