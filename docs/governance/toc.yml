@@ -26,6 +26,8 @@ items:
     href: onelake-catalog-govern.md
   - name: Secure your data
     href: secure-your-data.md
+  - name: Block and unblock Fabric apps (preview)
+    href: block-unblock-fabric-apps.md
 - name: Microsoft Purview
   items:
   - name: Microsoft Purview security and protection for Fabric
