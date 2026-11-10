@@ -471,6 +471,8 @@ items:
               href: plan/planning-reference-formulas/planning-reference-other-operators.md
         - name: Scripting functions
           items:
+            - name: Overview
+              href: plan/scripting-functions/overview.md
             - name: SHOW_VISUAL
               href: plan/scripting-functions/show-visual.md
             - name: REFRESH_REPORT
@@ -501,6 +503,8 @@ items:
               href: plan/scripting-functions/show-message.md
             - name: SHOWCLOSEDFORECAST
               href: plan/scripting-functions/showclosedforecast.md
+            - name: SHOWMEASURES
+              href: plan/scripting-functions/showmeasures.md
   - name: PowerTable sheets
     items:
     - name: Concepts
