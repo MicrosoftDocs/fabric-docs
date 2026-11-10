@@ -110,6 +110,12 @@ date = "2024-01-01"
 region = "US"
 ```
 
+For parameter names in the child notebook, start with an ASCII letter (`A`-`Z` or `a`-`z`) or underscore (`_`).
+Use only ASCII letters, digits (`0`-`9`), and underscores for the remaining characters.
+For example, use `customer_id` or `_run_date` instead of `customer id`, `customer-id`, `customer.id`, or `café`.
+Match each name exactly in the parameter cell and the arguments passed to `notebookutils.notebook.run()` or `runMultiple()`, or configured in a pipeline Notebook activity.
+This naming guidance applies to parameter names, not parameter values. It doesn't change how existing notebook runs execute.
+
 > [!TIP]
 > Exit values are always strings. If you need a numeric value in the parent notebook, convert the result after retrieval (for example, `int(result)`).
 
