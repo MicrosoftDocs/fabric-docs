@@ -39,6 +39,8 @@ items:
     items:
     - name: Secure your Fabric data
       href: ../governance/secure-your-data.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
+    - name: Block and unblock Fabric apps (preview)
+      href: ../governance/block-unblock-fabric-apps.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json
 - name: Data protection
   items:
   - name: Fabric policies (preview)
