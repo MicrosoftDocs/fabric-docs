@@ -20,6 +20,7 @@ Fabric Apps provides these capabilities:
 
 - **Data models to APIs** – Decorate TypeScript classes with `@entity()`, `@text()`, `@uuid()`, and other decorators. Fabric Apps generates database schemas and GraphQL endpoints automatically.
 - **Fabric data connectors** – Add typed access to a lakehouse, warehouse, SQL database in Fabric, or semantic model.
+- **File storage** - Define typed folders, control access with authenticated policies, and upload, download, list, and delete files in Fabric. See [Store and manage files](storage.md).
 - **Type-safe clients** – The client SDK validates queries and mutations before they reach the backend, catching errors during development.
 - **Built-in authentication** – Session management, token handling, and authentication flows are included. Configure Fabric SSO for deployed applications or use email and password during local development.
 - **Static hosting** – Build and serve your frontend application alongside your backend APIs. Require Fabric item access or allow anonymous access to hosted assets.
@@ -67,13 +68,14 @@ Each Fabric app has a single endpoint that provides access to all services:
 https://<your-app>-app.rayfin.windows.net/
 ```
 
-The endpoint exposes a path for each service:
+The endpoint includes these service paths:
 
 | Path | Service |
 | --- | --- |
 | `/api/graphql` | Data API (GraphQL) — used by `RayfinClient` for read and write operations |
 | `/auth` | Authentication service |
-| `/storage` | File storage |
+
+For file operations, use the [storage client SDK](storage.md#configure-the-client).
 
 ## Management in the Fabric portal
 
@@ -190,5 +192,6 @@ Fabric Apps might not be suitable for:
 - [Create your first Fabric Apps project](create-app.md)
 - [Define data models with decorators](data-models.md)
 - [Connect Fabric Apps to Fabric data](connectors.md)
+- [Store and manage files](storage.md)
 - [Deploy to Fabric](deploy-app.md)
 - [Configure authentication](authentication.md)

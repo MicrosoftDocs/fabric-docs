@@ -55,6 +55,13 @@ landingContent:
           - text: Apply and verify schema changes
             url: apply-schema-changes.md
 
+  - title: Storage
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Store and manage files
+            url: storage.md
+
   - title: Functions
     linkLists:
       - linkListType: overview
