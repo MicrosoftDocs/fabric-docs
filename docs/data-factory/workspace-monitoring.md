@@ -1,5 +1,5 @@
 ---
-title: Enable Workspace Monitoring (Preview) in Microsoft Fabric
+title: Using Pipelines Workspace Monitoring (Preview) in Microsoft Fabric
 description: Discover how Workspace Monitoring helps you track pipeline runs, analyze logs with KQL, and optimize performance with detailed diagnostics.
 ms.reviewer: conxu-ms
 ms.date: 12/09/2025
@@ -11,21 +11,7 @@ ai-usage: ai-assisted
 
 Workspace monitoring gives you log-level visibility for all items in a workspace, including pipelines. It stores execution logs in a monitoring eventhouse so you can query and analyze them using KQL (Kusto Query Language).
 
-## Enable workspace monitoring (Preview)
-
-1. In your Fabric workspace, select **Workspace Settings**, then select the **Monitoring** tab.
-
-   :::image type="content" source="media/monitor-pipeline-runs/workspace-monitoring-settings.png" alt-text="Screenshot of workspace settings showing the option to toggle on workspace monitoring.":::
-
-1. Turn on **Log workspace activity**. This creates an eventhouse in your workspace to store logs. Fabric also creates a read-only KQL database inside the eventhouse for monitoring data.
-
-   :::image type="content" source="media/monitor-pipeline-runs/monitoring-kql-database.png" alt-text="Screenshot of the items generated from workspace monitoring.":::
-
-1. Go to the KQL database. You can find it in the **Monitoring database** link within the monitoring settings or in your workspace.
-
-1. In the KQL database, the **ItemJobEventLogs** table captures pipeline-level events from your workspace. Logs include pipeline name, run status, timestamps, and system diagnostics.
-
-    :::image type="content" source="media/monitor-pipeline-runs/pipeline-workspace-monitoring.png" alt-text="Screenshot of the pipeline workspace monitoring table." lightbox="media/monitor-pipeline-runs/pipeline-workspace-monitoring.png":::
+Refer to [Configure workspace monitoring](/fabric/fundamentals/enable-workspace-monitoring) to set up your workspace with Workspace Monitoring.
 
 ## Troubleshooting missing monitoring tables
 
