@@ -3,7 +3,7 @@ title: "Data Quality in Materialized Lake Views in a Lakehouse in Microsoft Fabr
 description: Learn about data quality in materialized lake views in a lakehouse in Microsoft Fabric
 ms.reviewer: bsankaran, sairamyeturi, nijelsf, hgowrisankar
 ms.topic: concept-article
-ms.date: 03/18/2026
+ms.date: 11/09/2026
 ai-usage: ai-assisted
 #customer intent: As a data engineer, I want to implement data quality in materialized lake views in a lakehouse so that I can ensure the integrity and reliability of my data.
 ---
@@ -341,11 +341,9 @@ In this example, define column-level data quality checks for the `sales_db.daily
 Put the suite registration and its entry functions in a single data quality cell. The following example runs **two checks** in one validation pass — `customer_id` must be complete (no nulls) and `order_id` must be unique:
 
 ```python
-# Data quality cell — separate from the MLV definition
-@fmlv.dq_suite(mlv_name="sales_db.daily_orders", replace=True)
-@fmlv.validate("completeness_and_uniqueness", "FAIL")
-def daily_orders_dq():
-    pass
+import os
+os.environ["SPARK_VERSION"] = "3.5"   # works on both 3.5 and 4.1
+import fmlv
 
 # Entry function — returns a PyDeequ VerificationResult DataFrame
 def completeness_and_uniqueness(df):
@@ -363,17 +361,21 @@ def completeness_and_uniqueness(df):
         .run()
     )
     return VerificationResult.checkResultsAsDataFrame(spark, result)
+# Data quality cell — separate from the MLV definition
+@fmlv.dq_suite(mlv_name="sales_db.daily_orders", replace=True)
+@fmlv.validate("completeness_and_uniqueness", "FAIL")
+def daily_orders_dq():
+    pass
 ```
 
 **Add metrics without failing the run.** Stack an `@fmlv.analyze` pass to compute column metrics (size, completeness, mean, …) for observability. Analyze results are always recorded and never block a run — useful while validation rules are still evolving.
 
 ```python
-@fmlv.dq_suite(mlv_name="sales_db.daily_orders", replace=True)
-@fmlv.validate("completeness_and_uniqueness", "FAIL")
-@fmlv.analyze("column_profiling")
-def daily_orders_dq():
-    pass
+import os
+os.environ["SPARK_VERSION"] = "3.5"   # works on both 3.5 and 4.1
+import fmlv
 
+# Entry function — returns a PyDeequ AnalyzerContext metrics DataFrame
 def column_profiling(df):
     from pydeequ.analyzers import AnalysisRunner, AnalyzerContext, Size, Completeness, Mean
     result = (
@@ -385,6 +387,12 @@ def column_profiling(df):
         .run()
     )
     return AnalyzerContext.successMetricsAsDataFrame(spark, result)
+# Data quality cell — separate from the MLV definition
+@fmlv.dq_suite(mlv_name="sales_db.daily_orders", replace=True)
+@fmlv.validate("completeness_and_uniqueness", "FAIL")
+@fmlv.analyze("column_profiling")
+def daily_orders_dq():
+    pass
 ```
 
 ##### Control the outcome: FAIL vs. WARN
@@ -432,7 +440,7 @@ The MLV run history also shows a data quality status for each run — **Success*
 
 #### Supported checks and analyzers
 
-Because column-level DQ is powered by [Amazon Deequ](https://github.com/awslabs/deequ), you can use the full Deequ library inside your entry functions. **Validation checks** (used with `@fmlv.validate`) are `Check` constraints that produce a pass/fail outcome; **analyzers** (used with `@fmlv.analyze`) compute a metric with no pass/fail. The most common ones are listed in the following tables.
+Because column-level DQ is powered by the open-source [Deequ library](https://github.com/awslabs/deequ), you can use all of Deequ's checks and analyzers inside your entry functions. **Validation checks** (used with `@fmlv.validate`) are `Check` constraints that produce a pass/fail outcome; **analyzers** (used with `@fmlv.analyze`) compute a metric with no pass/fail. The most common ones are listed in the following tables.
 
 ##### Validation checks — `@fmlv.validate`
 
@@ -483,7 +491,7 @@ Because column-level DQ is powered by [Amazon Deequ](https://github.com/awslabs/
 | `UniqueValueRatio` | Fraction of unique values over the number of all distinct values. | `UniqueValueRatio(["brand"])` |
 | `Uniqueness` | Fraction of unique values over the number of all values. | `Uniqueness(["brand"])` |
 
-The open-source **Amazon Deequ** library provides these checks and analyzers. For the complete and authoritative list, see the Deequ project at [github.com/awslabs/deequ](https://github.com/awslabs/deequ/blob/master).
+The open-source **Deequ** library provides these checks and analyzers. For the complete and authoritative list, see the Deequ project at [github.com/awslabs/deequ](https://github.com/awslabs/deequ/blob/master).
 
 #### Summary
 

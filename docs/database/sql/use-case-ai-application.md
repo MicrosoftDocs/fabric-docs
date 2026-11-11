@@ -2,7 +2,7 @@
 title: Use SQL Database in AI Applications
 description: Learn how to use SQL database in Fabric to build AI-powered applications with vector search, RAG patterns, and integration with LangChain and Semantic Kernel.
 ms.reviewer: pamela, antho, yoleichen, pookam
-ms.date: 09/15/2026
+ms.date: 10/28/2026
 ms.topic: solution-overview
 ai-usage: ai-assisted
 ---
@@ -118,16 +118,24 @@ The SQL Database Engine provides built-in T-SQL functions for generating embeddi
 
 ### Register an embedding model
 
-Use [CREATE EXTERNAL MODEL](/sql/t-sql/statements/create-external-model-transact-sql?view=fabric-sqldb&preserve-view=true) to register an Azure OpenAI embedding endpoint as a database object. This example uses the `text-embedding-ada-002` deployment with Microsoft Entra managed identity authentication. First, create access credentials to Azure OpenAI using a managed identity:
+Step 1: Before you proceed, follow the steps in this document to [create an Azure OpenAI resource and deploy the embedding model](/azure/foundry-classic/openai/how-to/create-resource?pivots=web-portal).
+
+Use [CREATE EXTERNAL MODEL](/sql/t-sql/statements/create-external-model-transact-sql?view=fabric-sqldb&preserve-view=true) to register an Azure OpenAI embedding endpoint as a database object. This example uses the `text-embedding-ada-002` deployment with API-key authentication through the `HTTPEndpointHeaders` credential identity.
+
+Note: Use the API key from Azure OpenAI Project.
+
+Step 2:
 
 ```sql
 CREATE DATABASE SCOPED CREDENTIAL [https://my-azure-openai-endpoint.cognitiveservices.azure.com/]
-    WITH IDENTITY = 'Managed Identity',
-    SECRET = '{"resourceid":"https://cognitiveservices.azure.com"}';
+    WITH IDENTITY = 'HTTPEndpointHeaders',
+    SECRET = '{"api-key":"<OpenAIKey>"}';
 GO
 ```
 
 Then, create an external model:
+
+Step 3:
 
 ```sql
 CREATE EXTERNAL MODEL MyEmbeddingModel

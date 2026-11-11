@@ -127,7 +127,7 @@ items:
             href: event-streams/add-source-confluent-kafka.md
           - name: Cribl
             href: event-streams/add-source-cribl.md
-          - name: Custom Stream Connector (Preview)
+          - name: Custom stream connector (preview)
             href: event-streams/add-custom-stream-connector.md
           - name: Custom endpoint
             href: event-streams/add-source-custom-app.md
@@ -894,6 +894,8 @@ items:
           href: dashboard-permissions.md
         - name: Configure data source access
           href: dashboard-data-source-access.md
+        - name: Display a dashboard in present or kiosk mode
+          href: dashboard-fullscreen-kiosk.md
         - name: Embed Real-Time Dashboards in other applications
           href: ../embed/quickstart-embed-fabric-item.md
       - name: Deploy and manage
@@ -1174,6 +1176,8 @@ items:
             href: map/customize-map.md
           - name: Create a tileset
             href: map/create-tile-sets.md
+          - name: Monitor Fabric Maps with workspace monitoring
+            href: map/workspace-monitoring.md
           - name: Create Activator alerts from a Fabric map
             href: map/create-activator-alerts.md
           - name: Map sharing

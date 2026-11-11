@@ -35,9 +35,11 @@ The rest of this article describes the existing eventstream experience.
 
 ## Bring events into Fabric
 
-Eventstreams provide you with source connectors to fetch event data from various sources.
+Eventstreams provide source connectors to fetch event data from various sources.
 
 [!INCLUDE [supported-sources-enhanced](./includes/supported-sources-enhanced.md)]
+
+If a built-in connector isn't available for your source, use a custom stream connector (preview) to upload a Kafka Connect source connector plugin. Upload the package from Real-Time hub or a custom stream connector item in your workspace, and then configure the connector and add it to an eventstream. For more information, see [Add a custom stream connector to an eventstream](./add-custom-stream-connector.md).
 
 ## Process events
 

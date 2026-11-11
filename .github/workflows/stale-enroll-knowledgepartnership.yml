@@ -8,6 +8,7 @@ on:
     types: [opened, reopened, ready_for_review, edited, synchronize]
 
 permissions:
+  contents: read
   issues: read
   pull-requests: write
 
@@ -18,7 +19,7 @@ concurrency:
 jobs:
   configuration:
     name: Share workflow settings
-    if: github.repository == 'MicrosoftDocs/fabric-docs-pr'
+    if: github.event.repository.private == true && github.repository == 'MicrosoftDocs/fabric-docs-pr'
     permissions: {}
     uses: ./.github/workflows/reusable-kp-configuration.yml
 
@@ -26,10 +27,11 @@ jobs:
     name: Validate Knowledge Partnership labels
     needs: configuration
     if: >-
-      github.repository == 'MicrosoftDocs/fabric-docs-pr' &&
+      github.event.repository.private == true && github.repository == 'MicrosoftDocs/fabric-docs-pr' &&
       startsWith(github.event.pull_request.base.ref, needs.configuration.outputs.rollout-branch-prefix)
     uses: ./.github/workflows/reusable-kp-validate-labels.yml
     with:
+      reminder-due-label: ${{ needs.configuration.outputs.reminder-due-label }}
       event-label: ${{ needs.configuration.outputs.event-label }}
       author-action-label: ${{ needs.configuration.outputs.author-action-label }}
       author-reminder-label: ${{ needs.configuration.outputs.author-reminder-label }}
@@ -38,8 +40,10 @@ jobs:
   label-event-prs:
     name: Enroll rollout PR (no reminders)
     needs: [configuration, validate-labels]
-    if: github.repository == 'MicrosoftDocs/fabric-docs-pr'
+    if: github.event.repository.private == true && github.repository == 'MicrosoftDocs/fabric-docs-pr'
     uses: ./.github/workflows/reusable-kp-label-event.yml
     with:
+      reminder-due-label: ${{ needs.configuration.outputs.reminder-due-label }}
+      author-reminder-label: ${{ needs.configuration.outputs.author-reminder-label }}
       event-label: ${{ needs.configuration.outputs.event-label }}
       rollout-branch-prefix: ${{ needs.configuration.outputs.rollout-branch-prefix }}

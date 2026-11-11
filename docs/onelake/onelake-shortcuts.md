@@ -4,7 +4,9 @@ description: OneLake shortcuts provide a way to connect to existing data without
 ms.reviewer: eloldag, oronkaiser-MSFT-nonEMU
 ms.search.form: Shortcuts
 ms.topic: concept-article
-ms.date: 07/13/2026
+ms.date: 11/05/2026
+ms.custom: msecd-doc-authoring-1030
+ai-usage: ai-assisted
 #customer intent: As a data engineer, I want to learn how to use OneLake shortcuts so that I can unify data sources and have OneLake manage the permissions.
 ---
 
@@ -52,6 +54,8 @@ When you create a shortcut in a KQL database, it appears in the **Shortcuts** fo
 
 When you create a database shortcut in an eventhouse, you can choose to include all subitems from the source database or select specific subitems to share. This table-level sharing capability enables secure, controlled data sharing without exposing entire databases.
 
+The source database and the database shortcut must be in the same tenant and region. Cross-tenant and cross-region sharing aren't supported. For the complete procedure, see [Create a database shortcut](../real-time-intelligence/database-shortcut.md).
+
 #### Select specific subitems
 
 When creating a new database shortcut, you can select from the following subitem types:
@@ -70,8 +74,8 @@ To select specific subitems:
    - **OneLake catalog** - Browse and select a database from Fabric.
    - **Cluster URI** - Enter an Azure Data Explorer cluster URI and database name manually.
    - **Invitation token** - Paste a token issued by the data producer. The subitem selection is predefined by the producer.
-1. In the **Subitems to include** section, select **Include all subitems** (default) or **Select specific subitems**.
-1. If you select specific subitems, use the inline picker to filter by type and search by name.
+1. For the OneLake catalog or cluster URI method, open **Shared entities**. Keep **All entities** selected to include every subitem, or select only the subitems you want to share.
+1. To find specific subitems, expand an entity type or search by name.
 1. Select **Create** to create the shortcut.
 
 > [!NOTE]
@@ -81,7 +85,7 @@ To select specific subitems:
 
 There are two types of automatic schema sync for eventhouse database shortcuts:
 
-- **Auto schema sync for the database shortcut**: Adds or removes tables, shortcut tables, materialized views, and functions. This sync happens only when you create a database shortcut and select **Include all subitems**. If you select only a subset of the subitems, this sync doesn't apply.
+- **Auto schema sync for the database shortcut**: Adds or removes tables, shortcut tables, materialized views, and functions. This sync happens only when you create a database shortcut and select **All entities** in **Shared entities**. If you select only a subset of the subitems, this sync doesn't apply. Newly created source subitems aren't automatically added to that share.
 - **Auto schema sync for a shortcut table**: Adds, deletes, or renames columns, and changes column types. This sync happens for all shortcut tables by default, unless you turn it off with the KQL command in the following example.
 
 Consumers of a table-level share can only query and view subitems explicitly included in the share. Names of nonshared subitems aren't visible to consumers.

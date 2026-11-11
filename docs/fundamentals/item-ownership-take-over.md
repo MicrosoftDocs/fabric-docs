@@ -5,7 +5,8 @@ ms.reviewer: sakjai
 author: SnehaGunda
 ms.author: sngun
 ms.topic: how-to
-ms.date: 01/31/2025
+ms.date: 10/29/2026
+ai-usage: ai-assisted
 #customer intent: As a member of a workspace that has items that no longer work correctly because the current owner has left the organization, I want to know how to take over ownership of such items and make other changes to get the items working again.
 ---
 # Take ownership of Fabric items
@@ -44,6 +45,12 @@ To take ownership of a Fabric item:
 
 > [!IMPORTANT]
 > The take over feature doesn't cover ownership change of related items. For instance, if a pipeline has notebook activity, changing ownership of the pipeline doesn't change the ownership of the notebook. Ownership of related items needs to be changed separately.
+
+## Review schedules after Fabric item ownership change
+
+Taking over an item doesn't transfer ownership of existing schedules associated with that item or update their authentication context. Item ownership, schedule ownership, and connections used by the item are separate concerns.
+
+Review existing schedules separately after taking over an item. A successful on-demand run doesn't confirm that an existing schedule can run successfully. For more information, see [Schedule ownership and item takeover](job-scheduler.md#schedule-ownership-and-item-takeover).
 
 ## Repair connections after Fabric item ownership change
 

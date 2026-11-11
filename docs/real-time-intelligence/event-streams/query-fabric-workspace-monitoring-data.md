@@ -16,7 +16,7 @@ Eventstream workspace monitoring (preview) uses Fabric workspace monitoring. Whe
 
 Before you query monitoring data, enable workspace monitoring at the workspace level, and then turn on **Log Eventstream activity** for the eventstream. If you published an eventstream before enabling workspace monitoring, republish it so that it starts sending monitoring data. For instructions, see [Enable workspace monitoring for eventstreams](enable-fabric-workspace-monitoring.md).
 
-**Eventstream monitoring tables** are a set of three tables created in your workspace monitoring database that capture different aspects of your eventstream's behavior. All tables share common columns (base dimensions) and include table-specific columns for the data they track. For more information about the tables and the data they contain, see [Eventstream monitoring tables](fabric-workspace-monitoring.md#monitoring-tables).
+**Eventstream monitoring tables** are a set of four tables created in your workspace monitoring database that capture different aspects of your eventstream's behavior. All tables share common columns (base dimensions) and include table-specific columns for the data they track. For more information about the tables and the data they contain, see [Eventstream monitoring tables](fabric-workspace-monitoring.md#monitoring-tables).
 
 You can query your Eventstream monitoring data using KQL (Kusto Query Language) directly in the monitoring Eventhouse. Open the monitoring database and use the query editor to run queries against the Eventstream tables.
 
@@ -28,7 +28,7 @@ This query returns the most recent status of each node in a specific Eventstream
 
 ```kql
 EventStreamNodeStatus
-| where ArtifactId == "<your-artifact-id>"
+| where ItemId  == "<your-artifact-id>"
 | summarize arg_max(Timestamp, *) by NodeId
 | project Timestamp, NodeName, NodeDirection, NodeType, NodeStatus
 | order by NodeDirection asc
@@ -41,9 +41,9 @@ This query shows how many messages entered and exited your Eventstream in 5-minu
 
 ```kql
 EventStreamMetrics
-| where ArtifactId == "<your-artifact-id>"
-| where MetricsName in ("Incoming Messages", "Outgoing Messages")
-| summarize TotalMessages = sum(Value) by
+| where ItemId  == "<your-artifact-id>"
+| where MetricsName in ("IncomingMessages", "OutgoingMessages")
+| summarize TotalMessages = sum(MetricsValue) by
     TimeWindow = bin(Timestamp, 5m), MetricsName
 | order by TimeWindow asc
 ```
@@ -54,10 +54,10 @@ This query shows errors from the last 24 hours, grouped by error type and time w
 
 ```kql
 EventStreamErrorMetrics
-| where ArtifactId == "<your-artifact-id>"
+| where ItemId == "<your-artifact-id>"
 | where Timestamp > ago(24h)
-| where Value > 0
-| summarize TotalErrors = sum(Value) by
+| where MetricsValue  > 0
+| summarize TotalErrors = sum(MetricsValue) by
     TimeWindow = bin(Timestamp, 5m), MetricsName, NodeDirection
 | order by TimeWindow desc
 ```

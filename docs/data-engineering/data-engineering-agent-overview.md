@@ -1,9 +1,9 @@
 ---
-title: What is Fabric data engineering agent (Project Osmos)? (preview)
+title: What is Fabric data engineering agent (Project Osmos)? Preview
 description: Fabric data engineering agent (Project Osmos) is an autonomous data engineering capability for Microsoft Fabric that plans, executes, and validates work against authorized lakehouse resources.
 author: vsarad
 ms.author: vijaykris
-ms.date: 08/22/2026
+ms.date: 10/23/2026
 ms.topic: overview
 ms.service: fabric
 ms.subservice: data-engineering
@@ -11,7 +11,7 @@ ai-usage: ai-assisted
 #customer intent: As a data engineer, I want to understand what Fabric data engineering agent (Project Osmos) is and when to use it so that I can decide whether to run autonomous data engineering tasks in Fabric.
 ---
 
-# What is Fabric data engineering agent (Project Osmos)? (preview)
+# What is Fabric data engineering agent (Project Osmos)? Preview
 
 Fabric data engineering agent (Project Osmos) is an autonomous data engineering capability for Microsoft Fabric. It runs persistent tasks that plan, execute, and validate data engineering work against Fabric resources you’re authorized to access.
 

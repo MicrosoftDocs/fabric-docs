@@ -79,6 +79,10 @@ The endpoint exposes a path for each service:
 
 After deployment, you can manage your Fabric app directly in the Fabric portal.
 
+A Fabric administrator can temporarily block other users from loading your app. As the app owner, you can still open the app. For more information, see [Block and unblock Fabric apps](../governance/block-unblock-fabric-apps.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json).
+
+If you own or use a blocked app, see [What happens when an app is blocked](../governance/block-unblock-fabric-apps.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json#what-happens-when-an-app-is-blocked).
+
 ### View item properties
 
 Open the Fabric app in the portal to see:
@@ -90,7 +94,7 @@ Open the Fabric app in the portal to see:
 
 Select the Fabric app to see its child services:
 
-- **SQL database in Fabric** — Opens the Fabric SQL Database item to view the object explorer. You can run read queries against your data. Schema changes should always be made in the code under `rayfin/data` folder. Schema conflicts can occur if schema is changed in the SQL Database directly and can break the app.
+- **SQL database in Fabric** — Opens the SQL database in Fabric item to view the object explorer. You can run read queries against your data. Make schema changes in your configured data package (`packages/data` in the default Universal App, or `rayfin/data` in flat templates), not directly in the database. Manual schema changes can create conflicts and break the app.
 
 ### Item permissions
 
@@ -122,6 +126,8 @@ For a complete command reference, see [CLI reference](cli-reference.md).
 
 Define data models using TypeScript decorators:
 
+The default `blankapp` scaffold is a Universal App workspace. Data is opt-in: enable it before adding entities to `packages/data/src/`, and keep client-facing contracts in `packages/shared/src/`. Flat templates can use `rayfin/data/` instead. See [Define data models](data-models.md).
+
 ```typescript
 import {
   entity,
@@ -142,7 +148,7 @@ export class Todo {
   @boolean() isCompleted!: boolean;
   @date() createdAt!: Date;
   @date({ optional: true }) dueDate?: Date;
-  @text() user_id!: string;
+  @text({ max: 255 }) user_id!: string;
 }
 
 ```
