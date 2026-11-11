@@ -4,7 +4,7 @@ description: "Learn how to create an allow list using data connection rules on M
 author: msmimart
 ms.author: mimart
 ms.topic: how-to
-ms.date: 11/08/2026
+ms.date: 11/10/2026
 ai-usage: ai-assisted
 
 #customer intent: As a data platform administrator, I want to set up outbound access protection and create an allow list using data connection rules so that I can control and secure how my workspace resources connect to external networks.
@@ -22,7 +22,7 @@ When you enable outbound access protection for a workspace, it blocks all outbou
 This article describes how to use data connection rules in the workspace settings to allow cloud connections and data gateways.
 
 > [!NOTE]
-> Data connection rules are available for supported workloads, including Data Factory and Power BI. For Data Engineering or OneLake, use [managed private endpoints](./workspace-outbound-access-protection-allow-list-endpoint.md) to allow outbound access.
+> Data connection rules are available for Data Factory workloads and the other item types listed in [Supported item types](workspace-outbound-access-protection-overview.md#supported-item-types). For Data Engineering or OneLake, use [managed private endpoints](./workspace-outbound-access-protection-allow-list-endpoint.md) to allow outbound access.
 
 ## How to create an allow list using data connection rules
 

@@ -33,6 +33,10 @@ items:
     href: data-permissions.md
   - name: Read and write data
     href: read-write-data-graphql.md
+- name: Storage
+  items:
+  - name: Store and manage files
+    href: storage.md
 - name: Auth
   items:
   - name: Authentication overview

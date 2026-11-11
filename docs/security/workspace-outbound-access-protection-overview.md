@@ -4,7 +4,7 @@ description: "This article describes workspace outbound access protection in Mic
 author: msmimart
 ms.author: mimart
 ms.topic: overview
-ms.date: 11/08/2026
+ms.date: 11/10/2026
 
 #customer intent: As a Fabric administrator, I want to control and secure outbound connections from workspace artifacts so that I can protect organizational data and ensure compliance with security policies.
 
@@ -25,7 +25,7 @@ When outbound access protection is enabled for a workspace, all outbound connect
 
 * **Managed private endpoints**, which are network connections that let you securely link workspace items to supported external data sources over private virtual networks. You can also connect to other workspaces within the same tenant by using managed private endpoints in conjunction with the Private Link service. Managed private endpoints are supported for Data Engineering and OneLake workloads.
 
-* **Data connection rules**, which are policies that permit workspace items to access external services through specific cloud connections or gateway connections. Admins control outbound connectivity by explicitly allowing or blocking connectors. Data connection rules are supported for Data Factory workloads and mirrored databases.
+* **Data connection rules**, which are policies that permit workspace items to access external services through specific cloud connections or gateway connections. Admins control outbound connectivity by explicitly allowing or blocking connectors. Data connection rules are supported for Data Factory workloads, mirrored databases, mirrored catalogs, and Snowflake database items.
 
 The following sections explain these options in more detail.
 
@@ -64,6 +64,7 @@ The following table summarizes the supported workloads and item types that can b
 | Fabric IQ | Data connection rules | <ul><li>Graph</li><li>Operations agent</li><li>Data agent</li></ul> | Workspace outbound access protection for Fabric IQ: [Graph](workspace-outbound-access-protection-graph.md), [Operations agent](workspace-outbound-access-protection-operations-agent.md), and [Data agent](workspace-outbound-access-protection-data-agent.md) |
 | Real-Time Intelligence | Data connection rules | <ul><li>Activator</li><li>Eventstream</li><li>Eventhouse</li><li>Fabric Maps</li></ul> | Workspace outbound access protection for Real-Time Intelligence: [Activator](workspace-outbound-access-protection-activator.md), [Eventstream](workspace-outbound-access-protection-eventstream.md), [Eventhouse](workspace-outbound-access-protection-eventhouse.md), and [Fabric Maps](workspace-outbound-access-protection-fabric-maps.md) |
 | Mirrored databases | Data connection rules | <ul><li>Mirrored databases</li></ul> | [Workspace outbound access protection for mirrored databases](workspace-outbound-access-protection-mirrored-databases.md) |
+| Mirrored catalogs and Snowflake database | Data connection rules | <ul><li>Mirrored catalogs</li><li>Snowflake database</li></ul> | [Workspace outbound access protection for mirrored catalogs and Snowflake database](workspace-outbound-access-protection-mirrored-catalogs-snowflake-database.md) |
 | OneLake | Managed private endpoints | <ul><li>OneLake shortcuts</li></ul> | [Workspace outbound access protection for OneLake](workspace-outbound-access-protection-onelake.md) |
 | Real-Time Events (preview) | Data connection rules | <ul><li>Azure, Fabric, and Business events</li></ul> | [Workspace outbound access protection for Real-Time Events](workspace-outbound-access-protection-real-time-events.md) |
 | Power BI | Data connection rules for semantic models and interactive report-to-model connections | <ul><li>Semantic models</li><li>Interactive reports</li></ul> | Workspace outbound access protection for Power BI: [Semantic models](workspace-outbound-access-protection-semantic-models.md) and [Interactive reports](workspace-outbound-access-protection-power-bi-reports.md) |

@@ -4,7 +4,7 @@ description: Learn about limitations for Google Lakehouse runtime catalog mirror
 author: kgremban
 ms.author: kgremban
 ms.reviewer: mahi
-ms.date: 08/21/2026
+ms.date: 11/10/2026
 ms.topic: limits-and-quotas
 ai-usage: ai-assisted
 ---
@@ -20,7 +20,7 @@ This article lists current limitations and considerations with Google Lakehouse 
 - You can only mirror Apache Iceberg V2 tables. Google Lakehouse runtime catalog doesn't support Iceberg V1 tables.
 - The Google Lakehouse Apache Iceberg REST catalog endpoint supports only Parquet data files.
 - Fabric automatically converts tables you mirror from Google Lakehouse runtime catalog from Iceberg to Delta Lake. This conversion is subject to the [limitations of the Iceberg to Delta Lake conversion feature](../../onelake/onelake-iceberg-tables.md#limitations-and-considerations).
-- Fabric accesses the Apache Iceberg REST catalog endpoint and the Google Cloud Storage location of every mirrored table through the public internet. Catalog mirroring doesn't currently support firewall rules or other network restrictions. Microsoft plans to address this limitation.
+- The Apache Iceberg REST catalog endpoint and the Google Cloud Storage locations that store the Iceberg data must be reachable over the public internet. Source firewall rules and other source-network restrictions aren't supported. Mirrored catalogs support [workspace outbound access protection in Fabric](../../security/workspace-outbound-access-protection-mirrored-catalogs-snowflake-database.md).
 - You can mirror up to 500 tables at once. This limit applies to both individually selected tables and tables that are automatically mirrored.
 - The Google Lakehouse Apache Iceberg REST catalog endpoint limits each Iceberg `metadata.json` file to 1 MB.
 - Mirrored Google Lakehouse runtime catalog data is read-only in Fabric. You can't write back to the source tables through the mirrored item.
