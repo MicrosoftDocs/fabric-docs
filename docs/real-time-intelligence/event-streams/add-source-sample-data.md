@@ -24,11 +24,11 @@ To get a better understanding of how a Microsoft Fabric eventstream works, you c
 
 1. On the get-started page, select **Use sample data**.
 
-   :::image type="content" border="true" source="media\add-source-sample-data-enhanced\select-sample-data.png" alt-text="Screenshot of the tile for using sample data.":::
+   :::image type="content" border="true" source="media\add-source-sample-data\select-sample-data.png" alt-text="Screenshot of the tile for using sample data.":::
 
    Or, if you already have a published eventstream and want to add sample data as a source, switch to **Edit** mode. On the ribbon, select **Add source** > **Sample data**.
 
-   :::image type="content" border="true" source="media\add-source-sample-data-enhanced\add-sample-data.png" alt-text="Screenshot of selections for adding sample data to an eventstream.":::
+   :::image type="content" border="true" source="media\add-source-sample-data\add-sample-data.png" alt-text="Screenshot of selections for adding sample data to an eventstream.":::
 
 1. On the **Sample data** pane, enter a **Source name** value. In the **Sample data** box, select the source data that you want, and then select **Add**. You have these options for sample data:
 
@@ -39,15 +39,15 @@ To get a better understanding of how a Microsoft Fabric eventstream works, you c
    - **S&P 500 companies stocks**: Sample data for Standard & Poor’s 500 Index historical stock prices with a preset schema that includes fields such as **Date**, **Open**, **High**, **Low**, **Close**, **Adjusted Close**, **Volume**, and **Ticker**.
    - **Semantic Model Logs**: Sample data for semantic model operation logs with a preset schema that includes fields such as **Timestamp**, **OperationName**, **ItemId**, **ItemKind**, **ItemName**, **WorkspaceId**, **WorkspaceName**, and **CapacityId**.
 
-   :::image type="content" border="true" source="media\add-source-sample-data-enhanced\sample-sources.png" alt-text="Screenshot that shows the choices on the pane for sample data.":::
+   :::image type="content" border="true" source="media\add-source-sample-data\sample-sources.png" alt-text="Screenshot that shows the choices on the pane for sample data.":::
 
 1. After you create the sample data source, confirm that the source is added to your eventstream on the canvas in **Edit** mode. To implement this newly added sample data, select **Publish**.
 
-    :::image type="content" source="media\add-source-sample-data-enhanced\edit-mode.png" alt-text="Screenshot that shows an eventstream in Edit mode, with the Publish button highlighted.":::
+    :::image type="content" source="media\add-source-sample-data\edit-mode.png" alt-text="Screenshot that shows an eventstream in Edit mode, with the Publish button highlighted.":::
 
 1. After publishing succeeds, the sample data is available for visualization in **Live** view.
 
-    :::image type="content" source="media\add-source-sample-data-enhanced\live-view.png" alt-text="Screenshot that shows an eventstream in Live view." lightbox="media\add-source-sample-data-enhanced\live-view.png":::
+    :::image type="content" source="media\add-source-sample-data\live-view.png" alt-text="Screenshot that shows an eventstream in Live view." lightbox="media\add-source-sample-data\live-view.png":::
 
 ## Related content
 

@@ -137,6 +137,8 @@ items:
                     href: workspace-outbound-access-protection-data-agent.md
               - name: Mirrored databases
                 href: workspace-outbound-access-protection-mirrored-databases.md
+              - name: Mirrored catalogs and Snowflake database
+                href: workspace-outbound-access-protection-mirrored-catalogs-snowflake-database.md
               - name: OneLake
                 href: workspace-outbound-access-protection-onelake.md
               - name: Semantic models (preview)

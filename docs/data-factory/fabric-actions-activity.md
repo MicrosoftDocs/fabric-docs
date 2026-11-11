@@ -9,15 +9,74 @@ ai-usage: ai-assisted
 
 # Use the Fabric actions activity in a pipeline
 
-Use the Fabric actions activity to run a [Fabric REST API operation](/rest/api/fabric/articles/get-started/using-fabric-apis) from a Data Factory pipeline.
+The **Fabric actions activity** lets a pipeline *do something in Fabric* as one of its steps. You can run a notebook, create a shortcut, update an item, or start a job. You don't need to write code or call an API yourself. You choose the action from a list, fill in its inputs, and the pipeline runs it for you. Later steps in the pipeline can use the result.
 
-For example, after a pipeline prepares sales data for reporting, you can run a Fabric operation and make its response available to later pipeline logic.
-
-This article shows you how to add a Fabric actions activity, configure a Fabric operation with pipeline values, run the pipeline, and use the response in a downstream activity.
+Behind the scenes, each action is a [Microsoft Fabric REST API](/rest/api/fabric/articles/get-started/using-fabric-apis) operation. The activity handles the connection, sign-in, and request format, so you work with a form instead of HTTP requests.
 
 > [!IMPORTANT]
-> Fabric actions is in preview.
-> Availability, supported operations, and the final portal experience can change before general availability.
+> The Fabric actions activity is in **preview**. Availability, supported operations, and the portal experience can change before general availability.
+
+## What the Fabric actions activity does
+
+The activity runs **one Fabric operation per activity**. Each time it runs, it:
+
+1. **Takes the action you selected**, such as *Run On Demand Item Job* or *Create Item*.
+2. **Fills in the inputs** you provided, such as a workspace ID, item ID, or request body. Inputs can be fixed values or dynamic content.
+3. **Calls Fabric** with your Fabric connection, using the same permissions as the identity behind that connection.
+4. **Returns Fabric's response** as activity output so later steps can use it. For example, a later step can read a new item's ID or a job's status.
+
+### Why it matters
+
+- **Orchestrate all of Fabric from one place.** A pipeline can load data and then act on the rest of your Fabric estate (items, jobs, schedules, shortcuts, and more) without leaving the pipeline.
+- **No custom code.** Without this activity, you'd typically need a Web activity with hand-built URLs, headers, and authentication, or a notebook that calls the API. The Fabric actions activity replaces that need with a guided selection and form.
+- **Dynamic, end-to-end workflows.** Because the response becomes activity output, you can chain actions. For example, you can create an item, then pass its ID to the next step.
+
+### Example scenarios
+
+| Scenario | Example action (Fabric REST API operation) |
+|---|---|
+| Start a Fabric job after data lands | [Run On Demand Item Job](/rest/api/fabric/core/job-scheduler) |
+| Check or cancel a running job | Get Item Job Instance, Cancel Item Job Instance |
+| Create, update, or schedule an item as part of a deployment workflow | [Create Item, Update Item](/rest/api/fabric/core/items), Create Item Schedule |
+| Look up items in a workspace and branch on the result | List Items, Get Item |
+| Move or organize items | Move Item, Bulk Move Items |
+
+## What it supports
+
+### Supported operations
+
+The Fabric actions activity is built on the **Microsoft Fabric REST APIs**. For the complete, current list of operations, including every operation's required parameters, request body, and response, see:
+
+**[Microsoft Fabric REST API references](/rest/api/fabric/articles/)**
+
+The REST API reference is grouped into these areas:
+
+| API area | What it covers | Examples |
+|---|---|---|
+| **Core** | Operations that work across all of Fabric | [Items](/rest/api/fabric/core/items) (create, get, list, update, move, definitions), [Job Scheduler](/rest/api/fabric/core/job-scheduler) (run, monitor, cancel, and schedule item jobs), workspaces, connections, and more |
+| **Item-specific (workload) APIs** | Operations for a particular Fabric item type | Operations for item types such as Apache Airflow jobs, anomaly detectors, lakehouses, notebooks, and other Fabric items |
+| **Admin** | Tenant-level governance operations. Require Fabric administrator permissions. | Workspaces, items, domains, connections, tenant settings, tags, and labels |
+
+> [!NOTE]
+> Operations marked **(preview)** or **(beta)** in the REST API reference can change. Use them with care in production pipelines.
+
+### Authentication
+
+The activity calls Fabric through a **Fabric connection**. The operation runs with the permissions of the identity in that connection. That identity must have access to the target workspace and item, and must be allowed to call the selected operation.
+
+### Operation output
+
+The activity exposes the Fabric REST API response body as activity output. Downstream activities can reference it with dynamic content, such as `@activity('RunFabricOperation').output`.
+
+### When to use a different activity
+
+| If you want to... | Consider |
+|---|---|
+| Run a notebook and wait for it with built-in notebook settings | [Notebook activity](/fabric/data-factory/notebook-activity) |
+| Refresh a Power BI semantic model | [Semantic model refresh activity](/fabric/data-factory/semantic-model-refresh-activity) |
+| Call a non-Fabric API or service | [Web activity](/fabric/data-factory/web-activity) |
+| Run a business action in another system, such as Logic Apps or connectors | [Business action activity](/fabric/data-factory/business-actions-activity) |
+| Run any Fabric REST API operation, including ones with no dedicated activity | **Fabric actions activity** |
 
 ## Prerequisites
 
