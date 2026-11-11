@@ -24,7 +24,7 @@ Fabric event streams support the following destinations. Use links in the table 
 
 [!INCLUDE [select-view](./includes/select-view.md)]
 
-[!INCLUDE [supported-destinations](./includes/supported-destinations-enhanced.md)]
+[!INCLUDE [supported-destinations](./includes/supported-destinations.md)]
 
 [!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 

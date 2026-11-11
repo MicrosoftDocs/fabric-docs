@@ -111,6 +111,18 @@ The configuration includes these key fields:
 | `path` | `string` | — | Data package directory relative to the project root, such as `packages/data`. Flat templates can use `rayfin/data`. |
 | `buildCommand` | `string` | — | Build command for the configured data package. |
 
+#### `services.storage`
+
+| Field | Type | Default | Description |
+| --- | --- | --- | --- |
+| `enabled` | `boolean` | `false` | Enable remote file storage. Requires `services.data.enabled: true`. |
+| `path` | `string` | `.` | Storage project root, relative to the app root. For example, `packages/storage`. |
+
+Storage runs on Fabric, including during development.
+It doesn't use a local storage service or emulator.
+Declare folders and their access policies under `rayfin/storage/` in the configured storage project root.
+For setup instructions, see [Store and manage files](storage.md).
+
 #### `services.auth`
 
 | Field | Type | Default | Description |
@@ -176,6 +188,15 @@ Maintain matching record interfaces and the `UniversalAppSchema` type in `packag
 ### Flat-template entities
 
 In a flat template, `rayfin/data/*.ts` defines entities and `rayfin/data/schema.ts` maps entity names to types for `client.data.<Entity>`. Follow the registration mechanism supplied by that template.
+
+## Storage files
+
+The optional `rayfin/storage/` folder under the storage project root contains classes decorated with `@blob()` and a `schema.ts` file that registers them.
+When you omit `services.storage.path` or set it to `.`, add these files under your app's `rayfin/storage/` folder.
+For example, `services.storage.path: packages/storage` places these files under `packages/storage/rayfin/storage/`.
+Export a `schema` array that lists the folders to deploy to Fabric.
+The `AppStorageSchema` type maps folder names to classes for typed client access.
+For an example, see [Store and manage files](storage.md).
 
 ## Generated artifacts
 

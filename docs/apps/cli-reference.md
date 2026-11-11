@@ -248,6 +248,21 @@ Starts a local development session against a Rayfin backend.
 | `--no-emit-env` | Don't regenerate the framework `.env.local` file. |
 | `-v, --verbose` | Enable verbose logging. |
 
+### `rayfin dev storage apply`
+
+Applies storage folder configuration to the active development app in Fabric.
+The full `rayfin dev` workflow applies enabled Storage declarations automatically; use this command for a retry or a storage-only change.
+Start a full `rayfin dev` session before using this command.
+
+| Option | Description |
+| --- | --- |
+| `--force` | Permit storage configuration changes that can cause data loss. |
+| `--gen-config-only` | Generate storage configuration without applying it to the server. |
+
+This command uses the active deployment and doesn't accept `--workspace` or `--workspace-id`.
+Storage has no local emulator, and applying it with the Docker provider isn't supported.
+See [Store and manage files](storage.md).
+
 ### `rayfin dev functions apply`
 
 Starts the local Functions host against the active deployment.
@@ -347,6 +362,7 @@ npx rayfin up --exclude-services functions
 | Subcommand | Description |
 | --- | --- |
 | `npx rayfin up db apply` | Generate and apply DAB configuration to the remote Rayfin item workload endpoint. |
+| `npx rayfin up storage apply` | Apply storage folder configuration to the active remote item. |
 | `npx rayfin up functions deploy` | Build, package, and deploy Functions to the active remote item. |
 | `npx rayfin up staticapp deploy` | Build, package, and deploy static content to the remote Rayfin item. |
 | `npx rayfin up connector apply` | Apply database configuration for declared GraphQL connectors. |
@@ -377,6 +393,24 @@ Force regeneration and capture machine-readable output:
 ```bash
 npx rayfin up db apply --force --json
 ```
+
+### `rayfin up storage apply`
+
+Generates and applies storage folder configuration to the active Fabric deployment.
+Requires Data and Storage to be enabled in `rayfin/rayfin.yml`.
+A full `rayfin up` applies registered folders automatically; use this command for a retry or a storage-only change.
+
+| Option | Description |
+| --- | --- |
+| `--force` | Permit storage configuration changes that can cause data loss, including removal of non-empty folders. |
+| `--json` | Emit JSON output. |
+
+```bash
+npx rayfin up storage apply
+```
+
+Removing a folder permanently deletes its files.
+Review the [folder removal behavior](storage.md#change-or-remove-folders) before using `--force`.
 
 ### `rayfin up functions deploy`
 
