@@ -15,7 +15,7 @@ Use security roles to configure sheet-level permissions and row-level security (
 For each role, learn how to control user access, manage permissions, apply row-level security (RLS), and secure database tables with configurable access rules.
 
 > [!NOTE]
-> You can manage the roles & policies security settings if you are the item owner, the workspace admin, member, or an authorized workspace contributor. To learn more about controlling workspace contributors' access to security settings, see [Workspace contributors' access control for managing security settings](./planning-how-to-manage-security.md#workspace-contributor-security-controls).
+> You can manage the roles and policies security settings if you're the item owner, the workspace admin, a member, or an authorized workspace contributor. To learn more about controlling workspace contributors' access to security settings, see [Workspace contributors' access control for managing security settings](./planning-how-to-manage-security.md#workspace-contributor-security-controls).
 
 ## Security models
 
