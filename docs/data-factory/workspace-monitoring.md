@@ -11,7 +11,7 @@ ai-usage: ai-assisted
 
 Workspace monitoring gives you log-level visibility for all items in a workspace, including pipelines. It stores execution logs in a monitoring eventhouse so you can query and analyze them using KQL (Kusto Query Language).
 
-Refer to [Configure workspace monitoring](../fundamentals/enable-workspace-monitoring.md) to set up your workspace with Workspace Monitoring.
+To set up your workspace with workspace monitoring, see [Configure workspace monitoring](../fundamentals/enable-workspace-monitoring.md).
 
 ## Troubleshooting missing monitoring tables
 
