@@ -2,7 +2,7 @@
 title: Configure Data Security in PowerTable
 description: Learn how to configure data security settings in PowerTable by using roles, policies, and user attributes. Control access to data, manage permissions, and secure database tables with access rules.
 #customer intent: As a user, I want to configure roles, policies, and user attributes to control access to data and database operations, so that users can access only the data and perform the actions permitted to them.
-ms.date: 09/22/2026
+ms.date: 11/11/2026
 ms.topic: how-to
 ---
 
@@ -13,6 +13,9 @@ This article explains how to configure data security in PowerTable by using role
 Use security roles to configure sheet-level permissions and row-level security (RLS) for each database configured with PowerTable. You can control whether users can access a sheet and whether they can view or edit its data.
 
 For each role, learn how to control user access, manage permissions, apply row-level security (RLS), and secure database tables with configurable access rules.
+
+> [!NOTE]
+> You can manage the roles & policies security settings if you are the item owner, the workspace admin, member, or an authorized workspace contributor. To learn more about controlling workspace contributors' access to security settings, see [Workspace contributors' access control for managing security settings](./planning-how-to-manage-security.md#workspace-contributor-security-controls).
 
 ## Security models
 
