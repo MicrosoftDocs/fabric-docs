@@ -7,7 +7,7 @@ ms.reviewer: svredevoogd
 ms.service: fabric
 ms.subservice: iq
 ms.topic: get-started
-ms.date: 10/21/2026
+ms.date: 11/10/2026
 ai-usage: ai-assisted
 ---
 
@@ -109,7 +109,7 @@ All clients require the delegated `Item.Read.All` and `Item.Execute.All` permiss
 GitHub Copilot CLI uses a preregistered Microsoft Entra application. You don't need to create your own app registration:
 
 1. Start GitHub Copilot CLI after you save the MCP configuration.
-1. Run `/mcp show FabricIQ`.
+1. Run `/mcp get FabricIQ`.
 1. When prompted, sign in with your Microsoft Entra work or school account.
 1. Accept the requested permissions if prompted.
 1. Return to GitHub Copilot CLI after sign-in completes.
@@ -148,19 +148,15 @@ Use two checks to validate the setup.
 After you save the configuration:
 
 1. Start GitHub Copilot CLI.
-1. Run `/mcp show FabricIQ`.
+1. Run `/mcp get FabricIQ`.
 1. Complete the browser sign-in when prompted.
 1. Confirm that the server is connected and that Fabric IQ tools are available.
 
 This check verifies the endpoint, authentication, and MCP handshake.
 
-Enter `/mcp show FabricIQ` in GitHub Copilot CLI:
+Enter `/mcp get FabricIQ` in GitHub Copilot CLI. The command displays the connection status and available Fabric IQ tools:
 
-:::image type="content" source="media/fabric-iq-mcp/mcp-show-command.png" alt-text="Screenshot of the mcp show FabricIQ command in GitHub Copilot CLI." lightbox="media/fabric-iq-mcp/mcp-show-command.png":::
-
-The command displays the connection status and available Fabric IQ tools:
-
-:::image type="content" source="media/fabric-iq-mcp/mcp-show-results.png" alt-text="Screenshot of a connected Fabric IQ MCP server and its six available tools in GitHub Copilot CLI." lightbox="media/fabric-iq-mcp/mcp-show-results.png":::
+:::image type="content" source="media/fabric-iq-mcp/mcp-get-results.png" alt-text="Screenshot of a connected Fabric IQ MCP server and its six available tools in GitHub Copilot CLI." lightbox="media/fabric-iq-mcp/mcp-get-results.png":::
 
 > [!TIP]
 > Use the runtime `tools/list` response as the authoritative list of available tools and input schemas.
@@ -181,6 +177,8 @@ The client calls `DiscoverArtifacts` to search by name. A successful result veri
 - Access to the target report or semantic model.
 
 :::image type="content" source="media/fabric-iq-mcp/discover-report.png" alt-text="Screenshot of GitHub Copilot CLI finding a Power BI report with the DiscoverArtifacts tool." lightbox="media/fabric-iq-mcp/discover-report.png":::
+
+`DiscoverArtifacts` search results return citations both inline in the result content and in the result metadata under `_meta`. The `_meta` citations provide a consistent citation representation across Fabric IQ tools. How citations appear to users depends on the MCP client.
 
 You don't need to provide internal identifiers. Fabric IQ MCP obtains the identifiers needed for later schema and query operations.
 
@@ -238,13 +236,13 @@ Call `tools/list` at runtime instead of hard-coding an assumed tool schema.
 
 Fabric IQ uses the `X-Variants` header to select a version of its tool contract. The `v1` in the endpoint URL is part of the endpoint address and isn't the tool-contract version.
 
-The current public version is `Fabric.Routing.FabricIQ.V1`. To pin this version, send the following header on every MCP request:
+The current public version is `Fabric.Routing.FabricIQ.V2`, and it's the default toolset. To pin this version, send the following header on every MCP request:
 
 ```http
-X-Variants: Fabric.Routing.FabricIQ.V1
+X-Variants: Fabric.Routing.FabricIQ.V2
 ```
 
-Use the same value for `initialize`, `tools/list`, and `tools/call`. When a newer version becomes the default, this article will be updated with its selector.
+Use the same value for `initialize`, `tools/list`, and `tools/call`. Clients that omit the header use the default toolset.
 
 ## Limitations and considerations
 
@@ -269,7 +267,7 @@ Use the same value for `initialize`, `tools/list`, and `tools/call`. When a newe
 | The browser sign-in doesn't open. | The client doesn't support automatic OAuth discovery, or it requires an app registration. | Check the client's OAuth setup and configure a single-tenant app registration if required. |
 | Authentication fails. | The token is missing, expired, has the wrong audience, lacks `Item.Read.All` or `Item.Execute.All` permissions, or requires approval under the tenant consent policy. | Reauthenticate and check the app registration, Power BI Service permissions, and tenant consent policy. |
 | `tools/list` doesn't show the expected tools. | The server connection is stale. | Restart the connection and check the runtime tool list. |
-| Fabric IQ tools don't match the documented list. | The `X-Variants` header is missing or has an incorrect value. | Configure `X-Variants` as `Fabric.Routing.FabricIQ.V1`, and then reconnect. |
+| Fabric IQ tools don't match the documented list. | The `X-Variants` header is missing or has an incorrect value. | Configure `X-Variants` as `Fabric.Routing.FabricIQ.V2`, and then reconnect. |
 | A known report or semantic model isn't found. | The caller lacks access, the item type isn't supported, or the name is ambiguous. | Verify Fabric access, use a more specific name, or provide a supported report or semantic model browser URL. |
 | A tool call returns a permission error. | The authenticated identity can't access the requested content or operation. | Verify access to the report or semantic model, and check whether RLS or OLS restricts the requested data. |
 | A request returns a rate-limit error. | The client sent requests too quickly, or an upstream Power BI API throttled the operation. | Back off before retrying, reduce request bursts, and narrow metadata or query results. |
