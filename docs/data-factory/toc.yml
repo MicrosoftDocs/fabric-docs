@@ -23,6 +23,8 @@
             href: pricing-copy-job.md
           - name: Pricing Apache Airflow job
             href: pricing-apache-airflow-job.md
+          - name: Pricing dbt job
+            href: dbt-job-pricing.md
           - name: Pricing examples
             items: 
               - name: Pipelines
@@ -1173,6 +1175,8 @@
           href: dbt-job-how-to.md
         - name: Configure a dbt job
           href: dbt-job-configure.md
+        - name: Generate a dbt starter project from a Fabric warehouse or lakehouse (Preview)
+          href: generate-dbt-starter-project-from-fabric-source.md
         - name: Connect to Azure HorizonDB
           href: dbt-connect-azure-horizondb.md
         - name: Run dbt projects from GitHub

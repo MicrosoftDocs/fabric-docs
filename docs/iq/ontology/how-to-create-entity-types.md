@@ -1,8 +1,9 @@
 ---
 title: Create Entity Types (Preview)
 description: Learn about entity types in ontology (preview) and how to manage them.
-ms.date: 09/04/2026
+ms.date: 10/20/2026
 ms.topic: how-to
+ai-usage: ai-assisted
 ---
 
 # Create entity types in ontology (preview)
@@ -50,9 +51,6 @@ This section shows how to create properties on entity types without binding data
 1. Add a name and property type for each property, or choose *Unknown* to [model untyped properties](#modeling-untyped-properties) without specifying a data type upfront. Select **Shared** if you want to create a [shared property](how-to-reuse-properties.md#about-shared-properties). Select **Save** to view the saved properties in the **Properties** pane.
 
     :::image type="content" source="media/how-to-create-entity-types/add-properties-details.png" alt-text="Screenshot of configuring the listed property details." lightbox="media/how-to-create-entity-types/add-properties-details.png":::
-
-    >[!NOTE]
-    > You can duplicate property names across entities only for properties of the same type. For example, you can't have one entity type with a string `ID` property and another entity type with an integer `ID` property, but you can have two entity types that both have a string `ID` property.
 
 1. The properties appear on the **Configure** page, unbound to any data source.
 

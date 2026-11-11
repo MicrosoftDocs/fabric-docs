@@ -3,8 +3,9 @@ title: Data in Dataflow Gen2 staging
 description: Learn what staging items are in Dataflow Gen2, the ELT patterns they enable, and how to manage staged data.
 ms.reviewer: jeluitwi
 ms.topic: concept-article
-ms.date: 05/01/2026
+ms.date: 10/12/2026
 ms.custom: dataflows
+ai-usage: ai-assisted
 ---
 
 # Data in Dataflow Gen2 staging items
@@ -52,13 +53,11 @@ For more guidance on when to enable or disable staging, see [Best practices for 
 Staging items aren't designed for direct access by users. Dataflow Gen2 manages the data in the staging items and ensures that the data is in a consistent state. Accessing data in staging items directly isn't supported as it can't be guaranteed that the data is in a consistent state. If you need to access data in staging items, you can use the dataflow connector in Power BI, Excel, or other dataflows.
 
 > [!IMPORTANT]
-> The internal API that serves staged data to downstream consumers (such as semantic models or other dataflows using the Dataflows connector) can experience intermittent timeouts.
-> These timeouts may cause refresh failures in consuming items, often surfacing as the error "The key didn't match any rows in the table."
-> This error doesn't indicate a data issue. It means the backend could not retrieve the staged results in time.
+> Consuming Dataflow Gen2 tables through the dataflow connector, including as a source for Power BI semantic models, Excel, or other dataflows, is fully supported. Always use the connector rather than accessing the underlying staging storage directly. The connector provides a stable contract, while the internal storage layer can change.
 >
-> **Recommended workaround:** Configure an [data destination](dataflow-gen2-data-destinations-and-managed-settings.md) (Lakehouse or Warehouse) for your dataflow, and update downstream items to read from that destination directly using the Lakehouse or Warehouse connector. This bypasses the internal staging API and improves refresh reliability.
+> Staging is a cache, not a system of record. Keep a durable copy of any data that can't be recreated from your source systems.
 >
-> For more information, see [Data Factory limitations](data-factory-limitations.md#data-factory-dataflow-gen2-limitations).
+> Where possible, use a [data destination](dataflow-gen2-data-destinations-and-managed-settings.md), such as a lakehouse or warehouse, to create an explicit, governed copy for downstream consumption. This recommendation isn't a requirement.
 
 Removing data from the staging items can be forced by one of the following actions:
 

@@ -24,6 +24,8 @@ This article shows you how to:
 
 ## Prerequisites
 
+[!INCLUDE [business-event-publisher-region-note](../../real-time-hub/includes/business-event-publisher-region-note.md)]
+
 Before you begin, you need:
 
 - A [Fabric workspace](../../fundamentals/create-workspaces.md) with an active capacity or trial capacity.

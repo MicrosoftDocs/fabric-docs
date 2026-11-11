@@ -3,6 +3,7 @@ title: Set Alerts on Business Event in Real-Time Hub
 description: Learn how to set alerts on business events in Real-Time hub. Monitor events, configure conditions, and automate actions with step-by-step guidance.
 #customer intent: As a business analyst, I want to set alerts on business events in Real-Time hub so that I can monitor critical activities effectively.
 ms.topic: how-to
+ai-usage: ai-assisted
 ms.date: 02/27/2026
 ---
 
@@ -14,6 +15,8 @@ This article describes how to set alerts on business events in Real-Time hub.
 > Workspace private links can block cross-workspace business event consumption. For Business events, the source workspace is the workspace that contains the Event Schema Set. If that workspace blocks public access, create the Activator rule in the same workspace or establish a private link from the consumer's network to the source workspace. For more information, see [Workspace private links for Azure, Fabric, and Business events](../workspace-private-links-real-time-events.md).
 
 ## Navigate to Real-Time hub
+
+[!INCLUDE [business-event-consumer-region-note](../includes/business-event-consumer-region-note.md)]
 
 [!INCLUDE [navigate-to-real-time-hub](../includes/navigate-to-real-time-hub.md)]
 

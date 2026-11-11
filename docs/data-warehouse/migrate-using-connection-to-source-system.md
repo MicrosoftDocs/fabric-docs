@@ -2,7 +2,7 @@
 title: Migrate Data with the Migration Assistant for Fabric Data Warehouse
 description: This tutorial provides a step-by-step guide for the Migration Assistant for Fabric Data Warehouse using a direct connection to the source.
 ms.reviewer: anphil, pvenkat, prlangad
-ms.date: 09/21/2026
+ms.date: 10/14/2026
 ms.topic: how-to
 ms.search.form: Migration Assistant
 ai-usage: ai-assisted
@@ -42,6 +42,10 @@ To use the AI-assisted migration features of the Migration Assistant to fix migr
    :::image type="content" source="media/migrate-using-connection-to-source-system/choose-your-method-connect.png" alt-text="Screenshot from the Fabric portal of input method for migration to connect to the source system.":::
 
 1. On **Set the source**, provide the server name, database name, and authentication details, and then select **Next**.
+
+1. In the **Choose objects to migrate** page, select objects to migrate.
+
+   :::image type="content" source="media/migrate-using-connection-to-source-system/choose-objects.png" alt-text="Screenshot from the Fabric portal, showing object selection step.":::
 
 1. On the **Set the destination** page, select the Fabric workspace, enter a name for the new warehouse, and then select **Next**.
 
@@ -91,6 +95,93 @@ Let's fix these scripts with help from the Migration Assistant.
 1. The next script to be fixed opens.
 1. Continue to fix the rest of the scripts. You can choose to skip fixing scripts that you don't need during this step.
 1. When all desired metadata is ready for migration, select the back button in the **Fix problems** pane to return the top-level view of the Migration Assistant. Check the **2. Fix problems** step in the Migration Assistant. 
+
+### Get more objects to migrate
+
+Use incremental migration to add or update objects in an existing Fabric warehouse. Provide new source input, select only the objects you need, and choose how to handle objects that already exist in the destination. For example, migrate one group of schemas, validate the result, and then return later to migrate more objects or updated definitions.
+
+1. Start the incremental migration from either of the following locations:
+   - Open the warehouse, select the **Migration** tab on the ribbon, and then select **Get more objects**.
+
+      :::image type="content" source="media/migrate-using-connection-to-source-system/get-more-objects-ribbon-menu.png" alt-text="Screenshot of Get more objects on the Migration tab of a warehouse.":::
+
+   - In the migration summary, expand **Copy metadata**, and then select **Get more objects**.
+
+      :::image type="content" source="media/migrate-using-connection-to-source-system/get-more-objects-copy-metadata.png" alt-text="Screenshot of Get more objects on the completed Copy metadata page.":::
+
+1. Select the source, choose an input method, and continue to the **Choose more objects to migrate** step.
+
+   :::image type="content" source="media/migrate-using-connection-to-source-system/choose-more-objects-to-migrate.png" alt-text="Screenshot of the Migration Assistant's Choose more objects to migrate page.":::
+
+1. On **Choose more objects to migrate**, select the objects to migrate:
+   - Use the filter to view all source objects, objects with naming conflicts, or objects without naming conflicts.
+
+      :::image type="content" source="media/migrate-using-connection-to-source-system/choose-objects-filter.png" alt-text="Screenshot of the naming conflict filter on the Choose more objects to migrate page.":::
+
+   - Objects whose names already exist in the warehouse display a warning icon. If you select one of these objects, you resolve the naming conflict later in the migration.
+
+      :::image type="content" source="media/migrate-using-connection-to-source-system/choose-more-objects-existing-objects.png" alt-text="Screenshot of the warning icon and tooltip for an object whose name already exists in the warehouse.":::
+
+   - By default, Migration Assistant includes direct dependencies when you select an object. Select an object name to view its direct dependencies in the right pane.
+
+      :::image type="content" source="media/migrate-using-connection-to-source-system/view-dependent-objects.png" alt-text="Screenshot of the direct dependencies for a selected object.":::
+
+   - If an object in the input file doesn't have a schema name, Migration Assistant assigns the object to the default `dbo` schema.
+1. On **Review**, verify the source, destination, and object migration summary.
+
+   :::image type="content" source="media/migrate-using-connection-to-source-system/review-migration-assistant.png" alt-text="Screenshot of the source, destination, and object migration summary on the Review page.":::
+
+1. Select **Migrate**. Migration Assistant translates the selected objects and creates objects that don't have naming conflicts. Objects with naming conflicts remain pending until you resolve each conflict.
+
+### Resolve conflicts and fix objects
+
+When you update an existing warehouse through incremental migration, conflict resolution lets you choose which object definition to keep.
+
+1. In the Migration Assistant summary, review the **Conflicts to resolve** count. Expand **2. Resolve conflicts and fix objects**.
+
+   :::image type="content" source="media/migrate-using-connection-to-source-system/summary-conflicts-to-resolve.png" alt-text="Screenshot of the Conflicts to resolve count and the Resolve conflicts and fix objects step.":::
+
+1. On the **Conflicts** tab, review the objects that have naming conflicts.
+
+   :::image type="content" source="media/migrate-using-connection-to-source-system/conflicts.png" alt-text="Screenshot of the objects on the Conflicts tab.":::
+
+1. Select an object to compare its SQL definitions. The existing definition appears on the left, and the incoming translated definition appears on the right.
+
+   :::image type="content" source="media/migrate-using-connection-to-source-system/existing-incoming-script-view.png" alt-text="Screenshot comparing the existing and incoming SQL definitions for an object.":::
+
+1. Choose one of the following actions for the object:
+   - **Keep existing**: Retain the existing object definition and discard the incoming translated definition.
+   - **Keep incoming**: Replace the existing object definition with the incoming translated definition. Confirm the action when prompted.
+   - **Rename incoming**: Create the incoming object with a different name and retain the existing object.
+
+   :::image type="content" source="media/migrate-using-connection-to-source-system/conflict-resolution-actions.png" alt-text="Screenshot of the Keep incoming, Keep existing, and Rename incoming actions for an object.":::
+
+   If you select **Rename incoming**, enter the schema and object name, and then select **Rename**.
+
+   :::image type="content" source="media/migrate-using-connection-to-source-system/rename-object.png" alt-text="Screenshot of the Rename migrated object dialog.":::
+
+1. Optional: Edit the incoming script before you keep it. To discard your edits and restore the translated script, select **Reset incoming**.
+
+   :::image type="content" source="media/migrate-using-connection-to-source-system/reset-incoming.png" alt-text="Screenshot of Reset incoming above an edited incoming SQL definition.":::
+
+1. To apply the incoming definition, select **Keep incoming (overwrite existing)**. If you edited the incoming script, select **Overwrite existing** instead.
+
+   > [!WARNING]
+   > For a table, **Keep incoming** drops and re-creates the existing table. If the table contains data, this action causes data loss, and you must load the data again. If Migration Assistant can't apply the incoming script, it restores the previous object definition, but it doesn't recover dropped data.
+
+   For a table, select **Replace table** to confirm the action.
+
+   :::image type="content" source="media/migrate-using-connection-to-source-system/confirmation-replace-existing.png" alt-text="Screenshot of the confirmation dialog for replacing an existing table.":::
+
+1. When the script runs successfully, Migration Assistant marks the conflict as resolved.
+
+   :::image type="content" source="media/migrate-using-connection-to-source-system/conflict-resolved.png" alt-text="Screenshot showing that an object's conflict is resolved.":::
+
+1. Repeat these steps for each object with a naming conflict. To apply the same action to multiple objects, select the objects, and then select **Keep existing** or **Keep incoming**.
+
+   :::image type="content" source="media/migrate-using-connection-to-source-system/bulk-actions.png" alt-text="Screenshot of the bulk Keep incoming and Keep existing actions.":::
+
+1. Confirm that each successfully processed object is marked as resolved. If an object needs more changes, review the information in the right pane.
 
 ### Copy data by using Migration Assistant
 

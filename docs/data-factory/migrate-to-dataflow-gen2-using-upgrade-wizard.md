@@ -142,10 +142,6 @@ An upgraded Dataflow Gen1 is retained in a soft-deleted state for up to 30 days.
 
 Dataflow Gen2 uses the Fabric REST API, which doesn't have full parity with the Power BI REST API. If applications trigger or manage your Gen1 dataflow through the Power BI REST API, review those calls and update them to the corresponding Fabric REST API endpoints.
 
-### Government Community Cloud (GCC) environments aren't supported
-
-The Dataflows Upgrade Wizard isn't currently supported in GCC environments.
-
 ### Workspace Viewers can't consume tables from an upgraded dataflow
 
 Users with the Viewer workspace role can see an upgraded Dataflow Gen2, but they can't consume its tables through the Power Platform Dataflows connector. Assign users who need to consume the upgraded dataflow the Contributor, Member, or Admin workspace role. For more information, see [Power Query Dataflow connector - Power Query | Microsoft Learn](/power-query/connectors/dataflows#limitations-and-considerations).

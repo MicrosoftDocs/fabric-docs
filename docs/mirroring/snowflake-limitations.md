@@ -54,15 +54,17 @@ Current limitations in the Microsoft Fabric mirrored databases from Snowflake ar
 - If you're changing most of the data in a large table, it's more efficient to stop and restart Mirroring. Inserting or updating billions of records can take a long time.
 - Some schema changes aren't reflected immediately. Some schema changes need a data change (insert, update, or delete) before schema changes are replicated to Fabric.
 - Cross-region considerations: If your Snowflake instance and Fabric capacity are in different cloud regions, you might experience higher replication latency and data egress charges. For optimal performance and to avoid cross-region egress costs, deploy your Fabric capacity in the same cloud region as your Snowflake instance. If cross-region deployment is unavoidable, factor in the additional egress fees from Snowflake and/or Azure. See [Snowflake egress documentation](https://docs.snowflake.com/en/user-guide/cost-understanding-data-transfer) for details. 
-- When mirroring data from Snowflake to a customer's OneLake, the process normally stages data via an inline URL to improve performance. If the Snowflake account-level parameter [PREVENT_UNLOAD_TO_INLINE_URL](https://docs.snowflake.com/sql-reference/parameters#prevent-unload-to-inline-url) is set to true, the following behavior applies:
+- When mirroring data from Snowflake to OneLake, mirroring uses a staging path. If the Snowflake account-level parameter [PREVENT_UNLOAD_TO_INLINE_URL](https://docs.snowflake.com/sql-reference/parameters#prevent-unload-to-inline-url) is set to `true`, behavior depends on whether storage integration is configured for mirroring.
 
-| Connectivity method | Impact when PREVENT_UNLOAD_TO_INLINE_URL = true |
-|---|---|
-| Direct (public endpoint) | Mirroring falls back to direct read from Snowflake. This fallback results in slower replication times and an increased risk of connection timeouts, particularly for large datasets. |
-| Virtual Network (VNet) data gateway | Mirroring is completely blocked. VNet gateway scenarios can't use direct read and require the inline URL staging path. |
-| On-premises data gateway (OPDG) | Mirroring is completely blocked. OPDG scenarios can't use direct read and require the inline URL staging path. |
+| Scenario | Behavior when `PREVENT_UNLOAD_TO_INLINE_URL = true` |
+| --- | --- |
+| Storage integration is configured for mirroring | Mirroring uses the configured storage integration as the staging path. If the storage integration configuration is invalid, mirroring fails with an actionable error. |
+| Storage integration isn't configured, Direct (public endpoint) connectivity | Mirroring can fall back to direct read from Snowflake. This fallback can be slower and is more susceptible to connection timeouts for large datasets. |
+| Storage integration isn't configured, Virtual Network (VNet) data gateway connectivity | Mirroring is blocked. Configure storage integration for this scenario. |
+| Storage integration isn't configured, On-premises data gateway (OPDG) connectivity | Mirroring is blocked. Configure storage integration for this scenario. |
 
-Planned resolution: Storage integration support is in development and will provide an alternative staging path that works when PREVENT_UNLOAD_TO_INLINE_URL is set to true. This solution unblocks VNet and OPDG scenarios. Check this page for updates on availability. 
+  - If you see `SQL compilation error: Cannot unload to an inlined external location. Please create a stage first and unload to the stage instead`, validate your Snowflake unload restriction settings and storage integration configuration.
+  - For setup steps, see [Tutorial: Configure Microsoft Fabric mirrored databases from Snowflake](../mirroring/snowflake-tutorial.md).
 
 - **Reseeding behavior:** A reseed is a full data reload of an entire table. Unlike incremental sync (which only processes changed rows), a reseed re-reads and re-writes all data in the table. Reseeds can incur significant Snowflake compute cost, especially for large tables. 
   - What triggers a reseed:

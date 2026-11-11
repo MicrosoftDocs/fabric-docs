@@ -85,6 +85,32 @@ The following table lists which authentication methods are supported for mirrori
 | Key pair authentication | Yes | RSA key pair for service account scenarios |
 | Workspace identity | No | Not currently supported for Snowflake |
 
+## Storage integration for restricted Snowflake environments
+
+Snowflake mirroring uses a staging path during replication. In some Snowflake environments, inline URL unload is restricted (for example, when `PREVENT_UNLOAD_TO_INLINE_URL = TRUE`). In this case, configure a Snowflake storage integration for mirroring so staging can be authorized without relying on inline SAS URL staging. You can configure this setting through the mirroring setup page. 
+
+  :::image type="content" source="media/snowflake/snowflake-storage-integration.png" alt-text="Screenshot of Snowflake storage integration." lightbox="media/snowflake/snowflake-storage-integration.png":::
+
+When you explicitly configure storage integration, mirroring uses that storage integration as the staging path. If the storage integration is misconfigured, mirroring returns an actionable error instead of silently switching to another read path.
+
+### Troubleshooting inline URL unload errors
+
+If mirroring fails with an error similar to:
+
+`SQL compilation error: Cannot unload to an inlined external location. Please create a stage first and unload to the stage instead.`
+
+Use the following checks:
+
+| Check | What to verify |
+|---|---|
+| Snowflake unload restriction | Confirm whether inline URL unload is restricted in the Snowflake account (for example, `PREVENT_UNLOAD_TO_INLINE_URL = TRUE`). |
+| Storage integration setup | Confirm the storage integration used for mirroring is correctly created and has required permissions to the staging location. |
+| Mirroring configuration | Confirm the mirrored database is configured to use the intended storage integration and storage path. |
+
+> [!IMPORTANT]
+> Storage integration doesn't remove staging. It changes how staging is authenticated and authorized.
+> 
+
 ## Mirroring Snowflake behind firewall
 
 Check the networking requirements to access your Snowflake data source. If your Snowflake data source is not publicly accessible and is within a private network, [create a virtual network data gateway](/data-integration/vnet/create-data-gateways) or [install an on-premises data gateway](/data-integration/gateway/service-gateway-install) to mirror the data. The Azure Virtual Network or the gateway machine's network must connect to the Snowflake instance via a private endpoint or be allowed by the firewall rule. To get started, see [Tutorial: Configure Microsoft Fabric mirrored databases from Snowflake](../mirroring/snowflake-tutorial.md).

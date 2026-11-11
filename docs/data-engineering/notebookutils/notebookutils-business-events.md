@@ -38,6 +38,8 @@ notebookutils.businessEvents.help("publish")
 
 ## Publish a business event
 
+[!INCLUDE [business-event-publisher-region-note](../../real-time-hub/includes/business-event-publisher-region-note.md)]
+
 Use `publish()` to send a payload that matches the schema of a business event:
 
 ```python

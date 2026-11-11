@@ -13,7 +13,6 @@ ai-usage: ai-assisted
 
 Workspace monitoring is the primary way to enable optional observability experiences for your Fabric deployment. With workspace monitoring, you can collect and organize logs and metrics from supported Microsoft Fabric items in a workspace, create alerts through activators, use the Operations Agent to automatically investigate issues in the system, and more.
 
-
 ## How workspace monitoring works
 
 You manage workspace monitoring through a **monitoring item**. You can send data to the Eventhouse in this monitoring item, or send data to the Eventhouse in another monitoring item. Sending data to another monitoring item lets you centralize telemetry from multiple workspaces. The monitoring item also contains an activator, Operations Agent, and items related to monitoring for other experiences you opt into.
@@ -38,19 +37,22 @@ After you [enable workspace monitoring](enable-workspace-monitoring.md), you can
 
 | Workload | Fabric artifact name | Supported events and logs |
 |---|---|---|
-| Data Warehouse | Warehouse, SQL analytics endpoint, and warehouse snapshot | <ul><li>[Warehouse query execution logs](../data-warehouse/warehouse-workspace-monitoring.md)</li></ul> |
-| Real-Time hub | Job Events | [Job event logs](item-job-event-logs.md) |
-| Real-Time hub | Event schema set | [Event schema set operation logs](../real-time-intelligence/schema-sets/event-schema-set-operation-logs.md) |
+| Databases | SQL database in Fabric | <ul><li>SQL DB native perf used storage metrics</li><li>SQL DB native perf CPU metrics</li></ul> |
 | Data Engineering | GraphQL API | <ul><li>[Graph QL metrics](../data-engineering/graphql-operations.md)</li><li>[Graph QL operation logs](../data-engineering/graphql-operations.md)</li></ul> |
 | Data Factory | Copy job | [Copy job activity run details logs](../data-factory/copy-job-workspace-monitoring.md) |
-| Data Factory | Pipeline activity logs | [Pipeline Activity Run Logs](../data-factory/workspace-monitoring.md) |
-| Real-Time Intelligence | Activator | [Activator rule notifications](../real-time-intelligence/data-activator/activator-workspace-monitoring.md) |
-| Real-Time Intelligence | Eventhouse | <ul><li>[Metric operation logs](../real-time-intelligence/monitor-metrics.md)</li><li>[Command logs](../real-time-intelligence/monitor-logs-command.md)</li><li>[Data operation logs](../real-time-intelligence/monitor-logs-data-operation.md)</li><li>[Query logs](../real-time-intelligence/monitor-logs-query.md)</li><li>[Ingestion results logs](../real-time-intelligence/monitor-logs-ingestion-results.md)</li><li>[Capacity throttling logs](../real-time-intelligence/monitor-logs-capacity-throttling.md)</li><li>[Sub-optimal size logs](../real-time-intelligence/monitor-logs-sub-optimal-size.md)</li><li>[Scale-out event logs](../real-time-intelligence/monitor-logs-scaleout-events.md)</li></ul> |
-| Real-Time Intelligence | Eventstream | <ul><li>[Eventstream Node Status](../real-time-intelligence/event-streams/fabric-workspace-monitoring.md)</li><li>[Eventstream Metrics](../real-time-intelligence/event-streams/fabric-workspace-monitoring.md)</li><li>[Eventstream Error Metrics](../real-time-intelligence/event-streams/fabric-workspace-monitoring.md) |
+| Data Factory | Dataflow Gen2 | [Dataflow Gen2 logs](../data-factory/dataflow-gen2-workspace-monitoring.md) |
+| Data Factory | Pipeline activity logs | [Pipeline activity run logs](../data-factory/workspace-monitoring.md) |
+| Data Warehouse | <ul><li>Warehouse</li><li>SQL analytics endpoint</li><li>warehouse snapshot</li></ul> |[Warehouse query execution logs](../data-warehouse/warehouse-workspace-monitoring.md) |
 | Mirroring | Mirrored database | [Mirrored database execution logs](../mirroring/monitor-logs.md) |
 | Power BI | Semantic models | [Semantic model operation logs](../enterprise/powerbi/semantic-model-operations.md) |
-| Mirroring | Mirrored database | [Mirrored database execution logs](../mirroring/monitor-logs.md) |
-| Power BI | Semantic model | [Semantic model operation logs](../enterprise/powerbi/semantic-model-operations.md) |
+| Real-Time hub | Job Events | [Job event logs](item-job-event-logs.md) |
+| Real-Time hub | Event schema set | [Event schema set operation logs](../real-time-intelligence/schema-sets/event-schema-set-operation-logs.md) |
+| Real-Time Intelligence | Activator | [Activator rule notifications](../real-time-intelligence/data-activator/activator-workspace-monitoring.md) |
+| Real-Time Intelligence | Eventhouse | <ul><li>[Metric operation logs](../real-time-intelligence/monitor-metrics.md)</li><li>[Command logs](../real-time-intelligence/monitor-logs-command.md)</li><li>[Data operation logs](../real-time-intelligence/monitor-logs-data-operation.md)</li><li>[Query logs](../real-time-intelligence/monitor-logs-query.md)</li><li>[Ingestion results logs](../real-time-intelligence/monitor-logs-ingestion-results.md)</li><li>[Capacity throttling logs](../real-time-intelligence/monitor-logs-capacity-throttling.md)</li><li>[Sub-optimal size logs](../real-time-intelligence/monitor-logs-sub-optimal-size.md)</li><li>[Scale-out event logs](../real-time-intelligence/monitor-logs-scaleout-events.md)</li></ul> |
+| Real-Time Intelligence | Eventstream | <ul><li>[Eventstream node status](../real-time-intelligence/event-streams/fabric-workspace-monitoring.md)</li><li>[Eventstream metrics](../real-time-intelligence/event-streams/fabric-workspace-monitoring.md)</li><li>[Eventstream error metrics](../real-time-intelligence/event-streams/fabric-workspace-monitoring.md)</li></ul> |
+| Real-Time Intelligence | Map | [Fabric Maps operation logs](../real-time-intelligence/map/workspace-monitoring.md) |
+| Real-Time Intelligence | KQL Queryset | Queryset operation logs |
+| Real-Time Intelligence | Real-Time Dashboards | Real-Time Dashboard operation logs |
 
 ## Sample queries
 
@@ -72,6 +74,10 @@ You can change the data policies for the Eventhouse under the Monitoring Item:
 To configure these policies, open the monitoring KQL Database in the Eventhouse, and select **Manage** > **Data policies**. The caching period must be less than or equal to the retention period. For full details, see [Change data policies](../real-time-intelligence/data-policies.md).
 
 ## Considerations and limitations
+
+> [!IMPORTANT]
+> Workspace monitoring logs can contain customer-provided data, including sensitive or personally identifiable information (PII), depending on the Fabric items and operations in your workspace. For example, values provided as inputs, outputs, parameters, or other operation data might be included in monitoring events. Before enabling workspace monitoring, review the monitoring data generated by your workloads and use available workload controls to prevent credentials, secrets, tokens, or other sensitive values from being included in monitoring data. Limit access to monitoring data to authorized users. For workload specific PII guidance, refer to the following articles:
+> - [Pipelines security and sensitive data considerations](../data-factory/workspace-monitoring.md#security-and-sensitive-data-considerations).
 
 - Only one Monitoring Item can collect telemetry for a workspace at a time.
 

@@ -135,7 +135,7 @@ Prebuilt AI services in Fabric are billed against the Copilot and AI billing met
 
 You can monitor AI services usage using the [Microsoft Fabric Capacity Metrics app](../../enterprise/metrics-app.md). To view AI-related usage:
 
-1. Install the [Microsoft Fabric Capacity Metrics app](../../enterprise/metrics-app.md#install-the-app) (requires capacity admin permissions for initial setup).
+1. Install the [Microsoft Fabric Capacity Metrics app](../../enterprise/metrics-app-install.md) (requires capacity admin permissions for initial setup).
 1. In the app, look for usage reported under the Copilot and AI meter to see capacity consumption from AI Services and AI Functions operations.
 
 > [!NOTE]

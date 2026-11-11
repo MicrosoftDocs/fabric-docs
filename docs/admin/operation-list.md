@@ -4,7 +4,8 @@ description: This article provides a list of all the operations available in Fab
 author: msmimart
 ms.author: mimart
 ms.topic: reference
-ms.date: 09/08/2026
+ms.date: 11/12/2026
+ms.custom: msecd-doc-authoring-1032
 ---
 # Operation list
 
@@ -44,6 +45,7 @@ To audit OneLake data access and storage operations, use [OneLake diagnostics](.
 | Applied a change to model in Power BI | :::no-loc text="ApplyChangeToPowerBIModel"::: | A user makes a change to an existing model. This occurs whenever any edit is made to the model (ex: write a DAX measure, manage relationships, etc.)  |
 | Applied sensitivity label to Power BI item | :::no-loc text="SensitivityLabelApplied"::: |   |
 | Apply CMK encryption to your workspace | :::no-loc text="ApplyWorkspaceEncryption"::: | Triggered when CMK encryption is applied to a workspace |
+| Assign warehouse server alias|:::no-loc text="AssignWarehouseServerAlias":::| A workspace administrator assigned a server alias to a Fabric Warehouse workspace.|
 | Assign Workspace To Alm Pipeline | :::no-loc text="AssignWorkspaceToAlmPipeline"::: |   |
 | Assigned a workspace to a deployment pipeline | :::no-loc text="AssignWorkspaceToPipeline"::: | Not currently used  |
 | Attach Notebook Environment | :::no-loc text="AttachNotebookEnvironment"::: | Attach the environment for Notebook.  |
@@ -112,7 +114,6 @@ To audit OneLake data access and storage operations, use [OneLake diagnostics](.
 | Create Link Goals | :::no-loc text="CreateLinkGoals"::: |   |
 | Create Managed Private   Endpoint | :::no-loc text="CreateManagedPrivateEndpoint"::: | Create a private endpoint within a managed virtual network for   a workspace |
 | Create Managed VNet | :::no-loc text="CreateManagedVNet"::: | Create managed virtual network for a workspace |
-| Create MetricSet Metric   Endpoint | :::no-loc text="CreateMetricSetMetric"::: | Create metric in a metricset endpoint |
 | Create Notebook Resource | :::no-loc text="CreateNotebookResource"::: | Create resources in notebook.  |
 | Create Org App | :::no-loc text="CreateOrgApp"::: |   |
 | Create Personal Datasource | :::no-loc text="CreatePersonalDatasource"::: |   |
@@ -195,7 +196,6 @@ To audit OneLake data access and storage operations, use [OneLake diagnostics](.
 | Delete Link Goals | :::no-loc text="DeleteLinkGoals"::: |   |
 | Delete Managed Private   Endpoint | :::no-loc text="DeleteManagedPrivateEndpoint"::: | Delete a private endpoint within a managed virtual network for   a workspace |
 | Delete Managed VNet | :::no-loc text="DeleteManagedVNet"::: | Delete managedvirtual network for a workspace |
-| Delete MetricSet Metric   Endpoint | :::no-loc text="DeleteMetricSetMetric"::: | Delete metric in a metricset endpoint |
 | Delete Model Version | :::no-loc text="DeleteModelVersion"::: | Triggered when a Machine Learning Model version is removed   |
 | Delete Notebook Resource | :::no-loc text="DeleteNotebookResource"::: | Update resources in notebook.  |
 | Delete Scorecard Hierarchy | :::no-loc text="DeleteScorecardHierarchy"::: | Triggered when a [scorecard hierarchy](/power-bi/create-reports/service-metrics-get-started-hierarchies) is deleted. That is, the hierarchy's metadata is deleted, not the values of the goals in it. |
@@ -350,7 +350,6 @@ To audit OneLake data access and storage operations, use [OneLake diagnostics](.
 | Get Hierarchy Goal Values | :::no-loc text="GetHierarchyGoalValues"::: |   |
 | Get item sizes for workspace | :::no-loc text="GetItemsSize"::: | Retrieves the computed sizes of all items in the workspace. Does not refresh the data |
 | Get Lakehouse Table Details | :::no-loc text="GetLakehouseTableDetails"::: |   |
-| Get MetricSet Metric Endpoint | :::no-loc text="GetMetricSetMetric"::: | Read metric in a metricset endpoint |
 | Get Model Diagram Layouts | :::no-loc text="GetPowerBIDataModelDiagramLayouts"::: | Get diagram layouts when open data model in web model view.  |
 | Get Model SAS Token via Lockbox | :::no-loc text="GetModelSASTokenViaLockbox"::: | Gets the SAS Token for a given model in a tenant via Lockbox  |
 | Get My Goals | :::no-loc text="GetMyGoals"::: |   |
@@ -387,7 +386,6 @@ To audit OneLake data access and storage operations, use [OneLake diagnostics](.
 | Get Workspaces Via Admin Api | :::no-loc text="GetWorkspacesViaAdminApi"::: |   |
 | Get a task flow | :::no-loc text="GetTaskFlow"::: |   |
 | Get all connections | :::no-loc text="GetAllConnections"::: | Get all connections |
-| Get all metric sets Endpoint | :::no-loc text="GetAllMetricSets"::: | Get all metric sets endpoint |
 | Get data artifact table   details | :::no-loc text="GetDataArtifactTableDetails"::: | Get the details (for example, schema) for a data item table |
 | Get datasource share policy | :::no-loc text="GetDatasourceShareTenantPolicy"::: | Retrieve the datasource share policy set by the tenant  |
 | Get delegated capacity tenant setting overrides | :::no-loc text="GetCapacityDelegatedTenantSettingOverridesViaAdminApi"::: | Get capacity delegated tenant setting overrides  |
@@ -459,6 +457,8 @@ To audit OneLake data access and storage operations, use [OneLake diagnostics](.
 | Post Notebook Comment | :::no-loc text="PostNotebookComment"::: |   |
 | Post configure credentials | :::no-loc text="PostGitProviderCredentials"::: | Configure git provider credentials for a specific user |
 | Posted Power BI comment | :::no-loc text="PostComment"::: |   |
+| Modified by Power BI MCP | :::no-loc text="ModifiedByPowerBIMCP"::: | Power BI MCP tool called to modify the semantic model. |
+| Read by Power BI MCP | :::no-loc text="ReadByPowerBIMCP"::: | Power BI MCP tool called to read semantic model metadata. |
 | Preview Lakehouse Table | :::no-loc text="PreviewLakehouseTable"::: |   |
 | Printed Power BI Dashboard | :::no-loc text="PrintDashboard"::: |   |
 | Printed Power BI report page | :::no-loc text="PrintReport"::: |   |
@@ -604,6 +604,9 @@ To audit OneLake data access and storage operations, use [OneLake diagnostics](.
 | Set dataflow storage location for a workspace | :::no-loc text="SetDataflowStorageLocationForWorkspace"::: |   |
 | Set scheduled refresh on Power BI dataflow | :::no-loc text="SetScheduledRefreshOnDataflow"::: |   |
 | Set scheduled refresh on Power BI semantic model | :::no-loc text="SetScheduledRefresh"::: |   |
+| Set warehouse connection mode to automatic|:::no-loc text="SetWarehouseConnectionModeToAutomatic":::|A workspace administrator set the Fabric Warehouse SQL connection mode to Automatic.|
+| Set warehouse connection mode to proxy|:::no-loc text="SetWarehouseConnectionModeToProxy":::| A workspace administrator set the Fabric Warehouse SQL connection mode to Proxy.|
+| Set warehouse connection mode to redirect|:::no-loc text="SetWarehouseConnectionModeToRedirect":::|A workspace administrator set the Fabric Warehouse SQL connection mode to Redirect.|
 | Set warehouse hardware acceleration|:::no-loc text="SetWarehouseHardwarePlatform":::|Changed the current hardware acceleration settings for warehouses in a workspace.|
 | Share Artifact | :::no-loc text="ShareArtifact"::: |   |
 | Share Datamart | :::no-loc text="ShareDatamart"::: |   |
@@ -627,6 +630,7 @@ To audit OneLake data access and storage operations, use [OneLake diagnostics](.
 | Took ownership of Power BI dataflow | :::no-loc text="TookOverDataflow"::: |   |
 | Take over a Fabric item | :::no-loc text="TakeOverArtifact"::: |   |
 | Trial License Extension | :::no-loc text="TrialLicenseExtension"::: | Extend user trials by user list or tenant  |
+| Unassign warehouse server alias | :::no-loc text="UnassignWarehouseServerAlias"::: | A workspace administrator unassigned the server alias from a Fabric Warehouse workspace.  |
 | Unassign Workspace From Alm Pipeline | :::no-loc text="UnassignWorkspaceFromAlmPipeline"::: |   |
 | Undelete blob | :::no-loc text="UndeleteBlob"::: | OneLake operation. Restore a soft deleted blob. |
 | Undo Git | :::no-loc text="UndoGit"::: | Undo Git is an item activity, which is generated when users undo changes done to item.  |
@@ -669,7 +673,6 @@ To audit OneLake data access and storage operations, use [OneLake diagnostics](.
 | Update Hierarchy Goal Value | :::no-loc text="UpdateHierarchyGoalValue"::: |   |
 | Update Hierarchy Note | :::no-loc text="UpdateHierarchyNote"::: |   |
 | Update In Place Sharing Settings | :::no-loc text="UpdateInPlaceSharingSettings"::: |  |
-| Update MetricSet Metric   Endpoint | :::no-loc text="UpdateMetricSetMetric"::: | Update metric in a metricset endpoint |
 | Update Notebook Library | :::no-loc text="UpdateNotebookLibrary"::: |  |
 | Update Notebook Resource | :::no-loc text="UpdateNotebookResource"::: | Update resources in notebook. |
 | Update Notebook Spark Property | :::no-loc text="UpdateNotebookSparkProperty"::: |  |
@@ -758,6 +761,7 @@ To audit OneLake data access and storage operations, use [OneLake diagnostics](.
 | Viewed Power BI report | :::no-loc text="ViewReport"::: | A report is also generated per page when exporting a report. Some fields such as CapacityID and CapacityName, will return null if the report or dashboard is viewed from a Power BI app, rather than a Power BI workspace. |
 | Viewed Power BI tile | :::no-loc text="ViewTile"::: |  |
 | Viewed Power BI usage metrics | :::no-loc text="ViewUsageMetrics"::: |  |
+| Viewed Workspace App | :::no-loc text="ViewedWorkspaceApp"::: | Viewed Workspace App is generated when a user opens a Power BI workspace app. |
 | View or modify CMK encryption settings | :::no-loc text="GetWorkspaceEncryption"::: | Logged when the encryption settings page is opened in the portal, modified, or applied to items. |
 | disable workspace | :::no-loc text="DisableWorkspaceViaAdminApi"::: | Disables the workspace |
 | Disable CMK encryption for your workspace | :::no-loc text="DisableWorkspaceEncryption"::: | Triggered when CMK encryption is disabled for a workspace |
@@ -777,6 +781,23 @@ To audit OneLake data access and storage operations, use [OneLake diagnostics](.
 | Disabled external data share access for inbound access restricted workspaces | :::no-loc text="ExternalDataSharesBypassForWorkspaceDisabled"::: | |
 | Updated Git connection settings | :::no-loc text="GitConnectionSettingsUpdated"::: | Updated Git connection settings |
 | Branch workspace configuration updated | :::no-loc text="GitBranchWorkspaceConfigured"::: | Branch workspace configuration updated |
+| Create an entity type in Ontology |:::no-loc text="DigitalOperationsEntityTypeCreated"::: | |
+| Update an entity type in Ontology |:::no-loc text="DigitalOperationsEntityTypeUpdated"::: | |
+| Delete an entity type in Ontology |:::no-loc text="DigitalOperationsEntityTypeDeleted"::: | |
+| Create an entity relationship in Ontology |:::no-loc text="DigitalOperationsRelationshipTypeCreated"::: | |
+| Update an entity relationship in Ontology |:::no-loc text="DigitalOperationsRelationshipTypeUpdated"::: | |
+| Delete an entity relationship in Ontology |:::no-loc text="DigitalOperationsRelationshipTypeDeleted"::: | |
+| Create a data source in Ontology |:::no-loc text="DigitalOperationsDataBindingCreated"::: | |
+| Update a data source in Ontology |:::no-loc text="DigitalOperationsDataBindingUpdated"::: | |
+| Delete a data source in Ontology |:::no-loc text="DigitalOperationsDataBindingDeleted"::: | |
+| Import an RDF ontology, or import from a semantic model during Ontology provisioning |:::no-loc text="DigitalOperationsOntologyImported"::: | |
+| Create an Ontology Agent conversation |:::no-loc text="DigitalOperationsOntologyAgentConversationCreated"::: | |
+| Send an Ontology Agent message |:::no-loc text="DigitalOperationsOntologyAgentMessageSent"::: | |
+| Cancel an in-progress Ontology Agent conversation turn |:::no-loc text="DigitalOperationsOntologyAgentConversationCancelled"::: | |
+| Create a namespace, expression, or rule in Ontology |:::no-loc text="CreateArtifact"::: | |
+| Read/list audited ontology resources; retrieve the definition, TMDL, or public ontology model |:::no-loc text="ReadArtifact"::: | |
+| Update a namespace, expression, or rule; replace/clear the ontology definition; apply a script; clear/detach entity-type data sources; replace the public ontology model |:::no-loc text="UpdateArtifact"::: | |
+| Delete a namespace, expression, or rule in Ontology |:::no-loc text="DeleteArtifact"::: | |
 
 ## Considerations and limitations
 

@@ -71,23 +71,28 @@ GitHub Copilot can generate and update the required files and components. You ca
 
 ## Understand the project layout
 
-The functions initialization command updates `rayfin/rayfin.yml` and creates `rayfin/functions`. A typical app with functions has the following structure:
+The default `blankapp` scaffold resolves to Universal App, an npm workspace. The functions initializer updates `rayfin/rayfin.yml` and selects the package location in this order: `--path`, an existing `services.functions.path`, an existing `rayfin/functions` directory, a detected workspace location, or the flat `rayfin/functions` default.
+
+For a new Universal App with `packages/*` workspaces, the detected location is `packages/functions`. After Functions initialization and opting into Data, the layout resembles:
 
 ```text
 my-app/
 ├── rayfin/
 │   ├── rayfin.yml
-│   ├── data/
-│   │   ├── TripPlan.ts
-│   │   └── schema.ts
-│   └── functions/
-│       ├── package.json
-│       ├── tsconfig.json
-│       └── src/
-│           ├── function_app.ts
-│           └── types.ts
-└── src/
-    └── services/
+│   └── .env
+└── packages/
+    ├── frontend/
+    │   └── src/
+    ├── data/
+    │   └── src/index.ts
+    ├── shared/
+    │   └── src/index.ts
+    └── functions/
+        ├── package.json
+        ├── tsconfig.json
+        └── src/
+            ├── function_app.ts
+            └── types.ts
 ```
 
 The files serve the following purposes:
@@ -95,12 +100,15 @@ The files serve the following purposes:
 | Path | Purpose |
 | --- | --- |
 | `rayfin/rayfin.yml` | Configures authentication, data, functions, and static hosting services. |
-| `rayfin/data/` | Contains the app's data models and schema exports. |
-| `rayfin/functions/package.json` | Defines dependencies and build scripts for the functions project. |
-| `rayfin/functions/tsconfig.json` | Configures the TypeScript build for functions. |
-| `rayfin/functions/src/function_app.ts` | Contains your function implementations. |
-| `rayfin/functions/src/types.ts` | Contains the generated `AppFunctionsSchema` types. Don't edit this file manually. |
-| `src/` | Contains the React frontend and any shared domain types or wrappers. |
+| `packages/data/src/` | Contains decorated runtime entities and their schema registration. Data is opt-in. |
+| `packages/shared/src/` | Contains record contracts and schema types shared with the frontend. |
+| `packages/functions/package.json` | Defines dependencies and build scripts for Functions. |
+| `packages/functions/tsconfig.json` | Configures the TypeScript build for Functions. |
+| `packages/functions/src/function_app.ts` | Contains function implementations. |
+| `packages/functions/src/types.ts` | Contains generated `AppFunctionsSchema` types. Don't edit this file manually. |
+| `packages/frontend/src/` | Contains the frontend and typed client calls. |
+
+Flat templates remain valid: they can use root `src/`, `rayfin/data/`, and `rayfin/functions/`. Follow your configured paths rather than creating duplicate packages. To choose a Functions location explicitly, run `npx rayfin functions init --path packages/functions`.
 
 When you enable functions, `rayfin/rayfin.yml` includes the functions service:
 
@@ -108,6 +116,7 @@ When you enable functions, `rayfin/rayfin.yml` includes the functions service:
 services:
   functions:
     enabled: true
+    path: packages/functions
     auth:
       type: application
     buildCommand: npm run build
@@ -182,7 +191,7 @@ To start only the functions host, for example when you run the frontend separate
 
 ```powershell
 cd my-app
-npx rayfin dev 
+npx rayfin dev functions apply
 ```
 
 ## Deploy to Fabric
@@ -205,7 +214,7 @@ From the root of an existing Fabric app, enable the feature and initialize the f
 npx rayfin functions init
 ```
 
-After initialization, add function implementations to `rayfin/functions/src/function_app.ts`.
+After initialization, add implementations to `src/function_app.ts` inside the configured Functions package (`packages/functions` for a new Universal App, or `rayfin/functions` for a flat app).
 
 ## Limitations
 

@@ -1,10 +1,11 @@
 ---
 title: Configure Custom SQL Pools in the Fabric Portal
 description: Learn how to use the Fabric portal to configure custom SQL pools.
-ms.reviewer: brmyers
-ms.date: 03/11/2026
+ms.reviewer: twcyril
+ms.date: 09/23/2026
 ms.topic: quickstart
 ms.search.form: Warehouse Custom SQL pools
+ai-usage: ai-assisted
 ---
 
 # Configure custom SQL pools in the Fabric portal
@@ -13,7 +14,7 @@ ms.search.form: Warehouse Custom SQL pools
 
 By using custom SQL pools, administrators can control how the system allocates resources to handle requests. In this quickstart, you configure custom SQL pools and view the classifier values in the Fabric portal.
 
-Workspace administrators can use the application name (or program name) from the connection string to route requests to different compute pools. Workspace administrators can also control the percentage of resources each compute SQL pool can access, based on the burstable scale limit of the workspace capacity.
+Workspace administrators can use the statement type or the application name (or program name) from the connection string to route requests to different compute pools. Workspace administrators can also control the percentage of resources each compute SQL pool can access, based on the burstable scale limit of the workspace capacity.
 
 ## Prerequisites
 
@@ -29,7 +30,13 @@ Workspace administrators can use the application name (or program name) from the
 
    An informational bubble says **Using built-in pools** when default pool settings are in place. When you configure custom SQL pools, the bubble shows **Using custom setup**.
 1. Select the **Set up custom pools** button to enable custom SQL pools.
-1. Select the **Classifier type** dropdown list and select either **Application name (exact name)** for exact application name classification or **Application name (regex)** for regular expression application name classification. For this exercise, choose **Application name (regex)** to create classifiers based on a regular expression.
+1. Select the **Classifier type** dropdown list, and then select one of the following classifier types:
+
+   - **Application name (exact name)** for exact application name classification.
+   - **Application name (regex)** for regular expression application name classification.
+   - **Statement type** to classify requests as `SELECT` or `NONSELECT`.
+
+   For this exercise, create classifiers on the application name.
 
    :::image type="content" source="media/configure-custom-sql-pools-portal/classifiers.png" alt-text="Screenshot from the Fabric portal showing the custom SQL pools classifiers dropdown list." lightbox="media/configure-custom-sql-pools-portal/classifiers.png":::
     

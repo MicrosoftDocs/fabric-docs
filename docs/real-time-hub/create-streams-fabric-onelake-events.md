@@ -36,6 +36,8 @@ For more information, see [Explore OneLake events](explore-fabric-onelake-events
 
 ## Prerequisites
 
+[!INCLUDE [event-consumer-region-note](./includes/event-consumer-region-note.md)]
+
 - Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions.
 - SubscribeOneLakeEvent permission on the data sources.
 

@@ -1,23 +1,52 @@
 ---
-title: Use the Business Action Activity in a Pipeline
-description: Learn how to use the business action activity in a Microsoft Fabric Data Factory pipeline.
+title: Use the Business Actions Activity in a Pipeline
+description: Learn how to use the business actions activity in a Microsoft Fabric Data Factory pipeline.
 ms.reviewer: conxu
 ms.topic: how-to
 ms.date: 09/23/2026
 ai-usage: ai-assisted
 ---
 
-# Use the business action activity in a pipeline
+# Use the business actions activity in a pipeline
 
-Use the business action activity to invoke an enterprise application action through a Logic Apps connector from a Data Factory pipeline.
-
-For example, after a pipeline produces a daily data-quality result, you can use a business connector action to notify the operations team and make the action response available to later pipeline logic.
-
-This article shows you how to add a business action, configure its connector and connection, pass pipeline data as action inputs, and verify the action run.
+The business actions activity lets a Data Factory pipeline take action in the business applications your organization already uses, such as creating an incident in ServiceNow, opening an issue in Jira, or sending an SMS alert through Twilio. It does this through Logic Apps connectors, so you can reach hundreds of applications and services without writing code or hosting a separate integration service.
 
 > [!IMPORTANT]
-> The business action activity is in preview.
-> Availability, supported connectors, and the final portal experience can change before general availability.
+> The business actions activity is in preview. Availability, supported connectors, and the final portal experience can change before general availability.
+
+## What the business actions activity does
+
+If you're new to pipelines, here's the short version:
+
+- A **pipeline** is a workflow in Fabric Data Factory. It runs a series of steps, called **activities**, in order. For example, a pipeline might copy data, transform it, and then check its quality.
+- Most activities move or process data. The **business actions activity** is different: it connects your pipeline to the rest of your business. When a pipeline step finishes, it can open work items, update records, or signal systems outside Fabric.
+- The activity runs a single **action** (for example, *Create record* or *Send message*) from a **connector** (for example, ServiceNow or Jira). It can wait for the action to finish and return the result, so that later steps in the pipeline can use it.
+
+Here are examples of what you can do with some of the connectors available today:
+
+| Connector | Example action from a pipeline |
+|---|---|
+| ServiceNow | Create an incident when a daily data-quality check fails, including the failed row count and run ID. |
+| Jira | Open an issue for the data engineering team when a load produces unexpected results. |
+| Freshservice | Raise an IT service ticket when a source system is unavailable during a scheduled load. |
+| Freshdesk | Create or update a support ticket when a customer-facing dataset is delayed. |
+| Teamwork | Create a task in a project when a dataset is ready for review. |
+| LeanKit / Planview AgilePlace | Add a card to a team board to track follow-up work from a pipeline run. |
+| Twilio | Send an SMS to the on-call engineer when a critical load fails. |
+| HelloSign | Send a signature request after a contract or approval document is generated. |
+| Stripe | Create or update customer and invoice records after billing data is processed. |
+| ShipStation | Create or update orders after order data is validated. |
+
+### What's supported
+
+- **Connectors:** The business actions activity uses Logic Apps connectors. For the full catalog of connectors and their actions, see [List of all Logic Apps connectors](/connectors/connector-reference/connector-reference-logicapps-connectors). Select any connector on that page to see its actions, authentication options, and region availability.
+
+  > [!NOTE]
+  > Because the business actions activity is in public preview, it doesn't support all connectors in the Logic Apps catalog yet. Support for more connectors is coming. The connector browser in the activity shows the connectors you can use today.
+- **Credentials:** Connections use the Fabric connection framework. You don't create or manage a separate Logic Apps resource.
+- **Inputs:** The activity generates its input form from the selected action's schema. You can pass in pipeline parameters, variables, and outputs from earlier activities.
+- **Outputs:** When **Wait for completion** is enabled, the action's response is available to later activities in the pipeline.
+- **Long-running actions:** The activity supports actions that take time to complete by waiting for completion and polling for the result.
 
 ## Prerequisites
 
@@ -27,7 +56,7 @@ This article shows you how to add a business action, configure its connector and
 - Permission to create or use a connection for the business application.
 - An account authorized to use the connector action that you plan to run.
 
-## Add a business action activity to a pipeline
+## Add a business actions activity to a pipeline
 
 1. Open your Fabric workspace.
 1. Create a pipeline, or open the pipeline that contains your data-quality activity.

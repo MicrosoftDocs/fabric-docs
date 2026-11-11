@@ -5,7 +5,8 @@ author: msmimart
 ms.author: mimart
 ms.reviewer: nadavsc
 ms.topic: overview
-ms.date: 05/29/2025
+ms.date: 10/08/2026
+ai-usage: ai-assisted
 #customer intent: As data engineer, data scientist, analyst, or business user, I want to understand the information I see on a item's item details view, and use the functionality that is provided there.
 ---
 
@@ -67,7 +68,7 @@ In the OneLake catalog explorer, you can view and interact with semantic models 
 
 - **Create a paginated report:** If you prefer to choose specific tables and columns before exporting, select **Explore this data > Create a [paginated report](/power-bi/paginated-reports/web-authoring/paginated-formatted-table)**. In the paginated report editor, select the columns you need, then go to **Home > Export** and choose your preferred format (PDF, Excel, Word, and more).
 
-:::image type="content" source="media/onelake-catalog-item-details/paginated-report-export.png" alt-text="A screenshot showing the export menu of a paginated report." lightbox="media/onelake-catalog-item-details/paginated-report-export.png":::
+:::image type="content" source="media/onelake-catalog-item-details/paginated-report-export.png" alt-text="Screenshot of the export menu of a paginated report." lightbox="media/onelake-catalog-item-details/paginated-report-export.png":::
 
 ### Lineage tab
 
@@ -143,7 +144,7 @@ This section covers actions unique to Semantic Models, SQL Analytics Endpoints, 
 | | **Schedule refresh** | Opens the settings page where you can configure [scheduled refresh](/power-bi/connect-data/refresh-scheduled-refresh). | **Refresh** button \> **Schedule refresh** |
 | **Semantic Model** | **Download this file** | Downloads the .pbix file for this semantic model. | **Download** button |
 | | **Version History** | With [version history](/power-bi/transform-model/service-semantic-model-version-history), self-service users can recover from the most critical mistakes when editing their semantic models on the web. | **File** \> **Version history** |
-| | **Explore this data** | A lightweight tool for quick, ad-hoc data analysis. [Explore the data](/power-bi/consumer/explore-data-service) to create matrix/visual pairs without building a full report. To Explore a specific table or column of a semantic model, point to it in the **Overview** tab and select the binoculars icon. | **Explore this data** button \> **Explore this data** (or binoculars icon on Overview tab) |
+| | **Explore this data** | A lightweight tool for quick, ad-hoc data analysis. [Explore the data](/power-bi/consumer/explore-data-service) to create matrix/visual pairs without building a full report. To explore a specific table or column of a semantic model, point to it in the **Overview** tab and select the binoculars icon. | **Explore this data** button \> **Explore this data** (or binoculars icon on Overview tab) |
 | | **Auto-create a report** | [Automatically generates](/power-bi/create-reports/service-interact-quick-report) a summary report with key insights and visuals from the selected semantic model, which is useful for quick data checks. | **Explore this data** button \> **Auto-create a report** |
 | | **Create a blank report** | Opens the report editing canvas to a new report built on the semantic model. Saving your new report saves it in the workspace that contains the semantic model if you have write permissions for that workspace. If you don't have write permissions for the workspace, the new report saves in *My workspace*. | **Explore this data** button \> **Create a blank report** |
 | | **Create from template** | You can create a report template that users can use to get started building their own reports based on your semantic model. This template is a regular report designed to be used as a starting point. When you save it, you should add the suffix "(template)" to the report name, for example, *Monthly Sales (template)*. When a user selects **Create from template** in the details page, a copy of the template is created in the user's *My workspace* and opens in the report editing canvas. Report templates are also easily identifiable in the list of related reports in the semantic model details view. | **Explore this data** \> **From a template**. |
@@ -176,6 +177,31 @@ This section covers actions unique to Pipelines, Dataflow Gen2 CI/CD, and Notebo
 | | **Download** | Downloads the pipeline definition file. | **Download** button |
 | **Dataflow Gen2 CI/CD** | **Check Validation** | Determine the validity of the dataflow by running a "zero row" evaluation for all the queries in the dataflow. | Specific menu option |
 | **Notebook** | **Download** | Downloads the notebook file. | **Download** button |
+
+## View object details
+
+Select an object in the items list to open its details alongside the list. The list narrows to the **Name** column so you can keep your place.
+
+The overview shows the object's name, type, icon, and location path, including its domain, workspace, main item, and any intermediate objects.
+
+The view also shows the object's description, if available, and contents one level down. For example, a schema lists its tables and views, while a table lists its columns and their metadata. Columns don't have separate details pages.
+
+Available actions depend on the object. For example, you can open the main item with the object selected.
+
+:::image type="content" source="./media/onelake-catalog-item-details/onelake-catalog-object-details-overview.png" alt-text="Screenshot of a table's object details in the OneLake catalog, showing its overview and column metadata alongside the items list." lightbox="./media/onelake-catalog-item-details/onelake-catalog-object-details-overview.png":::
+
+### View technical details
+
+For some tables, an optional **Details** tab shows additional technical information about the table, such as its format, type, URL, relative path, and ABFS path. The available information depends on the table type, so some fields might not appear.
+
+### Preview table data
+
+For tables under supported item types, the **Data preview** tab shows 100 sample rows. You can sort by column, filter column values, search visible rows, and copy cell values. If the table is empty or you don't have permission to read its data, the tab shows an appropriate message and, when needed, explains how to request access.
+
+:::image type="content" source="./media/onelake-catalog-item-details/onelake-catalog-object-data-preview.png" alt-text="Screenshot of the Data preview tab in the OneLake catalog, showing sample rows from a selected table alongside the items list." lightbox="./media/onelake-catalog-item-details/onelake-catalog-object-data-preview.png":::
+
+> [!NOTE]
+> To view a table's contents in **Data preview**, you need permission to access its data. The required permissions depend on the item type.
 
 ## Considerations and limitations
 

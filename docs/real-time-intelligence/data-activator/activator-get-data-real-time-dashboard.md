@@ -142,6 +142,8 @@ The following visuals aren't supported:
 
 > [!NOTE]
 > These limitations apply to Real-Time Dashboard visuals. For alerts on table visuals in published Power BI reports, see [Create an alert in Power BI report](activator-get-data-power-bi.md).
+>
+> A map visual in a real-time dashboard is different from a Fabric map item. To create a rule from a supported layer in a Fabric map item, see [Create Activator alerts from a Fabric map](../map/create-activator-alerts.md).
 
 ## Limitations on charts with a time axis
 
@@ -189,5 +191,6 @@ The most common reason that a measure value changes over time is that the most r
 
 * [Create [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rules in design mode](activator-create-activators.md)
 * [Detection conditions in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](activator-detection-conditions.md)
+* [Create Activator alerts from a Fabric map](../map/create-activator-alerts.md)
 * [[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] tutorial using sample data](activator-tutorial.md)
 * [What is Microsoft Fabric?](../../fundamentals/microsoft-fabric-overview.md)

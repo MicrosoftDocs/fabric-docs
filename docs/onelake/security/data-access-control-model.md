@@ -75,6 +75,9 @@ The following table shows the standard default roles. Items might have specializ
 
 You can modify or remove the default role from a Fabric item to change access for the users in that member group.
 
+> [!IMPORTANT]
+> In an item with OneLake security enabled, ReadAll doesn't grant data access on its own. It grants access through the `DefaultReader` role. If you delete `DefaultReader`, users who relied on that role lose data access, even if they still have ReadAll permission. To restore access, assign the affected users or groups to another OneLake security role that grants access to the required tables or folders. Workspace Admins, Members, and Contributors retain access through their Write permission.
+
 ## Engine and user access to data
 
 OneLake security defaults to least privileged access. Some storage-level operations can't enforce RLS or CLS, so when a query can't be safely filtered, OneLake blocks it entirely rather than risk exposing data the user isn't permitted to see. Whether a query is filtered or blocked depends on the access path - a supported query engine or direct user access.

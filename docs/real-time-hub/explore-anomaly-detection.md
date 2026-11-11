@@ -15,6 +15,8 @@ Anomaly detection in Real-Time hub helps you automatically identify unusual patt
 
 ## View anomaly detection events detail page
 
+[!INCLUDE [event-consumer-region-note](./includes/event-consumer-region-note.md)]
+
 1. In **Real-Time hub**, select **Fabric events** under the **Subscribe to** category.
 
     :::image type="content" source="media/explore-anomaly-detection/fabric-events.png" alt-text="Screenshot that shows the Fabric events page in Real-Time hub.":::

@@ -61,7 +61,8 @@ Deploy activator instances for each workspace and bind them to specific data sou
 | -------------------- | -------------------------- |
 | Eventstream          | Sends real-time data to Activator so it can monitor for patterns and conditions. Alert creation and rule management are also embedded directly within Eventstream, so users can author and manage rules in-context. |
 | Activator            | Can create new events, such as enriched data or categorized data, that trigger another activator. |
-| Pipeline             | Target of Activator’s rule triggers, which automates downstream processing. |
+| Fabric Maps          | Lets you create Activator rules in context from supported eventhouse map layers. For more information, see [Activator alerts in Fabric Maps](../map/about-activator-alerts.md). |
+| Pipeline             | Target of Activator's rule triggers, which automates downstream processing. |
 | Power BI             | Serves as an event source for Activator rules on report visuals, including table visual row detection. Also consumes the result of triggered pipelines or notebooks for real-time visualizations. |
 | Power Automate       | Automates tasks by using prebuilt or custom workflows when events occur. |
 | Fabric events        | Supplies events that are happening within Fabric like refreshing of a semantic model or failing of a pipeline.​ |
@@ -142,7 +143,7 @@ Rules are evaluated continuously. For stateless rules on streaming data, the sys
 
 #### Actions
 
-When a rule’s conditions are met and an action is initiated, the rule is activated. The supported targets for actions include:
+When a rule's conditions are met and an action is initiated, the rule is activated. The supported targets for actions include:
 
 - Fabric pipelines (for data movement, enrichment).
 - Fabric notebooks (for machine-learning scoring, diagnostics).
@@ -208,8 +209,8 @@ Here are a few real-world scenarios where you can use Fabric Activator:
 
 - Automatically launch ad campaigns when same-store sales decline, helping to boost performance in underperforming locations.
 - Notify grocery store managers to relocate food from malfunctioning freezers before spoilage occurs.
-- Trigger personalized outreach workflows when a customer’s journey across apps, websites, or other touchpoints indicates a negative experience.
-- Proactively initiate investigation workflows when a shipment’s status isn't updated within a defined timeframe, helping to locate lost packages faster.
+- Trigger personalized outreach workflows when a customer's journey across apps, websites, or other touchpoints indicates a negative experience.
+- Proactively initiate investigation workflows when a shipment's status isn't updated within a defined timeframe, helping to locate lost packages faster.
 - Alert account teams when customers fall into arrears, using customized thresholds for time or outstanding balances per customer.
 - Monitor pipeline health and automatically rerun failed jobs or alert teams when anomalies or failures are detected.
 
@@ -221,5 +222,6 @@ Here are a few real-world scenarios where you can use Fabric Activator:
 - [Trigger Fabric items from an Activator rule](activator-trigger-fabric-items.md)
 - [Detection conditions in Activator](activator-detection-conditions.md)
 - [Activator limitations](activator-limitations.md)
+- [Activator alerts in Fabric Maps](../map/about-activator-alerts.md)
 - [Create an alert rule on a SQL query](set-alerts-warehouse-sql-query.md)
 - [Latency in Activator](activator-latency.md)

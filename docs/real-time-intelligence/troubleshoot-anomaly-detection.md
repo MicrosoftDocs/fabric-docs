@@ -1,13 +1,16 @@
 ---
 title: Troubleshoot Errors in Anomaly Detection
 description: This article provides troubleshooting steps for common errors encountered in anomaly detection in Real-Time Intelligence.
-ms.reviewer: v-hzargari, tessahurr
+ms.reviewer: v-hzargari, tessahurr, willthom
 ms.topic: concept-article
-ms.date: 09/15/2025
+ms.date: 11/10/2026
 ms.search.form: Anomaly Detection Troubleshooting Errors
+ai-usage: ai-assisted
 ---
 
 # Troubleshoot errors in anomaly detection
+
+[!INCLUDE [anomaly-detector-deprecation-note](../includes/anomaly-detector-deprecation-note.md)]
 
 If a problem occurs with any of your anomaly detection events, models, or configurations after you create them, the system sends you an email containing an error code. This article explains the meaning of the error codes you might receive and provides steps to resolve the associated issues.
 

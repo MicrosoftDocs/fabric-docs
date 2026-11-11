@@ -18,7 +18,7 @@ This article explains basic Git concepts and the process of integrating Git with
 - The permissions you have in both the workspace and Git, as listed in the next sections, determine the actions you can take.
 
 >[!NOTE]
->Starting December 1, 2026, users without read-write permissions on workspace items can't use Git integration. This restriction can result in loss of access to certain items because of sensitivity labels and protection policies applied to those items. For more information, see [Information Protection in Microsoft Fabric](../../governance/information-protection.md).
+>Starting February 28, 2027, users without read-write permissions on workspace items can't use Git integration. This restriction can result in loss of access to certain items because of sensitivity labels and protection policies applied to those items. For more information, see [Information Protection in Microsoft Fabric](../../governance/information-protection.md).
 
 
 ### Required Git permissions for popular actions
@@ -127,6 +127,7 @@ When connected and synced, the workspace structure is mirrored in the Git reposi
 - Empty folders in Git are deleted automatically.
 - Empty folders in the workspace aren't deleted automatically even if all items are moved to different folders.
 - Folder structure is retained up to 10 levels deep.
+- Renaming a folder by changing only the letter casing isn't supported. For example, renaming SalesFolder to salesFolder in Git can't be applied to the workspace by using Update from Git.
 
 #### Handling folder changes safely
 

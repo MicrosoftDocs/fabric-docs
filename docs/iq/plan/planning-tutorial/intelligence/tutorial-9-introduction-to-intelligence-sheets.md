@@ -17,7 +17,7 @@ Before you begin, ensure you have:
 
 - Access to a Microsoft Fabric workspace where you can create a plan and upload a semantic model.
 - Permission to create and edit an intelligence sheet.
-- The Enterprise Dataset sample PBIX file. Download it from the [Fabric samples GitHub repository](https://github.com/jagan0506/fabric-samples/blob/add-plan-enterprise-dataset/docs-samples/iq/plan/Enterprise%20Dataset.pbix).
+- The Enterprise Dataset sample PBIX file. Download it from the [Fabric samples GitHub repository](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/iq/plan/Enterprise%20Dataset.pbix).
 
 ## Business context
 
@@ -393,4 +393,3 @@ You now have an interactive enterprise dashboard that:
 
 :::image type="content" source="../../media/planning-tutorial/intelligence/tutorial-9-introduction-to-intelligence-sheets/final-dashboard-preview.jpg" alt-text="Screenshot of the completed SaaS Enterprise financial performance dashboard with variance, trend, KPI, matrix, date filter, and header." lightbox="../../media/planning-tutorial/intelligence/tutorial-9-introduction-to-intelligence-sheets/final-dashboard-preview.jpg":::
 
-:::image type="content" source="../../media/planning-tutorial/intelligence/tutorial-10-build-profit-and-loss-intelligence/open-data-pane.png" alt-text="Screenshot of an intelligence sheet with the Data pane open and the Add button under Semantic Model highlighted." lightbox="../../media/planning-tutorial/intelligence/tutorial-10-build-profit-and-loss-intelligence/open-data-pane.png":::

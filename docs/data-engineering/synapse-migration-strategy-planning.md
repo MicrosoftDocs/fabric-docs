@@ -124,7 +124,7 @@ For the full comparison, see [Compare Fabric and Azure Synapse Spark: Key Differ
 |----|----|----|
 | **Deployment model** | PaaS (configure and manage resources) | SaaS (capacity-based, no infrastructure management) |
 | **Compute model** | Spark pools (node-based); requires minimum 3 nodes | Capacity Units (CU) shared across all workloads; Spark pools as config templates; single-node execution supported; Autoscale Billing for Spark (pay-per-use, similar to Synapse model) |
-| **Spark engine** | Synapse Spark pools (Spark 3.4, 3.5); GPU pools supported | Fabric Spark (Runtime 1.2/1.3/2.0: Spark 3.4–4.0); no GPU support; runs on latest-generation hardware for improved performance |
+| **Spark engine** | Synapse Spark pools (Spark 3.4, 3.5); GPU pools supported | Fabric Spark ([Runtime 2.0](./runtime-2-0.md), Spark 4.1, is the latest GA and default runtime); no GPU support; runs on latest-generation hardware for improved performance |
 | **Scaling** | Node autoscale for Spark (min 3 nodes) | Node autoscale for Spark (single-node minimum); capacity-based scaling |
 | **Session startup** | Pool-based; cold start for new clusters | Starter Pools (seconds-level startup); Custom Live Pools; High Concurrency mode |
 | **Cost model** | Per-node-hour (Spark); pause/resume | Two options: (1) Fabric Spark uses a Capacity Unit (CU)-based shared consumption model, or (2) Autoscale Billing for Spark – pay as you go Spark mode |
@@ -133,7 +133,7 @@ For the full comparison, see [Compare Fabric and Azure Synapse Spark: Key Differ
 
 | **Capability** | **Synapse Spark** | **Fabric Spark** |
 |----|----|----|
-| **Spark versions** | Spark 3.4 (EOL), 3.5 (Preview). | Spark 3.4 (RT 1.2 EOL), 3.5 (RT 1.3 GA), 4.0 (RT 2.0 Preview) |
+| **Spark versions** | Spark 3.4 (EOL), 3.5 (Preview). | Spark 3.4 (Runtime 1.2 EOS), 3.5 (Runtime 1.3 EOSA), 4.1 (Runtime 2.0 GA and default) |
 | **Query acceleration** | No native acceleration engine | Native Execution Engine (Velox/Gluten, up to 4x on TPC-DS) |
 | **Pool model** | Fixed pools with max node count per pool; minimum 3 nodes | Starter Pools (seconds-level startup, no configuration needed); Custom Pools for specific node sizes and custom libraries; single-node execution supported |
 | **Security (network)** | Managed virtual network; Private Endpoints | Managed Private Endpoints (MPE); Outbound Access Policies (OAP); Customer-Managed Keys (CMK) |

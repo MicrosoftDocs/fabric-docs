@@ -4,6 +4,7 @@ description: Discover how Microsoft Fabric's Business Events enable real-time re
 #customer intent: As a developer, I want to understand what business events are so that I can determine their relevance to my organization's needs.
 ms.date: 02/22/2026
 ms.topic: overview
+ai-usage: ai-assisted
 ---
 
 # Business events overview
@@ -85,6 +86,12 @@ In Microsoft Fabric:
 This model lets you add new consumers - such as analytics flows, pipelines, automations, or external integrations - without changing or coordinating with the original publisher. New consumers can subscribe to existing events at any time, and the architecture supports scalable, parallel processing so multiple consumers can act on the same event simultaneously without affecting publisher code.
 
 Workspace private links can affect cross-workspace business event publishing and consumption. For Business events, the source workspace is the workspace that contains the Event Schema Set. If that workspace blocks public access, publishers and consumers in other workspaces need a private link to the source workspace. For more information, see [Workspace private links for Azure, Fabric, and Business events](../workspace-private-links-real-time-events.md).
+
+## Regional requirements
+
+[!INCLUDE [business-event-publisher-region-note](../includes/business-event-publisher-region-note.md)]
+
+[!INCLUDE [business-event-consumer-region-note](../includes/business-event-consumer-region-note.md)]
 
 ## Consistent modeling across the organization
 

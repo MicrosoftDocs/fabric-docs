@@ -81,6 +81,8 @@ Create a new business event by selecting the **+ New business event** button at 
 
 ### Add a consumer for the business event
 
+[!INCLUDE [business-event-consumer-region-note](../includes/business-event-consumer-region-note.md)]
+
 - **Add an alert for the business event**: You can create an alert on a business event to monitor the event and get notified when the event occurs. To create an alert for the selected event, select **Add consumer** -> **Set alert** on the ribbon. For step-by-step guidance on setting alerts, see [Set alerts on business events in Real-Time hub](set-alerts-business-events.md).
 
 - **Add a Notebook consumer for the business event**: You can create a Notebook consumer for a business event to analyze the event data in a notebook. To create a Notebook consumer for the selected event, select **Add consumer** -> **Create Notebook consumer** on the ribbon. For step-by-step guidance on creating a Notebook consumer, see [Publish business events using Notebook and react using Activator](tutorial-business-events-notebook-user-data-function-activator.md).

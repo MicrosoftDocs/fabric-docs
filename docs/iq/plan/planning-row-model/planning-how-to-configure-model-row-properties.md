@@ -10,7 +10,7 @@ ms.topic: how-to
 
 This article explains row properties and how to configure them in a model.
 
-## Hybrid row configuration
+## Configure closed and open periods
 
 The model builder looks like the following image. There are two tabs: **Closed Period** and **Open Period**.
 
@@ -60,12 +60,18 @@ Based on the row type, fill in the configuration as follows.
 
 ### Formula
 
-For a **Formula** row, enter the configuration as a formula. You can type the formula manually or select from the suggestions that appear as you start typing.
+For a **Formula** row, enter the configuration as a formula. You can type the formula and select from the suggestions that appear as you start typing.
 
 :::image type="content" source="../media/planning-row-model/planning-how-to-configure-model-row-properties/formula-editor.png" alt-text="Screenshot of formula editor." lightbox="../media/planning-row-model/planning-how-to-configure-model-row-properties/formula-editor.png":::
 
->[!NOTE]
->To access help suggestions with examples, press <kbd>Ctrl</kbd>+<kbd>Space</kbd>. To select between row references and functions, switch between the **References** and **Functions** tabs.
+To access help suggestions with examples, press **Ctrl + Space**. A suggestions pop-up opens with two tabs: **References** and **Functions**.
+
+* Select the **References** tab to reference and add the row names you want in the formula.
+* Select the **Functions** tab to view the list of supported functions. Select one to view its syntax and example and then insert it.
+
+For hierarchical rows, typing a row reference in the formula box inserts the full path from the root node to the referenced row, as shown in the following image. Verify the row path to ensure that you reference the correct row.
+
+:::image type="content" source="../media/planning-row-model/planning-how-to-configure-model-row-properties/hierarchical-row.png" alt-text="Screenshot of the Enter Formula box with row references prefixed by the parent path, such as [Income Before Tax (EBT)].[Interest Income]." lightbox="../media/planning-row-model/planning-how-to-configure-model-row-properties/hierarchical-row.png":::
 
 ### Data Source
 
@@ -92,7 +98,11 @@ This type offers various aggregation options, letting you define how child rows 
 
 ### Linked Row
 
-For a **Linked Row**, you can select another row to link. Linked rows share the same values, properties, configuration, and simulation behavior, ensuring they remain in sync. Use this type when you need to reuse the same row in multiple parts of the model, as it lets you change all instances at once. This type can be specified for open period rows.
+In a **Linked Row**, you can select another row to link to. Linked rows share the same values, properties, configuration, and simulation behavior, ensuring they remain in sync.
+
+Use this type when you need to reuse the same row in multiple parts of the model, so you can change all instances at once. For example, you can share global software licensing fees across regional budgets or reuse a standard salary and benefits configuration across departments. Changes to the linked row are reflected across its instances, helping maintain consistency and reduce duplicate data entry.
+
+You can specify this type for open period rows.
 
 :::image type="content" source="../media/planning-row-model/planning-how-to-configure-model-row-properties/linked-row.png" alt-text="Screenshot of linked row." lightbox="../media/planning-row-model/planning-how-to-configure-model-row-properties/linked-row.png":::
 

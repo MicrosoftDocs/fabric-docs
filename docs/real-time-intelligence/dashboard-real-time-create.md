@@ -3,7 +3,7 @@ title: Create a Real-Time Dashboard
 description: Learn how to create and customize Real-Time Dashboards to visualize data effectively using KQL queries and Copilot for seamless insights.
 ms.reviewer: mibar
 ms.topic: how-to
-ms.date: 10/04/2026
+ms.date: 10/11/2026
 author: spelluru
 ms.author: spelluru
 ms.subservice: rti-dashboard
@@ -263,34 +263,9 @@ You can add tiles to your dashboard directly from queries written in a KQL query
 
 [!INCLUDE [Fabric feature-preview-note](../includes/feature-preview-note.md)]
 
-Embed an existing [Fabric Maps](map/about-fabric-maps.md) item as a tile in your dashboard. Unlike the built-in [map visual](dashboard-visuals-customize.md), which renders directly from a KQL query defined in the tile, a Fabric Maps tile embeds a pre-authored, multi-layer map item as-is. This approach lets you reuse the same map across dashboards without redefining its data sources, queries, or styling.
+Embed an existing [Fabric Map](map/about-fabric-maps.md) item in your dashboard. A Fabric Map visual embeds a pre-authored, multilayer map item as-is, so you can reuse the same map across dashboards without redefining its data sources, queries, or styling.
 
-The embedded map is a self-contained visual: its data sources, queries, layers, and styling stay authored and maintained in the original map item. Reload the dashboard page to display saved map configuration changes. In the dashboard, you can't edit the map's queries, data sources, layers, filters, or styling.
-
-The Fabric Maps tile renders in view-only mode. Viewers can pan, zoom, hover, and view basic tooltips. Real-Time Dashboard parameters don't filter or otherwise modify the Fabric Maps tile.
-
-1. In your dashboard, switch to [**Editing mode**](#edit-mode).
-
-1. Select **New visual** from the top menu bar, and then select **Fabric Maps**.
-
-    :::image type="content" source="media/real-time-dashboard/fabric-map.png" alt-text="Screenshot of the New visual menu with Fabric Maps highlighted." lightbox="media/real-time-dashboard/fabric-map.png":::
-
-1. In the catalog picker, either:
-
-   * Select an existing map to embed it as-is, in its published state.
-   * Select **Create a new map** to open the map creation flow in a new browser tab. After you save the new map, return to your dashboard and select the new map from the catalog.
-
-1. Adjust the tile's layout position and size as needed. The tile supports the standard dashboard resize and maximize capabilities.
-
-1. In the dashboard toolbar, select the **Save** icon to save the dashboard with the new tile.
-
-> [!NOTE]
-> Dashboard viewers must have access to the dashboard, the source map item, and all underlying data sources required by the map. The viewer's identity and permissions are used for authorization. If the map is deleted or inaccessible, the tile shows an error state. The tile continues to track a map that is renamed or moved because the dashboard references it by item ID.
-
-You can also pin an open Fabric map directly to a new or existing Real-Time Dashboard. For more information, see [Pin a Fabric map to a Real-Time Dashboard](map/pin-map-to-real-time-dashboard.md).
-
-<!-- Confirm which standard RTD tile actions beyond resize and maximize are supported, including rename, duplicate, Share visual, and export. -->
-<!-- Follow up: document dashboard copy, export/import, deployment pipeline, and Git behavior when the referenced map isn't available in the destination. -->
+For step-by-step instructions, see [Embed a Fabric Map in a Real-Time Dashboard](dashboard-fabric-maps-tile.md).
 
 ## Add page
 
@@ -512,5 +487,6 @@ You can update an existing dashboard or restore a previous version by using the 
 
 * [Use parameters in Real-Time Dashboard queries](dashboard-parameters.md)
 * [Real-Time Dashboard-specific visuals](dashboard-visuals.md)
+* [Add a Fabric Maps tile to a Real-Time Dashboard](dashboard-fabric-maps-tile.md)
 * [Apply conditional formatting in Real-Time Dashboard visuals](dashboard-conditional-formatting.md)
 * [Create [!INCLUDE [fabric-activator](includes/fabric-activator.md)] alerts from a Real-Time Dashboard](data-activator/activator-get-data-real-time-dashboard.md)

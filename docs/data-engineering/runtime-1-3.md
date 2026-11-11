@@ -3,13 +3,18 @@ title: Runtime 1.3 in Fabric
 description: Learn about Apache Spark-based runtime 1.3 in Fabric, including the unique features, capabilities, and best practices.
 ms.reviewer: arali
 ms.topic: overview
-ms.date: 08/17/2026
+ms.date: 10/22/2026
 no-loc: [Copilot]
 ai-usage: ai-assisted
 #customer intent: As a Microsoft Fabric user I want to learn about Apache Spark-based runtime 1.3 in Fabric.
 ---
 
 # Fabric Runtime 1.3 (EOSA)
+
+> [!WARNING]
+> Microsoft Fabric Runtime 1.3 is in the end of support announced (EOSA) stage. Plan your migration to [Runtime 2.0](./runtime-2-0.md), the latest generally available (GA) and default runtime, to maintain support and avoid future disruption to your workloads.
+>
+> Validate workload compatibility before you [upgrade your Fabric workspace](./runtime.md) and environments. For migration steps and compatibility considerations, see [Migrate from Fabric Runtime 1.3 to Runtime 2.0](./runtime-2-0-migration-guide.md).
 
 Fabric runtime offers a seamless integration with Azure. It provides a sophisticated environment for both data engineering and data science projects that use Apache Spark. This article provides an overview of the essential features and components of Fabric Runtime 1.3.
 

@@ -40,7 +40,7 @@ Warehouse automatically scales compute resources in response to workload demand.
 
 You can analyze universal compute capacity usage by workload category, across the tenant. Fabric tracks usage by total Capacity Unit Seconds (CUs). The table displayed shows aggregated usage across the last 14 days.
 
-Both the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] roll up under **Warehouse** in [the Metrics app](../enterprise/metrics-app.md#install-the-app), as they both use SQL compute. The operation categories you see in this view are:
+Both the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] roll up under **Warehouse** in [the Metrics app](../enterprise/metrics-app.md), as they both use SQL compute. The operation categories you see in this view are:
 
 - **Warehouse Query**: Compute charge for all user-generated and system-generated T-SQL statements within a warehouse.
 - **SQL Endpoint Query**: Compute charge for all user-generated and system-generated T-SQL statements within a [!INCLUDE [fabric-se](includes/fabric-se.md)].

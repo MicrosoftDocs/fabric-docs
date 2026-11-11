@@ -2,7 +2,7 @@
 title: "Create scalar user-defined functions"
 description: Learn how to create scalar user-defined functions, make functions inlineable, and rewrite calling queries for scalar UDF inlining in Microsoft Fabric Data Warehouse.
 ms.reviewer: srdjanmatin
-ms.date: 09/11/2026
+ms.date: 10/20/2026
 ms.topic: how-to
 # customer intent: Learn how to create scalar user-defined functions, make functions inlineable, and rewrite calling queries for scalar UDF inlining in Microsoft Fabric Data Warehouse.
 ---
@@ -12,7 +12,7 @@ ms.topic: how-to
 
 Microsoft Fabric Data Warehouse uses two inlining techniques to run scalar user-defined functions (UDFs) as part of distributed queries:
 
-- ExprBlock inlining supports computation-based scalar UDFs that don't reference data in their function bodies, and it supports a wide variety of calling-query shapes.
+- Expression Block inlining supports computation-based scalar UDFs that don't reference data in their function bodies, and it supports a wide variety of calling-query shapes.
 - [Scalar UDF inlining in Fabric Data Warehouse (preview)](/sql/relational-databases/user-defined-functions/scalar-udf-inlining?view=fabric&preserve-view=true) has strict requirements for both the function definition and the calling query. For more information about the two techniques and their requirements, see [CREATE FUNCTION](/sql/t-sql/statements/create-function-sql-data-warehouse?view=fabric&preserve-view=true). 
 
 > [!NOTE]
@@ -54,7 +54,7 @@ GO
 
 ### Check whether the function is inlineable
 
-The `sys.sql_modules` catalog view exposes two properties that describe scalar UDF inlineability:
+The `sys.sql_modules` catalog view provides two properties that describe scalar UDF inlineability:
 
 - `is_inlineable` indicates whether the function definition is inlineable. A value of `1` means inlineable, and `0` means non-inlineable.
 - `inline_eligibility_mask` identifies which inlining technique can process the function definition. For more information about the values, see [Check whether a scalar UDF can be inlined](/sql/t-sql/statements/create-function-sql-data-warehouse?view=fabric&preserve-view=true#check-whether-a-scalar-udf-can-be-inlined).
@@ -105,7 +105,7 @@ GO
 The revised function has one `RETURN` statement and meets the scalar UDF inlining requirements. Run the metadata query again to verify that `is_inlineable` is `1`.
 
 > [!NOTE]
-> ExprBlock inlining supports multiple `RETURN` statements. This example reads table data and therefore uses scalar UDF inlining, which requires a single `RETURN` statement.
+> Expression Block inlining supports multiple `RETURN` statements. This example reads table data and therefore uses scalar UDF inlining, which requires a single `RETURN` statement.
 
 ### Replace @@ROWCOUNT with an initial value
 
@@ -130,7 +130,7 @@ END;
 GO
 ```
 
-Initialize the variable to the result for no matching row. The `SELECT` changes the value only when a row is found, which removes the need to inspect `@@ROWCOUNT`:
+Initialize the variable to the result for no matching row. The `SELECT` statement changes the value only when a row is found, which removes the need to inspect `@@ROWCOUNT`:
 
 ```sql
 CREATE OR ALTER FUNCTION dbo.CustomerExists (@CustomerID INT)
@@ -207,7 +207,7 @@ GO
 
 ## Make a query inlineable
 
-The query-shape requirements in this section apply when at least one UDF in a query relies on scalar UDF inlining. When every UDF in a query is handled by ExprBlock inlining, these query shapes work without the rewrites shown here.
+The query-shape requirements in this section apply when at least one UDF in a query relies on scalar UDF inlining. When every UDF in a query is handled by Expression Block inlining, these query shapes work without the rewrites shown here.
 
 The following examples use the inlineable, data-access version of `dbo.GetDiscount` from the previous section.
 

@@ -91,6 +91,36 @@ Microsoft Entra ID delegated authorization types (organizational account, servic
 >[!IMPORTANT]
 >The **Generate a user delegation key** requirement isn't currently enforced when a workspace identity is configured for the workspace and the ADLS shortcut auth type is Organizational Account, Service Principal, or Workspace Identity. However, this behavior will be restricted in the future. Make sure that all delegated identities have the **Generate a user delegation key** action to ensure that your users' access isn't affected when this behavior changes.
 
+### Use access control lists in Azure Data Lake Storage with ADLS shortcuts
+
+To reuse access control lists (ACLs) assigned to an ADLS shortcut target and bring them to an ADLS shortcut, use a combination of the Storage Blob Delegator role and ACLs assigned to the files and directories within the storage account to control access to ADLS shortcuts.
+
+:::image type="content" source="./media/create-adls-shortcut/acl-image.png" alt-text="A screenshot of a storage account with sample ACL configuration." lightbox="./media/create-adls-shortcut/acl-image.png":::
+
+By using this authorization model, you can control access to ADLS shortcuts with more granularity. The model combines the Storage Blob Delegator role with ACLs assigned on ADLS directories and files within the storage account. This authorization model doesn't affect existing ADLS shortcuts. Customers can continue using existing authorization models. The ACL authorization model supports user identity, service principals, and Fabric workspace identity.
+
+1. Go to the Azure Storage account and select **Add role assignment**. Then select the **Storage Blob Delegator** role. Assign this role to a user identity or a service principal (SPN).
+
+   :::image type="content" source="./media/create-adls-shortcut/show-storage-delegator.png" alt-text="Screenshot of Azure Storage role assignment with Storage Blob Delegator role highlighted in the image." lightbox="./media/create-adls-shortcut/show-storage-delegator.png":::
+
+1. After you complete the role assignment, go to the object (file or directory) in ADLS and select **Manage ACL**. Assign appropriate ACL permissions to the security principal you use for configuring the ADLS shortcut.
+
+   :::image type="content" source="./media/create-adls-shortcut/manage-acl.png" alt-text="Screenshot of ADLS settings with ACL configuration options." lightbox="./media/create-adls-shortcut/manage-acl.png":::
+
+1. Switch to Microsoft Fabric and select **New shortcut**. Follow the prompts to configure the ADLS shortcut by using the security principal that you assigned the Storage Blob Delegator role and appropriate ACL permissions.
+
+   :::image type="content" source="./media/create-adls-shortcut/create-new-adls-shortcut.png" alt-text="Screenshot of create new shortcut experience with connection settings highlighted." lightbox="./media/create-adls-shortcut/create-new-adls-shortcut.png":::
+
+1. After you specify connection details and credentials to use, go to the directory on ADLS with the source data for the shortcut. Your security principal that you use to configure the ADLS shortcut might not have permission to browse directories. If this principal doesn't have permission, select **Path View** in the top right corner of the dialog box and type in the desired location.
+
+   :::image type="content" source="./media/create-adls-shortcut/shortcut-path-view.png" alt-text="Screenshot of new shortcut setup experience with Path View option highlighted." lightbox="./media/create-adls-shortcut/shortcut-path-view.png":::
+
+1. Select **Create shortcut** once you specify the desired location. The new shortcuts appear in OneLake when you create the shortcut successfully.
+
+   :::image type="content" source="./media/create-adls-shortcut/final-create-shortcut.png" alt-text="Screenshot of Fabric lakehouse UX showing ADLS shortcuts have been created successfully." lightbox="./media/create-adls-shortcut/final-create-shortcut.png":::
+
+Now you set up an ADLS shortcut that uses ADLS access control lists to manage authorization for the shortcut representation of that object.
+
 ## Limitations
 
 The following limitations apply to ADLS shortcuts:

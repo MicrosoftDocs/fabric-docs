@@ -3,7 +3,7 @@ title: Create and Configure Operations Agents
 description: Learn how to use operations agents in Fabric Real-Time Intelligence.
 ms.reviewer: willthom, v-hzargari
 ms.topic: how-to
-ms.date: 08/03/2026
+ms.date: 10/21/2026
 ms.search.form: Operations Agent
 ai-usage: ai-assisted
 ---
@@ -136,6 +136,7 @@ In the **Operation details** page, you can view the operation details and status
 
 ## Related content
 
+* [Get started with the remote MCP server for operations agents](mcp-remote-operations-agent.md)
 * [Operations agent billing](operations-agent-billing.md)
 * [Operations agent limitations](operations-agent-limitations.md)
 * [Workspace outbound access protection for operations agent](../security/workspace-outbound-access-protection-operations-agent.md)

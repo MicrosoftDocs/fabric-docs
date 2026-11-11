@@ -4,6 +4,7 @@ description: Create an inventory business event, publish a sample JSON payload, 
 #customer intent: As a Fabric user, I want to publish and validate a sample business event so that I can test an event flow before connecting a production publisher.
 ms.date: 08/17/2026
 ms.topic: tutorial
+ai-usage: ai-assisted
 ---
 
 # Tutorial: Publish and validate a sample business event
@@ -53,6 +54,8 @@ Create a business event that represents inventory falling below its reorder thre
 For more information about schema creation and supported options, see [Create and manage business events](create-business-events.md).
 
 ## Open the sample event publisher
+
+[!INCLUDE [business-event-publisher-region-note](../includes/business-event-publisher-region-note.md)]
 
 1. On the **Business events** page, search for `Retail.Inventory.LowStockThreshold`.
 
@@ -121,6 +124,8 @@ Select **Publish** to send the sample event.
 Data preview shows up to 30 recent events from the last 24 hours for each publisher or consumer. For more information about its controls and limits, see [Preview business event data](preview-business-event-data.md).
 
 ## Validate consumer delivery
+
+[!INCLUDE [business-event-consumer-region-note](../includes/business-event-consumer-region-note.md)]
 
 If you already have a consumer for this business event:
 

@@ -46,10 +46,10 @@ From the previous tutorial steps, you have raw data ingested from the source to 
 
 1. Select the **wwilakehouse** lakehouse to open it, so that the notebook you open next is linked to it.
 
-1. From the top navigation menu, select **Open notebook** > **Existing notebook**.
+1. From the dropdown menu at the top right of the screen, select **Notebook** > **Existing notebook**.
 
-   :::image type="content" source="media\tutorial-lakehouse-data-preparation\existing-notebook-ribbon.png" alt-text="Screenshot showing the list of successfully imported notebooks." lightbox="media\tutorial-lakehouse-data-preparation\existing-notebook-ribbon.png":::
-
+   :::image type="content" source="media\tutorial-lakehouse-data-preparation\existing-notebook-ribbon-new.png" alt-text="Screenshot showing the Notebook menu and Existing notebook option." lightbox="media\tutorial-lakehouse-data-preparation\existing-notebook-ribbon-new.png":::
+   
 1. Select your imported notebook for PySpark or Spark SQL and select **Open**. The notebook is already linked to your opened lakehouse, as shown in the lakehouse **Explorer**.
 
 You're now ready to run the notebook cells that create and transform your Delta tables.

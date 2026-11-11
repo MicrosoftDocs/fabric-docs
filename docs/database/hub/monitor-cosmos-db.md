@@ -5,6 +5,7 @@ ms.reviewer: amapatil, jmaldonado, mjbrown
 ms.date: 09/22/2026
 ms.topic: how-to
 ai-usage: ai-assisted
+ms.search.form: Database Hub Estate, Database Hub Performance
 ---
 # Monitor a Cosmos DB account in the Database Hub (preview)
 

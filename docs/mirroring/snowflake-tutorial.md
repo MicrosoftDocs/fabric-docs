@@ -83,6 +83,25 @@ You can use an existing workspace (not My Workspace) or create a new workspace.
 
     For this tutorial, we select the **Mirror all data** option.
 
+1. Configure **storage integration** when inline URL unload is restricted
+
+   If your Snowflake environment restricts inline URL unload (for example, `PREVENT_UNLOAD_TO_INLINE_URL = TRUE`), configure Snowflake storage integration before you create the mirrored database.
+
+   :::image type="content" source="media/snowflake/snowflake-storage-integration.png" alt-text="Screenshot of Storage Integration." lightbox="media/snowflake/snowflake-storage-integration.png":::
+
+    > 1. In Snowflake, create and validate a storage integration that can access the staging location used for mirroring.
+    > 2. Ensure the integration has the required permissions to read and write to that staging location.
+    > 3. In Fabric, select the storage integration-backed staging configuration when creating the mirrored database.
+    > 4. Complete mirrored database creation and monitor replication.
+
+    > [!NOTE]
+    > Mirroring still uses staging. Storage integration is the supported approach when inline URL staging is restricted.
+
+    > If configuration is incomplete or incorrect, mirroring can fail with an error such as:
+    > `SQL compilation error: Cannot unload to an inlined external location. Please create a stage first and unload to the stage instead.`
+    > Recheck Snowflake unload restriction settings and storage integration permissions, and then retry.
+
+
 1. Select **Connect**. If you chose to mirror any Iceberg tables, enter the connection information for the storage containing your Iceberg tables. 
 
 1. Name your mirrored database, then select **Create mirrored database**. Mirroring begins.

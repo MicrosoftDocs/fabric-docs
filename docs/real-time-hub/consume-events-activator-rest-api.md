@@ -225,6 +225,8 @@ Add the workspace event types that you want to consume to `eventTypes`.
 
 ## Fabric job events in Activator
 
+[!INCLUDE [event-consumer-region-note](./includes/event-consumer-region-note.md)]
+
 ```json
 {
   "name": "Fabric Job events",
@@ -258,9 +260,11 @@ Add the workspace event types that you want to consume to `eventTypes`.
 }
 ```
 
-Set `artifactId` to the ID of the Fabric item whose jobs you want to monitor. The source item and Activator workspaces must be in the same region.
+Set `artifactId` to the ID of the Fabric item whose jobs you want to monitor.
 
 ## Fabric OneLake events in Activator
+
+[!INCLUDE [event-consumer-region-note](./includes/event-consumer-region-note.md)]
 
 ```json
 {
@@ -301,7 +305,7 @@ Set `artifactId` to the ID of the Fabric item whose jobs you want to monitor. Th
 }
 ```
 
-Set `artifactId` to the lakehouse or other supported OneLake item's ID. The source item and Activator workspaces must be in the same region.
+Set `artifactId` to the lakehouse or other supported OneLake item's ID.
 
 ## Fabric capacity overview events in Activator
 
@@ -333,6 +337,8 @@ Set `artifactId` to the lakehouse or other supported OneLake item's ID. The sour
 
 ## Fabric capacity operation events in Activator
 
+[!INCLUDE [event-consumer-region-note](./includes/event-consumer-region-note.md)]
+
 ```json
 {
   "name": "Fabric capacity operation events",
@@ -357,6 +363,8 @@ Set `artifactId` to the lakehouse or other supported OneLake item's ID. The sour
 ```
 
 ## Fabric anomaly detection events in Activator
+
+[!INCLUDE [event-consumer-region-note](./includes/event-consumer-region-note.md)]
 
 ```json
 {
@@ -385,6 +393,8 @@ Set `artifactId` to the lakehouse or other supported OneLake item's ID. The sour
 Set `artifactId` to the Anomaly Detector item ID. To consume events from only one detector configuration, add a `StringContains` filter on `subject` whose value is the configuration ID.
 
 ## Business events in Activator
+
+[!INCLUDE [business-event-consumer-region-note](./includes/business-event-consumer-region-note.md)]
 
 For Business events, identify each event type by its fully qualified ID:
 

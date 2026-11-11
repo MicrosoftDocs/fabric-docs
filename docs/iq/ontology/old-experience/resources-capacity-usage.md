@@ -62,7 +62,7 @@ Because ontology is a background job and usage is averaged over a 24-hour period
 
 The [Microsoft Fabric Capacity Metrics](../../../enterprise/metrics-app.md) app provides visibility into capacity usage for all Fabric workloads in one place. Administrators can use the app to monitor capacity, the performance of workloads, and their usage compared to purchased capacity. The Microsoft Fabric Capacity Metric app shows operations for ontology (preview).
 
-A capacity admin must install the Microsoft Fabric Capacity Metrics app. Once the app is installed, you can grant permissions to view the app to anyone in the organization. For more information about the app, see [Install the Microsoft Fabric Capacity Metrics app](../../../enterprise/metrics-app.md#install-the-app).
+A capacity admin must install the Microsoft Fabric Capacity Metrics app. After the admin installs the app, you can grant permissions to view the app to anyone in the organization. For more information about the app, see [Install the Microsoft Fabric Capacity Metrics app](../../../enterprise/metrics-app-install.md).
 
 ## Manage usage
 

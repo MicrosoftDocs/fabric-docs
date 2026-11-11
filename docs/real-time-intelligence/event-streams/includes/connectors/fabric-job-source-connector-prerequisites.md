@@ -3,6 +3,7 @@ title: Fabric Job events connector - prerequisites
 description: The include file has the prerequisites for using Fabric Job events connector for Fabric event streams and Real-Time hub. 
 ms.reviewer: robece
 ms.topic: include
+ai-usage: ai-assisted
 ms.date: 04/02/2026
 ---
 
@@ -22,5 +23,7 @@ With Fabric event streams, you can capture these Job events, transform them, and
 | Microsoft.Fabric.ItemJobFailed | Raised when the job fails, including job getting stuck or canceled. |
 
 ## Prerequisites
+
+[!INCLUDE [event-consumer-region-note](../../../../real-time-hub/includes/event-consumer-region-note.md)]
 
 - Get access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions.

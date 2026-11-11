@@ -2,6 +2,7 @@
 title: Use Notebook as a Business Events Publisher
 description: This article describes how to use a notebook to publish business events in Fabric Real-Time hub.
 ms.topic: how-to
+ai-usage: ai-assisted
 ms.date: 02/25/2026
 ---
 
@@ -28,6 +29,8 @@ Eventstream is ideal for routing and transformation, but many real world scenari
 Notebooks bring **full Python programmability**, enabling powerful, domain specific event generation without building external services.
 
 ## The built-in notebook publisher API
+
+[!INCLUDE [business-event-publisher-region-note](../includes/business-event-publisher-region-note.md)]
 
 Fabric provides native support for business events inside notebooks through the `notebookutils.businessEvents` API. This API allows notebooks to publish events aligned with a business event schema defined in the Schema Registry in Fabric Real-Time hub.
 

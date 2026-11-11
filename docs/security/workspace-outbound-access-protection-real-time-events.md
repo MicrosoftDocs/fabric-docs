@@ -11,7 +11,7 @@ ai-usage: ai-assisted
 
 ---
 
-# Workspace outbound access protection for Azure, Fabric, and Business events (preview)
+# Workspace outbound access protection for Azure, Fabric, and Business events
 
 Workspace outbound access protection helps safeguard your data by controlling outbound connections from event consumers in your workspace. When you enable this feature, consumers such as Activator and Eventstream can't consume events that originate outside the workspace unless you explicitly grant access through approved data connection rules.
 

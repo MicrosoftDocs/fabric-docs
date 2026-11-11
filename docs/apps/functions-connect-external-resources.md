@@ -144,7 +144,7 @@ class ContextTokenCredential implements TokenCredential {
 }
 ```
 
-Pass `new ContextTokenCredential(ctx.Tokens.Storage)` or the appropriate declared token to an SDK client that requires a credential. Install resource SDK packages in `rayfin/functions/package.json`, not in the project root.
+Pass `new ContextTokenCredential(ctx.Tokens.Storage)` or the appropriate declared token to an SDK client that requires a credential. Install resource SDK packages in the Functions package selected by `services.functions.path`, such as `packages/functions/package.json` in Universal App or `rayfin/functions/package.json` in a flat template, not in the project root.
 
 ## Develop locally
 

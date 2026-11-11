@@ -43,6 +43,8 @@ After you select a property or eventstream, you see a preview of the values for 
 > Activator can also monitor published Power BI reports and notify you when a new row appears in a table visual. You configure this monitoring from the Power BI service. The resulting rule can trigger the same actions (email, Teams, Fabric item, or Power Automate). For more information, see [Create an alert in Power BI report](activator-get-data-power-bi.md).
 >
 > Activator supports creating rules on Fabric Data Warehouse SQL query results (preview). These rules evaluate a SQL query on a configurable schedule and trigger actions when conditions are met, enabling periodic monitoring of warehouse data.
+>
+> You can also create rules in context from supported eventhouse layers in Fabric Maps. For more information, see [Create Activator alerts from a Fabric map](../map/create-activator-alerts.md).
 
 ### Make a new Activator rule
 

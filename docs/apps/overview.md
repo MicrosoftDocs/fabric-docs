@@ -20,6 +20,7 @@ Fabric Apps provides these capabilities:
 
 - **Data models to APIs** – Decorate TypeScript classes with `@entity()`, `@text()`, `@uuid()`, and other decorators. Fabric Apps generates database schemas and GraphQL endpoints automatically.
 - **Fabric data connectors** – Add typed access to a lakehouse, warehouse, SQL database in Fabric, or semantic model.
+- **File storage** - Define typed folders, control access with authenticated policies, and upload, download, list, and delete files in Fabric. See [Store and manage files](storage.md).
 - **Type-safe clients** – The client SDK validates queries and mutations before they reach the backend, catching errors during development.
 - **Built-in authentication** – Session management, token handling, and authentication flows are included. Configure Fabric SSO for deployed applications or use email and password during local development.
 - **Static hosting** – Build and serve your frontend application alongside your backend APIs. Require Fabric item access or allow anonymous access to hosted assets.
@@ -67,17 +68,22 @@ Each Fabric app has a single endpoint that provides access to all services:
 https://<your-app>-app.rayfin.windows.net/
 ```
 
-The endpoint exposes a path for each service:
+The endpoint includes these service paths:
 
 | Path | Service |
 | --- | --- |
 | `/api/graphql` | Data API (GraphQL) — used by `RayfinClient` for read and write operations |
 | `/auth` | Authentication service |
-| `/storage` | File storage |
+
+For file operations, use the [storage client SDK](storage.md#configure-the-client).
 
 ## Management in the Fabric portal
 
 After deployment, you can manage your Fabric app directly in the Fabric portal.
+
+A Fabric administrator can temporarily block other users from loading your app. As the app owner, you can still open the app. For more information, see [Block and unblock Fabric apps](../governance/block-unblock-fabric-apps.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json).
+
+If you own or use a blocked app, see [What happens when an app is blocked](../governance/block-unblock-fabric-apps.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json#what-happens-when-an-app-is-blocked).
 
 ### View item properties
 
@@ -90,7 +96,7 @@ Open the Fabric app in the portal to see:
 
 Select the Fabric app to see its child services:
 
-- **SQL database in Fabric** — Opens the Fabric SQL Database item to view the object explorer. You can run read queries against your data. Schema changes should always be made in the code under `rayfin/data` folder. Schema conflicts can occur if schema is changed in the SQL Database directly and can break the app.
+- **SQL database in Fabric** — Opens the SQL database in Fabric item to view the object explorer. You can run read queries against your data. Make schema changes in your configured data package (`packages/data` in the default Universal App, or `rayfin/data` in flat templates), not directly in the database. Manual schema changes can create conflicts and break the app.
 
 ### Item permissions
 
@@ -122,6 +128,8 @@ For a complete command reference, see [CLI reference](cli-reference.md).
 
 Define data models using TypeScript decorators:
 
+The default `blankapp` scaffold is a Universal App workspace. Data is opt-in: enable it before adding entities to `packages/data/src/`, and keep client-facing contracts in `packages/shared/src/`. Flat templates can use `rayfin/data/` instead. See [Define data models](data-models.md).
+
 ```typescript
 import {
   entity,
@@ -142,7 +150,7 @@ export class Todo {
   @boolean() isCompleted!: boolean;
   @date() createdAt!: Date;
   @date({ optional: true }) dueDate?: Date;
-  @text() user_id!: string;
+  @text({ max: 255 }) user_id!: string;
 }
 
 ```
@@ -184,5 +192,6 @@ Fabric Apps might not be suitable for:
 - [Create your first Fabric Apps project](create-app.md)
 - [Define data models with decorators](data-models.md)
 - [Connect Fabric Apps to Fabric data](connectors.md)
+- [Store and manage files](storage.md)
 - [Deploy to Fabric](deploy-app.md)
 - [Configure authentication](authentication.md)

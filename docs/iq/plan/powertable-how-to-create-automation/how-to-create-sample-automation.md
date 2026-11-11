@@ -54,9 +54,9 @@ The workflow performs the following tasks:
 ## Create the workflow and add trigger
 
 1. Open the **Order Requests** table.
-1. Create a new automation workflow by using **Setup** > **Automations**. To learn more, see [Create an automation flow](./how-to-configure-automation-workflows.md#create-an-automation-flow).
+1. Create a new automation workflow by using **Setup** > **Automations**.
 1. Select **When a form is submitted** as the trigger.
-1. [Configure the trigger](./how-to-configure-automation-workflows.md#add-trigger) to run only when the required customer details are present in the **Properties** pane. The trigger starts only when the *Customer Phone*, *Product Name*, and *Quantity* **are not empty**.
+1. In the **Properties** pane, [configure the trigger](./how-to-configure-automation-workflows.md#add-trigger) to run only when the required customer details are present. The trigger starts only when the *Customer Phone*, *Product Name*, and *Quantity* **aren't empty**.
 
     :::image type="content" source="../media/powertable-how-to-create-automation/how-to-create-sample-automation/configure-trigger-sample.png" alt-text="Screenshot of the Automations Properties pane with trigger conditions requiring Customer Phone, Product Name, and Quantity to be not empty." lightbox="../media/powertable-how-to-create-automation/how-to-create-sample-automation/configure-trigger-sample.png":::
 
@@ -84,16 +84,15 @@ The workflow uses the retrieved product details to validate stock inventory and 
 If sufficient stock is available, create a record in the **orders** table.
 
 1. Add a [**Create Record**](./how-to-configure-automation-workflows.md#create-record) action.
-1. Select the schema and select ***Orders1*** in **Table**.
-1. Select **Add Field** to add the fields for the record.&#x20;
-1. For field values, select **+** and map the customer&#x20;
-1. details from the **Order Requests** table, sourced from the form.
+1. Select the schema and select the orders table (*Orders1*) under **Table**.
+1. Select **Add Field** to add the fields for the record.
+1. For field values, select **+** and map the customer details from the **Order Requests** table, sourced from the form.
 1. For product-related fields, map the product details from the **Find Record(s)** action. For example, retrieve the *Product Key* from **Inventory** table fetched by using **Find Record(s)**.
 1. Set the **Status** field to *Processing*.
 
     :::image type="content" source="../media/powertable-how-to-create-automation/how-to-create-sample-automation/create-record-orders-field-mapped.png" alt-text="Screenshot of Properties pane for Create Record in Orders1, mapping ProductKey, Quantity, Status, and CustomerName fields." lightbox="../media/powertable-how-to-create-automation/how-to-create-sample-automation/create-record-orders-field-mapped.png":::
 
-Next, update the stock in inventory.
+Next, update the stock in inventory:
 
 1. Add an [**Update Record**](./how-to-configure-automation-workflows.md#update-record) action.
 1. Select the schema and select **Inventory** table.
@@ -106,7 +105,7 @@ Next, update the stock in inventory.
 ## Add Otherwise branch
 
 1. Select **Add Condition** to add another condition branch.
-1. Select **If no other condition are met** to make it a final branch.
+1. In the **Properties** pane, select **If no other condition are met** to make it the final branch.
 
     :::image type="content" source="../media/powertable-how-to-create-automation/how-to-create-sample-automation/otherwise-branch-no-other-conditions-met.png" alt-text="Screenshot of Properties pane Configuration Details with If no other conditions are met selected for the new condition branch." lightbox="../media/powertable-how-to-create-automation/how-to-create-sample-automation/otherwise-branch-no-other-conditions-met.png":::
 
@@ -134,3 +133,7 @@ Consider a user submits the form as shown in the following image.
 The orders table is updated. The stock inventory is also updated from 60 to 40 as seen in the *Stock* reference column.
 
 :::image type="content" source="../media/powertable-how-to-create-automation/how-to-create-sample-automation/orders-table-new-row.png" alt-text="Screenshot of the orders table with a highlighted new row for Quinn Anderson, Water Bottle, quantity 20, Processing status, and Stock 40." lightbox="../media/powertable-how-to-create-automation/how-to-create-sample-automation/orders-table-new-row.png":::
+
+If the requested quantity is more than the stock, the *Restock* field is updated in the **Inventory** table.
+
+This example is a sample workflow that demonstrates a simple use case. Use more actions and their combinations for your workflows as needed.

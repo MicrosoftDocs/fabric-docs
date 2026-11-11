@@ -1,7 +1,7 @@
 ---
 title: Manage Ontology Version History (Preview)
 description: Learn about versioning in ontology (preview).
-ms.date: 09/04/2026
+ms.date: 10/20/2026
 ms.topic: how-to
 ai-usage: ai-assisted
 ---
@@ -37,7 +37,7 @@ To open the version history pane, follow these steps.
 
 To capture the current state of the ontology as a version, follow these steps:
 
-1. In the version history pane, select **+ New Version**. An inline **Create a version** box appears with two required fields.
+1. In the version history pane, select **+ New Version**. An inline **Create a version** box appears with a required version name and an optional description.
 
     :::image type="content" source="media/how-to-use-version-history/create-version.png" alt-text="Screenshot of the Create a version form with Version name and Description fields." lightbox="media/how-to-use-version-history/create-version.png":::
 

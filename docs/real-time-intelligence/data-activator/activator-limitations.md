@@ -58,6 +58,8 @@ If you had preview items, you needed to recreate your rules in a new Activator i
 * Azure Map
 * ArcGIS map
 
+These limitations apply to map visuals in Power BI reports, not to Fabric map items. To create a rule from a supported layer in a Fabric map item, see [Create Activator alerts from a Fabric map](../map/create-activator-alerts.md).
+
 ## Supported real-time dashboard tiles
 
 [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] supports the following tile types in Real-Time Dashboards:
@@ -145,5 +147,6 @@ Each Data [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] item su
 ## Related content
 
 * [Detection conditions in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](activator-detection-conditions.md)
+* [Activator alerts in Fabric Maps](../map/about-activator-alerts.md)
 * [[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] tutorial using sample data](activator-tutorial.md)
 * [What is Microsoft Fabric?](../../fundamentals/microsoft-fabric-overview.md)

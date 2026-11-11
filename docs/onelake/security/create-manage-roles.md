@@ -1,28 +1,32 @@
 ---
 title: 'OneLake security roles: create and manage'
-description: Learn how to create, edit, and delete OneLake security roles, assign members, and apply row-level and column-level security to control data access.
+description: Learn how to create and manage OneLake security roles, review access by member or data, assign members, and apply row-level and column-level security.
 ms.reviewer: aamerril
 ms.topic: how-to
-ms.date: 08/28/2026
+ms.date: 09/25/2026
 ai-usage: ai-assisted
-#customer intent: As a Fabric user, I want to learn how to create and manage OneLake security roles so that I can control access to specific folders in my lakehouse and ensure data security.
+#customer intent: As a Fabric user, I want to create and manage OneLake security roles and review how access is granted so that I can secure the data in my Fabric item.
 ---
 
 # Create and manage OneLake security roles
 
-OneLake security roles let you control who can access specific tables and folders in your Fabric data items. This article shows you how to create, edit, and delete security roles, and how to assign members to those roles. For an overview of OneLake security concepts and permissions, see [Data security in OneLake](get-started-security.md).
+OneLake security roles let you control who can access specific tables and folders in your Fabric data items. In **Manage OneLake security**, use the roles view to configure roles, the members view to manage membership, and the data view to review how data is secured and shared. For an overview of OneLake security concepts and permissions, see [Data security in OneLake](get-started-security.md).
 
 Create OneLake security roles to control access to data for the following item types:
 
 [!INCLUDE [onelake-security-supported-items](../../includes/onelake-security-supported-items.md)]
 
-Role creation and membership assignment take effect as soon as you save a role, so make sure you want to grant access before adding someone to a role.
+Role creation and membership assignment take effect as soon as you save a role, so ensure you want to grant access before adding someone to a role.
 
 ## Prerequisites
 
 * Fabric Write or Reshare permissions (generally included for Admin or Member workspace users)
 
-## Create a role
+## Manage roles
+
+Use the **All roles** tab to create roles and manage each role's permissions, data, and membership.
+
+### Create a role
 
 Use the following steps to create a OneLake security role.
 
@@ -30,7 +34,7 @@ Use the following steps to create a OneLake security role.
 
 1. Select **Manage OneLake security** from the item menu.
 
-1. On the **OneLake security** pane, select **New**.
+1. On the **OneLake security** pane, on the **All \<item type\> roles** tab, select **New**.
 
 1. Provide the following information for the new role:
 
@@ -38,10 +42,10 @@ Use the following steps to create a OneLake security role.
    | --------- | ----- |
    | **Role name** | Provide a name that meets the following guidelines:<br><br>* The role name only contains alphanumeric characters.<br>* The role name starts with a letter.<br>* Names are case insensitive and must be unique.<br>* The maximum name length is 128 characters. |
    | **Type of role** | OneLake security only supports **Grant** role types. |
-   | **Select Grant permissions** | Choose the permissions you want to grant. **Read** is selected at a minimum, and you can add **ReadWrite** for some item types. |
+   | **Select Grant permissions** | Choose the permissions you want to grant. **Read** is the minimum permission, and you can add **ReadWrite** for some item types. |
 
    > [!NOTE]
-   > You can apply row-level security (RLS) and column-level security (CLS) only to roles that grant **Read** permission. For roles that grant **ReadWrite**, the RLS and CLS options are unavailable.
+   > You can apply row-level security (RLS) and column-level security (CLS) to roles that grant only **Read** permission. The RLS and CLS options are unavailable for roles that grant **ReadWrite** permission.
 
 1. Select **Next**.
 
@@ -54,13 +58,13 @@ Use the following steps to create a OneLake security role.
 
    1. Select **Edit**.
 
-      :::image type="content" source="./media/create-manage-roles/selected-data-edit.png" alt-text="Screenshot that highlights the 'Edit' button to select data.":::
+      :::image type="content" source="./media/create-manage-roles/selected-data-edit.png" alt-text="Screenshot that highlights the Edit button to select data.":::
 
    1. Expand the **Tables** and **Files** directories to view data in your item.
    1. Check the boxes next to the tables and files that you want the role to apply to.
-   1. To apply row-level or column-level security to a table, select the table name, select **Data access**, and choose the appropriate option. For more information, see [apply row-level security](#apply-row-level-security-to-a-table) and [apply column-level security](#apply-column-level-security-to-a-table).
+   1. To apply row-level or column-level security to a table, select the table name. Then, select **Data access**, and choose the appropriate option. For more information, see [apply row-level security](#apply-row-level-security-to-a-table) and [apply column-level security](#apply-column-level-security-to-a-table).
 
-      :::image type="content" source="./media/create-manage-roles/data-access.png" alt-text="Screenshot that highlights the 'Data access' option for a table.":::
+      :::image type="content" source="./media/create-manage-roles/data-access.png" alt-text="Screenshot that highlights the Data access option for a table.":::
 
    1. Select **Add data** to add the selected items to your role.
 
@@ -73,7 +77,7 @@ Use the following steps to create a OneLake security role.
 
 1. Select **Create**.
 
-## View and edit a role
+### View and edit a role
 
 Use the following steps to edit an existing OneLake security role.
 
@@ -81,7 +85,7 @@ Use the following steps to edit an existing OneLake security role.
 
 1. Select **Manage OneLake security** from the item menu.
 
-1. On the **OneLake security** pane, select the role that you want to edit.
+1. On the **OneLake security** pane, on the **All \<item type\> roles** tab, select the role that you want to edit.
 
    This action opens the role details page. The top of the role details page shows the role name, permissions, and type. The bottom of the role details page includes two tabs: **Data in role** and **Members in role**.
 
@@ -91,7 +95,7 @@ Use the following steps to edit an existing OneLake security role.
 
 1. Select the **Data in role** tab to view all the data that the members of the role can access.
 
-   :::image type="content" source="./media/create-manage-roles/data-in-role.png" alt-text="Screenshot that shows the details visible in the 'Data in role' tab.":::
+   :::image type="content" source="./media/create-manage-roles/data-in-role.png" alt-text="Screenshot that shows the details visible in the Data in role tab.":::
 
    | Column | What it shows |
    | --- | --- |
@@ -107,7 +111,7 @@ Use the following steps to edit an existing OneLake security role.
 
 1. Select the **Members in role** tab to view the members of the role.
 
-   :::image type="content" source="./media/create-manage-roles/members-in-role.png" alt-text="Screenshot that shows the details visible in the 'Members in role' tab.":::
+   :::image type="content" source="./media/create-manage-roles/members-in-role.png" alt-text="Screenshot that shows the details visible in the Members in role tab.":::
 
    | Column | What it shows |
    | --- | --- |
@@ -125,7 +129,7 @@ Use the following steps to edit an existing OneLake security role.
 
 When you make any changes to role membership, the role updates immediately. A notification shows the success or failure of any changes.
 
-## Apply row-level security to a table
+### Apply row-level security to a table
 
 Define row-level security (RLS) rules as part of any OneLake security role that grants access to table data in Delta Parquet format. Rows are relevant only to tabular data, so you can't define RLS for non-table folders or unstructured data. As a best practice, avoid vague or overly complex RLS expressions. For the full rule syntax, see [Row-level security syntax reference](./row-level-security-syntax.md).
 
@@ -135,13 +139,13 @@ Define row-level security (RLS) rules as part of any OneLake security role that 
 
 1. On the role details page, select more options (**...**) next to the table you want to secure, and then select **Row security**.
 
-   :::image type="content" source="./media/row-level-security/select-row-security.png" alt-text="Screenshot that shows selecting 'row security' to edit permissions on a table.":::
+   :::image type="content" source="./media/row-level-security/select-row-security.png" alt-text="Screenshot that shows selecting row security to edit permissions on a table.":::
 
 1. In the code editor, type the SQL statement that defines which rows users can see. For syntax guidance, see [Row-level security syntax reference](./row-level-security-syntax.md).
 
 1. Select **Save** to confirm the row security rules.
 
-## Apply column-level security to a table
+### Apply column-level security to a table
 
 Define column-level security (CLS) as part of a OneLake security role for any Delta Parquet table. By default, users have access to all columns. Create CLS rules that hide columns to revoke access.
 
@@ -154,13 +158,29 @@ Define column-level security (CLS) as part of a OneLake security role for any De
 
 1. On the role details page, select more options (**...**) next to the table you want to secure, and then select **Column security**.
 
-   :::image type="content" source="./media/column-level-security/select-column-security.png" alt-text="Screenshot that shows selecting 'column security' to edit permissions on a table.":::
+   :::image type="content" source="./media/column-level-security/select-column-security.png" alt-text="Screenshot that shows selecting column security to edit permissions on a table.":::
 
 1. To remove access to a column, set the column **Permission** to **Hide**. Use the checkboxes to select multiple columns and set permissions in bulk. Use the **Filter** to view columns by permission. At least one column must remain in the list of allowed columns.
 
 1. Select **Save**.
 
-## Assign a member or group to a role
+### Delete a role
+
+Use the following steps to delete a OneLake security role.
+
+1. Open the item where you want to define security.
+
+1. Select **Manage OneLake security** from the item menu.
+
+1. On the **OneLake security** pane, on the **All \<item type\> roles** tab, check the box next to the roles you want to delete.
+
+1. Select **Delete** and wait for the notification that the roles are successfully deleted.
+
+## Manage membership
+
+Use the **All members in roles** tab to review and manage users and groups across all OneLake security roles in the item.
+
+### Assign a member or group to a role
 
 OneLake security roles support adding individual users, Microsoft Entra groups, and security principals.  
 
@@ -173,7 +193,7 @@ When you add users directly to a role, you make them explicit members of the rol
 
 The role's virtual membership adjusts dynamically based on the users' [Fabric item permissions](../../security/permission-model.md#item-permissions). When you select **Advanced configuration** and a permission, you add any user in the Fabric workspace who has all the selected permissions as an implicit member of the role. For example, if you choose **ReadAll, Write**, any user of the Fabric workspace who has ReadAll *and* Write permissions to the item becomes a member of the role. To see which users a permission group includes, look at the **Added using** column in the **Members in role** tab. You can't manually remove these members. To remove a member you added through a permission group, remove the permission group from the role.
 
-### Assign virtual members
+#### Assign virtual members
 
 Use the following permissions to identify virtual members:
 
@@ -193,7 +213,7 @@ To assign users to permission groups, use the following steps:
 
 1. Select **Advanced configuration**.
 
-   :::image type="content" source="./media/get-started-data-access-roles/members-advanced-configuration.png" alt-text="Screenshot that shows selecting 'advanced configuration' to add members by using permission groups.":::
+   :::image type="content" source="./media/get-started-data-access-roles/members-advanced-configuration.png" alt-text="Screenshot that shows selecting advanced configuration to add members by using permission groups.":::
 
 1. In the **Permission groups** box, select the check box next to each permission that you want to include users for.
 
@@ -203,17 +223,63 @@ To assign users to permission groups, use the following steps:
 
 1. Select **Add** to include the groups and save the role.
 
-## Delete a role
+### View access by member
 
-Use the following steps to delete a OneLake security role.
+View which roles grant access to a member and which data the member can access.
 
-1. Open the item where you want to define security.
+1. Open the item where you want to review access.
 
 1. Select **Manage OneLake security** from the item menu.
 
-1. On the **OneLake security** pane, check the box next to the roles you want to delete.
+1. Select the **All members in roles** tab.
 
-1. Select **Delete** and wait for the notification that the roles are successfully deleted.
+   The page lists each user or group that belongs to a OneLake security role and the roles they belong to.
+
+1. Select a user or group to open their access details.
+
+1. Select **Roles** to browse the roles that this user or group is a member of.
+
+1. Select **Granted data** to browse the data the member can access and identify which role grants access to each table or folder.
+
+1. To change the user or group's access, select a role and edit its data or members.
+
+### Add members to multiple roles
+
+Add multiple users or groups to multiple OneLake security roles at the same time.
+
+1. On the **All members in roles** tab, select **Add members**.
+
+1. Use the **Roles** dropdown list to select each role that you want to assign.
+
+1. In the **Members** text box, enter the users or groups that you want to add. Or, select **Advanced configuration** to [Assign virtual members](#assign-virtual-members).
+
+1. Select **Add**.
+
+### Remove a member from all roles
+
+Remove a user or group from all OneLake security roles when they should no longer have access to data in the item.
+
+1. On the **All members in roles** tab, select the user or group that you want to remove.
+
+1. Select **Remove from *item type*** (for example, **Remove from Mirrored catalog**) to revoke the member's data access across all OneLake security roles.
+
+## Manage data
+
+Use the **All data in roles** tab to review all data in the item and understand which roles grant access to it.
+
+### View access by data
+
+1. Open the item where you want to review access.
+
+1. Select **Manage OneLake security** from the item menu.
+
+1. Select the **All data in roles** tab.
+
+   The page lists the tables in the item, the roles that grant access to each table, and the number of members with access.
+
+1. Select a table to view the roles and permissions that apply to it.
+
+1. Review the members who can access the table.
 
 ## Related content
 

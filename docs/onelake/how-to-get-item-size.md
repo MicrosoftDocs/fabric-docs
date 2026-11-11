@@ -30,7 +30,6 @@ Use the storage report to:
 * Sort and search your items, including by data size
 * Break down storage costs across visible, hidden, and soft-deleted data
 
-
 ### Open the storage report
 
 The OneLake storage report is available in the OneLake section of any workspace's settings.
@@ -74,7 +73,7 @@ For more information about OneLake capacity consumption, see [OneLake consumptio
 
 ### Storage report limitations  
 
-* The storage report doesn't currently include any OneLake diagnostic events stored within a lakehouse.
+* The soft-deleted category only includes files that are soft-deleted. When you soft-delete a folder, all list operations, including the storage report, can't access the contents of that folder and ignore them. 
 
 ## Use PowerShell
 

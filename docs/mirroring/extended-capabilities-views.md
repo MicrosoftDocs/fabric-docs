@@ -16,7 +16,7 @@ Mirroring views replicate logical views from your source system instead of full 
 - Helps downstream users query shaped, filtered, or joined data directly in OneLake.
 
 > [!NOTE]
-> Currently, views are supported only in preview for mirroring for Snowflake.
+> Currently, views are supported only for mirroring for Snowflake. This is now generally available.
 
 ## Prerequisites
 

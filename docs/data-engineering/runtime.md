@@ -4,7 +4,7 @@ description: Learn about the Apache Spark-based runtimes available in Fabric, in
 ms.reviewer: arali
 ms.topic: overview
 ms.custom: sfi-image-nochange
-ms.date: 07/24/2026
+ms.date: 10/22/2026
 ai-usage: ai-assisted
 ---
 
@@ -65,14 +65,14 @@ Fabric supports multiple runtimes, so you can switch between them and reduce the
 > [!NOTE]
 > A Spark runtime includes a specific Python version as part of its component set. For example, Runtime 1.3 includes Python 3.11. This Python version is separate from the Python notebook kernel that you select for pure Python notebooks. For the Python notebook kernel lifecycle, see [Python notebook runtime and kernel lifecycle in Fabric](./python-notebook-runtime-lifecycle.md).
 
-**By default, all new workspaces currently use [Runtime 1.3](./runtime-1-3.md).**
+**New workspaces and environment items use [Runtime 2.0](./runtime-2-0.md), the latest generally available (GA) and default runtime.** Validate workload compatibility before changing the runtime of an existing workspace or environment.
 
 To change the runtime version at the workspace level, go to **Workspace Settings** > **Data Engineering/Science** > **Spark settings**. From the **Environment** tab, select your desired runtime version from the available options. Select **Save** to confirm your selection.
 
 :::image type="content" source="media\mrs\runtime-2.png" alt-text="Screenshot showing where to select runtime version for workspace settings." lightbox="media\mrs\runtime-2.png":::
 
 > [!NOTE]
-> To set the workspace-level runtime programmatically, use the [Spark Workspace Settings REST API](/rest/api/fabric/spark/workspace-settings). The default runtime is the nested `environment.runtimeVersion` field (for example, `1.3`) of the workspace Spark settings object, not a top-level property.
+> To set the workspace-level runtime programmatically, use the [Spark Workspace Settings REST API](/rest/api/fabric/spark/workspace-settings). The default runtime is the nested `environment.runtimeVersion` field (for example, `2.0`) of the workspace Spark settings object, not a top-level property.
 
 After you make this change, all system-created items within the workspace, including lakehouses, Spark job descriptions, and notebooks, use the newly selected workspace-level runtime version starting from the next Spark Session. If you're currently using a notebook with an existing session for a job or any lakehouse-related activity, that Spark session continues as is. However, starting from the next session or job, the selected runtime version applies.
 
@@ -122,4 +122,3 @@ Additionally, verify that all current and future production workloads and proces
 
 - [Runtime 2.0 (Spark 4.1, Java 21, Python 3.13, Delta Lake 4.2)](./runtime-2-0.md)
 - [Runtime 1.3 (Spark 3.5, Java 11, Python 3.11, Delta Lake 3.2)](./runtime-1-3.md)
-

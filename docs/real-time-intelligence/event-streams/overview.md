@@ -35,9 +35,11 @@ The rest of this article describes the existing eventstream experience.
 
 ## Bring events into Fabric
 
-Eventstreams provide you with source connectors to fetch event data from various sources.
+Eventstreams provide source connectors to fetch event data from various sources.
 
-[!INCLUDE [supported-sources-enhanced](./includes/supported-sources-enhanced.md)]
+[!INCLUDE [supported-sources](./includes/supported-sources.md)]
+
+If a built-in connector isn't available for your source, use a custom stream connector (preview) to upload a Kafka Connect source connector plugin. Upload the package from Real-Time hub or a custom stream connector item in your workspace, and then configure the connector and add it to an eventstream. For more information, see [Add a custom stream connector to an eventstream](./add-custom-stream-connector.md).
 
 ## Process events
 
@@ -45,7 +47,7 @@ An end-to-end data flow diagram in an eventstream can give you a comprehensive u
 
 The event processor editor is a drag-and-drop experience. It's an intuitive way to create your event data processing, transforming, and routing logic without writing any code.
 
-[!INCLUDE [supported-transformations-enhanced](./includes/supported-transformations-enhanced.md)]
+[!INCLUDE [supported-transformations](./includes/supported-transformations.md)]
 
 In addition to the no-code transformations, eventstreams support a [SQL operator (preview)](process-events-using-sql-code-editor.md) for code-first stream processing. Use the SQL operator to define custom transformation logic by using SQL expressions, including windowing, joins, and aggregations. You can choose between no-code transformations and SQL-based authoring within an eventstream to build complex streaming logic.
 
@@ -55,11 +57,11 @@ While creating an eventstream, the transformation operations are supported for a
 
 The Fabric eventstreams feature supports sending data to the following supported destinations.
 
-[!INCLUDE [supported-destinations-enhanced](./includes/supported-destinations-enhanced.md)]
+[!INCLUDE [supported-destinations](./includes/supported-destinations.md)]
 
 You can attach multiple destinations in an eventstream to simultaneously receive data from your eventstreams without the eventstreams interfering with each other.
 
-:::image type="content" source="./media/overview/multiple-destinations-enhanced.png" alt-text="Screenshot that shows an overview of an eventstream item with multiple destinations." lightbox="./media/overview/multiple-destinations-enhanced.png" :::
+:::image type="content" source="./media/overview/multiple-destinations.png" alt-text="Screenshot that shows an overview of an eventstream item with multiple destinations." lightbox="./media/overview/multiple-destinations.png" :::
 
 
 ## Schema management

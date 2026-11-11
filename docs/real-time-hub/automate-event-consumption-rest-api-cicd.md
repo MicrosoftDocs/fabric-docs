@@ -49,6 +49,18 @@ Before you start, make sure that:
 
 Use `Eventstream.ReadWrite.All` or `Item.ReadWrite.All` for Eventstream, and `Reflex.ReadWrite.All` or `Item.ReadWrite.All` for Activator. Identity support differs by API. Check the identity table in each REST operation and [Microsoft Entra identity support](/rest/api/fabric/articles/identity-support).
 
+## Regional requirements
+
+For Job, OneLake, capacity operation, and anomaly detection events:
+
+[!INCLUDE [event-consumer-region-note](./includes/event-consumer-region-note.md)]
+
+This same-region requirement doesn't apply to Azure Blob Storage events, Workspace item events, or Capacity overview events.
+
+[!INCLUDE [business-event-consumer-region-note](./includes/business-event-consumer-region-note.md)]
+
+[!INCLUDE [business-event-publisher-region-note](./includes/business-event-publisher-region-note.md)]
+
 ## Authenticate to Fabric
 
 Acquire a Microsoft Entra access token for the Fabric API, and include it in the `Authorization` header of every Fabric request.
