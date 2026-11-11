@@ -145,4 +145,4 @@ To work with larger datasets, split the data across multiple planning sheets and
 
 ## Writeback cell limit
 
-Writeback supports up to 1.2 million cells per operation. Writeback operations that exceed this limit aren't supported and might fail.
+Writeback to Fabric SQL supports up to 2.4 million cells. Writeback operations that exceed this limit aren't supported and might fail.
