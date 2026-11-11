@@ -550,6 +550,8 @@ items:
       href: intelligent-cache.md
     - name: Low-Shuffle Merge
       href: low-shuffle-merge.md
+  - name: Delta Lake expected behaviors and troubleshooting
+    href: delta-lake-troubleshoot.md
 - name: Apache Spark
   items:
   - name: Structured streaming
