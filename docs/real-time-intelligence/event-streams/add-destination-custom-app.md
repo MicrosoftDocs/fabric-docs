@@ -52,21 +52,21 @@ To route event data to your app, add a custom endpoint as your eventstream desti
 
 1. If you're in the live view, switch to edit mode by selecting **Edit** on the ribbon.
 
-    :::image type="content" source="./media/add-destination-custom-app-enhanced/switch-to-edit-mode.png" alt-text="Screenshot that shows the Edit button that lets you switch to edit mode." lightbox="./media/add-destination-custom-app-enhanced/switch-to-edit-mode.png":::
+    :::image type="content" source="./media/add-destination-custom-app/switch-to-edit-mode.png" alt-text="Screenshot that shows the Edit button that lets you switch to edit mode." lightbox="./media/add-destination-custom-app/switch-to-edit-mode.png":::
 
 1. In edit mode, add a custom endpoint destination in one of the following ways:
 
     - Select **Add destination** on the ribbon, select **Custom endpoint**, and then connect the endpoint to your default stream or derived stream.
 
-      :::image type="content" source="./media/add-destination-custom-app-enhanced/add-destination-custom-endpoint-menu.png" alt-text="Screenshot that shows the selection of a custom endpoint as a destination on the ribbon." lightbox="./media/add-destination-custom-app-enhanced/add-destination-custom-endpoint-menu.png":::
+      :::image type="content" source="./media/add-destination-custom-app/add-destination-custom-endpoint-menu.png" alt-text="Screenshot that shows the selection of a custom endpoint as a destination on the ribbon." lightbox="./media/add-destination-custom-app/add-destination-custom-endpoint-menu.png":::
 
     - In the editor, select **Transform events or add destination**, and then select **Custom endpoint**.
 
-      :::image type="content" source="./media/add-destination-custom-app-enhanced/transform-custom-endpoint-menu.png" alt-text="Screenshot that shows the selection of a custom endpoint in the editor." lightbox="./media/add-destination-custom-app-enhanced/transform-custom-endpoint-menu.png":::
+      :::image type="content" source="./media/add-destination-custom-app/transform-custom-endpoint-menu.png" alt-text="Screenshot that shows the selection of a custom endpoint in the editor." lightbox="./media/add-destination-custom-app/transform-custom-endpoint-menu.png":::
 
 1. For **Destination name**, enter a name for the custom endpoint. Then select **Save**.
 
-    :::image type="content" source="./media/add-destination-custom-app-enhanced/custom-app-name.png" alt-text="Screenshot that shows the pane for entering a name for a custom endpoint." lightbox="./media/add-destination-custom-app-enhanced/custom-app-name.png":::
+    :::image type="content" source="./media/add-destination-custom-app/custom-app-name.png" alt-text="Screenshot that shows the pane for entering a name for a custom endpoint." lightbox="./media/add-destination-custom-app/custom-app-name.png":::
 
     If you're using schemas at the source, for **Input schema**, select the schema for events. This field is the extra field you fill when you enable the schema support for an eventstream. 
 
@@ -74,23 +74,23 @@ To route event data to your app, add a custom endpoint as your eventstream desti
 
 1. Connect the default stream tile to the custom endpoint tile if there's no existing connection.
 
-    :::image type="content" source="./media/add-destination-custom-app-enhanced/connect.png" alt-text="Screenshot that shows the connection to a custom endpoint tile.":::  
+    :::image type="content" source="./media/add-destination-custom-app/connect.png" alt-text="Screenshot that shows the connection to a custom endpoint tile.":::
 
 1. To view the detailed information for your custom endpoint, select **Publish**.
 
-    :::image type="content" source="./media/add-destination-custom-app-enhanced/publish-button.png" alt-text="Screenshot that shows the Publish button." lightbox="./media/add-destination-custom-app-enhanced/publish-button.png":::
+    :::image type="content" source="./media/add-destination-custom-app/publish-button.png" alt-text="Screenshot that shows the Publish button." lightbox="./media/add-destination-custom-app/publish-button.png":::
 
 ## Get endpoint details on the Details pane to consume events
 
 In **Live view**, select the custom endpoint tile. The **Details** pane that appears includes three protocol tabs: **Event Hub**, **AMQP**, and **Kafka**.
 
-:::image type="content" source="./media/add-destination-custom-app-enhanced/details-event-hub-tab.png" alt-text="Screenshot that shows the Details pane for a custom endpoint." lightbox="./media/add-destination-custom-app-enhanced/details-event-hub-tab.png":::
+:::image type="content" source="./media/add-destination-custom-app/details-event-hub-tab.png" alt-text="Screenshot that shows the Details pane for a custom endpoint." lightbox="./media/add-destination-custom-app/details-event-hub-tab.png":::
 
 Each protocol tab contains three pages: **Basic**, **SAS Key Authentication**, and **Entra ID Authentication**. These pages provide endpoint information specific to the selected protocol.
 
 - The **Basic** page shows the name, type, and status of your custom endpoint.
 
-    :::image type="content" source="./media/add-destination-custom-app-enhanced/details-basic.png" alt-text="Screenshot that shows basic details for a custom endpoint in the eventstream live view.":::
+    :::image type="content" source="./media/add-destination-custom-app/details-basic.png" alt-text="Screenshot that shows basic details for a custom endpoint in the eventstream live view.":::
 
 - **SAS Key Authentication** and **Entra ID Authentication** are two supported authentication methods for connecting to your application:
   - **SAS Key Authentication** provides the information needed to produce and consume Eventstream data using Shared Access Signature (SAS) keys.
@@ -103,7 +103,7 @@ The following section describes how to connect to a custom endpoint destination 
 
 The **Keys** page on the **Event Hub** tab contains information related to an event hub's connection string. The information includes **Event hub name**, **Shared access key name**, **Primary key**, and **Connection string-primary key**.
 
-:::image type="content" source="./media/add-destination-custom-app-enhanced/event-hub-keys.png" alt-text="Screenshot that shows event hub keys on the Details pane of the eventstream live view.":::
+:::image type="content" source="./media/add-destination-custom-app/event-hub-keys.png" alt-text="Screenshot that shows event hub keys on the Details pane of the eventstream live view.":::
 
 The event hub format is the default for the connection string, and it works with the Azure Event Hubs SDK. This format allows you to connect to your eventstream via the Event Hubs protocol.
 
@@ -113,17 +113,17 @@ The following example shows what the connection string looks like in event hub f
 
 Select **Show sample code** on the **Event Hub** page to get ready-to-use code that includes the required information about connection keys in the event hub. Simply copy and paste it into your application for use.
 
-:::image type="content" source="./media/add-destination-custom-app-enhanced/event-hub-sample-code.png" alt-text="Screenshot that shows event hub sample code on the Details pane of the eventstream live view.":::
+:::image type="content" source="./media/add-destination-custom-app/event-hub-sample-code.png" alt-text="Screenshot that shows event hub sample code on the Details pane of the eventstream live view.":::
 
 ### Kafka
 
 The Kafka format is compatible with the Apache Kafka protocol, which is a popular distributed streaming platform that supports high-throughput and low-latency data processing. You can use the **Keys** and **Sample code** information for the Kafka protocol format to connect to the eventstream and consume the events.
 
-:::image type="content" source="./media/add-destination-custom-app-enhanced/kafka-keys.png" alt-text="Screenshot that shows Kafka keys on the Details pane of the eventstream live view.":::
+:::image type="content" source="./media/add-destination-custom-app/kafka-keys.png" alt-text="Screenshot that shows Kafka keys on the Details pane of the eventstream live view.":::
 
 Select **Show sample code** on the **Kafka** page to get ready-made code, including the necessary connection keys in Kafka format. Simply copy it for your use.
 
-:::image type="content" source="./media/add-destination-custom-app-enhanced/kafka-sample-code.png" alt-text="Screenshot that shows Kafka sample code on the Details pane of the eventstream live view.":::
+:::image type="content" source="./media/add-destination-custom-app/kafka-sample-code.png" alt-text="Screenshot that shows Kafka sample code on the Details pane of the eventstream live view.":::
 
 For a clear guide on using the custom endpoint with the Kafka protocol, see [this tutorial](stream-consume-events-use-kafka-endpoint.md). It provides detailed steps for streaming and consuming events using the custom endpoint with the Kafka protocol.
 
@@ -131,11 +131,11 @@ For a clear guide on using the custom endpoint with the Kafka protocol, see [thi
 
 The AMQP format works with the AMQP 1.0 protocol, which is a standard messaging protocol that supports interoperability between various platforms and languages. Use this format to connect to your eventstream by using the AMQP protocol.
 
-:::image type="content" source="./media/add-destination-custom-app-enhanced/amqp-keys.png" alt-text="Screenshot that shows AMQP keys on the Details pane of the eventstream live view.":::
+:::image type="content" source="./media/add-destination-custom-app/amqp-keys.png" alt-text="Screenshot that shows AMQP keys on the Details pane of the eventstream live view.":::
 
 Select **Show sample code** on the **AMQP** page to get ready-to-use code with connection key information in AMQP format.
 
-:::image type="content" source="./media/add-destination-custom-app-enhanced/amqp-sample-code.png" alt-text="Screenshot that shows AMQP sample code on the Details pane of the eventstream live view.":::
+:::image type="content" source="./media/add-destination-custom-app/amqp-sample-code.png" alt-text="Screenshot that shows AMQP sample code on the Details pane of the eventstream live view.":::
 
 Choose the protocol format that suits your application needs and preferences, and then copy and paste the connection string into your application. You can also refer to or copy the sample code on the **Sample code** page, which shows how to send or receive events by using various protocols.
 
