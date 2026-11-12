@@ -505,8 +505,6 @@ items:
               href: plan/scripting-functions/showclosedforecast.md
             - name: SHOWMEASURES
               href: plan/scripting-functions/showmeasures.md
-            - name: TRIGGERWRITEBACK
-              href: plan/scripting-functions/triggerwriteback.md
   - name: PowerTable sheets
     items:
     - name: Concepts
