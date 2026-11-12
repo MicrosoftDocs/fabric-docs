@@ -60,7 +60,7 @@ On the **Review + connect** screen, review the summary, and select **Add** (Even
 ::: zone-end
 
 ::: zone pivot="extended-features"
-1. On the **Connect** page, for **Feature level**, select **Extended features (Preview)**.
+1. On the **Connect** page, for **Feature level**, select **Extended features**.
 
     :::image type="content" source="./media/azure-iot-hub-source-connector/extended-new-connection-button.png" alt-text="Screenshot that shows the Connect page the New connection link highlighted." lightbox="./media/azure-iot-hub-source-connector/extended-new-connection-button.png":::
 
