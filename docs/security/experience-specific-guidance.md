@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.reviewer: danzhang, wiassaf
 ms.topic: how-to
-ms.date: 10/27/2026
+ms.date: 11/11/2026
 ai-usage: ai-assisted
 ---
 
@@ -917,6 +917,24 @@ If Fabric becomes inaccessible or inoperable in a region, you can still read and
 ### Resource instance rules
 
 Resource instance rules help you securely control access to data in OneLake by using trusted Azure resource identities. During regional failover, the system continues to enforce existing rules for read access. However, you can't create, update, or delete resource instance rules until the workspace returns to a writable state.
+
+### Mirrored catalog
+
+Mirrored catalogs don't copy table data into OneLake. They create shortcuts to tables that remain in the source catalog's storage. Because no table data is stored in OneLake, the capacity's disaster recovery setting doesn't apply to mirrored catalog data.
+
+If the region that hosts a mirrored catalog has an outage, the original mirrored catalog item is unavailable until the region recovers. When the region is available again, metadata sync resumes automatically.
+
+To restore access before the primary region recovers, recreate the mirrored catalog in a workspace on a capacity in a different region, such as C2.W2:
+
+1. In C2.W2, create a new mirrored catalog item for your provider.
+1. Select your existing connection to the source catalog. You don't need to create a new connection.
+1. Select the tables to mirror.
+1. Update any shortcuts, semantic models, Real-Time Dashboards, or other items that referenced the original mirrored catalog, and reapply item permissions.
+
+> [!NOTE]
+> A recreated mirrored Azure Monitor item shows only data that arrives after the item is created. Earlier data isn't backfilled. For more information, see [Mirror Azure Monitor in Microsoft Fabric](../mirroring/catalog-mirroring/azure-monitor.md#considerations).
+
+After the primary region recovers, the original and the recreated mirrored catalogs both sync the same tables. Choose which item to keep, update downstream references to that item, and then delete the other item.
 
 ## Related information
 
