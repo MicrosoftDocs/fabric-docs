@@ -810,6 +810,8 @@ items:
         href: kusto-query-set.md
       - name: Share queries
         href: kusto-share-queries.md
+      - name: Monitor KQL querysets with workspace monitoring
+        href: monitor-kql-querysets-with-workspace-monitoring.md
       - name: Access the data profile of a table
         href: data-profile.md
       - name: Customize results in the KQL Queryset results grid
@@ -883,6 +885,8 @@ items:
           href: dashboard-explore-data.md
       - name: Monitor and automate
         items:
+        - name: Monitor Real-Time Dashboards with workspace monitoring
+          href: monitor-real-time-dashboards-with-workspace-monitoring.md
         - name: Set alerts for Real-Time dashboard
           href: ./data-activator/activator-get-data-real-time-dashboard.md
           displayName: trigger, activator, reflex
