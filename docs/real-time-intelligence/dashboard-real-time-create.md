@@ -3,7 +3,7 @@ title: Create a Real-Time Dashboard
 description: Learn how to create and customize Real-Time Dashboards to visualize data effectively using KQL queries and Copilot for seamless insights.
 ms.reviewer: mibar
 ms.topic: how-to
-ms.date: 10/11/2026
+ms.date: 11/15/2026
 author: spelluru
 ms.author: spelluru
 ms.subservice: rti-dashboard
@@ -156,6 +156,36 @@ Under the **Home** tab, you can add new visuals, markdown boxes, alerts, data so
 Under the **Manage** tab, you can manage [parameters](dashboard-parameters-manage.md), base queries, configure [Refresh setting](#enable-live-refresh), and manage data sources.
 
 :::image type="content" source="media/real-time-dashboard/manage-tab.png" alt-text="Screenshot of the toolbar options under the Manage tab." lightbox="media/real-time-dashboard/manage-tab.png":::
+
+## Add Design Tiles
+
+Design Tiles are generally available. Use them to add headings, explanatory content, and visual separation without creating a query.
+
+1. Open a Real-Time Dashboard and select **Editing** in the upper-right corner.
+
+1. In the top toolbar, select **Title**, **Text Box**, or **Divider**.
+
+1. Enter content directly on the dashboard for a Title or Text Box. Use a Divider to add a labeled horizontal break between sections.
+
+1. In the dashboard toolbar, select **Save**.
+
+### Title
+
+Use a Title for a dashboard heading or short section label. Formatting applies to the entire title.
+
+:::image type="content" source="media/real-time-dashboard/design-tile-title.png" alt-text="Screenshot of a Title tile with its formatting toolbar open.":::
+
+### Text Box
+
+Use a Text Box for descriptions, operational guidance, annotations, and links. Formatting applies to selected text or to text you enter next. You can add links and apply a background to the tile.
+
+### Divider
+
+Use a Divider to mark a section boundary. It is a visual separator; it doesn't group tiles or make a section collapsible.
+
+:::image type="content" source="media/real-time-dashboard/design-tile-divider.png" alt-text="Screenshot of a horizontal Divider labeled 'Gates Drill Down'.":::
+
+Design Tiles use theme-aware, accessible colors and support keyboard navigation. Text pasted into a Text Box is handled to help prevent unsupported formatting or content from disrupting the dashboard.
 
 ## Add or edit tile
 
