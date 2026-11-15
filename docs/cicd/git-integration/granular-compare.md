@@ -23,7 +23,7 @@ workspace changes, you can commit them directly from the same experience.
 > commit. For [supported Fabric items](#items-that-support-file-level-commit),
 > it is possible to perform a file-level commit, allowing you to commit specific
 > files within the item and leave the remaining files uncommitted.
-> File-level commit is currently in preview and is also available
+> File-level commit is also available
 > through the [Commit To Git API](/rest/api/fabric/core/git/commit-to-git?tabs=HTTP).
 
 This article explains how to review workspace changes, incoming Git updates, and conflicts;
@@ -31,7 +31,7 @@ commit workspace changes; and understand supported scenarios and limitations.
 
 ## What you can do
 - Review workspace changes before you commit.
-- Commit a Fabric items, or subset of files for supported items (Preview).
+- Commit a Fabric items, or subset of files for supported items.
 - Review incoming Git changes before you update the workspace.
 - Compare conflicted items before you resolve them.
 
@@ -64,7 +64,7 @@ Use the **Changes** tab to inspect changes made in the workspace and choose what
    selected automatically and can't be excluded from the commit.
 
    > [!NOTE]
-   > File-level commit is in preview and is available only for
+   > File-level commit is available only for
    > [supported items](#items-that-support-file-level-commit) in the **Modified** state.
 
 5. Enter a commit message, and then select **Commit**. If you selected only some files in
@@ -124,7 +124,7 @@ choose one of these comparison modes:
 
 ## Items that support file-level commit
 
-File level commit (Preview) is available only for the following items:
+File level commit is available only for the following items:
 - Data Warehouse items:
   - [Warehouse](../../data-warehouse/data-warehousing.md)
 - Database items:
@@ -158,8 +158,7 @@ For more information, see [Automatically generated system files](source-code-for
 
 - The compare dialog doesn't display the contents of binary files or files larger than 1 MB.
 - Git status can detect an encoding-only change, such as a file manually uploaded to Git with a different encoding, even when the compare dialog doesn't display a difference.
-- File-level commit is in preview and is available only for [supported items](#items-that-support-file-level-commit) in the **Modified** state.
-- Commit to another branch from the compare code experience isn't supported, including when the source control pane contains a partial selection.
+- File-level commit is available only for [supported items](#items-that-support-file-level-commit) in the **Modified** state.
 
 ## Related content
 
