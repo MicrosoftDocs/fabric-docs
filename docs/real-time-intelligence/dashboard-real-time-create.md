@@ -157,9 +157,9 @@ Under the **Manage** tab, you can manage [parameters](dashboard-parameters-manag
 
 :::image type="content" source="media/real-time-dashboard/manage-tab.png" alt-text="Screenshot of the toolbar options under the Manage tab." lightbox="media/real-time-dashboard/manage-tab.png":::
 
-## Add Design Tiles
+## Add Title, Text Box, and Divider
 
-Design Tiles are generally available. Use them to add headings, explanatory content, and visual separation without creating a query.
+Use Title, Text Box, and Divider to make dashboards easier for viewers to scan and understand, without creating a query.
 
 1. Open a Real-Time Dashboard and select **Editing** in the upper-right corner.
 
@@ -173,7 +173,7 @@ Design Tiles are generally available. Use them to add headings, explanatory cont
 
 Use a Title for a dashboard heading or short section label. Formatting applies to the entire title.
 
-:::image type="content" source="media/real-time-dashboard/design-tile-title.png" alt-text="Screenshot of a Title tile with its formatting toolbar open.":::
+:::image type="content" source="media/real-time-dashboard/title-formatting-toolbar.png" alt-text="Screenshot of a Title tile with its formatting toolbar open.":::
 
 ### Text Box
 
@@ -183,9 +183,9 @@ Use a Text Box for descriptions, operational guidance, annotations, and links. F
 
 Use a Divider to mark a section boundary. It is a visual separator; it doesn't group tiles or make a section collapsible.
 
-:::image type="content" source="media/real-time-dashboard/design-tile-divider.png" alt-text="Screenshot of a horizontal Divider labeled 'Gates Drill Down'.":::
+:::image type="content" source="media/real-time-dashboard/divider-section-label.png" alt-text="Screenshot of a horizontal Divider labeled 'Gates Drill Down'.":::
 
-Design Tiles use theme-aware, accessible colors and support keyboard navigation. Text pasted into a Text Box is handled to help prevent unsupported formatting or content from disrupting the dashboard.
+All three tile types use theme-aware, accessible colors and support keyboard navigation. Text pasted into a Text Box is handled to help prevent unsupported formatting or content from disrupting the dashboard.
 
 ## Add or edit tile
 
