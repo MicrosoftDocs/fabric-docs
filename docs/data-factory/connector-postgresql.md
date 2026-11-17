@@ -2,7 +2,7 @@
 title: Set up your PostgreSQL database connection
 description: This article provides information about how to create a PostgreSQL database connection in Microsoft Fabric.
 ms.topic: how-to
-ms.date: 07/21/2026
+ms.date: 10/27/2026
 ms.custom:
   - template-how-to
   - connectors
@@ -58,6 +58,23 @@ You can connect a dataflow Gen2 in Fabric to a PostgreSQL database by using Powe
 ### Connection instructions
 
 [!INCLUDE [postgresql-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/postgresql/connect-online.md)]
+
+## Use PostgreSQL as a Dataflow Gen2 data destination
+
+PostgreSQL destination support in Dataflow Gen2 is generally available. Prepare your data with Power Query, and then configure a PostgreSQL destination on the query whose results you want to load.
+
+1. Select the prepared query in the Power Query editor.
+1. Select **Add data destination** > **PostgreSQL database**.
+1. Select or create a PostgreSQL connection with write access to the target database and table.
+1. Choose a new or existing destination table, and then review the column mapping and destination settings.
+1. Finish the setup, and then select **Save & run**.
+1. Review the refresh status and check the results in PostgreSQL.
+
+:::image type="content" source="media/connector-postgresql/destination-connector.png" alt-text="Screenshot of the PostgreSQL database connector tile in Dataflow Gen2.":::
+
+If you use an on-premises data gateway, the [June 2026 gateway update (version 3000.322)](/data-integration/gateway/service-gateway-monthly-updates#june-2026-update-3000322) or later is required for PostgreSQL destinations.
+
+For more information, see [Dataflow Gen2 data destinations and managed settings](dataflow-gen2-data-destinations-and-managed-settings.md) and [View refresh history and monitor your dataflows](dataflows-gen2-monitor.md).
 
 ## Related content
 

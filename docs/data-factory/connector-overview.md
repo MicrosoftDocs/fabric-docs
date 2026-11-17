@@ -39,7 +39,7 @@ Fabric supports these connectors in dataflow Gen2, pipelines, and copy jobs. Sel
 | [Amazon RDS for Oracle](connector-amazon-rds-for-oracle-overview.md) |  | ✓/− | ✓/− |
 | [Amazon RDS for SQL Server](connector-amazon-rds-for-sql-server-overview.md) |  | ✓/− | ✓/− |
 | [Amazon Redshift](connector-amazon-redshift-overview.md) | ✓/− | ✓/− |  |
-| [Amazon S3](connector-amazon-s3-overview.md) |  | ✓/✓ | ✓/✓ |
+| [Amazon S3](connector-amazon-s3-overview.md) | ✓/✓ (preview) | ✓/✓ | ✓/✓ |
 | [Amazon S3 Compatible](connector-amazon-s3-compatible-overview.md) |  | ✓/✓ | ✓/✓ |
 | [Anaplan](connector-anaplan-overview.md) | ✓/− |  |  |
 | Asana | ✓/− |  |  |
@@ -117,7 +117,7 @@ Fabric supports these connectors in dataflow Gen2, pipelines, and copy jobs. Sel
 | [FTP](connector-ftp-overview.md) |  | ✓/− | ✓/− |
 | [Funnel](connector-funnel-overview.md) | ✓/− |  |  |
 | [Google Analytics](connector-google-analytics-overview.md) | ✓/− |  |  |
-| [Google BigQuery](connector-google-bigquery-overview.md) | ✓/− | ✓/✓ | ✓/✓ |
+| [Google BigQuery](connector-google-bigquery-overview.md) | ✓/✓ (destination in preview) | ✓/✓ | ✓/✓ |
 | [Google BigQuery (Microsoft Entra ID)](/power-query/connectors/google-bigquery-aad#connect-to-google-bigquery-microsoft-entra-id-data-from-power-query-online) | ✓/− |  |  |
 | [Google Cloud Storage](connector-google-cloud-storage-overview.md) |  | ✓/✓ | ✓/✓ |
 | [Google Sheets](connector-google-sheets-overview.md) | ✓/− |  |  |
