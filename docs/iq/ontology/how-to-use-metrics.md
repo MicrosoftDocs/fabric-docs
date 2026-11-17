@@ -1,7 +1,7 @@
 ---
 title: Define Metrics in Ontology (Preview)
 description: Learn how to use the metrics feature in ontology (preview).
-ms.date: 10/20/2026
+ms.date: 11/09/2026
 ms.topic: how-to
 ai-usage: ai-assisted
 ---
@@ -41,9 +41,9 @@ One way to create an ontology is to [generate it from one or multiple semantic m
 
 ## View metrics on an entity
 
-1. Open an entity and select **View Entity Type details**.
+1. Select an entity, and then select **Entity type > Open details**.
 
-    :::image type="content" source="media/how-to-use-metrics/entity-type-details.png" alt-text="Screenshot of the entity type details page for an entity." lightbox="media/how-to-use-metrics/entity-type-details.png":::
+    :::image type="content" source="media/how-to-use-metrics/entity-type-details.png" alt-text="Screenshot of Sales selected on the canvas with the Entity type tab available." lightbox="media/how-to-use-metrics/entity-type-details.png":::
 
 1. Locate the **Metrics** section on the entity details page. It lists metrics based on measures in the semantic model behind this entity. Each metric shows a name, description, source semantic model, and table.
 

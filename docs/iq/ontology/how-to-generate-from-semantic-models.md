@@ -1,7 +1,7 @@
 ---
 title: Generate Ontology (Preview) from Semantic Models
 description: Learn how to generate an ontology item (preview) that uses data from one or more Power BI semantic models.
-ms.date: 09/09/2026
+ms.date: 11/09/2026
 ms.topic: how-to
 ai-usage: ai-assisted
 ---
@@ -52,7 +52,7 @@ Before you add semantic models to an ontology, ensure you have:
 
 * A [Fabric workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity).
 * **Users can create ontology (preview) items** and **Users can create Fabric items** [enabled on your Fabric tenant](overview-tenant-settings.md).
-* One or more related [semantic models](../../data-warehouse/semantic-models.md) in your workspace that represent parts of the same business domain (for example, `Customer_retention` and `Support_operations`).
+* One or more related [semantic models](../../data-warehouse/semantic-models.md) in your workspace that represent parts of the same business domain (for example, `SalesReport` and `InventoryReport`).
   * Both Read and Build [permissions](/power-bi/connect-data/service-datasets-permissions#what-are-the-semantic-model-permissions) on the semantic model(s). This is required to generate an ontology from the semantic models and query the semantic models using ontology.
 * Basic familiarity with the [ontology agent](how-to-use-ontology-agent.md).
 
@@ -81,18 +81,19 @@ Open each entity type to view its details. Confirm that the entity type includes
 
 Add one or more semantic models to an existing ontology by using the ontology agent.
 
-1. With the ontology open, select **Ontology agent** and set the agent to **Act mode**.
+1. With the ontology open, select **Home** > **Ontology agent** and set the agent to **Act**.
 
     :::image type="content" source="media/how-to-generate-from-semantic-models/agent-act-mode.png" alt-text="Screenshot of opening the ontology agent in Act mode." lightbox="media/how-to-generate-from-semantic-models/agent-act-mode.png":::
 
 1. Prompt the agent to include additional semantic models that your Fabric account has access to. Here's an example query:
 
     ```text
-    Use the following semantic models in this workspace to create a full 360 customer ontology to understand customer orders, support tickets, returns, sales details, and order details:
-    - customer_retention
-    - support_operations
-    - returns_refunds
-    - exec_sales_overview
+    Use the SalesReport and InventoryReport semantic models in this workspace.
+    Keep Sales and Locations bound to SalesReport. Use InventoryReport for
+    Products and InventoryPositions, including its measures. Preserve the
+    existing entity types and relationships, reconcile overlapping tables,
+    and don't create duplicate entities. Apply the changes and summarize
+    the entity types, relationships, and measure bindings.
     ```
 
 1. Submit the query and let the agent process the request. The agent summarizes what it did and exposes its reasoning steps, including how it resolved conflicts between overlapping tables in the multiple models.
@@ -105,17 +106,19 @@ Add one or more semantic models to an existing ontology by using the ontology ag
 
 After you build the ontology with semantic model data, use the agent to validate it and run queries across all source models.
 
-1. In the chat pane, select the **Test the ontology** suggestion.
+1. In the chat pane, select **Test the ontology** if the suggestion is available. Otherwise, ask the agent to generate representative questions and answer them by querying the bound data.
 
-    :::image type="content" source="media/how-to-generate-from-semantic-models/test-before.png" alt-text="Screenshot of the Test the ontology suggestion." lightbox="media/how-to-generate-from-semantic-models/test-before.png":::
+    :::image type="content" source="media/how-to-generate-from-semantic-models/test-after.png" alt-text="Screenshot of an ontology test request and generated DAX questions and answers." lightbox="media/how-to-generate-from-semantic-models/test-after.png":::
 
-    The agent generates a set of representative questions and answers them by querying the bound data.
+    Review the generated queries and their results. In this example, the agent tests questions about Net Sales, Gross Margin %, products, stores, and inventory statuses.
 
-    :::image type="content" source="media/how-to-generate-from-semantic-models/test-after.png" alt-text="Screenshot of the test questions being answered." lightbox="media/how-to-generate-from-semantic-models/test-after.png":::
+    :::image type="content" source="media/how-to-generate-from-semantic-models/test-before.png" alt-text="Screenshot of the agent's sample product, store, and inventory-status results." lightbox="media/how-to-generate-from-semantic-models/test-before.png":::
 
-1. Ask your own question in plain language to query across the combined models. For example, ask *Show me the total orders by store*, where order data comes from one semantic model and store data comes from another.
+    If a result is blank or a query fails, verify the source data and bindings before relying on the answer.
 
-    The agent uses the relationships it created between orders, stores, and products to answer the question, even though the data originates in separate semantic models.
+1. Ask your own question in plain language to query across the combined models. For example, ask *Show sales by store alongside current inventory positions*, where sales data comes from one semantic model and inventory data comes from another.
+
+    The agent uses the relationships between sales, locations, products, and inventory positions to answer the question, even though the data originates in separate semantic models.
 
 >[!NOTE]
 > You need both Read and Build [permissions](/power-bi/connect-data/service-datasets-permissions#what-are-the-semantic-model-permissions) on the semantic models to generate an ontology from a semantic model and query the semantic models using ontology.

@@ -3,7 +3,7 @@ title: Introduction to CI/CD in Microsoft Fabric
 description: An overview of continuous integration and continuous delivery (CI/CD) in Microsoft Fabric, including Git integration, deployment pipelines, the Variable library, the Fabric REST APIs, the Fabric CLI, and infrastructure as code.
 ms.reviewer: NimrodShalit
 ms.topic: concept-article
-ms.date: 08/23/2026
+ms.date: 10/25/2026
 ai-usage: ai-assisted
 #customer intent: As a developer, I want to understand the CI/CD process in Microsoft Fabric so that I can efficiently manage the lifecycle of my applications.
 ---
@@ -44,6 +44,8 @@ This layer moves content reliably from development to production through four co
 
 > [!NOTE]
 > Some of the items for CI/CD are in preview. See the list of supported items for the [Git integration](./git-integration/intro-to-git-integration.md#supported-items) and [deployment pipeline](./deployment-pipelines/intro-to-deployment-pipelines.md#supported-items) features.
+
+[Fabric Apps](../apps/overview.md) supports Git integration and deployment pipelines. You can version your Fabric app with Git integration and promote it across workspaces with deployment pipelines.
 
 ### Git integration
 

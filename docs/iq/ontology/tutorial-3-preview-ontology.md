@@ -1,8 +1,9 @@
 ---
 title: "Tutorial Part 3: Explore the Ontology (Preview)"
 description: Explore the ontology in canvas views, entity instance view, and graph view. Part 3 of the ontology (preview) tutorial.
-ms.date: 09/18/2026
+ms.date: 11/06/2026
 ms.topic: tutorial
+ai-usage: ai-assisted
 ---
 
 # Ontology (preview) tutorial part 3: Explore the ontology
@@ -17,9 +18,9 @@ In this tutorial step, explore your ontology in different ways. View the ontolog
 
 When you bound data to your entity types in [part 1 of the tutorial](tutorial-1-create-ontology.md), ontology automatically created instances of those entity types that map to the source data rows. View the entity instances with these steps:
 
-1. Start in the Home configuration canvas of ontology. Select an entity type, and **View Entity Type details** from the top ribbon.
+1. Start in the Home configuration canvas of ontology. Select an entity type, and then select **Entity type > Open details** from the ribbon.
 
-    :::image type="content" source="media/tutorial-3-preview-ontology/view-entity-type-details.png" alt-text="Screenshot of opening the entity type details for Inventory." lightbox="media/tutorial-3-preview-ontology/view-entity-type-details.png":::
+    :::image type="content" source="media/tutorial-3-preview-ontology/view-entity-type-details.png" alt-text="Screenshot of opening entity type details from the Entity type ribbon." lightbox="media/tutorial-3-preview-ontology/view-entity-type-details.png":::
 
 1. Open the **Instances** tab. You see a list of entity instances with data populated from the original lakehouse table data source. For example, the Inventory entity type instances have columns like `ProductId`, `OnHandQuantity`, and `ShelfAvailableUnits`.
 
@@ -41,7 +42,7 @@ This section shows how to create an optional materialized graph from your existi
     >[!NOTE]
     > Entity types must have entity type keys defined to be eligible for graph projection.
 
-    1. Select an entity type in the canvas and select **View Entity Type details**.
+    1. Select an entity type in the canvas and select **Entity type > Open details**.
     1. Select **Define entity type key**.
 
         :::image type="content" source="media/tutorial-3-preview-ontology/entity-type-key.png" alt-text="Screenshot of selecting an entity type key." lightbox="media/tutorial-3-preview-ontology/entity-type-key.png":::
@@ -63,34 +64,36 @@ This section shows how to create an optional materialized graph from your existi
         | Supplier | `SupplierId` |
         | Refrigeration Telemetry | *skip* |
 
-    1. Repeat for each entity type until all entity types have keys.
+    1. Repeat for each entity type that you plan to project, except the types marked *skip*.
 
-1. Set up the graph instance. From the home canvas ribbon, select **Manage graph**.
+1. Set up the graph instance. From the home canvas ribbon, select **Home > Manage > Graph**.
 
     :::image type="content" source="media/tutorial-3-preview-ontology/manage-graph.png" alt-text="Screenshot of opening the manage graph option from the ribbon." lightbox="media/tutorial-3-preview-ontology/manage-graph.png":::
 
-1. The **Configure Graph** page loads with the default selection of **Use the entire Ontology**. You can see all entity types in the **Entities** section, and the **Preview** section shows what the graph looks like. Each entity type is projected as a graph node, and each relationship type is projected as a graph edge.
+1. On **Review validation**, wait for validation to finish. Review the **Status** column, and select **Ineligible** for an entry to learn why it can't be projected. Select **Select entities**.
 
-    :::image type="content" source="media/tutorial-3-preview-ontology/configure-graph.png" alt-text="Screenshot of configuring the graph by projecting the entire ontology." lightbox="media/tutorial-3-preview-ontology/configure-graph.png":::
+1. On **Choose what to project**, select the eligible entity types and expand them to select their relationships. The **Preview** pane shows the selected subgraph. Each entity type becomes a node type, and each relationship type becomes an edge type.
 
-1. Notice that *Sale* and *Refrigeration_Telemetry* entity types can't be added to the graph. The graph in ontology doesn't currently support semantic model and eventhouse data sources.
+    :::image type="content" source="media/tutorial-3-preview-ontology/configure-graph.png" alt-text="Screenshot of a focused projection containing Product, Supplier, and suppliedBy." lightbox="media/tutorial-3-preview-ontology/configure-graph.png":::
 
-    Verify that all entity types are selected except *Sale* and *Refrigeration_Telemetry*. Select **Continue**.
+    The screenshot shows a focused Product and Supplier example. For the queries later in this tutorial, include Store, Product, Shipment, Supplier, and their connecting relationships.
 
     >[!NOTE]
-    > Currently, only delta tables from lakehouses or mirrored databases are supported data sources for the graph view.
+    > Only delta tables from lakehouses or mirrored databases are supported. Sale and Refrigeration Telemetry use unsupported source types. Relationships also need a supported data binding with a single backing table. For example, you can use *dimproducts* as a mapping table for *suppliedBy*, mapping Product's `ProductId` to `ProductId` and Supplier's `SupplierId` to `SupplierId`. For more information, see [Create relationship types](how-to-create-relationship-types.md) and [Graph limitations](how-to-use-ontology-graph.md#limitations).
 
-1. On the **Projection Summary** page, you see 10 entities. Select **Materialize**. Creating the graph model might take several minutes.
+    Select **Continue**.
+
+1. On **Projection summary**, review your selected entities and relationships. Select **Materialize**. Creating and loading the graph model might take several minutes.
 
     :::image type="content" source="media/tutorial-3-preview-ontology/materialize-graph.png" alt-text="Screenshot of selecting to materialize the graph." lightbox="media/tutorial-3-preview-ontology/materialize-graph.png":::
 
-1. When the graph finishes provisioning, return to the home canvas view. <!--What opens automatically when the graph is done provisioning?-->
+1. Wait for **Materialization status** to show **Graph materialized** and a **Complete** refresh status.
 
 ### Explore the graph
 
-1. From the top ribbon, select **Explore graph**. This button is visible now that the graph is materialized.
+1. In your Fabric workspace, open the graph model associated with your ontology. In the graph model, select **Query > Query now**.
 
-    :::image type="content" source="media/tutorial-3-preview-ontology/explore-graph.png" alt-text="Screenshot of opening the explore graph option from the ribbon." lightbox="media/tutorial-3-preview-ontology/explore-graph.png":::
+    :::image type="content" source="media/tutorial-3-preview-ontology/explore-graph.png" alt-text="Screenshot of Query now in the graph model Query menu." lightbox="media/tutorial-3-preview-ontology/explore-graph.png":::
 
 1. The graph queryset view opens. On the right side of the queryset, select the puzzle piece icon to expand the **Components** pane. The Components pane shows the list of nodes and edges that are available in your graph.
 
@@ -112,7 +115,7 @@ This section shows how to create an optional materialized graph from your existi
 
     :::image type="content" source="media/tutorial-3-preview-ontology/path-query.png" alt-text="Screenshot of building a path query with a start node, direction, and end node." lightbox="media/tutorial-3-preview-ontology/path-query.png":::
 
-1. Select **Run** to run the query and render the result in both the query result canvas and the path results pane.
+1. Select **Run query** to run the query and render the result in both the query result canvas and the path results pane.
 
     :::image type="content" source="media/tutorial-3-preview-ontology/path-query-results.png" alt-text="Screenshot of the path query results." lightbox="media/tutorial-3-preview-ontology/path-query-results.png":::
 

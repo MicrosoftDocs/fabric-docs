@@ -7,7 +7,7 @@ ms.reviewer: guptamaya
 ms.custom:
   - tenant-setting
 ms.topic: how-to
-ms.date: 08/11/2026
+ms.date: 11/03/2026
 ms.update-cycle: 180-days
 LocalizationGroup: Administration
 no-loc: [Copilot]
@@ -27,6 +27,7 @@ For information about how to get to the Fabric tenant settings, see [About tenan
 
 * [Users can use Copilot and other features powered by Azure OpenAI](#copilot-with-openai)
 * [Capacities can be designated as Copilot in Fabric capacities](#fabric-copilot-capacities)
+* [Users can use Power BI Desktop for Apps (preview)](#power-bi-desktop-for-apps)
 
 **Settings disabled by default**
 
@@ -139,6 +140,20 @@ This setting is applicable in the standalone Copilot in Power BI as well as the 
 :::image type="content" source="./media/service-admin-portal-copilot/admin-setting-only-show-approved-items.png" alt-text="Screenshot of the Only show approved items in the standalone Copilot tenant setting." lightbox="./media/service-admin-portal-copilot/admin-setting-only-show-approved-items.png":::
 
 **Default:** Disabled
+
+<a id="power-bi-desktop-for-apps"></a>
+## Users can use Power BI Desktop for Apps (preview)
+
+Tenant admins can enable access to Power BI Desktop for Apps, a separate desktop application that creators can launch from Power BI Desktop to build Fabric apps. You must also enable the [Fabric Apps tenant setting](../apps/create-app.md#enable-fabric-app-in-tenant-admin-settings).
+
+When you disable this setting, creators can still build Fabric apps through other supported routes, such as the SDK and CLI, if the Fabric Apps tenant setting is enabled and they meet the requirements for those routes.
+
+You can enable this setting for **The entire organization** or **Specific security groups**, and exclude groups by selecting **Except specific security groups**.
+
+:::image type="content" source="./media/service-admin-portal-copilot/power-bi-desktop-for-apps-tenant-setting.png" alt-text="Screenshot of the Power BI Desktop for Apps tenant setting with the Enabled switch selected and organization and security-group scope options." lightbox="./media/service-admin-portal-copilot/power-bi-desktop-for-apps-tenant-setting.png":::
+
+**Default:** Enabled
+
 
 ## Related content
 

@@ -20,7 +20,7 @@ For an overview of how retention works for workspaces and items, see [Retention 
 
 ## Prerequisites
 
-- To set up item retention settings, you need a [tenant admin](microsoft-fabric-admin.md) role.
+- To set up item retention settings, you need a [tenant admin](admin-overview.md#administrative-roles) role.
 - To recover deleted items, you need at least **Workspace Contributor** permissions. See [Permissions](retention-recovery.md#permissions-for-item-recovery-and-deletion) for the full permissions matrix.
 - To permanently delete recoverable items, you need **Workspace Admin** permissions.
 
@@ -32,7 +32,7 @@ For an overview of how retention works for workspaces and items, see [Retention 
 You can change the retention period (from 3 to 90 days) or turn item recovery off by using the **Item Recovery** tenant setting.
 
 1. Sign in to [Fabric](https://app.fabric.microsoft.com) using your admin account credentials. Open the **OneLake catalog**, and then select the **Govern** tab > **Configurations** > **Tenant settings** > **Item Recovery**.
-1. Turn on the setting and enter the number of days for the retention period (7 to 90 days).
+1. Turn on the setting and enter the number of days for the retention period (3 to 90 days).
 1. Select **Apply**.
 
 > [!NOTE]
@@ -141,4 +141,4 @@ curl --request DELETE \
 - [Retention and recovery in Fabric](retention-recovery.md)
 - [Set up and manage workspace retention](workspace-retention.md)
 - [Manage workspaces](portal-workspaces.md)
-- [Admin portal overview](admin-center.md)
+- [Fabric administration overview](admin-overview.md)

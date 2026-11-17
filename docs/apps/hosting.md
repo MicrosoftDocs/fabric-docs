@@ -233,6 +233,7 @@ The `npx rayfin up staticapp deploy` command requires an existing remote deploym
 
 ## Related content
 
+- [Content security policy for static-hosted Fabric apps](content-security-policy.md)
 - [Deploy to Fabric](deploy-app.md)
 - [Configure authentication](authentication.md)
 - [Create your first project](create-app.md)

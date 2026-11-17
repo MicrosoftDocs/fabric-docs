@@ -1,7 +1,7 @@
 ---
 title: Reuse shared properties
 description: Learn how to define and reference shared properties across entity types in an ontology (preview) item.
-ms.date: 10/20/2026
+ms.date: 11/06/2026
 ms.topic: how-to
 ai-usage: ai-generated
 ---
@@ -24,14 +24,14 @@ Shared property names are unique within an ontology.
 
 To create a shared property:
 
-1. Select **Shared properties** from the Explorer pane.
+1. On the **Home** tab, select **Manage** > **Shared properties**.
 
-    :::image type="content" source="media/how-to-reuse-properties/shared-properties.png" alt-text="Screenshot of the shared explorer option." lightbox="media/how-to-reuse-properties/shared-properties.png":::
+    :::image type="content" source="media/how-to-reuse-properties/shared-properties.png" alt-text="Screenshot of Shared properties in the Manage menu." lightbox="media/how-to-reuse-properties/shared-properties.png":::
 
-1. Select **New shared property**, enter the property details, and select **Add**.
+1. Select **New** or, if the list is empty, **New shared property**. Enter the property details, and select **Add**.
 1. The property is visible on the **Shared properties** page. 
 
-    After you add the property to entity types, you can see all the entity types that use this property in the **Used by** column.
+    After you add the property to entity types, you can see all the entity types that use this property in the **Linked ontology elements** column.
 
     :::image type="content" source="media/how-to-reuse-properties/shared-properties-populated.png" alt-text="Screenshot of the shared property and entity types that use it." lightbox="media/how-to-reuse-properties/shared-properties-populated.png":::
 
@@ -40,7 +40,7 @@ To create a shared property:
 To add a shared property to an entity type:
 
 1. Open the **Configure** tab for the entity.
-1. Select **Manage property bindings** > **Add existing property**.
+1. Select **Add shared property**.
 
     :::image type="content" source="media/how-to-reuse-properties/add-existing-property.png" alt-text="Screenshot of adding an existing property." lightbox="media/how-to-reuse-properties/add-existing-property.png":::
 

@@ -17,12 +17,12 @@ In the **OneLake catalog**, select **Govern** > **Configurations** > **Fabric id
 
 <!-- Placeholder: Fabric identities page in OneLake catalog > Govern > Configurations. -->
 
-The columns of the list of identities are described in following table.
+The following table describes the columns in the list of identities.
 
 | Column | Description |
 | --------- | --------- |
 | **Name** | The name of the identity. |
-| **Service principal ID** | The object ID of the Enterprise application that is associated with the identity in Microsoft Entra. |
+| **Service principal ID** | The object ID of the Enterprise application that's associated with the identity in Microsoft Entra. |
 | **State** | The state of the identity. See [workspace identity state values](../security/workspace-identity.md#identity-details).|
 | **Workspace** | The workspace ID. |
 

@@ -5,18 +5,26 @@ items:
   items:
   - name: What is Fabric Apps?
     href: overview.md
+  - name: Licensing options
+    href: licensing.md
   - name: Pricing
     href: pricing.md
 - name: Get started
   items:
   - name: Create your first app
     href: create-app.md
+  - name: Create an app in Visual Studio Code
+    href: create-app-with-vs-code.md
   - name: Create an app connected to a semantic model
     href: data-apps-template.md
   - name: Create and deploy your first app with the CLI
     href: create-app-with-cli.md
+  - name: Create Fabric apps with Power BI Desktop for Apps (preview)
+    href: create-app-power-bi-desktop.md
 - name: Build with agents
   items:
+  - name: Develop apps with AI agents
+    href: ai-agent-development-for-apps.md
   - name: Create an app with GitHub Copilot
     href: create-app-with-github-copilot.md
   - name: Create an app with Claude Code
@@ -37,6 +45,10 @@ items:
   items:
   - name: Store and manage files
     href: storage.md
+- name: Visuals
+  items:
+  - name: Add charts and tables
+    href: visual-components.md
 - name: Auth
   items:
   - name: Authentication overview
@@ -59,18 +71,28 @@ items:
   items:
   - name: Configure hosting and access
     href: hosting.md
+  - name: Content security policy
+    href: content-security-policy.md
+  - name: Share and distribute
+    items:
+    - name: Share a Fabric app
+      href: share-app.md
 - name: Deploy
   items:
   - name: Deploy to Fabric
     href: deploy-app.md
-  - name: Monitor app metrics
-    href: app-metrics.md
+  - name: Configure Git integration
+    href: source-control.md
   - name: Deploy using GitHub Actions
     href: deploy-github-actions.md
   - name: Manage dev and prod environments
     href: dev-prod-workflow.md
   - name: Author and share app templates
     href: author-templates.md
+- name: Monitoring
+  items:
+  - name: Monitor usage and troubleshoot
+    href: app-metrics.md
 - name: Reference
   items:
   - name: Understand the project structure
