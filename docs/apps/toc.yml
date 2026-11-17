@@ -5,6 +5,8 @@ items:
   items:
   - name: What is Fabric Apps?
     href: overview.md
+  - name: What is Rayfin?
+    href: rayfin-overview.md
   - name: Licensing options
     href: licensing.md
   - name: Pricing
