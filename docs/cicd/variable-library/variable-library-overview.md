@@ -65,6 +65,7 @@ The following items support the variable library:
 - [Deployment plan](../deployment-plan/deployment-plan-overview.md) action parameters
 - [Plan](../../iq/plan/overview.md)
 - [Catalog mirroring](../../mirroring/catalog-mirroring/dremio.md)
+- [Map](../../real-time-intelligence/map/about-fabric-maps.md)
 
 ## Naming conventions
 The name of variable library item itself must follow these conventions:
