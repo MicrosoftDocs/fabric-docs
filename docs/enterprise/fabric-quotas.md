@@ -4,7 +4,7 @@ description: Learn what counts against Microsoft Fabric capacity quotas, includi
 author: dknappettmsft
 ms.author: daknappe
 ms.topic: how-to
-ms.date: 11/16/2026
+ms.date: 11/17/2026
 ai-usage: ai-assisted
 
 #customer intent: As an administrator or an executive, I want to learn how to manage my Microsoft Fabric quota.
@@ -94,7 +94,7 @@ Your available quota is the difference between `limit` and `currentValue` for th
 
 ## Request a quota increase
 
-The following section outlines how to request a Fabric quota increase using the Azure portal and the ARM APIs.
+When requesting a quota increase, include enough quota for both provisioned capacity CUs and configured overage thresholds across capacities in the target subscription and region, including any planned increases. Overage thresholds require quota even if no overage occurs. For the threshold calculation, see [How capacity overage works](capacity-overage-overview.md#how-capacity-overage-works).
 
 # [Azure](#tab/Azure)
 
