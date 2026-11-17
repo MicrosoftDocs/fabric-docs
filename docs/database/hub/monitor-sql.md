@@ -126,8 +126,9 @@ Currently, Database Hub evaluates the following Microsoft SQL platform security 
     - Applicable to Azure SQL Database, Azure SQL Managed Instance
 - **Microsoft Entra Authentication Enforced** (suggestion)
     - Applicable to Azure SQL Database, SQL Server enabled by Azure Arc, Azure SQL Managed Instance
-- **SQL Ledger** (suggestion) 
+- **SQL Ledger (preview)** (suggestion) 
     - Applicable to Azure SQL Database
+    - This assessment is in preview. Database Hub only detects ledger databases, not individual ledger tables. If your database uses ledger tables without being configured as a ledger database, you can safely ignore the recommendation to use ledger tables.
 
 ## Troubleshoot
 
