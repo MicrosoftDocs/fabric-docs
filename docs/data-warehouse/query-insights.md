@@ -17,7 +17,7 @@ The query insights feature provides a central location for historic query data a
 
 - **Historical Query Data:** Query Insights stores historical data about query executions, enabling you to track performance changes over time. System queries aren't stored in query insights.
 - **Aggregated Insights:** Query Insights aggregates query execution data into insights that are more actionable, such as identifying long-running queries or most active users. These aggregations are based on the query shape. For more information, see [How are similar queries aggregated to generate insights?](#how-are-similar-queries-aggregated-to-generate-insights)
-- **Warehouse Insights:** To understand the overall health of your warehouse, use the [`sql_pool_insights`](/sql/relational-databases/system-views/queryinsights-sql-pool-insights-transact-sql?view=fabric&preserve-view=true) view. This view provides pool-level metrics, pressure indicators, and vnode utilization, helping you monitor resource allocation, see how close each pool came to its limit, and diagnose performance issues across pools.
+- **Warehouse insights:** To understand the overall health of your warehouse, use the [`sql_pool_insights`](/sql/relational-databases/system-views/queryinsights-sql-pool-insights-transact-sql?view=fabric&preserve-view=true) view. This view provides pool-level metrics, pressure indicators, and vnode utilization, helping you monitor resource allocation, see how close each pool came to its limit, and diagnose performance issues across pools.
 
 ## Before you begin
 
