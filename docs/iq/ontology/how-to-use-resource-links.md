@@ -32,15 +32,15 @@ Before adding resource links, make sure you have the following prerequisites:
 
 To add a link to an existing Fabric item on an entity type, follow these steps.
 
-1. In the Home contextual canvas, select the entity type in the **Explorer** pane. Select **View Entity Type details** from the ribbon.
+1. In the Home configuration canvas, select the entity type in the **Explorer** pane. Select **Entity type > Open details** from the ribbon.
 
-    :::image type="content" source="media/how-to-use-resource-links/view-entity-type-details.png" alt-text="Screenshot of selecting View Entity Type details from the canvas." lightbox="media/how-to-use-resource-links/view-entity-type-details.png":::
+    :::image type="content" source="media/how-to-use-resource-links/view-entity-type-details.png" alt-text="Screenshot of selecting Open details from the Entity type ribbon." lightbox="media/how-to-use-resource-links/view-entity-type-details.png":::
 
     The entity type details view opens to the **Configure** tab.
 
-1. Scroll down to the **Resources** section, which shows any linked resources. Select **Add** to add a new resource link.
+1. Scroll down to the **Resources** section, which shows any linked resources. Select **Manage resources** > **Add Fabric item** to add a new resource link.
 
-    :::image type="content" source="media/how-to-use-resource-links/add-resources.png" alt-text="Screenshot of the Resources section and the Add button." lightbox="media/how-to-use-resource-links/add-resources.png":::
+    :::image type="content" source="media/how-to-use-resource-links/add-resources.png" alt-text="Screenshot of Add Fabric item in the Manage resources menu." lightbox="media/how-to-use-resource-links/add-resources.png":::
 
 1. Fabric opens your OneLake catalog of resources. Choose the Fabric item you want to link to the entity type, and select **Add**.
 

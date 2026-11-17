@@ -21,11 +21,11 @@ Go to the **Add data** page in either of the following ways:
 
 - On the **Streaming data** page, select **Add data**.
 
-  :::image type="content" source="./media/get-started-real-time-hub/connect-to-data-source-button.png" alt-text="Screenshot that shows the Add data button on the Streaming data page." lightbox="./media/get-started-real-time-hub/connect-to-data-source-button.png":::
+  :::image type="content" source="./media/get-started-real-time-hub/connect-to-data-source-button.png" alt-text="Screenshot of the Add data button on the Streaming data page." lightbox="./media/get-started-real-time-hub/connect-to-data-source-button.png":::
 
 - On the left navigation menu, select **Add data**.
 
-  :::image type="content" source="./media/get-started-real-time-hub/real-time-hub-add-data.png" alt-text="Screenshot that shows the Add data page in Fabric Real-Time hub." lightbox="./media/get-started-real-time-hub/real-time-hub-add-data.png":::
+  :::image type="content" source="./media/get-started-real-time-hub/real-time-hub-add-data.png" alt-text="Screenshot of the Add data page in Fabric Real-Time hub." lightbox="./media/get-started-real-time-hub/real-time-hub-add-data.png":::
 
 ## All sources tab
 
@@ -33,7 +33,7 @@ The **All sources** tab is the default tab for this page. It has **Quick start**
 
 ### Quickstart section
 
-:::image type="content" source="./media/get-started-real-time-hub/add-data-page-quick-start-section.png" alt-text="Screenshot that shows the Quick start section of the Add data page." lightbox="./media/get-started-real-time-hub/add-data-page-quick-start-section.png":::
+:::image type="content" source="./media/get-started-real-time-hub/add-data-page-quick-start-section.png" alt-text="Screenshot of the Quick start section of the Add data page." lightbox="./media/get-started-real-time-hub/add-data-page-quick-start-section.png":::
 
 The **Quick start** section provides the following options:
 
@@ -41,7 +41,7 @@ The **Quick start** section provides the following options:
 
 - **Azure data** - Switch to the **Azure** tab at the top so that you can view Azure sources, such as Azure event hubs and Azure IoT hubs, that you can connect to eventstreams. For more information, see [Azure tab](#azure-tab).
 
-- **Diagnostics data (preview)** - Switches to the **Diagnostics** tab at the top to view sources that provide diagnostic logs and metrics, which you can stream into Real-Time hub. For more information, see [Diagnostics (preview) tab](#diagnostics-preview-tab).
+- **Diagnostics data (preview)** - Switch to the **Diagnostics** tab at the top to view sources that provide diagnostic logs and metrics, which you can stream into Real-Time hub. For more information, see [Diagnostics (preview) tab](#diagnostics-preview-tab).
 
 
 ### Recommended sources section
@@ -83,6 +83,7 @@ Go to the [Business events page](business-events-page.md) to learn how to define
 
 ## Related content
 
+- [Create an Azure Event Hubs shortcut (preview)](../real-time-intelligence/event-streams/create-event-hubs-shortcut.md)
 - [Supported sources in Fabric Real-Time hub](supported-sources.md)
 - [Explore the Streaming data page](streaming-data-page.md)
 - [Real-Time hub overview](real-time-hub-overview.md)

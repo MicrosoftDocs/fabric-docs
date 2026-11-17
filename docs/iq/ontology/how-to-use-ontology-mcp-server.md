@@ -1,8 +1,9 @@
 ---
 title: Use Ontology MCP Server (Preview)
 description: Learn how to consume ontology (preview) as a Model Context Protocol (MCP) server.
-ms.date: 04/14/2026
+ms.date: 11/06/2026
 ms.topic: how-to
+ai-usage: ai-assisted
 ---
 
 # Consume ontology (preview) as an MCP server
@@ -29,11 +30,13 @@ To create the MCP server endpoint, you need the URL of your ontology (preview) i
 To find the URL, follow these steps:
 
 1. Open your ontology item in Fabric.
-1. View the URL in the browser, in the format `https://app.fabric.microsoft.com/groups/<workspace-ID>/ontologies/<ontology-item-ID>`.
+1. View the URL in the browser. The workspace ID follows `groups/`, and the ontology item ID follows `ontologies/`:
 
-    Copy the values of `<workspace-ID>` and `<ontology-item-ID>` from the URL.
+    ```text
+    https://app.fabric.microsoft.com/groups/<workspace-ID>/ontologies/<ontology-item-ID>
+    ```
 
-    :::image type="content" source="media/how-to-use-ontology-mcp-server/url.png" alt-text="Screenshot of the values in the URL." lightbox="media/how-to-use-ontology-mcp-server/url.png":::
+    Copy the values of `<workspace-ID>` and `<ontology-item-ID>`. If the URL includes extra path segments or query parameters, copy only the two IDs.
 
 1. Form the **MCP server URL** by entering the copied values into this string: `https://api.fabric.microsoft.com/v1/mcp/dataPlane/workspaces/<workspace-ID>/items/<ontology-item-ID>/ontologyEndpoint`.
 

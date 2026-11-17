@@ -128,7 +128,7 @@ Because of this possible threat, the Microsoft Entra SSO feature is disabled by 
 
 To learn more, see [Microsoft Entra SSO](/power-bi/connect-data/service-gateway-azure-active-directory-sso).
 
-## Users can view Power BI files saved in OneDrive and SharePoint (Preview)
+## Users can view Power BI files saved in OneDrive and SharePoint
 
 This setting allows users to view Power BI files saved in OneDrive and SharePoint Online document libraries in their browser without needing to download the file and open in Power BI Desktop on their local machine. When enabled, the setting applies to all users in your organization. This setting is on by default.
 
@@ -136,13 +136,11 @@ This setting allows users to view Power BI files saved in OneDrive and SharePoin
 
 Learn more about [viewing Power BI files saved in OneDrive and SharePoint](/power-bi/collaborate-share/service-sharepoint-viewer).
 
-## Users can share links to Power BI files stored in OneDrive and SharePoint through Power BI Desktop (preview)
+## Users can share links to Power BI files stored in OneDrive and SharePoint through Power BI Desktop
 
 Users can share links to Power BI Desktop files (.pbix) saved to OneDrive and SharePoint through Power BI Desktop. Sharing uses standard OneDrive and SharePoint sharing functionality. When enabled, this setting applies to all users in your organization.
 
 :::image type="content" source="media/service-admin-portal-integration/admin-integration-desktop-sharing.png" alt-text="Screenshot of admin setting called  Users can share links to Power BI files stored in OneDrive and SharePoint through Power BI Desktop.":::
-
-During public preview, if a user enables share through the Power BI Desktop menu, but the admin setting is disabled for the tenant, a **Share** button still appears in Power BI Desktop, but the user is notified that the capability is disabled when they attempt to share.
 
 Learn more about [sharing links through Power BI Desktop](/power-bi/create-reports/desktop-sharepoint-save-share).
 

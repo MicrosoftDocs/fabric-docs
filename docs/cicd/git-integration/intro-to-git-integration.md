@@ -3,7 +3,7 @@ title: Overview of Fabric Git integration
 description: An introduction to integrating Git version control with the Fabric Application lifecycle management (ALM) tool
 ms.reviewer: NimrodShalit
 ms.topic: overview
-ms.date: 09/01/2026
+ms.date: 10/25/2026
 ms.search.form: Git integration supported items, Introduction to Git integration
 #customer intent: As a developer I want to learn about the Git integration feature in Fabric so that my team can collaborate more effectively.
 ---
@@ -57,6 +57,10 @@ The following Git providers are supported:
 ## Supported items
 
 The following items currently support Git integration:
+
+* Fabric Apps items:
+
+  * [Fabric app](../../apps/source-control.md)
 
 * Data Engineering items:
 

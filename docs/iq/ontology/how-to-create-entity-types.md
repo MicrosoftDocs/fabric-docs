@@ -1,7 +1,7 @@
 ---
 title: Create Entity Types (Preview)
 description: Learn about entity types in ontology (preview) and how to manage them.
-ms.date: 10/20/2026
+ms.date: 11/09/2026
 ms.topic: how-to
 ai-usage: ai-assisted
 ---
@@ -26,11 +26,11 @@ Before creating entity types, make sure you have the following prerequisites:
 
 Follow these steps to create entity types in your ontology (preview) item.
 
-1. From the Home configuration canvas, select **Add entity type** from the top ribbon or the center of the canvas.
+1. On the **Home** tab of the top ribbon, select **+ Add** > **Entity type**.
 
-    :::image type="content" source="media/how-to-create-entity-types/add-entity-type.png" alt-text="Screenshot of adding entity type." lightbox="media/how-to-create-entity-types/add-entity-type.png":::
+    :::image type="content" source="media/how-to-create-entity-types/add-entity-type.png" alt-text="Screenshot of the Entity type option in the Home ribbon's Add menu." lightbox="media/how-to-create-entity-types/add-entity-type.png":::
 
-1. Enter a name for your entity type, and select **Add Entity Type**.
+1. Enter an **Entity type name**, such as *Freezer*, and select **Add**.
 
 1. The configuration canvas shows your new entity type.
 
@@ -40,19 +40,21 @@ Follow these steps to create entity types in your ontology (preview) item.
 
 This section shows how to create properties on entity types without binding data to them (the properties remain unbound until you add data bindings for them later). You can also add properties while binding data in a single operation, as described in [Data binding](how-to-bind-data.md).
 
-1. Select the entity type name in the **Explorer** and select **View Entity Type details** from the top ribbon. You can also open the entity type details by selecting the arrow icon next to the entity name on the canvas.
+1. Select the entity type name in the **Explorer**, and then select **Entity type > Open details** from the ribbon. You can also open the entity type details by selecting the open-details icon next to the entity name on the canvas.
 
-    :::image type="content" source="media/how-to-create-entity-types/view-entity-type-details.png" alt-text="Screenshot of the View Entity Type details button." lightbox="media/how-to-create-entity-types/view-entity-type-details.png":::
+    :::image type="content" source="media/how-to-create-entity-types/view-entity-type-details.png" alt-text="Screenshot of the Open details button on the Entity type ribbon." lightbox="media/how-to-create-entity-types/view-entity-type-details.png":::
 
-1. The **Configure** page opens. This page surfaces important information about the entity type, including its properties and data bindings. Expand **Manage property bindings** and select **Add properties**.
+1. The **Configure** page opens. This page surfaces important information about the entity type, including its properties and data bindings. Select **Create property**.
 
     :::image type="content" source="media/how-to-create-entity-types/add-properties.png" alt-text="Screenshot of adding properties to the entity type." lightbox="media/how-to-create-entity-types/add-properties.png":::
 
-1. Add a name and property type for each property, or choose *Unknown* to [model untyped properties](#modeling-untyped-properties) without specifying a data type upfront. Select **Shared** if you want to create a [shared property](how-to-reuse-properties.md#about-shared-properties). Select **Save** to view the saved properties in the **Properties** pane.
+1. Enter a **Name** and select a **Data type** for the first property. Select **Add** to add another property row. For example, add `FreezerId` and `FreezerName` with **String** data types. You can also choose **Unknown** to [model untyped properties](#modeling-untyped-properties) without specifying a data type upfront.
+
+    To reuse an existing [shared property](how-to-reuse-properties.md#about-shared-properties), select **Add shared property** on the **Configure** page instead.
 
     :::image type="content" source="media/how-to-create-entity-types/add-properties-details.png" alt-text="Screenshot of configuring the listed property details." lightbox="media/how-to-create-entity-types/add-properties-details.png":::
 
-1. The properties appear on the **Configure** page, unbound to any data source.
+1. Select **Create**. The properties appear on the **Configure** page, unbound to any data source.
 
     :::image type="content" source="media/how-to-create-entity-types/add-properties-done.png" alt-text="Screenshot of the new unbound properties on the entity type." lightbox="media/how-to-create-entity-types/add-properties-done.png":::
 
@@ -60,13 +62,13 @@ This section shows how to create properties on entity types without binding data
 
 ## Edit or delete an entity type
 
-To delete an entity type from in your ontology (preview) item, go to the Home configuration canvas. Next to the entity type name in the **Explorer**, select **... > Delete entity type**.
+To delete an entity type from your ontology (preview) item, go to the **Home** configuration canvas. Next to the entity type name in the **Explorer**, select **... > Delete**, and then confirm with **Delete entity type**.
 
 :::image type="content" source="media/how-to-create-entity-types/delete-entity-type.png" alt-text="Screenshot of deleting an entity type." lightbox="media/how-to-create-entity-types/delete-entity-type.png":::
 
-To edit details of the entity type, select **View Entity Type details** from the top ribbon to open the **Configure** page.
+To edit details of the entity type, select it and then select **Entity type > Open details** from the ribbon to open the **Configure** page.
 
-From this page, you can add, rename, and delete properties, and rename or delete the entity type itself.
+On this page, you can add, rename, and delete properties. To rename or delete the entity type itself, select **...** in the upper-right corner of the page, and then select **Rename** or **Delete**.
 
 :::image type="content" source="media/how-to-create-entity-types/edit-entity-type.png" alt-text="Screenshot of editing entity type details." lightbox="media/how-to-create-entity-types/edit-entity-type.png":::
 
@@ -92,7 +94,7 @@ An untyped property is always unbound. Once you bind data to an untyped property
 
 ### Create untyped property
 
-To create a property without specifying a data type, select **Unknown** as the **Property type** when defining the property.
+To create a property without specifying a data type, select **Unknown** as the **Data type** when defining the property.
 
 :::image type="content" source="media/how-to-create-entity-types/untyped-property.png" alt-text="Screenshot of creating an untyped property." lightbox="media/how-to-create-entity-types/untyped-property.png":::
 

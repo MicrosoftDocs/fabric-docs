@@ -1,8 +1,9 @@
 ---
 title: Bind Data (Preview)
 description: Learn about the data binding process in ontology (preview).
-ms.date: 10/20/2026
+ms.date: 11/09/2026
 ms.topic: how-to
+ai-usage: ai-assisted
 ---
 
 # Data binding in ontology (preview)
@@ -37,15 +38,15 @@ Before binding data to your ontology, make sure you have the following prerequis
 
     :::image type="content" source="media/how-to-bind-data/bind-data-canvas.png" alt-text="Screenshot of starting a data binding from the configuration canvas." lightbox="media/how-to-bind-data/bind-data-canvas.png":::
 
-    On the **Configure** page, select **Manage property bindings** > **Add properties** or **Add binding and properties**. You can also select the **Add properties from data** button if the entity type has no properties yet.
+    On the **Configure** page, select **Bind data**. You can also select **Add properties from data** if the entity type has no properties yet.
 
     :::image type="content" source="media/how-to-bind-data/bind-data-add.png" alt-text="Screenshot of adding a new data binding to the entity type." lightbox="media/how-to-bind-data/bind-data-add.png":::
 
-1. The **Property binding** page opens. Select **Add** to add a data source.
+1. The **Bind data** page opens. Select the plus (**+**) button next to **Data sources**, and then select **OneLake catalog**.
 
     :::image type="content" source="media/how-to-bind-data/add-data-source.png" alt-text="Screenshot of adding a data source." lightbox="media/how-to-bind-data/add-data-source.png":::
 
-1. Select your data source table from the OneLake catalog.
+1.  Select your data source table from the OneLake catalog, and then select **Select**. For a schema-enabled lakehouse, expand the lakehouse, **Schemas**, and the schema that contains your table.
 
     :::image type="content" source="media/how-to-bind-data/bind-data-select-table.png" alt-text="Screenshot of the data source selection." lightbox="media/how-to-bind-data/bind-data-select-table.png":::
 
@@ -53,15 +54,13 @@ Before binding data to your ontology, make sure you have the following prerequis
 
     :::image type="content" source="media/how-to-bind-data/data-source-loaded.png" alt-text="Screenshot of the data source after it is loaded." lightbox="media/how-to-bind-data/data-source-loaded.png":::
 
-1. Select **Entity type properties** to see properties of the entity type. The columns from the source table automatically populate as proposed properties.
+1. Select **Properties** under **Entity type**. The columns from the source table automatically populate as proposed properties on the **Bind data: Properties** page.
 
     :::image type="content" source="media/how-to-bind-data/entity-type-properties.png" alt-text="Screenshot of the populated properties." lightbox="media/how-to-bind-data/entity-type-properties.png":::
 
-1. In the **Properties** section, add, rename, or delete properties as needed. Property names can match the source column names or be different. If you have existing properties defined on the entity type, you can select their names from the dropdown menu.
+1. Add, rename, or delete properties as needed. Property names can match the source column names or be different. To reuse an existing property, select its name from the property name dropdown menu.
 
-1. When you finish configuring properties, select **Create** to save the data binding. You see a banner confirming that **Entity type updated successfully**.
-
-1. Close the property binding page by selecting **Cancel**. Closing the binding page returns you to the **Configure** page.
+1. When you finish configuring properties, select **Create** to save the data binding and return to the **Configure** page.
 
 1. In the **Configure** page, verify the bindings by reviewing the properties in the **Properties** pane and confirming that they're bound to the correct data sources.
 
@@ -71,23 +70,23 @@ Before binding data to your ontology, make sure you have the following prerequis
 
 Follow these steps to add more bindings after the first binding is created.
 
-1. In the **Configure** page, expand **Manage property bindings** and select **Add binding and properties** again to reopen the binding configuration.
+1. On the **Configure** page, select **Bind data** to reopen the binding configuration.
 
-1. On the **Entity type properties** page, select **Add** and select your data table from the OneLake catalog. The system adds the new data source as a secondary data source.
+1. Select the plus (**+**) button next to **Data sources**, and then select **OneLake catalog**. Choose your data table, and then select **Select**. The system adds the new data source as a secondary data source.
 
-1. The data source loads and asks you to define the relationship between the primary and secondary data source. Select the common column from each table that allows them to relate to each other. Select **Save** to save your progress.
+1. In **Relationship with primary data source**, select the common column from each table to link the secondary source to the primary source.
 
     :::image type="content" source="media/how-to-bind-data/bind-data-time-series-relationship.png" alt-text="Screenshot of defining the data source relationship." lightbox="media/how-to-bind-data/bind-data-time-series-relationship.png":::
 
-1. Select **Entity type properties**. The system automatically adds all the columns from the new table to the property list, where they appear alongside any properties that you added to the entity previously. If any columns exist in both source tables with the same name, the system adds a *_2* suffix to the default property names of the columns from the new data source. Make any changes as needed and **Save** the entity type when you're done.
-1. Confirm that the entity type updated successfully, then select **Cancel** to close the configuration options.
-1. Back in the **Configure** page, verify the new properties and their binding to the data source.
+1. Select **Properties** to review the proposed properties from the new source alongside the existing properties. Check the property names, source columns, and property types, and make any changes you need.
 
-    :::image type="content" source="media/how-to-bind-data/bind-data-time-series-complete.png" alt-text="Screenshot of all the data bindings in the Configure page." lightbox="media/how-to-bind-data/bind-data-time-series-complete.png":::
+    :::image type="content" source="media/how-to-bind-data/bind-data-time-series-complete.png" alt-text="Screenshot of reviewing properties from primary and secondary data sources before saving." lightbox="media/how-to-bind-data/bind-data-time-series-complete.png":::
+
+1. Select **Save**. On the **Configure** page, verify the properties and their data source bindings.
 
 ## Edit or delete data binding
 
-To edit or delete data bindings, start in the **Configure** page. Select **Manage property bindings** > **+ Add binding and properties**.
+To edit or delete data bindings, start on the **Configure** page and select **Bind data**.
 
 :::image type="content" source="media/how-to-bind-data/manage-bindings.png" alt-text="Screenshot of the manage bindings options." lightbox="media/how-to-bind-data/manage-bindings.png":::
 

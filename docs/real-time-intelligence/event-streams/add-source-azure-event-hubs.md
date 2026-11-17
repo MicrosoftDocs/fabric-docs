@@ -9,6 +9,7 @@ ms.date: 04/01/2026
 author: spelluru
 ms.author: spelluru
 ms.search.form: Source and Destination
+ai-usage: ai-assisted
 zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
 zone_pivot_groups: event-hubs-capabilities
 ---
@@ -16,6 +17,9 @@ zone_pivot_groups: event-hubs-capabilities
 # Add an Azure Event Hubs source to an eventstream
 
 This article shows you how to add an Azure Event Hubs source to a Microsoft Fabric eventstream.
+
+> [!NOTE]
+> To use a customer-owned event hub as the eventstream's default stream without copying its data into Eventstreams, see [Azure Event Hubs shortcuts (preview)](event-hubs-shortcuts-overview.md). Shortcuts are separate from this source connector and have different approval, topology, and networking requirements.
 
 [!INCLUDE [schema-aware-source-callout](./includes/schema-aware-source-callout.md)]
 
@@ -29,7 +33,7 @@ This article shows you how to add an Azure Event Hubs source to a Microsoft Fabr
 
 On the **Select a data source** page, search for **Azure Event Hubs**. On the **Azure Event Hubs** tile, select **Connect**.
 
-:::image type="content" source="./media/add-source-azure-event-hubs/select-azure-event-hubs.png" alt-text="Screenshot that shows the selection of Azure Event Hubs as the source type in the wizard for getting events." lightbox="./media/add-source-azure-event-hubs/select-azure-event-hubs.png":::
+:::image type="content" source="./media/add-source-azure-event-hubs/select-azure-event-hubs.png" alt-text="Screenshot of the selection of Azure Event Hubs as the source type in the wizard for getting events." lightbox="./media/add-source-azure-event-hubs/select-azure-event-hubs.png":::
 
 ## Configure an Azure Event Hubs connector
 
@@ -43,11 +47,11 @@ On the **Select a data source** page, search for **Azure Event Hubs**. On the **
 
 1. Confirm that the Event Hubs source is added to your eventstream on the canvas in the **Edit** mode. Select **Refresh** to display a preview of the data in the event hub. To implement this newly added event hub, select **Publish** on the ribbon.
 
-    :::image type="content" source="./media/add-source-azure-event-hubs/publish.png" alt-text="Screenshot that shows the editor with the Publish button selected." lightbox="./media/add-source-azure-event-hubs/publish.png":::
+    :::image type="content" source="./media/add-source-azure-event-hubs/publish.png" alt-text="Screenshot of the editor with the Publish button selected." lightbox="./media/add-source-azure-event-hubs/publish.png":::
 
 1. The event hub is available for visualization in the **Live** view. Select the **Event hub** tile in the diagram to open a pane that's similar to the following example.
 
-    :::image type="content" source="./media/add-source-azure-event-hubs/live-view.png" alt-text="Screenshot that shows the editor in the live view." lightbox="./media/add-source-azure-event-hubs/live-view.png":::
+    :::image type="content" source="./media/add-source-azure-event-hubs/live-view.png" alt-text="Screenshot of shows the editor in the live view." lightbox="./media/add-source-azure-event-hubs/live-view.png":::
 
 ::: zone-end
 
@@ -57,11 +61,11 @@ On the **Select a data source** page, search for **Azure Event Hubs**. On the **
 
 1. Confirm that the Event Hubs source is added to your eventstream on the canvas in the **Edit** mode. Select **Refresh** to display a preview of the data in the event hub. To implement this newly added event hub, select **Publish** on the ribbon.
 
-    :::image type="content" source="./media/add-source-azure-event-hubs/extended-publish.png" alt-text="Screenshot that shows the Publish button in the editor." lightbox="./media/add-source-azure-event-hubs/extended-publish.png":::
+    :::image type="content" source="./media/add-source-azure-event-hubs/extended-publish.png" alt-text="Screenshot of the Publish button in the editor." lightbox="./media/add-source-azure-event-hubs/extended-publish.png":::
 
 1. The event hub is available for visualization in the **Live** view. Select the **Event hub** tile in the diagram to open a pane that's similar to the following example.
 
-    :::image type="content" source="./media/add-source-azure-event-hubs/live-view.png" alt-text="Screenshot that shows the editor in live view." lightbox="./media/add-source-azure-event-hubs/live-view.png":::
+    :::image type="content" source="./media/add-source-azure-event-hubs/live-view.png" alt-text="Screenshot of the editor in live view." lightbox="./media/add-source-azure-event-hubs/live-view.png":::
 
 [!INCLUDE [configure-destintions-schema-enabled-sources](./includes/configure-destinations-schema-enabled-sources.md)]
 
@@ -70,5 +74,4 @@ On the **Select a data source** page, search for **Azure Event Hubs**. On the **
 ## Related content
 
 - For a list of supported sources, see [Add and manage an event source in an eventstream](add-manage-eventstream-sources.md).
-
 

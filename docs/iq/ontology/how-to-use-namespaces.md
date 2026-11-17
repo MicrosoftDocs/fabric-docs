@@ -1,7 +1,7 @@
 ---
 title: "Namespaces in Ontology (Preview)"
 description: Learn how to use namespaces to organize an ontology (preview) item, disambiguate same-named concepts, and support governance and reuse of external vocabularies.
-ms.date: 09/10/2026
+ms.date: 11/13/2026
 ms.topic: how-to
 ai-usage: ai-generated
 ---
@@ -40,11 +40,13 @@ Because namespaces build on RDF namespaces and use stable URIs, they can map to 
 
 To create a namespace:
 
-1. Select **+ Namespace** from the ontology ribbon.
+1. On the **Home** tab of the top ribbon, select **Manage** > **Namespaces**.
 
-    :::image type="content" source="media/how-to-use-namespaces/namespaces-ribbon.png" alt-text="Screenshot of adding a namespace from the ribbon." lightbox="media/how-to-use-namespaces/namespaces-ribbon.png":::
+    :::image type="content" source="media/how-to-use-namespaces/namespaces-ribbon.png" alt-text="Screenshot of the Namespaces option in the Home ribbon's Manage menu." lightbox="media/how-to-use-namespaces/namespaces-ribbon.png":::
 
-1. Enter namespace details, including a **Namespace name** and optional metadata like a **Namespace description** and **Additional metadata**.
+1. On the **Namespaces** page, select **New** in the upper-right corner.
+
+1. On the **New namespace** page, enter a **Name**. Under **Metadata**, optionally enter a **Description** and **Additional metadata**.
 
     :::image type="content" source="media/how-to-use-namespaces/new-namespace.png" alt-text="Screenshot of the new namespace details." lightbox="media/how-to-use-namespaces/new-namespace.png":::
 
@@ -53,7 +55,7 @@ To create a namespace:
 1. Select **Create**.
 1. The new namespace appears in the **Namespaces** view.
 
-    Later, once you [assign concepts to this namespace](#assign-concepts-to-a-namespace), that information is also visible here in the **Assigned concepts** column.
+    Later, once you [assign concepts to this namespace](#assign-concepts-to-a-namespace), that information is also visible here in the **Linked ontology elements** column.
 
     :::image type="content" source="media/how-to-use-namespaces/namespaces.png" alt-text="Screenshot of the namespace view." lightbox="media/how-to-use-namespaces/namespaces.png":::
 
@@ -63,7 +65,7 @@ You can add two types of ontology concepts to a namespace: entity types and rela
 
 Every concept belongs to exactly one namespace. You can assign a concept to a namespace when you create the concept, or reassign it afterward.
 
-* To assign a concept to a namespace while creating the concept, expand **Additional configuration** in the creation dialog and select a namespace under **Choose namespace**.
+* To assign a concept to a namespace while creating the concept, start with **Home** > **+ Add** > **Entity type** or **Home** > **+ Add** > **Relationship type**. In the creation dialog, expand **Additional configuration** and select a namespace under **Choose namespace (optional)**.
 
     For entity types:
 
@@ -87,11 +89,11 @@ When you reassign a concept, the ontology runs validation to prevent duplicate c
 
 ## Edit, rename, and delete namespaces
 
-You can edit, rename, or delete a namespace from the **Namespaces** page. Access this page through the **Manage namespaces** button in the ontology ribbon.
+You can edit, rename, or delete a namespace from the **Namespaces** page. To open this page, select **Home > Manage > Namespaces**.
 
-:::image type="content" source="media/how-to-use-namespaces/manage-namespaces-ribbon.png" alt-text="Screenshot of the manage namespace button in the ribbon." lightbox="media/how-to-use-namespaces/manage-namespaces-ribbon.png":::
+:::image type="content" source="media/how-to-use-namespaces/manage-namespaces-ribbon.png" alt-text="Screenshot of Namespaces in the Manage menu." lightbox="media/how-to-use-namespaces/manage-namespaces-ribbon.png":::
 
-You can edit a namespace's metadata—its name, description, and prefix—without breaking existing references. When you change a namespace name, qualified references to its concepts update automatically, so links elsewhere in the ontology stay intact.
+You can edit a namespace's name, description, and additional metadata without breaking existing references. When you change a namespace name, qualified references to its concepts update automatically, so links elsewhere in the ontology stay intact.
 
 You can delete a namespace only when it has no remaining references. If any concept still references the namespace, the ontology blocks the deletion until you remove or reassign those references. This behavior helps you make safe rename, delete, and lifecycle changes as the model evolves.
 
@@ -99,7 +101,7 @@ You can delete a namespace only when it has no remaining references. If any conc
 
 You can group and filter the **Explorer** view by namespace.
 
-In the **Explorer** pane, select the **...** option menu next to the filter search box. From here you can select whether to group by or filter by namespace.
+In the **Explorer** pane, select **More list options (...)** next to **Filter by name**. Under **Group by**, select **Namespaces** to group concepts by namespace. Under **Filters**, select **Namespaces** to choose which namespaces to show.
 
 :::image type="content" source="media/how-to-use-namespaces/filter.png" alt-text="Screenshot of filtering the Explorer view by namespace." lightbox="media/how-to-use-namespaces/filter.png":::
 

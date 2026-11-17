@@ -39,6 +39,8 @@ Eventstreams provide source connectors to fetch event data from various sources.
 
 [!INCLUDE [supported-sources](./includes/supported-sources.md)]
 
+You can also use an [Azure Event Hubs shortcut (preview)](event-hubs-shortcuts-overview.md) to make a customer-owned event hub the default stream of an eventstream, without copying its data into Eventstreams. Shortcuts have separate approval, topology, and networking requirements.
+
 If a built-in connector isn't available for your source, use a custom stream connector (preview) to upload a Kafka Connect source connector plugin. Upload the package from Real-Time hub or a custom stream connector item in your workspace, and then configure the connector and add it to an eventstream. For more information, see [Add a custom stream connector to an eventstream](./add-custom-stream-connector.md).
 
 ## Process events
@@ -61,8 +63,7 @@ The Fabric eventstreams feature supports sending data to the following supported
 
 You can attach multiple destinations in an eventstream to simultaneously receive data from your eventstreams without the eventstreams interfering with each other.
 
-:::image type="content" source="./media/overview/multiple-destinations.png" alt-text="Screenshot that shows an overview of an eventstream item with multiple destinations." lightbox="./media/overview/multiple-destinations.png" :::
-
+:::image type="content" source="./media/overview/multiple-destinations.png" alt-text="Screenshot of an overview of an eventstream item with multiple destinations." lightbox="./media/overview/multiple-destinations.png" :::
 
 ## Schema management
 
