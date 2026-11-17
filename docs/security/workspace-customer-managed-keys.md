@@ -170,8 +170,6 @@ Before you configure your Fabric workspace with a customer-managed key, consider
 
 * CMK can be enabled and disabled for the workspace while the tenant level encryption setting is on. Once the tenant setting is turned off, you can no longer enable CMK for workspaces in that tenant or disable CMK for workspaces that already have CMK turned on in that tenant. Data in workspaces that enabled CMK before the tenant setting was turned off remains encrypted with the customer managed key. Keep the associated key active to be able to unwrap data in that workspace. Disabling CMK setting on your workspace also limits the ability to add a new BYOK key to your tenant.
 
-* Enabling CMK on a workspace with existing Activators may reset the state and history of some rules.
-
 * Activator items in CMK-enabled workspaces support up to 2,000 events per second.
 
 ## Related content
