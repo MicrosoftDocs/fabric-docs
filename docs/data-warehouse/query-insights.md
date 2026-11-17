@@ -2,7 +2,7 @@
 title: Query Insights
 description: Query Insights makes past query execution data and aggregated insights built on top of this data available to you via simple views.
 ms.reviewer: mariyaali, jovanpop
-ms.date: 08/24/2026
+ms.date: 11/18/2026
 ms.topic: concept-article
 ms.search.form: Monitoring # This article's title should not change. If so, contact engineering.
 ---
@@ -17,7 +17,7 @@ The query insights feature provides a central location for historic query data a
 
 - **Historical Query Data:** Query Insights stores historical data about query executions, enabling you to track performance changes over time. System queries aren't stored in query insights.
 - **Aggregated Insights:** Query Insights aggregates query execution data into insights that are more actionable, such as identifying long-running queries or most active users. These aggregations are based on the query shape. For more information, see [How are similar queries aggregated to generate insights?](#how-are-similar-queries-aggregated-to-generate-insights)
-- **Warehouse Insights:** To understand the overall health of your warehouse, use the `sql_pool_insights` view. This view provides pool-level metrics and pressure indicators, helping you monitor resource allocation and diagnose performance issues across pools.
+- **Warehouse Insights:** To understand the overall health of your warehouse, use the [`sql_pool_insights`](/sql/relational-databases/system-views/queryinsights-sql-pool-insights-transact-sql?view=fabric&preserve-view=true) view. This view provides pool-level metrics, pressure indicators, and vnode utilization, helping you monitor resource allocation, see how close each pool came to its limit, and diagnose performance issues across pools.
 
 ## Before you begin
 
@@ -55,6 +55,8 @@ The query insights feature addresses several questions and concerns related to q
 - Which pools are consuming the highest percentage of resources?
 - Can I correlate pressure events with slow-running queries?
 - How can I identify trends in pool pressure over time?
+- How many vnodes did each pool use, and how close did it come to its limit?
+- Which queries ran when a pool was at its highest utilization?
 
 The following system views provide answers to these questions:
 
@@ -71,7 +73,7 @@ The following system views provide answers to these questions:
   - Returns information about frequently run queries.
  
 - [queryinsights.sql_pool_insights](/sql/relational-databases/system-views/queryinsights-sql-pool-insights-transact-sql?view=fabric&preserve-view=true)
-  - Returns information about warehouse resource allocation, configuration changes, and pressure.
+  - Returns information about warehouse resource allocation, configuration changes, pressure, and vnode utilization.
 
 - [queryinsights.external_api_call_stats](/sql/relational-databases/system-views/queryinsights-external-api-call-stats-transact-sql?view=fabric&preserve-view=true)
   - Returns function-level diagnostics for queries that call external APIs through AI functions. The view contains one row for each distinct external function used by a query.
@@ -162,6 +164,20 @@ The following query returns the queries that match a certain string, ordered by 
 SELECT * FROM queryinsights.long_running_queries
 WHERE last_run_command LIKE '%<some_label>%'
 ORDER BY median_total_elapsed_time_ms DESC;
+```
+
+### Check SQL pool vnode utilization
+
+The following query returns vnode utilization for each SQL pool over the last 24 hours. For column definitions and more examples, including how to find queries that ran during high utilization, see [queryinsights.sql_pool_insights](/sql/relational-databases/system-views/queryinsights-sql-pool-insights-transact-sql?view=fabric&preserve-view=true).
+
+```sql
+SELECT [timestamp], sql_pool_name, vnodes_used, max_vnodes_available,
+    CAST(100.0 * vnodes_used / NULLIF(max_vnodes_available, 0) AS decimal(5,1)) AS utilization_pct,
+    is_pool_under_pressure
+FROM queryinsights.sql_pool_insights
+WHERE [timestamp] >= DATEADD(HOUR, -24, GETUTCDATE())
+    AND vnodes_used IS NOT NULL
+ORDER BY [timestamp] DESC;
 ```
 
 ## Query insights views
