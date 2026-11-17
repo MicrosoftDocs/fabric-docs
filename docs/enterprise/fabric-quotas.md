@@ -14,6 +14,8 @@ ai-usage: ai-assisted
 
 Microsoft Fabric provides limits, also known as *quotas*, which determine the maximum number of Fabric Capacity Units (CUs) available to your Azure subscription in each region. Both provisioned capacity CUs and configured capacity overage thresholds count against this quota. Quotas depend on your [Azure subscription type](/azure/azure-resource-manager/management/azure-subscription-service-limits). You don't get charged for quota itself.
 
+Enabling capacity overage uses quota based on the configured threshold, even if no overage occurs. For the quota calculation and requirements, see [How capacity overage works](capacity-overage-overview.md#how-capacity-overage-works).
+
 This article explains how to view and increase your quotas, using the Azure portal and the Azure Resource Manager (ARM) APIs.
 
 ## Prerequisites
@@ -23,19 +25,6 @@ This article explains how to view and increase your quotas, using the Azure port
 * To manage your Fabric quota, you need the permissions listed in [Quota Request Operator](/azure/role-based-access-control/built-in-roles/management-and-governance#quota-request-operator)
   
 * Before provisioning your first capacity or if your quota is 0, register the Microsoft.Fabric resource provider using the [Azure Resource Provider instructions](/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider)
-
-## What counts against your Fabric quota
-
-Your Fabric quota usage includes the following allocations across your capacities in the same Azure subscription and region:
-
-* **Provisioned capacity CUs:** Each capacity uses quota based on its SKU. For example, an F64 capacity uses 64 CUs of quota.
-* **Configured capacity overage thresholds:** When capacity overage is enabled, its rolling 24-hour threshold also uses quota, even if no overage occurs. Divide the threshold in CU hours by 24 to calculate the additional quota required in CUs.
-
-For example, an F64 capacity with a 48 CU hour overage threshold requires 66 CUs of quota: 64 CUs for the capacity and 2 CUs for the overage threshold (48 / 24). Include both allocations for each capacity when you calculate the total quota you need.
-
-Capacity overage is enabled by default when you create a Fabric capacity, so account for its configured threshold when you check whether you have enough quota. Before you enable capacity overage or increase its threshold, check your available quota. If the threshold requires more quota than is available, [request a quota increase](#request-a-quota-increase) or [reduce the overage threshold](enable-capacity-overage.md).
-
-Quota usage isn't the same as billed usage. Configuring an overage threshold uses quota, but you pay overage charges only when overage occurs. For more information, see [Capacity overage in Microsoft Fabric](capacity-overage-overview.md).
 
 ## View your Fabric CU quota
 
@@ -94,7 +83,7 @@ Your available quota is the difference between `limit` and `currentValue` for th
 
 * `limit` - Identifies the quota limit for your subscription in the selected region.
 
-* `currentValue` - Identifies the CUs that count against your quota, including provisioned capacity CUs and configured capacity overage thresholds. For details, see [What counts against your Fabric quota](#what-counts-against-your-fabric-quota).
+* `currentValue` - Identifies the CUs that count against your quota, including provisioned capacity CUs and configured capacity overage thresholds.
 
 ---
 
