@@ -491,6 +491,8 @@ items:
               href: plan/scripting-functions/hide-visual.md
             - name: SETSCALING
               href: plan/scripting-functions/setscaling.md
+            - name: SETFILTER
+              href: plan/scripting-functions/setfilter.md
             - name: SETTOPN
               href: plan/scripting-functions/settopn.md
             - name: SETBOTTOMN
