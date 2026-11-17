@@ -12,9 +12,7 @@ ai-usage: ai-assisted
 
 # Microsoft Fabric capacity quotas
 
-Microsoft Fabric provides limits, also known as *quotas*, which determine the maximum number of Fabric Capacity Units (CUs) available to your Azure subscription in each region. Both provisioned capacity CUs and configured capacity overage thresholds count against this quota. Quotas depend on your [Azure subscription type](/azure/azure-resource-manager/management/azure-subscription-service-limits). You don't get charged for quota itself.
-
-Enabling capacity overage uses quota based on the configured threshold, even if no overage occurs. For the quota calculation and requirements, see [How capacity overage works](capacity-overage-overview.md#how-capacity-overage-works).
+Microsoft Fabric provides limits, also known as *quotas*, which determine the maximum number of Fabric Capacity Units (CUs) available to your Azure subscription in each region. Quotas depend on your [Azure subscription type](/azure/azure-resource-manager/management/azure-subscription-service-limits). You don't get charged for quota itself.
 
 This article explains how to view and increase your quotas, using the Azure portal and the Azure Resource Manager (ARM) APIs.
 
@@ -25,6 +23,13 @@ This article explains how to view and increase your quotas, using the Azure port
 * To manage your Fabric quota, you need the permissions listed in [Quota Request Operator](/azure/role-based-access-control/built-in-roles/management-and-governance#quota-request-operator)
   
 * Before provisioning your first capacity or if your quota is 0, register the Microsoft.Fabric resource provider using the [Azure Resource Provider instructions](/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider)
+
+## What counts against your Fabric quota
+
+Quota usage includes these allocations across capacities in the same subscription and region:
+
+* **Provisioned capacity CUs:** Each capacity uses quota based on its SKU.
+* **Configured capacity overage thresholds:** Enabling overage uses additional quota based on the threshold, even if no overage occurs. For the calculation and requirements, see [How capacity overage works](capacity-overage-overview.md#how-capacity-overage-works).
 
 ## View your Fabric CU quota
 
