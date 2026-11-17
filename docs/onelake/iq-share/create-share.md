@@ -3,7 +3,7 @@ title: Create a Share with IQ Sharing
 description: Learn how to use IQ Sharing to create a Share, select a supported Fabric item, add recipients, and distribute an invitation.
 ms.reviewer: shivnarayanan
 ms.topic: how-to
-ms.date: 10/28/2026
+ms.date: 11/10/2026
 ai-usage: ai-assisted
 #customer intent: As a data producer, I want to create a Share with IQ Sharing so that users in another Fabric tenant can access a supported item.
 ---
@@ -25,7 +25,7 @@ Complete these prerequisites before you create a Share.
 | Fabric administrator | In the Fabric admin portal tenant settings, enable **External data sharing** in the data producer's tenant. |
 | Fabric administrator (optional) | In the Fabric admin portal tenant settings, enable **Enable Share Subscription Item (preview)** in the data producer's tenant. This setting allows the tenant to accept Shares through IQ Sharing. It's optional for a tenant that only produces Shares. |
 | Data producer | Use a workspace that contains the supported Fabric item you want to share. |
-| Data producer | Have the required [item permissions](#item-permissions). |
+| Data producer | Have the required [workspace role](#workspace-roles-and-share-permissions) and [source-item permissions](#source-item-permissions). |
 | Data producer | Identify the intended recipients. Recipients can be users identified by email address or service principals. |
 
 ## Create a Share
@@ -91,7 +91,7 @@ IQ Sharing doesn't send email notifications when you create a Share. After you c
 
 ## Permissions and security
 
-Review the tenant settings, item permissions, and recipient controls before you create a Share.
+Review the tenant settings, workspace roles, source-item permissions, and recipient controls before you create a Share.
 
 ### Tenant settings
 
@@ -99,23 +99,24 @@ Fabric administrators can control who creates Shares by scoping the **External d
 
 :::image type="content" source="media/create-share/external-data-sharing-tenant-setting.png" alt-text="Screenshot of the External data sharing tenant setting with Specific security groups selected and the admin group added." lightbox="media/create-share/external-data-sharing-tenant-setting.png":::
 
-### Item permissions
+### Workspace roles and Share permissions
+
+To create a Share, you must have the **Admin**, **Member**, or **Contributor** role in the workspace where you create it. The **Viewer** role doesn't allow you to create a Share.
+
+For permissions to manage an existing Share, see [Workspace roles and Share permissions](manage-share.md#workspace-roles-and-share-permissions).
+
+### Source-item permissions
 
 The permissions required on each source item depend on whether OneLake security is enabled:
 
-- **Without OneLake security:** The producer needs **Read** and **Reshare** permissions.
-- **With OneLake security:** The producer needs **Write** and **Reshare** permissions.
+| Source-item configuration | Required source-item permissions |
+| --- | --- |
+| OneLake security isn't enabled. | **Read** and **Reshare**. |
+| OneLake security is enabled. | **Write** and **Reshare**. |
 
 **Write** permission grants access to all data in the item without evaluating OneLake security role assignments. This is the current OneLake security behavior and might change. OneLake security rules on the source item aren't honored when consumers access shared data through IQ Sharing.
 
 Consumer access depends on the Share creator's permissions. If the creator loses a permission required for sharing, or loses access to the source item or workspace, consumers of that Share also lose access.
-
-### Permissions at a glance
-
-| Action | Required permissions |
-| --- | --- |
-| Create a Share with OneLake security disabled | **Read** and **Reshare** on the item. |
-| Create a Share with OneLake security enabled | **Write** and **Reshare** on the item. |
 
 ### Limit recipients and access duration
 
