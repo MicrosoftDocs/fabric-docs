@@ -132,6 +132,8 @@ To configure capacity surge protection notifications, follow the steps for the t
 - Capacity-level surge protection doesn't block operations billed with autoscale.
 - Certain operations, including OneLake activities, remain unaffected by capacity-level surge protection.
 
+<a id="workspace-level-surge-protection-preview"></a>
+
 ## Workspace-level surge protection
 
 At the workspace level, you cap the compute that individual workspaces consume so that no single workspace exhausts the capacity. The following sections explain how it works and how to enable it, manage workspaces, configure notifications, and recover blocked workspaces.
@@ -202,7 +204,7 @@ To configure workspace-level surge protection notifications, follow the steps fo
 1. Select the capacity and expand the settings.
 1. Expand **Capacity Notifications**.
 1. To show a banner in a workspace while it's blocked, turn on **Display a banner to all users of the workspace**.
-1. To send an email, select **Email workspace contacts (preview)**, and enter one or more addresses under **Notifications Recipients**, separated by semicolons. By default, the capacity admins receive an email.
+1. To send an email, select **Email workspace contacts**, and enter one or more addresses under **Notifications Recipients**, separated by semicolons. By default, the capacity admins receive an email.
 1. Select **Apply**.
 
 # [Admin portal](#tab/admin-portal)
@@ -212,7 +214,7 @@ To configure workspace-level surge protection notifications, follow the steps fo
 1. Select the capacity.
 1. Expand **Throttling notifications**.
 1. To show a banner in a workspace while it's blocked or unblocked, turn on **Display a banner to all users of the workspace**.
-1. To send an email, select **Email workspace contacts (preview)**, and enter one or more addresses under **Notifications Recipients**, separated by semicolons. By default, the capacity admins receive an email.
+1. To send an email, select **Email workspace contacts**, and enter one or more addresses under **Notifications Recipients**, separated by semicolons. By default, the capacity admins receive an email.
 1. Select **Apply**.
 
 ---
