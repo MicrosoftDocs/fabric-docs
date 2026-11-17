@@ -1077,6 +1077,8 @@
                     href: dataflow-document-builder-html.md
               - name: Advanced edit for data destination queries
                 href: dataflow-gen2-advanced-edit-data-destinations.md
+              - name: HTML advanced data destination (preview)
+                href: dataflow-data-destinations-html-advanced.md
               - name: Excel advanced data destination
                 href: dataflow-gen2-data-destinations-excel-advanced.md
                 items:
