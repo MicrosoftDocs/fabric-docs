@@ -1,7 +1,7 @@
 ---
 title: Add Metadata (Preview)
 description: Learn how to add metadata, descriptions, synonyms, and additional metadata key-value pairs to ontology objects> Metadata helps agents answer ontology questions more accurately using business language.
-ms.date: 09/04/2026
+ms.date: 11/09/2026
 ms.topic: how-to
 ai-usage: ai-assisted
 ---
@@ -33,9 +33,9 @@ Before you add metadata to your ontology, make sure you have:
 
 Entity types support descriptions, synonyms, and additional metadata key-value pairs. Follow these steps to add metadata to entity types.
 
-1. In the **Explorer** pane of the Home configuration canvas, select the entity type to enrich. Select **View Entity Type details** from the top ribbon.
+1. In the **Explorer** pane of the Home configuration canvas, select the entity type to enrich. Select **Entity type > Open details** from the ribbon.
 
-1. In the **Configure** tab, scroll down to the **Metadata** section. Add optional metadata properties.
+1. In the **Configure** tab, scroll down to the **Metadata** section and select **Edit**. Add optional metadata properties.
 
     :::image type="content" source="media/how-to-add-metadata/add-metadata-entity.png" alt-text="Screenshot of adding metadata attributes to an entity type." lightbox="media/how-to-add-metadata/add-metadata-entity.png":::
 
@@ -62,7 +62,7 @@ Properties support descriptions and additional metadata key-value pairs, but not
 
     :::image type="content" source="media/how-to-add-metadata/add-metadata-properties.png" alt-text="Screenshot of adding metadata to properties from Configure tab." lightbox="media/how-to-add-metadata/add-metadata-properties.png":::
 
-    Or, open the [data binding configuration](how-to-bind-data.md) for an entity type, and select **Metadata** next to the property in the Properties list.
+    Or, open the [data binding configuration](how-to-bind-data.md) for an entity type. Select **Properties** under **Entity type**, and then select **Metadata** next to the property.
 
     :::image type="content" source="media/how-to-add-metadata/add-metadata-properties-binding.png" alt-text="Screenshot of adding metadata to properties from binding page." lightbox="media/how-to-add-metadata/add-metadata-properties-binding.png":::
 

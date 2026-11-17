@@ -3,7 +3,7 @@ title: Upgrade Dataflow Gen1 to Dataflow Gen2 (CI/CD) using the Upgrade Wizard
 description: This article describes how to use the Dataflows Upgrade Wizard to upgrade Power BI Dataflows Gen1 items to Dataflow Gen2 (CI/CD) in Data Factory for Microsoft Fabric.
 ms.reviewer: eranbenayun
 ms.topic: how-to
-ms.date: 09/17/2026
+ms.date: 11/09/2026
 ai-usage: ai-assisted
 ms.custom:
   - template-how-to
@@ -15,9 +15,6 @@ ms.custom:
 The Dataflows Upgrade Wizard in Microsoft Fabric is a guided experience that performs an in-place upgrade of your Power BI Dataflow Gen1 items to Dataflow Gen2 (CI/CD). The upgrade preserves each dataflow's ID, name, schedule, and connections. You can upgrade a single dataflow, or upgrade multiple dataflows from a workspace together.
 
 For most dataflows, downstream semantic models and reports keep working without any changes. Before you upgrade, review [Assessment status](#assessment-status) and [Known limitations](#known-limitations) to see which of your dataflows need attention, and see [Inventory](dataflow-gen2-migrate-from-dataflow-gen1-scenarios.md#inventory) to find the downstream items that read them. After you upgrade, follow [After the upgrade](#after-the-upgrade).
-
-> [!NOTE]
-> The Dataflows Upgrade Wizard is currently in preview.
 
 > [!TIP]
 > Power BI Dataflow Gen1 is now in a legacy state and won't receive new feature investment. For Premium customers with Fabric access, [Dataflow Gen2](dataflows-gen2-overview.md) is the recommended path, offering improvements in performance, scale, reliability, functionality, and built-in AI. Pro/PPU customers can continue to use Gen1 as Gen2 guidance for these scenarios is evolving. See [Upgrade from Dataflow Gen1 to Dataflow Gen2](dataflow-gen2-migrate-from-dataflow-gen1.md) for upgrade guidance.
@@ -42,11 +39,11 @@ Before you start:
 
 You can start the Dataflows Upgrade Wizard from the workspace item list.
 
-1. In your workspace, select the ellipsis (**...**) next to the Dataflow Gen1 you want to upgrade, and then select **Upgrade to Dataflow Gen2 (Preview)**.
+1. In your workspace, select the ellipsis (**...**) next to the Dataflow Gen1 you want to upgrade, and then select **Upgrade to Dataflow Gen2**.
 
-   :::image type="content" source="media/migrate-to-dataflow-gen2-using-upgrade-wizard/context-menu-upgrade-option.png" alt-text="Screenshot of the workspace item list context menu showing the Upgrade to Dataflow Gen2 (Preview) option." lightbox="media/migrate-to-dataflow-gen2-using-upgrade-wizard/context-menu-upgrade-option.png":::
+   :::image type="content" source="media/migrate-to-dataflow-gen2-using-upgrade-wizard/context-menu-upgrade-option.png" alt-text="Screenshot of the workspace item list context menu showing the Upgrade to Dataflow Gen2 option." lightbox="media/migrate-to-dataflow-gen2-using-upgrade-wizard/context-menu-upgrade-option.png":::
 
-1. The **Upgrade Power BI Dataflows Gen1 (Preview)** wizard opens on the **Overview** step. Review how the upgrade works and the **Attention** notice, and then select **Get Started**.
+1. The **Upgrade Power BI Dataflows Gen1** wizard opens on the **Overview** step. Review how the upgrade works and the **Attention** notice, and then select **Get Started**.
 
    :::image type="content" source="media/migrate-to-dataflow-gen2-using-upgrade-wizard/wizard-overview.png" alt-text="Screenshot of the Dataflows Upgrade Wizard Overview step describing the Select, Review, and Monitor steps, with an Attention notice." lightbox="media/migrate-to-dataflow-gen2-using-upgrade-wizard/wizard-overview.png":::
 

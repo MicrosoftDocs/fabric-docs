@@ -2,7 +2,7 @@
 title: Pricing for Dataflow Gen2
 description: This article provides details of the pricing model of Dataflow Gen2 for Data Factory in Microsoft Fabric.
 ms.reviewer: susabat
-ms.date: 09/10/2026
+ms.date: 11/03/2026
 ms.topic: concept-article
 ms.custom:
   - dataflows
@@ -28,7 +28,9 @@ When you refresh or publish a Dataflow Gen2 item, Fabric Capacity Units are cons
 - Standard Compute: You're charged for it based on the query evaluation time across all your Dataflow queries that run through the Mashup engine.
 - High Scale Dataflow Compute: You're charged when staging is enabled, based on Lakehouse (Staging storage) and Warehouse (Storage Compute) SQL engine consumption duration.
 - Fast Copy: You're charged when fast copy connectors are enabled and can be used in the Dataflow, based on copy job duration. Fast Copy runs in parallel across multiple cores, so this duration is the total time spent across all the cores the copy job uses, not the wall-clock time of the refresh.
-- Spark Compute: MDF transforms use Spark Compute when executed through the Fabric Pipeline Dataflow activity. Pricing for MDF transforms is being finalized, and customers aren't currently charged for MDF transform compute. This article will be updated before billing begins.
+- Spark Compute: MDF transforms use underlying Spark compute for execution. Consumption for the same Dataflow Gen2 item is associated with two billing operations:
+  - **MDF Transforms – Core:** Billed starting with general availability at 1.0 CU per Spark vCore-hour. Consumption is reported per Dataflow Gen2 item in CU-seconds in the Fabric Capacity Metrics app.
+  - **MDF Transforms – Compute:** Represents the underlying Spark compute used by the same MDF transform execution. This operation isn't billed at general availability. Billing will be introduced after GA, and this article will be updated before billing begins for this operation.
 
 ## Dataflow Gen2 pricing model
 
@@ -50,7 +52,12 @@ For high-scale scenarios-when staging is turned on-queries run on the Lakehouse 
 
 If you turn on fast copy, there's a separate rate for data movement: 1.5 CU, based on how long the activity runs. Fast copy automatically balances each scenario to decide how many cores to use, and the billed duration is the total time spent across all of those cores rather than the wall-clock time you see in the refresh history. Spreading the work across more cores shortens the elapsed time, while the billed duration accounts for every core the copy job uses.
 
-At the end of each run, Dataflow Gen2 adds up the CU usage from each engine and bills it based on the Fabric capacity pricing in your region.
+MDF transforms have two separate billing components: **MDF Transforms – Core** and **MDF Transforms – Compute**. MDF Transforms – Core is billed starting with general availability at **1.0 CU per Spark vCore-hour**, based on the aggregate Spark vCore-hours used during execution. Consumption is reported per Dataflow Gen2 item.
+
+> [!NOTE]
+> Only MDF Transforms – Core is currently billed. The separate MDF Transforms – Compute component, which covers the underlying Spark compute, isn't billed at general availability. Billing for MDF Transforms – Compute will be introduced after GA, and this article will be updated before billing begins for that component.
+
+At the end of each run, Dataflow Gen2 adds up the CU usage from each engine and bills it based on the Fabric capacity pricing in your region. For MDF transforms, only MDF Transforms – Core consumption is currently billed. The separate MDF Transforms – Compute component isn't currently billed.
 
 ### CU rate table
 
@@ -60,7 +67,10 @@ At the end of each run, Dataflow Gen2 adds up the CU usage from each engine and 
 | Standard Compute (non CI/CD) | Based on each mashup engine query execution duration in seconds. | 16 CU | Per Dataflow Gen2 item |
 | High Scale Dataflows Compute | Based on Lakehouse/Warehouse SQL engine execution (with staging enabled) duration in seconds. | 6 CU | Per workspace |
 | Data movement | Based on Fast Copy run duration, measured as the aggregate core time in seconds summed across all the cores the copy job uses. Dataflow automatically balances how many cores each fast copy scenario uses. | 1.5 CU | Per Dataflow Gen2 item |
-| Mapping Data Flow Transforms Compute (Preview) | MDF transforms use Spark-backed compute within Dataflow Gen2. | Not currently billed. Pricing for MDF transforms is being finalized, and this article will be updated before billing begins. | Not applicable during preview |
+| MDF Transforms – Core | Aggregate Spark vCore-hours used during MDF transform execution | 1.0 CU per Spark vCore-hour. Billing starts with general availability. | Per Dataflow Gen2 item |
+
+> [!NOTE]
+> MDF Transforms – Compute is a separate billing component for the underlying Spark compute. It isn't currently billed and isn't included in the MDF Transforms – Core rate above. Billing for MDF Transforms – Compute will be introduced after GA, and this article will be updated before billing begins for that component.
 
 ## Virtual network data gateway pricing with Dataflow Gen2
 
@@ -137,6 +147,29 @@ If your dataflow uses fast copy, to find out how much Data Movement compute you 
 ```
 FastCopyComputeCapacityConsumptionInCUSeconds = QueryDurationInSeconds x 1.5
 ```
+
+### Exercise 5: Understanding mapping data flow transform core consumption
+
+MDF transforms have two separate billing components: **MDF Transforms – Core** and **MDF Transforms – Compute**. Starting with general availability, you pay for only **MDF Transforms – Core**, at **1.0 CU per Spark vCore-hour**. Consumption is reported per Dataflow Gen2 item.
+The Fabric Capacity Metrics app reports consumption in CU-seconds. Filter by your Dataflow Gen2 item name and select the **MDF Transforms – Core** operation to review only the consumption covered by this calculation.
+
+For an execution that uses a constant number of Spark vCores, calculate MDF Transforms – Core consumption by using the following formula:
+
+```text
+MDFTransformCoreConsumptionInCUSeconds = SparkExecutionDurationInSeconds × NumberOfSparkCores × 1.0
+```
+
+For example:
+
+- An execution using 8 Spark vCores for one hour consumes `3600 × 8 × 1.0 = 28,800 CU-seconds`, equivalent to 8 CU-hours.
+- An execution using 8 Spark vCores for 30 minutes consumes `1800 × 8 × 1.0 = 14,400 CU-seconds`, equivalent to 4 CU-hours.
+
+Use the CU-seconds values when comparing the calculated consumption with the Fabric Capacity Metrics app. To convert CU-seconds to CU-hours, divide by 3,600.
+
+
+> [!NOTE]
+> This calculation includes only MDF Transforms – Core consumption. The separate MDF Transforms – Compute component isn't currently billed. Billing for that component will be introduced after GA, and this article will be updated before billing begins.
+
 
 ## Related content
 

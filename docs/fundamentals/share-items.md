@@ -17,6 +17,8 @@ Workspaces are the central places where you collaborate with your colleagues in 
 
 This document describes how to share an item and manage its permissions.
 
+For Fabric apps, see [Share a Fabric app](../apps/share-app.md). The app-specific sharing flow also considers related items and the app's authentication configuration, so its steps differ from the sharing-link flow described here.
+
 ## Share an item via link
 
 1. In the list of items, or in an open item, select the **Share** button :::image type="content" border="true" source="media/share-items/share-button.png" alt-text="Screenshot of share button.":::.

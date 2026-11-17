@@ -1,7 +1,7 @@
 ---
 title: Import and Export Ontologies (Preview)
 description: Learn how to import and export ontology (preview) items and how Fabric maps supported RDF, RDFS, OWL, and SKOS concepts.
-ms.date: 10/23/2026
+ms.date: 11/09/2026
 ms.topic: how-to
 ai-usage: ai-assisted
 ---
@@ -68,9 +68,9 @@ When you're done reviewing the import summary, select **Done** and confirm that 
 >[!NOTE]
 > You can't export an empty ontology.
 
-1. Open an ontology item that contains content and select **Export**.
+1. Open an ontology item that contains content. On the **Home** tab, select **Export**, the download-arrow icon at the left of the ribbon.
 
-    :::image type="content" source="media/how-to-import-export/export.png" alt-text="Screenshot of the Export option for an ontology." lightbox="media/how-to-import-export/export.png":::
+    :::image type="content" source="media/how-to-import-export/export.png" alt-text="Screenshot of the Export download-arrow icon on the Home ribbon." lightbox="media/how-to-import-export/export.png":::
 
 1. Choose the output format: **Turtle (.ttl)** or **RDF/XML (.rdf)**. There's no separate `.owl` output option, but both output formats can contain supported OWL concepts.
 1. Select **Export** to download the file.

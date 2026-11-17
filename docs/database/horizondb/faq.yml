@@ -1,0 +1,122 @@
+### YamlMime:FAQ
+metadata:
+  title: "Frequently asked questions for Microsoft Fabric HorizonDB"
+  description: Get answers to common questions about Fabric HorizonDB, PostgreSQL access, compute, security, and Fabric integration.
+  ms.reviewer: scoriani
+  ms.topic: faq
+  ms.date: 11/06/2026
+  ms.search.form: Fabric HorizonDB overview
+  ai-usage: ai-assisted
+
+title: "Frequently asked questions for Microsoft Fabric HorizonDB"
+
+summary: |
+  Fabric HorizonDB is a managed PostgreSQL service and is currently in public preview. This article answers common questions about the database lifecycle, connectivity, security, Federated Analytics, and capacity consumption.
+
+sections:
+  - name: Product and connectivity
+    questions:
+      - question: |
+          What is Fabric HorizonDB?
+        answer: |
+          Fabric HorizonDB is a managed PostgreSQL experience represented as a native Fabric item with a stable PostgreSQL endpoint. Fabric manages compute, durable storage, lifecycle operations, and supported integrations. In the portal, create it through **HorizonDB database (preview)**. For more information, see [Fabric HorizonDB overview](overview.md).
+      - question: |
+          Do I select a PostgreSQL version?
+        answer: |
+          PostgreSQL is service-managed. Inspect the version in the SQL editor with `SELECT current_setting('server_version');` rather than assuming a specific engine version.
+      - question: |
+          Who can connect to PostgreSQL?
+        answer: |
+          Only the Microsoft Entra identity that created the database can connect in the current preview. Other users, service principals, and managed identities can't connect. Sharing the Fabric item or assigning a workspace role doesn't remove this restriction.
+      - question: |
+          How do I connect?
+        answer: |
+          Use the PostgreSQL endpoint and sign in as the creator. Select **Visual Studio Code** in the Fabric toolbar to find connection details or open the Microsoft PostgreSQL extension. Use database `postgres` in the current preview, not the Fabric item display name. Don't use the SQL analytics endpoint for operational connections. For more information, see [Connect to Fabric HorizonDB](connect.md).
+      - question: |
+          Can I use password authentication or PostgreSQL superuser access?
+        answer: |
+          Microsoft Entra authentication is the supported identity model. Public preview doesn't provide customer PostgreSQL superuser, host, filesystem, arbitrary native-library, or unrestricted server-configuration access.
+
+  - name: Compute and lifecycle
+    questions:
+      - question: |
+          How does Fabric HorizonDB scale?
+        answer: |
+          Fabric HorizonDB uses service-managed compute. Use only the controls shown in your database item; availability and behavior can vary by preview environment.
+      - question: |
+          When does the database pause?
+        answer: |
+          Where scale to zero is enabled, an idle database can pause automatically. A connection through the same endpoint resumes it; allow for startup latency. The onboarding guidance doesn't specify a fixed idle interval. Clients should reconnect and use bounded retry for safe transient connection failures.
+      - question: |
+          Is compute free whenever the database is idle?
+        answer: |
+          Don't infer charges from idle or paused state alone. Confirm the consumption and commercial terms for your preview with your capacity administrator or preview contact.
+
+  - name: Federated Analytics
+    questions:
+      - question: |
+          What is Federated Analytics?
+        answer: |
+          Federated Analytics connects operational and analytical data through database mirroring, federated queries, and data delivery. Mirroring publishes an asynchronous analytical copy to OneLake. Federated queries read supported Fabric data through foreign tables without copying the rows locally. Data delivery uses Copy jobs to load analytical results into PostgreSQL tables for reverse ETL. For more information, see [Federated Analytics overview](federated-analytics-overview.md).
+      - question: |
+          What is the difference between the PostgreSQL endpoint and the SQL analytics endpoint?
+        answer: |
+          The PostgreSQL endpoint is the operational endpoint used by applications and PostgreSQL tools. The SQL analytics endpoint is a read-only analytical endpoint over asynchronously mirrored Fabric HorizonDB data. The two endpoints have independent health and freshness.
+      - question: |
+          Is mirroring synchronous?
+        answer: |
+          No. Mirroring performs an initial copy and then asynchronously applies committed changes for eligible tables. Data in OneLake and the SQL analytics endpoint can lag behind the operational database. No numeric freshness guarantee is published for public preview.
+      - question: |
+          Can Fabric HorizonDB query Fabric data?
+        answer: |
+          Yes. The `pg_fabric_fdw` extension exposes supported warehouses and SQL analytics endpoints as read-only foreign tables. `IMPORT FOREIGN SCHEMA` imports metadata without copying rows. Use the managed `fabric_dw` server for the database's mirrored endpoint, or register a customer-owned server using a separate warehouse's SQL connection details. The `database_name` option selects another reachable database; it doesn't discover arbitrary workspaces. For more information, see [Query Fabric data from a HorizonDB database](query-fabric-data.md).
+      - question: |
+          Do federated queries run entirely in Fabric?
+        answer: |
+          Not always. The wrapper translates eligible operations into T-SQL and runs them in Fabric. PostgreSQL completes operations that remain local, such as a join with a local table. Some unsupported constructs are rejected. Use `EXPLAIN (VERBOSE)` and inspect the `Fabric SQL` line to identify remote work. Pushdown can also expose Fabric rules for text comparisons, UUID ordering, or integer averages rather than identical PostgreSQL behavior. For more information, see [Federated query reference](federated-query-reference.md).
+      - question: |
+          How do I load Fabric data into a HorizonDB database?
+        answer: |
+          Create a Copy job using the **Azure Database for PostgreSQL** destination connector, the HorizonDB host, database `postgres`, and **Organizational account** authentication as the creator. Select **Full copy** and map source columns into a staging table. The destination is insert-oriented; validate the batch and publish upserts separately in PostgreSQL. Don't assume source-delete propagation or automatic conflict handling. For more information, see [Load Fabric data with a Copy job](load-fabric-data-copy-job.md).
+
+  - name: Security and sharing
+    questions:
+      - question: |
+          Does sharing the Fabric item grant access to all database data?
+        answer: |
+          No. Only the database creator can connect to PostgreSQL in the current preview. Item sharing doesn't enable other users or principals. Configure permissions on the mirrored SQL analytics endpoint, semantic model, or report separately for analytical consumers.
+      - question: |
+          How is data encrypted?
+        answer: |
+          Use the TLS settings specified for your preview connection, and keep encrypted connections enabled in Copy jobs. Confirm encryption coverage and key-management options with your administrator or preview contact before using sensitive data.
+      - question: |
+          Can I rely on production backup and recovery options?
+        answer: |
+          Don't assume production recovery guarantees. Review the backup, restore, deletion, and recovery options available for your preview. Use a dedicated test workspace and synthetic, nonsensitive data.
+      - question: |
+          Is private connectivity supported?
+        answer: |
+          Don't apply networking instructions from another PostgreSQL service. Use only the ingress, DNS, TLS, and routing modes published for Fabric HorizonDB. Private connectivity isn't part of the documented public preview boundary unless it appears in the current Fabric HorizonDB connection experience and limits documentation.
+
+  - name: Monitoring
+    questions:
+      - question: |
+          How do I monitor Fabric HorizonDB?
+        answer: |
+          Review the item lifecycle and operation state in Fabric, use available capacity and storage metrics, and query PostgreSQL diagnostic views such as `pg_stat_database` and `pg_stat_activity`. Monitor mirroring, federation, and Copy jobs separately because their health is independent. For more information, see [Monitor Fabric HorizonDB](monitor.md).
+
+  - name: Troubleshooting
+    questions:
+      - question: |
+          What information should I collect before requesting support?
+        answer: |
+          Record the failing step, expected and actual behavior, a UTC timestamp, the sanitized SQL or request, the item and workspace IDs, the operation or correlation ID, and whether one deliberate retry produced the same result. Remove tokens, complete connection strings, user data, and real endpoint names. For common resolutions, see [Troubleshoot Fabric HorizonDB](troubleshoot.md).
+
+additionalContent: |
+
+  ## Related content
+
+  - [Fabric HorizonDB overview](overview.md).
+  - [Fabric HorizonDB limitations](limitations.md).
+  - [Security overview](security-overview.md).
+  - [Usage reporting](usage-reporting.md).

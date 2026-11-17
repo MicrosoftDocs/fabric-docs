@@ -1,0 +1,89 @@
+### YamlMime:FAQ
+metadata:
+  title: Frequently asked questions about Microsoft Fabric HorizonDB mirroring
+  description: Answers to common questions about mirroring Fabric HorizonDB data to Microsoft Fabric.
+  ms.reviewer: scoriani
+  ms.topic: faq
+  ms.date: 11/06/2026
+  ai-usage: ai-assisted
+
+title: Frequently asked questions about Microsoft Fabric HorizonDB mirroring
+
+summary: |
+  Fabric HorizonDB uses service-managed mirroring to publish an asynchronous analytical copy of eligible PostgreSQL tables to OneLake and a SQL analytics endpoint.
+
+sections:
+  - name: Capabilities and freshness
+    questions:
+      - question: |
+          What does Fabric HorizonDB mirroring create?
+        answer: |
+          Mirroring automatically creates an analytical representation of eligible Fabric HorizonDB tables in OneLake and makes it available through a read-only SQL analytics endpoint. Locate the associated mirroring item in the workspace, and wait for the initial copy before validating the generated endpoint.
+
+      - question: |
+          Is mirrored data always current with Fabric HorizonDB?
+        answer: |
+          No. Mirroring is asynchronous. Initial-copy progress, workload volume, long transactions, schema changes, capacity state, and reseeding can affect freshness. Use mirroring status and a source timestamp in the data when freshness matters.
+
+      - question: |
+          Does a healthy HorizonDB database mean that mirroring is healthy?
+        answer: |
+          No. PostgreSQL database health, mirroring health, federation health, Copy job health, and SQL analytics endpoint health are independent. Troubleshoot the failing path instead of treating every integration failure as a database outage.
+
+      - question: |
+          How long does the initial copy take?
+        answer: |
+          Completion time depends on eligible data volume and available integration resources. Public preview doesn't provide a fixed completion-time or numeric freshness guarantee. Monitor progress for each table.
+
+      - question: |
+          Can I write through the SQL analytics endpoint?
+        answer: |
+          No. The SQL analytics endpoint is read-only for mirrored data. Use the Fabric HorizonDB PostgreSQL endpoint for application writes and transactions.
+
+  - name: Eligibility and schema changes
+    questions:
+      - question: |
+          Which tables are mirrored?
+        answer: |
+          Only tables that meet the released key, type, DDL, and item limits are eligible. Use a stable primary key for tables intended for mirroring, but don't assume that every keyed table is supported. Review [mirroring limitations](mirroring-limitations.md) and the reason shown in mirroring status.
+
+      - question: |
+          Are views and extension-owned objects mirrored?
+        answer: |
+          Don't assume that a PostgreSQL object is eligible because it can be queried. Mirroring is intended for released ordinary-table combinations. Use a supported table or an analytical transformation downstream when a view, foreign table, or extension-owned object isn't eligible.
+
+      - question: |
+          What happens after a schema change?
+        answer: |
+          A schema change can be applied, rejected, suspend the affected table, or require reseeding, depending on the released DDL and type contract. Coordinate source changes with SQL analytics endpoint, semantic-model, report, and API consumers.
+
+      - question: |
+          What is a reseed?
+        answer: |
+          A reseed creates a replacement analytical copy when mirroring can't safely continue from its prior position or lineage. During a reseed, treat the affected analytical data as stale or unavailable according to the displayed state.
+
+  - name: Security and operations
+    questions:
+      - question: |
+          Do PostgreSQL permissions automatically protect mirrored data?
+        answer: |
+          No. The current preview permits PostgreSQL connections only from the database creator, but analytical permissions are a separate boundary. Configure and test access to the SQL analytics endpoint, semantic model, and report independently.
+
+      - question: |
+          Does mirroring keep an otherwise idle database active?
+        answer: |
+          Don't infer auto-pause behavior from mirroring status. Confirm whether scale to zero is enabled for your preview, and monitor database state and mirroring progress separately. The onboarding guidance doesn't specify which background activities affect idle detection.
+
+      - question: |
+          How do I investigate missing or stale data?
+        answer: |
+          Check the affected table's initial-copy, lag, unsupported, suspended, or reseed status. Compare a stable source count or high-water mark with the SQL analytics endpoint, and then follow [Troubleshoot Fabric HorizonDB mirroring](mirroring-troubleshooting.md).
+
+additionalContent: |
+
+  ## Related content
+
+  - [Mirroring overview](mirroring-overview.md).
+  - [Monitor Fabric HorizonDB mirroring](mirroring-monitor.md).
+  - [Mirroring limitations](mirroring-limitations.md).
+  - [Secure mirrored Fabric HorizonDB data](mirroring-secure.md).

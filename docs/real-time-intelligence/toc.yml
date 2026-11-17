@@ -87,6 +87,16 @@ items:
             href: event-streams/edit-publish.md
           - name: Route events based on content
             href: event-streams/route-events-based-on-content.md
+      - name: Azure Event Hubs shortcuts (preview)
+        items:
+          - name: Overview
+            href: event-streams/event-hubs-shortcuts-overview.md
+          - name: Create a shortcut
+            href: event-streams/create-event-hubs-shortcut.md
+          - name: Approve and manage shortcuts
+            href: event-streams/manage-event-hubs-shortcuts.md
+          - name: Troubleshoot shortcuts
+            href: event-streams/troubleshoot-event-hubs-shortcuts.md
       - name: Add source connectors to eventstreams
         items:
           - name: Add and manage an event source

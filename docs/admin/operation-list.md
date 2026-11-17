@@ -478,7 +478,7 @@ To audit OneLake data access and storage operations, use [OneLake diagnostics](.
 | ReadDataflow | :::no-loc text="ReadDataflow"::: | Read Dataflow  |
 | Rebind Report | :::no-loc text="RebindReport"::: |   |
 | Received Power BI dataflow secret from Key Vault | :::no-loc text="ReceiveDataflowSecretFromKeyVault"::: |   |
-| Recovered an item (Preview) | :::no-loc text="ArtifactRecovered"::: | Generated when a soft-deleted item is recovered. Available when [item recovery](item-recovery.md) is enabled in tenant admin settings.  |
+| Recovered an item | :::no-loc text="ArtifactRecovered"::: | Generated when a soft-deleted item is recovered. Available when [item recovery](item-recovery.md) is enabled in tenant admin settings.  |
 | Recovered folder (Preview) | :::no-loc text="RecoveredSubfolder"::: | Generated when one or more soft-deleted folders are recovered as part of artifact recovery. Available when [item recovery](item-recovery.md) is enabled in tenant admin settings.  |
 | Refresh Datamart | :::no-loc text="RefreshDatamart"::: |   |
 | Refresh Goal Current Value Rollup | :::no-loc text="RefreshGoalCurrentValueRollup"::: |   |
@@ -615,7 +615,7 @@ To audit OneLake data access and storage operations, use [OneLake diagnostics](.
 | Shared Power BI dashboard | :::no-loc text="ShareDashboard"::: |   |
 | Shared Power BI report | :::no-loc text="ShareReport"::: |   |
 | Shared Power BI semantic model | :::no-loc text="ShareDataset"::: |   |
-| Soft-deleted an item (Preview) | :::no-loc text="ArtifactSoftDeleted"::: | Generated when an item is soft-deleted and moved to the recycle bin. Available when [item recovery](item-recovery.md) is enabled in tenant admin settings.  |
+| Soft-deleted an item | :::no-loc text="ArtifactSoftDeleted"::: | Generated when an item is soft-deleted and moved to the recycle bin. Available when [item recovery](item-recovery.md) is enabled in tenant admin settings.  |
 | Start Notebook Session | :::no-loc text="StartNotebookSession"::: |   |
 | Start Publish Environment | :::no-loc text="StartPublishEnvironment"::: | Start publish environment |
 | Started Power BI extended trial | :::no-loc text="OptInForExtendedProTrial"::: | Not currently used  |

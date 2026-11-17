@@ -1,8 +1,9 @@
 ---
 title: "Tutorial Part 2: Enrich the Ontology with Additional Data (Preview)"
 description: Enrich the ontology by adding metadata and rules. Part 2 of the ontology (preview) tutorial.
-ms.date: 09/12/2026
+ms.date: 11/09/2026
 ms.topic: tutorial
+ai-usage: ai-assisted
 ---
 
 # Ontology (preview) tutorial part 2: Enrich the ontology with additional data
@@ -19,11 +20,11 @@ You can add metadata to entity types and to specific properties on the entity ty
 
 Metadata for entity types supports descriptions, synonyms, and additional metadata key-value pairs. Follow these steps to add that metadata to your entity types.
 
-1. Start with the Store entity type. Select it on the semantic canvas and select **View Entity Type details**.
+1. Select an entity type in the **Explorer**, and then select **Entity type > Open details**. The following screenshot shows Inventory selected.
 
-    :::image type="content" source="media/tutorial-2-enrich-ontology/store-view-entity-type-details.png" alt-text="Screenshot of opening entity type details for Store." lightbox="media/tutorial-2-enrich-ontology/store-view-entity-type-details.png":::
+    :::image type="content" source="media/tutorial-2-enrich-ontology/store-view-entity-type-details.png" alt-text="Screenshot of Inventory selected on the canvas with the Entity type tab available." lightbox="media/tutorial-2-enrich-ontology/store-view-entity-type-details.png":::
 
-1. On the **Configure** page that opens, scroll down to the **Entity metadata** section.
+1. For the Store metadata example, repeat the previous step for **Store**. On its **Configure** page, scroll down to the **Metadata** section and select **Edit**.
 1. Enter the following **Description**: *Filtered locations binding where LocationType = STORE; priorityDefinition=Tier 1 stores require same-day response.*
 
     :::image type="content" source="media/tutorial-2-enrich-ontology/store-metadata.png" alt-text="Screenshot of adding a metadata description to Store." lightbox="media/tutorial-2-enrich-ontology/store-metadata.png":::
@@ -48,7 +49,7 @@ Metadata for properties supports descriptions and additional metadata key-value 
 
     :::image type="content" source="media/tutorial-2-enrich-ontology/product-bind-data.png" alt-text="Screenshot of opening the Product data bindings." lightbox="media/tutorial-2-enrich-ontology/product-bind-data.png":::
 
-1. Select **Entity type properties** from the left pane to open the **Properties** list.
+1. Select **Properties** under **Entity type** in the left pane.
 1. Next to the `ProductId` property, select **Metadata**.
 
     :::image type="content" source="media/tutorial-2-enrich-ontology/product-property-metadata.png" alt-text="Screenshot of selecting metadata for the property." lightbox="media/tutorial-2-enrich-ontology/product-property-metadata.png":::
@@ -89,7 +90,7 @@ Metadata for relationship types supports descriptions and additional metadata ke
     | *stockedAt* | Inventory > Store | **Description:** *Represents an active store assortment and its current inventory position, not merely a historical sale.* |
     | *originatesAt* | Shipment > Distribution Center | **Description:** *Identifies the distribution center sending the shipment.* |
     | *forProduct* | Sale > Product | **Description:** *Identifies the item sold.* |
-    | *stockedAt* | Product > Inventory | **Description:** *The item is part of the store's active assortment and has a current inventory position there.* |
+    | *stockedAtProduct* | Product > Inventory | **Description:** *The item is part of the store's active assortment and has a current inventory position there.* |
     | *suppliedBy* | Product > Supplier | **Description:** *Identifies the supplier responsible for the items.* |
     | *contains* | Shipment > Product | **Description:** *Identifies the item being replenished.* |
     | *hasTelemetryReading* | Refrigeration Unit > Refrigeration Telemetry | **Description:** *Identified sensor telemetry readings for refrigeration units.* |
@@ -98,25 +99,25 @@ Metadata for relationship types supports descriptions and additional metadata ke
 
 Next, add some business rules that give more detail about day-to-day operations. Write rules in natural language and link them to entity types, properties, and relationship types so consumers (like AI agents) can discover these rules and use them to ground their responses.
 
-1. In the **Explorer**, expand **Overview** and select **Rules**.
+1. On the **Home** tab of the top ribbon, select **+ Add** > **Rule**.
 
-    :::image type="content" source="media/tutorial-2-enrich-ontology/rules.png" alt-text="Screenshot of opening the Business rules page." lightbox="media/tutorial-2-enrich-ontology/rules.png":::
+    :::image type="content" source="media/tutorial-2-enrich-ontology/rules.png" alt-text="Screenshot of the Rule option in the Home ribbon's Add menu." lightbox="media/tutorial-2-enrich-ontology/rules.png":::
 
-1. Select **+ Create rule**.
 1. Enter the following rule details:
 
     1. **Name:** Cold-chain exception
     1. **Definition:** *A frozen product has a cold-chain exception when the temperature of the refrigeration unit storing it remains above the product’s maximum storage temperature for more than 20 minutes.*
-    1. **Linked ontology concepts:** Frozen Product, Refrigeration Unit
+    1. **Linked ontology elements:** Frozen Product, Refrigeration Unit
+
+    Under **Linked ontology elements**, select **+ Add**. In the **Add elements** dialog, select these two entity types and then select **Save**.
 
     :::image type="content" source="media/tutorial-2-enrich-ontology/rules-configure.png" alt-text="Screenshot of configuring rule details." lightbox="media/tutorial-2-enrich-ontology/rules-configure.png":::
 
-1. Select **Save**. After the rule finishes saving, select **Cancel** to close the configuration details.
-1. You see the rule in the **Business rules** page.
+1. Select **Create**. In the **Explorer**, expand **Rules** and select **Cold-chain exception** to review the saved rule.
 
-    :::image type="content" source="media/tutorial-2-enrich-ontology/rules-done.png" alt-text="Screenshot of the new rule on the Business rules page." lightbox="media/tutorial-2-enrich-ontology/rules-done.png":::
+    :::image type="content" source="media/tutorial-2-enrich-ontology/rules-done.png" alt-text="Screenshot of the saved Cold-chain exception rule selected in the Explorer." lightbox="media/tutorial-2-enrich-ontology/rules-done.png":::
 
-1. Select **New rule** to add more rules. Add two rules with the following details:
+1. Select **Home** > **+ Add** > **Rule** from the top ribbon to add more rules. Add two rules with the following details:
 
     | Name | Definition | Linked concepts |
     | --- | --- | --- |

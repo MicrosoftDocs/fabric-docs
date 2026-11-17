@@ -1109,7 +1109,7 @@
                 href: dataflow-gen2-variable-library-integration.md    
               - name: Data visuals (Preview)
                 href: dataflow-gen2-data-visuals.md
-          - name: Mapping data flow transforms (Preview)
+          - name: Mapping data flow transforms
             href: dataflow-gen2-mapping-data-flows-transforms.md
           - name: Dataflow refresh
             href: dataflow-gen2-refresh.md

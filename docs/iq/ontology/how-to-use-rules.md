@@ -1,8 +1,9 @@
 ---
 title: Define Business Rules (Preview)
 description: Learn about using business rules in ontology (preview).
-ms.date: 09/15/2026
+ms.date: 11/09/2026
 ms.topic: how-to
+ai-usage: ai-assisted
 ---
 
 # Create and manage business rules in ontology (preview)
@@ -22,39 +23,35 @@ Before creating business rules, ensure you have:
 ## Access business rules
 
 1. Open an ontology item in Fabric.
-1. In the **Explorer**, expand **Overview** and select **Rules**.
+1. To create a rule, select **Home** > **+ Add** > **Rule** from the top ribbon. To open an existing rule, expand **Rules** in the **Explorer** and select it.
 
-    :::image type="content" source="media/how-to-use-rules/open-rules.png" alt-text="Screenshot of opening the rules page." lightbox="media/how-to-use-rules/open-rules.png":::
+    :::image type="content" source="media/how-to-use-rules/open-rules.png" alt-text="Screenshot of a rule selected in the Explorer with its details open." lightbox="media/how-to-use-rules/open-rules.png":::
 
 ### View created rules
 
-After you create rules, the **Business rules** page lists the rules in the ontology and the entity types linked to each rule.
+After you create rules, the **Rules** section of the **Explorer** lists them. Select a rule to view its definition, linked ontology elements, and metadata.
 
-:::image type="content" source="media/how-to-use-rules/rules-list.png" alt-text="Screenshot of the Business rules page, showing saved rules and linked entity types." lightbox="media/how-to-use-rules/rules-list.png":::
+:::image type="content" source="media/how-to-use-rules/rules-list.png" alt-text="Screenshot of a saved rule and its linked ontology elements." lightbox="media/how-to-use-rules/rules-list.png":::
 
-To browse and find rules:
-
-* Enter text in **Search rules by name** to find a rule by name.
-* Select **Entity type** to filter the list. You can select more than one entity type.
-* Select **Clear all** in the entity type menu to remove entity type filters.
-* Select a rule name or row to open the rule details page.
+To find a rule by name, enter part of its name in **Filter by name** in the **Explorer**. Clear the text to show all ontology elements again.
 
 If a rule links only to properties or relationships, open the rule details page to view all linked concepts.
 
 ## Create a business rule
 
-1. On the **Business rules** page, the **+ Create rule** button appears if there are no rules yet, and the **New rule** button appears if there are already rules created. Select the button that's visible in your scenario.
-1. On the rule details page, enter a **Rule name** and a **Rule definition** that describes what must, must not, or should be true.
+1. On the **Home** tab of the top ribbon, select **+ Add** > **Rule**.
+1. Under **Rule details**, enter a **Name** and a **Definition** that describes what must, must not, or should be true. For the following example, enter:
 
-    For example: *Every refrigeration unit must receive a safety inspection at least once every 90 days.*
+    * **Name**: *Cold-chain exception*.
+    * **Definition**: *A frozen product has a cold-chain exception when the temperature of the refrigeration unit storing it remains above the product's maximum storage temperature for more than 20 minutes.*
 
-1. Optionally, add [linked ontology concepts](#link-ontology-concepts).
-1. Optionally, add a [description and additional metadata](#add-rule-metadata).
-1. Select **Save**.
+1. Optionally, add [linked ontology concepts](#link-ontology-concepts). The following example links **Frozen Product** and **Refrigeration Unit**.
+1. Optionally, add a [description and additional metadata](#add-rule-metadata). The example uses the description *Identify temperature excursions that can affect frozen inventory.* and the metadata pair `category: cold-chain`.
+1. Select **Create**. In the **Explorer**, expand **Rules** and select the new rule to review it. The saved rule uses **Save** for subsequent edits.
 
-    :::image type="content" source="media/how-to-use-rules/completed-rule.png" alt-text="Screenshot of a completed business rule with a rule definition, linked entity type, description, and metadata." lightbox="media/how-to-use-rules/completed-rule.png":::
+    :::image type="content" source="media/how-to-use-rules/completed-rule.png" alt-text="Screenshot of the saved Cold-chain exception rule with its definition, linked entity types, description, and metadata." lightbox="media/how-to-use-rules/completed-rule.png":::
 
-The **Rule name** and **Rule definition** fields are required. Linked ontology concepts, description, and additional metadata are optional.
+The **Name** and **Definition** fields are required. Linked ontology elements, description, and additional metadata are optional.
 
 ### Write a clear rule definition
 
@@ -77,37 +74,36 @@ Suggestions:
 
 Linked concepts make rules easier for authorized agents and applications to discover and interpret.
 
-1. On the rule details page, under **Linked ontology concepts**, select **Add concept**.
-1. In the **Add concepts** dialog, use the following tabs to browse or search the ontology:
+1. On the rule details page, under **Linked ontology elements**, select **+ Add**.
+1. In the **Add elements** dialog, use the following tabs to browse or search the ontology:
 
-    * **Entity types**
-    * **Properties**
-    * **Relationships**
+    * **Entity types** lists the entity types in the ontology.
+    * **Properties** lists the available properties.
+    * **Relationships** lists the relationship types.
 
 1. Select one or more concepts.
 1. Select **Save** to add the selected concepts to the rule.
 
-    :::image type="content" source="media/how-to-use-rules/add-rule-concepts.png" alt-text="Screenshot of the Add concepts dialog with the entity type list and concept picker tabs." lightbox="media/how-to-use-rules/add-rule-concepts.png":::
+    :::image type="content" source="media/how-to-use-rules/add-rule-concepts.png" alt-text="Screenshot of the Add elements dialog with tabs for entity types, properties, and relationships." lightbox="media/how-to-use-rules/add-rule-concepts.png":::
 
 To remove a linked concept, deselect the concept and then save the rule.
 
 ### Add rule metadata
 
-The **Rule metadata** section provides optional context for reviewers, agents, and other consumers.
+The inline **Metadata** section provides optional context for reviewers, agents, and other consumers.
 
-1. On the rule details page, find **Rule metadata** and select **Edit**.
+1. On the rule details page, find **Metadata**.
 1. Enter an optional **Description**.
-1. To add structured context, select **Add** under **Additional metadata**.
-1. Enter a key and value, and then select **Add**.
-1. Repeat the previous step for any additional key-value pairs.
-1. Select **Save** in the **Rule metadata** dialog.
-1. Select **Save** on the rule details page.
+1. To add structured context, select **+ Add** under **Additional metadata**.
+1. Enter a **Key** and **Value**, and then select **Add**.
+1. Repeat the previous two steps for any additional key-value pairs.
+1. Select **Create** for a new rule or **Save** for an existing rule.
 
-    :::image type="content" source="media/how-to-use-rules/rule-metadata.png" alt-text="Screenshot of the Rule metadata dialog with a description and an additional metadata key-value pair." lightbox="media/how-to-use-rules/rule-metadata.png":::
+    :::image type="content" source="media/how-to-use-rules/rule-metadata.png" alt-text="Screenshot of the inline Metadata section with a description and an additional metadata key-value pair." lightbox="media/how-to-use-rules/rule-metadata.png":::
 
 Examples of useful additional metadata include:
 
-* `category: maintenance`
+* `category: cold-chain`
 * `region: EMEA`
 * `policyFamily: food-safety`
 * `owner: facilities-operations`
@@ -115,18 +111,18 @@ Examples of useful additional metadata include:
 ## Edit or delete a business rule
 
 To edit a business rule:
-1. On the **Business rules** page, select the rule you want to edit.
+1. In the **Explorer**, expand **Rules** and select the rule you want to edit.
 1. Update the rule name or rule definition.
 1. Add or remove linked ontology concepts as needed.
-1. Select **Edit** in the **Rule metadata** section to update the description or additional metadata.
+1. Update the description or additional metadata in the **Metadata** section.
 1. Select **Save**.
 
 Removing the last linked concept displays the same non-blocking warning that appears when you create a rule without links.
 
 To delete a business rule:
 
-1. On the **Business rules** page, find the rule you want to delete.
-1. Select **More actions (...)** and then select **Delete rule**.
+1. In the **Explorer**, expand **Rules** and select the rule you want to delete.
+1. On the rule details page, select **Delete**.
 1. Review the confirmation dialog.
 1. Select **Delete**.
 
@@ -175,7 +171,7 @@ Submit feedback through [Fabric feedback channels](../../fundamentals/feedback.m
 
 | Issue | Resolution |
 | --- | --- |
-| **Create** or **Save** isn't available | Enter values in the required **Rule name** and **Rule definition** fields. |
+| **Create** or **Save** isn't available | Enter values in the required **Name** and **Definition** fields. |
 | A rule name is rejected | Choose a unique name. |
 | A concept isn't available in the picker | Confirm that the entity type, property, or relationship type exists in the ontology. |
 | A metadata key is rejected | Use a key that isn't already present in the rule. |

@@ -1,7 +1,7 @@
 ---
 title: Manage Ontology Version History (Preview)
 description: Learn about versioning in ontology (preview).
-ms.date: 10/20/2026
+ms.date: 11/06/2026
 ms.topic: how-to
 ai-usage: ai-assisted
 ---
@@ -25,9 +25,9 @@ Before you manage version history, make sure you have the following prerequisite
 
 To open the version history pane, follow these steps.
 
-1. Open the ontology item and select **Version history** in the top-right corner.
+1. Open the ontology item and select **History** in the top-right corner.
 
-    :::image type="content" source="media/how-to-use-version-history/version-history-button.png" alt-text="Screenshot of the Version history button in the ontology toolbar." lightbox="media/how-to-use-version-history/version-history-button.png":::
+    :::image type="content" source="media/how-to-use-version-history/version-history-button.png" alt-text="Screenshot of the History button in the ontology ribbon." lightbox="media/how-to-use-version-history/version-history-button.png":::
 
 1. The pane opens and loads the list of all versions. Each version shows the version name, date and time, and the user who created it.
 
