@@ -7,7 +7,8 @@ ms.reviewer: yicw, mesrivas,liud
 ms.topic: concept-article
 ms.search.form: product-trident, Manage your workspace
 #customer intent: As a report creator, I need to know about workspaces so that I can create collections of artifacts that are related.
-ms.date: 07/28/2026
+ms.date: 11/09/2026
+ai-usage: ai-assisted
 
 ---
 
@@ -41,7 +42,9 @@ After you select and open a workspace, this workspace becomes your current works
 
 ## Workspace layout
 
-A workspace consists of a header, a toolbar, and a view area. There are two views that can appear in the view area: list view and lineage view. You select the view you want to see with controls on the toolbar. The following image shows these main workspace components, with list view selected.
+A workspace consists of a header, a toolbar, and a view area. Two views can appear in the view area:
+list view and lineage view. Use the controls on the toolbar to select the view you want to see.
+The following image shows the main workspace components, with list view selected.
 
 :::image type="content" source="./media/workspaces/workspace-layout.png" alt-text="Screenshot showing the layout of the workspace - header, toolbar, and view area." lightbox="./media/workspaces/workspace-layout.png":::
 
@@ -56,14 +59,22 @@ List view is divided into the task flow and the items list.
 
 :::image type="content" source="./media/workspaces/workspace-list-view.png" alt-text="Screenshot showing the layout of list view and its controls." lightbox="./media/workspaces/workspace-list-view.png":::
 
-1. **Task flow**: The task flow is where you can create or view a graphical representation of  your data project. The task flow shows the logical flow of the project - it doesn't show the flow of data. Read more about [task flows](../fundamentals/task-flow-overview.md).
-1. **Items list**: The items list is where you see the items and folders in the workspace. If you have tasks in the task flow, you can filter the items list by selecting the tasks. In the list view, there are several columns which show the key information of items. For example, the **Status** column shows long-term, non-permanent state of items by using different kinds of indicators, such as trial expiring, [dataflow refresh status](../data-factory/dataflows-gen2-monitor.md#workspace-status) etc.
+1. **Task flow**: Use the task flow to create or view a graphical representation of your
+   data project. The task flow shows the logical flow of the project - it doesn't show the flow of
+   data. To learn more, see [task flows](../fundamentals/task-flow-overview.md).
+1. **Items list**: The items list shows the items and folders in the workspace. If you
+   have tasks in the task flow, you can filter the items list by selecting the tasks. In the list
+   view, several columns show key item information. For example, the **Status** column uses
+   indicators to show long-term, non-permanent item states, such as an expiring trial or
+   [dataflow refresh status](../data-factory/dataflows-gen2-monitor.md#workspace-status).
 1. **Resize bar**: You can resize the task flow and items list by dragging the resize bar up or down.
-1. **Show/Hide task flow**: If you don't want to see the task flow, you can hide it using the hide/show arrows at the side of the separator bar.
+1. **Show/Hide task flow**: If you don't want to see the task flow, you can hide it by using the
+   hide/show arrows at the side of the separator bar.
 
 ### Lineage view
 
-Lineage view shows the flow of data between the items in the workspace. Read more about [lineage view](../governance/lineage.md).
+Lineage view shows the flow of data between the items in the workspace. To learn more, see
+[lineage view](../governance/lineage.md).
 
 ## Branched workspace
 A **Branched workspace** is a workspace that is linked to a source workspace. It lets developers work on changes in an isolated environment, understand how their work relates to other workspaces, and promote changes back to the main workspace with confidence.
@@ -76,7 +87,8 @@ The relationship (link) between a *Branched workspace* and its source workspace 
 
 Workspace admins can use workspace settings to manage and update the workspace. The settings include general settings of the workspace, like the basic information of the workspace, contact list, SharePoint, license, Azure connections, storage, and other experiences' specific settings.
 
-To open the workspace settings, you can select the workspace in the nav pane, then select **More options (...)** > **Workspace settings** next to the workspace name.
+To open the workspace settings, select the workspace in the nav pane, and then select
+**More options** > **Workspace settings** next to the workspace name.
 
 :::image type="content" source="media/workspaces/open-workspace-settings.png" alt-text="Screenshot showing Open workspace settings in the nav pane.":::
 
@@ -86,7 +98,11 @@ You can also open it from the workspace page.
 
 ### Workspace contact list
 
-The Contact list feature allows you to specify which users receive notification about issues occurring in the workspace. By default, the one who created the workspace is in the contact list. You can add others to that list while [creating workspace](../fundamentals/create-workspaces.md#contact-list) or in workspace settings after creation. Users or groups in the contact list are also listed in the user interface (UI) of the workspace settings, so workspace users know whom to contact.
+Use the contact list feature to specify which users receive notifications about issues occurring
+in the workspace. By default, the user who created the workspace is in the contact list. You can
+add others to that list while [creating workspace](../fundamentals/create-workspaces.md#contact-list)
+or in workspace settings after creation. Users or groups in the contact list are also listed in
+the user interface (UI) of the workspace settings, so workspace users know whom to contact.
 
 :::image type="content" source="media/workspaces/contact-list-workspace-settings.png" alt-text="Screenshot of contact list setting options.":::
 
@@ -95,7 +111,8 @@ The Contact list feature allows you to specify which users receive notification 
 The Workspace SharePoint feature allows you to configure a Microsoft 365 Group whose SharePoint document library is available to workspace users. You create the Group outside of [!INCLUDE [product-name](../includes/product-name.md)] first, with one available method being from SharePoint. Read about creating a [SharePoint shared library](https://support.microsoft.com/office/create-a-new-shared-library-from-onedrive-for-work-or-school-345c8599-05d8-4bf8-9355-2b5cfabe04d0).
 
 > [!NOTE]
-> Creating Microsoft 365 Groups may be restricted in your environment, or the ability to create them from your SharePoint site may be disabled. If this is the case, speak with your IT department.
+> Your environment might restrict creating Microsoft 365 Groups or disable creating them from
+> your SharePoint site. If either restriction applies, contact your IT department.
 
 [!INCLUDE [product-name](../includes/product-name.md)] doesn't synchronize permissions between users or groups with workspace access, and users or groups with Microsoft 365 Group membership. A best practice is to [give access to the workspace](../fundamentals/give-access-workspaces.md) to the same Microsoft 365 Group whose file storage you configured. Then manage workspace access by managing membership of the Microsoft 365 Group.
 
@@ -105,7 +122,10 @@ You can configure SharePoint in workspace settings by typing in the name of the 
 
 ### Workspace type
 
-By default, workspaces are created in your organization's shared capacity. When your organization has other capacities, workspaces including *My Workspaces* can be assigned to any capacity in your organization. You can configure it while creating a workspace or modify it after creation in the workspace settings.
+By default, Fabric creates workspaces in your organization's shared capacity. When your
+organization has other capacities, you can assign workspaces, including *My Workspaces*, to any
+capacity in your organization. You can configure the capacity while creating a workspace or
+modify it after creation in the workspace settings.
 
 Workspace types are organized into two categories, **Power BI workspace types** and **Fabric workspace types**. To learn more, see [licenses](../enterprise/licenses.md#workspace-types) article.
 
@@ -133,9 +153,10 @@ Keep in mind that you or someone else may have reports and dashboards based on a
 
 ### Remove the workspace
 
-As an admin for a workspace, you can delete it. When you delete the workspace, everything contained within the workspace is deleted for all group members, and the associated app is also removed from AppSource.
+As an admin for a workspace, you can delete it. When you delete the workspace, Fabric deletes its
+contents for all group members and removes the associated app from AppSource.
 
-In the Workspace settings pane, select **Other** > **Remove this workspace**.
+In the **Workspace settings** pane, select **Other** > **Remove this workspace**.
 
 
 
@@ -143,13 +164,18 @@ In the Workspace settings pane, select **Other** > **Remove this workspace**.
 :::image type="content" source="media/workspaces/remove-workspace.png" alt-text="Screenshot showing deleting workspace." lightbox="media/workspaces/remove-workspace.png":::
 
 > [!WARNING]
-> If the workspace you're deleting has a workspace identity, that workspace identity will be irretrievably lost. In some scenarios this could cause Fabric items relying on the workspace identity for trusted workspace access or authentication to break. For more information, see [Delete a workspace identity](../security/workspace-identity.md#deleting-the-identity).
+> Deleting a workspace irretrievably removes its workspace identity. In some scenarios, this loss
+> might cause Fabric items that rely on the workspace identity for trusted workspace access or
+> authentication to break. For more information, see
+> [Delete a workspace identity](../security/workspace-identity.md#deleting-the-identity).
 
 #### Remove a workspace in a deployment pipeline
 If you attempt to delete a workspace via the workspace settings, and that workspace is currently assigned to a [Deployment Pipeline](../cicd/deployment-pipelines/intro-to-deployment-pipelines.md), the 
-deletion will fail.  
+deletion fails.
 
-To remove the workspace, you can return to the workspace page and select the **View Deployment Pipeline** button. This will direct you to the relevant pipeline, where you can unassign the workspace and then remove it.
+To remove the workspace, return to the workspace page and select **View Deployment Pipeline**.
+This action directs you to the relevant pipeline, where you can unassign the workspace and then
+remove it.
 
 For more information, see [Remove a workspace from a deployment pipeline](../cicd/deployment-pipelines/assign-pipeline.md#remove-a-workspace-in-a-deployment-pipeline).
 
@@ -159,7 +185,9 @@ Each workspace has a recycle bin that shows items in a retention period. When yo
 
 To open the recycle bin, select **Recycle bin** from the workspace navigation. From the recycle bin, you can:
 
-- **Restore** a deleted item to its original location in the workspace. Workspace contributors, members, and admins can restore items.
+- **Restore** a deleted item to its original location in the workspace. Workspace contributors,
+  members, and admins can restore items. When a name conflict occurs, Fabric renames the restored
+  item by appending an underscore and a generated numeric suffix.
 - **Delete permanently** to remove an item before the retention period ends. Only workspace admins can permanently delete items.
 
 :::image type="content" source="media/workspaces/workspace-recycle-bin.png" alt-text="Screenshot of the Workspace recycle bin in the Fabric portal, showing the Restore and Delete permanently buttons in the toolbar along with a list of deleted items." lightbox="media/workspaces/workspace-recycle-bin.png":::
@@ -194,15 +222,17 @@ See the following table if you have trouble signing in.
 | Message | Meaning | How to fix |
 |---|---|---|
 |`browser_storage_unsupported`| Your browser is blocking access to storage, which is required for signing in.| - Check your browser’s privacy settings.<br>- Make sure cookies and local storage (like `sessionStorage` or `localStorage`) are allowed.<br>- Try disabling any extensions that might block storage access. |
-|`cluster_resolution_failure_401`|Your network or proxy is blocking authentication headers needed to connect to the service.|- Ask your IT admin to add **app.powerbi.com** to the allowlist of your proxy or firewall. This helps your network keep the necessary sign-in information in place when trying to connect to the service. |
+|`cluster_resolution_failure_401`|Your network or proxy is blocking authentication headers needed to connect to the service.|- Ask your IT admin to add **app.powerbi.com** to the allow list of your proxy or firewall. This helps your network keep the necessary sign-in information in place when trying to connect to the service. |
 | `popup_window_blocked` | Error opening popup window. The browser blocked popups or the environment doesn't support popups. | Allow popups for the site, then retry sign in. | 
 
 ## Considerations and limitations
 
-Limitations to be aware of:
+Be aware of the following limitations:
 
-- Workspaces can contain a maximum of 1,000 Fabric and Power BI items.
-- Certain special characters aren't supported in workspace names when using an XMLA endpoint. As a workaround, use URL encoding of special characters, for example, for a forward slash **/**, use **%2F**.
+- Workspaces can contain up to 1,000 Fabric and Power BI items.
+- Workspace names don't support certain special characters when you use an XMLA endpoint. As a
+  workaround, use URL encoding for special characters. For example, use **%2F** for a forward slash
+  **/**.
 - A user or a [service principal](/power-bi/enterprise/service-premium-service-principal) can be a member of up to 1,000 workspaces.
 
 ## Related content
