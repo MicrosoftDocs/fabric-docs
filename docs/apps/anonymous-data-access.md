@@ -40,7 +40,7 @@ A Fabric tenant administrator must enable anonymous data access before app devel
 
 1. Sign in to the [Fabric admin portal](https://app.fabric.microsoft.com/admin-portal).
 1. Select **Tenant settings**.
-1. Under **Fabric apps (preview)**, find **Anonymous data access**.
+1. Under **Fabric apps**, find **Anonymous data access**.
 
    :::image type="content" source="./media/anonymous-data-access/admin-setting-for-anonymous-data-access.png" alt-text="Screenshot of the Anonymous data access setting in the Fabric admin portal.":::
 

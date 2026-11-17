@@ -119,16 +119,10 @@ items:
             href: deployment-scripts.md
   - name: Develop
     items:
-      - name: AI functions
-        href: ai-functions.md
       - name: Fabric functions
         href: fabric-user-data-functions.md
       - name: Query labels
         href: query-label.md
-      - name: Regular expressions
-        href: regular-expressions.md
-      - name: String similarity comparison
-        href: string-similarity.md
       - name: Transactions
         href: transactions.md
       - name: Warehouse collation
@@ -136,6 +130,16 @@ items:
       - name: Warehouse snapshots
         href: warehouse-snapshot.md
         displayName: Snapshot
+      - name: Built-in functions
+        items:
+          - name: AI functions
+            href: ai-functions.md
+          - name: Analytical functions
+            href: analytical-functions.md
+          - name: Regular expressions
+            href: regular-expressions.md
+          - name: String similarity comparison
+            href: string-similarity.md
       - name: How to
         items:
           - name: Create a sample warehouse

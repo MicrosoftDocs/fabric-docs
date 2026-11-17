@@ -3,7 +3,7 @@ title: Fabric Apps frequently asked questions (FAQ)
 description: Answers to common questions about Microsoft Fabric Apps, including capabilities, limitations, deployment, and architecture.
 ms.reviewer: mksuni
 ms.topic: faq
-ms.date: 09/15/2026
+ms.date: 10/25/2026
 ai-usage: ai-generated
 ---
 
@@ -96,7 +96,11 @@ No. Fabric requires fabric authentication to be enabled before you deploy a Fabr
 
 ### Can I deploy to multiple environments (dev, staging, production)?
 
-You can manually manage separate Fabric workspaces and deploy to different items.
+Yes. Use [deployment pipelines](../cicd/deployment-pipelines/intro-to-deployment-pipelines.md) to promote your Fabric app across workspaces. You can also manually manage separate Fabric workspaces and deploy to different items.
+
+### Does Fabric Apps support application lifecycle management (ALM)?
+
+Yes. Fabric Apps supports [Git integration](../cicd/git-integration/intro-to-git-integration.md) for version control and [deployment pipelines](../cicd/deployment-pipelines/intro-to-deployment-pipelines.md) for promoting apps across environments. For an overview, see [CI/CD in Microsoft Fabric](../cicd/cicd-overview.md).
 
 ### How long does deployment take?
 
@@ -158,10 +162,8 @@ Yes. Implement client-side caching in your frontend application. The backend doe
 - Many-to-many relationships aren't supported
 - Composite primary keys aren't supported
 - Custom authentication providers aren't supported
-- Multiple environments management isn't available out of the box
 - Workspace outbound access protection isn't supported at this time.
 - Tenant-level and workspace-level private links aren't supported at this time.
-- Application lifecycle management (ALM) isn't supported at this time.
 
 See [Troubleshoot Fabric Apps](troubleshooting.md) for workarounds.
 

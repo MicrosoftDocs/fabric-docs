@@ -27,7 +27,7 @@ You can also find your Share Subscriptions in the OneLake catalog.
 
 1. Review the **Shared items** and **Configuration** cards. The configuration card displays the required expiration date.
 
-   :::image type="content" source="media/manage-share-subscription/share-subscription.png" alt-text="Screenshot of a Share Subscription showing its shared-item count, expiration configuration, OneLake Mirrored Items, permissions, and status." lightbox="media/manage-share-subscription/share-subscription.png":::
+   :::image type="content" source="media/manage-share-subscription/share-subscription.png" alt-text="Screenshot of a Share Subscription showing its shared-item count, expiration configuration, Mirrored OneLake items, permissions, and status." lightbox="media/manage-share-subscription/share-subscription.png":::
 
 ## View the items included in the Share
 
@@ -35,7 +35,7 @@ You can also find your Share Subscriptions in the OneLake catalog.
 
 1. Review each entry under **Shared data**. The list shows the item name, type, permission, sensitivity, status, and last-modified information.
 
-Each supported shared item is represented in the consumer workspace by a OneLake Mirrored Item.
+Each supported shared item is represented in the consumer workspace by a Mirrored OneLake item.
 
 ## Delete or unsubscribe
 

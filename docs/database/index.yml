@@ -1,14 +1,15 @@
 ### YamlMime:Landing
 
 title: Databases in Fabric documentation
-summary: Learn about databases in Fabric, including SQL database and Cosmos DB.
+summary: Learn about SQL database in Fabric, Microsoft Fabric HorizonDB, and Cosmos DB in Fabric.
 
 metadata:
   title: Databases in Fabric documentation
-  description: Learn about SQL database and Cosmos DB in Fabric.
+  description: Learn about SQL database in Fabric, Microsoft Fabric HorizonDB, and Cosmos DB in Fabric.
   ms.topic: landing-page # Required
   ms.collection: collection # Optional; Remove if no collection is used.
-  ms.date: 09/18/2026
+  ms.date: 10/27/2026
+  ai-usage: ai-assisted
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:
@@ -23,6 +24,8 @@ landingContent:
             url: hub/overview.md
           - text: SQL database in Fabric
             url: sql/overview.md
+          - text: Fabric HorizonDB
+            url: horizondb/overview.md
           - text: Cosmos DB database in Fabric
             url: cosmos-db/overview.md
           - text: "Decision guide: Which data store?"
@@ -64,6 +67,46 @@ landingContent:
             url: sql/performance-dashboard.md
           - text: Monitor mirroring replication
             url: sql/mirroring-monitor.md
+
+  # Card
+  - title: Get started with Fabric HorizonDB
+    linkLists:
+      - linkListType: quickstart
+        links:
+          - text: Create a HorizonDB database
+            url: horizondb/create.md
+          - text: Create tables
+            url: horizondb/create-table.md
+          - text: Load sample data
+            url: horizondb/load-sample-data.md
+          - text: Query a HorizonDB database
+            url: horizondb/query.md
+      - linkListType: how-to-guide
+        links:
+          - text: Connect to a HorizonDB database
+            url: horizondb/connect.md
+          - text: Federated Analytics overview
+            url: horizondb/federated-analytics-overview.md
+          - text: Monitor Fabric HorizonDB
+            url: horizondb/monitor.md
+
+  # Card
+  - title: Build AI and Federated Analytics solutions with Fabric HorizonDB
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Use Fabric HorizonDB in AI applications
+            url: horizondb/use-case-ai-application.md
+          - text: Federated Analytics overview
+            url: horizondb/federated-analytics-overview.md
+          - text: Database mirroring
+            url: horizondb/mirroring-overview.md
+      - linkListType: how-to-guide
+        links:
+          - text: Federated queries
+            url: horizondb/query-fabric-data.md
+          - text: Data delivery (reverse ETL)
+            url: horizondb/load-fabric-data-copy-job.md
 
   # Card 
   - title: Get started with Cosmos DB database
@@ -144,4 +187,3 @@ landingContent:
         links:
           - text: NoSQL query language
             url: /nosql/query/overview?context=/fabric/context/context-database
-

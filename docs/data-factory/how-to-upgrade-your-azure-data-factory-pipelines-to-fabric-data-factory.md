@@ -4,7 +4,7 @@ description: Upgrade your Azure Data Factory to Fabric at your own pace. Explore
 author: ssindhub
 ms.author: ssrinivasara
 ms.topic: how-to
-ms.date: 09/15/2026
+ms.date: 11/06/2026
 ms.custom: pipelines
 ai-usage: ai-assisted
 ---
@@ -214,7 +214,7 @@ The following items aren't supported in the upgrade experience today. Pipelines 
 |  | Certificate-based authentication (Web activity) | Requires redesign. |
 |  | User-assigned managed identity (UAMI) | Use workspace identity (WI) as a workaround. |
 | **Parameterization and metadata** | Dynamic linked services (parameterized connections) | Each permutation must be a separate connection. |
-| **Activities and compute** | Mapping data flows (MDF) | Supported in preview. Converted to MDF transforms in Dataflow Gen2. |
+| **Activities and compute** | Mapping data flows (MDF) | Generally available for eligible pipelines. Converted to MDF transforms in Dataflow Gen2. Review the [MDF transform limitations](dataflow-gen2-mapping-data-flows-transforms.md#limitations) before upgrading. |
 |  | Web, webhook, or HTTP activities with custom authentication or headers | Complex authentication scenarios must be rebuilt manually. |
 |  | Notebook pool environment settings | Not supported; upgrade is blocked. |
 |  | Batch or custom activity workspace identity support | Missing workspace identity support blocks upgrade. |
@@ -278,7 +278,7 @@ Yes. Validate in a nonproduction environment—confirming connections, triggers,
 
 - [Compare Azure Data Factory and Fabric Data Factory](/fabric/data-factory/compare-fabric-data-factory-and-azure-data-factory)
 - [Plan your migration from Azure Data Factory to Fabric Data Factory](/fabric/data-factory/migrate-planning-azure-data-factory)
-- [Upgrade Azure Data Factory Mapping Data Flows pipelines to Fabric (preview)](/fabric/data-factory/dataflow-gen2-mapping-data-flows-transforms-upgrade)
+- [Upgrade Azure Data Factory Mapping Data Flows pipelines to Fabric](/fabric/data-factory/dataflow-gen2-mapping-data-flows-transforms-upgrade)
 - [Migration best practices](/fabric/data-factory/migration-best-practices)
 - [Connector parity](/fabric/data-factory/connector-parity)
 - [Convert global parameters to variable libraries](/fabric/data-factory/convert-global-parameters-to-variable-libraries)

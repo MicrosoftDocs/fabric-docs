@@ -1,0 +1,10 @@
+# YamlMime:ZonePivotGroups
+groups:
+  - id: database-agents-engine
+    title: Database engine
+    prompt: Select your database engine
+    pivots:
+      - id: azure-sql
+        title: Azure SQL Database
+      - id: postgresql
+        title: Azure Database for PostgreSQL

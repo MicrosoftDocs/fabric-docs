@@ -3,7 +3,7 @@ title: Differences between Data Factory in Fabric and Azure
 description: Compare Azure Data Factory and Fabric Data Factory features to choose the right data integration solution for your enterprise.
 ms.reviewer: makromer
 ms.topic: concept-article
-ms.date: 10/05/2026
+ms.date: 11/06/2026
 ms.custom:
   - template-concept
   - build-2023
@@ -91,7 +91,7 @@ With Data Factory, we continue to maintain a high degree of continuity with Data
 |HDInsight|[Hive activity](/azure/data-factory/transform-data-using-hadoop-hive) &bull; [Pig activity](/azure/data-factory/transform-data-using-hadoop-pig) &bull; [MapReduce activity](/azure/data-factory/transform-data-using-hadoop-map-reduce) &bull; [Spark activity](/azure/data-factory/transform-data-using-spark) &bull; [Streaming activity](/azure/data-factory/transform-data-using-hadoop-streaming)|[HDInsight activity](azure-hdinsight-activity.md)|
 |If condition|[Y](/azure/data-factory/control-flow-if-condition-activity)|[Y](if-condition-activity.md)|
 |Lookup|[Y](/azure/data-factory/control-flow-lookup-activity)|[Y](lookup-activity.md)|
-|Mapping Data Flow|[Y](/azure/data-factory/control-flow-execute-data-flow-activity)|[MDF transforms in Dataflow Gen2](dataflow-gen2-mapping-data-flows-transforms.md) (Preview). Power Query in [Dataflow Gen2](tutorial-dataflows-gen2-pipeline-activity.md) is also available as an alternative redesign option.|
+|Mapping Data Flow|[Y](/azure/data-factory/control-flow-execute-data-flow-activity)|[MDF transforms in Dataflow Gen2](dataflow-gen2-mapping-data-flows-transforms.md). Power Query in [Dataflow Gen2](tutorial-dataflows-gen2-pipeline-activity.md) is also available as an alternative redesign option.|
 |Office 365 Outlook|N/A|[Y](outlook-activity.md)|
 |Power Query (ADF only - Wrangling Dataflow)|Deprecated|N/A|
 |Script|[Y](/azure/data-factory/transform-data-using-script)|[Y](script-activity.md)|
@@ -117,7 +117,7 @@ In addition to maintaining activity continuity, Fabric Data Factory introduces s
 1. **Outlook**: Available in Fabric Data Factory to facilitate integration with Outlook services.
 1. **Teams**: Available in Fabric Data Factory to enable orchestration of Microsoft Teams activities.
 1. **Semantic model refresh**: Available in Fabric Data Factory to enhance Power BI semantic model refresh capabilities.
-1. **Dataflow Gen2**: Available in Fabric Data Factory for Power Query-based transformations and Spark-based MDF transforms. MDF transforms are currently in preview and are executed through the pipeline Dataflow activity.
+1. **Dataflow Gen2**: Available in Fabric Data Factory for Power Query-based transformations and Spark-based MDF transforms. MDF transforms are generally available and are executed through the pipeline Dataflow activity.
 
 For a list of all available Fabric Data Factory activities, see the [Activity overview](activity-overview.md).
 

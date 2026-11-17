@@ -42,7 +42,7 @@ Here are examples of what you can do with some of the connectors available today
 - **Connectors:** The business actions activity uses Logic Apps connectors. For the full catalog of connectors and their actions, see [List of all Logic Apps connectors](/connectors/connector-reference/connector-reference-logicapps-connectors). Select any connector on that page to see its actions, authentication options, and region availability.
 
   > [!NOTE]
-  > Because the business actions activity is in public preview, it doesn't support all connectors in the Logic Apps catalog yet. Support for more connectors is coming. The connector browser in the activity shows the connectors you can use today.
+  > Because the business actions activity is in public preview, it doesn't support all connectors in the Logic Apps catalog yet. Support for more connectors is being released on a rolling basis. The service type browser in the activity settings shows the connectors you can use today.
 - **Credentials:** Connections use the Fabric connection framework. You don't create or manage a separate Logic Apps resource.
 - **Inputs:** The activity generates its input form from the selected action's schema. You can pass in pipeline parameters, variables, and outputs from earlier activities.
 - **Outputs:** When **Wait for completion** is enabled, the action's response is available to later activities in the pipeline.
@@ -59,7 +59,7 @@ Here are examples of what you can do with some of the connectors available today
 ## Add a business actions activity to a pipeline
 
 1. Open your Fabric workspace.
-1. Create a pipeline, or open the pipeline that contains your data-quality activity.
+1. Create a pipeline.
 1. In the pipeline authoring canvas, add the **Business Actions** activity.
 
    :::image type="content" source="media/business-actions-activity/add-business-actions-activity.png" alt-text="Screenshot of a business action activity on the pipeline canvas with the Settings tab open.":::
@@ -73,8 +73,8 @@ For more information, see [General settings](activity-overview.md#general-settin
 ## Select a connector action and connection
 
 1. Open the **Settings** tab.
-1. Use the connector browser to search or browse the business connector catalog.
-1. Select a connector and then select the action that you want to run.
+1. Use the **Service type** selection experience to search or browse the business connector catalog.
+1. Select a service and then select the action (API request) that you want to run.
 1. Select an existing connection, or select the option to create a connection and complete the required authentication flow.
 
    :::image type="content" source="media/business-actions-activity/configure-business-action.png" alt-text="Screenshot of business action settings configured for a Stripe action, connection, parameters, and activity preview." lightbox="media/business-actions-activity/configure-business-action.png":::
@@ -113,9 +113,7 @@ After the pipeline runs:
 - Connector availability and authentication requirements depend on the selected connector and action.
 - Long-running connector operations require the activity to wait for completion and use polling.
 - Connection credentials can require reauthorization when a connector credential expires.
-- Pricing details for the business action activity aren't finalized in the source specification.
-- AI-assisted payload completion can vary in availability during preview.
-
+  
 ## Related content
 
 - [Activity overview](activity-overview.md)

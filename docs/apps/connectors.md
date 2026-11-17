@@ -126,6 +126,8 @@ The `--auth` flag isn't available in CLI 1.36.2; use the YAML setting with that 
 
 Changing the mode doesn't grant source permissions. Developer sign-in and schema discovery use the developer's access and don't prove that the deployed runtime identity can access the source. Existing declarations aren't automatically migrated to the new default; keep `auth.type` explicit. After re-adding a connector, review the generated mode before deploying.
 
+When you distribute the app, review which related items require per-user access. See [Share a Fabric app](share-app.md) for the sharing workflow and the effect of removing direct access.
+
 ## Configure an entity connector
 
 Lakehouse, warehouse, and SQL database connectors expose selected source tables as typed entities. Use the generated `metadata.json` file to define only the tables and columns that your app needs.

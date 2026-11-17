@@ -1,20 +1,17 @@
 ---
-title: Mapping Data Flow Transforms in Dataflow Gen2 (Preview)
+title: Mapping Data Flow Transforms in Dataflow Gen2
 description: Learn about mapping data flow transforms in Dataflow Gen2, which enable you to author, execute, and monitor Spark-based data transformations in Data Factory in Microsoft Fabric.
 ms.topic: concept-article
-ms.date: 10/26/2026
+ms.date: 11/06/2026
 ms.reviewer: krirukm
 ms.search.form: DataflowGen2
 ms.custom: dataflows
 ai-usage: ai-assisted
 ---
 
-# Mapping data flow transforms in dataflow gen2 (Preview)
+# Mapping data flow transforms in dataflow gen2
 
-> [!IMPORTANT]  
-> Mapping data flow transforms in dataflow gen2 are currently in public preview and are subject to change.
-
-Mapping data flow (MDF) transforms in dataflow gen2 enable you to author, execute, and monitor Spark-based data transformations directly within Data Factory in Microsoft Fabric.
+Mapping data flow (MDF) transforms in dataflow gen2 are generally available. By using MDF transforms, you can author, execute, and monitor Spark-based data transformations directly within Data Factory in Microsoft Fabric.
 
 MDF transforms bring the capabilities of Azure Data Factory and Azure Synapse Analytics Mapping Data Flows into Microsoft Fabric through a familiar low-code visual authoring experience integrated with dataflow gen2.
 
@@ -86,7 +83,7 @@ Before you use MDF transforms in dataflow gen2, ensure the following prerequisit
 
 ## Limitations
 
-The following capabilities aren't currently supported in public preview:
+The following limitations apply to MDF transforms:
 
 | Area | Limitation |
 | --- | --- |
@@ -94,9 +91,10 @@ The following capabilities aren't currently supported in public preview:
 | Data Flow Library | Not supported. |
 | User-defined functions (UDFs) | Not supported. |
 | Dataflow execution | MDF transforms can only be executed through the pipeline Dataflow activity. Direct execution from dataflow gen2 isn't currently supported. Only the **Save** action is available from the **Save & run** menu. |
-| Managed Virtual Network | Managed Virtual Network (Managed VNet) support isn't available in this preview. |
-| Runtime execution | MDF transform execution currently uses the underlying Synapse Spark runtime, similar to Azure Data Factory and Azure Synapse Analytics Mapping Data Flows. |
-| Feature parity | Not all Mapping Data Flow capabilities are available in this preview. |
+| Managed Virtual Network | Managed Virtual Network (Managed VNet) connectivity through managed private endpoints (MPEs) isn't supported at general availability. |
+| Data gateways | On-premises data gateways (OPDGs) and virtual network (VNet) data gateways aren't supported for MDF transforms. |
+| Runtime execution | MDF transform execution currently uses the underlying Spark runtime, similar to Azure Data Factory and Azure Synapse Analytics Mapping Data Flows. |
+| Feature parity | Not all Mapping Data Flow capabilities are available in MDF transforms. |
 
 ## Supported connectors
 
@@ -125,7 +123,7 @@ The following connectors are currently supported:
 | | Fabric Warehouse | ✓/✓ | Organizational account |
 
 > [!NOTE]  
-> Organizational account authentication uses the signed-in user's Microsoft Entra organizational identity. Availability can depend on the connector, gateway configuration, and permissions granted to that identity.
+> Organizational account authentication uses the signed-in user's Microsoft Entra organizational identity. Availability can depend on the connector and permissions granted to that identity.
 
 During authoring:
 
@@ -257,7 +255,7 @@ Before execution:
    :::image type="content" source="media/dataflow-gen2-mapping-data-flows-transforms/save-mapping-data-flow-transform.png" alt-text="Screenshot of the Save option in the Save and run menu for a mapping data flow transform." lightbox="media/dataflow-gen2-mapping-data-flows-transforms/save-mapping-data-flow-transform.png":::
 
 > [!NOTE]  
-> Only the **Save** action is currently supported for dataflow gen2 with MDF transforms in public preview.
+> Only the **Save** action is currently supported for dataflow gen2 with MDF transforms. To execute the transforms, use a Fabric pipeline Dataflow activity.
 
 ## Execute mapping data flow transforms using Fabric pipelines
 
@@ -283,6 +281,22 @@ MDF transforms execute using managed Spark runtime integrated with Data Factory 
 - Sink properties
 
 :::image type="content" source="media/dataflow-gen2-mapping-data-flows-transforms/spark-runtime-configuration.png" alt-text="Screenshot of the Spark runtime configuration settings for a Dataflow activity in a Fabric pipeline." lightbox="media/dataflow-gen2-mapping-data-flows-transforms/spark-runtime-configuration.png":::
+
+## Use variable libraries with MDF transforms
+
+MDF transforms don't read variable libraries directly. To use a variable library value:
+
+1. Add the variable to the pipeline's **Library variables**.
+1. On the pipeline **Dataflow** activity, set the MDF parameter to a pipeline expression, such as `@pipeline().libraryVariables.<name>`. Replace `<name>` with the library variable reference name.
+
+The value is resolved when the pipeline run starts.
+
+The following limitations apply:
+
+- Supported types are String, Integer, Boolean, DateTime, and Guid. Number isn't supported.
+- Variables can't change the connections or lakehouse and warehouse items used by MDF sources and sinks.
+
+For more information, see [Variable library integration with pipelines](variable-library-integration-with-data-pipelines.md).
 
 ## Monitor mapping data flow transform executions
 
@@ -311,6 +325,7 @@ To view monitoring details:
 
 - [What is dataflow gen2?](dataflows-gen2-overview.md)
 - [Upgrade Azure Data Factory mapping data flows pipelines to Fabric](dataflow-gen2-mapping-data-flows-transforms-upgrade.md)
+- [Pricing for Dataflow Gen2](pricing-dataflows-gen2.md)
 - [A guide to Fabric dataflows for Azure Data Factory Mapping Data Flow users](guide-to-dataflows-for-mapping-data-flow-users.md)
 - [Use a dataflow in a pipeline](tutorial-dataflows-gen2-pipeline-activity.md)
 - [Monitor your dataflows](dataflows-gen2-monitor.md)

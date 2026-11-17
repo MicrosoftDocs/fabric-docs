@@ -1,18 +1,17 @@
 ---
-title: Upgrade Azure Data Factory pipelines with Mapping Data Flows to Fabric (Preview)
+title: Upgrade Azure Data Factory pipelines with Mapping Data Flows to Fabric
 description: Learn how to upgrade Azure Data Factory pipelines containing Mapping Data Flows to Microsoft Fabric, converting them to mapping data flow transforms in Dataflow Gen2.
 ms.topic: how-to
-ms.date: 10/06/2026
+ms.date: 11/06/2026
 ms.reviewer: krirukm
 ms.search.form: DataflowGen2
 ms.custom: dataflows
 ai-usage: ai-assisted
 ---
 
-# Upgrade Azure Data Factory pipelines with Mapping Data Flows to Fabric (Preview)
+# Upgrade Azure Data Factory pipelines with Mapping Data Flows to Fabric
 
-> [!IMPORTANT]
-> Upgrading Azure Data Factory Mapping Data Flows to Fabric is currently in public preview and is subject to change.
+Upgrading eligible Azure Data Factory pipelines that contain Mapping Data Flows to Fabric is now generally available.
 
 Use the Azure Data Factory built-in upgrade experience to upgrade eligible pipelines containing Mapping Data Flows to Microsoft Fabric Data Factory. During the upgrade, supported Mapping Data Flows are converted to [mapping data flow (MDF) transforms in Dataflow Gen2](dataflow-gen2-mapping-data-flows-transforms.md), and the associated pipelines are upgraded to Fabric pipelines.
 
@@ -137,7 +136,7 @@ After the upgrade finishes, open the upgrade results or the folder containing th
    :::image type="content" source="media/dataflow-gen2-mapping-data-flows-transforms-upgrade/mapping-data-flow-transform-save-menu.png" alt-text="Screenshot of the Save and run menu in the mapping data flow transform authoring experience.":::
 
 > [!NOTE]  
-> Only the **Save** action is currently supported for MDF transforms during public preview.
+> Only the **Save** action is currently supported for MDF transforms. To execute the transforms, run the upgraded Fabric pipeline.
 
 ## Run upgraded pipelines
 
@@ -205,7 +204,7 @@ To review execution details:
 
 The general Azure Data Factory upgrade limitations also apply to pipelines containing Mapping Data Flows. Review [Known limitations](how-to-upgrade-your-azure-data-factory-pipelines-to-fabric-data-factory.md#known-limitations) before selecting pipelines to upgrade.
 
-The following limitations currently apply to MDF transforms during public preview:
+The following limitations apply to MDF transforms:
 
 | Area | Limitation |
 | --- | --- |
@@ -213,14 +212,15 @@ The following limitations currently apply to MDF transforms during public previe
 | Data Flow Library | Not supported. |
 | User-defined functions (UDFs) | Not supported. |
 | Dataflow execution | MDF transforms can only be executed through the pipeline Dataflow activity. Direct Dataflow Gen2 refresh isn't supported. |
-| Managed Virtual Network | Managed Virtual Network support isn't available. |
+| Managed Virtual Network | Managed Virtual Network (Managed VNet) connectivity through managed private endpoints (MPEs) isn't supported at general availability. |
+| Data gateways | On-premises data gateways (OPDGs) and virtual network (VNet) data gateways aren't supported for MDF transforms. |
 | Spark runtime execution | MDF transforms currently use Spark runtime infrastructure similar to Azure Data Factory and Azure Synapse Analytics Mapping Data Flows. |
-| Feature parity | Not all Azure Data Factory Mapping Data Flow capabilities are available in the current preview. |
+| Feature parity | Not all Azure Data Factory Mapping Data Flow capabilities are available in MDF transforms. |
 
 ## Related content
 
 - [Upgrade your Azure Data Factory pipelines to Fabric Data Factory](how-to-upgrade-your-azure-data-factory-pipelines-to-fabric-data-factory.md)
-- [Mapping data flow transforms in Dataflow Gen2 (Preview)](dataflow-gen2-mapping-data-flows-transforms.md)
+- [Mapping data flow transforms in Dataflow Gen2](dataflow-gen2-mapping-data-flows-transforms.md)
 - [Upgrade planning for Azure Data Factory to Fabric Data Factory](upgrade-planning-azure-data-factory.md)
 - [Upgrade best practices for Azure Data Factory to Fabric Data Factory](upgrade-best-practices.md)
 - [Pricing for Dataflow Gen2](pricing-dataflows-gen2.md)

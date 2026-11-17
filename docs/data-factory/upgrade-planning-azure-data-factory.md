@@ -3,7 +3,7 @@ title: Upgrade Planning for Azure Data Factory to Fabric Data Factory
 description: Plan your ADF-to-Fabric upgrades with steps to evaluate the correct tools and execute your upgrade.
 #customer intent: As an Azure Data Factory customer I want to choose the right upgrade path to Fabric Data Factory, so I can quickly and easily upgrade all my items.
 ms.reviewer: makromer
-ms.date: 10/05/2026
+ms.date: 11/06/2026
 ms.topic: concept-article
 ai-usage: ai-assisted
 ---
@@ -60,7 +60,7 @@ Each pipeline and activity is clearly categorized (Ready, Needs review, Coming s
 This approach is well-suited for customers who want a guided, low-risk, and incremental upgrade path, while maintaining visibility into unsupported features and next steps.
 For step-by-step guidance, see [Upgrade your Azure Data Factory pipelines to Fabric](how-to-upgrade-your-azure-data-factory-pipelines-to-fabric-data-factory.md).
 
-The built-in upgrade experience also supports eligible pipelines containing Mapping Data Flows. Supported Mapping Data Flows are upgraded to MDF transforms in Dataflow Gen2, preserving their transformation logic and Spark-based execution model. This capability is currently in preview. For requirements, limitations, and upgrade instructions, see [Upgrade Azure Data Factory Mapping Data Flow pipelines to Fabric](dataflow-gen2-mapping-data-flows-transforms-upgrade.md).
+The built-in upgrade experience also supports eligible pipelines containing Mapping Data Flows. Supported Mapping Data Flows are upgraded to MDF transforms in Dataflow Gen2, preserving their transformation logic and Spark-based execution model. MDF transforms and the built-in Mapping Data Flow upgrade experience are generally available. For requirements, limitations, and upgrade instructions, see [Upgrade Azure Data Factory Mapping Data Flow pipelines to Fabric](dataflow-gen2-mapping-data-flows-transforms-upgrade.md).
 
 ## Manual upgrade
 
@@ -107,7 +107,6 @@ Modernize your ETL environment by upgrading pipelines and data flows to Fabric. 
 - Replace SHIRs (self-hosted integration runtimes) with OPDGs (on-premises data gateways) and VNet IRs with virtual network data gateways.
 - For eligible pipelines containing Mapping Data Flows, use the built-in upgrade experience to upgrade supported Mapping Data Flows to MDF transforms in Dataflow Gen2.
 - Review the [MDF transform limitations](dataflow-gen2-mapping-data-flows-transforms.md#limitations), supported connectors, transformations, authentication methods, and networking requirements before upgrading.
-- For Mapping Data Flows that use capabilities not supported in the current preview, remediate the unsupported components or redesign the transformation by using Power Query in Dataflow Gen2, Fabric Warehouse SQL, Spark notebooks, or another appropriate Fabric capability.
 - Rebuild [unsupported ADF activities](compare-fabric-data-factory-and-azure-data-factory.md#activity-comparison) using Fabric alternatives or the Invoke pipeline activity. Unsupported activities include:
   - Data Lake Analytics (U-SQL), a deprecated Azure service.
   - Validation activity, which you can rebuild by using Get Metadata, pipeline loops, and If activities.
@@ -133,7 +132,7 @@ Recreate CDC as [Copy job](create-copy-job.md) items. For Airflow, copy your DAG
 
 This guided, assessment-first experience helps you evaluate readiness, identify compatibility gaps, and upgrade supported pipelines incrementally to a Fabric workspace—all without scripts.
 
-The built-in upgrade experience also supports eligible pipelines that contain Mapping Data Flows. Supported Mapping Data Flows are upgraded to MDF transforms in Dataflow Gen2, preserving their transformation logic and Spark-based execution model. This capability is currently in preview.
+The built-in upgrade experience also supports eligible pipelines that contain Mapping Data Flows. Supported Mapping Data Flows are upgraded to MDF transforms in Dataflow Gen2, preserving their transformation logic and Spark-based execution model. MDF transforms and the built-in Mapping Data Flow upgrade experience are generally available.
 
 For more information, see:
 

@@ -1,5 +1,5 @@
 ---
-title: Configure data source access for a Real-Time Dashboard 
+title: Configure dashboard editor's identity for a Real-Time Dashboard
 description: Learn how to configure Real-Time Dashboards without granting access to the underlying data source.
 ms.reviewer: mbar
 ms.topic: how-to
@@ -9,7 +9,7 @@ author: spelluru
 ms.author: spelluru
 ai-usage: ai-assisted
 ---
-# Configure data source access for a Real-Time Dashboard 
+# Configure dashboard editor identity for a Real-Time Dashboard
 
 You can configure a Real-Time Dashboard data source to use the dashboard editor's identity. This setup lets users view dashboard data without direct access to the underlying data source. 
 
@@ -21,6 +21,9 @@ In this article, you learn how to create a cloud connection, apply it to a dashb
 - Edit permissions on the Real-Time Dashboard. 
 - Access to the underlying data source. 
 - Permission to create and manage cloud connections. 
+
+> [!NOTE]
+> Dashboard editor identity supports parameterized queries only when the data source is Azure Data Explorer (ADX) or Fabric Eventhouse. For other data sources, use pass-through identity to run parameterized queries. By using pass-through identity, dashboard viewers must have access to the underlying data source.
 
 ## Create a cloud connection
 

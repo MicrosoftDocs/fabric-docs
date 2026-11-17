@@ -1,7 +1,7 @@
 ---
 title: Use the Ontology Agent (Preview)
 description: Learn how to use the ontology agent in Fabric to create and operate ontologies over your Fabric workspace data through a chat interface.
-ms.date: 10/20/2026
+ms.date: 11/09/2026
 ms.topic: how-to
 ai-usage: ai-assisted
 ---
@@ -30,13 +30,17 @@ Before you start, organize the workspace and source data so the agent can discov
 
 A new ontology item starts empty. The first time you open it, the canvas shows a **Get started** page with an option to **Start with Ontology agent**.
 
-:::image type="content" source="media/how-to-use-ontology-agent/create-new-get-started.png" alt-text="Screenshot of an empty ontology item showing the Get started page with the Start with Ontology agent and Learn more cards." lightbox="media/how-to-use-ontology-agent/create-new-get-started.png":::
+:::image type="content" source="media/how-to-use-ontology-agent/create-new-get-started.png" alt-text="Screenshot of an empty ontology showing the Start with Ontology agent, Import ontology, and Learn more cards." lightbox="media/how-to-use-ontology-agent/create-new-get-started.png":::
 
-When you select **Start with Ontology agent**, the chat panel opens on the right of the canvas. The agent introduces itself and asks a few clarifying questions to scope the work, such as what the ontology should cover and which sources to prioritize. To make it easier to get going, the agent offers a few one-click suggestions above the input box. For example, jump straight into discovery, walk through the clarification dialogue first, or get an explanation of ontology concepts. The agent generates the suggestions and adapts them to the ontology and the conversation, so the exact wording and which suggestions appear can vary. Pick a suggestion or type your own message at any time.
+To add concepts manually instead, use the **+ Add** menu on the **Home** tab of the ribbon. It contains **Entity type**, **Relationship type**, **Namespace**, and **Rule**.
+
+When you select **Start with Ontology agent**, the chat panel opens on the right of the canvas. Describe what the ontology should cover and which sources to prioritize, or ask the agent to clarify the scope before discovering data or making changes. To make it easier to get going, the agent offers a few one-click suggestions above the input box. For example, jump straight into discovery, walk through the clarification dialogue first, or get an explanation of ontology concepts. The agent generates the suggestions and adapts them to the ontology and the conversation, so the exact wording and which suggestions appear can vary. Pick a suggestion or type your own message at any time.
 
 If your request or discovered sources span unrelated business domains, the agent asks whether to include all topics, focus on one primary domain, or start with a smaller subgroup. Revise the scope at any time before you apply the draft.
 
-:::image type="content" source="media/how-to-use-ontology-agent/create-new-agent-clarification.png" alt-text="Screenshot of the ontology agent chat panel with clarifying questions, suggestion chips, and the Plan and Act toggle." lightbox="media/how-to-use-ontology-agent/create-new-agent-clarification.png":::
+The following example asks the agent about an airline ontology's scope, source data, and priorities without changing the existing ontology.
+
+:::image type="content" source="media/how-to-use-ontology-agent/create-new-agent-clarification.png" alt-text="Screenshot of the ontology agent asking three clarifying questions about an airline ontology before discovery or changes." lightbox="media/how-to-use-ontology-agent/create-new-agent-clarification.png":::
 
 From there, the agent walks you through the rest of the creation flow:
 
@@ -45,11 +49,11 @@ From there, the agent walks you through the rest of the creation flow:
 1. **Validate**: runs structural and grounding checks on the draft and shows the results, including any warnings or errors.
 1. **Apply**: once you switch the agent to **Act mode**, writes the definition to the ontology item and publishes it.
 
-When you publish the first definition, the canvas replaces the **Get started** page with the Explorer (the list of entity types) and the relationship graph. The agent then offers a **Test the ontology** suggestion that generates five representative questions and answers them by querying the bound data. You can also continue working with the agent on other day-to-day tasks.
+When you publish the first definition, the entity types and relationship types appear in the **Explorer**, and the canvas shows your ontology. The agent might offer a **Test the ontology** suggestion. Select it, or ask the agent to generate representative questions and answer them with queries against the bound data. You can also continue working with the agent on other day-to-day tasks.
 
 ## Operate your ontology with the agent
 
-Once your ontology has a definition, open the ontology item any time and select **Ontology agent** on the toolbar to bring up the chat panel. The agent greets you and offers a few one-click suggestions that adapt to the current ontology. For example, ask the agent to explain the ontology, query the data behind it, or propose improvements. The agent generates the suggestions and they can vary across conversations. Pick a suggestion or type your own question in the **Say something** box.
+Once your ontology has a definition, open the ontology item any time and select **Home > Ontology agent** on the ribbon to bring up the chat panel. The agent greets you and offers a few one-click suggestions that adapt to the current ontology. For example, ask the agent to explain the ontology, query the data behind it, or propose improvements. The agent generates the suggestions and they can vary across conversations. Pick a suggestion or type your own question in the **Say something** box.
 
 :::image type="content" source="media/how-to-use-ontology-agent/ontology-agent-chat-greeting.png" alt-text="Screenshot of the ontology agent chat panel on an existing ontology with the greeting message, suggestion chips, and the Plan and Act toggle." lightbox="media/how-to-use-ontology-agent/ontology-agent-chat-greeting.png":::
 

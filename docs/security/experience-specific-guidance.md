@@ -756,7 +756,15 @@ Once configurations are restored, confirm that any referenced Eventhouse (KQL) d
 
 ## Databases
 
-This guide describes the recovery procedures for the databases experience. 
+This guide describes the recovery procedures for the databases experience.
+
+### Database Hub
+
+Database Agents must run in the same region as the database. If that region becomes unavailable, Database Agents can't recover by making cross-region calls, even if Fabric fails over to another region. You must wait until the original region recovers.
+
+For example, if the agent and database are in East US and Fabric fails over to West US during an East US outage, the agent remains unavailable until East US recovers. A failover that continues to route requests to the primary region doesn't have this cross-region restriction, provided that the primary region remains available.
+
+You don't need to reconfigure or re-enable Database Agents. After service is restored in the original region, refresh Database Hub or retry the operation. If Database Agents doesn't return, contact Microsoft Support.
 
 ### SQL database
 
