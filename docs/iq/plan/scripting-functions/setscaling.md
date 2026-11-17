@@ -5,7 +5,7 @@ ms.date: 10/30/2026
 ms.topic: reference
 ---
 
-# setscaling
+# SETSCALING
 
 Use setscaling to scale measure values in a planning sheet to a specified unit, such as thousands or millions.
 
