@@ -1,5 +1,5 @@
 ---
-title: What is Fabric Apps (Preview)?
+title: What is Fabric Apps?
 description: Learn about Microsoft Fabric Apps, a platform for building and deploying backend services with TypeScript data models, authentication, and static hosting on Microsoft Fabric.
 ms.reviewer: mksuni
 ms.topic: overview
@@ -8,11 +8,9 @@ ai-usage: ai-assisted
 ms.search.form: Fabric Apps overview
 ---
 
-# What is Fabric Apps (Preview)?
+# What are Fabric Apps?
 
-Fabric Apps (preview) is built on the Rayfin SDK and enables developers to create data-driven applications on Fabric using a unified development workflow. Developers define data models in TypeScript, and Fabric Apps automatically generates APIs, handles authentication, provides hosting, and integrates with Fabric services. Fabric Apps supports TypeScript for data models, client code, and application logic. Learn more in the [Rayfin SDK overview](/javascript/api/fabric-apps-sdk-javascript/rayfin-overview).
-
-[!INCLUDE [Fabric feature-preview-note](../includes/feature-preview-note.md)]
+Fabric Apps is built on the Rayfin SDK and enables developers to create data-driven applications on Fabric using a unified development workflow. Developers define data models in TypeScript, and Fabric Apps automatically generates APIs, handles authentication, provides hosting, and integrates with Fabric services. Fabric Apps supports TypeScript for data models, client code, and application logic. Learn more in the [Rayfin SDK overview](/javascript/api/fabric-apps-sdk-javascript/rayfin-overview).
 
 ## Key features
 
@@ -30,9 +28,14 @@ Fabric Apps provides these capabilities:
 Fabric Apps are not avaiable in all regions yet. See [supported regions for Fabric App](../admin/region-availability.md) to learn more.
 ## Prerequisites
 
-### Fabric capacity
+### License and workspace
 
-Your workspace must have Fabric capacity assigned. When creating a new workspace, select a Fabric capacity to associate with it. Fabric Apps services consume capacity units from the assigned capacity.
+Workspace requirements depend on your app's licensing option:
+
+- For a capacity-backed app, assign Fabric capacity or an active Fabric trial capacity to the workspace. App services consume capacity units from that capacity.
+- For the Power BI Pro experience, use a Pro workspace. You don't need to assign Fabric capacity. The [Power BI Pro limits](licensing.md#power-bi-pro-limits) apply.
+
+For licensing requirements, see [Choose a licensing option for Fabric Apps](licensing.md). To create an app with either option, follow [Create an app from the portal](create-app.md#create-an-app-from-portal).
 
 ### Tenant admin settings
 
@@ -40,7 +43,7 @@ A Fabric tenant administrator must enable the Fabric Apps workload before users 
 
 1. Sign in to the [Fabric admin portal](https://app.fabric.microsoft.com/admin-portal).
 1. Navigate to **Tenant settings**.
-1. Under **Fabric Apps (preview)**, toggle the setting to **Enabled**.
+1. Under **Fabric Apps**, toggle the setting to **Enabled**.
 1. Choose whether to enable for the entire organization or specific security groups.
 1. Select **Apply**.
 
@@ -109,6 +112,8 @@ Workspace roles don't supersede item-level permissions. To share an app with som
 | **Reshare** | Grant other users access to the Fabric app. Requires **admin** role on the workspace. |
 
 Learn more about [Workspace roles](/fabric/fundamentals/roles-workspaces).
+
+For the sharing workflow, related item permissions, and access requests, see [Share a Fabric app](share-app.md).
 
 ## Development with Rayfin CLI
 

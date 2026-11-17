@@ -155,4 +155,4 @@ To stop incurring costs for a soft-deleted item, permanently delete it before th
 - [Set up and manage workspace retention](workspace-retention.md)
 - [Recover or permanently delete items](item-recovery.md)
 - [Manage workspaces](portal-workspaces.md)
-- [Admin portal overview](admin-center.md)
+- [Fabric administration overview](admin-overview.md)

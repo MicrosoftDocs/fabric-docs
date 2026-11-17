@@ -1,7 +1,7 @@
 ---
 title: Entity Type Inheritance
 description: Learn about modeling inheritance in an ontology (preview) item to create type hierarchies.
-ms.date: 10/20/2026
+ms.date: 11/09/2026
 ms.topic: how-to
 ai-usage: ai-generated
 ---
@@ -33,14 +33,14 @@ The derived entity type doesn't inherit the following things:
 
 To create a derived entity type:
 
-1. Select **+ Add entity type** from the ontology ribbon.
-1. In the **Add entity type** dialog, expand **Additional configuration** and select **Choose entity to inherit from**.
+1. On the **Home** tab of the top ribbon, select **+ Add** > **Entity type**.
+1. In the **Add entity type** dialog, enter an **Entity type name**. Expand **Additional configuration**, and choose the base entity type under **Choose entity to inherit from (optional)**. For example, create *Frozen Dessert* and choose *Product* as its base entity type.
 
-    :::image type="content" source="media/how-to-use-inheritance/add-entity-type-configuration.png" alt-text="Screenshot of adding a base type when creating an entity." lightbox="media/how-to-use-inheritance/add-entity-type-configuration.png":::
+    :::image type="content" source="media/how-to-use-inheritance/add-entity-type-configuration.png" alt-text="Screenshot of Frozen Dessert inheriting from Product in the Add entity type dialog." lightbox="media/how-to-use-inheritance/add-entity-type-configuration.png":::
 
-1. Enter the details and select **Add Entity Type**.
+1. Select **Add**.
 
-To see the details of the derived entity type, select **View Entity Type details** from the ontology ribbon. 
+To see the details of the derived entity type, select it and then select **Entity type > Open details** from the ribbon.
 
 The **Configure** page opens and shows **Properties** inherited from the base class, a lineage-type **Relationship**, and **Details** about its inheritance relationships.
 
@@ -55,9 +55,9 @@ After you derive an entity type, you can continue adding information to that ent
 
 You can also model a relationship from a derived entity type back to its base (or to any ancestor) alongside the is-a link. The is-a link and a modeled relationship can coexist between the same pair of entity types. 
 
-Use the **Relationship** and **Lineage** buttons on the ontology canvas to toggle between relationship and inheritance views.
+Use the **Neighborhood** and **Inheritance** buttons on the ontology canvas to toggle between relationship and inheritance views.
 
-:::image type="content" source="media/how-to-use-inheritance/canvas-lineage.png" alt-text="Screenshot of the lineage view of the canvas." lightbox="media/how-to-use-inheritance/canvas-lineage.png":::
+:::image type="content" source="media/how-to-use-inheritance/canvas-lineage.png" alt-text="Screenshot of the Inheritance view of the canvas." lightbox="media/how-to-use-inheritance/canvas-lineage.png":::
 
 ## Work with inherited properties
 

@@ -111,7 +111,7 @@ When you migrate your dataflows, it's important to think beyond simply copying e
 
 In the [migration scenarios article](dataflow-gen2-migrate-from-dataflow-gen1-scenarios.md), several methods for upgrading, taking inventory, and using accelerators like [Power Query templates](/power-query/power-query-template) are described. These methods can help to ensure a seamless upgrade for your projects.
 
-If you want to upgrade your Dataflow Gen1 items in place, keeping each dataflow's ID, name, schedule, and connections, use the [Dataflows Upgrade Wizard](migrate-to-dataflow-gen2-using-upgrade-wizard.md), which is currently in preview.
+If you want to upgrade your Dataflow Gen1 items in place, keeping each dataflow's ID, name, schedule, and connections, use the [Dataflows Upgrade Wizard](migrate-to-dataflow-gen2-using-upgrade-wizard.md).
 
 ### Roadmap
 

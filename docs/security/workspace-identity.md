@@ -61,15 +61,15 @@ When an identity is deleted, Fabric items relying on the workspace identity for 
 
 ## How to use workspace identity
 
- Workspace identity currently can be used in two ways:
+You can currently use workspace identity in two ways:
 
 * For authentication: To learn how this identity surfaces as an authentication option when connecting OneLake shortcuts, pipelines, semantic models, and Dataflows Gen2 (CI/CD) to data sources, see [Authenticate with workspace identity](./workspace-identity-authenticate.md).
 
-* For trusted workspace access: Shortcuts in a workspace that has a workspace identity can be used for trusted service access. For more information, see [trusted workspace access](../security/security-trusted-workspace-access.md).
+* For trusted workspace access: Use shortcuts in a workspace that has a workspace identity for trusted service access. For more information, see [trusted workspace access](../security/security-trusted-workspace-access.md).
 
 ## Security, administration, and governance of the workspace identity
 
-The following sections describe who can use the workspace identity, and how you can monitor it in Microsoft Purview  and Azure.
+The following sections describe who can use the workspace identity, and how you can monitor it in Microsoft Purview and Azure.
 
 ### Access control
 
@@ -85,7 +85,7 @@ Workspace identity is supported for authentication to target resources in connec
 > [!WARNING]
 > Modifying or deleting the service principal or app registration in Azure is not recommended, as it will cause Fabric items relying on workspace identity to stop working. Such changes may be reverted.
 > Adding API permissions to allow access to target resources is supported for workspace identities.
-> Additionally, adhere to the principle of least privilege when managing Application Administrator roles. Ensure that only appropriate users are assigned this role. For more details, refer to [Application Administrators](/entra/identity/role-based-access-control/permissions-reference#application-administrator)
+> Also, adhere to the principle of least privilege when managing Application Administrator roles. Ensure that only appropriate users are assigned this role. For more information, see [Application Administrators](/entra/identity/role-based-access-control/permissions-reference#application-administrator).
 
 ### Administer the workspace identity in Fabric
 
@@ -111,7 +111,7 @@ You can view the audit events generated when creating and deleting workspace ide
 
 ### Administer the workspace identity in Azure
 
-The application associated with the workspace identity can be viewed under both **Enterprise applications and App registrations** in the Azure portal.
+You can view the application associated with the workspace identity under both **Enterprise applications** and **App registrations** in the Azure portal.
 
 #### Enterprise applications
 
@@ -120,7 +120,7 @@ The application associated with the workspace identity can be seen in **Enterpri
 > [!WARNING]
 > Modifications to the application made here will cause the workspace identity to stop working, and such changes may be reverted.
 > Adding API permissions to allow access to target resources is supported for workspace identities.
-> Additionally, adhere to the principle of least privilege when managing Application Administrator roles. Ensure that only appropriate users are assigned this role. For more details, refer to [Application Administrators](/entra/identity/role-based-access-control/permissions-reference#application-administrator)
+> Also, adhere to the principle of least privilege when managing Application Administrator roles. Ensure that only appropriate users are assigned this role. For more information, see [Application Administrators](/entra/identity/role-based-access-control/permissions-reference#application-administrator).
 
 To view the audit logs and sign-in logs for this identity:
 

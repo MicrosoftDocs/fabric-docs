@@ -139,10 +139,11 @@ During the current preview, PostgreSQL monitoring in the Database Hub has the fo
 
 - For Azure Database for PostgreSQL flexible server, **Estate** lists flexible server resources, not the individual PostgreSQL databases hosted on each server.
 
-- In the current preview, monitoring for Azure Database for PostgreSQL flexible server uses existing Azure Monitor metrics and doesn't provide query-level diagnostics in Database Hub. Query Store-backed top queries, query plans, wait-event analysis, and log search aren't part of the Database Hub. Use the Azure portal and native PostgreSQL tools to investigate queries.
+- In the current preview, **Performance** dashboard monitoring for Azure Database for PostgreSQL flexible server uses existing Azure Monitor metrics and doesn't provide interactive query-level explorers such as Query Store-backed top queries, query plans, wait-event analysis, or log search. Database Agents support for PostgreSQL in Database Hub is coming soon. During the limited preview, use [Database Agents in Visual Studio Code](database-agents-vs-code.md) alongside the Azure portal and native PostgreSQL tools for AI-assisted performance issue detection and investigation.
 
 ## Related PostgreSQL guidance
 
+- [Use Database Agents in Visual Studio Code (Preview)](database-agents-vs-code.md)
 - [Monitor PostgreSQL using metrics and logs](/azure/postgresql/monitor/concepts-monitoring)
 - [Flexible Server metric reference](/azure/azure-monitor/reference/supported-metrics/microsoft-dbforpostgresql-flexibleservers-metrics)
 - [Azure Monitor roles and permissions](/azure/azure-monitor/fundamentals/roles-permissions-security)

@@ -119,8 +119,9 @@ Currently, Database Hub evaluates the following Microsoft SQL platform security 
     - Applicable to Azure SQL Database, SQL Server on Azure VM, Azure SQL Managed Instance
 - **Private Endpoint Enabled** (issue)
     - Applicable to Azure SQL Database
-- **Auditing** (suggestion)
+- **Auditing (preview)** (suggestion)
     - Applicable to Azure SQL Database
+    - This assessment is in preview. Database Hub reflects the auditing status for Azure SQL databases only when auditing is enabled through Azure Policy. Auditing configured through other methods, such as the Azure portal or PowerShell, might not appear in Database Hub. In these cases, manually verify the auditing configuration in Azure Portal.
 - **Encryption at rest using Customer Managed Keys (CMK)** (suggestion)
     - Applicable to Azure SQL Database, Azure SQL Managed Instance
 - **Microsoft Entra Authentication Enforced** (suggestion)
