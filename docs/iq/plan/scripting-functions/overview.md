@@ -1,7 +1,7 @@
 ---
 title: Scripting functions in planning
 description: Learn about the scripting functions available in planning in Fabric and how to use them to control visuals, refresh reports, configure layouts, and manage data display.
-ms.date: 11/09/2026
+ms.date: 11/18/2026
 ms.topic: reference
 ---
 
@@ -25,6 +25,7 @@ The following table lists the scripting functions available in planning in Fabri
 | [REFRESH_REPORT](refresh-report.md) | Refreshes a report in a planning sheet. |
 | [REFRESH_VISUAL](refresh-visual.md) | Refreshes a specific visual in an intelligence sheet. |
 | [SETBOTTOMN](setbottomn.md) | Displays the bottom N records based on a selected category and ranking criterion. |
+| [SETFILTER](setfilter.md) | Applies a saved filter to a planning sheet. |
 | [SETLAYOUT](setlayout.md) | Applies a layout to a planning sheet, including Hierarchy, Table, Tree, default, measures-on-rows, and measures-on-columns layouts. |
 | [SETNUMBERFORMATTING](setnumberformatting.md) | Switches the number formatting applied to values in a planning sheet between Native, Uniform, Measure Level, and Auto modes. |
 | [SETSCALING](setscaling.md) | Scales measure values in a planning sheet to a specified unit, such as thousands or millions. |
@@ -35,6 +36,7 @@ The following table lists the scripting functions available in planning in Fabri
 | [SHOW_VISUAL](show-visual.md) | Shows a visual or visual group in an intelligence sheet. |
 | [SHOWCLOSEDFORECAST](showclosedforecast.md) | Shows or hides forecast values for closed periods in a planning sheet. |
 | [SHOWMEASURES](showmeasures.md) | Shows or hides all measures in a planning sheet. |
+| [TRIGGERWRITEBACK](triggerwriteback.md) | Executes a configured Writeback operation from a button in a planning sheet. |
 
 ## Use scripting functions
 

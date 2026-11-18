@@ -207,5 +207,6 @@ For specific runtime errors, see the [Excel advanced destination error reference
 ## Related content
 
 - [Dataflow destinations and managed settings](dataflow-gen2-data-destinations-and-managed-settings.md)
+- [HTML document builder](dataflow-document-builder-html.md)
 - [Excel advanced data destination](dataflow-gen2-data-destinations-excel-advanced.md)
 - [View refresh history and monitor your dataflows](dataflows-gen2-monitor.md)

@@ -23,6 +23,9 @@ Parameters are the building blocks for filters in Real-Time Dashboards. Create a
 * Editor permissions on a [Real-Time Dashboard](dashboard-real-time-create.md).
 * A dashboard with visuals that uses the **StormEvents** table in the *Weather analytics* sample data from the [samples gallery](sample-gallery.md#get-data).
 
+> [!NOTE]
+> When using Dashboard editor's identity, parameterized queries are supported only for Azure Data Explorer (ADX) and Fabric Eventhouse data sources. For more information about configuring data source access, see [Configure Dashboard editor's identity for a Real-Time Dashboard](dashboard-data-source-access.md).
+
 ## View the parameter list
 
 To view the list of all dashboard parameters, select **Manage** > **Parameters**.

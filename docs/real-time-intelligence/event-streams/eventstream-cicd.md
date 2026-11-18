@@ -92,7 +92,7 @@ You can also use the [Import/Export Item Definitions Batch APIs (preview)](/rest
 | Category | Fully Supported | Partially Supported | Not Supported |
 | :--- | :--- | :--- | :--- |
 | **Sources** | Standard GA sources (for example, Azure Event Hubs, Confluent, Sample Data) |  Azure SQL DB (CDC)<br>Azure SQL Managed Instance (CDC)<br>MySQL DB (CDC)<br>PostgreSQL Database CDC<br>SQL Server on VM (CDC) | Cribl<br> Anomaly Detection events (Preview)|
-| **Destinations** | Eventhouse<br>Lakehouse<br>Derived stream<br>Custom endpoint<br>Activator | - | Business events (Preview)<br>Spark Notebook (Preview) |
+| **Destinations** | Eventhouse<br>Lakehouse<br>Derived stream<br>Custom endpoint<br>Activator | - | Business events<br>Spark Notebook (Preview) |
 | **Operators** |  Filter<br> Manage fields<br>Aggregate<br>Join<br>Group by<br>Union<br>Expand | SQL Code (Custom code) | - |
 | **Features** | General capabilities (e.g., multiple-schema inferencing) | - | Pause/Resume State |
 
@@ -113,5 +113,4 @@ You can also use the [Import/Export Item Definitions Batch APIs (preview)](/rest
 - [Get started with Git integration](/fabric/cicd/git-integration/git-get-started)
 - [Choose the best Fabric CI/CD workflow option for you](/fabric/cicd/manage-deployment)
 - [Azure DevOps Pipelines extension for Fabric](https://marketplace.visualstudio.com/items?itemName=ms-fabric.fabric-devops-pipelines)
-
 

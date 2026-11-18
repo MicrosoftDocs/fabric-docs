@@ -51,6 +51,24 @@ landingContent:
             url: ../real-time-hub/explore-all-data-streams.md
           - text: Set alerts on streams
             url: ../real-time-hub/set-alerts-data-streams.md
+          - text: What are Business Events?
+            url: ../real-time-hub/business-events/business-events-overview.md?context=/fabric/context/context-rti&pivots=fabric
+          - text: What are Azure and Fabric Events?
+            url: ../real-time-hub/fabric-events-overview.md?context=/fabric/context/context-rti&pivots=fabric
+      - linkListType: tutorial
+        links:
+          - text: Publish business events using eventstreams and react using Activator
+            url: ../real-time-hub/business-events/tutorial-business-events-event-stream-user-data-function-activator.md?context=/fabric/context/context-rti&pivots=fabric
+          - text: Build event-driven pipelines with Azure and Fabric Events
+            url: ../real-time-hub/tutorial-build-event-driven-data-pipelines.md?context=/fabric/context/context-rti&pivots=fabric
+      - linkListType: how-to-guide
+        links:
+          - text: Publish and consume events with REST APIs
+            url: ../real-time-hub/automate-event-consumption-rest-api-cicd.md?context=/fabric/context/context-rti&pivots=fabric
+      - linkListType: reference
+        links:
+          - text: Fabric Events scenarios and guides
+            url: https://microsoft.github.io/fabric-events/home/
 
     # Card
   - title: Visualize data
