@@ -94,7 +94,7 @@ Your available quota is the difference between `limit` and `currentValue` for th
 
 ## Request a quota increase
 
-When requesting a quota increase, consider enough quota for both provisioned capacity CUs and configured overage thresholds, including any planned increases. Overage thresholds require quota even if no overage occurs. For the threshold calculation, see [How capacity overage works](capacity-overage-overview.md#how-capacity-overage-works). The following section outlines how to request a Fabric quota increase using the Azure portal and the ARM APIs.
+When requesting a quota increase, consider enough quota for both provisioned capacity CUs and configured overage thresholds, including any planned increases. Overage thresholds require quota even if no overage occurs. For the threshold calculation, see [How capacity overage works](capacity-overage-overview.md#how-capacity-overage-works). The following section outlines how to request a Fabric quota increase by using the Azure portal and the ARM APIs.
 
 # [Azure](#tab/Azure)
 
