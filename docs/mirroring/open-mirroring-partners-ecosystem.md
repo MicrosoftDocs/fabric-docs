@@ -29,11 +29,7 @@ For more information, see [ASAPIO Integration Add-on, Fabric Connector](https://
 
 CData Sync brings Open Mirroring support to over 150 enterprise data sources with minimal configuration, for both on-premises and in the cloud. Open Mirroring with Sync helps organizations reflect data changes from critical sources like SAP, NetSuite, Salesforce, and SQL Server directly into Fabric for immediate analysis.
 
-For setup instructions and additional resources, see:
-
-- [CData Sync Microsoft OneLake Mirroring destination documentation](https://docs.sync.cdata.com/26.4/en/connections/destinations/microsoft-onelake-mirroring-destination).
-- [CData Sync demo: From SQL Server to Fabric: Orchestrating AI-Ready Data Pipelines with CData Sync](https://www.youtube.com/watch?v=PmdFbcCdObQ) (video).
-- [CData Sync's Open Mirroring release blog](https://www.cdata.com/blog/sync-expands-ms-fabric-support-open-mirroring).
+For more information, see [CData Sync Microsoft OneLake Mirroring destination documentation](https://docs.sync.cdata.com/26.4/en/connections/destinations/microsoft-onelake-mirroring-destination).
 
 ## CluedIn
 
