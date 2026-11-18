@@ -2,15 +2,18 @@
 title: PostgreSQL database connector overview
 description: This article provides an overview of the supported capabilities of the PostgreSQL database connector.
 ms.topic: how-to
-ms.date: 07/21/2026
+ms.date: 10/27/2026
 ms.custom:
   - template-how-to
   - connectors
+ai-usage: ai-assisted
 ---
 
 # PostgreSQL database connector overview
 
 The PostgreSQL database connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
+
+PostgreSQL is generally available as a Dataflow Gen2 data destination. Use it to load prepared query results directly into PostgreSQL tables.
 
 ## Supported capabilities
 
@@ -26,5 +29,7 @@ The PostgreSQL database connector is supported in Data Factory for [!INCLUDE [pr
 ## Related content
 
 For information on how to connect to a PostgreSQL database, go to [Set up your PostgreSQL database connection](connector-postgresql.md).
+
+To load query results into PostgreSQL, see [Use PostgreSQL as a Dataflow Gen2 data destination](connector-postgresql.md#use-postgresql-as-a-dataflow-gen2-data-destination).
 
 To learn more about the copy activity configuration for PostgreSQL database in a pipeline, go to [Configure in a pipeline copy activity](connector-postgresql-copy-activity.md).

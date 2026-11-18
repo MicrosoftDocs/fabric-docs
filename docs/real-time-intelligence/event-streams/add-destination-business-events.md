@@ -46,7 +46,7 @@ Add a business events destination to your eventstream by following these steps:�
 
     - Create a new business events topic and event schema: 
 
-        :::image type="content" source="media/add-destination-business-events/business-events-create-new-event-type.png" alt-text="Screenshot of the Business events configuration panel with the Create new link highlighted under Business event type." lightbox="media/add-destination-business-events/business-events-create-new-event-type.png":::
+        :::image type="content" source="media/add-destination-business-events/business-events-create-new-event-type-ga.png" alt-text="Screenshot of the Business events configuration panel with the Create new link highlighted under Business event type." lightbox="media/add-destination-business-events/business-events-create-new-event-type-ga.png":::
 
         1. On the **Define business page**, follow these steps:
             1. Specify the **name** and **description** of the event schema. 
@@ -63,7 +63,7 @@ Add a business events destination to your eventstream by following these steps:�
 
 1.  **Save** the destination configuration. 
 
-    :::image type="content" source="media/add-destination-business-events/business-events-destination-schema-json-format.png" alt-text="Screenshot of the Business events destination configuration with schema, JSON input data format, and Save button." lightbox="media/add-destination-business-events/business-events-destination-schema-json-format.png":::
+    :::image type="content" source="media/add-destination-business-events/business-events-destination-schema-json-format-ga.png" alt-text="Screenshot of the Business events destination configuration with schema, JSON input data format, and Save button." lightbox="media/add-destination-business-events/business-events-destination-schema-json-format-ga.png":::
 
 1.  If the eventstream schema doesn't match the selected business event schema, you need to configure schema mapping before publishing the eventstream. If the input event schema produced by your eventstream already matches the selected business event schema, no schema mapping is required. You can proceed to the next step.
 

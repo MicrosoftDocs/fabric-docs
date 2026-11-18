@@ -15,6 +15,20 @@ As a data producer, manage the **Share** you created with IQ Sharing. Use it to 
 > [!NOTE]
 > IQ Sharing is currently in preview. This preview is provided without a service-level agreement and isn't recommended for production workloads. Certain features might not be supported or might have constrained capabilities. For more information, see [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
+## Workspace roles and Share permissions
+
+Workspace roles grant the following permissions on Share items:
+
+| Action | Required permissions on the item | Admin | Member | Contributor | Viewer |
+| --- | --- | --- | --- | --- | --- |
+| Update the Share's scope or contents. | Write | Yes | Yes | No | No |
+| Delete a Share. | Write | Yes | Yes | Yes | No |
+| Revoke a Share. | Write | Yes | Yes | Yes | No |
+| View Share metadata. | Read | Yes | Yes | Yes | Yes |
+| Share the Share item with others. | Reshare | Yes | Yes | No | No |
+
+These permissions apply to the **Share item**. They don't replace the [permissions required on the source items](create-share.md#source-item-permissions) included in the Share. In this table, **No** means that the workspace role doesn't grant the permission.
+
 ## View a Share
 
 You can also find your Shares in the OneLake catalog.

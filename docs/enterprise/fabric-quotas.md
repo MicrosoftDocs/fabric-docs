@@ -1,17 +1,18 @@
 ---
 title: Microsoft Fabric quotas
-description: Learn how to view and manage your Microsoft Fabric quota which sets the number of Capacity Units (CUs) your subscribed capacity has.
+description: Learn what counts against Microsoft Fabric capacity quotas, including capacity overage thresholds, and how to view and increase your quota.
 author: dknappettmsft
 ms.author: daknappe
 ms.topic: how-to
-ms.date: 04/06/2025
+ms.date: 11/17/2026
+ai-usage: ai-assisted
 
 #customer intent: As an administrator or an executive, I want to learn how to manage my Microsoft Fabric quota.
 ---
 
 # Microsoft Fabric capacity quotas
 
-Microsoft Fabric provides limits, also known as *quotas*, which determine the maximum number of Fabric Capacity Units (CUs) for each of the capacities on your subscription. Quotas depend on your [Azure subscription type](/azure/azure-resource-manager/management/azure-subscription-service-limits). You don't get charged for quotas, you're only charged for your capacities.
+Microsoft Fabric provides limits, also known as *quotas*, which determine the maximum number of Fabric Capacity Units (CUs) available to your Azure subscription in each region. Quotas depend on your [Azure subscription type](/azure/azure-resource-manager/management/azure-subscription-service-limits). You don't get charged for quota itself.
 
 This article explains how to view and increase your quotas, using the Azure portal and the Azure Resource Manager (ARM) APIs.
 
@@ -22,6 +23,13 @@ This article explains how to view and increase your quotas, using the Azure port
 * To manage your Fabric quota, you need the permissions listed in [Quota Request Operator](/azure/role-based-access-control/built-in-roles/management-and-governance#quota-request-operator)
   
 * Before provisioning your first capacity or if your quota is 0, register the Microsoft.Fabric resource provider using the [Azure Resource Provider instructions](/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider)
+
+## What counts against your Fabric quota
+
+Quota usage includes these allocations across capacities in the same subscription and region:
+
+* **Provisioned capacity CUs:** Each capacity uses quota based on its SKU.
+* **Configured capacity overage thresholds:** Enabling overage uses additional quota based on the threshold, even if no overage occurs. For the calculation and requirements, see [How capacity overage works](capacity-overage-overview.md#how-capacity-overage-works).
 
 ## View your Fabric CU quota
 
@@ -76,17 +84,17 @@ Here's an example of the response you get when you call the API.
 
 ### Calculate your quota
 
-Your available quota is the difference between `limit` and `CurrentValue`.
+Your available quota is the difference between `limit` and `currentValue` for the selected subscription and region.
 
-* `limit` - Identifies the quota limit of your subscription.
+* `limit` - Identifies the quota limit for your subscription in the selected region.
 
-* `CurrentValue` - Determines the number of used CUs.
+* `currentValue` - Identifies the CUs that count against your quota, including provisioned capacity CUs and configured capacity overage thresholds.
 
 ---
 
 ## Request a quota increase
 
-The following section outlines how to request a Fabric quota increase using the Azure portal and the ARM APIs.
+When requesting a quota increase, consider enough quota for both provisioned capacity CUs and configured overage thresholds, including any planned increases. Overage thresholds require quota even if no overage occurs. For the threshold calculation, see [How capacity overage works](capacity-overage-overview.md#how-capacity-overage-works). The following section outlines how to request a Fabric quota increase by using the Azure portal and the ARM APIs.
 
 # [Azure](#tab/Azure)
 

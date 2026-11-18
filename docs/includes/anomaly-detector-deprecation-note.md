@@ -8,4 +8,4 @@ ai-usage: ai-assisted
 ---
 
 > [!IMPORTANT]
-> You can't create Fabric Anomaly Detection items on or after December 1, 2026. After January 1, 2027, anomaly detection events will stop. The remaining items will be deleted after this date. This change doesn't affect any eventhouse data that the anomaly detectors monitor.
+> Fabric Anomaly Detector is being retired. You can't create Anomaly Detector items on or after December 1, 2026. After January 1, 2027, anomaly detection events will stop. The remaining items will be deleted after this date. This change doesn't affect any eventhouse data that the anomaly detectors monitor.

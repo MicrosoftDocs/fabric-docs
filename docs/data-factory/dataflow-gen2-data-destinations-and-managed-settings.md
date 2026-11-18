@@ -3,7 +3,7 @@ title: Dataflow Gen2 data destinations and managed settings
 description: Describes how to use Dataflow Gen2 to save your data in specific destinations, along with instructions on how to use managed settings.
 ms.reviewer: jeluitwi
 ms.topic: how-to
-ms.date: 10/06/2026
+ms.date: 11/04/2026
 ms.custom: dataflows
 ai-usage: ai-assisted
 ---
@@ -15,6 +15,8 @@ After you clean and prepare your data with Dataflow Gen2, you'll want to save it
 The following list contains the supported data destinations:
 
 [!INCLUDE [dataflow-gen2-data-destinations](includes/dataflow-gen2-data-destinations.md)]
+
+Google BigQuery and Amazon S3 data destinations are in preview. The [PostgreSQL data destination](connector-postgresql.md#use-postgresql-as-a-dataflow-gen2-data-destination) is generally available.
 
 > [!NOTE]
 > To load your data to Fabric Data Warehouse, you can use the Azure Synapse Analytics (SQL DW) connector by getting the SQL connection string. For more information, see [Connectivity to Fabric Data Warehouse](../data-warehouse/connectivity.md).
@@ -42,6 +44,29 @@ There are three ways to set up the data destination:
 Connecting to the data destination works like connecting to a data source. You can use connections for both reading and writing your data, as long as you have the right permissions on the data source. You'll need to create a new connection or pick an existing one, then select **Next**.
 
 :::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/connect-to-data-destination.png" alt-text="Screenshot of the Connect to data destination window for a Lakehouse destination.":::
+
+## Google BigQuery and Amazon S3 destinations (preview)
+
+Use these destinations to deliver prepared data to other cloud platforms without a separate export step:
+
+| Destination | Output | Connection and setup |
+|---|---|---|
+| Google BigQuery | Tables in a BigQuery dataset. | [Use Google BigQuery as a data destination](connector-google-bigquery.md#use-google-bigquery-as-a-data-destination-preview). |
+| Amazon S3 | Files in an S3 bucket. | [Use Amazon S3 as a data destination](connector-amazon-s3.md#use-amazon-s3-as-a-data-destination). |
+
+> [!IMPORTANT]
+> To use Google BigQuery or Amazon S3 as a Dataflow Gen2 data destination through an on-premises data gateway, you need the November 2026 gateway release (version **3000.342.0**) or later. For update instructions, see [Update an on-premises data gateway](/data-integration/gateway/service-gateway-update).
+
+Select the query to export, choose **Add data destination**, and then select **Google BigQuery** or **Amazon S3**. Configure a connection with write permissions and complete the target and destination settings. Run the dataflow to write the query results.
+
+:::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/multicloud-destinations.png" alt-text="Screenshot of the Amazon S3 and Google BigQuery data destination tiles, both marked Preview.":::
+
+Amazon S3 is also available as a data source. You can [read files from S3](connector-amazon-s3.md#read-data-from-amazon-s3), transform and combine the data in Power Query, and load the results to a supported destination.
+
+> [!NOTE]
+> During preview, writes to Google BigQuery can be slower than expected. See the [known destination performance issue](connector-google-bigquery.md#dataflow-gen2-destination-performance-preview) for guidance.
+>
+> Also review the [BigQuery empty-query-result limitation](connector-google-bigquery.md#empty-query-results-in-the-dataflow-gen2-destination-preview) and the [Amazon S3 bucket-root write limitation and subfolder workaround](connector-amazon-s3.md#known-issue-writing-to-the-bucket-root) when configuring these destinations.
 
 ## Set up file-based destinations
 
@@ -92,6 +117,15 @@ The multi sheet format partitions your data across multiple sheets based on a co
 #### Advanced format
 
 The advanced format provides more control over Excel output, allowing you to create complex workbooks with multiple sheets, charts, and customized formatting using navigation tables. For more information, see [Excel Advanced Data Destination](dataflow-gen2-data-destinations-excel-advanced.md).
+
+### Document builders
+
+Use a document builder to define formatted content from your dataflow queries, and then configure a file-based destination on the resulting document query:
+
+- [Excel document builder (preview)](dataflow-gen2-document-builder-excel.md) defines worksheets, tables, ranges, and charts.
+- [HTML document builder (preview)](dataflow-document-builder-html.md) defines an HTML document, including charts that use prepared query data.
+
+Closing a builder doesn't write a file. Configure the document query's destination and run the dataflow to generate the document.
 
 ## Create a new table or pick an existing table
 
