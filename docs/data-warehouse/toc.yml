@@ -136,6 +136,8 @@ items:
             href: ai-functions.md
           - name: Analytical functions
             href: analytical-functions.md
+          - name: String functions
+            href: string-functions.md
           - name: Regular expressions
             href: regular-expressions.md
           - name: String similarity comparison

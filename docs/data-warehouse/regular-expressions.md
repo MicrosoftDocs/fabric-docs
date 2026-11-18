@@ -167,6 +167,7 @@ GROUP BY LOWER(REGEXP_SUBSTR(Email, '@(.+)$', 1, 1, 'c', 1));
 
 ## Related content
 
+- [String functions in Fabric Data Warehouse](string-functions.md)
 - [Regular expressions functions (Transact-SQL)](/sql/t-sql/functions/regular-expressions-functions-transact-sql)
 - [T-SQL surface area in Fabric Data Warehouse](tsql-surface-area.md)
 - [Data types in Fabric Data Warehouse](data-types.md)
