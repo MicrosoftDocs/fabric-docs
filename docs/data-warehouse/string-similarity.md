@@ -294,6 +294,7 @@ Comparing every row of one table with every row of another can be expensive for 
 
 ## Related content
 
+- [String functions in Fabric Data Warehouse](string-functions.md)
 - [Fuzzy string matching overview](/sql/relational-databases/fuzzy-string-match/overview)
 - [SOUNDEX (Transact-SQL)](/sql/t-sql/functions/soundex-transact-sql?view=fabric&preserve-view=true)
 - [DIFFERENCE (Transact-SQL)](/sql/t-sql/functions/difference-transact-sql?view=fabric&preserve-view=true)

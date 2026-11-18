@@ -6,7 +6,7 @@ ms.author: daknappe
 ms.reviewer: pankar
 ms.topic: how-to
 ai-usage: ai-assisted
-ms.date: 09/23/2026
+ms.date: 11/16/2026
 ---
 
 # Manage surge protection for Fabric capacities
@@ -14,7 +14,7 @@ ms.date: 09/23/2026
 Surge protection helps capacity admins keep resources available for interactive workloads by proactively limiting the compute that background operations consume. You can apply surge protection at two levels:
 
 - **Capacity-level surge protection** rejects new background operations as a capacity approaches its configured usage threshold, before the capacity enters deep throttling.
-- **Workspace-level surge protection (preview)** caps how much compute a single workspace can consume, so no one workspace monopolizes the capacity. Admins can also manage workspace availability, automatically or manually block excessive consumers, and unblock and forgive workspaces to restore operations and reset recorded consumption.
+- **Workspace-level surge protection** caps how much compute a single workspace can consume, so no one workspace monopolizes the capacity. Admins can also manage workspace availability, automatically or manually block excessive consumers, and unblock and forgive workspaces to restore operations and reset recorded consumption.
 
 This article explains how to enable both levels, set thresholds, monitor surge events, and recover blocked workspaces.
 
@@ -132,9 +132,9 @@ To configure capacity surge protection notifications, follow the steps for the t
 - Capacity-level surge protection doesn't block operations billed with autoscale.
 - Certain operations, including OneLake activities, remain unaffected by capacity-level surge protection.
 
-## Workspace-level surge protection (preview)
+<a id="workspace-level-surge-protection-preview"></a>
 
-[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
+## Workspace-level surge protection
 
 At the workspace level, you cap the compute that individual workspaces consume so that no single workspace exhausts the capacity. The following sections explain how it works and how to enable it, manage workspaces, configure notifications, and recover blocked workspaces.
 

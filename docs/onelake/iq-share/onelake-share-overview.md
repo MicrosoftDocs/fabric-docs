@@ -26,7 +26,7 @@ The current preview supports sharing Fabric data items, such as lakehouses, ware
 | Data consumer | The person or organization that reviews an invitation and accepts a Share into a workspace in their Fabric tenant. |
 | Share | The producer-side Fabric item that identifies the shared items, recipients, expiration configuration, and invitation. The data producer creates and manages this item. |
 | Share Subscription | The consumer-side Fabric item created when a data consumer accepts a Share. It provides information about the Share and links to the shared items. The data consumer manages this item in the destination workspace. |
-| OneLake Mirrored Item | The consumer-side item through which the data consumer accesses the shared item's data. When a Share is accepted, Fabric represents each shared item in the consumer's workspace through a OneLake Mirrored Item. A OneLake Mirrored Item can be created only through IQ Sharing. |
+| Mirrored OneLake | The consumer-side item through which the data consumer accesses the shared item's data. When a Share is accepted, Fabric represents each shared item in the consumer's workspace through a Mirrored OneLake item. A Mirrored OneLake item can be created only through IQ Sharing. |
 | Invitation | The URL that lets an intended recipient review and accept a Share. The URL alone doesn't replace recipient authorization. |
 
 ## How IQ Sharing works
@@ -38,9 +38,9 @@ The following examples use a lakehouse and warehouse to illustrate the sharing w
 
 The data producer creates a Share, selects supported Fabric items, adds recipients, and sets the required expiration date. IQ Sharing generates an invitation URL that the producer sends to the intended consumers.
 
-Each invited recipient uses the URL to review the Share and selects a destination workspace in their Fabric tenant. Fabric creates a Share Subscription where the consumer can monitor expiration and view all shared items. Fabric also creates a read-only OneLake Mirrored Item for each shared source item. Each OneLake Mirrored Item contains shortcuts to the shared data. A OneLake Mirrored Item doesn't copy data. Its shortcuts reference the producer's data.
+Each invited recipient uses the URL to review the Share and selects a destination workspace in their Fabric tenant. Fabric creates a Share Subscription where the consumer can monitor expiration and view all shared items. Fabric also creates a read-only Mirrored OneLake item for each shared source item. Each Mirrored OneLake item contains shortcuts to the shared data. A Mirrored OneLake item doesn't copy data. Its shortcuts reference the producer's data.
 
-:::image type="content" source="media/onelake-share-overview/share-invitation.png" alt-text="Diagram showing an invitation connecting a Share in the producer tenant to a Share Subscription and OneLake Mirrored Items in the consumer tenant." lightbox="media/onelake-share-overview/share-invitation.png":::
+:::image type="content" source="media/onelake-share-overview/share-invitation.png" alt-text="Diagram showing an invitation connecting a Share in the producer tenant to a Share Subscription and Mirrored OneLake items in the consumer tenant." lightbox="media/onelake-share-overview/share-invitation.png":::
 
 ### Access data and context in place
 
@@ -54,7 +54,7 @@ For a shared lakehouse, Markdown files can provide business definitions, descrip
 
 Changes to tables within an already shared item, including added or deleted tables, are automatically reflected for consumers. You don't need a separate export pipeline to propagate these source changes.
 
-:::image type="content" source="media/onelake-share-overview/shared-table-updates.png" alt-text="Diagram showing source table updates and deletions reflected in the consumer's OneLake Mirrored Items." lightbox="media/onelake-share-overview/shared-table-updates.png":::
+:::image type="content" source="media/onelake-share-overview/shared-table-updates.png" alt-text="Diagram showing source table updates and deletions reflected in the consumer's Mirrored OneLake items." lightbox="media/onelake-share-overview/shared-table-updates.png":::
 
 ### Refresh added or removed items
 
@@ -70,7 +70,7 @@ As a data producer, track who has accepted your Share on the **Recipients** tab.
 
 These lifecycle changes can interrupt dependent analytics. Plan ownership, access duration, and downstream dependencies before you onboard consumers.
 
-:::image type="content" source="media/onelake-share-overview/share-access-lifecycle.png" alt-text="Diagram showing Share expiration ending access to all OneLake Mirrored Items in the consumer's Share Subscription." lightbox="media/onelake-share-overview/share-access-lifecycle.png":::
+:::image type="content" source="media/onelake-share-overview/share-access-lifecycle.png" alt-text="Diagram showing Share expiration ending access to all Mirrored OneLake items in the consumer's Share Subscription." lightbox="media/onelake-share-overview/share-access-lifecycle.png":::
 
 ## Supported item types
 
@@ -110,7 +110,7 @@ Fabric provides several ways to share data within and across tenants. Choose an 
 | Identity requirement | The data consumer doesn't need an identity in the producer's tenant | The data consumer doesn't need an identity in the producer's tenant | Requires an organizational account or service principal in the producer's tenant | Requires an organizational account or service principal in the producer's tenant |
 | Sharing unit | An entire supported Fabric item | Selected tables and files | Selected folders or tables | The Fabric item |
 | Setup model | The data producer creates a Share and shares the invitation URL | The data producer selects **External Data Share**, creates an external data share, and shares the invitation URL | The data consumer creates a delegated shortcut by using credentials for the producer's tenant | The data producer selects **Share** on an item and grants permissions to users |
-| Consumer experience | Acceptance creates a Share Subscription and a OneLake Mirrored Item for each shared source item in the consumer's workspace | The data consumer accepts the invitation link and selects a lakehouse. This creates a shared table. | The selected data appears as a shortcut in a lakehouse | The user accesses the producer's item directly |
+| Consumer experience | Acceptance creates a Share Subscription and a Mirrored OneLake item for each shared source item in the consumer's workspace | The data consumer accepts the invitation link and selects a lakehouse. This creates a shared table. | The selected data appears as a shortcut in a lakehouse | The user accesses the producer's item directly |
 
 If you already use external data sharing, you can continue to use it. For new implementations that share an entire item, use IQ Sharing if it supports your scenario.
 
@@ -124,10 +124,11 @@ Data producers currently don't incur networking charges when data consumers acce
 
 ## Key considerations
 
-Before you create or accept a Share through IQ Sharing, consider the following limitations:
+Before you create or accept a Share through IQ Sharing, review the following considerations:
 
-- **Shared data in other Fabric experiences.** You can't use OneLake Mirrored Items directly in ontologies, data agents, semantic models, or notebooks. Create a lakehouse, [create OneLake shortcuts](../shortcuts/create-onelake-shortcut.md) to the OneLake Mirrored Item's data, and use that lakehouse in the other Fabric experiences.
+- **Shared data in other Fabric experiences.** You can't use Mirrored OneLake items directly in ontologies, data agents, semantic models, or notebooks. Create a lakehouse, [create OneLake shortcuts](../shortcuts/create-onelake-shortcut.md) to the Mirrored OneLake item's data, and use that lakehouse in the other Fabric experiences.
 - **OneLake security rules aren't honored.** You can share source items that have OneLake security enabled, but their OneLake security rules aren't honored when consumers access the shared data through IQ Sharing.
+- **Manage security in the consumer tenant.** Warehouse SQL permissions and lakehouse permissions configured in the producer's tenant don't propagate to the consumer's tenant. The data consumer is responsible for configuring and managing security for the shared data in their tenant.
 - **Send invitations yourself.** IQ Sharing doesn't send email notifications when you create a Share. Copy the invitation URL and send it to the intended data consumers.
 - **Allow time for large table counts.** When you share a lakehouse or warehouse with thousands of tables, the SQL analytics endpoint can take time to register the table metadata. Allow time for this registration before you query the shared tables through the SQL analytics endpoint.
 

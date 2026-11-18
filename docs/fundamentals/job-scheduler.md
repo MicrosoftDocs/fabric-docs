@@ -67,7 +67,7 @@ To ensure your schedule is valid:
 
 * The Scheduler limits each user to 100 job submissions and 100 Get Job requests per minute to maintain system stability. Requests beyond these limits are automatically rejected.
 
-* Fabric limits each item to 100 concurrent jobs. All jobs submitted beyond this number are automatically failed. A job counts toward this limit as long as it's in any active state (starting, preparing, queueing, or running). The slot is released only after the job completes.
+* Fabric limits each item to 200 concurrent jobs. All jobs submitted beyond this number automatically fail. A job counts toward this limit as long as it's in any active state (starting, preparing, queueing, or running). The slot is released only after the job completes.
 
 * Jobs can run for a maximum of 24 days. Any jobs exceeding this duration are automatically terminated.
 

@@ -4,11 +4,11 @@ description: Learn how to create an eventstream for business events from the Add
 author: robece
 ms.author: robece
 ms.topic: how-to
-ms.date: 08/10/2026
+ms.date: 11/08/2026
 #customer intent: As a user, I want to create an eventstream for a business event from Real-Time hub so that I can transform and route the event in real time.
 ---
 
-# Create eventstreams for business events in Fabric Real-Time hub (Preview)
+# Create eventstreams for business events in Fabric Real-Time hub
 
 This article shows you how to create an eventstream for a business event from the **Add data** page, the business events list, or the detail page for a selected event in Real-Time hub.
 
@@ -47,7 +47,7 @@ Before you begin, make sure that you have:
 
 1. On the **Add data** page, select the **Business events** category or search for **Business events**.
 
-    :::image type="content" source="media/create-streams-business-events/add-data-business-events.png" alt-text="Screenshot showing Add Business Events as a data source." lightbox="media/create-streams-business-events/add-data-business-events.png":::
+    :::image type="content" source="media/create-streams-business-events/add-data-business-events-ga.png" alt-text="Screenshot showing Add Business Events as a data source." lightbox="media/create-streams-business-events/add-data-business-events-ga.png":::
 
 1. Continue with the steps in [Configure and create the eventstream](#configure-and-create-the-eventstream).
 
