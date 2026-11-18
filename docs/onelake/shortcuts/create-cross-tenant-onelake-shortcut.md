@@ -6,7 +6,7 @@ ms.reviewer: eloldag # Product team ms alias(es)
 # ms.author: Do not use - assigned by folder in docfx file
 ms.search.form: Shortcuts
 ms.topic: how-to
-ms.date: 07/31/2026
+ms.date: 11/18/2026
 ai-usage: ai-assisted
 #customer intent: As a data consumer, I want to create a delegated OneLake shortcut to data in another Fabric tenant so that I can use shared data without managing access for each downstream user in the producer tenant.
 ---
@@ -48,13 +48,9 @@ Use the following steps to create a shortcut to a OneLake item in a different te
 
    :::image type="content" source="media/create-onelake-shortcut/new-shortcut-lake-view.png" alt-text="Screenshot showing where to select New shortcut from the Lake view.":::
 
-1. Under **Internal sources**, select **Microsoft OneLake**.
+1. Under **Internal sources**, select **Microsoft OneLake (Cross-tenant)**.
 
-   :::image type="content" source="media/create-onelake-shortcut/new-shortcut.png" alt-text="Screenshot of the New shortcut window showing available shortcut sources. The option titled OneLake is highlighted.":::
-
-1. On the **Create a shortcut to data in another tenant?** banner, select **Enter connection details**.
-
-   :::image type="content" source="media/create-onelake-shortcut/tenant-enter-connection-details.png" alt-text="Screenshot that shows the button to enter connection details to OneLake in an external tenant.":::
+   :::image type="content" source="media/create-onelake-shortcut/new-shortcut-cross-tenant.png" alt-text="Screenshot of the New shortcut window with Microsoft OneLake (Cross-tenant) highlighted under Internal sources.":::
 
 1. Select **Existing connection** and choose a connection from the list, or select **New connection** to create one.
 
