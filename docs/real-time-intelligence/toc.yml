@@ -599,6 +599,66 @@ items:
         href: schema-sets/event-schema-set-operation-logs.md
       - name: Known limitations
         href: schema-sets/schema-registry-limitations.md
+  - name: Events in Fabric
+    items:
+      - name: Overview
+        items:
+          - name: What are Business Events?
+            href: ../real-time-hub/business-events/business-events-overview.md?context=/fabric/context/context-rti&pivots=fabric
+          - name: What are Azure and Fabric Events?
+            href: ../real-time-hub/fabric-events-overview.md?context=/fabric/context/context-rti&pivots=fabric
+      - name: Tutorials
+        items:
+          - name: Publish business events using Notebook and react using Activator
+            href: ../real-time-hub/business-events/tutorial-business-events-notebook-user-data-function-activator.md?context=/fabric/context/context-rti&pivots=fabric
+          - name: Publish business events using User Data Function and react using Activator
+            href: ../real-time-hub/business-events/tutorial-business-events-user-data-function-activation-email.md?context=/fabric/context/context-rti&pivots=fabric
+          - name: Publish business events using eventstreams and react using Activator
+            href: ../real-time-hub/business-events/tutorial-business-events-event-stream-user-data-function-activator.md?context=/fabric/context/context-rti&pivots=fabric
+          - name: Publish and validate a sample business event
+            href: ../real-time-hub/business-events/tutorial-publish-sample-business-event.md?context=/fabric/context/context-rti&pivots=fabric
+          - name: Build event-driven pipelines with Azure and Fabric Events
+            href: ../real-time-hub/tutorial-build-event-driven-data-pipelines.md?context=/fabric/context/context-rti&pivots=fabric
+          - name: Monitor Fabric Capacity health with Capacity Overview Events
+            href: ../real-time-hub/tutorial-monitor-capacity-threshold.md?context=/fabric/context/context-rti&pivots=fabric
+          - name: Orchestrate Fabric jobs with Job events
+            href: ../real-time-hub/tutorial-orchestrate-jobs-with-job-events.md?context=/fabric/context/context-rti&pivots=fabric
+      - name: Develop
+        items:
+          - name: Overview
+            href: ../real-time-hub/automate-event-consumption-rest-api-cicd.md?context=/fabric/context/context-rti&pivots=fabric
+          - name: Create Business events and manage data access
+            href: ../real-time-hub/create-business-events-rest-api.md?context=/fabric/context/context-rti&pivots=fabric
+          - name: Publish Business events with APIs
+            href: ../real-time-hub/publish-business-events.md?context=/fabric/context/context-rti&pivots=fabric
+          - name: Consume events with Eventstream REST APIs
+            href: ../real-time-hub/consume-events-with-event-stream-rest-api.md?context=/fabric/context/context-rti&pivots=fabric
+          - name: Consume events with Activator REST APIs
+            href: ../real-time-hub/consume-events-activator-rest-api.md?context=/fabric/context/context-rti&pivots=fabric
+          - name: Filter events
+            href: ../real-time-hub/configure-event-filters-rest-api.md?context=/fabric/context/context-rti&pivots=fabric
+      - name: Secure
+        items:
+          - name: Subscribe permission for Azure and Fabric events
+            href: ../real-time-hub/fabric-events-subscribe-permission.md?context=/fabric/context/context-rti&pivots=fabric
+          - name: Tenant private links for Azure and Fabric events
+            href: ../real-time-hub/private-links-real-time-events.md?context=/fabric/context/context-rti&pivots=fabric
+          - name: Workspace private links for Azure, Fabric, and Business events
+            href: ../real-time-hub/workspace-private-links-real-time-events.md?context=/fabric/context/context-rti&pivots=fabric
+          - name: Outbound access protection for Azure, Fabric, and Business events
+            href: ../security/workspace-outbound-access-protection-real-time-events.md?context=/fabric/context/context-rti&pivots=fabric
+      - name: Monitor and troubleshoot
+        items:
+          - name: Paused event configurations
+            href: ../real-time-hub/fabric-events-paused-state.md?context=/fabric/context/context-rti&pivots=fabric
+          - name: Events capacity consumption
+            href: ../real-time-hub/fabric-events-capacity-consumption.md?context=/fabric/context/context-rti&pivots=fabric
+          - name: Events delivery guarantees
+            href: ../real-time-hub/fabric-event-delivery-guarantees.md?context=/fabric/context/context-rti&pivots=fabric
+      - name: Resources
+        items:
+          - name: Fabric Events scenarios and guides
+            href: https://microsoft.github.io/fabric-events/home/
   - name: Eventhouse
     items:
       - name: Eventhouse overview
