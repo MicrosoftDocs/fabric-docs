@@ -16,5 +16,5 @@ ai-usage: ai-assisted
 - A Power BI Premium or a Fabric capacity.
 - The **Workspace admins can turn on monitoring for their workspaces** tenant setting is enabled. To enable the setting, you need to be a Fabric administrator. If you're not a Fabric administrator, ask the Fabric administrator in your organization to enable the setting.
 - You have the **admin** role in the workspace.
-- Workspace monitoring is enabled at the workspace level, and **Log Eventstream activity** is enabled for each eventstream. Enabling workspace monitoring for the workspace doesn't automatically enable activity logging for eventstreams.
+- Workspace monitoring is enabled at the workspace level, and **Log Eventstream activity** is enabled for each existing eventstream you want to monitor. Eventstreams created after workspace monitoring is enabled will have logging turned on automatically.
 
