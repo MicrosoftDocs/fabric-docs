@@ -3,7 +3,7 @@ title: What is Fabric Apps?
 description: Learn about Microsoft Fabric Apps, a platform for building and deploying backend services with TypeScript data models, authentication, and static hosting on Microsoft Fabric.
 ms.reviewer: mksuni
 ms.topic: overview
-ms.date: 09/15/2026
+ms.date: 11/13/2026
 ai-usage: ai-assisted
 ms.search.form: Fabric Apps overview
 ---
@@ -17,15 +17,18 @@ Fabric Apps is built on the Rayfin SDK and enables developers to create data-dri
 Fabric Apps provides these capabilities:
 
 - **Data models to APIs** – Decorate TypeScript classes with `@entity()`, `@text()`, `@uuid()`, and other decorators. Fabric Apps generates database schemas and GraphQL endpoints automatically.
-- **Fabric data connectors** – Add typed access to a lakehouse, warehouse, SQL database in Fabric, or semantic model.
+- **Server-side functions** - Run TypeScript logic on the server and call it from your frontend through the typed client. Access app data, work with secrets, and call external APIs. See [Use Functions in Fabric Apps](functions.md).
+- **Bring your own data with connectors** - Add typed access to an existing lakehouse, warehouse, SQL database in Fabric, or semantic model. Supported operations depend on the connector. See [Connect Fabric Apps to Fabric data](connectors.md).
 - **File storage** - Define typed folders, control access with authenticated policies, and upload, download, list, and delete files in Fabric. See [Store and manage files](storage.md).
 - **Type-safe clients** – The client SDK validates queries and mutations before they reach the backend, catching errors during development.
 - **Built-in authentication** – Session management, token handling, and authentication flows are included. Configure Fabric SSO for deployed applications or use email and password during local development.
 - **Static hosting** – Build and serve your frontend application alongside your backend APIs. Require Fabric item access or allow anonymous access to hosted assets.
-- **Local development** – Run the full stack locally with Docker for rapid iteration, then deploy to Fabric when ready for production. Scaffold projects, develop with GitHub Copilot, and deploy to Fabric using Rayfin CLI.
+- **Development workflow** - Scaffold projects, develop with GitHub Copilot or other coding agents, and deploy to Fabric using the Rayfin CLI. Use Fabric-backed services during development or Docker for supported local services. File storage uses Fabric storage in both development and deployment.
 
-## Regions supported 
-Fabric Apps are not avaiable in all regions yet. See [supported regions for Fabric App](../admin/region-availability.md) to learn more.
+## Regions supported
+
+For region availability, see [Fabric region availability](../admin/region-availability.md).
+
 ## Prerequisites
 
 ### License and workspace
@@ -51,34 +54,19 @@ Changes might take a few minutes to propagate.
 
 ## How it works
 
-A Fabric app runs as a managed service in Fabric with a suite of services that define the backend such as app hosting, database, GraphQL APIs, and authentication. Fabric manages the hosting, networking, and scaling. Authentication uses Fabric SSO (Microsoft Entra ID single sign-on) exclusively - no other authentication providers are available after deployment.
+A Fabric app brings together frontend hosting and managed backend services. Your frontend uses the Rayfin client to access data APIs, invoke functions, manage files, and query connected data. Fabric manages the hosting, networking, and scaling. Deployed apps use Fabric SSO (Microsoft Entra ID single sign-on) for user authentication; other sign-in providers aren't available after deployment.
 
 :::image type="content" source="media\overview\fabric-app-overview.png" alt-text="Screenshot showing Fabric app managed service and components." lightbox="media\overview\fabric-app-overview.png" border="true":::
 
-When you deploy your application with `rayfin up`, Fabric creates child services based on your `rayfin.yml` configuration. These child services appear as child items under the Fabric app in the Fabric portal.
+When you deploy with the Rayfin CLI, Fabric provisions or updates the services enabled in `rayfin.yml`. Choose the services your app needs:
 
-| Child service | What it provides | Portal capabilities |
-| --- | --- | --- |
-| **SQL database in Fabric** | A managed SQL database with your schema applied from TypeScript data model decorators. | View database, run queries with the query editor, copy connection string. The database is read-only in the portal—schema changes must come from your code via `rayfin up`. |
-| **Authentication** | Fabric brokered authentication using Microsoft Entra ID (SSO). Users sign in through their existing Fabric identity. | View authenticated users in the SQL database. |
-| **Static Content** | Your built frontend assets (HTML, CSS, JS) served from a Fabric Apps hosting URL. Configure protected access or allow anonymous access to the assets. | View hosting URL. Assets are updated on each deploy. |
-
-## App backend URL
-
-Each Fabric app has a single endpoint that provides access to all services:
-
-```text
-https://<your-app>-app.rayfin.windows.net/
-```
-
-The endpoint includes these service paths:
-
-| Path | Service |
+| Service | What it provides |
 | --- | --- |
-| `/api/graphql` | Data API (GraphQL) — used by `RayfinClient` for read and write operations |
-| `/auth` | Authentication service |
-
-For file operations, use the [storage client SDK](storage.md#configure-the-client).
+| Data and GraphQL APIs | Structured app data in a SQL database in Fabric, with schemas and APIs generated from your TypeScript data models and authorization rules. |
+| Functions | Server-side TypeScript logic exposed through callable HTTP endpoints, with typed client calls and access to app data and external services. |
+| File storage | OneLake-backed storage for documents, images, and attachments, with typed folders and authenticated access rules. Storage requires the Data service. |
+| Authentication | Fabric SSO for deployed apps, so users sign in with their existing Fabric identity. |
+| Static hosting | Your built frontend files served from a hosting URL, with protected or anonymous access to the static content. |
 
 ## Management in the Fabric portal
 
@@ -87,19 +75,6 @@ After deployment, you can manage your Fabric app directly in the Fabric portal.
 A Fabric administrator can temporarily block other users from loading your app. As the app owner, you can still open the app. For more information, see [Block and unblock Fabric apps](../governance/block-unblock-fabric-apps.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json).
 
 If you own or use a blocked app, see [What happens when an app is blocked](../governance/block-unblock-fabric-apps.md?toc=/fabric/admin/TOC.json&bc=/fabric/admin/breadcrumb/toc.json#what-happens-when-an-app-is-blocked).
-
-### View item properties
-
-Open the Fabric app in the portal to see:
-
-- **App Backend URL** — This endpoint is used for all the backend services used by the application.
-- **App URL** — The URL where your static content is hosted. Access depends on the `assetAccess` setting in `rayfin.yml`.
-
-### Manage child items
-
-Select the Fabric app to see its child services:
-
-- **SQL database in Fabric** — Opens the SQL database in Fabric item to view the object explorer. You can run read queries against your data. Make schema changes in your configured data package (`packages/data` in the default Universal App, or `rayfin/data` in flat templates), not directly in the database. Manual schema changes can create conflicts and break the app.
 
 ### Item permissions
 
@@ -111,7 +86,7 @@ Workspace roles don't supersede item-level permissions. To share an app with som
 | **Edit (Write)** | Modify the Fabric app—deploy code with `rayfin up`, apply schema changes, update settings, and manage child services. |
 | **Reshare** | Grant other users access to the Fabric app. Requires **admin** role on the workspace. |
 
-Learn more about [Workspace roles](/fabric/fundamentals/roles-workspaces).
+Learn more about [Workspace roles](../fundamentals/roles-workspaces.md).
 
 For the sharing workflow, related item permissions, and access requests, see [Share a Fabric app](share-app.md).
 
@@ -160,12 +135,9 @@ export class Todo {
 
 ```
 
-Fabric Apps analyzes these decorators and generates:
+You can also connect to existing data rather than storing all data in the app's database. Connectors provide read access to a lakehouse through its SQL analytics endpoint, supported read and write operations on a warehouse or SQL database in Fabric, and queries against a semantic model. Connector access requires the appropriate source permissions; it doesn't grant access to the underlying data. See [Connect Fabric Apps to Fabric data](connectors.md).
 
-- Database table definitions
-- GraphQL API endpoints
-- Row-level authorization rules
-- Type-safe client methods
+For data and services outside these connectors, use functions to call external APIs and supported Azure and Fabric resources. External connections use the app identity's permissions, while access to the app's database through a function preserves the caller's permissions. Keep credentials and resource tokens on the server. See [Connect Functions to external resources](functions-connect-external-resources.md).
 
 ## When to use Fabric Apps
 
@@ -179,7 +151,7 @@ Fabric Apps is ideal for:
 Fabric Apps might not be suitable for:
 
 - Applications requiring complex multi-step transactions or stored procedures.
-- Apps requiring custom authentication providers beyond Fabric SSO and email/password.
+- Apps requiring sign-in providers other than Fabric SSO after deployment.
 
 ## Security responsibilities
 
@@ -197,6 +169,8 @@ Fabric Apps might not be suitable for:
 - [Create your first Fabric Apps project](create-app.md)
 - [Define data models with decorators](data-models.md)
 - [Connect Fabric Apps to Fabric data](connectors.md)
+- [Add server-side functions](functions.md)
+- [Connect functions to external resources](functions-connect-external-resources.md)
 - [Store and manage files](storage.md)
 - [Deploy to Fabric](deploy-app.md)
 - [Configure authentication](authentication.md)
