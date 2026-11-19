@@ -81,9 +81,33 @@ Before you create a schedule, consider what drives your refresh timing:
     > A run fails if it exceeds 24 hours.
     > If a new refresh starts while another refresh is in progress, Fabric skips the later refresh. See [Recent runs](./run-history.md) for details.
 
+To schedule a refresh with
+[Skills for Fabric](../../fundamentals/skills-for-fabric-install.md), replace
+the placeholders and use this prompt:
+
+```copilot
+Use Skills for Fabric. In workspace <workspace-name>, schedule the lineage in
+lakehouse <lakehouse-name> daily at 02:00 UTC from <start-date> through
+<end-date>. List existing schedules. Ask whether to create one or update a
+named schedule. For updates, show current and proposed settings. Wait for my
+confirmation before changing anything.
+```
+
 ## Run a schedule on demand
 
 To trigger an immediate refresh without waiting for the next scheduled time, select **Run** next to any schedule in the **Manage schedules** pane. The run uses the same scope and settings as the schedule.
+
+To run a schedule now with
+[Skills for Fabric](../../fundamentals/skills-for-fabric-install.md), replace
+the placeholders and use this prompt:
+
+```copilot
+Use Skills for Fabric. In workspace <workspace-name> and lakehouse
+<lakehouse-name>, run refresh schedule <schedule-name> now using its existing
+scope and settings. Show both and wait for my confirmation before starting.
+Don't change the schedule. Monitor the run and report its job ID and final
+status.
+```
 
 ## Run a single materialized lake view
 

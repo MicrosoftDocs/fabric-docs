@@ -1,7 +1,7 @@
 ---
 title: NotebookUtils business event utilities for Fabric
 description: Use NotebookUtils business event utilities to publish business events from Fabric notebooks.
-ms.reviewer: jingzh
+ms.reviewer: shuaijunye
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 09/16/2026
