@@ -29,9 +29,7 @@ See the Power BI documentation below for details on setting up Power BI Desktop 
 
 ## Understand requirements
 
-Both the [Power BI Desktop for Apps tenant setting](../admin/service-admin-portal-copilot.md#power-bi-desktop-for-apps) and the [Fabric Apps tenant setting](create-app.md#enable-fabric-app-in-tenant-admin-settings) must be enabled for your access.
-
-To show the app-building entry points in Power BI Desktop, turn on the **Power BI Desktop for Apps** preview switch, which is off by default. Power BI and GitHub sign-in are required. See the setup article above for installation and account requirements.
+Enable [Power BI Desktop for Apps tenant setting](../admin/service-admin-portal-copilot.md#power-bi-desktop-for-apps) . To show the app-building entry points in Power BI Desktop, turn on the **Power BI Desktop for Apps** preview switch, which is off by default. Power BI and GitHub sign-in are required. See the setup article above for installation and account requirements.
 
 
 ## Related content
