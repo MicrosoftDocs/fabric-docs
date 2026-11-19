@@ -33,7 +33,7 @@ The template provides reusable patterns that improve reliability, produce more c
 
 ## Prerequisites
 
-- [Later Node.js](https://nodejs.org/).
+- Latest [Node.js version](https://nodejs.org/).
 - A workspace where you have Contributor, Member, or Admin permissions.  
 - The Semantic Model Execute Queries REST API tenant setting enabled.
 - Build and Read permissions on a semantic model hosted on Fabric or Power BI capacity.
