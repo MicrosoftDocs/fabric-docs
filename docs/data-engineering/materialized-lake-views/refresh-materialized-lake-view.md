@@ -4,6 +4,7 @@ description: Learn how to refresh a materialized lake view in a lakehouse in Mic
 ms.reviewer: bsankaran, sairamyeturi, nijelsf, hgowrisankar
 ms.topic: how-to
 ms.date: 11/05/2026
+ai-usage: ai-assisted
 # customer intent: As a data engineer, I want to refresh materialized lake views in a lakehouse so that I can ensure that the data is up to date and optimize query performance.
 ---
 
@@ -12,6 +13,24 @@ ms.date: 11/05/2026
 Each time a scheduled refresh runs for your materialized lake views, Fabric determines the best strategy to use—no refresh, incremental, or full—based on what changed in the source data. This behavior is called *optimal refresh*, and it helps you keep your materialized lake views up to date while minimizing compute costs and refresh time.
 
 This article explains how optimal refresh works, what each strategy does, and how to switch to full refresh mode when needed.
+
+To review a saved definition with
+[Skills for Fabric](../../fundamentals/skills-for-fabric-install.md), replace
+the placeholders and use this prompt:
+
+```copilot
+Use Skills for Fabric. In workspace <workspace-name>, read
+<source-notebook-name> via the Notebook API. Find the full SQL definition for
+<schema-name>.<materialized-lake-view-name> in destination lakehouse
+<destination-lakehouse-name>, including data quality constraints. Show the
+cell and SQL; ask me to choose if several match.
+
+Resolve sources from notebook bindings and SQL references; qualify as needed.
+Check best practices, Delta format, CDF, append-only changes, and supported
+SQL. Explain blockers and suggest only changes that preserve results and data
+quality. Show revised SQL and explain edits. Flag unverified checks and when a
+full refresh is needed. Don't run the notebook or change items or settings.
+```
 
 > [!NOTE]
 > Optimal refresh isn't supported in the following scenarios:

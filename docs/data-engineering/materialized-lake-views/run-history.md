@@ -9,6 +9,7 @@ ms.reviewer: sairamyeturi, bsankaran, nijelsf, hgowrisankar
 title: Recent runs of materialized lake views
 description: Monitor materialized lake view refreshes in Microsoft Fabric. Read the KPI strip, inspect the runs grid, and switch to the Analytics tab for trend, top errors, and refresh-policy distribution charts.
 ms.topic: how-to
+ai-usage: ai-assisted
 ---
 
 # Recent runs of materialized lake views
@@ -97,6 +98,18 @@ Each row's status:
 1. Use **Copy all to clipboard** to share the error with the team.
 
 1. Select **Open Spark UI** in the Activities row's **Spark link** column when the error message alone isn't enough to diagnose driver or executor failures.
+
+To investigate a failed run with
+[Skills for Fabric](../../fundamentals/skills-for-fabric-install.md), replace
+the placeholders and use this prompt:
+
+```copilot
+Use Skills for Fabric. In workspace <workspace-name> and lakehouse
+<lakehouse-name>, show recent refresh runs. For the latest failure, explain the
+error code and message and suggest next steps. Check for a later success and
+identify the latest overall run. If no failure appears, say so and stop. Don't
+retry or change settings.
+```
 
 ### Find a specific run
 
