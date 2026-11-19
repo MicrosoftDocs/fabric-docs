@@ -53,6 +53,8 @@ In this page, there are three cards present to provide specific information on s
 
 * **Billing type** - Indicates whether the workspace is billable or not.
 
+* **Charge type** - In Mirroring scenarios, this value indicates whether the mirrored [storage](../onelake/onelake-consumption.md#storage) is included or chargeable. For more information about free Mirroring storage limits, see [Microsoft Fabric pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric).
+
 * **Current storage (GB)** - Current storage in GB of a specific workspace.
 
 * **Billable storage (GB)** -  Billable storage in GB of a specific workspace.
@@ -65,7 +67,7 @@ There are two column charts in this page showing the storage trend for last 30 d
 
 ### Storage (GB) by date
 
-A column chart that shows average storage in GB by date and hours.
+A column chart that shows average storage in GB by date and hours, highlighting included and chargeable Mirrored storage values.
 
 ### Cumulative billable storage (GB) by date
 
