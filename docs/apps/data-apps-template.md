@@ -35,8 +35,7 @@ The template provides reusable patterns that improve reliability, produce more c
 
 - [Node.js 20 or later](https://nodejs.org/).
 - Access to Fabric.
-- A Fabric workspace where you have Contributor, Member, or Admin permissions.
-- The Fabric Apps workload enabled in your tenant. See [Create your first Fabric app](create-app.md#enable-fabric-app-in-tenant-admin-settings).
+- A Fabric workspace where you have Contributor, Member, or Admin permissions.  
 - The Semantic Model Execute Queries REST API tenant setting enabled.
 - Build and Read permissions on a semantic model hosted on Fabric or Power BI capacity.
 - The workspace ID and item ID for the semantic model.
