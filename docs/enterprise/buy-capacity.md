@@ -48,7 +48,7 @@ To buy Fabric capacity, you need:
 
 - A supported Azure region for the Fabric workloads that you plan to use. Review [Fabric region availability](../admin/region-availability.md) before you select a region.
 
-- Enough available Fabric capacity unit (CU) quota in the Azure subscription and region for both the SKU that you want to buy and any configured capacity overage threshold. For example, an F64 capacity requires 64 CUs for the provisioned SKU, plus additional quota for overage if enabled. Capacity overage is enabled by default for new capacities, and its configured threshold uses quota even if no overage occurs. If the available quota is too low, request an increase, reduce the overage threshold, or turn off overage before you create the capacity. For details, see [Microsoft Fabric capacity quotas](fabric-quotas.md).
+- Enough available Fabric capacity unit (CU) quota in the Azure subscription and region for the SKU and any configured capacity overage threshold. For quota requirements and increase requests, see [Microsoft Fabric capacity quotas](fabric-quotas.md).
 
 ## Buy an Azure capacity SKU for Fabric
 
@@ -76,16 +76,13 @@ To buy an Azure capacity SKU for Fabric in the Azure portal, follow these steps:
        * The capacity administrator must belong to the tenant where you provision the capacity.
        * Business to business (B2B) users can't be capacity administrators.
 
-1. In **Capacity overage**, review the setting. Capacity overage is enabled by default and charges for eligible excess usage that would otherwise trigger throttling. Review or change the **Rolling 24-hour overage threshold**, which defaults to 25%. To opt out, turn off **Capacity overage**. If you opt out, normal throttling applies. For configuration details, see [Configure capacity overage during capacity creation](enable-capacity-overage.md#enable-and-configure-capacity-overage-during-capacity-creation).
-
-    > [!IMPORTANT]
-    > The overage threshold isn't a hard spending cap. Actual charges can exceed it because Fabric evaluates overage periodically and operations already in progress continue to run. For pricing and threshold behavior, see [Capacity overage in Microsoft Fabric](capacity-overage-overview.md).
+1. In **Capacity overage**, which is enabled by default, review the threshold or turn off the setting to opt out. For details, see [Configure capacity overage during capacity creation](enable-capacity-overage.md#enable-and-configure-capacity-overage-during-capacity-creation). Review [overage pricing and threshold behavior](capacity-overage-overview.md) before you create the capacity.
 
 1. Select **Next: Tags** and if necessary, enter a name and a value for your capacity.
 
 1. Select **Review + create**.
 
-1. Review the capacity details, including the overage setting and threshold, and select **Create**.
+1. Review the capacity details and select **Create**.
 
 ## Buy through a Cloud Solution Provider (CSP)
 
