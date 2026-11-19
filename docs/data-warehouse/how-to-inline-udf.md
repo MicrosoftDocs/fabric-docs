@@ -2,33 +2,115 @@
 title: "Create scalar user-defined functions"
 description: Learn how to create scalar user-defined functions, make functions inlineable, and rewrite calling queries for scalar UDF inlining in Microsoft Fabric Data Warehouse.
 ms.reviewer: srdjanmatin
-ms.date: 10/20/2026
+ms.date: 11/10/2026
 ms.topic: how-to
+ai-usage: ai-assisted
 # customer intent: Learn how to create scalar user-defined functions, make functions inlineable, and rewrite calling queries for scalar UDF inlining in Microsoft Fabric Data Warehouse.
 ---
-# Create a scalar user-defined function (preview)
+# Create scalar user-defined functions
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-Microsoft Fabric Data Warehouse uses two inlining techniques to run scalar user-defined functions (UDFs) as part of distributed queries:
+Microsoft Fabric Data Warehouse uses Expression Block inlining and Scalar UDF inlining to run scalar user-defined functions (UDFs) as part of distributed queries. Eligible functions are inlined automatically during query compilation.
 
-- Expression Block inlining supports computation-based scalar UDFs that don't reference data in their function bodies, and it supports a wide variety of calling-query shapes.
-- [Scalar UDF inlining in Fabric Data Warehouse (preview)](/sql/relational-databases/user-defined-functions/scalar-udf-inlining?view=fabric&preserve-view=true) has strict requirements for both the function definition and the calling query. For more information about the two techniques and their requirements, see [CREATE FUNCTION](/sql/t-sql/statements/create-function-sql-data-warehouse?view=fabric&preserve-view=true). 
+For supported function constructs and calling-query requirements, see [Inlining of scalar UDF](/sql/t-sql/statements/create-function-sql-data-warehouse?view=fabric&preserve-view=true#inlining-of-scalar-udf).
 
-> [!NOTE]
-> Scalar UDFs are currently a preview feature in Fabric Data Warehouse.
+## Create an inlineable scalar UDF
 
-In this article, learn how to convert a non-inlineable UDF into an inlinable function or create a non-inlineable UDF.
+Use `CREATE FUNCTION` to define a function, or `CREATE OR ALTER FUNCTION` to create or update it. By default, the definition must be eligible for at least one inlining technique. If it isn't, the statement returns an error explaining why the definition doesn't meet the inlining requirements.
 
-## Make a non-inlineable scalar UDF inlineable
+The following function checks whether a number is prime. A prime number is a whole number greater than 1 that divides evenly only by 1 and itself. The function uses a loop to try possible divisors and returns `1` for prime numbers or `0` otherwise.
 
-The T-SQL code changes required to make a scalar UDF inlineable depend on which construct makes its definition non-inlineable.
+```sql
+CREATE OR ALTER FUNCTION dbo.IsPrime (@Number INT)
+RETURNS BIT
+AS
+BEGIN
+    IF @Number IS NULL OR @Number < 2
+        RETURN 0;
 
-The following examples show how to rewrite multiple `RETURN` statements, `@@ROWCOUNT`, and a time-dependent function in a data-access UDF.
+    DECLARE @Divisor INT = 2;
+
+    WHILE @Divisor <= @Number / @Divisor
+    BEGIN
+        IF @Number % @Divisor = 0
+            RETURN 0;
+
+        SET @Divisor = @Divisor + 1;
+    END;
+
+    RETURN 1;
+END;
+GO
+```
+
+Use `GENERATE_SERIES` to call the function for each number from 1 through 20:
+
+```sql
+SELECT
+    Series.value AS Number,
+    dbo.IsPrime(Series.value) AS IsPrime
+FROM GENERATE_SERIES(1, 20) AS Series
+ORDER BY Series.value;
+GO
+```
+
+The result contains 20 rows. `IsPrime` is `1` for 2, 3, 5, 7, 11, 13, 17, and 19, and `0` for the other numbers.
+
+Check which inlining technique supports this function:
+
+```sql
+SELECT is_inlineable, inline_eligibility_mask
+FROM sys.sql_modules
+WHERE object_id = OBJECT_ID('dbo.IsPrime');
+GO
+```
+
+For `dbo.IsPrime`, the expected values are `is_inlineable = 1` and `inline_eligibility_mask = 2`.
+
+The function is eligible for Expression Block inlining. Its `WHILE` loop rules out Scalar UDF inlining.
+
+<a id="make-a-non-inlineable-scalar-udf-inlineable"></a>
+
+## Adapt a function for Scalar UDF inlining
+
+The previous example uses Expression Block inlining. The following examples read table data and require Scalar UDF inlining for distributed queries. The rewrites in this section address that technique's requirements.
+
+### Set up sample data
+
+In a warehouse, run the following script to create and populate `dbo.Customer` for the remaining examples.
+
+On a SQL analytics endpoint, use an existing table with the columns shown in the following example.
+
+```sql
+CREATE TABLE dbo.Customer
+(
+    CustomerID INT NOT NULL,
+    CustomerName VARCHAR(100) NOT NULL,
+    CustomerType VARCHAR(20) NOT NULL,
+    MemberSince DATE NOT NULL,
+    YearToDateRevenue DECIMAL(18, 2) NOT NULL
+);
+GO
+
+INSERT INTO dbo.Customer
+(
+    CustomerID,
+    CustomerName,
+    CustomerType,
+    MemberSince,
+    YearToDateRevenue
+)
+VALUES
+    (1, 'Customer 1', 'Regular', '2020-01-15', 12000.00),
+    (2, 'Customer 2', 'Premium', '2022-06-01', 24000.00),
+    (3, 'Customer 3', 'VIP',     '2024-03-10', 36000.00);
+GO
+```
 
 ### Replace multiple RETURN statements
 
-The following function reads the customer type from a table and contains multiple `RETURN` statements. Because the function accesses table data, scalar UDF inlining requirements apply. Multiple `RETURN` statements make this definition non-inlineable.
+The following function reads the customer type from a table and contains multiple `RETURN` statements. Multiple `RETURN` statements make this definition non-inlineable.
 
 Specify `WITH INLINE = AUTO` to create the function while you prepare to rewrite it:
 
@@ -52,7 +134,7 @@ END;
 GO
 ```
 
-### Check whether the function is inlineable
+#### Check whether the function is inlineable
 
 The `sys.sql_modules` catalog view provides two properties that describe scalar UDF inlineability:
 
@@ -71,8 +153,7 @@ FROM sys.sql_modules AS m
 INNER JOIN sys.objects AS o
     ON m.object_id = o.object_id
 WHERE o.type = 'FN'
-    AND SCHEMA_NAME(o.schema_id) = 'dbo'
-    AND o.name = 'GetDiscount';
+    AND o.object_id = OBJECT_ID('dbo.GetDiscount');
 GO
 ```
 
@@ -102,14 +183,16 @@ END;
 GO
 ```
 
-The revised function has one `RETURN` statement and meets the scalar UDF inlining requirements. Run the metadata query again to verify that `is_inlineable` is `1`.
+The revised function has one `RETURN` statement and meets the Scalar UDF inlining requirements. Run the metadata query again to verify that `is_inlineable` is `1`.
 
 > [!NOTE]
-> Expression Block inlining supports multiple `RETURN` statements. This example reads table data and therefore uses scalar UDF inlining, which requires a single `RETURN` statement.
+> Expression Block inlining supports multiple `RETURN` statements. Scalar UDF inlining requires a single `RETURN` statement.
 
-### Replace @@ROWCOUNT with an initial value
+<a id="replace-rowcount-with-an-initial-value"></a>
 
-The following data-access UDF uses `@@ROWCOUNT` to determine whether its query found a customer. `@@ROWCOUNT` isn't supported by scalar UDF inlining, so the definition is non-inlineable:
+### Replace @@ROWCOUNT with EXISTS
+
+The following data-access UDF uses `@@ROWCOUNT` to determine whether its query found a customer. Scalar UDF inlining doesn't support `@@ROWCOUNT`, so the definition is non-inlineable:
 
 ```sql
 CREATE OR ALTER FUNCTION dbo.CustomerExists (@CustomerID INT)
@@ -130,7 +213,7 @@ END;
 GO
 ```
 
-Initialize the variable to the result for no matching row. The `SELECT` statement changes the value only when a row is found, which removes the need to inspect `@@ROWCOUNT`:
+Use `EXISTS` to check for a matching customer and set the result to `1` when found. Otherwise, the initialized value remains `0`:
 
 ```sql
 CREATE OR ALTER FUNCTION dbo.CustomerExists (@CustomerID INT)
@@ -139,9 +222,13 @@ AS
 BEGIN
     DECLARE @CustomerExists BIT = 0;
 
-    SELECT @CustomerExists = 1
-    FROM dbo.Customer
-    WHERE CustomerID = @CustomerID;
+    IF EXISTS
+    (
+        SELECT 1
+        FROM dbo.Customer
+        WHERE CustomerID = @CustomerID
+    )
+        SET @CustomerExists = 1;
 
     RETURN @CustomerExists;
 END;
@@ -152,7 +239,7 @@ Run the metadata query from the previous example with `CustomerExists` as the fu
 
 ### Pass a time-dependent value into a data-access UDF
 
-The following function combines table access with `GETUTCDATE()`. Table access requires scalar UDF inlining, where a time-dependent function in the UDF body makes the definition non-inlineable:
+The following function combines table access with `GETUTCDATE()`. Scalar UDF inlining doesn't support `GETUTCDATE()` in the function body, so this definition is non-inlineable:
 
 ```sql
 CREATE OR ALTER FUNCTION dbo.GetCustomerTenureDays (@CustomerID INT)
@@ -205,15 +292,17 @@ ORDER BY CustomerID;
 GO
 ```
 
-## Make a query inlineable
+<a id="make-a-query-inlineable"></a>
 
-The query-shape requirements in this section apply when at least one UDF in a query relies on scalar UDF inlining. When every UDF in a query is handled by Expression Block inlining, these query shapes work without the rewrites shown here.
+## Adapt a calling query for Scalar UDF inlining
+
+The query shape requirements in this section apply when at least one UDF in a query relies on Scalar UDF inlining. When every UDF in a query is handled by Expression Block inlining, these query shapes work without the rewrites shown here.
 
 The following examples use the inlineable, data-access version of `dbo.GetDiscount` from the previous section.
 
 ### Replace a common table expression
 
-A query that uses a common table expression (CTE) can't inline a function that depends on scalar UDF inlining. The following query isn't supported:
+Scalar UDF inlining doesn't support common table expressions (CTEs) in the calling query. The following query isn't supported:
 
 ```sql
 WITH CustomerDiscounts AS
@@ -229,7 +318,7 @@ FROM CustomerDiscounts;
 GO
 ```
 
-Materialize the result in a temporary table, and then query the temporary table:
+In Warehouse, materialize the result in a temporary table, and then query it. Run all batches in this example in the same SQL session.
 
 ```sql
 DROP TABLE IF EXISTS #CustomerDiscounts;
@@ -264,7 +353,7 @@ GO
 
 ### Move a UDF call out of GROUP BY
 
-The following query calls the UDF directly in the `GROUP BY` clause and isn't supported for a function that depends on scalar UDF inlining:
+Calling a UDF directly in `GROUP BY` isn't supported by Scalar UDF inlining:
 
 ```sql
 SELECT
@@ -292,7 +381,7 @@ GO
 
 ### Use a column alias in ORDER BY
 
-Avoid calling a UDF that depends on scalar UDF inlining directly in the `ORDER BY` clause. Project the result once and order by its column alias or column ordinal number:
+For Scalar UDF inlining, project the UDF result in the `SELECT` list and order by its column alias or column ordinal number:
 
 ```sql
 SELECT
@@ -304,11 +393,13 @@ ORDER BY DiscountRate;
 GO
 ```
 
-## Create a non-inlineable scalar UDF
+<a id="create-a-non-inlineable-scalar-udf"></a>
+
+## Create a function for standalone execution with INLINE = AUTO
 
 You might need a function for a standalone calculation even when its definition can't be inlined. For example, an application or report might call a UDF once to calculate a business metric.
 
-The following function reads year-to-date revenue from the customer table, then uses a `WHILE` loop to add the average monthly revenue for each remaining month. Because the function accesses table data, it relies on scalar UDF inlining, which doesn't support `WHILE`. The function definition is therefore non-inlineable.
+The following function reads year-to-date revenue from the customer table, then uses a `WHILE` loop to add the average monthly revenue for each remaining month. Table access rules out Expression Block inlining. `WHILE` rules out Scalar UDF inlining. The definition is therefore non-inlineable, but you can create it for supported standalone execution.
 
 Use `WITH INLINE = AUTO` to allow the function to be created even though its definition isn't inlineable:
 
@@ -320,10 +411,11 @@ AS
 BEGIN
     DECLARE @YearToDateRevenue DECIMAL(38, 6);
     DECLARE @ProjectedRevenue DECIMAL(38, 6);
-    DECLARE @MonthNumber INT = @MonthsElapsed + 1;
 
     IF @MonthsElapsed BETWEEN 1 AND 12
     BEGIN
+        DECLARE @MonthNumber INT = @MonthsElapsed + 1;
+
         SELECT @YearToDateRevenue = SUM(YearToDateRevenue)
         FROM dbo.Customer;
 
@@ -357,7 +449,6 @@ GO
 The query returns projected annual revenue based on average monthly revenue through the current UTC month.
 
 `INLINE = AUTO` allows the function to be created, but it doesn't make a non-inlineable function eligible for use in a distributed query. For example, `dbo.GetProjectedAnnualRevenue` can't be used in a `SELECT ... FROM dbo.Customer` query.
-
 
 ## Related content
 

@@ -2,13 +2,13 @@
 title: Overview of Mirroring for SQL database
 description: "Learn more about automatic mirroring to OneLake for SQL database in Fabric."
 ms.reviewer: nzagorac
-ms.date: 07/02/2025
+ms.date: 11/18/2026
 ms.topic: concept-article
 ms.search.form: SQL database replication to OneLake, Databases replication to OneLake
 ---
 # Mirroring Fabric SQL database in Microsoft Fabric
 
-Database mirroring is a feature of Microsoft Fabric to continuously replicate data from your operational database into Fabric OneLake. With your data mirrored automatically into Fabric, you can query and perform analytics combined with other data. Fabric a one stop shop for your analytics needs with minimal data integration effort in an all-in-one solution.
+Database mirroring is a feature of Microsoft Fabric to continuously replicate data from your operational database into Fabric OneLake. With your data mirrored automatically into Fabric, you can query and perform analytics combined with other data. Fabric is a one stop shop for your analytics needs with minimal data integration effort in an all-in-one solution.
 
 ## Overview of mirroring for SQL database in Fabric
 
@@ -19,7 +19,7 @@ When you create a SQL database in Microsoft Fabric, these are provisioned in you
 - The SQL database itself
 - The SQL analytics endpoint
 
-To facilitate analytics scenarios, SQL database in Fabric automatically mirrors its data into Fabric OneLake, to the same workspace where the database itself resides. Mirroring starts upon creation of your SQL database in Fabric with **no user action required**. There are no settings to configure mirroring: **all** supported tables and their supported columns are mirrored as soon as they're created.
+To facilitate analytics scenarios, SQL database in Fabric automatically mirrors its data into Fabric OneLake, to the same workspace where the database itself resides. Mirroring starts upon creation of your SQL database in Fabric with **no user action required**. By default, **all** supported tables and their supported columns are mirrored as soon as you create them.
 
 - SQL database in Fabric stores its data in .mdf files, just like Azure SQL Database.
 - Mirrored data is stored as delta parquet files in OneLake.
@@ -37,9 +37,9 @@ Mirroring largely remains the same between [mirroring Azure SQL Database](../../
 | Function | Azure SQL Database | SQL database in Fabric |
 |:--|:--|:--|
 | Mirroring setup | User takes care of authentication, network connectivity, and sets up mirroring manually. | Mirroring is automatic upon creation. |
-| Authentication while setting up | Mirroring requires a login with CONTROL database permission. | Authentication is Fabric managed identities. |
+| Authentication while setting up | Mirroring requires a sign-in with CONTROL database permission. | Authentication is Fabric managed identities. |
 | Mirroring control          | Full control by user  | Mirroring is always on and can't be turned off.  |
-| Choice of tables to mirror | Full control by user  | All supported tables are mirrored with no option to skip tables. |
+| Choice of tables to mirror | You have full control.  | All supported tables are mirrored by default. You also have control over what tables to mirror by using the **Configure Replication** button in the **Replication** tab. |
 | Point in time restore (PITR) | PITR creates a new database and mirroring must be manually reconfigured. | PITR creates a new database in Fabric. Continuous mirroring is automatically started with a snapshot. |
 | [Stored procedures for control and monitoring](/sql/relational-databases/system-stored-procedures/sp-change-feed-enable-db?view=fabric-sqldb&preserve-view=true) | Allowed | Only allowed for monitoring, not for configuration |
 | [Fabric Capacity pausing / resuming / deletion / deletion of workspace](/sql/relational-databases/system-stored-procedures/sp-change-feed-enable-db?view=fabric-sqldb&preserve-view=true) | Manual intervention to remove or resume mirroring | Automatic. Fabric will pause/resume/delete the mirror and data. |

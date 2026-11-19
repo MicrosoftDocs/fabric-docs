@@ -15,7 +15,7 @@ ai-usage: ai-assisted
 Eventstream workspace monitoring (preview) uses [Fabric workspace monitoring](/fabric/fundamentals/workspace-monitoring-overview). To enable workspace monitoring for eventstreams, complete the following steps:
 
 1. Enable workspace monitoring at the workspace level and create an Eventhouse in your workspace. The Eventhouse is a monitoring database that contains tables for monitoring data from all supported items in the workspace, including eventstreams.
-2. Enable workspace monitoring at the eventstream level.
+2. Enable monitoring at the eventstream level for existing eventstreams in your workspace. Eventstreams you create after you enable workspace monitoring have monitoring on by default.
 
 This article provides instructions for enabling workspace monitoring for eventstreams. For more information about workspace monitoring, see [Eventstream workspace monitoring overview](fabric-workspace-monitoring.md).
 
@@ -25,24 +25,22 @@ This article provides instructions for enabling workspace monitoring for eventst
 
 ## Enable monitoring at workspace level
 
-Go to your workspace settings and enable monitoring by creating an eventhouse.
 
-1. Go to the workspace where your eventstreams are located.
-1. Select **Workspace settings**.
+1. Open the workspace, and select Workspace settings.
+2. Select Monitoring.
+3. Choose whether to send data to the Eventhouse in this Monitoring Item or to the Eventhouse in another Monitoring Item.
+4. If you send data to another Monitoring Item, select the destination Monitoring Item.
+5. Optionally, enable a destination Custom Endpoint in the Eventstream.
+6. Optionally, enable agentic investigation capabilities to add an Operations Agent.
+7. Complete the configuration to create the Monitoring Item.
+8. Turn on data collection.
 
-    :::image type="content" source="media/enable-fabric-workspace-monitoring/workspace-settings-button.png" alt-text="Screenshot that shows the Fabric workspace page with Workspace settings button highlighted." lightbox="media/enable-fabric-workspace-monitoring/workspace-settings-button.png":::
-1. In the left navigation of Workspace settings, select **Monitoring**.
-1. Select **+ Eventhouse** and wait for the monitoring database to be created.
-
-    :::image type="content" source="media/enable-fabric-workspace-monitoring/workspace-settings-monitor-eventhouse-button.png" alt-text="Workspace settings panel with the Monitoring section selected in the left navigation. The + Eventhouse button is visible in the Monitoring pane.":::
-
-    After the eventhouse is created, Fabric begins collecting monitoring data from all supported items in the workspace, including your eventstreams.
-
-    :::image type="content" source="media/enable-fabric-workspace-monitoring/monitoring-database-created.png" alt-text="Screenshot that shows the Fabric workspace settings with the monitoring database created." lightbox="media/enable-fabric-workspace-monitoring/monitoring-database-created.png":::
+For more information on configuring workspace monitoring, see [Configure workspace monitoring](../../fundamentals/enable-workspace-monitoring.md).
 
 ## Enable workspace monitoring for Eventstreams
 
-To enable workspace monitoring for an eventstream, follow these steps:
+Eventstreams you create after you turn on workspace monitoring have Log Eventstream activity on by default. Existing eventstreams need to be turned on individually.
+To turn on monitoring for an existing eventstream, or to check or change the setting for any eventstream, follow these steps:
 
 1. Go to the eventstream you want to monitor.
 1. Select **Settings**.
@@ -59,7 +57,7 @@ Locate and explore the monitoring eventhouse to verify the Eventstream tables ar
 
 1. In your workspace, locate the monitoring eventhouse that was created (it appears as an Eventhouse item).
 1. Open the eventhouse and expand the database to see the available tables.
-1. Look for the three Eventstream tables: **EventStreamNodeStatus**, **EventStreamMetrics**, and **EventStreamErrorMetrics**.
+1. Look for the four Eventstream tables: **EventStreamNodeStatus**, **EventStreamMetrics**,**EventStreamErrorMetrics**, and **EventStreamDiagnosticLogs**.
 
     :::image type="content" source="media/enable-fabric-workspace-monitoring/monitor-eventhouse-event-stream-tables.png" alt-text="Screenshot of Eventhouse database explorer showing three Eventstream monitoring tables highlighted in red." lightbox="media/enable-fabric-workspace-monitoring/monitor-eventhouse-event-stream-tables.png":::
 
