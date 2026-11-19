@@ -18,7 +18,6 @@ File operations use Fabric storage during development as well as after deploymen
 ## Prerequisites
 
 - A [Fabric Apps project](create-app-with-cli.md) and Node.js 20 or later.
-- [Fabric Apps enabled for your tenant](overview.md#tenant-admin-settings).
 - The **Users can access data stored in OneLake with apps external to Fabric** tenant setting enabled. See [Enable OneLake access](#enable-onelake-access).
 - Access to a Fabric workspace with a supported Fabric capacity assigned. Storage isn't supported in Power BI Pro workspaces.
 - Permission to deploy the app and apply its storage configuration.
