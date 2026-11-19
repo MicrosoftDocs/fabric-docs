@@ -20,7 +20,6 @@ In this quickstart, you create an app named `demoapp12`, set up its source code 
 - [Node.js 20 or later](https://nodejs.org/) and npm.
 - A Microsoft account with access to Fabric.
 - A Fabric workspace with Fabric capacity assigned, where you have Contributor, Member, or Admin permissions. See [Fabric Apps prerequisites](overview.md).
-- The Fabric Apps workload enabled for your tenant. If it isn't enabled, contact your Fabric administrator.
 
 ## Sign in and select a workspace
 
