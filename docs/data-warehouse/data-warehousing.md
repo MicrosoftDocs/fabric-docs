@@ -2,7 +2,7 @@
 title: What Is Fabric Data Warehouse?
 description: Learn more about data warehousing workloads in Fabric Data Warehouse.
 ms.reviewer: joanpo, rakrish75
-ms.date: 09/09/2025
+ms.date: 11/10/2026
 ms.topic: overview
 ms.search.form: SQL Analytics Endpoint overview, Warehouse overview, Warehouse in workspace overview # This article's title should not change. If so, contact engineering.
 ---
@@ -57,7 +57,7 @@ Using similar technology, a warehouse, a [SQL database](../database/sql/sql-anal
 With the SQL analytics endpoint, T-SQL commands can define and query data objects but not manipulate or modify the data. You can perform the following actions in the SQL analytics endpoint:
 
 - Query the tables that reference data in your Delta Lake folders in the lake.
-- Create views, inline TVFs, and procedures to encapsulate your semantics and business logic in T-SQL.
+- Create views, [scalar user-defined functions](how-to-inline-udf.md), inline TVFs, and stored procedures to encapsulate your semantics and business logic in T-SQL.
 - Manage permissions on the objects. For more about security in the SQL analytics endpoint, see [OneLake security for SQL analytics endpoints](../onelake/sql-analytics-endpoint-onelake-security.md).
 
 To get started with the [!INCLUDE [fabric-se](includes/fabric-se.md)], see:

@@ -24,7 +24,6 @@ In this tutorial, you:
 
 - Access to Fabric.
 - A Fabric workspace where you have Contributor, Member, or Admin permissions.
-- The Fabric Apps workload enabled in your tenant.
 - Node.js and npm installed.
 
 
