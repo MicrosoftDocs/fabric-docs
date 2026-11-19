@@ -14,7 +14,7 @@ Fabric apps helps you build and ship backend services faster by providing ready-
 
 ## Prerequisites
 
-- A Microsoft account with access to Fabric or PBI Pro license.
+- A Microsoft account with access to Fabric or Power BI Pro license.
 - A workspace where you have contributor or admin permissions.
 
 ## From nothing to a running app
