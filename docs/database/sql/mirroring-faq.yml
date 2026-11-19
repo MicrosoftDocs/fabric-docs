@@ -57,7 +57,7 @@ sections:
       - question: |
           Can I mirror only specific tables from my SQL database in Fabric?
         answer: 
-          No, all tables eligible for mirroring will be automatically included into mirroring.
+          Yes, you can select the tables to replicate by using the **Configure Replication** button on the **Replication** tab in the SQL database in Fabric editor.
 
   - name: Security
     questions:

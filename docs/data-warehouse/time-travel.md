@@ -115,7 +115,7 @@ Any user who has **Admin**, **Member**, **Contributor**, or **Viewer** [workspac
 - The [OPTION FOR TIMESTAMP AS OF query hint](/sql/t-sql/queries/hints-transact-sql-query?view=fabric&preserve-view=true#for-timestamp) can only be used in queries that begin with `SELECT` statement. 
 - View definitions cannot contain the `OPTION FOR TIMESTAMP AS OF` T-SQL syntax. The view can be queried with the `SELECT .. FROM <view> ... OPTION FOR TIMESTAMP AS OF` T-SQL syntax. However, you cannot query past data from tables in a view from before the view was created.
 - The `FOR TIMESTAMP AS OF` T-SQL syntax for time travel is not currently supported in Power BI Desktop Direct query mode or the **Explore this data** option.
-- Currently, time travel for SQL analytics endpoints is only enabled for SQL analytics endpoints created with the [New metadata sync (preview)](../data-engineering/sql-analytics-endpoint-metadata-sync.md#new-metadata-sync-preview) enabled.
+- Currently, time travel for SQL analytics endpoints is only enabled for SQL analytics endpoints created with the [New metadata sync](../data-engineering/sql-analytics-endpoint-metadata-sync.md#new-metadata-sync) enabled.
 
 ## Next step
 
