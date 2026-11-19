@@ -27,10 +27,15 @@ In this article, you learn to:
     :::image type="content" source="../media/planning-forecasting/planning-how-to-build-forecasts/prerequisite-date-hierarchy-columns.jpg" alt-text="Screenshot of a standard date hierarchy assigned to the column dimension data well in a planning sheet." lightbox="../media/planning-forecasting/planning-how-to-build-forecasts/prerequisite-date-hierarchy-columns.jpg":::
 
     > [!NOTE]
-    > The maximum forecast horizon depends on the granularity of your time dimension:
-    > * Year + Quarter: Up to 25 years
-    > * Year + Month: Up to 50 years
-    > * Year only: Up to 100 years
+    > The maximum forecast range is determined by the finest (lowest) granularity level in your time dimension. For example, if the lowest level in your hierarchy is Month, you can extend the forecast range up to 25 years.
+    >
+    > The maximum forecast horizon for each granular unit is as follows:
+    > 
+    > * Year - Up to 100 years
+    > * Quarter - Up to 50 years
+    > * Month - Up to 25 years
+    > * Week - Up to 10 years
+    > * Day - Up to 5 years
 
 ## Create a forecast from historical actuals
 
