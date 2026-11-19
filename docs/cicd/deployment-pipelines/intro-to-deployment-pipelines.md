@@ -96,7 +96,7 @@ When you deploy content from one pipeline stage to another, the copied content c
   * Dataflow *(preview)*
   * [Org app](/power-bi/consumer/org-app-items/org-app-cicd) *(preview)*
   * Paginated report *(preview)*
-  * Report (based on supported semantic models) *(preview)*
+  * Report (based on supported semantic models)
   * Semantic model (that originates from a .pbix file and isn't a PUSH dataset) *(preview)*
 
 * Database items:
