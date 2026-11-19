@@ -12,6 +12,8 @@ This article shows you how to monitor your graph workloads in Microsoft Fabric b
 
 Graph in Microsoft Fabric follows the existing Fabric-wide telemetry framework. Graph items are workspace-scoped (each graph belongs to a specific workspace), but the Monitoring hub aggregates visibility based on your role and permissions. You don't need to navigate workspace-by-workspace to monitor your graph workloads. You can see them all in the centralized Monitoring hub, filtered by what you're authorized to see.
 
+For workspace monitoring telemetry, such as query execution and natural-language-to-GQL translation logs, see [Workspace monitoring for graph](workspace-monitoring.md).
+
 ## Access monitoring data
 
 To access monitoring data, follow these steps:
