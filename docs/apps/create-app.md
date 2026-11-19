@@ -16,6 +16,7 @@ Fabric apps helps you build and ship backend services faster by providing ready-
 
 - A Microsoft account with access to Fabric or Power BI Pro license.
 - A workspace where you have contributor or admin permissions.
+- Latest [Node.js version](https://nodejs.org/en/download)
 
 ## From nothing to a running app
 
