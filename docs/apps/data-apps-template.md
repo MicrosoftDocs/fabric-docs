@@ -33,9 +33,8 @@ The template provides reusable patterns that improve reliability, produce more c
 
 ## Prerequisites
 
-- [Node.js 20 or later](https://nodejs.org/).
-- Access to Fabric.
-- A Fabric workspace where you have Contributor, Member, or Admin permissions.  
+- [Later Node.js](https://nodejs.org/).
+- A workspace where you have Contributor, Member, or Admin permissions.  
 - The Semantic Model Execute Queries REST API tenant setting enabled.
 - Build and Read permissions on a semantic model hosted on Fabric or Power BI capacity.
 - The workspace ID and item ID for the semantic model.
