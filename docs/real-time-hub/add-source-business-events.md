@@ -5,11 +5,11 @@ author: robece
 ms.author: robece
 ms.topic: how-to
 ai-usage: ai-assisted
-ms.date: 08/10/2026
+ms.date: 11/08/2026
 #customer intent: As a user, I want to add business events to an eventstream so that I can transform and route business signals in real time.
 ---
 
-# Add business events to an eventstream (Preview)
+# Add business events to an eventstream
 
 This article shows you how to add business events as a source to an existing Fabric eventstream.
 
@@ -40,7 +40,7 @@ Before you begin, ensure that you have:
 
 1. On the **Select a data source** page, search for **Business events**, and then select the **Business events** tile.
 
-    :::image type="content" source="media/add-source-business-events/select-business-events-source.png" alt-text="Screenshot of the Select a data source page with Business events selected." lightbox="media/add-source-business-events/select-business-events-source.png":::
+    :::image type="content" source="media/add-source-business-events/select-business-events-source-ga.png" alt-text="Screenshot of the Select a data source page with Business events selected." lightbox="media/add-source-business-events/select-business-events-source-ga.png":::
 
 1. On the **Business events** page, select **Select business events**.
 

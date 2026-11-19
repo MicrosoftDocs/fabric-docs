@@ -45,6 +45,7 @@ After you [enable workspace monitoring](enable-workspace-monitoring.md), you can
 | Data Warehouse | <ul><li>Warehouse</li><li>SQL analytics endpoint</li><li>warehouse snapshot</li></ul> |[Warehouse query execution logs](../data-warehouse/warehouse-workspace-monitoring.md) |
 | Mirroring | Mirrored database | [Mirrored database execution logs](../mirroring/monitor-logs.md) |
 | Power BI | Semantic models | [Semantic model operation logs](../enterprise/powerbi/semantic-model-operations.md) |
+| Fabric IQ | Graph model | [Workspace monitoring for graph](../graph/workspace-monitoring.md) |
 | Real-Time hub | Job Events | [Job event logs](item-job-event-logs.md) |
 | Real-Time hub | Event schema set | [Event schema set operation logs](../real-time-intelligence/schema-sets/event-schema-set-operation-logs.md) |
 | Real-Time Intelligence | Activator | [Activator rule notifications](../real-time-intelligence/data-activator/activator-workspace-monitoring.md) |

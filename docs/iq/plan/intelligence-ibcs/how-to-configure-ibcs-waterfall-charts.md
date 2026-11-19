@@ -1,7 +1,7 @@
 ---
 title: IBCS Waterfall Charts for Financial Analysis
 description: IBCS waterfall charts help you visualize how positive and negative values drive net change. Learn how to configure column, bar, and vertical waterfall charts today.
-ms.date: 07/17/2026
+ms.date: 11/18/2026
 ms.topic: how-to
 ---
 
@@ -29,11 +29,28 @@ Use an IBCS bars with vertical waterfall chart to visualize cumulative changes b
 | Configuration option | Configuration value |
 | --- | --- |
 | **Chart type** | Waterfall + bar |
-| **Category** | Assign the dimension that defines the categories on the y-axis. The chart shows each category as a unique bar in the waterfall. *Example: Month.* |
+| **Category** | Assign the dimension that defines the categories on the y-axis. The chart shows each category as a unique bar in the waterfall. *Example: Country/Region.* |
 | **Actual(s)** | Assign one measure to analyze. The values determine the length of each bar. *Example: Profit - Actual.* |
 | **Comparison 1–3 (vs Actuals)** | Assign prior-year, plan, and forecast measures to compare with actual values. The chart shows each comparison measure as an overlapping or separate bar for the same category and calculates the corresponding variance from the actual and comparison values. *Example: Profit - Prior Year, Profit - Target, Profit - Forecast.* |
 
-:::image type="content" source="../media/intelligence-ibcs/how-to-configure-ibcs-waterfall-charts/ibcs-bars-waterfall.jpg" alt-text="Screenshot of an IBCS waterfall chart with bars to show actuals, plan, and forecast values." lightbox="../media/intelligence-ibcs/how-to-configure-ibcs-waterfall-charts/ibcs-bars-waterfall.jpg":::
+:::image type="content" source="../media/intelligence-ibcs/how-to-configure-ibcs-waterfall-charts/ibcs-bar-waterfall-assign-dimensions-measures.png" alt-text="Screenshot of assigning measures and dimensions to render an IBCS waterfall chart." lightbox="../media/intelligence-ibcs/how-to-configure-ibcs-waterfall-charts/ibcs-bar-waterfall-assign-dimensions-measures.png":::
+
+Follow these steps to customize the chart as per IBCS specifications:
+
+1. In the **Waterfall + bar** ribbon, go to **Themes** (paintbrush icon) and select IBCS.
+1. Go to **Series** and deselect **Delta PY** and **Delta PY%**. This action removes the pin charts for prior-year absolute and relative variances.
+
+    :::image type="content" source="../media/intelligence-ibcs/how-to-configure-ibcs-waterfall-charts/ibcs-bar-waterfall-series-select-plan-variance.png" alt-text="Screenshot of selecting the variance measure for plan." lightbox="../media/intelligence-ibcs/how-to-configure-ibcs-waterfall-charts/ibcs-bar-waterfall-series-select-plan-variance.png":::
+
+1. Select the y-axis title and select the hide icon.
+1. Double-click the title to edit it and add a relevant title as per IBCS.
+1. In the **Waterfall + bar** ribbon, select **Deviation** > **Customize.**&#x20;
+1. Turn on the **Enable Deviation** switch to render deviation lines between actuals and comparison measures.
+1. In the **Deviation** pane, set **Label Display** to **Value.** In the **Text & Appearance** section, set **Shape** to **Ellipses**. Select **Apply**.
+
+    The following screenshot shows the C06 waterfall:
+
+    :::image type="content" source="../media/intelligence-ibcs/how-to-configure-ibcs-waterfall-charts/ibcs-bar-waterfall-set-deviation-final.png" alt-text="Screenshot of ibcs waterfall chart with variances." lightbox="../media/intelligence-ibcs/how-to-configure-ibcs-waterfall-charts/ibcs-bar-waterfall-set-deviation-final.png":::
 
 ## C12: Vertical waterfall
 
