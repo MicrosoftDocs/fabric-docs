@@ -312,6 +312,19 @@ For example, to list all materialized lake views in the `silver` schema:
 SHOW MATERIALIZED LAKE VIEWS IN silver;
 ```
 
+To list materialized lake views with
+[Skills for Fabric](../../fundamentals/skills-for-fabric-install.md), replace
+the placeholders and use this prompt:
+
+```copilot
+Use Skills for Fabric. In workspace <workspace-name> and lakehouse
+<lakehouse-name>, use Spark SQL to run
+`SHOW MATERIALIZED LAKE VIEWS IN <schema-name>` and return schema-qualified
+names. Don't change tables, views, notebook definitions, or refresh settings.
+If a helper notebook is needed, show its name and purpose and wait for my
+confirmation before creating it.
+```
+
 ## Retrieve the statement that created a materialized lake view
 
 To get the `CREATE` statement for a materialized lake view, use the following syntax:

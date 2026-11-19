@@ -142,6 +142,8 @@ items:
         href: notebookutils/notebookutils-variable-library.md
       - name: Business event utilities
         href: notebookutils/notebookutils-business-events.md
+      - name: Power Query utilities (preview)
+        href: notebookutils/notebookutils-power-query.md
     - name: Operations and engineering
       items:
       - name: Run notebooks in high concurrency mode

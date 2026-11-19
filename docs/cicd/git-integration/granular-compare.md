@@ -138,6 +138,7 @@ File level commit (Preview) is available only for the following items:
   - [Dataflow Gen2](../../data-factory/create-first-dataflow-gen2.md)
 - CI/CD items:
   - [Variable Library](../variable-library/get-started-variable-libraries.md)
+  - [Deployment Plan](../deployment-plan/deployment-plan-overview.md)
 
 ## System files and platform changes
 
