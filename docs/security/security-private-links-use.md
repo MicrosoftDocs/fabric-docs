@@ -251,7 +251,7 @@ The tenant-level Private Link configuration creates one or more Azure Private En
 > Customers often deploy the private endpoint in a central networking subscription, which might be different from the subscription containing the Power BI Private Link Service.
 
 > [!Important]
-Don't delete unrelated private endpoints used by other Azure services such as Azure Storage, SQL Database, Synapse, or Azure AI services.
+> Don't delete unrelated private endpoints used by other Azure services such as Azure Storage, SQL Database, Synapse, or Azure AI services.
 
 ### Step 3: Delete Corresponding Private DNS Zones  
 
@@ -271,7 +271,7 @@ After you remove all Power BI private endpoints:
 > The exact set of zones can vary depending on how the private endpoints were originally configured.
 
 > [!Important]
-Don't delete unrelated DNS zones used by other Azure services such as Azure Storage, SQL Database, Synapse, or Azure AI services.
+> Don't delete unrelated DNS zones used by other Azure services such as Azure Storage, SQL Database, Synapse, or Azure AI services.
 
 ### Step 4: Delete the Power BI Private Link Service  
 In the Azure portal, delete the private link service **Microsoft.PowerBI/privateLinkServicesForPowerBI**, with **Show hidden types** enabled when exploring Resource Groups.
