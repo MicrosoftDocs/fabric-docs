@@ -44,10 +44,10 @@ Check the user's workspace role and whether the table being queried is a shortcu
 
 | Scenario | Expected behavior | Action |
 |---|---|---|
-| User is a **Viewer** (or has read-only sharing) | OneLake security filtering should apply. | Continue to [Step 4](#step-4-check-security-sync-status) to check sync status. |
+| User is a **Viewer** (or has read-only sharing) | OneLake security filtering should apply. | Continue to [Step 3](#step-3-check-security-sync-status) to check sync status. |
 | User has **Admin, Member, or Contributor** role and the table is *not* a shortcut | Elevated workspace access grants broader visibility than OneLake security rules would enforce on a Viewer. This behavior is expected, not a misconfiguration. | To have OneLake security govern this user's access, grant them access through Viewer-level or read-only sharing instead of Admin, Member, or Contributor roles. Otherwise, accept that data-level rules won't apply consistently to Admin, Member, or Contributor users. |
-| User has **Admin, Member, or Contributor** role and the table *is* a shortcut-backed table | Enforcement might still apply, because shortcut access is evaluated against the source's OneLake security rules. The user's elevated role on the consumer workspace doesn't grant them elevated access at the producer. | Verify the user has the required access at the source artifact, using the same Object ID match described in [Step 2](#step-2-confirm-the-users-object-id-matches-exactly-at-producer-and-consumer). |
-| **Admin, Member, or Contributor** user is unexpectedly filtered | Security sync might have failed to apply roles correctly, or RLS configured in user identity mode is enforced for all users including Admin, Member, or Contributor. | Check sync status in [Step 4](#step-4-check-security-sync-status) and review RLS configuration. |
+| User has **Admin, Member, or Contributor** role and the table *is* a shortcut-backed table | Enforcement might still apply, because shortcut access is evaluated against the source's OneLake security rules. The user's elevated role on the consumer workspace doesn't grant them elevated access at the producer. | Verify the user has the required access at the source item, using the same Object ID match described in [Permissions and identity](#permissions-and-identity). |
+| **Admin, Member, or Contributor** user is unexpectedly filtered | Security sync might have failed to apply roles correctly, or RLS configured in user identity mode is enforced for all users including Admin, Member, or Contributor. | Check sync status in [Step 3](#step-3-check-security-sync-status) and review RLS configuration. |
 
 ### Step 3: Check security sync status
 
@@ -55,8 +55,8 @@ Changes to OneLake security roles can take up to 5 minutes to propagate to the S
 
 - **Speed up propagation:** Select the **Metadata sync** button in the SQL analytics endpoint toolbar, or refresh the page. Either action triggers an immediate sync instead of waiting for the periodic cycle.
 - **Verify the sync is working:** In **Object Explorer**, expand **Security** > **Roles** > **Database Roles**. Confirm that custom roles prefixed with OLS\_ are present. Each OLS\_ role corresponds to a OneLake security role that security sync has translated and applied to the SQL analytics endpoint.
-  - **If no OLS\_ roles appear after 5 minutes:** Security sync hasn't processed the OneLake roles yet. Continue to [Step 5](#step-5-validate-that-the-role-references-arent-broken) to check for broken references, or see [Security sync appears stuck](#security-sync-appears-stuck) for deeper diagnostics.
-  - **If OLS\_ roles are present but the user still cannot query:** The sync is working, and the issue is likely in the user's role membership or identity match. Re-verify [Step 1](#step-1-confirm-the-user-has-fabric-read-permission-on-the-lakehouse) and [Step 2](#step-2-confirm-the-users-object-id-matches-exactly-at-producer-and-consumer).
+  - **If no OLS\_ roles appear after 5 minutes:** Security sync hasn't processed the OneLake roles yet. Continue to [Step 4](#step-4-validate-that-the-role-references-arent-broken) to check for broken references, or see [Security sync appears stuck](#security-sync-appears-stuck) for deeper diagnostics.
+  - **If OLS\_ roles are present but the user still cannot query:** The sync is working, and the issue is likely in the user's role membership or identity match. Re-verify [Step 1](#step-1-confirm-the-user-has-fabric-read-permission-on-the-lakehouse) and review [Permissions and identity](#permissions-and-identity).
 
    :::image type="content" source="./media/troubleshoot-onelake-security-for-sql-analytics-endpoints/view-security-roles.png" alt-text="Screenshot that shows the presence of 'ols_' roles in the 'DP roles (Custom)' folder.":::
 
