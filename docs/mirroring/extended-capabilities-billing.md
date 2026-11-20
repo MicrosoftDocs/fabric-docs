@@ -30,6 +30,8 @@ Extended capabilities in mirroring for Microsoft Fabric are optional and billed 
 
 Extended capabilities are billed by actual replication work, using the same pricing approach as [Incremental Copy in Copy Job](/fabric/data-factory/pricing-copy-job). Charges map to Fabric Capacity Units (CUs), and billing is based on usage.
 
+For worked examples showing how these CU-hours translate into estimated costs, see [Change data feed pricing example](extended-capabilities-billing-example-delta-change-data-feed.md) and [Views pricing example](extended-capabilities-billing-example-views.md).
+
 ## Pricing details
 
 Extended capabilities use the DataMovementIncrementalCopy meter and follow the same pricing principles as [Incremental Copy in Copy Job](/fabric/data-factory/pricing-copy-job).
@@ -53,4 +55,7 @@ Extended capabilities use the DataMovementIncrementalCopy meter and follow the s
 
 ## Related content
 
-[Extended capabilities in mirroring](extended-capabilities.md)
+- [Extended capabilities in mirroring](extended-capabilities.md)
+- [Change data feed pricing example for Mirroring](extended-capabilities-billing-example-delta-change-data-feed.md)
+- [Views pricing example for Mirroring](extended-capabilities-billing-example-views.md)
+
