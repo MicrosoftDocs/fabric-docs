@@ -24,7 +24,7 @@ Use this procedure when an end user receives an access error or empty result set
 
 ### Step 1: Confirm the user has Fabric Read permission on the lakehouse
 
-The one-to-one identity mapping requirement means the user must have explicit Read access on the consumer lakehouse, not just membership in a OneLake security role.
+To access the SQL EP, the user or a group they are a member of must have explicit Read access on the consumer lakehouse, not just membership in a OneLake security role.
 
 1. Open the lakehouse, select **Manage permissions**.
 
@@ -36,15 +36,7 @@ The one-to-one identity mapping requirement means the user must have explicit Re
 
 1. If the user is missing, add them directly or share the item with Read permission.
 
-
-### Step 2: Confirm the user's Object ID matches exactly at producer and consumer
-
-Nested or effective group membership isn't resolved across the producer → consumer boundary. Cases of mis-matched object IDs will result in an error message like "The SELECT permission or external policy action 'Microsoft.Sql/Sqlservers/Databases/Schemas/Tables/Rows/Select' was denied on the object '{tableName}', database '{itemName}', schema '{schemaName}'.
-
-- If the OneLake security role references a **user** (for example, user@contoso.com), that same user must be directly granted Fabric Read on the consumer lakehouse.
-- If the OneLake security role references a **group**, that same group must be directly granted Fabric Read on the consumer lakehouse. Granting the permission to an individual member of the group doesn't satisfy the match.
-
-### Step 3: Verify the user's workspace role and whether the table is a shortcut
+### Step 2: Verify the user's workspace role and whether the table is a shortcut
 
 OneLake security filtering is designed for users accessing data as **Viewers** or through read-only item sharing. Users with **Admin, Member, or Contributor** roles have data access granted by default at the workspace level, which means OneLake security policies might not be fully aligned or applied to them in the same way as Viewers.
 
@@ -57,7 +49,7 @@ Check the user's workspace role and whether the table being queried is a shortcu
 | User has **Admin, Member, or Contributor** role and the table *is* a shortcut-backed table | Enforcement might still apply, because shortcut access is evaluated against the source's OneLake security rules. The user's elevated role on the consumer workspace doesn't grant them elevated access at the producer. | Verify the user has the required access at the source artifact, using the same Object ID match described in [Step 2](#step-2-confirm-the-users-object-id-matches-exactly-at-producer-and-consumer). |
 | **Admin, Member, or Contributor** user is unexpectedly filtered | Security sync might have failed to apply roles correctly, or RLS configured in user identity mode is enforced for all users including Admin, Member, or Contributor. | Check sync status in [Step 4](#step-4-check-security-sync-status) and review RLS configuration. |
 
-### Step 4: Check security sync status
+### Step 3: Check security sync status
 
 Changes to OneLake security roles can take up to 5 minutes to propagate to the SQL analytics endpoint. You can speed this up and verify the sync directly in the UI.
 
@@ -68,7 +60,7 @@ Changes to OneLake security roles can take up to 5 minutes to propagate to the S
 
    :::image type="content" source="./media/troubleshoot-onelake-security-for-sql-analytics-endpoints/view-security-roles.png" alt-text="Screenshot that shows the presence of 'ols_' roles in the 'DP roles (Custom)' folder.":::
 
-### Step 5: Validate that the role references aren't broken
+### Step 4: Validate that the role references aren't broken
 
 A role that references a deleted or renamed column or table puts the database into an error state in user identity mode.
 
