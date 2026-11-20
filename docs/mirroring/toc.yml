@@ -287,7 +287,13 @@ items:
   - name: Mirroring views
     href: extended-capabilities-views.md
   - name: Pricing for extended capabilities
-    href: extended-capabilities-billing.md
+    items:
+      - name: Billing for extended capabilities in mirroring
+        href: extended-capabilities-billing.md
+      - name: Change data feed pricing example
+        href: extended-capabilities-billing-example-delta-change-data-feed.md
+      - name: Views pricing example
+        href: extended-capabilities-billing-example-views.md
 - name: Mirroring REST API
   href: mirrored-database-rest-api.md 
 - name: CI/CD for mirrored databases

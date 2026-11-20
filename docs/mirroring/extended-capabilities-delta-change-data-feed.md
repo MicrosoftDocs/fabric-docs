@@ -157,9 +157,12 @@ Key pricing clarifications:
 
 For the full pricing model, metering details, and billing scope, see [Billing for extended capabilities in mirroring](extended-capabilities-billing.md).
 
+For worked examples showing how these CU-hours translate into estimated costs, see [Change data feed pricing example](extended-capabilities-billing-example-delta-change-data-feed.md).
+
 ## Related content
 
 - [Extended capabilities in mirroring for Fabric](extended-capabilities.md)
+- [Change data feed pricing example](extended-capabilities-billing-example-delta-change-data-feed.md)
 - [Mirroring views in Fabric](extended-capabilities-views.md)
 - [Billing for extended capabilities in mirroring](extended-capabilities-billing.md)
 - [Microsoft Fabric mirroring public REST API](mirrored-database-rest-api.md)
