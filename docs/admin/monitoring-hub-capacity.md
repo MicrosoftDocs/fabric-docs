@@ -2,7 +2,7 @@
 title: Monitor capacity health in the Monitor hub
 description: Learn how to monitor Microsoft Fabric capacity health, consumption, and throttling from the Monitor hub so you can identify and resolve capacity issues.
 ms.topic: how-to
-ms.date: 08/20/2026
+ms.date: 11/06/2026
 ai-usage: ai-assisted
 #customer intent: As a Fabric administrator, I want to monitor capacity health and consumption from the Monitor hub so that I can identify and resolve capacity issues.
 ---
@@ -14,6 +14,9 @@ The Monitor hub gives Fabric administrators one place to monitor the health, cap
 > [!IMPORTANT]
 > Monitor capacity in the Monitor hub is currently in preview.
 > See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
+
+> [!NOTE]
+> The Monitor hub capacity-health experience doesn't visualize on-demand billing consumption. For a hybrid capacity, the utilization and throttling information on this page represents provisioned-capacity consumption only. For an F0 capacity, use the Capacity Metrics app [**On-demand compute** page](../enterprise/on-demand-billing-monitor.md) to monitor on-demand usage.
 
 ## Prerequisites
 

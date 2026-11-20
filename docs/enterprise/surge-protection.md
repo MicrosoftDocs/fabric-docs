@@ -18,6 +18,9 @@ Surge protection helps capacity admins keep resources available for interactive 
 
 This article explains how to enable both levels, set thresholds, monitor surge events, and recover blocked workspaces.
 
+> [!NOTE]
+> Surge protection works only with provisioned capacity. It doesn't apply to F0 capacities.
+
 ## Prerequisites
 
 - Admin access to the Fabric capacity you want to manage.

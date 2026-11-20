@@ -58,7 +58,7 @@ The following animated image walks through several steps you can use to drill th
     Use the start and end times to correlate the billing interval with query activity in Query Insights and dynamic management views (DMVs).
 
     > [!NOTE]
-    > The **Operation Id** shown in the Capacity Metrics app no longer maps to the distributed statement ID for warehouse queries. To determine which queries contributed to compute consumption during a billing interval, query the *queryinsights.exec_requests_history* view using the interval's start and end timestamps.
+    > The **Operation Id** shown in the Capacity Metrics app no longer maps to the distributed statement ID for warehouse queries. To determine which queries contributed to compute consumption during a billing interval, query the *queryinsights.exec_requests_history* view by using the interval's start and end timestamps.
 
     The following T-SQL example returns requests that were active during a specified billing interval:
 
