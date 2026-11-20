@@ -328,6 +328,15 @@ items:
                 href: how-to-observe-utilization.md
       - name: Warehouse capacity
         items:
+          - name: On-demand billing
+            items:
+              - name: Overview
+                href: on-demand-billing.md
+                displayName: on-demand, serverless, workspace compute ceiling
+              - name: Configure on-demand billing
+                href: configure-on-demand-billing.md
+              - name: FAQ
+                href: on-demand-billing-faq.yml
           - name: Burstable capacity
             href: burstable-capacity.md
           - name: Capacity pause and resume

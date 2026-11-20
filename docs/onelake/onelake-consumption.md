@@ -47,10 +47,37 @@ The following table defines CU consumption for OneLake data operations. As of Ma
 
 *For files > 4 MB in size, OneLake counts a transaction for every 4 MB block of data read or written. For files < 4 MB, a full transaction is counted. For example, if you do 10,000 read operations via Redirect and each file read is 16 MB in size, your capacity consumption is 40,000 transactions or 416 CU seconds.
 
+## On-demand billing
+
+> [!IMPORTANT]
+> On-demand billing is currently in preview.
+
+When you enable on-demand billing, you pay for all OneLake operations and storage based on actual usage. This billing model gives you the flexibility to use OneLake without buying provisioned Fabric capacity upfront.
+
+This flexibility makes it easier to use OneLake as the centralized data layer in a multicloud analytics architecture. You can keep your data in OneLake and choose the compute engine that best fits each workload, such as Fabric, Azure Databricks, or Snowflake.
+
+ You can use on-demand billing in two ways:
+
+- On a paid capacity - Enable on-demand billing for a supported billing category on an existing Fabric capacity (F2 and higher). Operations in that category no longer draw capacity units (CUs) from the capacity and are billed separately. This separation helps maintain access to OneLake when the capacity is throttled. Other Fabric operations continue to use the shared capacity.
+
+- On Fabric Zero-Provisioned (F0) – Create a capacity with zero provisioned CUs and no upfront capacity cost. On-demand billing is enabled by default, so you pay only for the OneLake compute and storage you use. You can move between F0 and other SKUs as your needs change.
+
+### On-demand pricing
+
+On-demand billing uses separate meters for each OneLake billing category, such as reads, writes, and other operations. Pricing is based on the same pay-as-you-go capacity price.
+
+For example, OneLake hot reads consume **104 CU seconds per 10,000 transactions**.
+
+By using the **East US 2** pay-as-you-go price of **$0.00005 per CU second**, you can calculate the cost as follows:
+
+`$0.00005 per CU second × 104 CU seconds = $0.0052 per 10,000 read transactions`
+
+To configure, see [On-demand billing](/fabric/enterprise/on-demand-billing).
+
 ### Workload-driven consumption
 Some Fabric workloads access OneLake as part of their internal processing and system operations. These requests consume Fabric Capacity Units (CUs) in the same way as user-initiated operations.
 > [!NOTE]
-> Some OneLake operations performed as part of Spark workload execution aren't fully reflected in reported capacity consumption. Beginning October 15, 2026, Fabric will correct this reporting so that these operations are included in OneLake CU consumption. OneLake consumption rates aren't changing. However, customers with Spark workloads that generate a high volume of these operations might see increased CU consumption. Whether this increase results in additional cost depends on the utilization and configuration of the customer’s Fabric capacity.
+> Some OneLake operations performed as part of Spark workload execution aren't fully reflected in reported capacity consumption. Beginning November 15, 2026, Fabric will correct this reporting so that these operations are included in OneLake CU consumption. OneLake consumption rates aren't changing. However, customers with Spark workloads that generate a high volume of these operations might see increased CU consumption. Whether this increase results in additional cost depends on the utilization and configuration of the customer’s Fabric capacity.
 
 ## Shortcuts
 

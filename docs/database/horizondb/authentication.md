@@ -38,7 +38,7 @@ For the Fabric SQL editor, the service uses your signed-in Fabric context. The c
 
 For Visual Studio Code:
 
-1. Install the Microsoft PostgreSQL extension.
+1. Install the Microsoft PostgreSQL extension, version 1.34.0 or later. If you upgrade the extension, restart the Visual Studio Code window before connecting.
 1. Select **Visual Studio Code** in the Fabric HorizonDB toolbar, and then select **Open in VS Code** in the connection pane.
 1. Select **Entra Auth**.
 1. Sign in to the correct tenant as the database creator.

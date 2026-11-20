@@ -10,7 +10,10 @@ ms.custom: references_regions
 
 # Explore Fabric capacity overview events in Fabric Real-Time hub
 
-Fabric capacity overview events provide summary-level information related to your capacity. Use these events to create alerts about your capacity health through Activator, or store them in an eventhouse for granular or historical analysis.
+Fabric capacity overview events provide summary-level information about provisioned-capacity utilization. Use these events to create alerts about your capacity health through Activator, or store them in an eventhouse for granular or historical analysis.
+
+> [!NOTE]
+> Capacity overview events report provisioned capacity utilization only and don't include on-demand billing consumption. For information about on-demand usage events and their availability, see [Explore Fabric capacity on-demand overview events](explore-fabric-capacity-on-demand-overview-events.md).
 
 [!INCLUDE [consume-fabric-events-regions](../real-time-intelligence/event-streams/includes/connectors/consume-fabric-events-regions.md)]
 
@@ -48,7 +51,7 @@ Fabric supports the following capacity overview events:
 
 | Event type name | Description |
 | --------------- | ----------- |
-| Microsoft.Fabric.Capacity.Summary | Fabric emits this event every 30 seconds to summarize capacity usage across workloads during the interval. |
+| Microsoft.Fabric.Capacity.Summary | Fabric emits this event every 30 seconds to summarize provisioned-capacity usage during the interval. On-demand billing consumption isn't included. |
 | Microsoft.Fabric.Capacity.State | Fabric emits this event when a capacity's state changes, including throttling-related conditions such as when a capacity becomes overloaded, or when a capacity is paused or resumed. Use this event to set alerts on throttling. |
 
 ### Schemas
@@ -71,6 +74,9 @@ The `data` object has the following properties for Summary events:
 
 > [!NOTE]
 > The summary table contains aggregated CU data at the capacity level in a granularity of 30-second windows. CU data is smoothed, rather than raw- this approach reflects the way the system analyzes CU consumption for the purposes of throttling. Active capacities emit exactly one line item every 30 seconds, unless all line items for that window (CU, Interactive Delay Throttling percentage etc) are 0. Also, if a capacity is paused, it doesn't emit summary data.
+
+> [!NOTE]
+> Calculations based on `baseCapacityUnits`, `capacityUnitMs`, and the throttling percentages don't include on-demand billing consumption.
 
 | Property | Type | Description | Example |
 | -------- | ---- | ----------- | ------- |

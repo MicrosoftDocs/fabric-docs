@@ -28,7 +28,7 @@ The following table lists Fabric features by SKU type. It includes only the feat
 | [On-demand resizing](scale-capacity.md)                                                               | Yes           | No     |
 | [Pause and resume your capacity](pause-resume.md)                                                     | Yes           | No     |
 | [Power BI autoscale](/power-bi/enterprise/service-premium-auto-scale)                                 | No            | Yes    |
-| [Spark autoscale billing](../data-engineering/autoscale-billing-for-spark-overview.md)                | Yes           | No     |
+| [On-demand Billing for Apache Spark](../data-engineering/autoscale-billing-for-spark-overview.md)    | Yes           | No     |
 | [Trusted workspace access](../security/security-trusted-workspace-access.md)                          | Yes           | No     |
 | View Power BI items with a Microsoft Fabric free license<sup>1</sup>                                  | F64 or higher | Yes    |
 | Workspace-level private links                                                                         | Yes           | No     |
