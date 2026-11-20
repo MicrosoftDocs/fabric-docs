@@ -137,6 +137,8 @@ items:
       href: fabric-sku-estimator-scenario.md
     - name: Fabric SKU Estimator Release Notes
       href: fabric-sku-estimator-release-notes.md
+  - name: Use Copilot Credits in Microsoft Fabric (preview)
+    href: copilot-credits-workspaces.md
 - name: Capacity guidance
   items:
   - name: Capacity planning guide
