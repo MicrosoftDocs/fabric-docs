@@ -3,7 +3,7 @@ title: Connector overview
 description: Learn about the available data connectors for Data Factory in Microsoft Fabric.
 ms.reviewer: jianleishen
 ms.topic: overview
-ms.date: 10/30/2026
+ms.date: 11/20/2026
 ms.search.form: product-data-factory
 ms.custom: connectors
 ---
@@ -38,7 +38,7 @@ Fabric supports these connectors in dataflow Gen2, pipelines, and copy jobs. Sel
 | [Amazon OpenSearch Service (Beta)](/power-query/connectors/amazon-opensearch-service) | ✓/− |  |  |
 | [Amazon RDS for Oracle](connector-amazon-rds-for-oracle-overview.md) |  | ✓/− | ✓/− |
 | [Amazon RDS for SQL Server](connector-amazon-rds-for-sql-server-overview.md) |  | ✓/− | ✓/− |
-| [Amazon Redshift](connector-amazon-redshift-overview.md) | ✓/− | ✓/− |  |
+| [Amazon Redshift](connector-amazon-redshift-overview.md) | ✓/− | ✓/− | ✓/− |
 | [Amazon S3](connector-amazon-s3-overview.md) | ✓/✓ (preview) | ✓/✓ | ✓/✓ |
 | [Amazon S3 Compatible](connector-amazon-s3-compatible-overview.md) |  | ✓/✓ | ✓/✓ |
 | [Anaplan](connector-anaplan-overview.md) | ✓/− |  |  |
@@ -59,7 +59,7 @@ Fabric supports these connectors in dataflow Gen2, pipelines, and copy jobs. Sel
 | [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2-overview.md) | ✓/− | ✓/✓ | ✓/✓ |
 | [Azure Database for MySQL](connector-azure-database-for-mysql-overview.md) |  | ✓/✓ | ✓/✓ |
 | [Azure Database for PostgreSQL](connector-azure-database-for-postgresql-overview.md) | ✓/- | ✓/✓ | ✓/✓ |
-| [Azure Databricks](connector-azure-databricks-overview.md) | ✓/− | ✓/✓ |  |
+| [Azure Databricks](connector-azure-databricks-overview.md) | ✓/− | ✓/✓ | ✓/✓ |
 | [Azure Files](connector-azure-files-overview.md) |  | ✓/✓ |  ✓/✓ |
 | [Azure HDInsight (HDFS)](/power-query/connectors/azure-hdinsight#connect-to-azure-hdinsight-from-power-query-online) | ✓/− |  |  |
 | Azure HDInsight Spark | ✓/- | | |
@@ -103,6 +103,7 @@ Fabric supports these connectors in dataflow Gen2, pipelines, and copy jobs. Sel
 | Entersoft Business Suite | ✓/− |  |  |
 | [EQuIS](/power-query/connectors/equis) | ✓/− |  |  |
 | eWay-CRM | ✓/− |  |  |
+| Eventstream |  |  | ✓/✓ |
 | [Exact Online Premium (Beta)](/power-query/connectors/exact-online-premium) | ✓/− |  |  |
 | Exasol | ✓/− |  |  |
 | [Excel workbook](/power-query/connectors/excel#connect-to-an-excel-workbook-from-power-query-online) | ✓/− |  |  |
@@ -149,7 +150,6 @@ Fabric supports these connectors in dataflow Gen2, pipelines, and copy jobs. Sel
 | [LinkedIn Learning](/power-query/connectors/linkedin-learning) | ✓/− |  |  |
 | [MariaDB](connector-mariadb-overview.md) | ✓/− | ✓/− | ✓/− |
 | MarkLogic | ✓/− |  |  |
-| [Microsoft 365](connector-microsoft-365-overview.md) |  | ✓/− |  |
 | [Microsoft Access](connector-microsoft-access-overview.md) |  | ✓/✓ | ✓/✓ |
 | Microsoft Azure Data Manager for Energy | ✓/− |  |  |
 | [Microsoft Exchange Online](connector-microsoft-exchange-online-overview.md) | ✓/− |  |  |
