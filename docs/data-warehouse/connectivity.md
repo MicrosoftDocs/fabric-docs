@@ -85,7 +85,7 @@ For implementation details, see [Configure Azure Firewall application rules with
 
 ## Connection idleness
 
-A connection between a client and [!INCLUDE [fabric-dw](includes/fabric-dw.md)] is *idle* when it's open but the client isn't sending any queries or requests over it. An idle connection isn't disconnected or unhealthy. It's simply open and not in use.
+A connection between a client and [!INCLUDE [fabric-dw](includes/fabric-dw.md)] is *idle* when it's open, no request is running or returning results, and the client isn't submitting a new request. An idle connection isn't disconnected or unhealthy. It's simply open and not in use.
 
 [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] automatically close connections that stay idle for **15 minutes**. The idle timer starts after the warehouse finishes sending a response to the client. It pauses whenever the client submits a new request, such as a query batch, a remote procedure call (RPC), a transaction request, or a bulk load.
 
