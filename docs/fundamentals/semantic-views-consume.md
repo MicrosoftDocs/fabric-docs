@@ -4,13 +4,13 @@ description: Use semantic views in reports and agents, and reuse definitions in 
 ms.reviewer: vvereen
 ms.topic: how-to
 ms.date: 11/05/2026
-ms.search.form: Semantic Views
+ms.search.form: Semantic views
 ai-usage: ai-assisted
 ---
 
 # Consume semantic views
 
-Use a semantic view in reports and agents by connecting to its generated semantic model. You can also reuse the view or selected definitions with another lakehouse's data through OneLake shortcuts.
+Use semantic views in [Fabric IQ](../iq/overview.md) to share consistent business definitions across reports and agents. In this preview, reports and agents query the semantic model generated when you publish a view. You can also reuse the view or selected definitions with another lakehouse's data through OneLake shortcuts.
 
 [!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 

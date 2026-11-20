@@ -4,7 +4,7 @@ description: Build a semantic view to analyze sales by region. Define tables, re
 ms.reviewer: vvereen
 ms.topic: tutorial
 ms.date: 10/20/2026
-ms.search.form: Semantic Views
+ms.search.form: Semantic views
 ai-usage: ai-assisted
 #customer intent: As a data modeler, I want to define business logic over my lakehouse tables so that I can analyze sales by region.
 ---

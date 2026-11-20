@@ -3,8 +3,8 @@ title: Create a semantic view
 description: Learn how to create a semantic view in a lakehouse, edit or upload YAML definitions, and organize the view folder.
 ms.reviewer: vvereen
 ms.topic: how-to
-ms.date: 10/20/2026
-ms.search.form: Semantic Views
+ms.date: 11/18/2026
+ms.search.form: Semantic views
 ai-usage: ai-assisted
 ---
 
@@ -143,6 +143,7 @@ Deleting a semantic view requires separate cleanup of its source folder, generat
 
 ## Related content
 
+- [Work with semantic views through APIs](semantic-views-overview.md#work-with-semantic-views-through-apis)
 - [Semantic view YAML syntax reference](semantic-views-yaml-reference.md)
 - [Publish a semantic view](semantic-views-publish.md)
 - [Semantic views (preview)](semantic-views-overview.md)
