@@ -19,6 +19,8 @@ An error has two identifiers: a five-character PostgreSQL **SQLSTATE** and a wra
 
 Successful PostgreSQL sign-in doesn't guarantee that the session can query Fabric data. Check the message accompanying SQLSTATE `28000` and `[Execution/AuthenticationError]`.
 
+If you see `[Execution/AuthenticationError]` when using the Microsoft PostgreSQL extension for Visual Studio Code, check the extension version. Version 1.34.0 or later is required. If you're using an earlier version, upgrade the extension, restart the Visual Studio Code window, and reconnect with **Entra Auth** as the database creator. For connection steps, see [Connect with Visual Studio Code](connect.md#connect-with-visual-studio-code). If the error continues, use the following table to check other causes.
+
 | Message or condition | Recovery |
 |---|---|
 | The sign-in token can't be used to query Fabric data | Acquire a new token for one of the audiences listed in the error, and reconnect. Retrying on the same connection doesn't change its token audience. |

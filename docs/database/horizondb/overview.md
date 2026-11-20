@@ -49,7 +49,7 @@ Federated Analytics connects operational and analytical data through three compl
 | Capability | Direction | Use it when |
 |---|---|---|
 | [Database mirroring](mirroring-overview.md) | HorizonDB database to Fabric | Analytical consumers need an asynchronous copy of eligible operational tables in OneLake and through a SQL analytics endpoint. |
-| [Federated queries](query-fabric-data.md) | Fabric to a PostgreSQL query | An operational query needs to read supported Fabric data through `pg_fabric_fdw` without copying those rows into local tables. |
+| [Federated queries](query-fabric-data.md) | PostgreSQL to Fabric query | An operational query needs to read supported Fabric data through `pg_fabric_fdw` without copying those rows into local tables. |
 | [Data delivery](load-fabric-data-copy-job.md) | Fabric to HorizonDB database storage | An application needs selected analytical results materialized in PostgreSQL through a bounded Copy job for reverse ETL. |
 
 These paths have independent health and freshness. A healthy PostgreSQL endpoint doesn't guarantee that mirroring, federation, or a Copy job is healthy. Mirrored data is asynchronous and can be behind the operational database.

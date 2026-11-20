@@ -56,7 +56,9 @@ The editor uses your signed-in Microsoft Entra context. The calling principal de
 Install:
 
 - [Visual Studio Code](https://code.visualstudio.com/).
-- The [PostgreSQL extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-ossdata.vscode-pgsql) published by Microsoft.
+- The [PostgreSQL extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-ossdata.vscode-pgsql) published by Microsoft, version 1.34.0 or later.
+
+If you upgrade the extension, restart the Visual Studio Code window before connecting.
 
 Open the connection from the Fabric toolbar:
 

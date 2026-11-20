@@ -10,7 +10,7 @@ ms.custom: references_regions
 
 # Explore Fabric capacity operation events in Fabric Real-Time hub
 
-Fabric capacity operation events provide granular, per-operation information about workload activity that consumes capacity units (CUs) on your Fabric capacity. Use these events to create alerts on specific operations through Activator, or store them in an eventhouse for detailed drill-down and historical analysis of capacity consumption at the workspace, item, and operation level.
+Fabric capacity operation events provide granular, per-operation information about workload activity. During the public preview of on-demand billing, these events include operations that consume provisioned capacity units (CUs) and operations that use on-demand billing. Use these events to create alerts on specific operations through Activator, or store them in an eventhouse for detailed drill-down and historical analysis at the workspace, item, and operation level.
 
 [!INCLUDE [consume-fabric-events-regions](../real-time-intelligence/event-streams/includes/connectors/consume-fabric-events-regions.md)]
 
@@ -50,7 +50,7 @@ Fabric supports the following capacity operation events:
 
 | Event type name | Description |
 | --------------- | ----------- |
-| Microsoft.Fabric.CapacityOperationEvents.Operation | Fabric emits this event for every operation that consumes capacity. |
+| Microsoft.Fabric.CapacityOperationEvents.Operation | Fabric emits this event for every operation that consumes provisioned capacity or uses on-demand billing. |
 
 ### Schemas
 
@@ -72,6 +72,9 @@ The `data` object has the following properties for Operation events:
 
 > [!NOTE]
 > The operation table contains one row per operation that consumes capacity. Unlike the summary events, operation events aren't aggregated by time window - each row represents a distinct operation with its own duration, CU consumption, and status.
+
+> [!NOTE]
+> During the public preview of on-demand billing, the capacity operation event schema doesn't distinguish between operations that use provisioned capacity and operations that use on-demand billing.
 
 | Property | Type | Description | Example |
 | -------- | ---- | ----------- | ------- |

@@ -13,6 +13,9 @@ Capacity overage is a feature that pays for eligible excess capacity usage, up t
 
 This article shows you how to configure capacity overage while you create a capacity, how to configure it later through the OneLake catalog, and how to set up capacity overage notifications. For more information about how capacity overage works, what it costs, and how the threshold behaves, see [Capacity overage in Microsoft Fabric](capacity-overage-overview.md).
 
+> [!NOTE]
+> Capacity overage works only with provisioned capacity. It doesn't apply to F0 capacities.
+
 ## Prerequisites
 
 Before you enable capacity overage, ensure you meet the following requirements:

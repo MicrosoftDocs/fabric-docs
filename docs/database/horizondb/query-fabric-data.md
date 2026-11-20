@@ -8,9 +8,9 @@ ai-usage: ai-assisted
 ---
 # Query Fabric data from a HorizonDB database
 
-Federated queries are a [Federated Analytics](federated-analytics-overview.md) capability in Microsoft Fabric HorizonDB. Use the service-managed `pg_fabric_fdw` extension to query supported warehouses and SQL analytics endpoints with PostgreSQL SQL. Imported objects appear as PostgreSQL foreign tables, so an application connected to a HorizonDB database can join operational rows with Fabric data without storing a local copy.
+Federated queries are a [Federated Analytics](federated-analytics-overview.md) capability in Microsoft Fabric HorizonDB. Use the service-managed `pg_fabric_fdw` extension to query supported warehouses and SQL analytics endpoints with a PostgreSQL query. You can import Fabric objects as PostgreSQL foreign tables by using the `IMPORT FOREIGN SCHEMA` command, so an application connected to a HorizonDB database can join operational rows with Fabric data without storing a local copy.
 
-The wrapper translates eligible query operations into T-SQL and sends them to Fabric over a native Tabular Data Stream (TDS) connection. Fabric runs those operations and returns the results. You don't need to rewrite your application queries in T-SQL or configure an Open Database Connectivity (ODBC) driver or data source name (DSN).
+The wrapper translates eligible PostgreSQL queries into T-SQL and sends them to Fabric over a native Tabular Data Stream (TDS) connection. Fabric runs those operations and returns the results. You don't need to rewrite your application queries in T-SQL or configure an Open Database Connectivity (ODBC) driver or data source name (DSN).
 
 > [!IMPORTANT]
 > Fabric HorizonDB is in public preview. Capabilities, limits, and behavior might change before general availability. For more information, see [Microsoft Fabric preview features](../../fundamentals/preview.md).
@@ -41,7 +41,7 @@ FROM pg_catalog.pg_extension AS extension
 WHERE extension.extname = 'pg_fabric_fdw';
 ```
 
-One row should be returned. If it isn't, don't run `CREATE EXTENSION`. The extension is service-managed.
+One row should be returned. If it isn't, don't run `CREATE EXTENSION`. The extension is service-managed, contact Microsoft support.
 
 Inspect available foreign servers:
 

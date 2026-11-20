@@ -26,7 +26,7 @@ Federated Analytics is the collective name for these capabilities, not a separat
 | Capability | Data direction | Data location at query time | Best for | Freshness boundary |
 |---|---|---|---|---|
 | [Database mirroring](mirroring-overview.md) | HorizonDB database to Fabric | Mirrored analytical copy in OneLake | Reporting, semantic models, notebooks, and analytics that shouldn't run against the operational database | Asynchronous after an initial copy |
-| [Federated queries](query-fabric-data.md) | Fabric to a query running in a HorizonDB database | Rows remain in the Fabric source | Selective joins between operational rows and supported Fabric SQL-compatible data | Read at query time, subject to remote availability |
+| [Federated queries](query-fabric-data.md) | PostgreSQL to Fabric query | Rows remain in the Fabric source | Selective joins between operational rows and supported Fabric SQL-compatible data | Read at query time, subject to remote availability |
 | [Data delivery](load-fabric-data-copy-job.md) | Fabric to a HorizonDB database | Rows are loaded into PostgreSQL tables | Reusable scores, recommendations, summaries, and other operational state | Determined by the last successful load and publish step |
 
 The paths can work together. For example, mirror orders to Fabric, calculate customer risk in a Fabric analytical workload, and load the bounded result back into Fabric HorizonDB for an application to use.
