@@ -37,7 +37,10 @@ Due to smoothing, only a portion of the CU usage for an operation applies to any
 Bursting and smoothing work together to make it easier for you to do your work. For example, you typically spend time scheduling jobs and spreading them out across the day. With smoothing, Fabric spreads the compute cost for background jobs over 24 hours. As a result, scheduled jobs can all run simultaneously without causing any spikes that would otherwise block jobs from starting. At the same time, you can enjoy consistently fast performance without waiting for slow jobs to complete or wasting time managing job schedules.
 
 > [!NOTE]
-> Fabric doesn't support bursting and smoothing when a capacity admin enables Autoscale Billing for Spark. In this scenario, Spark usage operates in a pay-as-you-go mode, and the concepts of bursting and smoothing don't apply.
+> Fabric doesn't support bursting and smoothing when a capacity admin enables [On-demand Billing for Apache Spark](../data-engineering/autoscale-billing-for-spark-overview.md). In this scenario, Spark usage operates in a pay-as-you-go mode, and the concepts of bursting and smoothing don't apply.
+
+> [!NOTE]
+> Operations in enabled on-demand billing categories run outside the shared provisioned-capacity compute limit and are billed separately. Bursting, smoothing, and capacity throttling continue to apply to operations that consume provisioned capacity. For more information, see [On-demand billing in Microsoft Fabric](on-demand-billing.md).
 
 ## Throttle triggers and throttle stages
 
@@ -174,6 +177,8 @@ The throttling system attempts to accurately categorize operations upon submissi
 ## Track overages and rejected operations
 
 To see whether your capacity is overloaded, review the [Utilization chart](metrics-app-compute-page.md#utilization) in the [Microsoft Fabric Capacity Metrics app](metrics-app.md). A spike that goes over the line indicates an overage. To further investigate the overage, drill through to the timepoint page. Then review both your interactive and background operations to see which ones caused the overages.
+
+The **Compute** page reports provisioned-capacity utilization and throttling. To monitor operations that use on-demand billing, use the [**On-demand compute** page](on-demand-billing-monitor.md).
 
 Because utilization exceeding 100% doesn't automatically mean throttling, use the [Throttling chart](metrics-app-compute-page.md#throttling) when you evaluate overages. From there, open a table that shows minutes to burndown, a chart with add, burndown, and cumulative percent, and more. Minutes to burndown estimates how long burndown would take if no more operations occur in the capacity.
 

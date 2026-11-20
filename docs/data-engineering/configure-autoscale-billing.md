@@ -17,7 +17,7 @@ This article explains how to enable on-demand billing for a Fabric capacity and 
 
 ## Requirements
 
-- **Capacity**: Supported only for **Fabric F-SKUs** (F2 and above). Not supported on **P-SKUs** or **Fabric trial capacities**.
+- **Capacity**: Supported for **Fabric F-SKUs**, including F0. Not supported on **P-SKUs** or **Fabric trial capacities**. On an F0 capacity, you must explicitly enable on-demand billing for Spark before Spark workloads can run.
 - **Role**: You must be a **Fabric Capacity Administrator**.
 
 > [!IMPORTANT]
@@ -36,7 +36,7 @@ This article explains how to enable on-demand billing for a Fabric capacity and 
 1. Select **Apply**.
 
 
-The maximum CU value available on the slider depends on your approved Azure quota and subscription type.
+The maximum CU value available on the slider depends on the available capacity quota for the subscription and region. On-demand Billing for Spark doesn't use an on-demand billing category spend limit.
 
 > [!NOTE]
 > After you save the setting, Spark pools can use the CU quota defined by on-demand billing.

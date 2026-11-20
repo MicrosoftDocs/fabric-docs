@@ -1186,6 +1186,8 @@
           href: dbt-connect-azure-horizondb.md
         - name: Run dbt projects from GitHub
           href: dbt-run-github.md
+        - name: Run dbt projects from Azure DevOps
+          href: dbt-run-azure-devops.md
         - name: dbt job logs with OneLake
           href: dbt-job-onelake-logs.md
         - name: dbt job activity in a pipeline

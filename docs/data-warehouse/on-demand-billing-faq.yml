@@ -1,0 +1,138 @@
+### YamlMime:FAQ
+metadata:
+  title: On-Demand Billing FAQ for Fabric Data Warehouse
+  description: Frequently asked questions about on-demand billing in Fabric Data Warehouse — workspace ceilings, concurrency, query acceleration, custom SQL pools, and monitoring.
+  ms.reviewer: sosivara
+  ms.date: 11/06/2026
+  ms.topic: faq
+  ai-usage: ai-assisted
+  #customer intent: As a Fabric capacity admin or warehouse owner, I want quick answers to common questions about on-demand billing so I can adopt it confidently.
+
+title: On-demand billing in Fabric Data Warehouse frequently asked questions (preview)
+summary: |
+  [!INCLUDE [applies-to](includes/applies-to-version/fabric-se-and-dw.md)]
+
+  Answers to common questions about on-demand billing for Fabric Data Warehouse. For an overview, see [On-demand billing for Fabric Data Warehouse](on-demand-billing.md). For step-by-step configuration, see [Configure on-demand billing for Fabric Data Warehouse](configure-on-demand-billing.md). For the platform-wide framework, see [On-demand billing in Microsoft Fabric](../enterprise/on-demand-billing.md).
+
+  > [!IMPORTANT]
+  > On-demand billing in Fabric is currently in [preview](../fundamentals/preview.md).
+
+sections:
+  - name: Enablement and scope
+    questions:
+    - question: Can I enable on-demand billing only for some workspaces?
+      answer: |
+        No. On-demand billing applies at the capacity level and covers every workspace on that capacity that contains a warehouse, SQL analytics endpoint, or warehouse snapshot. See [Set up on-demand billing in Microsoft Fabric](../enterprise/on-demand-billing-setup.md).
+    - question: Who can enable or modify on-demand billing?
+      answer: |
+        Only a capacity admin can enable, disable, or modify on-demand billing values (spend limit, new-workspace default, existing-workspace ceilings) in the admin portal.
+    - question: How quickly does enabling or disabling on-demand billing take effect?
+      answer: |
+        Enabling or disabling on-demand billing is an online operation (active queries aren't disrupted) and can take 5 to 15 minutes to take effect. In F0 capacity, on-demand billing cannot be disabled. For general transition behavior, see [Transition behavior when enabling or disabling on-demand billing](../enterprise/on-demand-billing.md#transition-behavior).
+    - question: How immediate is modifying a workspace compute ceiling?
+      answer: |
+        Once you modify a workspace compute ceiling, typically within a minute, new queries scale up or down within the new guardrail. Queries in progress aren't disrupted and won't benefit from the modified value.
+  - name: Scale and concurrency
+    questions:
+    - question: What is the maximum ceiling a workspace can scale up to?
+      answer: |
+        The maximum ceiling for a workspace is whatever the capacity admin sets for it, up to the configured 24-hour compute limit for the **Data Warehouse** category. The workspace only reaches this ceiling if the workload requires it, and you only pay for what you actually consume.
+    - question: Can on-demand billing help improve concurrency?
+      answer: |
+        A higher workspace ceiling can provide additional performance and concurrency headroom when workload demand and query plans can use the added compute. Results depend on query characteristics, concurrent demand, Custom SQL Pool allocations, and the available spend limit. Monitor pool pressure and actual consumption before and after changing the ceiling. In some cases, a combination of on-demand billing and custom SQL pools helps maximize resources for ingestion versus reporting.
+    - question: Can a single query trigger on-demand and benefit from the added compute?
+      answer: |
+        No. An individual query doesn’t enable or trigger on-demand billing. A capacity admin enables on-demand billing for the Data Warehouse category at the capacity level. After the setting takes effect, eligible operations are billed on-demand and can use compute within the workspace ceiling. An individual query’s resource use is still determined by its query plan and the resources available within that ceiling.
+
+  - name: Cost, spend limits, and billing
+    questions:
+    - question: What am I billed for?
+      answer: |
+        You're billed only for the compute consumed by executed queries on warehouses, SQL analytics endpoints, warehouse snapshots, based on Fabric's pay-as-you-go rates. You aren't billed for unused headroom under a workspace compute ceiling. For platform pricing behavior, see [Billing meters and pricing](../enterprise/on-demand-billing.md#billing-meters-and-pricing).
+    - question: Does on-demand billing cost the same as Data Warehouse compute on shared capacity?
+      answer: |
+        No. On-demand billing for Fabric Data Warehouse is charged at 1.3× the standard pay-as-you-go (PAYG) rate for Data Warehouse compute in the existing shared capacity model. The multiplier applies to the CU-hours you actually consume, not to the configured workspace ceiling. For current per-CU pricing in your region, see the [Fabric pricing page](https://azure.microsoft.com/pricing/details/microsoft-fabric/).
+    - question: What's the difference between a workspace ceiling and a spend limit?
+      answer: |
+        - Workspace compute ceiling controls how fast a workspace can run. The workspace compute ceiling is the peak concurrent CU.
+        - The 24-hour compute limit caps the total CU-hours consumed by all Data Warehouse workloads across the capacity in a rolling 24-hour window.
+
+        For more information, see [On-demand spend limits](on-demand-billing.md#how-on-demand-billing-works).
+    - question: What happens when a capacity reaches my 24-hour spend limit?
+      answer: |
+        There are two levels of billing guardrails - capacity consumption limit, and individual workspace compute ceiling. 
+        
+        - Once the 24-hour capacity consumption limit is reached, new queries are rejected until consumption is available again without exceeding the rolling 24-hour consumption limit, similar to capacity throttling in shared capacity billing.
+        - Whenever a workspace **Data Warehouse** compute ceiling is hit, queries are queued to avoid exceeding the *concurrent* compute limit.
+    - question: Can I set my spend limit to 0?
+      answer: |
+        Yes. Setting the spend limit to 0 CU-hours blocks all **Data Warehouse** consumption for that capacity. Operations return an error that indicates the on-demand usage limit is exceeded.
+    - question: How are the capacity spend limit and workspace compute ceiling measured?
+      answer: | 
+        The 24-hour compute limit is measured in CU-hours, and the compute ceiling is measured in CUs. The **Settings** page uses these values to derive **Max daily usage (CU-hours)** and **Estimated max vNodes** for each workspace. For more information on CU vs. CU-hours concepts, see [CU vs. CU-hours](../enterprise/on-demand-billing.md#cu-vs-cu-hours).
+
+  - name: Workspaces and defaults
+    questions:
+
+    - question: What's the default compute ceiling for a new workspace?
+      answer: |
+        During the current preview, new and migrated workspaces default to a compute ceiling of 64 CUs. Capacity admins can lower this at any time. The minimum for any workspace compute ceiling is 25 CUs.
+    - question: What happens to my workspace if I disable on-demand billing?
+      answer: |
+        The workspace returns to your Fabric shared capacity, along with your other Fabric workloads. Disabling is an online operation (active queries aren't disrupted) and takes 5 to 15 minutes to propagate. 
+    - question: Does on-demand billing support bursting or smoothing?
+      answer: |
+        No. On-demand billing doesn't use bursting or smoothing. To avoid regressions when you enable on-demand billing, Fabric applies smart default workspace ceilings that approximate the effective throughput customers previously observed on shared capacity with bursting enabled.
+  - name: Query behavior
+    questions:
+    - question: What happens when queries exceed the workspace compute ceiling?
+      answer: |
+        If resources are temporarily unavailable but the query can run within the workspace ceiling, the query queues.
+        If the initial plan requests more resources than the ceiling, Fabric attempts to shrink-fit it.
+        If the shrink-fitted plan can run within the ceiling but resources are currently busy, the query queues.
+        If the query cannot run within the ceiling even after shrink-fitting, it is rejected.
+    - question: Why do I sometimes see "This query was rejected due to current capacity constraints"?
+      answer: |
+        This error occurs when a query can't fit within the workspace compute ceiling after Fabric attempts to shrink-fit the query plan. If you see the error repeatedly, raise the workspace compute ceiling or reduce the query's resource requirements. Reducing concurrent load helps only when the query can fit within the ceiling but is waiting for resources used by other queries.
+
+  - name: Query acceleration and custom SQL pools
+    questions:
+    - question: Is query acceleration supported with on-demand billing?
+      answer: |
+        Yes. Query acceleration is supported on on-demand billing. Because acceleration can drive high concurrent compute demand, set a higher workspace compute ceiling on any workspace where you plan to use it. A ceiling that's too low can reject acceleration-eligible queries before they can benefit.
+    - question: How does the ceiling interact with custom SQL pools?
+      answer: |
+        When custom SQL pools are enabled, the workspace compute ceiling becomes the total poolable compute. The system pool automatically receives approximately one-third of the ceiling. You allocate the remaining compute across your user-controlled pools. 
+        
+        For example, with a 99 CU ceiling: system pool gets ~33 CU, and you split the remaining 66 CU across your user pools.
+  - name: Monitoring
+    questions:
+    - question: Where do I see on-demand billing usage?
+      answer: |
+        Use the **Fabric Capacity Metrics app**. The **On-demand compute** tab shows actual usage for the **Data Warehouse** category alongside other on-demand workloads. Because no 24-hour smoothing is applied, the graphs reflect real peaks and scaling activity. See [Monitor and manage on-demand billing usage in Microsoft Fabric](../enterprise/on-demand-billing-monitor.md).
+    - question: How can I tell if a workspace is running on shared capacity or on-demand billing?
+      answer: |
+        Use a T-SQL query on the [queryinsights.sql_pool_insights](/sql/relational-databases/system-views/queryinsights-sql-pool-insights-transact-sql?view=fabric&preserve-view=true) view in the warehouse. The `current_workspace_capacity` column indicates whether the pool is running on shared capacity (F SKU) or on on-demand billing. For on-demand pools the value is a string of the form `On-demand <n> CUs`, where `<n>` is the pool's currently allocated ceiling. 
+        
+        For example:
+
+        ```sql
+        SELECT sql_pool_name, current_workspace_capacity, timestamp
+        FROM [<your-warehouse-name>].[queryinsights].[sql_pool_insights]
+        ORDER BY timestamp DESC;
+        -- current_workspace_capacity example values: 'F64' for shared capacity, or 'On-demand 620 CUs'
+        ```
+    - question: Is there alerting when I approach my spend limit or ceiling?
+      answer: |
+        Not in preview. There's no supported workaround today. Alerting on approaching spend or ceiling limits is planned as a follow-up. In the meantime, use the Capacity Metrics app to monitor consumption.
+
+additionalContent: |
+
+  ## Related content
+
+  - [On-demand billing for Fabric Data Warehouse](on-demand-billing.md)
+  - [Configure on-demand billing](configure-on-demand-billing.md)
+  - [On-demand billing in Microsoft Fabric](../enterprise/on-demand-billing.md)
+  - [Set up on-demand billing in Microsoft Fabric](../enterprise/on-demand-billing-setup.md)
+  - [Monitor and manage on-demand billing usage in Microsoft Fabric](../enterprise/on-demand-billing-monitor.md)
+  - [Query insights in Fabric Data Warehouse](../data-warehouse/query-insights.md)

@@ -39,6 +39,20 @@ items:
     href: fabric-operations.md   
   - name: Optimize your capacity
     href: optimize-capacity.md
+  - name: On-demand billing
+    items:
+    - name: On-demand billing in Fabric
+      href: on-demand-billing.md
+    - name: Set up on-demand billing
+      href: on-demand-billing-setup.md
+    - name: Monitor on-demand billing usage
+      href: on-demand-billing-monitor.md
+    - name: On-demand billing meters and multipliers
+      href: on-demand-billing-meters-multipliers.md
+    - name: On-demand billing quotas
+      href: fabric-on-demand-billing-quotas.md
+  - name: Get capacity overview events in Real-Time Hub
+    href: /fabric/real-time-hub/create-streams-fabric-capacity-overview-events?context=/fabric/context/context-enterprise
   - name: Capacity events
     items:
     - name: Explore capacity overview events
@@ -75,6 +89,8 @@ items:
       href: metrics-app-preview-health-page.md
     - name: Compute page
       href: metrics-app-compute-page.md
+    - name: On-demand compute page
+      href: metrics-app-on-demand-compute-page.md
     - name: Compute page (preview)
       href: metrics-app-preview-compute-page.md
     - name: Storage page
