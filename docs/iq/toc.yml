@@ -765,6 +765,20 @@ items:
   href: ../real-time-intelligence/operations-agent-tocs/toc.yml
 - name: Power BI semantic model
   href: ../data-warehouse/semantic-model-toc/toc.yml
+- name: Semantic views (preview)
+  items:
+  - name: Overview
+    href: ../fundamentals/semantic-views-overview.md?toc=/fabric/iq/toc.json
+  - name: Create a semantic view
+    href: ../fundamentals/semantic-views-create.md?toc=/fabric/iq/toc.json
+  - name: YAML syntax reference
+    href: ../fundamentals/semantic-views-yaml-reference.md?toc=/fabric/iq/toc.json
+  - name: Publish a semantic view
+    href: ../fundamentals/semantic-views-publish.md?toc=/fabric/iq/toc.json
+  - name: Consume semantic views
+    href: ../fundamentals/semantic-views-consume.md?toc=/fabric/iq/toc.json
+  - name: Tutorial - Build a semantic view
+    href: ../fundamentals/semantic-views-tutorial.md?toc=/fabric/iq/toc.json
 - name: Integrations
   items:
   - name: Fabric IQ MCP

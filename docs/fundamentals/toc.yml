@@ -125,7 +125,7 @@ items:
       href: building-reports.md
       
 
-- name: Semantic Views (preview)
+- name: Semantic views (preview)
   items:
   - name: Overview
     href: semantic-views-overview.md
