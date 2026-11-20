@@ -31,7 +31,7 @@ The following table lists which engines support RLS and CLS filtering:
 | [Spark notebooks](../../data-engineering/spark-onelake-security.md) | Yes | GA |
 | [SQL analytics endpoint in **user's identity access mode**](./sql-analytics-endpoint-onelake-security.md#change-the-onelake-access-mode) | Yes | GA |
 | Eventhouse | Yes | GA |
-| [Foundry IQ](/azure/search/search-how-to-index-onelake-files) | N/A | Public preview |
+| [Foundry IQ](/azure/search/search-how-to-index-onelake-files) | N/A—indexes files only, not tables | Public preview |
 | [Authorized third-party engines](./onelake-security-integrations-overview.md) | Yes (when the engine implements it) | Public preview |
 | Any engine via [Table Read API](../table-apis/read-table-data-rest-api.md) | Yes | Public preview |
 
