@@ -4,7 +4,7 @@ description: Define semantic views with YAML. Review supported properties, DAX e
 ms.reviewer: vvereen
 ms.topic: reference
 ms.date: 10/20/2026
-ms.search.form: Semantic Views
+ms.search.form: Semantic views
 ai-usage: ai-assisted
 ---
 
