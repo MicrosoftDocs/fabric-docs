@@ -55,6 +55,8 @@ Mirroring views requires extra compute to materialize and periodically refresh v
 
 For the full pricing model, metering details, and billing scope, see [Billing for extended capabilities in mirroring](extended-capabilities-billing.md).
 
+For worked examples showing how these CU-hours translate into estimated costs, see [Views pricing example](extended-capabilities-billing-example-views.md).
+
 ## Limitations
 
 - Snowflake is the only source that supports views.
@@ -64,6 +66,7 @@ For the full pricing model, metering details, and billing scope, see [Billing fo
 ## Related content
 
 - [Extended capabilities in mirroring for Fabric](extended-capabilities.md)
+- [Views pricing example for Mirroring](extended-capabilities-billing-example-views.md)
 - [Delta change data feed in mirroring for Fabric](extended-capabilities-delta-change-data-feed.md)
 - [Billing for extended capabilities in mirroring](extended-capabilities-billing.md)
 - [Mirroring Snowflake in Microsoft Fabric](snowflake.md)
