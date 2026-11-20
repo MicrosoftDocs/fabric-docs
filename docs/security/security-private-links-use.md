@@ -227,15 +227,74 @@ If you want to disable the Private Link setting, make sure that all the private 
 
 If you're going to disable the Private Link setting, it's recommended to do so during nonbusiness hours. It might take up to 15 minutes of downtime for some scenarios to reflect the change. 
 
-## Disable Private Link for tenant migration
+## Disable Private Link for tenant remap
 
-If you have tenant-level private link, clean it up fully before [tenant migration](/power-bi/support/service-admin-region-move). Follow these steps:
+To prepare for [tenant remap](/power-bi/support/service-admin-region-move), you must completely remove the **Tenant-level Private Link** configuration if your tenant is configured with it.
 
-1. In the Fabric portal, enable public internet access: **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings** > **Public Internet Access**.
-1. In the Azure portal, delete all associated private endpoints you created.
-1. In the Azure portal, delete all corresponding private DNS zones.
-1. In the Azure portal, delete the private link service **Microsoft.PowerBI/privateLinkServicesForPowerBI**. There should be only one. Turn on **Show hidden types** when exploring Resource Groups.
-1. In the Fabric portal, disable tenant-level private link: **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings** > **Tenant-level Private Link**.
+*How do I know if I have Tenant-level Private Link?*  
+In Azure, search all subscriptions for resources of type **Microsoft.PowerBI/privateLinkServicesForPowerBI** with **Show hidden types** enabled when exploring Resource Groups. If one exists, your tenant is configured for Tenant-level Private Link and you must remove it before migration.
+
+### Step 1: Enable Public Internet Access
+1. In the Fabric portal, [go to the tenant settings](../admin/about-tenant-settings.md#how-to-get-to-the-tenant-settings), select **Block Public Internet Access**.
+1. Disable **Block Public Internet Access** and apply the change. Verify that public access works before deleting private endpoints.
+
+### Step 2: Delete all associated private endpoints  
+The tenant-level Private Link configuration creates one or more Azure Private Endpoints that connect to the Power BI Private Link Service.
+
+1. In the Azure portal, search for **Private Endpoints**.
+1. Review private endpoints across all subscriptions that might host networking resources.
+1. Identify private endpoints connected to: Resource type: **Microsoft.PowerBI/privateLinkServicesForPowerBI**.
+1. Target sub-resource: tenant.
+1. Delete all private endpoints associated with the Power BI Private Link Service.
+
+> [!Tip]
+> Customers often deploy the private endpoint in a central networking subscription, which might be different from the subscription containing the Power BI Private Link Service.
+
+> [!Important]
+> Don't delete unrelated private endpoints used by other Azure services such as Azure Storage, SQL Database, Synapse, or Azure AI services.
+
+### Step 3: Delete Corresponding Private DNS Zones  
+
+After you remove all Power BI private endpoints:
+
+1. In the Azure portal, search for Private DNS Zones.
+1. Locate DNS zones that were created for Power BI Tenant-Level Private Link.
+1. Verify that the zone contains records or virtual network links associated with the Power BI private endpoint.
+1. Delete the DNS zones after the corresponding private endpoints are removed.
+
+> [!Tip]
+> Common Power BI private DNS zones include:
+> * privatelink.analysis.windows.net
+> * privatelink.pbidedicated.windows.net
+> * privatelink.powerbi.com
+> 
+> The exact set of zones can vary depending on how the private endpoints were originally configured.
+
+> [!Important]
+> Don't delete unrelated DNS zones used by other Azure services such as Azure Storage, SQL Database, Synapse, or Azure AI services.
+
+### Step 4: Delete the Power BI Private Link Service  
+In the Azure portal, delete the private link service **Microsoft.PowerBI/privateLinkServicesForPowerBI**, with **Show hidden types** enabled when exploring Resource Groups.
+
+> [!NOTE]
+> There's only one Power BI Private Link Service associated with the tenant.
+
+### Step 5: Disable tenant-level Private Link  
+
+1. In the Fabric portal, go to: **Power BI** > **Admin portal** > **Tenant settings** > **Tenant-level Private Link**.
+1. Disable **Tenant-level Private Link**.
+
+### Final validation
+
+Verify the following:
+
+1. Public internet access is enabled.
+1. No private endpoints remain connected to **Microsoft.PowerBI/privateLinkServicesForPowerBI**.
+1. No associated Power BI Private DNS zones remain.
+1. The **Microsoft.PowerBI/privateLinkServicesForPowerBI** resource is deleted.
+1. Tenant-level Private Link is disabled in the Fabric Admin portal.
+
+If you don't remove these resources, tenant remap is blocked.
 
 ## Related content
 

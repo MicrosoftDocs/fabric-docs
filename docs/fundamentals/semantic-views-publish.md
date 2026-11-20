@@ -3,8 +3,8 @@ title: Publish a semantic view
 description: Publish a semantic view, inspect the generated model, and resolve errors before retrying.
 ms.reviewer: vvereen
 ms.topic: how-to
-ms.date: 10/20/2026
-ms.search.form: Semantic Views
+ms.date: 11/18/2026
+ms.search.form: Semantic views
 ai-usage: ai-assisted
 ---
 
@@ -77,6 +77,7 @@ These commands are available after a model exists. Publishing validates the defi
 
 ## Related content
 
+- [Work with semantic views through APIs](semantic-views-overview.md#work-with-semantic-views-through-apis)
 - [Create a semantic view](semantic-views-create.md)
 - [Semantic view YAML syntax reference](semantic-views-yaml-reference.md)
 - [Consume semantic views](semantic-views-consume.md)

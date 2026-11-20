@@ -1,16 +1,16 @@
 ---
 title: Semantic views (preview)
-description: Define business metrics once alongside your data in OneLake with Semantic Views. Reuse definitions across teams and tools, independently of compute.
+description: Define business metrics once alongside your data in OneLake with semantic views. Reuse definitions across teams and tools, independently of compute.
 ms.reviewer: vvereen
 ms.topic: concept-article
-ms.date: 11/05/2026
-ms.search.form: Semantic Views
+ms.date: 11/18/2026
+ms.search.form: Semantic views
 ai-usage: ai-assisted
 ---
 
 # Semantic views (preview)
 
-Define your business metrics once, next to your data in OneLake, and reuse them across teams for AI and BI. A semantic view describes datasets, relationships, business metrics, and their meaning. It provides a single source of truth for those definitions, independent of the engines and tools that consume them. For example, define revenue once so agents and reports use the same business logic rather than maintaining separate versions.
+Semantic views are a capability of [Fabric IQ](../iq/overview.md) that you can use to define business metrics once, alongside your data in OneLake, and reuse them across teams for AI and BI. A semantic view describes datasets, relationships, business metrics, and their meaning, independently of the engines and tools that consume them. For example, define revenue once so agents and reports use the same business logic rather than maintaining separate versions.
 
 [!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
@@ -83,6 +83,23 @@ To create and publish a view, you need **Write** permission on the lakehouse and
 
 :::image type="content" source="media/semantic-views/workspace-view.png" alt-text="Screenshot of the workspace showing lakehouse_sales and its sales child semantic model." lightbox="media/semantic-views/workspace-view.png":::
 
+## Work with semantic views through APIs
+
+Use APIs to find semantic views, read or edit their definitions, reuse shared definitions through shortcuts, and publish changes for reports and agents to use.
+
+| What you want to do | API documentation |
+|---|---|
+| Find semantic views in a lakehouse. | [List semantic views (beta)](/rest/api/fabric/lakehouse/semantic-views/list%28beta%29) |
+| Read an existing view's definitions, create a new view, or edit its definition files. | [OneLake API access](../onelake/onelake-access-api.md) |
+| Find shortcuts and identify where their shared definitions are stored. | [List shortcuts](/rest/api/fabric/core/onelake-shortcuts/list-shortcuts) and [Get shortcut](/rest/api/fabric/core/onelake-shortcuts/get-shortcut) |
+| Reuse definitions from another folder or lakehouse. | [Create shortcut](/rest/api/fabric/core/onelake-shortcuts/create-shortcut) |
+| Publish a new view or apply saved changes to its generated semantic model. | [Publish a semantic view (beta)](/rest/api/fabric/lakehouse/semantic-views/publish%28beta%29) |
+
+Store definition files under `Context/Semantic Views/<view-name>/`. After creating or editing files, publish the view to update its generated semantic model.
+
+> [!IMPORTANT]
+> During preview, the List and Publish APIs require `beta=true`. These beta APIs are provided for evaluation and development only and aren't recommended for production use. Publishing by using a third-party token isn't supported. The [publishing restrictions](#publish-and-manage-views) also apply to API calls.
+
 ## Considerations and limitations
 
 The following considerations and limitations apply.
@@ -117,8 +134,8 @@ The generated semantic model inherits permissions from its parent lakehouse:
 Manage access through the lakehouse. For underlying data-access requirements, see [Access](semantic-views-consume.md#access).
 
 - **Model access:** Opening the generated model in web modeling requires model **Write** permission, inherited from lakehouse **Write** permission. The model remains read-only. In Power BI Desktop's OneLake catalog, **Connect** is supported for report creation, but **Edit** (remote modeling) isn't supported for the generated model. XMLA endpoint access and creating ontologies from the generated model aren't supported.
-- **OneLake security:** The `Context` folder doesn't support OneLake security. The generated semantic model supports OneLake security.
-- **Object-level security metadata:** OLS can restrict access to tables and columns. If a semantic view includes tables or columns restricted by OLS, publishing generates the model's TMDL in `SystemContext` and displays a warning. The generated semantic model enforces OLS, but users who can read `SystemContext` can see metadata about those tables or columns. This metadata disclosure doesn't expose the restricted data.
+- **OneLake security:** When enabled, OneLake security rules apply to queries against the generated semantic model, including object-level security (OLS) and row-level security (RLS). The `Context` folder doesn't support OneLake security.
+- **Object-level security metadata:** If a semantic view includes tables or columns restricted by OLS, publishing generates the model's TMDL in `SystemContext` and displays a warning. Users who can read `SystemContext` can see metadata about those tables or columns, but not the restricted data.
 
 ### Costs
 
