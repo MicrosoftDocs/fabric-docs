@@ -72,7 +72,7 @@ By using the **East US 2** pay-as-you-go price of **$0.00005 per CU second**, yo
 
 `$0.00005 per CU second × 104 CU seconds = $0.0052 per 10,000 read transactions`
 
-To configure on-demand billing, see <placeholder link>.
+To configure, see [On-demand billing](/fabric/enterprise/on-demand-billing).
 
 ### Workload-driven consumption
 Some Fabric workloads access OneLake as part of their internal processing and system operations. These requests consume Fabric Capacity Units (CUs) in the same way as user-initiated operations.
