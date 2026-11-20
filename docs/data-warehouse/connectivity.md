@@ -113,7 +113,15 @@ The idle connection timeout is different from the other timeouts you might confi
 - **Connection resiliency still works.** The idle timeout doesn't change connection resiliency or the other options you use to recover connections. Driver features such as idle connection resiliency (for example, the `ConnectRetryCount` and `ConnectRetryInterval` connection string properties in Microsoft.Data.SqlClient), connection pooling, and application retry logic continue to work as before. For more information, see [Best practices](#best-practices).
 - **Plan for a closed connection.** If your application keeps a connection open and reuses it after a long pause, the next request might fail because the connection was closed. Open connections when you need them and close them when you're done, or use retry logic so your application reconnects automatically.
 - **Commit transactions promptly.** If a connection with an open transaction stays idle for 15 minutes, the warehouse closes the connection and the uncommitted transaction is rolled back. Don't leave a transaction open while your application waits on user input or other work.
-- **Inactive connections stop counting toward session limits.** [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] have a limit of 2048 user sessions per workspace. Closing inactive connections frees the sessions they hold, so reaching the 2048 limit is unlikely to be an issue. For more information, see [Sessions](workload-management.md#sessions).
+- **Manage concurrent sessions.** [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and
+  [!INCLUDE [fabric-se](includes/fabric-se.md)] have a limit of 2048 user sessions per
+  workspace. Closing idle connections reduces unused sessions, but doesn't prevent
+  reaching this limit. Idle sessions still count until they're closed, and connections
+  used more frequently than every 15 minutes aren't closed by the idle timeout. A burst
+  of connections can also reach the limit before idle connections time out. Manage
+  connection lifetimes and concurrent sessions rather than relying on idle cleanup.
+  When the limit is reached, new connection attempts fail with a session-limit error.
+  For more information, see [Sessions](workload-management.md#sessions).
 
 ## Considerations and limitations
 
