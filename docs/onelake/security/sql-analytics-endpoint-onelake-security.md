@@ -78,11 +78,6 @@ In user identity mode:
 
 * Write operations aren't supported at the SQL analytics endpoint. All writes must occur through the Lakehouse page in the Fabric portal and are governed by workspace roles (Admin, Member, Contributor).
 
-> [!IMPORTANT]
-> **One-to-one identity mapping across producer and consumer (hub-and-spoke).** When OneLake security policies are carried from a producer (the source item where the role is defined) to a consumer (a destination item accessing the data through a shortcut), the identities assigned to OneLake security roles at the producer must be mapped **exactly 1:1** at the consumer. The same principal - whether a user or a group - must be granted Fabric Read permission on the consumer artifact as the one referenced in the producer's security role. Nested or effective group membership is **not** resolved across this boundary.
->
-> For example, if the OneLake security role at the producer references `user123@microsoft.com`, then `user123@microsoft.com` (that exact Object ID) must also have Fabric Read permission on the consumer lakehouse. Likewise, if the producer role references `Group A`, then `Group A` itself must be granted Fabric Read permission on the consumer - granting that permission only to a member of Group A doesn't satisfy the match.
-
 For more information on the permissions model with **User's identity mode**, see [How OneLake security controls data access](./data-access-control-model.md).
 
 ## Security sync between OneLake and SQL analytics endpoint
