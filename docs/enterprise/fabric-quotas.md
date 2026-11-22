@@ -4,7 +4,7 @@ description: Learn what counts against Microsoft Fabric capacity quotas, includi
 author: dknappettmsft
 ms.author: daknappe
 ms.topic: how-to
-ms.date: 11/17/2026
+ms.date: 11/20/2026
 ai-usage: ai-assisted
 
 #customer intent: As an administrator or an executive, I want to learn how to manage my Microsoft Fabric quota.
@@ -14,40 +14,41 @@ ai-usage: ai-assisted
 
 Microsoft Fabric provides limits, also known as *quotas*, which determine the maximum number of Fabric Capacity Units (CUs) available to your Azure subscription in each region. Quotas depend on your [Azure subscription type](/azure/azure-resource-manager/management/azure-subscription-service-limits). You don't get charged for quota itself.
 
-This article explains how to view and increase your quotas, using the Azure portal and the Azure Resource Manager (ARM) APIs.
+This article explains how to view and increase your quotas by using the Azure portal and the Azure Resource Manager (ARM) APIs.
 
 ## Prerequisites
 
-* To view your Fabric quota, you need an Azure account with the contributor role, or another role that includes *contributor* access.
+* To view your Fabric quota, you need an Azure account with the Contributor role or another role that includes Contributor access.
 
-* To manage your Fabric quota, you need the permissions listed in [Quota Request Operator](/azure/role-based-access-control/built-in-roles/management-and-governance#quota-request-operator)
-  
-* Before provisioning your first capacity or if your quota is 0, register the Microsoft.Fabric resource provider using the [Azure Resource Provider instructions](/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider)
+* To manage your Fabric quota, you need the permissions listed in [Quota Request Operator](/azure/role-based-access-control/built-in-roles/management-and-governance#quota-request-operator).
+
+* Before you provision your first capacity, or if your quota is 0, register the `Microsoft.Fabric` resource provider. For instructions, see [Register a resource provider](/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider).
 
 ## What counts against your Fabric quota
 
 Quota usage includes these allocations across capacities in the same subscription and region:
 
-* **Provisioned capacity CUs:** Each capacity uses quota based on its SKU.
-* **Configured capacity overage thresholds:** Enabling overage uses additional quota based on the threshold, even if no overage occurs. For the calculation and requirements, see [How capacity overage works](capacity-overage-overview.md#how-capacity-overage-works).
+* **Provisioned capacity CUs**. Each capacity uses quota based on its SKU.
+* **Configured capacity overage thresholds**. Enabling overage uses additional quota based on the threshold, even if no overage occurs. For the calculation and requirements, see [How capacity overage works](capacity-overage-overview.md#how-capacity-overage-works).
+* **On-demand billing**. Separate quotas limit usage for each billing category per capacity and the number of capacities that use on-demand billing. For more information, see [View and increase on-demand billing quotas](fabric-on-demand-billing-quotas.md).
 
 ## View your Fabric CU quota
 
-The following section outlines how to view your Fabric quota using the Azure portal and the ARM APIs.
+View your Fabric quota by using the Azure portal or the ARM APIs.
 
 # [Azure](#tab/Azure)
 
-1. Sign in to the [Azure portal](https://portal.azure.com/#home)
+1. Sign in to the [Azure portal](https://portal.azure.com/#home).
 
-2. Search for *quotas* and select **Quotas**.
+1. Search for *quotas* and select **Quotas**.
 
-3. In the *overview* page, select **Microsoft Fabric**.
+1. On the **Overview** page, select **Microsoft Fabric**.
 
-4. To see your usage records by subscription, select the following filters:
-   * **Provider** - *Microsoft Fabric*.
-   * **Subscription** - Select the subscription you want to see usage for.
-   * **Region** - Select the region you want to see usage for.
-   * **Usage** - *Show all*.
+1. Configure the following filters to view your usage records:
+   * For **Provider**, select **Microsoft Fabric**.
+   * For **Subscription**, select the subscription whose usage you want to view.
+   * For **Region**, select the region whose usage you want to view.
+   * For **Usage**, select **Show all**.
 
 # [API](#tab/API)
 
@@ -55,15 +56,15 @@ Use [Fabric Capacities - List Usages](/rest/api/microsoftfabric/fabric-capacitie
 
 You need three parameters to make the call:
 
-* `location` - The name of the Azure region. If you don't know the name of your region, you can use the [Region - List By Service](/rest/api/apimanagement/region/list-by-service) API to find it.
+* `location` - The name of the Azure region. If you don't know the name of your region, use the [Region - List By Service](/rest/api/apimanagement/region/list-by-service) API to find it.
 
 * `subscriptionId` - The ID of the target subscription. The value must be a UUID.
 
-* `api-version` - The API version to use for this operation. The only supported version is `2023-11-01`
+* `api-version` - The API version to use for this operation. The only supported version is `2023-11-01`.
 
 ### Response example
 
-Here's an example of the response you get when you call the API.
+The following example shows an API response:
 
 ```json
 {
@@ -94,66 +95,68 @@ Your available quota is the difference between `limit` and `currentValue` for th
 
 ## Request a quota increase
 
-When requesting a quota increase, consider enough quota for both provisioned capacity CUs and configured overage thresholds, including any planned increases. Overage thresholds require quota even if no overage occurs. For the threshold calculation, see [How capacity overage works](capacity-overage-overview.md#how-capacity-overage-works). The following section outlines how to request a Fabric quota increase by using the Azure portal and the ARM APIs.
+When you request a quota increase, account for both provisioned capacity CUs and configured overage thresholds, including any planned increases. Overage thresholds require quota even if no overage occurs. For the threshold calculation, see [How capacity overage works](capacity-overage-overview.md#how-capacity-overage-works).
+
+Request a Fabric quota increase by using the Azure portal or the ARM APIs.
 
 # [Azure](#tab/Azure)
 
-Follow these steps to request a quota increase using the Azure portal. After submitting your request, it's reviewed and within minutes you're notified whether it was successful or not. You can see the status of your request in Azure, or in your logs. If your request isn't successful, you can [open a support request](#create-support-request-for-quota-increase).
+After you submit your request, you receive a notification within minutes about whether it was successful. View the status of your request in Azure or in your logs. If your request isn't successful, [open a support request](#create-support-request-for-quota-increase).
 
-1. Sign in to the [Azure portal](https://portal.azure.com/#home)
+1. Sign in to the [Azure portal](https://portal.azure.com/#home).
 
-2. Search for *quotas* and select **Quotas**.
+1. Search for *quotas* and select **Quotas**.
 
-3. In the *overview* page, select **Microsoft Fabric**.
+1. On the **Overview** page, select **Microsoft Fabric**.
 
-4. Select **New Quota Request**.
+1. Select **New Quota Request**.
 
-5. Select one of these options to increase your quota:
-    * Enter a new limit
-    * Adjust the usage %
+1. To increase your quota, select either **Enter a new limit** or **Adjust the usage %**.
 
-    >[!TIP]
-    >To add quotas to your favorites list, see [Manage favorites](/azure/azure-portal/azure-portal-add-remove-sort-favorites).
+   > [!TIP]
+   > To add quotas to your favorites list, see [Manage favorites](/azure/azure-portal/azure-portal-add-remove-sort-favorites).
 
-6. Select **Submit**.
+1. Select **Submit**.
 
 # [API](#tab/API)
 
-Use [Fabric Capacities - Update](/rest/api/microsoftfabric/fabric-capacities/update) to request an increase in quota. After submitting your request, you can use [Fabric Capacities - Get](/rest/api/microsoftfabric/fabric-capacities/get) to check if it was successful. If your request isn't successful, you can [open a support request](#create-support-request-for-quota-increase).
+Use [Fabric Capacities - Update](/rest/api/microsoftfabric/fabric-capacities/update) to request a quota increase. After you submit your request, use [Fabric Capacities - Get](/rest/api/microsoftfabric/fabric-capacities/get) to check whether it was successful. If your request isn't successful, [open a support request](#create-support-request-for-quota-increase).
 
 You need four parameters to make the call:
 
 * `capacityName` - The name of your Microsoft Fabric capacity.
 
-* `resourceGroupName`- The name of the resource group. The name is case insensitive.
+* `resourceGroupName` - The name of the resource group. The name is case-insensitive.
 
 * `subscriptionId` - The ID of the target subscription. The value must be a UUID.
 
-* `api-version` - The API version to use for this operation. The only supported version is `2023-11-01`
+* `api-version` - The API version to use for this operation. The only supported version is `2023-11-01`.
 
 ---
 
 ## Create support request for quota increase
 
-To create a support request for an increase to your quota, follow these steps:
+If your quota increase request isn't successful, submit a support request:
 
-1.	Go to the New support request page in the Azure portal, by following the steps in [Open a support request](/azure/azure-portal/supportability/how-to-create-azure-support-request).
+1. In the Azure portal, go to the **New support request** page by following the steps in [Open a support request](/azure/azure-portal/supportability/how-to-create-azure-support-request).
 
-2.	On the *Problem description* tab of the *New support request* page, do the following:
-    * **Issue Type** - Select *Service* and *subscription limits (quotas)* for the issue type, and your subscription from the drop-down menu.
-    * **Quota type** - Type *Fabric* and select *Microsoft Fabric*.
+1. On the **Problem description** tab of the **New support request** page, configure the following fields:
+   * For **Issue Type**, select **Service and subscription limits (quotas)**, and then select your subscription from the dropdown list.
+   * For **Quota type**, enter *Fabric* and select **Microsoft Fabric**.
 
-3.	Select **Next**.
+1. Select **Next**.
 
-4.	On the *Additional details* tab, under *Problem details*, select **Enter details** to enter additional information.
+1. On the **Additional details** tab, under **Problem details**, select **Enter details**.
 
-5.	In the *Quota details window*, specify your new limits.
+1. In **Quota details**, specify your new limits.
 
-6.  Select **Save**.
+1. Select **Save**.
 
-7.	Fill in the remaining details of your quota request.
+1. Enter the remaining details of your quota request.
 
-8.  Select **Next: Review + create**, and after reviewing the request details, select **Create** to submit the request.
+1. Select **Next: Review + create**.
+
+1. Review the request details, and then select **Create** to submit the request.
 
 ## Related content
 
