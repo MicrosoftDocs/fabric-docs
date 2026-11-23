@@ -122,6 +122,7 @@ Workspace names allow more characters than KQL database names do. If your worksp
 - If **Monitoring** isn't available in **Workspace settings**, verify the tenant setting, workspace role, and capacity prerequisites.
 - If provisioning doesn't finish, refresh the page and reopen the Monitoring Item to check its status.
 - If a supported table is empty, generate the corresponding item activity and allow time for ingestion.
+- If a workload starts emitting new telemetry to workspace monitoring after you enable monitoring, the new data might not appear in your existing monitoring eventhouse. Disable and reenable workspace monitoring for the new telemetry to appear.
 - If you send data to the Eventhouse in another Monitoring Item, verify that the destination Monitoring Item still exists and both workspaces are in the same Azure region.
 
 ## Legacy workspace monitoring
