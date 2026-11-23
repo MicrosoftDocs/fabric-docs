@@ -110,6 +110,8 @@ date = "2024-01-01"
 region = "US"
 ```
 
+To keep parameter passing compatible across notebook execution methods, start parameter names with an ASCII letter (`A`-`Z` or `a`-`z`) or an underscore (`_`). Use only ASCII letters, digits (`0`-`9`), and underscores for the remaining characters. For example, use `customer_id` or `_run_date`. Don't use spaces, hyphens, periods, line breaks, or non-ASCII characters, such as in `customer id`, `customer-id`, `customer.id`, or `café`. Match each name exactly in the parameter cell and the arguments passed to `notebookutils.notebook.run()` or `runMultiple()`. This guidance applies to parameter names, not parameter values.
+
 > [!TIP]
 > Exit values are always strings. If you need a numeric value in the parent notebook, convert the result after retrieval (for example, `int(result)`).
 
