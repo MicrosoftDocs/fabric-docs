@@ -10,6 +10,9 @@ ms.search.form: Eventstreams Tutorials
 
 # Build a Power BI report by streaming events from Azure IoT Hub to Microsoft Fabric
 
+> [!NOTE]
+> Azure IoT Hub can now route messages directly to Microsoft Fabric Eventstreams. With this native integration, you can apply routing queries and message enrichments, preserve device metadata, and authenticate with Microsoft Entra ID when sending data to your Eventstream. To get started, see [Microsoft Fabric eventstreams as a routing endpoint](/azure/iot-hub/iot-hub-devguide-endpoints#microsoft-fabric-eventstreams-as-a-routing-endpoint).
+
 If you have IoT devices that are connected to your Azure IoT Hub, you can ingest and transform your IoT data using Eventstream in Microsoft Fabric. In this tutorial, we walk you through the process of setting up an eventstream to ingest real-time data from Azure IoT Hub to Kusto database. You learn to build a Power BI report to monitor the health of your IoT devices in real time.
 
 ## Prerequisites
