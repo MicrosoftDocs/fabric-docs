@@ -4,7 +4,7 @@ description: Learn about high concurrency support for the Microsoft Fabric Livy 
 ms.reviewer: avinandac
 ms.topic: how-to
 ms.search.form: Learn about high concurrency with the Livy API for Data Engineering
-ms.date: 04/10/2026
+ms.date: 10/06/2026
 ai-usage: ai-assisted
 ---
 # High concurrency support in the Fabric Livy API
@@ -63,7 +63,7 @@ The following list describes the key parameters:
 - **Livy session ID**: The underlying Spark/Livy session that can host multiple REPLs.
 - **REPL ID**: The identifier of the REPL inside a Livy session. Each REPL ID maps to an HC ID.
 - **`sessionTag` (optional)**: A hint used to pack REPLs into existing Livy sessions when possible.
-- **Limits**: The service currently supports up to five REPLs per Livy session. Rapid concurrent calls to the HC session acquisition API might create multiple Livy sessions.
+- **REPL limit**: Set `spark.highConcurrency.max` in the Spark configuration to control how many REPLs the underlying Livy session can host. You can specify up to 50 REPLs. Rapid concurrent calls to the HC session acquisition API might create multiple Livy sessions.
 
 ### Acquire a high concurrency Spark session
 
@@ -85,7 +85,10 @@ The request body for acquiring a high concurrency session includes the following
   "files": ["string"],
   "pyFiles": ["string"],
   "archives": ["string"],
-  "conf": { "spark.some.config": "value" },
+  "conf": {
+    "spark.highConcurrency.max": "50",
+    "spark.some.config": "value"
+  },
   "driverMemory": "string",
   "driverCores": 1,
   "executorMemory": "string",
@@ -98,6 +101,8 @@ Note the following about the request parameters:
 
 - The `artifactName` (lakehouse) is used to surface HC jobs in the monitoring hub as `HC_<LakehouseName>_<LIVY_SESSION_ID>`.
 - The `sessionTag` is a hint for packing. It isn't a strict lock. Rapid concurrent POST requests with the same `sessionTag` might create multiple Livy sessions.
+- The `spark.highConcurrency.max` configuration controls the maximum number of REPLs that can be packed into an underlying Livy session. The maximum supported value is `50`.
+- Use the same `spark.highConcurrency.max` value and other Spark configuration settings for acquisition requests that you want the service to pack into the same Livy session.
 - The API is nonidempotent by default. Multiple POST requests can yield distinct HC IDs and REPLs.
 
 #### Response payload (HighConcurrencySessionResponse)

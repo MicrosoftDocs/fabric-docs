@@ -55,6 +55,10 @@ Under **Advanced**, you can specify the following fields:
 - **Request timeout**: Specify the timeout (the **TimeSpan** value) for the HTTP request to get a response. This value is the timeout to get a response, not the timeout to read response data. If not specified, the default value is 00:05:00 (5 minutes).
 - **Additional columns**: Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.
 
+> [!NOTE]
+> Complex data types, such as **Enum**, aren't supported.
+
+
 ### Mapping
 
 For **Mapping** tab configuration, see [Configure your mappings under mapping tab](copy-data-activity.md#configure-your-mappings-under-the-mapping-tab).

@@ -12,7 +12,7 @@ ai-usage: ai-assisted
 
 Appropriately sized files are important for query performance, resource utilization, and metadata management. Smaller files increase task overhead and metadata operations, while larger files can underutilize parallelism and skew I/O. Delta Lake uses file metadata for partition pruning and data skipping, so targeting the right file size ensures efficient reads, writes, and maintenance.
 
-For file-size recommendations by consumption scenario (SQL analytics endpoint, Power BI Direct Lake, Spark), see [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md#optimal-file-layouts-by-engine).
+All data consumers benefit from having optimally sized files (SQL analytics endpoint, Power BI Direct Lake, Spark), see [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md#cross-workload-guidance) for guidance on how to optimize performance for consuming engines.
 
 The following sections describe the main features you can use to tune file size in Delta tables.
 
@@ -88,6 +88,9 @@ ALTER TABLE dbo.table_name
 SET TBLPROPERTIES ('delta.targetFileSize' = '256m')
 ```
 
+> [!NOTE]
+> The user-defined `delta.targetFileSize` configuration exists for legacy compatibility purposes. Microsoft recommends [adaptive target file size](#adaptive-target-file-size) instead of specifying a user-defined target.
+
 ## Adaptive target file size
 
 Fabric provides adaptive target file size to eliminate the complexity related to manually tuning the target file size of all tables in a session or individual tables via the `delta.targetFileSize` table property. Adaptive target file size uses Delta table heuristics like table size to estimate the ideal target file size and automatically updates the target as conditions change, ensuring optimal performance without manual intervention or maintenance overhead.
@@ -95,7 +98,7 @@ Fabric provides adaptive target file size to eliminate the complexity related to
 ### Enable adaptive target file size
 
 > [!NOTE]
-> While not currently enabled by default, Microsoft recommends enabling the **adaptive target file size** session configuration.
+> **Adaptive target file size** is enabled by default in Runtime 2.0 and later. Microsoft recommends manually enabling the feature if using Runtime 1.3.
 
 Enable adaptive target file size on tables created or modified within a Spark session by setting the following Spark session configuration:
 
@@ -164,7 +167,7 @@ Starting out small at 128MB and then scaling the size of parquet files as a tabl
 Adaptive target file size can improve compaction performance and query/write latency when it selects a better size than the default configuration. If adaptive evaluation produces the same size as the default Spark session configuration, no measurable improvement is expected.
 
 > [!IMPORTANT]
-> Write amplification occurs when previously compacted files are rewritten as target file size increases over time. To reduce this risk, enable **file-level compaction targets** (`spark.microsoft.delta.optimize.fileLevelTarget.enabled=true`). This setting helps preserve prior compaction work by skipping unnecessary recompaction of files that were already compacted under earlier target sizes. For more information, see [file-level compaction targets](./table-compaction.md#file-level-compaction-targets).
+> Write amplification occurs when previously compacted files are rewritten as target file size increases over time. To reduce this risk, enable **file-level compaction targets** (`spark.microsoft.delta.optimize.fileLevelTarget.enabled=true`) which are enabled by default starting in Runtime 2.0. This setting helps preserve prior compaction work by skipping unnecessary recompaction of files that were already compacted under earlier target sizes. For more information, see [file-level compaction targets](./table-compaction.md#file-level-compaction-targets).
 
 ## Summary of best practices
 

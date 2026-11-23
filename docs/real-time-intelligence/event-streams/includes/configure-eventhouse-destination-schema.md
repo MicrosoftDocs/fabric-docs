@@ -1,8 +1,8 @@
 ---
-title: Configure destinations for schema-enabled sources
-description: Include file with instructions on how to configure supported destinations for schema-enabled sources.
+title: Configure Eventhouse destinations for schema-aware Eventstreams
+description: Include file with instructions on how to configure an Eventhouse destination for schema-aware Eventstreams.
 ms.topic: include
-ms.date: 09/27/2025
+ms.date: 09/02/2026
 ---
 
 1. Select **Transform events or add destination**, and then select **Eventhouse**.

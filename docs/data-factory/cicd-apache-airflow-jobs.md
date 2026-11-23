@@ -1,7 +1,7 @@
 ---
-title: CI/CD for Apache Airflow in Data Factory in Microsoft Fabric 
+title: CI/CD for Apache Airflow in Fabric Data Factory
 #customer intent: As a developer, I want to set up CI/CD for Apache Airflow Jobs in Data Factory so that I can automate integration, testing, and deployment.
-description: This article describes how to set up continuous integration and delivery (CI/CD) for Apache Airflow in Data Factory for Microsoft Fabric.
+description: This article describes how to set up continuous integration and delivery (CI/CD) for Apache Airflow in Fabric Data Factory.
 ms.reviewer: conxu
 ms.topic: how-to
 ms.date: 06/10/2025
@@ -9,10 +9,10 @@ ms.custom: airflows
 ai-usage: ai-assisted
 ---
 
-# CI/CD for Apache Airflow in Data Factory in Microsoft Fabric
+# CI/CD for Apache Airflow in Fabric Data Factory
 
 > [!IMPORTANT]
-> CI/CD in Apache Airflow in Data Factory for Microsoft Fabric is currently in preview. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+> CI/CD in Apache Airflow in Fabric Data Factory is currently in preview. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 [!INCLUDE[apache-airflow-note](includes/apache-airflow-note.md)]
 
@@ -37,7 +37,7 @@ To use Git integration with Airflow in Fabric, you first need to connect to a Gi
 1. Sign in to Fabric and go to the workspace you want to connect to Git.
 1. Select **Workspace settings**.
 
-   :::image type="content" source="media/cicd-data-pipelines/workspace-settings.png" alt-text="Screenshot showing where to select Workspace settings in Fabric UI.":::
+   :::image type="content" source="media/cicd-data-pipelines/workspace-settings.png" alt-text="Screenshot showing where to select workspace settings in Fabric UI.":::
 
 1. Select **Git integration**.
 1. Choose your Git provider—either _Azure DevOps_ or _GitHub_. If you pick GitHub, select **Add account** to connect your GitHub account. After you sign in, select **Connect** so Fabric can access your GitHub account.
@@ -86,7 +86,7 @@ Deployment pipelines for Airflow jobs use the same workflow as other Fabric Data
 
 ## Known limitations
 
-Here are some of the current limitations when using CI/CD for Airflow in Data Factory in Microsoft Fabric.
+Here are some of the current limitations when using CI/CD for Airflow in Data Factory.
 
 - Git integration does not support Airflow Git-Sync (exporting with Git Sync will not export Git Sync properties. If you import onto an item with Git Sync enabled, Git Sync will be removed) 
 - Secrets are not supported. (Exporting with secrets will not export Git Sync properties. If you import onto an item with existing secrets they will NOT be removed). 
@@ -95,6 +95,6 @@ Here are some of the current limitations when using CI/CD for Airflow in Data Fa
 
 ## Related content
 
-- [Introduction to the CI/CD process as part of the ALM cycle in Microsoft Fabric](../cicd/cicd-overview.md?source=recommendations)
+- [Introduction to the CI/CD process as part of the ALM cycle in Fabric](../cicd/cicd-overview.md?source=recommendations)
 - [Get started with Git integration, the Fabric Application Lifecycle Management (ALM) tool](../cicd/git-integration/git-get-started.md?tabs=azure-devops%2CAzure%2Ccommit-to-git)
 - [Get started using deployment pipelines, the Fabric Application Lifecycle Management (ALM) tool](../cicd/deployment-pipelines/get-started-with-deployment-pipelines.md?tabs=from-fabric%2Cnew%2Cstage-settings-new)

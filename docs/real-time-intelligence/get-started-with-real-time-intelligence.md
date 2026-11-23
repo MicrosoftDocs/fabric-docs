@@ -45,7 +45,7 @@ Don't try to learn these components upfront. Come back when a specific need driv
 
 | If you need to | Reach for |
 | --- | --- |
-| Enforce a schema contract on events flowing through your streams | **[Event schema set (preview)](schema-sets/schema-registry-overview.md)** |
+| Define, share, and version schema contracts for streaming events | **[Event schema set](schema-sets/schema-registry-overview.md)** |
 | Plot streaming or historical data on a map | **[Map](map/about-fabric-maps.md)** |
 | Automatically surface unusual patterns in an eventhouse table | **[Anomaly Detector (preview)](anomaly-detection.md)** |
 | Model your physical operations (assets, sites, equipment) as an ontology | **[Digital twin builder (preview)](digital-twin-builder/overview.md)** |

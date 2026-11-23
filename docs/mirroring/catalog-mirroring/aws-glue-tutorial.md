@@ -4,7 +4,7 @@ description: Learn how to create a mirrored AWS Glue catalog in Microsoft Fabric
 author: kgremban
 ms.author: kgremban
 ms.reviewer: mahi
-ms.date: 07/28/2026
+ms.date: 11/10/2026
 ms.topic: tutorial
 ai-usage: ai-assisted
 ---
@@ -18,7 +18,7 @@ ai-usage: ai-assisted
 ## Prerequisites
 
 - You must have an AWS account with an AWS Glue Data Catalog that contains the Apache Iceberg tables you want to mirror.
-- The AWS Glue Iceberg REST catalog endpoint and the Amazon S3 locations that store the Iceberg data must be reachable through the public internet. Firewall rules or other network restrictions aren't currently supported. See [limitations and considerations of this feature](aws-glue-limitations.md).
+- The AWS Glue Iceberg REST catalog endpoint and the Amazon S3 locations that store the Iceberg data must be reachable over the public internet. Source firewall rules and other source-network restrictions aren't supported. Mirrored catalogs support [workspace outbound access protection in Fabric](../../security/workspace-outbound-access-protection-mirrored-catalogs-snowflake-database.md). See [limitations and considerations of this feature](aws-glue-limitations.md).
 - You need an AWS Identity and Access Management (IAM) user with an access key and the permissions described in [Configure AWS authentication](#configure-aws-authentication).
 - You need a Fabric workspace associated with a Fabric capacity (F SKU or Trial).
 - Your Fabric tenant administrator must enable the [tenant admin setting](../../admin/about-tenant-settings.md) titled **Enable new mirrored catalog items (Preview)**.

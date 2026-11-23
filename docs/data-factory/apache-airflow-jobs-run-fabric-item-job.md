@@ -3,7 +3,7 @@ title: Run a Fabric item using Apache Airflow DAG.
 description: Learn to run Microsoft Fabric items using Apache Airflow DAGs.
 ms.reviewer: noelleli
 ms.topic: tutorial
-ms.date: 04/22/2026
+ms.date: 10/26/2026
 ms.custom: Airflows, sfi-image-nochange
 ---
 
@@ -14,11 +14,11 @@ ms.custom: Airflows, sfi-image-nochange
 In this tutorial, you build a directed acyclic graph (DAG) to run a Microsoft Fabric item including:
 
 - Notebooks
-- dbt Jobs
-- Copy Jobs
+- dbt jobs
+- Copy jobs
 - Spark job definitions
 - Pipelines
-- Semantic Model Refresh
+- Semantic model refresh
 - User data functions
 
 ## Prerequisites
@@ -31,7 +31,7 @@ To get started, you must complete the following prerequisites:
 
 - To authenticate your DAGs with Fabric APIs, use either a [service principal](#set-up-apache-airflow-connection) by following these steps:
 
-    - In Fabric, select **Settings**, **Admin portal**, **Tenant Settings**, and enable service principals to call Fabric public APIs on your fabric tenant.
+   - In Fabric, go to **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**, and enable service principals to call Fabric public APIs on your Fabric tenant.
     
        :::image type="content" source="media/apache-airflow-jobs/enable-service-principals.png" lightbox="media/apache-airflow-jobs/enable-service-principals.png" alt-text="Screenshot of the Microsoft Fabric Admin portal settings with service principals enabled to call Fabric public APIs.":::
     
@@ -54,7 +54,7 @@ To get started, you must complete the following prerequisites:
 
 ## Set up Apache Airflow connection
 
-Apache Airflow connection is used to store the credentials required to authenticate with Microsoft Fabric APIs. You can set up your connections in two ways:
+Apache Airflow connection is used to store the credentials required to authenticate with Fabric APIs. You can set up your connections in two ways:
 
 - [Through the Apache Airflow job UI](#fabric-apache-airflow-job-ui)
 - [Through the Apache Airflow UI](#apache-airflow-ui)
@@ -76,7 +76,7 @@ Apache Airflow connection is used to store the credentials required to authent
 
     :::image type="content" source="media/apache-airflow-jobs/add-apache-airflow-connection-pop-up.png" lightbox="media/apache-airflow-jobs/add-apache-airflow-connection-pop-up.png" alt-text="Screenshot to add Apache Airflow connection through the pop-up.":::
 
-1. Select **Create** once you have completed the connection. You can also create and manage the Microsoft Fabric connection directly in  the Airflow UI. Will need to do that to periodically refresh your SPN secret. The instructions below will not work if you're using GIT sync – in that case, you'll need to edit your DAG manually.  
+1. Select **Create** once you complete the connection. You can also create and manage the Fabric connection directly in the Airflow UI. You need to do that to periodically refresh your SPN secret. The following instructions don't work if you're using Git sync. In that case, you need to edit your DAG manually.
 
 ### Apache Airflow UI
 
@@ -111,7 +111,7 @@ Apache Airflow connection is used to store the credentials required to authent
 
 ## Create a DAG to trigger Microsoft Fabric item run
 
-On your Apache Airflow job canvas, there are three tiles. Select **Run Fabric artifact**. This opens a new pop-up. (Accessible when no DAG is opened)
+On your Apache Airflow job canvas, there are three tiles. Select **Run Fabric artifact**. This selection opens a new pop-up that is accessible when no DAG is opened.
 
 :::image type="content" source="media/apache-airflow-jobs/run-fabric-artifact.png" lightbox="media/apache-airflow-jobs/run-fabric-artifact.png" alt-text="Screenshot of canvas tile for running Fabric items.":::
 
@@ -141,19 +141,12 @@ On your Apache Airflow job canvas, there are three tiles. Select **Run Fabric ar
 
    :::image type="content" source="media/apache-airflow-jobs/set-fabric-provider-dag.png" lightbox="media/apache-airflow-jobs/set-fabric-provider-dag.png" alt-text="Screenshot to create the DAG you want to run Fabric providers using the pop-up.":::
 
-Create a new DAG file in the 'dags' folder in Fabric managed storage with the following code. Replace the following placeholders:
-
-- `fabric_conn_id`: The connection ID you created in the previous step.
-- `workspace_id`: The workspace ID where the item is located.
-- `item_id`: The item ID of the item you want to run. For example, a Notebook ID or a Pipeline ID.
-- `job_type`: The type of item you want to run. For example, for notebook use "RunNotebook", for Spark Job Definitions use "sparkjob" and for pipelines use "Pipeline". This is case sensitive.
-- `wait_for_termination`: If set to True, the operator waits for the item run to complete before proceeding to the next task.
-- `deferrable`: If set to True, the operator can free up resources while waiting for the item run to complete.
+You also have the option to create a new DAG in the `dags` folder in Fabric managed storage with the following code:
 
 ```python
 from airflow import DAG
 from datetime import datetime
-from apache_airflow_microsoft_fabric_plugin.operators.fabric import FabricRunItemOperator
+from airflow.providers.microsoft.fabric.operators.run_item import MSFabricRunJobOperator
 
 with DAG(
   dag_id="Run_Fabric_Item",
@@ -162,7 +155,7 @@ with DAG(
   catchup=False,
 ) as dag:
 
-  run_fabric_item = FabricRunItemOperator(
+  run_fabric_item = MSFabricRunJobOperator(
     task_id="run_fabric_item",
     fabric_conn_id="fabric_conn",
     workspace_id="<workspace_id>",
@@ -174,10 +167,18 @@ with DAG(
 
   run_fabric_item
 ```
+Replace the following placeholders:
+- `fabric_conn_id`: The connection ID you created in the previous step.
+- `workspace_id`: The workspace ID where the item is located.
+- `item_id`: The item ID of the item you want to run. For example, a notebook ID or a pipeline ID.
+- `job_type`: The type of item you want to run. For example, for notebook use "RunNotebook", for Spark job definitions use "sparkjob" and for pipelines use "Pipeline". This value is case sensitive.
+- `wait_for_termination`: If set to `True`, the operator waits for the item run to complete before proceeding to the next task.
+- `deferrable`: If set to `True`, the operator can free up resources while waiting for the item run to complete.
+
 
 ## Monitor your DAG
 
-### In Apache Airflow Job UI
+### In Apache Airflow job UI
 
 1. When you open your DAG file in Fabric Managed Storage, "Results" appears at the bottom. Select the arrow to view the results of the DAG run.
 
@@ -197,5 +198,5 @@ with DAG(
 
 ## Related Content
 
-[Quickstart: Create an Apache Airflow Job](../data-factory/create-apache-airflow-jobs.md)
-[Apache Airflow Job workspace settings](../data-factory/apache-airflow-jobs-workspace-settings.md)
+[Quickstart: Create an Apache Airflow job](../data-factory/create-apache-airflow-jobs.md)
+[Apache Airflow job workspace settings](../data-factory/apache-airflow-jobs-workspace-settings.md)

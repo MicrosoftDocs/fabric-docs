@@ -3,6 +3,7 @@ title: Integrating with Fabric Tools
 description: Learn about integrating digital twin builder (preview) with other Fabric tools.
 ms.date: 04/28/2025
 ms.topic: concept-article
+ai-usage: ai-assisted
 ---
 
 # Integrating Fabric tools with digital twin builder (preview)
@@ -34,12 +35,6 @@ For more information about alerts in Activator, see [What is Activator?](../data
 As an item in Microsoft Fabric, digital twin builder (preview) uses the Fabric Application Lifecycle Management toolset. These tools enable you to version and deploy digital twin builder across multiple environments, using deployment experiences like Git Integration and other pipelines native to the Fabric platform.  
 
 For more information about creating and operating deployment pipelines, see the [Lifecycle management documentation in Microsoft Fabric](../../cicd/cicd-overview.md).
-
-## Purview
-
-With digital twin builder (preview), you receive built-in enterprise security and governance. For more information about using Purview to govern your data, see the following resources: 
-* [Use Microsoft Purview to govern Microsoft Fabric](../../governance/microsoft-purview-fabric.md)
-* [The Microsoft Purview hub in Microsoft Fabric](../../governance/use-microsoft-purview-hub.md?tabs=overview) 
 
 ## Related content
 

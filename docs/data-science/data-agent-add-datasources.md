@@ -6,7 +6,7 @@ author: s-polly
 ms.reviewer: shradha
 reviewer: shradha
 ms.topic: how-to
-ms.date: 2/6/2026
+ms.date: 08/31/2026
 ms.search.form: Data Agent
 ai-usage: ai-assisted
 ---
@@ -25,11 +25,11 @@ Data Agent supports the following data source categories:
 | **Eventhouse** | Eventhouse KQL Database | KQL | Real-time intelligence and time-series analytics |
 | **Semantic Model** | Power BI Semantic Models | DAX | Business logic, calculated measures, and curated metrics |
 | **Graph (preview)** | Graph Model | GQL | Relationship-rich data exploration and graph analytics |
-| **Ontology (preview)** | Fabric Ontology | Ontology-native | Domain knowledge and semantic context for data integration |
+| **Ontology (preview)** | Fabric Ontology and its associated underlying sources | T-SQL, KQL, or DAX | Governed domain context and source-native queries |
 | **Azure AI Search (preview)** | Azure AI Search Index | Natural language + search | Unstructured data retrieval (PDFs, text, enriched content) |
 
 > [!TIP]
-> A single Data Agent can combine up to five data sources in any combination, letting you blend structured, real-time, semantic, and unstructured data in one conversational experience.
+> A single Data Agent can use up to five data sources in any combination.
 
 # [SQL](#tab/sql)
 ### Supported Artifacts
@@ -84,8 +84,9 @@ When the data agent runs GQL against a graph data source, the underlying Fabric 
 
 - **Fabric Ontology**—A semantic layer that captures domain knowledge, entity definitions, and relationships.
 
-After an ontology is configured in Fabric, it can be added as a data source to Data Agent. The agent uses the ontology to understand domain context and answer questions grounded in your organization's knowledge model.
+After you configure an Ontology in Fabric, add it to a data agent as a context source. The data agent uses its entity definitions, properties, relationships, synonyms, mappings, and bindings to interpret a question and identify a relevant underlying data source. It then generates a source-native SQL, KQL, or DAX query, runs the query against that source, and presents the result.
 
+Ontology provides semantic meaning but isn't the query execution endpoint. The underlying source executes the generated query by using the requesting user's permissions. For setup, configuration, permissions, and limitations, see [Use Ontology as context in Fabric data agent](data-agent-ontology-sources.md).
 
 # [Unstructured Data (preview)](#tab/unstructured-data)
 ### Supported Artifacts
@@ -107,6 +108,8 @@ Data Agent connects directly to your Azure AI Search index using a resource URL.
 | Agent Instructions | ✅ Yes | Guide the agent on when and how to route questions to this source. |
 | Data Source Instructions | ✅ Yes | Provide table descriptions, join logic, key column details, and business terminology to NL2SQL. |
 | Data Source Description | ✅ Yes | Description that helps the agent determine whether this data source is relevant to the user's question. |
+| [Schema Object Descriptions (Preview)](data-agent-schema-object-descriptions.md) | ✅ Yes | Provide business context for tables, columns, and other schema elements to improve SQL query generation. Available only on the [preview runtime](data-agent-runtime.md#preview-runtime). |
+| [Topics (Preview)](data-agent-topics.md) | ✅ Yes | Provide up to 1 million characters of topic-based instructions. The data agent retrieves relevant sections for NL2SQL. Available only on the [preview runtime](data-agent-runtime.md#preview-runtime). |
 | Example Queries | ✅ Yes | Supply natural-language/SQL pairs so the agent can learn complex query patterns. Top examples are automatically retrieved via vector similarity. |
 
 # [Eventhouse](#tab/kql)
@@ -117,6 +120,7 @@ Data Agent connects directly to your Azure AI Search index using a resource URL.
 | Agent Instructions | ✅ Yes | Guide the agent on when and how to route questions to this source. |
 | Data Source Instructions | ✅ Yes | Provide context about tables, MVs, Functions, and Shortcuts to NL2KQL. |
 | Data Source Description | ✅ Yes | Description that helps the agent determine whether this data source is relevant to the user's question. |
+| Topics | ❌ No | Topics are supported only for SQL data sources that use NL2SQL on the preview runtime. |
 | Example Queries | ✅ Yes | Supply natural-language/KQL pairs to teach the agent complex aggregation and join patterns. |
 
 
@@ -128,6 +132,7 @@ Data Agent connects directly to your Azure AI Search index using a resource URL.
 | Agent Instructions | ✅ Yes | Guide the agent on when to choose the semantic model to answer questions. |
 | Data Source Instructions | ❌ No* | Instructions are managed through **Prep for AI** (AI Instructions and Verified Answers) on the semantic model side. Data Agent honors them when present. |
 | Data Source Description | ❌ No | Semantic Models do not support data source descriptions. |
+| Topics | ❌ No | Topics are supported only for SQL data sources that use NL2SQL on the preview runtime. |
 | Example Queries | ❌ No* | Not currently supported for semantic models. Use Verified Answers in Prep for AI to include example DAX queries. |
 
 *\*Semantic models are primarily configured through [Prep for AI in Power BI](/power-bi/create-reports/copilot-prepare-data-ai), which offers AI Data Schemas, AI Instructions, and Verified Answers.*
@@ -141,6 +146,7 @@ Data Agent connects directly to your Azure AI Search index using a resource URL.
 | Agent Instructions | ✅ Yes | Guide the agent on when and how to route questions to this source. |
 | Data Source Instructions | ✅ Yes | Passed to the NL2GQL engine to guide query generation. |
 | Data Source Description | ✅ Yes | Description that helps the agent determine whether this data source is relevant to the user's question. |
+| Topics | ❌ No | Topics are supported only for SQL data sources that use NL2SQL on the preview runtime. |
 | Example Queries | ✅ Yes | Passed to NL2GQL to teach complex graph traversal patterns. |
 
 # [Ontology (preview)](#tab/Ontology)
@@ -148,11 +154,14 @@ Data Agent connects directly to your Azure AI Search index using a resource URL.
 
 | Configuration | Supported | Details |
 |---|---|---|
-| Schema Selection | ❌ No | Not supported for ontology data sources. |
-| Agent Instructions | ✅ Yes | Guide the agent on when to choose the semantic model to answer questions. |
-| Data Source Instructions | ❌ No | Not supported for ontology data sources. |
-| Data Source Description | ✅ Yes | Description that helps the agent determine whether this data source is relevant to the user's question. |
-| Example Queries | ❌ No | Not supported for ontology data sources. |
+| Schema selection | ❌ No | Entity selection within an Ontology isn't supported. |
+| Agent instructions | ✅ Yes | Guide the agent on when and how to use the Ontology context. |
+| Data source instructions | ✅ Yes* | Mount an eligible underlying source to provide source-specific query guidance. |
+| Data source description | ✅ Yes* | Mount an eligible underlying source to describe its contents and the questions it can answer. |
+| Topics | ❌ No | Topics aren't supported for Ontology-bound data sources. |
+| Example queries | ✅ Yes* | Mount an eligible underlying source to provide natural-language and source-native query pairs. |
+
+*\*These configurations apply only to the mounted underlying source in the data agent. They aren't written back to the Ontology, and availability depends on the underlying source type. For details, see [Use Ontology as context in Fabric data agent](data-agent-ontology-sources.md#supported-configurations-for-underlying-sources).*
 
 # [Unstructured Data (preview)](#tab/unstructured-data)
 ### Unstructured Data Configurations
@@ -163,6 +172,7 @@ Data Agent connects directly to your Azure AI Search index using a resource URL.
 | Number of Documents | Control how many documents are retrieved per query (recommended: 3–20). |
 | Context / Description | Describe the index contents, key fields, and usage guidance to help routing. |
 | Agent Instructions | Guide how the agent interprets search results and composes the final answer. |
+| Topics | Not supported. Topics are available only for SQL data sources that use NL2SQL on the preview runtime. |
 
 ---
 
@@ -174,4 +184,3 @@ Data Agent connects directly to your Azure AI Search index using a resource URL.
 - [End-to-end tutorial](/fabric/data-science/data-agent-end-to-end-tutorial)
 - [Connect Azure AI Search Index](/fabric/data-science/data-agent-ai-search-index)
 - [Add a Power BI semantic model](/fabric/data-science/data-agent-semantic-model)
-

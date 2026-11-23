@@ -17,7 +17,7 @@ This article outlines the steps to create HTTP connection.
 
 ## Supported authentication types
 
-The HTTP connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+The HTTP connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
@@ -25,7 +25,7 @@ The HTTP connector supports the following authentication types for copy and Data
 |Basic| √ | n/a |
 
 ## Set up your connection for Dataflow Gen2
-The HTTP connector isn't currently supported in Dataflow Gen2.
+The HTTP connector isn't currently supported in dataflow Gen2.
 
 ## Set up your connection in a pipeline
 

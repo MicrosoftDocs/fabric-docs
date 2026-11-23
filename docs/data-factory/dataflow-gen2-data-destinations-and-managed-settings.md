@@ -3,7 +3,7 @@ title: Dataflow Gen2 data destinations and managed settings
 description: Describes how to use Dataflow Gen2 to save your data in specific destinations, along with instructions on how to use managed settings.
 ms.reviewer: jeluitwi
 ms.topic: how-to
-ms.date: 03/13/2026
+ms.date: 11/04/2026
 ms.custom: dataflows
 ai-usage: ai-assisted
 ---
@@ -16,8 +16,10 @@ The following list contains the supported data destinations:
 
 [!INCLUDE [dataflow-gen2-data-destinations](includes/dataflow-gen2-data-destinations.md)]
 
+Google BigQuery and Amazon S3 data destinations are in preview. The [PostgreSQL data destination](connector-postgresql.md#use-postgresql-as-a-dataflow-gen2-data-destination) is generally available.
+
 > [!NOTE]
->To load your data to the Fabric Warehouse, you can use the Azure Synapse Analytics (SQL DW) connector by getting the SQL connection string. More information: [Connectivity to data warehousing in Microsoft Fabric](../data-warehouse/connectivity.md)
+> To load your data to Fabric Data Warehouse, you can use the Azure Synapse Analytics (SQL DW) connector by getting the SQL connection string. For more information, see [Connectivity to Fabric Data Warehouse](../data-warehouse/connectivity.md).
 
 ## Entry points
 
@@ -43,6 +45,29 @@ Connecting to the data destination works like connecting to a data source. You c
 
 :::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/connect-to-data-destination.png" alt-text="Screenshot of the Connect to data destination window for a Lakehouse destination.":::
 
+## Google BigQuery and Amazon S3 destinations (preview)
+
+Use these destinations to deliver prepared data to other cloud platforms without a separate export step:
+
+| Destination | Output | Connection and setup |
+|---|---|---|
+| Google BigQuery | Tables in a BigQuery dataset. | [Use Google BigQuery as a data destination](connector-google-bigquery.md#use-google-bigquery-as-a-data-destination-preview). |
+| Amazon S3 | Files in an S3 bucket. | [Use Amazon S3 as a data destination](connector-amazon-s3.md#use-amazon-s3-as-a-data-destination). |
+
+> [!IMPORTANT]
+> To use Google BigQuery or Amazon S3 as a Dataflow Gen2 data destination through an on-premises data gateway, you need the November 2026 gateway release (version **3000.342.0**) or later. For update instructions, see [Update an on-premises data gateway](/data-integration/gateway/service-gateway-update).
+
+Select the query to export, choose **Add data destination**, and then select **Google BigQuery** or **Amazon S3**. Configure a connection with write permissions and complete the target and destination settings. Run the dataflow to write the query results.
+
+:::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/multicloud-destinations.png" alt-text="Screenshot of the Amazon S3 and Google BigQuery data destination tiles, both marked Preview.":::
+
+Amazon S3 is also available as a data source. You can [read files from S3](connector-amazon-s3.md#read-data-from-amazon-s3), transform and combine the data in Power Query, and load the results to a supported destination.
+
+> [!NOTE]
+> During preview, writes to Google BigQuery can be slower than expected. See the [known destination performance issue](connector-google-bigquery.md#dataflow-gen2-destination-performance-preview) for guidance.
+>
+> Also review the [BigQuery empty-query-result limitation](connector-google-bigquery.md#empty-query-results-in-the-dataflow-gen2-destination-preview) and the [Amazon S3 bucket-root write limitation and subfolder workaround](connector-amazon-s3.md#known-issue-writing-to-the-bucket-root) when configuring these destinations.
+
 ## Set up file-based destinations
 
 When you choose a file-based destination (for example, SharePoint), you'll need to configure settings based on the file format you select.
@@ -63,10 +88,7 @@ When you select **Delimited text** as the file format, configure these settings:
 
 :::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/file-destinations-settings.png" alt-text="Screenshot of the File destination settings window with the delimited text format selected.":::
 
-### Excel format (Preview)
-
-> [!NOTE]
-> Excel format for file-based destinations is currently in preview.
+### Excel format
 
 When you select **Excel** as the file format, you have three format options: **Single sheet**, **Multi sheet**, and **Advanced**.
 
@@ -95,6 +117,15 @@ The multi sheet format partitions your data across multiple sheets based on a co
 #### Advanced format
 
 The advanced format provides more control over Excel output, allowing you to create complex workbooks with multiple sheets, charts, and customized formatting using navigation tables. For more information, see [Excel Advanced Data Destination](dataflow-gen2-data-destinations-excel-advanced.md).
+
+### Document builders
+
+Use a document builder to define formatted content from your dataflow queries, and then configure a file-based destination on the resulting document query:
+
+- [Excel document builder (preview)](dataflow-gen2-document-builder-excel.md) defines worksheets, tables, ranges, and charts.
+- [HTML document builder (preview)](dataflow-document-builder-html.md) defines an HTML document, including charts that use prepared query data.
+
+Closing a builder doesn't write a file. Configure the document query's destination and run the dataflow to generate the document.
 
 ## Create a new table or pick an existing table
 
@@ -137,7 +168,7 @@ When you're loading into a new table, automatic settings are turned on by defaul
 * **Drop and recreate table**: To allow for these schema changes, the table gets dropped and recreated on every dataflow refresh. Your dataflow refresh might cause the removal of relationships or measures that were added previously to your table.
 
 > [!NOTE]
-> Currently, automatic settings are only supported for Lakehouse and Azure SQL database as data destination.  
+> Automatic settings are supported for Lakehouse, Azure SQL Database, and Snowflake as data destinations. For details, see [Snowflake destination settings](#snowflake-destination-settings).
 
 :::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/use-automatic-settings.png" alt-text="Screenshot of the Choose destination settings window with the Use automatic settings option selected.":::
 
@@ -165,19 +196,14 @@ Schema options on publish only apply when the update method is **replace**. When
 
 > [!NOTE]
 > When loading data into the warehouse, only fixed schema is supported.
-> When loading data into a Snowflake database, only fixed schema is supported. If you change the schema of your source query, you need to reconfigure the destination mapping manually.
 
 :::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/fixed-schema.png" alt-text="Screenshot of the Schema options on publish option, with Fixed schema selected.":::
 
 ## Parameterization
 
-[Parameters](/power-query/power-query-query-parameters) are a core feature within Dataflow Gen2. Once a parameter gets created or you use the **Always allow** setting, an input widget becomes available to define the table or file name for your destination.
+[Parameters](/power-query/power-query-query-parameters) are a core feature within Dataflow Gen2. Use the dynamic expression editor to combine text with dynamic date and time values, parameters, and workspace variables in supported data destination fields. The editor is enabled by default. In a supported field, press `/` to insert a value. For more information, see [Use the dynamic expression editor for Dataflow Gen2 data destinations](dataflow-gen2-dynamic-expression-editor-data-destinations.md).
 
-![Screenshot of the data destination experience where the table name is using a parameter called "TableName" and the input widget is shown.](media/dataflow-gen2-data-destinations-and-managed-settings/parameter-table-name.png)
-
-> [!NOTE]
-> Parameters in the data destination can also be applied directly through the M script created for the queries related to it. You can manually alter the script of your data destination queries to apply the parameters to meet your requirements.
-> However, the user interface currently only supports parameterization for the table or file name field.
+To parameterize destination settings that the dynamic expression editor doesn't support, use the M script created for the destination query. For more information, see [Advanced edit for data destination queries](dataflow-gen2-advanced-edit-data-destinations.md).
 
 ## Mashup script for data destination queries
 
@@ -240,13 +266,19 @@ To enable staging, right-click on the query and enable staging by selecting the 
 
 :::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/disable-staging.png" alt-text="Screenshot of the query drop-down menu with Enable staging emphasized.":::
 
-#### Snowflake destination preview limitations
+<a id="snowflake-destination-limitations"></a>
 
-Snowflake as a data destination has the following known limitations:
+#### Snowflake destination settings
 
-* **Dynamic schema is not supported.** If you change the columns in your source query (add, rename, or remove columns), you need to manually reconfigure the destination mapping. Other destinations like Fabric Lakehouse support dynamic schema, but Snowflake doesn't yet.
-* **Default destination only works for new tables.** When using the default destination experience with Snowflake, it creates a new table on the first refresh. However, if you later change the schema of your dataflow, the destination schema isn't updated automatically.
-* **Gateway is not supported.** Snowflake as a data destination is currently only available for cloud-based dataflows. Gateway support is coming soon.  
+Snowflake supports **Replace** and **Append** as update methods. With **Replace**, new tables support **Dynamic schema** and **Fixed schema**.
+
+* **Managed settings**: For new tables, Dataflow Gen2 manages column mapping and uses **Replace**. When you add, rename, or remove query columns, republish the dataflow. The next refresh updates the destination schema automatically, without requiring you to reconfigure the destination mapping.
+* **Manual settings**: By using **Replace** and **Dynamic schema**, update the column mapping when you change your query, then republish the dataflow. The next refresh updates the destination schema. By using **Fixed schema** or **Append**, automatic schema changes aren't supported.
+
+When you use Snowflake as a default destination, managed settings apply to new tables, including automatic mapping and schema updates.
+
+> [!NOTE]
+> To use Snowflake as a data destination through an on-premises data gateway, [install the latest version of the gateway](/data-integration/gateway/service-gateway-install). Older gateway versions don't include the connector changes required for Snowflake destinations.
 
 #### Loading data into the Warehouse
 
@@ -279,12 +311,9 @@ You can set this option to **False** in edge cases where:
 * You don't query the Lakehouse through the SQL analytics endpoint and don't need the metadata sync.
 * You see significantly longer refresh times caused by a large delta log backlog on the destination Lakehouse, and you want to skip the synchronization step until the backlog is addressed (for example, through table maintenance and vacuuming).
 
-When the option is set to **False**, the SQL analytics endpoint metadata isn't refreshed by the dataflow, and downstream SQL endpoint consumers may see stale data until the next sync (manual or scheduled) occurs.
+When the option is set to **False**, the SQL analytics endpoint metadata isn't refreshed by the dataflow, and downstream SQL analytics endpoint consumers may see stale data until the next sync (manual or scheduled) occurs.
 
 ### Enable V-Order compression on a Lakehouse destination
-
-> [!NOTE]
-> This advanced option is currently in preview.
 
 When a Dataflow Gen2 refresh writes data to a Fabric Lakehouse table destination, you can control whether the data is written using V-Order compression. V-Order is a write-time optimization for the Parquet file format that improves read performance for downstream Fabric engines such as the SQL analytics endpoint, Direct Lake semantic models, and Spark, at the cost of additional CPU during the write. For background and cross-engine guidance, see [Delta Lake table optimization and V-Order](../data-engineering/delta-optimization-and-v-order.md) and [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md).
 

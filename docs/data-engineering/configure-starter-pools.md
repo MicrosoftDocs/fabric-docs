@@ -1,7 +1,7 @@
 ---
 title: Configure and manage starter pools in Fabric Spark
 description: Learn how to customize starter pools from your Fabric workspace settings for your analytics workloads.
-ms.reviewer: saravi
+ms.reviewer: milescole
 ms.topic: how-to
 ms.date: 06/15/2026
 ai-usage: ai-assisted

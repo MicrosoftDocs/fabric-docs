@@ -17,14 +17,14 @@ This article outlines the steps to create a Microsoft 365 connection.
 
 ## Supported authentication types
 
-This Microsoft 365 connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+This Microsoft 365 connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
 |Service principal| √| n/a|
 
 ## Set up your connection for Dataflow Gen2
-The Microsoft 365 connector isn't currently supported in Dataflow Gen2.
+The Microsoft 365 connector isn't currently supported in dataflow Gen2.
 
 ## Set up your connection in a pipeline
 
@@ -61,7 +61,7 @@ Under **Authentication method**, select your authentication from the drop-down l
 
 :::image type="content" source="media/connector-microsoft-365/authentication-method.png" alt-text="Screenshot of the authentication method of Microsoft 365.":::
 
-#### Service Principal authentication
+#### Service principal authentication
 
 :::image type="content" source="media/connector-microsoft-365/service-pricipal-authentication.png" alt-text="Screenshot of the Service Principal authentication method of Microsoft 365.":::
 

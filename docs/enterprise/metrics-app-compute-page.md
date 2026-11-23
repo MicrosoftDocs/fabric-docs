@@ -16,9 +16,9 @@ ai-usage: ai-assisted
 
 The compute page of the Microsoft Fabric Capacity Metrics app shows how your capacity uses compute resources over the last 14 days.
 
-Use the compute page to spot usage patterns, identify peak loads, and see when your capacity is overloaded or throttled. With this information, you can decide whether to scale up your capacity or turn on autoscale.
+Use the compute page to spot usage patterns, identify peak loads, and see when your capacity is overloaded or throttled. With this information, you can decide whether to scale up your capacity or turn on autoscale. 
 
-This article explains how to read each visual on the compute page - the ribbon chart, the utilization and throttling charts, and the operations matrix - so you can interpret what the page tells you about your capacity's performance. To choose which capacity the page shows results for, use the **Capacity Name** field at the top of the page.
+This article explains how to read each visual on the compute page - the ribbon chart, the utilization and throttling charts, and the operations matrix - so you can interpret what the page tells you about your capacity's performance. To choose which capacity the page shows results for, use the **Capacity Name** field at the top of the page. It describes the compute page in the generally available capacity metrics report. For the redesigned compute page, see [Compute page in the capacity metrics app preview](metrics-app-preview-compute-page.md).
 
 ## Cards
 

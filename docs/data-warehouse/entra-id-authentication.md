@@ -102,7 +102,7 @@ Applications and tools must upgrade drivers to versions that support Microsoft E
 
 Fabric is compatible with Microsoft's native drivers, including OLE DB, `Microsoft.Data.SqlClient`, and generic drivers such ODBC and JDBC. The transition for applications to work with Fabric can be managed through reconfiguration to use Microsoft Entra ID-based authentication.
 
-For more information, see [Connectivity to data warehousing in Microsoft Fabric](connectivity.md).
+For more information, see [Connectivity to Fabric Data Warehouse](connectivity.md).
 
 ### Microsoft OLE DB
 
@@ -167,5 +167,5 @@ Code snippets using SPNs:
 
 ## Related content
 
-- [Connectivity to data warehousing in Microsoft Fabric](connectivity.md)
-- [Security for data warehousing in Microsoft Fabric](security.md)
+- [Connectivity to Fabric Data Warehouse](connectivity.md)
+- [Security in Fabric Data Warehouse](security.md)

@@ -3,9 +3,10 @@ title: Manage and monitor a KQL database table
 description: Learn how to manage and monitor a table and gain insights from the system information in Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.topic: how-to
-ms.date: 06/15/2026
+ms.date: 08/19/2026
 ms.subservice: rti-eventhouse
 ms.search.form: Database
+ai-usage: ai-assisted
 #customer intent: As a user, I want to learn how to manage and monitor a table in a KQL  database so that I can effectively utilize Real-Time Intelligence.
 ---
 # Manage and monitor a table
@@ -107,6 +108,12 @@ The right information pane displays the details of the selected table.
 | Caching Policy | The time period in which data is cached and kept in local SSD storage. For more information, see [Caching policy](/fabric/real-time-intelligence/data-policies#caching-policy).|
 | Retention Policy | The time period after which data is automatically removed from tables or materialized views. For more information, see [Data retention policy](/fabric/real-time-intelligence/data-policies#data-retention-policy).|
 
+**Encoding policy**
+
+| Item| Description|
+|---|---|
+| Large value encoding <br> (BigObjectIndexed32 encoding policy) | Shows whether large values are allowed for a `string` or `dynamic` column. When large values are allowed, the column uses the `BigObjectIndexed32` encoding policy, which indexes large data cells, from 1 MB up to 20 MB, for query performance, at the cost of higher memory consumption. For more information, see [Large message support (preview)](get-data-overview.md#large-message-support-preview) and [Encoding policy types](/kusto/management/alter-encoding-policy?view=microsoft-fabric&preserve-view=true#encoding-policy-types).|
+
 ## Main view area
 
 The center table information pane shows a histogram of the ingestion data, table information, and a way to preview the table data and schema insights.
@@ -127,6 +134,11 @@ The center table information pane shows a histogram of the ingestion data, table
 | Item| Description|
 |---|---|
 | Quick query | Shows a preview of the table ingestion results. Displays Ingestion time, TableName, and Record. Select **Columns** to select columns and values for a pivot view.|
+
+> [!NOTE]
+> If a `string` or `dynamic` value is longer than 10,000 characters, the displayed value in the data preview is trimmed. You can still query the entire value with KQL, as long as the value is stored in the engine and the `BigObjectIndexed32` encoding policy is enabled for the column. For more information, see [Large message support (preview)](get-data-overview.md#large-message-support-preview). You can also select **Copy full value** to copy the entire value and paste it into a text editor that supports large strings.
+> Large Message Support isn't supported for shortcuts (external tables), tables with Query acceleration over OneLake shortcuts. 
+> OneLake data availability for tables with large value columns depends on the target size limits.
 
 **Schema insights**
 

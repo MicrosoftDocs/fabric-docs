@@ -3,7 +3,7 @@ title: "Fabric Eventstream: Supported Data Formats"
 description: Learn how Fabric Eventstream supports JSON, CSV, Avro, and text-based formats for event ingestion, transformation, and routing to various destinations.
 #customer intent: As a data engineer, I want to understand the data formats supported by Fabric Eventstream so that I can ensure compatibility with my event payloads.
 ms.reviewer: ali
-ms.date: 01/05/2026
+ms.date: 09/02/2026
 ms.topic: concept-article
 ---
 
@@ -13,6 +13,13 @@ Fabric Eventstream supports multiple data formats for input event payloads. This
 - **Natively supported formats (JSON, CSV, Avro)**: Fully supported by Eventstream for ingestion, transformation, and routing. You can route events in these formats to all destinations.
 - **Direct ingestion text formats**: Additional plain text formats (for example, `PSV`, `TSV`) that Eventstream can ingest directly into Eventhouse or forward to custom endpoints. Eventstream doesn't parse these formats, so no transformations are supported. These formats aren't supported for Lakehouse or Activator destinations.
 - **Pass-through formats**: Any other format can be passed through unparsed from source to a custom endpoint destination. You can ingest these formats into Eventstream with connector, but can't route these formats to Eventhouse, Lakehouse, or Activator.
+
+> [!NOTE]
+> **Schema-aware Eventstreams (Preview)** provide a unified processing
+> experience for schematized and unschematized events. Schematized, classified,
+> and untyped events can coexist in the same Eventstream. For more information,
+> see
+> [Schema-aware Eventstreams overview (Preview)](./schema-aware-eventstreams-overview.md).
 
 ## Natively supported formats: JSON, CSV, Avro 
 Eventstream natively supports JSON, CSV, and Avro event payloads. The Eventstream operator can parse these formats, enabling transformations and full processing. You can deliver events in these formats to **all destinations** – Eventhouse, Activator, Lakehouse, and custom endpoints – without restrictions. 

@@ -20,5 +20,5 @@ All the Power BI visuals admin settings, including Power BI visuals tenant setti
 
 ## Related content
 
-- [What is the admin portal?](admin-center.md)
+- [Govern and manage your Fabric data with the OneLake catalog](../governance/onelake-catalog-govern.md)
 - [Manage Power BI visuals admin settings](organizational-visuals.md)

@@ -6,7 +6,7 @@ ms.author: daknappe
 ms.reviewer: yuturchi, arthii
 ms.custom: admin-portal
 ms.topic: how-to
-ms.date: 03/06/2026
+ms.date: 11/09/2026
 ai-usage: ai-assisted
 ---
 
@@ -20,22 +20,27 @@ For an overview of how retention works for workspaces and items, see [Retention 
 
 ## Prerequisites
 
-- To set up item retention settings, you need a [tenant admin](microsoft-fabric-admin.md) role.
+- To set up item retention settings, you need a [tenant admin](admin-overview.md#administrative-roles) role.
 - To recover deleted items, you need at least **Workspace Contributor** permissions. See [Permissions](retention-recovery.md#permissions-for-item-recovery-and-deletion) for the full permissions matrix.
 - To permanently delete recoverable items, you need **Workspace Admin** permissions.
 
 ## Set up the retention period for deleted items
 
-By default, when you turn on item recovery in tenant settings, Fabric retains deleted items for seven days. You can change the retention period (from 7 to 90 days) by using the **Item Recovery** tenant setting.
+> [!NOTE]
+> Item recovery is now enabled by default, with a retention period of three days. The default applies to tenants that never explicitly configured the **Item Recovery** setting and to newly created tenants. Fabric preserves settings that an admin explicitly configured: if you already turned on item recovery, your current retention value stays the same, and if you explicitly turned it off, it stays off.
 
-1. In the admin portal, go to **Tenant settings** > **Item Recovery**.
-1. Turn on the setting and enter the number of days for the retention period (7 to 90 days).
+You can change the retention period (from 3 to 90 days) or turn item recovery off by using the **Item Recovery** tenant setting.
+
+1. Sign in to [Fabric](https://app.fabric.microsoft.com) using your admin account credentials. Open the **OneLake catalog**, and then select the **Govern** tab > **Configurations** > **Tenant settings** > **Item Recovery**.
+1. Turn on the setting and enter the number of days for the retention period (3 to 90 days).
 1. Select **Apply**.
 
 > [!NOTE]
 > When the **Item Recovery** setting is off, Fabric doesn't retain deleted items when you delete an individual item.
 >
-> The Item Recovery setting doesn't affect the retention period of workspaces. See [Retention and recovery in Fabric](retention-recovery.md#workspace-retention) for details about workspace retention.
+> The **Item Recovery** setting doesn't affect the retention period of workspaces. See
+> [Retention and recovery in Fabric](retention-recovery.md#workspace-retention)
+> for details about workspace retention.
 
 ## Restore a deleted item
 
@@ -47,14 +52,27 @@ The workspace recycle bin is a dedicated view within each workspace where you ca
 
 1. Open the workspace that contained the deleted item.
 1. Select **Recycle bin** from the workspace navigation.
-1. Find the item you want to recover. You can use the filter and search options to locate specific items.
-1. Select the item, then choose **Restore** from the toolbar.
+1. Find the item you want to recover. Use the filter and search options as needed.
+1. Select the item, and then choose **Restore** from the toolbar.
 
 The restored item reappears in its original workspace with its properties, configurations, and relationships intact.
 
+If the item's name conflicts with an active item in the workspace, the restore still succeeds.
+Fabric automatically renames the restored item by appending an underscore and a generated numeric
+suffix, such as `Sales notebook_1787195281`. You can rename the item after you restore it.
+
+Naming constraints depend on the item type. For example, restoring a notebook named `Sales`
+isn't affected by an active lakehouse named `Sales`. However, warehouse snapshot names must
+also differ from warehouse and SQL analytics endpoint names. See
+[Warehouse snapshots](../data-warehouse/warehouse-snapshot.md#manage-snapshots).
+
+> [!IMPORTANT]
+> The recycle bin automatically renames items when names conflict; the public REST API doesn't.
+> See [Use the REST API to restore an item](#use-the-rest-api-to-restore-an-item).
+
 ### Use the REST API to restore an item
 
-Use the REST API to programmatically recover deleted items.
+Use the [Recover Item](/rest/api/fabric/core/recoverable-items/recover-item) REST API operation to programmatically recover deleted items.
 
 **Request:**
 
@@ -78,14 +96,18 @@ curl --request POST \
 **Response:**
 
 - **200 OK** - Item successfully recovered.
+- **202 Accepted** - Recovery is in progress. The operation is a [long running operation](/rest/api/fabric/articles/long-running-operation), and the response includes `Location`, `x-ms-operation-id`, and `Retry-After` headers that you use to poll for the result.
 - **404 Not Found** - Item not found or no longer in recovery period.
 - **403 Forbidden** - User doesn't have permission to recover the item.
+- **409 Conflict** - The item's name conflicts with an active item in the workspace. The error code is `ItemDisplayNameAlreadyInUse`.
 
 > [!NOTE]
 > Recovered items retain their original properties, settings, and permissions. If the item depends on other deleted items, you might need to restore those dependencies first.
 
 > [!IMPORTANT]
-> If a new item with the same name as the soft-deleted item exists in the same workspace, the recovery fails until you rename the existing item. To recover the deleted item, rename the new item, then retry the recovery operation.
+> Unlike the recycle bin, the REST API doesn't automatically rename a recovered item when a name conflict exists. The operation fails with `409 Conflict` and the error code `ItemDisplayNameAlreadyInUse`.
+>
+> To recover an item that has a name conflict, either restore it from the [workspace recycle bin](#use-the-workspace-recycle-bin-to-restore-an-item), or rename the conflicting active item and then retry the recovery operation.
 
 ## Permanently delete a recoverable item
 
@@ -96,7 +118,7 @@ While a deleted item is in its retention period, you can permanently delete it i
 1. Open the workspace that contained the deleted item.
 1. Select **Recycle bin** from the workspace navigation.
 1. Find the item you want to permanently delete.
-1. Select the item, then choose **Delete permanently** from the toolbar.
+1. Select the item, and then choose **Delete permanently** from the toolbar.
 
 You're asked to confirm the permanent deletion.
 
@@ -138,4 +160,4 @@ curl --request DELETE \
 - [Retention and recovery in Fabric](retention-recovery.md)
 - [Set up and manage workspace retention](workspace-retention.md)
 - [Manage workspaces](portal-workspaces.md)
-- [Admin portal overview](admin-center.md)
+- [Fabric administration overview](admin-overview.md)

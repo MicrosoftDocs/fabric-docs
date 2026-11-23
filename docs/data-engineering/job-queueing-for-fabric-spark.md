@@ -1,7 +1,7 @@
 ---
 title: Job queueing in Apache Spark for Fabric
 description: Learn about background job queueing for notebooks, Apache Spark job definitions, and lakehouse jobs in Fabric.
-ms.reviewer: saravi
+ms.reviewer: milescole
 ms.topic: concept-article
 ms.custom: sfi-image-blocked
 ms.date: 06/15/2026

@@ -1,9 +1,9 @@
 ---
 title: What is Copy job in Data Factory
 description: This article explains the concept of the Copy job and the benefits it provides.
-ms.reviewer: yexu
+ms.reviewer: ukchrist
 ms.topic: how-to
-ms.date: 04/24/2026
+ms.date: 09/17/2026
 ms.search.form: copy-job-tutorials 
 ms.custom: copy-job
 ai-usage: ai-assisted
@@ -104,6 +104,12 @@ With audit columns, you get row-level data lineage without custom code, enabling
 
 See more details in [Audit columns in Copy job](audit-columns-copy-job.md).
 
+
+### Change data feed
+
+Change data feed for Delta tables allows consumers of those tables to incrementally process data. For destination tables that Copy job creates in a Fabric Lakehouse, you can enable Change data feed (CDF) in the **Write settings** of a Copy job. Select the option **Enable CDF on destination** to turn on Change data feed. This setting applies to all Lakehouse tables that Copy job creates. This setting doesn't change user-created destination tables.
+
+
 ### Performance
 
 Copy job automatically optimizes copy performance based on the data volume, so you get fast data movement without manual tuning. Whether you're copying a small lookup table or a large transaction log, Copy job applies the right strategy for each table automatically.
@@ -146,7 +152,7 @@ With Copy job, you can move your data between cloud data stores or from on-premi
 See our [supported connectors](copy-job-connectors.md) page for the full list of supported sources and destinations:
 
 - [Sources and destinations](copy-job-connectors.md#copy-job-sources-and-destinations)
-- [Change data capture (CDC) replication (Preview)](copy-job-connectors.md#cdc-replication-preview)
+- [Change data capture (CDC) replication](copy-job-connectors.md#cdc-replication)
 
 Submit your feedback on [Fabric Ideas](https://community.fabric.microsoft.com/t5/Fabric-Ideas/idb-p/fbc_ideas/label-name/data%20factory%20%7C%20copy%20job) and join the conversation on the [Fabric Community](https://community.fabric.microsoft.com/t5/Copy-job/bd-p/db_copyjob).
 

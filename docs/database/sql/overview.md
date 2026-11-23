@@ -2,7 +2,7 @@
 title: "SQL database Overview"
 description: Learn about SQL database in Microsoft Fabric.
 ms.reviewer: antho, sukkaur
-ms.date: 05/19/2026
+ms.date: 10/02/2026
 ms.topic: overview
 ms.search.form: product-databases, SQL database Overview, Databases Overview
 ---
@@ -75,6 +75,18 @@ SQL database in Fabric is designed to support a variety of modern data patterns 
 - **Operational Data Store (ODS)**: Consolidate data from multiple operational systems into a normalized, near real-time store that supports operational reporting and lightweight analytics. SQL database serves as the "hot, harmonized truth" between source systems and analytical platforms. For more information, see [Use SQL database as an operational data store](use-case-operational-data-store.md).
 - **Translytical applications**: Build applications that require both transactional and analytical access to the same data. Automatic replication to OneLake creates a SQL analytics endpoint that enables analytical queries without impacting transactional performance. For more information, see [Use SQL database as the source for translytical applications](use-case-translytical-applications.md).
 
+## Monitor
+
+Use the [Database Hub](../hub/overview.md) (currently a preview feature) to monitor your SQL database in Fabric and your entire database estate across Azure, Fabric, on-premises, and multicloud. With the Database Hub you can monitor and investigate your databases with prebuilt monitoring and ad hoc telemetry analysis with Power BI, Kusto queries, and AI agent skills. 
+
+You can use ready-made skills to interact with Database Hub data. Get started using [Database Hub agent skills](https://github.com/microsoft/microsoft-sql/tree/main/plugins/microsoft-sql-fdh) to understand and interact with the [Database Hub in Fabric](https://powerbi.com/workloads/fdh/databaseHub):
+
+```agent-prompt
+- Use [Database Hub skills](https://github.com/microsoft/microsoft-sql/tree/main/plugins/microsoft-sql-fdh).
+- Review [Database Hub in Fabric documentation](https://learn.microsoft.com/fabric/database/hub/)
+  and use the [Microsoft Learn MCP server](https://learn.microsoft.com/api/mcp) for official docs.
+```
+
 ## Cross-database queries
 
 With the data from your SQL database automatically stored in the OneLake, you can write cross-database queries, joining data from other SQL databases, mirrored databases, warehouses, and the SQL analytics endpoint in a single T-SQL query. All this is currently possible with queries on the SQL analytics endpoint of the SQL database, or lakehouse.
@@ -141,6 +153,5 @@ Fabric SQL database doesn't support the Azure SQL Database elastic pools concept
 ## Related content
 
 - [Frequently asked questions for SQL database in Microsoft Fabric](faq.yml)
-- [What's new in Fabric Databases](../../fundamentals/whats-new.md#sql-database-in-microsoft-fabric)
 - [Engage with the Fabric Community for SQL database](https://community.fabric.microsoft.com/t5/SQL-database/bd-p/db_general_discussion)  
 - [What is the SQL analytics endpoint for a SQL database in Fabric?](sql-analytics-endpoint.md)

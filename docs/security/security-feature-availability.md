@@ -2,10 +2,10 @@
 title: Fabric security features availability
 description: Learn about the support status of the Fabric security features Workspace private links, Customer managed keys, and Outbound access protection for various Fabric workloads and items. Find out if items are currently supported in preview or general availability.
 #customer intent: As a Fabric security admin or decision-maker, I want to learn if certain security features are supported for specific workload items.
-author: msmimart
-ms.author: mimart
+author: teddyberco
+ms.author: tebercov
 ms.reviewer: mimart
-ms.date: 07/08/2026
+ms.date: 10/02/2026
 ms.topic: concept-article
 ---
 
@@ -24,7 +24,7 @@ The following table shows the support status for each Fabric item. A check mark 
 | Workload | Item type | Workspace private links | Customer managed keys | Outbound access protection |
 |--|--|:--:|:--:|:--:|
 | **Data Engineering** | Lakehouse | ✓ | ✓ | ✓ |
-|  | Lakehouse SQL Endpoint | ✓ | ✓ | ✓ |
+|  | Lakehouse SQL analytics endpoint | ✓ | ✓ | ✓ |
 |  | Notebook | ✓ | ✓ | ✓ |
 |  | Spark Job Definition | ✓ | ✓ | ✓ |
 |  | Environment | ✓ | ✓ | ✓ |
@@ -39,22 +39,25 @@ The following table shows the support status for each Fabric item. A check mark 
 |  | Vnet data gateway | ✓ | - | ✓ |
 |  | On-premises data gateway: Pipeline/Copy Job | ✓ | - | ✓ |
 |  | On-premises data gateway: Dataflow Gen2 | -| - | ✓ |
-|  | Data Workflow | - | - | - |
+|  | Data Workflow (previously Airflow) | - | - | - |
 |  | Data Build Tool job | - | - | - |
 | **Data Science** | ML Model | ✓ | ✓ | ✓ |
 |  | Experiment | ✓ | ✓ | ✓ |
 |  | Data Agent | ✓ | - | Preview |
-| **Data Warehouse** | SQL Endpoint | ✓ | ✓ | ✓ |
+| **Data Warehouse** | SQL analytics endpoint | ✓ | ✓ | ✓ |
 |  | Warehouse | ✓ | ✓ | ✓ |
 |  | Warehouse with EDPE | - | - | - |
 | **Developer Experience** | API for GraphQL | - | ✓ | - |
 |  | Deployment Pipeline |  | - | ✓ |
 |  | Git Integration | ✓ | - | ✓ |
 |  | Variable Library | ✓ | - | ✓ |
+|  | Deployment Plan | - | - | ✓ |
 | **Governance and Security** | Sensitivity Label | - | - | - |
 |  | Share item | - | - | - |
-| **Fabric IQ** | Graph model  | - | - | Preview |
-|  | Graph queryset | - | - | Preview |
+| **Fabric IQ** | Graph model  | - | - | ✓ |
+|  | Graph queryset | - | - | ✓ |
+|  | Ontology | - | - | - |
+|  | Operations agent | - | - | Preview |
 | **Industry Solutions** | Healthcare data solutions | - | ✓ | - |
 |  | Sustainability Solution | - | ✓ | - |
 |  | Retail Solution | - | ✓ | - |
@@ -64,6 +67,7 @@ The following table shows the support status for each Fabric item. A check mark 
 |  | Mirrored Azure Databricks Catalog | - | - | - |
 |  | Mirrored Azure SQL Database | ✓ | ✓ | ✓ |
 |  | Mirrored Azure SQL Managed Instance | ✓ | ✓ | ✓ |
+|  | Mirrored Azure Monitor | - | - | Preview |
 |  | Mirrored Dataverse | - | - | - |
 |  | Mirrored Google Bigquery | - | ✓ | ✓ |
 |  | Mirrored Oracle | - | ✓ | ✓ |
@@ -73,10 +77,15 @@ The following table shows the support status for each Fabric item. A check mark 
 |  | Mirrored SQL Server 2016-2022 | - | ✓ | ✓ |
 |  | Mirrored SQL Server 2025 | ✓ | ✓ | ✓ |
 |  | Open Mirroring | ✓ | ✓ | ✓ |
-| **Fabric Databases** | SQL database in Fabric |  | ✓ | - |
+|  | Mirrored CONNECT by AVEVA | - | - | Preview |
+|  | Mirrored AWS Glue Catalog | - | - | Preview |
+|  | Mirrored Dremio Catalog | - | - | Preview |
+|  | Mirrored Sentinel Catalog | - | - | Preview |
+|  | Mirrored Google Lakehouse runtime catalog | - | - | Preview |
+| **Fabric Databases** | SQL database in Fabric | Preview | ✓ | - |
 |  | Cosmos DB |  | - | - |
-|  | Snowflake database | - | - | - |
-| **OneLake** | Shortcut | ✓ | ✓ | Preview |
+|  | Snowflake database | - | - | Preview |
+| **OneLake** | Shortcut | ✓ | ✓ | ✓ |
 | **Power BI** | Power BI Report | - | - | Preview |
 |  | Dashboard | - | - | - |
 |  | Scorecard | - | - | - |
@@ -88,21 +97,19 @@ The following table shows the support status for each Fabric item. A check mark 
 |  | Exploration | - | - | - |
 |  | Org App | - | - | - |
 |  | Metric Set | - | - | - |
-| **Real-Time Intelligence** | KQL Queryset | ✓ | Preview | Preview |
-|  | Activator | ✓ | - | Preview |
-|  | Eventhouse/KQL DB | ✓ | Preview | Preview |
+| **Real-Time Intelligence** | KQL Queryset | ✓ | Preview | ✓ |
+|  | Activator | ✓ | ✓ | ✓ |
+|  | Eventhouse/KQL DB | ✓ | Preview | ✓ |
 |  | Eventstream | ✓ | - | Preview |
-|  | Real-Time Dashboard | ✓ | Preview | Preview |
+|  | Real-Time Dashboard | ✓ | Preview | ✓ |
 |  | Anomaly detector  | - | - | - |
 |  | Digital Twin Builder | - | - | - | 
-|  | Event Schema Set  | - | - | - |
-|  | Map | - | - | - |
-|  | Operations Agent | - | - | Preview |
+|  | Event Schema Set  | - | - | ✓ |
+|  | Map | - | - | Preview |
 
 ## Related links
 
-- Learn about the new features and documentation improvements for Microsoft Fabric in [What's new in Microsoft Fabric](/fabric/fundamentals/whats-new).
+- Learn about the new features and documentation improvements for Microsoft Fabric in [What's new in Microsoft Fabric](../fundamentals/whats-new.md).
 - Follow the latest in Fabric news and features in the [Microsoft Fabric Updates Blog](https://blog.fabric.microsoft.com/).
 - Find community, marketing, case studies, and industry news in the [Microsoft Fabric Blog](https://www.microsoft.com/microsoft-fabric/blog/).
 - Follow the latest in Power BI at [What's new in Power BI?](/power-bi/fundamentals/desktop-latest-update?tabs=powerbi-service)
-- Review older updates in the [Microsoft Fabric What's New archive](/fabric/fundamentals/whats-new-archive).

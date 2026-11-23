@@ -1,6 +1,6 @@
 ---
 title: Migrate to Apache Airflow Job in Microsoft Fabric
-description: Learn to migrate from Azure workflow orchestration manager to Apache Airflow Job in Microsoft Fabric.
+description: Learn to migrate from Azure workflow orchestration manager to Apache Airflow job in Microsoft Fabric.
 ms.reviewer: abnarain
 ms.topic: how-to
 ms.date: 07/26/2024
@@ -16,10 +16,10 @@ Apache Airflow job, a transformative capability within Microsoft Fabric, redefin
 ## Key concepts in Apache Airflow job
 
 - **Instant Apache Airflow Runtime Provisioning**: Initiate a new Data Workflow and immediately access an Apache Airflow runtime to run, debug, and operationalize your DAGs.
-- **Versatile Cloud-Based Authoring (IDE)**: In addition to your existing development tools to craft Apache Airflow DAGs, you can utilize the cloud-based authoring environment provided by Apache Airflow Job for a truly cloud-native and SaaS-optimized authoring and debugging experience.
+- **Versatile Cloud-Based Authoring (IDE)**: In addition to your existing development tools to craft Apache Airflow DAGs, you can utilize the cloud-based authoring environment provided by Apache Airflow job for a truly cloud-native and SaaS-optimized authoring and debugging experience.
 - **Dynamic Auto-Scaling**: Execute hundreds of Apache Airflow tasks concurrently with our autoscaling feature, designed to mitigate job queuing and enhance performance.
 - **Intelligent Auto-pause**: Achieve cost-effectiveness by automatically pausing the Apache Airflow runtime minutes after inactivity in Data Workflows, optimizing capacity usage, particularly during development phases where continuous runtime is unnecessary.
-- **Enhanced Built-in Security**: Integrated within Microsoft Fabric, the Apache Airflow runtime supports Microsoft Entra ID, facilitating single sign-On (SSO) experiences when interfacing with Apache Airflow UIs. Additionally, it incorporates Microsoft Fabric workspace roles for robust security measures.
+- **Enhanced Built-in Security**: Integrated within Fabric, the Apache Airflow runtime supports Microsoft Entra ID, facilitating single sign-On (SSO) experiences when interfacing with Apache Airflow UIs. Additionally, it incorporates Fabric workspace roles for robust security measures.
 - **Support for Apache Airflow plugins and Libraries**: Since Data Workflows is powered by Apache Airflow, it supports all features, plugins, and libraries of Apache Airflow, offering comparable extensibility.
 - **Custom pools for greater flexibility**: When you create a new Data Workflow, the default pool used is a starter pool. This pool is instantly available and optimized to provide a server-free Apache Airflow runtime experience. It also turns off when not in use to save costs, making it perfect for development scenarios. If you require more control over the pools, you can create a custom pool. This pool allows you to specify the size, autoscale configuration, and more. Setting up your Data Workflows for production in this manner enables unattended operation with an always-on Apache Airflow runtime, supporting Apache Airflow scheduling capabilities. Custom pools can be created using the Workspace settings, ensuring your workflows are tailored to your specific needs.
 
@@ -29,7 +29,7 @@ Apache Airflow job, a transformative capability within Microsoft Fabric, redefin
 
 - [Create a new or use an existing Apache Airflow job.](../data-factory/create-apache-airflow-jobs.md)
 
-To enable customers to upgrade to Microsoft Fabric's Apache Airflow job from Azure's Workflow Orchestration Manager, consider the following two scenarios:
+To enable customers to upgrade to Fabric's Apache Airflow job from Azure's Workflow Orchestration Manager, consider the following two scenarios:
 
 **Scenario 1: You are using Blob storage in Azure Workflow Orchestration Manager.**
 
@@ -37,10 +37,10 @@ In this scenario, our recommended approach is to use Visual Studio Code for a st
 
 **Scenario 2: You are using Git sync storage in Azure Workflow Orchestration Manager**
 
-In this scenario, use the Git sync feature of Apache Airflow Job to seamlessly synchronize your GitHub repository. Similar to Azure Workflow Orchestration Manager, this feature ensures your GitHub repository stays in sync, allowing you to start developing instantly. To get started, follow the [tutorial: Synchronize your GitHub Repository in Apache Airflow Job](../data-factory/apache-airflow-jobs-sync-git-repo.md).
+In this scenario, use the Git sync feature of Apache Airflow job to seamlessly synchronize your GitHub repository. Similar to Azure Workflow Orchestration Manager, this feature ensures your GitHub repository stays in sync, allowing you to start developing instantly. To get started, follow the [tutorial: Synchronize your GitHub Repository in Apache Airflow job](../data-factory/apache-airflow-jobs-sync-git-repo.md).
 
 ## Related content
 
-- [Quickstart: Create an Apache Airflow Job](../data-factory/create-apache-airflow-jobs.md)
-- [Run Dag in Apache Airflow Job](../data-factory/create-apache-airflow-jobs.md)
-- [Apache Airflow Job workspace settings](../data-factory/apache-airflow-jobs-workspace-settings.md)
+- [Quickstart: Create an Apache Airflow job](../data-factory/create-apache-airflow-jobs.md)
+- [Run Dag in Apache Airflow job](../data-factory/create-apache-airflow-jobs.md)
+- [Apache Airflow job workspace settings](../data-factory/apache-airflow-jobs-workspace-settings.md)

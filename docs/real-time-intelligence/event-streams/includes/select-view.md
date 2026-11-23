@@ -1,9 +1,6 @@
 ---
-title: Select enhanced or standard view
-description: The include file has a note about enhanced capabilities versus standard capabilities.
+title: Legacy eventstreams
+description: This include file explains support for eventstreams created in Fabric.
 ms.topic: include
 ms.date: 05/21/2024
 ---
-
-> [!NOTE]
-> Enhanced capabilities are enabled by default when you create eventstreams. If you have eventstreams that you created via standard capabilities, those eventstreams will continue to work. You can still edit and use them as usual. We recommend that you create a new eventstream to replace standard eventstreams so that you can take advantage of additional capabilities and benefits of enhanced eventstreams.

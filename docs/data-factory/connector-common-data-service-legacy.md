@@ -14,16 +14,18 @@ ai-usage: ai-assisted
 
 This article outlines the steps to create a Common Data Service (Legacy) connection.
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
 
-The Common Data Service (Legacy) connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+## Summary
+
+The Common Data Service (Legacy) connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
 |Organizational account| n/a | √ |
 
-## Set up your connection for Dataflow Gen2
-You can connect Dataflow Gen2 to Common Data Service (Legacy) in Microsoft Fabric using Power Query connectors. Follow these steps to create your connection:
+## Set up your connection for dataflow Gen2
+You can connect dataflow Gen2 to Common Data Service (Legacy) in Fabric by using Power Query connectors. Follow these steps to create your connection:
 
 1. Check [capabilities](#capabilities) to make sure your scenario is supported.
 1. [Complete prerequisites for Common Data Service (Legacy)](#prerequisites).
@@ -32,29 +34,40 @@ You can connect Dataflow Gen2 to Common Data Service (Legacy) in Microsoft Fabri
 1. [Connect to Common Data Service (Legacy)](#connect-to-common-data-service-legacy).
 
 
-### Capabilities
+## Prerequisites
 
-[!INCLUDE [common-data-service-legacy-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/common-data-service-legacy/common-data-service-legacy-capabilities-supported.md)]
+[!INCLUDE [common-data-service-legacy-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/common-data-service-legacy/prerequisites.md)]
 
-### Prerequisites
+<a id="capabilities"></a>
 
-[!INCLUDE [common-data-service-legacy-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/common-data-service-legacy/common-data-service-legacy-prerequisites.md)]
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
+
+[!INCLUDE [common-data-service-legacy-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/common-data-service-legacy/capabilities-supported.md)]
+
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Find your Common Data Service (Legacy) URL
 
-[!INCLUDE [common-data-service-legacy-find-environment-url](~/../powerquery-repo/powerquery-docs/connectors/includes/common-data-service-legacy/common-data-service-legacy-find-environment-url.md)]
+<a id="connect-to-common-data-service-legacy"></a>
 
-### Connect to Common Data Service (Legacy)
+### Connection instructions
 
-[!INCLUDE [common-data-service-legacy-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/common-data-service-legacy/common-data-service-legacy-connect-to-power-query-online.md)]
+[!INCLUDE [common-data-service-legacy-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/common-data-service-legacy/connect-online.md)]
 
 ## Set up your connection in a pipeline
 
-Data Factory in Microsoft Fabric doesn't currently support Common Data Service (Legacy) in pipelines.
+Data Factory doesn't currently support Common Data Service (Legacy) in pipelines.
+
+## Additional information
+
+<a id="find-your-common-data-service-legacy-url"></a>
+
+[!INCLUDE [common-data-service-legacy-find-environment-url](~/../powerquery-repo/powerquery-docs/connectors/includes/common-data-service-legacy/additional-information.md)]
 
 ## Related content
 

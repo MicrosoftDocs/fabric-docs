@@ -4,22 +4,44 @@ description: Learn how eventstreams can help you capture, transform, and route r
 ms.reviewer: xujiang1
 ms.topic: concept-article
 ms.custom: sfi-image-nochange
-ms.date: 04/29/2026
+ms.date: 09/02/2026
 ms.search.form: Eventstream Overview
 ai-usage: ai-assisted
 ---
 
 # Overview of Microsoft Fabric eventstreams
 
-You can use the eventstreams feature in Microsoft Fabric Real-Time Intelligence to bring real-time events into Fabric, transform them, and then send them to various destinations without writing any code. You create an eventstream, add event data sources to the stream, optionally add transformations to transform the event data, and then send the data to supported destinations.
+Use the eventstreams feature in Microsoft Fabric Real-Time Intelligence to bring real-time events into Fabric, transform them, and then send them to various destinations without writing any code. You create an eventstream, add event data sources to the stream, optionally add transformations to transform the event data, and then send the data to supported destinations.
 
 Also, with Apache Kafka endpoints available for eventstreams, you can send or consume real-time events by using the Kafka protocol.
 
+## Two ways to build an eventstream
+
+When you create a new event stream, you can choose between two experiences:
+
+- **Existing eventstream experience.** The eventstream capabilities available
+  today continue to work as before. See
+  [Create an Eventstream in Microsoft Fabric](./create-manage-an-eventstream.md).
+- **Schema-aware eventstream (Preview).** An opt-in experience for ingesting,
+  understanding, and processing schematized and unschematized events. It
+  includes enhanced data preview, the Classifier workflow, Event SchemaSet
+  integration, and mixed processing for schematized, classified, and untyped
+  events. See
+  [Create a schema-aware Eventstream (Preview)](./create-schema-aware-eventstream.md).
+
+To compare the capabilities and decide whether to opt in, see
+[Schema-aware Eventstreams overview (Preview)](./schema-aware-eventstreams-overview.md).
+The rest of this article describes the existing eventstream experience.
+
 ## Bring events into Fabric
 
-Eventstreams provide you with source connectors to fetch event data from the various sources. More sources are available when you enable **Enhanced capabilities** at the time of creating an eventstream.
+Eventstreams provide source connectors to fetch event data from various sources.
 
-[!INCLUDE [supported-sources-enhanced](./includes/supported-sources-enhanced.md)]
+[!INCLUDE [supported-sources](./includes/supported-sources.md)]
+
+You can also use an [Azure Event Hubs shortcut (preview)](event-hubs-shortcuts-overview.md) to make a customer-owned event hub the default stream of an eventstream, without copying its data into Eventstreams. Shortcuts have separate approval, topology, and networking requirements.
+
+If a built-in connector isn't available for your source, use a custom stream connector (preview) to upload a Kafka Connect source connector plugin. Upload the package from Real-Time hub or a custom stream connector item in your workspace, and then configure the connector and add it to an eventstream. For more information, see [Add a custom stream connector to an eventstream](./add-custom-stream-connector.md).
 
 ## Process events
 
@@ -27,29 +49,40 @@ An end-to-end data flow diagram in an eventstream can give you a comprehensive u
 
 The event processor editor is a drag-and-drop experience. It's an intuitive way to create your event data processing, transforming, and routing logic without writing any code.
 
-[!INCLUDE [supported-transformations-enhanced](./includes/supported-transformations-enhanced.md)]
+[!INCLUDE [supported-transformations](./includes/supported-transformations.md)]
 
 In addition to the no-code transformations, eventstreams support a [SQL operator (preview)](process-events-using-sql-code-editor.md) for code-first stream processing. Use the SQL operator to define custom transformation logic by using SQL expressions, including windowing, joins, and aggregations. You can choose between no-code transformations and SQL-based authoring within an eventstream to build complex streaming logic.
 
-If you enabled **Enhanced capabilities** while creating an eventstream, the transformation operations are supported for all destinations. The derived stream acts as an intermediate bridge for some destinations, like a custom endpoint or Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]). If you didn't enable **Enhanced capabilities**, the transformation operations are available only for the lakehouse and eventhouse (event processing before ingestion) destinations.
+While creating an eventstream, the transformation operations are supported for all destinations. The derived stream acts as an intermediate bridge for some destinations, like a custom endpoint or Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]).
 
 ## Route events to destinations
 
 The Fabric eventstreams feature supports sending data to the following supported destinations.
 
-[!INCLUDE [supported-destinations-enhanced](./includes/supported-destinations-enhanced.md)]
+[!INCLUDE [supported-destinations](./includes/supported-destinations.md)]
 
 You can attach multiple destinations in an eventstream to simultaneously receive data from your eventstreams without the eventstreams interfering with each other.
 
-:::image type="content" source="./media/overview/multiple-destinations-enhanced.png" alt-text="Screenshot that shows an overview of an eventstream item with enhanced capabilities." lightbox="./media/overview/multiple-destinations-enhanced.png" :::
-
+:::image type="content" source="./media/overview/multiple-destinations.png" alt-text="Screenshot of an overview of an eventstream item with multiple destinations." lightbox="./media/overview/multiple-destinations.png" :::
 
 ## Schema management
 
 Eventstreams provide schema management capabilities to help you govern and validate the structure of your streaming data:
 
-- **Schema Registry (preview)**: Register and version schemas centrally by using the Fabric Schema Registry to manage schema evolution across your eventstreams. For more information, see [Use event schemas in eventstreams](../schema-sets/use-event-schemas.md).
-- **Multiple schema inferencing (preview)**: Infer and work with multiple schemas within a single eventstream. Design diverse transformation paths by selecting the appropriate inferred schema for each path. For more information, see [Enhance event processing by using multiple schema inferencing](process-events-with-multiple-schemas.md).
+- **Schema-aware Eventstreams (Preview)**: An opt-in experience that processes
+  schematized and unschematized events in one pipeline. It includes the
+  Classifier workflow, Event SchemaSet integration, enhanced data preview, and
+  mixed processing for schematized, classified, and untyped events. For more
+  information, see
+  [Schema-aware Eventstreams overview (Preview)](./schema-aware-eventstreams-overview.md).
+- **Schema Registry**: Register, import, version, and compare schemas centrally by using generally available event schema sets. For more information, see [Schema Registry overview](../schema-sets/schema-registry-overview.md).
+- **Multiple schema inferencing (preview)**: In the existing Eventstream
+  experience, infer and work with multiple schemas within one Eventstream.
+  Design transformation paths by selecting the inferred schema for each path.
+  For more information, see
+  [Enhance event processing by using multiple schema inferencing](process-events-with-multiple-schemas.md).
+  For unschematized events with different shapes in a schema-aware Eventstream,
+  see [Classify unschematized events (Preview)](./process-events-with-classifier.md).
 - **Confluent Schema Registry–based deserialization (preview)**: When you ingest data from Confluent Cloud for Apache Kafka, eventstreams can use Confluent Schema Registry to deserialize schema-encoded messages, improving interoperability with Confluent-based streaming ecosystems.
 
 These features improve schema governance and interoperability when you consume varied streams in your eventstreams.
@@ -75,7 +108,7 @@ DeltaFlow (Preview) is available with the following CDC source connectors:
 To use DeltaFlow, choose **Analytics-ready events & auto-updated schema** during the schema handling step when setting up a CDC connector as an Eventstream source. To learn how DeltaFlow transforms raw CDC events into analytics-ready output, see [DeltaFlow output transformation](./delta-flow-output-transformation.md).
 
 > [!NOTE]
-> We recommend that you use the Fabric eventstreams feature with at least four [capacity](../../enterprise/licenses.md#capacity) units: F4.
+> Use the Fabric eventstreams feature with at least four [capacity](../../enterprise/licenses.md#capacity) units: F4.
 
 ## Apache Kafka on Fabric eventstreams
 
@@ -105,5 +138,4 @@ Fabric eventstreams have the following general limitations. Before you work with
 ## Related content
 
 - [Create an eventstream in Microsoft Fabric](./create-manage-an-eventstream.md)
-
-
+- [Enrich events with reference data](./enrich-events-with-reference-data.md)

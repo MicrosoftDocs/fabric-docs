@@ -10,7 +10,7 @@ ms.custom:
 
 # Connect to Binary format in dataflows
 
-A Binary format connector isn't currently supported in Dataflow Gen2.
+Dataflow Gen2 doesn't currently support a Binary format connector.
 
 ## Related content
 

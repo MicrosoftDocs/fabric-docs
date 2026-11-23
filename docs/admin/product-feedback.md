@@ -13,7 +13,7 @@ Product [feedback](../fundamentals/feedback.md) allows users to give Microsoft f
 
 ## Disable product feedback
 
-Product feedback is configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](about-tenant-settings.md).
+Configure product feedback in **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**. For information about how to get to and use tenant settings, see [About tenant settings](about-tenant-settings.md).
 
 To disable product feedback, follow the following steps:
 

@@ -13,6 +13,8 @@ ms.search.form: Source and Destination
 # Add Confluent Cloud for Apache Kafka source to an eventstream
 This article shows you how to add Confluent Cloud for Apache Kafka source to an eventstream. 
 
+[!INCLUDE [schema-aware-source-callout](./includes/schema-aware-source-callout.md)]
+
 [!INCLUDE [confluent-kafka-source-description-prerequisites](./includes/connectors/confluent-kafka-source-description-prerequisites.md)]
 
 ## Launch the Select a data source wizard

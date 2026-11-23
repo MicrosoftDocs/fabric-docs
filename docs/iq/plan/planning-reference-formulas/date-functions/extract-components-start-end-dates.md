@@ -7,7 +7,7 @@ ms.search.form: Date functions
 #customer intent: As a user, I want to extract the day, month, or year from a date, so that I can group and analyze my data by specific time components. I also want to know how to extract the start and end dates of a period range.
 ---
 
-# Date functions: Extract date components and find start and end dates
+# Extract date components and find start and end dates
 
 In this article, you learn how to extract day, month, and year values from dates. You also learn how to find the start or end of calendar periods and generate date ranges.
 

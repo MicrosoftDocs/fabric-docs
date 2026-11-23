@@ -43,7 +43,7 @@ items:
   - name: Find items with Fabric Home
     href: fabric-home.md
   - name: Find items with OneLake catalog
-    href: ../governance/onelake-catalog.md
+    href: ../governance/onelake-catalog-overview.md
   - name: Complete end-to-end tutorials
     href: end-to-end-tutorials.md
 
@@ -88,6 +88,8 @@ items:
     href: apply-sensitivity-labels.md
   - name: Schedule recurring jobs
     href: job-scheduler.md
+  - name: 2026 Canadian Time Zone Updates
+    href: canadian-time-zone-changes.md
   - name: Delta Lake in Microsoft Fabric overview
     href: delta-lake-overview.md
   - name: Use Delta Lake interoperability
@@ -123,6 +125,21 @@ items:
       href: building-reports.md
       
 
+- name: Semantic views (preview)
+  items:
+  - name: Overview
+    href: semantic-views-overview.md
+  - name: Create a semantic view
+    href: semantic-views-create.md
+  - name: YAML syntax reference
+    href: semantic-views-yaml-reference.md
+  - name: Publish a semantic view
+    href: semantic-views-publish.md
+  - name: Consume semantic views
+    href: semantic-views-consume.md
+  - name: Tutorial - Build a semantic view
+    href: semantic-views-tutorial.md
+
 - name: Use Copilot and AI
   items:
   - name: Understand Copilot in Fabric
@@ -133,6 +150,8 @@ items:
     href: copilot-fabric-glossary.md
   - name: Enable Copilot in Fabric
     href: copilot-enable-fabric.md
+  - name: Understand OpenAI as a subprocessor
+    href: copilot-openai-subprocessor.md
   - name: Integrate Copilot in Power BI
     href: /power-bi/create-reports/copilot-integration?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/breadcrumb/toc.json
   - name: Use Copilot with semantic models
@@ -166,7 +185,7 @@ items:
   - name: Use Copilot across experiences
     items:
     - name: Use Copilot for Data Factory
-      href: copilot-fabric-data-factory.md?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/breadcrumb/toc.json
+      href: ../data-factory/copilot-fabric-data-factory.md?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/breadcrumb/toc.json
     - name: Use Copilot for Data Warehouse
       href: ../data-warehouse/copilot.md?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/breadcrumb/toc.json
     - name: Use Copilot for Real-Time Intelligence
@@ -271,5 +290,3 @@ items:
   items:
     - name: Use official Fabric icons
       href: icons.md
-    - name: Browse the what's new archive
-      href: whats-new-archive.md

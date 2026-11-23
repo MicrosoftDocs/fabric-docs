@@ -4,9 +4,10 @@ description: Discover how Microsoft Fabric's Business Events enable real-time re
 #customer intent: As a developer, I want to understand what business events are so that I can determine their relevance to my organization's needs.
 ms.date: 02/22/2026
 ms.topic: overview
+ai-usage: ai-assisted
 ---
 
-# Business events overview (Preview)
+# Business events overview
 
 **Business events** is a capability in Fabric Real-Time Intelligence that empowers teams to define, explore, and act on business signals in real time, accelerating event‑driven application development and faster decision‑making. 
 
@@ -31,9 +32,6 @@ Once published, these events are available in Real-Time hub, where you can take 
 The following diagram shows how a manufacturing system detects abnormal vibration using a Spark Notebook, analyzes it, and publishes a `VibrationCriticalDetected` business event that triggers custom business logic in a User Data Function (UDF) through Activator.
 
 :::image type="content" source="media/business-events-overview/business-event-workflow.png" alt-text="Diagram showing a manufacturing system detecting abnormal vibration using a Spark Notebook, analyzing it, and publishing a VibrationCriticalDetected business event that triggers custom business logic in a User Data Function through Activator." lightbox="media/business-events-overview/business-event-workflow.png":::
-
-> [!IMPORTANT]
-> This feature is in [preview](../../fundamentals/preview.md).
 
 ## What is a business event?
 
@@ -86,6 +84,14 @@ In Microsoft Fabric:
 - **Eventhouse** automatically stores every published business event, enabling [KQL queries, historical analysis, and Real-Time Dashboards](business-events-eventhouse.md).
 
 This model lets you add new consumers - such as analytics flows, pipelines, automations, or external integrations - without changing or coordinating with the original publisher. New consumers can subscribe to existing events at any time, and the architecture supports scalable, parallel processing so multiple consumers can act on the same event simultaneously without affecting publisher code.
+
+Workspace private links can affect cross-workspace business event publishing and consumption. For Business events, the source workspace is the workspace that contains the Event Schema Set. If that workspace blocks public access, publishers and consumers in other workspaces need a private link to the source workspace. For more information, see [Workspace private links for Azure, Fabric, and Business events](../workspace-private-links-real-time-events.md).
+
+## Regional requirements
+
+[!INCLUDE [business-event-publisher-region-note](../includes/business-event-publisher-region-note.md)]
+
+[!INCLUDE [business-event-consumer-region-note](../includes/business-event-consumer-region-note.md)]
 
 ## Consistent modeling across the organization
 

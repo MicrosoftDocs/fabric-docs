@@ -1,25 +1,25 @@
 ---
-title: Create an Ontology Agent with Foundry IQ
+title: Create an Ontology (Preview) Agent in Foundry IQ
 description: Learn how to create a Foundry IQ agent that is grounded in an ontology (preview). The agent can answer natural-language questions using the ontology as a single source of truth.
 ms.date: 07/15/2026
 ms.topic: how-to
 ---
 
-# Build a Foundry IQ agent grounded in an ontology
+# Build a Foundry IQ agent grounded in an ontology (preview)
 
 [Microsoft Foundry](/azure/foundry/what-is-foundry) agents can answer natural-language questions. Enhance their ability to give trustworthy, business-aware answers by grounding them in your organization's data. Foundry IQ provides that grounding through reusable knowledge sources and knowledge bases that an agent can query at runtime.
 
-*Fabric IQ Ontology* is a semantic layer that lives in OneLake. It describes your business entities, their relationships, business rules and the underlying tables that back them. By exposing an ontology as a Foundry IQ knowledge source, you give the agent a semantically rich, governed view of your Fabric data.
+*Ontology (preview) in Fabric* is a semantic layer that lives in OneLake. It describes your business entities, their relationships, business rules, and the underlying tables that back them. By exposing an ontology (preview) as a Foundry IQ knowledge source, you give the agent a semantically rich, governed view of your Fabric data.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
 In this article, you:
 
-1. Create a knowledge source in Foundry IQ that points to an existing Fabric IQ Ontology item in OneLake.
+1. Create a knowledge source in Foundry IQ that points to an existing ontology item in OneLake.
 1. Wrap that source in a knowledge base and validate it by running test queries through the Foundry APIs.
 1. Build a Foundry agent that uses the knowledge base, and chat with it from the built-in **Chat** pane.
 
-After completing the steps in this article, you have a custom agent that answers business questions using your ontology as the single source of truth.
+After completing the steps in this article, you have a custom agent that answers business questions by using your ontology as the single source of truth.
 
 ## Prerequisites
 
@@ -28,7 +28,7 @@ Before you begin, make sure you have:
 * An active Azure subscription with permission to create Foundry resources.
 * A Microsoft Fabric workspace that contains at least one ontology (preview) item. For more information, see [Create ontology (preview) item](tutorial-1-create-ontology.md#create-ontology-preview-item).
 * Complete the [Foundry quickstart](/azure/foundry/quickstarts/get-started-code) to provision a Foundry project and a sample agent. The steps in this article assume that project already exists.
-* Ensure that the AI Search resource has the *Search Index Data Contributor* role for the Foundry Project. To assign this role, go to the [Azure portal](https://portal.azure.com) and open IAM for the AI Search resource. Follow the [Assign roles for development](/azure/search/search-security-rbac?tabs=roles-portal-admin%2Croles-portal%2Croles-portal-query%2Ctest-portal%2Ccustom-role-portal#assign-roles-for-development) instructions to assign the *Search Index Data Contributor* role to the managed identity of your Foundry project.
+* Ensure that the Azure AI Search resource has the *Search Index Data Contributor* role for the Foundry project. To assign this role, go to the [Azure portal](https://portal.azure.com) and open IAM for the Azure AI Search resource. Follow the [Assign roles for development](/azure/search/search-security-rbac?tabs=roles-portal-admin%2Croles-portal%2Croles-portal-query%2Ctest-portal%2Ccustom-role-portal#assign-roles-for-development) instructions to assign the *Search Index Data Contributor* role to the managed identity of your Foundry project.
 
     >[!IMPORTANT]
     >If you don't assign this role, the agent can't access the ontology and you see a 403 error in the Foundry agent.
@@ -53,7 +53,7 @@ Before you begin, make sure you have:
 
    :::image type="content" source="media/how-to-create-agent-foundry-iq/create-knowledge-source.png" alt-text="Screenshot of Fabric IQ knowledge source in Foundry." lightbox="media/how-to-create-agent-foundry-iq/create-knowledge-source.png":::
 
-1. Give the knowledge base a **Name**, **Description** and other model and retrieval configurations. The description is used by the agent at runtime to decide when to consult this knowledge base, so write it from the agent's point of view.
+1. Give the knowledge base a **Name**, **Description**, and other model and retrieval configurations. The agent uses the description at runtime to decide when to consult this knowledge base, so write it from the agent's point of view.
 
    Example **Answer instructions**:
 
@@ -83,9 +83,9 @@ Before you begin, make sure you have:
 
    :::image type="content" source="media/how-to-create-agent-foundry-iq/create-agent.png" alt-text="Screenshot of creating the Foundry agent." lightbox="media/how-to-create-agent-foundry-iq/create-agent.png":::
 
-1. Next, attach the knowledge base. In the agent's **Knowledge** section, choose **+ Add knowledge** and select the knowledge base you created earlier during [step 1](#step-1-create-the-knowledge-source-and-knowledge-base). The agent now routes relevant questions to the Fabric IQ ontology automatically.
+1. Next, attach the knowledge base. In the agent's **Knowledge** section, choose **+ Add knowledge** and select the knowledge base you created earlier during [step 1](#step-1-create-the-knowledge-source-and-knowledge-base). The agent now routes relevant questions to the ontology automatically.
 
-1. Review the configuration and save the agent. Foundry provisions the agent and make it available for testing and API calls.
+1. Review the configuration and save the agent. Foundry provisions the agent and makes it available for testing and API calls.
 
    :::image type="content" source="media/how-to-create-agent-foundry-iq/agent.png" alt-text="Screenshot of the Foundry agent after it's created." lightbox="media/how-to-create-agent-foundry-iq/agent.png":::
 
@@ -103,7 +103,7 @@ Before you begin, make sure you have:
 
 ## Next steps
 
-* Add additional knowledge sources (documents, web, other ontologies) to the same knowledge base to broaden the agent's coverage.
-* Call the agent from your own application using the [Foundry agents SDK or REST API](/azure/foundry/agents/concepts/runtime-components).
+* Add more knowledge sources (documents, web, other ontologies) to the same knowledge base to broaden the agent's coverage.
+* Call the agent from your own application by using the [Foundry agents SDK or REST API](/azure/foundry/agents/concepts/runtime-components).
 * Set up evaluations to monitor answer quality as the ontology evolves.
 * Use the [Ontology MCP](how-to-use-ontology-mcp-server.md) directly to build other agentic experiences.

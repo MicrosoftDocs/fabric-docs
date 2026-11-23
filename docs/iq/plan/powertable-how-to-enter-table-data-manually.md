@@ -1,7 +1,7 @@
 ---
 title: Build a Table App Using PowerTable by Entering Data Manually
 description: Learn how to use PowerTable to create a collaborative table app with live synchronization by entering data manually.
-ms.date: 04/10/2026
+ms.date: 09/10/2026
 ms.topic: how-to
 #customer intent: As a user, I want step-by-step instructions to create a table app using PowerTable by entering data manually.
 ---
@@ -10,11 +10,16 @@ ms.topic: how-to
 
 This article explains how to create a table app using PowerTable by entering the data manually from scratch. You'll enter data to create a table in a database, then write back any subsequent changes to the same database using the PowerTable sheet.
 
+> [!NOTE]
+> * You can also create a table by uploading data from an Excel or CSV file. For more information, see [Create a table app with PowerTable sheets](powertable-how-to-create-table-app.md).
+> * To connect an existing database table to a PowerTable sheet and create a table app, see [Connect to a database](powertable-how-to-connect-existing-database.md).
+> * To learn how to connect to a semantic model, see [Connect to a semantic model](powertable-how-to-connect-semantic-model.md).
+
 ## Prerequisites
 
 Before you begin, make sure that you have the following prerequisites in place:
 
-* Connections established to the [Fabric SQL database](planning-how-to-create-database-connection.md) and the [semantic model](planning-how-to-create-semantic-model-connection.md) that contain the data for your PowerTable.
+* Connection established to the [Fabric SQL database](planning-how-to-create-database-connection.md) that stores the data for your PowerTable app.
 * [A plan item](planning-how-to-get-started.md#create-plan-item) created in your Fabric workspace.
 
 [!INCLUDE [new PowerTable sheet](includes/create-powertable.md)]
@@ -24,7 +29,7 @@ Before you begin, make sure that you have the following prerequisites in place:
 To create a new table in the database and enter the data manually, follow these steps:
 
 1. Select **New Table**.
-1. Choose the database schema and enter a name for the table.
+1. Choose the database schema and enter a name for the table. Currently, table names support English characters only.
 1. Select **Enter Data Manually** in the **Import Data** section.
 1. Select **Next**.
 
@@ -33,6 +38,10 @@ To create a new table in the database and enter the data manually, follow these 
 1. Configure your table by adding the column name, primary key, and other relevant details like length, precision, scale, and so on, wherever applicable.
 
     :::image type="content" source="media/powertable-how-to-enter-table-data-manually/enter-column-name.png" alt-text="Screenshot of entering the first column name." lightbox="media/powertable-how-to-enter-table-data-manually/enter-column-name.png":::
+
+    > [!NOTE]
+    > * Currently, column names support English characters only. To display non-English column names, scroll to the right in the column configuration table and set the **Display Name** property to Japanese or another non-English label to display localized labels in PowerTable.
+    > * If your data contains Japanese or other non-English text, define those columns' input type as `NVARCHAR` so PowerTable supports and renders non-English characters correctly.
 
 1. Select **Add Column** to add a new column. Use the bin icon to delete a column.
 1. Select **Finish** after entering all the column details.

@@ -1,27 +1,23 @@
 ---
-title: Prerequisites for Plan
-description: This article lists the prerequisites for using plan.
+title: Prerequisites for Planning
+description: This article lists the prerequisites for using planning in Fabric.
 ms.topic: overview
-ms.date: 07/28/2026
+ms.date: 09/23/2026
 ai-usage: ai-assisted
-#customer intent: As a user, I want to know the prerequisites for using Plan.
+#customer intent: As a user, I want to know the prerequisites for using planning.
 ---
 
-# Prerequisites for plan
+# Prerequisites for planning in Fabric
 
-This article lists all the required prerequisites, tenant settings, and capacity settings that must be configured to use plan.
+This article lists all the required prerequisites, tenant settings, and capacity settings that must be configured to use planning in Fabric.
 
 ## Tenant settings
 
-[Fabric administrators](../../admin/roles.md) can grant access to these settings in the [admin portal](../../admin/admin-center.md) under [Tenant settings](../../admin/tenant-settings-index.md).
+[Fabric administrators](../../admin/roles.md) can grant access to these settings in **OneLake catalog** > **Govern** > **Configurations** > [**Tenant settings**](../../admin/tenant-settings-index.md).
 
 1. Under [Integration settings](../../admin/tenant-settings-index.md#integration-settings), enable **Allow XMLA endpoints and Analyze in Excel with on-premises semantic models**.
 
    :::image type="content" source="media/overview-prerequisites/allow-xmla-endpoints.png" alt-text="Screenshot of enabling allow xmla endpoints and analyze in excel with on-premises semantic models.":::
-
-1. Under **Developer settings**, enable [Embed content in apps](../../admin/service-admin-portal-developer.md#embed-content-in-apps).
-
-   :::image type="content" source="media/overview-prerequisites/embed-content-in-apps.png" alt-text="Screenshot of enabling embed content in apps.":::
 
 1. For service principal-based authentication, enable [Service principals can call Fabric public APIs](../../admin/service-admin-portal-developer.md#service-principals-can-call-fabric-public-apis) under **Developer settings**.
 
@@ -29,20 +25,16 @@ This article lists all the required prerequisites, tenant settings, and capacity
 
 ## Capacity settings
 
-* Semantic models used in plan must be hosted on supported capacities, such as
+* Semantic models used in planning must be hosted on supported capacities, such as
 
    * **Power BI Premium capacities (P1, P2, and higher)**
    * **Microsoft Fabric capacities (F SKUs)**
 
-* Plan scenarios that rely on XMLA endpoints and embed tokens require supported **Microsoft Fabric capacities (F SKUs)** or **Power BI Premium capacities (P1–P5)**. Power BI Pro and Power BI Premium Per User (PPU) aren't supported for these scenarios. Some lower-capacity SKUs can also have XMLA and memory limitations that prevent supported usage.
+* Planning scenarios that rely on XMLA endpoints require supported **Microsoft Fabric capacities (F SKUs)** or **Power BI Premium capacities (P1–P5)**. Power BI Pro and Power BI Premium Per User (PPU) aren't supported for these scenarios. Some lower-capacity SKUs can also have XMLA and memory limitations that prevent supported usage.
 
-* In the Power BI Admin portal, under **Capacity settings**, ensure that the **XMLA Endpoint** setting is configured as **Read Only** or **Read Write**.
+* In **OneLake catalog** > **Govern** > **Capacities**, ensure that the **XMLA Endpoint** setting is configured as **Read Only** or **Read Write**.
 
     :::image type="content" source="media/overview-prerequisites/set-xmla-read-only.png" alt-text="Screenshot of setting xmla endpoints as read only or read write.":::
-
-## Semantic model connection owner permissions
-
-The shared cloud connection owner, whether a user account or service principal, must have a workspace **Member** or **Admin** role.
 
 ## Optional: Database connections
 

@@ -44,7 +44,7 @@ Use the following table to quickly identify which fields appear for each load sc
 | Field | When you see it | What to enter or select | Validation and behavior |
 |---|---|---|---|
 | **Schema** (dropdown) | New table and existing table paths | Destination lakehouse schema namespace | Select the namespace where the table is created or updated. |
-| **New table name** | New table paths only | Name for the destination Delta table | Use alphanumeric characters and underscores (`_`) only, up to 256 characters. Dashes (`-`) and spaces aren't allowed. |
+| **New table name** | New table paths only | Name for the destination Delta table | Use lowercase alphanumeric characters and underscores (`_`) only, up to 256 characters. Dashes (`-`) and spaces aren't allowed. |
 | **Load mode** (**Append** or **Overwrite**) | Existing table paths only | How to load into the selected existing table | Choose **Append** to add rows, or **Overwrite** to replace existing data. |
 | **File type** | Folder paths only | Folder load format (**CSV** or **Parquet**) | All files in one folder load action must match the selected file type. |
 | **Column header** (checkbox) | CSV paths only | Whether to use the first row as column names | If checked, Fabric uses first-row values as column names. If not checked (or headers don't exist), Fabric assigns defaults such as `_c0`, `_c1`, `_c2`. |

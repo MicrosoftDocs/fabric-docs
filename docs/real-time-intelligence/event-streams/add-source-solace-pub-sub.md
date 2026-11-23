@@ -1,14 +1,14 @@
 ---
 title: Add Solace PubSub+ as source to an eventstream
-description: Learn how to add a Solace PubSub+ source to an eventstream. This feature is currently in preview.
+description: Learn how to add a Solace PubSub+ source to an eventstream.
 ms.reviewer: xujiang1
 ms.topic: how-to
-ms.date: 04/03/2026
+ms.date: 09/18/2026
 ms.search.form: Source and Destination
 ms.custom: reference_regions
 ---
 
-# Add Solace PubSub+ source to an eventstream (preview)
+# Add Solace PubSub+ source to an eventstream
 This article shows you how to add a Solace PubSub+ source to an eventstream. 
 
 [!INCLUDE [solace-pub-sub-source-connector-prerequisites](./includes/connectors/solace-pub-sub-source-connector-prerequisites.md)]

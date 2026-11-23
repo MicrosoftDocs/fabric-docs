@@ -1,8 +1,8 @@
 ---
 title: Overview of managed private endpoints for Microsoft Fabric
 description: Learn about managed private endpoints for Microsoft Fabric.
-author: msmimart
-ms.author: mimart
+author: teddyberco
+ms.author: tebercov
 ms.reviewer: karthikeyana
 ms.topic: concept-article
 ms.custom: references_regions, sfi-image-nochange
@@ -26,7 +26,7 @@ Managed private endpoints are feature that allows secure and private access to d
 :::image type="content" source="./media/security-managed-private-endpoints-overview/managed_private_endpoint.gif" alt-text="Animated illustration showing the process of creating a managed private endpoint in Microsoft Fabric.":::
 
 > [!NOTE]
-> Managed private endpoints are supported for Fabric trial capacity and all Fabric F SKU capacities.
+> Managed private endpoints are supported on Microsoft Fabric capacities only, including Trial Capacities.
 
 For more information about supported data sources for managed private endpoints in Fabric, see [Supported data sources](./security-managed-private-endpoints-create.md#supported-data-sources).
 

@@ -5,7 +5,8 @@ ms.reviewer: jingzh
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.search.form: Microsoft Spark utilities, Microsoft NotebookUtils
-ms.date: 03/31/2025
+ms.date: 11/19/2026
+ai-usage: ai-assisted
 ---
 
 # NotebookUtils (former MSSparkUtils) for Fabric
@@ -32,6 +33,8 @@ NotebookUtils provides the following modules. Select a module to see detailed do
 | [Session management](notebookutils/notebookutils-session-management.md) | `notebookutils.session` | Stop interactive sessions and restart the Python interpreter. |
 | [User Data Function (UDF) utilities](notebookutils/notebookutils-user-data-function.md) | `notebookutils.udf` | Retrieve and invoke User Data Functions from notebooks. |
 | [Variable library utilities](notebookutils/notebookutils-variable-library.md) | `notebookutils.variableLibrary` | Access centrally managed variables and configuration from Variable Library items. |
+| [Business event utilities](notebookutils/notebookutils-business-events.md) | `notebookutils.businessEvents` | Publish analytical insights, failure detections, and custom business rules as actionable business events. |
+| [Power Query utilities (preview)](notebookutils/notebookutils-power-query.md) | `notebookutils.powerquery` | Run Power Query M queries through existing Fabric connections, including gateway-backed connections for supported on-premises sources, and load results into DataFrames. |
 
 To get an overview of all available modules and methods, run:
 

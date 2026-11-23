@@ -17,6 +17,7 @@ AI Functions work out of the box with default model settings. Use these settings
 >
 > - AI Functions are for use in [Fabric Runtime 1.3 (Spark 3.5), (Python 3.11)](../../../data-engineering/runtime-1-3.md) and later.
 > - Review the prerequisites and [setup steps](../overview.md#set-up-ai-functions) required for your runtime.
+> - For Fabric Runtime 2.0 with Spark 4.1, follow the [temporary pandas setup](../runtime-2-0-workarounds.md#configure-pandas-ai-functions).
 > - Although the underlying model can handle several languages, most of the AI Functions are optimized for use on English-language texts.
 
 > [!NOTE]

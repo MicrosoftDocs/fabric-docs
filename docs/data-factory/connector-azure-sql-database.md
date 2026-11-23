@@ -13,11 +13,13 @@ ai-usage: ai-assisted
 
 # Set up your Azure SQL Database connection
 
-This article outlines how to set up a connection to [Azure SQL Database](/azure/azure-sql/database/sql-database-paas-overview) for pipelines and Dataflow Gen2 in Microsoft Fabric.
+This article outlines how to set up a connection to [Azure SQL Database](/azure/azure-sql/database/sql-database-paas-overview) for pipelines and dataflow Gen2 in Fabric.
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
 
-The Azure SQL Database connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+## Summary
+
+The Azure SQL Database connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
@@ -25,29 +27,37 @@ The Azure SQL Database connector supports the following authentication types for
 |Organizational account| √| √|
 |Service Principal|√||
 
-## Set up your connection for Dataflow Gen2
-You can connect Dataflow Gen2 to Azure SQL database from Microsoft Fabric using Power Query connectors. Follow these steps to create your connection:
+## Set up your connection for dataflow Gen2
+You can connect dataflow Gen2 to Azure SQL Database from Fabric using Power Query connectors. Follow these steps to create your connection:
 
 1. Check [capabilities](#capabilities) to make sure your scenario is supported.
 1. [Complete prerequisites for Azure SQL Database](#prerequisites).
 1. [Get data in Fabric](#get-data).
-1. [Connect to Azure SQL database](#connect-to-azure-sql-database).
+1. [Connect to Azure SQL Database](#connect-to-azure-sql-database).
 
-### Capabilities
+## Prerequisites
 
-[!INCLUDE [azure-sql-database-ccapabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-sql-database/azure-sql-database-capabilities-supported.md)]
+[!INCLUDE [azure-sql-database-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-sql-database/prerequisites.md)]
 
-### Prerequisites
+<a id="capabilities"></a>
 
-[!INCLUDE [azure-sql-database-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-sql-database/azure-sql-database-prerequisites.md)]
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
+
+[!INCLUDE [azure-sql-database-ccapabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-sql-database/capabilities-supported.md)]
+
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Connect to Azure SQL database
+<a id="connect-to-azure-sql-database"></a>
 
-[!INCLUDE [azure-sql-database-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-sql-database/azure-sql-database-connect-to-power-query-online.md)]
+### Connection instructions
+
+[!INCLUDE [azure-sql-database-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-sql-database/connect-online.md)]
 
 ## Set up your connection for a pipeline
 
@@ -130,7 +140,7 @@ Open **Edit credentials**. You notice the sign in interface. Enter your account 
 
 :::image type="content" source="./media/connector-azure-sql-database/authentication-oauth2.png" alt-text="Screenshot showing OAuth2 authentication method.":::
 
-### Service Principal authentication
+### Service principal authentication
 
 :::image type="content" source="./media/connector-azure-sql-database/authentication-service-principal.png" alt-text="Screenshot showing Service Principal authentication method page.":::
 

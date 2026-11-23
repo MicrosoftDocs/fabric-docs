@@ -23,8 +23,8 @@ This Google Cloud Storage connector supports the following authentication types 
 |:---|:---|:---|
 |Basic| √| n/a|
 
-## Set up your connection for Dataflow Gen2
-The Google Cloud Storage connector isn't currently supported in Dataflow Gen2.
+## Set up your connection for dataflow Gen2
+The Google Cloud Storage connector isn't currently supported in dataflow Gen2.
 
 ## Set up your connection in a pipeline
 

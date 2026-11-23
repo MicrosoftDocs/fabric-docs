@@ -12,9 +12,11 @@ ai-usage: ai-assisted
 #customer intent: As a data engineer, I want to understand medallion lakehouse architecture and learn how to implement a lakehouse so that I can optimally structure and store my organization's data.
 ---
 
-# Understand medallion lakehouse architecture for Fabric with OneLake
+# Understand medallion architecture for Fabric with OneLake
 
 The medallion lakehouse architecture, commonly known as _medallion architecture_, is a design pattern that's used to organize data in a lakehouse. It's the recommended design approach for Fabric. Since OneLake is the data lake for Fabric, medallion architecture is implemented by creating lakehouses in OneLake.
+
+Use this article after you choose medallion architecture to plan its implementation, including layer design, deployment models, storage formats, materialized lake views, and Delta table optimization. To compare medallion architecture with other OneLake patterns and understand how the patterns work together, see [OneLake patterns and foundational capabilities](architecture-patterns.md).
 
 Medallion architecture comprises three distinct layers. The three medallion layers are: bronze (raw data), silver (enriched data), and gold (curated data). Each layer indicates the quality of data stored in the lakehouse, with higher levels representing higher quality.
 
@@ -100,7 +102,7 @@ Delta Lake format delivers the following benefits compared to generic file forma
 - Faster read queries.
 - Increased data freshness.
 - Support for both batch and streaming workloads.
-- Support for data rollback by using [Delta Lake time travel](/azure/databricks/delta/history#--what-is-delta-lake-time-travel).
+- Support for data rollback by using [Delta Lake time travel](../data-engineering/delta-lake-time-travel.md).
 - Enhanced regulatory compliance and audit by using [Delta Lake table history](/azure/databricks/delta/history).
 
 Fabric standardizes storage file format with Delta Lake. By default, every workload engine in Fabric creates Delta tables when you write data to a new table. For more information, see [Lakehouse and Delta Lake tables](../data-engineering/lakehouse-and-delta-tables.md).
@@ -148,17 +150,17 @@ This section describes other guidance related to implementing a medallion lakeho
 
 Generally, a big data platform performs better when it has a few large files rather than many small files. Performance degradation occurs when the compute engine has many metadata and file operations to manage. For better query performance, target file sizes between 128 MB and 1 GB, depending on the table size and the layer's consumption pattern.
 
-Different layers of the medallion architecture have different requirements for file size based on which consumption engine is used. In the bronze layer, you can use smaller files because of the raw nature of the data, as long as you focus data modification and preparation on Spark. In the silver layer, use moderate file sizes to balance write and read performance. In the gold layer, optimize for larger file sizes and larger row groups to improve query performance for consumption engines. To learn more about optimizing file sizes for different layers, see [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md#medallion-architecture-recommendations).
+Different layers of the medallion architecture have different requirements for file size based on which consumption engine is used. In the bronze layer, you can use smaller files because of the raw nature of the data, as long as you focus data modification and preparation on Spark. In the silver layer, use moderate file sizes to balance write and read performance. In the gold layer, optimize for larger file sizes and larger row groups to improve query performance for consumption engines. To learn more about optimizing file sizes for different layers, see [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md#apply-the-guidance-to-medallion-layers).
 
 #### Historical retention
 
 By default, Delta Lake maintains a history of all changes made, so the size of historical metadata grows over time. Based on your business requirements, keep historical data only for a certain period of time to reduce your storage costs. Consider retaining historical data for only the last month, or other appropriate period of time.
 
-You can remove older historical data from a Delta table by using the [VACUUM command](/azure/databricks/sql/language-manual/delta-vacuum). However, by default you can't delete historical data within the last seven days. That restriction maintains the consistency in data. Configure the default number of days with the table property `delta.deletedFileRetentionDuration = "interval <interval>"`. That property determines the period of time that a file must be deleted before it can be considered a candidate for a vacuum operation.
+You can remove older historical data from a Delta table by using the [VACUUM command](../data-engineering/delta-lake-vacuum.md). However, by default you can't delete historical data within the last seven days. That restriction maintains the consistency in data. Configure the default number of days with the table property `delta.deletedFileRetentionDuration = "interval <interval>"`. That property determines the period of time that a file must be deleted before it can be considered a candidate for a vacuum operation.
 
 #### Table partitions and clustering
 
-When you store data in each layer, use a partitioned folder structure wherever applicable. This technique improves data manageability and query performance. Generally, partitioned data in a folder structure results in faster search for specific data entries because of partition pruning or elimination. In the bronze layer, partitioning is acceptable but discouraged for new implementations. For silver and gold layers, use Liquid Clustering instead of partitioning to optimize query performance. To learn more about optimizing for different layers, see [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md#medallion-architecture-recommendations).
+When you store data in each layer, use a partitioned folder structure wherever applicable. This technique improves data manageability and query performance. Generally, partitioned data in a folder structure results in faster search for specific data entries because of partition pruning or elimination. In the bronze layer, partitioning is acceptable but discouraged for new implementations. For silver and gold layers, use Liquid Clustering instead of partitioning to optimize query performance. To learn more about optimizing for different layers, see [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md#apply-the-guidance-to-medallion-layers).
 
 Typically, you append data to your target table as new data arrives. However, in some cases you might merge data because you need to update existing data at the same time. In that case, you can perform an _upsert_ operation by using the [MERGE command](/azure/databricks/delta/merge). When your target table is partitioned, be sure to use a partition filter to speed up the operation. That way, the engine can eliminate partitions that don't require updating.
 
@@ -167,7 +169,7 @@ Typically, you append data to your target table as new data arrives. However, in
 You should plan and control who needs access to specific data in the lakehouse. You should also understand the various transaction patterns they're going to use while accessing this data for each layer.
 
 > [!TIP]
-> Each medallion layer has different optimization requirements. For comprehensive guidance on table maintenance strategies for bronze, silver, and gold layers, including when to enable V-order and optimal file sizes, see [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md#medallion-architecture-recommendations).
+> Each medallion layer has different optimization requirements. For comprehensive guidance on table maintenance strategies for bronze, silver, and gold layers, including when to enable V-order and optimal file sizes, see [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md#apply-the-guidance-to-medallion-layers).
 
 ## Related content
 

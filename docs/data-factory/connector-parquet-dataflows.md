@@ -14,27 +14,35 @@ ai-usage: ai-assisted
 You can connect to Parquet files in Dataflow Gen2 using the Parquet connector provided by Data Factory in [!INCLUDE [product-name](../includes/product-name.md)].
 
 ## Set up your connection for Dataflow Gen2
-You can connect Dataflow Gen2 in Microsoft Fabric to Parquet files using Power Query connectors. Follow these steps to create your connection:
+You can connect a dataflow Gen2 in Fabric to Parquet files by using Power Query connectors. Follow these steps to create your connection:
 
 1. Check [capabilities](#capabilities), [limitations, and considerations](#limitations-and-considerations) to make sure your scenario is supported.
 1. [Get data in Fabric](#get-data).
 1. [Connect to a Parquet file](#connect-to-a-parquet-file).
 
-### Capabilities
+<a id="capabilities"></a>
 
-[!INCLUDE [parquet-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/parquet/parquet-capabilities-supported.md)]
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
+
+[!INCLUDE [parquet-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/parquet/capabilities-supported.md)]
+
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Connect to a Parquet file
+<a id="connect-to-a-parquet-file"></a>
 
-[!INCLUDE [parquet-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/parquet/parquet-connect-to-power-query-online.md)]
+### Connection instructions
 
-### Limitations and considerations
+[!INCLUDE [parquet-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/parquet/connect-online.md)]
 
-[!INCLUDE [parquet-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/parquet/parquet-limitations-and-considerations-include.md)]
+## Limitations and considerations
+
+[!INCLUDE [parquet-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/parquet/limitations.md)]
 
 ## Related content
 

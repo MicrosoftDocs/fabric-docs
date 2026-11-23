@@ -2,13 +2,13 @@
 title: Include file for Git integration limitations
 description: Include file for the Git integration limitations. This file is referenced in this repo and also in an article in the Power BI repo.
 ms.topic: include
-ms.date: 05/24/2026
+ms.date: 11/01/2026
 ---
 
 ### General Git integration limitations
 
 >[!NOTE]
->Starting December 1, 2026, users without read-write permissions on workspace items can't use Git integration. This restriction can result in loss of access to certain items because of sensitivity labels and protection policies applied to those items. For more information, see [Information Protection in Microsoft Fabric](../../governance/information-protection.md).
+>Starting February 28, 2027, users without read-write permissions on workspace items can't use Git integration. This restriction can result in loss of access to certain items because of sensitivity labels and protection policies applied to those items. For more information, see [Information Protection in Microsoft Fabric](../../governance/information-protection.md).
 
 - The [authentication method](/entra/identity/authentication/concept-authentication-methods-manage#authentication-methods-policy) in Fabric must be at least as strong as the authentication method for Git. For example, if Git requires multifactor authentication, Fabric needs to require multifactor authentication as well.
 
@@ -20,7 +20,7 @@ ms.date: 05/24/2026
 - If you use a workspace identity in one artifact and commit it to Git, it can be updated (back to a fabric workspace) only in a workspace connected to the same identity. Be careful, as this also affects features like branch out.
 - Submodules aren't supported.
 - Sovereign clouds aren't supported.
-- Fabric workspaces can contain a maximum of **1,000 Fabric and Power BI items** (see [Workspace item limits](/fabric/admin/portal-workspaces#workspace-item-limits)). This limit applies to all items managed through Git integration. If your workspace approaches this limit, consider splitting it into smaller sets of artifacts—place each set in a separate workspace and link to a different Git branch, or organize a single branch into different folders. For details on syncing behavior when a Git branch exceeds this limit, see [Workspace limitations](#workspace-limitations).
+- If your workspace contains hundreds of items, consider splitting it into smaller sets of artifacts. Each set should be placed in a separate workspace and linked to a different Git branch, or connected to a single branch organized into different folders.
 
 #### [Azure DevOps limitations](#tab/azure-devops)
 
@@ -91,6 +91,8 @@ Git Integration re‑creates item definitions only and does not restore item dat
 ### Sync and commit limitations
 
 - You can only sync in one direction at a time. You can’t commit and update at the same time.
+- Saving a deployment plan assigns a logical ID to each referenced item that doesn't already have one. A later Git operation can report a logical ID conflict if the branch contains matching items with different logical IDs. For more information, see [Resolve Logical ID Conflicts in Microsoft Fabric](../git-integration/logical-id-conflict-resolution.md).
+- When you attach a deployment plan while switching branches, the selected plan version must exist in the target branch. The operation is blocked if you can't read the plan, lack Git sync permission for a referenced item, or the plan changes before the sync starts. For resolution steps, see [Resolve deployment plan errors when switching branches](../git-integration/dependency-errors.md#resolve-deployment-plan-errors-when-switching-branches).
 - Sensitivity labels aren't supported and exporting items with sensitivity labels might be disabled. To commit items that have sensitivity labels without the sensitivity label, [ask your administrator](/fabric/admin/git-integration-admin-settings#users-can-export-workspace-items-with-applied-sensitivity-labels-to-git-repositories-preview) for help.
 - Works with [limited items](/fabric/cicd/git-integration/intro-to-git-integration#supported-items). Unsupported items in the folder are ignored.
 - Duplicating names isn't allowed. Even if Power BI allows name duplication, the update, commit, or undo action fails.

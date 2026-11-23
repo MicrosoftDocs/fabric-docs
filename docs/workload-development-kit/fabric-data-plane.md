@@ -43,7 +43,7 @@ The Fabric Workload Development Kit SDK provides a method for acquiring an acces
 If you decide to use SQL to access your customer data, the access token must be obtained with the scope `https://database.windows.net//user_impersonation` to use Azure SQL Database and the Microsoft.Data.SqlClient namespace. The access token must be used as written, with two forward slashes before `user_impersonation`, to be validated by the SQLConnection class.
 For more examples of token authentication, see the Microsoft Fabric Developer kit sample.
 
-More details on how to obtain a token can be found in the [Microsoft Fabric Workload Development REST API documentation](https://go.microsoft.com/fwlink/?linkid=2271986).
+For more information about how to get a token, see the [Microsoft Fabric Workload Development REST API documentation](/rest/api/fabric/articles/).
 
 ### Read metadata
 
@@ -65,7 +65,7 @@ Another useful endpoint is the [Get Warehouse API](/rest/api/fabric/warehouse/it
     }
 ```
 
-Here, the "ConnectionInfo" property is the Fully Qualified Domain Name (FQDN) of the Warehouse SQL Server. With this FQDN, you can establish an SQL connection. For more information, see [Connectivity to Data Warehousing in Microsoft Fabric](../data-warehouse/connectivity.md).
+Here, the "ConnectionInfo" property is the Fully Qualified Domain Name (FQDN) of the Warehouse SQL Server. With this FQDN, you can establish an SQL connection. For more information, see [Connectivity to Data Warehouse in Microsoft Fabric](../data-warehouse/connectivity.md).
 For implementation examples, see the [Microsoft Fabric Workload Development Kit](./index.yml).
 
 ### Reading data

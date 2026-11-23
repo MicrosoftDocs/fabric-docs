@@ -122,6 +122,9 @@ The response body is empty.
 
 To retrieve all Delta tables in a lakehouse — for example, to build a data catalog or validate a deployment — use the List Tables endpoint. For the full parameter list, see the [Tables API reference](/rest/api/fabric/lakehouse/tables).
 
+> [!NOTE]
+> The List Tables and Load Table endpoints shown in this article don't support [schema-enabled lakehouses](lakehouse-schemas.md). Against a schema-enabled lakehouse, `GET .../tables` and `POST .../tables/{table}/load` return HTTP 400 (`UnsupportedOperationForSchemasEnabledLakehouse`). To list tables in a schema-enabled lakehouse, use the [OneLake table APIs for Delta](lakehouse-schemas.md), and to load a table, use the schema-scoped endpoint `POST .../lakehouses/{lakehouseId}/schemas/{schemaName}/tables/{tableName}/load?beta=true`.
+
 **Request**
 
 ```http

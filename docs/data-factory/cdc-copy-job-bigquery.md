@@ -9,9 +9,9 @@ ms.custom: copy-job
 ai-usage: ai-generated
 ---
 
-# Change data capture from Google BigQuery using Copy job (Preview)
+# Change data capture from Google BigQuery using copy job (Preview)
 
-This tutorial describes how to use change data capture (CDC) in Copy job to efficiently replicate data changes from Google BigQuery to a destination. This ensures your destination data stays up to date automatically.
+This tutorial describes how to use change data capture (CDC) in copy job to efficiently replicate data changes from Google BigQuery to a destination. This ensures your destination data stays up to date automatically.
 
 ## Prerequisites
 
@@ -32,8 +32,8 @@ Before you begin, ensure you have the following:
 For more information about BigQuery permissions and change history, see [BigQuery IAM roles and permissions](https://cloud.google.com/bigquery/docs/access-control) and [Work with change history](https://cloud.google.com/bigquery/docs/change-history).
 
 **Fabric requirements:**
-- A Fabric workspace with the necessary permissions to create a Copy job.
-- A destination data store supported by Copy job for CDC replication.
+- A Fabric workspace with the necessary permissions to create a copy job.
+- A destination data store supported by copy job for CDC replication.
 
 > [!TIP]
 > Assign BigQuery IAM roles at the appropriate resource level (project, dataset, or table) following the principle of least privilege.
@@ -130,16 +130,16 @@ Google BigQuery uses change history to enable change data capture. When you enab
 
 For more information about BigQuery change history, see the official [Google Cloud Documentation - Work with change history](https://cloud.google.com/bigquery/docs/change-history).
 
-## Create a Copy job with Google BigQuery CDC
+## Create a copy job with Google BigQuery CDC
 
 > [!NOTE]
-> -  The following steps are very similar to what you have done in [Use Copy job to ingest data from Azure SQL DB via CDC to another Azure SQL DB](cdc-copy-job.md#how-to-get-started)
+> -  The following steps are very similar to what you have done in [Use copy job to ingest data from Azure SQL DB via CDC to another Azure SQL DB](cdc-copy-job.md#how-to-get-started)
 
-Complete the following steps to create a new Copy job to ingest data from Google BigQuery via CDC to a destination:
+Complete the following steps to create a new copy job to ingest data from Google BigQuery via CDC to a destination:
 
-1. Select **+ New Item**, choose the **Copy job** icon, name your Copy job, and select **Create**.
+1. Select **+ New Item**, choose the **Copy job** icon, name your copy job, and select **Create**.
 
-   :::image type="content" source="media/copy-job/create-new-copy-job.png" alt-text="Screenshot showing where to navigate to the Data Factory home page and create a new Copy job.":::
+   :::image type="content" source="media/copy-job/create-new-copy-job.png" alt-text="Screenshot showing where to navigate to the Data Factory home page and create a new copy job.":::
 
 1. Choose the data store to copy data from. In this example, choose **Google BigQuery**.
 
@@ -153,11 +153,11 @@ Complete the following steps to create a new Copy job to ingest data from Google
    Tables without CDC enabled:
    :::image type="content" source="media/copy-job/none-cdc-table-icon.png" alt-text="Screenshot showing none cdc table icon.":::
 
-   :::image type="content" source="media/copy-job/select-cdc-tables.png" alt-text="Screenshot showing where to select cdc tables for the Copy job.":::
+   :::image type="content" source="media/copy-job/select-cdc-tables.png" alt-text="Screenshot showing where to select cdc tables for the copy job.":::
 
 1. Select your destination store. Choose a destination that supports CDC operations for optimal CDC replication.
 
-   :::image type="content" source="media/copy-job/select-destination-store.png" alt-text="Screenshot showing where to select the destination store for the Copy job.":::
+   :::image type="content" source="media/copy-job/select-destination-store.png" alt-text="Screenshot showing where to select the destination store for the copy job.":::
 
    > [!NOTE]
    > Based on the supported connectors, Google BigQuery as a CDC source can replicate to destinations that support incremental copy. Review the [supported connectors for CDC](cdc-copy-job.md#supported-connectors) to choose an appropriate destination.
@@ -165,7 +165,7 @@ Complete the following steps to create a new Copy job to ingest data from Google
 1. Select **Incremental copy** and you'll see no Incremental column for each table is required to be input to track changes. The default **Update method** should be set to **Merge**, and the required key columns will match the primary key defined in the source store by default.
 
    > [!NOTE]
-   > Copy job initially performs a full load and subsequently carries out incremental copies in subsequent runs via CDC.
+   > copy job initially performs a full load and subsequently carries out incremental copies in subsequent runs via CDC.
 
    :::image type="content" source="media/copy-job/copy-job-cdc-mode.png" alt-text="Screenshot showing where to select the CDC.":::
 
@@ -178,11 +178,11 @@ Complete the following steps to create a new Copy job to ingest data from Google
 
 1. Update your source tables in BigQuery by inserting, updating, or deleting rows.
 
-1. Run the Copy job again to capture and replicate all changes, including inserted, updated, and deleted rows, to the destination.
+1. Run the copy job again to capture and replicate all changes, including inserted, updated, and deleted rows, to the destination.
 
 ## Next steps
 
-- [Change data capture (CDC) in Copy job](cdc-copy-job.md)
-- [What is the Copy job in Data Factory](what-is-copy-job.md)
-- [How to monitor a Copy job](monitor-copy-job.md)
+- [Change data capture (CDC) in copy job](cdc-copy-job.md)
+- [What is the copy job in Data Factory](what-is-copy-job.md)
+- [How to monitor a copy job](monitor-copy-job.md)
 - [Google BigQuery connector overview](connector-google-bigquery-overview.md)

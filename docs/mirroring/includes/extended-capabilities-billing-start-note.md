@@ -7,6 +7,4 @@ ms.topic: include
 ---
 
 > [!NOTE]
-> Billing for extended capabilities resumed to all regions as of the week of May 25. 2026. UX support for enabling extended capabilities is also reenabled, though you can also [extend capabilities via APIs](../mirrored-database-rest-api.md#json-definition-example-of-replicating-entire-database).
->
 > Mirroring without extended capabilities is free.

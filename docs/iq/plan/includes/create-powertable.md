@@ -17,9 +17,13 @@ ms.date: 06/24/2026
 
 1. **Select a Connection:** Choose a Fabric SQL connection if available. If there are no connections, create one by selecting [Create Connection](../planning-how-to-create-database-connection.md).
 
-    :::image type="content" source="../media/includes/connect.png" alt-text="Screenshot of selecting the SQL connection.":::
+    :::image type="content" source="../media/includes/connect.png" alt-text="Screenshot of selecting a Fabric SQL connection in the PowerTable connection dropdown." lightbox="../media/includes/connect.png":::
 
-1. **Database Name:** Select the destination Fabric SQL database to store the table data. Select **Add**.
+1. **Database Name:** Select the **Database Name** field to open the list of databases available. 
+
+    :::image type="content" source="../media/includes/select-field-choose-database.png" alt-text="Screenshot of the Database Name field highlighted in the Select Fabric SQL Connection dialog, ready to open the database list." lightbox="../media/includes/select-field-choose-database.png":::
+
+1. Select the destination Fabric SQL database to store the table data and then select **Add**.
 
     :::image type="content" source="../media/includes/select-database.png" alt-text="Screenshot of selecting the database." lightbox="../media/includes/select-database.png":::
 

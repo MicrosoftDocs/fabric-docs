@@ -39,8 +39,38 @@ items:
     href: fabric-operations.md   
   - name: Optimize your capacity
     href: optimize-capacity.md
+  - name: On-demand billing
+    items:
+    - name: On-demand billing in Fabric
+      href: on-demand-billing.md
+    - name: Set up on-demand billing
+      href: on-demand-billing-setup.md
+    - name: Monitor on-demand billing usage
+      href: on-demand-billing-monitor.md
+    - name: On-demand billing meters and multipliers
+      href: on-demand-billing-meters-multipliers.md
+    - name: On-demand billing quotas
+      href: fabric-on-demand-billing-quotas.md
   - name: Get capacity overview events in Real-Time Hub
     href: /fabric/real-time-hub/create-streams-fabric-capacity-overview-events?context=/fabric/context/context-enterprise
+  - name: Capacity events
+    items:
+    - name: Explore capacity overview events
+      href: /fabric/real-time-hub/explore-fabric-capacity-overview-events?context=/fabric/context/context-enterprise
+    - name: Explore Fabric capacity operation events
+      href: /fabric/real-time-hub/explore-fabric-capacity-operation-events?context=/fabric/context/context-enterprise
+    - name: Create streams for capacity overview events
+      href: /fabric/real-time-hub/create-streams-fabric-capacity-overview-events?context=/fabric/context/context-enterprise
+    - name: Create streams for Fabric capacity operation events
+      href: /fabric/real-time-hub/create-streams-fabric-capacity-operation-events?context=/fabric/context/context-enterprise
+    - name: Set alerts on capacity overview events
+      href: /fabric/real-time-hub/set-alerts-fabric-capacity-overview-events?context=/fabric/context/context-enterprise
+    - name: Create custom alerts on capacity overview events
+      href: /fabric/real-time-hub/set-custom-alerts-fabric-capacity-overview-events?context=/fabric/context/context-enterprise
+    - name: Set alerts on Fabric capacity operation events
+      href: /fabric/real-time-hub/set-alerts-fabric-capacity-operation-events?context=/fabric/context/context-enterprise
+    - name: Monitor capacity health tutorial
+      href: /fabric/real-time-hub/tutorial-monitor-capacity-threshold?context=/fabric/context/context-enterprise
   - name: Capacity overage
     items:
     - name: Capacity overage overview
@@ -49,35 +79,49 @@ items:
       href: enable-capacity-overage.md
   - name: Metrics app
     items:
-    - name: What is the Microsoft Fabric Capacity Metrics app?
+    - name: Fabric Capacity Metrics app overview
       href: metrics-app.md
-    - name: Install the Microsoft Fabric Capacity Metrics app
+    - name: Install the Fabric Capacity Metrics app
       href: metrics-app-install.md
-    - name: Understand the Health page
+    - name: Health page
       href: metrics-app-health-page.md
-    - name: Understand the Compute page
+    - name: Health page (preview)
+      href: metrics-app-preview-health-page.md
+    - name: Compute page
       href: metrics-app-compute-page.md
-    - name: Understand the Storage page
+    - name: On-demand compute page
+      href: metrics-app-on-demand-compute-page.md
+    - name: Compute page (preview)
+      href: metrics-app-preview-compute-page.md
+    - name: Storage page
       href: metrics-app-storage-page.md
-    - name: Understand the Workspace Blocked Details page
+    - name: Storage page (preview)
+      href: metrics-app-preview-storage-page.md
+    - name: Workspace Blocked Details page
       href: metrics-app-workspace-blocked-details.md
-    - name: Understand the Timepoint page
+    - name: Timepoint page
       href: metrics-app-timepoint-page.md
-    - name: Understand the Timepoint summary page
+    - name: Timepoint summary page
       href: metrics-app-timepoint-summary-page.md
-    - name: Understand the Timepoint item detail page
+    - name: Timepoint item detail page
       href: metrics-app-timepoint-item-detail-page.md
-    - name: Understand the Autoscale compute for Spark page
-      href: metrics-app-feature-autoscale-page.md
-    - name: Understand the Autoscale compute for Spark detail page
-      href: metrics-app-feature-autoscale-detail-page.md
-    - name: Understand the Item history page
+    - name: On-demand Compute for Spark page
+      href: metrics-app-on-demand-compute-for-spark-page.md
+    - name: On-demand Compute for Spark detail page
+      href: metrics-app-on-demand-compute-for-spark-detail-page.md
+    - name: Item history page
       href: metrics-app-item-history-page.md
+    - name: Workspace Detail page (preview)
+      href: metrics-app-preview-workspace-detail-page.md
+    - name: Item details page (preview)
+      href: metrics-app-preview-item-details-page.md
+    - name: Monitor capacity and throttling (preview)
+      href: metrics-app-monitor-capacity-throttling.md
     - name: Plan your capacity size
       href: plan-capacity.md    
     - name: Monitor a paused capacity
       href: monitor-paused-capacity.md
-    - name: Understand metrics app calculations
+    - name: Metrics app calculations
       href: metrics-app-calculations.md
   - name: Chargeback app
     items:
@@ -93,6 +137,8 @@ items:
       href: fabric-sku-estimator-scenario.md
     - name: Fabric SKU Estimator Release Notes
       href: fabric-sku-estimator-release-notes.md
+  - name: Use Copilot Credits in Microsoft Fabric (preview)
+    href: copilot-credits-workspaces.md
 - name: Capacity guidance
   items:
   - name: Capacity planning guide
@@ -140,9 +186,11 @@ items:
     href: powerbi/onelake-integration-overview.md
   - name: Power BI licensing for organizations
     href: powerbi/service-admin-power-bi-licensing.md 
-  - name: Power BI sovereign clouds
+  - name: Sovereign clouds
     expanded: false
     items:
+    - name: Microsoft Fabric for GCC High
+      href: us-government-community-cloud-high.md
     - name: Power BI for US government
       href: powerbi/service-government-us-overview.md
     - name: Enroll a US government organization

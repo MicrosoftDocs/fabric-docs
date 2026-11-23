@@ -3,7 +3,7 @@ title: Resolve dependency errors with Git integration
 description: Learn how to resolve dependency errors when using Fabric's git integration tools, including identifying unsupported items, and removing dependencies.
 ms.reviewer: Dan Weinstein
 ms.topic: how-to
-ms.date: 12/15/2025
+ms.date: 09/01/2026
 #customer intent: As a developer, I want to know how to resolve dependency errors when using Fabric's git integration tools.
 ---
 
@@ -35,6 +35,26 @@ Try to switch to branch with unsupported item
 1. Manually remove the dependency. The easiest way to do this is to delete the item.
 1. Switch branches or update again.
 
+## Resolve deployment plan errors when switching branches
+
+When you attach a deployment plan while switching branches, Fabric validates the plan and its referenced items before the sync starts. The switch is blocked when:
+
+- The selected plan no longer exists or you no longer have permission to read it.
+- You don't have Git sync permission for a referenced item.
+- The plan changes after you select it but before the sync starts.
+- The selected plan version doesn't exist in the target branch.
+
+The sync also fails if the plan or a referenced item becomes inaccessible while the operation is running.
+
+To resolve the error:
+
+1. Confirm that the selected plan exists and that you have permission to read it.
+1. Confirm that the selected plan version exists in the target branch.
+1. Confirm that you have Git sync permission for each referenced item.
+1. Reopen the switch-branch dialog, select the current saved plan, and try again.
+
 ## Related content
 
 [Maintain your git branches](./manage-branches.md)
+
+[Attach a deployment plan](../deployment-plan/deployment-plan-attach.md)

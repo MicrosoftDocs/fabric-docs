@@ -1,17 +1,17 @@
 ---
-title: Create and Configure a Fabric Map Using Python and REST API 
-description: Learn how to create and configure a map item using Microsoft Fabric Maps REST API.
+title: Create and configure a Fabric map using Python and REST API
+description: Learn how to create and configure a map item using the Microsoft Fabric Maps REST API.
 ms.reviewer: smunk, sipa
 ms.topic: how-to
-ms.date: 04/22/2026
-ms.search.form: Create and Configure a Fabric Map using REST API
+ms.date: 09/13/2026
+ms.search.form: Create and configure a Fabric map using REST API
 ---
 
-# Create and Configure a Fabric Map Using Python and REST API
+# Create and configure a Fabric map using Python and REST API
 
-This article shows how to create a Fabric map item and apply a map definition using Python. It demonstrates both supported order-of-operations patterns and includes basic error handling.
+This article shows how to create a Fabric map item and apply a map definition by using Python. It demonstrates both supported order-of-operations patterns and includes basic error handling.
 
-Creating a Fabric map programmatically requires two components:
+To create a Fabric map programmatically, you need two components:
 
 - A **map definition** (`map.json`)
 - A **map item** in a Fabric workspace
@@ -24,11 +24,11 @@ Depending on the pattern you choose, you can:
 This article demonstrates both approaches.
 
 > [!TIP]
-> In most automation scenarios, the recommended approach is to **create the map with its definition inline**. This ensures the map is fully configured at creation time and avoids additional API calls.
+> In most automation scenarios, use the approach that **creates the map with its definition inline**. This approach ensures the map is fully configured at creation time and avoids extra API calls.
 
 > [!NOTE]
 > This article focuses on map creation and configuration (**control plane**).
-> Data referenced by the map (such as GeoJSON files or SVG icons) must already exist in OneLake or another supported data source.
+> You must already have data referenced by the map (such as GeoJSON files or SVG icons) in OneLake or another supported data source.
 
 ## Prerequisites
 
@@ -42,12 +42,12 @@ This article demonstrates both approaches.
 The following example shows a simplified `map.json` payload that:
 
 - Uses the default basemap
-- Reads GeoJSON data from a Lakehouse data source
+- Reads GeoJSON data from a lakehouse data source
 - Renders the data as a vector layer
 
 The `map.json` definition is a **declarative configuration** that describes:
 
-- `dataSources` (for example, Lakehouse or Eventhouse resources that provide data)
+- `dataSources` (for example, lakehouse or eventhouse resources that provide data)
 - `layerSources` (the files, tables, or functions that define the data for each layer)
 - `layerSettings` (the visualization settings for each layer, such as colors, icons, or styling)
 
@@ -97,7 +97,7 @@ map_json = {
 }
 ```
 
-For more information on the key components in a `map.json`, see [MapDetails](/rest/api/fabric/articles/item-management/definitions/map-definition#mapdetails).
+For more information about the key components in a `map.json`, see [MapDetails](/rest/api/fabric/articles/item-management/definitions/map-definition#mapdetails).
 
 ## Pattern 1: Create a map, then assign the definition
 
@@ -286,14 +286,14 @@ Both map‑creation patterns ultimately rely on the same map definition contract
 
 ### Pattern 2: Create map with definition included
 
-- **Create Map call includes definition**: You must provide `definition.parts[]` and Base64-encode **map.json** using `payloadType: "InlineBase64"`.
+- **Create Map call includes definition**: Provide `definition.parts[]` and Base64-encode **map.json** by using `payloadType: "InlineBase64"`.
 
 > **Rule of thumb:**
-> If **map.json** is included in any REST request/response, it is carried as a **Base64 payload** in a `definition.parts[]` entry with `payloadType: "InlineBase64"`.
+> If you include **map.json** in any REST request or response, carry it as a **Base64 payload** in a `definition.parts[]` entry with `payloadType: "InlineBase64"`.
 
 ## Create helper function to retrieve the map ID
 
-When you create a map by using the Fabric REST API, the request can return a 202 Accepted response. This indicates that the map is being provisioned asynchronously as a long-running operation (LRO), rather than being created immediately. In this case, the response doesn't include the map ID, and the LRO completion endpoint may not return a usable result. Additionally, even after the operation completes, the newly created map might not appear immediately when calling the List Maps API due to backend propagation.
+When you create a map by using the Fabric REST API, the request can return a 202 Accepted response. This response indicates that the map is being provisioned asynchronously as a long-running operation (LRO), rather than being created immediately. In this case, the response doesn't include the map ID, and the LRO completion endpoint might not return a usable result. Even after the operation completes, the newly created map might not appear immediately when calling the List Maps API due to backend propagation.
 
 To reliably obtain the map ID, you must query the list of maps and retry until the new map becomes visible. The following helper function implements this retry pattern and ensures your automation flow is resilient to asynchronous provisioning delays.
 
@@ -356,7 +356,7 @@ def resolve_map_id(client, list_url, headers, map_name, max_attempts=10, delay=5
     raise RuntimeError("Map created but still not visible after retries")
 ```
 
-Then instead of getting your map ID as in the previous sample (`map_id = created["id"]`), try:
+Instead of getting your map ID as in the previous sample (`map_id = created["id"]`), try:
 
 ```python
     if response.status_code == 201:

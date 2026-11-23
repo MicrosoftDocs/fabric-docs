@@ -15,9 +15,11 @@ ai-usage: ai-assisted
 
 [Azure Blob Storage](/azure/storage/blobs/storage-blobs-introduction) is Microsoft's object storage solution for the cloud. Blob storage is optimized for storing massive amounts of unstructured data. This article outlines the steps to create an Azure Blob Storage connection for pipelines and Dataflow Gen2.
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
 
-The Azure Blob Storage connector supports the following authentication types for copy and Dataflow Gen2 respectively.
+## Summary
+
+The Azure Blob Storage connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
 | Authentication type | Copy | Dataflow Gen2 |
 | --- | :---: | :---: |
@@ -28,7 +30,7 @@ The Azure Blob Storage connector supports the following authentication types for
 | [Service principal](#service-principal-authentication) | √ | √ |
 
 ## Set up your connection for Dataflow Gen2
-You can connect Dataflow Gen2 to Azure Blobs using Power Query connectors. Follow these steps to create your connection:
+You can connect dataflow Gen2 to Azure Blobs by using Power Query connectors. Follow these steps to create your connection:
 
 1. Check [capabilities](#capabilities), [limitations, and considerations](#limitations-and-considerations) to make sure your scenario is supported.
 1. [Complete prerequisites for Azure Blob Storage](#prerequisites).
@@ -36,30 +38,33 @@ You can connect Dataflow Gen2 to Azure Blobs using Power Query connectors. Follo
 1. [Copy your account key for Azure Blob Storage](#copy-your-account-key-for-azure-blob-storage).
 1. [Connect to Azure Blob Storage](#connect-to-azure-blob-storage).
 
-### Capabilities
+## Prerequisites
 
-[!INCLUDE [azure-blob-storage-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-blob-storage/azure-blob-storage-capabilities-supported.md)]
+[!INCLUDE [azure-blob-storage-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-blob-storage/prerequisites.md)]
 
-### Prerequisites
+<a id="capabilities"></a>
 
-[!INCLUDE [azure-blob-storage-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-blob-storage/azure-blob-storage-prerequisites.md)]
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
+
+[!INCLUDE [azure-blob-storage-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-blob-storage/capabilities-supported.md)]
+
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Copy your account key for Azure Blob Storage
+<a id="copy-your-account-key-for-azure-blob-storage"></a>
 
-[!INCLUDE [azure-blob-storage-copy-account-key](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-blob-storage/azure-blob-storage-copy-account-key.md)]
+[!INCLUDE [azure-blob-storage-copy-account-key](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-blob-storage/additional-information.md)]
 
-### Connect to Azure Blob Storage
+<a id="connect-to-azure-blob-storage"></a>
 
-[!INCLUDE [azure-blob-storage-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-blob-storage/azure-blob-storage-connect-to-power-query-online.md)]
+### Connection instructions
 
-### Limitations and considerations
-
-[!INCLUDE [azure-blob-storage-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-blob-storage/azure-blob-storage-limitations-and-considerations.md)]
-
+[!INCLUDE [azure-blob-storage-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-blob-storage/connect-online.md)]
 
 ## Set up your connection for a pipeline
 
@@ -170,6 +175,11 @@ To use service principal authentication, follow these steps:
 
    * **As source**, in **Access control (IAM)**, grant at least the **Storage Blob Data Reader** role.
    * **As destination**, in **Access control (IAM)**, grant at least the **Storage Blob Data Contributor** role.
+
+
+## Limitations and considerations
+
+[!INCLUDE [azure-blob-storage-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-blob-storage/limitations.md)]
 
 
 ## Related content

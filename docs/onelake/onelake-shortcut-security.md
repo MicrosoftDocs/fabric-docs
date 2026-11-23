@@ -55,11 +55,11 @@ This table shows the permissions needed for each shortcut action.
 
 ## OneLake security
 
-[OneLake security](./security/get-started-onelake-security.md) enables you to apply role-based access control (RBAC) to your data stored in OneLake. You can define security roles that grant read access to specific tables and folders within a Fabric item, and assign them to users or groups. The access permissions determine what users can do across all engines in Fabric, ensuring consistent access control.
+[OneLake security](./security/data-access-control-model.md) enables you to apply role-based access control (RBAC) to your data stored in OneLake. You can define security roles that grant read access to specific tables and folders within a Fabric item, and assign them to users or groups. The access permissions determine what users can do across all engines in Fabric, ensuring consistent access control.
 
-Users in the Admin, Member, and Contributor roles have full access to read data from a shortcut. To create or update a shortcut, they also need Read access to the target path.
+OneLake security roles don't restrict shortcut data access for users in the Admin, Member, and Contributor workspace roles. These users must still have access to both the shortcut path and the target path, as described in [Workspace roles](./security/get-started-security.md#grant-access-with-workspace-roles). They must also have Read access to the target path to create or update a shortcut.
 
-Users in the Viewer role, or users with [item Read permissions](./security/get-started-security.md#item-permissions), have access determined by their OneLake security roles. To perform shortcut operations, these users need the corresponding OneLake security permission in addition to Fabric Read permission.
+Users in the Viewer role, or users with [item Read permissions](./security/get-started-security.md#share-items-and-set-item-level-permissions), have access determined by their OneLake security roles. To perform shortcut operations, these users need the corresponding OneLake security permission in addition to Fabric Read permission.
 
 The following table shows the combined permissions required for each shortcut operation:
 

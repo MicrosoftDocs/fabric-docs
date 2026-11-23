@@ -5,7 +5,7 @@ ms.topic: include
 ms.date: 06/24/2026
 ---
 
-1. Review the detected column settings.
+1. Review the detected column settings. Modify them if required.
 1. If the primary key isn't selected, select the appropriate column as the primary key.
 1. Configure columns as required:
    * Mark fields as **Mandatory** if they must contain values.

@@ -31,7 +31,6 @@ Throughout this article, the terms *Power BI items* and *non-Power BI Fabric ite
 - Dashboards
 - Paginated reports
 - Scorecards
-- Metric sets
 - Dataflows
 - Datamarts
 - Org apps

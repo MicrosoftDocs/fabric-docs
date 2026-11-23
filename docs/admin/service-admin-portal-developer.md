@@ -12,12 +12,12 @@ LocalizationGroup: Administration
 
 # Developer tenant settings
 
-These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
+These settings are configured in **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
 
 To manage Power BI developer settings, you must be a Fabric administrator. For more information about the Fabric administrator role, see [Understand Fabric admin roles](roles.md).
 
 >[!NOTE]
->The developer settings in the Admin portal are different from and not related to the [developer mode](/power-bi/developer/visuals/environment-setup#set-up-power-bi-service-for-developing-a-visual) setting for debugging visuals.
+>The developer settings in **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings** are different from and not related to the [developer mode](/power-bi/developer/visuals/environment-setup#set-up-power-bi-service-for-developing-a-visual) setting for debugging visuals.
 
 ## Embed content in apps
 
@@ -65,7 +65,7 @@ This setting applies to the entire organization. You can't apply it only to a se
 
 ## Define maximum number of Fabric identities in a tenant
 
-This setting specifies the maximum number of Fabric identities that can be created in a Fabric tenant. If this setting is disabled, a default value of 10,000 Fabric identities can be created in a tenant. If you enable this setting, you can set a custom limit of how many Fabric identities can be created in your Fabric tenant. You can also manage this value programmatically by using the [Update Tenant Setting REST API](/rest/api/fabric/admin/tenants/update-tenant-setting).
+Set the maximum number of Fabric identities that can be created in a Fabric tenant. If you disable this setting, users can create up to 10,000 Fabric identities in a tenant. If you enable this setting, set a custom limit for how many Fabric identities can be created in your Fabric tenant. You can also manage this value programmatically by using the [Update Tenant Setting REST API](/rest/api/fabric/admin/tenants/update-tenant-setting).
 
 The maximum number of Fabric identities defined and created for a Fabric tenant can't exceed the maximum number of resources allowed in a Microsoft Entra tenant. Fabric doesn't validate that your custom limit falls within your Microsoft Entra ID resource quota. Before setting a custom limit, check your tenant's [Microsoft Entra service limits](/entra/identity/users/directory-service-limits-restrictions). To increase your resource limit in your Microsoft Entra tenant, contact Microsoft support.
 

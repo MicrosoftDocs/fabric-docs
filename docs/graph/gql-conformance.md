@@ -2,9 +2,10 @@
 title: GQL Standard Conformance for Graph in Microsoft Fabric
 description: Detailed GQL standard conformance mapping for graph in Microsoft Fabric. Use this reference to evaluate GQL coverage, compare with other implementations, or identify gaps when migrating from another GQL database.
 ms.topic: reference
-ms.date: 05/20/2026
+ms.date: 09/17/2026
 ms.reviewer: splantikow
 ms.search.form: GQL Conformance
+ai-usage: ai-assisted
 ---
 
 # GQL standard conformance for graph in Microsoft Fabric
@@ -40,7 +41,7 @@ Graph implements the [labeled property graph](graph-data-models.md) model. The f
 | GG20 | Explicit element type names | Yes | Node and edge types are identified by label names defined in the graph type. |
 | GG23 | Optional element type key label sets | Yes | The key label set of an element type is its element type name. |
 | GH02 | Undirected edges | No | All edges are directed. |
-| GV11, GV12, GV24, GV31 | Property value types | Yes | Supported types: `BOOL`, `INT`/`INT64`, `UINT64`, `FLOAT64`/`DOUBLE`, `STRING`. For the full type reference, see [GQL values and value types](gql-values-and-value-types.md). GV08, GV21, GV40, and GV07 have nuances - see the [GV section](#gv--value-type-features). |
+| GV11, GV12, GV17, GV24, GV31 | Property value types | Yes | For graph-model property types available through the Fabric modeling experience, see [Data types](limitations.md#data-types). `UINT64` is available as a query/runtime value type but isn't exposed as a graph-model property type in the UI. GV08, GV21, GV40, and GV07 have nuances—see the [GV section](#gv--value-type-features). |
 
 ## Minimum conformance
 
@@ -71,20 +72,27 @@ The following tables summarize the current state of graph's support for mandator
 
 | Subclause | Capability | Supported | Notes |
 | ---------- | ------- | --------- | ----- |
-| 14.3 | Linear query statement / nested query specification | No | Nested query specifications aren't currently supported. Basic linear statement chaining is supported. |
+| 14.3 | Linear query statement | Yes | Basic statement chaining and advanced composition with [`NEXT`](gql-language-guide.md#next) are supported. Each stage can contain a union of query blocks. |
+| 14.3 | Nested query specification | No | The ISO nested query specification feature isn't supported. Inline [`CALL`](gql-language-guide.md#call-statement) and procedure-form [`EXISTS`](gql-expressions.md#existence-subqueries) subqueries are separate supported features; inline `CALL` subqueries can be nested. |
 | 14.4 | `MATCH` statement | Yes | [`MATCH`](gql-language-guide.md#match-statement) with pattern matching. |
-| 14.4 | `OPTIONAL MATCH` statement | Yes | [`OPTIONAL MATCH`](gql-language-guide.md#match-statement) returns `NULL` for unmatched variables instead of filtering them out. |
+| 14.4 | `OPTIONAL MATCH` statement | Yes | [`OPTIONAL MATCH`](gql-language-guide.md#optional-match-statement) returns `NULL` for unmatched variables instead of filtering them out. |
 | 14.9 | `ORDER BY` and page statement | Yes | [`ORDER BY`](gql-language-guide.md#order-by-statement), [`OFFSET`, and `LIMIT`](gql-language-guide.md#offset-and-limit-statements). |
 | 14.10 | Primitive result statement | Yes | Supported through [`RETURN`](gql-language-guide.md#return-basic-result-projection). |
 | 14.11 | `RETURN` statement | Yes | [`RETURN`](gql-language-guide.md#return-basic-result-projection) with projections, aliases, and [`GROUP BY`](gql-language-guide.md#return-with-group-by-grouped-result-projection). |
 | 14.12 | `SELECT` statement | No | Use [`RETURN`](gql-language-guide.md#return-basic-result-projection) instead. |
+
+### Conditional statements (Subclause 15.4)
+
+| Subclause | Capability | Supported | Notes |
+| ---------- | ---------- | --------- | ----- |
+| 15.4 | Searched conditional statement | Yes | [`WHEN`, `THEN`, and `ELSE`](gql-language-guide.md#conditional-statements) route each input row to the first matching branch. This statement isn't a searched `CASE` expression. |
 
 ### Graph patterns and common elements (Subclause 16)
 
 | Subclause | Capability | Supported | Notes |
 | ---------- | ------- | --------- | ----- |
 | 16.1 | `AT` schema clause | No | |
-| 16.3 | Graph pattern binding table | Yes | Path binding and [group variables](gql-language-guide.md#advanced-aggregation-techniques). |
+| 16.3 | Graph pattern binding table | Yes | Path binding and [group-list aggregation](gql-expressions.md#aggregate-functions). |
 | 16.4 | Graph pattern | Yes | Simple anonymous patterns, named edge patterns, and [composed patterns](gql-graph-patterns.md#compose-patterns) with `WHERE` clause. |
 | 16.4 | Node patterns | Yes | `(n:Label)` syntax with element variable declarations, label expressions, and property specifications. |
 | 16.4 | Edge patterns (full directed) | Yes | `->`, `<-`, and `-[]-` directed edge patterns. |
@@ -105,9 +113,11 @@ The following tables summarize the current state of graph's support for mandator
 | Subclause | Capability | Supported | Notes |
 | ---------- | ------- | --------- | ----- |
 | 19.3 | Comparison predicate | Yes | [Comparison operators](gql-expressions.md#comparison-predicates): `=`, `<>`, `<`, `>`, `<=`, `>=`. |
-| 19.4 | `EXISTS` predicate | Yes | `EXISTS` predicate with graph patterns is supported. |
+| 19.4 | `EXISTS` predicate | Partial | Procedure-form [`EXISTS`](gql-expressions.md#existence-subqueries) subqueries are supported. The graph-pattern-only form isn't supported. |
 | 19.5 | `NULL` predicate | Yes | [`IS NULL` and `IS NOT NULL`](gql-expressions.md#property-existence-predicates). |
 | 19.7 | `NORMALIZED` predicate | No | The `IS [NOT] NORMALIZED` predicate isn't currently supported. The `NORMALIZE()` function is supported — see Subclause 20.24. |
+
+Graph also supports the [`ALL`, `ANY`, `NONE`, and `SINGLE` list predicate functions](gql-expressions.md#list-predicate-functions) as a Graph-specific language extension.
 
 ### Value expressions and functions (Subclause 20)
 
@@ -115,18 +125,18 @@ The following tables summarize the current state of graph's support for mandator
 | ---------- | ------- | --------- | ----- |
 | 20.2 | Value expression primary | Yes | Literals, variable references, property access, and parenthesized expressions. |
 | 20.3 | Value specification | Partial | Literals and variable references are supported. `SESSION_USER` and dynamic parameter specification aren't currently supported. |
-| 20.7 | `CASE` expression | Yes | [`CASE`](gql-expressions.md#built-in-functions) (simple and searched), [`COALESCE`](gql-expressions.md#built-in-functions), and `NULLIF` are supported. |
-| 20.9 | Aggregate function | Yes | [`count`](gql-expressions.md#aggregate-functions), `sum`, `avg`, `min`, `max` with `DISTINCT`/`ALL` set quantifiers. |
+| 20.7 | `CASE` expression | Partial | Simple [`CASE`](gql-expressions.md#conditional-expressions), `COALESCE`, and `NULLIF` are supported. Searched `CASE WHEN` expressions aren't currently supported. |
+| 20.9 | Aggregate function | Yes | [`COUNT`](gql-expressions.md#aggregate-functions), `SUM`, `AVG`, `MIN`, and `MAX` support `DISTINCT` and `ALL` set quantifiers and aggregate-specific `FILTER (WHERE ...)` with an optional `LIMIT`. Graph also supports `COLLECT_LIST`, `COLLECT_ONE`, and `COLLECT_ELEMENTS`. |
 | 20.11 | Property reference | Yes | Dot-notation [property access](gql-expressions.md#property-access) on nodes and edges. |
 | 20.12 | Binding variable reference | Yes | Variable references in expressions. |
 | 20.20 | Boolean value expression | Partial | [`AND`, `OR`, `NOT`](gql-expressions.md#logical-expressions) are supported. `IS [NOT] TRUE/FALSE/UNKNOWN` tests aren't currently supported. |
 | 20.21 | Numeric value expression | Yes | [Arithmetic operators](gql-expressions.md#arithmetic-expressions): `+`, `-`, `*`, `/`. |
-| 20.22 | Numeric value function | Partial | [`char_length`](gql-expressions.md#string-functions) is supported. `CHARACTER_LENGTH` alias isn't currently supported. |
+| 20.22 | Numeric value function | Partial | [`CHAR_LENGTH`](gql-expressions.md#character-length-and-case), [`ABS`, `POWER`, trigonometric functions, and `RANGE`](gql-expressions.md#numeric-functions) are supported. The `CHARACTER_LENGTH` alias and ceiling, floor, logarithmic, modulus, exponential, and square-root functions aren't supported. |
 | 20.23 | String value expression | Yes | String concatenation with the `\|\|` operator. |
-| 20.24 | Character string function | Partial | [`upper`](gql-expressions.md#string-functions), `lower`, `trim`, `LEFT`/`RIGHT` substring functions, and `NORMALIZE` are supported. Unicode case mapping isn't fully supported. |
+| 20.24 | Character string function | Partial | Unicode-aware [`UPPER`](gql-expressions.md#character-length-and-case), `LOWER`, explicit `TRIM`, and [`NORMALIZE`](gql-expressions.md#normalize-strings) with NFC or NFD are supported. `LEFT` and `RIGHT` aren't currently supported. |
 | 20.25 | Byte string function | No | Byte string types aren't supported. |
-| 20.27 | Datetime value function | Yes | `CURRENT_DATETIME` is supported. See [zoned datetime values](gql-values-and-value-types.md#zoned-datetime-values). |
-| 20.29 | Duration value function | Yes | Duration value functions are supported. |
+| 20.27 | Datetime value function | Yes | [`CURRENT_TIMESTAMP`](gql-expressions.md#temporal-functions) is supported. See [zoned datetime values](gql-values-and-value-types.md#zoned-datetime-values). |
+| 20.29 | Duration value function | Partial | [`DURATION(string)`](gql-expressions.md#temporal-functions) constructs a day-time duration. You can subtract zoned datetime values to derive a duration, but the `DURATION_BETWEEN` function isn't currently supported. |
 
 ### Value types (Subclause 24.2)
 
@@ -148,21 +158,21 @@ A Feature ID identifies optional features. It starts with "G" followed by a grou
 
 | Feature ID | Feature | Supported | Notes |
 | ---------- | ------- | --------- | ----- |
-| G002 | Different-edges match mode | No | |
-| G003 | Explicit `REPEATABLE ELEMENTS` keyword | Partial | Default match mode behavior is repeatable elements, but the explicit `REPEATABLE ELEMENTS` keyword isn't supported. |
+| G002 | Different-edges match mode | Yes | [`DIFFERENT EDGES` and `DIFFERENT RELATIONSHIPS`](gql-graph-patterns.md#control-element-reuse) enforce edge uniqueness across the complete graph pattern. |
+| G003 | Explicit `REPEATABLE ELEMENTS` keyword | Yes | `REPEATABLE ELEMENTS` is supported and is the default match mode. |
 | G004 | Path variables | Yes | [Path variable binding](gql-graph-patterns.md#binding-path-variables) is supported. |
-| G005 | Path search prefix in a path pattern | No | |
+| G005 | Path search prefix in a path pattern | Yes | Explicit [`ALL` and `ANY SHORTEST`](gql-graph-patterns.md#control-which-paths-are-returned) prefixes are supported. |
 | G006 | Graph pattern `KEEP` clause: path mode prefix | No | |
 | G007 | Graph pattern `KEEP` clause: path search prefix | No | |
-| G010 | Explicit `WALK` keyword | Yes | `WALK` allows repeated nodes and edges in matched paths. |
-| G011 | Advanced path modes: `TRAIL` | Yes | [`TRAIL`](gql-graph-patterns.md#match-trails) prevents duplicate edge traversal. |
-| G012 | Advanced path modes: `SIMPLE` | Yes | `SIMPLE` prevents repeated nodes in matched paths. |
-| G013 | Advanced path modes: `ACYCLIC` | Yes | `ACYCLIC` prevents cycles in matched paths. |
-| G014 | Explicit `PATH`/`PATHS` keywords | No | |
-| G015 | All path search: explicit `ALL` keyword | Partial | All path search behavior is available, but the explicit `ALL` keyword syntax isn't supported. |
+| G010 | Explicit `WALK` keyword | Yes | `WALK` allows repeated nodes and edges in matched paths and is the default path mode. |
+| G011 | Advanced path modes: `TRAIL` | Yes | [`TRAIL`](gql-graph-patterns.md#control-element-reuse) prevents duplicate edge traversal. |
+| G012 | Advanced path modes: `SIMPLE` | Yes | `SIMPLE` prevents repeated nodes except when the first and last node are the same. It also prevents repeated edges because edge reuse would repeat endpoint nodes. |
+| G013 | Advanced path modes: `ACYCLIC` | Yes | `ACYCLIC` prevents all repeated nodes and, therefore, all repeated edges. |
+| G014 | Explicit `PATH`/`PATHS` keywords | Yes | Optional `PATH` and `PATHS` keywords are supported in path mode and path search prefixes. |
+| G015 | All path search: explicit `ALL` keyword | Yes | `ALL` is supported explicitly and is the default path search. |
 | G016 | Any path search | No | |
 | G017 | All shortest path search | No | |
-| G018 | Any shortest path search | No | |
+| G018 | Any shortest path search | Yes | `ANY SHORTEST` returns one shortest path per source-destination pair from each input row. Ties aren't deterministic. |
 | G019 | Counted shortest path search | No | |
 | G020 | Counted shortest group search | No | |
 | G030 | Path multiset alternation | No | |
@@ -184,13 +194,13 @@ A Feature ID identifies optional features. It starts with "G" followed by a grou
 | G049 | Parenthesized path pattern: path mode prefix | No | |
 | G050 | Parenthesized path pattern: `WHERE` clause | No | |
 | G051 | Parenthesized path pattern: non-local predicates | No | |
-| G060 | Bounded graph pattern quantifiers | Yes | `{m,n}`, `{m}`, `{,n}` syntax. Maximum upper bound of 8. |
-| G061 | Unbounded graph pattern quantifiers | No | Unbounded quantifiers (`{m,}`, `*`, `+`) aren't currently supported. Bounded quantifiers have a maximum upper bound of 8. |
+| G060 | Bounded graph pattern quantifiers | Yes | `{m,n}`, `{m}`, and `{,n}` syntax. The visual query builder's eight-hop limit doesn't apply to GQL in the code editor. |
+| G061 | Unbounded graph pattern quantifiers | Partial | `{m,}`, `*`, and `+` are supported with `TRAIL`, `SIMPLE`, and `ACYCLIC`. Unbounded `ALL WALK` is rejected. Unbounded `ANY SHORTEST WALK` supports [specific query shapes](gql-graph-patterns.md#unbounded-variable-length-patterns). |
 | G074 | Label expression: wildcard label | No | Wildcards aren't currently supported. |
 | G080 | Simplified path pattern expression: basic defaulting | No | |
 | G081 | Simplified path pattern expression: full overrides | No | |
 | G082 | Simplified path pattern expression: basic overrides | No | |
-| G100 | `ELEMENT_ID` function | Yes | `ELEMENT_ID` returns the unique identifier of a node or edge element. |
+| G100 | `ELEMENT_ID` function | Yes | [`ELEMENT_ID`](gql-expressions.md#graph-functions) returns the opaque identifier of a node or edge as a string. |
 | G110 | `IS DIRECTED` predicate | No | |
 | G111 | `IS LABELED` predicate | No | |
 | G112 | `IS SOURCE` and `IS DESTINATION` predicate | No | |
@@ -203,13 +213,13 @@ A Feature ID identifies optional features. It starts with "G" followed by a grou
 | Feature ID | Feature | Supported | Notes |
 | ---------- | ------- | --------- | ----- |
 | GA01 | IEEE 754 floating-point operations | Yes | `FLOAT64` uses IEEE 754 binary64 representation. See [approximate numeric types](gql-values-and-value-types.md#approximate-numeric-types) and the [Query API value encoding](gql-query-api.md#floating-point-types). |
-| GA03 | Explicit ordering of nulls | No | `NULL` sorts as the smallest value in [`ORDER BY`](gql-language-guide.md#order-by-statement), but explicit `NULLS FIRST`/`NULLS LAST` keywords aren't currently supported. |
-| GA04 | Universal comparison | No | |
-| GA05 | Cast specification | Partial | `CAST(value AS target_type)` is supported. Unicode type casting isn't currently supported. See [type conversions](gql-values-and-value-types.md#type-conversions-and-casting). |
+| GA03 | Explicit ordering of nulls | Yes | Use `NULLS FIRST` or `NULLS LAST` with [`ORDER BY`](gql-language-guide.md#order-by-statement). The default is `NULLS LAST`. |
+| GA04 | Universal comparison | No | Graph compares most values of compatible types, but doesn't yet support every [numeric comparison](gql-expressions.md#comparison-predicates) that GQL defines. |
+| GA05 | Cast specification | Partial | `CAST(value AS target_type)` is supported, including casts between compatible exact numeric, string, and list types. Unicode type casting isn't currently supported. See [type conversions](gql-values-and-value-types.md#type-conversions-and-casting). |
 | GA06 | Value type predicate | Yes | Value type predicates are supported. |
 | GA07 | Ordering by discarded binding variables | No | |
-| GA08 | GQL-status objects with diagnostic records | Partial | Status objects with GQLSTATUS codes, messages, diagnostic records, and cause chains are supported. See [status codes reference](gql-reference-status-codes.md) and the [Query API status object](gql-query-api.md#status-object). Full GQL status code coverage isn't yet complete. |
-| GA09 | Comparison of paths | No | |
+| GA08 | GQL-status objects with diagnostic records | Partial | Status objects, diagnostic records, additional statuses, and cause chains are supported. The Query API maps canonical GQLSTATUS values to a smaller set of public status codes and preserves the canonical value in diagnostics. See the [status codes reference](gql-reference-status-codes.md) and the [Query API status object](gql-query-api.md#status-object). |
+| GA09 | Comparison of paths | Partial | Path equality and using paths as sort keys are supported. Other path comparison forms aren't currently documented. |
 
 ### GB — Lexical features
 
@@ -250,24 +260,26 @@ A Feature ID identifies optional features. It starts with "G" followed by a grou
 | GE06 | Path value construction | Yes | `PATH [node, edge, node]` constructor for building path values. |
 | GE07 | Boolean `XOR` | Yes | Exclusive disjunction with `XOR` operator. |
 | GE08 | Reference parameters | No | |
-| GE09 | Horizontal aggregation | Yes | [Horizontal aggregation](gql-language-guide.md#horizontal-aggregation-with-group-list-variables) over group list variables from variable-length patterns. |
+| GE09 | Horizontal aggregation | Yes | [Horizontal aggregation](gql-expressions.md#aggregate-functions) over group list variables from variable-length patterns. |
 
 ### GF — Function features
 
 | Feature ID | Feature | Supported | Notes |
 | ---------- | ------- | --------- | ----- |
-| GF01 | Enhanced numeric functions | No | `abs`, `mod`, `floor`, `ceil`, and `sqrt` aren't currently supported. |
-| GF02 | Trigonometric functions | No | |
+| GF01 | Enhanced numeric functions | Partial | [`ABS` and `POWER`](gql-expressions.md#absolute-value-and-power) are supported. `MOD`, `FLOOR`, `CEIL`, `CEILING`, and `SQRT` aren't currently supported. |
+| GF02 | Trigonometric functions | Yes | [`SIN`, `COS`, `TAN`, `COT`, `ASIN`, `ACOS`, `ATAN`, `SINH`, `COSH`, `TANH`, `DEGREES`, and `RADIANS`](gql-expressions.md#trigonometric-functions) are supported. |
 | GF03 | Logarithmic functions | No | |
 | GF04 | Enhanced path functions | Yes | [`elements(path)`](gql-expressions.md#graph-functions), [`path_length(path)`](gql-expressions.md#graph-functions), [`nodes(path)`](gql-expressions.md#graph-functions), and [`edges(path)`](gql-expressions.md#graph-functions) are supported. |
-| GF05 | Multi-character `TRIM` function | No | |
-| GF06 | Explicit `TRIM` function | No | `TRIM` with trim specification syntax (for example, `TRIM('_' FROM '_x')`) isn't supported. Basic `trim(string)` is supported as a mandatory capability. |
+| GF05 | Multi-character `TRIM` function | No | A custom trim value must be exactly one byte. |
+| GF06 | Explicit `TRIM` function | Yes | `BOTH`, `LEADING`, and `TRAILING` trim specifications are supported. |
 | GF07 | Byte string `TRIM` function | No | Byte string types aren't supported. |
-| GF10 | Advanced aggregate functions: general set functions | Partial | [`collect_list`](gql-expressions.md#aggregate-functions) and `collect_any` are supported. `stddev_pop`, `stddev_samp`, and `product` aren't currently supported. |
+| GF10 | Advanced aggregate functions: general set functions | Partial | [`COLLECT_LIST`, `COLLECT_ONE`, and `COLLECT_ELEMENTS`](gql-expressions.md#aggregate-functions) are supported. `STDDEV_POP`, `STDDEV_SAMP`, and `PRODUCT` aren't currently supported. |
 | GF11 | Advanced aggregate functions: binary set functions | No | `percentile_cont` and `percentile_disc` aren't currently supported. |
 | GF12 | `CARDINALITY` function | No | Use [`size(list)`](gql-expressions.md#list-functions) instead. |
 | GF13 | `SIZE` function | Yes | [`size(list)`](gql-expressions.md#list-functions) returns the number of elements in a list. |
 | GF20 | Aggregate functions in sort keys | No | |
+
+Graph-specific string extensions include [`CASEFOLD`, `STRING_JOIN`, and the `MSFT.REGEXP_*` functions](gql-expressions.md#string-functions). The standard `REGEXP_CONTAINS` predicate isn't supported.
 
 ### GG — Graph type features
 
@@ -294,10 +306,10 @@ A Feature ID identifies optional features. It starts with "G" followed by a grou
 | GL02 | Octal literals | No | |
 | GL03 | Binary literals | No | |
 | GL04 | Exact number in common notation without suffix | Yes | Integer literals like `123456`. See [exact numeric types](gql-values-and-value-types.md#exact-numeric-types). |
-| GL05 | Exact number with suffix | Yes | Integer literals with type suffixes. |
-| GL06 | Exact number in scientific notation with suffix | No | |
-| GL07 | Approximate number in common notation with suffix | Yes | For example, `12.45f`. See [approximate numeric types](gql-values-and-value-types.md#approximate-numeric-types). |
-| GL08 | Approximate number in scientific notation with suffix | Yes | Scientific notation with suffix for float literals. |
+| GL05 | Exact number with suffix | Yes | Integer literals with type suffixes such as `123m`. |
+| GL06 | Exact number in scientific notation with suffix | Yes | For example, `1.25e2m`. |
+| GL07 | Approximate number in common notation with suffix | Partial | The `d` and `D` suffixes are supported. The `f` and `F` suffixes aren't currently supported. See [approximate numeric types](gql-values-and-value-types.md#approximate-numeric-types). |
+| GL08 | Approximate number in scientific notation with suffix | Partial | Scientific notation with `d` or `D` is supported. The `f` and `F` suffixes aren't currently supported. |
 | GL09 | Optional float number suffix | No | |
 | GL10 | Optional double number suffix | No | |
 | GL11 | Opt-out character escaping | No | |
@@ -305,7 +317,7 @@ A Feature ID identifies optional features. It starts with "G" followed by a grou
 
 ### GP — Procedure features
 
-The `CALL` inline procedure statement (GP01) is supported. Other procedure features (GP02–GP18) aren't currently supported, including `CALL` named procedures, procedure-local variable definitions, and procedure arguments.
+GP01 inline procedure calls are partially supported through [`CALL { ... }`](gql-language-guide.md#call-statement) and `OPTIONAL CALL { ... }`. Inline subqueries implicitly import variables from enclosing scopes and can contain nested `CALL` statements. Explicit variable import lists such as `CALL (p) { ... }` aren't supported. Named procedure calls and other procedure features (GP02–GP18) also aren't currently supported.
 
 ### GQ — Query composition features
 
@@ -313,28 +325,28 @@ The `CALL` inline procedure statement (GP01) is supported. Other procedure featu
 | ---------- | ------- | --------- | ----- |
 | GQ01 | `USE` graph clause | No | |
 | GQ02 | Composite query: `OTHERWISE` | No | |
-| GQ03 | Composite query: `UNION` | Partial | `UNION ALL` is supported. `UNION DISTINCT` isn't currently supported. |
+| GQ03 | Composite query: `UNION` | Yes | Bare `UNION` and [`UNION DISTINCT`](gql-language-guide.md#union-and-union-all) remove duplicate rows. `UNION ALL` preserves them. |
 | GQ04 | Composite query: `EXCEPT DISTINCT` | No | |
 | GQ05 | Composite query: `EXCEPT ALL` | No | |
 | GQ06 | Composite query: `INTERSECT DISTINCT` | No | |
 | GQ07 | Composite query: `INTERSECT ALL` | No | |
 | GQ08 | `FILTER` statement | Yes | [`FILTER`](gql-language-guide.md#filter-statement) with `WHERE` keyword. |
 | GQ09 | `LET` statement | Yes | [`LET`](gql-language-guide.md#let-statement) for computed variables. |
-| GQ10 | `FOR` statement: list value support | Yes | Regular `FOR` statement with list value support. |
-| GQ11 | `FOR` statement: `WITH ORDINALITY` | No | |
+| GQ10 | `FOR` statement: list value support | Yes | The [`FOR`](gql-language-guide.md#for-statement) statement expands list values into rows. |
+| GQ11 | `FOR` statement: `WITH ORDINALITY` | Yes | `WITH ORDINALITY` provides a one-based position. |
 | GQ12 | `ORDER BY` and page statement: `OFFSET` clause | Yes | [`OFFSET`](gql-language-guide.md#offset-and-limit-statements) (also aliased as `SKIP`). |
 | GQ13 | `ORDER BY` and page statement: `LIMIT` clause | Yes | [`LIMIT`](gql-language-guide.md#offset-and-limit-statements). |
-| GQ14 | Complex expressions in sort keys | No | |
+| GQ14 | Complex expressions in sort keys | Yes | [`ORDER BY`](gql-language-guide.md#order-by-statement) accepts expressions, including function calls and calculated values. |
 | GQ15 | `GROUP BY` clause | Yes | [`RETURN` with `GROUP BY`](gql-language-guide.md#return-with-group-by-grouped-result-projection). |
 | GQ16 | Pre-projection aliases in sort keys | No | |
-| GQ17 | Element-wise group variable operations | Yes | Supported through [horizontal aggregation](gql-language-guide.md#horizontal-aggregation-with-group-list-variables). |
+| GQ17 | Element-wise group variable operations | Yes | Supported through [horizontal aggregation](gql-expressions.md#aggregate-functions). |
 | GQ18 | Scalar subqueries | No | Scalar subqueries aren't currently supported. |
 | GQ19 | Graph pattern `YIELD` clause | No | |
-| GQ20 | Advanced linear composition with `NEXT` | No | |
+| GQ20 | Advanced linear composition with `NEXT` | Yes | [`NEXT`](gql-language-guide.md#next) starts another query stage from the columns returned by the preceding stage. Each stage can contain a union of query blocks. |
 | GQ21 | `OPTIONAL`: Multiple `MATCH` statements | Yes | `OPTIONAL MATCH` is supported. |
-| GQ22 | `EXISTS` predicate: multiple `MATCH` statements | No | |
+| GQ22 | `EXISTS` predicate: multiple `MATCH` statements | Yes | Procedure-form [`EXISTS`](gql-expressions.md#existence-subqueries) subqueries support multiple `MATCH` statements in the subquery body. |
 | GQ23 | `FOR` statement: binding table support | No | |
-| GQ24 | `FOR` statement: `WITH OFFSET` | No | |
+| GQ24 | `FOR` statement: `WITH OFFSET` | Yes | `WITH OFFSET` provides a zero-based index. |
 
 ### GS — Session management features
 
@@ -364,7 +376,6 @@ GQL transaction management features (GT01–GT03) aren't currently supported.
 | GV14 | 128-bit signed integer numbers | No | |
 | GV15 | 256-bit unsigned integer numbers | No | |
 | GV16 | 256-bit signed integer numbers | No | |
-| GV17 | Decimal numbers | No | |
 | GV18 | Small signed integer numbers | No | |
 | GV19 | Big signed integer numbers | No | |
 | GV20 | 16-bit floating-point numbers | No | |
@@ -413,12 +424,10 @@ GQL transaction management features (GT01–GT03) aren't currently supported.
 The following notable features aren't currently supported. For the full list, see any row marked **No** in the tables.
 
 - `SELECT` statement (Subclause 14.12) — use `RETURN` instead
-- `NEXT` keyword for advanced linear composition (GQ20)
-- `UNION DISTINCT` statement (GQ03) — `UNION ALL` is supported
-- Unbounded graph pattern quantifiers: `{m,}`, `*`, `+` (G061)
-- All shortest, any, and counted path searches (G016–G020)
+- `ALL SHORTEST`, `ANY`, and counted path searches (G016–G017 and G019–G020)
 - Scalar subqueries (GQ18)
-- Enhanced numeric, trigonometric, and logarithmic functions (GF01–GF03)
+- Graph-pattern-only `EXISTS` subqueries (Subclause 19.4)
+- Ceiling, floor, logarithmic, modulus, exponential, and square-root functions (GF01 and GF03)
 - `EXCEPT` and `INTERSECT` statements (GQ04–GQ07)
 - `OTHERWISE` statement (GQ02)
 - GQL `INSERT`/`SET`/`DELETE` statements (GD01) — use [data management](manage-data.md) instead

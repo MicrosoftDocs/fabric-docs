@@ -9,7 +9,7 @@ ms.author: spelluru
 ms.search.form: Source and Destination
 ---
 
-# Add Fabric capacity overview events to an eventstream (preview)
+# Add Fabric capacity overview events to an eventstream
 
 This article shows you how to add Fabric capacity overview event source to an eventstream.
 

@@ -108,7 +108,7 @@ After the layer is added, you can:
 
 These options allow you to tailor the visualization to your scenario without modifying the underlying KQL entity.
 
-- For more information on layer styling, see [Customize a map](customize-map.md).
+- For more information on layer styling, see [Configure layer settings in Fabric Maps](customize-map.md).
 - For more information on data filtering in layers, see [Data filtering in Fabric Maps](about-data-filtering.md).
 
 The following screenshot demonstrates a polygon-based data layer that autorefreshes every 5 seconds:
@@ -124,7 +124,7 @@ The following screenshot demonstrates a point-based data layer that autorefreshe
 To learn more about custom styling:
 
 > [!div class="nextstepaction"]
-> [Customize a map](customize-map.md)
+> [Configure layer settings](customize-map.md)
 
 To learn more about data filtering:
 

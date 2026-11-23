@@ -1,8 +1,8 @@
 ---
 title: Use SQL Database in AI Applications
 description: Learn how to use SQL database in Fabric to build AI-powered applications with vector search, RAG patterns, and integration with LangChain and Semantic Kernel.
-ms.reviewer: pamela, antho, yoleichen
-ms.date: 05/29/2026
+ms.reviewer: pamela, antho, yoleichen, pookam
+ms.date: 10/28/2026
 ms.topic: solution-overview
 ai-usage: ai-assisted
 ---
@@ -18,7 +18,7 @@ SQL database in Fabric provides the relational foundation for intelligent applic
 
 Building intelligent applications requires a database that can store operational data alongside vector embeddings, serve both transactional and similarity queries at low latency, and integrate with AI orchestration frameworks. SQL database in Fabric meets these requirements:
 
-- **Native vector support**: The SQL Database Engine's native [vector data type](/sql/t-sql/data-types/vector-data-type?view=fabric-sqldb&preserve-view=true) and [vector scalar functions](/sql/t-sql/functions/vector-functions-transact-sql?view=fabric-sqldb&preserve-view=true) let you store embeddings and run similarity searches directly in T-SQL, without a separate vector database.
+- **Native vector support**: The SQL Database Engine's native [vector data type](/sql/t-sql/data-types/vector-data-type?view=fabric-sqldb&preserve-view=true), [vector indexes](/sql/t-sql/statements/create-vector-index-transact-sql?view=fabric-sqldb&preserve-view=true), and [vector scalar functions](/sql/t-sql/functions/vector-functions-transact-sql?view=fabric-sqldb&preserve-view=true) let you store embeddings and run similarity searches directly in T-SQL, without a separate vector database.
 - **RAG-ready architecture**: Combine your structured business data with vector embeddings in the same database, so retrieval queries can join relational context (customer records, order history, product catalogs) with semantic search results in a single query.
 - **Framework integration**: Connect with [LangChain](https://github.com/Azure-Samples/azure-sql-langchain) and [Semantic Kernel](https://github.com/microsoft/semantic-kernel) through existing SQL Server connectors to build orchestrated AI workflows.
 - **Fabric platform integration**: Access your SQL data from Fabric Notebooks, Data Science workloads, and Copilot experiences without moving data out of the platform.
@@ -118,16 +118,24 @@ The SQL Database Engine provides built-in T-SQL functions for generating embeddi
 
 ### Register an embedding model
 
-Use [CREATE EXTERNAL MODEL](/sql/t-sql/statements/create-external-model-transact-sql?view=fabric-sqldb&preserve-view=true) to register an Azure OpenAI embedding endpoint as a database object. This example uses the `text-embedding-ada-002` deployment with Microsoft Entra managed identity authentication. First, create access credentials to Azure OpenAI using a managed identity:
+Step 1: Before you proceed, follow the steps in this document to [create an Azure OpenAI resource and deploy the embedding model](/azure/foundry-classic/openai/how-to/create-resource?pivots=web-portal).
+
+Use [CREATE EXTERNAL MODEL](/sql/t-sql/statements/create-external-model-transact-sql?view=fabric-sqldb&preserve-view=true) to register an Azure OpenAI embedding endpoint as a database object. This example uses the `text-embedding-ada-002` deployment with API-key authentication through the `HTTPEndpointHeaders` credential identity.
+
+Note: Use the API key from Azure OpenAI Project.
+
+Step 2:
 
 ```sql
 CREATE DATABASE SCOPED CREDENTIAL [https://my-azure-openai-endpoint.cognitiveservices.azure.com/]
-    WITH IDENTITY = 'Managed Identity',
-    SECRET = '{"resourceid":"https://cognitiveservices.azure.com"}';
+    WITH IDENTITY = 'HTTPEndpointHeaders',
+    SECRET = '{"api-key":"<OpenAIKey>"}';
 GO
 ```
 
 Then, create an external model:
+
+Step 3:
 
 ```sql
 CREATE EXTERNAL MODEL MyEmbeddingModel

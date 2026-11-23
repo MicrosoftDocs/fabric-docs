@@ -15,9 +15,6 @@ This tutorial walks you through an end-to-end workflow for publishing business e
 1. Validate the published events in Real-Time hub.
 1. Create an Activator rule that listens for the business event and triggers an email notification when the event occurs.
 
-> [!IMPORTANT]
-> This feature is in [preview](../../fundamentals/preview.md).
-
 ## Create a new business event
 
 1. Go to **Business events** in Real-Time hub.
@@ -60,6 +57,8 @@ This tutorial walks you through an end-to-end workflow for publishing business e
     :::image type="content" source="media/tutorial-business-events-user-data-function-activation-email/business-event-list.png" alt-text="Screenshot of the list of business events in Real-Time hub." lightbox="media/tutorial-business-events-user-data-function-activation-email/business-event-list.png":::
 
 ## Configure user data function to publish business events
+
+[!INCLUDE [business-event-publisher-region-note](../includes/business-event-publisher-region-note.md)]
 
 1. After creating the business event, open another tab in your web browser, and go to your workspace.
 
@@ -164,6 +163,8 @@ This tutorial walks you through an end-to-end workflow for publishing business e
 
 
 ## Create an Activator trigger to consume events and send email notifications
+
+[!INCLUDE [business-event-consumer-region-note](../includes/business-event-consumer-region-note.md)]
 
 1. Select the Real-Time hub icon in the left navigation pane of the Fabric portal.
 

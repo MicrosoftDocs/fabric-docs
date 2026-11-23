@@ -1,12 +1,12 @@
 ---
 title: Agent Integration Options for Ontology (Preview)
-description: Learn how to use an ontology (preview) item as a source for AI agents and when to choose each supported agent option.
-ms.date: 07/09/2026
+description: Understand how an ontology (preview) item can be a source for AI agents and when to choose each supported agent option.
+ms.date: 09/15/2026
 ms.topic: concept-article
 ai-usage: ai-generated
 ---
 
-# Agent integration options for ontology (preview)
+# Get started with agent integration for ontology (preview)
 
 An ontology (preview) item gives AI agents a governed, shared understanding of your business, including key entity types, relationships, definitions, rules, and source mappings. When an agent uses an ontology as context, it produces responses that are more grounded, explainable, and consistent across systems instead of relying only on raw data or prompts. This article explains how agents consume ontology context and helps you choose the right agent for your scenario.
 
@@ -23,7 +23,7 @@ Grounding an agent in an ontology provides several benefits:
 * **Governance**: The ontology carries data bindings, provenance, and access controls, so agents respect the same governed model as the rest of Fabric IQ.
 * **Explainability**: Responses reference well-defined concepts and relationships, which makes answers easier to trust and validate.
 
-Connect an ontology to several agents. The following agents currently support ontology as a source:
+Ontology has a built-in [ontology agent](how-to-use-ontology-agent.md). You can also set up other agents to use ontology as a source:
 
 * [Fabric operations agent](#fabric-operations-agent)
 * [Fabric data agent](#fabric-data-agent)
@@ -37,6 +37,7 @@ Use the following table to compare the agents that ontology supports and decide 
 
 | Agent | Primary experience | Best for | Audience |
 |-------|--------------------|----------|----------|
+| **Ontology agent** | Chat interface inside ontology | Creating, improving, and testing queries on your ontology | Ontology users |
 | **Fabric operations agent** | Continuous monitoring with recommended actions | Real-time monitoring, alerting, and automated actions against business goals | Operations teams |
 | **Fabric data agent** | Conversational Q&A inside Fabric | Interactive analytics over governed Fabric data with ontology context | Data analysts and business users |
 | **Foundry IQ agent** | Custom developer agent with tool calling | Advanced, customizable agents that integrate with enterprise systems | Developers |
@@ -44,6 +45,14 @@ Use the following table to compare the agents that ontology supports and decide 
 | **Custom agents with ontology MCP server** | Any MCP-compatible AI client or custom agent | Connecting external or custom AI systems and tools to ontology through the Model Context Protocol (MCP) | Developers |
 
 ## Supported agent descriptions
+
+### Ontology agent
+
+The built-in [ontology agent](how-to-use-ontology-agent.md) provides a natural language chat interface inside the ontology experience.
+
+The agent can help you [create an ontology](how-to-use-ontology-agent.md#create-an-ontology-with-the-agent) and import data from semantic models, and [operate your ontology](how-to-use-ontology-agent.md#operate-your-ontology-with-the-agent). The agent can describe the ontology, query the data behind it by using Data Analysis Expressions (DAX), Kusto Query Language (KQL), SQL, or Graph Query Language (GQL), and improve it as your sources evolve.
+
+For more information about the ontology agent, see [Use the ontology agent (preview) in Fabric](how-to-use-ontology-agent.md).
 
 ### Fabric operations agent
 
@@ -59,7 +68,7 @@ A [Fabric data agent](../../data-science/concept-data-agent.md) lets you build a
 
 Use Fabric data agent with ontology when you want an interactive analytics experience inside Fabric, and you want a straightforward path to connect ontology alongside other Fabric data sources.
 
-For details about setting up a Fabric data agent with ontology as source, see [Ontology tutorial part 4: Consume ontology from agents](tutorial-4-create-data-agent.md).
+For details about setting up a Fabric data agent with ontology as source, see [Create a data agent grounded in an ontology](how-to-create-data-agent.md).
 
 ### Foundry IQ agent
 
@@ -88,7 +97,8 @@ For details about consuming ontology through the Model Context Protocol, see [Co
 ## Related content
 
 * [What is ontology (preview)?](overview.md)
-* [Ontology tutorial part 4: Consume ontology from agents](tutorial-4-create-data-agent.md)
+* [Use the ontology agent (preview) in Fabric](how-to-use-ontology-agent.md)
+* [Create a data agent grounded in an ontology](how-to-create-data-agent.md)
 * [Create an operations agent grounded in an ontology](how-to-create-operations-agent.md)
 * [Build a Foundry IQ agent grounded in an ontology](how-to-create-agent-foundry-iq.md)
 * [Build a Copilot Studio agent grounded in an ontology](how-to-create-agent-copilot-studio.md)

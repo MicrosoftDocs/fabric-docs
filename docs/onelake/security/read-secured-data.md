@@ -3,7 +3,7 @@ title: Read data secured with OneLake security
 description: Learn which engines can read data secured with OneLake security and the requirements for accessing tables that use row-level and column-level security.
 ms.reviewer: aamerril
 ms.topic: how-to
-ms.date: 07/27/2026
+ms.date: 08/28/2026
 ai-usage: ai-assisted
 #customer intent: As a data consumer, I want to understand how to read tables secured with OneLake security so that I can query the data I'm allowed to see.
 ---
@@ -16,7 +16,7 @@ To learn how to define security rules, see [Create and manage OneLake security r
 
 ## Engines that can read secured data
 
-Fabric engines can read tables that have RLS or CLS rules applied. Data access to OneLake happens in one of two ways:
+Fabric engines can read tables that have RLS or CLS rules applied, but filtering support varies by engine. Data access to OneLake happens in one of two ways:
 
 * **Through a query engine:** Fabric engines and [authorized third-party engines](./onelake-security-integrations-overview.md) apply RLS and CLS filtering, so you see only the rows and columns you're allowed to see.
 * **Through user access:** Queries from nonauthorized external engines are treated as user access. If you aren't permitted to see all the rows or columns in a table, the query is blocked.
@@ -25,19 +25,21 @@ The following table lists which engines support RLS and CLS filtering:
 
 | Engine | RLS/CLS filtering | Status |
 | --- | --- | --- |
-| Eventhouse | RLS only | Public preview |
 | Graph in Fabric | Yes | GA |
 | Lakehouse | Yes | GA |
 | [Semantic models using Direct Lake on OneLake mode](../../fundamentals/direct-lake-develop.md) | Yes | GA |
 | [Spark notebooks](../../data-engineering/spark-onelake-security.md) | Yes | GA |
-| [SQL analytics endpoint in **user's identity access mode**](./sql-analytics-endpoint-onelake-security.md#how-to-change-the-onelake-access-mode) | Yes | GA |
+| [SQL analytics endpoint in **user's identity access mode**](./sql-analytics-endpoint-onelake-security.md#change-the-onelake-access-mode) | Yes | GA |
+| Eventhouse | Yes | GA |
+| [Foundry IQ](/azure/search/search-how-to-index-onelake-files) | N/A—indexes files only, not tables | Public preview |
 | [Authorized third-party engines](./onelake-security-integrations-overview.md) | Yes (when the engine implements it) | Public preview |
+| Any engine via [Table Read API](../table-apis/read-table-data-rest-api.md) | Yes | Public preview |
 
 ## Engine-specific requirements
 
 Some engines require extra configuration before they can read secured data:
 
-* **SQL analytics endpoint:** [Change the SQL analytics endpoint to user's identity access mode](./sql-analytics-endpoint-onelake-security.md#how-to-change-the-onelake-access-mode) so it can read secured data.
+* **SQL analytics endpoint:** [Change the SQL analytics endpoint to user's identity access mode](./sql-analytics-endpoint-onelake-security.md#change-the-onelake-access-mode) so it can read secured data.
 * **Semantic models:** The semantic model must use [Direct Lake on OneLake](../../fundamentals/direct-lake-develop.md).
 * **Authorized third-party engines:** The engine must be configured as an [authorized engine](./onelake-security-integrations-overview.md) to enforce OneLake security at query time.
 

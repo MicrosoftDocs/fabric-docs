@@ -1,10 +1,10 @@
 ---
 title: Understand dependency binding in cross-workspace deployment
-description: Learn how Fabric items reference their dependencies using logical IDs or object IDs, and how this affects cross-workspace deployment with Git integration.
+description: Learn how Fabric items and deployment plans use logical IDs or object IDs, and how this affects cross-workspace deployment.
 ms.reviewer: NimrodShalit
 ms.topic: concept-article
-ms.date: 05/14/2026
-ms.search.form: cross-workspace deployment, logical ID, object ID, Git integration, dependency binding
+ms.date: 09/01/2026
+ms.search.form: cross-workspace deployment, logical ID, object ID, Git integration, dependency binding, deployment plan
 ---
 
 # Understand dependency binding in cross-workspace deployment
@@ -27,6 +27,14 @@ This article maps which Fabric item types support dependency binding through log
 Within a workspace, items reference their dependencies using object IDs. When Fabric exports an item to Git, it replaces some of these object IDs with logical IDs from the `.platform` file. When you sync the Git branch to a different workspace, Fabric resolves those logical IDs back to the correct object IDs in the target workspace. This is what makes dependency binding work.
 
 However, not all dependency references are replaced with logical IDs during export. Items that keep object IDs in their Git representation still point to the original workspace after sync, and you need to update them manually or through parameterization.
+
+### Deployment plans and logical IDs
+
+When you save a deployment plan, Fabric assigns a logical ID to each referenced item that doesn't already have one. The plan stores that logical ID so it can identify the corresponding item when the plan moves to another workspace.
+
+Assigning a logical ID to a referenced item doesn't change how that item's own dependencies are stored. The dependency-binding behavior in the following tables still applies when you deploy with a plan. Review the plan's action steps and their dependencies before you use the plan in another workspace.
+
+Saving requires write permission on each referenced item because assigning a logical ID updates the item. If Fabric can't assign a logical ID to a referenced item type, the plan can't be saved.
 
 > [!IMPORTANT]
 > Dependency binding only applies to references between Fabric items within the **same workspace**. If an item references a Fabric item in a **different workspace**, that reference uses an object ID and doesn't bind automatically. References to **Connections** (data source connections, gateways) also don't auto-bind. Use [Variable Libraries](./variable-library/variable-library-overview.md) with environment-specific value sets to manage connection references across environments.
@@ -68,7 +76,7 @@ The **Auto-bind in Git** column indicates:
 | Pipeline | Yes | |
 | Notebook | Yes | |
 | Dataflow Gen2 | Yes | |
-| SQL Database | Yes | |
+| SQL database | Yes | |
 | Spark Job Definition | No | The SparkJobDefinition activity references the Spark Job Definition by object ID, not logical ID, so it stays pointed at the source item after deployment. You need to parameterize this value for cross-workspace deployment. |
 | Lakehouse | Yes | |
 | Semantic Model | No | PBISemanticModelRefresh activity references the semantic model by item ID, not logical ID. You need to parameterize this value for cross-workspace deployment. |
@@ -107,7 +115,7 @@ By default, Dataflow Gen2 creates absolute references to Fabric items: the query
 |---|---|---|
 | Lakehouse | No | |
 | Warehouse | No | |
-| SQL Database | No | |
+| SQL database | No | |
 
 ### Spark Job Definitions
 
@@ -122,15 +130,15 @@ By default, Dataflow Gen2 creates absolute references to Fabric items: the query
 |---|---|---|
 | Lakehouse | Yes | |
 | Warehouse | No | The warehouse `artifactId` resolves through the logical ID and rebinds, but the `linkedService` also stores the source workspace's SQL `endPoint`, which isn't rewritten. Parameterize the `endPoint` for cross-workspace deployment. |
-| SQL Database | Yes | |
+| SQL database | Yes | |
 
 ### GraphQL APIs
 
 | Dependency | Auto-bind in Git | Notes |
 |---|---|---|
-| SQL Endpoint | Yes | |
+| SQL analytics endpoint | Yes | |
 | Warehouse | Yes | |
-| SQL Database | Yes | |
+| SQL database | Yes | |
 
 For all GraphQL API data sources, you might need to reconfigure the connection and credentials after deployment.
 
@@ -155,7 +163,7 @@ For all GraphQL API data sources, you might need to reconfigure the connection a
 | Dependency | Auto-bind in Git | Notes |
 |---|---|---|
 | Warehouse (cross-reference) | No | References to other warehouses use object IDs. |
-| SQL Endpoint | No | SQL Endpoint references use workspace-specific identifiers. |
+| SQL analytics endpoint | No | SQL analytics endpoint references use workspace-specific identifiers. |
 
 ### Variable Libraries
 
@@ -168,7 +176,7 @@ For all GraphQL API data sources, you might need to reconfigure the connection a
 The following items have no cross-workspace dependency binding concerns:
 
 - Environment
-- SQL Database
+- SQL database
 - Eventhouse (container item; KQL databases reference it)
 - Mirrored Database (external source configuration only)
 
@@ -182,3 +190,4 @@ When you deploy Fabric items across workspaces, dependencies between items can b
 - [Introduction to Git integration](./git-integration/intro-to-git-integration.md)
 - [Git integration source code format](./git-integration/source-code-format.md)
 - [Logical ID conflict resolution](./git-integration/logical-id-conflict-resolution.md)
+- [What is a deployment plan?](./deployment-plan/deployment-plan-overview.md)

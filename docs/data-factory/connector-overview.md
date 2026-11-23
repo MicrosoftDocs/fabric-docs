@@ -3,25 +3,25 @@ title: Connector overview
 description: Learn about the available data connectors for Data Factory in Microsoft Fabric.
 ms.reviewer: jianleishen
 ms.topic: overview
-ms.date: 07/21/2026
+ms.date: 10/30/2026
 ms.search.form: product-data-factory
 ms.custom: connectors
 ---
 
 # Connector overview
 
-Data Factory in Microsoft Fabric connects to many types of data stores using built-in connectors. These connectors help you bring in or transform data with Dataflow Gen2, pipelines, or Copy job. Select the connector you need to get started.
+Data Factory connects to many types of data stores by using built-in connectors. These connectors help you bring in or transform data by using dataflow Gen2, pipelines, or copy jobs. Select the connector you need to get started.
 
 ## Prerequisites
 
 Before setting up a connection, ensure you have:
 
-- A Microsoft Fabric tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
-- A Microsoft Fabric-enabled workspace. [Create a workspace](../fundamentals/create-workspaces.md).
+- A Fabric tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
+- A Fabric-enabled workspace. [Create a workspace](../fundamentals/create-workspaces.md).
 
 ## Supported connectors in Fabric
 
-Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Select a data store to see what it can do and how to set it up.
+Fabric supports these connectors in dataflow Gen2, pipelines, and copy jobs. Select a data store to see what it can do and how to set it up.
 
 >[!TIP]
 > For more detailed copy job feature availability, see [supported features by connector for Copy job](copy-job-connectors.md).
@@ -39,7 +39,7 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | [Amazon RDS for Oracle](connector-amazon-rds-for-oracle-overview.md) |  | ✓/− | ✓/− |
 | [Amazon RDS for SQL Server](connector-amazon-rds-for-sql-server-overview.md) |  | ✓/− | ✓/− |
 | [Amazon Redshift](connector-amazon-redshift-overview.md) | ✓/− | ✓/− |  |
-| [Amazon S3](connector-amazon-s3-overview.md) |  | ✓/✓ | ✓/✓ |
+| [Amazon S3](connector-amazon-s3-overview.md) | ✓/✓ (preview) | ✓/✓ | ✓/✓ |
 | [Amazon S3 Compatible](connector-amazon-s3-compatible-overview.md) |  | ✓/✓ | ✓/✓ |
 | [Anaplan](connector-anaplan-overview.md) | ✓/− |  |  |
 | Asana | ✓/− |  |  |
@@ -58,11 +58,12 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | [Azure Data Explorer (Kusto)](connector-azure-data-explorer-overview.md) | ✓/✓ | ✓/✓ | ✓/✓ |
 | [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2-overview.md) | ✓/− | ✓/✓ | ✓/✓ |
 | [Azure Database for MySQL](connector-azure-database-for-mysql-overview.md) |  | ✓/✓ | ✓/✓ |
-| [Azure Database for PostgreSQL](connector-azure-database-for-postgresql-overview.md) |  | ✓/✓ | ✓/✓ |
+| [Azure Database for PostgreSQL](connector-azure-database-for-postgresql-overview.md) | ✓/- | ✓/✓ | ✓/✓ |
 | [Azure Databricks](connector-azure-databricks-overview.md) | ✓/− | ✓/✓ |  |
 | [Azure Files](connector-azure-files-overview.md) |  | ✓/✓ |  ✓/✓ |
 | [Azure HDInsight (HDFS)](/power-query/connectors/azure-hdinsight#connect-to-azure-hdinsight-from-power-query-online) | ✓/− |  |  |
-| Azure HDInsight Spark | ✓/− |  |  |
+| Azure HDInsight Spark | ✓/- | | |
+| [Azure HorizonDB Database](/power-query/connectors/azure-horizondb) | ✓/- | | |
 | [Azure Resource Graph](/power-query/connectors/azure-resource-graph#connect-to-azure-resource-graph-from-power-query-online) | ✓/− |  |  |
 | [Azure SQL database](connector-azure-sql-database-overview.md) | ✓/✓ | ✓/✓ | ✓/✓ |
 | [Azure SQL Managed Instance](connector-azure-sql-managed-instance-overview.md) |  | ✓/✓ | ✓/✓ |
@@ -106,9 +107,9 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | Exasol | ✓/− |  |  |
 | [Excel workbook](/power-query/connectors/excel#connect-to-an-excel-workbook-from-power-query-online) | ✓/− |  |  |
 | [Fabric Data Warehouse](connector-data-warehouse-overview.md) | ✓/✓ | ✓/✓ | ✓/✓ |
-| [Fabric KQL Database](connector-kql-database-overview.md) | ✓/✓ | ✓/✓ |  |
-| [Fabric Lakehouse](connector-lakehouse-overview.md) | ✓/✓ | ✓/✓ | ✓/✓ |
-| [Fabric SQL database (Beta)](connector-sql-database-overview.md) | ✓/✓ | ✓/✓ | ✓/✓ |
+| [KQL database in Fabric](connector-kql-database-overview.md) | ✓/✓ | ✓/✓ |  |
+| [Lakehouse in Fabric](connector-lakehouse-overview.md) | ✓/✓ | ✓/✓ | ✓/✓ |
+| [SQL database in Fabric (Beta)](connector-sql-database-overview.md) | ✓/✓ | ✓/✓ | ✓/✓ |
 | FactSet Analytics | ✓/− |  |  |
 | FactSet RMS (Beta) | ✓/− |  |  |
 | [FHIR](connector-fhir-overview.md) | ✓/− |  |  |
@@ -116,7 +117,7 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | [FTP](connector-ftp-overview.md) |  | ✓/− | ✓/− |
 | [Funnel](connector-funnel-overview.md) | ✓/− |  |  |
 | [Google Analytics](connector-google-analytics-overview.md) | ✓/− |  |  |
-| [Google BigQuery](connector-google-bigquery-overview.md) | ✓/− | ✓/✓ | ✓/✓ |
+| [Google BigQuery](connector-google-bigquery-overview.md) | ✓/✓ (destination in preview) | ✓/✓ | ✓/✓ |
 | [Google BigQuery (Microsoft Entra ID)](/power-query/connectors/google-bigquery-aad#connect-to-google-bigquery-microsoft-entra-id-data-from-power-query-online) | ✓/− |  |  |
 | [Google Cloud Storage](connector-google-cloud-storage-overview.md) |  | ✓/✓ | ✓/✓ |
 | [Google Sheets](connector-google-sheets-overview.md) | ✓/− |  |  |
@@ -198,7 +199,7 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | [SharePoint list](connector-sharepoint-list-overview.md) | ✓/− |  |  |
 | [SharePoint Online list](connector-sharepoint-online-list-overview.md) | ✓/− | ✓/− |✓/− |
 | Shortcuts Business Insights (Beta) | ✓/− |  |  |
-| [SingleStore Direct Query Connector](/power-query/connectors/singlestore) | ✓/− |  |  |
+| [SingleStore DirectQuery Connector](/power-query/connectors/singlestore) | ✓/− |  |  |
 | [SIS-CC SDMX (Beta)](/power-query/connectors/sis-cc-sdmx) | ✓/− |  |  |
 | Siteimprove | ✓/− |  |  |
 | [Smartsheet](connector-smartsheet-overview.md) | ✓/− |  |  |

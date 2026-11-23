@@ -79,12 +79,12 @@ INNER JOIN sys.database_permissions AS pe
 
 In the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)], you can restrict access to specific columns and to specific rows in a table, and mask sensitive data from nonadministrators.
 
-- [Row-level security in Fabric data warehousing](row-level-security.md)
-- [Column-level security in Fabric data warehousing](column-level-security.md)
-- [Dynamic data masking in Fabric data warehousing](dynamic-data-masking.md)
+- [Row-level security in Fabric Data Warehouse](row-level-security.md)
+- [Column-level security in Fabric Data Warehouse](column-level-security.md)
+- [Dynamic data masking in Fabric Data Warehouse](dynamic-data-masking.md)
 
 ## Related content
 
-- [Security for data warehousing in Microsoft Fabric](security.md)
+- [Security in Fabric Data Warehouse](security.md)
 - [Share your data and manage permissions](share-warehouse-manage-permissions.md)
 - [GRANT](/sql/t-sql/statements/grant-transact-sql?view=fabric&preserve-view=true), [REVOKE](/sql/t-sql/statements/revoke-transact-sql?view=fabric&preserve-view=true), and [DENY](/sql/t-sql/statements/deny-transact-sql?view=fabric&preserve-view=true)

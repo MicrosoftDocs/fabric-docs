@@ -2,7 +2,7 @@
 title: "Mirror Azure Monitor Data in Microsoft Fabric (Preview)"
 description: Learn about the Mirror Azure Monitor feature in Microsoft Fabric, which connects Log Analytics tables to Fabric workloads without replicating data.
 ms.reviewer: nirarazy, ilanawaitser
-ms.date: 07/29/2026
+ms.date: 11/10/2026
 ms.topic: overview
 ms.search.form: Fabric Mirroring
 ---
@@ -124,6 +124,7 @@ Validate the security model end to end before exposing a mirrored item to a broa
 
 The following constraints apply during public preview:
 
+- **Outbound access protection.** Mirrored Azure Monitor items support workspace outbound access protection. To let the item connect when outbound access protection is enabled, allow its connection type in the workspace's data connection rules. Endpoint exceptions aren't supported. For more information, see [Workspace outbound access protection for mirrored catalogs and Snowflake database](../../security/workspace-outbound-access-protection-mirrored-catalogs-snowflake-database.md).
 - **Table count.** A mirrored Azure Monitor item supports approximately **500 tables**. This limit is soft during preview and might change. For larger workspaces, create multiple mirrored items, each scoped to a subset of tables.
 - **No historical backfill.** During public preview, mirrored Azure Monitor items show **new data only**. Data that arrived in the workspace before the table was mirrored isn't backfilled into Fabric.
 - **Read-only.** Mirrored items are read-only in Fabric. Writing back to Azure Monitor through the mirrored item isn't supported.

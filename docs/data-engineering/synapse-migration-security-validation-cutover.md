@@ -16,7 +16,7 @@ Use this article in the final stage of your migration to validate workloads, ali
 In this article, you learn how to:
 
 - Map Synapse RBAC and network patterns to Fabric workspace, OneLake, and managed network controls.
-- Reconnect governance workflows, including Microsoft Purview integration and labeling.
+- Reestablish governance and protection workflows by using OneLake Catalog and Microsoft Purview Information Protection.
 - Use the phase-by-phase migration checklist to validate, optimize, and execute cutover.
 - Plan decommissioning of legacy Synapse Spark resources after successful cutover.
 
@@ -36,7 +36,7 @@ In this article, you learn how to:
 
 ## Governance
 
-If you use Azure Purview with Synapse, Fabric provides native Microsoft Purview integration for data catalog, lineage, sensitivity labels, and access policies. Reconnect your Purview account to scan Fabric workspaces.
+Use [OneLake Catalog](../governance/onelake-catalog-overview.md) to discover and govern migrated Fabric items and review their lineage. Use Microsoft Purview Information Protection to apply sensitivity labels and protection policies to supported Fabric items.
 
 ## Migration checklist
 
@@ -49,7 +49,7 @@ For planning guidance, migration patterns, and feature comparison, see [Phase 1:
 - **1.1** Complete Spark asset inventory: Spark pools, notebooks, Spark job definitions, lake databases, Hive Metastore (HMS) databases, and linked services used in notebooks.
 - **1.2** Review Synapse vs. Fabric feature differences. Flag blockers: GPU workloads, unsupported catalog APIs, linked service dependencies.
 - **1.3** Run the pre-refactoring audit: search all notebooks for Synapse-specific patterns (`spark.synapse.linkedService`, `getSecretWithLS`, `TokenLibrary`, `synapsesql`). Count affected notebooks.
-- **1.4** Check library compatibility: run `pip freeze` on Synapse pools, compare against Fabric Runtime 1.3 built-in libraries. List libraries that need to be pre-installed.
+- **1.4** Check library compatibility: run `pip freeze` on Synapse pools and compare against the built-in libraries for your target Fabric runtime. [Runtime 2.0](./runtime-2-0.md) is the latest GA and default runtime. List missing libraries and incompatible versions to resolve before migration.
 - **1.5** Create Fabric workspace(s), provision capacity, and create target Lakehouse items.
 - **1.6** Export Spark pool configurations, custom libraries, and Spark properties from Synapse Studio.
 
@@ -92,7 +92,7 @@ For security, governance, and network mapping guidance, see [Phase 4: Security a
 - **5.2** Configure OneLake RBAC for fine-grained data access control at the folder and table level.
 - **5.3** Configure Managed VNet and Managed Private Endpoints for Spark workloads that access private data sources (requires Custom Pools).
 - **5.4** Replace SHIR with On-premises Data Gateway (OPDG), and replace VNet IR with VNet Data Gateway.
-- **5.5** Reconnect Microsoft Purview for governance, lineage, and sensitivity labels.
+- **5.5** Verify that migrated items appear in OneLake Catalog and review their lineage.
 - **5.6** Review and apply sensitivity labels to migrated Lakehouse items as needed.
 
 ### Phase 6: Optimize and validate

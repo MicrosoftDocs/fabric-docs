@@ -3,8 +3,8 @@ title: Use Azure OpenAI with REST API
 description: How to use prebuilt Azure OpenAI in Fabric with REST API
 ms.author: lagayhar
 author: lgayhardt
-ms.reviewer: ruxu
-reviewer: ruixinxu
+ms.reviewer: scottpolly
+reviewer: s-polly
 ms.topic: how-to
 ms.date: 06/10/2026
 ms.update-cycle: 180-days
@@ -182,7 +182,7 @@ Output:
 
 - [Use Azure OpenAI with AI Functions](how-to-use-openai-ai-functions.md) for large scale dataset transformations in Fabric for Pandas or PySpark DataFrames
 - [Use Azure OpenAI with SynapseML](how-to-use-openai-synapse-ml.md) for distributed processing using Spark DataFrames with no overhead
-- [Use Azure OpenAI with Python SDK](how-to-use-openai-python-sdk.md) for pythonic control over single API calls using OpenAI Python SDK
+- [Use Azure OpenAI with OpenAI Python SDK](how-to-use-openai-python-sdk.md) for the OpenAI package or built-in synchronous and asynchronous OpenAI-compatible clients
 
 ### OpenAI API documentation
 

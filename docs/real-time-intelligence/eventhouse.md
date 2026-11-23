@@ -4,7 +4,7 @@ description: Learn about eventhouse data storage in Real-Time Intelligence.
 ms.reviewer: sharmaanshul
 ms.topic: concept-article
 ms.subservice: rti-eventhouse
-ms.custom:
+ms.custom: msecd-doc-authoring-1030
 ms.date: 06/15/2026
 ms.search.form: Eventhouse
 ai-usage: ai-assisted
@@ -17,10 +17,10 @@ Eventhouses are tailored to time-based, streaming events with structured, semist
 
 ## Analyze data with integration
 
-Eventhouse uses the same **Analyze data with** menu as other Fabric items, so you can start analysis from a unified entry point across workloads. From an Eventhouse or KQL database, you can use **SQL endpoint** and **Notebook** options directly where available.
+Eventhouse uses the same **Analyze data with** menu as other Fabric items, so you can start analysis from a unified entry point across workloads. From an Eventhouse or KQL database, you can use **SQL analytics endpoint** and **Notebook** options directly where available.
 
 > [!NOTE]
-> The **Analyze data with** > **SQL endpoint** option appears for Eventhouse and KQL databases only when OneLake availability and schema synchronization are enabled on the database. This setup provides near-real-time access to KQL data through the SQL endpoint.
+> The **Analyze data with** > **SQL analytics endpoint** option appears for Eventhouse and KQL databases only when OneLake availability and schema synchronization are enabled on the database. This setup provides near-real-time access to KQL data through the SQL analytics endpoint.
 
 ## When do I create an eventhouse?
 
@@ -75,6 +75,8 @@ The UI provides a weekly schedule view and surfaces warnings if scheduled minimu
 When you [share a direct link to an Eventhouse](create-eventhouse.md#share-an-eventhouse), the recipient inherits the sender's permission level to all Eventhouse items including KQL databases and tables, and all related Eventhouse components including dashboards, functions, materialized views, and embedded querysets.
 
 Individual KQL databases can be shared independently, although users with database-only access don't gain access to Eventhouse-level navigation elements like System overview or the list of KQL databases in the Eventhouse. To share an individual database, see [Share a KQL database link](access-database-copy-uri.md#share-a-kql-database-link).
+
+To share only selected tables, shortcut tables, materialized views, or functions, create a [database shortcut](database-shortcut.md). This table-level sharing option exposes the selected subitems without exposing the rest of the source database. Unlike sharing an eventhouse or database link, it creates a read-only database shortcut for consumers. The source database and the database shortcut must be in the same tenant and region.
 
 ## Related content
 

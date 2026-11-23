@@ -6,7 +6,8 @@ ms.reviewer: preshah # Product team ms alias(es)
 # ms.author: Do not use - assigned by folder in docfx file
 ms.topic: how-to
 ai-usage: ai-assisted
-ms.date: 04/30/2026
+ms.date: 10/12/2026
+ms.search.form: Databricks Storage overview
 #customer intent: As a data engineer, I want to learn how to integrate OneLake with Azure Databricks so that I can read and write data to a Microsoft Fabric lakehouse from my Azure Databricks workspace.
 ---
 
@@ -23,6 +24,7 @@ For related Databricks integration scenarios, see the following resources:
 | -------- | ------------- |
 | Query OneLake data from Unity Catalog without copying it | [Enable OneLake catalog federation](/azure/databricks/query-federation/onelake) |
 | Access Databricks Unity Catalog data from Fabric | [Mirroring Azure Databricks Unity Catalog](../mirroring/azure-databricks.md) |
+| Write to OneLake by using a Unity Catalog external location | [Direct writes to OneLake](/azure/databricks/connect/unity-catalog/cloud-storage/external-locations-onelake) |
 
 ## Prerequisites
 

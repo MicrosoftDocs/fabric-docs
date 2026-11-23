@@ -279,7 +279,7 @@ You can find useful Python code snippets on the **Edit** tab by selecting **Brow
 
 ## Semantic link
 
-Semantic link is a feature that you can use to connect [semantic models](/power-bi/connect-data/service-datasets-understand) and Synapse Data Science. Python notebooks natively support this feature. BI engineers and Power BI developers can use semantic link to connect and manage semantic models easily. To learn more, see the [public document](../data-science/semantic-link-overview.md).
+Use the semantic link feature to connect [semantic models](/power-bi/connect-data/service-datasets-understand) and Fabric Data Science. Python notebook natively supports this feature. BI engineers and Power BI developers can use semantic link to connect and manage semantic models easily. To learn more, see [What is semantic link](../data-science/semantic-link-overview.md).
 
 ## Visualization
 
@@ -296,13 +296,13 @@ Python notebooks also use Pylance as the language server. For more information, 
 
 ## Data science capabilities
 
-To learn more about data science and AI experiences in Fabric, see [Data Science documentation in Fabric](/fabric/data-science/). This article lists a few key data science features that Python notebooks natively support.
+To learn more about data science and AI experiences in Fabric, see [Fabric Data Science documentation](/fabric/data-science/). This article lists a few key data science features that Python notebooks natively support.
 
 - **Data Wrangler**: Data Wrangler is a notebook-based tool that provides an immersive interface for exploratory data analysis. This feature combines a grid-like data display with dynamic summary statistics, built-in visualizations, and a library of common data cleaning operations. It provides data cleaning, data transformation, and integration, which accelerates data preparation by using Data Wrangler.
 
 - **MLflow**: A machine learning experiment is the primary unit of organization and control for all related machine learning runs. A run corresponds to a single execution of model code.
 
-- **Fabric Auto Logging**: Synapse Data Science includes autologging, which significantly reduces the amount of code required to automatically log the parameters, metrics, and items of a machine learning model during training.
+- **Fabric Auto Logging**: Fabric Data Science includes autologging, which significantly reduces the amount of code required to automatically log the parameters, metrics, and items of a machine learning model during training.  
 
    Autologging extends MLflow Tracking capabilities. Autologging can capture various metrics, including accuracy, loss, F1 score, and custom metrics you define. By using autologging, developers and data scientists can easily track and compare the performance of different models and experiments without manual tracking.
 

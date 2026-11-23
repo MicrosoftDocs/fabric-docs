@@ -11,7 +11,7 @@ ms.date: 06/26/2026
 
 # Troubleshoot Databricks gateway TLS mismatch
 
-When you use an on-premises data gateway with Databricks, connection validation, refresh, or result download failures can occur if the gateway host's TLS or certificate configuration doesn't align with Databricks requirements. This issue can affect Dataflow Gen2 and other supported Databricks or Azure Databricks connection scenarios.
+When you use an on-premises data gateway with Databricks, connection validation, refresh, or result download failures can occur if the gateway host's TLS or certificate configuration doesn't align with Databricks requirements. This issue can affect dataflow Gen2 and other supported Databricks or Azure Databricks connection scenarios.
 
 This problem typically occurs if you recently enabled enhanced security or TLS-related settings on the gateway host, use an older gateway build, or route gateway traffic through a proxy or firewall that inspects HTTPS traffic. In these cases, the error might appear as a generic driver or gateway failure rather than clearly indicating a TLS 1.2 or certificate trust issue.
 

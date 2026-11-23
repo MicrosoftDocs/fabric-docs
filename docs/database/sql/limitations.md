@@ -2,7 +2,7 @@
 title: "Limitations for SQL database"
 description: A detailed list of limitations for SQL database in Microsoft Fabric.
 ms.reviewer: nzagorac, antho, sukkaur, drskwier, nanikolic
-ms.date: 05/15/2026
+ms.date: 08/24/2026
 ms.topic: concept-article
 ms.update-cycle: 180-days
 ms.search.form: Databases Limitations for SQL, Databases Limitations
@@ -22,10 +22,6 @@ This article applies to SQL database in Fabric only. For the warehouse and SQL a
 SQL database in Fabric is available in most regions where Microsoft Fabric is available. The region of your workspace based on the license capacity, which is displayed in **Workspace settings**, in the **Workspace type** page. For more information, see [Fabric availability](/azure/reliability/reliability-fabric#availability).
 
 Mirroring of SQL database in Fabric is available in [Fabric regions that support mirroring](../../mirroring/azure-sql-database-limitations.md#supported-regions).
-
-## Workspace level limitations
-
-Tenant-level [private links](../../security/security-private-links-overview.md) are available for SQL database, but currently, workspace-level private links are not available in SQL database.
 
 ## Database level limitations
 
@@ -137,7 +133,7 @@ The following table lists the major features of SQL Server and provides informat
 | Time zone choice | No | No |
 | [Trace flags](/sql/t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql) | No | No |
 | [Transactional replication](/azure/azure-sql/database/migrate-to-database-from-sql-server) | Yes, subscriber only |  Yes, subscriber only |
-| [Transparent data encryption (TDE)](/azure/azure-sql/database/transparent-data-encryption-tde-overview) | Yes | No. Fabric SQL database uses storage encryption with service-managed keys to protect all customer data at rest. Currently, customer-managed keys are not supported. |
+| [Transparent data encryption (TDE)](/azure/azure-sql/database/transparent-data-encryption-tde-overview) | Yes | Yes |
 
 ## Platform capabilities
 
@@ -149,8 +145,8 @@ The Azure platform provides a number of PaaS capabilities that are added as an a
 | **Automatic backups** | Yes | Yes |
 | **Automatic tuning (indexes)**| Yes, see [Automatic tuning](/azure/azure-sql/database/automatic-tuning-overview?view=azuresql-db&preserve-view=true) | Yes   |
 | **Availability zones** | [Yes](/azure/availability-zones/az-overview) | [Yes, automatically configured](/azure/reliability/reliability-fabric#availability-zone-support) |
-| [Azure Database Migration Service (DMS)](/azure/dms/dms-overview) | Yes | No |
-| [Data Migration Service (DMA)](/sql/dma/dma-overview) | Yes | No |
+| [Azure Database Migration Service (DMS)](/azure/dms/dms-overview) | Yes | No, use the [Fabric Migration Assistant for SQL database](migration-assistant.md) |
+| [Data Migration Service (DMA)](/sql/dma/dma-overview) | Yes | No, use the [Fabric Migration Assistant for SQL database](migration-assistant.md) |
 | **Elastic jobs** | Yes, see [Elastic jobs](/azure/azure-sql/database/elastic-jobs-overview?view=azuresql-db&preserve-view=true) | No |
 | **Failover groups**| Yes, see [failover groups](/azure/azure-sql/database/failover-group-sql-db?view=azuresql-db&preserve-view=true) | No |
 | **Geo-restore**| Yes, see [Geo-restore](/azure/azure-sql/database/recovery-using-backups?view=azuresql-db&preserve-view=true#geo-restore) | No |
@@ -168,7 +164,7 @@ The Azure platform provides a number of PaaS capabilities that are added as an a
 | [VNet](/azure/virtual-network/virtual-networks-overview) | Partial, restricted access using [VNet Endpoints](/azure/azure-sql/database/vnet-service-endpoint-rule-overview?view=azuresql-db&preserve-view=true) | No |
 | **VNet Service endpoint** | Yes, see [virtual network service endpoints](/azure/azure-sql/database/vnet-service-endpoint-rule-overview?view=azuresql-db&preserve-view=true) | No |
 | **VNet Global peering** | Yes, using [Private IP and service endpoints](/azure/azure-sql/database/vnet-service-endpoint-rule-overview?view=azuresql-db&preserve-view=true) | No |
-| **Private connectivity** | Yes, using [Private Link](/azure/private-link/private-endpoint-overview) | Yes, tenant-level [private links](../../security/security-private-links-overview.md) are available for SQL database, but currently, workspace-level private links are not available in SQL database. |
+| **Private connectivity** | Yes, using [Private Link](/azure/private-link/private-endpoint-overview) | Yes, tenant-level and workspace-level (preview) [private links](../../security/security-private-links-overview.md) are available for SQL database. |
 | **Connectivity Policy**|[Redirect, Proxy, or Default](/azure/azure-sql/database/connectivity-architecture?view=azuresql-db&preserve-view=true#connection-policy)|[Default](/azure/azure-sql/database/connectivity-architecture?view=fabric-sqldb&preserve-view=true#connection-policy)|
 
 ## Resource limits

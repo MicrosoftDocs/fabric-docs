@@ -23,7 +23,7 @@ Before you can publish your workload to the Workload Hub, you must meet these fu
 Every workload requires a unique **Workload Name** that follows the format `[Publisher].[Workload]` (for example, `Contoso.SalesInsights`).
 
 * **Character Limit**: The Workload portion cannot exceed 32 characters
-* **Automatic Registration**: The workload name is automatically registered when you confirm it during the first upload in the Admin Portal
+* **Automatic registration**: The workload name is automatically registered when you confirm it during the first upload in **OneLake catalog** > **Govern** > **Configurations** > **Workloads**.
 * **Fixed Value**: Once registered, the Workload name cannot be changed
 * **Manifest Configuration**: Set the Workload name in your [workload manifest](manifest-workload.md)
 * **First Upload Confirmation**: When you upload a workload for the first time, a **Confirm workload Name** dialog appears. The workload name is permanently reserved in your tenant after confirmation.
@@ -136,7 +136,7 @@ The validation tool provides:
 
 Once you meet all requirements, follow this process:
 
-1. **Workload Name Registration**: Register your workload name during the first upload in the Admin Portal
+1. **Workload name registration**: Register your workload name during the first upload in **OneLake catalog** > **Govern** > **Configurations** > **Workloads**.
 2. **Requirements Compliance**: Meet all workload and item requirements
 3. **Attestation Documentation**: Create and publish your attestation document
 4. **Validation**: Use validation tools to verify compliance

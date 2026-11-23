@@ -66,7 +66,7 @@ The [Starter-Kit](https://aka.ms/fabric-extensibility-starter-kit) repository in
 ## How it’s used in dev and production
 
 - DevGateway: Uses the manifest to register your local development instance with Fabric so your app loads in an iFrame during development. See [DevGateway](tools-register-local-workload.md).
-- Admin Portal: For testing and production, upload the manifest package through the Fabric Admin Portal as part of your publishing flow. See [Publish your workload](publishing-overview.md).
+- Workloads: For testing and production, upload the manifest package through **OneLake catalog** > **Govern** > **Configurations** > **Workloads** as part of your publishing flow. See [Publish your workload](publishing-overview.md).
 
 ## Related content
 

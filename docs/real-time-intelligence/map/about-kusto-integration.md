@@ -54,6 +54,8 @@ A configuration wizard guides you through:
 
 Kusto‑backed layers can refresh automatically at a configured interval. This makes them suitable for monitoring scenarios such as telemetry, device tracking, or live operational data.
 
+To monitor the underlying data and take action when specified conditions are met, you can create a Fabric Activator rule from a supported layer. For more information, see [Activator alerts in Fabric Maps](about-activator-alerts.md).
+
 ## Styling and interaction
 
 Once added, Kusto layers behave like other vector layers in Fabric Maps. You can:

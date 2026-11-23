@@ -14,9 +14,7 @@ After you [upload your workload](manage-workload.md) to Microsoft Fabric, you ca
 
 1. Sign in to Fabric.
 
-1. Go to **Settings** > **Admin portal**.
-
-1. Select **Workloads**.
+1. Go to **OneLake catalog** > **Govern** > **Configurations** > **Workloads**.
 
 1. On the **Public Sample Workload** pane, select the **Publish** tab.
 
@@ -27,7 +25,7 @@ After you [upload your workload](manage-workload.md) to Microsoft Fabric, you ca
 1. Select **Publish**.
 
 > [!NOTE]
-> If you plan to publish to your own tenant, ensure that you first deactivate the workload in the Microsoft Fabric admin portal. For more information, see the steps to [deactivate a workload](manage-workload.md).
+> If you plan to publish to your own tenant, ensure that you first deactivate the workload in **OneLake catalog** > **Govern** > **Configurations** > **Workloads**. For more information, see the steps to [deactivate a workload](manage-workload.md).
 
 ## Related content
 

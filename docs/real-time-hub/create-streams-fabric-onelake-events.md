@@ -4,8 +4,8 @@ description: This article describes how to get OneLake events as a Fabric events
 ms.reviewer: robece
 ms.topic: how-to
 ms.date: 04/02/2026
-author: spelluru
-ms.author: spelluru
+author: galir
+ms.author: garezni
 #customer intent: I want to know how to create eventstreams for OneLake events in Fabric Real-Time hub.
 ---
 
@@ -35,6 +35,8 @@ For more information, see [Explore OneLake events](explore-fabric-onelake-events
 [!INCLUDE [workspace-private-links-note](./includes/workspace-private-links-note.md)]
 
 ## Prerequisites
+
+[!INCLUDE [event-consumer-region-note](./includes/event-consumer-region-note.md)]
 
 - Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions.
 - SubscribeOneLakeEvent permission on the data sources.

@@ -7,9 +7,9 @@ ms.topic: best-practice
 
 # Best practices and supported date formats for automatic time intelligence
 
-Time intelligence automatically recognizes the date fields you assign to a visual and interprets them as a date hierarchy (for example, Year → Quarter → Month → Day). After plan detects a date/time hierarchy, it maps each member to the corresponding calendar period. Use the hierarchy for time intelligence calculations such as year-to-date (YTD), prior period, next N periods, and period-over-period comparisons.
+Time intelligence automatically recognizes the date fields you assign to a visual and interprets them as a date hierarchy (for example, Year → Quarter → Month → Day). After planning detects a date/time hierarchy, it maps each member to the corresponding calendar period. Use the hierarchy for time intelligence calculations such as year-to-date (YTD), prior period, next N periods, and period-over-period comparisons.
 
-This article helps report developers understand the time hierarchies that plan detects:
+This article helps report developers understand the time hierarchies that planning detects:
 
 * Supported hierarchy levels
 * Accepted text and numeric label formats
@@ -19,7 +19,7 @@ This article helps report developers understand the time hierarchies that plan d
 
 Time intelligence automatically detects the hierarchy without additional configuration when the labels follow one of the supported formats described in this article.
 
-## How plan detects a time hierarchy
+## How planning detects a time hierarchy
 
 Time intelligence identifies the date hierarchy by using the following order of precedence:
 
@@ -266,26 +266,31 @@ A composite quarter-and-year field: Both the quarter and the year come from each
 
 ## Troubleshooting
 
-### Time intelligence doesn't detect my hierarchy.
+Here are some possible issues and their troubleshooting resolutions.
+
+### Time intelligence doesn't detect my hierarchy
 
 Check that each field uses one of the accepted formats listed earlier and that all members of a level use the same format. Rename the field to include a recognizable keyword, such as Year or Month, so time intelligence identifies the level. Confirm that the values fall within the valid range for the level (Quarters 1–4, Months 1–12, Weeks 1–53, Days 1–31).
 
-### Time intelligence detects the hierarchy in the wrong order.*
+> [!NOTE]
+> If plan doesn't detect your hierarchy after you apply the workarounds described in this section, or if you use custom date formats that plan can't recognize, manually map the date formats. To learn more, see [Configure Time Interval Mapping for Custom Date Fields](../how-to-manually-map-time-intervals.md).
+
+### Time intelligence detects the hierarchy in the wrong order
 
 Arrange levels from broadest to most granular (Year at the top, Day at the bottom). Reorder the fields so that each level sits above its subdivisions.
 
-### A member is missing or ignored.
+### A member is missing or ignored
 
 This problem usually means the label falls outside the supported range or uses an unsupported format. For example, Q5, Week 54, Sept, or a range such as 22-23. Correct the label to a supported value or format.
 
-### Time intelligence doesn't parse a composite date correctly.
+### Time intelligence doesn't parse a composite date correctly
 
 Ensure every member of the field follows the same composite structure and that each period part is in a supported format. A composite label can hold only one value per level and can't contain a range.
 
-### Two-digit years land in the wrong century. 
+### Two-digit years land in the wrong century
 
 Time intelligence interprets two-digit years within the current century. For example, 24 becomes 2024. If you need a specific century, use the full four-digit year.
 
-### Days appear under the wrong month. 
+### Days appear under the wrong month
 
 When a Day level sits directly under a Quarter or Half Year without a Month level, time intelligence measures days from the start of that parent period. Add a Month level above Day for accurate placement.

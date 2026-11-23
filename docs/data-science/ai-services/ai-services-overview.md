@@ -1,19 +1,19 @@
 ---
 title: Use Foundry Tools in Fabric
 description: Overview of using Foundry Tools in Fabric.
-ms.author: lagayhar
-author: lgayhardt
+ms.author: singhrana
+author: ranadeepsingh
 ms.reviewer: singhrana
 reviewer: ranadeepsingh
 ms.topic: overview
 ms.custom:
   - references_regions
-ms.date: 08/03/2026
+ms.date: 09/02/2026
 ms.update-cycle: 180-days
 ms.search.form: 
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
-ai.usage: ai-assisted
+ai-usage: ai-assisted
 ---
 
 # Foundry Tools in Fabric (preview)
@@ -28,7 +28,7 @@ Fabric provides two options to use Foundry Tools:
 
     Fabric seamlessly integrates with Foundry Tools, allowing you to enrich your data with prebuilt AI models without any prerequisite. We recommend this option because you can use your Fabric authentication to access Foundry Tools, and all usages are billed against your Fabric capacity. This option is currently in public preview, with limited Microsoft Foundry tools available.
 
-    Fabric offers [Azure OpenAI Service](/azure/foundry/foundry-models/concepts/models-sold-directly-by-azure?tabs=global-standard-aoai%2Cglobal-standard&pivots=azure-openai), [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/), and [Azure Translator in Foundry Tools](https://azure.microsoft.com/products/ai-services/translator/) by default, with support for both SynapseML and the RESTful API. You can also use the [OpenAI Python Library](https://platform.openai.com/docs/api-reference?lang=python) to access Azure OpenAI service in Fabric. For more information about available models, visit [prebuilt AI models in Fabric](./ai-services-overview.md#prebuilt-ai-models-in-fabric-preview).
+    Fabric offers [Azure OpenAI Service](/azure/foundry/foundry-models/concepts/models-sold-directly-by-azure?tabs=global-standard-aoai%2Cglobal-standard&pivots=azure-openai), [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/), and [Azure Translator in Foundry Tools](https://azure.microsoft.com/products/ai-services/translator/) by default, with support for SynapseML and the REST API. You can also use the [OpenAI Python SDK](how-to-use-openai-python-sdk.md), including built-in synchronous and asynchronous OpenAI-compatible clients that require no installation or authentication setup. For more information, see [Prebuilt AI models in Fabric](#prebuilt-ai-models-in-fabric-preview).
 
 - **Bring your own key (BYOK)**
 
@@ -40,7 +40,7 @@ Fabric provides two options to use Foundry Tools:
 
 ### [Azure OpenAI Service](/azure/foundry/foundry-models/concepts/models-sold-directly-by-azure?tabs=global-standard-aoai%2Cglobal-standard&pivots=azure-openai)
 
-[REST API](how-to-use-openai-via-rest-api.md), [Python SDK](how-to-use-openai-python-sdk.md), [SynapseML](how-to-use-openai-synapse-ml.md), [AI Functions](how-to-use-openai-ai-functions.md)
+[REST API](how-to-use-openai-via-rest-api.md), [OpenAI Python SDK](how-to-use-openai-python-sdk.md), [SynapseML](how-to-use-openai-synapse-ml.md), [AI Functions](how-to-use-openai-ai-functions.md)
 
 - Language models: `gpt-5.1` and `gpt-5-mini` are hosted. [See table for details](#consumption-rate-for-openai-language-models)
 - Text embedding model: `text-embedding-ada-002` is hosted. [See table for details](#consumption-rate-for-openai-embedding-models)
@@ -56,12 +56,16 @@ Fabric provides two options to use Foundry Tools:
 - Named entity recognition: identifies known entities and general named entities in the input text
 - Entity linking: identifies and disambiguates the identity of entities found in text
 
+The REST examples use API version `2024-11-01` for most Language capabilities. Text PII detection uses API and model version `2026-05-01`, the latest generally available versions for that capability. For currently published versions, see the [Azure AI Language model lifecycle](/azure/ai-services/language-service/concepts/model-lifecycle).
+
 ### [Translator](https://azure.microsoft.com/products/ai-services/translator/)
 
 [REST API](how-to-use-text-translator.md), [SynapseML](how-to-use-text-translator.md)
 
 - Translate: Translates text
 - Transliterate: Converts text in one language, in one script, to another script.
+
+The Fabric REST examples use Translator Text API v3.0 for translation and API version `2026-06-06` for transliteration and supported-language retrieval. SynapseML continues to use v3.0. API version `2026-06-06` has a breaking request and response schema, and its translation operation isn't currently available through the prebuilt Fabric endpoint. For migration details, see [Migrate to Translator Text API 2026-06-06](/azure/ai-services/translator/text-translation/how-to/migrate-to-2026-06-06).
 
 ## Available regions
 
@@ -131,7 +135,7 @@ Prebuilt AI services in Fabric are billed against the Copilot and AI billing met
 
 You can monitor AI services usage using the [Microsoft Fabric Capacity Metrics app](../../enterprise/metrics-app.md). To view AI-related usage:
 
-1. Install the [Microsoft Fabric Capacity Metrics app](../../enterprise/metrics-app.md#install-the-app) (requires capacity admin permissions for initial setup).
+1. Install the [Microsoft Fabric Capacity Metrics app](../../enterprise/metrics-app-install.md) (requires capacity admin permissions for initial setup).
 1. In the app, look for usage reported under the Copilot and AI meter to see capacity consumption from AI Services and AI Functions operations.
 
 > [!NOTE]
@@ -153,5 +157,5 @@ This separation makes it easier to track and forecast AI-related costs independe
 
 - [Fabric AI Functions](../ai-functions/overview.md) for large scale dataset transformations in Fabric for Pandas or PySpark DataFrames
 - [Use Azure OpenAI with SynapseML](how-to-use-openai-synapse-ml.md) for distributed processing using Spark DataFrames with no overhead
-- [Use Azure OpenAI with Python SDK](how-to-use-openai-python-sdk.md) for pythonic control over single API calls using OpenAI Python SDK
+- [Use Azure OpenAI with OpenAI Python SDK](how-to-use-openai-python-sdk.md) for the OpenAI package or built-in synchronous and asynchronous OpenAI-compatible clients
 - [Use Azure OpenAI with REST API](how-to-use-openai-via-rest-api.md) for direct REST API calls to the LLM endpoint

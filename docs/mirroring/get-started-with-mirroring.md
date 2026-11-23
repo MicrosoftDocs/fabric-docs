@@ -2,12 +2,12 @@
 title: Get Started with Mirroring in Fabric
 description: New to Mirroring in Microsoft Fabric? Start here to learn the basics, find your source, and see where to go next.
 ms.reviewer: sbahadur, maprycem, tinglee
-ms.topic: overview
-ms.date: 07/20/2026
+ms.date: 07/27/2026
 ms.subservice: mirroring
+ms.topic: overview
 ms.search.form: Get started
 ai-usage: ai-assisted
-#customer intent: As someone new to Mirroring in Fabric, I want a short starting point that tells me the basics and points me to what to read next, so that I can begin without having to absorb the full overview article first.
+# customer intent: As someone new to Mirroring in Fabric, I want a short starting point that tells me the basics and points me to what to read next, so that I can begin without having to absorb the full overview article first.
 ---
 
 # Get started with mirroring in Fabric
@@ -34,6 +34,22 @@ Most mirrored sources move through the same stages. This article follows the sta
 Find your source in the following table and follow the tutorial. Each tutorial covers source-specific prerequisites at the top. The **Type of mirroring** column tells you whether your source is replicated into OneLake or referenced through shortcuts.
 
 Sources marked **(preview)** are in [public preview](../fundamentals/preview.md); all other sources are generally available.
+
+When you create a mirrored item, use the following options to choose a source connection:
+
+- **Home**:
+
+    [!INCLUDE [Home module](~/../powerquery-repo/powerquery-docs/includes/get-data-home-module.md)]
+
+- **New**:
+
+    [!INCLUDE [New data source module](~/../powerquery-repo/powerquery-docs/includes/get-data-new-source-module.md)]
+
+- **OneLake catalog**:
+
+    [!INCLUDE [OneLake catalog module](~/../powerquery-repo/powerquery-docs/includes/get-data-onelake-catalog-module.md)]
+
+After you select a source or connection, follow the source-specific setup steps in its tutorial.
 
 [!INCLUDE [Mirrored data sources](includes/mirrored-sources-table.md)]
 

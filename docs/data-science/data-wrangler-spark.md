@@ -3,8 +3,8 @@ title: Explore and transform Spark data with Data Wrangler
 description: Learn how to explore and transform Spark DataFrames with Data Wrangler, generating PySpark code in real time.
 ms.author: scottpolly
 author: s-polly
-ms.reviewer: ruxu
-reviewer: ruixinxu
+ms.reviewer: scottpolly
+reviewer: s-polly
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 09/29/2025

@@ -2,9 +2,10 @@
 title: GQL Query HTTP API Reference for graph in Microsoft Fabric
 description: Refer to the complete HTTP API reference for querying graph data in graph in Microsoft Fabric using GQL (Graph Query Language) via REST endpoints.
 ms.topic: reference
-ms.date: 05/20/2026
+ms.date: 09/18/2026
 ms.reviewer: splantikow
 ms.search.form: GQL Query HTTP API reference
+ai-usage: ai-assisted
 ---
 
 # GQL Query API reference
@@ -16,13 +17,13 @@ Run GQL queries against property graphs in graph in Microsoft Fabric using a RES
 
 ## Overview
 
-The GQL Query API is a single endpoint (RPC over HTTP) that accepts GQL queries as JSON payloads and returns structured, typed results. The API is stateless, handles authentication, and provides comprehensive error reporting.
+The GQL Query API exposes a REST endpoint that accepts GQL queries as JSON payloads and returns structured, typed results. It supports continuation polling for queries that don't finish during the initial request.
 
 ### Key features
 
 - **Single endpoint** - All operations use HTTP POST to one URL.
 - **JSON based** - Request and response payloads use JSON with rich encoding of typed GQL values.
-- **Stateless** - No session state required between requests.
+- **Continuation polling** - Long-running queries can continue across multiple HTTP requests.
 - **Type safe** - Strong, GQL-compatible typing with discriminated unions for value representation.
 
 ## Prerequisites
@@ -67,8 +68,10 @@ You can obtain bearer tokens for applications registered in Microsoft Entra. Con
 The API uses a single endpoint that accepts all query operations:
 
 ```http
-POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/GraphModels/{GraphModelId}/executeQuery?preview=true
+POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/graphModels/{graphModelId}/executeQuery?beta=true
 ```
+
+The Query API is in beta and isn't recommended for production use. Set the required `beta` query parameter to `true`. The older `preview=true` parameter remains supported for backward compatibility, but use `beta=true` for new integrations.
 
 To obtain the `{workspaceId}` for your workspace, you can list all available workspaces using `az rest`:
 
@@ -76,21 +79,28 @@ To obtain the `{workspaceId}` for your workspace, you can list all available wor
 az rest --method get --resource "https://api.fabric.microsoft.com" --url "https://api.fabric.microsoft.com/v1/workspaces"
 ```
 
-To obtain the `{graphId}`, you can list all available graphs in a workspace using `az rest`:
+To obtain the `{graphModelId}`, you can list all available graphs in a workspace using `az rest`:
 
 ```bash
-az rest --method get --resource "https://api.fabric.microsoft.com" --url "https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/GraphModels"
+az rest --method get --resource "https://api.fabric.microsoft.com" --url "https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/graphModels"
 ```
 
-You can use more parameters to further narrow down query results:
+You can use Azure CLI output options to filter or format the responses from these list requests. These options run in the Azure CLI client; they aren't Query API parameters:
 
-- `--query 'value[?displayName=='My Workspace']` for listing only items with a `displayName` of `My Workspace`.
-- `--query 'value[starts_with(?displayName='My')]` for listing only items whose `displayName` starts with `My`.
-- `--query '{query}'` for listing only items that match the provided JMESPath `{query}`. See the [Azure CLI documentation on JMESPath](/cli/azure/use-azure-cli-successfully-query) regarding the supported syntax for `{query}`.
+- `--query "value[?displayName=='My Workspace']"` lists only items with a `displayName` of `My Workspace`.
+- `--query "value[?starts_with(displayName, 'My')]"` lists only items whose `displayName` starts with `My`.
+- `--query "{query}"` lists only items that match the provided JMESPath `{query}`. See [Query Azure CLI command results](/cli/azure/use-azure-cli-successfully-query) for the supported syntax.
 - `-o table` for producing a table result.
 
 > [!NOTE]
 > See the [section on using az-rest](#complete-example-with-az-rest) or the [section on using curl](#complete-example-with-curl) for how to execute queries via the API endpoint from a command line shell.
+
+### Query parameters
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------: | ----------- |
+| `beta` | boolean | Yes | Set to `true` to use the beta Query API. |
+| `continuationToken` | string | No | Token from `result.nextPage` when a query is still running. Submit the same query text when you use the token. |
 
 ### Request headers
 
@@ -128,11 +138,15 @@ All responses for successful requests use HTTP 200 status with JSON payload cont
 {
   "status": {
     "code": "00000",
-    "description": "note: successful completion", 
+    "description": "note: successful completion",
     "diagnostics": {
-      "OPERATION": "",
+      "OPERATION": "query",
       "OPERATION_CODE": "0",
-      "CURRENT_SCHEMA": "/"
+      "CURRENT_SCHEMA": "/",
+      "_graphaneGqlStatus": {
+        "gqlType": "STRING",
+        "value": "00000"
+      }
     }
   },
   "result": {
@@ -149,20 +163,21 @@ Every response includes a status object with execution information:
 
 | Field         | Type   | Description                                  |
 |---------------|--------|----------------------------------------------|
-| `code`        | string | six-character status code (000000 = success) |
-| `description` | string | Human-readable status message                |
-| `diagnostics` | object | Detailed diagnostic records                  |
-| `cause`       | object | Optional underlying cause status object      |
+| `code`        | string | Five-character public API status code. |
+| `description` | string | Human-readable status description. |
+| `diagnostics` | object | Detailed diagnostic record, including the canonical query-engine GQLSTATUS when available. |
+| `cause`       | object | Optional underlying cause status object. |
 
 #### Status codes
 
-Status codes follow a hierarchical pattern:
+The primary `status.code` uses these public API categories:
 
-- `00xxxx` - Complete success
-- `01xxxx` - Success with warnings
-- `02xxxx` - Success with no data
-- `03xxxx` - Success with information
-- `04xxxx` and higher - Errors and exception conditions
+- `00000` - Successful completion with at least one row.
+- `00001` - Successful completion with an omitted result. Reserved for future DDL and DML support.
+- `01000` - Warning or informational condition.
+- `02000` - No rows are currently available from a row-producing query.
+- `42000` - Syntax, access-rule, or other user-correctable query error.
+- `50000` - System or unclassified error.
 
 For more information, see the [GQL status codes reference](gql-reference-status-codes.md).
 
@@ -171,7 +186,11 @@ For more information, see the [GQL status codes reference](gql-reference-status-
 Diagnostic records can contain other key-value pairs that further detail the status object. Keys starting with an underscore (`_`) are specific to graph. The GQL standard prescribes all other keys.
 
 > [!NOTE]
-> Values in the diagnostic record of keys specific to graph are JSON-encoded GQL values. See [Value types and encoding](#value-types-and-encoding).
+> The `_graphaneGqlStatus` diagnostic contains the canonical five-character
+> GQLSTATUS reported by the query engine. Every underscore-prefixed diagnostic
+> member contains either `null` or a JSON-encoded GQL value. For example,
+> `_graphaneGqlStatus` uses `STRING`, while error-classification diagnostics use
+> `BOOL`. See [Value types and encoding](#value-types-and-encoding).
 
 #### Causes
 
@@ -179,9 +198,9 @@ Status objects include an optional `cause` field when an underlying cause is kno
 
 #### Other status objects
 
-Some results can report other status objects as a list in the (optional) `additionalStatuses` field.
+Some results can report other status objects as a list in the optional `additionalStatuses` field.
 
-If so, then the primary status object is always determined to be the most critical status object (such as an exception condition) as prescribed by the GQL standard.
+The primary status is the most critical recorded condition. Every additional status and nested cause has its own public API code and canonical GQLSTATUS diagnostic.
 
 ### Result types
 
@@ -202,11 +221,11 @@ For queries that return tabular data:
     },
     {
       "name": "age",
-      "gqlType": "INT32",
-      "jsonType": "number"
+      "gqlType": "INT64",
+      "jsonType": "number|string"
     }
   ],
-  "isOrdered": true,
+  "isOrdered": false,
   "isDistinct": false,
   "data": [
     {
@@ -221,15 +240,65 @@ For queries that return tabular data:
 }
 ```
 
+#### Long-running queries
+
+If a query doesn't finish during the current HTTP request, the API returns HTTP 200 with public status code `02000`, an empty table, and a `nextPage` token:
+
+```json
+{
+  "status": {
+    "code": "02000",
+    "description": "No data available, retry with continuation token"
+  },
+  "result": {
+    "kind": "TABLE",
+    "columns": [],
+    "data": [],
+    "nextPage": "{continuationToken}"
+  }
+}
+```
+
+Poll for completion by sending the same request body and adding the token to the URL:
+
+```http
+POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/graphModels/{graphModelId}/executeQuery?beta=true&continuationToken={continuationToken}
+```
+
+Treat `nextPage` as an opaque value. Percent-encode it exactly once according
+to RFC 3986 before using it as the `continuationToken` query-parameter value.
+Don't decode, inspect, or modify the token.
+
+Continue until the response no longer contains `nextPage`. Query execution can continue for up to 20 minutes from the initial request. If it exceeds that total duration, the API returns HTTP 408 with error code `QueryTimeout`.
+
+#### Truncated results
+
+Graph truncates a query response when its internal binary representation exceeds
+64 MB. The API returns the rows that fit and adds a status to
+`additionalStatuses`. The additional status uses public code `01000` and
+preserves canonical GQLSTATUS `01M11` in `_graphaneGqlStatus`.
+
+Truncation doesn't produce a `nextPage` token for the omitted rows. Narrow the query with filters, specific projections, or `LIMIT`, and then run it again.
+
 #### Omitted results
 
-For operations that don't return data (for example, catalog and/or data updates):
+The response schema can represent an operation whose statement never produces
+rows, independent of the data or evaluation outcome. This outcome uses status
+code `00001`:
 
 ```json
 {
   "kind": "NOTHING"
 }
 ```
+
+This omitted result differs from a table with no rows. An empty table is the
+result of evaluating a row-producing query that currently has no rows to
+return.
+
+Graph reserves this result shape and status code for future data definition
+language (DDL) and data manipulation language (DML) statement support. Current
+query statements always return table results.
 
 ## Value types and encoding
 
@@ -344,14 +413,17 @@ For table results, value serialization is optimized based on column type informa
 
 ```json
 {
+  "kind": "TABLE",
   "columns": [
     {"name": "name", "gqlType": "STRING", "jsonType": "string"},
-    {"name": "mixed", "gqlType": "ANY", "jsonType": "unknown"}
+    {"name": "amount", "gqlType": "INT64", "jsonType": "number|string"},
+    {"name": "mixed", "gqlType": "ANY", "jsonType": "object"}
   ],
   "data": [
     {
       "name": "Alice",
-      "mixed": {"gqlType": "INT32", "value": 42}
+      "amount": "123",
+      "mixed": {"gqlType": "INT64", "value": "1"}
     }
   ]
 }
@@ -361,34 +433,40 @@ For table results, value serialization is optimized based on column type informa
 
 ### Transport errors
 
-Network and HTTP transport errors result in standard HTTP error status codes (4xx, 5xx).
+HTTP status and GQL status describe different layers of the response:
+
+| HTTP status | Meaning |
+| ----------- | ------- |
+| 200 | The API processed the request. Inspect `status.code` because the result can represent success, no rows, a query still in progress, or a user-correctable query error. |
+| 408 | Query execution exceeded the 20-minute total timeout. The error code is `QueryTimeout`. |
+| 429 | The service rate limit was exceeded. Wait for the duration in the `Retry-After` header before retrying. |
+| 499 | The caller canceled the request. The error code is `ClientCancelled`. |
+| Other 4xx or 5xx | The request or service failed before returning a GQL execution outcome. Inspect the HTTP error response. |
 
 ### Application errors
 
-Application-level errors always return HTTP 200 with error information in the status object:
+An application-level error can return HTTP 200 with error information in the status object. For example, division by zero uses the public API code `42000` and preserves canonical GQLSTATUS `22012` in the diagnostic record:
 
 ```json
 {
   "status": {
-    "code": "42001",
-    "description": "error: syntax error or access rule violation",
+    "code": "42000",
+    "description": "error: data exception - division by zero",
     "diagnostics": {
       "OPERATION": "query",
       "OPERATION_CODE": "0",
       "CURRENT_SCHEMA": "/",
-      "_errorLocation": {
+      "_graphaneGqlStatus": {
         "gqlType": "STRING",
-        "value": "line 1, column 15"
-      }
-    },
-    "cause": {
-      "code": "22007",
-      "description": "error: data exception - invalid date, time, or, datetime
-format",
-      "diagnostics": {
-        "OPERATION": "query",
-        "OPERATION_CODE": "0",
-        "CURRENT_SCHEMA": "/"
+        "value": "22012"
+      },
+      "_graphaneIsUserError": {
+        "gqlType": "BOOL",
+        "value": true
+      },
+      "_graphaneIsTransientError": {
+        "gqlType": "BOOL",
+        "value": false
       }
     }
   }
@@ -397,10 +475,7 @@ format",
 
 ### Status checking
 
-To determine success, check the status code:
-
-- Codes starting with `00`, `01`, `02`, `03` indicate success (with possible warnings)
-- All other codes indicate errors
+To determine the broad outcome, check the public `status.code`. Use `_graphaneGqlStatus` when your application needs to distinguish a specific query-engine condition, such as numeric overflow (`22003`) from division by zero (`22012`).
 
 ## Complete example with az rest
 
@@ -408,7 +483,7 @@ Run a query using the `az rest` command to avoid having to obtain bearer tokens 
 
 <!-- GQL Query: Checked 2025-11-20 -->
 ```bash
-az rest --method post --url "https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/GraphModels/{GraphModelId}/executeQuery?preview=true" \
+az rest --method post --url "https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/graphModels/{graphModelId}/executeQuery?beta=true" \
 --headers "Content-Type=application/json" "Accept=application/json" \
 --resource "https://api.fabric.microsoft.com" \
 --body '{ 
@@ -433,7 +508,7 @@ Run a query like so:
 
 <!-- GQL Query: Checked 2025-11-20 -->
 ```bash
-curl -X POST "https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/GraphModels/{GraphModelId}/executeQuery?preview=true" \
+curl -X POST "https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/graphModels/{graphModelId}/executeQuery?beta=true" \
   -H "Content-Type: application/json" \
   -H "Accept: application/json" \
   -H "Authorization: Bearer $ACCESS_TOKEN" \
@@ -455,12 +530,12 @@ Follow these best practices when using the GQL Query API.
 
 - **Use HTTPS** - Never send authentication tokens over unencrypted connections.
 - **Rotate tokens** - Implement proper token refresh and expiration handling.
-- **Validate inputs** - Sanitize and properly escape any user-provided query parameters injected into the query.
+- **Validate inputs** - Validate and correctly escape any user-provided values that your application inserts into the query text.
 
 ### Value representation
 
 - **Handle large integer values** - Integers are encoded as strings if they can't be represented as JSON numbers natively.
-- **Handle special floating point values** - Floating-point values returned from queries can be `Infinity`, `-Infinity`, or `NaN` (not a number) values.
+- **Handle special floating-point values** - The API serializes positive infinity, negative infinity, not-a-number, and negative zero as `"Inf"`, `"-Inf"`, `"NaN"`, and `"-0"`.
 - **Handle null values** - JSON null represents GQL null.
 
 ## Related content

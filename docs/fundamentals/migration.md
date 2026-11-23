@@ -30,9 +30,8 @@ Microsoft Fabric provides a unified analytics platform. By migrating your data a
 
 | Article | Description |
 |:--|:--|
-| **[Planning your migration from Azure Data Factory to Data Factory in Fabric](../data-factory/migrate-planning-azure-data-factory.md)**|Plan your migration from Azure Data Factory to Fabric Data Factory.|
-| **[Migrate from Azure Data Factory to Data Factory in Fabric](../data-factory/migrate-from-azure-data-factory.md)**| Learn how to migrate Azure Data Factory (ADF) to Data Factory in Microsoft Fabric. |
-| **[How to Use Azure Data Factory item (Mount) in Fabric](../data-factory/migrate-pipelines-azure-data-factory-item.md)**|The Azure Data Factory item in Microsoft Fabric allows you to bring in your Azure Data Factory artifacts to Fabric instantly.|
+| **[Planning your upgrade from Azure Data Factory to Data Factory in Fabric](../data-factory/upgrade-planning-azure-data-factory.md)**|Plan your upgrade from Azure Data Factory to Fabric Data Factory.|
+| **[How to Use Azure Data Factory item (Mount) in Fabric](../data-factory/upgrade-pipelines-azure-data-factory-item.md)**|The Azure Data Factory item in Microsoft Fabric allows you to bring in your Azure Data Factory artifacts to Fabric instantly.|
 | **[Migrate from Azure Workflow Orchestration Manager to Microsoft Fabric Apache Airflow job](../data-factory/apache-airflow-jobs-migrate-azure-workflow-orchestration-manager.md)**| Learn to migrate from Azure workflow orchestration manager to [Apache Airflow Job in Microsoft Fabric](../data-factory/create-apache-airflow-jobs.md). |
 
 ## Migrate from Azure SQL Database

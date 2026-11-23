@@ -14,9 +14,11 @@ ai-usage: ai-assisted
 This article outlines the steps to create a Teradata database connection.
 
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
 
-The Teradata database connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+## Summary
+
+The Teradata database connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
@@ -24,28 +26,36 @@ The Teradata database connector supports the following authentication types for 
 |Windows| √ | √ |
 
 ## Set up your connection for Dataflow Gen2
-You can connect Dataflow Gen2 in Microsoft Fabric to Teradata database using Power Query connectors. Follow these steps to create your connection:
+You can connect a dataflow Gen2 in Fabric to a Teradata database using Power Query connectors. Follow these steps to create your connection:
 
 1. Check [capabilities](#capabilities) to make sure your scenario is supported.
 1. [Complete prerequisites for Teradata database](#prerequisites).
 1. [Get data in Fabric](#get-data).
 1. [Connect to a Teradata database](#connect-to-a-teradata-database).
 
-### Capabilities
+## Prerequisites
 
-[!INCLUDE [teradata-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/teradata/teradata-capabilities-supported.md)]
+[!INCLUDE [teradata-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/teradata/prerequisites.md)]
 
-### Prerequisites
+<a id="capabilities"></a>
 
-[!INCLUDE [teradata-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/teradata/teradata-prerequisites.md)]
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
+
+[!INCLUDE [teradata-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/teradata/capabilities-supported.md)]
+
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Connect to a Teradata database
+<a id="connect-to-a-teradata-database"></a>
 
-[!INCLUDE [teradata-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/teradata/teradata-connect-to-power-query-online.md)]
+### Connection instructions
+
+[!INCLUDE [teradata-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/teradata/connect-online.md)]
 
 
 ## Related content

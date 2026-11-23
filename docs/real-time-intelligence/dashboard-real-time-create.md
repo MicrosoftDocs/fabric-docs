@@ -3,7 +3,7 @@ title: Create a Real-Time Dashboard
 description: Learn how to create and customize Real-Time Dashboards to visualize data effectively using KQL queries and Copilot for seamless insights.
 ms.reviewer: mibar
 ms.topic: how-to
-ms.date: 07/09/2026
+ms.date: 10/11/2026
 author: spelluru
 ms.author: spelluru
 ms.subservice: rti-dashboard
@@ -12,12 +12,12 @@ ai-usage: ai-assisted
 ---
 # Create a Real-Time Dashboard
 
-A dashboard is a collection of tiles, optionally organized in pages, where each tile has an underlying query and a visual representation. You can natively export Kusto Query Language (KQL) queries to a dashboard as visuals and later modify their underlying queries and visual formatting as needed. In addition to ease of data exploration, this fully integrated dashboard experience provides improved query and visualization performance. Copilot integration in the dashboard editing experience lets you use natural language to create and modify visuals directly, no KQL expertise required.
+Real-Time Dashboards help you monitor, analyze, and share streaming and historical data through an interactive collection of visual tiles. You can create a dashboard from scratch, generate one with Copilot, build it from existing KQL queries, or restore it from a dashboard file. As your dashboard evolves, you can connect data sources, add and customize visuals, organize content using pages and parameters, and share insights with others.
 
-In this article, you learn how to create a new Real-Time Dashboard, add data sources, add and edit tiles in the dashboard - manually or using Copilot. You also learn how to enable Live refresh, use parameters, and export dashboards.
+This article shows you how to create a new Real-Time Dashboard, add data sources, and add and edit tiles in the dashboard - manually or using Copilot. You also learn how to enable live refresh, use parameters, and export dashboards.
 
 > [!IMPORTANT]
-> Your data is secure. Dashboards and dashboard-related metadata about users are encrypted at rest using Microsoft-managed keys.
+> Your data is secure. Microsoft-managed keys encrypt dashboards and dashboard-related metadata about users at rest.
 
 ## Prerequisites
 
@@ -26,9 +26,15 @@ In this article, you learn how to create a new Real-Time Dashboard, add data sou
 
 ## Create a new dashboard
 
-There are several ways to create a new Real-Time dashboard, select the tab that corresponds with your desired creation method.
+To create a new Real-Time dashboard, select the tab that corresponds with your desired creation method.
 
-## [Manual](#tab/create-manual)
+### Generate with Copilot
+
+Copilot streamlines the creation of Real-Time Dashboards by automating the setup process, making it accessible even to users without advanced technical expertise. By using natural language input, you can describe the dashboard you want, and Copilot uses AI to generate it.
+
+For detailed instructions, see [Generate Real-Time Dashboard Using Copilot](../fundamentals/copilot-generate-dashboard.md).
+
+### Create manually
 
 [!INCLUDE [Real-Time Intelligence create-real-time-dashboard](includes/create-real-time-dashboard.md)]
 
@@ -36,13 +42,7 @@ There are several ways to create a new Real-Time dashboard, select the tab that 
 
     :::image type="content" source="media/real-time-dashboard/dashboard-new-with-source.png" alt-text="Screenshot of Real-Time Dashboard with all options enabled." lightbox="media/real-time-dashboard/dashboard-new-with-source.png":::
 
-### [Copilot](#tab/create-copilot)
-
-Copilot streamlines the creation of Real-Time Dashboards by automating the setup process, making it accessible even to users without advanced technical expertise. By using natural language input, you can describe the dashboard you want, and Copilot uses AI to generate it. Start by selecting a data table from the Real-Time Hub or a KQL Queryset. Copilot creates a Real-Time Dashboard tailored to your specifications, including an insights page for a high-level summary and a data profile page for in-depth analysis.
-
-For detailed instructions, see [Generate Real-Time Dashboard Using Copilot](../fundamentals/copilot-generate-dashboard.md).
-
-### [Queryset](#tab/create-queryset)
+### Create from a queryset
 
 1. [Open an existing KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
 
@@ -60,13 +60,11 @@ For detailed instructions, see [Generate Real-Time Dashboard Using Copilot](../f
 
 1. To give the tile a name, open the tile options and select **Rename**.
 
-### [Replacing the file](#tab/replacing-file)
+### Replacing the file
 
-Select the **Manage** tab, then choose **Replace with file**. Select the file you want to use to create a new dashboard, update an existing one, restore a previous version, or use a file received from another user.
+Select the **Manage** tab, and then choose **Replace with file**. Select the file you want to use to create a new dashboard, update an existing one, restore a previous version, or use a file received from another user.
 
 :::image type="content" source="media/real-time-dashboard/replace-with-file-button.png" alt-text="Screenshot of the Replace with file option." lightbox="media/real-time-dashboard/replace-with-file-button.png":::
-
-----
 
 ## Add data source
 
@@ -85,6 +83,16 @@ Select the tab that corresponds with your desired data source type.
 1. In the **OneLake Catalog** window, select a KQL database to connect to your KQL queryset, and then select **Connect**.
 
     Alternatively, close the **OneLake Catalog** window and use the **+ Add data source** menu to connect to a different data source.
+
+### [Ontology](#tab/ontology)
+
+1. Open your Real-Time dashboard.
+
+1. In the upper toolbar, select **Add data source** > **Ontology**.
+
+    :::image type="content" source="media/real-time-dashboard/ontology-source.png" alt-text="Screenshot of the data source menu showing a list of optional data sources with ontology highlighted." lightbox="media/real-time-dashboard/ontology-source.png":::
+
+1. In the **OneLake Catalog** window, select an ontology item and select **Connect**.
 
 ### [Azure Data Explorer](#tab/azure-data-explorer-cluster)
 
@@ -106,11 +114,11 @@ Select the tab that corresponds with your desired data source type.
 
     **To enter your connection parameters**:
 
-    1. Enter your **Subscription ID**. You can find the ID in the Azure portal by selecting **Subscriptions** > your subscription name > copy the Subscription ID from the resource Overview tab.
+    1. Enter your **Subscription ID**. Find the ID in the Azure portal by selecting **Subscriptions** > your subscription name > copy the Subscription ID from the resource **Overview** tab.
 
     1. Select the **Resource Group** that contains your Application Insights or Log Analytics database.
 
-    1. Enter the **Workspace Name** for Log Analytics or the **Application Insights app name** for Application Insights. You can find the name in the Azure portal by selecting the Application Insights or Log Analytics resource.
+    1. Enter the **Workspace Name** for Log Analytics or the **Application Insights app name** for Application Insights. Find the name in the Azure portal by selecting the Application Insights or Log Analytics resource.
 
     1. Select the **Application Insights** or **Log Analytics** database from the drop-down list. This list is populated with the databases in your selected database group.
 
@@ -118,7 +126,7 @@ Select the tab that corresponds with your desired data source type.
 
     1. Select **Connection URI** and enter your Connection URI in this format:
 
-    > Replace \<subscription-id\>, \<resource-group-name\> and \<ai-app-name\> with your own values.
+    > Replace \<subscription-id\>, \<resource-group-name\>, and \<ai-app-name\> with your own values.
 
     For Log Analytics: `https://ade.loganalytics.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.insights/components/<ai-app-name>`
 
@@ -137,23 +145,23 @@ Select the tab that corresponds with your desired data source type.
 
 ## Edit mode
 
-To switch to edit mode, select **Editing** in the top-right corner.
+To switch to edit mode, select **Editing** in the upper-right corner.
 
 :::image type="content" source="media/real-time-dashboard/edit-mode.png" alt-text="Screenshot showing the selection of the editing view." lightbox="media/real-time-dashboard/edit-mode.png":::
 
-Under the Home tab, you can add new visuals, markdown boxes, alerts, data sources, and parameters. You can also save and manually refresh the dashboard.
+Under the **Home** tab, you can add new visuals, markdown boxes, alerts, data sources, and parameters. You can also save and manually refresh the dashboard.
 
 :::image type="content" source="media/real-time-dashboard/home-tab.png" alt-text="Screenshot of the toolbar options under the Home tab." lightbox="media/real-time-dashboard/home-tab.png":::
 
-Under the Manage tab, you can manage [parameters](dashboard-parameters.md), base queries, configure [Refresh setting](#enable-live-refresh) and manage data sources.
+Under the **Manage** tab, you can manage [parameters](dashboard-parameters-manage.md), base queries, configure [Refresh setting](#enable-live-refresh), and manage data sources.
 
 :::image type="content" source="media/real-time-dashboard/manage-tab.png" alt-text="Screenshot of the toolbar options under the Manage tab." lightbox="media/real-time-dashboard/manage-tab.png":::
 
-## Add or Edit tile
+## Add or edit tile
 
-Dashboard tiles use Kusto Query Language (KQL) queries to fetch data and generate visuals. Each tile or query is designed to support a single visual representation. The tile editor gives you two options for authoring and editing a tile's query and visual:
+Dashboard tiles use Kusto Query Language (KQL) queries to fetch data and generate visuals. Each tile or query supports a single visual representation. The tile editor provides two options for authoring and editing a tile's query and visual:
 
-* **Copilot** (preview) - use natural language to generate the tile's KQL query and the tile visual. Copilot enables non-KQL experts, business analysts, and report creators who understand their data but aren’t fluent to build dashboard visuals independently.
+* **Copilot** (preview) - use natural language to generate the tile's KQL query and the tile visual. Copilot enables non-KQL experts, business analysts, and report creators who understand their data but aren't fluent to build dashboard visuals independently.
 
 * **KQL query** - manually author the query and define the tile visual.
 
@@ -161,9 +169,9 @@ You can switch between the two options at any time.
 
 :::image type="content" source="media/real-time-dashboard/tile-editing-panes.png" alt-text="Screenshot of the three panes in the tile editing window: Explorer, Run query, and Copilot." lightbox = "media/real-time-dashboard/tile-editing-panes.png":::
 
-### [Use Copilot to add/edit tile (preview)](#tab/new-tile-copilot)
+### [Use Copilot to add or edit a tile](#tab/new-tile-copilot)
 
-Describe the insight you’re looking for. Start with a broad question and refine based on the results. You might begin with “Show me all error events” and follow up with “Filter to critical errors only” or “Group by error type.” Copilot maintains context within the conversation, so each follow-up builds on your previous requests. For more information, see [Use Copilot for writing KQL queries](copilot-writing-queries.md).
+Describe the insight you're looking for. Start with a broad question and refine it based on the results. You might begin with "Show me all error events" and follow up with "Filter to critical errors only" or "Group by error type." Copilot maintains context within the conversation, so each follow-up builds on your previous requests. For more information, see [Use Copilot for writing KQL queries](copilot-writing-queries.md).
 
 1. In your dashboard, switch to [**Editing mode**](#edit-mode).
 
@@ -175,13 +183,17 @@ Describe the insight you’re looking for. Start with a broad question and refin
 
 1. In the Copilot pane, enter a description of the tile in natural language. For example, "Compare security screening lane volumes."
 
-    :::image type="content" source="media/real-time-dashboard/new-tile-copilot-response.png" alt-text="Screenshot of the copilot pane with the results displayed in a table." lightbox="media/real-time-dashboard/new-tile-copilot-response.png":::
+    :::image type="content" source="media/real-time-dashboard/new-tile-copilot-response.png" alt-text="Screenshot of entering a tile description for copilot." lightbox="media/real-time-dashboard/new-tile-copilot-response.png":::
+
+    If you have ontology added as a data source, you see the ontology entity types in the left pane. They provide context about the ontology structure during tile editing.
+
+    :::image type="content" source="media/real-time-dashboard/ontology-tile.png" alt-text="Screenshot of the entity types visible in the left pane while entering a tile description for copilot." lightbox="media/real-time-dashboard/ontology-tile.png":::
 
 1. View the result. Refine the result by asking Copilot a follow-up request. In this example, ask Copilot to "Create a time chart comparing the top 5 security screening lanes."
 
      :::image type="content" source="media/real-time-dashboard/new-tile-copilot-response-refined.png" alt-text="Screenshot of the copilot pane with the refined results displayed in a table." lightbox="media/real-time-dashboard/new-tile-copilot-response-refined.png":::
 
-1. In the **Visual formatting** tab you can configure the remaining options.    
+1. In the **Visual formatting** tab, configure the remaining options.    
 
     :::image type="content" source="media/real-time-dashboard/visual-formatting.png" alt-text="Screenshot of visual formatting pane in Real-Time Dashboards." lightbox="media/real-time-dashboard/visual-formatting.png":::    
 
@@ -193,15 +205,15 @@ Describe the insight you’re looking for. Start with a broad question and refin
 
 1. In the dashboard toolbar, select the **Save** icon to save the dashboard with the new or edited visual.
 
-### [Use query editor to add/edit tile](#tab/new-tile-query-editor)
+### [Use query editor to add or edit tile](#tab/new-tile-query-editor)
 
-Here you can manually author or edit the KQL query and visual in the tile editing pane.
+In the tile editing pane, you can manually create or edit the KQL query and visual.
 
 1. In your dashboard, switch to [**Editing mode**](#edit-mode).
 
 1. Select the visual type you want to create from the dashboard canvas or **New visual** from the top menu bar.
 
-   :::image type="content" source="media/real-time-dashboard/add-tile-button.png" alt-text="Screenshot showing the selection of the Add tile button." lightbox="media/real-time-dashboard/add-tile-button.png"::::::
+   :::image type="content" source="media/real-time-dashboard/add-tile-button.png" alt-text="Screenshot showing the selection of the Add tile button." lightbox="media/real-time-dashboard/add-tile-button.png":::
 
 1. To edit an existing tile, select the pencil icon or open the tile options and select **Edit**.
 
@@ -212,7 +224,7 @@ Here you can manually author or edit the KQL query and visual in the tile editin
     For information about generating queries that use parameters, see [Use parameters in your query](dashboard-parameters.md#use-parameters-in-your-query).
 
     > [!TIP]
-    > You can also use Copilot to edit the query with natural language. Copilot can generate a new query, replace the current query, or refine it without leaving the tile editor.
+    > You can also use Copilot to edit the query by using natural language. Copilot can generate a new query, replace the current query, or refine it without leaving the tile editor.
 
 
 1. In the **Visual formatting** tab, select a **Visual type** and configure the remaining options.    
@@ -247,11 +259,19 @@ You can add tiles to your dashboard directly from queries written in a KQL query
 
     :::image type="content" source="media/real-time-dashboard/rename-new-tile.png" alt-text="Screenshot of the Rename tile option in the tile menu." lightbox="media/real-time-dashboard/rename-new-tile.png":::
 
+## Add a Fabric Maps tile (preview)
+
+[!INCLUDE [Fabric feature-preview-note](../includes/feature-preview-note.md)]
+
+Embed an existing [Fabric Map](map/about-fabric-maps.md) item in your dashboard. A Fabric Map visual embeds a pre-authored, multilayer map item as-is, so you can reuse the same map across dashboards without redefining its data sources, queries, or styling.
+
+For step-by-step instructions, see [Embed a Fabric Map in a Real-Time Dashboard](dashboard-fabric-maps-tile.md).
+
 ## Add page
 
-Pages are optional containers for tiles. You can use pages to organize tiles into logical groups, such as by data source or by subject area. You can also use pages to create a dashboard with multiple views, such as a dashboard with a drillthrough from a summary page to a details page.
+Pages are optional containers for tiles. Use pages to organize tiles into logical groups, such as by data source or by subject area. You can also use pages to create a dashboard with multiple views, such as a dashboard with a drillthrough from a summary page to a details page.
 
-1. Switch to the editing mode by selecting **Editing** in the top-right corner.
+1. Select **Editing** in the upper-right corner to switch to editing mode.
 1. On the **Pages** pane, select **+ Add page**.
 
     :::image type="content" source="media/real-time-dashboard/new-page.png" alt-text="Screenshot of adding a page to a Real-Time Dashboard in Real-Time Intelligence in Microsoft Fabric." lightbox="media/real-time-dashboard/new-page.png":::
@@ -261,7 +281,7 @@ Pages are optional containers for tiles. You can use pages to organize tiles int
 
 ## Use parameters
 
-Parameters significantly improve dashboard rendering performance, and enable you to use filter values as early as possible in the query. Filtering is enabled when the parameter is included in the query associated with your tiles. For more information about how to set up and use different kinds of parameters, see [Use parameters in Real-Time Dashboards](dashboard-parameters.md).
+Parameters significantly improve dashboard rendering performance, and enable you to use filter values as early as possible in the query. Filtering is enabled when you include the parameter in the query associated with your tiles. For more information about how to set up and use different kinds of parameters, see [Use parameters in Real-Time Dashboard queries](dashboard-parameters.md).
 
 ## Tile legend
 
@@ -269,11 +289,11 @@ You can change the position of the legend in your tiles and use the legend to in
 
 ### Change the legend location
 
-If you have edit rights on a real-time dashboard, you can change the location of the legend in your tile. Toggle to **Edit** mode and select the **Edit** pencil icon. In the **Visual formatting** pane, under **Legend**, you can select your location preference.
+If you have edit rights on a real-time dashboard, you can change the location of the legend in your tile. Toggle to **Edit** mode and select the **Edit** pencil icon. In the **Visual formatting** pane, under **Legend**, select your location preference.
 
 ### Interact with your data
 
-You can use the legend to interact with the data in your tile. You can change what data you view by selecting the specific item in the legend. Use <kbd>Ctrl</kbd> to add or remove items from the selection, hold <kbd>shift</kbd> to select a range. Items not selected are greyed out.
+Use the legend to interact with the data in your tile. Change what data you view by selecting the specific item in the legend. Use <kbd>Ctrl</kbd> to add or remove items from the selection, and hold <kbd>Shift</kbd> to select a range. Items you don't select are greyed out.
 
 The **Search** button allows you to search and filter items.
 
@@ -281,8 +301,8 @@ Use the **Invert** button to invert your selection.
 
 The **Up** and **Down** arrows navigate through the list in the following ways:
 
-* When one item is selected, the up and down arrows select the previous or next item.
-* When more than one item is selected, the up and down arrows scroll through the list of items, and the data for any selected items you navigate to is highlighted.
+* When you select one item, the up and down arrows select the previous or next item.
+* When you select more than one item, the up and down arrows scroll through the list of items. The data for any selected items you navigate to is highlighted.
 
 :::image type="content" source="media/real-time-dashboard/interactive-legend.png" alt-text="Screenshot showing the buttons to use the legend to interact with your data." lightbox="media/real-time-dashboard/interactive-legend.png":::
 
@@ -301,7 +321,7 @@ You can view the query in either viewing or editing mode.
     :::image type="content" source="media/real-time-dashboard/edit-query.png" alt-text="Screenshot of the KQL query editor." lightbox="media/real-time-dashboard/edit-query.png":::
 
     > [!NOTE]
-    > Any edits made to the query using this flow won't be reflected in the original Real-Time Dashboard.
+    > Any edits you make to the query by using this flow don't appear in the original Real-Time Dashboard.
 
 ## Enable live refresh
 
@@ -320,17 +340,17 @@ For more information about live refresh, see [Live refresh in Real-Time Dashboar
 
 ## Share the dashboard
 
-Real-Time Dashboards can be shared with others to provide access to insights and visualizations without requiring direct interaction with the underlying data sources. Sharing enables collaboration across teams by allowing users to view and interact with dashboard content through a link, making it easier to distribute monitoring views and analytical results. To successfully share Real-Time Dashboards, make sure the recipients have the necessary [Real-Time Dashboard permissions](dashboard-permissions.md).
+You can share Real-Time dashboards with others so they can access insights and visualizations without needing direct interaction with the underlying data sources. Sharing enables collaboration across teams by allowing users to view and interact with dashboard content through a link. This feature makes it easier to distribute monitoring views and analytical results. To successfully share Real-Time dashboards, ensure the recipients have the necessary [Real-Time Dashboard permissions](dashboard-permissions.md).
 
 You can share an entire Real-Time Dashboard, or a specific visual.
 
 To share the entire dashboard:
 
-1. Select **Share** in the top-right corner of the dashboard.
+1. Select **Share** in the upper-right corner of the dashboard.
 
     :::image type="content" source="media/real-time-dashboard/share-button.png" alt-text="Screenshot showing the Share button on the dashboard." lightbox="media/real-time-dashboard/share-button.png":::
 
-1. In the **Create and send link** window, you can do the following steps:
+1. In **Create and send link**, complete the following steps:
     - To see a link to the dashboard and copy it to the clipboard, select **Copy link**.
     - To share a link to the dashboard via email, select **by Email**.
     - To share a link to the dashboard via Teams, select **by Teams**.
@@ -338,7 +358,7 @@ To share the entire dashboard:
     :::image type="content" source="media/real-time-dashboard/share-link.png" alt-text="Screenshot that shows the pop-up window for sharing the dashboard." lightbox="media/real-time-dashboard/share-link.png":::
 
 To share a specific visual:
-1. In the top right corner of a visual, select **...** to open the visual's context menu.
+1. In the upper-right corner of a visual, select **...** to open the visual's context menu.
 1. Select **Share visual**.
 
     :::image type="content" source="media/real-time-dashboard/share-visual.png" alt-text="Screenshot that shows the Share visual option in the visual's context menu.":::
@@ -354,11 +374,11 @@ For more information, see [Fabric Embedded](../embed/what-is-fabric-embed.md) an
 
 ## Export dashboards
 
-Use the file menu to export a dashboard to a JSON file. Exporting dashboard can be useful in the following scenarios:
+Use the file menu to export a dashboard to a JSON file. Exporting a dashboard can be useful in the following scenarios:
 
-* **Version control**: You can use the file to restore the dashboard to a previous version.
-* **Dashboard template**: You can use the file as template for creating new dashboards.
-* **Manual editing**: You can edit the file to modify the dashboard. The file can be imported back to the dashboard.
+* **Version control**: Use the file to restore the dashboard to a previous version.
+* **Dashboard template**: Use the file as a template for creating new dashboards.
+* **Manual editing**: Edit the file to modify the dashboard. You can import the file back to the dashboard.
 
 To export a dashboard, in the dashboard, select the **Manage** tab > **|-> Download file**.
 :::image type="content" source="media/real-time-dashboard/download-file-button.png" alt-text="Screenshot that shows the Download file button on the Manage tab button." lightbox="media/real-time-dashboard/download-file-button.png":::
@@ -455,9 +475,9 @@ The file contains the dashboard data in JSON format, an outline of which is show
 
 ## Update or restore an existing dashboard from a file
 
-You can update an existing dashboard, or restore a previous version, as follows:
+You can update an existing dashboard or restore a previous version by using the following steps:
 
-1. In the dashboard, select the **Manage** tab > **Replace with file**.
+1. In the dashboard, select the **Manage** tab, and then select **Replace with file**.
 
     :::image type="content" source="media/real-time-dashboard/replace-with-file-button.png" alt-text="Screenshot that shows the Replace with file button on the Manage tab button." lightbox="media/real-time-dashboard/replace-with-file-button.png":::
 1. Select the file to update the dashboard.
@@ -465,7 +485,8 @@ You can update an existing dashboard, or restore a previous version, as follows:
 
 ## Related content
 
-* [Use parameters in Real-Time Dashboards](dashboard-parameters.md)
+* [Use parameters in Real-Time Dashboard queries](dashboard-parameters.md)
 * [Real-Time Dashboard-specific visuals](dashboard-visuals.md)
+* [Add a Fabric Maps tile to a Real-Time Dashboard](dashboard-fabric-maps-tile.md)
 * [Apply conditional formatting in Real-Time Dashboard visuals](dashboard-conditional-formatting.md)
 * [Create [!INCLUDE [fabric-activator](includes/fabric-activator.md)] alerts from a Real-Time Dashboard](data-activator/activator-get-data-real-time-dashboard.md)

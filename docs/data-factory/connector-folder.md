@@ -1,6 +1,6 @@
 ---
-title: Set up your Folder connection
-description: This article provides information about how to create a Folder connection in Microsoft Fabric.
+title: Set up your folder connection
+description: This article provides information about how to create a folder connection in Microsoft Fabric.
 ms.reviewer: tinglee
 ms.topic: how-to
 ms.date: 03/20/2026
@@ -10,41 +10,53 @@ ms.custom:
   - connectors
 ---
 
-# Set up your Folder connection
+# Set up your folder connection
 
 This article outlines the steps to create a folder connection.
 
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
 
-The Folder connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+## Summary
+
+The folder connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
 |Windows| √| √ |
 
 ## Set up your connection for Dataflow Gen2
-You can connect Dataflow Gen2 in Microsoft Fabric to Folder using Power Query connectors. Follow these steps to create your connection:
+You can connect dataflow Gen2 in Fabric to a folder by using Power Query connectors. Follow these steps to create your connection:
 
 1. Check [capabilities](#capabilities) to make sure your scenario is supported.
 1. [Get data in Fabric](#get-data).
 1. [Connect to a folder](#connect-to-a-folder).
 
-### Capabilities
+<a id="capabilities"></a>
 
-[!INCLUDE [folder-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/folder/folder-capabilities-supported.md)]
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
+
+[!INCLUDE [folder-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/folder/capabilities-supported.md)]
+
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Connect to a folder
+<a id="connect-to-a-folder"></a>
 
-[!INCLUDE [folder-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/folder/folder-connect-to-power-query-online.md)]
+### Connection steps
+
+[!INCLUDE [folder-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/folder/connect-online.md)]
 
 ## Set up your connection in Manage connections and gateways
 
-The following table contains a summary of the properties needed for a Folder connection:
+### Connection properties
+
+The following table summarizes the properties needed for a folder connection:
 
 | Name | Description | Required |
 | --- | --- | --- |
@@ -53,7 +65,9 @@ The following table contains a summary of the properties needed for a Folder con
 | **Connection type** | Select **Folder**. | Yes |
 | **Full path** | The root path of the folder that you want to copy. Use the escape character "" for special characters in the string. 
 | **Authentication method** | Go to [Authentication](#authentication). | Yes |
-| **Privacy level** | The privacy level that you want to apply. Allowed values are None, Organizational, Private, and Public. | Yes |
+| **Privacy level** | The privacy level that you want to apply. Allowed values are `None`, `Organizational`, `Private`, and `Public`. | Yes |
+
+### Connection instructions
 
 For specific instructions to set up your connection in Manage connections and gateways, follow these steps:
 
@@ -71,14 +85,14 @@ For specific instructions to set up your connection in Manage connections and ga
 
 1. In the **New connection** pane, choose **On-premises**, and specify the following fields:
 
-   :::image type="content" source="media/connector-folder/connection-details.png" alt-text="Screenshot showing how to set up a new Folder connection.":::
+   :::image type="content" source="media/connector-folder/connection-details.png" alt-text="Screenshot showing how to set up a new folder connection.":::
 
    - **Gateway cluster name**: Select the on-premises data gateway cluster that you use to connect to the custom data source.
    - **Connection name**: Specify a name for your connection.
    - **Connection type**: Select **Folder** for your connection type.
    - **Full path**: Specify the root path of the folder. For example, `C:\myfolder`.
 
-1. Under **Authentication method**, select your authentication from the drop-down list and complete the related configuration. The Folder connector supports the following authentication types:
+1. Under **Authentication method**, select your authentication from the drop-down list and complete the related configuration. The folder connector supports the following authentication types:
 
    - [Windows](#windows-authentication)
 
@@ -86,22 +100,22 @@ For specific instructions to set up your connection in Manage connections and ga
 
 1. Select **Create** to create your connection. Your creation is successfully tested and saved if all the credentials are correct. If not correct, the creation fails with errors.
 
-## Authentication
+### Authentication
 
-This section lists the instructions for each authentication type supported by the Folder connector:
+This section lists the instructions for each authentication type supported by the folder connector:
 
 - [Windows](#windows-authentication)
 
-### Windows authentication
+#### Windows authentication
 
 Fill in the required properties. You need to specify the Windows username and Windows password when using this authentication.
 
-:::image type="content" source="media/connector-folder/windows-authentication.png" alt-text="Screenshot showing the Windows authentication method for Folder.":::
+:::image type="content" source="media/connector-folder/windows-authentication.png" alt-text="Screenshot showing the Windows authentication method for folder.":::
 
 - **Windows username**: Specify the user name to use with Windows authentication. The format is `domain\<alias>`.
 - **Windows password**: Specify the password for the user account.
 
 ## Related content
 
-- [For more information about this connector, see the Folder connector documentation.](/power-query/connectors/folder)
-- [Configure Folder in a copy activity](connector-folder-copy-activity.md)
+- [For more information about this connector, see the folder connector documentation.](/power-query/connectors/folder)
+- [Configure folder in a copy activity](connector-folder-copy-activity.md)

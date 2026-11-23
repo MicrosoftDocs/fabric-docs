@@ -1,5 +1,5 @@
 ---
-title: Get visual responses from a Fabric data agent (preview)
+title: Get visual responses from a Fabric data agent
 description: Learn how to get visual responses such as charts and graphs from a Fabric data agent.
 ms.author: scottpolly
 author: s-polly
@@ -12,11 +12,9 @@ ai-usage: ai-assisted
 #customer intent: As an Analyst, I want to get visual responses from a Fabric data agent so that I can explore data insights through charts and graphs.
 ---
 
-# Get visual responses from a Fabric data agent (preview)
+# Get visual responses from a Fabric data agent
 
-The Fabric data agent can return interactive visual responses, such as charts and graphs, in addition to text and table-based answers. Visual responses help you quickly identify trends, patterns, and outliers in your data without leaving the conversational interface.
-
-[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
+The Fabric data agent can return interactive visual responses, such as charts and graphs, in addition to text and table-based answers. Visual responses help you quickly identify trends, patterns, and outliers in your data without leaving the conversational interface. These visuals are generated using Fabric Visuals, the same visualization foundation used in Fabric apps and increasingly across the Fabric platform. As a result, the charts you receive in a data agent conversation are built on the same technology that powers visuals across other Fabric experiences, helping deliver a more consistent and familiar experience.
 
 [!INCLUDE [data-agent-prerequisites](./includes/data-agent-prerequisites.md)]
 
@@ -59,12 +57,12 @@ The following visual types are currently supported:
    - Stacked area chart
 
 ## Customization
-Agent instructions can be used to guide the agent's use of visuals. For example, you can instruct the agent to always include a visual for certain types of questions, or to prefer specific chart types for certain data patterns. For more information on agent instructions, see [Best practices for configuring data agents](data-agent-configuration-best-practices.md).
+Use agent instructions to guide the agent's use of visuals. For example, you can instruct the agent to always include a visual for certain types of questions, or to prefer specific chart types for certain data patterns. For more information, see [Data agent instructions](data-agent-configurations.md#data-agent-instructions).
 
 The colors, font sizes, title, and labels are preset and currently can't be customized.
 
 > [!TIP]
-> Visuals are enabled by default. To avoid generating visuals or specify the behavior, you can use agent instructions to instruct the agent to avoid using visuals. For more information on agent instructions, see [Best practices for configuring data agents](data-agent-configuration-best-practices.md).
+> Visuals are enabled by default. To avoid generating visuals or specify the behavior, use agent instructions to instruct the agent to avoid using visuals. For more information, see [Data agent instructions](data-agent-configurations.md#data-agent-instructions).
 
 ## Limitations
 
@@ -72,7 +70,7 @@ The colors, font sizes, title, and labels are preset and currently can't be cust
 - Visuals currently support up to 200 rows of data. When a query returns more than 200 rows, only the first 200 are charted, so the visualization represents a truncated result set.
 - Chart types are limited to the [Supported visual types](#supported-visual-types).
 - The colors, font sizes, title, and labels are preset and currently can't be customized.
-- These visuals are currently only supported in the data agent experience in Fabric and not in other clients like SDK, M365 Copilot, Teams, or Foundry.
+- These visuals are currently only supported in the data agent experience in Fabric and not in other clients like SDK, M365 Copilot, Teams, or Foundry. This limitation applies to the *rendered* chart image. The underlying visualization specification (chart type, axes, and aggregated data) is emitted in the assistant run's steps, so a client can reconstruct the chart from that specification.
     - When you consume a Fabric data agent through Microsoft 365 Copilot, you can use code interpreter to generate visualizations from the results returned by the data agent.
 
 ## Related content
@@ -81,4 +79,4 @@ The colors, font sizes, title, and labels are preset and currently can't be cust
 - [Data agent configurations](data-agent-configurations.md)
 - [Consume a data agent from Microsoft 365 Copilot](data-agent-microsoft-365-copilot.md)
 - [How to create a Fabric data agent](how-to-create-data-agent.md)
-- [Best practices for configuring data agents](data-agent-configuration-best-practices.md)
+- [Best practices for improving data agent query generation](data-agent-configuration-best-practices.md)

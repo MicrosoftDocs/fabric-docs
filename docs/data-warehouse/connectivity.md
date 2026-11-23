@@ -2,8 +2,9 @@
 title: Warehouse Connectivity
 description: Learn about connecting to Fabric Data Warehouse, including authentication and best practices.
 ms.reviewer: fresantos, salilkanade, pvenkat
-ms.date: 05/13/2026
+ms.date: 11/20/2026
 ms.topic: concept-article
+ai-usage: ai-assisted
 ms.search.form: Warehouse connectivity # This article's title should not change. If so, contact engineering.
 ms.custom: sfi-image-nochange
 ---
@@ -26,7 +27,11 @@ In [!INCLUDE [product-name](../includes/product-name.md)], the SQL connection st
 
 For more information, see [Microsoft Entra authentication as an alternative to SQL authentication in Microsoft Fabric](entra-id-authentication.md).
 
-The SQL connection string requires TCP port 1433 to be open. TCP 1433 is the standard SQL Server port number. The SQL connection string also respects the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or Lakehouse [!INCLUDE [fabric-se](includes/fabric-se.md)] security model for data access. Users can access data for all objects to which they have permission.
+The SQL connection string requires TCP port 1433 to be open. TCP 1433 is the standard SQL Server port number. [!INCLUDE [fabric-dw](includes/fabric-dw.md)] uses the Microsoft SQL Server Tabular Data Stream (TDS) protocol over TCP port 1433. In environments that use protocol-aware firewalls or application-layer inspection, configure and inspect SQL traffic as Microsoft SQL Server (MSSQL/TDS) traffic rather than HTTPS traffic.
+
+Some firewalls distinguish between TCP port access and application protocol inspection. In these environments, allowing TCP port 1433 alone might not be sufficient if the firewall is configured to expect HTTPS traffic on that port.
+
+The SQL connection string also respects the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or Lakehouse [!INCLUDE [fabric-se](includes/fabric-se.md)] security model for data access. Users can access data for all objects to which they have permission.
 
 For more information about security in the SQL analytics endpoint, see [OneLake security for SQL analytics endpoints](../onelake/sql-analytics-endpoint-onelake-security.md).
 
@@ -48,6 +53,75 @@ Add retries to your applications and ETL jobs to make them more resilient. For m
 To enable connectivity through the firewall, you need to allow Power BI service tags and SQL service tags. For more information, see [Power BI Service Tags](/power-bi/enterprise/service-premium-service-tags) and [Service tags](../security/security-service-tags.md). 
 
 You can't use the Fully Qualified Domain Name (FQDN) of the TDS Endpoint alone. 
+
+> [!IMPORTANT]
+> If your organization uses Azure Firewall application rules or similar protocol-aware firewalls, configure [!INCLUDE [fabric-dw](includes/fabric-dw.md)] traffic as MSSQL/TDS traffic. Configuring SQL traffic as HTTPS traffic on port 1433 can prevent successful connectivity even when network access to the port is allowed.
+
+### Firewall and application-layer inspection considerations
+
+Some enterprise firewall solutions perform application-layer inspection in addition to traditional IP and port filtering.
+
+When you configure firewall policies for [!INCLUDE [fabric-dw](includes/fabric-dw.md)]:
+
+- Allow outbound TCP connectivity on port 1433.
+- Ensure SQL traffic is treated as Microsoft SQL Server (MSSQL/TDS) traffic.
+- Don't configure SQL connections to [!INCLUDE [fabric-dw](includes/fabric-dw.md)] as HTTPS traffic on port 1433.
+- Validate connectivity after firewall policy changes are deployed.
+
+> [!NOTE]
+> Customers using Azure Firewall application rules should configure SQL-aware filtering for SQL traffic. Azure Firewall supports MSSQL protocol handling and SQL FQDN filtering for SQL workloads.
+
+### FQDN-based firewall filtering
+
+Organizations that restrict outbound access using fully qualified domain names (FQDNs) can use firewall rules that allow only approved SQL destinations.
+
+For environments that use Azure Firewall:
+
+- SQL-aware FQDN filtering is supported through MSSQL application rules.
+- FQDN filtering can be used together with port 1433 restrictions to limit outbound SQL connectivity.
+- Ensure all [!INCLUDE [fabric-dw](includes/fabric-dw.md)] endpoints documented in this article are included in the firewall allow list.
+
+For implementation details, see [Configure Azure Firewall application rules with SQL FQDNs](/azure/firewall/sql-fqdn-filtering).
+
+## Connection idleness
+
+A connection between a client and [!INCLUDE [fabric-dw](includes/fabric-dw.md)] is *idle* when it's open, no request is running or returning results, and the client isn't submitting a new request. An idle connection isn't disconnected or unhealthy. It's simply open and not in use.
+
+[!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] automatically close connections that stay idle for **15 minutes**. The idle timer starts after the warehouse finishes sending a response to the client. It pauses whenever the client submits a new request, such as a query batch, a remote procedure call (RPC), a transaction request, or a bulk load.
+
+For example, the following timeline shows a connection with the 15-minute idle timeout:
+
+1. **10:00 AM:** A client connects to the warehouse.
+1. **10:05 AM:** The client runs a query, and the query completes successfully.
+1. **10:05 AM to 10:20 AM:** The connection stays open, but the client doesn't submit any other queries or requests. This period is inactivity.
+1. **10:20 AM:** The connection has been idle for 15 minutes, so the warehouse closes it.
+1. **10:25 AM:** The client tries to run another query. The client must establish a new connection first.
+
+### Idle timeout, connection timeout, and query timeout
+
+The idle connection timeout is different from the other timeouts you might configure in your client or connection string:
+
+| Timeout | What it limits | Who controls it |
+|---------|----------------|-----------------|
+| Idle connection timeout | How long a connection can stay open without activity. | Fixed at 15 minutes by [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. |
+| Connection timeout | How long a client waits while it establishes a connection. | The client, for example the `Connect Timeout` connection string property. |
+| Query timeout | How long an individual query can run. | The client, for example the `CommandTimeout` property in ADO.NET. |
+
+### What connection idleness means for your applications
+
+- **Long-running queries aren't affected.** The idle timer pauses while a request runs, so a query that runs for longer than 15 minutes isn't closed by the idle timeout. Only connections that sit unused between requests are closed.
+- **Connection resiliency still works.** The idle timeout doesn't change connection resiliency or the other options you use to recover connections. Driver features such as idle connection resiliency (for example, the `ConnectRetryCount` and `ConnectRetryInterval` connection string properties in Microsoft.Data.SqlClient), connection pooling, and application retry logic continue to work as before. For more information, see [Best practices](#best-practices).
+- **Plan for a closed connection.** If your application keeps a connection open and reuses it after a long pause, the next request might fail because the connection was closed. Open connections when you need them and close them when you're done, or use retry logic so your application reconnects automatically.
+- **Commit transactions promptly.** If a connection with an open transaction stays idle for 15 minutes, the warehouse closes the connection and the uncommitted transaction is rolled back. Don't leave a transaction open while your application waits on user input or other work.
+- **Manage concurrent sessions.** [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and
+  [!INCLUDE [fabric-se](includes/fabric-se.md)] have a limit of 2048 user sessions per
+  workspace. Closing idle connections reduces unused sessions, but doesn't prevent
+  reaching this limit. Idle sessions still count until they're closed, and connections
+  used more frequently than every 15 minutes aren't closed by the idle timeout. A burst
+  of connections can also reach the limit before idle connections time out. Manage
+  connection lifetimes and concurrent sessions rather than relying on idle cleanup.
+  When the limit is reached, new connection attempts fail with a session-limit error.
+  For more information, see [Sessions](workload-management.md#sessions).
 
 ## Considerations and limitations
 
@@ -97,7 +171,7 @@ The following screenshot shows the error as it appears in SSMS when an invalid w
 
 ## Related content
 
-- [Security for data warehousing in Microsoft Fabric](security.md)
+- [Security in Fabric Data Warehouse](security.md)
 - [Microsoft Entra authentication as an alternative to SQL authentication in Microsoft Fabric](entra-id-authentication.md)
 - [Add Fabric URLs to your allow list](../security/fabric-allow-list-urls.md)
 - [Azure IP ranges and service tags for public clouds](https://www.microsoft.com/download/details.aspx?id=56519)

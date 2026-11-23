@@ -91,8 +91,10 @@ After you finish the mappings, build and validate the graph model in the editor:
 1. Run validation queries to confirm relationships and cardinality. For example:
 
    ```gql
-   MATCH (c:Customer)-[:purchases]->(o:Order)
-   RETURN c.CustomerID_K, COUNT(o) AS orderCount
+   MATCH (c:Customer)-[:purchases]->(o:`Order`)
+   LET customerId = c.CustomerID_K
+   RETURN customerId, COUNT(o) AS orderCount
+   GROUP BY customerId
    ORDER BY orderCount DESC
    ```
 

@@ -21,11 +21,9 @@ To get started, you need access to a [[!INCLUDE [fabric-se](includes/fabric-se.m
 To find the server name of your warehouse item:
 
 1. Open the **Settings** of your warehouse or SQL analytics endpoint.
-1. In the **Settings** window, select the **SQL endpoint** page.
+1. In the **Settings** window, select the **SQL connection string** page.
 1. Copy the **SQL connection string** and use it to connect externally to the item from Power BI desktop, applications, or client tools. This is the server name of your warehouse.
 1. You should provide the warehouse item name as the **Initial Catalog** or **Database name** when you connect. If you don't provide [the `InitialCatalog` connection string property](connectivity.md#connection-behavior-for-initialcatalog), your initial connection context will be to the `master` warehouse.
-
-   :::image type="content" source="media/how-to-connect/connection-string.png" alt-text="Screenshot from the Fabric portal of the Settings window, SQL endpoint page.":::
 
 ## Connect using SQL Server Management Studio (SSMS)
 
@@ -55,7 +53,7 @@ A [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or Lakehouse [!INCLUDE [fabric-s
 1. Choose entities.
 1. Load Data - choose a data connectivity mode: [import or DirectQuery](/power-bi/connect-data/desktop-directquery-about).
 
-For more information, see [Create reports on data warehousing in Microsoft Fabric](create-reports.md).
+For more information, see [Create reports on Fabric Data Warehouse](create-reports.md).
 
 ## Connect using OLE DB
 

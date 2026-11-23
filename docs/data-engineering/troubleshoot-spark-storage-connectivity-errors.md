@@ -413,7 +413,7 @@ Invalid UTF-8 start byte
 
 - If the error is intermittent, retry—token generation can have transient failures.
 
-- If persistent, check the Fabric admin portal for any capacity or tenant-level issues, then contact support.
+- If persistent, check **OneLake catalog** > **Govern** > **Capacities** and **Configurations** > **Tenant settings** for any capacity or tenant-level issues, then contact support.
 
 ### ABFS unauthorized (403)
 

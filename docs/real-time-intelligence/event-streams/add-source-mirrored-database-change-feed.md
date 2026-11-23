@@ -12,6 +12,8 @@ ms.search.form: Source and Destination
 
 This article shows you how to add a Mirrored Database (Change Feed) source to an eventstream.
 
+[!INCLUDE [schema-aware-source-callout](./includes/schema-aware-source-callout.md)]
+
 The Mirrored Database (Change Feed) source connector for Microsoft Fabric event streams allows you to ingest real-time change events from a [Fabric Mirrored Database](/fabric/database/mirrored-database/overview). Mirrored databases in Fabric provide a near real-time, read-only replica of your external database data. With this connector, you can capture inserts, updates, and deletes as they happen in the mirrored database and stream them into an eventstream for real-time processing, analytics, and routing to various Fabric destinations.
 
 This connector supports all mirrored database types available in Fabric Mirroring, including:

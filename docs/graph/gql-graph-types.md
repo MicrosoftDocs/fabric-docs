@@ -2,8 +2,9 @@
 title: GQL Graph Types Reference for graph in Microsoft Fabric
 description: Complete reference for defining graph types in GQL for graph in Microsoft Fabric, including node types, edge types, constraints, and inheritance.
 ms.topic: reference
-ms.date: 05/20/2026
+ms.date: 09/17/2026
 ms.reviewer: splantikow
+ai-usage: ai-assisted
 ---
 
 # GQL graph types
@@ -18,11 +19,17 @@ This article explains how to define graph types using GQL syntax, including node
 Graph types provide several key benefits:
 
 - **Data validation**: Ensure your graph contains only valid node and edge combinations.
-- **Query optimization**: Help the query engine understand your data structure for better performance.
+- **Shared structure**: Define the node types, edge types, properties, and
+  constraints that applications can expect.
 - **Documentation**: Serve as a clear specification of your graph's structure for developers and analysts.
 
 > [!NOTE]
 > This article introduces graph types conceptually and illustrates their definition using the syntax defined in the GQL standard. However, this syntax isn't currently supported directly for graph.
+
+To design and create a graph through the supported Fabric experience, see
+[Design a graph schema](design-graph-schema.md). Use this article when you need
+the formal GQL model behind node types, edge types, inheritance, property
+declarations, and key constraints.
 
 Structurally, a graph type defines allowed node types and edge types of graphs of the graph type, as well as additional constraints that further restrict those graphs.
 
@@ -203,19 +210,14 @@ This definition implicitly defines the following edge types:
 
 ## Supported property types
 
-When you define a property type, use a property value type that graph supports. Choosing the right data types is important for storage efficiency and query performance.
+The GQL standard requires implementations that claim minimum conformance to
+support `STRING`, `BOOL`, `INT` (signed integer), and `FLOAT` property value
+types. Graph supports additional property value types.
 
-Use the following data types for property values:
-
-- `INT` (also: `INT64`)
-- `UINT` (also: `UINT64`)
-- `STRING`
-- `BOOL` (also: `BOOLEAN`)
-- `DOUBLE` (also: `FLOAT64`, `FLOAT`)
-- `T NOT NULL`, where `T` is any of the preceding data types.
-- `LIST<T>` and `LIST<T> NOT NULL`, where `T` is any of the preceding data types.
-
-For complete information about value types, see [GQL values and value types](gql-values-and-value-types.md).
+For the property types that graph currently supports, see
+[Data types](limitations.md#data-types) in Current limitations. For GQL value
+semantics and the broader query type system, see
+[GQL values and value types](gql-values-and-value-types.md).
 
 > [!IMPORTANT]
 > All property types with the same name that occur in a node type or edge type of a given graph type must specify the same property value type.
@@ -229,7 +231,7 @@ Node key constraints define how each node in your graph gets uniquely identified
 Understanding key constraints is crucial because they:
 
 - **Ensure uniqueness**: Prevent duplicate nodes based on your business logic.
-- **Enable efficient lookups**: Allow the system to optimize queries that search for specific nodes.
+- **Define identity**: Establish which property values identify a node.
 - **Support data integration**: Provide a stable way to reference nodes across different data sources.
 
 > [!IMPORTANT]
@@ -264,8 +266,8 @@ You can also define compound keys that use multiple properties together to ensur
 
 ## Related content
 
-- [GQL language guide](gql-language-guide.md)
+- [Design a graph schema](design-graph-schema.md)
 - [Social network schema example](gql-schema-example.md)
 - [GQL values and value types](gql-values-and-value-types.md)
-- [Optimize GQL query performance for graph](gql-query-performance.md)
+- [GQL language guide](gql-language-guide.md)
 - [Try Microsoft Fabric for free](../fundamentals/fabric-trial.md)

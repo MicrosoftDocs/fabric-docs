@@ -37,6 +37,18 @@ When you select a table, the main view shows the table data in a preview datagri
 
 You can switch between table view and file view without going back to the explorer pane.
 
+### Table overview (preview)
+
+The Table Overview page brings a Lakehouse table’s business context, structure, and key metadata into one place. Its Summary card combines an editable table description with details such as table type, row count, storage size, Delta version, and maintenance timestamps.
+
+The Columns card lets you explore column names, data types, and descriptions, while the Security and permissions card provides visibility into table access.
+
+Authorized users can update table and column descriptions to capture data meaning and business context, making tables easier for colleagues and AI experiences to interpret.
+
+:::image type="content" source="media\lakehouse-overview\lakehouse-table-overview-view.png" alt-text="Screenshot of the Lakehouse explorer main view showing a table in overview." lightbox="media\lakehouse-overview\lakehouse-table-overview-view.png":::
+
+Learn more about how to [read and write additional table metadata](../onelake/table-apis/additional-table-metadata.md) by using the API.
+
 ### Table deep links
 
 You can generate a unique URL for any table so that others can open the Lakehouse explorer with that table already previewed. Select **...** next to the table and choose **Copy URL**.
@@ -107,9 +119,7 @@ You can download files directly from the Lakehouse explorer, from both table fil
 
 To enable file downloads:
 
-1. In the Fabric portal, select the **Settings** gear icon (**&#9881;**) at the top of the page.
-1. In the side pane, under **Governance and administration**, select **Admin portal**.
-1. Select **Tenant settings**.
+1. In the Fabric portal, go to **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**.
 1. Under **OneLake settings**, turn on "Users can access data stored in OneLake with apps external to Fabric."
 
 :::image type="content" source="media\lakehouse-overview\lakehouse-download-settings.png" alt-text="Screenshot showing the download setting in tenant settings." lightbox="media\lakehouse-overview\lakehouse-download-settings.png":::

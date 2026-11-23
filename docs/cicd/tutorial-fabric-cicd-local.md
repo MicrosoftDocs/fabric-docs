@@ -1,8 +1,8 @@
 ---
 title: Tutorial - Local deployment
 description: This article provides a tutorial on deploying Fabric items locally using the fabric-cicd Python library or the Fabric CLI deploy command.
-author: billmath
-ms.author: billmath
+author: nimrodshalit
+ms.author: nishalit
 ms.topic: tutorial
 ms.custom:
 ms.service: fabric

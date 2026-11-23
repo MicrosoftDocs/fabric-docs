@@ -2,7 +2,7 @@
 title: Git Integration for Fabric Warehouse Development
 description: Learn how you can benefit from Fabric's built-in Git integration when developing and deploying Fabric Data Warehouse.
 ms.reviewer: pvenkat, randolphwest
-ms.date: 07/31/2026
+ms.date: 08/13/2026
 ms.topic: concept-article
 ---
 
@@ -50,9 +50,11 @@ The `XMLA.json` file itself is excluded from during the Git integration workflow
 
 ## Limitations in source control
 
-[SQL security](security.md) features such as permissions require a separate export and migration approach.
+- [SQL security](security.md) features such as permissions require a script-based approach for export and migration. Consider using a post-deployment script in a SQL database project. You can configure a post-deployment script in the project with the [SQL Database Projects extension](/sql/tools/visual-studio-code-extensions/sql-database-projects/sql-database-projects-extension) available in [Visual Studio Code](https://code.visualstudio.com/).
 
 - **Cross-item dependencies between warehouses and SQL analytics endpoints** aren't currently supported in development workflows. As a result, scenarios that rely on coordinated changes across these items might not work reliably.
+
+- **Pre-deployment or post-deployment scripts and additional publish configurations** added directly to the database project through Git aren't preserved as part of development workflows. You might need to manage these configurations separately outside of Fabric workspace.
 
 - **Selective commits at the warehouse level** aren't currently supported. Changes are committed at the warehouse item level rather than at finer granular object levels.
 

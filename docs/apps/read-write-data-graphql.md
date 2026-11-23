@@ -22,27 +22,25 @@ Instantiate `RayfinClient` with your backend URL, publishable key, and schema ty
 
 ```typescript
 import { RayfinClient } from '@microsoft/rayfin-client';
-import type { Note } from '../rayfin/data/Note';
-import type { Notebook } from '../rayfin/data/Notebook';
+import type { UniversalAppSchema } from '@rayfin-app/shared';
 
-type AppSchema = { 
-  Note: Note;
-  Notebook: Notebook;
-};
-
-const client = new RayfinClient<AppSchema>({
-  baseUrl: import.meta.env.VITE_RAYFIN_API_URL ?? 'http://localhost:5168',
-  publishableKey: 'pk-your-project-key',
+const client = new RayfinClient<UniversalAppSchema>({
+  baseUrl: import.meta.env.VITE_RAYFIN_API_URL,
+  publishableKey: import.meta.env.VITE_RAYFIN_PUBLISHABLE_KEY,
 });
 ```
 
 The generic type argument enables TypeScript to provide autocomplete and type checking for all data operations.
 
+These examples assume that you enabled Data and registered `Note` and `Notebook` in the Universal App's `packages/data/src/index.ts` and shared schema contract. In a flat template, import your schema type from `rayfin/data/schema.ts` instead. See [Define data models](data-models.md#register-entities-in-the-schema).
+
 ## Read data
 
 Access entity collections through `client.data.<EntityName>`. The fluent API provides methods for querying, filtering, sorting, and pagination.
 
-### Fetch all records
+### Fetch a page of records
+
+`execute()` returns only one page, with 100 records by default. It doesn't return cursor metadata or fetch subsequent pages. Use [forward pagination](#paginate-large-result-sets) for lists that can grow beyond one page.
 
 ```typescript
 const notes = await client.data.Note.select([
@@ -57,10 +55,19 @@ const notes = await client.data.Note.select([
 ### Fetch a single record by primary key
 
 ```typescript
-const note = await client.data.Note.findByPk('00000000-0000-0000-0000-000000000000');
+const note = await client.data.Note.findById('00000000-0000-0000-0000-000000000000');
 ```
 
-This returns the complete entity or `null` if no record with that ID exists.
+`findById()` returns `null` if no record exists. The released implementation selects only the primary key, so don't assume that other entity fields are populated. Select fields explicitly when you need their values:
+
+```typescript
+const notes = await client.data.Note.select(['id', 'title', 'content'])
+  .where({ id: { eq: '00000000-0000-0000-0000-000000000000' } })
+  .first(1)
+  .execute();
+
+const note = notes[0] ?? null;
+```
 
 ### Filter records
 
@@ -81,7 +88,7 @@ const pinnedNotes = await client.data.Note.select([
 | Operator | Description | Example |
 |----------|-------------|---------|
 | `eq` | Equals | `{ status: { eq: 'active' } }` |
-| `ne` | Not equals | `{ status: { ne: 'archived' } }` |
+| `neq` | Not equals | `{ status: { neq: 'archived' } }` |
 | `gt` | Greater than | `{ age: { gt: 18 } }` |
 | `gte` | Greater than or equal | `{ age: { gte: 21 } }` |
 | `lt` | Less than | `{ price: { lt: 100 } }` |
@@ -127,7 +134,6 @@ const notes = await client.data.Note.select([
   'content',
   'notebook.id',
   'notebook.name',
-  'notebook.color',
 ])
   .execute();
 ```
@@ -145,6 +151,7 @@ const page = await client.data.Note.select([
   'createdAt',
 ])
   .orderBy({ createdAt: 'desc' })
+  .orderBy({ id: 'asc' })
   .first(25)
   .executePaginated();
 
@@ -157,12 +164,16 @@ Fetch the next page using the cursor:
 
 ```typescript
 if (page.hasNextPage) {
+  if (!page.endCursor) {
+    throw new Error('The next page is missing its cursor.');
+  }
   const nextPage = await client.data.Note.select([
     'id',
     'title',
     'createdAt',
   ])
     .orderBy({ createdAt: 'desc' })
+    .orderBy({ id: 'asc' })
     .first(25)
     .after(page.endCursor)
     .executePaginated();
@@ -170,7 +181,81 @@ if (page.hasNextPage) {
 ```
 
 > [!NOTE]
-> The `totalCount` property appears on the `PagedResult` type but isn't populated by the backend. Use `items.length` to count results in the current page.
+> The backend doesn't populate the `totalCount` property on the `PagedResult` type. The `page.items.length` value counts only the current page, not all matching records.
+
+To process every matching record, continue forward until `hasNextPage` is `false`. Keep selections, filters, and sort order unchanged across requests.
+
+```typescript
+let cursor: string | undefined;
+let matchingRecords = 0;
+
+while (true) {
+  let query = client.data.Note.select(['id'])
+    .where({ isArchived: { eq: false } })
+    .orderBy({ id: 'asc' })
+    .first(100);
+
+  if (cursor !== undefined) {
+    query = query.after(cursor);
+  }
+
+  const page = await query.executePaginated();
+  matchingRecords += page.items.length;
+
+  if (!page.hasNextPage) {
+    break;
+  }
+  if (!page.endCursor) {
+    throw new Error('The next page is missing its cursor.');
+  }
+  cursor = page.endCursor;
+}
+
+console.log('Records read across all pages:', matchingRecords);
+```
+
+Paging doesn't provide a snapshot across requests. Concurrent changes can affect the records you read and count.
+
+## Aggregate and group data
+
+Use `aggregate()` for server-side totals and `groupBy()` for per-group summaries. The standalone fluent `count()` method isn't available, but `count` is supported inside an aggregation specification.
+
+All five aggregate operations (`sum`, `avg`, `min`, `max`, and `count`) require a numeric field. Don't count a UUID `id` or a text field. For example, the following query assumes a registered `Product` entity with a required numeric `stockQuantity` field:
+
+```typescript
+const totals = await client.data.Product.where({ isAvailable: { eq: true } })
+  .aggregate({
+    matchingProducts: { count: 'stockQuantity' },
+    totalStock: { sum: 'stockQuantity' },
+    averageStock: { avg: 'stockQuantity' },
+    lowestStock: { min: 'stockQuantity' },
+    highestStock: { max: 'stockQuantity' },
+  })
+  .execute();
+
+console.log(totals[0].aggregations.matchingProducts);
+```
+
+`count` counts non-null values of the specified numeric field. Use a required numeric field to count matching rows. If your entity has no suitable field, count identifiers across *all* pages as shown earlier, not just one page.
+
+For grouped totals:
+
+```typescript
+const groups = await client.data.Product.groupBy(['status'])
+  .aggregate({
+    matchingProducts: { count: 'stockQuantity' },
+    totalStock: { sum: 'stockQuantity' },
+  })
+  .execute();
+
+for (const row of groups) {
+  console.log(row.fields.status, row.aggregations.totalStock);
+}
+```
+
+Aggregation results are arrays with `fields` and `aggregations` objects. A grand total has one row with an empty `fields` object. `count` returns a `number`; the other operations return `number | null` for empty or all-null inputs.
+
+Apply `where()` before aggregation. Don't combine aggregation with row selection, ordering, or paging through `select()`, `orderBy()`, `first()`, or `after()`.
 
 ## Create records
 
@@ -188,7 +273,7 @@ const newNote = await client.data.Note.create({
 });
 ```
 
-The method returns the created entity with all fields populated, including the autogenerated `id`.
+The method returns the created record, including its autogenerated `id`. Use an explicit selected read when you need additional stored fields.
 
 ### Create records with relationships
 
@@ -199,19 +284,27 @@ When creating entities that have relationships, pass either the full related obj
 const note = await client.data.Note.create({
   title: 'Weekly summary',
   content: 'Summary of this week',
-  notebook: { id: 'notebook-456' },
+  notebook: { id: '22222222-3333-4444-5555-666666666666' },
   isPinned: false,
   isArchived: false,
   createdAt: new Date(),
   updatedAt: new Date(),
 });
 
-// Option 2: Pass the full object
-const notebook = await client.data.Notebook.findByPk('notebook-456');
-const note = await client.data.Note.create({
+// Option 2: Select the related fields you need before creating the note.
+const notebooks = await client.data.Notebook.select(['id', 'name'])
+  .where({ id: { eq: '22222222-3333-4444-5555-666666666666' } })
+  .first(1)
+  .execute();
+const notebook = notebooks[0];
+if (!notebook) {
+  throw new Error('Notebook not found.');
+}
+
+const noteWithNotebook = await client.data.Note.create({
   title: 'Weekly summary',
   content: 'Summary of this week',
-  notebook: notebook,
+  notebook,
   isPinned: false,
   isArchived: false,
   createdAt: new Date(),
@@ -220,6 +313,8 @@ const note = await client.data.Note.create({
 ```
 
 Both forms produce the same result. Use the first form when you already know the related entity's ID and want to avoid an extra fetch.
+
+The client uses the related object's primary key to set the relationship. Passing an object doesn't create or update the related notebook.
 
 ## Update records
 
@@ -257,9 +352,35 @@ await client.data.Note.delete({ id: 'note-123' });
 
 The method resolves when the backend confirms deletion. If no records match the filter, the method still succeeds.
 
+## Create or update a record
+
+Use `upsert(where, create, update)` to create a missing record or update an existing one. Supply the same ID in the lookup and the create input:
+
+```typescript
+const id = '11111111-2222-3333-4444-555555555555';
+const now = new Date();
+
+await client.data.Note.upsert(
+  { id },
+  {
+    id,
+    title: 'Daily summary',
+    content: 'Summary of today',
+    isPinned: false,
+    isArchived: false,
+    createdAt: now,
+    updatedAt: now,
+    user_id: 'user-123',
+  },
+  { title: 'Daily summary', updatedAt: now },
+);
+```
+
+This helper performs a read followed by a separate create or update. It isn't atomic, and concurrent calls can race. Don't use it as a transaction or concurrency guarantee.
+
 ## Handle authentication
 
-When authentication is enabled, sign in before performing data operations:
+Sign in before performing protected data operations. For a deployed backend, use the app's configured [Microsoft Entra sign-in flow](fabric-authentication.md). The following email and password example is for a local backend only:
 
 ```typescript
 await client.auth.signIn({ email, password });
@@ -279,7 +400,7 @@ The client automatically attaches the authentication session to all data API cal
 
 ## Current limitations
 
-- The `count()` method isn't available on the fluent client. Select minimal fields and use `results.length` instead.
+- A standalone `count()` method isn't available. Use a numeric-field [aggregation](#aggregate-and-group-data), or count records across all pages. An array's length counts only the records returned in that page.
 - Many-to-many relationships aren't supported. Use an explicit join entity with two `@one()` navigation decorators.
 - The `totalCount` property on `PagedResult` isn't populated by the backend.
 

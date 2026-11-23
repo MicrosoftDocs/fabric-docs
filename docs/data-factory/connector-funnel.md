@@ -14,16 +14,18 @@ ai-usage: ai-assisted
 This article outlines the steps to create a Funnel connection.
 
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
 
-The Funnel connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+## Summary
+
+The Funnel connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
 |Funnel Workspace| n/a | √ |
 
-## Set up your connection for Dataflow Gen2
-You can connect Dataflow Gen2 in Microsoft Fabric to Funnel using Power Query connectors. Follow these steps to create your connection:
+## Set up your connection for dataflow Gen2
+You can connect dataflow Gen2 in Fabric to Funnel using Power Query connectors. Follow these steps to create your connection:
 
 1. Check [capabilities](#capabilities) to make sure your scenario is supported.
 1. [Complete prerequisites for Funnel](#prerequisites).
@@ -31,29 +33,37 @@ You can connect Dataflow Gen2 in Microsoft Fabric to Funnel using Power Query co
 1. [Connect to Funnel data](#connect-to-funnel-data).
 1. Check [limitations and considerations](#limitations-and-considerations) for any current restrictions.
 
-### Capabilities
+## Prerequisites
 
-[!INCLUDE [funnel-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/funnel/funnel-capabilities-supported.md)]
+[!INCLUDE [funnel-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/funnel/prerequisites.md)]
 
-### Prerequisites
+<a id="capabilities"></a>
 
-[!INCLUDE [funnel-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/funnel/funnel-prerequisites.md)]
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
+
+[!INCLUDE [funnel-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/funnel/capabilities-supported.md)]
+
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Connect to Funnel data
+<a id="connect-to-funnel-data"></a>
 
-[!INCLUDE [funnel-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/funnel/funnel-connect-to-power-query-online.md)]
+### Connection instructions
 
-### Limitations and considerations
-
-[!INCLUDE [funnel-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/funnel/funnel-limitations-and-considerations-include.md)]
+[!INCLUDE [funnel-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/funnel/connect-online.md)]
 
 ## Set up your connection in a pipeline
 
-Data Factory in Microsoft Fabric doesn't currently support Funnel in pipelines.
+Data Factory doesn't currently support Funnel in pipelines.
+
+## Limitations and considerations
+
+[!INCLUDE [funnel-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/funnel/limitations.md)]
 
 ## Related content
 

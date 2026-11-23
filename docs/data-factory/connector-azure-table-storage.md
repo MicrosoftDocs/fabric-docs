@@ -13,38 +13,48 @@ ai-usage: ai-assisted
 
 This article outlines the steps to create an Azure Table Storage connection in Microsoft Fabric.
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
 
-The Azure Table Storage connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+## Summary
+
+The Azure Table Storage connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
 |Account key| √ | √ |
 
-## Set up your connection for Dataflow Gen2
+## Set up your connection for dataflow Gen2
 
-You can connect Dataflow Gen2 to Azure Table Storage in Microsoft Fabric using Power Query connectors. Follow these steps to create your connection:
+You can connect dataflow Gen2 to Azure Table Storage in Fabric by using Power Query connectors. Follow these steps to create your connection:
 
 1. Check [capabilities](#capabilities) to make sure your scenario is supported.
 1. [Get data in Fabric](#get-data).
 1. [Copy your account key for Azure Table Storage](#copy-your-account-key-for-azure-table-storage).
 1. [Connect to Azure Table Storage](#connect-to-azure-table-storage).
 
-### Capabilities
+<a id="capabilities"></a>
 
-[!INCLUDE [azure-table-storage-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-table-storage/azure-table-storage-capabilities-supported.md)]
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
+
+[!INCLUDE [azure-table-storage-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-table-storage/capabilities-supported.md)]
+
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Copy your account key for Azure Table Storage
+<a id="copy-your-account-key-for-azure-table-storage"></a>
 
-[!INCLUDE [azure-table-storage-copy-account-key](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-table-storage/azure-table-storage-copy-account-key.md)]
+[!INCLUDE [azure-table-storage-copy-account-key](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-table-storage/additional-information.md)]
 
-### Connect to Azure Table Storage
+<a id="connect-to-azure-table-storage"></a>
 
-[!INCLUDE [azure-table-storage-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-table-storage/azure-table-storage-connect-to-power-query-online.md)]
+### Connection instructions
+
+[!INCLUDE [azure-table-storage-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-table-storage/connect-online.md)]
 
 ## Related content
 

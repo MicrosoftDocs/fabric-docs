@@ -3,7 +3,7 @@ metadata:
   title: "Fabric lifecycle management tools Frequently asked questions"
   description: "Frequently asked questions about Fabric lifecycle management tools."
   ms.topic: faq
-  ms.date: 04/20/2024
+  ms.date: 09/23/2026
 
 title: "Frequently asked questions about the Fabric lifecycle management tools"
 summary: |
@@ -88,6 +88,47 @@ sections:
           
       - question: Why aren't some tiles displaying information after deployment?
         answer: When you pin a tile to a dashboard, if the tile relies on an unsupported item (any item not on [this list](deployment-pipelines/intro-to-deployment-pipelines.md#supported-items) is unsupported), or on an item that you don't have permissions to deploy, after deploying the dashboard the tile doesn't render. For example, if you create a tile from a report that relies on a semantic model you're not an admin on, when deploying the report you get an error warning. However, when deploying the dashboard with the tile, you don't an error message, the deployment will succeed, but the tile won't display any information.
+
+  - name: Deployment plan questions
+    questions:
+      - question: What is a deployment plan?
+        answer: For a short explanation of deployment plans, see the [deployment plan overview](deployment-plan/deployment-plan-overview.md).
+
+      - question: I don't see the deployment plan item type in my workspace. How do I make it appear?
+        answer: |
+          The deployment plan item type appears only after a Fabric admin turns on the tenant setting. In the [admin portal](../admin/about-tenant-settings.md), under **Tenant settings** > **Microsoft Fabric**, enable **Users can create deployment plan (preview) items**, set **Apply to** either the whole organization or a security group, and select **Apply**.
+
+          Until this setting is on, the item type stays hidden in every workspace.
+
+      - question: What happens if I deploy without attaching a plan?
+        answer: The deployment falls back to its default behavior. Items deploy without a declared order and without pre-deploy or post-deploy actions. Any dependency the plan was protecting, such as a warehouse view that reads a lakehouse table populated by a notebook, fails again.
+
+      - question: Why did my warehouse view fail to bind, even though the items deployed in the right order?
+        answer: A correctly ordered plan deploys item metadata in the order you declare, but deploying a lakehouse doesn't put rows into its tables. A warehouse view that reads a lakehouse table fails to bind unless a notebook or data pipeline produced that table first. Add a post-deploy action between the lakehouse and the warehouse that produces the table. An action reports completion when the action itself ends, not when the services it feeds have caught up, so put any readiness check in the last cell of the notebook, or the last activity of the data pipeline. For an example, see [deployment plan samples](deployment-plan/deployment-plan-sample-plans.md).
+
+      - question: Why did my notebook write to the wrong workspace after it deployed?
+        answer: A notebook's default lakehouse field holds IDs that point at a specific lakehouse in a specific workspace. After the notebook lands in a new workspace through Git, those IDs can still point at the original workspace. Either set the default lakehouse for the target environment in the notebook settings before the run, or have the notebook resolve its lakehouse at runtime. For more information, see [Notebook source control and deployment](../data-engineering/notebook-source-control-deployment.md).
+
+      - question: Where do I see what the plan did during a run?
+        answer: Run output is visible from the deployment in the portal. Action runs link back to the underlying item's run history for logs and step details.
+
+      - question: How do I recover from a deployment that failed partway?
+        answer: A failed deployment doesn't roll back completed item deployments or changes made by actions. For recovery guidance, see [The deployment stopped partway through](deployment-plan/deployment-plan-troubleshoot.md#the-deployment-stopped-partway-through).
+
+      - question: Can I run a deployment plan on a schedule?
+        answer: Not directly. Trigger **Update from Git** from an external scheduler such as Azure Pipelines or GitHub Actions, and the attached plan runs as part of that deployment.
+
+      - question: Can I use a deployment plan from my CI pipeline?
+        answer: Yes, if the pipeline drives the deployment through a Fabric API that supports attaching a plan, such as the [Git sync API](git-integration/git-automation.md), the deployment pipelines deploy API, or the batch import API. A deployment driven by the Fabric CLI, the Terraform provider for Fabric, or the fabric-cicd Python library can't attach a plan.
+
+      - question: Does a deployment plan deploy workspace settings?
+        answer: |
+          No. A plan governs the items in a deployment and the actions that run around them. Workspace-level configuration isn't part of a deployment, so settings such as the workspace identity, Spark settings, and the Git connection aren't created or updated by a plan.
+
+          Configure these in the target workspace before you deploy. An item that depends on workspace-level configuration, such as a notebook that authenticates through the workspace identity, fails at run time if the target workspace isn't configured the same way as the source.
+
+      - question: Does a deployment plan need special permissions?
+        answer: No. A deployment plan follows the standard Fabric workspace role model. For more information, see [deployment plan permissions](deployment-plan/deployment-plan-permissions.md).
 
   - name: Paginated reports
     questions:

@@ -58,7 +58,7 @@ Under **Advanced**, you can specify the following fields:
 
     :::image type="content" source="./media/connector-sql-database/isolation-level.png" alt-text="Screenshot showing Isolation level settings." lightbox="./media/connector-sql-database/isolation-level.png":::
 
-- **Partition option**: Specify the data partitioning options used to load data from SQL database. Allowed values are: **None** (default), **Physical partitions of table**, and **Dynamic range**. When a partition option is enabled (that is, not **None**), the degree of parallelism to concurrently load data from an SQL database is controlled by **Degree of copy parallelism** in copy activity settings tab.
+- **Partition option**: Specify the data partitioning options used to load data from SQL database. Allowed values are: **None** (default), **Physical partitions of table**, and **Dynamic range**. When a partition option is enabled (that is, not **None**), the degree of parallelism to concurrently load data from a SQL database is controlled by **Degree of copy parallelism** in copy activity settings tab.
 
   - **None**: Choose this setting to not use a partition.
   - **Physical partitions of table**: When using a physical partition, the partition column and mechanism are automatically determined based on your physical table definition.

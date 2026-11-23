@@ -4,6 +4,7 @@ description: Learn how to create your first materialized lake view in a Microsof
 ms.topic: quickstart
 ms.reviewer: bsankaran, sairamyeturi, nijelsf, hgowrisankar
 ms.date: 07/17/2026
+ai-usage: ai-assisted
 #customer intent: As a data engineer, I want to create materialized lake views in a Microsoft Fabric Lakehouse so that I can optimize query performance and manage data quality.
 ---
 
@@ -13,10 +14,32 @@ In this quickstart, you create source tables in a lakehouse in Microsoft Fabric,
 
 ## Prerequisites
 
-* A [workspace](../../fundamentals/create-workspaces.md) with a Fabric-enabled [capacity](../../enterprise/licenses.md#capacity).
-* A Lakehouse with [Lakehouse schemas](../Lakehouse-schemas.md) enabled and [Fabric Runtime 1.3](../runtime-1-3.md). 
+* A [workspace](../../fundamentals/create-workspaces.md) with a Fabric-enabled
+  [capacity](../../enterprise/licenses.md#capacity) and Contributor or higher access.
+* A Lakehouse with [Lakehouse schemas](../Lakehouse-schemas.md) enabled,
+  [Fabric Runtime 1.3](../runtime-1-3.md), and access to source Delta tables.
 
 ## Create your first materialized lake view
+
+To create a view with
+[Skills for Fabric](../../fundamentals/skills-for-fabric-install.md), start
+with a definition saved in a notebook. If needed, review it in
+[Optimal refresh](./refresh-materialized-lake-view.md).
+Replace the placeholders and continue that conversation with this prompt.
+Otherwise, use the portal steps in the following section.
+
+```copilot
+Use Skills for Fabric. In workspace <workspace-name> and destination lakehouse
+<destination-lakehouse-name>, create materialized lake view
+<target-schema>.<new-view-name> from the reviewed SQL above. Preserve its
+sources, logic, and data quality rules; change only the target name. If the
+view or notebook <notebook-name> exists, stop and ask for another name. Show
+the definition and wait for my confirmation.
+
+After approval, save only this definition in a new notebook, attach it, and run
+it. Don't rerun setup or loading cells. Query the saved view and report its
+row count and sample rows.
+```
 
 1. Go to the [Fabric portal](https://app.fabric.microsoft.com/) and navigate to your workspace.
 

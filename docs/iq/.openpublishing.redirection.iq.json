@@ -12,7 +12,27 @@
     },
     {
       "source_path_from_root": "/docs/iq/ontology/how-to-use-preview-experience.md",
-      "redirect_url": "/fabric/iq/ontology/how-to-view-entity-type-details",
+      "redirect_url": "/fabric/iq/ontology/how-to-view-ontology-details",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/iq/ontology/how-to-view-entity-type-details.md",
+      "redirect_url": "/fabric/iq/ontology/how-to-view-ontology-details",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/iq/ontology/concepts-generate.md",
+      "redirect_url": "/fabric/iq/ontology/how-to-generate-from-semantic-models",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/iq/ontology/tutorial-4-create-data-agent.md",
+      "redirect_url": "/fabric/iq/ontology/tutorial-4-use-agent",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/iq/ontology/how-to-add-semantic-enrichment.md",
+      "redirect_url": "/fabric/iq/ontology/how-to-add-metadata",
       "redirect_document_id": true
     },
     {
@@ -71,11 +91,6 @@
       "redirect_document_id": true
     },
     {
-      "source_path_from_root": "/docs/iq/plan/planning-driver-model/planning-how-to-create-model-using-model-builder.md",
-      "redirect_url": "/fabric/iq/plan/planning-row-model/planning-how-to-create-model-using-model-builder",
-      "redirect_document_id": true
-    },
-    {
       "source_path_from_root": "/docs/iq/plan/planning-driver-model/planning-how-to-configure-model-row-properties.md",
       "redirect_url": "/fabric/iq/plan/planning-row-model/planning-how-to-configure-model-row-properties",
       "redirect_document_id": true
@@ -86,10 +101,59 @@
       "redirect_document_id": true
     },
     {
+      "source_path_from_root": "/docs/iq/plan/planning-forecasting/planning-how-to-create-statistical-forecasts.md",
+      "redirect_url": "/fabric/iq/plan/planning-forecasting/planning-how-to-generate-statistical-forecasts-using-predict-feature",
+      "redirect_document_id": true
+    },
+    {
       "source_path_from_root": "/docs/iq/plan/planning-driver-model/planning-how-to-create-driver-model.md",
-      "redirect_url": "/fabric/iq/plan/planning-row-model/planning-how-to-create-driver-model",
+      "redirect_url": "/fabric/iq/plan/planning-row-model/how-to-create-row-model",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/iq/plan/planning-driver-model/planning-how-to-create-model-using-model-builder.md",
+      "redirect_url": "/fabric/iq/plan/planning-row-model/how-to-create-row-model",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/iq/plan/planning-row-model/planning-how-to-create-driver-model.md",
+      "redirect_url": "/fabric/iq/plan/planning-row-model/how-to-create-row-model",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/iq/plan/planning-row-model/planning-how-to-create-model-using-model-builder.md",
+      "redirect_url": "/fabric/iq/plan/planning-row-model/how-to-create-row-model",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/iq/plan/planning-row-model/planning-how-to-create-templates.md",
+      "redirect_url": "/fabric/iq/plan/planning-row-model/how-to-create-templates",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/iq/plan/planning-tutorial/planning/tutorial-3-optimizer.md",
+      "redirect_url": "/fabric/iq/plan/planning-tutorial/planning/tutorial-2-optimizer",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/iq/plan/planning-how-to-create-semantic-model-connection.md",
+      "redirect_url": "/fabric/iq/plan/planning-how-to-get-started/#add-the-semantic-model",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/iq/plan/planning-reference-formulas/math-functions/random-lookup-functions.md",
+      "redirect_url": "/fabric/iq/plan/planning-reference-formulas/math-functions/random-functions",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/iq/plan/planning-reference-formulas/time-intelligence-functions/time-shifting-lookup.md",
+      "redirect_url": "/fabric/iq/plan/planning-reference-formulas/time-intelligence-functions/time-shifting",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/iq/plan/planning-reference-formulas/lookup-functions.md",
+      "redirect_url": "/fabric/iq/plan/planning-reference-formulas/lookup-functions/xlookup",
       "redirect_document_id": true
     }
-
   ]
 }

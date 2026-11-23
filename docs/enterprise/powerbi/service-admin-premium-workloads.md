@@ -38,11 +38,10 @@ You can tune the behavior of the workloads, by configuring workload settings for
 >[!IMPORTANT]
 >All workloads are always enabled and cannot be disabled. Your capacity resources are managed by Power BI according to your capacity usage.
 
-#### To configure workloads in the Power BI admin portal
+#### To configure workloads in OneLake catalog Govern
 
 1. Sign in to [Power BI](https://app.powerbi.com) using your admin account credentials.
-2. From the page header, select **...** > **Settings** > **Admin portal**.
-3. Go to **Capacity settings** and from the **Power BI Premium** tab, select a capacity.
+2. Go to **OneLake catalog** > **Govern** > **Capacities** and, from the **Power BI Premium** tab, select a capacity.
 4. Expand **Workloads**.
 5. Set the values for each workload according to your specifications.
 6. Select **Apply**.
@@ -197,7 +196,7 @@ When enabled, automatic page refresh allows users in your Premium capacity to re
 
 To find the automatic page refresh setting:
 
-1. In the Power BI Admin portal, select **Capacity settings**.
+1. Go to **OneLake catalog** > **Govern** > **Capacities**.
 
 2. Select your capacity, and then scroll down and expand the **Workloads** menu.
 
@@ -211,11 +210,11 @@ Queries created by automatic page refresh go directly to the data source, so it'
 
 Power BI Premium supports additional Analysis Services server properties. To review these properties, refer to [Server properties in Analysis Services](/analysis-services/server-properties/server-properties-in-analysis-services).
 
-#### Admin portal switch
+#### Capacity setting
 
 The Analysis Services XMLA-based server properties setting is enabled by default. When enabled, workspace admins can modify behaviors for an individual workspace. Modified properties apply only to that workspace. To toggle the Analysis Services server properties setting, follow the steps below.
 
-1. Go to your [capacity settings](/power-bi/admin/service-admin-portal-capacity-settings).
+1. Go to **OneLake catalog** > **Govern** > **Capacities**.
 
 2. Select the capacity you want to disable the *Analysis Services server properties* in.
 
@@ -241,11 +240,11 @@ Paginated reports offer the same capabilities that SQL Server Reporting Services
 
 ### Outbound connectivity
 
-Outbound connectivity is turned on by default. It allows paginated reports to make requests for fetching external resources such as images, and call external APIs and Azure functions defined using custom code in paginated reports. A Fabric administrator can disable this setting in the Power BI admin portal.
+Outbound connectivity is turned on by default. It allows paginated reports to make requests for fetching external resources such as images, and call external APIs and Azure functions defined using custom code in paginated reports. A Fabric administrator can disable this setting in **OneLake catalog** > **Govern** > **Capacities**.
 
 To get to the outbound connectivity settings, follow these steps:
 
-1. In Power BI service, navigate to the [admin portal](/power-bi/admin/service-admin-portal#how-to-get-to-the-admin-portal).
+1. In the Power BI service, go to **OneLake catalog** > **Govern** > **Capacities**.
 
 2. From the **Power BI Premium** tab, select the capacity you want to disable the paginated reports outbound requests for.
 

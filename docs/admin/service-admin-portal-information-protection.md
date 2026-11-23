@@ -12,7 +12,7 @@ LocalizationGroup: Administration
 
 # Information protection tenant settings
 
-Information protection tenant settings help you to protect sensitive information in your Power BI tenant. Allowing and applying sensitivity labels to content ensures that information is only seen and accessed by the appropriate users. These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
+Information protection tenant settings help you to protect sensitive information in your Power BI tenant. Allowing and applying sensitivity labels to content ensures that information is only seen and accessed by the appropriate users. These settings are configured in **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
 
 ## Allow users to apply sensitivity labels for content
 

@@ -9,7 +9,7 @@ ms.date: 11/15/2023
 
 # Use the Azure Batch activity to run a command on an Azure Batch instance
 
-The Azure Batch activity in Data Factory for Microsoft Fabric allows you to run a command against an Azure Batch instance. If you are migrating to Fabric Data Factory from ADF or Synapse, this activity is called Custom activity.
+The Azure Batch activity in Fabric Data Factory allows you to run a command against an Azure Batch instance. If you are migrating to Fabric Data Factory from Azure Data Factory or Azure Synapse, this activity is called Custom activity.
 
 ## Prerequisites
 
@@ -45,13 +45,13 @@ The Azure Batch activity supports WI, SPN, and OAuth connection types.
 
 :::image type="content" source="media/azure-batch-activity/azure-batch-activity-settings.png" alt-text="Screenshot showing the Settings tab of the Azure Batch activity.":::
 
-#### Using Fabric Workspace Identity (WI) in the Azure Batch activity
+#### Using Fabric workspace identity in the Azure Batch activity
 
-1. **Create the Workspace Identity**
+1. **Create the workspace identity**
 
-   You must enable WI in your workspace (this may take a moment to load). Create a Workspace Identity in your Fabric workspace. Note that the WI should be created in the same workspace as your Pipeline.
+   You must enable workspace identity in your workspace (this may take a moment to load). Create a workspace identity in your Fabric workspace. Note that the workspace identity should be created in the same workspace as your pipeline.
    
-   Check out the docs on [Workspace Identity](../security/workspace-identity.md).
+   Check out the docs on [workspace identity](../security/workspace-identity.md).
 
 1. **Enable tenant-level settings**
 
@@ -59,9 +59,9 @@ The Azure Batch activity supports WI, SPN, and OAuth connection types.
 
    You can enable this setting in the [Fabric admin portal](/fabric/admin/admin-center#how-to-get-to-the-admin-portal). For more information about this setting, see [the enable service principal authentication for admin APIs article](../admin/enable-service-principal-admin-apis.md).
 
-1. **Grant workspace permissions to the Workspace Identity**
+1. **Grant workspace permissions to the workspace identity**
 
-   Open the workspace, select Manage access, and assign permissions to the Workspace Identity. Contributor access is sufficient for most scenarios.
+   Open the workspace, select Manage access, and assign permissions to the workspace identity. Contributor access is sufficient for most scenarios.
 
    Check out the docs on [Give users access to workspaces](../fundamentals/give-access-workspaces.md).
 
@@ -70,9 +70,9 @@ The Azure Batch activity supports WI, SPN, and OAuth connection types.
 [!INCLUDE[save-run-schedule-pipeline](includes/save-run-schedule-pipeline.md)]
 
 ## Known issues
-- The WI option in connections settings does not surface in some instances. This is a bug that a fix is being worked on at the moment.
+- The workspace identity option in connections settings does not surface in some instances. This is a bug that a fix is being worked on at the moment.
 - Using Service Principal to run a notebook that contains Semantic Link code has functional limitations and supports only a subset of semantic link features. See the [supported semantic link functions](../data-science/semantic-link-service-principal-support.md#supported-semantic-link-functions) for details. To use other capabilities, you're recommended to [manually authenticate semantic link with a service principal](../data-science/semantic-link-service-principal-support.md#manually-authenticate-semantic-link-with-a-service-principal).
-- Some customers may not see the Workspace Identity (WI) dropdown, or may see it but be unable to create a connection. This behavior is due to a known issue in one of our underlying platform components. The fix is currently being worked on.
+- Some customers may not see the workspace identity dropdown, or may see it but be unable to create a connection. This behavior is due to a known issue in one of our underlying platform components. The fix is currently being worked on.
 
 ## Related content
 

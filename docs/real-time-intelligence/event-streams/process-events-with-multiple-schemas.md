@@ -3,11 +3,17 @@ title: Enhance Event Processing with Multiple Schema Inferencing
 description: This article provides information on using multiple schemas to process and preview events in a Microsoft Fabric eventstream.
 ms.reviewer: xujiang1
 ms.topic: how-to
-ms.date: 09/08/2025
+ms.date: 09/02/2026
 ms.search.form: Enhancing events processing with multiple schema inferencing
 ---
 
 # Enhance event processing by using multiple schema inferencing (preview)
+
+> [!NOTE]
+> This article covers multiple schema inferencing in the **existing Eventstream
+> experience**. For unschematized events with different shapes in a
+> **schema-aware Eventstream (Preview)**, use the Classifier workflow. See
+> [Classify unschematized events (Preview)](./process-events-with-classifier.md).
 
 The feature of multiple schema inferencing in Microsoft Fabric eventstreams supports inferring multiple schemas from various sources and the eventstream itself. You can use the feature to design various data transformation paths by picking up one of the inferred schemas with rich flexibility. This ability allows for seamless data integration and processing that caters to environments with complex and multiple data shapes. It addresses the challenges that users previously encountered with single-schema inferencing.
 
@@ -165,5 +171,3 @@ When you enable multiple schema inferencing in an existing eventstream and you s
 
 - [Add and manage a destination in an eventstream](./add-manage-eventstream-destinations.md)
 - [Process event data by using the event processing editor](./process-events-using-event-processor-editor.md)
-
-

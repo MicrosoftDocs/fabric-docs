@@ -14,9 +14,11 @@ ai-usage: ai-assisted
 This article outlines the steps to create a SQL Server database connection.
 
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
 
-The SQL Server database connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+## Summary
+
+The SQL Server database connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
@@ -27,28 +29,42 @@ The SQL Server database connector supports the following authentication types fo
 |Workspace identity | n/a | √ |
 
 ## Set up your connection for Dataflow Gen2
-You can connect Dataflow Gen2 in Microsoft Fabric to SQL Server database using Power Query connectors. Follow these steps to create your connection:
+You can connect a dataflow Gen2 in Fabric to a SQL Server database using Power Query connectors. Follow these steps to create your connection:
 
 1. Check [capabilities](#capabilities), [limitations, and considerations](#limitations-and-considerations) to make sure your scenario is supported.
 1. [Get data in Fabric](#get-data).
 1. [Connect to SQL Server database](#connect-to-sql-server-database).
 
 
-### Capabilities
+<a id="capabilities"></a>
 
-[!INCLUDE [sql-server-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/sql-server/sql-server-capabilities-supported.md)]
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
+
+[!INCLUDE [sql-server-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/sql-server/capabilities-supported.md)]
+
+<a id="connect-to-sql-server-database"></a>
+
+<a id="connect-from-power-query-online"></a>
+
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Connect to SQL Server database
+### Connection instructions
 
-[!INCLUDE [sql-server-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/sql-server/sql-server-connect-to-power-query-online.md)]
+[!INCLUDE [sql-server-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/sql-server/connect-online.md)]
 
-### Limitations and considerations
+## Limitations and considerations
 
-[!INCLUDE [sql-server-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/sql-server/sql-server-limitations-and-considerations.md)]
+[!INCLUDE [sql-server-limitations](~/../powerquery-repo/powerquery-docs/connectors/includes/sql-server/limitations.md)]
+
+## Troubleshooting
+
+[!INCLUDE [sql-server-troubleshooting](~/../powerquery-repo/powerquery-docs/connectors/includes/sql-server/troubleshoot.md)]
 
 ## Related content
 

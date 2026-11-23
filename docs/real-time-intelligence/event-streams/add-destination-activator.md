@@ -34,15 +34,15 @@ To add an activator destination to a default stream or derived stream, follow th
 
 1. In **Edit mode** for your eventstream, select **Add destination** on the ribbon and select **Activator** from the dropdown list.
 
-   :::image type="content" source="./media/add-destination-activator-enhanced/add-destination.png" alt-text="Screenshot of the Add destination dropdown list with Activator highlighted." lightbox="./media/add-destination-activator-enhanced/add-destination.png" border="true":::
+   :::image type="content" source="./media/add-destination-activator/add-destination.png" alt-text="Screenshot of the Add destination dropdown list with Activator highlighted." lightbox="./media/add-destination-activator/add-destination.png" border="true":::
 
     You can also select **Transform events or add destination** tile on the canvas, and select **Activator** from the dropdown list. 
 
-   :::image type="content" source="media/add-destination-activator-enhanced/add-destination-canvas.png" alt-text="Screenshot of the canvas for an eventstream with New destination, Activator menu selected." lightbox="media/add-destination-activator-enhanced/add-destination-canvas.png":::
+   :::image type="content" source="media/add-destination-activator/add-destination-canvas.png" alt-text="Screenshot of the canvas for an eventstream with New destination, Activator menu selected." lightbox="media/add-destination-activator/add-destination-canvas.png":::
 
 1. On the **Activator** screen, enter a **Destination name**, select a **Workspace**, and select an existing **Activator** or select **Create new** to create a new one.
 
-   :::image type="content" source="media/add-destination-activator-enhanced/activator-screen.png" alt-text="Screenshot of the Activator screen." lightbox="media/add-destination-activator-enhanced/activator-screen.png" border="true":::
+   :::image type="content" source="media/add-destination-activator/activator-screen.png" alt-text="Screenshot of the Activator screen." lightbox="media/add-destination-activator/activator-screen.png" border="true":::
 
 1. Select **Save**.
 1. To implement the newly added activator destination, select **Publish**.
@@ -52,13 +52,13 @@ To add an activator destination to a default stream or derived stream, follow th
 
 1. After you complete these steps, the activator destination is available for visualization in **Live view**. Select **Edit** to switch to the Edit mode to make more changes to the eventstream.
 
-   :::image type="content" source="media/add-destination-activator-enhanced/eventstream-edit-mode-publish.png" alt-text="Screenshot of the Activator destination available for visualization in Live view." lightbox="media/add-destination-activator-enhanced/eventstream-edit-mode-publish.png" border="true":::
+   :::image type="content" source="media/add-destination-activator/eventstream-edit-mode-publish.png" alt-text="Screenshot of the Activator destination available for visualization in Live view." lightbox="media/add-destination-activator/eventstream-edit-mode-publish.png" border="true":::
 
 ## Create rules in the activator instance
 
 1. When the eventstream is in **Live** mode, select the **Activator** icon on the Activator destination. In the **Rules** pane, select **Add rule**. 
 
-   :::image type="content" source="media/add-destination-activator-enhanced/event-stream-live-view.png" alt-text="Screenshot of the Rules pane for an eventstream." lightbox="media/add-destination-activator-enhanced/event-stream-live-view.png" border="true":::
+   :::image type="content" source="media/add-destination-activator/event-stream-live-view.png" alt-text="Screenshot of the Rules pane for an eventstream." lightbox="media/add-destination-activator/event-stream-live-view.png" border="true":::
 
 1. In the **Add rule** pane, enter the following details and select **Save**.
 
@@ -68,13 +68,13 @@ To add an activator destination to a default stream or derived stream, follow th
     
     - **Action**: Select an action to perform when the condition is met. For example, choose to send an email notification or trigger a Logic App.
 
-       :::image type="content" source="media/add-destination-activator-enhanced/add-rule.png" alt-text="Screenshot of the Add rule pane for an activator destination." lightbox="media/add-destination-activator-enhanced/add-rule.png" border="true":::
+       :::image type="content" source="media/add-destination-activator/add-rule.png" alt-text="Screenshot of the Add rule pane for an activator destination." lightbox="media/add-destination-activator/add-rule.png" border="true":::
 
     For more information on how to create rules in an activator instance, see [Create rules in an activator instance](../data-activator/activator-create-activators.md).
 
 1. You see the rule you created in the **Rules** pane. 
 
-   :::image type="content" source="media/add-destination-activator-enhanced/rule-list.png" alt-text="Screenshot of the Rules pane with a rule created." lightbox="media/add-destination-activator-enhanced/rule-list.png" border="true":::
+   :::image type="content" source="media/add-destination-activator/rule-list.png" alt-text="Screenshot of the Rules pane with a rule created." lightbox="media/add-destination-activator/rule-list.png" border="true":::
 
 [!INCLUDE [Manage rules](includes/manage-rules.md)]
 

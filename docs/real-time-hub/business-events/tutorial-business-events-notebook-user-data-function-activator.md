@@ -15,9 +15,6 @@ This tutorial guides you through the full workflow of reacting to your own busin
 1. Validate the published events in Real-Time hub.
 1. Create an Activator rule that triggers a user data function when the business event occurs. 
 
-> [!IMPORTANT]
-> This feature is in [preview](../../fundamentals/preview.md).
-
 ## Create a new business event
 
 1. Go to **Business events** in Real-Time hub.
@@ -57,6 +54,8 @@ This tutorial guides you through the full workflow of reacting to your own busin
 
 ## Configure notebook for publishing
 
+[!INCLUDE [business-event-publisher-region-note](../includes/business-event-publisher-region-note.md)]
+
 1. After creating the business event, go to your workspace.
 
 1. Select **+ New item** and then select **Notebook** in the **Analyze and train data** section.
@@ -77,11 +76,11 @@ This tutorial guides you through the full workflow of reacting to your own busin
     Help on module notebookutils.businessEvents in notebookutils:
     
     NAME
-        notebookutils.businessEvents - [Preview] Utility for Business Events operations in Fabric
+        notebookutils.businessEvents - Utility for Business Events operations in Fabric
     
     FUNCTIONS
         help(methodName: str = '') -> None
-            [Preview] Provides help for the notebookutils.businessEvents module or the specified method.
+            Provides help for the notebookutils.businessEvents module or the specified method.
             
             Examples:
             notebookutils.businessEvents.help()
@@ -89,7 +88,7 @@ This tutorial guides you through the full workflow of reacting to your own busin
             :param methodName: The name of the method to get help with.
         
         publish(eventSchemaSetWorkspace: str, eventSchemaSet: str, eventTypeName: str, eventData: Union[Dict[str, Any], List[Dict[str, Any]]], dataVersion: str = 'v1') -> bool
-            [Preview] Publish business events data to the specified event type.
+            Publish business events data to the specified event type.
             
             Examples:
             notebookutils.businessEvents.publish(
@@ -247,6 +246,8 @@ This tutorial guides you through the full workflow of reacting to your own busin
      :::image type="content" source="media/tutorial-business-events-notebook-user-data-function-activator/publish-user-data-function-button.png" alt-text="Screenshot of the Publish button for the user data function." lightbox="media/tutorial-business-events-notebook-user-data-function-activator/publish-user-data-function-button.png":::
 
 ## Create an Activator trigger to consume events
+
+[!INCLUDE [business-event-consumer-region-note](../includes/business-event-consumer-region-note.md)]
 
 1. Select the Real-Time hub icon in the left navigation pane of the Fabric portal.
 

@@ -15,6 +15,8 @@ For a list of all supported actions for an Activator rule, see [Supported action
 
 ## Create and manage rules for a process
 
+[!INCLUDE [event-consumer-region-note](../../real-time-hub/includes/event-consumer-region-note.md)]
+
 Fabric Activator supports templates for the following Fabric processes in OneLake so that you can easily create alerts from the OneLake user interface: 
 
 - Pipelines
@@ -31,10 +33,10 @@ Use these templates to automate actions based on the status of the process run o
 
 To create a rule for a process, follow these steps: 
 
-1. Hover over the process (pipeline, Spark job, or notebook) that you want to create a rule for, select **...**, and then select **Create and manage rules**. The following screenshot shows an example of how to create and manage rules for a pipeline in OneLake. 
+1. Hover over the process (pipeline, Spark job, or notebook) that you want to create a rule for, select **...**, and then select **Create and manage rules**. The following screenshot shows an example of how to create and manage rules for a pipeline in OneLake.
 
     :::image type="content" source="./media/create-manage-rules-onelake/pipeline-create-manage-rules.png" alt-text="Screenshot that shows how to create and manage rules for a pipeline in OneLake." lightbox="./media/create-manage-rules-onelake/pipeline-create-manage-rules.png":::
-1. In the **Rules pane**, select **Add rule** at the bottom of the pane. 
+1. In the **Rules** pane, select **Add rule** at the bottom of the pane.
 
     :::image type="content" source="./media/create-manage-rules-onelake/rules-pane-add-rule-button.png" alt-text="Screenshot that shows the Add rule button in the Rules pane." lightbox="./media/create-manage-rules-onelake/rules-pane-add-rule-button.png":::
 1. Select a template that fits your needs. For example, select the template to automate an action when a process run fails.
@@ -52,6 +54,8 @@ To create a rule for a process, follow these steps:
 1. On the **Add rule** page, select **Create** to create the rule. To learn more about creating an Activator rule, see [Create an Activator rule](activator-create-activators.md). See the [Rules](#rules-pane) section for instructions on how to manage the rule in the **Rules** pane.
 
 ## Create and manage rules for data stores
+
+[!INCLUDE [event-consumer-region-note](../../real-time-hub/includes/event-consumer-region-note.md)]
 
 Fabric Activator supports templates for the following Fabric data stores in OneLake, so you can easily create alerts from the OneLake user interface: 
 

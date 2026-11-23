@@ -6,8 +6,6 @@ items:
   items:
   - name: What is OneLake?
     href: onelake-overview.md
-  - name: Medallion lakehouse architecture
-    href: onelake-medallion-lakehouse-architecture.md
 - name: Get started
   items:
   - name: Get data into OneLake
@@ -16,6 +14,12 @@ items:
     href: quickstart-consume-data.md
   - name: Ingest data and analyze with Azure Databricks
     href: onelake-open-access-quickstart.md
+- name: Design your OneLake
+  items:
+  - name: Architecture patterns
+    href: architecture-patterns.md
+  - name: Medallion architecture
+    href: onelake-medallion-lakehouse-architecture.md
 - name: Unify your data
   items:
   - name: Choose shortcuts or mirroring
@@ -36,6 +40,8 @@ items:
         href: shortcuts/create-blob-shortcut.md
       - name: Dataverse shortcut
         href: create-dataverse-shortcut.md
+      - name: Salesforce Data 360 shortcut
+        href: shortcuts/create-salesforce-data-360-shortcut.md
       - name: OneDrive or SharePoint shortcut
         href: shortcuts/create-onedrive-sharepoint-shortcut.md
       - name: Amazon S3 shortcut
@@ -62,6 +68,8 @@ items:
         href: access-onelake-shortcuts.md
       - name: Assign variables to shortcuts
         href: assign-variables-to-shortcuts.md
+      - name: Move shortcuts to a new region
+        href: shortcuts/move-shortcuts-region.md
       - name: Use shortcuts REST API
         href: /rest/api/fabric/core/onelake-shortcuts?toc=/fabric/onelake/toc.json&bc=/fabric/onelake/toc.json
     - name: Shortcut transformations
@@ -76,6 +84,18 @@ items:
       href: ../mirroring/overview.md?toc=/fabric/onelake/toc.json&bc=/fabric/onelake/toc.json
     - name: Mirroring documentation
       href: ../mirroring/index.yml
+  - name: IQ Sharing
+    items:
+    - name: IQ Sharing overview
+      href: iq-share/onelake-share-overview.md
+    - name: Create a Share with IQ Sharing
+      href: iq-share/create-share.md
+    - name: Accept an IQ Sharing invitation
+      href: iq-share/accept-share.md
+    - name: Manage a Share with IQ Sharing
+      href: iq-share/manage-share.md
+    - name: Manage a Share Subscription in IQ Sharing
+      href: iq-share/manage-share-subscription.md
 - name: Access and work with data
   items:
   - name: File APIs
@@ -94,18 +114,22 @@ items:
     items:
     - name: What are table APIs?
       href: ./table-apis/table-apis-overview.md
-    - name: Iceberg
+    - name: Discover item endpoints (preview)
+      href: ./table-apis/endpoint-discovery-api.md
+    - name: Work with table metadata
       items:
-      - name: Table APIs for Iceberg
+      - name: Additional table metadata (preview)
+        href: ./table-apis/additional-table-metadata.md
+      - name: Iceberg metadata API
         href: ./table-apis/iceberg-table-apis-overview.md
-      - name: Get started with Iceberg table APIs
+      - name: Iceberg metadata API samples
         href: ./table-apis/iceberg-table-apis-get-started.md
-    - name: Delta
-      items:
-      - name: Table APIs for Delta
+      - name: Delta metadata API
         href: ./table-apis/delta-table-apis-overview.md
-      - name: Get started with Delta table APIs
+      - name: Delta metadata API samples
         href: ./table-apis/delta-table-apis-get-started.md
+    - name: Read table data
+      href: ./table-apis/read-table-data-rest-api.md
   - name: OneLake file explorer for Windows
     items:
     - name: OneLake file explorer overview
@@ -135,17 +159,17 @@ items:
   items:
   - name: Microsoft Foundry knowledge
     href: onelake-foundry-knowledge.md
-  - name: AI agents (MCP)
+  - name: Local MCP server
     href: onelake-local-mcp.md
+  - name: Hosted MCP server (preview)
+    href: onelake-hosted-mcp.md
 - name: Secure data
   items:
   - name: Data security
     href: ./security/get-started-security.md
   - name: Configure data access
     items:
-    - name: OneLake security
-      href: ./security/get-started-onelake-security.md
-    - name: Data access control model
+    - name: Data access control overview
       href: ./security/data-access-control-model.md
     - name: Create and manage roles
       href: ./security/create-manage-roles.md
@@ -193,6 +217,8 @@ items:
     href: onelake-lifecycle-management.md
   - name: Storage tiers
     href: onelake-storage-tiers.md
+  - name: Configure file-level soft delete
+    href: configure-soft-delete.md
   - name: Recover deleted files
     href: soft-delete.md
   - name: Plan for disaster recovery

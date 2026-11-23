@@ -80,7 +80,7 @@ By default, Premium capacity or Premium Per User semantic model workloads have t
 ### To enable read-write for a Premium capacity
 
 1. Select **Settings** > **Admin portal**.
-1. In the Admin portal, select **Capacity settings** > **Power BI Premium** > capacity name.
+1. Go to **OneLake catalog** > **Govern** > **Capacities** > **Power BI Premium** > capacity name.
 1. Expand **Workloads**. In the **XMLA Endpoint** setting, select **Read Write**. The XMLA Endpoint setting applies to *all workspaces and semantic models* assigned to the capacity.
 
     :::image type="content" source="media/service-premium-connect-tools/xml-analysis-endpoint-enable.png" alt-text="Screenshot showing the XMLA endpoint settings. Read write is selected.":::

@@ -1,14 +1,17 @@
 ---
 title: Specifications of Anomaly Detection Models in Real-Time Intelligence
 description: Learn about the specifications of anomaly detection models in Fabric Real-Time Intelligence.
-ms.reviewer: v-hzargari, tessarhurr
+ms.reviewer: v-hzargari, tessarhurr, willthom
 ms.topic: concept-article
 ms.subservice: rti-anomaly-detector
-ms.date: 09/15/2025
+ms.date: 11/10/2026
 ms.search.form: Anomaly Detection Model Technical Details
+ai-usage: ai-assisted
 ---
 
 # Specifications of anomaly detection models in Fabric (Preview)
+
+[!INCLUDE [anomaly-detector-deprecation-note](../includes/anomaly-detector-deprecation-note.md)]
 
 This article provides an overview of the specifications and capabilities of the anomaly detection models available in Fabric Real-Time Intelligence. These models are designed to automatically identify unusual patterns and outliers in your data streams.
 

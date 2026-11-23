@@ -2,6 +2,7 @@
 title: Use Notebook as a Business Events Publisher
 description: This article describes how to use a notebook to publish business events in Fabric Real-Time hub.
 ms.topic: how-to
+ai-usage: ai-assisted
 ms.date: 02/25/2026
 ---
 
@@ -29,6 +30,8 @@ Notebooks bring **full Python programmability**, enabling powerful, domain speci
 
 ## The built-in notebook publisher API
 
+[!INCLUDE [business-event-publisher-region-note](../includes/business-event-publisher-region-note.md)]
+
 Fabric provides native support for business events inside notebooks through the `notebookutils.businessEvents` API. This API allows notebooks to publish events aligned with a business event schema defined in the Schema Registry in Fabric Real-Time hub.
 
 This approach creates a strongly typed, contract-driven event publishing pattern right from the notebook. Developers can explore the sample methods in the API by using the `notebookutils.businessEvents.help()` method.
@@ -49,6 +52,9 @@ A notebook publishes a business event by providing:
 
 > [!NOTE]
 > The properties `eventSchemaSetWorkspace` and `eventSchemaSet` support both Fabric item names and Fabric item IDs.
+
+> [!NOTE]
+> Workspace private links can block cross-workspace business event publishing. For Business events, the source workspace is the workspace that contains the Event Schema Set. If that workspace blocks public access, publish from a notebook in the same workspace or establish a private link from the publisher's network to the source workspace. For more information, see [Workspace private links for Azure, Fabric, and Business events](../workspace-private-links-real-time-events.md).
 
 For example, a simple event for delayed orders might look like: 
 

@@ -21,9 +21,6 @@ To explore more details about a business event, follow these steps to navigate t
 
     :::image type="content" source="./media/business-event-details-page/business-event-details-page.png" alt-text="Screenshot of the business event details page." lightbox="./media/business-event-details-page/business-event-details-page.png":::
 
-> [!IMPORTANT]
-> This feature is in [preview](../../fundamentals/preview.md).
-
 > [!NOTE]
 > If you're not familiar with business events, see [Business events overview](business-events-overview.md) to learn what business events are and how they can benefit your organization.
 
@@ -66,6 +63,8 @@ The Event schema pane shows the schema of the events for this business event. Th
     :::image type="content" source="./media/business-event-details-page/event-schema-pane.png" alt-text="Screenshot of the Event Schema pane showing the schema structure on the business event details page." lightbox="./media/business-event-details-page/event-schema-pane.png":::
 
 ## Add consumer
+
+[!INCLUDE [business-event-consumer-region-note](../includes/business-event-consumer-region-note.md)]
 
 When you select a business event from the list, you can also take the following actions to add a consumer for the business event:
 

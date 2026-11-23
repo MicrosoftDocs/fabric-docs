@@ -6,7 +6,7 @@ ms.author: mimart
 ms.reviewer: Ben.Zulauf
 ms.custom: admin-portal
 ms.topic: how-to
-ms.date: 02/20/2026
+ms.date: 09/10/2026
 LocalizationGroup: Administration
 ai-usage: ai-assisted
 ---
@@ -21,9 +21,7 @@ To access the **Embed codes** page in the Admin portal:
 
 1. Sign in to [Fabric](https://app.fabric.microsoft.com/?pbi_source=learn-admin-admin-center) using your admin account credentials.
 
-1. Select the **Settings** (gear) icon, and then select **Admin portal**.
-
-1. Select **Embed Codes**.
+1. Open the **OneLake catalog** and go to **Govern** > **Configurations** > **Embed codes**.
 
 ## Disable embed codes
 
@@ -43,7 +41,7 @@ To change ownership from the Admin portal, follow these steps:
 
 1. Sign in to [Fabric](https://app.fabric.microsoft.com/?pbi_source=learn-admin-admin-center) using your admin account credentials.
 
-1. Select the **Settings** (gear) icon, select **Admin portal**, and then select **Embed Codes**.
+1. Open the **OneLake catalog** and go to **Govern** > **Configurations** > **Embed codes**.
 
 1. On the **Embed codes** page, select **Change ownership**. 
 

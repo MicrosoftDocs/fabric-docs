@@ -1,8 +1,8 @@
 ---
 title: About workspace IP firewall rules
 description: Learn about using workspace-level IP firewall rules for secure access to a Fabric workspace.
-author: msmimart
-ms.author: mimart
+author: teddyberco
+ms.author: tebercov
 ms.reviewer: karthikeyana
 ms.topic: how-to
 ms.date: 03/09/2026
@@ -50,7 +50,7 @@ In this diagram:
 
 Use workspace-level IP firewall rules to control access to the following Fabric item types:
 
-- Lakehouse, SQL Endpoint, and Shortcuts
+- Lakehouse, SQL analytics endpoint, and shortcuts
 - Direct connections via OneLake endpoint
 - Notebooks, Spark Job Definitions, and Environments
 - Machine Learning Experiments and Machine Learning Models

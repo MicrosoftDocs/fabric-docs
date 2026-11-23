@@ -15,7 +15,7 @@ In Fabric, an **item** represents a set of capabilities within a specific experi
 
 This article offers a comprehensive guide on using the Microsoft Fabric REST APIs to create and manage Eventstream items within your Fabric workspace. You find detailed specifications for each Eventstream API operation, along with instructions for setting up and configuring your API calls.
 
-For a complete overview of Microsoft Fabric REST APIs, visit: [Using the Microsoft Fabric REST APIs](/rest/api/fabric/articles/using-fabric-apis)
+For a complete overview of Microsoft Fabric REST APIs, visit: [Using the Microsoft Fabric REST APIs](/rest/api/fabric/articles/get-started/using-fabric-apis)
 
 ## Supported Eventstream APIs
 
@@ -287,6 +287,9 @@ Example of Eventstream source in API body:
 }
 ```
 
+> [!NOTE]
+> A `SampleData` source's `properties` object must include a `type` field that names the sample dataset, for example `"properties": { "type": "StockMarket" }`. Allowed values include `Bicycles`, `YellowTaxi`, `StockMarket`, and `Buses`. An empty `properties: {}` is rejected because the required `type` property is missing.
+
 ### Destinations
 
 To define an Eventstream destination in the API body, make sure each field and property is specified correctly according to the table.
@@ -300,6 +303,14 @@ To define an Eventstream destination in the API body, make sure each field and p
 | `inputNodes` | Array         | A reference to the input nodes for the destination, such as your Eventstream name or an operator name. | Required     | Example: `eventstream-1`   |
 
 If you're using an **Eventhouse direct ingestion mode** destination, ensure that `connectionName` and `mappingRuleName` are correctly specified. For the end-to-end setup steps, see [Create an Eventstream with an Eventhouse DirectIngestion destination by using APIs](api-kusto-pull-destination.md).
+
+> [!IMPORTANT]
+> An Eventhouse destination has two `dataIngestionMode` values, and each mode requires a **different** set of properties:
+>
+> - `ProcessedIngestion` (the Eventstream provisions ingestion itself): `dataIngestionMode`, `workspaceId`, `itemId`, `databaseName`, `tableName`, and `inputSerialization`.
+> - `DirectIngestion` (references a pre-existing Kusto data connection and ingestion mapping on the Eventhouse): `dataIngestionMode`, `workspaceId`, `itemId`, `connectionName`, and `mappingRuleName`.
+>
+> Supplying the wrong combination — for example `DirectIngestion` with `tableName`/`inputSerialization` but no `connectionName`/`mappingRuleName` — is accepted by the API but leaves the destination in a `Warning` state that ingests no rows and reports no error. Verify that the property set matches the mode you selected.
 
 ---
 
@@ -429,7 +440,7 @@ Example of stream in API body:
 
 ## Related content
 
-* [Using the Microsoft Fabric REST APIs](/rest/api/fabric/articles/using-fabric-apis)
+* [Using the Microsoft Fabric REST APIs](/rest/api/fabric/articles/get-started/using-fabric-apis)
 * [Eventstream item definition](/rest/api/fabric/articles/item-management/definitions/eventstream-definition)
 
 

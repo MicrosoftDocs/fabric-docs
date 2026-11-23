@@ -6,13 +6,13 @@ ms.author: mimart
 ms.custom:
   - tenant-setting
 ms.topic: concept-article
-ms.date: 04/08/2026
+ms.date: 09/01/2026
 LocalizationGroup: Administration
 ---
 
 # Workspace tenant settings
 
-These settings are configured in the tenant settings section of the [Admin portal](./about-tenant-settings.md#how-to-get-to-the-tenant-settings). For information about how to get to and use tenant settings, see [About tenant settings](./about-tenant-settings.md).
+As a Fabric administrator, you can configure workspace settings in **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**. For information about how to get to and use tenant settings, see [About tenant settings](./about-tenant-settings.md).
 
 ## Create workspaces
 
@@ -20,11 +20,11 @@ Workspaces are places where users collaborate on dashboards, reports, and other 
 
 **List of workspaces**
 
-The admin portal has another section of settings about the workspaces in your tenant. In that section, you can sort and filter the list of workspaces and display the details for each workspace. See [Manage workspaces](portal-workspaces.md) for details.
+The **Workspaces** section in **OneLake catalog** > **Govern** has settings for the workspaces in your tenant. In that section, you can sort and filter the list of workspaces and display the details for each workspace. See [Manage workspaces](portal-workspaces.md) for details.
 
 **Publish apps**
 
-In the admin portal, you also control which users have permissions to distribute apps to the organization. See [Publish apps to the entire organization](service-admin-portal-app.md#publish-apps-to-the-entire-organization) for details.
+In the tenant settings, you also control which users have permissions to distribute apps to the organization. See [Publish apps to the entire organization](service-admin-portal-app.md#publish-apps-to-the-entire-organization) for details.
 
 ## Use semantic models across workspaces
 
@@ -34,7 +34,7 @@ For more information, see [Intro to semantic models across workspaces](/power-bi
 
 ## Identify your workspace ID
 
-The easiest way to find your workspace ID is in the URL of the Fabric site for an item in a workspace. As in Power BI, the Fabric URL contains the workspace ID, which is the unique identifier after `/groups/` in the URL, for example: `https://powerbi.com/groups/11aa111-a11a-1111-1abc-aa1111aaaa/...`. Alternatively, you can find the workspace ID in the Power BI Admin portal settings by selecting **Details** next to the workspace name.
+The easiest way to find your workspace ID is in the URL of the Fabric site for an item in a workspace. As in Power BI, the Fabric URL contains the workspace ID, which is the unique identifier after `/groups/` in the URL, for example: `https://powerbi.com/groups/11aa111-a11a-1111-1abc-aa1111aaaa/...`. Alternatively, you can find the workspace ID in **Admin portal** > **Workspaces** by selecting the **Actions** menu > **Details** next to the workspace name.
 
 ## Block users from reassigning personal workspaces (My Workspace)
 
@@ -42,7 +42,7 @@ Personal workspaces are the My workspaces that every user has for their personal
 
 To prevent such a scenario, the [!INCLUDE [product-name](../includes/product-name.md)] admin can turn on the **Block users from reassigning personal workspaces (My Workspace)** tenant setting. When this setting is on, My workspace owners can't change the capacity assignment of their My workspace.
 
-To turn on the setting, go to the [!INCLUDE [product-name](../includes/product-name.md)] Admin portal, select **Tenant settings**, scroll to the **Workspace settings** section, and find **Block users from reassigning personal workspaces (My Workspace)**.
+To turn on the setting, sign in to [Fabric](https://app.fabric.microsoft.com) using your admin account credentials. Open the **OneLake catalog** and go to the **Govern** tab > **Configurations** > **Tenant settings**. Then scroll to the **Workspace settings** section, and find **Block users from reassigning personal workspaces (My Workspace)**.
 
 For more information, see [Prevent My workspace owners from reassigning their My workspaces to a different capacity](./portal-workspaces.md#prevent-my-workspace-owners-from-reassigning-their-my-workspaces-to-a-different-capacity).
 

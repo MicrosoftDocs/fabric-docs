@@ -8,7 +8,7 @@ ms.topic: how-to
 
 # Import measures between planning sheets with Infobridge
 
-By using Infobridge in plan, you can consolidate measures from different data sources, such as files and planning sheets, into a target planning sheet. For example, you can integrate multiple regional forecasts into a single global forecast.
+By using Infobridge in planning, you can consolidate measures from different data sources, such as files and planning sheets, into a target planning sheet. For example, you can integrate multiple regional forecasts into a single global forecast.
 
 In this article, you learn how to import a measure from one planning sheet into another.
 

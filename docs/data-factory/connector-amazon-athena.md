@@ -14,16 +14,18 @@ ai-usage: ai-assisted
 This article outlines the steps to create an Amazon Athena connection.
 
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
 
-The Amazon Athena connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+## Summary
 
-|Authentication type |Copy |Dataflow Gen2 |
+The Amazon Athena connector supports the following authentication types for copy and dataflow Gen2 respectively.
+
+|Authentication type |Copy |dataflow Gen2 |
 |:---|:---|:---|
 |Organizational account| n/a | √ |
 
 ## Set up your connection for Dataflow Gen2
-You can connect Dataflow Gen2 in Microsoft Fabric to Amazon Athena using Power Query connectors. Follow these steps to create your connection:
+You can connect dataflow Gen2 in Fabric to Amazon Athena using Power Query connectors. Follow these steps to create your connection:
 
 1. Check [capabilities](#capabilities) to make sure your scenario is supported.
 1. [Complete prerequisites for Amazon Athena](#prerequisites).
@@ -31,29 +33,37 @@ You can connect Dataflow Gen2 in Microsoft Fabric to Amazon Athena using Power Q
 1. [Connect to Amazon Athena data](#connect-to-amazon-athena-data).
 1. Check [limitations and considerations](#limitations-and-considerations) for any current restrictions.
 
-### Capabilities
+## Prerequisites
 
-[!INCLUDE [amazon-athena-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/amazon-athena/amazon-athena-capabilities-supported.md)]
+[!INCLUDE [amazon-athena-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/amazon-athena/prerequisites.md)]
 
-### Prerequisites
+<a id="capabilities"></a>
 
-[!INCLUDE [amazon-athena-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/amazon-athena/amazon-athena-prerequisites.md)]
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
+
+[!INCLUDE [amazon-athena-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/amazon-athena/capabilities-supported.md)]
+
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Connect to Amazon Athena data
+<a id="connect-to-amazon-athena-data"></a>
 
-[!INCLUDE [amazon-athena-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/amazon-athena/amazon-athena-connect-to-power-query-online.md)]
+### Connection instructions
 
-### Limitations and considerations
-
-[!INCLUDE [amazon-athena-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/amazon-athena/amazon-athena-limitations-and-considerations.md)]
+[!INCLUDE [amazon-athena-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/amazon-athena/connect-online.md)]
 
 ## Set up your connection in a pipeline
 
-Data Factory in Microsoft Fabric doesn't currently support Amazon Athena in pipelines.
+Fabric Data Factory doesn't currently support Amazon Athena in pipelines.
+
+## Limitations and considerations
+
+[!INCLUDE [amazon-athena-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/amazon-athena/limitations.md)]
 
 ## Related content
 

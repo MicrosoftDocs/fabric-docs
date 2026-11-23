@@ -15,7 +15,7 @@ This article lists current limitations for warehouse and SQL analytics endpoint 
 
 ## Limitations
 
-This article lists current general product limitations for data warehousing in Microsoft Fabric. Feature level limitations are called out in the corresponding feature article. For more information on the future of Microsoft Fabric, see [Fabric Roadmap](https://blog.fabric.microsoft.com/blog/announcing-the-fabric-roadmap?ft=All).
+This article lists current general product limitations for Fabric Data Warehouse. Feature level limitations are called out in the corresponding feature article. For more information on the future of Microsoft Fabric, see [Fabric Roadmap](https://blog.fabric.microsoft.com/blog/announcing-the-fabric-roadmap?ft=All).
 
 ### T-SQL syntax support
 

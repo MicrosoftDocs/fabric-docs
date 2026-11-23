@@ -11,7 +11,7 @@ ms.date: 04/08/2026
 
 # Audit and usage tenant settings
 
-These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
+These settings are configured in **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
 
 ## Usage metrics for content creators
 
@@ -48,7 +48,7 @@ When this setting is enabled, Microsoft can store the query text generated when 
 
 Storing and retaining query text data can have implications for data security and privacy. While it is recommended to leave the setting on to facilitate support, if there are organizational requirements that don't permit storing query text, or if you wish to opt out of this feature for any other reason, you can turn off the feature as follows:
 
-Go to the [tenant settings tab in the admin portal](./about-tenant-settings.md#how-to-get-to-the-tenant-settings), find **Microsoft can store query text to aid in support investigations** in the **Audit and usage** section, and set the toggle to **Disabled**.
+Go to **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**, find **Microsoft can store query text to aid in support investigations** in the **Audit and usage** section, and set the toggle to **Disabled**.
 
 For more information about the diagnostic query text storage feature, see [Diagnostic query text storage](./query-text-storage.md).
 

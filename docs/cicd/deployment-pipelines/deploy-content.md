@@ -2,7 +2,8 @@
 title: Fabric Application lifecycle management (ALM) deployment pipelines deploy content
 description: Learn how to deploy content to an empty or to nonempty stage using the Fabric Application lifecycle management (ALM) deployment pipeline tool.
 ms.topic: concept-article
-ms.date: 12/15/2025
+ms.date: 09/24/2026
+ai-usage: ai-assisted
 #customer intent: As a developer, I want to learn how to deploy content to an empty or nonempty stage using the Fabric Application lifecycle management (ALM) deployment pipeline tool so that I can manage my content lifecycle.
 ---
 
@@ -20,6 +21,9 @@ You can also use the [deployment pipelines REST APIs](/rest/api/power-bi/pipelin
 If you already have a workspace that you'd like to use with a specific stage, instead of deploying you can [assign](assign-pipeline.md) that workspace to the appropriate stage.
 
 When you deploy content to an empty stage, the relationships between the items are kept. For example, a report that is bound to a semantic model in the source stage, is cloned alongside its semantic model, and the clones are similarly bound in the target workspace. The folder structure is also kept. If you have items in a folder in the source stage, a folder is created in the target stage. Since a folder is deployed only if one of its items is deployed, an empty folder can't be deployed.
+
+> [!NOTE]
+> When a variable library is deployed to an empty stage, **Default** is active in the new target workspace. If the target environment requires another value set, set it as active and save the variable library in the target workspace before running dependent items or deployment plan actions. For more information, see [Variable library CI/CD](../variable-library/variable-library-cicd.md).
 
 Once the deployment is complete, refresh the semantic model. For more information, see [deploying content to an empty stage](understand-the-deployment-process.md#assign-a-workspace-to-an-empty-stage).
 
@@ -122,6 +126,20 @@ For example, if you assign an existing workspace to a production stage and then 
 
 :::image type="content" source="./media/deploy-content/backwards-deploy.png" alt-text="A screenshot showing how to change the stage you deploy to.":::
 
+### Deploy with a deployment plan (preview)
+
+Attach a [deployment plan](../deployment-plan/deployment-plan-overview.md) when items must deploy in a specific order or when supported actions must run before or after an item deploys. Attaching a plan is optional. If you don't attach a plan, deployment pipelines use the standard deployment process.
+
+To deploy with a deployment plan:
+
+1. Select the items that you want to deploy, and then select **Deploy**.
+1. In the deployment dialog, select a deployment plan from the source workspace.
+1. Review the selected items and the deployment plan, add an optional note, and then select **Deploy**.
+
+:::image type="content" source="media/deploy-content/select-deployment-plan.png" alt-text="Screenshot of the deployment pipeline Deploy with plan dialog showing Hydrate_and_validate and two notebook items listed for deployment." lightbox="media/deploy-content/select-deployment-plan.png":::
+
+For how the selected items, plan relationships, Fabric lineage, and actions determine the deployment, see [How a deployment plan works](../deployment-plan/deployment-plan-overview.md#how-a-deployment-plan-works).
+
 ### Review your deployment and leave a note
 
 After selecting which content to deploy, a pop-up window lists all the items you're about to deploy. You can review the list and add a note, or comment, to the deployment. Adding a note is optional, but it's highly recommended as the notes are added to the [deployment history](deployment-history.md). With a note for each deployment, reviewing the history of your pipelines becomes more meaningful.
@@ -148,3 +166,4 @@ The deployment time is useful for establishing when a stage was last updated. It
 
 * [Get started with deployment pipelines](get-started-with-deployment-pipelines.md)
 * [Deployment history](deployment-history.md)
+* [Deployment plan examples](../deployment-plan/deployment-plan-sample-plans.md)

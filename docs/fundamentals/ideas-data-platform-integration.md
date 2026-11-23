@@ -11,21 +11,21 @@ ms.custom: fabric-cat
 
 # IDEAS journey to a modern data platform with Microsoft Fabric - from petabytes to insights
 
-Microsoft Fabric is an AI-powered SaaS platform for end-to-end enterprise analytics. It efficiently supports various data roles across an organization. To optimize data consistency and accessibility, Microsoft used Fabric to enhance its internal analytics infrastructure during rapid AI advancements. Microsoft established IDEAS (Insights, Data, Engineering, Analytics, Systems) organization to build and maintain a comprehensive data analytics platform. IDEAS aims to unify data sources, eliminate silos, and create a single source of truth, boosting productivity and AI adoption across Microsoft. Initially supporting Office products, IDEAS now powers data-driven insights across Microsoft 365, Security, and over 600 internal teams driving AI adoption and productivity. This article details IDEAS’s journey with adopting Fabric.
+Microsoft Fabric is an AI-powered SaaS platform for end-to-end enterprise analytics. It efficiently supports various data roles across an organization. To optimize data consistency and accessibility, Microsoft used Fabric to enhance its internal analytics infrastructure during rapid AI advancements. Microsoft established IDEAS (Insights, Data, Engineering, Analytics, Systems) organization to build and maintain a comprehensive data analytics platform. IDEAS aims to unify data sources, eliminate silos, and create a single source of truth, boosting productivity and AI adoption across Microsoft. Initially supporting Office products, IDEAS now powers data-driven insights across Microsoft 365, Security, and over 600 internal teams driving AI adoption and productivity. This article details IDEAS's journey with adopting Fabric.
 
 A key function of IDEAS is to serve as the central data and growth engine for the Experiences and Devices(E+D) and Security divisions. IDEAS also acts as the central data plane for all Copilot experiences, driving Copilot's success by aggregating key insights, enabling research, and powering AI experiences across Microsoft. It manages 420 PiB (Pebibyte) of data from 2,700 sources, personalizing experiences across more than 350 product surfaces and billions of customer interactions annually.
 
 Because of its scale and role in powering key Microsoft initiatives like Copilot, IDEAS serves as a real-world testing ground for emerging data technologies. IDEAS is a pilot user and strategic 'customer zero' for Microsoft Fabric. It provides valuable feedback and validates the Fabric's capabilities at a various levels. IDEAS provides key insights that shape Fabric's development, while Fabric enables IDEAS to achieve its vision for the future of its AI-driven data platform. Specifically, Fabric offers key benefits in following four key areas:
 
-* **Activating data for AI innovation:** Fabric’s seamless integration with Microsoft tools like Office and Azure AI accelerates the creation of custom AI models and solutions.
+* **Activating data for AI innovation:** Fabric's seamless integration with Microsoft tools like Office and Azure AI accelerates the creation of custom AI models and solutions.
 
 * **Streamlining analytics with a unified toolchain:** By providing a unified toolchain for all data roles, Fabric empowers everyone within IDEAS to enhance collaboration, streamline workflows, and maximize the data value.
 
 * **Increasing collaboration and flexibility:** Fabric enables collaboration across different data personas using the same datasets and tools. This flexibility simplifies working with diverse data formats, locations, optimizes engineering processes, and enables teams to work more effectively.
 
-* **Reducing costs and risks:** Fabric’s unified data lake minimizes data movement, reducing engineering costs and compliance risks by allowing multiple compute engines to operate on the same copy of data. By maintaining a single copy of data, teams can efficiently use it for multiple purposes, which support effective data governance and compliance.
+* **Reducing costs and risks:** Fabric's unified data lake minimizes data movement, reducing engineering costs and compliance risks by allowing multiple compute engines to operate on the same copy of data. By maintaining a single copy of data, teams can efficiently use it for multiple purposes, which support effective data governance and compliance.
 
-This partnership aims to deliver substantial business and productivity value by creating a modern data platform to meet today’s technological demands. This article explains IDEAS’s journey with adopting Fabric.
+This partnership aims to deliver substantial business and productivity value by creating a modern data platform to meet today's technological demands. This article explains IDEAS's journey with adopting Fabric.
 
 ## Building a scalable data foundation with OneLake and Delta lake
 
@@ -47,7 +47,7 @@ IDEAS analytics require 13 months of historical data, but due to personal identi
 
 ## Powering Microsoft 365 Copilot Analytics with Fabric
 
-IDEAS manages 420 PiB of data across over 600 teams within Microsoft. The data platform is built entirely on Azure to use scalability for a team of over 600 people. By extending Azure’s capabilities, IDEAS has developed a robust and adaptable system. To learn more about the core systems that drive the data lifecycle see [Data productivity in ideas](https://medium.com/data-science-at-microsoft/leveraging-ai-for-next-level-data-productivity-in-ideas-part-1-1878ae2d0d1e)
+IDEAS manages 420 PiB of data across over 600 teams within Microsoft. The data platform is built entirely on Azure to use scalability for a team of over 600 people. By extending Azure's capabilities, IDEAS has developed a robust and adaptable system. To learn more about the core systems that drive the data lifecycle see [Data productivity in ideas](https://medium.com/data-science-at-microsoft/leveraging-ai-for-next-level-data-productivity-in-ideas-part-1-1878ae2d0d1e)
 
 Efficient data access is essential to IDEAS, and Microsoft Fabric has become a key enabler in our strategy. We wanted to shorten the feedback loop for interactive queries and empower faster report and dashboard creation. Our foundation is the [Unified Data Model (UDM)](https://medium.com/@moving-the-needle/reinventing-data-models-keystone-for-modern-data-platforms-132d8283acbc), a set of durable and extensible data assets designed for company-wide reuse. This reusability is key to maintaining consistency and efficiency.
 
@@ -57,7 +57,7 @@ IDEAS employs the [medallion architecture](../onelake/onelake-medallion-lakehous
 
 By making our gold and silver layers available as UDM assets in Fabric through Delta Lake, we enhanced the Microsoft 365 Copilot analytics plane. We provided direct access to preprocessed Silver layer Microsoft 365 Copilot data as Delta Lake tables in OneLake. It dramatically improved query performance and dashboard rendering by eliminating repeated transformations.
 
-Furthermore, exposing our Gold layer Microsoft 365 Copilot metrics as Delta Lake tables simplified data discovery and usability. It enabled the creation of rich dashboards that support business leaders and product teams with Copilot’s adoption, performance, and growth. This approach reduced data movement, streamlined the data graph, and cut infrastructure costs. As a result, Microsoft 365 Copilot analytics, now powered by Fabric, plays a vital role in several Microsoft projects.
+Furthermore, exposing our Gold layer Microsoft 365 Copilot metrics as Delta Lake tables simplified data discovery and usability. It enabled the creation of rich dashboards that support business leaders and product teams with Copilot's adoption, performance, and growth. This approach reduced data movement, streamlined the data graph, and cut infrastructure costs. As a result, Microsoft 365 Copilot analytics, now powered by Fabric, plays a vital role in several Microsoft projects.
 
 :::image type="content" source="./media/ideas-data-platform-integration/ideas-intelligence-platform-architecture.png" alt-text="Screenshot showing the Ideas intelligence platform architecture." lightbox="./media/ideas-data-platform-integration/ideas-intelligence-platform-architecture.png":::
 
@@ -104,7 +104,7 @@ To further enhance the reliability of our Fabric deployment, we developed a user
 
 In addition to identifying and addressing potential issues, we monitor the impact of issues and the number of affected users. This dual approach allows us to proactively address issues before they spread and to understand and trend the reliability of our reports and semantic models through user feedback. By monitoring the frequency and breadth of user-reported issues, we can directly correlate our reliability targets with real-world usage and reduce user impact over time.
 
-As the Fabric product group improves telemetry and log data, we'll incorporate richer KPIs and metrics into our dashboard. These enhancements improve our ability to proactively detect issues, ensuring optimal performance and reliability. In the next phase, we plan to extend this monitoring process to other Fabric items, including Lakehouse SQL endpoints and Spark notebooks.
+As the Fabric product group improves telemetry and log data, we'll incorporate richer KPIs and metrics into our dashboard. These enhancements improve our ability to proactively detect issues, ensuring optimal performance and reliability. In the next phase, we plan to extend this monitoring process to other Fabric items, including Lakehouse SQL analytics endpoints and Spark notebooks.
 
 ## Enabling interactive analytics with Fabric
 
@@ -118,9 +118,9 @@ Initial testing with Fabric Spark queries on these materialized assets has shown
 
 ## Securing Our Fabric Environment: A Holistic Approach to Data Governance
 
-Over the past year, we’ve progressed from an exploratory Fabric workspace to managing multiple F2048 production workspaces with over 4 PiB of data in Delta Lake format. However, data discovery and compliance remain complex challenges, especially as privacy regulations evolve.  As IDEAS makes more data available in Fabric, our compliance obligations extend beyond GDPR and Microsoft's commitment to data residency within the EU Data Boundary, ensuring commercial personal data is stored and processed exclusively in Europe.
+Over the past year, we've progressed from an exploratory Fabric workspace to managing multiple F2048 production workspaces with over 4 PiB of data in Delta Lake format. However, data discovery and compliance remain complex challenges, especially as privacy regulations evolve.  As IDEAS makes more data available in Fabric, our compliance obligations extend beyond GDPR and Microsoft's commitment to data residency within the EU Data Boundary, ensuring commercial personal data is stored and processed exclusively in Europe.
 
-Microsoft’s global scale and handling of sensitive data drive IDEAS' strong commitment to data privacy and governance. This extends beyond baseline requirements, adhering to various international and industry-specific standards. It translates into robust controls and processes for managing data access.
+Microsoft's global scale and handling of sensitive data drive IDEAS' strong commitment to data privacy and governance. This extends beyond baseline requirements, adhering to various international and industry-specific standards. It translates into robust controls and processes for managing data access.
 
 At IDEAS, we strongly adhere to the principle of least privilege and scenario-based data use for security and compliance. This principle means granting data access only to users or identities with legitimate approval for specific use cases. To prevent unauthorized data transfers, IDEAS actively monitors for data exfiltration within Fabric workspaces. While Fabric provides tenant-level monitoring, Microsoft requires more granular control at the workspace level.
 
@@ -130,4 +130,4 @@ Ultimately, we believe that data privacy and governance aren't merely a complian
 
 ## Conclusion
 
-Integrating Microsoft Fabric into the IDEAS data platform has enhanced data access and boosted productivity for our data scientists and engineers. By building a unified foundation with OneLake and Delta Lake, enabling interactive analytics, and establishing strong governance, Fabric has provided a robust data analytics environment. As we continue to explore and implement Fabric's capabilities, particularly in areas like real-time analytics and advanced AI integration, we're confident that we’re building a unified and innovative platform that will drive greater insights and impact for Microsoft.
+Integrating Microsoft Fabric into the IDEAS data platform has enhanced data access and boosted productivity for our data scientists and engineers. By building a unified foundation with OneLake and Delta Lake, enabling interactive analytics, and establishing strong governance, Fabric has provided a robust data analytics environment. As we continue to explore and implement Fabric's capabilities, particularly in areas like real-time analytics and advanced AI integration, we're confident that we're building a unified and innovative platform that will drive greater insights and impact for Microsoft.

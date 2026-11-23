@@ -3,6 +3,7 @@ title: Set alerts on anomaly detection events in Real-Time hub
 description: This article describes how to set alerts on anomaly detection events in Real-Time hub.
 ms.reviewer: v-hzargari, tessahurr
 ms.topic: how-to
+ai-usage: ai-assisted
 ms.date: 10/14/2025
 ms.search.form: Anomaly Detection Set Alerts On Anomaly Detection Events
 ---
@@ -19,6 +20,8 @@ This article walks you through how to configure alerts for anomaly detection eve
 
 ## How to set alerts on anomaly detection events
 
+[!INCLUDE [event-consumer-region-note](./includes/event-consumer-region-note.md)]
+
 ### Launch the Set alert page
 
 1. Select the **Real-Time hub** icon in the left navigation pane of the Fabric portal.
@@ -27,11 +30,9 @@ This article walks you through how to configure alerts for anomaly detection eve
 
 1. In the Real-Time hub, select **Fabric events** under the **Subscribe to** category.
 
-    :::image type="content" source="media/set-alerts-anomaly-detection/fabric-events.png" alt-text="Screenshot of the Fabric events option." lightbox="media/set-alerts-anomaly-detection/fabric-events.png":::
-
 1. In the **Fabric events** list, locate **Anomaly detection event**. Select either the ⚡ lightning icon or the ⋯ (three dots) menu next to the event, then select **Set alert**.
 
-    :::image type="content" source="media/set-alerts-anomaly-detection/set-alert.png" alt-text="Screenshot that shows the Anomaly Detection events in the Fabric events list.":::
+    :::image type="content" source="media/set-alerts-anomaly-detection/set-alert.png" alt-text="Screenshot that shows the Anomaly Detection events in the Fabric events list." lightbox="media/set-alerts-anomaly-detection/set-alert.png":::
 
 [!INCLUDE [rule-details](../real-time-intelligence/data-activator/includes/rule-details.md)]
 

@@ -3,7 +3,7 @@ title: Get started with Git integration
 description: Learn how to connect a workspace to a Git repository and branch, commit changes to the repo or workspace and sync.
 ms.reviewer: NimrodShalit
 ms.topic: quickstart
-ms.date: 12/16/2025
+ms.date: 09/01/2026
 ms.search.form: Connect to a Git repo, Update from Git, Commit changes to Git, Introduction to Git integration
 #customer intent: As a developer, I want to connect my workspace to a Git repo so that I can collaborate with others and leverage source control.
 ---
@@ -165,6 +165,11 @@ After the changes are committed, the items that were committed are removed from 
 
 After the commit is completed successfully, the status of the selected items changes from **Uncommitted** to **Synced**.
 
+> [!NOTE]
+> You can also commit changes to Git from the compare experience. For supported items, the
+> preview file-level commit capability lets you commit specific files within an item. For more
+> information, see [Compare and commit changes](./granular-compare.md).
+
 ### [Commit to standalone branch](#tab/stand-alone)
 Commit to standalone branch is a Git integration feature that lets you create a fresh branch and commit your current changes to it in one single action. In other words, instead of committing to the connected branch, you can branch off on the fly: the system will spin up a new Git branch and save your work there without requiring you to leave or switch from your original branch. 
 
@@ -237,7 +242,7 @@ To update a workspace, follow these steps:
 
  :::image type="content" source="./media/git-get-started/update-2.png" alt-text="Screenshot of confirmation dialog.":::
 
-After it updates successfully, the list of items is removed, and the workspace points to the new workspace that it's synced to.
+After it updates successfully, the list of items is removed, and the workspace is fully synced with the connected Git branch.
 
 :::image type="content" source="./media/git-get-started/no-updates.png" alt-text="Screenshot of source control window stating that you successfully updated the workspace.":::
 
@@ -262,4 +267,3 @@ The actions you can take on a workspace depend on the permissions you have in bo
 
 - [Understand the Git integration process](./git-integration-process.md)
 - [Manage Git branches](./manage-branches.md)
-- [Git integration best practices](../best-practices-cicd.md)

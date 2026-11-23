@@ -3,7 +3,7 @@ title: Microsoft Fabric and GitHub Enterprise Cloud with data residency support
 description: Learn Microsoft Fabric supports GitHub for data residency
 ms.reviewer: NimrodShalit
 ms.topic: how-to
-ms.date: 05/11/2025
+ms.date: 09/01/2026
 #customer intent: As a developer, I want to learn how to integrate Git with a service principal in Microsoft Fabric, so that I can automate CI/CD workflows.
 ---
 
@@ -34,9 +34,6 @@ The following limitations apply:
 
 - [Understand the Git integration process](./git-integration/git-integration-process.md)
 - [Manage Git branches](./git-integration/manage-branches.md)
-- [Git integration best practices](best-practices-cicd.md)
-
-
 
 
 

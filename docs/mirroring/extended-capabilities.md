@@ -11,6 +11,8 @@ ms.reviewer: sbahadur
 
 [!INCLUDE [Extended capabilities billing start note](includes/extended-capabilities-billing-start-note.md)]
 
+[!INCLUDE [Extended capabilities GA start note](includes/extended-capabilities-ga-note.md)]
+
 Extended capabilities in mirroring for Microsoft Fabric are optional, paid features that build on the core mirroring experience. While core mirroring keeps operational data continuously available in OneLake at no cost for compute, extended capabilities provide granular change tracking, fresher data, and additional replication options.
 
 Extended capabilities include:
@@ -26,13 +28,15 @@ Both capabilities run on the same managed mirroring foundation: secure source co
 |---|---|
 | Continuous replication of source tables into OneLake with near real-time freshness, Delta Lake format, and Fabric integration. | Optional features such as Delta change data feed and Mirroring views that add incremental change processing and view replication on top of core mirroring. |
 
-## Delta change data feed (preview)
+<a id="delta-change-data-feed-preview"></a>
+
+## Delta change data feed
 
 Delta change data feed (CDF) captures inserts, updates, and deletes, then applies them to Delta Lake tables in OneLake. This flow supports near real-time analytics without full reloads or heavy ETL pipelines. CDF is available for all mirroring sources, including open mirroring partners.
 
 For full details on enabling, querying, and consuming change data, see [Delta change data feed in mirroring for Fabric](extended-capabilities-delta-change-data-feed.md).
 
-## Mirroring views (preview)
+## Mirroring views
 
 Mirroring views replicate logical views from your source system instead of full physical tables. You can bring source filters, joins, and transformations into OneLake without building separate engineering pipelines.
 

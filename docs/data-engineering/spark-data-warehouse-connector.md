@@ -27,7 +27,7 @@ Microsoft Entra authentication is an integrated authentication approach. Users s
 
 ### Permissions
 
-To connect to the SQL engine, users need at least Read permission (similar to CONNECT permission in SQL Server) on the warehouse or SQL analytics endpoint (item level). Users also need granular object-level permissions to read data from specific tables or views. To learn more, see [Security for data warehousing in Fabric](../data-warehouse/security.md).
+To connect to the SQL engine, users need at least Read permission (similar to CONNECT permission in SQL Server) on the warehouse or SQL analytics endpoint (item level). Users also need granular object-level permissions to read data from specific tables or views. To learn more, see [Security in Fabric Data Warehouse](../data-warehouse/security.md).
 
 ## Code templates and examples
 
@@ -185,7 +185,7 @@ Upon completion, the read response snippet appears in the cell's output. Failure
 Currently, the connector:
 
 * Supports data retrieval or read from Fabric warehouses and SQL analytics endpoints of lakehouse items.
-* Supports writing data to a warehouse table using different save modes - this is only available with the latest GA runtime, i.e., [Runtime 1.3](runtime-1-3.md). 
+* Supports writing data to a warehouse table by using different save modes - this feature is available only with the latest GA runtime, [Runtime 2.0](runtime-2-0.md).
 * With `Private Link` enabled, read and write operations are supported at both tenant and workspace levels. Writes use JDBC batch insert strategies. For more information, see [Private Link support for the Spark connector](spark-data-warehouse-connector-private-link.md).
 * Fabric DW now supports `Time Travel` however this connector doesn't work for a query with time travel syntax. 
 * Retains the usage signature like the one shipped with Apache Spark for Azure Synapse Analytics for consistency. However, it's not backward compatible to connect and work with a dedicated SQL pool in Azure Synapse Analytics.
@@ -196,5 +196,5 @@ Currently, the connector:
 * [Private link support for the Spark connector](spark-data-warehouse-connector-private-link.md)
 * [Apache Spark runtimes in Fabric](runtime.md)
 * [Apache Spark monitoring overview](spark-monitoring-overview.md)
-* [Security for data warehousing in Fabric](../data-warehouse/security.md)
+* [Security in Fabric Data Warehouse](../data-warehouse/security.md)
 * [SQL granular permissions in Fabric](../data-warehouse/sql-granular-permissions.md)

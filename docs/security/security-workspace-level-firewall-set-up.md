@@ -1,8 +1,8 @@
 ---
 title: Set up and use workspace IP firewall rules
 description: Learn how to set up and use workspace-level IP firewall rules for secure access to a Fabric workspace.
-author: msmimart
-ms.author: mimart
+author: teddyberco
+ms.author: tebercov
 ms.reviewer: karthikeyana
 ms.topic: how-to
 ms.date: 01/27/2026

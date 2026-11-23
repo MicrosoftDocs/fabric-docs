@@ -4,8 +4,9 @@ description: Learn how to create a mirrored Dremio catalog in Microsoft Fabric.
 author: kgremban
 ms.author: kgremban
 ms.reviewer: mahi
-ms.date: 04/27/2026
+ms.date: 11/10/2026
 ms.topic: tutorial
+ai-usage: ai-assisted
 ---
 
 # Tutorial: Configure mirrored Dremio catalog
@@ -17,7 +18,7 @@ ms.topic: tutorial
 ## Prerequisites
 
 - You must have an active Dremio account with access to a Dremio project that contains Iceberg tables you want to mirror.
-- The Dremio project must be reachable via the public internet. Firewall rules or other network restrictions are not currently supported. See [limitations and considerations of this feature](dremio-limitations.md).
+- Catalog mirroring requires public internet access to the Dremio project and the storage location of all Iceberg tables. Catalog mirroring doesn't support source firewall rules or other source-network restrictions. Mirrored catalogs support [workspace outbound access protection in Fabric](../../security/workspace-outbound-access-protection-mirrored-catalogs-snowflake-database.md). See [limitations and considerations of this feature](dremio-limitations.md).
 - You need a Fabric workspace associated with a Fabric capacity (F SKU or Trial).
 - You must have the necessary permissions in Dremio to read the catalogs, namespaces, and tables you want to mirror.
 - Your Fabric tenant administrator must enable the [tenant admin setting](../../admin/about-tenant-settings.md) titled **Enable new mirrored catalog items (Preview)**.

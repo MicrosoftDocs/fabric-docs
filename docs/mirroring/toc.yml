@@ -72,8 +72,8 @@ items:
       - name: FAQ about mirrored Azure Cosmos DB 
         displayName: Frequently asked questions about mirrored Azure Cosmos DB
         href: azure-cosmos-db-faq.yml
-      - name: Configure private networks
-        displayName: Configure private networks for Azure Cosmos DB mirroring
+      - name: Mirror accounts with network restrictions
+        displayName: Configure mirroring for Azure Cosmos DB accounts with network restrictions
         href: azure-cosmos-db-private-network.md
       - name: Limitations
         displayName: Limitations in mirrored Azure Cosmos DB
@@ -132,6 +132,14 @@ items:
         href: catalog-mirroring/dremio-tutorial.md
       - name: Limitations
         href: catalog-mirroring/dremio-limitations.md
+  - name: Mirroring Google Lakehouse runtime catalog
+    items:
+      - name: Mirrored Google Lakehouse runtime catalog
+        href: catalog-mirroring/google-lakehouse-runtime.md
+      - name: Mirrored Google Lakehouse runtime catalog tutorial
+        href: catalog-mirroring/google-lakehouse-runtime-tutorial.md
+      - name: Limitations
+        href: catalog-mirroring/google-lakehouse-runtime-limitations.md
   - name: Mirroring Google BigQuery
     items: 
       - name: Mirrored databases from Google BigQuery
@@ -253,6 +261,8 @@ items:
       - name: Open mirroring landing zone
         displayName: Open mirroring landing zone requirements and format
         href: open-mirroring-landing-zone-format.md
+      - name: Open mirroring best practices
+        href: open-mirroring-best-practices.md
       - name: Open mirroring FAQ
         displayName: Frequently asked questions about Open Mirroring
         href: open-mirroring-faq.yml
@@ -272,12 +282,18 @@ items:
   items:
   - name: Extended capabilities overview
     href: extended-capabilities.md
-  - name: Delta change data feed (Preview)
+  - name: Delta change data feed
     href: extended-capabilities-delta-change-data-feed.md
-  - name: Mirroring views (Preview)
+  - name: Mirroring views
     href: extended-capabilities-views.md
   - name: Pricing for extended capabilities
-    href: extended-capabilities-billing.md
+    items:
+      - name: Billing for extended capabilities in mirroring
+        href: extended-capabilities-billing.md
+      - name: Change data feed pricing example
+        href: extended-capabilities-billing-example-delta-change-data-feed.md
+      - name: Views pricing example
+        href: extended-capabilities-billing-example-views.md
 - name: Mirroring REST API
   href: mirrored-database-rest-api.md 
 - name: CI/CD for mirrored databases

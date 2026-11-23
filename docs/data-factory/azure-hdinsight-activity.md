@@ -1,6 +1,6 @@
 ---
 title: Azure HDInsight activity
-description: Learn how to transform data by running an Azure HDInsight activity in a pipeline in Data Factory for Microsoft Fabric.
+description: Learn how to transform data by running an Azure HDInsight activity in a pipeline in Fabric Data Factory.
 ms.reviewer: xupxhou
 ms.topic: how-to
 ms.custom: pipelines
@@ -9,7 +9,7 @@ ms.date: 06/06/2025
 
 # Transform data by running an Azure HDInsight activity
 
-The Azure HDInsight activity in Data Factory for Microsoft Fabric allows you to orchestrate the following Azure HDInsight job types:
+The Azure HDInsight activity in Fabric Data Factory allows you to orchestrate the following Azure HDInsight job types:
 
 - Execute Hive queries
 - Invoke a MapReduce program
@@ -57,7 +57,7 @@ Select the **Settings** tab to see the advanced settings for the activity.
 
 :::image type="content" source="media/azure-hdinsight-activity/settings.png" alt-text="Screenshot showing the Settings tab of the Azure HDInsight activity properties in the pipeline editor window.":::
 
-All advanced cluster properties and dynamic expressions supported in the [Azure Data Factory and Synapse Analytics HDInsight linked service](/azure/data-factory/compute-linked-services#azure-hdinsight-linked-service) are now also supported in the Azure HDInsight activity for Data Factory in Microsoft Fabric, under the **Advanced** section in the UI. These properties all support easy-to-use custom parameterized expressions with dynamic content.
+All advanced cluster properties and dynamic expressions supported in the [Azure Data Factory and Synapse Analytics HDInsight linked service](/azure/data-factory/compute-linked-services#azure-hdinsight-linked-service) are now also supported in the Azure HDInsight activity for Data Factory, under the **Advanced** section in the UI. These properties all support easy-to-use custom parameterized expressions with dynamic content.
 
 ### Cluster type
 

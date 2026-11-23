@@ -16,6 +16,8 @@ Real-Time Hub enables you to discover and subscribe to these changes within OneL
 
 ## View OneLake events detail page
 
+[!INCLUDE [event-consumer-region-note](./includes/event-consumer-region-note.md)]
+
 1. In **Real-Time hub**, select **Fabric events**.
 1. Select **OneLake events** from the list.
 

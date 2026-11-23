@@ -21,11 +21,11 @@ Notifications are sent when there's an *extended delay* in operations like openi
 
 ## Enable notifications for service outages or incidents
 
-A Fabric admin can enable notifications for service outages or incidents in the admin portal:
+A Fabric admin can enable notifications for service outages or incidents in **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**:
 
 1. Identify or create an email-enabled security group that should receive notifications.
 
-1. In the admin portal, select **Tenant settings**. Under **Help and support settings**, expand **Receive email notifications for service outages or incidents**.
+1. Go to **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**. Under **Help and support settings**, expand **Receive email notifications for service outages or incidents**.
 
 1. Enable notifications, enter a security group, and select **Apply**.
 

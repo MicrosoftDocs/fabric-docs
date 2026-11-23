@@ -1,8 +1,8 @@
 ---
 title: Customer-managed keys for Fabric workspaces
 description: Learn how to use workspace customer managed keys to encrypt data-at-rest in your Microsoft Fabric workspace.
-author: msmimart
-ms.author: mimart
+author: teddyberco
+ms.author: tebercov
 ms.topic: how-to
 ms.date: 10/15/2025
 
@@ -41,6 +41,7 @@ Customer-managed keys are currently supported for the following Fabric items:
 * Mirrored Database
 * Eventhouse (preview)
 * Graph
+* Activator
 
 This feature can't be enabled for a workspace that contains unsupported items. When customer-managed key encryption for a Fabric workspace is enabled, only supported items can be created in that workspace. To use unsupported items, create them in a different workspace that doesn't have this feature enabled.
 
@@ -152,10 +153,8 @@ You can track encryption configuration requests for your Fabric workspaces by au
 Before you configure your Fabric workspace with a customer-managed key, consider the following limitations:
 
 * The following data isn't protected with customer-managed keys:
- 
-  * Lakehouse column names, table format, table compression.
-  * All data stored in the Spark Clusters (data stored in temp discs as part of  shuffle or data spills or RDD caches in a spark application) aren't protected. This includes all the Spark Jobs from Notebooks, Lakehouses, Spark Job Definitions, Lakehouse Table Load and Maintenance jobs, Shortcut Transforms, Fabric Materialized View Refresh.
-  * The job logs stored in the history server
+
+  * All data stored in the Spark Clusters, including data stored in temp disks as part of shuffle or data spills, or RDD caches in a spark application. This data includes all the Spark Jobs from Notebooks, Lakehouses, Spark Job Definitions, Lakehouse Table Load and Maintenance jobs, Shortcut Transforms, and Fabric Materialized View Refresh.
   * Libraries attached as part of environments or added as part of the Spark session customization using magic commands aren't protected
   * Metadata generated when creating a Pipeline and Copy job, such as DB name, table, schema
   * Metadata of ML model and experiment, like the model name, version, metrics
@@ -167,9 +166,11 @@ Before you configure your Fabric workspace with a customer-managed key, consider
 
 * You can turn on CMK for workspaces hosted in BYOK capacities. The same or separate keys can be used to protect both items in a CMK‑enabled workspace and semantic models residing on the BYOK capacity. (preview)
 
-* You can enable CMK by using the Fabric portal or APIs (preview).
+* You can enable CMK by using the Fabric portal or APIs. Workspace administrators can use APIs Assign Workspace Encryption, Get Workspace Encryption, and Reset Workspace Encryption to turn CMK setting on or off and view the CMK status of the workspace. Tenant administrators can use List Workspaces API to get the encryption status of all the workspaces in their tenant.
 
 * CMK can be enabled and disabled for the workspace while the tenant level encryption setting is on. Once the tenant setting is turned off, you can no longer enable CMK for workspaces in that tenant or disable CMK for workspaces that already have CMK turned on in that tenant. Data in workspaces that enabled CMK before the tenant setting was turned off remains encrypted with the customer managed key. Keep the associated key active to be able to unwrap data in that workspace. Disabling CMK setting on your workspace also limits the ability to add a new BYOK key to your tenant.
+
+* Activator items in CMK-enabled workspaces support up to 2,000 events per second.
 
 ## Related content
 

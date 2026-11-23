@@ -2,6 +2,7 @@
 title: Use Eventstream as a Business Events Publisher
 description: This article describes how to use eventstreams to publish business events in Fabric Real-Time hub.
 ms.topic: how-to
+ai-usage: ai-assisted
 ms.date: 02/25/2026
 ---
 
@@ -37,6 +38,8 @@ This selective transformation allows downstream systems, such as Activator workf
 
 ## Connecting Eventstream to a business event
 
+[!INCLUDE [business-event-publisher-region-note](../includes/business-event-publisher-region-note.md)]
+
 Once a transformation produces a meaningful signal, Eventstream routes this output to a business events destination. This destination links the transformed data to a specific business event defined in the Real-Time hub.
 
 Eventstream integrates natively with business events by:
@@ -67,6 +70,9 @@ These mappings ensure that every business event published follows the same struc
 Schema mapping also enforces CloudEvents metadata, ensuring protocol consistency and event interoperability across Fabric consumers.
 
 ## Publishing and operationalizing the Eventstream
+
+> [!NOTE]
+> Workspace private links can block cross-workspace business event publishing. For Business events, the source workspace is the workspace that contains the Event Schema Set. If that workspace blocks public access, publish from the same workspace or establish a private link from the publisher's network to the source workspace. For more information, see [Workspace private links for Azure, Fabric, and Business events](../workspace-private-links-real-time-events.md).
 
 After defining transformations and schema mapping, publish the Eventstream to start producing business events. When you publish, you activate the pipeline, which enables:
 

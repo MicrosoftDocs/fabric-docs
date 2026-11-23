@@ -7,7 +7,7 @@ ms.topic: how-to
 
 # Enable writeback in reading mode
 
-Plan users can perform writeback even when a report is in reading view. You can also review logs from [Logs](#logs) under the **Writeback** tab.
+Planning users can perform writeback even when a report is in reading view. You can also review logs from [Logs](#logs) under the **Writeback** tab.
 
 :::image type="content" source="../media/planning-writeback/planning-how-to-enable-writeback-reading-mode/writeback-enable-reading-mode.jpg" alt-text="Screenshot showing the Writeback ribbon tab with the Writeback and Logs buttons available." lightbox="../media/planning-writeback/planning-how-to-enable-writeback-reading-mode/writeback-enable-reading-mode.jpg":::
 
@@ -21,7 +21,7 @@ The following options are displayed for users in the reading view who also have 
 
 ## Writeback
 
-Select **Writeback** to write report data to the configured destination. Plan respects row-level security (**RLS**) in the source dataset. If a viewer has RLS applied, plan only writes back the rows allowed by that security rule.
+Select **Writeback** to write report data to the configured destination. Planning respects row-level security (**RLS**) in the source dataset. If a viewer has RLS applied, planning only writes back the rows allowed by that security rule.
 
 ## Logs
 

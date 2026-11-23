@@ -1,0 +1,51 @@
+items:
+- name: Overview
+  items:
+  - name: What is ontology?
+    href: overview.md
+  - name: Required tenant settings
+    href: ../overview-tenant-settings.md
+- name: Concepts
+  items:
+  - name: Generate an ontology from semantic model
+    href: concepts-generate.md
+  - name: Agent integration options
+    href: concepts-agent-integration.md
+- name: How-tos
+  items:
+  - name: Create entity types
+    href: how-to-create-entity-types.md
+  - name: Bind data
+    href: how-to-bind-data.md
+  - name: Add relationship types
+    href: how-to-create-relationship-types.md
+  - name: Add semantic enrichment
+    href: how-to-add-semantic-enrichment.md
+  - name: View entity type details
+    href: how-to-view-entity-type-details.md
+  - name: Use rules
+    href: how-to-use-rules.md
+  - name: Use resource links
+    href: how-to-use-resource-links.md
+  - name: Connect an operations agent
+    href: ../how-to-create-operations-agent.md
+  - name: Create a Foundry IQ agent
+    href: ../how-to-create-agent-foundry-iq.md
+  - name: Create a Copilot Studio agent
+    href: ../how-to-create-agent-copilot-studio.md
+  - name: Use ontology MCP server
+    href: ../how-to-use-ontology-mcp-server.md
+- name: Resources
+  items:
+  - name: Troubleshooting
+    href: ../resources-troubleshooting.md
+  - name: Billing and capacity usage
+    href: resources-capacity-usage.md
+  - name: Glossary
+    href: ../resources-glossary.md
+  - name: FAQ
+    href: ../resources-frequently-asked-questions.yml
+  - name: Ontology REST API
+    href: /rest/api/fabric/ontology/items
+  - name: CI/CD in Fabric
+    href: ../../../cicd/cicd-overview.md

@@ -2,8 +2,9 @@
 title: GQL Values and Value Types for graph in Microsoft Fabric
 description: Learn about GQL values and value types in graph in Microsoft Fabric, including literals, comparison rules, type conversions and the type system hierarchy.
 ms.topic: reference
-ms.date: 05/20/2026
+ms.date: 09/17/2026
 ms.reviewer: splantikow
+ai-usage: ai-assisted
 ---
 
 # GQL values and value types
@@ -49,12 +50,22 @@ Understanding how GQL compares values is crucial for writing effective queries, 
 ### Basic comparison rules
 
 - You can generally compare values of the same kind.
-- You can compare all numbers with each other, such as integers with floats.
+- If both values are numbers, GQL compares them by their numerical values.
 - You can only compare reference values that reference the same kind of object, such as node references with node references and edge references with edge references.
+
+> [!IMPORTANT]
+> Graph doesn't yet support universal numeric comparison. Integers can be
+> compared with approximate numbers, but approximate
+> numeric values can't be compared. Comparisons between signed and unsigned
+> integers can fail when an unsigned value is outside the signed integer range.
 
 ### Null handling in comparisons
 
-When you compare any value with null, the result is always `UNKNOWN`. Null handling follows three-valued logic principles. However, the `ORDER BY` statement treats `NULL` as the smallest value when sorting, providing predictable ordering behavior.
+When you compare any value with null, the result is always `UNKNOWN`. Null
+handling follows three-valued logic principles. `ORDER BY` handles null
+placement separately from comparisons. By default, null values sort last for
+both ascending and descending order. Use `NULLS FIRST` or `NULLS LAST` to
+control their placement explicitly.
 
 ## Distinctness vs. equality
 
@@ -159,11 +170,11 @@ STRING [ NOT NULL ]
 
 ### Exact numeric types
 
-Graph supports exact numbers that are negative or positive integers.
+Graph supports signed and unsigned integers.
 
 **How comparison works:**
 
-The system compares all numbers by their numeric value.
+The system compares compatible exact numeric values by their numeric value.
 
 **How to write integer literals:**
 
@@ -193,7 +204,7 @@ Graph supports approximate numbers that are IEEE (Institute of Electrical and El
 
 **How comparison works:**
 
-The system compares all numbers by their numeric value.
+The system compares compatible approximate numeric values by their numeric value.
 
 **How to write floating-point literals:**
 
@@ -203,14 +214,19 @@ The system compares all numbers by their numeric value.
 | Common notation with grouping   | 123_456.789   | 123456.789 |
 | Scientific notation             | 1.23456e2     | 123.456    |
 | Scientific notation (uppercase) | 1.23456E2     | 123.456    |
-| Floating-point with suffix      | 123.456f      | 123.456    |
 | Double precision with suffix    | 123.456d      | 123.456    |
+| Scientific notation with suffix | 2.5e10d       | 25000000000 |
+| Signed integer notation with suffix | -17d      | -17.0      |
+
+> [!IMPORTANT]
+> Graph supports the `d` and `D` suffixes for `FLOAT64` literals. The `f` and
+> `F` literal suffixes aren't currently supported.
 
 **Additional numeric considerations:**
 
-- **Overflow and underflow**: Integer operations that exceed the supported range might cause runtime errors or wrap-around behavior, depending on the implementation.
+- **Overflow and underflow**: Integer operations that exceed the supported range produce an error with canonical GQLSTATUS `22003`.
 - **Precision**: Floating-point operations might lose precision because of IEEE 754 representation limitations.
-- **Special float values**: `NaN` (Not a Number), positive infinity (`+∞`), and negative infinity (`-∞`) might be supported in floating-point contexts.
+- **Special float values**: See [Floating-point types](gql-query-api.md#floating-point-types) for the Query API representation of IEEE 754 special values.
 
 **Type syntax:**
 
@@ -246,6 +262,30 @@ ZONED_DATETIME('2024-12-31T23:59:59.999-08:00')
 
 ```gql
 ZONED DATETIME [ NOT NULL ]
+```
+
+### Duration values
+
+A duration value represents an ISO 8601 day-time interval. Create one by passing
+an ISO 8601 duration string to `DURATION`:
+
+```gql
+DURATION('P1DT2H30M')
+```
+
+Duration values support comparison, addition, subtraction, and scaling. You can
+also add or subtract a duration from a zoned datetime, or subtract two zoned
+datetimes to derive a duration.
+
+> [!IMPORTANT]
+> Graph supports day-time durations but not year-month durations. The
+> `DURATION_BETWEEN(start, end)` function isn't currently supported; use the
+> subtraction operator between zoned datetime values instead.
+
+**Type syntax:**
+
+```gql
+DURATION [ NOT NULL ]
 ```
 
 ## Reference value types
@@ -414,7 +454,7 @@ Use square bracket notation to create lists:
 ```gql
 [1, 2, 3, 4]
 ['hello', 'world']
-[1, 'mixed', TRUE, NULL]
+[1.20m, 3.45m, NULL]
 []  -- empty list
 ```
 
@@ -438,7 +478,12 @@ RETURN [1, 2] || [3, 4]  -- [1, 2, 3, 4]
 
 -- List size
 size(list_var)
+
+-- Test elements against a predicate
+ANY(element IN list_var WHERE element IS NOT NULL)
 ```
+
+Use the [`ALL`, `ANY`, `NONE`, and `SINGLE` list predicate functions](gql-expressions.md#list-predicate-functions) to test how many list elements satisfy a condition.
 
 **Type syntax:**
 
@@ -466,9 +511,7 @@ A path consists of:
 
 **How comparison works:**
 
-You compare paths by comparing lists of reference values to all of their constituent nodes and edges, in the sequence in which they occur along the path.
-
-For more information, see the comparison rules for [list values](#list-values) and [reference values](#reference-value-types).
+You can compare path values for equality and use them as sort keys. Two path values are equal when they contain the same sequence of node and edge references. Don't rely on the relative sort order of different paths across queries.
 
 **Type syntax:**
 
@@ -482,10 +525,9 @@ GQL supports both implicit and explicit type conversions to enable flexible oper
 
 ### Implicit conversions
 
-Certain value types can be implicitly converted when the conversion is safe and doesn't lose information:
+Certain numeric value types can be implicitly converted when an expression requires a common type:
 
-- **Numeric widening**: Integer values can be implicitly converted to floating-point types when used in mixed arithmetic operations.
-- **String contexts**: Values can be implicitly converted to strings in certain contexts like concatenation operations.
+- **Integer and floating point**: The integer is converted to an approximate numeric type.
 
 ### Explicit casting
 
@@ -502,12 +544,13 @@ CAST(123 AS STRING)           -- "123"
 CAST('456' AS INT64)          -- 456
 CAST(3.14 AS STRING)          -- "3.14"
 CAST('true' AS BOOL)          -- TRUE
+CAST(-42.9m AS INT64)         -- -42
+CAST(1.20m AS STRING)         -- "1.20"
 ```
 
 **Casting rules:**
 
 - **To STRING**: You can cast most value types to STRING by using their literal representation.
-- **To numeric types**: You can cast strings that contain valid numeric literals to appropriate numeric types.
 - **To BOOL**: You can cast strings 'true' or 'false' (case-insensitive) to boolean values.
 - **Invalid casts**: If you try to cast incompatible values, runtime errors occur.
 
@@ -516,4 +559,4 @@ CAST('true' AS BOOL)          -- TRUE
 - [GQL language guide](gql-language-guide.md)
 - [GQL expressions and functions](gql-expressions.md)
 - [GQL graph types](gql-graph-types.md)
-- [Try Microsoft Fabric for free](../fundamentals/fabric-trial.md)
+- [GQL Query API value encoding](gql-query-api.md#value-types-and-encoding)

@@ -1,8 +1,8 @@
 ---
 title: Conditional Access
 description: Learn how to configure conditional access for Microsoft Fabric.
-author: msmimart
-ms.author: mimart
+author: teddyberco
+ms.author: tebercov
 ms.topic: how-to
 ms.custom:
 ms.date: 02/26/2026

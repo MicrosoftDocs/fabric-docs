@@ -10,7 +10,7 @@ ms.custom:
 
 # Delta Sharing connector overview
 
-The Delta Sharing connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
+[!INCLUDE [product-name](../includes/product-name.md)] Data Factory supports the Delta Sharing connector with the following capabilities.
 
 
 ## Supported capabilities
@@ -21,6 +21,6 @@ The Delta Sharing connector is supported in Data Factory for [!INCLUDE [product-
 
 ## Related content
 
-- [Delta Lake in Microsoft Fabric overview](../fundamentals/delta-lake-overview.md)
+- [Delta Lake in Fabric overview](../fundamentals/delta-lake-overview.md)
 
 For information on how to connect to Delta Sharing, go to [Set up your Delta Sharing connection](connector-delta-sharing.md).

@@ -3,7 +3,7 @@ title: Git Integration with Service Principal
 description: Learn how to integrate Git with a service principal in Microsoft Fabric for streamlined CI/CD workflows.
 ms.reviewer: NimrodShalit
 ms.topic: how-to
-ms.date: 12/15/2025
+ms.date: 09/01/2026
 #customer intent: As a developer, I want to learn how to integrate Git with a service principal in Microsoft Fabric, so that I can automate CI/CD workflows.
 ---
 
@@ -127,7 +127,7 @@ You can create the service principal in the Azure DevOps tenant using one of the
  Connect-MgGraph -TenantId "<Tenant B ID>" -Scopes "Application.ReadWrite.All", "Directory.ReadWrite.All" # Where -TenantID is the tenant ID of Azure DevOps tenant (tenant B)
  
  
- New-MgServicePrincipal -AppId "00001111-aaaa-2222-bbbb-3333cccc4444" # Where -AppID is the client ID of the application in tenant A
+ New-MgServicePrincipal -AppId "00001111-aaaa-2222-bbbb-3333cccc4444" # Where -AppID is the client ID of the application in tenant A; pii-allow
  ```
 
   
@@ -153,4 +153,3 @@ When you need to update your service principal details, for example, update serv
 - [Automate git integration with a service principal in Azure DevOps](automate-git-integration-with-service-principal.md).
 - [Understand the Git integration process](./git-integration-process.md)
 - [Manage Git branches](./manage-branches.md)
-- [Git integration best practices](../best-practices-cicd.md)

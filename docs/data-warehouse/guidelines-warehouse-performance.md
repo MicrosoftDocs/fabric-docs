@@ -29,8 +29,6 @@ Statistics are persisted objects that represent data in your tables' columns. Th
 > [!TIP]
 > For Lakehouse users, the ACE-Cardinality statistic can use information from your tables' Delta log files to be more accurate. Ensure your Spark generated Delta tables include table row-counts with: `spark.conf.set("spark.databricks.delta.stats.collect", "true")`. For more information, see [Configure and manage Automated Table Statistics in Fabric Spark](../data-engineering/automated-table-statistics.md).
 
-When filtering lakehouse tables on timestamp column before Apache Spark runtime 3.5.0, rowgroup-level statistics for timestamp columns aren't generated. This lack of statistics makes it difficult for systems, like Fabric Warehouse, to apply rowgroup elimination (also known as data skipping or predicate pushdown), which is performance optimization that skips irrelevant rowgroups during query execution. Without these statistics, filtering queries that involve timestamp columns might need to scan more data, leading to significant performance degradation. You can upgrade [the Apache Spark runtime in Fabric](../data-engineering/runtime.md). Apache Spark 3.5.0 and higher versions can generate rowgroup-level statistics for timestamp columns. You then need to recreate the table and ingest the data to have rowgroup level statistics generated.
-
 ### Cold cache performance
 
 The *first execution* of a query in Fabric Data Warehouse can be unexpectedly slower than subsequent runs. This slowdown is known as a *cold start*. A cold start happens because of system initialization or scaling activities that prepare the environment for processing. 
@@ -43,7 +41,7 @@ Cold starts typically occur when:
 
 These operations can increase query duration. Cold starts can be partial. Some compute nodes, data, or statistics might already be available or cached in memory, while the query waits for others to become available. 
 
-In-memory and disk caching in Fabric Data Warehouse is fully transparent and automatically enabled. Caching intelligently minimizes the need for remote storage reads by leveraging local caches. Fabric Data Warehouse employs refined access patterns to enhance data reads from storage and elevate query execution speed. For more information, see [Caching in Fabric data warehousing](caching.md).
+In-memory and disk caching in Fabric Data Warehouse is fully transparent and automatically enabled. Caching intelligently minimizes the need for remote storage reads by leveraging local caches. Fabric Data Warehouse employs refined access patterns to enhance data reads from storage and elevate query execution speed. For more information, see [Caching in Fabric Data Warehouse](caching.md).
 
 You can detect cold start effects caused by fetching data from remote storage into memory by querying the [queryinsights.exec_requests_history](/sql/relational-databases/system-views/queryinsights-exec-requests-history-transact-sql?view=fabric&preserve-view=true) view. Check the `data_scanned_remote_storage_mb` column: 
 
@@ -60,6 +58,8 @@ Distinct from in-memory and disk caching, result set caching is a built-in optim
 
 For more information, see [Result set caching](result-set-caching.md).
 -->
+
+When filtering lakehouse tables on timestamp column before Apache Spark runtime 3.5.0, rowgroup-level statistics for timestamp columns aren't generated. This lack of statistics makes it difficult for systems, like Fabric Warehouse, to apply rowgroup elimination (also known as data skipping or predicate pushdown), which is performance optimization that skips irrelevant rowgroups during query execution. Without these statistics, filtering queries that involve timestamp columns might need to scan more data, leading to significant performance degradation. You can upgrade [the Apache Spark runtime in Fabric](../data-engineering/runtime.md). Apache Spark 3.5.0 and higher versions can generate rowgroup-level statistics for timestamp columns. You then need to recreate the table and ingest the data to have rowgroup level statistics generated.
 
 ### Queries on tables with string columns  
 
@@ -326,7 +326,7 @@ Zero-copy clones are ideal for scenarios such as development, testing, and backu
   - [queryinsights.long_running_queries](/sql/relational-databases/system-views/queryinsights-long-running-queries-transact-sql?view=fabric&preserve-view=true)
   - [queryinsights.frequently_run_queries](/sql/relational-databases/system-views/queryinsights-frequently-run-queries-transact-sql?view=fabric&preserve-view=true)
 
-For more information on the `queryinsights` views, see [Query insights in Fabric data warehousing](query-insights.md).
+For more information on the `queryinsights` views, see [Query insights in Fabric Data Warehouse](query-insights.md).
 
 - Query lifecycle DMVs 
   - [sys.dm_exec_connections](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-connections-transact-sql?view=fabric&preserve-view=true)
@@ -347,3 +347,4 @@ For more information on query lifecycle DMVs, see [Monitor connections, sessions
 - [Query insights](query-insights.md)
 - [Statistics in Fabric Data Warehouse](statistics.md)
 - [Ingest data into your Warehouse using the COPY statement](ingest-data-copy.md)
+- [Query acceleration in Fabric Data Warehouse](query-acceleration.md)

@@ -3,7 +3,8 @@ title: Automate Git integration by using APIs
 description: Learn how to automate Git integration in the Microsoft Fabric Application lifecycle management (ALM) tool, by using APIs and Azure DevOps or GitHub.
 ms.reviewer: Pierre, NimrodShalit
 ms.topic: concept-article
-ms.date: 12/15/2025
+ms.date: 09/24/2026
+ai-usage: ai-assisted
 ms.search.form: Git integration automation, Git integration APIs, Azure DevOps integration, GitHub integration
 #customer intent: As developer, I want to learn how to automate Git integration in the Microsoft Fabric Application lifecycle management (ALM) tool, so that I can simplify continuous integration and continuous delivery (CI/CD) of my content.
 ---
@@ -12,7 +13,7 @@ ms.search.form: Git integration automation, Git integration APIs, Azure DevOps i
 
 The Fabric [Git integration](intro-to-git-integration.md) tool enables teams to work together using source control to build an efficient and reusable release process for their Fabric content.
 
-By using [Fabric REST APIs](/rest/api/fabric/articles/using-fabric-apis), you can automate Fabric procedures and processes to complete tasks faster and with fewer errors. This efficiency leads to cost savings and improved productivity.
+By using [Fabric REST APIs](/rest/api/fabric/articles/get-started/using-fabric-apis), you can automate Fabric procedures and processes to complete tasks faster and with fewer errors. This efficiency leads to cost savings and improved productivity.
 
 This article describes how to use the [Git integration REST APIs](/rest/api/fabric/core/git) to automate Git integration in Fabric.
 
@@ -313,6 +314,8 @@ For the complete script, see [Update workspace from Git](https://github.com/micr
 1. Call the [Get Status](/rest/api/fabric/core/git/get-status) API to build the update from Git request body.
 1. Call the [Update From Git](/rest/api/fabric/core/git/update-from-git) API to update the workspace with commits pushed to the connected branch.
 
+You can optionally attach a deployment plan to the Update From Git request. For the request format and requirements, see [Automate deployments with a deployment plan](../deployment-plan/deployment-plan-automation.md).
+
 ### Commit all
 
 This section gives a step by step description of how to programmatically commit all changes from the workspace to Git.
@@ -563,5 +566,5 @@ Copy the ID of the connection you want and use it in the [Git - Connect](/rest/a
 
 ## Related content
 * [Git integration - get started](git-get-started.md)
-* [Fabric APIs](/rest/api/fabric/articles/using-fabric-apis)
-* [Git best practices](../best-practices-cicd.md)
+* [Fabric APIs](/rest/api/fabric/articles/get-started/using-fabric-apis)
+* [Automate deployments with a deployment plan](../deployment-plan/deployment-plan-automation.md)

@@ -12,7 +12,7 @@ ms.topic: how-to
 
 Dynamic data masking is a cutting-edge data protection technology that helps organizations safeguard sensitive information within their databases. It allows you to define masking rules for specific columns, ensuring that only authorized users see the original data while concealing it for others. Dynamic data masking provides an additional layer of security by dynamically altering the data presented to users, based on their access permissions.
 
-For more information, see [Dynamic data masking in Fabric data warehousing](dynamic-data-masking.md).
+For more information, see [Dynamic data masking in Fabric Data Warehouse](dynamic-data-masking.md).
 
 ## Prerequisites
 
@@ -120,8 +120,8 @@ To manage or modify existing dynamic data masking rules, create a new SQL script
 
 ## Related content
 
-- [Dynamic data masking in Fabric data warehousing](dynamic-data-masking.md)
-- [Workspace roles in Fabric data warehousing](workspace-roles.md)
-- [Column-level security in Fabric data warehousing](column-level-security.md)
-- [Row-level security in Fabric data warehousing](row-level-security.md)
-- [Security for data warehousing in Microsoft Fabric](security.md)
+- [Dynamic data masking in Fabric Data Warehouse](dynamic-data-masking.md)
+- [Workspace roles in Fabric Data Warehouse](workspace-roles.md)
+- [Column-level security in Fabric Data Warehouse](column-level-security.md)
+- [Row-level security in Fabric Data Warehouse](row-level-security.md)
+- [Security in Fabric Data Warehouse](security.md)

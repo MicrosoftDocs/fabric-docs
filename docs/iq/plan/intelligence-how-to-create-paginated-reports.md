@@ -1,5 +1,5 @@
 ---
-title: Create Paginated Reports in Fabric Plan Intelligence Sheets
+title: Create Paginated Reports in Planning in Fabric Intelligence Sheets
 description: Learn how to work with intelligence sheet pagination options for reports. Customize headers, footers, layout, and formatting to create structured, readable, and consistent reports.
 ms.date: 07/21/2026
 ms.topic: how-to

@@ -58,7 +58,7 @@ The following permissions are required to read change history and table data.
 
 > [!IMPORTANT]
 > Any granular security established in the source BigQuery warehouse must be reconfigured in the mirrored database in Microsoft Fabric.
-> For more information, see [SQL granular permissions in Microsoft Fabric](../../data-warehouse/sql-granular-permissions.md).
+> For more information, see [SQL granular permissions in Fabric Data Warehouse](../../data-warehouse/sql-granular-permissions.md).
 
 #### Required Permissions
 
@@ -179,4 +179,4 @@ For more information, see:
 
 > [!IMPORTANT]
 > Any granular security defined in the source BigQuery warehouse must be reconfigured in the mirrored database in Microsoft Fabric.
-> For more information, see [SQL granular permissions in Microsoft Fabric](../../data-warehouse/sql-granular-permissions.md).
+> For more information, see [SQL granular permissions in Fabric Data Warehouse](../../data-warehouse/sql-granular-permissions.md).

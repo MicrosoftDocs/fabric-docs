@@ -9,7 +9,7 @@ ms.custom:
   - ai-gen-docs-bap
   - ai-gen-title
   - ai-seo-date:08/26/2025
-ms.date: 09/04/2025
+ms.date: 09/23/2026
 ai-usage: ai-assisted
 ---
 
@@ -88,7 +88,9 @@ With a clear inventory of central versus distributed content, the next step is t
     - Whenever possible, [**start with smaller SKUs and scale up gradually**](optimize-capacity.md). You can always [scale up](scale-capacity.md) a capacity's size with minimal downtime. This incremental approach avoids over-allocating budget. For instance, you might start a new enterprise solution on F64, closely watch metrics for a month, then decide to scale to F128 if needed.
 
     > [!NOTE]
-    > For Power BI workload, scaling up and down between F32 to F64 applies different licensing and might take some time. Similarly, scaling up or down between sizes smaller or equal to F256, and equal to or higher than F512, might result in a slower experience.
+    > - For a Power BI workload, scaling up and down between F32 to F64 applies different licensing and might take some time. Similarly, scaling up or down between sizes smaller or equal to F256, and equal to or higher than F512, might result in a slower experience.
+    >
+    > - Avoid resizing a capacity frequently. Applying a new capacity size can take time, and operations already in progress might be delayed or otherwise affected. For more information, see [Scale your Fabric capacity](scale-capacity.md).
 
     - Keep **mission-critical workloads separate from others on different capacities**. Using two medium capacities - one for mission-critical tasks and one for other workloads - is preferable to combining them on a larger capacity if their SLA needs differ. For instance, run tier 1 on an F64 and tier 2 on another F64 rather than both on a single F128. This way, issues with tier 2 don't affect tier 1. This approach might increase costs, so proper workload classification is necessary.
 

@@ -1,7 +1,7 @@
 ---
 title: High concurrency mode in Apache Spark compute for Fabric
 description: Learn about sharing Spark sessions using high concurrency mode in Microsoft Fabric for data engineering and data science workloads.
-ms.reviewer: saravi
+ms.reviewer: milescole
 ms.topic: concept-article
 ms.date: 03/05/2026
 ai-usage: ai-assisted

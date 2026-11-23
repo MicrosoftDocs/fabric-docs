@@ -14,38 +14,54 @@ ai-usage: ai-assisted
 You can connect to Excel workbooks in Dataflow Gen2 using the Excel connector provided by Data Factory in [!INCLUDE [product-name](../includes/product-name.md)].
 
 ## Set up your connection for Dataflow Gen2
-You can connect Dataflow Gen2 to an Excel workbook in Microsoft Fabric using Power Query connectors. Follow these steps to create your connection:
+You can connect dataflow Gen2 to an Excel workbook in Fabric using Power Query connectors. Follow these steps to create your connection:
 
 1. Check [capabilities](#capabilities), [limitations, and considerations](#limitations-and-considerations) to make sure your scenario is supported.
 1. [Complete prerequisites for Excel workbook](#prerequisites).
 1. [Get data in Fabric](#get-data).
 1. [Connect to an Excel workbook](#connect-to-an-excel-workbook).
 
-### Capabilities
+## Prerequisites
 
-[!INCLUDE [excel-ccapabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/excel/excel-capabilities-supported.md)]
+[!INCLUDE [excel-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/excel/prerequisites.md)]
 
-### Prerequisites
+<a id="capabilities"></a>
 
-[!INCLUDE [excel-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/excel/excel-prerequisites.md)]
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
+
+[!INCLUDE [excel-ccapabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/excel/capabilities-supported.md)]
+
+<a id="connect-to-an-excel-workbook"></a>
+
+<a id="connect-from-power-query-online"></a>
+
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Connect to an Excel workbook
+### Connection instructions
 
-[!INCLUDE [excel-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/excel/excel-connect-to-power-query-online.md)]
+[!INCLUDE [excel-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/excel/connect-online.md)]
 
-### Limitations and considerations
+<a id="remarks"></a>
 
-[!INCLUDE [excel-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/excel/excel-limitations-and-considerations-include.md)]
+## Additional information
 
-### More information
+<a id="more-information"></a>
 
 - [Excel connector suggested tables](/power-query/connectors/excel#suggested-tables)
 - [Excel connector troubleshooting](/power-query/connectors/excel#troubleshooting)
 - [Excel connector known issues and limitations](/power-query/connectors/excel#known-issues-and-limitations)
+
+<a id="known-issues-and-limitations"></a>
+
+## Limitations and considerations
+
+[!INCLUDE [excel-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/excel/limitations.md)]
 
 ## Related content
 

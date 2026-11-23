@@ -4,7 +4,7 @@ description: Learn about admin organizational visual capabilities and how to cus
 author: billmath
 ms.author: billmath
 ms.topic: how-to
-ms.date: 10/23/2025
+ms.date: 09/01/2026
 ms.custom: sfi-image-nochange
 #customer intent: As a Fabric administrator for your organization, I want to control the type of Power BI visuals that users can access across the organization and limit the actions users can perform so that I can ensure compliance with company policies and security standards.
 ---
@@ -17,10 +17,10 @@ To manage Power BI visuals, you must be a Fabric administrator. For more informa
 
 ## Power BI visuals tenant settings
 
-To manage the tenant settings for Power BI visuals from the Fabric admin portal, go to **Tenant settings** and scroll down to **Power BI visuals**.
+To manage the tenant settings for Power BI visuals, sign in to [Fabric](https://app.fabric.microsoft.com) using your admin account credentials. Open the **OneLake catalog** and go to the **Govern** tab > **Configurations** > **Tenant settings**. Then scroll to **Power BI visuals**.
 
 > [!NOTE]
-> These settings are managed in the **Fabric admin portal** (accessible at [https://app.fabric.microsoft.com/admin-portal](https://app.fabric.microsoft.com/admin-portal) or through **Settings** > **Admin portal** in the Power BI service). These settings are *not* available in the Power Platform admin center.
+> Manage these settings in **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**. These settings aren't available in the Power Platform admin center.
 
 :::image type="content" source="media/organizational-visuals/power-bi-visuals-tenant-settings.png" alt-text="Screenshot of the Power BI visuals tenant settings location.":::
 
@@ -70,7 +70,7 @@ UI changes to tenant settings apply only to the Power BI service. To enable user
 
 When you enable this setting, only certified Power BI visuals render in your organization's reports and dashboards. Power BI visuals from AppSource or files that aren't certified return an error message. This setting is disabled by default and doesn't apply to visuals in your [organizational store](/power-bi/developer/visuals/power-bi-custom-visuals#organizational-store).
 
-1. From the admin portal, select **Add and use certified visuals only**.
+1. Expand the **Add and use certified visuals only** setting.
 
 1. Select **Enabled**.
 
@@ -116,7 +116,7 @@ UI changes to tenant settings apply both for Power BI Service and Power BI Deskt
 
 When `AllowCVToExportDataToFile` is set to *1*, the custom visual can export data to a file only if:
 
-* The feature switch in the admin portal is enabled.
+* The feature switch in the tenant settings is enabled.
 * The user is signed in.
 
 ### Local storage
@@ -263,6 +263,6 @@ Sometimes an organization develops its own Power BI visual and distributes it in
 
 ## Related content
 
-* [What is the admin portal?](admin-center.md)
+* [Administration overview](admin-overview.md)
 * [Visuals in Power BI](/power-bi/developer/visuals/power-bi-custom-visuals)
 * [Organizational visuals in Power BI](/power-bi/developer/visuals/power-bi-custom-visuals-organization)

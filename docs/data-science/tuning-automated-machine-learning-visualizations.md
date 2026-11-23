@@ -4,8 +4,8 @@ description: Learn how to use the flaml.visualization module to analyze and expl
 ms.topic: how-to
 ms.author: scottpolly
 author: s-polly
-ms.reviewer: ruxu
-reviewer: ruixinxu
+ms.reviewer: scottpolly
+reviewer: s-polly
 ms.date: 07/23/2026
 ai-usage: ai-assisted
 ---

@@ -2,7 +2,7 @@
 title: Create deployment rules for Fabric's ALM
 description: Learn how to create rules to simplify deploying content with Fabric's Application lifecycle management (ALM) tool.
 ms.topic: concept-article
-ms.date: 12/15/2025
+ms.date: 09/01/2026
 ms.search.form: Deployment rules
 #customer intent: As a developer, I want to learn how to create deployment rules in Fabric's Application lifecycle management (ALM) tool so that I can simplify deploying content between stages in my deployment pipeline.
 ---
@@ -122,7 +122,7 @@ Data source rules can be defined for the following data sources:
 * SharePoint
 * Teradata
 
-For other data sources, we recommend [using parameters to configure your data source](../best-practices-cicd.md#use-parameters-for-configurations-that-will-change-between-stages).
+For other data sources, use [parameters](understand-the-deployment-process.md#autobinding-and-parameters) to configure your data source.
 
 ## Considerations and limitations
 

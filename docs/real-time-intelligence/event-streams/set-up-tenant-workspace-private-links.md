@@ -17,7 +17,7 @@ Fabric supports private links at both the tenant level and the workspace level:
 
 ## Tenant private link
 
-There are two tenant settings in the Fabric admin portal involved in Private Link configuration:
+There are two settings in **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings** involved in Private Link configuration:
 
 * **Azure Private Links**
 
@@ -65,7 +65,7 @@ Currently, when tenant or workspace level private link is enabled, you can only 
 |                       |                        | Azure IoT Hub           | Yes          |
 |                       |                        | Azure Service Bus       | Yes          |
 |                       |                        | Azure Data Explorer DB  | Yes          |
-|                       | **Basic**              | Custom Endpoint         | No           |
+|                       | **Basic**              | Custom Endpoint         | Yes           |
 |                       |                        | Sample data             | Yes          |
 |                       |                        | Weather data            | Yes          |
 |                       | **External streams**   | Confluent Cloud for Apache Kafka | Yes |
@@ -90,7 +90,7 @@ Currently, when tenant or workspace level private link is enabled, you can only 
 | **Destinations**      | **Fabric destinations**| Lakehouse               | Yes          |
 |                       |                        | Eventhouse (preprocessing mode)         | Yes          |
 |                       |                        | Eventhouse (direct ingestion mode)     | No           |
-|                       |                        | Data Activator          | No           |
+|                       |                        | Activator               | No           |
 |                       |                        | Custom Endpoint         | No           |
 
 ## Related content

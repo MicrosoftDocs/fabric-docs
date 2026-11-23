@@ -1,14 +1,14 @@
 ---
-title: Operations Agent for Pipelines (preview)
+title: Operations Agent for Pipelines (Preview)
 description: Learn how to use the operations agent for pipelines in Microsoft Fabric to monitor, diagnose, and optimize pipeline executions with AI-powered insights.
 ms.reviewer: noelleli
 ms.topic: concept-article
 ms.custom: pipelines
-ms.date: 07/07/2026
+ms.date: 09/02/2026
 ai-usage: ai-assisted
 ---
 
-# Operations Agent for Pipelines (preview)
+# Operations agent for pipelines (preview)
 
 [!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
@@ -34,7 +34,7 @@ The operations agent reduces this effort by automating these workflows.
 - **Accelerate troubleshooting**: Quickly identify root causes of pipeline failures.
 - **Reduce manual effort**: Eliminate the need to manually collect logs and signals.
 - **Proactive monitoring**: Detect issues early with continuous analysis.
-- **Improve pipeline reliability**: Maintain stable, production-grade Workflows at scale.
+- **Improve pipeline reliability**: Maintain stable, production-grade workflows at scale.
 - **Actionable recommendations**: Get targeted guidance to optimize performance and health.
 
 ## How to use the operations agent
@@ -66,9 +66,9 @@ Fabric Data Factory integrates the operations agent and automatically uses pipel
    - Activity-level metadata
    - Performance and runtime signals
 
-   You don't need to set up or configure the agent manually. The agent monitors pipeline behavior over time and builds insights based on observed patterns, including:
+   After you create the agent, it automatically monitors pipeline behavior over time and builds insights based on observed patterns, including:
 
-   - Root Cause Analysis for failures
+   - Root cause analysis for failures
    - Detection of bottlenecks and anomalies
    - Recommendations for optimization
    - Alerts or notifications for issues
@@ -81,13 +81,39 @@ Fabric Data Factory integrates the operations agent and automatically uses pipel
 
    :::image type="content" source="media/operations-agent-for-pipelines/teams-notification.png" alt-text="Screenshot showing a Teams notification from the operations agent with pipeline failure monitoring insights.":::
 
+## Investigate a failed pipeline run from Monitoring hub
+
+Use the built-in **Investigate** experience in Monitoring hub to analyze a failed pipeline run. The operations agent uses the pipeline execution context to identify potential issues and help you troubleshoot the failure.
+
+1. Open the [new Monitoring hub experience](monitor-pipeline-runs-new-monitoring-hub.md).
+1. Locate a failed pipeline run, and then select the run to open its details.
+
+   :::image type="content" source="media/operations-agent-for-pipelines/failed-pipeline-details.png" alt-text="Screenshot of the details page for a failed pipeline run in Monitoring hub." lightbox="media/operations-agent-for-pipelines/failed-pipeline-details.png":::
+
+1. Select **Investigate**.
+
+   :::image type="content" source="media/operations-agent-for-pipelines/investigate-failed-run.png" alt-text="Screenshot of the Investigate option for a failed pipeline run." lightbox="media/operations-agent-for-pipelines/investigate-failed-run.png":::
+
+The operations agent analyzes the failed run and provides insights to help you understand what happened. Depending on the failure, the investigation can include:
+
+- Pipeline execution log analysis.
+- Identification of the failed activity.
+- Likely root cause information.
+- Recommended next steps to resolve the issue.
+
+:::image type="content" source="media/operations-agent-for-pipelines/investigation-analysis.png" alt-text="Screenshot of operations agent analysis for a failed pipeline run." lightbox="media/operations-agent-for-pipelines/investigation-analysis.png":::
+
+:::image type="content" source="media/operations-agent-for-pipelines/investigation-recommendations.png" alt-text="Screenshot of operations agent recommendations for resolving a failed pipeline run." lightbox="media/operations-agent-for-pipelines/investigation-recommendations.png":::
+
+The **Investigate** experience moves you from failure detection to root-cause analysis without requiring you to inspect each activity log and monitoring signal manually.
+
 ## Core capabilities
 
 | Capability | Description |
-|---|---|
+| --- | --- |
 | **Pipeline health monitoring** | Track success and failure rates, execution patterns, and abnormal behavior across runs. |
 | **Failure diagnosis** | Analyze pipeline and activity-level failures to identify likely root causes. |
-| **Performance optimization** | Highlight slow activities and detect bottlenecks impacting pipeline performance. |
+| **Performance optimization** | Highlight slow activities and detect bottlenecks affecting pipeline performance. |
 | **Proactive alerting** | Surface issues early based on observed trends and conditions. |
 | **Scenario-driven setup** | Quickly get started using templates tailored for pipeline scenarios. |
 
@@ -129,6 +155,7 @@ Use the operations agent when:
 
 ## Related content
 
-- [Monitor pipeline runs](monitor-pipeline-runs.md)
-- [Data pipeline runs](pipeline-runs.md)
-
+- [Monitor pipeline runs in the new Monitoring hub (preview)](monitor-pipeline-runs-new-monitoring-hub.md)
+- [Create alerts for pipeline runs](create-alerts-for-pipeline-runs.md)
+- [Monitor pipeline runs in Fabric Data Factory](monitor-pipeline-runs.md)
+- [Run, schedule, or use events to trigger a pipeline](pipeline-runs.md)

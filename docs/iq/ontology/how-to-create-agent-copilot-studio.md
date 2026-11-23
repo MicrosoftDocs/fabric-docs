@@ -1,13 +1,13 @@
 ---
-title: Create an Ontology Agent with Copilot Studio
+title: Create an Ontology (Preview) Agent in Copilot Studio
 description: Learn how to create a Copilot Studio agent that is grounded in an ontology (preview). The agent can answer natural-language questions using the ontology as a single source of truth.
 ms.date: 05/13/2026
 ms.topic: how-to
 ---
 
-# Build a Copilot Studio agent grounded in an ontology
+# Build a Copilot Studio agent grounded in an ontology (preview)
 
-[Copilot Studio](/microsoft-copilot-studio/fundamentals-what-is-copilot-studio) empowers business analysts, developers, and domain experts to create intelligent, enterprise-grade AI agents without extensive coding expertise. By combining natural language processing with your ontology, you can build custom copilots that understand your organization's unique data structure and business context. 
+By using [Copilot Studio](/microsoft-copilot-studio/fundamentals-what-is-copilot-studio), business analysts, developers, and domain experts can create intelligent, enterprise-grade AI agents without extensive coding expertise. By combining natural language processing with your ontology (preview), you can build custom copilots that understand your organization's unique data structure and business context. 
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
@@ -15,19 +15,19 @@ In this article, you:
 
 1. Create a new agent in Copilot Studio.
 1. Configure your agent to use ontology (preview) as a data source by connecting to an existing ontology.
-1. Validate your agent's functionality using the built-in **Test** pane.
+1. Validate your agent's functionality by using the built-in **Test** pane.
 
-After completing the steps in this article, you have a fully functional agent capable of answering business questions by leveraging your ontology as a trusted, single source of truth.
+After completing the steps in this article, you have a fully functional agent capable of answering business questions by using your ontology as a trusted, single source of truth.
 
 ## Prerequisites
 
 Before you begin, make sure you have:
 
-* An active **Copilot Studio Production environment** with ontology MCP tools allowed.
-* A Microsoft Fabric workspace that contains at least one (preview) item, accessible through the OneLake catalog. For more information, see [Create ontology (preview) item](tutorial-1-create-ontology.md#create-ontology-preview-item). 
+* An active **Copilot Studio production environment** with ontology MCP tools allowed.
+* A Microsoft Fabric workspace that contains at least one ontology (preview) item, accessible through the OneLake catalog. For more information, see [Create ontology (preview) item](tutorial-1-create-ontology.md#create-ontology-preview-item).
 * An Edge or Chrome browser, signed in with the same identity that has access to both the Copilot Studio environment and the Fabric workspace.
 
-## Step 1: Login into your Copilot Studio production environment
+## Step 1: Sign in to your Copilot Studio production environment
 
 1. Open **Copilot Studio**: https://copilotstudio.microsoft.com/.
 
@@ -69,9 +69,9 @@ Before you begin, make sure you have:
 
 	:::image type="content" source="media/how-to-create-agent-copilot-studio/tools.png" alt-text="Screenshot of Copilot Studio agent tools connection MCP tools." lightbox="media/how-to-create-agent-copilot-studio/tools.png":::
 
-## Step 3: Query and test the agent
+## Step 4: Query and test the agent
 
-1. Open the **Test** pane using the **Test** button in the top right corner of the screen. Enter a natural language question.
+1. Open the **Test** pane by using the **Test** button in the top right corner of the screen. Enter a natural language question.
 
 1. **Allow** the MCP tool when prompted. 
 

@@ -24,13 +24,13 @@ Import an existing semantic model to create reports based on curated business da
 
 1. To connect to a semantic model, select **Semantic Model** from the **Get data** section of the landing page.
 
-1. Select the semantic model connection.
+1. Select **Semantic Model Item** and select the search field.
 
-    :::image type="content" source="media/intelligence-how-to-get-started/select-semantic-model-connection.jpg" alt-text="Screenshot of selecting the semantic model connection." lightbox="media/intelligence-how-to-get-started/select-semantic-model-connection.jpg":::
+    :::image type="content" source="media/intelligence-how-to-get-started/select-semantic-model-connection.jpg" alt-text="Screenshot of selecting the semantic model search field." lightbox="media/intelligence-how-to-get-started/select-semantic-model-connection.jpg":::
 
-1. Select the semantic model.
+1. Select the semantic model you want from the list.
 
-    :::image type="content" source="media/intelligence-how-to-get-started/select-semantic-model.png" alt-text="Screenshot of selecting the semantic model." lightbox="media/intelligence-how-to-get-started/select-semantic-model.png":::
+    :::image type="content" source="media/intelligence-how-to-get-started/select-semantic-model.png" alt-text="Screenshot of selecting the semantic model from the list." lightbox="media/intelligence-how-to-get-started/select-semantic-model.png":::
 
 1. The semantic model appears in the intelligence sheet.
 

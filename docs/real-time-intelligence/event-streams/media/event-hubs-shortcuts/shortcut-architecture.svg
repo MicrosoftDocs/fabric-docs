@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="440" viewBox="0 0 1160 440" role="img" aria-labelledby="title desc">
+  <title id="title">Azure Event Hubs shortcut to a Fabric eventstream</title>
+  <desc id="desc">A customer-owned event hub in Azure acts as a Fabric eventstream's default stream through an approved shortcut. Optional transformations route events to an Eventhouse destination. There is no copy into Eventstreams for the default stream; the destination can store data.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 Z" fill="#374151"/></marker>
+  </defs>
+  <rect width="1160" height="440" fill="#ffffff"/>
+  <g font-family="Segoe UI, Arial, sans-serif" fill="#172b3a">
+    <rect x="20" y="30" width="300" height="310" rx="12" fill="#eef6ff" stroke="#326a99" stroke-width="2"/>
+    <text x="42" y="65" font-size="21" font-weight="600">Azure</text>
+    <text x="42" y="94" font-size="17">Customer-owned namespace</text>
+    <rect x="50" y="153" width="240" height="100" rx="8" fill="#ffffff" stroke="#326a99" stroke-width="2"/>
+    <text x="170" y="196" text-anchor="middle" font-size="22" font-weight="600">Event hub</text>
+    <text x="170" y="225" text-anchor="middle" font-size="16">Ownership stays in Azure</text>
+    <rect x="430" y="30" width="710" height="310" rx="12" fill="#effaf7" stroke="#087f6a" stroke-width="2"/>
+    <text x="452" y="65" font-size="21" font-weight="600">Microsoft Fabric workspace</text>
+    <rect x="454" y="105" width="416" height="195" rx="8" fill="#ffffff" stroke="#087f6a" stroke-dasharray="5 4"/>
+    <text x="474" y="135" font-size="18" font-weight="600">Eventstream</text>
+    <rect x="475" y="166" width="175" height="86" rx="6" fill="#e4f4ef" stroke="#087f6a"/>
+    <text x="562" y="198" text-anchor="middle" font-size="18" font-weight="600">Default stream</text>
+    <text x="562" y="223" text-anchor="middle" font-size="15">Backed by event hub</text>
+    <rect x="687" y="166" width="162" height="86" rx="6" fill="#e4f4ef" stroke="#087f6a"/>
+    <text x="768" y="198" text-anchor="middle" font-size="17">Transformations</text>
+    <text x="768" y="223" text-anchor="middle" font-size="15">(optional)</text>
+    <rect x="915" y="166" width="200" height="86" rx="6" fill="#ffffff" stroke="#087f6a" stroke-width="2"/>
+    <text x="1015" y="198" text-anchor="middle" font-size="20" font-weight="600">Destination</text>
+    <text x="1015" y="225" text-anchor="middle" font-size="16">For example, Eventhouse</text>
+    <path d="M290,207 H475 M650,207 H684 M849,207 H912" fill="none" stroke="#374151" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="376" y="148" text-anchor="middle" font-size="16">Approved</text>
+    <text x="376" y="171" text-anchor="middle" font-size="16">shortcut</text>
+    <text x="42" y="291" font-size="16">Public network access required</text>
+    <text x="452" y="325" font-size="16">One namespace maps to one workspace</text>
+    <text x="30" y="383" font-size="18">No copy into Eventstreams for the default stream.</text>
+    <text x="30" y="414" font-size="18">Processing and destination ingestion can transmit and store events.</text>
+  </g>
+</svg>

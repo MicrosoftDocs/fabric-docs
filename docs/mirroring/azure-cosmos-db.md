@@ -2,10 +2,11 @@
 title: "Microsoft Fabric Mirrored Databases From Azure Cosmos DB"
 description: Learn about the mirrored databases from Azure Cosmos DB in Microsoft Fabric.
 ms.reviewer: mjbrown, jmaldonado
-ms.date: 12/03/2025
+ms.date: 10/21/2026
 ms.topic: overview
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
+ai-usage: ai-assisted
 ---
 
 # Mirroring Azure Cosmos DB
@@ -79,6 +80,9 @@ If you are enabling continuous backup specifically for mirroring, 7-day continuo
 
 It could take a few minutes to replicate your Azure Cosmos DB Data into Fabric OneLake. Depending on your data's initial snapshot or the frequency of updates/deletes, replication could also take longer in some cases. Replication doesn't affect the request units (RUs) you allocated for your transactional workloads.
 
+> [!NOTE]
+> When you start mirroring, the initial replication of existing data reads once from the Azure Cosmos DB account's continuous backup, which is taken on or before every seven days. After this one-time initial backfill, mirroring reads inserts, updates, and deletes directly from the live container in near real-time. Type changes to items that existed before mirroring started might not be reflected until a backup that includes those changes is taken. For more information, see the [troubleshooting guide](azure-cosmos-db-troubleshooting.yml) and the [FAQ](azure-cosmos-db-faq.yml).
+
 ## What to expect from mirroring
 
 There are a few considerations and supported scenarios you should consider before mirroring.
@@ -151,15 +155,17 @@ You can also mask sensitive data from non admin users using dynamic data masking
 >
 > Mirroring doesn't support customer managed keys (CMK) on OneLake.
 
-Azure Cosmos DB accounts with virtual networks or private endpoints are supported with Fabric mirroring using the Network ACL Bypass feature. This allows your authorized Fabric workspace to access the Cosmos DB account without requiring a data gateway, while maintaining enhanced network security. For detailed configuration instructions, see [Configure private networks for Microsoft Fabric mirrored databases from Azure Cosmos DB](azure-cosmos-db-private-network.md).
+Fabric mirroring supports Azure Cosmos DB accounts with virtual networks or private endpoints. The documented setup for accounts with network restrictions uses a virtual network data gateway connection together with a trusted-workspace network ACL bypass. For accounts with private endpoints, this workflow keeps public network access disabled throughout setup and mirroring.
+
+The Azure Cosmos DB connector runs in the Fabric Replicator service, not on the gateway. Ongoing mirroring data travels over an internal Microsoft network and doesn't use public endpoints. This traffic doesn't traverse your virtual network data gateway or your private endpoint. Support for an account with a private endpoint doesn't mean that ongoing mirroring uses that endpoint. For detailed configuration instructions, including REST-based mirrored database creation, see [Configure mirroring for Azure Cosmos DB accounts with network restrictions](azure-cosmos-db-private-network.md).
 
 ## Disaster recovery and replication latency
 
 In Fabric, you can deploy content to data centers in regions other than the home region of the Fabric tenant. For more information, see [multi-geo support](../admin/service-admin-premium-multi-geo.md).
 
-For an Azure Cosmos DB account with a primary write region and multiple read regions, mirroring chooses the Azure Cosmos DB read region closest to the region where Fabric capacity is configured. This selection helps provide low-latency replication for mirroring.
+For an Azure Cosmos DB account with a primary write region and multiple read regions, mirroring chooses the Azure Cosmos DB write region (hub).
 
-When you switch your Azure Cosmos DB account to a recovery region, mirroring automatically selects the nearest Azure Cosmos DB region again.
+When you switch your Azure Cosmos DB account to a recovery region, mirroring continues to use the Azure Cosmos DB write region.
 
 > [!NOTE]
 > Mirroring does not support accounts with multiple write regions.

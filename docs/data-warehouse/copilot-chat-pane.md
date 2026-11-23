@@ -10,6 +10,7 @@ ms.collection:
   - ce-skilling-ai-copilot
 ms.update-cycle: 180-days
 ms.devlang: copilot-prompt
+ms.search.form: Warehouse Copilot
 ---
 
 # How to use the Copilot chat pane in Fabric Data Warehouse (Preview)

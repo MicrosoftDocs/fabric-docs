@@ -33,7 +33,7 @@ The following diagram shows the workspace layout for this tutorial.
 ## Prerequisites
 
 * A Fabric tenant account with an active subscription. [Create an account for free](../../get-started/fabric-trial.md).
-* The following [tenant switch](../../admin/about-tenant-settings.md) is enabled from the admin portal:
+* The following [tenant switch](../../admin/about-tenant-settings.md) is enabled in **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**:
   * [Users can create Fabric items](../../admin/fabric-switch.md)
 
 

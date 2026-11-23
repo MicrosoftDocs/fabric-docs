@@ -1,6 +1,6 @@
 ---
 title: Create and Manage Event Schemas in Fabric Real-Time Hub
-description: Learn how to create and manage event schemas in Fabric Real-Time Hub with step-by-step guidance for registration, schema building, and organization.
+description: Find, create, import, and manage event schemas across accessible schema sets in Fabric Real-Time hub.
 #customer intent: As a user, I want to learn how to add a schema to a schema set.
 ms.topic: how-to
 ms.custom:
@@ -8,13 +8,18 @@ ms.custom:
   - ai-gen-title
   - ai-seo-date:08/07/2025
   - ai-gen-description
-ms.date: 12/18/2025
+ms.date: 09/08/2026
 ms.search.form: Schema Registry
+ai-usage: ai-assisted
 ---
 
 # Create and manage event schemas in Fabric Real-Time hub
 
-In this article, you lean how to register or add a schema in Fabric Real-Time hub.
+Use the **Event schema registry** page to discover and manage schemas across the schema sets you can access in your tenant. A schema set is a Fabric workspace item that groups related schemas. The registry is the cross-workspace view of those items.
+
+## Prerequisites
+
+You need read access to inspect a schema set and edit access to add or update schemas. To create a new schema set, you need the **Admin**, **Member**, or **Contributor** role in the target workspace. For more information, see [Permissions](schema-registry-overview.md#permissions).
 
 ## Navigate to Real-Time hub
 
@@ -22,110 +27,74 @@ In this article, you lean how to register or add a schema in Fabric Real-Time hu
 
 ## Event schema registry page
 
-On the left navigation bar, select **Event schema registry**. On the **Event schema registry** page, you see all the schemas that are registered using Fabric Real-Time hub or Fabric schema sets user interface (UI). To learn how to add schema using schema sets, see [Create and manage event schemas in schema sets](create-manage-event-schemas.md).
+Select **Event schema registry** on the left navigation bar. The registry shows schema sets and you can expand a set to explore its schemas.
 
-:::image type="content" source="./media/create-manage-event-schemas-real-time-hub/event-schemas.png" alt-text="Screenshot of the Schema Registry page in Fabric Real-Time hub." lightbox="./media/create-manage-event-schemas-real-time-hub/event-schemas.png":::
+:::image type="content" source="./media/create-manage-event-schemas-real-time-hub/event-schemas.png" alt-text="Screenshot of the Event schema registry with an expanded schema set and its schemas." lightbox="./media/create-manage-event-schemas-real-time-hub/event-schemas.png":::
 
-### Columns
+### Search and filter
 
-This page mainly has the list of schemas with the following columns.
+Use the search box to find a schema or schema set. Use the available filters to narrow the list, such as by workspace. The registry only shows items you have permission to access.
 
-| Column           | Description                                                      |
-| ---------------- | ---------------------------------------------------------------- |
-| Name             | Name of the schema.                                              |
-| Event schema set | The schema set that contains the schema.                         |
-| Updated          | The date and time at which the schema was updated last.         |
-| Owner            | Owner of the schema.                                             |
-| Workspace        | The workspace that contains the schema set.                      |
-| Endorsement      | The endorsement status of the schema.                            |
+:::image type="content" source="./media/create-manage-event-schemas-real-time-hub/search.png" alt-text="Screenshot of the Event schema registry search functionality." lightbox="./media/create-manage-event-schemas-real-time-hub/search.png":::
 
-### Search
+### Schema set actions
 
-It also has a search box at the top where you can enter text to search for your schema.
+You can open a schema set by selecting it in the list. When you hover over the schema set in the list and select **... (ellipsis)**, you see more actions. 
 
-### Filters
+- **Open a schema set**. Use this option to view the details of a schema set, including the list of schemas it contains. From here, you can manage the schema set, add new schemas, or inspect existing ones. You can also open a schema by selecting it in the list.
+- **Endorse a schema set**. Use this option to endorse a schema set to indicate that it's approved for use. On the **Endorsement** page, set the appropriate endorsement level for the schema set.
 
-Using the filter drop-down lists, you can filter schemas by using the following filters.
+    :::image type="content" source="./media/create-manage-event-schemas-real-time-hub/endorse.png" alt-text="Screenshot that shows the Endorsement options." lightbox="./media/create-manage-event-schemas-real-time-hub/endorse.png":::
 
-- Schema set owner
-- Schema set name
-- Fabric workspace
 
-Now, let's see how to add an event schema using the **+ New event schema** button.
+### Schema actions
+You can open a schema by selecting it in the list. When you hover over the schema in the list and select **... (ellipsis)**, you see more actions. 
 
-## Add a new event schema
+:::image type="content" source="./media/create-manage-event-schemas-real-time-hub/select-schema.png" alt-text="Screenshot of selecting a schema in the Event schema registry." lightbox="./media/create-manage-event-schemas-real-time-hub/select-schema.png":::
 
-1. On the **Event schema registry** page, select **+New event schema** button.
+- **Edit schema**. Use this option to open the schema page to view and modify its details, including its definition and versions. You can also open the schema by selecting it in the list.     
+- **Copy schema**. Use this option to copy the schema AVRO into the clipboard that you can copy to another location or share with others.
+- **Download schema**. Use this option to download the schema AVRO to your local machine.
+- **Delete schema**. Use this option to remove the schema from the schema set.
 
-1. On the **New event schema** page, follow these instructions:
+## Create an event schema
 
-    1. Specify a **name** for the event schema set.
-    1. Optionally, enter a description for the event schema set.
+1. On the **Event schema registry** page, select **Create event schema set** or **Create**.
 
-1. Use one of the following options to create a schema.
+:::image type="content" source="./media/create-manage-event-schemas-real-time-hub/create-button.png" alt-text="Screenshot of the schema set list with the Create button highlighted." lightbox="./media/create-manage-event-schemas-real-time-hub/create-button.png":::
+1. Enter a name and, optionally, a description for the **schema**.
+1. Choose how to define the schema:
 
-    - If you have a schema JSON file, select **Upload** to upload the file. For a sample file, see the [Sample schema file](create-manage-event-schemas.md#download-an-event-schema) section.
+    | Method | Steps |
+    | --- | --- |
+    | Upload an Avro definition | Select **Upload**, and choose a file containing an Avro schema. Use the [device telemetry example](device-telemetry-schema-example.md) to try this workflow. |
+    | Build a schema visually | Use the **Schema view** tab to build your schema visually. Select **Add field**, and enter each field's name, type, and description. |
+    | Enter an Avro definition | Use the **Code view** to open the code editor, and enter or paste the Avro schema as JSON. Use this option for the nested records, arrays, and other complex types in the example. |
 
-        :::image type="content" source="./media/create-manage-event-schemas-real-time-hub/upload-button.png" alt-text="Screenshot that shows the upload option to create a schema." lightbox="./media/create-manage-event-schemas-real-time-hub/upload-button.png":::
+    :::image type="content" source="./media/create-manage-event-schemas/code-editor-schema-json.png" alt-text="Screenshot that shows a device telemetry Avro definition in the schema code editor." lightbox="./media/create-manage-event-schemas/code-editor-schema-json.png":::
+1. Select the target workspace.
+1. Choose an existing event schema set, or select the option to create a schema set and enter its name.
 
-    - Start building a schema manually by selecting **Add row**. For each row, select the **field type**, **field name**, and optionally enter a **description**. 
-    
-        :::image type="content" source="./media/create-manage-event-schemas-real-time-hub/build-schema.png" alt-text="Screenshot that shows the manual way of building a schema." lightbox="./media/create-manage-event-schemas-real-time-hub/build-schema.png":::            
-    
-    - To build a schema by entering JSON code, select **Code editor** option as shown in the following image. If you see the message: **If you choose to use the code editor to create your schema, note that you won’t be able to switch back to the UI builder**, select **Edit**. 
+    :::image type="content" source="./media/create-manage-event-schemas-real-time-hub/use-existing-schema-set.png" alt-text="Screenshot that shows how to choose a workspace and an existing schema set for a new schema." lightbox="./media/create-manage-event-schemas-real-time-hub/use-existing-schema-set.png":::
 
-        :::image type="content" source="./media/create-manage-event-schemas-real-time-hub/code-editor-schema.png" alt-text="Screenshot that shows the code editor to build a schema." lightbox="./media/create-manage-event-schemas-real-time-hub/code-editor-schema.png":::
+1. Review the definition and target schema set, and select **Finish**.
+1. Return to the registry, expand the target schema set, and verify that the schema appears. Refresh the list if needed.
 
-        Enter the JSON code into the editor.
+To add several schemas or versions together, see [Import event schemas](import-event-schemas.md).
 
-        :::image type="content" source="./media/create-manage-event-schemas-real-time-hub/code-editor-schema-json.png" alt-text="Screenshot that shows the JSON code in the code editor to build a schema." lightbox="./media/create-manage-event-schemas-real-time-hub/code-editor-schema-json.png":::
+## Import event schemas
 
-1. Now, in the right pane, follow these steps:
+To import event schemas, use the import functionality in the Event schema registry. By uploading a file with schema definitions, you can add multiple schemas or versions at once. On **Event schema registry**, select the **Import your own schemas** tile or the **Import** button located above the list.
 
-    - **To use an existing schema set**:
+  :::image type="content" source="./media/create-manage-event-schemas-real-time-hub/import.png" alt-text="Screenshot that shows how to import event schemas in the Event schema registry." lightbox="./media/create-manage-event-schemas-real-time-hub/import.png":::    
 
-        1. Select the Fabric workspace that has the schema set.
-        1. Select the schema set where you want to save the schema.
+For detailed instructions, see [Import event schemas](import-event-schemas.md).
 
-            :::image type="content" source="./media/create-manage-event-schemas-real-time-hub/use-existing-schema-set.png" alt-text="Screenshot that shows the right pane where you select an existing schema set." lightbox="./media/create-manage-event-schemas-real-time-hub/use-existing-schema-set.png":::
-
-    - **To create a new schema set**:
-
-        1. Select the Fabric workspace where you want to create the schema set.
-        1. In the drop-down list for **Event schema set**, select **Create**.
-
-            :::image type="content" source="./media/create-manage-event-schemas-real-time-hub/create-menu.png" alt-text="Screenshot that shows the right pane where you can select an option to create a new schema set." lightbox="./media/create-manage-event-schemas-real-time-hub/create-menu.png":::
-
-        1. Enter a name for the schema set.
-
-            :::image type="content" source="./media/create-manage-event-schemas-real-time-hub/schema-set-name.png" alt-text="Screenshot that shows the right pane where you enter a name for the schema set." lightbox="./media/create-manage-event-schemas-real-time-hub/schema-set-name.png":::
-
-1. Select **Finish** to start creating the schema.
-
-    :::image type="content" source="./media/create-manage-event-schemas-real-time-hub/finish-button.png" alt-text="Screenshot that shows the New event schema page with the Finish button selected." lightbox="./media/create-manage-event-schemas-real-time-hub/finish-button.png":::
-
-1. On the **Event schema registry** page, you should see the schema you created in the list of schemas. If you don't see it, refresh the page.
-
-    :::image type="content" source="./media/create-manage-event-schemas-real-time-hub/new-schema.png" alt-text="Screenshot that shows the new schema in the list of schemas." lightbox="./media/create-manage-event-schemas-real-time-hub/new-schema.png":::
-
-    To add more schemas to the schema set, select **+ New event schema** at the top of the page.
-
-## View or endorse schema set
-
-Hover the mouse over a schema in the list, and select **... (ellipsis)**. You see two actions: **Open event schema set** and **Endorse**.
-
-:::image type="content" source="./media/create-manage-event-schemas-real-time-hub/schema-actions.png" alt-text="Screenshot that shows the actions available on the schema." lightbox="./media/create-manage-event-schemas-real-time-hub/schema-actions.png":::
-
-If you select **Open event schema set**, you see the event schema opened in the schema set user interface where you can also add schemas, update schemas, or delete schemas. For more information, see [Create and manage event schemas in schema sets](create-manage-event-schemas.md).
-
-:::image type="content" source="./media/create-manage-event-schemas-real-time-hub/schema-set-user-interface.png" alt-text="Screenshot that shows the schema opened in the schema set editor." lightbox="./media/create-manage-event-schemas-real-time-hub/schema-set-user-interface.png":::
-
-If you select **Endorse**, you see a window that lets you set the endorsement level for the schema. Organizations often have large numbers of Microsoft Fabric items available for sharing and reuse by their Fabric users. It can be difficult to identify trustworthy and authoritative items. Endorsement is a way to make it easier for users to find the high-quality items they need. For more information, see [Endorsement in Fabric](../../fundamentals/endorsement-promote-certify.md).
-
-:::image type="content" source="./media/create-manage-event-schemas-real-time-hub/endorse.png" alt-text="Screenshot that shows the endorsement user interface." lightbox="./media/create-manage-event-schemas-real-time-hub/endorse.png":::
 
 ## Related content
 
-To learn how to use schemas in Fabric eventstreams, see [Use schemas in eventstreams](use-event-schemas.md).
-
-
+- [Explore the Event schema registry page](../../real-time-hub/event-schema-registry-page.md).
+- [Create and manage event schema sets](create-manage-event-schema-sets.md).
+- [Create and manage event schemas in schema sets](create-manage-event-schemas.md).
+- [Import event schemas](import-event-schemas.md).
+- [Use schemas in eventstreams](use-event-schemas.md).

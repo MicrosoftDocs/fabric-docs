@@ -3,7 +3,7 @@ title: Overview of Fabric Git integration
 description: An introduction to integrating Git version control with the Fabric Application lifecycle management (ALM) tool
 ms.reviewer: NimrodShalit
 ms.topic: overview
-ms.date: 07/21/2026
+ms.date: 10/25/2026
 ms.search.form: Git integration supported items, Introduction to Git integration
 #customer intent: As a developer I want to learn about the Git integration feature in Fabric so that my team can collaborate more effectively.
 ---
@@ -23,6 +23,8 @@ Git integration in Fabric enables developers to integrate their development proc
 * Apply the capabilities of familiar source control tools to manage Fabric items
 
 The integration with source control is on a workspace level. Developers can version items they develop within a workspace in a single process, with full visibility to all their items. The workspace structure, including [subfolders](./git-integration-process.md#folders), is preserved in the Git repository.
+
+For supported Git operations, you can optionally attach a [deployment plan](../deployment-plan/deployment-plan-overview.md) to control deployment order and run action steps.
 
 See the list of [supported items](#supported-items).
 
@@ -56,6 +58,10 @@ The following Git providers are supported:
 
 The following items currently support Git integration:
 
+* Fabric Apps items:
+
+  * [Fabric app](../../apps/source-control.md)
+
 * Data Engineering items:
 
   * [Environment](../../data-engineering/environment-git-and-deployment-pipeline.md#integrate-git-for-fabric-environments)
@@ -79,7 +85,7 @@ The following items currently support Git integration:
   * [Mount ADF](../../data-factory/tutorial-bring-azure-data-factory-to-fabric.md)
   * [Mirrored snowflake](../../mirroring/snowflake.md) *(preview)*
   * [Airflow](../../data-factory/apache-airflow-jobs-concepts.md) *(preview)*
-  * [dbt Job](../../data-factory/dbt-job-overview.md) *(preview)*
+  * [dbt Job](../../data-factory/dbt-job-overview.md)
   * [Operations Agent](../../data-factory/operations-agent-for-pipelines.md) *(preview)*
 
 * Real-Time Intelligence items:
@@ -102,10 +108,9 @@ The following items currently support Git integration:
 
 * Power BI items:
 
-  * Metrics Set *(preview)*
-  * [Org app](/power-bi/consumer/org-app-items/org-app-cicd) *(preview)*
+  * [Org app](/power-bi/consumer/org-app-items/org-app-cicd)
   * [Paginated report](/power-bi/paginated-reports/paginated-github-integration) *(preview)*
-  * [Report](./source-code-format.md#report-files) (except reports connected to semantic models hosted in [Azure Analysis Services](/azure/analysis-services/analysis-services-overview), [SQL Server Analysis Services](/analysis-services/analysis-services-overview), or reports exported by Power BI Desktop that depend on semantic models hosted in [MyWorkspace](../../admin/portal-workspaces.md#govern-my-workspaces)) *(preview)*
+  * [Report](./source-code-format.md#report-files) (except reports connected to semantic models hosted in [Azure Analysis Services](/azure/analysis-services/analysis-services-overview), [SQL Server Analysis Services](/analysis-services/analysis-services-overview), or reports exported by Power BI Desktop that depend on semantic models hosted in [MyWorkspace](../../admin/portal-workspaces.md#govern-my-workspaces))
   * [Semantic model](./source-code-format.md#semantic-model-files) (except push datasets, live connections to Analysis Services, model v1) *(preview)*
 
 * Database items:
@@ -119,6 +124,7 @@ The following items currently support Git integration:
 
 * CI/CD items:
 
+  * [Deployment plan](../deployment-plan/deployment-plan-overview.md) *(preview)*
   * [Variable Library](../variable-library/variable-library-overview.md)
 
 * IQ (preview) items:
@@ -141,3 +147,4 @@ The actions you can take on a workspace depend on the permissions you have in bo
 
 * [Get started with Git integration](./git-get-started.md)
 * [Understand the Git integration process](./git-integration-process.md)
+* [Attach a deployment plan](../deployment-plan/deployment-plan-attach.md)

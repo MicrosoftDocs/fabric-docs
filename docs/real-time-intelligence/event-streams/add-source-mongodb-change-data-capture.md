@@ -4,11 +4,11 @@ description: Learn how to add MongoDB CDC source to an eventstream.
 ms.reviewer: xujiang1
 ms.topic: how-to
 ms.custom: sfi-image-nochange
-ms.date: 09/22/2025
+ms.date: 09/18/2026
 ms.search.form: Source and Destination
 ---
 
-# Add MongoDB CDC source to an eventstream (preview)
+# Add MongoDB CDC source to an eventstream
 
 This article shows you how to add a MongoDB Change Data Capture(CDC) source to an eventstream.
 

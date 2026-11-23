@@ -3,7 +3,7 @@ title: Set up your SharePoint connection
 description: This article provides information about how to create a SharePoint connection in Microsoft Fabric.
 ms.reviewer: xupzhou
 ms.topic: how-to
-ms.date: 03/19/2026
+ms.date: 10/30/2026
 ms.custom:
 - template-how-to
 - connectors
@@ -15,9 +15,11 @@ ai-usage: ai-assisted
 
 This article outlines the steps to create a SharePoint connection.
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
 
-The SharePoint connector supports the following authentication types for copy and Dataflow Gen2 respectively.
+## Summary
+
+The SharePoint connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
@@ -26,25 +28,35 @@ The SharePoint connector supports the following authentication types for copy an
 |Workspace identity| √ | √ |
 
 ## Set up your connection for Dataflow Gen2
-You can connect Dataflow Gen2 in Microsoft Fabric to SharePoint Online list using Power Query connectors. Follow these steps to create your connection:
+You can connect a dataflow Gen2 in Fabric to a SharePoint Online list by using Power Query connectors. Follow these steps to create your connection:
 
 1. Check [capabilities](#capabilities) to make sure your scenario is supported.
 1. [Get data in Fabric](#get-data).
 1. [Connect to a SharePoint Online list](#connect-to-a-sharepoint-online-list).
 
-### Capabilities
+<a id="capabilities"></a>
 
-[!INCLUDE [sharepoint-online-list-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/sharepoint-online-list/sharepoint-online-list-capabilities-supported.md)]
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
+
+[!INCLUDE [sharepoint-online-list-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/sharepoint-online-list/capabilities-supported.md)]
+
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Connect to a SharePoint Online list
+<a id="connect-to-a-sharepoint-online-list"></a>
 
-[!INCLUDE [sharepoint-online-list-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/sharepoint-online-list/sharepoint-online-list-connect-to-power-query-online.md)]
+### Connection steps
+
+[!INCLUDE [sharepoint-online-list-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/sharepoint-online-list/connect-online.md)]
 
 ## Set up your connection in Manage connections and gateways
+
+### Connection properties
 
 The following table contains a summary of the properties needed for a SharePoint connection:
 
@@ -56,9 +68,11 @@ The following table contains a summary of the properties needed for a SharePoint
 | **Authentication kind** | Go to [Authentication](#authentication). | Yes |
 | **Privacy Level** | The privacy level that you want to apply. Allowed values are **Organizational**, **Private**, **Public**. | Yes |
 
+### Connection instructions
+
 For specific instructions to set up your connection in Manage connections and gateways, follow these steps:
 
-1. From the page header in Data Integration service, select **Settings** :::image type="icon" source="./media/connector-common/settings.png"::: > **Manage connections and gateways**
+1. From the page header in Data Integration service, select **Settings** :::image type="icon" source="./media/connector-common/settings.png"::: > **Manage connections and gateways**.
 
    :::image type="content" source="media/connector-common/manage-connections-gateways.png" alt-text="Screenshot showing how to open manage gateway.":::
 
@@ -90,7 +104,7 @@ For specific instructions to set up your connection in Manage connections and ga
 
 1. Select **Create** to create your connection. Your creation is successfully tested and saved if all the credentials are correct. If not correct, the creation fails with errors.
 
-## Authentication 
+### Authentication
 
 This section lists the instructions for each authentication type supported by the SharePoint connector:
 
@@ -98,23 +112,29 @@ This section lists the instructions for each authentication type supported by th
 - [Service Principal](#service-principal-authentication)
 - [Workspace identity](#workspace-identity-authentication)
 
-### Organizational account authentication
+#### Organizational account authentication
 
 Select **Edit credentials**, which displays the sign in interface. Enter your account and password to sign in your organizational account. After signing in, go back to the **New connection** page.
 
 :::image type="content" source="media/connector-sharepoint-online-list/organizational-account.png" alt-text="Screenshot showing that organizational account authentication method.":::
 
-### Service Principal authentication
+#### Service Principal authentication
 
-Fill in the required properties. You need to specify the tenant ID, service principal client ID, and service principal key when using this authentication.
+SharePoint Online List supports certificate-based service principal authentication in Dataflow Gen2. Before you create the connection, register an application in Microsoft Entra ID, add the public certificate to the app registration, grant the SharePoint application permission `Sites.Read.All`, and grant admin consent.
 
-:::image type="content" source="media/connector-sharepoint-online-list/authentication-service-principal.png" alt-text="Screenshot showing that service principal authentication method.":::
+> [!NOTE]
+> Certificate-based service principal authentication isn't supported for Pipeline Copy Activity or Copy Job.
 
-- **Tenant ID**: The tenant ID under which your application resides.
-- **Service principal ID**: The Application (client) ID of the application registered in Microsoft Entra ID.
-- **Service principal key**: The application's key.
+In the connection dialog, provide the following values:
 
-### Workspace identity authentication
+- **Tenant ID**: The tenant ID where your application resides.
+- **Service principal ID**: The application (client) ID of the application registered in Microsoft Entra ID.
+- **Credential type**: Select **Service principal certificate**.
+- **Azure Key Vault reference**: Select the Azure Key Vault connection that contains the certificate.
+- **Certificate**: Select the certificate.
+- **Version**: Select the certificate version, or select **Latest**.
+
+#### Workspace identity authentication
 
 Use the workspace’s managed identity for authentication. For more information, see [Workspace identity](../security/workspace-identity.md).
 

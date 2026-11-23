@@ -5,7 +5,7 @@ author: dknappettmsft
 ms.author: daknappe
 ms.topic: reference
 ms.custom:
-ms.date: 04/08/2026
+ms.date: 10/23/2026
 ms.update-cycle: 180-days
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
@@ -92,7 +92,7 @@ You can find the consumption rates for Dataflows Gen2 in [Dataflow Gen2 pricing 
 | Operation                                        | Description                                                        | Item          | Azure billing meter         | Type       |
 | ------------------------------------------------ | ------------------------------------------------------------------ | ------------- | --------------------------- | ---------- |
 | Dataflow Gen2 Run Queries                           | Compute cost associated with dataflow Gen2 evaluation operation       | Dataflow Gen2 | Dataflows Standard Compute Capacity Usage CU | Background |
-| High Scale Dataflow Compute - SQL Endpoint Query | Usage related to the dataflow Gen2 staging warehouse SQL endpoint  | Warehouse     | High Scale Dataflow Compute Capacity Usage CU | Background |
+| High Scale Dataflow Compute - SQL Endpoint Query | Usage related to the dataflow Gen2 staging warehouse SQL analytics endpoint  | Warehouse     | High Scale Dataflow Compute Capacity Usage CU | Background |
 
 #### Pipelines
 
@@ -114,12 +114,22 @@ One Fabric capacity unit = 0.383 SQL database vCores.
 
 ### Data Warehouse
 
-One Fabric Data Warehouse core (unit of compute for Data Warehouse) is equivalent to two Fabric Capacity Units (CUs).
+One Fabric Data Warehouse core (unit of compute for Data Warehouse) is equivalent to 0.538 Fabric Capacity Units (CUs).
 
 | Operation          | Description                                                                                        | Item      | Azure billing meter | Type       |
 | ------------------ | -------------------------------------------------------------------------------------------------- | --------- | ------------------- | ---------- |
-| Warehouse Query    | Compute charge for all user generated and system generated T-SQL statements within a Warehouse     | Warehouse | Data Warehouse Capacity Usage CU      | Background |
-| SQL Endpoint Query | Compute charge for all user generated and system generated T-SQL statements within the SQL analytics endpoint of a Lakehouse  | Warehouse | Data Warehouse Capacity Usage CU     | Background |
+| Warehouse Query    | Compute charge for all user generated and system generated T-SQL statements within a Warehouse.     | Warehouse | Data Warehouse Capacity Usage CU      | Background |
+| SQL Endpoint Query | Compute charge for all user generated and system generated T-SQL statements within the SQL analytics endpoint of a Lakehouse.  | Warehouse | Data Warehouse Capacity Usage CU     | Background |
+| Warehouse Snapshot Query | Compute charge for all user generated and system generated T-SQL statements on a warehouse snapshot.  | Warehouse | Data Warehouse Capacity Usage CU     | Background |
+
+One Fabric Data Warehouse core with Query acceleration enabled (unit of compute for Data Warehouse (Accelerated)) is equivalent to 3.446 Fabric Capacity Units (CUs).
+
+| Operation          | Description                                                                                        | Item      | Azure billing meter | Type       |
+| ------------------ | -------------------------------------------------------------------------------------------------- | --------- | ------------------- | ---------- |
+| Warehouse Query (Accelerated) | Compute charge for all user generated and system generated T-SQL statements within the SQL analytics endpoint on a warehouse of a Query acceleration enabled workspace.  | Warehouse | Data Warehouse (Accelerated) Capacity Usage CU     | Background |
+| SQL Endpoint Query (Accelerated) | Compute charge for all user generated and system generated T-SQL statements within the SQL analytics endpoint on a lakehouse of a Query acceleration enabled workspace.  | Warehouse | SQL Endpoint Query (Accelerated) Capacity Usage CU     | Background |
+| Warehouse Snapshot Query (Accelerated) | Compute charge for all user generated and system generated T-SQL statements within the SQL analytics endpoint on a Warehouse Snapshot of a Query accerlation enabled workspace.  | Warehouse | Warehouse Snapshot Query (Accelerated) Capacity Usage CU     | Background |
+
 
 ### Fabric API for GraphQL
 
@@ -136,8 +146,8 @@ GraphQL operations are made up of requests performed on API for GraphQL items by
 | Operation          | Description                                                                                        | Item      | Azure billing meter | Type       |
 | ------------------ | -------------------------------------------------------------------------------------------------- | --------- | ------------------- | ---------- |
 | User Data Functions Execution    | Compute charge for the execution of the function inside of the User Data Functions item. This operation results from running a function after a request from the Fabric portal, another Fabric item, or an external application.  | User Data Functions | User Data Function Execution (CU/s)  | Interactive |
-| User Data Functions Portal Test    | Compute charge for the test execution of a function inside of the User Data Functions item. This operation results from testing a function in “Develop mode” during a test session. The test session has a minimum duration of 15 minutes.  | User Data Functions | User Data Function Execution (CU/s)  | Interactive |
-| User Data Functions Static Storage | Static storage of internal function metadata in a service-managed OneLake account. This is calculated with the compressed size of the User Data Functions item metadata. This is the cost of creating User Data Functions items even if they’re not used.  | OneLake Storage | OneLake Storage | Background |
+| User Data Functions Portal Test    | Compute charge for the test execution of a function inside of the User Data Functions item. This operation results from testing a function in "Develop mode" during a test session. The test session has a minimum duration of 15 minutes.  | User Data Functions | User Data Function Execution (CU/s)  | Interactive |
+| User Data Functions Static Storage | Static storage of internal function metadata in a service-managed OneLake account. This is calculated with the compressed size of the User Data Functions item metadata. This is the cost of creating User Data Functions items even if they're not used.  | OneLake Storage | OneLake Storage | Background |
 | User Data Functions Static Storage Read | Read operation of internal function metadata stored in a service-managed OneLake account. This operation is executed every time a function is executed after a period of inactivity. | OneLake Read Operations | OneLake Read Operations | Background |
 | User Data Functions Static Storage Write | Writes and updates of internal function metadata stored in a system-managed OneLake account. This operation is executed every time the User Data Functions item is published. | OneLake Write Operations | OneLake Write Operations | Background |
 | User Data Functions Static Storage Iterative Read | Read operations for internal function metadata stored in a service-managed OneLake account. This operation is executed every time the User Data Functions are listed. | OneLake Iterative Read Operations | OneLake Iterative Read Operations | Background |
@@ -153,7 +163,7 @@ GraphQL operations are made up of requests performed on API for GraphQL items by
 
 ### OneLake
 
-One Lake compute operations represent the transactions performed on One Lake items. The consumption rate for each operation varies depending on its type. For more details, refer to [One Lake consumption](../onelake/onelake-consumption.md).
+OneLake compute operations represent the transactions performed on OneLake items. The consumption rate for each operation varies depending on its type. For more details, refer to [OneLake consumption](../onelake/onelake-consumption.md).
 
 | Operation                                  | Description                                | Item       | Azure Billing Meter                             | Type       |
 | ------------------------------------------ | ------------------------------------------ | ---------- | ----------------------------------------------- | ---------- |
@@ -206,6 +216,16 @@ The usage for each operation is reported in CU processing time in seconds. Eight
 | XMLA read | XMLA read operations initiated by the user, for queries and discoveries  | Semantic model | Power BI Capacity Usage CU | Interactive |
 | XMLA write | A background XMLA write operation that changes the model  | Semantic model | Power BI Capacity Usage CU | Background |
 | Power BI scripting visual execution | R and Py visuals run triggered by rendering Power BI report |Power BI scripting report | Spark memory optimized capacity (CU) | Interactive |
+
+### Project Osmos
+
+[The data engineering agent (Project Osmos)](../data-engineering/data-engineering-agent-overview.md) operations are listed in this table. For billing and monitoring guidance, see [Project Osmos consumption](../data-engineering/data-engineering-agent-consumption.md).
+
+| Operation | Description | Item | Azure billing meter | Type |
+| --- | --- | --- | --- | --- |
+| Project Osmos | Language model input and output used by autonomous data engineering tasks | Lakehouse | Copilot and AI | Background |
+
+The **Project Osmos** operation covers language model consumption, not Spark execution. Tasks also use Spark for code execution, testing, and validation. Review Spark usage separately under the applicable [Spark operations](#spark) and [Spark billing model](../data-engineering/billing-capacity-management-for-spark.md).
 
 ### Real-Time Intelligence
 

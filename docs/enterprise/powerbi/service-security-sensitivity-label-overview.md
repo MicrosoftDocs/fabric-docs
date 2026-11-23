@@ -9,6 +9,7 @@ ms.subservice: powerbi-eim
 ms.topic: concept-article
 ms.date: 11/25/2025
 LocalizationGroup: Data from files
+ai-usage: ai-assisted
 ---
 # Sensitivity labels in Power BI
 
@@ -32,7 +33,7 @@ In addition, sensitivity labels can be applied to .pbix files in Power BI Deskto
 
 Sensitivity labels on reports, dashboards, semantic models, and dataflows are visible from many places in the Power BI service. Sensitivity labels on reports and dashboards are also visible in the Power BI iOS and Android mobile apps and in embedded visuals. In Desktop, you can see the sensitivity label in the status bar.
 
-A [protection metrics report](/fabric/governance/use-microsoft-purview-hub) available in the Power BI admin portal gives Power BI admins full visibility over the sensitive data in the Power BI tenant. In addition, the Power BI audit logs include sensitivity label information about activities such as applying, removing, and changing labels, as well as about activities such as viewing reports, dashboards, etc. This gives Power BI and security admins visibility over sensitive data consumption for the purposes of monitoring and investigating security alerts.
+The [Govern report in the OneLake catalog](/fabric/governance/onelake-catalog-govern#govern-report) gives Fabric administrators visibility into sensitivity-label coverage across workspaces and items. In addition, the Power BI audit logs include sensitivity label information about activities such as applying, removing, and changing labels, as well as about activities such as viewing reports, dashboards, etc. This gives Power BI and security admins visibility over sensitive data consumption for the purposes of monitoring and investigating security alerts.
 
 ## Important considerations
 
@@ -292,5 +293,5 @@ This article provided an overview of data protection in Power BI. The following 
 - [Enable sensitivity labels in Power BI](service-security-enable-data-sensitivity-labels.md)
 - [How to apply sensitivity labels in Power BI](service-security-apply-data-sensitivity-labels.md)
 - [Using Microsoft Defender for Cloud Apps controls in Power BI](/fabric/governance/service-security-using-defender-for-cloud-apps-controls)
-- [Protection metrics report](/fabric/governance/use-microsoft-purview-hub)
+- [Govern report in the OneLake catalog](/fabric/governance/onelake-catalog-govern#govern-report)
 - [Power BI implementation planning: Information protection for Power BI](/power-bi/guidance/powerbi-implementation-planning-info-protection)

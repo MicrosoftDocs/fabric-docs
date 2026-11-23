@@ -9,9 +9,7 @@ ms.search.form: Eventstreams Overview
 
 # Create an eventstream in Microsoft Fabric
 
-This article describes how to create a Fabric eventstream. The enhanced capabilities are enabled by default now, so use the content in the **Enhanced Capabilities** tab to create an eventstream.
-
-If you have eventstreams that you created by using standard capabilities, those eventstreams continue to work. You can still edit and publish them as usual. To take advantage of the additional capabilities and benefits of enhanced eventstreams, create a new eventstream to replace standard eventstreams.
+This article describes how to create a Fabric eventstream.
 
 ## Prerequisites
 

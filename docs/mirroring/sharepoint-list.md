@@ -1,14 +1,12 @@
 ---
-title: Microsoft Fabric Mirrored SharePoint List (Preview)
+title: Microsoft Fabric Mirrored SharePoint List
 description: Learn how to configure Mirroring in Microsoft Fabric to replicate SharePoint data into OneLake, enabling analytics-ready Delta Lake tables.
 ms.reviewer: sbahadur
-ms.date: 03/02/2026
+ms.date: 08/27/2026
 ms.topic: overview
 ---
 
-# Mirroring SharePoint List in Microsoft Fabric (preview)
-
-[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
+# Mirroring SharePoint List in Microsoft Fabric
 
 [Mirroring in Fabric](overview.md) provides an easy experience to avoid complex ETL (Extract Transform Load) and integrate your existing Sharepoint List data with the rest of your data in Microsoft Fabric. You can continuously replicate your existing SharePoint data directly into Fabric's OneLake. Inside Fabric, you can unlock powerful business intelligence, artificial intelligence, Data Engineering, Data Science, and data sharing scenarios.
 

@@ -72,7 +72,7 @@ For more information, see Snowflake documentation on [Access Control Privileges 
 
 > [!IMPORTANT]
 > Any granular security established in the source Snowflake warehouse must be re-configured in the mirrored database in Microsoft Fabric.
-> For more information, see [SQL granular permissions in Microsoft Fabric](../data-warehouse/sql-granular-permissions.md).
+> For more information, see [SQL granular permissions in Fabric Data Warehouse](../data-warehouse/sql-granular-permissions.md).
 
 **Supported authentication methods**
 
@@ -84,6 +84,32 @@ The following table lists which authentication methods are supported for mirrori
 | Microsoft Entra ID (SSO) | Yes | Single sign-on via Entra ID |
 | Key pair authentication | Yes | RSA key pair for service account scenarios |
 | Workspace identity | No | Not currently supported for Snowflake |
+
+## Storage integration for restricted Snowflake environments
+
+Snowflake mirroring uses a staging path during replication. In some Snowflake environments, inline URL unload is restricted (for example, when `PREVENT_UNLOAD_TO_INLINE_URL = TRUE`). In this case, configure a Snowflake storage integration for mirroring so staging can be authorized without relying on inline SAS URL staging. You can configure this setting through the mirroring setup page. 
+
+  :::image type="content" source="media/snowflake/snowflake-storage-integration.png" alt-text="Screenshot of Snowflake storage integration." lightbox="media/snowflake/snowflake-storage-integration.png":::
+
+When you explicitly configure storage integration, mirroring uses that storage integration as the staging path. If the storage integration is misconfigured, mirroring returns an actionable error instead of silently switching to another read path.
+
+### Troubleshooting inline URL unload errors
+
+If mirroring fails with an error similar to:
+
+`SQL compilation error: Cannot unload to an inlined external location. Please create a stage first and unload to the stage instead.`
+
+Use the following checks:
+
+| Check | What to verify |
+|---|---|
+| Snowflake unload restriction | Confirm whether inline URL unload is restricted in the Snowflake account (for example, `PREVENT_UNLOAD_TO_INLINE_URL = TRUE`). |
+| Storage integration setup | Confirm the storage integration used for mirroring is correctly created and has required permissions to the staging location. |
+| Mirroring configuration | Confirm the mirrored database is configured to use the intended storage integration and storage path. |
+
+> [!IMPORTANT]
+> Storage integration doesn't remove staging. It changes how staging is authenticated and authorized.
+> 
 
 ## Mirroring Snowflake behind firewall
 

@@ -3,7 +3,7 @@ title: Create and Configure Operations Agents
 description: Learn how to use operations agents in Fabric Real-Time Intelligence.
 ms.reviewer: willthom, v-hzargari
 ms.topic: how-to
-ms.date: 08/03/2026
+ms.date: 10/21/2026
 ms.search.form: Operations Agent
 ai-usage: ai-assisted
 ---
@@ -119,11 +119,24 @@ The following table describes the available conditions:
 | Is | State | Met any time the property matches the value. |
 | Becomes | Transition | Met when the property changes to the value from a different value (or null). |
 
+## Monitor agent activity
+
+The agent's activity log provides a detailed record of its actions, including the conditions it evaluated, the recommendations it made, and the responses it received. This information helps you understand the agent's decision-making process and identify areas for improvement.
+
+To access the activity log, select **Activity log** in the side navigation pane. The log displays a chronological list of events, including timestamps, event types, and relevant details. Select an event to view more information about it.
+
+:::image type="content" source="media/operations-agent/activity-log.png" alt-text="Screenshot of the activity log." lightbox="media/operations-agent/activity-log.png":::
+
+In the **Operation details** page, you can view the operation details and status.
+
+:::image type="content" source="media/operations-agent/activity-log-details.png" alt-text="Screenshot of the operation details page." lightbox="media/operations-agent/activity-log-details.png":::
+
 > [!div class="nextstepaction"]
 > [Configure operations agent actions](operations-agent-actions.md)
 
 ## Related content
 
+* [Get started with the remote MCP server for operations agents](mcp-remote-operations-agent.md)
 * [Operations agent billing](operations-agent-billing.md)
 * [Operations agent limitations](operations-agent-limitations.md)
 * [Workspace outbound access protection for operations agent](../security/workspace-outbound-access-protection-operations-agent.md)

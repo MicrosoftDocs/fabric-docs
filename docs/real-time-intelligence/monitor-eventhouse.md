@@ -1,9 +1,10 @@
 ---
-title: Eventhouse monitoring overview
+title: Eventhouse Monitoring Overview
 description: Understand Eventhouse monitoring in Fabric and how it can help you to gain insights into the usage and performance.
 ms.topic: concept-article
 ms.subservice: rti-eventhouse
-ms.date: 06/04/2026
+ms.date: 08/26/2026
+ms.reviewer: guregini
 #customer intent: As a admin I want to monitor my eventhouse to gain insights into the usage and performance that I can optimize my eventhouse and improve the user experience.
 ---
 
@@ -41,11 +42,23 @@ Eventhouse monitoring in Fabric offers comprehensive insights into the usage and
 
 When monitoring your eventhouse, you can query the following tables:
 
-* [Metrics](monitor-metrics.md)
-* [Command logs](monitor-logs-command.md)
-* [Data operation logs](monitor-logs-data-operation.md)
-* [Ingestion results logs](monitor-logs-ingestion-results.md)
-* [Query logs](monitor-logs-query.md)
+**Capacity throttling and eventhouse size**
+
+Capacity throttling and eventhouse size monitoring logs provide eventhouse users and workspace admins with detailed visibility into throttling events, sub-optimal sizing, and scale-out activities to proactively manage performance and costs. These logs let you set alerts on throttling states and scaling reasons.
+
+* [Capacity throttling logs](monitor-logs-capacity-throttling.md) track throttling states with updates every 30 seconds to 1 minute, helping users understand impacts such as interactive delays or query rejections.
+* [Sub-optimal size logs](monitor-logs-sub-optimal-size.md) report when an Eventhouse remains undersized after throttling exit, prompting actionable recommendations like adding capacity or reducing load.
+* [Scale-out event logs](monitor-logs-scaleout-events.md) aggregate reasons for scale-out over 24 hours, including high CPU or memory use and ingestion load, enabling users to optimize workloads and prevent unexpected cost spikes.
+
+**Operations**
+
+Operations logs provide eventhouse users with detailed visibility into queries, commands, ingestion, and data operations to monitor usage patterns, troubleshoot issues, and optimize performance.
+
+* [Metrics logs](monitor-metrics.md) track ingestion, materialized views, and continuous export activity.
+* [Command logs](monitor-logs-command.md) record commands run on your eventhouse KQL databases, including performance and resource use.
+* [Data operation logs](monitor-logs-data-operation.md) capture internal data operations such as batch ingestion, update policies, and materialized views.
+* [Ingestion results logs](monitor-logs-ingestion-results.md) report the outcome of queued ingestion operations, including failures.
+* [Query logs](monitor-logs-query.md) record queries run against your eventhouse databases, enabling analysis of performance and usage patterns.
 
 ## Sample queries
 
@@ -70,6 +83,7 @@ Two monitoring templates are available:
 :::image type="content" source="media/eventhouse/eventhouse-dashboard-power-bi.png" alt-text="Screenshot of the Power BI dashboard based on the template." lightbox="media/eventhouse/eventhouse-dashboard-power-bi.png":::
 
 ## Related content
+
 * [Workspace monitoring overview](../fundamentals/workspace-monitoring-overview.md)
 * [Enable monitoring in your workspace](../fundamentals/enable-workspace-monitoring.md)
 * [Manage and monitor an eventhouse](manage-monitor-eventhouse.md)

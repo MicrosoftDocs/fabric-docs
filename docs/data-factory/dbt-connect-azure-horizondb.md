@@ -1,5 +1,5 @@
 ---
-title: "Tutorial: Connect a Fabric dbt job to Azure HorizonDB (preview)"
+title: "Tutorial: Connect a Fabric dbt job to Azure HorizonDB"
 description: In this tutorial, deploy an Azure HorizonDB resource and connect it to a Microsoft Fabric dbt job by using the PostgreSQL adapter.
 ms.reviewer: akurnala
 ms.topic: tutorial
@@ -10,7 +10,7 @@ ms.search.form: dbt-job-tutorials
 #customer intent: As a data engineer, I want to connect a Microsoft Fabric dbt job to an Azure HorizonDB resource so that I can transform data in Azure HorizonDB directly from within Fabric.
 ---
 
-# Tutorial: Connect a Fabric dbt job to Azure HorizonDB (preview)
+# Tutorial: Connect a Fabric dbt job to Azure HorizonDB
 
 Azure HorizonDB is a managed PostgreSQL-based database service. In this tutorial, you deploy an Azure HorizonDB resource in the Azure portal, and then connect it to a Microsoft Fabric dbt job by using the PostgreSQL adapter. Because Azure HorizonDB is PostgreSQL-compatible, the dbt PostgreSQL adapter can run your dbt models directly against it. After you complete this tutorial, you can use your dbt job to transform data in Azure HorizonDB directly from Fabric.
 

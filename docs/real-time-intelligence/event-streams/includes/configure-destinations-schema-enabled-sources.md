@@ -1,16 +1,19 @@
 ---
 title: Configure destinations for schema-enabled sources
-description: Include file with instructions on how to configure supported destinations for schema-enabled sources.
+description: Include file with instructions for configuring destinations for schema-enabled sources in the existing Eventstream experience.
 ms.topic: include
-ms.date: 09/27/2025
+ms.date: 09/02/2026
 ---
 
-## Configure Eventstream destinations to use schemas
+## Configure destinations for schema-enabled sources
 
-Currently, only the Eventhouse, custom endpoint, and derived stream destinations are supported for Eventstreams with associated schemas. This section shows you how to add and configure an Eventhouse destination when extended features (like schema support) are enabled for the eventstream.
+Currently, only the Eventhouse, custom endpoint, and derived stream destinations
+support Eventstreams with associated schemas.
 
 > [!NOTE]
-> When you use **DeltaFlow (Preview)** with a supported Change Data Capture (CDC) source, destination tables in the Eventhouse are automatically created and managed to match the source table structure. You don't need to manually configure the destination table schema. DeltaFlow also handles schema evolution automatically when source tables change.
+> The procedures in this section apply to the existing Eventstream experience.
+> For information about destinations in schema-aware Eventstreams, see
+> [Schema-aware Eventstreams overview (Preview)](../schema-aware-eventstreams-overview.md).
 
 <a name = "configure-schema-for-a-custom-endpoint-destination"></a>
 

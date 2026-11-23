@@ -1,8 +1,8 @@
 ---
 title: About inbound access protection in Fabric
 description: Learn about the features in Fabric for protecting inbound access.
-author: msmimart
-ms.author: mimart
+author: teddyberco
+ms.author: tebercov
 ms.reviewer: karthikeyana
 ms.topic: how-to
 ms.date: 01/27/2026
@@ -47,7 +47,7 @@ Workspace admins can apply more specific inbound security controls when the tena
 
 - **Workspace IP firewall**: Admins can configure workspace IP firewall rules to specify which IP ranges can access workspace items. This feature complements private link by enabling granular allowlists.
 
-- **Resource Instance Rules**: Workspace admins can allow inbound access from specific Azure resource instances by adding the resource's Azure resource ID. This approach is useful when the Azure service uses dynamic or shared outbound IP addresses. For more information, see [Manage inbound access to OneLake with Resource Instance Rules](../onelake/onelake-manage-inbound-access-trusted-resources.md).
+- **Resource Instance Rules**: Workspace admins can allow inbound access from specific Azure resource instances by adding the resource's Azure resource ID. This approach is useful when the Azure service uses dynamic or shared outbound IP addresses. For more information, see [Manage workspace inbound access with Resource Instance Rules](../onelake/onelake-manage-inbound-access-trusted-resources.md).
 
 These layers can work independently or together, depending on organizational needs.
 

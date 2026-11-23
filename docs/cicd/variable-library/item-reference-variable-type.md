@@ -2,12 +2,12 @@
 title: Variable library item reference
 description: Learn how to use a Microsoft Fabric item reference with variable libraries.
 ms.topic: overview
-ms.date: 01/22/2025
+ms.date: 10/14/2026
 #customer intent: As a developer, I want to learn how to use a Fabric application lifecycle management (ALM) variable library to customize my release stages, so that I can manage my content lifecycle.
 ---
 
 
-# Item reference variable type (preview)
+# Item reference variable type
 
 To enhance flexibility and scalability, we're introducing advanced variables alongside the existing basic variable types. These advanced variables are designed to meet key requirements such as parameterizing external and internal connections (e.g., Snowflake, AWS, OneLake). 
 
@@ -113,7 +113,7 @@ Using item reference variables involves two layers of permissions:
 - **Create and Edit an item reference variable**: Users with Contributor or above roles in the workspace can create and edit variables in the library, while Viewers are read-only.
 - **Accessing the item reference variable**: In addition to rights on the Variable Library, **you must have at least Read permission on the item reference variable** you intend to reference.
 
-For more information on permissions and permission validation, see [Variable library permissions](variable-library-permissions.md#item-reference-variable-type-preview)
+For more information about permissions and permission validation, see [Variable library permissions](variable-library-permissions.md#item-reference-variable-type).
 
 ### Limitations
 Currently, you can only reference fabric items and semantic models. Other Power BI items, like Dataflow Gen1 are currently not supported.

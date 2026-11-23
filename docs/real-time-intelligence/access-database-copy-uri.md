@@ -6,6 +6,8 @@ ms.topic: how-to
 ms.date: 07/29/2025
 ms.subservice: rti-eventhouse
 ms.search.form: product-kusto
+ms.custom: msecd-doc-authoring-1030
+ai-usage: ai-assisted
 ---
 
 # Access an existing KQL database
@@ -59,6 +61,8 @@ To share your KQL database, follow these steps:
 :::image type="content" source="media/create-database/database-share.png" alt-text="Screenshot that shows the Share button on the top right of the screen.":::
 
 For more details, see [Share items](/fabric/fundamentals/share-items).
+
+To expose only selected tables, shortcut tables, materialized views, or functions, use [table-level sharing through a database shortcut](database-shortcut.md#select-shared-entities) instead of sharing a link to the source database. The shortcut provides read-only access to the selected subitems. The source database and the database shortcut must be in the same tenant and region.
 
 ## Related content
 

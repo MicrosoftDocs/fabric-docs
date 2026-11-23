@@ -4,8 +4,8 @@ description: Learn how to use AutoML to easily fit models to  your data
 ms.topic: how-to
 ms.author: scottpolly
 author: s-polly
-ms.reviewer: ruxu
-reviewer: ruixinxu
+ms.reviewer: scottpolly
+reviewer: s-polly
 ms.date: 07/22/2026
 ---
 

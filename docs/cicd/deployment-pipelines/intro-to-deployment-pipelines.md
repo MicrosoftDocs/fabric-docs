@@ -2,7 +2,8 @@
 title: Overview of Fabric deployment pipelines
 description: An introduction to deployment pipelines in the Fabric Application lifecycle management (ALM) tool. Learn which items can be deployed, the structure of a pipeline, and how to pair items.
 ms.topic: overview
-ms.date: 07/17/2026
+ms.date: 10/25/2026
+ai-usage: ai-assisted
 ms.search.form: Create deployment pipeline, View deployment pipeline, Introduction to Deployment pipelines
 #customer intent: As a developer, I want to learn about deployment pipelines in the Fabric service so that I can manage my development process efficiently.
 ---
@@ -13,6 +14,8 @@ ms.search.form: Create deployment pipeline, View deployment pipeline, Introducti
 > The articles in this section describe how to deploy content to your app. For version control, see the [Git integration](../git-integration/intro-to-git-integration.md) documentation.
 
 Fabric's deployment pipelines tool provides content creators with a production environment where they can collaborate with others to manage the lifecycle of organizational content. Deployment pipelines enable creators to develop and test content in the service before it reaches the users. See the full list of [Supported item types](#supported-items) that you can deploy.
+
+For deployments that require an explicit item order or actions before or after an item deploys, you can attach an optional [deployment plan](../deployment-plan/deployment-plan-overview.md). The items you select remain the deployment scope, while the plan adds order and actions to the deployment process.
 
 > [!NOTE]
 >
@@ -27,12 +30,20 @@ You can learn how to use the deployment pipelines tool by following these links.
 
 * [Get started with deployment pipelines](./get-started-with-deployment-pipelines.md) - An article that explains how to create a pipeline and perform key functions such as deployment, comparing content in different stages, and creating deployment rules.
 
+* [What is a deployment plan?](../deployment-plan/deployment-plan-overview.md) - An overview of how a plan controls deployment order and runs actions.
+
+* [Deploy with a deployment plan](./deploy-content.md#deploy-with-a-deployment-plan-preview) - Instructions for attaching a plan in the deployment dialog.
+
 ## Supported items
 
 When you deploy content from one pipeline stage to another, the copied content can contain the following items:
 
 >[!IMPORTANT]
 >Beginning February 12, 2026, Fabric deployment pipelines retire support for semantic models that aren't upgraded to Enhanced Metadata. For more information, see [Retirement of semantic model support for deployment pipelines](../troubleshoot-cicd.md#retirement-of-semantic-model-support-for-deployment-pipelines).
+
+* Fabric Apps items:
+
+  * [Fabric app](../../apps/source-control.md#use-with-deployment-pipelines)
 
 * Data Engineering items:
 
@@ -57,7 +68,7 @@ When you deploy content from one pipeline stage to another, the copied content c
   * [Mount ADF](../../data-factory/tutorial-bring-azure-data-factory-to-fabric.md)
   * [Mirrored snowflake](../../mirroring/snowflake.md) *(preview)*
   * [Airflow](../../data-factory/apache-airflow-jobs-concepts.md) *(preview)*
-  * [dbt Job](../../data-factory/dbt-job-overview.md) *(preview)*
+  * [dbt Job](../../data-factory/dbt-job-overview.md)
   * [Operations Agent](../../data-factory/operations-agent-for-pipelines.md) *(preview)*
   
 
@@ -85,7 +96,7 @@ When you deploy content from one pipeline stage to another, the copied content c
   * Dataflow *(preview)*
   * [Org app](/power-bi/consumer/org-app-items/org-app-cicd) *(preview)*
   * Paginated report *(preview)*
-  * Report (based on supported semantic models) *(preview)*
+  * Report (based on supported semantic models)
   * Semantic model (that originates from a .pbix file and isn't a PUSH dataset) *(preview)*
 
 * Database items:
@@ -100,6 +111,7 @@ When you deploy content from one pipeline stage to another, the copied content c
 * CI/CD items:
 
   * [Variable Library](../variable-library/variable-library-overview.md)
+  * [Deployment plan](../deployment-plan/deployment-plan-overview.md) *(preview)*
 
 * Industry solutions:
 
@@ -189,11 +201,22 @@ After you select **Deploy**, you get a confirmation message.
 
 Learn more about [which item properties are copied to the next stage](understand-the-deployment-process.md#item-properties-copied-during-deployment), and which properties aren't copied, in [Understand the deployment process](understand-the-deployment-process.md#item-properties-that-are-not-copied).
 
+### Control deployment order and actions with a deployment plan (preview)
+
+By default, deployment pipelines use Fabric lineage to determine the dependencies and order required to deploy the selected content. When a deployment requires an explicit order or work that item deployment alone can't perform, attach a deployment plan in the deployment dialog.
+
+When you attach a plan, deployment pipelines use the deployment plan in the target workspace by default. In the deployment dialog, you can instead select a deployment plan from the source workspace.
+
+For plan components and action behavior, see [Deployment plan actions](../deployment-plan/deployment-plan-actions.md). For how the selected items, plan relationships, Fabric lineage, and actions determine the deployment, see [How a deployment plan works](../deployment-plan/deployment-plan-overview.md#how-a-deployment-plan-works).
+
 ## Automation
 
-You can also deploy content programmatically, using the [deployment pipelines REST APIs](/rest/api/power-bi/pipelines). Learn more about the automation process in [Automate your deployment pipeline using APIs and DevOps](pipeline-automation.md).
+You can also deploy content programmatically by using the Power BI or Fabric deployment pipelines REST APIs. To attach a deployment plan through automation, use the Fabric deployment pipelines deploy API. Learn more in [Automate your deployment pipeline with Fabric APIs](pipeline-automation-fabric.md) and [Automate your deployment pipeline for Power BI items](pipeline-automation.md).
 
 ## Related content
 
 * [Understand the deployment pipelines process](understand-the-deployment-process.md)
 * [Get started with deployment pipelines](get-started-with-deployment-pipelines.md)
+* [Deploy content to the next stage](deploy-content.md)
+* [What is a deployment plan?](../deployment-plan/deployment-plan-overview.md)
+* [Deployment plan actions](../deployment-plan/deployment-plan-actions.md)

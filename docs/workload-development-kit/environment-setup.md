@@ -27,7 +27,7 @@ To begin development, the *Workspace admins can develop partner workloads* [tena
 
 To enable the *Workspace admins can develop partner workloads* tenant setting, follow these steps:
 
-1. In Fabric, go to **Settings > Admin portal > Tenant settings**.
+1. In Fabric, go to **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**.
 
 2. In the tenant settings, go to the **Additional workloads** section.
 

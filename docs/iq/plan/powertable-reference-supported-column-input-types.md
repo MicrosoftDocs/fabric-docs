@@ -7,7 +7,7 @@ ai-usage: ai-assisted
 #customer intent: As a user, I want to know about the supported column types that I can insert in the PowerTable sheet as well as the supported input and attachment types for the columns.
 ---
 
-# Supported column and input types
+# Supported column, input, and attachment types
 
 This article lists the supported column types that you can add to a PowerTable sheet, the supported input types for database columns, and the supported attachment file types for attachment columns.
 

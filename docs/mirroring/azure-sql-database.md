@@ -2,7 +2,7 @@
 title: "Microsoft Fabric Mirrored Databases from Azure SQL Database"
 description: Learn about the mirrored databases from Azure SQL Database in Microsoft Fabric.
 ms.reviewer: nanikolic, sbahadur, wiassaf
-ms.date: 07/03/2025
+ms.date: 10/08/2026
 ms.topic: concept-article
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
@@ -47,6 +47,8 @@ In addition to the [SQL query editor](../data-warehouse/sql-query-editor.md), th
 
 If your Azure SQL Database is not publicly accessible and doesn't [allow Azure services](/azure/azure-sql/database/network-access-controls-overview#allow-azure-services) to connect to it, you can set up [virtual network data gateway](/data-integration/vnet/overview) or [on-premises data gateway](/data-integration/gateway/service-gateway-onprem) to mirror the data. The data gateway facilitates secure connections to your source databases through a private endpoint or from a trusted private network. For more information, see [Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Database](../mirroring/azure-sql-database-tutorial.md).
 
+If the Azure SQL logical server belongs to a [network security perimeter](/azure/azure-sql/database/network-security-perimeter) (preview), the perimeter evaluates both Fabric's inbound connection to the server and the database's outbound connection to OneLake. Configure an inbound access rule so that Fabric can connect, and an outbound access rule so that replication can publish to OneLake. For more information, see [Network security perimeter (preview)](../mirroring/azure-sql-database-how-to-data-security.md#network-security-perimeter-preview).
+
 ## Active transactions, workloads, and replicator engine behaviors
 
 - Active transactions continue to hold the transaction log truncation until the transaction commits and the mirrored Azure SQL Database catches up, or the transaction aborts. Long-running transactions might result in the transaction log filling up more than usual. The source database transaction log should be monitored so that the transaction log does not fill. For more information, see [Transaction log grows due to long-running transactions and CDC](/troubleshoot/sql/database-engine/replication/monitor-long-running-transactions-and-log-growth).
@@ -74,3 +76,4 @@ Fabric compute used to replicate your data into Fabric OneLake is free. Storage 
 - [Limitations in Microsoft Fabric mirrored databases from Azure SQL Database](../mirroring/azure-sql-database-limitations.md)
 - [Monitor Fabric mirrored database replication](../mirroring/monitor.md)
 - [Troubleshoot Fabric mirrored databases from Azure SQL Database](../mirroring/azure-sql-database-troubleshoot.md)
+- [Network security perimeter for Azure SQL Database (preview)](/azure/azure-sql/database/network-security-perimeter)

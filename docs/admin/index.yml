@@ -1,16 +1,16 @@
 ### YamlMime:Landing
 
-title: Fabric administration documentation
-summary: Learn about the Fabric admin settings, options, and tools.
+title: Microsoft Fabric governance and administration documentation
+summary: Manage, protect, and unlock trusted reuse across your organization's Fabric data estate.
 
 metadata:
-  title: Fabric administration documentation
-  description: Learn about the Fabric admin settings, options, and tools.
+  title: Fabric governance and administration documentation
+  description: Manage, protect, and unlock trusted reuse across your organization's Fabric data estate.
   ms.subservice: admin
   ms.topic: landing-page
   author: msmimart
   ms.author: mimart
-  ms.date: 02/08/2024
+  ms.date: 08/31/2026
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
@@ -20,6 +20,8 @@ landingContent:
     linkLists:
       - linkListType: overview
         links:
+          - text: Govern and manage with OneLake Catalog
+            url: ../governance/onelake-catalog-govern.md
           - text: What is administration in Fabric?
             url: admin-overview.md
       - linkListType: get-started
@@ -64,20 +66,33 @@ landingContent:
           - text: Configure Multi-Geo support
             url: service-admin-premium-multi-geo.md
 
-  - title: Monitoring and management
+  - title: Domain administration
     linkLists:
-      - linkListType: overview
-        links:
-          - text: What is the admin monitoring workspace?
-            url: monitoring-workspace.md
       - linkListType: concept
-        links:                
-          - text: Feature usage and adoption report
-            url: feature-usage-adoption.md
+        links:
+          - text: Domains overview
+            url: ../governance/domains.md
       - linkListType: how-to-guide
         links:            
-          - text: Use the Monitoring hub
-            url: monitoring-hub.md
+          - text: Understand domain roles
+            url: ../governance/domains.md#domain-roles
+          - text: Create and manage domains
+            url: ../governance/domains.md#create-a-domain
+
+  - title: Capacity administration
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Manage your Fabric capacity
+            url: capacity-settings.md
+      - linkListType: how-to-guide
+        links:            
+          - text: Understand capacity administrator roles
+            url: roles.md#capacity-admin-roles
+          - text: Configure capacity contributor permissions
+            url: capacity-settings.md#details
+          - text: Monitor capacity with the Capacity Metrics app
+            url: ../enterprise/metrics-app.md
 
   - title: Workspace administration
     linkLists:
@@ -87,5 +102,7 @@ landingContent:
             url: portal-workspaces.md
       - linkListType: how-to-guide
         links:            
-          - text: Workspace tenant settings
-            url: portal-workspace.md
+          - text: Workspace roles
+            url: ../fundamentals/roles-workspaces.md
+          - text: Delegate settings to workspaces
+            url: delegate-settings.md

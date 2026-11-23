@@ -4,36 +4,44 @@ description: Learn about considerations and limitations when using a data gatewa
 ms.reviewer: jeluitwi
 ms.topic: concept-article
 ms.custom: dataflows, sfi-image-nochange
-ms.date: 08/26/2025
+ms.date: 09/17/2026
 ai-usage: ai-assisted
 ---
 
 # On-premises and virtual network data gateway considerations for data destinations in Dataflow Gen2
 
-This article explains the limitations and considerations when using the Data Gateway with data destinations in Dataflow Gen2.
+This article explains how staging affects network requirements for Dataflow Gen2 when you use an on-premises or virtual network data gateway with a Lakehouse destination. Writing data to a lakehouse and reading staged data during a refresh have different network requirements.
+
+The requirements in this article apply to connections from the gateway to Fabric. Data sources and other data destinations can have their own network requirements.
 
 ## Network issues with port 1433 when referencing queries
 
-When using Microsoft Fabric Dataflow Gen2 with an on-premises data gateway, you might face issues during the dataflow refresh process. This happens when the gateway can't connect to the dataflow staging Lakehouse to read data before using it in a query that references the staged data. Typically, this issue occurs if the firewall rules on the gateway server or the customer's proxy servers block outbound traffic to the required endpoints over port 1433.
+When a dataflow reads staged data through a lakehouse SQL analytics endpoint, the gateway needs outbound connectivity over TCP port 1433. The refresh can fail if firewall rules on the gateway server or proxy servers block that connection. The relevant distinction is whether the dataflow reads staged data, not how many queries it contains.
 
 ### Scenarios where port 1433 access isn't required
 
-Dataflow refresh should succeed without access to port 1433 in these cases:
+For staging and Lakehouse destination operations, port 1433 access isn't required when **all** of the following conditions are met:
 
-- The dataflow has a single query that writes to a Lakehouse, and no other queries reference it.
-- Fast Copy is disabled.
-- The dataflow has multiple queries, but none reference each other.
+- Fast copy is disabled.
+- No query reads data from staging.
+- Staging is disabled on each query that writes to a Lakehouse destination.
+
+These conditions can apply to one or many queries. Multiple queries can write to staging, provided the dataflow doesn't read that staged data. Referencing a query that has staging disabled doesn't by itself introduce a read from staging.
+
+Disabling fast copy alone isn't sufficient if the dataflow still reads staged data. For more information about fast copy, see [Fast copy in Dataflow Gen2](dataflows-gen2-fast-copy.md).
 
 ### Scenarios where port 1433 access is required
 
-If multiple queries reference each other, the dataflow refresh might fail due to network issues with port 1433. The dataflow engine needs to read data from the staging Lakehouse using the TDS protocol over port 1433. During the refresh, table refreshes might show as "Succeeded," but the activities section could display *"Failed"*. The error details for the activity `WriteToDatabaseTableFrom_...` might include the following message:
+You need access to port 1433 when the gateway reads staged data through a SQL analytics endpoint. This requirement includes queries that directly or indirectly reference a staged query. A query that has staging enabled and writes to a Lakehouse destination can also read its staged result before writing to the destination, even if no other query references it.
+
+During the refresh, table refreshes might show as "Succeeded," but the activities section could display *"Failed"*. The error details for the activity `WriteToDatabaseTableFrom_...` might include the following message:
 
 ```plaintext
 Mashup Exception Error: Couldn't refresh the entity because of an issue with the mashup document MashupException.Error: Microsoft SQL: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 0 - An attempt was made to access a socket in a way forbidden by its access permissions.) Details: DataSourceKind = Lakehouse;DataSourcePath = Lakehouse;Message = A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 0 - An attempt was made to access a socket in a way forbidden by its access permissions.);ErrorCode = -2146232060;Number = 10013
 ```
 
 > [!NOTE]
-> The dataflow engine uses an outbound HTTPS (port 443) endpoint to write data into a Lakehouse. However, reading data from the Lakehouse requires the TDS protocol (TCP over port 1433). This explains why the first query might succeed, while a query referencing it could fail, even if both Lakehouses are in the same OneLake instance.
+> The dataflow engine uses outbound HTTPS (port 443) to write data into a lakehouse, including the staging lakehouse. Reading staged data through the SQL analytics endpoint uses the TDS protocol over TCP port 1433. A write can therefore succeed while a later read of the staged data fails, even if both lakehouses are in the same OneLake instance.
 
 > [!NOTE]
 > It is important to note that many proxy services are designed only for generic TCP, HTTP, or TLS traffic, and do not support TDS protocol.
@@ -46,7 +54,7 @@ To troubleshoot, review the error details for the failed table or activity. Thes
 
 ## Solution: Update firewall rules on the gateway server
 
-Update the firewall rules on the gateway server or the customer's proxy servers to allow outbound traffic to the following endpoints. If your firewall doesn't support wildcards, use the IP addresses from [Azure IP Ranges and Service Tags](https://www.microsoft.com/download/details.aspx?id=56519). Keep these in sync monthly.
+For scenarios that require SQL analytics endpoint access, update the firewall rules on the gateway server or proxy servers to allow outbound traffic to the following endpoints. If your firewall doesn't support wildcards, use the IP addresses from [Azure IP Ranges and Service Tags](https://www.microsoft.com/download/details.aspx?id=56519). Keep these in sync monthly.
 
 - **Protocol**: TCP
 - **Endpoints**: *.datawarehouse.pbidedicated.windows.net, *.datawarehouse.fabric.microsoft.com, *.dfs.fabric.microsoft.com
@@ -67,9 +75,13 @@ The endpoint name looks similar to this example:
 
 ## Workaround: Combine queries or disable staging
 
-If you can't update the firewall rules, try these workarounds:
+If you can't allow the required outbound traffic, disable fast copy and remove the need to read staged data:
 
-- Combine queries that reference each other into a single query.
+- Combine dependent queries into a single query so that intermediate results don't need to be read from staging.
 - Disable staging on all referenced queries.
 
-These options aren't final solutions and might affect performance with complex transformations, but they can serve as temporary fixes until the firewall rules are updated.
+For any query that writes to a Lakehouse destination, also keep staging disabled.
+
+Alternatively, separate ingestion from transformation. Use a gateway-backed dataflow to land data in a Lakehouse destination with staging and fast copy disabled. After that dataflow completes, use a separate Dataflow Gen2 with only cloud connections to read the landed data and perform transformations. You can split the transformation logic across queries or dataflows without routing those reads through the on-premises gateway.
+
+These workarounds can require changes to an existing dataflow design and might affect performance with complex transformations. If you split ingestion and transformation into separate dataflows, coordinate their refresh order.

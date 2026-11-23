@@ -1,6 +1,6 @@
 ---
-title: Connector Capability Comparison Between Azure Data Factory and Data Factory in Fabric
-description: This documentation provides an in-depth comparison of connector availability between Azure Data Factory and Data Factory in Fabric.
+title: Connector Capability Comparison Between Azure Data Factory and Fabric Data Factory
+description: This documentation provides an in-depth comparison of connector availability between Azure Data Factory and Fabric Data Factory.
 ms.reviewer: lle
 ms.topic: how-to
 ms.date: 07/08/2026
@@ -9,14 +9,14 @@ ms.custom:
   - connectors
 ---
 
-# Connector capability comparison between Azure Data Factory and Data Factory in Fabric
+# Connector capability comparison between Azure Data Factory and Fabric Data Factory
 
-This article provides an in-depth comparison of connector availability between Azure Data Factory and Data Factory in Fabric. Connectors are essential for data integration, enabling data to flow between various sources and destinations. Understanding connector continuity between these two platforms helps you plan your data workflows.
+This article provides an in-depth comparison of connector availability between Azure Data Factory and Fabric Data Factory. Connectors are essential for data integration, enabling data to flow between various sources and destinations. Understanding connector continuity between these two platforms helps you plan your data workflows.
 
-With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich set of data sources. The following connectors are available in Azure Data Factory and Data Factory in Fabric:
+By using Fabric Data Factory, you can create pipelines that connect to a wide variety of data sources. The following connectors are available in both Azure Data Factory and Fabric Data Factory:
 
 - [Azure connectors](#azure-connectors)
-- [Microsoft Fabric & data warehouse connectors](#microsoft-fabric-and-data-warehouse-connectors)
+- [Fabric & Data Warehouse connectors](#microsoft-fabric-and-data-warehouse-connectors)
 - [Database connectors](#database-connectors)
 - [File connectors](#file-connectors)
 - [File format connectors](#file-format-connectors)
@@ -90,21 +90,21 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 |  |  | User-assigned managed identity |  |  |  |  |
 
 
-## Microsoft Fabric and data warehouse connectors
+## Microsoft Fabric and Data Warehouse connectors
 
 
 | **Connector Type** | **ADF Source/Sink** | **ADF Authentication** | **ADF Other Settings** | **Fabric Source/Destination** | **Fabric Authentication** | **Fabric Other Settings** |
 |--------------------|---------------------|-------------------------|-------------------------|-------------------------------|----------------------------|----------------------------|
-| [Microsoft Fabric Lakehouse](connector-lakehouse-overview.md) | ✓/✓ | Service principal |Upsert for Table isn't supported| ✓/✓ | | Support Upsert for Table|
+| [Fabric lakehouse](connector-lakehouse-overview.md) | ✓/✓ | Service principal |Upsert for Table isn't supported| ✓/✓ | | Support Upsert for Table|
 |                    |                     | System-assigned managed identity | |                       |                            | |
 |                    |                     | User-assigned managed identity   | |                       |                            | |
 |                    |                     |                                 | |                       | Organizational account      | |
-| [Microsoft Fabric Warehouse](connector-data-warehouse-overview.md) | ✓/✓ | Service principal | | ✓/✓ | | |
+| [Fabric warehouse](connector-data-warehouse-overview.md) | ✓/✓ | Service principal | | ✓/✓ | | |
 |                    |                     | System-assigned managed identity | |                       |                            | |
 |                    |                     | User-assigned managed identity   | |                       |                            | |
 |                    |                     |                                 | |                       | Organizational account      | |
-| [Microsoft Fabric KQL Database](connector-kql-database-overview.md) | N | | | ✓/✓ | Organizational account | |
-| [Microsoft Fabric SQL database](connector-sql-database-overview.md) | N | | | ✓/✓ | Organizational account | |
+| [KQL databasein Fabric](connector-kql-database-overview.md) | N | | | ✓/✓ | Organizational account | |
+| [SQL database in Fabric](connector-sql-database-overview.md) | N | | | ✓/✓ | Organizational account | |
 
 ## Database connectors
 
@@ -269,4 +269,4 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 
 ## Conclusion
 
-To learn how to use the connectors available in Data Factory in Fabric, see [Connector overview](connector-overview.md).
+To learn how to use the connectors available in Fabric Data Factory, see [Connector overview](connector-overview.md).

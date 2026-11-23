@@ -4,12 +4,13 @@ description: Learn about what the feature switches affecting Git integration do 
 author: billmath
 ms.author: billmath
 ms.topic: how-to
-ms.date: 07/14/2026
+ms.date: 10/07/2026
+ai-usage: ai-assisted
 ---
 
 # Git integration tenant settings
 
-The Git integration tenant admin settings are configured in the tenant settings section of the admin portal.  
+Configure the Git integration tenant admin settings in **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**.
 The tenant admin can choose to delegate control of these switches to the workspace admin or capacity admin. If the tenant admin enables delegation, the capacity admin can override the tenant admin's decision to enable or disable the switch. The workspace admin can override the tenant and the capacity settings.
 
 For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
@@ -62,7 +63,10 @@ To get started with Git integration, see [Manage a workspace with Git](../cicd/g
 ## Users can export items to Git repositories in other geographical locations
 
 If a workspace capacity is in one geographic location (for example, Central US) while the *Azure DevOps* repo is in another location (for example, West Europe), the Fabric admin can decide whether to allow users to commit metadata (or perform other Git actions) to another geographical location. Only the metadata of the item is exported. Item data and user related information are not exported.  
-Enable this setting to allow all users, or a specific group or users, to export metadata to other geographical locations.
+Enable this setting to allow all users, or a specific group of users, to export metadata to other geographical locations.
+
+> [!IMPORTANT]
+> Tenant settings apply to the Fabric user who performs the Git operation, not the account used to connect to the repository. If you enable this setting for specific security groups, include every Fabric user who needs this capability in an allowed group, even when a different account is used to connect the Git repository.
 
 :::image type="content" source="./media/git-integration-admin-settings/multi-geo-switch.png" alt-text="Screenshot of the multi geo switch enabled.":::
 
@@ -99,7 +103,7 @@ Delegation is the admin model that lets the tenant admin push control of a tenan
 
 For the Git integration switches, the layered override model is:
  
-- Tenant admin sets the switch in the admin portal (tenant settings) and chooses whether to delegate it.
+- Tenant admin sets the switch in the tenant settings and chooses whether to delegate it.
 - If delegation is enabled, the capacity admin can override the tenant admin's enable or disable decision for their capacity.
 - The workspace admin can override both the tenant and capacity settings for their workspace.
  

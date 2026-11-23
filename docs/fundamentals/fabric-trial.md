@@ -3,11 +3,11 @@ title: Fabric trial capacity
 description: Understand how the Fabric trial capacity works. This includes starting a trial, ending a trial, and sharing a trial.
 author: SnehaGunda
 ms.author: sngun
-ms.reviewer: alpowers, mibruhje
+ms.reviewer: alpowers, mibruhje, oaladekomo
 ms.topic: concept-article
 ms.custom: fabric-cat
 ms.collection: ce-skilling-ai-copilot
-ms.date: 01/30/2026
+ms.date: 08/12/2026
 ms.update-cycle: 180-days
 ai-usage: ai-assisted
 ---
@@ -16,7 +16,10 @@ ai-usage: ai-assisted
 
 The Microsoft Fabric trial capacity gives you **free access for 60 days** to explore almost everything Fabric has to offer—across data engineering, data science, real-time analytics, business intelligence, and more. Whether you're new to Fabric or coming from the product to learn more, this trial is your gateway to understanding how Fabric brings all your data and analytics tools together in one place.
 
-> **Quick start**: [Set up your Fabric trial capacity](#start-the-fabric-capacity-trial) | [Start using your Fabric trial capacity](#start-using-your-trial)
+> [!div class="nextstepaction"]
+> [Start a Fabric trial for free](https://app.fabric.microsoft.com/?pbi_source=learn-get-started-fabric-trial)
+
+> **Quick start**: [Learn how to set up your Fabric trial capacity](#start-the-fabric-capacity-trial) | [Learn how to start using your Fabric trial capacity](#start-using-your-trial)
 
 > [!NOTE]
 > **Share your feedback as a new Fabric user**
@@ -50,7 +53,7 @@ Learn more about which [Microsoft Fabric features are supported in a trial capac
 
 ## When your Fabric trial ends
 
-Your Microsoft Fabric trial capacity lasts for 60 days, unless you cancel it earlier. As the trial nears its end, you’ll see notifications in the Fabric portal and in the **Capacity settings** page of the Admin portal, helping you track how much time remains.
+Your Microsoft Fabric trial capacity lasts for 60 days, unless you cancel it earlier. As the trial nears its end, you’ll see notifications in the Fabric portal and in **OneLake catalog** > **Govern** > **Capacities**, helping you track how much time remains.
 
 Once the trial expires:
 
@@ -63,7 +66,7 @@ For more information, see [ending your trial](#end-a-fabric-trial). If Copilot b
 
 > [!TIP]
 >
-> - To check your trial status or trial expiration date, go to **Admin portal > Capacity settings > Trial**.
+> - To check your trial status or trial expiration date, go to **OneLake catalog** > **Govern** > **Capacities** > **Trial**.
 >
 > - If you need to request a trial extension, contact your Microsoft sales representative or contact the [Azure sales team](https://azure.microsoft.com/contact/?msockid=02d2195e72356be10cc60cb5738d6afb) for assistance.
 >
@@ -85,7 +88,12 @@ You can start a trial capacity several different ways. The first two methods mak
 
 ### Method 1: Start a new trial capacity from the Account manager
 
-You can sign up for a trial capacity. You manage who else can use your trial by giving coworkers permission to create workspaces in your trial capacity. Every user in the tenant has contributor permissions by default unless you explicitly manage who has access. Assigning workspaces to the trial capacity automatically adds coworkers (with roles in those workspaces) to the trial capacity. To start your Fabric trial capacity and become the Capacity administrator of that trial, follow these steps:
+You can sign up for a trial capacity. As the Capacity administrator, you manage who else can use your trial by giving coworkers permission to create workspaces in your trial capacity. Every user in the tenant has contributor permissions by default unless you explicitly manage who has access. Assigning workspaces to the trial capacity automatically adds coworkers (with roles in those workspaces) to the trial capacity. To start your Fabric trial capacity, select this button:
+
+> [!div class="nextstepaction"]
+> [Start a Fabric trial for free](https://app.fabric.microsoft.com/?pbi_source=learn-get-started-fabric-trial)
+
+To become the Capacity administrator of that trial, follow these steps:
 
 1. To open your Account manager, select the tiny photo from the upper-right corner of the [Fabric homepage](https://app.fabric.microsoft.com/home?pbi_source=learn-get-started-fabric-trial).
 
@@ -134,12 +142,15 @@ For more information, see [Sharing trial capacities](#share-trial-capacities).
 To start using your Fabric capacity trial, create a new workspace. Assign that workspace to your trial capacity [using the *Trial* workspace type](workspaces.md#workspace-type), and then all the items in that workspace are saved and executed in that trial capacity. Invite colleagues to those workspaces so they can share the trial experience with you. If you, as the Capacity administrator, enable **Contributor permissions**, then others can also assign their workspaces to your trial capacity. For more information about sharing, see [Share trial capacities](#share-trial-capacities).
 
 - **Existing Power BI users**: If you're an existing Power BI user, jump to [Start the Fabric trial](#start-the-fabric-capacity-trial). 
-- **New Power BI users**: The Fabric trial requires a per-user license. Navigate to [https://app.fabric.microsoft.com](https://app.fabric.microsoft.com/?pbi_source=learn-get-started-fabric-trial) to sign up for a Fabric (Free) license. Once you have the free license, you can [begin participating in the Fabric capacity trial](#start-the-fabric-capacity-trial).  
-  - You might already have a license and not realize it. For example, some versions of Microsoft 365 include a Power BI Pro license. Open Fabric [https://app.fabric.microsoft.com](https://app.fabric.microsoft.com) and select your Account manager to see if you already have a license, and which license it is. Read on to see how to open your Account manager.
+- **New Power BI users**: The Fabric trial requires a per-user license. Open [Fabric](https://app.fabric.microsoft.com/?pbi_source=learn-get-started-fabric-trial) to sign up for a Fabric (Free) license. Once you have the free license, you can [begin participating in the Fabric capacity trial](#start-the-fabric-capacity-trial).  
+  - You might already have a license and not realize it. For example, some versions of Microsoft 365 include a Power BI Pro license. Open [Fabric](https://app.fabric.microsoft.com?pbi_source=learn-get-started-fabric-trial) and select your Account manager to see if you already have a license, and which license it is. Read on to see how to open your Account manager.
+
+> [!div class="nextstepaction"]
+> [Start a Fabric trial for free](https://app.fabric.microsoft.com/?pbi_source=learn-get-started-fabric-trial)
 
 ## Get the status of your trial
 
-To see the status of your trial, open your Account manager again and look for the **Trial status**. Your Account manager keeps track of the number of days remaining in your trial. You can also see the countdown in the Fabric menu bar or go to **Admin portal > Capacity settings > Trial**.
+To see the status of your trial, open your Account manager again and look for the **Trial status**. Your Account manager keeps track of the number of days remaining in your trial. You can also see the countdown in the Fabric menu bar or go to **OneLake catalog** > **Govern** > **Capacities** > **Trial**.
 
 :::image type="content" source="media/fabric-trial/trial-status-me-control.png" lightbox="media/fabric-trial/trial-status-me-control.png" alt-text="Screenshot of the Microsoft Fabric trial status.":::
 
@@ -149,9 +160,9 @@ The person who starts the Fabric trial capacity becomes the Capacity administrat
 
 ### Share by enabling contributor permissions
 
-To share and collaborate during a trial, you need to make sure the right tenant settings are enabled. Trial enablement is no longer controlled by a single toggle in the Admin portal. Instead, it’s managed through **Tenant settings** and **Help and support settings**, with optional capacity assignment.
+To share and collaborate during a trial, you need to make sure the right tenant settings are enabled. Trial enablement is managed through **Tenant settings** and **Help and support settings**, with optional capacity assignment.
 
-1. In the **Admin portal**, go to **Tenant settings.**
+1. Go to **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**.
 1. Expand **Users can create Fabric items**, and turn it on. Optionally, scope this setting to specific security groups.
 1. Under **Help and support settings**, enable **Users can try Microsoft Fabric paid features**. This allows users to start a trial.
 1. (Optional) Assign trial capacity in **Capacity settings** if you want to control where trial workspaces are created.
@@ -173,8 +184,7 @@ For more information, see [Use Workspace settings](workspaces.md#workspace-type)
 
 If you're the Capacity administrator or Tenant administrator, you might be eligible to increase the trial capacity by following these steps:
 
-1. From the upper right corner of Fabric, select the gear icon, then select **Admin portal**.
-1. Select **Capacity settings**, and then choose the **Trial** tab.
+1. Go to **OneLake catalog** > **Govern** > **Capacities**, and then choose the **Trial** tab.
 1. Your current trial size is displayed here. Select the **Change size** button to increase from 4 capacity units to 64 capacity units.
 1. Select **Apply**. If you're eligible to change the size, you see a success message and receive a notification.
 
@@ -212,9 +222,9 @@ If you don't move the workspaces and their contents to a new capacity that suppo
 
   :::image type="content" source="media/fabric-trial/cancel-trial.png" lightbox="media/fabric-trial/cancel-trial.png" alt-text="Screenshot of the Cancel trial button in Account manager.":::
 
-- **Cancel the Fabric trial capacity using the Admin portal**: As a Capacity or Fabric administrator, you can use the Admin portal to cancel a Fabric trial capacity:
+- **Cancel the Fabric trial capacity in Govern**: As a Capacity or Fabric administrator, you can use **OneLake catalog** > **Govern** > **Capacities** to cancel a Fabric trial capacity:
 
-  1. Select **Settings** > **Admin portal** > **Capacity settings**.
+  1. Go to **OneLake catalog** > **Govern** > **Capacities**.
   1. Then choose the **Trials** tab.
   1. Select the cog icon for the trial capacity that you want to delete.
 
@@ -235,6 +245,18 @@ If you want to retain your data and continue to use Microsoft Fabric, [purchase 
 ## Frequently asked questions
 
 Here are some things to consider and answers to frequently asked questions about the Fabric trial.
+
+#### Can I use a Fabric trial capacity for production workloads?
+
+A Fabric trial capacity is intended for evaluation and testing only. Because trial capacities are time-bound, don't rely on them for ongoing production use, business-critical workloads, or long-term operational processes. For ongoing reliability and support for production scenarios, use a paid Fabric capacity. For more information, see [Purchase the full Fabric experience](#purchase-the-full-fabric-experience).
+
+#### Is every user eligible to start a Fabric trial?
+
+Trial eligibility depends on factors such as your tenant settings, license state, and the number of trial capacities available in your tenant. Microsoft determines trial availability by region and tenant, and availability can change over time. For troubleshooting guidance, see [Why can't I start a trial](#why-cant-i-start-a-trial)? If you’re still unable to start a trial, you may [contact Microsoft Support](/training/support/).
+
+#### Can I start another Fabric trial after my current trial ends?
+
+Eligibility for another trial isn't guaranteed, and Microsoft might restrict repeated or successive trial usage. To continue using Fabric after your trial ends, you can [purchase a paid Fabric capacity](#purchase-the-full-fabric-experience) or ask your Fabric administrator whether an existing capacity is available for your workspace.
 
 #### What if I don't already have an assigned Power BI PPU?
 
@@ -257,9 +279,9 @@ If you do see the **Start trial** button in your Account manager but can't start
 
 #### How do I look up the trial Capacity administrator?
 
-To request access to a trial capacity or to check whether your organization has the Fabric tenant setting enabled, you can contact your Capacity administrator. Ask your Fabric administrator to use the Admin portal to look up your Capacity administrator. You can find your Fabric administrator as the service administrator in the Workspace Settings of your workspace.
+To request access to a trial capacity or to check whether your organization has the Fabric tenant setting enabled, you can contact your Capacity administrator. Ask your Fabric administrator to use **OneLake catalog** > **Govern** > **Capacities** to look up your Capacity administrator. You can find your Fabric administrator as the service administrator in the Workspace Settings of your workspace.
 
-If you're the Capacity or Fabric administrator, from the upper right corner of Fabric, select the gear icon. Select **Admin portal**. For a Fabric trial, select **Capacity settings** and then choose the **Trial** tab.
+If you're the Capacity or Fabric administrator, go to **OneLake catalog** > **Govern** > **Capacities**, and then choose the **Trial** tab.
 
 :::image type="content" source="media/fabric-trial/fabric-admin.png" lightbox="media/fabric-trial/fabric-admin.png" alt-text="Screenshot of Admin center showing the Capacity settings screen.":::
 
@@ -272,19 +294,19 @@ Microsoft limits the number of trial capacities available per tenant. If your te
 
 To resolve this issue:
 
-- Contact your Fabric administrator to check existing trial capacities in **Admin portal > Capacity settings > Trial**. If there are inactive or unmanaged trial capacities (for example, from users who left the organization), consider canceling them to free up capacity for new trials.
+- Contact your Fabric administrator to check existing trial capacities in **OneLake catalog** > **Govern** > **Capacities** > **Trial**. If there are inactive or unmanaged trial capacities (for example, from users who left the organization), consider canceling them to free up capacity for new trials.
 - Request access to an existing trial capacity from a Capacity administrator who can share their trial by assigning workspaces or enabling contributor permissions.
 - Consider [purchasing a Fabric capacity](../enterprise/buy-capacity.md) if trial limits prevent your organization from testing Fabric features.
 
 #### How do I look up the number of days remaining in my trial?
 
-From the upper right corner of Fabric, select the gear icon. Select **Admin portal**. For a Fabric trial, select **Capacity settings** and then choose the **Trial** tab. The **Days left** column tracks the remaining days for each trial.
+Go to **OneLake catalog** > **Govern** > **Capacities**, and then choose the **Trial** tab. The **Days left** column tracks the remaining days for each trial.
 
 :::image type="content" source="media/fabric-trial/fabric-admin-days-left.png" lightbox="media/fabric-trial/fabric-admin-days-left.png" alt-text="Screenshot of Admin center showing the Capacity settings screen and days left for each trial.":::
 
 #### Why can't I assign a workspace to the trial capacity in my workspace settings?
 
-This can occur when the Fabric administrator turns off trials after you start a trial. To add your workspace to the trial capacity, open the Admin portal by selecting it from the gear icon in the top menu bar. Then, select **Trial > Capacity settings** and choose the name of the capacity. If you don't see your workspace assigned, add it here.
+This can occur when the Fabric administrator turns off trials after you start a trial. To add your workspace to the trial capacity, go to **OneLake catalog** > **Govern** > **Capacities** > **Trial**, and choose the name of the capacity. If you don't see your workspace assigned, add it here.
 
 :::image type="content" source="media/fabric-trial/capacity-wk-assignment.png" lightbox="media/fabric-trial/capacity-wk-assignment.png" alt-text="Screenshot of the Capacities page in the Admin portal.":::
 
@@ -326,6 +348,11 @@ Trial Capacity administrators can migrate existing workspaces into a trial capac
 #### How many SQL databases can I create in a Fabric trial capacity?
 
 Currently, you can create up to three SQL databases in a Fabric trial capacity.
+
+## Next steps
+
+> [!div class="nextstepaction"]
+> [Start a Fabric trial for free](https://app.fabric.microsoft.com/?pbi_source=learn-get-started-fabric-trial)
 
 ## Related content
 

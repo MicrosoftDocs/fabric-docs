@@ -14,9 +14,11 @@ ai-usage: ai-assisted
 This article outlines the steps to create an Impala database connection.
 
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
 
-The Impala connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+## Summary
+
+The Impala connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
@@ -25,31 +27,39 @@ The Impala connector supports the following authentication types for copy and Da
 |Database| n/a | √ |
 
 ## Set up your connection for Dataflow Gen2
-You can connect Dataflow Gen2 in Microsoft Fabric to Impala using Power Query connectors. Follow these steps to create your connection:
+You can connect dataflow Gen2 in Fabric to Impala using Power Query connectors. Follow these steps to create your connection:
 
 1. Check [capabilities](#capabilities), [limitations, and considerations](#limitations-and-considerations) to make sure your scenario is supported.
 1. [Get data in Fabric](#get-data).
 1. [Connect to an Impala database](#connect-to-an-impala-database).
 
-### Capabilities
+<a id="capabilities"></a>
 
-[!INCLUDE [impala-database-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/impala-database/impala-database-capabilities-supported.md)]
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
+
+[!INCLUDE [impala-database-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/impala-database/capabilities-supported.md)]
+
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Connect to an Impala database
+<a id="connect-to-an-impala-database"></a>
 
-[!INCLUDE [impala-database-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/impala-database/impala-database-connect-to-power-query-online.md)]
+### Connection instructions
 
-### Limitations and considerations
-
-[!INCLUDE [impala-database-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/impala-database/impala-database-limitations-and-considerations-include.md)]
+[!INCLUDE [impala-database-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/impala-database/connect-online.md)]
 
 ## Set up your connection in a pipeline
 
-Data Factory in Microsoft Fabric doesn't currently support an Impala database in pipelines.
+Data Factory doesn't currently support an Impala database in pipelines.
+
+## Limitations and considerations
+
+[!INCLUDE [impala-database-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/impala-database/limitations.md)]
 
 ## Related content
 

@@ -9,7 +9,7 @@ ms.date: 04/06/2026
 #customer intent: As a data engineer, I want to orchestrate dbt jobs inside a Fabric pipeline so that I can build end-to-end data workflows without switching tools.
 ---
 
-# Orchestrate a dbt job in a pipeline (Preview)
+# Orchestrate a dbt job in a pipeline
 
 The dbt job activity lets you run a dbt job as part of a Fabric data pipeline. You can select an existing dbt job from your workspace, create a new one inline, and chain it with other activities to build end-to-end data workflows. All dbt job settings support dynamic content, so you can build metadata-driven pipelines with parameterized configurations.
 
@@ -92,6 +92,12 @@ For example, you can pass a parameter to the **Select** field so that each pipel
 When the pipeline runs, the **Select** field resolves to the parameter value, so dbt executes only the matching model. You can override the default value each time you trigger the pipeline to target different models without editing the activity.
 
 You can add dynamic content for any column in **Settings** using the same approach.
+
+### CI/CD
+ 
+When you deploy a pipeline and its referenced dbt job together, the dbt job activity uses a relative reference to resolve the corresponding dbt job in the target workspace. You don't need to parameterize the workspace ID or dbt job ID for this scenario.
+ 
+For an end-to-end deployment example, see [Configure CI/CD for dbt jobs using Variable Library](simplify-cicd-for-dbt-jobs.md).
 
 ## dbt job activity advanced settings
 

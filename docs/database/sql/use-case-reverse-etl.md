@@ -88,7 +88,7 @@ The following components are involved in the general flow for using SQL database
 - Use **Microsoft Entra ID** for authentication and authorization.
 - Combine **Fabric workspace roles permissions** and **SQL permissions** for granular control.
 - Optionally, configure **customer-managed keys** for encryption of data at rest.
-- Audit access and secure data in transit by using **Private Link**.
+- Audit access and secure data in transit by using **Private Link**. You can configure private links at the workspace (preview feature) and tenant level.
 
 ## Application serving
 

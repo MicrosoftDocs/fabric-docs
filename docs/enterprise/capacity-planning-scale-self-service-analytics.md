@@ -84,7 +84,7 @@ In the try-out animation, we see the process of onboarding a new workspace in Mi
 
 ### "Timeout" capacity: Quarantine noisy neighbors
 
-If a workspace or user starts using too many resources on the shared capacity (causing others to throttle), move that workload to a separate **small capacity** temporarily. This acts as a quarantine: the rest of the teams recover, and the team using too many resources experiences limited compute, which often motivates them to fix their queries or upgrade to their own capacity. Admins can assign the workspace to a new capacity in the Fabric admin portal. Communicate this as an exceptional measure—"you maxed out the shared environment, so you've been moved to a smaller sandbox until the issue is resolved." This tactic protects everyone and creates accountability for heavy users. Pause the quarantine capacity when it's not in use.
+If a workspace or user starts using too many resources on the shared capacity (causing others to throttle), move that workload to a separate **small capacity** temporarily. This acts as a quarantine: the rest of the teams recover, and the team using too many resources experiences limited compute, which often motivates them to fix their queries or upgrade to their own capacity. Admins can assign the workspace to a new capacity in **OneLake catalog** > **Govern** > **Capacities**. Communicate this as an exceptional measure—"you maxed out the shared environment, so you've been moved to a smaller sandbox until the issue is resolved." This tactic protects everyone and creates accountability for heavy users. Pause the quarantine capacity when it's not in use.
 
 :::image type="content" source="media/capacity-planning/timeout.gif" alt-text="Animation of a workspace being moved to a smaller capacity in Microsoft Fabric.":::
 
@@ -93,7 +93,7 @@ In the timeout animation, we see the process of moving a workspace to a smaller 
 - **Approach**
   1. Create a small F SKU capacity.
   1. Assess CU consumption using the metrics app.
-  1. If CU for new items or workspaces affects existing workloads (throttling), move the new workspace to timeout capacity (Admin Portal/Capacity Settings).
+  1. If CU for new items or workspaces affects existing workloads (throttling), move the new workspace to timeout capacity in **OneLake catalog** > **Govern** > **Capacities**.
   1. High CU items or workspaces (noisy neighbors) share smaller capacity (or you can pause it post move).
   1. Note workload thresholds before moving.
 
@@ -109,7 +109,7 @@ In the rescue animation, we see the process of moving a workspace to a standby c
   1. Create an F SKU capacity; keep it paused.
   1. Assess CU consumption using metrics app.
   1. If CU for new items/workspaces affects priority workloads (throttling), resume the new capacity.
-  1. Move the priority workspace to new capacity (Admin Portal/Capacity Settings).
+  1. Move the priority workspace to a new capacity in **OneLake catalog** > **Govern** > **Capacities**.
   1. Address issues with new content, then bring it back to original capacity, and pause the new one.
   1. Note workload thresholds before moving.
 

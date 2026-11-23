@@ -1,5 +1,5 @@
 ---
-title: Observability for Fabric data agents in Microsoft Foundry
+title: Observability for Fabric data agents in Microsoft Foundry (preview)
 description: Learn how a Fabric data agent connected to a Foundry agent sends its logs and traces to the Application Insights resource attached to your Foundry project, how to read them, and how to control the telemetry with a tenant setting.
 author: amjafari
 ms.author: amjafari
@@ -15,6 +15,9 @@ ai-usage: ai-assisted
 # Observability for Fabric data agents in Microsoft Foundry
 
 You can add a Fabric data agent as a tool to an agent you build in Microsoft Foundry. After you connect it, the Foundry agent calls the Fabric data agent to answer questions that are grounded in your enterprise data that lives in Fabric OneLake.
+
+> [!IMPORTANT]
+> This feature is in [preview](../fundamentals/preview.md).
 
 This article is about observability for that setup. When you build an agent in Foundry and connect a Fabric data agent to it, you want to see what the data agent did on each request, not just the final answer. Foundry Observability gives you that visibility. The data agent's logs and traces are sent to the same place your Foundry agent already reports to, so you can follow a request end to end, from the Foundry agent, into the Fabric data agent, and down to the data sources it queried.
 
@@ -96,7 +99,7 @@ Access to a Foundry project on its own doesn't include access to the telemetry. 
 
 ## Operational metadata tenant setting
 
-A tenant setting in the Fabric admin portal controls whether Fabric data agents send operational metadata for observability in Foundry. The setting is on by default.
+A tenant setting in **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings** controls whether Fabric data agents send operational metadata for observability in Foundry. The setting is on by default.
 
 The setting sends only operational metadata. This metadata includes agent display names, data source names, reasoning step IDs, and conversation IDs. Fabric doesn't send any customer content. User prompts and data agent responses stay within Fabric's compliance boundary and aren't included in this telemetry.
 

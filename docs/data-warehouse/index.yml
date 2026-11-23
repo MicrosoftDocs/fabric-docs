@@ -108,6 +108,8 @@ landingContent:
             url: development-deployment.md
           - text: Warehouse projects in Visual Studio Code
             url: develop-warehouse-project.md
+          - text: Pre- and post-deployment scripts
+            url: deployment-scripts.md
           - text: Reports in the Power BI service
             url: reports-power-bi-service.md   
           - text: Semantic models
@@ -203,9 +205,15 @@ landingContent:
         links:
           - text: Migration Assistant 
             url: migration-assistant.md
-          - text: Migrate planning for Azure Synapse Analytics dedicated SQL pools
-            url: migration-synapse-dedicated-sql-pool-warehouse.md
-          - text: Migration​ methods for ​Azure Synapse Analytics dedicated SQL pools
-            url: migration-synapse-dedicated-sql-pool-methods.md
+          - text: Migrate using an uploaded file
+            url: migrate-using-upload-file.md
+          - text: Migrate using a direct connection
+            url: migrate-using-connection-to-source-system.md
+          - text: Plan migration from Azure Synapse Analytics
+            url: migration-synapse-dedicated-sql-pool-planning.md
+          - text: Plan migration from SQL Server
+            url: migration-sql-server-planning.md
+          - text: Plan migration from Teradata
+            url: migration-teradata-planning.md
           - text: Migrate to Fabric
             url: ../fundamentals/migration.md

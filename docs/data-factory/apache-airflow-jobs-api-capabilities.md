@@ -40,7 +40,7 @@ CRUD stands for Create, Read, Update, and Delete, which are the four basic opera
 - **Update**: Update existing Apache Airflow Jobs.
 - **Delete**: Delete Apache Airflow Jobs that are no longer needed.
 
-The primary online reference documentation for Microsoft Fabric REST APIs can be found in the [Microsoft Fabric REST API documentation](/rest/api/fabric/articles/).
+The primary online reference documentation for Fabric REST APIs can be found in the [Fabric REST API documentation](/rest/api/fabric/articles/).
 
 ### Additional APIs offered in Apache Airflow Jobs
 
@@ -128,7 +128,7 @@ Create an Apache Airflow Job in a specified workspace.
 ### Create an Apache Airflow Job with definition
 
 Create an Apache Airflow Job with a public definition in a specified workspace.
-For additional details on creating an Apache Airflow Job with definition, please review - [Microsoft Fabric REST API](/rest/api/fabric/apacheairflowjob/items/create-apache-airflow-job).
+For additional details on creating an Apache Airflow Job with definition, please review - [Fabric REST API](/rest/api/fabric/apacheairflowjob/items/create-apache-airflow-job).
 
 **Sample request**:
 
@@ -211,7 +211,7 @@ Returns properties of specified Apache Airflow Job.
 ### Get Apache Airflow Job with definition
 
 Returns the Apache Airflow Job item definition.
-For additional details on getting an Apache Airflow Job with definition, please review - [Microsoft Fabric REST API](/rest/api/fabric/apacheairflowjob/items/get-apache-airflow-job-definition).
+For additional details on getting an Apache Airflow Job with definition, please review - [Fabric REST API](/rest/api/fabric/apacheairflowjob/items/get-apache-airflow-job-definition).
 
 **Sample request**:
 
@@ -288,7 +288,7 @@ Updates the properties of the Apache Airflow Job.
 ### Update Apache Airflow Job with definition
 
 Updates the Apache Airflow Job item definition.
-For additional details on updating an Apache Airflow Job with definition, please review - [Microsoft Fabric REST API](/rest/api/fabric/apacheairflowjob/items/update-apache-airflow-job-definition).
+For additional details on updating an Apache Airflow Job with definition, please review - [Fabric REST API](/rest/api/fabric/apacheairflowjob/items/update-apache-airflow-job-definition).
 
 **Sample request**:
 
@@ -993,7 +993,7 @@ For more detailed information on how to set up and use SPNs in Fabric Data Facto
 
 Refer to the following content for more information on APIs in Apache Airflow Jobs in Fabric Data Factory:
 
-- [Microsoft Fabric REST API](/rest/api/fabric/articles/)
+- [Fabric REST API](/rest/api/fabric/articles/)
 - [CRUD Items APIs in Fabric](/rest/api/fabric/core/items)
 - [Apache Airflow Job — Compute](/rest/api/fabric/apacheairflowjob/compute)
 - [Apache Airflow Job — Environment](/rest/api/fabric/apacheairflowjob/environment)

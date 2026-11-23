@@ -3,9 +3,10 @@ title: Edit table schema
 description: Learn how to edit the table schema in Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.topic: how-to
-ms.date: 06/14/2026
+ms.date: 08/19/2026
 ms.subservice: rti-eventhouse
 ms.search.form: Edit the table schema
+ai-usage: ai-assisted
 ---
 # Edit a table schema
 
@@ -84,6 +85,25 @@ When you rename or add columns to a table, all references to that table in your 
     :::image type="content" source="media/empty-table/added-columns-mappings-command-viewer.png" alt-text="Screenshot of the command viewer with auto update mappings enabled in the dependencies section.":::
 
 1. If necessary, update the data ingestion [mapping](/kusto/management/mappings?view=microsoft-fabric&preserve-view=true).
+
+## Allow large values for a column
+
+If you expect to ingest large values in a column, you can enable large value support for that column. The system automatically enables large value support for `string` and `dynamic` columns when the schema inference process identifies values larger than 1 MB.
+
+If the schema inference process doesn't identify a large value, you can manually turn on large value support for an existing `string` or `dynamic` column. For more information, see [Large message support (preview)](get-data-overview.md#large-message-support-preview).
+
+> [!NOTE]
+> This setting only applies to new data ingested going forward. Previously ingested `string` values are truncated to the limit (the `MaxValueSize` property of the default policy is 1 MB), and `dynamic` values are replaced with null.
+> Large Message Support isn't supported for shortcuts (external tables), tables with Query acceleration over OneLake shortcuts. 
+> OneLake data availability for tables with large value columns depends on the target size limits.
+
+1. Browse to your desired KQL database. In the explorer pane, expand **Tables**.
+
+1. Select a table from the list, and in the **More menu** [**...**] select **Edit schema**.
+
+1. In the **Edit table schema** window, select the column that holds large values, and turn on **Enable large values**.
+
+:::image type="content" source="media/empty-table/ingest-large-data.png" alt-text="Screenshot of the edit table schema window with the enable large values option highlighted." lightbox="media/empty-table/ingest-large-data.png":::
 
 ## Related content
 

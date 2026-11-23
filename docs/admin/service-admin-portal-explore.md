@@ -11,7 +11,7 @@ ms.date: 04/08/2026
 
 # Tenant settings for Explore
 
-These settings are configured in the tenant settings section of the [Admin portal](./about-tenant-settings.md#how-to-get-to-the-tenant-settings). For information about how to get to and use tenant settings, see [About tenant settings](./about-tenant-settings.md).
+These settings are configured in **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**. For information about how to get to and use tenant settings, see [About tenant settings](./about-tenant-settings.md).
 
 ## Users with view permission can launch Explore
 

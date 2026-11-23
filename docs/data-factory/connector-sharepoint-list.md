@@ -14,9 +14,11 @@ ai-usage: ai-assisted
 This article outlines the steps to create a SharePoint list connection.
 
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
 
-The SharePoint list connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+## Summary
+
+The SharePoint list connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
@@ -24,27 +26,35 @@ The SharePoint list connector supports the following authentication types for co
 |Windows| n/a | √ |
 
 ## Set up your connection for Dataflow Gen2
-You can connect Dataflow Gen2 in Microsoft Fabric to SharePoint list using Power Query connectors. Follow these steps to create your connection:
+You can connect a dataflow Gen2 in Fabric to a SharePoint list by using Power Query connectors. Follow these steps to create your connection:
 
 1. Check [capabilities](#capabilities) to make sure your scenario is supported.
 1. [Get data in Fabric](#get-data).
 1. [Connect to a SharePoint list](#connect-to-a-sharepoint-list).
 
-### Capabilities
+<a id="capabilities"></a>
 
-[!INCLUDE [sharepoint-list-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/sharepoint-list/sharepoint-list-capabilities-supported.md)]
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
+
+[!INCLUDE [sharepoint-list-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/sharepoint-list/capabilities-supported.md)]
+
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Connect to a SharePoint list
+<a id="connect-to-a-sharepoint-list"></a>
 
-[!INCLUDE [sharepoint-list-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/sharepoint-list/sharepoint-list-connect-to-power-query-online.md)]
+### Connection instructions
+
+[!INCLUDE [sharepoint-list-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/sharepoint-list/connect-online.md)]
 
 ## Set up your connection in a pipeline
 
-Data Factory in Microsoft Fabric doesn't currently support a SharePoint list in pipelines.
+Data Factory doesn't currently support a SharePoint list in pipelines.
 
 ## Related content
 

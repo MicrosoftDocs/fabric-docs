@@ -43,7 +43,7 @@ Alternatively, if you have the SQL connection string of your [[!INCLUDE [fabric-
 
 1. Find the server name of your warehouse or SQL analytics endpoint. 
     - In the Fabric portal, right-click on the warehouse or SQL analytics endpoint in your workspace and select **Copy SQL connection string**. 
-    - Or, navigate to the warehouse **Settings** in your workspace. Select **SQL endpoint**. Copy the SQL connection string. This is the server name.
+    - Or, go to the warehouse **Settings** in your workspace. Select **SQL connection string**. Copy the SQL connection string. This string is the server name.
 1. Open Power BI Desktop and select **SQL Server** in the ribbon.
 1. Paste the SQL connection string under **Server**.
 1. In the **Navigator** dialog, select the databases and tables you would like to load.

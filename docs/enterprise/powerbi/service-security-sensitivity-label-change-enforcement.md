@@ -35,9 +35,9 @@ If no user has even these usage rights, nobody will be able to change or remove 
 
 To avoid this situation, the Power BI admin can enable the **Allow workspace admins to override automatically applied sensitivity labels (preview)** tenant setting. This makes it possible for workspace admins to override automatically applied sensitivity labels without regard to label change enforcement rules.
 
-To enable this setting, go to: **Admin portal > Tenant settings > Information protection**.
+To enable this setting, go to **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings** > **Information protection**.
 
-![Screenshot tenant switch allowing workspace admins to override automatically set sensitivity labels.](media/service-security-sensitivity-label-change-enforcement/relaxations-allow-workspace-admins-tenant-switch.png)
+:::image type="content" source="media/service-security-sensitivity-label-change-enforcement/relaxations-allow-workspace-admins-tenant-switch.png" alt-text="Screenshot tenant switch allowing workspace admins to override automatically set sensitivity labels." lightbox="media/service-security-sensitivity-label-change-enforcement/relaxations-allow-workspace-admins-tenant-switch.png":::
 
 ## Related content
 

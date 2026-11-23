@@ -54,7 +54,7 @@ Work through these steps to identify why Copilot is unavailable.
 
 ### Step 1: Check whether your Fabric trial expired
 
-Notifications appear in the Fabric portal and on the **Capacity settings** page of the Admin portal as a trial nears expiration. To check the current status, go to **Admin portal** > **Capacity settings** > **Trial**.
+Notifications appear in the Fabric portal and in **OneLake catalog** > **Govern** > **Capacities** as a trial nears expiration. To check the current status, go to **OneLake catalog** > **Govern** > **Capacities** > **Trial**.
 
 ### Step 2: Verify that your workspace has supported capacity
 

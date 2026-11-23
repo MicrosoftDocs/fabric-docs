@@ -25,7 +25,7 @@ You don't need to create a SQL analytics endpoint in Fabric. A SQL analytics end
 
 ### Automatic metadata discovery
 
-A seamless process reads the Delta logs from the `/Tables` folder and ensures SQL metadata for tables, such as statistics, is always up to date. There's no user action needed, and no need to import, copy data, or set up infrastructure. For more information, see [Automatically generated schema in the SQL analytics endpoint](sql-analytics-endpoint-performance.md#automatically-generated-schema-in-the-sql-analytics-endpoint-of-the-lakehouse).
+A seamless process reads the Delta logs from the `/Tables` folder and ensures SQL metadata for tables, such as statistics, is always up to date. There's no user action needed, and no need to import, copy data, or set up infrastructure. For more information, see [SQL analytics endpoint metadata sync](sql-analytics-endpoint-metadata-sync.md).
 
 ## Scenarios the lakehouse enables for data warehousing
 
@@ -37,7 +37,7 @@ The lakehouse, with its SQL analytics endpoint, powered by the warehouse, can si
 
 A well-known strategy for lake data organization is [medallion architecture](../onelake/onelake-medallion-lakehouse-architecture.md). This strategy organizes files into raw (bronze), consolidated (silver), and refined (gold) layers. You can use a SQL analytics endpoint to analyze data in the gold layer of medallion architecture if the files are stored in Delta Lake format, even if they're stored outside the [!INCLUDE [product-name](../includes/product-name.md)] OneLake.
 
-Use [shortcuts in OneLake](lakehouse-shortcuts.md) to reference gold folders in external Azure Data Lake storage accounts that Synapse Spark or Azure Databricks engines manage.
+Use [shortcuts in OneLake](lakehouse-shortcuts.md) to reference gold folders in external Azure Data Lake storage accounts that Azure Synapse Spark or Azure Databricks engines manage.
 
 You can also add warehouses as subject area or domain oriented solutions for specific subject matter that can have bespoke analytics requirements. 
 
@@ -64,13 +64,13 @@ In Fabric, you can use Spark Streaming or Data Engineering to curate your data. 
 
 ### Integration with your open lakehouse's gold layer
 
-A SQL analytics endpoint isn't limited to data analytics in just the lakehouse in Fabric. By using a SQL analytics endpoint, you can analyze lake data in any lakehouse by using Synapse Spark, Azure Databricks, or any other lake-centric data engineering engine. You can store the data in Azure Data Lake Storage or Amazon S3.
+A SQL analytics endpoint isn't limited to data analytics in just the lakehouse in Fabric. By using a SQL analytics endpoint, you can analyze lake data in any lakehouse by using Azure Synapse Spark, Azure Databricks, or any other lake-centric data engineering engine. You can store the data in Azure Data Lake Storage or Amazon S3.
 
 You can always access this tight, bi-directional integration with the lakehouse in Fabric through any engine by using open APIs, the Delta format, and of course T-SQL.
 
 ### Data virtualization of external data lakes with shortcuts
 
-Use OneLake [shortcuts](lakehouse-shortcuts.md) to reference gold folders in external Azure Data Lake storage accounts that Synapse Spark or Azure Databricks engines manage, as well as any Delta table stored in Amazon S3.
+Use [OneLake shortcuts](lakehouse-shortcuts.md) to reference gold folders in external Azure Data Lake storage accounts that Azure Synapse Spark or Azure Databricks engines manage, as well as any Delta table stored in Amazon S3.
 
 You can analyze any folder referenced by a shortcut from a SQL analytics endpoint and create a SQL table for the referenced data. Use the SQL table to expose data in externally managed data lakes and enable analytics on them.
 
@@ -145,7 +145,7 @@ For more information and examples on querying external data, see [Query external
 - [Power BI semantic models in Fabric](../data-warehouse/semantic-models.md)
 - [Options to get data into the lakehouse in Fabric](load-data-lakehouse.md)
 - [How to copy data using copy activity](../data-factory/copy-data-activity.md)
-- [Move data from Azure SQL DB into lakehouse via copy assistant](../data-factory/tutorial-move-data-lakehouse-copy-assistant.md)
-- [Connectivity to data warehousing in Fabric](../data-warehouse/connectivity.md)
+- [Move data from Azure SQL Database into lakehouse via copy assistant](../data-factory/tutorial-move-data-lakehouse-copy-assistant.md)
+- [Connectivity to Fabric Data Warehouse](../data-warehouse/connectivity.md)
 - [SQL analytics endpoint of the lakehouse](../data-warehouse/data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse)
 - [Query the SQL analytics endpoint or warehouse in Fabric](../data-warehouse/query-warehouse.md)

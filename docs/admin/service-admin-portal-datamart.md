@@ -12,7 +12,7 @@ LocalizationGroup: Administration
 
 # Datamart tenant settings
 
-Datamart tenant settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
+Datamart tenant settings are configured in **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
 
 ## Create Datamarts (Preview)
 

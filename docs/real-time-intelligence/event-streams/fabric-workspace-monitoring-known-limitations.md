@@ -1,23 +1,20 @@
 ---
-title: Eventstream Workspace Monitoring Limits
+title: Eventstream Workspace Monitoring Known Limitations (preview)
 description: Eventstream monitoring known issues include periodic node updates, outdated artifact names, and missing diagnostic logs. Find workarounds to keep your data flowing.
 #customer intent: As a Fabric admin, I want to understand the known limitations of Eventstream workspace monitoring so that I can set expectations for my team
 author: spelluru
 ms.author: spelluru
 ms.reviewer: spelluru
-ms.date: 07/27/2026
+ms.date: 08/24/2026
 ms.topic: article
+ai-usage: ai-assisted
 ---
 
-# Eventstream workspace monitoring - known limitations (preview)
+# Eventstream workspace monitoring known limitations (preview)
 
-**Eventstream workspace monitoring** is in preview and has a few known limitations that affect how monitoring data is collected, displayed, and queried.
+**Eventstream workspace monitoring (preview)** has a few known limitations that affect how monitoring data is collected, displayed, and queried.
 
-> [!NOTE]
-> Eventstream workspace monitoring is currently in preview.
-
-> [!IMPORTANT]
-> Workspace monitoring for eventstreams is temporarily disabled. The product team identified an issue that required disabling the feature. They're implementing a fix with improved controls. For more information, see the [Eventstream workspace monitoring known issue](https://support.fabric.microsoft.com/known-issues/?product=Real-Time%2520Intelligence&active=true&fixed=true&sort=published&issueId=1824). 
+[!INCLUDE [Eventstream workspace monitoring preview notice](includes/eventstream-workspace-monitoring-preview.md)]
 
 ## Node status updates are periodic, not real-time
 
@@ -46,9 +43,6 @@ The **ArtifactId** and **WorkspaceId** columns always contain the correct, curre
 
 The EventStreamMetrics and EventStreamErrorMetrics tables use a **CorrelationId** column to identify the underlying service resource (such as a processing job or event hub entity) rather than the individual Eventstream node name. In most cases, there's a one-to-one relationship between a CorrelationId and a node. However, when an Eventstream uses advanced processing (such as the SQL operator with multiple destinations), a single CorrelationId might map to multiple nodes. Use the **NodeDirection** and **NodeType** columns together with the **CorrelationId** to distinguish between nodes.
 
-## Diagnostic logs aren't yet available
-
-During public preview, the monitoring tables show metrics and error counts, but not detailed diagnostic log messages. This limitation means you can see that errors occurred, but not the specific error messages. Detailed diagnostic logs are planned for a future release.
 
 ## Related content
 

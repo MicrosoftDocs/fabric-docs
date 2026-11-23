@@ -3,13 +3,13 @@ title: Automate Fabric Maps with the REST API
 description: Learn about using Microsoft Fabric Maps REST API to programmatically create and manage map items in Microsoft Fabric.
 ms.reviewer: smunk, sipa
 ms.topic: article
-ms.date: 04/22/2026
+ms.date: 09/13/2026
 ms.search.form: Automate Fabric Maps
 ---
 
 # Automate Fabric Maps with the REST API
 
-Fabric Maps provides REST APIs that enables you to programmatically create and manage map items in Microsoft Fabric. This API allows you to automate map provisioning, apply consistent map definitions across environments, and integrate mapping workflows into applications and deployment pipelines.
+Fabric Maps provides REST APIs that enable you to programmatically create and manage map items in Microsoft Fabric. By using this API, you can automate map provisioning, apply consistent map definitions across environments, and integrate mapping workflows into applications and deployment pipelines.
 
 This article introduces the Fabric Maps REST APIs, explains authentication and authorization, and describes how map definitions are represented and applied.
 
@@ -26,7 +26,7 @@ The API follows standard REST patterns and uses the same security model as other
 
 ## Authentication and authorization
 
-All Fabric Maps REST API requests must be authenticated using Microsoft Entra ID.
+You must authenticate all Fabric Maps REST API requests by using Microsoft Entra ID.
 
 ### Access tokens
 
@@ -41,10 +41,10 @@ The access token represents the calling identity and its permissions in Fabric.
 The API enforces Fabric workspace and item permissions. To automate map operations, the calling identity must have appropriate access to:
 
 * The target workspace
-* Any map items being created or modified
+* Any map items you're creating or modifying
 
 > [!Important]
-> The Fabric Maps REST API honors the same authorization rules as the Fabric UI. Automation does not bypass security boundaries.
+> The Fabric Maps REST API follows the same authorization rules as the Fabric UI. Automation doesn't bypass security boundaries.
 
 ## Fabric Maps item model
 
@@ -52,7 +52,7 @@ Fabric Maps uses the standard Fabric item model.
 
 * A map is a first-class item stored in a workspace.
 * Each map item has an item ID and metadata.
-* Map items can be referenced by other Fabric workloads.
+* Other Fabric workloads can reference map items.
 
 Automation typically involves:
 
@@ -66,19 +66,19 @@ Fabric Maps are defined by a **public map definition**, commonly represented as 
 A map definition can include:
 
 * **Basemap configuration**
-    Specifies the underlying basemap (for example, a standard vector basemap or a custom source).
+    Specifies the underlying basemap, such as a standard vector basemap or a custom source.
 * **Data sources**
-    References to spatial data, such as GeoJSON files stored in OneLake or a Lakehouse.
+    References to spatial data, such as GeoJSON files stored in OneLake or a lakehouse.
 * **Layer sources**
     Mappings that associate data sources with map layers.
 * **Layer rendering settings**
     Styling and visualization rules that control how layers are drawn.
 
-Because the definition is declarative, the same **map.json** can be reused across environments and updated incrementally.
+Because the definition is declarative, you can reuse the same **map.json** across environments and update it incrementally.
 
-## Referencing GeoJSON and Lakehouse data
+## Referencing GeoJSON and lakehouse data
 
-Map definitions can reference spatial data stored in Fabric, such as GeoJSON files in a Lakehouse. This enables maps to be driven directly from curated data assets.
+Map definitions can reference spatial data stored in Fabric, such as GeoJSON files in a lakehouse. This approach enables maps to be driven directly from curated data assets.
 
 Common patterns include:
 
@@ -90,17 +90,17 @@ This separation allows data pipelines and map configuration to evolve independen
 
 ## Order of operations
 
-When you automate the creation of a map item in Fabric Maps using REST API, there are two supported patterns:
+When you automate the creation of a map item in Fabric Maps by using the REST API, use one of the following patterns:
 
 ### Option 1: Create the map, then assign the map definition
 
 1. Create an empty map item.
-1. Apply a map.json definition using a subsequent API call.
+1. Apply a map.json definition by using a subsequent API call.
 
-This approach is useful when:
+Use this approach when:
 
-* The map definition is generated dynamically.
-* The map item must exist before configuration is finalized.
+* You generate the map definition dynamically.
+* The map item must exist before you finalize the configuration.
 
 ### Option 2: Create the map with the definition included
 
@@ -109,10 +109,10 @@ This approach is useful when:
 
 This approach is useful for:
 
-* Fully declarative deployments
-* Infrastructure-as-code scenarios
+* Fully declarative deployments.
+* Infrastructure-as-code scenarios.
 
-Both patterns result in the same map state. The choice depends on how your automation workflow is structured.
+Both patterns result in the same map state. Choose the pattern that best fits your automation workflow.
 
 ## Error handling and validation
 
@@ -138,13 +138,13 @@ The REST API is a good fit in the following scenarios:
 
 * **Automated map provisioning**
 
-    Create maps as part of scripts, applications, or deployment pipelines instead of manually creating them in the UI. This is common when onboarding new workspaces or tenants.
+    Create maps as part of scripts, applications, or deployment pipelines instead of manually creating them in the UI. This approach is common when onboarding new workspaces or tenants.
 * **CI/CD and infrastructure‑as‑code workflows**
 
-    Store **map.json** definitions in source control and deploy them consistently across environments (development, test, and production) using automation.
+    Store **map.json** definitions in source control and deploy them consistently across environments (development, test, and production) by using automation.
 * **Real‑time and event‑driven solutions**
 
-    Programmatically create or update maps that visualize streaming data from Eventstreams and Eventhouse as part of real‑time operational systems.
+    Programmatically create or update maps that visualize streaming data from eventstreams and an eventhouse as part of real‑time operational systems.
 * **Bulk or repeatable updates**
 
     Apply the same configuration or definition changes to multiple maps efficiently, such as styling updates, layer changes, or data source migrations.
@@ -179,12 +179,12 @@ Review the Fabric Maps REST API reference.
 > [!div class="nextstepaction"]
 > [Map item definition](/rest/api/fabric/articles/item-management/definitions/map-definition)
 
-Learn how to create and configure a Fabric Map using Python.
+Learn how to create and configure a Fabric map using Python.
 
 > [!div class="nextstepaction"]
-> [Create and configure a Fabric Map using Python](create-configure-map-using-rest-api.md)
+> [Create and configure a Fabric map using Python](create-configure-map-using-rest-api.md)
 
-Tutorial that creates a map using GeoJSON as a data layer using REST API.
+Tutorial that creates a map using GeoJSON as a data layer by using the REST API.
 
 > [!div class="nextstepaction"]
 > [Tutorial: Create a map using REST API with Python](tutorial-create-fabric-map-python.md)

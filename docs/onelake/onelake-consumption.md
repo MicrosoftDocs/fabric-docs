@@ -5,7 +5,7 @@ ms.reviewer: eloldag # Product team ms alias(es)
 # author: Do not use - assigned by folder in docfx file
 # ms.author: Do not use - assigned by folder in docfx file
 ms.topic: how-to
-ms.date: 05/20/2026
+ms.date: 09/21/2026
 ai-usage: ai-assisted
 #customer intent: As a capacity admin, I want to understand how OneLake usage is billed and reported, including consumption of storage and transactions, so that I can effectively manage and optimize my costs and resources.
 ---
@@ -46,6 +46,38 @@ The following table defines CU consumption for OneLake data operations. As of Ma
 | **OneLake Iterative Write via Redirect** | OneLake Iterative Write | Per 100 | 1300 CU seconds | 1,300 CU seconds | 1,300 CU seconds |
 
 *For files > 4 MB in size, OneLake counts a transaction for every 4 MB block of data read or written. For files < 4 MB, a full transaction is counted. For example, if you do 10,000 read operations via Redirect and each file read is 16 MB in size, your capacity consumption is 40,000 transactions or 416 CU seconds.
+
+## On-demand billing
+
+> [!IMPORTANT]
+> On-demand billing is currently in preview.
+
+When you enable on-demand billing, you pay for all OneLake operations and storage based on actual usage. This billing model gives you the flexibility to use OneLake without buying provisioned Fabric capacity upfront.
+
+This flexibility makes it easier to use OneLake as the centralized data layer in a multicloud analytics architecture. You can keep your data in OneLake and choose the compute engine that best fits each workload, such as Fabric, Azure Databricks, or Snowflake.
+
+ You can use on-demand billing in two ways:
+
+- On a paid capacity - Enable on-demand billing for a supported billing category on an existing Fabric capacity (F2 and higher). Operations in that category no longer draw capacity units (CUs) from the capacity and are billed separately. This separation helps maintain access to OneLake when the capacity is throttled. Other Fabric operations continue to use the shared capacity.
+
+- On Fabric Zero-Provisioned (F0) – Create a capacity with zero provisioned CUs and no upfront capacity cost. On-demand billing is enabled by default, so you pay only for the OneLake compute and storage you use. You can move between F0 and other SKUs as your needs change.
+
+### On-demand pricing
+
+On-demand billing uses separate meters for each OneLake billing category, such as reads, writes, and other operations. Pricing is based on the same pay-as-you-go capacity price.
+
+For example, OneLake hot reads consume **104 CU seconds per 10,000 transactions**.
+
+By using the **East US 2** pay-as-you-go price of **$0.00005 per CU second**, you can calculate the cost as follows:
+
+`$0.00005 per CU second × 104 CU seconds = $0.0052 per 10,000 read transactions`
+
+To configure, see [On-demand billing](/fabric/enterprise/on-demand-billing).
+
+### Workload-driven consumption
+Some Fabric workloads access OneLake as part of their internal processing and system operations. These requests consume Fabric Capacity Units (CUs) in the same way as user-initiated operations.
+> [!NOTE]
+> Some OneLake operations performed as part of Spark workload execution aren't fully reflected in reported capacity consumption. Beginning November 15, 2026, Fabric will correct this reporting so that these operations are included in OneLake CU consumption. OneLake consumption rates aren't changing. However, customers with Spark workloads that generate a high volume of these operations might see increased CU consumption. Whether this increase results in additional cost depends on the utilization and configuration of the customer’s Fabric capacity.
 
 ## Shortcuts
 
@@ -97,7 +129,23 @@ OneLake security consumes capacity for row level security (RLS) transactions bas
 
 | **Operation** | **Description** | **Operation Unit of Measure** | **Capacity Units** |
 | --- | --- | --- | --- |
-| **OneLake security RLS** | OneLake security RLS | Million rows in the table | 0.1 CU seconds |
+| **OneLake security RLS** | OneLake security RLS | Million rows in the table | 1 CU seconds |
+
+## Table read API
+
+Calls to the table read API are billed to the calling user. You pay for the `POST /read` operation. You don't pay separately for retrieving the streams with `GET /readStream/{streamId}`.
+
+The API measures the rows it scans, not just the rows it returns. Charges are rounded up to the nearest million rows.
+
+| **Operation** | **Unit of measure** | **Consumption** |
+| --- | --- | --- |
+| `/read` | 1 million rows scanned | 8 CU seconds |
+
+When a table uses RLS, the number of rows scanned can be larger than the number of rows returned. If RLS returns no rows from data that is already materialized, the API still charges the base rate of 0.8 CU seconds.
+
+To return RLS-filtered results, the API materializes the data in a hidden OneLake location. You're charged for the volume of materialized data that the API generates and stores. The data is retained for seven days, and reading it doesn't extend its retention period.
+
+For more information about the workflow, see [Read OneLake table data](./table-apis/read-table-data-rest-api.md).
 
 ## OneLake diagnostics
 

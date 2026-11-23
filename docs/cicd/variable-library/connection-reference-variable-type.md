@@ -6,13 +6,13 @@ ms.author: billmath
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: overview
-ms.date: 02/18/2026
+ms.date: 11/04/2026
 
 #customer intent: As a developer, I want to learn how to use a Fabric application lifecycle management (ALM) variable library to customize my release stages, so that I can manage my content lifecycle.
 ---
 
 
-# Connection reference variable type (preview)
+# Connection reference variable type
 A connection reference variable is a workspace variable that stores the ID of an [external data connection (For example, Snowflake, Azure SQL)](../../data-factory/data-source-management.md), allowing items to reference external resources without embedding credentials or connection strings. 
 
 ## How to use
@@ -77,7 +77,7 @@ Using connection reference variables involves two layers of permissions:
 - **Create and Edit a connection reference variable**: Users with Contributor or above roles in the workspace can create and edit variables in the library, while Viewers are read-only.
 - **Accessing the connection reference variable**: In addition to rights on the Variable Library, **you must have at least Read permission on the connection reference variable** you intend to reference.
 
-For more information on permissions and permission validation, see [Variable library permissions](variable-library-permissions.md#connection-reference-variable-type-preview)
+For more information about permissions and permission validation, see [Variable library permissions](variable-library-permissions.md#connection-reference-variable-type).
 
 
 ## Supported items

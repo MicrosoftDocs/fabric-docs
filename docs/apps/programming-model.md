@@ -3,7 +3,7 @@ title: Programming model overview
 description: Learn about the Fabric Apps programming model, including TypeScript decorators, schema generation, and how data models become production-ready APIs.
 ms.reviewer: mksuni
 ms.topic: concept-article
-ms.date: 06/02/2026
+ms.date: 08/11/2026
 ai-usage: ai-assisted
 ---
 
@@ -37,14 +37,16 @@ When you create a Fabric app, your code flows through these stages:
 
 You define your data structure using TypeScript classes and decorators from `@microsoft/rayfin-core`:
 
+The default `blankapp` scaffold resolves to the Universal App workspace. Enable Data with `npm run pack:add -- data-modeling`, define entities in `packages/data/src/`, register runtime classes in `packages/data/src/index.ts`, and maintain client-facing contracts in `packages/shared/src/index.ts`. Flat templates can use `rayfin/data/` and `rayfin/data/schema.ts` instead. Service paths in `rayfin/rayfin.yml` determine which layout the CLI builds.
+
 ```typescript
 import { entity, uuid, text, int } from '@microsoft/rayfin-core';
 
 @entity()
 export class Product {
   @uuid() id!: string;
-  @text() name!: string;
-  @text({ optional: true }) description?: string;
+  @text({ max: 200 }) name!: string;
+  @text({ optional: true, max: 2000 }) description?: string;
   @int() price!: number;
 }
 ```
@@ -57,22 +59,26 @@ The Rayfin CLI (`npx rayfin`) analyzes your decorated classes and generates:
 - **API configuration** - GraphQL endpoint definitions
 - **Permission policies** - Row-level security and field-level access control
 
-### 4. Type-safe client usage
+### 3. Type-safe client usage
 
 GraphQL APIs are available to perform CRUD operations on your database. Rayfin SDK provides a data client operation out of the box to read or write or delete data.
 
 ```typescript
 import { RayfinClient } from '@microsoft/rayfin-client';
+import type { UniversalAppSchema } from '@rayfin-app/shared';
 
-const client = new RayfinClient();
+const client = new RayfinClient<UniversalAppSchema>({
+  baseUrl: import.meta.env.VITE_RAYFIN_API_URL,
+  publishableKey: import.meta.env.VITE_RAYFIN_PUBLISHABLE_KEY,
+});
 
-// TypeScript knows about Product fields
-const products = await client.data.products.query()
+// Register Product in the data package and shared schema first.
+const products = await client.data.Product
   .select(['id', 'name', 'price'])
   .execute();
 
 // Compile-time error if field doesn't exist
-const invalid = await client.data.products.query()
+const invalid = await client.data.Product
   .select(['nonexistentField'])  // ❌ TypeScript error
   .execute();
 ```
@@ -92,7 +98,7 @@ Rayfin SDK provides decorators for common data modeling patterns:
 | Decorator | Database type | TypeScript type |
 | ----------- |--------------- |----------------- |
 | `@uuid()` | UNIQUEIDENTIFIER | `string` |
-| `@text()` | NVARCHAR | `string` |
+| `@text({ max: n })` | NVARCHAR(n) | `string` |
 | `@int()` | INT | `number` |
 | `@decimal()` | DECIMAL | `number` |
 | `@bool()` | BIT | `boolean` |
@@ -105,6 +111,52 @@ Rayfin SDK provides decorators for common data modeling patterns:
 | `@role()` | Define role-based permissions |
 
 See [Define data permissions](data-permissions.md) for authorization details.
+
+## Functions
+
+Create one `UserDataFunctions` instance, and register each function by calling `udf.func(name, handler, connections?)`.
+
+Follow these rules when you define a function:
+
+- Place the `RayfinContext` parameter anywhere in the handler signature. The runtime identifies it by type, injects it, and excludes it from the generated function inputs.
+- Declare external resource audiences in `RayfinContext<Schema, Audiences>` and use the app identity's resource tokens through `ctx.Tokens`. Pass `[]` as the third argument to `udf.func()` when declaring those audiences. See [Connect Functions to external resources](functions-connect-external-resources.md).
+
+The following example registers a plain function and a function that uses the invocation context:
+
+```typescript
+import {
+  UserDataFunctions,
+  type RayfinContext,
+} from '@microsoft/fabric-user-data-functions';
+
+import type { UniversalAppSchema } from '@rayfin-app/shared';
+
+const udf = new UserDataFunctions();
+
+udf.func('greet', async (name: string): Promise<string> => {
+  return `Hello, ${name}!`;
+});
+
+udf.func(
+  'whoAmI',
+  async (ctx: RayfinContext<UniversalAppSchema>): Promise<string> => {
+    return ctx.accessToken ? 'authenticated' : 'anonymous';
+  },
+);
+```
+
+The `RayfinContext` provides the function's runtime services:
+
+| Member | Purpose |
+| --- | --- |
+| `ctx.accessToken` | Provides the signed-in user's Rayfin JSON Web Token (JWT). Decode the `sub` claim to get a stable user ID. |
+| `ctx.Tokens.<Audience>` | Gets a platform-provided resource token for an audience declared in the `RayfinContext` annotation. Deployed Functions use the app identity and its permissions. For details, see [Connect Functions to external resources](functions-connect-external-resources.md). |
+| `ctx.getSecret('NAME')` | Gets a secret for the current invocation. Returns `undefined` when the secret isn't set. |
+| `ctx.getDataClient()` | Gets the typed data API for your entities. The client supports create, `findMany`, update, delete, and upsert operations. |
+| `ctx.baseUrl` | Provides the Rayfin endpoint for the current item. |
+| `ctx.publishableKey` | Provides the publishable key for the current item. |
+
+For setup, local debugging, and deployment instructions, see [Use Functions in Fabric Apps](functions.md).
 
 ## Development workflow
 
@@ -127,8 +179,8 @@ Permissions are defined alongside your data models using the `@role` decorator:
 })
 export class UserDocument {
   @uuid() id!: string;
-  @text() userId!: string;
-  @text() content!: string;
+  @text({ max: 255 }) userId!: string;
+  @text({ max: 4000 }) content!: string;
 }
 ```
 
@@ -143,3 +195,5 @@ This approach ensures:
 - [Data models overview](data-models.md)
 - [Define data permissions](data-permissions.md)
 - [Query data with GraphQL](read-write-data-graphql.md)
+- [Use Functions in Fabric Apps](functions.md)
+- [Manage function secrets](manage-function-secrets.md)

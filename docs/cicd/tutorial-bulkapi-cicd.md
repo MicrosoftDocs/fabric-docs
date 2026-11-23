@@ -2,26 +2,28 @@
 title: Tutorial - CI/CD for Microsoft Fabric Using Fabric Bulk Import - Export API
 description: This article provides a Fabric CI/CD tutorial on using the Fabric Bulk Import - Export API.
 ms.reviewer: richin
-ms.author: billmath
-author: billmath
+ms.author: nishalit
+author: nimrodshalit
 ms.topic: overview
 ms.custom:
 ms.search.form:
-ms.date: 03/18/2026
+ms.date: 09/24/2026
 ai-usage: ai-assisted
 ---
 
 # Tutorial - Fabric CI/CD with Bulk Import Item Definitions API
-In this tutorial, you use an Azure DevOps pipeline that leverages the [Bulk import item definition api](/rest/api/fabric/core/items/bulk-import-item-definitions(beta)) to deploy items from a Git folder. The Git folder contains item definitions from a **dev** workspace that is connected to Git, and the pipeline deploys them to a **test** workspace that isn't connected to Git.
+In this tutorial, you use an Azure DevOps pipeline that leverages the [Bulk import item definition api](/rest/api/fabric/core/items/bulk-import-item-definitions) to deploy items from a Git folder. The Git folder contains item definitions from a **dev** workspace that is connected to Git, and the pipeline deploys them to a **test** workspace that isn't connected to Git.
+
+You can optionally attach a deployment plan to the Bulk Import Item Definitions request. For the request format and requirements, see [Automate deployments with a deployment plan](deployment-plan/deployment-plan-automation.md).
 
 ## Prerequisites
 - **Azure DevOps** Azure Project and repository + permissions to configure Azure DevOps pipeline and create variable groups.
 - **Fabric workspace** name: `bulk-tutorial-test` - target workspace for the deployment
 - **Service Principal (SPN)** - An Entra ID (Azure AD) App Registration with a client secret, need to have the client id, client secret, and tenant id.
 - The service principal has **Contributor** permission for `bulk-tutorial-test` Fabric workspace 
-- Fabric Admin Setting for Service Principal - A Fabric Admin must enable *"Service principals can use Fabric APIs"* in the Fabric Admin Portal under **Tenant Settings** 
+- Fabric Admin Setting for Service Principal - A Fabric Admin must enable *"Service principals can use Fabric APIs"* under **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**.
 
-> 💡 **Tip:** To enable Service Principal access in Fabric, a Fabric Admin must enable *"Service principals can use Fabric APIs"* in the Fabric Admin Portal under **Tenant Settings**.
+> 💡 **Tip:** To enable Service Principal access in Fabric, a Fabric Admin must enable *"Service principals can use Fabric APIs"* under **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**.
 
 ## Background
 
@@ -206,7 +208,7 @@ echo "Request body built with $(echo "$PARTS_JSON" | jq length) parts"
 Send the payload to the Bulk Import API and capture the operation ID for polling.
 
 ```bash
-API_URL="https://api.fabric.microsoft.com/v1/workspaces/$WORKSPACE_ID/items/bulkImportDefinitions?beta=true"
+API_URL="https://api.fabric.microsoft.com/v1/workspaces/$WORKSPACE_ID/items/bulkImportDefinitions"
 echo "Calling Bulk Import Item definition API: $API_URL"
 
 HEADER_FILE=$(mktemp)
@@ -239,7 +241,7 @@ fi
 
 **Output:** `OPERATION_ID` — the long-running operation identifier, stored as a pipeline variable
 
-**API called:** `POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/bulkImportDefinitions?beta=true`
+**API called:** `POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/bulkImportDefinitions`
 
 **Response handling:**
 - `200 OK` — deployment completed synchronously (result in body)
@@ -317,3 +319,8 @@ This tutorial demonstrated how to use the **Bulk Import Item Definition API** as
 | Resolve workspace | `GET api.fabric.microsoft.com/v1/workspaces` | Look up workspace ID by display name |
 | Deploy items | `POST api.fabric.microsoft.com/v1/workspaces/{id}/items/bulkImportDefinitions` | Import all item definitions in a single call |
 | Poll result | `GET api.fabric.microsoft.com/v1/operations/{id}/result` | Wait for async deployment to complete |
+
+## Related content
+
+* [Automate deployments with a deployment plan](deployment-plan/deployment-plan-automation.md)
+* [What is a deployment plan?](deployment-plan/deployment-plan-overview.md)

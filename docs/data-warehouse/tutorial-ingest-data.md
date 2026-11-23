@@ -2,7 +2,7 @@
 title: "Data Warehouse Tutorial: Ingest Data into a Warehouse"
 description: "In this tutorial, learn how to ingest data from Microsoft Azure Storage into a Warehouse to create tables."
 ms.reviewer: jovanpop, procha, salilkanade
-ms.date: 03/03/2026
+ms.date: 09/14/2026
 ms.topic: tutorial
 ms.custom: sfi-image-nochange
 ---
@@ -11,7 +11,7 @@ ms.custom: sfi-image-nochange
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
-In this tutorial, learn how to ingest sample data into a Warehouse using a **Copy job**. You'll create a table from a sample data file and populate it with sample data.
+In this tutorial, you learn how to ingest sample data into a Warehouse by using a **Copy job** or **T-SQL scripts**. You create a table from a sample data file and populate it with sample data.
 
 > [!NOTE]
 > This tutorial forms part of an [end-to-end scenario](tutorial-introduction.md#data-warehouse-end-to-end-scenario). In order to complete this tutorial, you must first complete these tutorials:
@@ -21,9 +21,11 @@ In this tutorial, learn how to ingest sample data into a Warehouse using a **Cop
 
 ## Ingest data
 
-In this task, learn how to ingest data into the warehouse to create tables.
+In this task, learn how to ingest data into the warehouse to create tables by using a Data Factory copy job or T-SQL.
 
-1. Ensure that the workspace you created in the [first tutorial](tutorial-create-workspace.md) is open.
+Ensure that the workspace you created in the [first tutorial](tutorial-create-workspace.md) is open.
+
+# [Copy job](#tab/copy-job)
 
 1. In the workspace landing pane, select **+ New Item** to display the full list of available item types.
 
@@ -63,6 +65,66 @@ In this task, learn how to ingest data into the warehouse to create tables.
 
 1. When complete, the **Copy job** will deliver a **Succeeded** notification and status. You'll now see six new tables from the Wide World Importers dataset in your warehouse.
 
+# [T-SQL](#tab/tsql)
+
+1. In the `Wide World Importers` warehouse, on the **Home** ribbon, select **New SQL query**.
+
+   :::image type="content" source="media/tutorial-clone-table/ribbon-new-sql-query.png" alt-text="Screenshot of the New SQL query option on the ribbon." lightbox="media/tutorial-clone-table/ribbon-new-sql-query.png":::
+
+1. In the query editor, paste the following code. The code creates a `fact_sale` table.
+
+   ```sql
+    CREATE TABLE dbo.fact_sale (
+      SaleKey bigint,
+      CityKey int,
+      CustomerKey int,
+      BillToCustomerKey int,
+      StockItemKey int,
+      InvoiceDateKey datetime2(6),
+      DeliveryDateKey datetime2(6),
+      SalespersonKey int,
+      WWIInvoiceID int,
+      Description varchar(max),
+      Package varchar(100),
+      Quantity int,
+      UnitPrice numeric(18,2),
+      TaxRate numeric(18,3),
+      TotalExcludingTax numeric(18,2),
+      TaxAmount numeric(18,2),
+      Profit numeric(18,2),
+      TotalIncludingTax numeric(18,2),
+      TotalDryItems int,
+      TotalChillerItems int,
+      LineageKey int
+   )
+   ```
+
+1. To execute the query, on the query designer ribbon, select **Run**.
+
+   :::image type="content" source="media/tutorial-clone-table/run-to-execute.png" alt-text="Screenshot of the Run option on the query editor ribbon.":::
+
+1. In the query editor, replace the previous code with the following code. The code loads the source files into the `fact_sale` table.
+
+   ```sql
+   COPY INTO dbo.fact_sale
+   FROM 'https://fabrictutorialdata.dfs.core.windows.net/sampledata/WideWorldImportersDW/parquet/full/fact_sale'
+   WITH ( FILE_TYPE = 'PARQUET' );
+   ```
+
+1. Run the query and verify that the import is finished.
+
+1. In the query editor, paste the following code. The code automatically creates a `dimension_city` table directly from the source files.
+
+   ```sql
+   CREATE TABLE dbo.dimension_city AS
+   SELECT *
+   FROM OPENROWSET(BULK 'https://fabrictutorialdata.dfs.core.windows.net/sampledata/WideWorldImportersDW/parquet/full/dimension_city/*.parquet');
+   ```
+
+1. Run the query and verify that the `dimension_city` table is created.
+
+---
+
 ## Next step
 
 > [!div class="nextstepaction"]
@@ -71,3 +133,6 @@ In this task, learn how to ingest data into the warehouse to create tables.
 ## Related content
 
 - [Create tables in the Warehouse in Microsoft Fabric](create-table.md)
+- [Ingest data in the warehouse](ingest-data-into-table.md)
+- [Ingest data into your Warehouse using the COPY statement](ingest-data-copy.md)
+- [Ingest data into your Warehouse using Transact-SQL](ingest-data-tsql.md)

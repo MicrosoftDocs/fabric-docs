@@ -50,6 +50,8 @@ For example:
 
 * Text-based data types such as `VARCHAR` and `NVARCHAR` support input types such as **Text**, **Email**, **URL**, **Phone Number**, **Person** (name or email), **Image** (URL-based), **Single Select**, and **Check Box**.
 
+* If your data contains Japanese and other non-English text, define the column's input type as `NVARCHAR`, so non-English characters in the data are supported and rendered correctly in PowerTable.
+
   :::image type="content" source="../media/powertable-how-to-configure-columns/how-to-configure-general-column-properties/input-type-text.png" alt-text="Screenshot of the input types for text data types." lightbox="../media/powertable-how-to-configure-columns/how-to-configure-general-column-properties/input-type-text.png":::
 
 * Boolean data types support input types such as **Check Box**.
@@ -202,6 +204,10 @@ The **Image** input type accepts:
 ### What are the supported input types in PowerTable?
 
 For information about the supported input types in PowerTable, see [Supported input types](../powertable-reference-supported-column-input-types.md#supported-input-types).
+
+### My table has non-English text, such as Japanese. How do I display it in PowerTable?
+
+If your data contains Japanese and other non-English text, define the column's input type as `NVARCHAR`, so non-English characters in the data are supported and rendered correctly in PowerTable.
 
 ### Does setting a default value change existing rows?
 

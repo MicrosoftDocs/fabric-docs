@@ -8,8 +8,8 @@ metadata:
   description: Understand what security features are available for Fabric and how to use them.
   ms.subservice: security
   ms.topic: landing-page
-  author: msmimart
-  ms.author: mimart
+  author: teddyberco
+  ms.author: tebercov
   ms.date: 02/08/2024
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
@@ -88,7 +88,5 @@ landingContent:
             url: ../governance/governance-compliance-overview.md        
       - linkListType: concept
         links:
-          - text: Microsoft Purview
+          - text: Microsoft Purview security and protection
             url: ../governance/microsoft-purview-fabric.md
-          - text: Microsoft Purview hub
-            url: ../governance/use-microsoft-purview-hub.md            

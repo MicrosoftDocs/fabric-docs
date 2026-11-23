@@ -57,7 +57,7 @@ Use this feature to:
 
 ## Related content
 
-- [Enhanced capabilities in Microsoft Fabric event streams](overview.md)
+- [Microsoft Fabric event streams overview](overview.md)
 - [Edit and publish an eventstream](edit-publish.md)
 - [Route data streams based on content](route-events-based-on-content.md)
 

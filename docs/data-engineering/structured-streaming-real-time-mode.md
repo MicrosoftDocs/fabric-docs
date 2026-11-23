@@ -23,7 +23,7 @@ Structured Streaming uses microbatch execution by default. In micro-batch mode, 
 
 Real-time mode changes the execution pattern. Spark starts long-running tasks that stay active while the query runs. The tasks process records continuously instead of waiting for the next microbatch boundary. This pattern can reduce end-to-end latency for supported queries, especially when events must move between streaming systems with minimal delay.
 
-The tradeoff is that real-time mode has a narrower support surface during preview. You need to validate your source, sink, output mode, and transformations on Fabric Runtime 2.0 or later before you use it for production workloads.
+The tradeoff is that the initial implementation of real-time mode supports a smaller set of sources, sinks, and operators than micro-batch mode.
 
 ## How real-time mode processes data
 
@@ -53,7 +53,7 @@ Enable Real-time Mode by setting the streaming trigger to `Trigger.RealTime("<in
 > Real-time Mode supports the `update` output mode only. The `append` and `complete` output modes aren't supported. Set `.outputMode("update")` on the query.
 
 > [!NOTE]
-> The real-time trigger is available in the JVM streaming API. During preview, PySpark doesn't expose it natively through `DataStreamWriter.trigger()`.
+> The real-time trigger is available in the JVM streaming API. In the initial Spark 4.1 implementation, PySpark doesn't expose it natively through `DataStreamWriter.trigger()`.
 
 The examples assume that `input_options`, `output_options`, and `c_path` contain your source options, sink options, and checkpoint path. Run these examples only on Fabric Spark Runtime 2.0 (Spark 4.1) or later.
 
@@ -126,7 +126,7 @@ query.awaitTermination()
 
 ## Design queries for Real-time Mode
 
-Real-time Mode validates the source, sink, output mode, and query plan when the query starts. During preview, it supports a focused set of streaming patterns. Confirm the exact support for your runtime version before you move a query to production, because preview coverage changes over time.
+Real-time Mode validates the source, sink, output mode, and query plan when the query starts. In the initial implementation, it supports a focused set of streaming patterns.
 
 The best mental model is a low-latency path that moves events between streaming message systems and applies light processing along the way. Design your query around that model:
 

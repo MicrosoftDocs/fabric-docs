@@ -54,7 +54,7 @@ Before you start, you must complete the following prerequisites:
 
 1. To add a custom endpoint source, on the get-started page, select **Use custom endpoint**.
 
-   :::image type="content" border="true" source="media\add-source-custom-app-enhanced\select-custom-endpoint.png" alt-text="Screenshot of the option to use a custom endpoint.":::
+   :::image type="content" border="true" source="media\add-source-custom-app\select-custom-endpoint.png" alt-text="Screenshot of the option to use a custom endpoint.":::
 
 1. In the **Custom endpoint** dialog, enter a name for the custom source under **Source name**, and then select **Add**.
 

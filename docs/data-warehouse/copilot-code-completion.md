@@ -9,6 +9,7 @@ ms.topic: how-to
 ms.collection:
   - ce-skilling-ai-copilot
 ms.update-cycle: 180-days
+ms.search.form: Warehouse Copilot
 ---
 
 # How to Use Copilot code completion in Fabric Data Warehouse (Preview)

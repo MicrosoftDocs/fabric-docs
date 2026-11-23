@@ -175,9 +175,7 @@ After the replacement completes, the modified cells appear highlighted. Select *
 When a table contains multiple modifications, it can be difficult to review and verify all changes before saving them to the database. PowerTable sheet lets you preview all pending changes in one place, and then save or discard them as needed.
 
 > [!NOTE]
-> **Preview Changes** displays only pending changes that you didn't save to the database yet. To view the history of saved changes, use **Audit Log**.
-
-<!--add audit hyperlink-->
+> **Preview Changes** displays only pending changes that you didn't save to the database yet. To view the history of saved changes, use [**Audit Log**](./powertable-how-to-view-audit-logs.md).
 
 1. After you perform insert, update, or delete operations, the **Preview Changes** option becomes available along with the count of rows containing pending changes in the table.
 
@@ -205,7 +203,7 @@ Select the **History** tab in the form editor panel to view the history of chang
 * Use **Filter** to filter the log history by action type (Insert, Update, or Delete), who made the change, when the change occurred, or who approved the change (if approvals are enabled).
 
 You can also find this information in **Audit Logs**, which provide more detailed tracking information for all changes.
-Select **Audit Logs** to view additional history details.<!--add audit hyperlink-->
+Select [**Audit Logs**](./powertable-how-to-view-audit-logs.md) to view more history details.
 
    :::image type="content" source="media/powertable-how-to-bulk-edit-data/audit-log-features.png" alt-text="Screenshot of the key features available in the Audit Logs window." lightbox="media/powertable-how-to-bulk-edit-data/audit-log-features.png":::
 
@@ -260,6 +258,14 @@ After a successful commit:
 ### How do I clear a cell instead of replacing its value?
 
 Right-click the cell and select **Clear Contents**.
+
+### Non-English text in my tables is displayed as `????`. What should I do?
+
+PowerTable supports non-English text, such as Japanese, when the column's input type is `NVARCHAR`.
+
+For new tables, select `NVARCHAR` as the input type when you configure the column. For existing tables, check the column's input type. If the column is already configured as `NVARCHAR`, manually replace all the `????` values with the original non-English text. Alternatively, create a new table and configure the column with the `NVARCHAR` input type.
+
+For non-English column names, use the **Display Name** property to display the column name in PowerTable.
 
 ### Why does the Form Editor behave differently when I select multiple rows?
 

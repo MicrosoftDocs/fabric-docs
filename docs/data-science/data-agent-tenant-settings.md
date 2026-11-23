@@ -20,14 +20,10 @@ To use a data agent in Microsoft Fabric, configure the required tenant settings.
 
 ## Access tenant settings
 
-To configure the required settings, you need administrative privileges to access the **Admin Portal** in Microsoft Fabric.
+To configure the required settings, you need administrative privileges to access tenant settings in Microsoft Fabric.
 
 1. **Sign in to Microsoft Fabric** with an admin account.
-1. **Open the Admin Portal**:
-   - Select the gear icon in the top-right corner.
-   - Select **Admin Portal**.
-1. **Navigate to Tenant Settings**:
-   - In the Admin Portal, select **Tenant settings** from the left-hand navigation pane.
+1. Go to **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**.
 
 When you're in **Tenant Settings**, enable the necessary configurations.
 
@@ -66,12 +62,9 @@ For a Fabric data agent to function properly, enable the [**Copilot and Azure Op
 
 :::image type="content" source="media/data-agent-tenant-settings/fabric-copilot-storage-tenant-setting.png" alt-text="Screenshot of Fabric Copilot Storage setting in the admin portal." lightbox="media/data-agent-tenant-settings/fabric-copilot-storage-tenant-setting.png":::
 
-- **Conversation history stored outside your capacity's geographic region, compliance boundary, or national cloud instance**
-
   - This setting is only applicable for customers who want to use Copilot in Notebooks and Fabric data agents powered by Azure OpenAI whose capacity's geographic region is outside of the EU data boundary and the US.
   - In order to use fully conversational agentic AI experiences, the agent needs to store conversation history across user sessions. This ensures that the AI agent keeps context about what a user asked in previous sessions. Conversation history is stored for as long as the user allows, up to 28 days if not manually removed.
   - Users can delete their conversation history at any time by clearing the chat.
-  - For more information, see [Conversation history stored outside your capacity's geographic region](../admin/service-admin-portal-copilot.md#conversation-history-stored-outside-your-capacitys-geographic-region-compliance-boundary-or-national-cloud-instance).
 
 ## Related content
 

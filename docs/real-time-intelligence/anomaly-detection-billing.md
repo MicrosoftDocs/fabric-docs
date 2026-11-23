@@ -1,14 +1,16 @@
 ---
 title: Anomaly Detector Capacity Usage and Billing in Real-Time Intelligence
 description: Learn about capacity usage and billing for Anomaly Detector in Real-Time Intelligence.
-ms.reviewer: tessarhurr, v-hzargari
+ms.reviewer: tessarhurr, v-hzargari, willthom
 ms.topic: concept-article
-ms.date: 12/10/2025
+ms.date: 11/10/2026
 ms.search.form: Anomaly detector billing
 ai-usage: ai-assisted
 ---
 
 # Anomaly detector capacity usage and billing in Real-Time Intelligence
+
+[!INCLUDE [anomaly-detector-deprecation-note](../includes/anomaly-detector-deprecation-note.md)]
 
 Anomaly Detector in Microsoft Fabric Real-Time Intelligence automatically identifies unusual patterns in your data from Eventhouse tables. It empowers you to monitor anomalies in real-time, without requiring data science expertise, by using no-code tools for setup and continuous monitoring. This article explains how Real-Time Intelligence measures, bills, and reports Anomaly Detector usage.
 

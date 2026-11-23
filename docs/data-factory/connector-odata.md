@@ -15,9 +15,11 @@ ai-usage: ai-assisted
 
 This article outlines the steps to create an OData connection.
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
 
-This OData connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+## Summary
+
+This OData connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
@@ -27,27 +29,31 @@ This OData connector supports the following authentication types for copy and Da
 
 ## Set up your connection for Dataflow Gen2
 
-You can connect Dataflow Gen2 in Microsoft Fabric to OData using Power Query connectors. Follow these steps to create your connection:
+You can connect dataflow Gen2 in Fabric to OData using Power Query connectors. Follow these steps to create your connection:
 
 1. [Get data in Fabric](#get-data).
 1. Check [capabilities](#capabilities), [limitations, and considerations](#limitations-and-considerations) to make sure your scenario is supported.
 1. [Load data from an OData feed](#load-data-from-an-odata-feed).
 
-### Capabilities
+<a id="capabilities"></a>
 
-[!INCLUDE [odata-feed-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/odata-feed/odata-feed-capabilities-supported.md)]
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
+
+[!INCLUDE [odata-feed-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/odata-feed/capabilities-supported.md)]
+
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Load data from an OData feed
+<a id="load-data-from-an-odata-feed"></a>
 
-[!INCLUDE [odata-feed-load-data-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/odata-feed/odata-feed-load-data-power-query-online.md)]
+### Connection instructions
 
-### Limitations and considerations
-
-[!INCLUDE [odata-feed-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/odata-feed/odata-feed-limitations-and-considerations-include.md)]
+[!INCLUDE [odata-feed-load-data-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/odata-feed/connect-online.md)]
 
 ## Set up your connection in a pipeline
 
@@ -132,6 +138,10 @@ The properties in the following table are the supported authentication type.
 |- Username|The user name to use to access the OData endpoint.|Yes |||
 |- Password|The password for the specified username.|Yes |||
 
+
+## Limitations and considerations
+
+[!INCLUDE [odata-feed-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/odata-feed/limitations.md)]
 
 ## Related content
 

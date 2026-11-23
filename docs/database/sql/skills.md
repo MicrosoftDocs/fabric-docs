@@ -2,12 +2,14 @@
 title: Skills for SQL database in Fabric
 description: Learn how to install and use Skills for SQL database in Fabric.
 ms.reviewer: sukkaur
-ms.date: 08/06/2026
+ms.date: 08/17/2026
 ms.topic: how-to
 ---
 # Skills for SQL database in Fabric
 
 **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
+
+[!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
 
 [Skills for Fabric](../../fundamentals/skills-for-fabric-overview.md) are reusable instructions that help an AI coding assistant understand Fabric workloads, APIs, query patterns, and operational best practices. The SQL database skills provide task-specific guidance for working with SQL database in Fabric from an agentic command-line or coding environment.
 
@@ -85,10 +87,10 @@ For the full catalog of available skills across all Fabric workloads, see [GitHu
 
 ## Develop a SQL database
 
-Use the `sqldb-authoring-cli` skill when the task changes database state. To author or update database objects with GitHub Copilot, always include the target workspace, database, environment, object, expected schema, constraints, and whether the assistant should generate a script only or execute it after your review. For schema changes or data changes, you can ask for `TRY...CATCH` to handle errors and perform a rollback of the transaction.
+Use the `sqldb-authoring-cli` skill when the task changes the database state. To author or update database objects with GitHub Copilot, always include the target workspace, database, environment, object, expected schema, constraints, and whether the assistant should generate a script only or execute it after your review. For schema changes or data changes, you can ask for `TRY...CATCH` to handle errors and perform a rollback of the transaction.
 
 > [!TIP]
-> Begin with a read-only request to generate T-SQL statements, then review any generated T-SQL statement before execution.
+> Begin with a read-only request to generate T-SQL statements, and then review any generated T-SQL statement before execution.
 
 For example, these sample prompts can be used to create and load a table with sample data.
 

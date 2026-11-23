@@ -4,7 +4,7 @@ description: Learn about Delta Lake table format interoperability in Microsoft F
 author: SnehaGunda
 ms.author: sngun
 ms.reviewer: dacoelho
-ms.date: 05/08/2026
+ms.date: 09/21/2026
 ms.topic: concept-article
 ms.search.form: delta lake interoperability
 ai-usage: ai-assisted
@@ -31,7 +31,7 @@ The following matrix shows key Delta Lake features and their availability on eac
 | Data warehouse Delta Lake export | Name: Yes<br />ID: No | Yes | Yes | Yes | Read: N/A (not applicable)<br />Write: No |
 | SQL analytics endpoint | Name: Yes<br />ID: No | Yes | N/A (not applicable) | N/A (not applicable) | Read: Yes<br />Write: N/A (not applicable) |
 | Lakehouse explorer and preview | Name: Yes<br />ID: No | Yes | N/A (not applicable) | Yes | Read: Yes<br />Write: N/A (not applicable) |
-| Fabric Spark Runtime 2.0 (Preview) | Name: Yes<br />ID: Yes | Yes | Yes | Yes | Read: Yes<br />Write: Yes |
+| Fabric Spark Runtime 2.0 | Name: Yes<br />ID: Yes | Yes | Yes | Yes | Read: Yes<br />Write: Yes |
 | Fabric Spark Runtime 1.3 | Name: Yes<br />ID: Yes | Yes | Yes | Yes | Read: Yes<br />Write: Yes |
 | Fabric Spark Runtime 1.2 | Name: Yes<br />ID: Yes | Yes | Yes | Yes | Read: Yes<br />Write: Yes |
 | Fabric Spark Runtime 1.1 | Name: Yes<br />ID: Yes | No | Yes | Yes | Read: Yes<br />Write: Yes |
@@ -50,7 +50,7 @@ The following matrix shows key Delta Lake features and their availability on eac
 | Data warehouse Delta Lake export | No | No | Reader: 3<br />Writer: 7<br />Deletion Vectors,<br />Column Mappings (name) | Yes |
 | SQL analytics endpoint | Yes | No | N/A (not applicable) | Yes |
 | Lakehouse explorer and preview | Yes | Yes | N/A (not applicable) | Yes |
-| Fabric Spark Runtime 2.0 (Preview) | Yes | Yes | Reader: 3<br />Writer: 7<br />Deletion Vectors | Yes |
+| Fabric Spark Runtime 2.0 | Yes | Yes | Reader: 3<br />Writer: 7<br />Deletion Vectors | Yes |
 | Fabric Spark Runtime 1.3 | Yes | Yes | Reader: 1<br />Writer: 2 | No |
 | Fabric Spark Runtime 1.2 | Yes, read only | Yes | Reader: 1<br />Writer: 2 | No |
 | Fabric Spark Runtime 1.1 | Yes, read only | No | Reader: 1<br />Writer: 2 | No |
@@ -72,7 +72,6 @@ The following matrix shows key Delta Lake features and their availability on eac
 
 Currently, Fabric doesn't support these Delta Lake features:
 
-- V2 Checkpoints aren't uniformly available in all experiences. Only Spark notebooks and Spark jobs can read and write to tables with V2 Checkpoints. Lakehouse and SQL analytics endpoints don't correctly list tables containing V2 Checkpoint files in the `__delta_log` folder.
 - Delta Lake 3.x Uniform. This feature is supported only in the Data Engineering Spark-compute (Notebooks, Spark Jobs).
 - Identity columns writing (Azure Databricks feature).
 - Lakeflow Spark Declarative Pipelines (Azure Databricks feature).

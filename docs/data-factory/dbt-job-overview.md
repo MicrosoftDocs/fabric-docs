@@ -1,22 +1,19 @@
 ---
-title: dbt job in Microsoft Fabric (preview)
+title: dbt Job in Microsoft Fabric
 description: Learn how to use dbt job in Microsoft Fabric to transform your data with SQL.
 ms.reviewer: akurnala
-ms.date: 06/11/2025
+ms.date: 08/19/2026
 ms.topic: overview
 ms.custom:
   - dbt
 ai-usage: ai-assisted
 ---
 
-# dbt job in Microsoft Fabric (preview)
+# dbt job in Microsoft Fabric
 
-> [!NOTE]
-> This feature is in [preview](/fabric/fundamentals/preview).
+A [dbt](https://docs.getdbt.com/) job brings the power of dbt (Data Build Tool) directly into the Fabric experience. You can transform data with SQL in a familiar, unified environment. Build, test, and deploy dbt models on top of your Fabric data warehouse or other supported data platforms—no need to install local tools or manage external orchestration.
 
-[dbt](https://docs.getdbt.com/) job in Fabric brings the power of dbt (Data Build Tool) directly into the Fabric experience. You can transform data with SQL in a familiar, unified environment. Build, test, and deploy dbt models on top of your Fabric data warehouse or other supported warehouses—no need to install local tools or manage external orchestration.
-
-You can develop and manage transformation logic entirely within Fabric. Author your models, define dependencies, and run tests in one place while you use Fabric's enterprise-grade security and governance.
+dbt Job in Microsoft Fabric is generally available (GA). You can develop and manage transformation logic entirely within Fabric. Author your models, define dependencies, and run tests in one place while you use Fabric's enterprise-grade security and governance.
 
 Fabric integrates with dbt Core to provide:
 
@@ -25,13 +22,6 @@ Fabric integrates with dbt Core to provide:
 - Visual insights into dbt runs, tests, and lineage—all within the same workspace as your pipelines and reports
 
 This approach combines the flexibility of code-first development with the simplicity of low-code orchestration so analytics and engineering teams can collaborate and scale transformations across the organization.
-
-## How to enable dbt jobs preview
-
-1. Go to the [admin portal](/fabric/admin/admin-center) in Fabric.
-1. Under **Tenant settings**, enable the **dbt jobs (preview)** feature for your organization or specific security groups.
-
-   :::image type="content" source="media/dbt-job/enable-dbt.png" alt-text="Screenshot of the Fabric UI with the tenant settings to enable dbt job." lightbox="media/dbt-job/enable-dbt.png":::
 
 ## Required permissions and access
 
@@ -64,8 +54,11 @@ The following table shows the adapters supported in dbt jobs, along with the run
 
 ## Limitations
 
-- **No build caching**: Currently, preview only supports compiling and executing a project fresh from the source. dbt artifacts produced from previous runs aren't available for recompilation.
+- **No build caching**: The service compiles and executes a project fresh from the source. dbt artifacts from previous runs aren't available for recompilation.
 - **Adapter constraints**: Some partner adapters aren't yet supported in Fabric. See [the current supported adapters](#supported-adapters-and-runtime).
+- **Large project import**: You can't currently import dbt projects with more than 5,000 files. For larger projects, connect the project from GitHub to the dbt job for execution, or split it into smaller projects.
+- **GitHub project location**: When you run a dbt project from a GitHub repository, you must place the `dbt_project.yml` file in the root directory of the repository.
+- **GitHub authentication**: Connecting a dbt project from a GitHub repository currently supports authentication by using a classic personal access token (PAT) only.
 
 ## Related content
 

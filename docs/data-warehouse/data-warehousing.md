@@ -2,7 +2,7 @@
 title: What Is Fabric Data Warehouse?
 description: Learn more about data warehousing workloads in Fabric Data Warehouse.
 ms.reviewer: joanpo, rakrish75
-ms.date: 09/09/2025
+ms.date: 11/10/2026
 ms.topic: overview
 ms.search.form: SQL Analytics Endpoint overview, Warehouse overview, Warehouse in workspace overview # This article's title should not change. If so, contact engineering.
 ---
@@ -57,7 +57,7 @@ Using similar technology, a warehouse, a [SQL database](../database/sql/sql-anal
 With the SQL analytics endpoint, T-SQL commands can define and query data objects but not manipulate or modify the data. You can perform the following actions in the SQL analytics endpoint:
 
 - Query the tables that reference data in your Delta Lake folders in the lake.
-- Create views, inline TVFs, and procedures to encapsulate your semantics and business logic in T-SQL.
+- Create views, [scalar user-defined functions](how-to-inline-udf.md), inline TVFs, and stored procedures to encapsulate your semantics and business logic in T-SQL.
 - Manage permissions on the objects. For more about security in the SQL analytics endpoint, see [OneLake security for SQL analytics endpoints](../onelake/sql-analytics-endpoint-onelake-security.md).
 
 To get started with the [!INCLUDE [fabric-se](includes/fabric-se.md)], see:
@@ -83,7 +83,7 @@ For more detailed decision guidance, see [Microsoft Fabric decision guide: Choos
 
 ## Migration
 
-Use [the Fabric Migration Assistant for Data Warehouse](migration-assistant.md) to migrate from Azure Synapse Analytics, SQL Server, and other SQL Database Engine platforms. Review [Migration​ planning](migration-synapse-dedicated-sql-pool-warehouse.md) and [Migration​ methods for ​Azure Synapse Analytics dedicated SQL pools to Fabric Data Warehouse](migration-synapse-dedicated-sql-pool-methods.md).
+Use [the Fabric Migration Assistant for Data Warehouse](migration-assistant.md) to migrate from Azure Synapse Analytics, SQL Server, Teradata, and other SQL Database Engine platforms.
 
 For migration guidance across Microsoft Fabric, review the tools and links in [Microsoft Fabric migration overview](../fundamentals/migration.md).
 
@@ -92,6 +92,6 @@ For migration guidance across Microsoft Fabric, review the tools and links in [M
 - [Lakehouse SQL analytics endpoint use cases](../data-engineering/lakehouse-sql-analytics-endpoint-use-cases.md)
 - [Create a Warehouse in Microsoft Fabric](create-warehouse.md)
 - [Create a lakehouse in Microsoft Fabric](../data-engineering/create-lakehouse.md)
-- [Create reports on data warehousing in Microsoft Fabric](create-reports.md)
+- [Create reports on Fabric Data Warehouse](create-reports.md)
 - [Development and deployment](development-deployment.md)
 - [OneLake security for SQL analytics endpoints](../onelake/sql-analytics-endpoint-onelake-security.md)

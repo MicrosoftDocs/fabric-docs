@@ -1,6 +1,6 @@
 ---
-title: Use simulation measures in a planning sheet
-description: Learn how to create, edit, and manage simulation measures in Microsoft Fabric Plan.
+title: Use Simulation Measures in a Planning Sheet
+description: Learn how to create, edit, and manage simulation measures in planning in Fabric.
 ms.date: 08/03/2026
 ms.topic: how-to
 ---

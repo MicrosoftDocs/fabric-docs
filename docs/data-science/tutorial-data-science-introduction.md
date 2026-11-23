@@ -3,7 +3,7 @@ title: Data science tutorial - get started
 description: Learn about the Data science tutorial, including an overview of the steps you follow through the series and details about the end-to-end scenario.
 ms.reviewer: amjafari, lagayhar
 ms.topic: tutorial
-ms.date: 04/21/2025
+ms.date: 08/21/2026
 ---
 
 # Data science end-to-end scenario: introduction and architecture
@@ -46,7 +46,7 @@ You perform the following activities in the tutorials:
 1. Create experiments and runs to train different machine learning models
 1. Use MLflow and the Fabric UI to register and track trained models
 1. Run scoring at scale, and save predictions and inference results to the lakehouse
-1. Use DirectLake to visualize predictions in Power BI
+1. Use Direct Lake mode in Power BI to visualize predictions
 
 ## Architecture
 
@@ -72,11 +72,11 @@ This tutorial series showcases a simplified end-to-end data science scenario inv
 
 This tutorial series focuses on data ingestion and loading from a lakehouse.
 
-**Explore, clean, and prepare** - The Fabric data science experience supports data cleaning, transformation, exploration, and featurization. It uses built-in Spark experiences and Python-based tools - for example, Data Wrangler and SemPy Library. This tutorial showcases data exploration with the `seaborn` Python library, and data cleaning and preparation with Apache Spark.
+**Explore, clean, and prepare** - The Fabric data science experience supports data cleaning, transformation, exploration, and featurization. It uses built-in Spark experiences and Python-based tools - for example, Data Wrangler and SemPy library. This tutorial showcases data exploration with the `seaborn` Python library, and data cleaning and preparation with Apache Spark.
 
-**Models and experiments** - With Fabric, you can train, evaluate, and score machine learning models with built-in experiments. To register and deploy your models, and track experiments, [**MLflow**](https://mlflow.org/docs/latest/index.html) offers seamless integration with Fabric as a way to model items. To build and share business insights, Fabric offers other features for model prediction at scale (PREDICT), to build and share business insights.
+**Models and experiments** - With Fabric, you can train, evaluate, and score machine learning models with built-in experiments. To register and deploy your models, and track experiments, [**MLflow**](https://mlflow.org/docs/latest/index.html) offers seamless integration with Fabric as a way to model items. For the latest tracking capabilities, including the `LoggedModel` entity and generative AI tracing, see [MLflow 3 in Fabric Data Science](mlflow-3-overview.md). To build and share business insights, Fabric offers other features for model prediction at scale (PREDICT), to build and share business insights.
 
-**Storage** - Fabric standardizes on [Delta Lake](https://docs.delta.io/latest/index.html), which means all Fabric engines can interact with the same dataset stored in a lakehouse. With that storage layer, you can store both structured and unstructured data that support both file-based storage and tabular format. You can easily access the datasets and stored files through all Fabric experience items - for example, notebooks and pipelines.
+**Storage** - Fabric standardizes on [Delta Lake](https://docs.delta.io/), which means all Fabric engines can interact with the same dataset stored in a lakehouse. With that storage layer, you can store both structured and unstructured data that support both file-based storage and tabular format. You can easily access the datasets and stored files through all Fabric experience items - for example, notebooks and pipelines.
 
 **Expose analysis and insights** - Power BI, an industry-leading business intelligence tool, can consume lakehouse data for report and visualization generation. In notebook resources, Python or Spark native visualization libraries
 

@@ -28,7 +28,7 @@ To get started configuring CMK for your Fabric workspace, see [Customer-managed 
 
 ## Limitations
 
-Before enabling CMK for your Fabric Data Warehouse, review the following considerations:
+Before enabling CMK for your Fabric Eventhouse, review the following considerations:
 
 - When enable, Eventhouse scales to a minimum of 16 virtual cores and could affect Capacity Units (CU) consumption.
 

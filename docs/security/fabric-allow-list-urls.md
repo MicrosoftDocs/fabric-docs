@@ -1,8 +1,8 @@
 ---
 title: Add Fabric URLs to your allowlist
 description: Learn about URL endpoints and ports with their associated linked sites to add to your allowlist for connectivity to Fabric.
-author: msmimart
-ms.author: mimart
+author: teddyberco
+ms.author: tebercov
 ms.topic: reference
 ms.date: 02/13/2026
 ---
@@ -74,6 +74,7 @@ The **Endpoint** column lists domain names and links to external sites, which co
 |Purpose   |Endpoint  |Port      |
 |:---------|:---------|:---------|
 |Inbound connections|https://cdn.jsdelivr.net/npm/monaco-editor*|N/A|
+|Inbound connections|https://pbilhe.powerbi.com|N/A|
 
 ## Notebook
 

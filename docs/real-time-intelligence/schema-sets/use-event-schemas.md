@@ -1,6 +1,6 @@
 ---
 title: Use Schemas in Eventstreams - Fabric Real-Time Intelligence
-description: Discover how to enable and manage schemas in eventstreams. Step-by-step guidance for custom endpoints, Azure SQL CDC, and schema-validated destinations.
+description: Learn how eventstreams use registered schemas to interpret, validate, and deliver events.
 #customer intent: As a user, I want to learn how to use event schemas in eventstreams in Real-Time Intelligence.
 ms.topic: how-to
 ms.custom:
@@ -8,30 +8,57 @@ ms.custom:
   - ai-gen-title
   - ai-seo-date:08/07/2025
   - ai-gen-description
-ms.date: 08/07/2025
+  - schema-aware-eventstream
+ms.date: 09/08/2026
 ms.search.form: Schema Registry
+ai-usage: ai-assisted
 ---
 
+# Use schemas in eventstreams (Fabric Real-Time Intelligence)
 
-# Use schemas in eventstreams (Fabric Real-Time intelligence)
-When configuring a source connector for an eventstream, you can use schemas to control the events that are ingested into Fabric. With this approach. You can create type-safe eventstream pipelines that promote reliable sourcing of data into Fabric. You can also preconfigure transformations and downstream delivery destination schema using the well-defined structured input guarantees provided by Event schema sets. Once enabled, all other events are dropped (and logged as part of Fabric errors). 
+> [!NOTE]
+> **Schema-aware Eventstreams (Preview)** integrate with Event SchemaSet (GA)
+> and the Fabric tenant-level schema registry. Ingested events tagged with
+> registered schemas can be automatically recognized and processed by using
+> their schema definitions. Schematized, classified, and untyped events can
+> coexist in the same Eventstream. For more information, see
+> [Schema-aware eventstreams overview (Preview)](../event-streams/schema-aware-eventstreams-overview.md).
+
+When you associate a supported source with an Event SchemaSet, every event from
+that source must conform to one of the associated schemas. Nonconforming events
+are dropped, and validation errors appear in the eventstream runtime logs.
+Sources that aren't associated with an Event SchemaSet remain untyped and
+continue to flow through the same schema-aware eventstream.
+
+Schematized events use the CloudEvents format. The `ce-type` header identifies
+the registered event type and corresponding schema. For source-specific
+association steps, see the documentation for the supported source.
 
 > [!IMPORTANT]
-> You can't enable schema support for existing eventstreams. You must enable schema support when you create an eventstream.
+> You can't enable schema-aware support for an existing Eventstream. Create a
+> new eventstream and select **Enable schema-aware eventstream (Preview)**.
 
+## Monitor schema validation errors
+
+1. Open the Eventstream item details pane.
+1. Select the source node associated with the Event SchemaSet.
+1. In the lower pane, select **Runtime logs**.
+1. Filter the logs to find schema validation errors.
 
 ## Supported sources
+
 - [Custom app or endpoint](../event-streams/add-source-custom-app.md?pivots=extended-features)
-- [Azure SQL Database Change Data Capture (CDC)](../event-streams/add-source-azure-sql-database-change-data-capture.md?pivots=extended-features)
 - [Azure Event Hubs](../event-streams/add-source-azure-event-hubs.md?pivots=extended-features)
+- [Azure SQL Database Change Data Capture (CDC)](../event-streams/add-source-azure-sql-database-change-data-capture.md)
+- [Azure SQL Managed Instance CDC](../event-streams/add-source-azure-sql-managed-instance-change-data-capture.md)
+- [SQL Server on virtual machine CDC](../event-streams/add-source-sql-server-change-data-capture.md)
+- [PostgreSQL Database CDC](../event-streams/add-source-postgresql-database-change-data-capture.md)
 
 ## Supported destinations
 
-Currently, schema-validated events can only be sent to:
+Schema-aware Eventstreams support schema selection for these destinations:
 
-- [Eventhouse (push mode)](../event-streams/add-source-azure-event-hubs.md?pivots=extended-features#configure-schemas-for-an-eventhouse-destination)
-- [Custom app or endpoint](../event-streams/add-source-azure-event-hubs.md?pivots=extended-features#configure-schema-for-a-custom-endpoint-destination)
-- Another stream (derived stream)
-
-
-
+- [Eventhouse](../event-streams/add-destination-kql-database.md)
+- [Lakehouse](../event-streams/add-destination-lakehouse.md)
+- [Custom endpoint](../event-streams/add-destination-custom-app.md)
+- [Derived stream](../event-streams/add-destination-derived-stream.md)

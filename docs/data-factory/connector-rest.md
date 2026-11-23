@@ -17,7 +17,7 @@ This article outlines the steps to create REST connection.
 
 ## Supported authentication types
 
-This REST connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+This REST connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
 |Authentication type |Copy |Dataflow Gen2 (Web API) |
 |:---|:---|:---|

@@ -162,6 +162,6 @@ Historical queries can take up to 15 minutes to appear in list depending on the 
 
 For more information about Fabric notebooks, see the following articles.
 
-- [What is data warehousing in Fabric?](../data-warehouse/data-warehousing.md)
+- [What is Fabric Data Warehouse?](../data-warehouse/data-warehousing.md)
 - Questions? Try asking the [Fabric Community](https://community.fabric.microsoft.com/).
 - Suggestions? [Contribute ideas to improve Fabric](https://ideas.fabric.microsoft.com/).

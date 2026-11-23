@@ -1,12 +1,12 @@
 ---
-title: "Tutorial: Copy job with SAP ABAP Add-On (Preview)"
+title: "Tutorial: Copy job with SAP ABAP Add-On"
 description: Learn how to use SAP ABAP Add-On to copy data from SAP systems in Copy Job.
-ms.reviewer: jingwang
-ms.date: 06/03/2026
+ms.reviewer: ukchrist
+ms.date: 09/16/2026
 ms.topic: tutorial
 ---
 
-# Copy job for SAP via ABAP Add-On (preview)
+# Copy job for SAP via ABAP Add-On
 
 Copy job for SAP via ABAP Add-On extends the built-in SAP connectors (SAP HANA, SAP Table, and SAP BW OpenHub) in Fabric. It extracts data from SAP using a proprietary Microsoft Data Integration ABAP Add-On installed on your SAP server, providing more scalable and flexible data ingestion with advanced capabilities than the classic connector.
 
@@ -16,7 +16,7 @@ During the copy job execution, on-premises data gateway connects to the SAP appl
 
 ## Supported capabilities
 
-- **Supported SAP source systems:** The Microsoft Data Integration ABAP Add-On supports **SAP S/4HANA (all versions)** and **SAP ECC 6.0 EhP 8 (based on SAP NetWeaver 7.50)**. SAP ECC 6.0 EhP 7 (based on SAP NetWeaver 7.40) or earlier version isn't supported. Import into unsupported SAP versions may fail with syntax errors.
+- **Supported SAP source systems:** The Microsoft Data Integration ABAP Add-On supports **SAP S/4HANA (all versions)**, **SAP ECC 6.0 EhP 8 (based on SAP NetWeaver 7.50)**, **SAP BW/4HANA (all versions)**, and **SAP BW 7.50 (on HANA or any other database)**. SAP systems running on SAP NetWeaver 7.40 or lower, like **ECC 6.0 EhP 7** or earlier aren't supported. Import into unsupported SAP versions might fail with syntax errors.
 
 - **Supported SAP source objects:** Copy job for SAP via ABAP Add-On reads data from SAP sources using ABAP SQL on the SAP application server. It can copy data from **tables (transparent, pool, cluster)**, **views**, and **CDS views**. To extract data from a CDS view, use the SQL view name given in the CDS view definition.
 
@@ -56,7 +56,7 @@ Complete the following steps to create a new Copy job to ingest data from SAP vi
 
 1. Select **SAP Table Application Server**, and set up the connection details. You can also choose an existing connection of this type you created upfront.
 
-1. Select the **Use ABAP Add-On (Preview)** option, and configure the tables to copy. The UI offers two ways to select source tables for extraction.
+1. Select the **Use ABAP Add-On** option, and configure the tables to copy. The UI offers two ways to select source tables for extraction.
 
     - **Select from list**
     - **Enter manually**
@@ -89,8 +89,15 @@ Complete the following steps to create a new Copy job to ingest data from SAP vi
 
 ## Known limitations
 
-- Table name with special character (e.g. `/`) is currently not supported.
-- Data type handling: Copy job maps SAP data types to the best corresponding data types on the destination. For example, `DATS` columns in SAP are mapped to `Timestamp` in Delta tables in a Fabric Lakehouse. If your data contains invalid values (for example, an arbitrary sequence of 8 characters in such case), which technically is allowed in SAP, copy job fails.
+- Data type handling: By default, the copy job maps SAP data types to the best corresponding data types on the destination. For example, `DATS` columns in SAP map to `Timestamp` in Delta tables in a Fabric Lakehouse. If your data contains invalid values (such as an arbitrary sequence of eight characters), which SAP technically allows, the copy job fails.
+To skip data type conversions and store all columns as `String` in the destination, use the `lowPrecisionDatatypeMode` property in the copy job JSON document.
+```JSON
+                "typeConversionSettings": {
+                    "typeConversion": {
+                        "lowPrecisionDatatypeMode": true
+                    }
+                }
+```
 - Copy operation times out after 12 hours (from SAP to OneLake staging) or 24 hours for end-to-end per table. You may encounter error when copying large amount of data.
 - Connecting to SAP Message Server currently isn't supported.
 - When using date type column as watermark in incremental copy, copy job doesn't apply [delayed extraction](incremental-copy-job.md#supported-watermark-column-types). If you run multiple times in a day, incremental data may be retrieved multiple times. Use merge as the update method in the destination setting.

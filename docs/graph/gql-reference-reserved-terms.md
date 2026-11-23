@@ -2,8 +2,9 @@
 title: GQL reserved words reference for graph in Microsoft Fabric
 description: Review the complete list of GQL reserved words and keywords in graph in Microsoft Fabric, including standard GQL and implementation-specific reserved words.
 ms.topic: reference
-ms.date: 05/20/2026
+ms.date: 09/17/2026
 ms.reviewer: splantikow
+ai-usage: ai-assisted
 ---
 
 # GQL reserved words reference
@@ -13,7 +14,9 @@ This article provides a comprehensive reference of GQL (Graph Query Language) re
 The alphabetical list includes both standard GQL reserved words and reserved words specific to graph.
 
 > [!NOTE]
-> Items marked "graph only" are reserved for potential Microsoft-specific extensions to GQL. Items marked "GQL standard prereserved" are reserved for future use in the GQL standard.
+> Items marked "graph only" are reserved by Graph, including words used by Microsoft-specific extensions to GQL. Items marked "GQL standard prereserved" are reserved for future use in the GQL standard.
+
+`CASEFOLD`, `NONE`, and `SINGLE` are recognized as function names but aren't reserved words. You can use them as identifiers without backticks.
 
 Use this reference to avoid conflicts when naming objects in your GQL queries and scripts.
 
@@ -22,6 +25,7 @@ Use this reference to avoid conflicts when naming objects in your GQL queries an
 - **ABS** - GQL standard
 - **ABSTRACT** - GQL standard prereserved
 - **ACOS** - GQL standard
+- **ACYCLIC** - GQL standard
 - **AGGREGATE** - GQL standard prereserved
 - **AGGREGATES** - GQL standard prereserved
 - **ALL** - GQL standard
@@ -68,7 +72,9 @@ Use this reference to avoid conflicts when naming objects in your GQL queries an
 - **CLONE** - GQL standard prereserved
 - **CLOSE** - GQL standard
 - **COALESCE** - GQL standard
+- **COLLECT_ELEMENTS** - graph only
 - **COLLECT_LIST** - GQL standard
+- **COLLECT_ONE** - graph only
 - **COMMIT** - GQL standard
 - **CONSTRAINT** - GQL standard prereserved
 - **CONSTRUCT** - graph only
@@ -94,13 +100,13 @@ Use this reference to avoid conflicts when naming objects in your GQL queries an
 - **DATE** - GQL standard
 - **DATETIME** - GQL standard
 - **DEC** - GQL standard
-- **DECIMAL** - GQL standard
 - **DECLARE** - graph only
 - **DEGREES** - GQL standard
 - **DELETE** - GQL standard
 - **DESC** - GQL standard
 - **DESCENDING** - GQL standard
 - **DETACH** - GQL standard
+- **DIFFERENT** - GQL standard
 - **DIRECTORY** - GQL standard prereserved
 - **DISTINCT** - GQL standard
 - **DOUBLE** - GQL standard
@@ -111,10 +117,10 @@ Use this reference to avoid conflicts when naming objects in your GQL queries an
 
 ## E
 
-- **EDGE** - graph only
-- **EDGES** - graph only
-- **ELEMENT** - graph only
-- **ELEMENTS** - graph only
+- **EDGE** - GQL standard
+- **EDGES** - GQL standard
+- **ELEMENT** - GQL standard
+- **ELEMENTS** - GQL standard
 - **ELEMENT_ID** - GQL standard
 - **ELSE** - GQL standard
 - **END** - GQL standard
@@ -283,11 +289,17 @@ Use this reference to avoid conflicts when naming objects in your GQL queries an
 - **RECORD** - GQL standard
 - **RECORDS** - GQL standard prereserved
 - **REFERENCE** - GQL standard prereserved
-- **REGEXP_CONTAINS** - graph only
-- **RELATIONSHIP** - graph only
-- **RELATIONSHIPS** - graph only
+- **REGEXP_CONTAINS** - GQL standard
+- **REGEXP_COUNT** - graph only
+- **REGEXP_INSTR** - graph only
+- **REGEXP_LIKE** - graph only
+- **REGEXP_REPLACE** - graph only
+- **REGEXP_SUBSTR** - graph only
+- **RELATIONSHIP** - GQL standard
+- **RELATIONSHIPS** - GQL standard
 - **REMOVE** - GQL standard
 - **RENAME** - GQL standard prereserved
+- **REPEATABLE** - GQL standard
 - **REPLACE** - GQL standard
 - **RESET** - GQL standard
 - **RETURN** - GQL standard
@@ -304,8 +316,10 @@ Use this reference to avoid conflicts when naming objects in your GQL queries an
 - **SESSION** - GQL standard
 - **SESSION_USER** - GQL standard
 - **SET** - GQL standard
+- **SHORTEST** - GQL standard
 - **SHOW** - graph only
 - **SIGNED** - GQL standard
+- **SIMPLE** - GQL standard
 - **SIN** - GQL standard
 - **SINH** - GQL standard
 - **SIZE** - GQL standard
@@ -328,12 +342,14 @@ Use this reference to avoid conflicts when naming objects in your GQL queries an
 - **TAN** - GQL standard
 - **TANH** - GQL standard
 - **TEMPORAL** - GQL standard prereserved
+- **TEMPLATE** - graph only
 - **TEXT** - graph only
 - **THEN** - GQL standard
 - **TIME** - GQL standard
 - **TIMESTAMP** - GQL standard
 - **TO_JSON** - graph only
 - **TO_JSON_STRING** - graph only
+- **TRAIL** - GQL standard
 - **TRAILING** - GQL standard
 - **TRIM** - GQL standard
 - **TYPED** - GQL standard
@@ -371,6 +387,7 @@ Use this reference to avoid conflicts when naming objects in your GQL queries an
 
 ## W
 
+- **WALK** - GQL standard
 - **WHEN** - GQL standard
 - **WHERE** - GQL standard
 - **WITH** - GQL standard

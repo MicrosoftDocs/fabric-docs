@@ -2,7 +2,7 @@
 title: "SQL Audit Logs in Fabric Data Warehouse"
 description: Learn more about SQL Audit Logs on Fabric Data Warehouse.
 ms.reviewer: fresantos
-ms.date: 03/13/2026
+ms.date: 08/10/2026
 ms.topic: concept-article
 ms.search.form: Warehouse SQL Audit Logs # This article's title should not change. If so, contact engineering.
 ---
@@ -12,7 +12,7 @@ ms.search.form: Warehouse SQL Audit Logs # This article's title should not chang
 
 Auditing in Fabric Data Warehouse provides enhanced security and compliance capabilities by tracking and recording database events.
 
-With SQL audit logs, you can monitor database activities, detect potential security threats, and meet compliance requirements by maintaining an audit trail of key actions, such as:
+By using SQL audit logs, you can monitor database activities, detect potential security threats, and meet compliance requirements by maintaining an audit trail of key actions, such as:
 
 - Authentication attempts and access control changes
 - Data access and modification operations
@@ -53,37 +53,39 @@ For instructions, see [How to configure SQL audit logs in Fabric Data Warehouse]
 
 ## Performance
 
-The SQL audit logs feature is optimized for availability and performance of the database being audited. During periods of very high activity or high network load, the auditing feature might allow transactions to proceed without recording all of the events marked for auditing.
+The SQL audit logs feature is optimized for the availability and performance of the database being audited. During periods of very high activity or high network load, the auditing feature might allow transactions to proceed without recording all of the events marked for auditing.
 
 ## Permissions
 
 Users must have the **Audit queries (Audit)** permission to configure and query audit logs.
 
 - By default, **Workspace Admins** have the **Audit queries** permission to all items in the workspace.
-- Admins can grant **Audit queries** permissions on items to other users via the share dialog box.
+- Admins can grant **Audit queries** permissions on items to other users through the share dialog box.
 
-Workspace Admins can grant **Audit queries** permissions to an item using the shared menu option in the Fabric portal. To verify if a user has **Audit queries** permissions, check the **Manage Permissions** settings.
+Workspace Admins can grant **Audit queries** permissions to an item by using the shared menu option in the Fabric portal. To verify if a user has **Audit queries** permissions, check the **Manage Permissions** settings.
 
 1. In your Warehouse item, select the **Share** button.
 
    Or, in the Fabric portal, in your workspace. Select the `...` context menu for your Warehouse item, select **Manage permissions**.
    
-1. In the **Grant people access** pane, you can grant permissions to a user.
+1. In the **Grant people access** pane, grant permissions to a user.
 
    :::image type="content" source="media/sql-audit-logs/grant-access-audit-queries.png" alt-text="Screenshot showing where to select the Audit queries (Audit) permission on the item Share menu.":::
 
-### Querying audit logs using T-SQL permissions
+<a id="querying-audit-logs-using-t-sql-permissions"></a>
 
-Users can also be granted the ability to query audit logs through T-SQL permissions by granting the `VIEW DATABASE SECURITY AUDIT` permission, even if they do not have workspace administrative roles.
+### Query audit logs by using T-SQL permissions
 
-Granting the following permission allows a user to query audit logs using the `sys.fn_get_audit_file_v2` function:
+Grant users the `VIEW DATABASE SECURITY AUDIT` permission so they can query audit logs by using T-SQL permissions, even if they don't have workspace administrative roles.
+
+When you grant the following permission, a user can query audit logs by using the `sys.fn_get_audit_file_v2` function:
 
 ```sql
 GRANT VIEW DATABASE SECURITY AUDIT TO [user];
 ```
 
 > [!TIP]
-> The `VIEW DATABASE SECURITY AUDIT` permission only grants the ability to query audit logs and does **not allow access to the files or to the user to perform any modification of audit configuration**.
+> The `VIEW DATABASE SECURITY AUDIT` permission only grants the ability to query audit logs. It **doesn't grant access to the files or permission to modify the audit configuration**.
 
 
 ## Database-level audit action groups and actions
@@ -126,6 +128,41 @@ In addition to action groups, you can configure individual audit actions to log 
 | `RECEIVE` | Logs `RECEIVE` operations on Service Broker queues. |
 | `REFERENCES` | Logs permission checks involving foreign key constraints. |
 
+## Reduce audit noise with predicate filtering
+
+To filter which events are captured, use the optional **predicate expression** filter.
+
+Use predicate filtering to reduce noise from expected, repetitive activity, such as automation identities, service principals, or scheduled jobs, without having to disable the action groups your organization needs for compliance or investigation purposes.
+
+- Only when an event matches the configured predicate, the SQL audit log event for that action is generated.
+   - Filtering happens before the event is written, so excluded events aren't available later for retrospective investigation. Treat predicate exclusions as a deliberate audit-policy decision, and review the configured predicate periodically as ownership, permissions, and risk profiles change.
+- Predicate filtering only evaluates events that are already configured to be captured by an enabled [audit action group or action](#database-level-audit-action-groups-and-actions). 
+   - If the underlying action group isn't enabled, no event is generated for the predicate to evaluate, and the filter has no effect. For example, to filter `SELECT` statements using a predicate on the `statement` field, you must first enable the **Batch Was Completed** (`BATCH_COMPLETED_GROUP`) action group.
+
+You can configure a predicate expression by using the Fabric portal or the REST API. For steps, see [Configure a predicate expression](configure-sql-audit-logs.md#configure-a-predicate-expression).
+
+### Predicate expression syntax
+
+Predicate expressions use the same syntax as the `<predicate_expression>` clause in [CREATE SERVER AUDIT (Transact-SQL)](/sql/t-sql/statements/create-server-audit-transact-sql?view=fabric&preserve-view=true), without the `WHERE` keyword:
+
+```syntaxsql
+<predicate_expression> ::=
+    { [ NOT ] <predicate_factor>
+    [ { AND | OR } [ NOT ] { <predicate_factor> } ] [ ,... n ] }
+
+<predicate_factor> ::=
+    event_field_name { = | <> | != | > | >= | < | <= | LIKE }
+    { number | 'string' }
+```
+
+- `event_field_name` corresponds to a column returned by [sys.fn_get_audit_file (Transact-SQL)](/sql/relational-databases/system-functions/sys-fn-get-audit-file-transact-sql?view=fabric&preserve-view=true). You can use all documented columns, except `file_name`, `audit_file_offset`, and `event_time`.
+- `action_id` and `class_type` are strings, but you can only compare them to numeric values in a predicate.
+- String comparisons don't perform implicit type conversion.
+- The maximum expression length is 3,000 characters.
+- An empty string means no predicate is applied.
+
+For example, to exclude activity generated by a known service principal or automation identity, filter on `server_principal_name`. To exclude repetitive `SELECT` statements, filter on the `statement` field: `NOT statement LIKE 'SELECT %'`.
+
 ## Limitations
 
 - Your default workspace doesn't support SQL audit logs.
@@ -142,7 +179,7 @@ The following limitations apply when auditing SQL analytics endpoints:
 - **DML operations aren't captured.** The audit doesn't record operations such as `INSERT`, `UPDATE`, `DELETE`, and `MERGE` because data manipulation for Lakehouse tables occurs through the Lakehouse runtime rather than through the SQL analytics endpoint.
 - **Direct access to the audit folder isn't currently supported.** Users can't browse or download the underlying `.XEL` audit files from the Lakehouse audit folder.
 
-You can still query audit events for SQL analytics endpoints with the T-SQL function `sys.fn_get_audit_file_v2`.
+You can still query audit events for SQL analytics endpoints by using the T-SQL function `sys.fn_get_audit_file_v2`.
 
 ## Next step
 
@@ -151,5 +188,5 @@ You can still query audit events for SQL analytics endpoints with the T-SQL func
 
 ## Related content
 
-- [Security for data warehousing in Microsoft Fabric](security.md)
+- [Security in Fabric Data Warehouse](security.md)
 - [Security in Microsoft Fabric](../security/security-overview.md)

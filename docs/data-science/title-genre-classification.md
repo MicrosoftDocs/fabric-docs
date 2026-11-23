@@ -2,10 +2,10 @@
 title: 'Tutorial: Create, evaluate, and score a text classification model'
 description: This tutorial demonstrates training and evaluating a text classification model by using a sample dataset of metadata for digitized books.
 ms.author: lagayhar
-ms.reviewer: ruxu
+ms.reviewer: scottpolly
 ms.topic: tutorial
 ms.custom: sfi-image-nochange
-ms.date: 06/30/2026
+ms.date: 08/31/2026
 #customer intent: As a data scientist, I want to build a text classification model so I can predict a category based on a single attribute.
 ---
 
@@ -97,7 +97,7 @@ EXPERIMENT_NAME = "sample-aisample-textclassification"  # MLflow experiment name
 The following code snippet downloads a publicly available version of the dataset, and then stores it in a Fabric lakehouse:
 
 > [!IMPORTANT]
-> [Add a lakehouse](https://aka.ms/fabric/addlakehouse) to the notebook before you run it. Failure to do so resultS in an error.
+> [Add a lakehouse](https://aka.ms/fabric/addlakehouse) to the notebook before you run it. Otherwise, you get an error.
 
 ```python
 if not IS_CUSTOM_DATA:
@@ -188,7 +188,7 @@ mlflow.set_experiment(EXPERIMENT_NAME)
 mlflow.autolog(disable=True)  # Disable Mlflow autologging
 ```
 
-### Read raw date data from the lakehouse
+### Read raw data from the lakehouse
 
 ```python
 raw_df = spark.read.csv(f"{DATA_FOLDER}/raw/{DATA_FILE}", header=True, inferSchema=True)

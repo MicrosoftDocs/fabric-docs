@@ -1,39 +1,62 @@
 ---
 title: GQL status codes reference for graph in Microsoft Fabric
-description: Review the complete reference of GQL status codes returned by graph in Microsoft Fabric queries, including success, warning, and error condition codes.
+description: Understand the public Query API status codes and canonical GQLSTATUS codes reported for graph in Microsoft Fabric queries.
 ms.topic: reference
-ms.date: 05/20/2026
+ms.date: 09/18/2026
 ms.reviewer: splantikow
+ai-usage: ai-assisted
 ---
 
 # GQL status codes reference
 
-When you run GQL queries in Microsoft Fabric, you receive status information along with your results. This article lists all GQLSTATUS codes used by graph in Microsoft Fabric.
+When you run GQL queries in Microsoft Fabric, you receive status information along with the result. The public Query API status code and the canonical GQLSTATUS reported by the query engine aren't always the same. This article explains how to use both.
 
-## Success codes
+## Query API status codes
 
-| GQLSTATUS | Message                                      | Description                                                          |
-|-----------|----------------------------------------------|----------------------------------------------------------------------|
-| 00000     | note: successful completion                  | Query executed successfully with at least one row                    |
-| 00001     | note: successful completion - omitted result | Query executed successfully but no table returned (currently unused) |
-| 02000     | note: no data                                | Query executed successfully but returned an empty table              |
+The Query API uses a small set of codes in the primary `status.code` field:
 
-## Error codes
+| API status code | Meaning |
+| --------------- | ------- |
+| `00000` | Successful completion with at least one result row. |
+| `00001` | Successful completion with an omitted result. Reserved for future DDL and DML support. |
+| `01000` | A warning or informational condition. Inspect the description and diagnostics. |
+| `02000` | No result rows are currently available from a row-producing query. If the result contains `nextPage`, execution is still in progress and you can poll for the result. |
+| `42000` | A syntax, access-rule, or other user-correctable query error. |
+| `50000` | A system or otherwise unclassified error. |
 
-| GQLSTATUS | Message                                      | Description                                   |
-|-----------|----------------------------------------------|-----------------------------------------------|
-| 22000     | error: data exception                        | Runtime error in data processing              |
-| 42000     | error: syntax error or access rule violation | Query syntax error or access permission issue |
-| G2000     | error: graph type violation                  | Query violates graph schema constraints       |
+For broad application control flow, use `status.code`. Don't parse the status description because its text can vary.
 
-## Understanding status codes
+## Canonical query-engine GQLSTATUS
 
-**Success indicators:** Codes that start with `0` indicate successful query execution. Even if your query returns no data (02000), query execution was successful.
+The Query API preserves the canonical GQLSTATUS from the query engine in the `_graphaneGqlStatus` member of each status object's `diagnostics` record:
 
-**Using status codes:** Check the GQLSTATUS code to determine if your query succeeded. Handle empty results appropriately in your applications.
+```json
+"_graphaneGqlStatus": {
+  "gqlType": "STRING",
+  "value": "22012"
+}
+```
+
+For example, numeric overflow and division by zero are user-correctable errors, so both use `42000` as the public `status.code`. The diagnostic value distinguishes canonical GQLSTATUS `22003` from `22012`.
+
+The following table lists common canonical GQLSTATUS values. The query engine can report additional values for more specific conditions.
+
+| GQLSTATUS | Meaning |
+| --------- | ------- |
+| `00000` | Successful query completion with at least one row. |
+| `00001` | Successful completion with an omitted result. |
+| `02000` | No-data condition for a row-producing query. |
+| `01M11` | Incomplete result. The result was truncated. |
+| `22000` | General data exception. This code can appear as the cause of a more specific primary condition. |
+| `22003` | Numeric value out of range, including overflow in a literal, operation, aggregate, or cast. |
+| `22012` | Division by zero. |
+| `42000` | General syntax error or access-rule violation. |
+| `G2000` | Graph type violation. |
+
+Primary statuses, entries in `additionalStatuses`, and nested `cause` statuses each have their own diagnostic record and canonical GQLSTATUS.
 
 ## Related content
 
-- [GQL Language Guide](gql-language-guide.md) - Complete guide to GQL syntax and usage
-- [GQL Quick Reference](gql-reference-abridged.md) - Syntax quick reference
-- [Error handling strategies](gql-language-guide.md#error-handling-strategies) - Best practices for robust queries
+- [GQL language guide](gql-language-guide.md)
+- [GQL Query API status object](gql-query-api.md#status-object)
+- [Handle nulls and query errors](gql-language-guide.md#handle-nulls-and-query-errors)

@@ -11,6 +11,8 @@ ms.search.form: Source and Destination
 
 This article shows you how to add a SQL Server on VM DB Change Data Capture (CDC) source to an eventstream.
 
+[!INCLUDE [schema-aware-source-callout](./includes/schema-aware-source-callout.md)]
+
 [!INCLUDE [sql-server-on-virtual-machine-cdc-source-connector-prerequisites](./includes/connectors/sql-server-on-virtual-machine-cdc-source-connector-prerequisites.md)]
 
 ## Add SQL Server on VM database as a source

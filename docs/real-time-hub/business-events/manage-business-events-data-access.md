@@ -2,20 +2,20 @@
 title: Manage Data Access for Business Events in Fabric
 description: Discover how to assign roles and permissions to manage data access for business events in Microsoft Fabric Real-Time hub. Start securing your events today.
 #customer intent: As an admin managing business events, I want to assign roles and permissions in Fabric Real-Time hub so that I can control who can publish and consume events.
-ms.date: 03/03/2026
+ms.date: 08/05/2026
 ms.topic: how-to
+ai-usage: ai-assisted
 ---
 
 # Manage data access for business events in Fabric Real-Time hub
 
 This article shows you how to manage data access for business events in Microsoft Fabric Real-Time hub. 
 
-> [!IMPORTANT]
-> This feature is in [preview](../../fundamentals/preview.md).
-
 ## Overview
 
 Business events use a role-based access control (RBAC) model to manage permissions for publishing and consuming business events. Data access roles enable you to define role-based security to grant users access to publish or consume your business events. Fabric users with **Admin** or **Member** roles on the workspace can create a business event and manage the data access roles.  
+
+Data access roles are a separate layer from the workspace roles and sharing permissions that control access to the event schema set item itself. Workspace roles determine who can view or edit a schema set and its schemas and event types. Data access roles determine who can publish or consume the event data. Being able to view or edit a schema set doesn't by itself grant publish or consume access. For more information about item-level access, see [Permissions](../../real-time-intelligence/schema-sets/schema-registry-overview.md#permissions).
 
 Each role has multiple components: 
 
@@ -82,6 +82,15 @@ The creator can publish and consume any business event within the same Event Sch
 ## Manage data access roles using REST APIs 
 
 Use the [Fabric REST API](/rest/api/fabric/core/onelake-data-access-security/create-or-update-data-access-roles#dataaccessrole) to create or update data access roles for business events. This API updates role definitions by creating, updating, and deleting roles to match the payload you send.  
+
+Before you make the first data access roles API call for an event schema set, enable OneLake security for the event schema set item:
+
+```http
+POST https://msit-onelake.pbidedicated.windows.net/v1.0/workspaces/{workspaceId}/artifacts/{schemaSetId}
+Content-Type: application/json
+
+{"enableOneSecurity": true}
+```
 
 ### Endpoint 
 

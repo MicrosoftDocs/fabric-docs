@@ -2,7 +2,7 @@
 title: Warehouse Snapshots
 description: Learn about warehouse snapshots in Fabric Data Warehouse.
 ms.reviewer: twcyril
-ms.date: 05/01/2026
+ms.date: 10/05/2026
 ms.topic: concept-article
 ms.search.form: Warehouse snapshot overview
 ---
@@ -63,7 +63,7 @@ When a T-SQL query is run, information about the current version of the data bei
 ## Manage snapshots
 
 - Warehouse snapshots require unique names, unique from the warehouse and SQL analytics endpoint.
-- Warehouse snapshots don't exist without the source warehouse. When the warehouse is deleted, all snapshots are deleted. Warehouse snapshots must be recreated if the warehouse is restored.
+- Warehouse snapshots are associated with their source warehouse. When you restore a warehouse, the associated snapshots restore automatically as part of the recovery process. This process ensures both the warehouse and its snapshots are recovered together.
 - Warehouse snapshots are valid for the [configured retention period](data-retention.md), up to 120 days in the past. The snapshot datetime can be set upon creation, to any date in the past within the retention period or database creation time (whichever is later). Retention periods can't be configured on individual warehouse snapshots. A snapshot inherits its access boundary from the parent warehouse's retention setting at the time the snapshot was created.
 
 ## Remarks

@@ -1,15 +1,15 @@
 ---
 title: Troubleshoot the Azure Synapse Analytics, Azure SQL Database, SQL Server, Azure SQL Managed Instance, and Amazon RDS for SQL Server connector
-description: Learn how to troubleshoot issues with the Azure Synapse Analytics, Azure SQL Database, SQL Server, Azure SQL Managed Instance, and Amazon RDS for SQL Server connectors in Data Factory in Microsoft Fabric.
+description: Learn how to troubleshoot issues with the Azure Synapse Analytics, Azure SQL Database, SQL Server, Azure SQL Managed Instance, and Amazon RDS for SQL Server connectors in Fabric Data Factory.
 ms.reviewer: xupzhou
 ms.topic: troubleshooting
 ms.custom: connectors
 ms.date: 11/20/2025
 ---
 
-# Troubleshoot the Azure Synapse Analytics, Azure SQL Database, SQL Server, Azure SQL Managed Instance, and Amazon RDS for SQL Server connectors in Data Factory in Microsoft Fabric
+# Troubleshoot the Azure Synapse Analytics, Azure SQL Database, SQL Server, Azure SQL Managed Instance, and Amazon RDS for SQL Server connectors in Fabric Data Factory
 
-This article provides suggestions to troubleshoot common problems with the Azure Synapse Analytics, Azure SQL Database, SQL Server, Azure SQL Managed Instance, and Amazon RDS for SQL Server connectors in Data Factory in Microsoft Fabric.
+This article provides suggestions to troubleshoot common problems with the Azure Synapse Analytics, Azure SQL Database, SQL Server, Azure SQL Managed Instance, and Amazon RDS for SQL Server connectors in Data Factory.
 
 ## Error code: SqlFailedToConnect
 
@@ -289,6 +289,6 @@ This article provides suggestions to troubleshoot common problems with the Azure
 
 For more troubleshooting help, try these resources:
 
-- [Data Factory blog](https://blog.fabric.microsoft.com/blog/category/data-factory)
-- [Data Factory community](https://community.fabric.microsoft.com/t5/Data-Factory-preview-Community/ct-p/datafactory)
+- [Fabric blog](https://community.fabric.microsoft.com/category/fabricupdatesblogs/blog/fbc_fabricupdatesblogs)
+- [Data Factory forums | Fabric Community](https://community.fabric.microsoft.com/category/datafactory)
 - [Data Factory feature requests ideas](https://ideas.fabric.microsoft.com/)

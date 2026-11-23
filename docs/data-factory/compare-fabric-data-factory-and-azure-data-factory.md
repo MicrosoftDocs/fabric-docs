@@ -3,7 +3,7 @@ title: Differences between Data Factory in Fabric and Azure
 description: Compare Azure Data Factory and Fabric Data Factory features to choose the right data integration solution for your enterprise.
 ms.reviewer: makromer
 ms.topic: concept-article
-ms.date: 06/11/2026
+ms.date: 11/06/2026
 ms.custom:
   - template-concept
   - build-2023
@@ -14,25 +14,25 @@ ai-usage: ai-assisted
 
 # Differences between Azure Data Factory and Fabric Data Factory
 
-[Data Factory in Microsoft Fabric](data-factory-overview.md) (Fabric Data Factory) is the next generation of [Azure Data Factory](/azure/data-factory/introduction). By using OneLake as the unified storage layer, Fabric Data Factory reduces infrastructure complexity and data movement. Pipelines can work directly with live data through [OneLake shortcuts](../onelake/onelake-shortcuts.md) and [cross-tenant sharing](../governance/external-data-sharing-overview.md).
+[Fabric Data Factory](data-factory-overview.md) is the next generation of [Azure Data Factory](/azure/data-factory/introduction). By using OneLake as the unified storage layer, Fabric Data Factory reduces infrastructure complexity and data movement. Pipelines can work directly with live data through [OneLake shortcuts](../onelake/onelake-shortcuts.md) and [cross-tenant sharing](../governance/external-data-sharing-overview.md).
 
-This article compares the core features, activities, connectors, and infrastructure components of both services. To plan a migration, see the [migration planning guide](migrate-planning-azure-data-factory.md).
+This article compares the core features, activities, connectors, and infrastructure components of both services. To plan an upgrade, see the [upgrade planning guide](upgrade-planning-azure-data-factory.md).
 
 ## Compare features side by side
 
 Here's how the core features stack up between Azure Data Factory and Fabric Data Factory. The table highlights what's changed, what's new, and what stays the same.
 
-|[Azure Data Factory](/azure/data-factory/introduction) |[Data Factory in Fabric](data-factory-overview.md) |What's different |
+|[Azure Data Factory](/azure/data-factory/introduction) |[Fabric Data Factory](data-factory-overview.md) |What's different |
 |:---|:---|:---|
-|Pipeline |Pipeline | **Better integration**: Pipelines in Fabric work seamlessly with Lakehouse, Data Warehouse, and other Fabric services right out of the box. Fabric pipelines include more SaaS-based activities and differ in JSON definitions. See our [pipeline feature comparison](#pipeline-feature-comparison) for more details.|
-|Mapping data flow  |Dataflow Gen2 | **Easier to use**: Dataflow Gen2 gives you a simpler experience for building transformations. We're adding more mapping dataflow features to Gen2 all the time. |
+|Pipeline |Pipeline | **Better integration**: Pipelines in Fabric work seamlessly with lakehouses, warehouses, and other Fabric items right out of the box. Fabric pipelines include more SaaS-based activities and differ in JSON definitions. See our [pipeline feature comparison](#pipeline-feature-comparison) for more details.|
+|Mapping data flow |Dataflow Gen2 with [Mapping Data Flow (MDF) transforms](dataflow-gen2-mapping-data-flows-transforms.md) | Use MDF transforms to retain the familiar Mapping Data Flow authoring experience and Spark-based execution model. |
 |Activities |Activities|**More activities coming**: We're working to bring all your favorite ADF activities to Fabric. Plus, you get new ones like the Office 365 Outlook activity that aren't available in ADF. See our [activity comparison](#activity-comparison) for details. |
-|Dataset |Connections only|**Simpler approach**: No more complex dataset configurations. For Data Factory in Fabric you use connections to link to your data sources and start working. Fabric eliminates datasets, defining data properties inline within activities. |
+|Dataset |Connections only|**Simpler approach**: No more complex dataset configurations. For Fabric Data Factory you use connections to link to your data sources and start working. Fabric eliminates datasets, defining data properties inline within activities. |
 |Linked Service |Connections |**More intuitive**: Connections work like linked services but are easier to set up and manage. |
 |Triggers |Schedule and file event triggers |**Built-in scheduling**: Use Fabric's scheduler and Reflex events to automatically run your pipelines. File event triggers work natively in Fabric without extra setup. Fabric integrates triggers into its Activator framework, unlike ADF's standalone triggers. |
 |Publish |Save and Run |**No publishing step**: In Fabric, skip the publish step entirely. Just select Save to store your work, or select Run to save and execute your pipeline immediately. |
 |Autoresolve and Azure Integration runtime |Not needed |**Simplified architecture**: No need to manage integration runtimes. Fabric handles the compute for you. |
-|Self-hosted integration runtimes |On-premises Data Gateway |**Same on-premises access**: Connect to your on-premises data using the familiar On-premises Data Gateway. Learn more in our [on-premises data access guide](how-to-access-on-premises-data.md). |
+|Self-hosted integration runtimes |On-premises data gateway |**Same on-premises access**: Connect to your on-premises data using the familiar on-premises data gateway. Learn more in our [on-premises data access guide](how-to-access-on-premises-data.md). |
 |Azure-SSIS integration runtimes |To be determined |**Future capability in Fabric**: We're still working on the design for SSIS integration in Fabric. |
 |Managed virtual networks and private endpoints |To be determined. |**Future capability in Fabric**: We're still working on integration for managed virtual networks and private endpoints in Fabric. |
 |Expression language |Expression language |**Same expressions**: Your existing expression knowledge transfers directly. The syntax is nearly identical. |
@@ -41,7 +41,7 @@ Here's how the core features stack up between Azure Data Factory and Fabric Data
 |ARM template export/import |Save as |**Quick duplication**: In Fabric, use "Save as" to quickly duplicate pipelines for development or testing. |
 |Monitoring |Monitoring hub + Run history |**Advanced monitoring**: The monitoring hub offers a modern experience with cross-workspace insights and better drill-down capabilities. |
 |Debugging |Interactive mode |**Simplified debugging**: Fabric eliminates ADF's debug mode. You're always in interactive mode. |
-|Change Data Capture (CDC) |Copy jobs |**Incremental data movement**: Fabric manages incremental data movement through Copy jobs instead of CDC artifacts. |
+|Change Data Capture (CDC) |Copy jobs |**Incremental data movement**: Fabric manages incremental data movement through copy jobs instead of CDC artifacts. |
 |Azure Synapse Link |Mirroring |**Data replication**: Fabric replaces Azure Synapse Link with mirroring features for data replication. |
 |Execute pipeline activity |Invoke pipeline activity |**Cross-platform invocation**: Fabric enhances ADF's Execute pipeline activity with cross-platform invocation. |
 
@@ -50,23 +50,26 @@ Here's how the core features stack up between Azure Data Factory and Fabric Data
 | **Category** | **ADF Pipelines** | **Fabric Pipelines** |
 |--------------|-------------------|---------------------|
 | Type of service | Data Integration PaaS Service | Data Integration SaaS Service |
-| Authoring Environment | Azure portal (ADF Studio) | Fabric / Power BI workspace (unified UX with Lakehouses, Warehouses, etc.) |
+| Authoring Environment | Azure portal (ADF Studio) | Fabric / Power BI workspace (unified UX with lakehouses, warehouses, etc.) |
 | Pipeline Orchestration | Full-featured pipelines with activities, triggers, parameters | Same orchestration model, re-imagined for Fabric UX |
-| Data Movement | Copy activity, mapping data flows, on-premises IR support, Managed virtual network | Copy activity, Dataflows Gen2, built-in connectivity to OneLake and Fabric items, [OneLake shortcuts](../onelake/onelake-shortcuts.md) for live data access without copy, On-premises Data Gateway, virtual network gateway |
+| Data Movement | Copy activity, mapping data flows, on-premises IR support, Managed virtual network | Copy activity, dataflows Gen2, built-in connectivity to OneLake and Fabric items, [OneLake shortcuts](../onelake/onelake-shortcuts.md) for live data access without copy, on-premises data gateway, virtual network gateway |
 | Compute / IR | Self-hosted, SSIS and Azure IR (for movement + transformation) | Cloud connections, On-premises, and virtual network gateway |
-| Data Flows | Azure Blob, Data Lake Storage, SQL, 100+ connectors | Same connectors + native OneLake integration, tighter Fabric workspace alignment |
-| Monitoring | Pipelines and Data Flows in ADF Studio with runs, triggers, alerts | Monitoring Hub and Workspace Monitoring with unified views across Pipelines, Dataflows, Notebooks, Databases, etc. |
+| Data Flows | Mapping Data Flows provide low-code, Spark-based transformations with supported source and sink connectors | Dataflow Gen2 provides [MDF transforms](dataflow-gen2-mapping-data-flows-transforms.md) with Spark-based execution. |
+| Monitoring | pipelines and Data Flows in ADF Studio with runs, triggers, alerts | Monitoring Hub and workspace Monitoring with unified views across pipelines, Dataflows, notebooks, Databases, etc. |
 | Triggers | Schedules, tumbling window, event-based triggers | Schedules, event triggers, tumbling window triggers as interval schedules. Pipelines that use live data through OneLake shortcuts and cross-tenant sharing work seamlessly with all Fabric trigger types. |
 | CI/CD | ARM templates + Azure DevOps or GitHub repo integration | Built-in deployment pipelines in Fabric; workspace-level promotion (Dev → Test → Production) and external repo integration |
 | Security | Managed identities, Key Vault integration, private endpoints | Same security model plus Fabric workspace RBAC; OneLake security integration |
 | Data sharing and governance | N/A | [Cross-tenant data sharing](../governance/external-data-sharing-overview.md) via OneLake shortcuts enables governed, live data access across organizational boundaries without duplication |
 | Pricing | Azure utilization-based Pay-as-you-go (per activity run, data movement, and compute) | Capacity-based (Fabric F SKU) with no charges for external or pipeline activities, only activity runs and pipeline data movement |
 
+> [!NOTE]
+> The built-in upgrade experience supports eligible Azure Data Factory and Azure Synapse Analytics pipelines containing Mapping Data Flows. Supported Mapping Data Flows are upgraded to MDF transforms in Dataflow Gen2. Review the supported connectors, transformations, authentication methods, and [current limitations](dataflow-gen2-mapping-data-flows-transforms.md#limitations) before upgrading. For requirements and instructions, see [Upgrade Azure Data Factory Mapping Data Flow pipelines to Fabric](dataflow-gen2-mapping-data-flows-transforms-upgrade.md).
+
 ## Activity comparison
 
-With Data Factory in Microsoft Fabric, we continue to maintain a high degree of continuity with Azure Data Factory. Approximately 90% of activities accessible in ADF are already available under Data Factory in Fabric. Here's a breakdown of the activities and their availability in both ADF and Data Factory in Fabric:
+With Data Factory, we continue to maintain a high degree of continuity with Data Factory. Approximately 90% of activities accessible in ADF are already available under Data Factory. Here's a breakdown of the activities and their availability in both ADF and Data Factory:
 
-|**Activity**|**ADF**|**Data Factory in Fabric**|
+|**Activity**|**ADF**|**Data Factory**|
 |:---|:---|:---|
 |ADX/KQL|[Y](/azure/data-factory/connector-azure-data-explorer)|[Y](kql-activity.md)|
 |Append Variable|[Y](/azure/data-factory/control-flow-append-variable-activity)|[Y](append-variable-activity.md)|
@@ -88,7 +91,7 @@ With Data Factory in Microsoft Fabric, we continue to maintain a high degree of 
 |HDInsight|[Hive activity](/azure/data-factory/transform-data-using-hadoop-hive) &bull; [Pig activity](/azure/data-factory/transform-data-using-hadoop-pig) &bull; [MapReduce activity](/azure/data-factory/transform-data-using-hadoop-map-reduce) &bull; [Spark activity](/azure/data-factory/transform-data-using-spark) &bull; [Streaming activity](/azure/data-factory/transform-data-using-hadoop-streaming)|[HDInsight activity](azure-hdinsight-activity.md)|
 |If condition|[Y](/azure/data-factory/control-flow-if-condition-activity)|[Y](if-condition-activity.md)|
 |Lookup|[Y](/azure/data-factory/control-flow-lookup-activity)|[Y](lookup-activity.md)|
-|Mapping Data Flow|[Y](/azure/data-factory/control-flow-execute-data-flow-activity)|[Dataflow Gen2](tutorial-dataflows-gen2-pipeline-activity.md)|
+|Mapping Data Flow|[Y](/azure/data-factory/control-flow-execute-data-flow-activity)|[MDF transforms in Dataflow Gen2](dataflow-gen2-mapping-data-flows-transforms.md). Power Query in [Dataflow Gen2](tutorial-dataflows-gen2-pipeline-activity.md) is also available as an alternative redesign option.|
 |Office 365 Outlook|N/A|[Y](outlook-activity.md)|
 |Power Query (ADF only - Wrangling Dataflow)|Deprecated|N/A|
 |Script|[Y](/azure/data-factory/transform-data-using-script)|[Y](script-activity.md)|
@@ -109,12 +112,12 @@ With Data Factory in Microsoft Fabric, we continue to maintain a high degree of 
 
 ### New activities in Fabric Data Factory
 
-In addition to maintaining activity continuity, Data Factory in Fabric introduces some new activities to meet your richer orchestration needs. These new activities are:
+In addition to maintaining activity continuity, Fabric Data Factory introduces some new activities to meet your richer orchestration needs. These new activities are:
 
 1. **Outlook**: Available in Fabric Data Factory to facilitate integration with Outlook services.
 1. **Teams**: Available in Fabric Data Factory to enable orchestration of Microsoft Teams activities.
 1. **Semantic model refresh**: Available in Fabric Data Factory to enhance Power BI semantic model refresh capabilities.
-1. **Dataflow Gen2**: Available in Fabric Data Factory to empower data orchestration with advanced dataflow capabilities.
+1. **Dataflow Gen2**: Available in Fabric Data Factory for Power Query-based transformations and Spark-based MDF transforms. MDF transforms are generally available and are executed through the pipeline Dataflow activity.
 
 For a list of all available Fabric Data Factory activities, see the [Activity overview](activity-overview.md).
 
@@ -122,13 +125,13 @@ For a list of all available Fabric Data Factory activities, see the [Activity ov
 
 For a comparison of all connectors and their availability in Azure Data Factory and Fabric Data Factory, see the [Connector comparison article](connector-parity.md).
 
-## Self-hosted Integration Runtime (SHIR) vs. On-premises Data Gateway (OPDG)
+## Self-hosted integration runtime (SHIR) vs. On-premises data gateway (OPDG)
 
 >[!NOTE]
 > The services supported by the SHIR and OPDG are different:
 >
-> - Self-hosted Integration Runtime (SHIR): Supports Azure Data Factory, Azure Synapse Analytics, Azure Machine Learning studio, and Azure Purview.
-> - On-premises Data Gateway (OPDG): Supports Power BI, Power Apps, Power Automate, Azure Analysis Services, Logic Apps, Fabric Dataflow Gen2, Fabric Pipeline, Fabric Copy Job, and Fabric Mirroring.
+> - Self-hosted Integration Runtime: Supports Data Factory, Azure Synapse Analytics, Azure Machine Learning studio, and Azure Purview.
+> - On-premises data gateway: Supports Power BI, Power Apps, Power Automate, Azure Analysis Services, Logic Apps, Fabric dataflow Gen2, Fabric pipeline, Fabric copy job, and Fabric mirroring.
 
 | **Category**                  | **Self-hosted Integration Runtime (SHIR)**                                                                 | **On-premises Data Gateway (OPDG)**                                                                 |
 |-------------------------------|-----------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
@@ -149,40 +152,40 @@ For a comparison of all connectors and their availability in Azure Data Factory 
 | **Private Link for Control Flow** | - Supported                                                                                               | - Not supported                                                                                   |
 | **Versioning**                | - Two releases per month; one pushed as autoupdate<br>- Supports last 12 months of releases           | - One release per month <br>- Supports last 6 releases                                          |
 | **CPU & Memory Throttling**   | - Not supported                                                                                           | - Supported                                                                                       |
-| **Throughput Limits**         | - No hard limit; dependent on network bandwidth                                                           | Service-specific limits:<br>Power Apps / Power Automate / Logic Apps:<br> - Write: 2-MB payload limit<br>- Read: 2-MB request limit, 8 MB compressed response limit<br>- GET request URL limit: 2,048 characters<br>Power BI Direct Query: 16-MB uncompressed response limit |
+| **Throughput Limits**         | - No hard limit; dependent on network bandwidth                                                           | Service-specific limits:<br>Power Apps / Power Automate / Logic Apps:<br> - Write: 2-MB payload limit<br>- Read: 2-MB request limit, 8 MB compressed response limit<br>- GET request URL limit: 2,048 characters<br>Power BI DirectQuery: 16-MB uncompressed response limit |
 
-## ADF Managed Virtual Network vs. Fabric Virtual Network Data Gateway
+## ADF Managed Virtual Network vs. Fabric virtual network data gateway
 
-Azure Data Factory (ADF) Managed Virtual Network and Microsoft Fabric Virtual Network (virtual network) Data Gateway both help you connect to data sources securely, without exposing them to the public internet. While both options support private connectivity for cloud workloads, they differ in how they're set up, who manages them, and which services they support.
+Azure Data Factory (ADF) Managed Virtual Network and Fabric virtual network (VNet) data gateway both help you connect to data sources securely, without exposing them to the public internet. While both options support private connectivity for cloud workloads, they differ in how they're set up, who manages them, and which services they support.
 
 - **ADF Managed VNET**  
   Microsoft owns and manages the network environment. You get a simple setup, but you can't control the network settings or firewall rules.
 
-- **Fabric VNET Data Gateway**  
+- **Fabric VNET data gateway**
   You deploy the gateway inside your own Azure virtual network. This gives you full control over networking, firewall, and scaling. You decide how the gateway connects to your resources and manage all network settings.
 
 Use the table below to compare the main differences and choose the option that fits your workload and governance needs.
 
-| **Category**                  | **ADF Managed Virtual Network**                                                                 | **Fabric Virtual Network Data Gateway**                                                                 |
+| **Category**                  | **ADF Managed VNet**                                                                 | **Fabric VNet data gateway**                                                                 |
 |-------------------------------|------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Supported Services**        | Azure Data Factory & Synapse pipelines.                                                       | Microsoft Fabric Dataflow Gen2, Fabric data pipelines, Fabric Copy Job, Fabric Mirroring, Power BI semantic models, and Power BI paginated reports |
+| **Supported Services**        | Azure Data Factory & Synapse pipelines.                                                       | Fabric dataflow Gen2, Fabric data pipelines, Fabric copy job, Fabric mirroring, Power BI semantic models, and Power BI paginated reports |
 | **VNET Ownership**            | Microsoft-managed virtual network (customer doesn't control the network).                                 | Customer-managed virtual network (customer has full control).                                                     |
-| **Private Endpoints**         | Autocreated and managed by ADF for supported services (Azure Storage, SQL DB, etc.).          | Customers configure virtual network Gateway to connect Fabric workloads to resources inside their virtual network.           |
+| **Private Endpoints**         | Autocreated and managed by ADF for supported services (Azure Storage, SQL DB, etc.).          | Customers configure virtual network gateway to connect Fabric workloads to resources inside their virtual network.           |
 | **Networking Control**        | Limited - customers can only allowlist virtual network integration runtime to private endpoints.          | Full control - customer configures firewall, NSG rules, routing in their own virtual network.                     |
-| **Installation / Deployment** | No installation needed; fully managed by Microsoft inside a hidden virtual network.                       | Requires deployment of virtual network Data Gateway into the customer's virtual network.                                     |
+| **Installation / Deployment** | No installation needed; fully managed by Microsoft inside a hidden virtual network.                       | Requires deployment of virtual network data gateway into the customer's virtual network.                                     |
 | **High Availability**         | Microsoft-managed, autoscaled inside ADF's virtual network. Switch to reserve mode when enabling TTL.     | Supports scaling and HA (node-based clusters), but runs inside customer-managed virtual network. Support up to seven nodes. |
 
 ## Fabric Data Factory capabilities
 
 Fabric Data Factory includes [Copilot for Data Factory](copilot-fabric-data-factory.md), which uses natural language to help you create and manage pipelines, dataflows, and other Data Factory items.
 
-### Native Lakehouse and Data Warehouse integration
+### Native lakehouse and warehouse integration
 
-One of the biggest advantages of Fabric Data Factory is how it connects with your data platforms. Lakehouse and Data Warehouse work as both sources and destinations in your pipelines, making it easy to build integrated data projects. Pipelines can also operate on lakehouse tables backed by [OneLake shortcuts](../onelake/onelake-shortcuts.md), allowing you to transform and orchestrate data from external sources (including [cross-tenant shares](../governance/external-data-sharing-overview.md)) without first copying it into your workspace.
+One of the biggest advantages of Fabric Data Factory is how it connects with your data platforms. Lakehouses and warehouses in Fabric work as both sources and destinations in your pipelines, making it easy to build integrated data projects. Pipelines can also operate on lakehouse tables backed by [OneLake shortcuts](../onelake/onelake-shortcuts.md), allowing you to transform and orchestrate data from external sources (including [cross-tenant shares](../governance/external-data-sharing-overview.md)) without first copying it into your workspace.
 
-   :::image type="content" source="media/connector-differences/source.png" alt-text="Screenshot showing lakehouse and data warehouse source tab.":::
+   :::image type="content" source="media/connector-differences/source.png" alt-text="Screenshot showing lakehouse and warehouse source tab.":::
 
-   :::image type="content" source="media/connector-differences/destination.png" alt-text="Screenshot showing lakehouse and data warehouse destination tab.":::
+   :::image type="content" source="media/connector-differences/destination.png" alt-text="Screenshot showing lakehouse and warehouse destination tab.":::
 
 ### Email notifications with Office 365
 
@@ -223,11 +226,14 @@ Use the **Save as** feature to duplicate any existing pipeline. Use it to create
 ## Related content
 
 > [!NOTE]
-> New features developed for Data Factory in Fabric aren't backported to Azure Data Factory or Azure Synapse pipelines. The two platforms maintain separate roadmaps. The product teams evaluate backport requests based on community feedback.
+> New features developed for Fabric Data Factory aren't backported to Azure Data Factory or Azure Synapse pipelines. The two platforms maintain separate roadmaps. The product teams evaluate backport requests based on community feedback.
 
 For more information, see the following resources:
 
-- [Migrate from Azure Data Factory to Data Factory in Microsoft Fabric](migrate-planning-azure-data-factory.md)
-- [Get the full overview of Data Factory in Microsoft Fabric](data-factory-overview.md)
-- [Migration best practices](migration-best-practices.md)
+- [Plan your upgrade from Azure Data Factory to Fabric Data Factory](upgrade-planning-azure-data-factory.md)
+- [Upgrade best practices for Azure Data Factory to Fabric Data Factory](upgrade-best-practices.md)
+- [Mapping Data Flow transforms in Dataflow Gen2](dataflow-gen2-mapping-data-flows-transforms.md)
+- [Upgrade Azure Data Factory Mapping Data Flow pipelines to Fabric](dataflow-gen2-mapping-data-flows-transforms-upgrade.md)
+- [A guide to Fabric dataflows for Azure Data Factory Mapping Data Flow users](guide-to-dataflows-for-mapping-data-flow-users.md)
+- [Get the full overview of Fabric Data Factory](data-factory-overview.md)
 - [Build your first data integration in Fabric](transform-data.md)

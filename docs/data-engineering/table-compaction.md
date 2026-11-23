@@ -3,7 +3,7 @@ title: Table Compaction
 description: Learn about how and why to optimize data files in Delta tables.
 ms.reviewer: milescole
 ms.topic: how-to
-ms.date: 03/01/2026
+ms.date: 08/25/2026
 ms.search.form: lakehouse table maintenance optimize compaction
 ai-usage: ai-assisted
 ---
@@ -251,7 +251,7 @@ SET TBLPROPERTIES ('delta.autoOptimize.autoCompact' = 'true')
 ```
 
 #### Reduce evaluation overhead
-Starting in Fabric Spark runtime 2.0 (Delta 4.1), you can enable the `onCheckpointOnly` auto compaction mode. By default, auto compaction evaluates file metadata after every write operation to determine whether a table has too many small files. With `onCheckpointOnly`, the evaluation is deferred to log checkpointing operations (typically every 10 commits). At checkpoint time, the table snapshot is already fully reconstructed, so the evaluation reads from metadata that is already in memory rather than requiring an extra scan. The deferred evaluation reduces per-commit overhead while still ensuring tables are periodically compacted.
+Starting in Fabric Spark runtime 2.0 (Delta 4.2), you can enable the `onCheckpointOnly` auto compaction mode. By default, auto compaction evaluates file metadata after every write operation to determine whether a table has too many small files. With `onCheckpointOnly`, the evaluation is deferred to log checkpointing operations (typically every 10 commits). At checkpoint time, the table snapshot is already fully reconstructed, so the evaluation reads from metadata that is already in memory rather than requiring an extra scan. The deferred evaluation reduces per-commit overhead while still ensuring tables are periodically compacted.
 
 # [Spark SQL](#tab/sparksql)
 

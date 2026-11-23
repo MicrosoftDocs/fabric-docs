@@ -5,7 +5,7 @@ ms.reviewer: mahi # Product team ms alias(es)
 # author: Do not use - assigned by folder in docfx file
 # ms.author: Do not use - assigned by folder in docfx file
 ms.topic: how-to
-ms.date: 11/17/2025
+ms.date: 11/10/2026
 ms.search.form: Create new Snowflake database item
 #customer intent: As a data engineer, I want to connect Snowflake to OneLake and have my Iceberg tables written to OneLake by default.
 ---
@@ -24,6 +24,8 @@ This article shows you how to:
 
 > [!IMPORTANT]
 > Connectivity between Snowflake and OneLake occurs over the public network. On-premises data gateway connections aren't supported, and your Snowflake account must be accessible over the public network.
+
+If workspace outbound access protection is enabled, allow the **Snowflake** connection type in the workspace's data connection rules. To allow only your Snowflake account endpoint, add it as an exception and leave the connection type set to **Blocked**. For more information, see [Workspace outbound access protection for mirrored catalogs and Snowflake database](../../security/workspace-outbound-access-protection-mirrored-catalogs-snowflake-database.md).
 
 1. Select (or create) a Fabric workspace for the Snowflake database item.
    - To keep things simple, use alphanumeric characters only for your workspace name. 

@@ -5,7 +5,7 @@ ms.reviewer: mibar
 ms.topic: how-to
 ms.collection: ce-skilling-ai-copilot
 ms.subservice: rti-dashboard
-ms.date: 05/27/2026
+ms.date: 08/27/2026
 author: hzargari-ms
 ms.author: v-hzargari
 ---
@@ -15,6 +15,8 @@ ms.author: v-hzargari
 Real-Time Dashboard in Microsoft Fabric helps you monitor live data and react to changes as they happen. To ensure your dashboard always reflects live data, Real-Time Dashboard supports **Live refresh**.
 
 **Live refresh** updates dashboard visuals when new data is ingested into the underlying source. For visuals that don't support ingestion detection, or are based on unsupported data sources, the dashboard uses a fallback refresh interval that the dashboard editor defines. Ingestion detection is more efficient than fixed-time intervals, as it queries the data only when the data changes.
+
+For new Real-Time Dashboards, **Live refresh** is turned on by default. You can change this setting anytime in the **Refresh settings** pane.
 
 **Live refresh** works well in the following scenarios: 
 
@@ -32,7 +34,7 @@ If the detection query identifies that new data is ingested, the process trigger
 
 ## Configure Live refresh (Editor)
 
-As a dashboard editor, you can configure how your dashboard stays fresh in the **Refresh settings**.
+As a dashboard editor, you can configure how your dashboard stays fresh in the **Refresh settings**. **Live refresh** is turned on by default for new Real-Time Dashboards, but you can turn it off at any time.
 
 1. In your dashboard, enable **Editing** mode and then select **Manage** from the top ribbon. 
 

@@ -14,45 +14,55 @@ ai-usage: ai-assisted
 This article outlines the steps to create a Google Analytics connection.
 
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
 
-The Google Analytics connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+## Summary
+
+The Google Analytics connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
 |Organizational account| n/a | √ |
 
-## Set up your connection for Dataflow Gen2
-You can connect Dataflow Gen2 in Microsoft Fabric to Google Analytics using Power Query connectors. Follow these steps to create your connection:
+## Set up your connection for dataflow Gen2
+You can connect dataflow Gen2 in Fabric to Google Analytics by using Power Query connectors. Follow these steps to create your connection:
 
 1. Check [capabilities](#capabilities), [limitations, and considerations](#limitations-and-considerations) to make sure your scenario is supported.
 1. [Complete prerequisites for Google Analytics](#prerequisites).
 1. [Get data in Fabric](#get-data).
 1. [Connect to Google Analytics data](#connect-to-google-analytics-data).
 
-### Capabilities
+## Prerequisites
 
-[!INCLUDE [google-analytics-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/google-analytics/google-analytics-capabilities-supported.md)]
+[!INCLUDE [google-analytics-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/google-analytics/prerequisites.md)]
 
-### Prerequisites
+<a id="capabilities"></a>
 
-[!INCLUDE [google-analytics-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/google-analytics/google-analytics-prerequisites.md)]
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
+
+[!INCLUDE [google-analytics-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/google-analytics/capabilities-supported.md)]
+
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Connect to Google Analytics data
+<a id="connect-to-google-analytics-data"></a>
 
-[!INCLUDE [google-analytics-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/google-analytics/google-analytics-connect-to-power-query-online.md)]
+### Connection instructions
 
-### Limitations and considerations
-
-[!INCLUDE [google-analytics-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/google-analytics/google-analytics-limitations-and-considerations-include.md)]
+[!INCLUDE [google-analytics-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/google-analytics/connect-online.md)]
 
 ## Set up your connection in a pipeline
 
-Data Factory in Microsoft Fabric doesn't currently support Google Analytics data in pipelines.
+Data Factory doesn't currently support Google Analytics data in pipelines.
+
+## Limitations and considerations
+
+[!INCLUDE [google-analytics-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/google-analytics/limitations.md)]
 
 ## Related content
 

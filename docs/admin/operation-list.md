@@ -4,16 +4,19 @@ description: This article provides a list of all the operations available in Fab
 author: msmimart
 ms.author: mimart
 ms.topic: reference
-ms.date: 06/02/2026
+ms.date: 11/12/2026
+ms.custom: msecd-doc-authoring-1032
 ---
 # Operation list
 
 The following operations are available in the audit logs.
 
+To audit OneLake data access and storage operations, use [OneLake diagnostics](../onelake/onelake-diagnostics-overview.md). The Fabric audit log isn't a complete source for OneLake data-plane activity.
+
 | Friendly name | Operation name | Notes |
 |---|---|---|
-| Abort copy blob operation | :::no-loc text="AbortCopyBlob"::: | OneLake operation. Stops a pending Copy Blob operation, and leaves a destination blob with zero length and full metadata.  |
 | Accept an invitation to   external data share | :::no-loc text="AcceptExternalDataShare"::: | Accept an invitation to external data share |
+| Activated policy set | :::no-loc text="ActivatedPolicySet"::: |   |
 | Activated Spark Custom Live Pool | :::no-loc text="ActivatedSparkCustomLivePool"::: | Whether a custom live pool activation succeeded or not. |
 | Add Admin Personal Workspace Access  |  :::no-loc text="AddAdminPersonalWorkspaceAccess":::  |    |
 | Add Artifact To Pipeline  |  :::no-loc text="AddArtifactToPipeline":::  |    |
@@ -38,12 +41,11 @@ The following operations are available in the audit logs.
 | Analyze In Excel Report | :::no-loc text="AnalyzeInExcelReport"::: |   |
 | Analyzed Power BI report | :::no-loc text="AnalyzeInExcel"::: | Generated when a user selects Analyze in Excel on a report or semantic model in the service and successfully generates an Excel workbook  |
 | Analyzed Power BI semantic model | :::no-loc text="AnalyzedByExternalApplication"::: | Generated when users interact with the service  |
-| Append block from URL | :::no-loc text="AppendBlockFromURL"::: | OneLake operation. Writes a block of data from a URL to the end of an append blob (append blobs only) |
-| Append block to blob | :::no-loc text="AppendBlock"::: | OneLake operation. Writes a block of data to the end of an append blob (append blobs only) |
-| Append data to file | :::no-loc text="AppendDataToFile"::: | OneLake operation. Uploads data to be append to a file (DFS). |
+| Applied a PostgreSQL database schema | :::no-loc text="ApplyPostgreSQLDatabaseSchema"::: | Generated when a user applies (plans and executes) a PostgreSQL database schema through the custom PG schema service (pgschema-based ALM flow). The audit log records caller identity, operation result, and the affected PostgreSQL database artifact. |
 | Applied a change to model in Power BI | :::no-loc text="ApplyChangeToPowerBIModel"::: | A user makes a change to an existing model. This occurs whenever any edit is made to the model (ex: write a DAX measure, manage relationships, etc.)  |
 | Applied sensitivity label to Power BI item | :::no-loc text="SensitivityLabelApplied"::: |   |
 | Apply CMK encryption to your workspace | :::no-loc text="ApplyWorkspaceEncryption"::: | Triggered when CMK encryption is applied to a workspace |
+| Assign warehouse server alias|:::no-loc text="AssignWarehouseServerAlias":::| A workspace administrator assigned a server alias to a Fabric Warehouse workspace.|
 | Assign Workspace To Alm Pipeline | :::no-loc text="AssignWorkspaceToAlmPipeline"::: |   |
 | Assigned a workspace to a deployment pipeline | :::no-loc text="AssignWorkspaceToPipeline"::: | Not currently used  |
 | Attach Notebook Environment | :::no-loc text="AttachNotebookEnvironment"::: | Attach the environment for Notebook.  |
@@ -53,6 +55,7 @@ The following operations are available in the audit logs.
 | Binded Power BI semantic model to gateway | :::no-loc text="BindToGateway"::: |   |
 | Binded monikers to Power BI datasources | :::no-loc text="BindMonikersToDatasources"::: |   |
 | Branch Out in Git | :::no-loc text="BranchOutInGit"::: | Branch out in Git is a workspace activity which is generated when a new workspace is created, which is connected to a newly forked git   branch based on the git branch that is connected to the origin workspace. |
+| Browsed PostgreSQL database objects | :::no-loc text="PgSQLDbObjectExplorer"::: | Generated when a user browses PostgreSQL database schema objects through Object Explorer. The audit log records caller identity, operation result, and the affected PostgreSQL database artifact. |
 | Cancel Datamart Batch | :::no-loc text="CancelDatamartBatch"::: |   |
 | Cancel Dataset Refresh | :::no-loc text="CancelDatasetRefresh"::: |   |
 | Cancel Publish Environment | :::no-loc text="CancelPublishEnvironment"::: | Cancel publish environment |
@@ -62,6 +65,7 @@ The following operations are available in the audit logs.
 | Cancel Warehouse Batch | :::no-loc text="CancelWarehouseBatch"::: |   |
 | Cancel Workspace Upgrades As Admin | :::no-loc text="CancelWorkspaceUpgradesAsAdmin"::: |   |
 | Cancel mounted warehouse batch | :::no-loc text="CancelMountedWarehouseBatch"::: | Generated when a mounted warehouse batch is canceled  |
+| Canceled a Digital Operations Ontology Agent conversation | :::no-loc text="DigitalOperationsOntologyAgentConversationCancelled"::: | A user canceled a Digital Operations Ontology Agent conversation |
 | Canceled Power BI dataflow refresh | :::no-loc text="CancelDataflowRefresh"::: |   |
 | Changed Power BI gateway admins | :::no-loc text="ChangeGatewayAdministrators"::: |   |
 | Changed Power BI gateway data source users | :::no-loc text="ChangeGatewayDatasourceUsers"::: |   |
@@ -70,7 +74,6 @@ The following operations are available in the audit logs.
 | Changed capacity user assignment | :::no-loc text="UpdateCapacityUsersAssignment"::: |   |
 | Changed sensitivity label for Power BI item | :::no-loc text="SensitivityLabelChanged"::: |   |
 | Check Scorecard Access | :::no-loc text="CheckScorecardAccess"::: | Verifies the access permissions for a scorecard |
-| Check access to file or blob | :::no-loc text="CheckAccessFileOrBlob"::: | OneLake operation. Checks if the calling user has permission to perform the specified operation |
 | Checkout Branch In Git | :::no-loc text="CheckoutBranchInGit"::: |   |
 | Cleanup unused or corrupted files from dataflows' refreshes | :::no-loc text="CleanupDataflow"::: | Cleanup unused or corrupted files from dataflows' refreshes  |
 | Clone Tile | :::no-loc text="CloneTile"::: |   |
@@ -87,7 +90,6 @@ The following operations are available in the audit logs.
 | Copied Power BI report | :::no-loc text="CopyReport"::: |   |
 | Copilot Interaction (Request Copilot features in Fabric) | :::no-loc text="CopilotInteraction"::: | Request Copilot features in Fabric |
 | Copy Scorecard | :::no-loc text="CopyScorecard"::: |   |
-| Copy blob | :::no-loc text="CopyBlob"::: | OneLake operation. Copies a source blob to a destination blob in this storage account or in another storage account. |
 | Create an SQL query from a Warehouse | :::no-loc text="CreateSqlQueryFromWarehouse"::: |   |
 | Create Artifact | :::no-loc text="CreateArtifact"::: |   |
 | Create Branch In Git | :::no-loc text="CreateBranchInGit"::: | Create Branch In Git is a git provider activity, which is generated when users create branch in Git.  |
@@ -112,7 +114,6 @@ The following operations are available in the audit logs.
 | Create Link Goals | :::no-loc text="CreateLinkGoals"::: |   |
 | Create Managed Private   Endpoint | :::no-loc text="CreateManagedPrivateEndpoint"::: | Create a private endpoint within a managed virtual network for   a workspace |
 | Create Managed VNet | :::no-loc text="CreateManagedVNet"::: | Create managed virtual network for a workspace |
-| Create MetricSet Metric   Endpoint | :::no-loc text="CreateMetricSetMetric"::: | Create metric in a metricset endpoint |
 | Create Notebook Resource | :::no-loc text="CreateNotebookResource"::: | Create resources in notebook.  |
 | Create Org App | :::no-loc text="CreateOrgApp"::: |   |
 | Create Personal Datasource | :::no-loc text="CreatePersonalDatasource"::: |   |
@@ -128,19 +129,15 @@ The following operations are available in the audit logs.
 | Create Workspace | :::no-loc text="CreateWorkspace"::: |   |
 | Create a shortcut | :::no-loc text="CreateShortcut"::: | OneLake operation. Part of Shortcut Controller |
 | Create an external data share | :::no-loc text="CreateExternalDataShare"::: | Create an external data share |
-| Create blob from URL | :::no-loc text="PutBlobFromURL"::: | OneLake operation. Creates a new blob or replaces an existing one where contents are from a URL. |
-| Create blob | :::no-loc text="PutBlob"::: | OneLake operation. Creates a new blob or replaces an existing one. |
-| Create block list | :::no-loc text="PutBlockList"::: | OneLake operation. Commits a blob by specifying the set of block IDs that comprise the block blob. |
-| Create block | :::no-loc text="PutBlock"::: | OneLake operation. Creates a new block to be committed as part of a block blob. |
-| Create container | :::no-loc text="CreateContainer"::: | OneLake operation. Creates a new workspace in OneLake |
-| Create directory | :::no-loc text="CreateDirectory"::: | OneLake operation. Creates a new directory. |
-| Create file system  | :::no-loc text="CreateFileSystem"::: | OneLake operation. Creates a new workspace. |
 | Create file | :::no-loc text="CreateFile"::: | OneLake operation. Creates a new file. |
 | Create gateway cluster data source from kind path JSON | :::no-loc text="CreateGatewayClusterDatasourceFromKindPath"::: | Create gateway cluster data source from kind path JSON  |
 | Create or update data access   roles | :::no-loc text="CreateOrUpdateDataAccessRoles"::: | Creates or updates data access roles |
 | Create subfolder | :::no-loc text="CreateSubfolder"::: |   |
 | Create task flow | :::no-loc text="CreateTaskFlow"::: |   |
 | Create virtual network data   gateway proxy | :::no-loc text="CreateVirtualNetworkDataGatewayProxy"::: | Create HTTP proxy for virtual network data gateway |
+| Created Artifact Definition | :::no-loc text="CreatedArtifactDefinition"::: | OneLake operation. Generated when a Fabric External Sources artifact definition is created (shared across item types such as MirroredStorage and AWS Databricks Catalog). |
+| Created AWS Databricks Catalog | :::no-loc text="CreatedAWSDatabricksCatalog"::: | OneLake operation. Generated when a Fabric AWS Databricks Catalog item is created, capturing the bound AWS Databricks workspace ConnectionId and the initial MirroredScope (catalogs/schemas/tables selected for mirroring). |
+| Created MirroredStorage | :::no-loc text="CreatedMirroredStorage"::: | OneLake operation. Generated when a user or service principal creates a Fabric MirroredStorage item, linking an external storage source to a workspace as OneLake shortcuts. |
 | Created Power BI app | :::no-loc text="CreateApp"::: |   |
 | Created Power BI dashboard | :::no-loc text="CreateDashboard"::: |   |
 | Created Power BI dataflow | :::no-loc text="CreateDataflow"::: |   |
@@ -160,6 +157,8 @@ The following operations are available in the audit logs.
 | Created an organizational custom visual | :::no-loc text="InsertOrganizationalGalleryItem"::: |   |
 | Created an SQL query from a SQL analytics endpoint | :::no-loc text="CreateSqlQueryFromSqlAnalyticsEndpointLakehouse"::: |   |
 | Created deployment pipeline | :::no-loc text="CreateAlmPipeline"::: |   |
+| Created Fabric policy rule | :::no-loc text="CreatedFabricPolicyRule"::: |   |
+| Created a Digital Operations Ontology Agent conversation | :::no-loc text="DigitalOperationsOntologyAgentConversationCreated"::: | A user created a Digital Operations Ontology Agent conversation |
 | Created workload assignment using admin api | :::no-loc text="ExtensibilityCreatedWorkloadAssignmentAdminApi"::: |   |
 | Custom visual requested Azure AD access token | :::no-loc text="GenerateCustomVisualAADAccessToken"::: |   |
 | Custom visual requested Office Web Apps access token | :::no-loc text="CustomVisualWACAccessToken"::: | Not currently used  |
@@ -169,6 +168,7 @@ The following operations are available in the audit logs.
 | Dataflow migrated to external storage account | :::no-loc text="DataflowMigratedToExternalStorageAccount"::: | Not currently used  |
 | Dataflow permissions added | :::no-loc text="DataflowPermissionsAdded"::: | Not currently used  |
 | Dataflow permissions removed | :::no-loc text="DataflowPermissionsRemoved"::: | Not currently used  |
+| Deactivated policy set | :::no-loc text="DeactivatedPolicySet"::: |   |
 | Delete Alm Pipeline Access As Admin | :::no-loc text="DeleteAlmPipelineAccessAsAdmin"::: |   |
 | Delete Alm Pipeline Access | :::no-loc text="DeleteAlmPipelineAccess"::: |   |
 | Delete Artifact | :::no-loc text="DeleteArtifact"::: | Generated when an item is deleted. When [item recovery](item-recovery.md) is **disabled** in tenant admin settings, this operation is logged at the time the user deletes the item. When item recovery is **enabled**, this operation is logged when the item is permanently deleted (after the soft-delete retention period expires or when the item is manually purged from the recycle bin); the initial user action is logged as `ArtifactSoftDeleted`.  |
@@ -196,7 +196,6 @@ The following operations are available in the audit logs.
 | Delete Link Goals | :::no-loc text="DeleteLinkGoals"::: |   |
 | Delete Managed Private   Endpoint | :::no-loc text="DeleteManagedPrivateEndpoint"::: | Delete a private endpoint within a managed virtual network for   a workspace |
 | Delete Managed VNet | :::no-loc text="DeleteManagedVNet"::: | Delete managedvirtual network for a workspace |
-| Delete MetricSet Metric   Endpoint | :::no-loc text="DeleteMetricSetMetric"::: | Delete metric in a metricset endpoint |
 | Delete Model Version | :::no-loc text="DeleteModelVersion"::: | Triggered when a Machine Learning Model version is removed   |
 | Delete Notebook Resource | :::no-loc text="DeleteNotebookResource"::: | Update resources in notebook.  |
 | Delete Scorecard Hierarchy | :::no-loc text="DeleteScorecardHierarchy"::: | Triggered when a [scorecard hierarchy](/power-bi/create-reports/service-metrics-get-started-hierarchies) is deleted. That is, the hierarchy's metadata is deleted, not the values of the goals in it. |
@@ -214,8 +213,6 @@ The following operations are available in the audit logs.
 | Delete all Domain's Folders Relations | :::no-loc text="DeleteAllDataDomainFoldersRelationsAsAdmin"::: | Delete all Domain's Folders Relations  |
 | Delete blob | :::no-loc text="DeleteBlob"::: | OneLake operation. Deletes a folder or file. |
 | Delete configured credentials | :::no-loc text="DeleteGitProviderCredentials"::: | Delete configured git provider credentials for a specific user |
-| Delete container | :::no-loc text="DeleteContainer"::: | OneLake operation. Deletes a workspace. |
-| Delete file system | :::no-loc text="DeleteFileSystem"::: | OneLake operation. Deletes a workspace. |
 | Delete file | :::no-loc text="DeleteFileOrBlob"::: | OneLake operation. Deletes a folder or file. |
 | Delete source in GraphQL artifact | :::no-loc text="DeleteSourceGraphQL"::: | Delete source in graphql item  |
 | Delete subfolder | :::no-loc text="DeleteSubfolder"::: |   |
@@ -247,6 +244,7 @@ The following operations are available in the audit logs.
 | Deleted an organizational custom visual | :::no-loc text="DeleteOrganizationalGalleryItem"::: |   |
 | Deleted current value connection of Power BI metric | :::no-loc text="DeleteGoalCurrentValueConnection"::: |   |
 | Deleted deployment pipeline | :::no-loc text="DeleteAlmPipeline"::: |   |
+| Deleted Fabric policy rule | :::no-loc text="DeletedFabricPolicyRule"::: |   |
 | Deleted link to external resource | :::no-loc text="DeleteLinkToExternalResource"::: |   |
 | Deleted member of Power BI gateway cluster | :::no-loc text="DeleteGatewayClusterMember"::: |   |
 | Deleted organizational Power BI content pack | :::no-loc text="DeleteOrgApp"::: |   |
@@ -294,6 +292,7 @@ The following operations are available in the audit logs.
 | Evaluate Diagnostics Query | :::no-loc text="EvaluateDiagnosticsQuery"::: |   |
 | Evaluate chat response based on the data gateway diagnostics data | :::no-loc text="EvaluateDiagnosticsChat"::: | Evaluate chat response based on the data gateway diagnostics data  |
 | Evaluate data sources against   DMTS data policies | :::no-loc text="EvaluateDataSourcesAgainstTenantDlpPolicies"::: | Evaluate data sources against DMTS data policies |
+| Executed a tenant relocation | :::no-loc text="TenantRelocationExecuted"::: | Executed tenant relocation. |
 | Explore Dataset | :::no-loc text="ExploreDataset"::: |   |
 | Export Package For Solution | :::no-loc text="ExportPackageForSolution"::: |   |
 | Export Power BI activity events | :::no-loc text="ExportActivityEvents"::: |   |
@@ -302,10 +301,10 @@ The following operations are available in the audit logs.
 | Exported Power BI item to another file format | :::no-loc text="ExportArtifact"::: |   |
 | Exported Power BI report to another file format or exported report visual data | :::no-loc text="ExportReport"::: |   |
 | Exported Power BI tile data | :::no-loc text="ExportTile"::: |   |
+| Exported a PostgreSQL database schema | :::no-loc text="ExportPostgreSQLDatabaseSchema"::: | Generated when a user dumps a PostgreSQL database schema through the custom PG schema service (pgschema-based ALM flow). The audit log records caller identity, operation result, and the affected PostgreSQL database artifact. |
 | Extract Template App Package | :::no-loc text="ExtractTemplateAppPackage"::: | Extract Template App Package is an app activity, which is generated when users extract an existing template app into another Power BI template app workspace  |
 | Fetch a shortcut's metadata | :::no-loc text="GetShortcut"::: | OneLake operation. Part of Shortcut Controller |
 | Finish Publish Environment | :::no-loc text="FinishPublishEnvironment"::: | Finish publish environment |
-| Flush data to file | :::no-loc text="FlushDataToFile"::: | OneLake operation. Proxy calls |
 | Follow Goal | :::no-loc text="FollowGoal"::: |   |
 | Gateway Cluster S S O Test Connection | :::no-loc text="GatewayClusterSSOTestConnection"::: |   |
 | Generate Custom Visual W A C Access Token | :::no-loc text="GenerateCustomVisualWACAccessToken"::: |   |
@@ -351,7 +350,6 @@ The following operations are available in the audit logs.
 | Get Hierarchy Goal Values | :::no-loc text="GetHierarchyGoalValues"::: |   |
 | Get item sizes for workspace | :::no-loc text="GetItemsSize"::: | Retrieves the computed sizes of all items in the workspace. Does not refresh the data |
 | Get Lakehouse Table Details | :::no-loc text="GetLakehouseTableDetails"::: |   |
-| Get MetricSet Metric Endpoint | :::no-loc text="GetMetricSetMetric"::: | Read metric in a metricset endpoint |
 | Get Model Diagram Layouts | :::no-loc text="GetPowerBIDataModelDiagramLayouts"::: | Get diagram layouts when open data model in web model view.  |
 | Get Model SAS Token via Lockbox | :::no-loc text="GetModelSASTokenViaLockbox"::: | Gets the SAS Token for a given model in a tenant via Lockbox  |
 | Get My Goals | :::no-loc text="GetMyGoals"::: |   |
@@ -387,21 +385,15 @@ The following operations are available in the audit logs.
 | Get Workspaces By Id Via Admin Api | :::no-loc text="GetWorkspacesByIdViaAdminApi"::: |   |
 | Get Workspaces Via Admin Api | :::no-loc text="GetWorkspacesViaAdminApi"::: |   |
 | Get a task flow | :::no-loc text="GetTaskFlow"::: |   |
-| Get access control list for file | :::no-loc text="GetAccessControlListForFile"::: | OneLake operation. Returns the permissions list for a file. |
 | Get all connections | :::no-loc text="GetAllConnections"::: | Get all connections |
-| Get all metric sets Endpoint | :::no-loc text="GetAllMetricSets"::: | Get all metric sets endpoint |
-| Get blob metadata | :::no-loc text="GetBlobMetadata"::: | OneLake operation. Retrieves all user-defined metadata of an existing file or folder. |
-| Get blob | :::no-loc text="GetBlob"::: | OneLake operation. Reads or downloads a blob from OneLake, including its user-defined metadata and system properties. |
-| Get block list | :::no-loc text="GetBlockList"::: | OneLake operation. Retrieves the list of blocks that have been uploaded as part of a block blob. |
 | Get data artifact table   details | :::no-loc text="GetDataArtifactTableDetails"::: | Get the details (for example, schema) for a data item table |
 | Get datasource share policy | :::no-loc text="GetDatasourceShareTenantPolicy"::: | Retrieve the datasource share policy set by the tenant  |
 | Get delegated capacity tenant setting overrides | :::no-loc text="GetCapacityDelegatedTenantSettingOverridesViaAdminApi"::: | Get capacity delegated tenant setting overrides  |
 | Get delegated domain tenant   setting overrides | :::no-loc text="GetDomainDelegatedTenantSettingOverridesViaAdminApi"::: | Get domain delegated tenant setting overrides |
 | Get delegated workspace tenant   setting overrides | :::no-loc text="GetWorkspaceDelegatedTenantSettingOverridesViaAdminApi"::: | Get workspace delegated tenant setting overrides |
-| Get file or blob properties | :::no-loc text="GetFileOrBlobProperties"::: | OneLake operation. Returns all system properties and user-defined metadata on the file or folder.. |
 | Get list of users part of the datasource share policy | :::no-loc text="GetDatasourceSharePrincipalsPolicy"::: | Retrieve the datasource share principals that are part of policy set by the tenant  |
-| Get path status | :::no-loc text="GetPathStatus"::: | OneLake operation. Returns all system defined properties for a path. |
-| Get properties | :::no-loc text="GetProperties"::: | OneLake operation. Returns all system and user defined properties for a path |
+| Get on-demand billing limits | :::no-loc text="GetOnDemandBillingLimits"::: | Generated when a capacity admin opens the On-demand billing page and the current billing categories and their 24-hour compute limits are returned for a Fabric capacity. |
+| Get on-demand billing quota | :::no-loc text="GetOnDemandBillingQuota"::: | Generated when the On-demand billing experience loads and the subscription-level on-demand billing quota usage and limits are retrieved. |
 | Get query text from secured   telemetry store via Lockbox | :::no-loc text="GetQueryTextTelemetryViaLockbox"::: | Retrieved query text from secured telemetry store via Azure   Lockbox |
 | Get refresh history via lockbox | :::no-loc text="GetRefreshHistoryViaLockbox"::: |   |
 | Get single connection by ID | :::no-loc text="GetConnection"::: | Get single connection by ID |
@@ -412,12 +404,14 @@ The following operations are available in the audit logs.
 | Goals Delete Role | :::no-loc text="GoalsDeleteRole"::: |   |
 | Goals Get Role | :::no-loc text="GoalsGetRole"::: |   |
 | Goals Update Role | :::no-loc text="GoalsUpdateRole"::: |   |
+| Granted consent to tenant relocation | :::no-loc text="TenantRelocationConsentGranted"::: | Tenant relocation consent granted. |
 | Hard-deleted a folder by cleanup scheduler (Preview) | :::no-loc text="HardDeletedSubfolderByCleanupScheduler"::: | Generated when the cleanup scheduler hard-deletes a soft-deleted folder after the retention period expires. Available when [item recovery](item-recovery.md) is enabled in tenant admin settings.  |
 | Import Package For Solution | :::no-loc text="ImportPackageForSolution"::: |   |
 | Import file to Power BI ended | :::no-loc text="ImportArtifactEnd"::: | Generated when importing Power BI Desktop files (.pbix). `ImportSource` indicates `PowerBI` or `OneDriveSharePoint`. `ImportType` tells you if the file is new (`Publish`) or is being updated (`Republish`).  |
 | Import file to Power BI started | :::no-loc text="ImportArtifactStart"::: | Generated when importing Power BI Desktop files (.pbix). When `ImportSource` is `PowerBI`, the file import originated from a Power BI client or API. When `ImportSource` is `OneDriveSharePoint`, the file import originated from OneDrive or a SharePoint document library.  |
 | Imported file to Power BI | :::no-loc text="Import"::: |   |
 | Imported OneLake lifecycle policy | :::no-loc text="ImportedLifecyclePolicy"::: |   |
+| Imported PostgreSQL sample data | :::no-loc text="ImportSampleDataToPostgreSQLDatabase"::: | Generated when a user imports supported sample data into a Fabric Native PostgreSQL database. The audit log records caller identity, operation result, and the affected PostgreSQL database artifact. |
 | Initiate Cloud O Auth Login | :::no-loc text="InitiateCloudOAuthLogin"::: |   |
 | Initiated Power BI gateway cluster authentication process | :::no-loc text="InitiateGatewayClusterOAuthLogin"::: |   |
 | Insert Domain | :::no-loc text="InsertDataDomainAsAdmin"::: | Insert Domain  |
@@ -429,13 +423,8 @@ The following operations are available in the audit logs.
 | Installed Power BI app | :::no-loc text="InstallApp"::: |   |
 | Installed Power BI template app | :::no-loc text="InstallTemplateApp"::: |   |
 | Instantiate App | :::no-loc text="InstantiateApp"::: |   |
-| Lease blob | :::no-loc text="LeaseBlob"::: | OneLake operation. Establishes and manages a lock on write and delete operations. |
-| Lease container | :::no-loc text="LeaseContainer"::: | OneLake operation. Establishes and manages a lock on write and delete operations. |
-| Lease path | :::no-loc text="LeasePath"::: | OneLake operation. Establishes and manages a lock on write and delete operations. |
 | List Lakehouse Tables | :::no-loc text="ListLakehouseTables"::: |   |
-| List blobs | :::no-loc text="ListBlob"::: | OneLake operation. List all blobs in a workspace |
 | List data access roles | :::no-loc text="ListDataAccessRoles"::: | Returns a list of data access roles |
-| List file paths | :::no-loc text="ListFilePath"::: | OneLake operation. Lists all files in a path. |
 | Load Lakehouse Table | :::no-loc text="LoadLakehouseTable"::: |   |
 | Load Spark App Log | :::no-loc text="LoadSparkAppLog"::: |   |
 | Manage Relationships | :::no-loc text="ManageRelationships"::: |   |
@@ -443,6 +432,7 @@ The following operations are available in the audit logs.
 | Migrated dataflow storage location | :::no-loc text="MigratedDataflowStorageLocation"::: | Not currently used  |
 | Migrated workspace to a capacity | :::no-loc text="MigrateWorkspaceIntoCapacity"::: |   |
 | Modified OneLake default tier | :::no-loc text="ModifiedDefaultTier"::: |   |
+| Modified OneLake file soft-delete settings | :::no-loc text="ModifiedOneLakeFileSoftDeleteSettings"::: | Generated when a workspace admin changes the OneLake file-level soft-delete retention settings (enable/disable, retention period). |
 | Modify Workspace Capacity | :::no-loc text="ModifyWorkspaceCapacity"::: | Modify Workspace Capacity is a capacity activity, which is generated on assigning a Power BI workspace to a capacity using an API call or the UI.  |
 | Move Goals | :::no-loc text="MoveGoals"::: | Moves goals within a scorecard |
 | Move Scorecard | :::no-loc text="MoveScorecard"::: |   |
@@ -452,7 +442,6 @@ The following operations are available in the audit logs.
 | Override Sjd Spark Settings | :::no-loc text="OverrideSjdSparkSettings"::: |   |
 | Patch Gateway Cluster | :::no-loc text="PatchGatewayCluster"::: |   |
 | Patch Goal Value Categories | :::no-loc text="PatchGoalValueCategories"::: |   |
-| Patch file system | :::no-loc text="PatchFileSystem"::: | OneLake operation. Sets properties for a workspace. |
 | Patched Power BI metric value | :::no-loc text="PatchGoalValue"::: |   |
 | Patched Power BI metric | :::no-loc text="PatchGoal"::: |   |
 | Patched Power BI note | :::no-loc text="PatchNote"::: |   |
@@ -463,11 +452,13 @@ The following operations are available in the audit logs.
 | Pin Report To Teams Channel | :::no-loc text="PinReportToTeamsChannel"::: |   |
 | Pin Tile | :::no-loc text="PinTile"::: |   |
 | Pin Widget Tile | :::no-loc text="PinWidgetTile"::: |   |
-| Planning Session Upgraded| :::no-loc text="PlanningSessionUpgraded"::: | Session type is upgraded in planning workload.|
+| Planning Session Upgraded| :::no-loc text="PlanningSessionUpgraded"::: | Session type is upgraded in plan item.|
 | Post Dataset Rows | :::no-loc text="PostDatasetRows"::: |   |
 | Post Notebook Comment | :::no-loc text="PostNotebookComment"::: |   |
 | Post configure credentials | :::no-loc text="PostGitProviderCredentials"::: | Configure git provider credentials for a specific user |
 | Posted Power BI comment | :::no-loc text="PostComment"::: |   |
+| Modified by Power BI MCP | :::no-loc text="ModifiedByPowerBIMCP"::: | Power BI MCP tool called to modify the semantic model. |
+| Read by Power BI MCP | :::no-loc text="ReadByPowerBIMCP"::: | Power BI MCP tool called to read semantic model metadata. |
 | Preview Lakehouse Table | :::no-loc text="PreviewLakehouseTable"::: |   |
 | Printed Power BI Dashboard | :::no-loc text="PrintDashboard"::: |   |
 | Printed Power BI report page | :::no-loc text="PrintReport"::: |   |
@@ -477,17 +468,17 @@ The following operations are available in the audit logs.
 | PublishDataflow | :::no-loc text="PublishDataflow"::: | Publish Dataflow  |
 | Published Power BI report to web | :::no-loc text="PublishToWebReport"::: |   |
 | Put Table | :::no-loc text="PutTable"::: |   |
-| Query blob contents | :::no-loc text="QueryBlobContents"::: | OneLake operation. Applies a SQL statement on a blob's contents, only returning the specified subset. |
 | Ran Power BI email subscription | :::no-loc text="RunEmailSubscription"::: |   |
 | Re-encrypted credentials using Power gateway cluster | :::no-loc text="ReencryptCredentials"::: |   |
+| Read active Fabric policy | :::no-loc text="ReadActiveFabricPolicy"::: |   |
 | Read Artifact | :::no-loc text="ReadArtifact"::: |   |
 | Read Environment Resource | :::no-loc text="ReadEnvironmentResource"::: | Read resources in environment |
 | Read Experiment Run | :::no-loc text="ReadExperimentRun"::: |   |
-| Read file or get blob | :::no-loc text="ReadFileOrGetBlob"::: | OneLake operation. Reads a file in OneLake. |
+| Read Fabric policy rules | :::no-loc text="ReadFabricPolicyRules"::: |   |
 | ReadDataflow | :::no-loc text="ReadDataflow"::: | Read Dataflow  |
 | Rebind Report | :::no-loc text="RebindReport"::: |   |
 | Received Power BI dataflow secret from Key Vault | :::no-loc text="ReceiveDataflowSecretFromKeyVault"::: |   |
-| Recovered an item (Preview) | :::no-loc text="ArtifactRecovered"::: | Generated when a soft-deleted item is recovered. Available when [item recovery](item-recovery.md) is enabled in tenant admin settings.  |
+| Recovered an item | :::no-loc text="ArtifactRecovered"::: | Generated when a soft-deleted item is recovered. Available when [item recovery](item-recovery.md) is enabled in tenant admin settings.  |
 | Recovered folder (Preview) | :::no-loc text="RecoveredSubfolder"::: | Generated when one or more soft-deleted folders are recovered as part of artifact recovery. Available when [item recovery](item-recovery.md) is enabled in tenant admin settings.  |
 | Refresh Datamart | :::no-loc text="RefreshDatamart"::: |   |
 | Refresh Goal Current Value Rollup | :::no-loc text="RefreshGoalCurrentValueRollup"::: |   |
@@ -495,6 +486,7 @@ The following operations are available in the audit logs.
 | Refresh Lakehouse Data | :::no-loc text="RefreshLakehouseData"::: |   |
 | Refresh Sql Analytics Endpoint Lakehouse Metadata | :::no-loc text="RefreshSqlAnalyticsEndpointLakehouseMetadata"::: | Refreshed metadata for a lakehouse SQL analytics endpoint. Previously named *Refreshed metadata for a default warehouse* (Operation name: :::no-loc text="*RefreshDefaultWarehouseMetadata*":::)  |
 | Refresh mounted warehouse metadata | :::no-loc text="RefreshMountedWarehouseMetadata"::: | Generated when mounted warehouse metadata is refreshed  |
+| Refreshed AWS Databricks Catalog shortcuts | :::no-loc text="RefreshedAWSDatabricksCatalogShortcuts"::: | OneLake operation. Generated when the refresh-catalog-metadata operation re-syncs the already-mirrored shortcuts against the underlying AWS Databricks Unity Catalog. |
 | Refreshed current value of Power BI metric | :::no-loc text="RefreshGoalCurrentValue"::: |   |
 | Refreshed target value of Power BI metric | :::no-loc text="RefreshGoalTargetValue"::: |   |
 | Register workload development   instance | :::no-loc text="ExtensibilityRegisterDevInstance"::: | Register a development instance of a workload |
@@ -512,7 +504,6 @@ The following operations are available in the audit logs.
 | Rename Lakehouse Table | :::no-loc text="RenameLakehouseTable"::: |   |
 | Rename Report | :::no-loc text="RenameReport"::: | Rename Report is a report activity, which is generated on renaming the name of a Power BI Report through its settings  |
 | Rename Warehouse | :::no-loc text="RenameWarehouse"::: |   |
-| Rename file or directory | :::no-loc text="RenameFileOrDirectory"::: | OneLake operation. Renames a file or directory in OneLake. |
 | Renamed Power BI dashboard | :::no-loc text="RenameDashboard"::: |   |
 | Request Cognitive Service | :::no-loc text="RequestCognitiveService"::: | Request Cognitive Service in ML workload.  |
 | Request Copilot features in   Fabric | :::no-loc text="RequestCopilot"::: | Request Copilot features in Fabric |
@@ -524,13 +515,13 @@ The following operations are available in the audit logs.
 | Requested SAS token for Power BI storage | :::no-loc text="AcquireStorageSASFromExternalApplication"::: |   |
 | Requested account key for Power BI storage | :::no-loc text="AcquireStorageAccountKey"::: |   |
 | Reserve workload name | :::no-loc text="ExtensibilityNameReserved"::: | Reserves a workload name |
-| Restore container | :::no-loc text="RestoreContainer"::: | OneLake operation. |
 | Restore deleted workspace | :::no-loc text="RestoreWorkspaceViaAdminApi"::: | Restores the deleted workspace |
 | Restored Power BI workspace | :::no-loc text="RestoreWorkspace"::: |   |
 | Resume Suspended Datamart | :::no-loc text="ResumeSuspendedDatamart"::: |   |
 | Resume Suspended Sql Analytics Endpoint Lakehouse | :::no-loc text="ResumeSuspendedSqlAnalyticsEndpointLakehouse"::: | Resumed a suspended lakehouse SQL analytics endpoint. Previously named *Resumed a suspended default warehouse* (Operation name: :::no-loc text="*ResumeSuspendedDefaultWarehouse*":::)  |
 | Resume Suspended Warehouse | :::no-loc text="ResumeSuspendedWarehouse"::: |   |
 | Resume suspended mounted warehouse | :::no-loc text="ResumeSuspendedMountedWarehouse"::: | Generated when a suspended mounted warehouse is resumed  |
+| Retrieved PostgreSQL SQL audit policy | :::no-loc text="GetSqlAuditPolicyOnDatabase"::: | Generated when a user retrieves the SQL audit policy settings for a PostgreSQL database artifact. The audit log records caller identity, operation result, and the affected PostgreSQL database artifact. |
 | Retrieved Power BI app users | :::no-loc text="GetAppUsersAsAdmin"::: |   |
 | Retrieved Power BI apps for user | :::no-loc text="GetUserAppsAsAdmin"::: | Not currently used  |
 | Retrieved Power BI apps | :::no-loc text="GetAppsAsAdmin"::: |   |
@@ -588,16 +579,20 @@ The following operations are available in the audit logs.
 | Retrieved status of Power BI gateway cluster datasource | :::no-loc text="GetGatewayClusterDatasourceStatus"::: |   |
 | Retrieved status of Power BI gateway cluster | :::no-loc text="GetGatewayClusterStatus"::: |   |
 | Retrieved upstream dataflows from Power BI dataflow | :::no-loc text="GetDataflowUpstreamDataflowsAsAdmin"::: |   |
-| Retry lakehouse SQL analytics endpoint creation for a Lakehouse | :::no-loc text="RetryLakehouseSqlEndpointCreation"::: | Retry SQL endpoint creation for a Lakehouse  |
+| Retry lakehouse SQL analytics endpoint creation for a Lakehouse | :::no-loc text="RetryLakehouseSqlEndpointCreation"::: | Retry SQL analytics endpoint creation for a Lakehouse  |
 | Revoke an external data share | :::no-loc text="RevokeExternalDataShare"::: | Revoke an external data share |
+| Revoked consent to tenant relocation | :::no-loc text="TenantRelocationConsentRevoked"::: | Tenant relocation consent revoked. |
 | Rotate Tenant Key | :::no-loc text="RotateTenantKey"::: |   |
 | Rotated Power BI gateway tenant key | :::no-loc text="RotateTenantKeyEncryptionKey"::: |   |
 | Run Artifact | :::no-loc text="RunArtifact"::: |   |
+| Run Graph Query | :::no-loc text="RunGraphQuery"::: | Generated when a user runs a query against a Microsoft Fabric Graph instance. |
+| Run Load Graph Data | :::no-loc text="RunLoadGraphData"::: | Generated when a request to load or refresh data in a Microsoft Fabric Graph instance is processed. The activity status indicates whether the request succeeded or failed. |
 | Save Model Diagram Layouts | :::no-loc text="SavePowerBIDataModelDiagramLayouts"::: | Save diagram layouts after update data model in web model view.  |
 | Saved an autogenerated report to Power BI | :::no-loc text="SaveAutogeneratedReport"::: | After exploring an autogenerated Power BI report in an external application, a user saved it to the Power BI service.  |
 | Saved an autogenerated semantic model to Power BI | :::no-loc text="SaveAutogeneratedDataset"::: | After exploring an autogenerated Power BI semantic model in an external application, a user saved it to the Power BI service.  |
 | Schedule Artifact | :::no-loc text="ScheduleArtifact"::: |   |
 | Sent a scan request in Power BI tenant | :::no-loc text="GetWorkspacesInfoAPI"::: |   |
+| Sent a message in a Digital Operations Ontology Agent conversation | :::no-loc text="DigitalOperationsOntologyAgentMessageSent"::: | A user sent a message in a Digital Operations Ontology Agent conversation |
 | Set Capacity Tenant Key | :::no-loc text="SetCapacityTenantKey"::: |   |
 | Set D Q Refresh Schedule Of Dataset | :::no-loc text="SetDQRefreshScheduleOfDataset"::: |   |
 | Set DirectQuery Refresh   Schedule Of Dateset | :::no-loc text="SetDQRefreshScheduleOfDateset"::: |  |
@@ -606,18 +601,14 @@ The following operations are available in the audit logs.
 | Set Model Refresh Schedule Of   Dateset | :::no-loc text="SetModelRefreshScheduleOfDateset"::: |  |
 | Set Model Refresh Schedule Of Dataset | :::no-loc text="SetModelRefreshScheduleOfDataset"::: |   |
 | Set Notebook Default Lakehouse | :::no-loc text="SetNotebookDefaultLakehouse"::: | Set default lakehouse for notebook.  |
+| Set PostgreSQL SQL audit policy | :::no-loc text="SetSqlAuditPolicyOnDatabase"::: | Generated when a user updates SQL audit policy settings for a PostgreSQL database artifact. The audit log records caller identity, operation result, and the affected PostgreSQL database artifact. |
 | Set Sjd Retry Policy | :::no-loc text="SetSjdRetryPolicy"::: |   |
-| Set access control for file | :::no-loc text="SetAccessControlForFile"::: | OneLake operation. Sets permissions for a file. |
-| Set blob expiry | :::no-loc text="SetBlobExpiry"::: | OneLake operation. Set the expiration time for a blob. |
-| Set blob metadata | :::no-loc text="SetBlobMetadata"::: | OneLake operation. Set user-defined metadata for a blob. |
-| Set blob properties | :::no-loc text="SetBlobProperties"::: | OneLake operation. Set system properties for a blob. |
-| Set blob tier | :::no-loc text="SetBlobTier"::: | OneLake operation. Sets the tier of a blob. |
-| Set container ACL | :::no-loc text="SetContainerAcl"::: | OneLake operation. Sets permissions for a workspace. |
-| Set container metadata | :::no-loc text="SetContainerMetadata"::: | OneLake operation. Sets user-defined metadata for a workspace. |
 | Set dataflow storage location for a workspace | :::no-loc text="SetDataflowStorageLocationForWorkspace"::: |   |
-| Set file properties | :::no-loc text="SetFileProperties"::: | OneLake operation. Set user-defined properties for a file. |
 | Set scheduled refresh on Power BI dataflow | :::no-loc text="SetScheduledRefreshOnDataflow"::: |   |
 | Set scheduled refresh on Power BI semantic model | :::no-loc text="SetScheduledRefresh"::: |   |
+| Set warehouse connection mode to automatic|:::no-loc text="SetWarehouseConnectionModeToAutomatic":::|A workspace administrator set the Fabric Warehouse SQL connection mode to Automatic.|
+| Set warehouse connection mode to proxy|:::no-loc text="SetWarehouseConnectionModeToProxy":::| A workspace administrator set the Fabric Warehouse SQL connection mode to Proxy.|
+| Set warehouse connection mode to redirect|:::no-loc text="SetWarehouseConnectionModeToRedirect":::|A workspace administrator set the Fabric Warehouse SQL connection mode to Redirect.|
 | Set warehouse hardware acceleration|:::no-loc text="SetWarehouseHardwarePlatform":::|Changed the current hardware acceleration settings for warehouses in a workspace.|
 | Share Artifact | :::no-loc text="ShareArtifact"::: |   |
 | Share Datamart | :::no-loc text="ShareDatamart"::: |   |
@@ -626,7 +617,7 @@ The following operations are available in the audit logs.
 | Shared Power BI dashboard | :::no-loc text="ShareDashboard"::: |   |
 | Shared Power BI report | :::no-loc text="ShareReport"::: |   |
 | Shared Power BI semantic model | :::no-loc text="ShareDataset"::: |   |
-| Soft-deleted an item (Preview) | :::no-loc text="ArtifactSoftDeleted"::: | Generated when an item is soft-deleted and moved to the recycle bin. Available when [item recovery](item-recovery.md) is enabled in tenant admin settings.  |
+| Soft-deleted an item | :::no-loc text="ArtifactSoftDeleted"::: | Generated when an item is soft-deleted and moved to the recycle bin. Available when [item recovery](item-recovery.md) is enabled in tenant admin settings.  |
 | Start Notebook Session | :::no-loc text="StartNotebookSession"::: |   |
 | Start Publish Environment | :::no-loc text="StartPublishEnvironment"::: | Start publish environment |
 | Started Power BI extended trial | :::no-loc text="OptInForExtendedProTrial"::: | Not currently used  |
@@ -641,6 +632,7 @@ The following operations are available in the audit logs.
 | Took ownership of Power BI dataflow | :::no-loc text="TookOverDataflow"::: |   |
 | Take over a Fabric item | :::no-loc text="TakeOverArtifact"::: |   |
 | Trial License Extension | :::no-loc text="TrialLicenseExtension"::: | Extend user trials by user list or tenant  |
+| Unassign warehouse server alias | :::no-loc text="UnassignWarehouseServerAlias"::: | A workspace administrator unassigned the server alias from a Fabric Warehouse workspace.  |
 | Unassign Workspace From Alm Pipeline | :::no-loc text="UnassignWorkspaceFromAlmPipeline"::: |   |
 | Undelete blob | :::no-loc text="UndeleteBlob"::: | OneLake operation. Restore a soft deleted blob. |
 | Undo Git | :::no-loc text="UndoGit"::: | Undo Git is an item activity, which is generated when users undo changes done to item.  |
@@ -683,7 +675,6 @@ The following operations are available in the audit logs.
 | Update Hierarchy Goal Value | :::no-loc text="UpdateHierarchyGoalValue"::: |   |
 | Update Hierarchy Note | :::no-loc text="UpdateHierarchyNote"::: |   |
 | Update In Place Sharing Settings | :::no-loc text="UpdateInPlaceSharingSettings"::: |  |
-| Update MetricSet Metric   Endpoint | :::no-loc text="UpdateMetricSetMetric"::: | Update metric in a metricset endpoint |
 | Update Notebook Library | :::no-loc text="UpdateNotebookLibrary"::: |  |
 | Update Notebook Resource | :::no-loc text="UpdateNotebookResource"::: | Update resources in notebook. |
 | Update Notebook Spark Property | :::no-loc text="UpdateNotebookSparkProperty"::: |  |
@@ -708,12 +699,16 @@ The following operations are available in the audit logs.
 | Update list of users part of the datasource share policy | :::no-loc text="UpdateDatasourceSharePrincipalsPolicy"::: | Set the datasource share principals that are part of policy set by the tenant |
 | Update mounted warehouse settings | :::no-loc text="UpdateMountedWarehouseSettings"::: | Generated when mounted warehouse settings are updated |
 | Update mounted warehouse | :::no-loc text="UpdateMountedWarehouse"::: | Generated when mounted warehouse is updated |
+| Update on-demand billing limits | :::no-loc text="UpdateOnDemandBillingLimits"::: | Generated when a capacity admin enables or disables a billing category, or changes its 24-hour compute limit, on a Fabric capacity. One audit event is emitted per billing category. |
 | Update source in GraphQL artifact | :::no-loc text="UpdateSourceGraphQL"::: | Update source in GraphQL item |
 | Update subfolder | :::no-loc text="UpdateSubfolder"::: |  |
 | Update task flow | :::no-loc text="UpdateTaskFlow"::: |  |
 | Update the current set of DLP policies applied on the Tenant | :::no-loc text="UpdateTenantDlpPolicies"::: | Update the current set of DLP policies applied on the Tenant |
 | Update virtual network data   gateway proxy | :::no-loc text="UpdateVirtualNetworkDataGatewayProxy"::: | Update HTTP proxy for virtual network data gateway |
 | Update workspace role | :::no-loc text="UpdateWorkspaceRoleViaAdminApi"::: | Update workspace role |
+| Updated Artifact Definition | :::no-loc text="UpdatedArtifactDefinition"::: | OneLake operation. Generated when a Fabric External Sources artifact definition is updated via the update-item-definition API (shared across item types such as MirroredStorage and AWS Databricks Catalog). |
+| Updated AWS Databricks Catalog Definition | :::no-loc text="UpdatedAWSDatabricksCatalogDefinition"::: | OneLake operation. Generated when the item's Databricks workspace connection or mirrored scope (catalogs/schemas/tables) is updated via the update-item-definition API. |
+| Updated MirroredStorage definition | :::no-loc text="UpdatedMirroredStorageDefinition"::: | OneLake operation. Generated when a user or service principal modifies the mirroring scope of an existing MirroredStorage item, changing which external paths are exposed in OneLake. |
 | Updated Power BI access request settings | :::no-loc text="UpdateAccessRequestSettings"::: |  |
 | Updated Power BI app | :::no-loc text="UpdateApp"::: |  |
 | Updated Power BI dataflow | :::no-loc text="UpdateDataflow"::: |  |
@@ -733,6 +728,7 @@ The following operations are available in the audit logs.
 | Updated dataflow storage assignment permissions | :::no-loc text="UpdatedDataflowStorageAssignmentPermissions"::: |  |
 | Updated deployment pipeline access | :::no-loc text="UpdateAlmPipelineAccess"::: |  |
 | Updated deployment pipeline configuration | :::no-loc text="SetConfigurationAlmPipeline"::: |  |
+| Updated Fabric policy rules | :::no-loc text="UpdatedFabricPolicyRules"::: |  |
 | Updated featured tables | :::no-loc text="UpdateFeaturedTables"::: |  |
 | Updated organization's Power BI settings | :::no-loc text="UpdatedAdminFeatureSwitch"::: |  |
 | Updated parameters for installed Power BI template app | :::no-loc text="UpdateInstalledTemplateAppParameters"::: |  |
@@ -767,6 +763,7 @@ The following operations are available in the audit logs.
 | Viewed Power BI report | :::no-loc text="ViewReport"::: | A report is also generated per page when exporting a report. Some fields such as CapacityID and CapacityName, will return null if the report or dashboard is viewed from a Power BI app, rather than a Power BI workspace. |
 | Viewed Power BI tile | :::no-loc text="ViewTile"::: |  |
 | Viewed Power BI usage metrics | :::no-loc text="ViewUsageMetrics"::: |  |
+| Viewed Workspace App | :::no-loc text="ViewedWorkspaceApp"::: | Viewed Workspace App is generated when a user opens a Power BI workspace app. |
 | View or modify CMK encryption settings | :::no-loc text="GetWorkspaceEncryption"::: | Logged when the encryption settings page is opened in the portal, modified, or applied to items. |
 | disable workspace | :::no-loc text="DisableWorkspaceViaAdminApi"::: | Disables the workspace |
 | Disable CMK encryption for your workspace | :::no-loc text="DisableWorkspaceEncryption"::: | Triggered when CMK encryption is disabled for a workspace |
@@ -785,6 +782,24 @@ The following operations are available in the audit logs.
 | Enabled external data share access for inbound access restricted workspaces | :::no-loc text="ExternalDataSharesBypassForWorkspaceEnabled"::: | |
 | Disabled external data share access for inbound access restricted workspaces | :::no-loc text="ExternalDataSharesBypassForWorkspaceDisabled"::: | |
 | Updated Git connection settings | :::no-loc text="GitConnectionSettingsUpdated"::: | Updated Git connection settings |
+| Branch workspace configuration updated | :::no-loc text="GitBranchWorkspaceConfigured"::: | Branch workspace configuration updated |
+| Create an entity type in Ontology |:::no-loc text="DigitalOperationsEntityTypeCreated"::: | |
+| Update an entity type in Ontology |:::no-loc text="DigitalOperationsEntityTypeUpdated"::: | |
+| Delete an entity type in Ontology |:::no-loc text="DigitalOperationsEntityTypeDeleted"::: | |
+| Create an entity relationship in Ontology |:::no-loc text="DigitalOperationsRelationshipTypeCreated"::: | |
+| Update an entity relationship in Ontology |:::no-loc text="DigitalOperationsRelationshipTypeUpdated"::: | |
+| Delete an entity relationship in Ontology |:::no-loc text="DigitalOperationsRelationshipTypeDeleted"::: | |
+| Create a data source in Ontology |:::no-loc text="DigitalOperationsDataBindingCreated"::: | |
+| Update a data source in Ontology |:::no-loc text="DigitalOperationsDataBindingUpdated"::: | |
+| Delete a data source in Ontology |:::no-loc text="DigitalOperationsDataBindingDeleted"::: | |
+| Import an RDF ontology, or import from a semantic model during Ontology provisioning |:::no-loc text="DigitalOperationsOntologyImported"::: | |
+| Create an Ontology Agent conversation |:::no-loc text="DigitalOperationsOntologyAgentConversationCreated"::: | |
+| Send an Ontology Agent message |:::no-loc text="DigitalOperationsOntologyAgentMessageSent"::: | |
+| Cancel an in-progress Ontology Agent conversation turn |:::no-loc text="DigitalOperationsOntologyAgentConversationCancelled"::: | |
+| Create a namespace, expression, or rule in Ontology |:::no-loc text="CreateArtifact"::: | |
+| Read/list audited ontology resources; retrieve the definition, TMDL, or public ontology model |:::no-loc text="ReadArtifact"::: | |
+| Update a namespace, expression, or rule; replace/clear the ontology definition; apply a script; clear/detach entity-type data sources; replace the public ontology model |:::no-loc text="UpdateArtifact"::: | |
+| Delete a namespace, expression, or rule in Ontology |:::no-loc text="DeleteArtifact"::: | |
 
 ## Considerations and limitations
 
@@ -793,7 +808,7 @@ When capacity ID and capacity name aren't available in the audit logs, you can v
 > [!IMPORTANT]
 > **Starting July 7, 2025**, As part of our ongoing efforts to simplify audit logging and ensure consistency across Fabric, we're **standardizing redundant item operations** into a single set of unified operations. This migration aligns warehouse, warehouse, and SQL Analytics Endpoint lakehouse actions under common names used across the Fabric platform.
 
-### What’s Changing?
+### What's Changing?
 
 | Friendly Name | Old Operation Name | New Operation Name |
 |---------------|--------------------|---------------------|

@@ -9,7 +9,7 @@ ms.date: 11/15/2023
 
 # Use the Azure Machine Learning activity to run a job on an Azure Machine Learning instance
 
-The Azure Machine Learning activity in Data Factory for Microsoft Fabric allows you to run a job on an Azure Machine Learning instance.
+The Azure Machine Learning activity in Fabric Data Factory allows you to run a job on an Azure Machine Learning instance.
 
 ## Prerequisites
 

@@ -30,6 +30,8 @@ items:
       href: git-integration/manage-branches.md
     - name: Development process using Branched workspace
       href: git-integration/branched-workspace.md
+    - name: Configure branch workspace admin profile
+      href: git-integration/branch-workspace-admin-profile.md
     - name: Development process using client tool
       href: git-integration/client-tool.md     
   - name: Handle errors and conflicts
@@ -56,7 +58,7 @@ items:
       href: git-integration/git-integration-with-service-principal.md
   - name: GitHub data residency support
     href: github-data-residency-support.md
-  - name: Compare code changes
+  - name: Compare and commit changes
     href: git-integration/granular-compare.md
 - name: Continuous Deployment with deployment pipelines
   items:
@@ -113,8 +115,26 @@ items:
     href: variable-library/tutorial-variable-library.md
   - name: Variable library FAQ and Troubleshooting
     href: variable-library/variable-library-troubleshoot.md
-- name: Lifecycle management best practices
-  href: best-practices-cicd.md
+  - name: Variable reference resolution failures
+    href: variable-library/variable-reference-resolution-failure.md
+- name: Deployment plan
+  items:
+  - name: What is a deployment plan?
+    href: deployment-plan/deployment-plan-overview.md
+  - name: Create a deployment plan
+    href: deployment-plan/how-to-create-deployment-plan.md
+  - name: Deployment plan actions
+    href: deployment-plan/deployment-plan-actions.md
+  - name: Deployment plan permissions
+    href: deployment-plan/deployment-plan-permissions.md
+  - name: Deployment plan examples
+    href: deployment-plan/deployment-plan-sample-plans.md
+  - name: Attach a deployment plan
+    href: deployment-plan/deployment-plan-attach.md
+  - name: Automate deployments with a deployment plan
+    href: deployment-plan/deployment-plan-automation.md
+  - name: Troubleshoot deployment plans
+    href: deployment-plan/deployment-plan-troubleshoot.md
 - name: Understand dependency binding in cross-workspace deployment
   href: cross-workspace-dependency-binding.md
 - name: Network security and CI/CD

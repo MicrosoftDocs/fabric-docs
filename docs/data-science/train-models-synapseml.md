@@ -3,8 +3,8 @@ title: How to train models with SynapseML
 description: Train a classification model with SynapseML in a Microsoft Fabric notebook using the TrainClassifier and ComputeModelStatistics classes.
 ms.author: scottpolly
 author: s-polly
-ms.reviewer: ruxu
-reviewer: ruixinxu
+ms.reviewer: scottpolly
+reviewer: s-polly
 ms.custom: dev-focus
 ms.topic: how-to
 ms.date: 05/13/2026

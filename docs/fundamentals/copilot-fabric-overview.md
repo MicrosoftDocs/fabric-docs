@@ -46,7 +46,7 @@ Enabling and effectively using Copilot in your organization requires deliberate 
 
 ## Enable Copilot
 
-You need to [Enable Copilot](copilot-enable-fabric.md), before your business can start using Copilot capabilities in Microsoft Fabric. Enabling Copilot involves turning on the feature in the tenant settings and managing access to it for users in your organization. You can enable Copilot for all users or specific groups of users, depending on your organization's needs and policies.
+Copilot is enabled by default for tenants with paid Fabric capacities (F2 or higher). As an administrator, [review and configure Copilot](copilot-enable-fabric.md) for your organization by verifying tenant settings, managing capacity-level options, and controlling which users and workspaces have access. You can make Copilot available to all users or specific groups of users, depending on your organization's needs and policies.
 
 > [!NOTE]  
 > Copilot isn't yet supported for sovereign clouds due to GPU availability.
@@ -166,11 +166,9 @@ The prebuilt [Azure OpenAI Service](/azure/foundry/foundry-models/concepts/model
 > [!NOTE]
 >This section only applies to customers who want to use [Copilot in Notebooks](../data-engineering/copilot-notebooks-overview.md) and Fabric [data agents](../data-science/concept-data-agent.md) (formerly known as Data agent) powered by Azure OpenAI, and whose capacity's geographic region is outside of the EU data boundary and the US. 
 
-To use fully conversational agentic AI experiences, the agent needs to store conversation history across user sessions. This feature ensures that the AI agent keeps context about what a user asked in previous sessions and is a desired behavior in many agentic experiences. Experiences such as Copilot in Notebooks and Fabric data agents are AI experiences that store conversation history across the user's sessions. **This history is stored inside the Azure security boundary, in the same region and in the same Azure Open AI resources that process all your Fabric AI requests.** The difference in this case is that the conversation history is stored for as long as the user allows. For experiences that don't store conversation history across sessions, no data is stored. Prompts are only processed by Azure OpenAI resources that Fabric uses.
+Conversational agentic experiences such as Copilot in Notebooks and Fabric data agents store conversation history across user sessions so the agent keeps context between sessions. This history is stored inside the Azure security boundary, in the same region and Azure OpenAI resources that process your other Fabric AI requests. Users can delete their conversation history at any time by clearing the chat; if it isn't removed manually, it's stored for 28 days.
 
-**Your users can delete their conversation history at any time, simply by clearing the chat. This option exists both for Copilot in Notebooks and data agents.** If the conversation history isn't manually removed, it's stored for 28 days.
-
-[Learn more about the tenant setting for conversation history](../admin/service-admin-portal-copilot.md)
+For full details and the tenant setting that controls this behavior, see [Copilot and Agent tenant settings](../admin/service-admin-portal-copilot.md).
 
 ## Related content
 

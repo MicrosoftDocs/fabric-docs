@@ -34,7 +34,7 @@ The supply chain reference architecture uses Microsoft Fabric Real-Time Intellig
 
 1. KQL queries are written within **[Eventhouse](../eventhouse.md)** to correlate historical data from OneLake with time-series data on inventory and shipment data. 
 
-1. Identifying seasonal demand shifts, **[Microsoft Graph](/graph/)** analyzes relationships between suppliers, shipments, and inventory to identify critical path dependencies and optimize supply chain decisions.
+1. Identifying seasonal demand shifts, **[graph in Microsoft Fabric](../../graph/overview.md)** analyzes relationships between suppliers, shipments, and inventory to identify critical path dependencies and optimize supply chain decisions.
 
 1. **[Data Science](../../data-science/data-science-overview.md)** predictive ML models forecast delivery delays using historical and real-time logistics data, while also scoring vendor performance based on reliability and responsiveness to help prioritize high-performing suppliers.
 
@@ -89,7 +89,7 @@ You write KQL queries within [Eventhouse](../eventhouse.md) to correlate histori
 
 ### Model and contextualize
 
-[Microsoft Graph](/graph/) analyzes relationships between suppliers, shipments, and inventory to identify critical path dependencies and optimize supply chain decisions. This relationship analysis provides:
+[Graph in Microsoft Fabric](../../graph/overview.md) analyzes relationships between suppliers, shipments, and inventory to identify critical path dependencies and optimize supply chain decisions. This relationship analysis provides:
 
 - **Supplier network mapping** - Comprehensive view of vendor relationships and dependencies
 - **Critical path identification** - Analysis of supply chain bottlenecks and risk points
@@ -269,4 +269,4 @@ Outlines the data processing and storage needs for implementing the supply chain
 - [Microsoft Fabric Real-Time Intelligence capacity planning](../../enterprise/plan-capacity.md)
 - [OneLake data storage overview](../../onelake/onelake-overview.md)
 - [Data Factory for data integration](../../data-factory/data-factory-overview.md)
-- [Microsoft Graph for relationship analysis](/graph/)
+- [Graph in Microsoft Fabric for relationship analysis](../../graph/overview.md)

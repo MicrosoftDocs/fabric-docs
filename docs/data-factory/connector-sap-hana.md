@@ -14,9 +14,11 @@ ms.custom:
 This article outlines the steps to create an SAP HANA database connection.
 
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
 
-The SAP HANA database connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+## Summary
+
+The SAP HANA database connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
@@ -24,35 +26,40 @@ The SAP HANA database connector supports the following authentication types for 
 |Windows | √ | √ |
 
 ## Set up your connection for Dataflow Gen2
-You can connect Dataflow Gen2 in Microsoft Fabric to SAP HANA database using Power Query connectors. Follow these steps to create your connection:
+You can connect a dataflow Gen2 in Fabric to an SAP HANA database by using Power Query connectors. Follow these steps to create your connection:
 
 1. Check [capabilities](#capabilities), [limitations, and considerations](#limitations-and-considerations) to make sure your scenario is supported.
 1. [Complete prerequisites for SAP HANA database](#prerequisites).
 1. [Get data in Fabric](#get-data).
 1. [Connect to an SAP HANA database](#connect-to-an-sap-hana-database).
 
-### Capabilities
+## Prerequisites
 
-[!INCLUDE [sap-hana-database-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/sap-hana-database/sap-hana-database-capabilities-supported.md)]
+[!INCLUDE [sap-hana-database-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/sap-hana-database/prerequisites.md)]
 
-### Prerequisites
+<a id="capabilities"></a>
 
-[!INCLUDE [sap-hana-database-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/sap-hana-database/sap-hana-database-prerequisites.md)]
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
+
+[!INCLUDE [sap-hana-database-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/sap-hana-database/capabilities-supported.md)]
+
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Connect to an SAP HANA database
+<a id="connect-to-an-sap-hana-database"></a>
 
-[!INCLUDE [sap-hana-database-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/sap-hana-database/sap-hana-database-connect-to-power-query-online.md)]
+### Connection steps
 
-### Limitations and considerations
-
-[!INCLUDE [sap-hana-database-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/sap-hana-database/sap-hana-database-limitations.md)]
-
+[!INCLUDE [sap-hana-database-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/sap-hana-database/connect-online.md)]
 
 ## Set up your connection in Manage connections and gateways
+
+### Connection properties
 
 The following table contains a summary of the properties needed for an SAP HANA connection:
 
@@ -67,6 +74,8 @@ The following table contains a summary of the properties needed for an SAP HANA 
 | **SSL crypto provider** | The SSL crypto provider that you want to use. Allowed values are **mscrypto**, **sapcrypto**, and **commoncrypto**. | Yes if you enable **Validate server certificate**  |
 | **Single sign-on** | Configure SSO options for Kerberos or SAML based on your query mode. | No |
 | **Privacy level** | The privacy level that you want to apply. Allowed values are None, Organizational, Private, and Public. | Yes |
+
+### Connection instructions
 
 For specific instructions to set up your connection in Manage connections and gateways, follow these steps:
 
@@ -102,33 +111,38 @@ For specific instructions to set up your connection in Manage connections and ga
 1. Optionally, in **Single sign-on**, select one or more SSO options based on your scenario:
 
    - **Use SSO via Kerberos for DirectQuery queries**: This option will only be applied for DirectQuery queries. Import will use the Username and Password specified in the data source details. For more information, see this [article](/power-bi/connect-data/service-gateway-sso-kerberos).
-   - **Use SSO via Kerberos for DirectQuery and Import queries**: For Import, it will use the Dataset owner's windows credentials. For more information, see this [article](/power-bi/connect-data/service-gateway-sso-kerberos).
+   - **Use SSO via Kerberos for DirectQuery and Import queries**: For Import, it will use the Dataset owner's Windows credentials. For more information, see this [article](/power-bi/connect-data/service-gateway-sso-kerberos).
    - **Use SSO via SAML for DirectQuery queries**
 
 1. In **General**, set the privacy level that you want to apply. Allowed values are None, Organizational, Private, and Public. For more information, see [privacy levels in the Power Query documentation](/power-query/privacy-levels).
 
 1. Select **Create** to create your connection. Your creation is successfully tested and saved if all the credentials are correct. If not correct, the creation fails with errors.
 
-## Authentication
+### Authentication
 
 This section lists the instructions for each authentication type supported by the SAP HANA connector:
 
 - [Basic](#basic-authentication)
 - [Windows](#windows-authentication)
 
-### Basic authentication
+#### Basic authentication
 
 :::image type="content" source="./media/connector-sap-hana/basic-authentication.png" alt-text="Screenshot showing the Basic authentication method for SAP HANA.":::
 
 - **Username**: Specify the user name to connect to the SAP HANA server.
 - **Password**: Specify the password for the user account.
 
-### Windows authentication
+#### Windows authentication
 
 :::image type="content" source="./media/connector-sap-hana/windows-authentication.png" alt-text="Screenshot showing the Windows authentication method for SAP HANA.":::
 
 - **Username**: Specify user name when using Windows authentication. For example: `user@domain.com`
 - **Password**: Specify the password for the user account.
+
+## Limitations and considerations
+
+[!INCLUDE [sap-hana-database-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/sap-hana-database/limitations.md)]
+
 
 ## Related content
 

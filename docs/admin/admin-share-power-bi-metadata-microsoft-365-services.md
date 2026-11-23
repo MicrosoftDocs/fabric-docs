@@ -3,8 +3,9 @@ title: Metadata passed from Microsoft Fabric to Microsoft Graph
 description: Learn how Microsoft Fabric shares metadata with Microsoft 365 through Microsoft Graph, what information flows, and how admins turn this tenant setting on or off.
 ms.reviewer: jadelynray
 ms.topic: concept-article
-ms.date: 07/08/2026
+ms.date: 09/14/2026
 LocalizationGroup: Admin
+ai-usage: ai-assisted
 #customer intent: As a Fabric admin, I need to know what information is passed from Fabric and Microsoft Graph to Microsoft 365.
 ---
 
@@ -15,6 +16,9 @@ This article helps Microsoft Fabric administrators and decision makers understan
 The **Share Fabric data with your Microsoft 365 services** tenant setting controls whether Power BI and Fabric automatically send information about your organization's Fabric content to Microsoft 365. When an admin turns on this setting, Fabric sends details about your reports, dashboards, and other content to Microsoft 365 in the background. No user action is required for this sharing to occur. Microsoft 365 uses this information to help users find and return to their Fabric content through search results, the Quick Access list on Office.com, and personalized recommendations.
 
 This information flows through [Microsoft Graph](/graph/overview). The setting is turned on by default when your Fabric tenant and Microsoft 365 tenant are in the same geographic region.
+
+> [!IMPORTANT]
+> Users in Microsoft 365 experiences only see metadata for Power BI items that they have permission to view in Power BI. Power BI continues to enforce the user's permissions, including row-level security (RLS) and object-level security (OLS), when the user opens or interacts with an item.
 
 ### What information is shared
 
@@ -34,6 +38,22 @@ For the complete list of shared properties, see [Data shared with Microsoft 365]
 > [!NOTE]
 > Power BI reports shared using organization-wide ("org-wide") links aren't discoverable in Microsoft 365 experiences (such as search) for users who only have access through those links, even when you enable this setting. Users can still access the report directly through the link, but the report doesn't appear in discovery surfaces unless it's shared using another access method.
 
+### Supported Microsoft 365 experiences
+
+When you turn on this setting, Microsoft 365 uses the shared Power BI metadata in the following experiences:
+
+- **Semantic Index for Microsoft Copilot:** Shared metadata contributes to the [Semantic Index for Microsoft Copilot](/microsoftsearch/semantic-index-for-copilot). The index helps Copilot understand relationships between users and the Power BI items they can access so it can return relevant results.
+- **Item attachment menus in Copilot Chat:** Users can search for and attach Power BI reports as context for a Copilot conversation. The attachment menu only shows reports that the signed-in user has permission to view in Power BI.
+- **Copilot search:** Copilot uses the shared metadata to help users find relevant Power BI items that they have permission to view.
+
+The following example shows Power BI reports in the **Add content** menu in Copilot Chat. A user can select **Power BI**, search for a report, and attach it as context for the conversation.
+
+:::image type="content" source="media/admin-share-power-bi-metadata-microsoft-365-services/copilot-chat-power-bi-item-attachment.png" alt-text="Screenshot of the Add content menu in Copilot Chat showing Power BI reports that can be attached to a conversation." lightbox="media/admin-share-power-bi-metadata-microsoft-365-services/copilot-chat-power-bi-item-attachment.png":::
+
+The following example shows Copilot search results filtered to Power BI content. Copilot uses the shared metadata, such as item names, types, descriptions, and modification dates, to help the user identify relevant Power BI items.
+
+:::image type="content" source="media/admin-share-power-bi-metadata-microsoft-365-services/copilot-search-power-bi-content.png" alt-text="Screenshot of Copilot search results filtered to Power BI content, including a Power BI app and report." lightbox="media/admin-share-power-bi-metadata-microsoft-365-services/copilot-search-power-bi-content.png":::
+
 ### What this setting doesn't control
 
 Turning off this setting doesn't block Fabric content from appearing in Microsoft 365. Users who have access to Fabric content can still take explicit action to use that content in Microsoft 365 products. The following experiences continue to work even when this setting is turned off, because they depend on a user actively doing something:
@@ -46,7 +66,7 @@ Turning off this setting doesn't block Fabric content from appearing in Microsof
 
 - **[Frontier only] Asking Microsoft 365 Copilot about Power BI data:** Microsoft 365 Copilot can answer questions by using Power BI reports and semantic models that the user has permission to view, regardless of this setting. Access to this feature requires Microsoft 365 admin approval. For more information, see [Fabric IQ in Microsoft 365 Copilot (Frontier)](/fabric/iq/connectors/microsoft-365-copilot-overview).
 
-- **[Frontier only] Asking Microsoft 365 Copilot Cowork about Power BI data:** Power BI reports and semantic models that the user has permission to view can feed into Copilot Cowork workflows. Users can request emails or schedule meetings triggered by the latest metrics. Users can also produce deep analysis that combines Work IQ context (such as emails, Teams chats, and documents) with insights from Power BI data. The **Share Fabric data with your Microsoft 365** tenant setting doesn't affect this behavior. Microsoft 365 admins can disable access to the Copilot Cowork agent for their organization, and access to the Fabric IQ plugin requires Microsoft 365 admin approval. For more information, see [Fabric IQ in Cowork (Frontier)](/fabric/iq/connectors/cowork-overview).
+- **[Frontier only] Asking Copilot Cowork about Power BI data:** Power BI reports and semantic models that the user has permission to view can feed into Copilot Cowork workflows. Users can request emails or schedule meetings triggered by the latest metrics. Users can also produce deep analysis that combines Work IQ context (such as emails, Teams chats, and documents) with insights from Power BI data. The **Share Fabric data with your Microsoft 365** tenant setting doesn't affect this behavior. Microsoft 365 admins can disable access to the Copilot Cowork agent for their organization, and access to the Fabric IQ plugin requires Microsoft 365 admin approval. For more information, see [Fabric IQ in Cowork (Frontier)](/fabric/iq/connectors/cowork-overview).
 
 All of these experiences rely on the user being signed in and having permissions for the content. None of them rely on Fabric sending information to Microsoft 365 in the background.
 
@@ -68,7 +88,7 @@ For more information about data storage for Microsoft 365, see [Where your Micro
 
 The **Share Fabric data with your Microsoft 365 services** tenant setting is on by default. To change this setting:
 
-1. Go to **Admin portal** > **Tenant settings** > **Share Fabric data with your Microsoft 365 services**.
+1. Go to **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings** > **Share Fabric data with your Microsoft 365 services**.
 1. Set the toggle to **Enabled** or **Disabled** as needed.
 
 Changes can take up to 24 hours to take effect.

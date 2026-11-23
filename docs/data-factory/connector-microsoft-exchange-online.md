@@ -14,36 +14,46 @@ ai-usage: ai-assisted
 This article outlines the steps to create a Microsoft Exchange Online connection.
 
 
-## Supported authentication types
+<a id="supported-authentication-types"></a>
 
-The Microsoft Exchange Online connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+## Summary
+
+The Microsoft Exchange Online connector supports the following authentication types for copy and dataflow Gen2 respectively.
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
 |Organizational account| n/a | √ |
 
 ## Set up your connection for Dataflow Gen2
-You can connect Dataflow Gen2 in Microsoft Fabric to Microsoft Exchange Online using Power Query connectors. Follow these steps to create your connection:
+You can connect dataflow Gen2 in Fabric to Microsoft Exchange Online using Power Query connectors. Follow these steps to create your connection:
 
 1. Check [capabilities](#capabilities) to make sure your scenario is supported.
 1. [Get data in Fabric](#get-data).
 1. [Connect to Microsoft Exchange Online](#connect-to-microsoft-exchange-online).
 
-### Capabilities
+<a id="capabilities"></a>
 
-[!INCLUDE [microsoft-exchange-online-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/microsoft-exchange-online/microsoft-exchange-online-capabilities-supported.md)]
+<a id="capabilities-supported"></a>
+
+## Supported capabilities
+
+[!INCLUDE [microsoft-exchange-online-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/microsoft-exchange-online/capabilities-supported.md)]
+
+## Connection settings
 
 ### Get data
 
 [!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
 
-### Connect to Microsoft Exchange Online
+<a id="connect-to-microsoft-exchange-online"></a>
 
-[!INCLUDE [microsoft-exchange-online-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/microsoft-exchange-online/microsoft-exchange-online-connect-to-power-query-online.md)]
+### Connection instructions
+
+[!INCLUDE [microsoft-exchange-online-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/microsoft-exchange-online/connect-online.md)]
 
 ## Set up your connection in a pipeline
 
-Data Factory in Microsoft Fabric doesn't currently support Microsoft Exchange Online in pipelines.
+Data Factory doesn't currently support Microsoft Exchange Online in pipelines.
 
 ## Related content
 

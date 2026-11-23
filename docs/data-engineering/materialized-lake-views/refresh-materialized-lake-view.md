@@ -3,7 +3,8 @@ title: Refresh Materialized Lake Views in a Lakehouse
 description: Learn how to refresh a materialized lake view in a lakehouse in Microsoft Fabric.
 ms.reviewer: bsankaran, sairamyeturi, nijelsf, hgowrisankar
 ms.topic: how-to
-ms.date: 06/08/2026
+ms.date: 11/05/2026
+ai-usage: ai-assisted
 # customer intent: As a data engineer, I want to refresh materialized lake views in a lakehouse so that I can ensure that the data is up to date and optimize query performance.
 ---
 
@@ -12,6 +13,24 @@ ms.date: 06/08/2026
 Each time a scheduled refresh runs for your materialized lake views, Fabric determines the best strategy to use—no refresh, incremental, or full—based on what changed in the source data. This behavior is called *optimal refresh*, and it helps you keep your materialized lake views up to date while minimizing compute costs and refresh time.
 
 This article explains how optimal refresh works, what each strategy does, and how to switch to full refresh mode when needed.
+
+To review a saved definition with
+[Skills for Fabric](../../fundamentals/skills-for-fabric-install.md), replace
+the placeholders and use this prompt:
+
+```copilot
+Use Skills for Fabric. In workspace <workspace-name>, read
+<source-notebook-name> via the Notebook API. Find the full SQL definition for
+<schema-name>.<materialized-lake-view-name> in destination lakehouse
+<destination-lakehouse-name>, including data quality constraints. Show the
+cell and SQL; ask me to choose if several match.
+
+Resolve sources from notebook bindings and SQL references; qualify as needed.
+Check best practices, Delta format, CDF, append-only changes, and supported
+SQL. Explain blockers and suggest only changes that preserve results and data
+quality. Show revised SQL and explain edits. Flag unverified checks and when a
+full refresh is needed. Don't run the notebook or change items or settings.
+```
 
 > [!NOTE]
 > Optimal refresh isn't supported in the following scenarios:
@@ -37,10 +56,11 @@ The following table describes the refresh strategies that optimal refresh can se
 |Full refresh | Recomputes the entire materialized lake view from the full source dataset. This strategy is used when unsupported expressions are detected, when changes can't be processed incrementally, or when the source dataset is small enough that a full recompute is faster than incremental processing.|
 
 > [!IMPORTANT]
-> Incremental refresh applies only when both of the following are true:
+> Incremental refresh is applied based on the following factors:
 >
-> - **Source data is append-only for the refresh cycle.** If a refresh cycle detects deletes or updates on a source table, the engine falls back to full refresh — even when CDF is enabled and the query uses only supported SQL constructs. For more details, see [Incremental refresh and append-only data](#incremental-refresh-and-append-only-data).
-> - **Delta change data feed (CDF) is enabled** (`delta.enableChangeDataFeed=true`) on all source tables referenced in the materialized lake view definition. Without CDF, optimal refresh can only choose between no refresh and full refresh. For more information, see [Enable incremental refresh](#enable-incremental-refresh).
+> - **Source data pattern.** Append-only data supports incremental processing for inserts. For non-append data, such as deletes or updates, incremental refresh is supported only when the materialized lake view uses a refresh hint that identifies row identity. Otherwise, the engine falls back to full refresh. For more details, see [Incremental refresh and data change patterns](#incremental-refresh-and-data-change-patterns).
+> - **Delta change data feed (CDF).** CDF must be enabled (`delta.enableChangeDataFeed=true`) on all source tables referenced in the materialized lake view definition. Without CDF, optimal refresh can only choose between no refresh and full refresh. For more information, see [Enable incremental refresh](#enable-incremental-refresh).
+
 
 ## Set up optimal refresh
 
@@ -55,11 +75,16 @@ By default, optimal refresh mode is enabled for a materialized lake view lineage
    
    :::image type="content" source="./media/refresh-materialized-lake-view/enable-optimal-refresh-option.png" alt-text="Screenshot that shows toggle to enable optimal refresh mode." border="true" lightbox="./media/refresh-materialized-lake-view/enable-optimal-refresh-option.png":::
 
-### Incremental refresh and append-only data
+### Incremental refresh and data change patterns
 
-Today, incremental refresh applies only when source data is **append-only** between refreshes. If any source table records a delete or update, Fabric falls back to full refresh—even with CDF enabled and a query that uses only [supported SQL constructs](#sql-constructs-supported-by-incremental-refresh).
- 
-The engine needs a reliable way to identify deleted rows. To improve efficiency, users can now supply refresh hints. We are piloting this with select customers.
+Incremental refresh supports both append-only and non-append data patterns when the query and data work with the refresh strategy.
+
+> [!NOTE]
+> When incremental refresh isn't the most efficient option, the engine can fall back to a full refresh based on the size and cost of the changes. This fallback helps maintain efficient refreshes while preserving correctness.
+
+For append-only refreshes, Fabric processes only the new rows that were added since the previous refresh. For non-append data, such as deletes or updates, the engine needs a reliable way to identify rows. If the materialized lake view defines a refresh hint that declares a unique key, Fabric can apply the deltas incrementally. If no compatible key is available, the engine falls back to full refresh - even when CDF is enabled and the query uses only [supported SQL constructs](#sql-constructs-supported-by-incremental-refresh).
+
+For more information about handling deletes and updates, see [Handle deletes and updates in materialized lake views with refresh hints](./optimal-refresh-handling-deletes-updates.md).
   
 ### Enable incremental refresh
 
@@ -83,7 +108,7 @@ To enable CDF directly from the banner:
 
 
 > [!NOTE]
-> Enabling CDF on your source tables has no measurable storage or performance effect for append-only workloads, which is the scenario that incremental refresh supports. CDF is a standard Delta Lake table property that other Fabric features can also benefit from. For more information about how CDF works, see [Use Delta Lake change data feed](/azure/databricks/delta/delta-change-data-feed).
+> Enabling CDF on your source tables has no measurable storage or performance impact on the source tables used by materialized lake views. CDF is a standard Delta Lake table property that other Fabric features can also benefit from. For more information about how CDF works, see [Use Delta Lake change data feed](/azure/databricks/delta/delta-change-data-feed).
 
 You can enable CDF at creation time by including `TBLPROPERTIES` in the `CREATE` statement:
 
@@ -127,7 +152,10 @@ Incremental refresh works when your materialized lake view definition uses only 
 | FROM | Supports Delta tables and materialized lake views. Subqueries and CTEs work if they use only the supported clauses. |
 | WHERE | Only deterministic built-in functions are supported. |
 | INNER JOIN | Supported. |
-| LEFT OUTER JOIN / LEFT SEMI JOIN | Supported. Incremental refresh works only if the right-side table remains unchanged during the refresh cycle. Any change to the right-side table triggers a full refresh. |
+| LEFT OUTER JOIN / LEFT SEMI JOIN / ANTI JOIN | Supported. Incremental refresh works only if the right-side table remains unchanged during the refresh cycle. Any change to the right-side table triggers a full refresh. |
+| RIGHT OUTER JOIN | Supported. Incremental refresh works only if the left-side table remains unchanged during the refresh cycle. Any change to the left-side table triggers a full refresh. |
+| CROSS JOIN | Supported. |
+| ORDER BY| Supported. |
 | GROUP BY / aggregates | Supported. Use of **Aggregates** (`AVG()`, `STDDEV()`, and others) requires that every source table is partitioned and that partition column is included in the `GROUP BY` clause of the MLV query - this requirement lets Fabric incrementally recompute only the affected partitions. <br>**`SUM()`,  `MIN()`, `MAX()`, and `COUNT()` (without DISTINCT)** are a **special case**: they support incremental refresh without the partitioning requirement. <br> Mixing other aggregate functions with `SUM()`, `COUNT()`, `MIN()`, and `MAX()` in the same query (for example, `SELECT SUM(amount), AVG(price) ...`) requires the partitioning condition for the whole query; otherwise, Fabric falls back to full refresh. `GROUP BY` columns must appear in the `SELECT` list.|
 | UNION ALL | Supported. |
 | WITH | Common table expressions (CTEs) if they use only supported clauses. |
@@ -159,7 +187,7 @@ REFRESH MATERIALIZED LAKE VIEW [workspace.lakehouse.schema].MLV_Identifier FULL
 If you want every scheduled run to perform a full refresh, you can turn off the optimal refresh toggle. This disables both the no-refresh and incremental strategies—every run recomputes the full dataset, even if no source data changed.
 
 1. Go to your lakehouse and select **Materialized lake views**.
-1. Click on  **Manage** and turn off the **Optimal refresh** toggle.
+1. Select **Manage** and turn off the **Optimal refresh** toggle.
 
    :::image type="content" source="./media/refresh-materialized-lake-view/full-refresh-option.png" alt-text="Screenshot that shows toggle to switch to full refresh mode." border="true" lightbox="./media/refresh-materialized-lake-view/full-refresh-option.png":::
 

@@ -1,11 +1,12 @@
 ---
-title: Monitor T-SQL Queries with Data Warehouse Monitor
-description: Learn about monitoring running and completed queries in your Fabric warehouse using Data Warehouse Monitor.
+title: Monitor T-SQL Queries in Fabric Data Warehouse
+description: Learn about monitoring running and completed queries in your Fabric warehouse using Monitor.
 ms.reviewer: mariyaali, twcyril
-ms.date: 05/08/2026
+ms.date: 11/04/2026
 ms.topic: how-to
 ms.search.form: Monitoring # This article's title should not change. If so, contact engineering.
 ms.custom: sfi-image-nochange
+ai-usage: ai-assisted
 ---
 # Monitor T-SQL queries (Preview)
 
@@ -13,17 +14,17 @@ ms.custom: sfi-image-nochange
 
 [!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
-Use Data Warehouse Monitor to view running and historical T-SQL queries, long-running queries, and frequently run queries without running T-SQL code. Integrated into the Fabric portal, you can use Data Warehouse Monitor to confirm that queries complete successfully, analyze execution patterns, and investigate slower query runs in detail.
+Use the Monitor to view your warehouse's running and historical T-SQL queries, long-running queries, and frequently run queries without running T-SQL code. Integrated into the Fabric portal, you can use Monitor to confirm that queries complete successfully, analyze execution patterns, and investigate slower query runs in detail.
 
-Data Warehouse Monitor was previously named "Query Activity".
+Monitor was previously named "Query Activity".
 
 ## Prerequisites
 
-- You must be an admin in your workspace to access Data Warehouse Monitor. Members, Contributors, and Viewers don't have permission to access this view.
+- You must be an admin in your workspace to access the Monitor. Members, Contributors, and Viewers don't have permission to access this view.
 
 ## Get started
 
-You can launch the Data Warehouse Monitor experience in two ways.
+Launch the Monitor experience from your workspace, the query editor, or the Microsoft Fabric Capacity Metrics app.
 
 - Select **More Options (...)** next to the warehouse you want to monitor within the workspace view, and select **Monitor**.
 
@@ -32,6 +33,44 @@ You can launch the Data Warehouse Monitor experience in two ways.
 - Within the query editor of the warehouse you want to monitor, select **Monitor** in the ribbon.
 
     :::image type="content" source="media/monitor/query-activity-entry-point-ribbon.png" alt-text="Screenshot of the Monitor entry point from the ribbon." lightbox="media/monitor/query-activity-entry-point-ribbon.png":::
+
+### Open Monitor from the Capacity Metrics app
+
+Use **Monitor in warehouse** in the [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md) to investigate query activity associated with capacity usage. Monitor opens the associated item with a time range based on the selected operation or item detail context.
+
+You need access to the Capacity Metrics app and the workspace Admin role for the selected item. Access to the Capacity Metrics app alone doesn't grant access to Monitor.
+
+1. Open the [timepoint page](../enterprise/metrics-app-timepoint-page.md#monitor-in-warehouse) for the capacity usage you want to investigate.
+1. In the background operations table, select a supported query operation. The **Monitor in warehouse** button becomes enabled.
+1. Select **Monitor in warehouse** to open Monitor for the associated item.
+1. Review the selected time range and investigate the query activity. Use query text, status, submitter, run source, and duration to narrow your investigation.
+
+If you start from the [timepoint item detail page](../enterprise/metrics-app-timepoint-item-detail-page.md#monitor-in-warehouse), you don't need to select a record first. For a supported query operation, select **Monitor in warehouse** to open the associated item with the relevant time range. Select a record first if you want to narrow the range to that operation.
+
+The following operations are supported:
+
+- **Warehouse Query** - T-SQL statements in a warehouse.
+- **Warehouse Query (Accelerated)** - T-SQL statements in a warehouse with workspace query acceleration enabled.
+- **SQL Endpoint Query** - T-SQL statements in a lakehouse's SQL analytics endpoint.
+- **SQL Endpoint Query (Accelerated)** - T-SQL statements in a lakehouse's SQL analytics endpoint with workspace query acceleration enabled.
+- **Warehouse Snapshot Query** - T-SQL statements on a warehouse snapshot.
+
+For operation definitions, see [Data Warehouse operations](../enterprise/fabric-operations.md#data-warehouse).
+
+> [!IMPORTANT]
+> The navigation provides item and time context, not a direct lookup of a single SQL statement. Capacity Metrics **Operation ID** and Query Insights `distributed_statement_id` are different identifiers. Correlate the item and overlapping execution time, then inspect the candidate queries.
+
+Capacity usage at a timepoint can include smoothed consumption from earlier operations. The selected capacity timepoint and an operation's execution interval aren't necessarily the same. Use the operation context passed to Monitor rather than assuming that every contributing query ran within the displayed capacity timepoint.
+
+### Troubleshoot navigation from Capacity Metrics
+
+| Symptom | Action |
+|---|---|
+| The button isn't visible on the timepoint page | Confirm that background operations at the selected timepoint include warehouse items. Check the supported operations in the [timepoint page guidance](../enterprise/metrics-app-timepoint-page.md#monitor-in-warehouse). |
+| The button is disabled on the timepoint page | Select a supported query operation in the background operations table. |
+| The button isn't visible on the timepoint item detail page | Confirm that you drilled through with a supported query operation. |
+| Monitor doesn't open because access is denied | Ask a workspace admin to verify that you have the workspace Admin role for the selected item. |
+| The expected queries aren't visible | Verify the item and time range. Review the [Monitor limitations](#limitations), and refresh if historical query records haven't appeared yet. |
 
 ## Query history
 
@@ -136,7 +175,7 @@ To get the most value from these views:
 - Move to **Long running queries** to identify query patterns with high median duration.
 - Review **Frequently run queries** to find high-volume query shapes that are good candidates for tuning.
 
-The same information regarding completed, failed, and canceled queries from Query history along with aggregated insights can also be found in [Query insights in Fabric data warehousing](query-insights.md).
+The same information regarding completed, failed, and canceled queries from Query history along with aggregated insights can also be found in [Query insights in Fabric Data Warehouse](query-insights.md).
 
 ## Limitations
 
@@ -147,5 +186,5 @@ The same information regarding completed, failed, and canceled queries from Quer
 ## Related content
 
 - [Billing and utilization reporting in Fabric Data Warehouse](usage-reporting.md)
-- [Query insights in Fabric data warehousing](query-insights.md)
+- [Query insights in Fabric Data Warehouse](query-insights.md)
 - [Monitor connections, sessions, and requests using DMVs](monitor-using-dmv.md)

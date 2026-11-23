@@ -55,13 +55,13 @@ The lakehouse has two logical layers:
 
 ### Viewing data in the lakehouse
 
-Both the base and domain data layers can be viewed in the SQL endpoint of the digital twin builder data lakehouse. You can find the endpoint as a child item of your lakehouse in your Fabric workspace.
+Both the base and domain data layers can be viewed in the SQL analytics endpoint of the digital twin builder data lakehouse. You can find the endpoint as a child item of your lakehouse in your Fabric workspace.
 
-:::image type="content" source="media/concept-modeling/fabric-sql-endpoint.png" alt-text="Screenshot of the SQL endpoint under the digital twin builder data lakehouse in Fabric workspace.":::
+:::image type="content" source="media/concept-modeling/fabric-sql-endpoint.png" alt-text="Screenshot of the SQL analytics endpoint under the digital twin builder data lakehouse in Fabric workspace.":::
 
 In the navigation pane under **Schemas**, the base layer is represented under **dbo > Tables**, and the domain layer is represented under **dom > Views**.
 
-:::image type="content" source="media/concept-modeling/sql-endpoint-schemas.png" alt-text="Screenshot of the SQL endpoint schemas.":::
+:::image type="content" source="media/concept-modeling/sql-endpoint-schemas.png" alt-text="Screenshot of the SQL analytics endpoint schemas.":::
 
 ## Related content
 

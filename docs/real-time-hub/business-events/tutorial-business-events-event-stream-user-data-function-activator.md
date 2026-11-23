@@ -20,9 +20,6 @@ This tutorial walks you through the end-to-end workflow of publishing business e
 
 1. Set an alert on the business event using Fabric Activator and trigger the user defined function when the alert condition is met. 
 
-> [!IMPORTANT]
-> This feature is in [preview](../../fundamentals/preview.md).
-
 ## Create a new business event
 
 1. Go to **Business events** in Real-Time hub.
@@ -63,6 +60,8 @@ This tutorial walks you through the end-to-end workflow of publishing business e
     :::image type="content" source="media/tutorial-business-events-event-stream-user-data-function-activator/business-event-list.png" alt-text="Screenshot of the list of business events in Real-Time hub." lightbox="media/tutorial-business-events-event-stream-user-data-function-activator/business-event-list.png":::
 
 ## Configure eventstream for publishing
+
+[!INCLUDE [business-event-publisher-region-note](../includes/business-event-publisher-region-note.md)]
 
 1. After creating the business event, go to your workspace.
 
@@ -237,6 +236,8 @@ This tutorial walks you through the end-to-end workflow of publishing business e
      :::image type="content" source="media/tutorial-business-events-event-stream-user-data-function-activator/publish-user-data-function-button.png" alt-text="Screenshot of the Publish button for the user data function." lightbox="media/tutorial-business-events-event-stream-user-data-function-activator/publish-user-data-function-button.png":::
 
 ## Create an Activator trigger to consume events
+
+[!INCLUDE [business-event-consumer-region-note](../includes/business-event-consumer-region-note.md)]
 
 1. Open another tab in your web browser, and go to the Fabric portal home page.
  

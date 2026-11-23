@@ -323,6 +323,8 @@ items:
     href: /kusto/query/fork-operator?view=microsoft-fabric&preserve-view=true
   - name: getschema operator
     href: /kusto/query/getschema-operator?view=microsoft-fabric&preserve-view=true
+  - name: inline external table operator
+    href: /kusto/query/inline-external-table-operator?view=microsoft-fabric&preserve-view=true
   - name: invoke operator
     href: /kusto/query/invoke-operator?view=microsoft-fabric&preserve-view=true
   - name: join operator
@@ -1539,16 +1541,20 @@ items:
     href: /kusto/query/graph-best-practices?view=microsoft-fabric&preserve-view=true
   - name: Additional query languages
     items:
-    - name: Graph query language (GQL)
+    - name: GQL (Graph query language)
       items:
-      - name: Query data using GQL
+      - name: GQL
         href: /kusto/query/graph-query-language?view=microsoft-fabric&preserve-view=true
-      - name: GQL reference
-        href: /kusto/query/graph-query-language-reference?view=microsoft-fabric&preserve-view=true
-      - name: GQL examples and use cases
-        href: /kusto/query/graph-query-language-use-cases?view=microsoft-fabric&preserve-view=true
+      - name: GQL guide
+        href: /kusto/query/graph-query-language-guide?view=microsoft-fabric&preserve-view=true
+      - name: GQL clauses
+        href: /kusto/query/graph-query-language-clauses?view=microsoft-fabric&preserve-view=true
+      - name: GQL functions
+        href: /kusto/query/graph-query-language-functions?view=microsoft-fabric&preserve-view=true
     - name: openCypher
       href: /kusto/query/opencypher-graph-query-language?view=microsoft-fabric&preserve-view=true
+    - name: How to run GQL or openCypher queries
+      href: /kusto/query/run-graph-query-with-graph-reference?view=microsoft-fabric&preserve-view=true
 - name: Geospatial
   items:
   - name: Geospatial clustering

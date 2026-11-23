@@ -3,7 +3,7 @@ title: Upgrade Dataflow Gen1 to Dataflow Gen2 (CI/CD) using the Upgrade Wizard
 description: This article describes how to use the Dataflows Upgrade Wizard to upgrade Power BI Dataflows Gen1 items to Dataflow Gen2 (CI/CD) in Data Factory for Microsoft Fabric.
 ms.reviewer: eranbenayun
 ms.topic: how-to
-ms.date: 08/04/2026
+ms.date: 11/09/2026
 ai-usage: ai-assisted
 ms.custom:
   - template-how-to
@@ -16,9 +16,6 @@ The Dataflows Upgrade Wizard in Microsoft Fabric is a guided experience that per
 
 For most dataflows, downstream semantic models and reports keep working without any changes. Before you upgrade, review [Assessment status](#assessment-status) and [Known limitations](#known-limitations) to see which of your dataflows need attention, and see [Inventory](dataflow-gen2-migrate-from-dataflow-gen1-scenarios.md#inventory) to find the downstream items that read them. After you upgrade, follow [After the upgrade](#after-the-upgrade).
 
-> [!NOTE]
-> The Dataflows Upgrade Wizard is currently in preview.
-
 > [!TIP]
 > Power BI Dataflow Gen1 is now in a legacy state and won't receive new feature investment. For Premium customers with Fabric access, [Dataflow Gen2](dataflows-gen2-overview.md) is the recommended path, offering improvements in performance, scale, reliability, functionality, and built-in AI. Pro/PPU customers can continue to use Gen1 as Gen2 guidance for these scenarios is evolving. See [Upgrade from Dataflow Gen1 to Dataflow Gen2](dataflow-gen2-migrate-from-dataflow-gen1.md) for upgrade guidance.
 
@@ -29,7 +26,11 @@ Before you start:
 - The Dataflow Gen1 must be in a workspace assigned to a [Fabric capacity](../enterprise/licenses.md#capacity).
 - Fabric item creation must be allowed for the relevant scope (the **Users can create Fabric items** admin setting is enabled at the tenant, capacity, or user-group level).
 - You need **Admin**, **Member**, or **Contributor** access to the workspace.
-- You must be the owner of the Dataflow Gen1. If you aren't, the wizard reports the dataflow as **Upgrade unavailable**. Ask the owner to run the upgrade, or use **Take over** to become the owner first. A tenant admin can upgrade dataflows they don't own by using the Power BI REST API, while preserving the original owner. For more information, see [Upgrade unavailable](#upgrade-unavailable).
+- You must be the owner of the Dataflow Gen1. If you aren't, the wizard reports the
+   dataflow as **Upgrade unavailable**. Ask the owner to run the upgrade, or use
+   **Take over** to become the owner first. After **Take over** completes, refresh the
+   Dataflow Gen1. If the refresh fails, fix the issue and confirm that the Dataflow Gen1
+   refreshes successfully before upgrading to Dataflow Gen2 (CI/CD).
 
 > [!IMPORTANT]
 > Your Dataflow Gen1 can't be recovered after the upgrade completes. If you want to keep it, use [Save As](migrate-to-dataflow-gen2-using-save-as.md) to create a new Dataflow Gen2 (CI/CD) with the same content as the original dataflow. The upgrade is in-place: the original Dataflow Gen1 is replaced by a new Dataflow Gen2 (CI/CD) with the same ID and name, and you can't revert it.
@@ -38,11 +39,11 @@ Before you start:
 
 You can start the Dataflows Upgrade Wizard from the workspace item list.
 
-1. In your workspace, select the ellipsis (**...**) next to the Dataflow Gen1 you want to upgrade, and then select **Upgrade to Dataflow Gen2 (Preview)**.
+1. In your workspace, select the ellipsis (**...**) next to the Dataflow Gen1 you want to upgrade, and then select **Upgrade to Dataflow Gen2**.
 
-   :::image type="content" source="media/migrate-to-dataflow-gen2-using-upgrade-wizard/context-menu-upgrade-option.png" alt-text="Screenshot of the workspace item list context menu showing the Upgrade to Dataflow Gen2 (Preview) option." lightbox="media/migrate-to-dataflow-gen2-using-upgrade-wizard/context-menu-upgrade-option.png":::
+   :::image type="content" source="media/migrate-to-dataflow-gen2-using-upgrade-wizard/context-menu-upgrade-option.png" alt-text="Screenshot of the workspace item list context menu showing the Upgrade to Dataflow Gen2 option." lightbox="media/migrate-to-dataflow-gen2-using-upgrade-wizard/context-menu-upgrade-option.png":::
 
-1. The **Upgrade Power BI Dataflows Gen1 (Preview)** wizard opens on the **Overview** step. Review how the upgrade works and the **Attention** notice, and then select **Get Started**.
+1. The **Upgrade Power BI Dataflows Gen1** wizard opens on the **Overview** step. Review how the upgrade works and the **Attention** notice, and then select **Get Started**.
 
    :::image type="content" source="media/migrate-to-dataflow-gen2-using-upgrade-wizard/wizard-overview.png" alt-text="Screenshot of the Dataflows Upgrade Wizard Overview step describing the Select, Review, and Monitor steps, with an Attention notice." lightbox="media/migrate-to-dataflow-gen2-using-upgrade-wizard/wizard-overview.png":::
 
@@ -54,19 +55,19 @@ You can start the Dataflows Upgrade Wizard from the workspace item list.
 
    :::image type="content" source="media/migrate-to-dataflow-gen2-using-upgrade-wizard/step-review.png" alt-text="Screenshot of the Review step showing each dataflow with the target type Dataflow Gen2 (CI/CD) and the Upgrade button." lightbox="media/migrate-to-dataflow-gen2-using-upgrade-wizard/step-review.png":::
 
-1. **Monitor.** The wizard shows the progress of the upgrade. When it finishes, **Upgrade Completed** appears, and you can go to the workspace to see the upgraded Dataflow Gen2 (CI/CD) items. If a dataflow failed to upgrade, it's listed with its error. Select **OK** to close the wizard.
+1. **Monitor.** The wizard shows the progress of the upgrade. When it finishes, **Upgrade Completed** appears, and you can go to the workspace to see the upgraded Dataflow Gen2 (CI/CD) items. If a dataflow failed to upgrade, it's listed with its error. To save the assessment and upgrade results as a CSV file, select **Download upgrade report**. Select **OK** to close the wizard.
 
-   :::image type="content" source="media/migrate-to-dataflow-gen2-using-upgrade-wizard/step-monitor.png" alt-text="Screenshot of the Monitor step showing Upgrade Completed after a successful upgrade." lightbox="media/migrate-to-dataflow-gen2-using-upgrade-wizard/step-monitor.png":::
+   :::image type="content" source="media/migrate-to-dataflow-gen2-using-upgrade-wizard/step-monitor.png" alt-text="Screenshot of the Monitor step showing Upgrade Completed, Download upgrade report, and OK." lightbox="media/migrate-to-dataflow-gen2-using-upgrade-wizard/step-monitor.png":::
 
 ## Assessment status
 
-When you select dataflows, the wizard assesses each one and returns one of these statuses:
+In the **Select Dataflows Gen1** step, the wizard assesses the Dataflow Gen1 items in the workspace and returns one of these statuses:
 
 | Status | What it means |
 | --- | --- |
 | **Ready to migrate** | The wizard didn't find anything that needs a manual step before or after the upgrade. |
 | **Needs Attention** | The wizard found one or more reasons that need your attention. The upgrade can proceed. Review the reasons to see what to do before or after the upgrade. |
-| **Upgrade unavailable** | You can't upgrade the dataflow, because you aren't its owner. |
+| **Upgrade unavailable** | You can't upgrade the dataflow until you resolve one or more blocking reasons. |
 
 The **Needs Attention** status might be due to more than one reason. Hover over the indicator next to the status in the **Select Dataflows Gen1** step to see every reason that applies to that dataflow.
 
@@ -91,9 +92,12 @@ The DirectQuery and linked-entity reasons are detection signals rather than proo
 
 ### Upgrade unavailable
 
-The wizard reports **Upgrade unavailable** when you aren't the owner of the dataflow. Only the owner can run the upgrade in the wizard. Ask the owner to run it, or use **Take over** to become the owner and run it yourself.
+The wizard reports **Upgrade unavailable** when it finds a reason that blocks the upgrade.
 
-Tenant admins can upgrade dataflows that they don't own by using the Power BI REST API. The API also supports bulk upgrades, and it keeps the original owner of each dataflow, so ownership doesn't change. For more information, see the [Power BI REST API reference for dataflows](/rest/api/power-bi/dataflows).
+| Reason | Why upgrade is unavailable | What to do |
+| --- | --- | --- |
+| **Not the owner** | You aren't the owner of the dataflow. | Ask the owner to run the upgrade, or use **Take over** to become the owner first. After **Take over**, complete the Gen1 refresh check in [Prerequisites](#prerequisites) before upgrading. |
+| **Unresolved data source connections** | One or more data source connections couldn't be resolved. | Recreate or rebind the connections before upgrading. |
 
 ## After the upgrade
 
@@ -135,9 +139,9 @@ An upgraded Dataflow Gen1 is retained in a soft-deleted state for up to 30 days.
 
 Dataflow Gen2 uses the Fabric REST API, which doesn't have full parity with the Power BI REST API. If applications trigger or manage your Gen1 dataflow through the Power BI REST API, review those calls and update them to the corresponding Fabric REST API endpoints.
 
-### Government Community Cloud (GCC) environments aren't supported
+### Workspace Viewers can't consume tables from an upgraded dataflow
 
-Fabric Dataflow Gen2 isn't currently available in GCC, so you can't upgrade a Dataflow Gen1 in a GCC environment.
+Users with the Viewer workspace role can see an upgraded Dataflow Gen2, but they can't consume its tables through the Power Platform Dataflows connector. Assign users who need to consume the upgraded dataflow the Contributor, Member, or Admin workspace role. For more information, see [Power Query Dataflow connector - Power Query | Microsoft Learn](/power-query/connectors/dataflows#limitations-and-considerations).
 
 > [!IMPORTANT]
 > Dataflow Gen2 uses a different compute and billing model than Dataflow Gen1. Capacity Unit (CU) consumption can vary for many reasons, including the use of new features in Dataflow Gen2, such as [lakehouse](../data-engineering/lakehouse-overview.md) staging and [warehouse](../data-warehouse/data-warehousing.md) compute. Validate refresh duration and CU consumption. For more information, see [Dataflow Gen2 pricing](pricing-dataflows-gen2.md).

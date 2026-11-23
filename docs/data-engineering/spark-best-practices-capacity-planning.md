@@ -75,13 +75,13 @@ To further optimize resource usage:
 
 - Enable [Native Execution Engine (NEE)](/fabric/data-engineering/native-execution-engine-overview?tabs=sparksql) to significantly boost performance.
 
-##### Scenario: You're migrating workloads from Synapse to Fabric.
+##### Scenario: You're migrating workloads from Azure Synapse to Fabric.
 
 If you're migrating workloads from Azure Synapse to Fabric, you might be wondering what changes, what stays the same, and whether you can reuse your existing Synapse sizing. 
 
 **Migration and Optimization:** 
 
-- Use the [Synapse to Fabric migration utility](/fabric/data-engineering/migrate-synapse-overview) to move your workloads. 
+- Use the [Azure Synapse to Fabric migration utility](/fabric/data-engineering/migrate-synapse-overview) to move your workloads. 
 
 - Enable Autoscale Billing for Spark. If the environment and lakehouse are the same, run the notebooks or pipelines in high concurrency mode (a feature not available in Synapse) for better performance. 
 

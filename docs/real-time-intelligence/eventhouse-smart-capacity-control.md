@@ -1,5 +1,5 @@
 ---
-title: Schedule Eventhouse Capacity for Real-Time Analytics Workloads (preview)
+title: Schedule Eventhouse Capacity for Real-Time Analytics Workloads
 description: Optimize Eventhouse capacity with a customizable schedule. Guarantee performance during peak hours and save costs during low activity periods. Learn more.
 author: spelluru
 ms.author: spelluru
@@ -13,7 +13,7 @@ ai-usage: ai-assisted
 #CustomerIntent: As a data engineer, I want to configure a capacity schedule for my Eventhouse so that I can optimize costs and ensure performance during peak hours.
 ---
 
-# Schedule smart Eventhouse capacity control (preview)
+# Schedule smart Eventhouse capacity control
 
 Real-time analytics workloads often follow predictable patterns. You might see heavy ingestion during business hours, lighter query traffic overnight, quiet weekends, and short but critical pipeline windows. You can customize a minimum capacity schedule that aligns with your workload patterns.
 
@@ -33,36 +33,39 @@ Capacity planning enables smart, policy-driven capacity management in your Event
 
 ## Minimum capacity schedule
 
-The minimum capacity schedule allows you to define different minimum capacity levels across the week, instead of relying on a single static value. You can:
+The minimum capacity schedule helps you define a default minimum capacity and adjust this value using the schedule to meet your workload requirements, instead of relying on a single static value. You can:
 
-* Configure a 7-day recurring schedule.
+* Configure a default value that applies to any period where a schedule isn't set.
 
-* Split each day into 60-minute time blocks.
+* Use the scheduler to further refine your minimum capacity by:
+   * Configuring a seven-day recurring schedule.
 
-* Define a minimum capacity per block, or explicitly mark it as no minimum.
+   * Splitting each day into 60-minute time blocks.
 
-* Use the scheduler to raise or lower the minimum capacity for a certain time block, as needed, without disabling autoscale. The scheduler doesn't replace autoscale rather works alongside it.
+   * Defining a minimum capacity per block, or explicitly marking it as no minimum.
 
-    * The schedule only sets a floor, not a ceiling, so you can still benefit from autoscale's ability to handle unexpected spikes without interruption.
+   * Using the scheduler to raise or lower the minimum capacity for a certain time block, as needed, without disabling autoscale. The scheduler doesn't replace autoscale but works alongside it.
 
-    * The system never forces a scale-down if capacity is already higher due to active demand.
+       * The schedule only sets a floor, not a ceiling, so you can still benefit from autoscale's ability to handle unexpected spikes without interruption.
 
-    * Any scale operation performed on a cluster results in a 24-hour cooldown period when trying to scale down from a physical to virtual cluster due to low utilization.
+       * The system never forces a scale-down if capacity is already higher due to active demand.
 
-    * If no minimum is defined for a time block, the default minimum capacity is 2 CUs (25 GB of premium storage size).
+       * Any scale operation performed on a cluster results in a 24-hour cooldown period when trying to scale down from a physical to virtual cluster due to low utilization.
 
-Eventhouse maintains the guaranteed baseline only during the scheduled windows. Outside of scheduled windows, the eventhouse remains fully elastic with autoscale active, scaling up or down based on actual workload demand.
+       * If you don't define a minimum for a time block, the default minimum capacity is 2 CUs (25 GB of premium storage size).
 
 > [!NOTE]
 >
 > Changes to the schedule take up to 30 minutes to impact capacity. Plan accordingly when setting up or modifying your schedule, especially for critical workloads.
 
-### Scheduler UI
+### Capacity planner settings
 
-The scheduler displays a weekly grid view where each cell represents a 60-minute block. You can enter a minimum capacity value directly in each cell, and the UI performs cell-level validation to ensure entries are within the supported range. An overview banner evaluates and summarizes the total scheduled minimum capacity for the next 24 hours, helping you understand upcoming baseline commitments.
+The **Capacity Planner** pane includes a **Default minimum capacity** field and an optional **Schedule**. The default field defines the week-wide baseline. Schedule entries override that value for the selected days and times.
+
+The pane validates minimum capacity values against supported ranges. The schedule overview summarizes the total scheduled minimum capacity for the next 24 hours.
 
 > [!WARNING]
-> If a scheduled minimum capacity exceeds the available capacity for your workspace or capacity SKU, a warning appears in the UI. You might need to adjust either the schedule or upgrade your capacity SKU to avoid constraint violations.
+> If a scheduled minimum capacity exceeds the available capacity for your workspace or capacity SKU, a warning appears in the pane. Adjust the schedule or upgrade your capacity SKU to avoid constraint violations.
 
 ## Enable capacity planner
 
@@ -75,9 +78,21 @@ When you enable **Capacity Planner mode**, you don't pay for *OneLake Cache Stor
 > [!NOTE]
 > If you don't continue by scheduling capacity values, the minimum capacity is set at a minimum value of 2 CUs (25 GB of premium storage size).
 
+## Set the default minimum capacity
+
+Set a default minimum capacity to define a baseline for the entire week.
+
+1. From the Eventhouse ribbon, select **Capacity Planner** and ensure **Capacity Planner mode** is enabled.
+1. In **Default minimum capacity**, enter the minimum capacity value in CUs.
+1. Select **Done** to save the default without adding schedule entries.
+
+> [!NOTE]
+> In rare cases, the minimum capacity value you enter is rounded up to the nearest supported value. This value appears when you return to the capacity settings.
+
+
 ## Schedule minimum capacity
 
-In addition to the always-on **Capacity Planner mode**, you can further customize a minimum capacity schedule. This schedule sets a minimum available capacity unit (CU) size for an eventhouse using a weekly grid of 60-minute time blocks.
+Add a schedule only when you need to override the default minimum capacity during specific periods.
 
 1. From the eventhouse ribbon, select **Capacity Planner** and ensure **Capacity Planner mode** is enabled.
 
@@ -93,12 +108,9 @@ In addition to the always-on **Capacity Planner mode**, you can further customiz
 
 1. Select **Done**.
 
-:::image type="content" source="media/eventhouse/minimum-capacity-small.png" alt-text="Screenshot showing the eventhouse capacity planner for the Eventhouse." lightbox="media/eventhouse/minimum-capacity.png":::
+For periods without a scheduled override, Eventhouse uses Default minimum capacity. For example, set a default of 4 CUs for the entire week. Add a schedule of 16 CUs during weekday business hours. Eventhouse maintains at least 16 CUs during those hours and at least 4 CUs at other times. Autoscale can increase capacity above either minimum when demand requires it.
 
-> [!NOTE]
->
-> * If you want to ensure a certain minimum capacity starting at a round hour, like 08:00, define the time range to start at the previous hour (07:00) so that the minimum capacity takes effect at the intended time.
-> * While this feature is in public preview, the minimum capacity takes up to 30 minutes to reach the defined capacity.
+:::image type="content" source="media/eventhouse/minimum-capacity-small.png" alt-text="Screenshot showing the eventhouse capacity planner for the Eventhouse." lightbox="media/eventhouse/minimum-capacity.png":::
 
 ## Capacity units mapping
 

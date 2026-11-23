@@ -4,7 +4,8 @@ description: Learn how to read the Microsoft Fabric Capacity Metrics app's explo
 author: dknappettmsft
 ms.author: daknappe
 ms.topic: how-to
-ms.date: 02/27/2025
+ms.date: 10/29/2026
+ai-usage: ai-assisted
 no-loc: [Copilot]
 ---
 
@@ -104,6 +105,29 @@ A table showing every background operation that contributed Capacity Unit(CU) us
 
 All the columns in the background operations table are similar to the ones in the [interactive operations](#interactive-operations-for-timerange) table.
 
+## Monitor in warehouse
+
+Use the **Monitor in warehouse** button to investigate the warehouse query activity behind your capacity usage.
+
+To access warehouse monitoring, you must be an admin in the workspace that contains the selected item. For more information, see [Monitor prerequisites](../data-warehouse/monitor.md#prerequisites).
+
+The button appears only when the background operations at the selected timepoint include warehouse items. It remains gray and disabled until you select an eligible query operation.
+
+1. Select a supported query operation for a warehouse item in the background operations table. The **Monitor in warehouse** button turns green when an eligible operation is selected.
+1. Select the **Monitor in warehouse** button to open warehouse monitoring for the selected item, with the time range set based on the selected operation.
+
+The following operations are supported:
+
+* **Warehouse Query** - T-SQL statements in a warehouse.
+* **Warehouse Query (Accelerated)** - T-SQL statements in a warehouse with workspace query acceleration enabled.
+* **SQL Endpoint Query** - T-SQL statements in a lakehouse's SQL analytics endpoint.
+* **SQL Endpoint Query (Accelerated)** - T-SQL statements in a lakehouse's SQL analytics endpoint with workspace query acceleration enabled.
+* **Warehouse Snapshot Query** - T-SQL statements on a warehouse snapshot.
+
+For more information, see [Data Warehouse operations](fabric-operations.md#data-warehouse).
+
+![Screenshot of the Capacity Metrics timepoint page with the Monitor in warehouse button highlighted.](media/time-point-monitor-in-warehouse.png)
+
 ## Burndown table for timerange
 
 A table showing the *add*, *burndown* and *cumulative* percent by experiences, for the last 30 seconds.
@@ -125,3 +149,4 @@ You can change the overages visual scale to display 10 minutes, 60 minutes and 2
 ## Related content
 
 * [Understand the metrics app compute page?](metrics-app-compute-page.md)
+* [Explore Fabric capacity operation events](../real-time-hub/explore-fabric-capacity-operation-events.md)

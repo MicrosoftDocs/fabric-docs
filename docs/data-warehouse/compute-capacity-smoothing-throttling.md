@@ -10,9 +10,7 @@ ms.topic: concept-article
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-This article details the concepts of smoothing and throttling in workloads using [!INCLUDE [fabricdw](includes/fabric-dw.md)] and [!INCLUDE [fabricse](includes/fabric-se.md)] in Microsoft Fabric.
-
-This article is specific to data warehousing workloads in Microsoft Fabric. For all Fabric workloads and general information, see [The Fabric throttling policy](../enterprise/throttling.md).
+This article details the concepts of smoothing and throttling in workloads using [!INCLUDE [fabricdw](includes/fabric-dw.md)] and [!INCLUDE [fabricse](includes/fabric-se.md)] in Microsoft Fabric. For all other Fabric workloads and general information, see [Fabric capacity throttling policy](../enterprise/throttling.md).
 
 ## Compute capacity
 
@@ -33,7 +31,7 @@ Smoothing won't affect execution time. It helps streamline capacity management b
 
 In general, similar to Power BI, [operations](../enterprise/fabric-operations.md#fabric-operations-by-experience) are classified either as *[interactive](../enterprise/fabric-operations.md#interactive-operations)* or *[background](../enterprise/fabric-operations.md#background-operations)*.
 
-Most [operations](usage-reporting.md#warehouse-operation-categories) in the **Warehouse** category are reported as *background* to take advantage of 24-hour smoothing of activity to allow for the most flexible usage patterns. With 24-hour smoothing, operations can run simultaneously without causing any spikes at any time during the day. Customers get the benefit of a consistently fast performance without having to worry about tiny spikes in their workload. Thus, classifying data warehousing as *background* reduces the frequency of peaks of CU utilization from triggering throttling too quickly.
+Most [operations](usage-reporting.md#warehouse-operation-categories) in the **Warehouse** category are reported as *background* to take advantage of 24-hour smoothing of activity to allow for the most flexible usage patterns. With 24-hour smoothing, operations can run simultaneously without causing any spikes at any time during the day. Customers get the benefit of a consistently fast performance without having to worry about tiny spikes in their workload. Thus, classifying warehouse activity as *background* reduces the frequency of peaks of CU utilization from triggering throttling too quickly.
 
 Most [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] operations only experience operation rejection after over-utilization averaged over a 24-hour period. For more information, see [The Fabric throttling policy](../enterprise/throttling.md).
 
@@ -71,6 +69,5 @@ Use the [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md) to
 - [What is the Microsoft Fabric Capacity Metrics app?](../enterprise/metrics-app.md)
 - [Fabric Data Warehouse performance guidelines](guidelines-warehouse-performance.md)
 - [Understand your Azure bill on a Fabric capacity](../enterprise/azure-billing.md)
-- [Smoothing and throttling in Fabric Data Warehousing](compute-capacity-smoothing-throttling.md)
-- [Burstable capacity in Fabric data warehousing](burstable-capacity.md)
-- [Pause and resume in Fabric data warehousing](pause-resume.md)
+- [Burstable capacity in Fabric Data Warehouse](burstable-capacity.md)
+- [Pause and resume in Fabric Data Warehouse](pause-resume.md)
