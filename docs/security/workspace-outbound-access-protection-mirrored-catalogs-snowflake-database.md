@@ -2,8 +2,8 @@
 title: Workspace outbound access protection for mirrored catalogs and Snowflake database
 description: Learn how to configure workspace outbound access protection (OAP) for mirrored catalog and Snowflake database items in Microsoft Fabric.
 #customer intent: As a workspace admin, I want to enable outbound access protection for mirrored catalog and Snowflake database items so that I can allow only approved connections.
-author: msmimart
-ms.author: mimart
+author: teddyberco
+ms.author: tebercov
 ms.reviewer: mahi
 ms.date: 11/10/2026
 ms.topic: how-to

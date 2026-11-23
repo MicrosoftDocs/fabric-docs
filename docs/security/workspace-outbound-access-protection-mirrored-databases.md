@@ -2,8 +2,8 @@
 title: Workspace outbound access protection for mirrored Databases
 description: Learn how to configure Workspace Outbound Access Protection (OAP) to secure your mirrored Database resources in Microsoft Fabric.
 #customer intent: As a workspace admin, I want to enable outbound access protection for my workspace so that I can secure data connections from mirrored databases to only approved destinations.
-author: msmimart
-ms.author: mimart
+author: teddyberco
+ms.author: tebercov
 ms.date: 12/01/2025
 ms.topic: how-to
 ---

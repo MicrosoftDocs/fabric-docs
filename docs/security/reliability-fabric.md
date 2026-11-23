@@ -1,8 +1,8 @@
 ---
 title: Reliability in Microsoft Fabric 
 description: Learn how to ensure analytics platform reliability with Microsoft Fabric by using availability zones, cross-region replication, and disaster recovery planning.
-author: msmimart 
-ms.author: mimart 
+author: teddyberco 
+ms.author: tebercov 
 ms.topic: reliability-article
 ms.service: fabric
 ms.subservice: admin
