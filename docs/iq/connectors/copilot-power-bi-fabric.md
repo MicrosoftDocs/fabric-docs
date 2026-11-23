@@ -4,7 +4,7 @@ description: Learn how Microsoft Copilot in Power BI and Microsoft Fabric helps 
 author: s-polly
 ms.author: scottpolly
 ms.reviewer: cnews
-ms.date: 10/20/2026
+ms.date: 11/13/2026
 ms.topic: overview
 ms.service: fabric
 ai-usage: ai-assisted
@@ -23,7 +23,7 @@ As an important step toward that goal, Microsoft Copilot is integrated directly 
 
 :::image type="content" source="media/copilot-power-bi-fabric/entry-point-power-bi.png" alt-text="Screenshot of Copilot open in Power BI." lightbox="media/copilot-power-bi-fabric/entry-point-power-bi.png":::
 
-Users can ask questions about Power BI data with Fabric IQ. Users with a Microsoft Copilot license can also use Work IQ to bring relevant context from Microsoft 365, such as emails, meetings, chats, and documents, into the same conversation. Shared conversation history lets users continue a discussion as they move between supported Microsoft Copilot experiences instead of starting over in each application.
+Users can ask questions about Power BI data with Fabric IQ. Users with Copilot (Premium) can also use Work IQ to bring relevant context from Microsoft 365, such as emails, meetings, chats, and documents, into the same conversation. Shared conversation history lets users continue a discussion as they move between supported Microsoft Copilot experiences instead of starting over in each application.
 
 ## How Microsoft Copilot works with Fabric data
 
@@ -47,35 +47,44 @@ From Microsoft Copilot in Power BI and Fabric, you can:
 - Explore trends, comparisons, summaries, and specific data points.
 - Attach supported Power BI content or reference it by link or name.
 - Continue conversations across supported Microsoft Copilot experiences.
-- With a Microsoft Copilot license, combine Fabric data with relevant Microsoft 365 work context.
+- With Copilot (Premium), combine Fabric data with relevant Microsoft 365 work context.
 
 For more information about data answering, see [Fabric IQ in Microsoft Copilot Chat](microsoft-365-copilot-overview.md).
 
 ## Licensing and available capabilities
 
-When the feature is enabled, the Microsoft Copilot entry point appears to users in the tenant. The capabilities available within the M365 experience depend on each user's license and access to Fabric content. 
+You don't need Copilot (Premium) to use Fabric IQ in this integration; you don't even need Fabric. When the feature is enabled, the Microsoft Copilot entry point appears to users included in the tenant setting's scope. Available capabilities depend on each user's Microsoft Copilot license and access to Fabric content.
 
 | User | Available experience |
 | --- | --- |
-| Copilot (Premium) | Microsoft Copilot with Fabric IQ and Work IQ. The user can work with Fabric data and permitted Microsoft 365 context. |
+| Copilot (Premium) | Microsoft Copilot with Fabric IQ and Work IQ. The user can work with Fabric data and permitted Microsoft 365 context, with premium capabilities such as model selection, chat history, and Cowork where available. |
 | Copilot chat (basic) | Fabric IQ is available for supported Fabric and Power BI data. Work IQ and grounding in organizational Microsoft 365 content aren't available. Basic license limits apply. |
 | M365 Copilot (basic) | Fabric IQ is available for supported Fabric and Power BI data. Work IQ and grounding in organizational Microsoft 365 content aren't available. Basic license limits apply. |
 
+> [!IMPORTANT]
+> Basic licenses support Fabric IQ through the embedded Microsoft Copilot entry points in Power BI and Fabric only. To use Fabric IQ in the broader Microsoft Copilot app or web experience, you need Copilot (Premium).
+
 A user's Power BI license type, such as Free, Pro, or Premium Per User (PPU), doesn't determine which Microsoft Copilot experience they receive. However, users must still have permission and licensed access to the Power BI or Fabric content they want to use.
-For more information on license types see [License Types](https://support.microsoft.com/en-us/microsoft-365-copilot/what-copilot-license-do-i-have)
+
+Basic experiences don't include Work IQ organizational grounding or the **Cowork** and **Code** tabs. Model selection is limited, and requests might be throttled to prioritize premium users. For more information about license types, see [What Copilot license do I have?](https://support.microsoft.com/en-us/microsoft-365-copilot/what-copilot-license-do-i-have)
+
+The entry point can appear in tenants that have only Pro workspaces. This integration doesn't require a Premium workspace, a Fabric workspace, or Fabric (F SKU) capacity. These requirements differ from those for Copilot in Fabric.
 
 ## Prerequisites
 
 Before users can use Microsoft Copilot in Power BI and Fabric:
 
 - A Fabric administrator must enable **Users can use Copilot and other features powered by Azure OpenAI** in the Fabric admin portal.
-- A Fabric administrator must enable **Make Microsoft Copilot available in Power BI and Fabric**. This preview setting is off by default.
+- A Fabric administrator must enable the new **Make Microsoft Copilot available in Power BI and Fabric** tenant setting introduced for this preview. The setting is off by default until December 8, 2026, when the default changes to on.
 - A Microsoft 365 administrator must enable **Fabric data available in Microsoft Copilot**.
 - Users must have permission and licensed access to the Power BI reports, semantic models, and other supported Fabric items they want to use.
-- The tenant and content must be in a supported region.
+- The tenant and content must meet the [supported-region requirements](#which-regions-are-supported).
+
+For Chat data answering in Fabric tenants outside the United States or European Union, also enable **Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance**. For more information, see the [cross-geography tenant setting](../../admin/service-admin-portal-copilot.md#data-sent-to-azure-openai-can-be-processed-outside-your-capacitys-geographic-region-compliance-boundary-or-national-cloud-instance).
 
 You don't need to enable the **Share Fabric data with your Microsoft 365 services** setting when you explicitly reference supported content by link or name. However, this setting affects whether Power BI content appears in Microsoft 365 discovery and attachment experiences. For more information, see [Metadata passed from Microsoft Fabric to Microsoft Graph](../../admin/admin-share-power-bi-metadata-microsoft-365-services.md).
-<br>You don't need to use Copilot in Fabric, or have access to an F SKU, to use Copilot in this scenario.
+
+You don't need access to Copilot in Fabric or Fabric capacity to use this integration.
 
 ## Enable Microsoft Copilot in Power BI and Fabric
 
@@ -84,11 +93,11 @@ Fabric administrators can make the experience available to their organization.
 1. Sign in to the [Fabric admin portal](https://app.fabric.microsoft.com/admin-portal).
 1. Select **Tenant settings**.
 1. Verify that **Users can use Copilot and other features powered by Azure OpenAI** is enabled for the intended users.
-1. Enable **Make Microsoft Copilot available in Power BI and Fabric**.
+1. Enable the new **Make Microsoft Copilot available in Power BI and Fabric** tenant setting introduced for this preview. The setting is off by default until December 8, 2026, when the default changes to on. This setting is separate from the existing standalone Power BI Copilot setting.
 1. Apply the setting to the entire organization or to the supported security groups available in the setting.
 1. Select **Apply**.
 
-The setting is off by default during public preview. An administrator can turn it off to remove the Microsoft Copilot entry point from Power BI and Fabric. <br>
+Users outside the enabled security groups don't see the Microsoft Copilot entry point. An administrator can turn the setting off to remove the entry point from Power BI and Fabric. For default-setting changes and retirement dates, see [Transition from standalone Power BI Copilot](#transition-from-standalone-power-bi-copilot).
 
 > [!NOTE]
 > The Power BI Copilot standalone setting remains independent of the Microsoft Copilot tenant setting.  Disabling the standalone tenant setting will remove the entry point in the left nav, the Copilot on Home experience, and the standalone experience in Teams and Mobile.
@@ -102,7 +111,7 @@ The setting is off by default during public preview. An administrator can turn i
 
 After an administrator enables the preview, select the **Microsoft Copilot** entry point in the left navigation pane of Power BI or Fabric.
 
-During the preview, Microsoft Copilot and the standalone Power BI Copilot experience can coexist:
+Until standalone Power BI Copilot retires on January 15, 2027, the two experiences can coexist:
 
 - If both tenant settings are enabled, users see entry points for both experiences. The standalone experience continues to appear on Power BI Home.
 - If Microsoft Copilot is enabled and standalone Power BI Copilot is disabled, users see the Microsoft Copilot entry point but don't see the standalone experience on Home.
@@ -110,15 +119,18 @@ During the preview, Microsoft Copilot and the standalone Power BI Copilot experi
 
 ## Transition from standalone Power BI Copilot
 
-For the time being, standalone Power BI Copilot remains independent from the introduction of this preview. It's not automatically removed when the preview begins. The two experiences coexist during the transition so that organizations have time to evaluate Microsoft Copilot in Power BI and Fabric, prepare users and administrators, and provide feedback. If an organization chooses to disable the classic standalone experience, it removes the experience from the Power BI and Fabric left nav, Teams, and mobile experiences.
+Microsoft Copilot will ultimately replace standalone Power BI Copilot. The preview doesn't immediately remove the standalone experience: the two experiences can coexist during the transition so that you can evaluate the replacement and prepare your users and administrators.
 
-In a future phase:
+The transition follows this schedule:
 
-- The Microsoft Copilot tenant setting will be enabled by default.
-- Microsoft Copilot will become the primary Copilot experience in Power BI and Fabric.
-- Standalone Power BI Copilot will be retired, including Teams and Mobile experiences.
+| Date | Milestone |
+| --- | --- |
+| November 10, 2026 | An admin center notice announces the deprecation of standalone Power BI Copilot, its replacement by Microsoft Copilot, and the date when Microsoft Copilot becomes on by default. |
+| November 17, 2026 | The Power BI Feature Blog for Microsoft Ignite announces details of the deprecation and the Microsoft Copilot replacement. |
+| December 8, 2026 | The standalone Power BI Copilot tenant setting switches to off by default, and **Make Microsoft Copilot available in Power BI and Fabric** switches to on by default. Administrators can re-enable the standalone setting to continue using those experiences until retirement. |
+| January 15, 2027 | Standalone Power BI Copilot and App Copilot are fully retired. Retirement removes the standalone entry point and the standalone experiences in Power BI Home, Teams, and mobile. |
 
-Microsoft will publish the final retirement date and provide administrators with advance notice before standalone Power BI Copilot is removed.
+If you turn off the standalone setting before retirement, the standalone entry point and experiences on Power BI Home, Teams, and mobile are removed. Re-enabling the setting restores those experiences only until January 15, 2027; it doesn't extend the retirement date.
 
 ## Security, permissions, and governance
 
@@ -143,16 +155,92 @@ For more information, see:
 ## Considerations and limitations
 
 - This experience is in preview and might change before general availability.
-- The Microsoft Copilot tenant setting is off by default during the preview.
-- Enabling the setting makes the entry point visible tenant-wide. Licensing and content permissions determine which capabilities each user can use.
+- The Microsoft Copilot tenant setting is off by default until December 8, 2026, when the default changes to on.
+- Enabling the setting makes the entry point visible to users within its configured scope. Licensing and content permissions determine which capabilities each user can use.
 - Users with basic licenses can use Fabric IQ but can't ground responses in organizational Microsoft 365 content through Work IQ.
-- The standalone Power BI Copilot experience remains available during the preview when its separate tenant setting is enabled.
+- The standalone Power BI Copilot experience remains available until January 15, 2027, when its separate tenant setting is enabled. That setting switches to off by default on December 8, 2026.
 - The **Share Fabric data with your Microsoft 365 services** setting affects discovery and recommendations. Turning it off doesn't prevent users from explicitly referencing supported Power BI content by link or name.
 - Copilot answers reflect the data available in the most recent successful semantic model refresh.
 - Copilot responses can be inaccurate. Review generated answers and validate important decisions against the source data.
-- The public preview rolls out progressively to organizations. Fabric administrators choose when to enable the experience for their tenant.
+- Fabric administrators can enable or disable the experience for their tenant and scope access to supported security groups.
 
-For regional and general Copilot requirements, see [Enable and configure Copilot in Microsoft Fabric](../../fundamentals/copilot-enable-fabric.md).
+For this integration's regional requirements, see [Which regions are supported?](#which-regions-are-supported). The capacity requirements for [Copilot in Fabric](../../fundamentals/copilot-enable-fabric.md) don't apply to this integration.
+
+## Frequently asked questions
+
+The following questions cover the transition, licensing, preview availability, billing, administration, and monitoring. For required settings, see [Prerequisites](#prerequisites).
+
+### What is the transition timeline?
+
+| Date | What changes |
+| --- | --- |
+| November 10, 2026 | An admin center notice announces the standalone Power BI Copilot deprecation, the Microsoft Copilot replacement, and the date when Microsoft Copilot becomes on by default. |
+| November 17, 2026 | The Power BI Feature Blog for Microsoft Ignite announces details of the transition. |
+| December 8, 2026 | The standalone Power BI Copilot tenant setting switches to off by default. **Make Microsoft Copilot available in Power BI and Fabric** switches to on by default. Administrators can re-enable standalone Power BI Copilot until retirement. |
+| January 15, 2027 | Standalone Power BI Copilot and App Copilot retire. The standalone entry point and standalone experiences in Power BI Home, Teams, and mobile are removed. Re-enabling the standalone setting doesn't extend this date. |
+
+For more information, see [Transition from standalone Power BI Copilot](#transition-from-standalone-power-bi-copilot).
+
+### Is Copilot in the report pane going away?
+
+No. Copilot in the Power BI report pane isn't retiring as part of this transition. The retirement applies to standalone Power BI Copilot and App Copilot, not the report-pane experience.
+
+### What licenses do I need?
+
+You don't need Copilot (Premium) to use Fabric IQ through the embedded Microsoft Copilot entry points in Power BI and Fabric. Copilot chat (basic) and M365 Copilot (basic) licenses are supported there. To use Fabric IQ in the broader Microsoft Copilot app or web experience, you need Copilot (Premium).
+
+You still need permission and licensed access to the Power BI or Fabric content you use. Your Power BI license, such as Free, Pro, or PPU, doesn't determine your Microsoft Copilot capabilities. This integration doesn't require a Premium workspace or Fabric (F SKU) capacity, and it supports tenants with only Pro workspaces.
+
+### How do starter (basic) and premium capabilities differ?
+
+| Capability | Starter (basic) | Copilot (Premium) |
+| --- | --- | --- |
+| Fabric IQ for supported Power BI and Fabric data. | Available through the embedded Power BI and Fabric entry points only. | Available through the embedded entry points and the broader Microsoft Copilot app and web experience. |
+| Work IQ grounding in organizational emails, meetings, chats, and documents. | Not available. | Available for content you have permission to access. |
+| Model selection. | Limited. | Premium model choices are available. |
+| Cowork and Code tabs. | Not available. | Available where supported by the premium experience. |
+| Request priority. | Requests might be throttled to prioritize premium users. | Requests receive priority over basic usage. |
+
+Content permissions and licensed access to the underlying Power BI or Fabric content apply to both experiences. For more information, see [Licensing and available capabilities](#licensing-and-available-capabilities).
+
+### Are request failures for basic users resolved?
+
+Some requests from users with basic licenses can fail during the preview. Fixes are planned to roll out shortly; the issue isn't yet resolved for all basic users.
+
+### How does this integration affect Fabric capacity and billing?
+
+Embedding Microsoft Copilot in Fabric doesn't introduce a separate charge. The embedded experience follows the same licensing and charging model as the corresponding Microsoft Copilot app or web experience. Copilot Chat usage is covered by the applicable license; Cowork and other pay-as-you-go scenarios retain their standard charging rules.
+
+Neither Chat nor Cowork bills Fabric capacity units (CUs) for DAX generation. Chat uses Fabric large language models (LLMs) without charging customer Fabric CUs for that LLM usage. For Cowork, the calling LLM generates the DAX.
+
+Power BI query execution is separate from DAX generation and works the same way for premium and basic Copilot users. A DAX query is treated like a query that calculates a measure in a report visual:
+
+- If the underlying semantic model is hosted on your Premium or Fabric capacity, query execution consumes that model's capacity as interactive usage.
+- If the underlying semantic model is hosted on shared capacity, the query doesn't introduce an additional customer capacity charge.
+
+Basic users don't need to buy capacity to use this integration. More queries can still add workload, just as ordinary report interactions do. Basic license limits on model selection and other capabilities remain separate from query execution.
+
+### Can I restrict Copilot to specific reports or semantic models?
+
+Yes. You can hide semantic models from Copilot by using the [semantic model Copilot access setting](/power-bi/create-reports/copilot-semantic-models#control-copilot-access-for-semantic-models). This is a model-level setting, not a separate report-level control.
+
+### Which regions are supported?
+
+The integration supports regions with broad Fabric availability, excluding regions that support only Power BI. For the current list, see the **All Fabric workloads** column in [Fabric region availability](../../admin/region-availability.md#all-workloads).
+
+Cross-geography processing requirements still apply to Chat, including in Multi-Geo deployments. See [Prerequisites](#prerequisites) for the required setting for Chat data answering outside the United States or European Union.
+
+### How can I track consumption and usage?
+
+Use the tool that matches what you want to measure:
+
+| What to monitor | Tool |
+| --- | --- |
+| Source capacity compute consumption, operations, and throttling. | [Microsoft Fabric Capacity Metrics app](../../enterprise/metrics-app.md). |
+| Adoption and prompt activity for the report's documented licensed population. | In the Microsoft 365 admin center, go to **Reports** > **Usage** > **Microsoft Copilot**. Don't assume these reports include every basic user. |
+| Copilot interactions for compliance investigations. | Microsoft Purview Audit, when auditing is enabled. For more information, see [Microsoft Copilot data protection and auditing](/microsoft-365/copilot/microsoft-365-copilot-architecture-data-protection-auditing). |
+
+
 
 ## Share feedback
 
