@@ -4,8 +4,8 @@ description: Fabric capacity overview events let you monitor capacity usage in R
 ms.reviewer: geguirgu
 ms.topic: how-to
 ms.date: 04/02/2026
-author: spelluru
-ms.author: spelluru
+author: galir
+ms.author: garezni
 ms.custom: references_regions
 ---
 

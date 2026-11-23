@@ -5,8 +5,8 @@ description: Connect Google Cloud Pub/Sub to Fabric Real-Time hub and start stre
 ms.reviewer: anboisve
 ms.topic: how-to
 ms.date: 04/01/2026
-author: spelluru
-ms.author: spelluru
+author: galir
+ms.author: garezni
 ---
 
 # Get events from Google Cloud Pub/Sub into Real-Time hub

@@ -5,8 +5,8 @@ ms.reviewer: anboisve
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 04/02/2026
-author: spelluru
-ms.author: spelluru
+author: galir
+ms.author: garezni
 ---
 
 # Add Azure SQL Database Change Data Capture (CDC) as source in Real-Time hub
