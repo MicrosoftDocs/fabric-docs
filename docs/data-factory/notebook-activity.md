@@ -39,6 +39,8 @@ Under **Connection**, select the authentication method for the notebook run and 
 
 Select an existing notebook from the **Notebook** dropdown, and optionally specify any parameters to pass to the notebook.
 
+For parameter names, start with an ASCII letter (`A`-`Z` or `a`-`z`) or an underscore (`_`). Use only ASCII letters, digits (`0`-`9`), and underscores for the remaining characters. For example, use `customer_id` or `_run_date`. Don't use spaces, hyphens, periods, line breaks, or non-ASCII characters, such as in `customer id`, `customer-id`, `customer.id`, or `café`. For notebook-variable parameters, match each name exactly in the notebook's parameter cell and the Notebook activity's base parameters. For session-configuration parameters, match the base parameter name to the `parameterName` field in the notebook's `%%configure` cell. This guidance applies to parameter names, not parameter values.
+
 :::image type="content" source="media/notebook-activity/notebook-connection-workspace-parameters.png" alt-text="Screenshot showing the Notebook settings tab highlighting the tab, where to choose a notebook, and where to add parameters.":::
 
 #### Using Fabric Workspace Identity (WI) in the Notebook activity
