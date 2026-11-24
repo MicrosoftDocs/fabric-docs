@@ -4,8 +4,8 @@ description: Azure SQL Managed Instance CDC can stream real-time data changes to
 ms.reviewer: zhenxilin
 ms.topic: how-to
 ms.date: 04/03/2026
-author: spelluru
-ms.author: spelluru
+author: skommajo
+ms.author: skommajosula
 ms.search.form: Source and Destination
 ---
 

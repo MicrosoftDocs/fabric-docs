@@ -5,8 +5,8 @@ description: Learn how to add a Message Queuing Telemetry Transport (MQTT) sourc
 ms.reviewer: xujiang1
 ms.topic: how-to
 ms.date: 06/29/2026
-author: spelluru
-ms.author: spelluru
+author: skommajo
+ms.author: skommajosula
 ms.search.form: Source and Destination
 ms.custom: reference_regions
 ---

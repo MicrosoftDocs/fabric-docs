@@ -2,8 +2,8 @@
 title: Enable Workspace Monitoring for Eventstreams (preview)
 description: Enable workspace monitoring for Eventstreams in Microsoft Fabric. Learn how to set up an Eventhouse and access Eventstream monitoring tables in your workspace.
 #customer intent: As a Fabric workspace admin, I want to enable workspace monitoring for my Eventstreams so that I can track their performance and health.
-author: spelluru
-ms.author: spelluru
+author: skommajo
+ms.author: skommajosula
 ms.reviewer: spelluru
 ms.date: 08/24/2026
 ms.topic: how-to

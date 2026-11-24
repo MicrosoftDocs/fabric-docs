@@ -2,8 +2,8 @@
 title: Choose the right network security feature for Eventstream
 description: Learn how to select the appropriate network security feature for Eventstream, including managed private endpoints, tenant-level private links, and workspace-level private links.
 ms.reviewer: spelluru
-ms.author: spelluru
-author: spelluru
+ms.author: skommajosula
+author: skommajo
 ms.topic: concept-article
 ms.date: 01/16/2025
 ms.search.form: fabric's network security

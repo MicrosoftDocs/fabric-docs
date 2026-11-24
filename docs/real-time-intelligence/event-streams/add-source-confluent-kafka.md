@@ -4,8 +4,8 @@ description: Provides information on adding a Confluent Cloud for Apache Kafka s
 ms.reviewer: xujiang1
 ms.topic: how-to
 ms.date: 06/29/2026
-author: spelluru
-ms.author: spelluru
+author: skommajo
+ms.author: skommajosula
 ms.search.form: Source and Destination
 #Customer intent: I want to learn how to bring events from a Confluent Cloud for Apache Kafka source into Microsoft Fabric.
 ---
