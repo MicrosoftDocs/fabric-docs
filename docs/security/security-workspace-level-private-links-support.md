@@ -1,8 +1,8 @@
 ---
 title: Supported Scenarios for Workspace Private Links
 description: Find information and links for supported and unsupported workspace-level private link scenarios.
-author: msmimart
-ms.author: mimart
+author: teddyberco
+ms.author: tebercov
 ms.reviewer: karthikeyana, wiassaf
 ms.topic: overview
 ms.date: 10/13/2026

@@ -2,8 +2,8 @@
 title: Tutorial - CI/CD for Microsoft Fabric Using Fabric Bulk Import - Export API
 description: This article provides a Fabric CI/CD tutorial on using the Fabric Bulk Import - Export API.
 ms.reviewer: richin
-ms.author: billmath
-author: billmath
+ms.author: nishalit
+author: nimrodshalit
 ms.topic: overview
 ms.custom:
 ms.search.form:

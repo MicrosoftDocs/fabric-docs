@@ -1,8 +1,8 @@
 ---
 title: About workspace IP firewall rules
 description: Learn about using workspace-level IP firewall rules for secure access to a Fabric workspace.
-author: msmimart
-ms.author: mimart
+author: teddyberco
+ms.author: tebercov
 ms.reviewer: karthikeyana
 ms.topic: how-to
 ms.date: 03/09/2026

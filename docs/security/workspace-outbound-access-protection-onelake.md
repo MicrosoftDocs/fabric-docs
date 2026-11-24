@@ -2,8 +2,8 @@
 title: Workspace outbound access protection for OneLake
 description: Learn how to configure Workspace Outbound Access Protection (OAP) to secure your OneLake resources in Microsoft Fabric.
 #customer intent: As a workspace admin, I want to enable outbound access protection for my workspace so that I can secure data connections to only approved destinations.
-author: msmimart
-ms.author: mimart
+author: teddyberco
+ms.author: tebercov
 ms.date: 01/20/2026
 ms.topic: how-to
 ---

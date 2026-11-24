@@ -1,8 +1,8 @@
 ---
 title: Enable workspace outbound access protection
 description: "Learn how to enable the workspace outbound access protection on Microsoft Fabric workspaces."
-author: msmimart
-ms.author: mimart
+author: teddyberco
+ms.author: tebercov
 ms.topic: how-to
 ms.date: 11/10/2026
 

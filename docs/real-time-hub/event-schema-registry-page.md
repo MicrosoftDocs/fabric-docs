@@ -2,8 +2,8 @@
 title: Explore the Event schema registry page in Real-Time hub
 description: Explore the Event schema registry page in Fabric Real-Time hub to find, filter, create, and manage registered event schemas across workspaces.
 #customer intent: As a Fabric user, I want to understand the Event schema registry page so that I can find and manage registered event schemas.
-author: spelluru
-ms.author: spelluru
+author: galir
+ms.author: garezni
 ms.reviewer: majia
 ms.topic: concept-article
 ms.custom: doc-kit-assisted

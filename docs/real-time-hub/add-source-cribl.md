@@ -4,8 +4,8 @@ description: Learn how to add a Cribl source in Fabric Real-Time hub. This featu
 ms.reviewer: xujiang1
 ms.topic: how-to
 ms.date: 04/06/2026
-author: spelluru
-ms.author: spelluru
+author: galir
+ms.author: garezni
 ms.search.form: Source and Destination
 ---
 
