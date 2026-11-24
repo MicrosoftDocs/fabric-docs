@@ -1,5 +1,5 @@
 ---
-title: Workspace outbound access protection for Power BI reports (preview)
+title: Workspace outbound access protection for Power BI reports
 description: Learn how workspace outbound access protection applies to Power BI reports, including exceptions for semantic models in other workspaces.
 author: kgremban
 ms.author: kgremban
@@ -10,14 +10,14 @@ ms.date: 11/08/2026
 ai-usage: ai-assisted
 ---
 
-# Workspace outbound access protection for Power BI reports (preview)
+# Workspace outbound access protection for Power BI reports
 
 Power BI reports in a workspace with outbound access protection (OAP) enabled can query semantic models in the same workspace. They can also query semantic models in other workspaces when a workspace admin explicitly allows each destination workspace through an OAP exception policy. Cross-workspace report-to-model connections are blocked by default.
 
 Most report features are client-side features. They run in the browser, not in the Fabric service, so they fall outside the scope of OAP. These client-side features remain enabled for reports in protected workspaces. OAP doesn't constrain them. Use local network security rules to block unwanted outbound client connections.
 
 > [!NOTE]
-> This feature is in preview. Only interactive Power BI reports (`.pbix`) are supported. Paginated reports, dashboards, and scorecards aren't supported in workspaces with outbound access protection enabled and can't be created in these workspaces.
+> Only interactive Power BI reports (`.pbix`) are supported. Paginated reports, dashboards, and scorecards aren't supported in workspaces with outbound access protection enabled and can't be created in these workspaces.
 
 ## How enforcement works
 
