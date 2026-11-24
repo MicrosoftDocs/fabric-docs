@@ -2,7 +2,7 @@
 title: "Tutorial: Copy job with SAP ABAP Add-On"
 description: Learn how to use SAP ABAP Add-On to copy data from SAP systems in Copy Job.
 ms.reviewer: ukchrist
-ms.date: 09/16/2026
+ms.date: 11/24/2026
 ms.topic: tutorial
 ---
 
@@ -101,6 +101,7 @@ To skip data type conversions and store all columns as `String` in the destinati
 - Copy operation times out after 12 hours (from SAP to OneLake staging) or 24 hours for end-to-end per table. You may encounter error when copying large amount of data.
 - Connecting to SAP Message Server currently isn't supported.
 - When using date type column as watermark in incremental copy, copy job doesn't apply [delayed extraction](incremental-copy-job.md#supported-watermark-column-types). If you run multiple times in a day, incremental data may be retrieved multiple times. Use merge as the update method in the destination setting.
+- Auto-partitioning is not supported for multiple SAP application server instances. Set partitioning to "None" in this case to avoid incomplete data extraction.
 
 ## Related content
 
