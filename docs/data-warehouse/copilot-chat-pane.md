@@ -1,8 +1,8 @@
 ---
 title: "How to Use the Copilot Chat Pane in the Data Warehouse Workload (Preview)"
 description: Learn more about Copilot chat pane in Microsoft Fabric in the Data Warehouse workload, to ask questions specific to your warehouse.
-author: markingmyname
-ms.author: maghan
+author: rakrish75
+ms.author: rakrish
 ms.reviewer: salilkanade, wiassaf
 ms.date: 09/02/2025
 ms.topic: how-to
