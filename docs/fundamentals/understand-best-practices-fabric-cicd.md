@@ -2,8 +2,8 @@
 title: Plan CI/CD for Microsoft Fabric Solutions
 description: Learn how to plan CI/CD for Microsoft Fabric solutions with Git integration, deployment pipelines, variable libraries, automation, and release best practices.
 ms.service: fabric
-ms.author: billmath
-author: billmath
+ms.author: anoopachuta
+author: anoopachuta-docs
 ms.reviewer: NimrodShalit
 ms.topic: concept-article
 ms.date: 05/28/2026
