@@ -1,8 +1,8 @@
 ---
 title: How to Use Copilot Quick Actions in the Data Warehouse Workload (Preview)
 description: Learn more about Copilot quick actions in Microsoft Fabric in the Data Warehouse workload, to explain and fix SQL queries in the SQL query editor.
-author: markingmyname
-ms.author: maghan
+author: rakrish75
+ms.author: rakrish
 ms.reviewer: salilkanade, wiassaf
 ms.date: 09/02/2026
 ms.topic: how-to

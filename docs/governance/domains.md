@@ -1,8 +1,8 @@
 ---
 title: Domains
 description: Learn about domains and how to create and manage them.
-author: msmimart
-ms.author: mimart
+author: sakjai
+ms.author: sakjai
 ms.topic: overview
 ms.custom: sfi-image-nochange
 ms.date: 05/01/2025

@@ -2,8 +2,8 @@
 title: Explore the Business Events Page in Real-Time Hub
 description: Explore the Business events page in Fabric Real-Time hub to define, discover, publish, consume, and respond to business events across Fabric.
 #customer intent: As a Fabric user, I want to understand the Business events page so that I can work with business events in Real-Time hub.
-author: spelluru
-ms.author: spelluru
+author: galir
+ms.author: garezni
 ms.reviewer: majia
 ms.topic: concept-article
 ms.custom: doc-kit-assisted

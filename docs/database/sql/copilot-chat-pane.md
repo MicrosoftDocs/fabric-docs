@@ -1,8 +1,8 @@
 ---
 title: How to Use the Microsoft Copilot Chat Pane in the SQL Database Workload
 description: Learn more about the Microsoft Copilot chat pane in Microsoft Fabric in the SQL database workload.
-author: markingmyname
-ms.author: maghan
+author: sukkaur
+ms.author: sukkaur
 ms.reviewer: yoleichen, wiassaf
 ms.date: 11/18/2025
 ms.topic: how-to

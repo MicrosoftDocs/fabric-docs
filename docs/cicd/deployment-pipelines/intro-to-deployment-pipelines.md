@@ -2,7 +2,7 @@
 title: Overview of Fabric deployment pipelines
 description: An introduction to deployment pipelines in the Fabric Application lifecycle management (ALM) tool. Learn which items can be deployed, the structure of a pipeline, and how to pair items.
 ms.topic: overview
-ms.date: 10/25/2026
+ms.date: 11/24/2026
 ai-usage: ai-assisted
 ms.search.form: Create deployment pipeline, View deployment pipeline, Introduction to Deployment pipelines
 #customer intent: As a developer, I want to learn about deployment pipelines in the Fabric service so that I can manage my development process efficiently.
@@ -82,7 +82,7 @@ When you deploy content from one pipeline stage to another, the copied content c
   * [KQL queryset](../../real-time-intelligence/git-deployment-pipelines.md)
   * [Real-Time Dashboard](../../real-time-intelligence/git-deployment-pipelines.md)
   * [Maps](../../real-time-intelligence/map/about-fabric-maps.md)
-  * [Event Schema Set](../../real-time-intelligence/schema-sets/create-manage-event-schemas.md) *(preview)*
+  * [Event Schema Set](../../real-time-intelligence/schema-sets/create-manage-event-schemas.md)
   * [Anomaly detection](../../real-time-intelligence/multivariate-anomaly-overview.md) *(preview)*
 
 * Data Warehouse items:
@@ -94,15 +94,16 @@ When you deploy content from one pipeline stage to another, the copied content c
 
   * Dashboard *(preview)*
   * Dataflow *(preview)*
-  * [Org app](/power-bi/consumer/org-app-items/org-app-cicd) *(preview)*
+  * [Org app](/power-bi/consumer/org-app-items/org-app-cicd)
   * Paginated report *(preview)*
+  * [Plan](../../iq/plan/overview.md) *(preview)*
   * Report (based on supported semantic models)
   * Semantic model (that originates from a .pbix file and isn't a PUSH dataset) *(preview)*
 
 * Database items:
 
   * [SQL database](../../database/sql/deployment-pipelines.md)
-  * [Cosmos database](../../database/cosmos-db/overview.md) *(preview)*
+  * [Cosmos database](../../database/cosmos-db/overview.md)
 
 * Graph:
   * [Graph Model](../../graph/overview.md)
@@ -113,6 +114,11 @@ When you deploy content from one pipeline stage to another, the copied content c
   * [Variable Library](../variable-library/variable-library-overview.md)
   * [Deployment plan](../deployment-plan/deployment-plan-overview.md) *(preview)*
 
+* Platform items:
+
+  * [Fabric policies](../../governance/fabric-policies-overview.md) *(preview)*
+  * [Workspace monitoring](../../fundamentals/workspace-monitoring-overview.md) *(preview)*
+
 * Industry solutions:
 
   * [Healthcare](/industry/healthcare/healthcare-data-solutions/application-lifecycle-management) *(preview)*
@@ -121,7 +127,6 @@ When you deploy content from one pipeline stage to another, the copied content c
 * IQ (preview) items:
 
   * [Ontology](../../iq/ontology/overview.md) *(preview)*
-  * [Plan](../../iq/plan/overview.md) *(preview)*
 
 ## Pipeline structure
 

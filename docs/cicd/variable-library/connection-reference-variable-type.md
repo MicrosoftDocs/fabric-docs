@@ -1,8 +1,8 @@
 ---
 title: Variable library connection reference
 description: Learn how to use a Microsoft Fabric connection reference variable with variable libraries.
-author: billmath
-ms.author: billmath
+author: nimrodshalit
+ms.author: nishalit
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: overview

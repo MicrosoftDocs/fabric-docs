@@ -4,8 +4,8 @@ description: Add Fabric OneLake events to an eventstream to capture real-time da
 ms.reviewer: xujiang1
 ms.topic: how-to
 ms.date: 04/02/2026
-author: spelluru
-ms.author: spelluru
+author: skommajo
+ms.author: skommajosula
 ms.search.form: Source and Destination
 ---
 

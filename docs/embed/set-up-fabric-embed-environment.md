@@ -1,8 +1,8 @@
 ---
 title: Set up Microsoft Fabric Embed for Real-Time Dashboard items
 description: Set up Microsoft Fabric Embed by preparing a workspace assigned to a Microsoft Fabric capacity, Real-Time Dashboard item, Microsoft Entra ID app, and local development tools.
-author: billmath
-ms.author: billmath
+author: anoopachuta-docs
+ms.author: anoopachuta
 ms.date: 07/01/2026
 ms.topic: how-to
 ms.service: fabric

@@ -2,8 +2,8 @@
 title: Explore the Streaming Data Page in Real-Time Hub
 description: Explore the Streaming data page in Fabric Real-Time hub to find streams and KQL tables, connect data, use samples, and manage streaming data.
 #customer intent: As a Fabric user, I want to understand the Streaming data page so that I can discover and manage streaming data.
-author: spelluru
-ms.author: spelluru
+author: galir
+ms.author: garezni
 ms.reviewer: majia
 ms.topic: concept-article
 ms.custom: doc-kit-assisted

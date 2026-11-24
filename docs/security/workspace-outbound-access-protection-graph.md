@@ -2,8 +2,8 @@
 title: Workspace outbound access protection for graph
 description: Learn how to configure Workspace Outbound Access Protection to secure your graph artifacts.
 #customer intent: As a workspace admin, I want to enable outbound access protection for my workspace so that I can secure Fabric IQ data connections to only approved destinations.
-author: msmimart
-ms.author: mimart
+author: teddyberco
+ms.author: tebercov
 ms.reviewer: wangwilliam
 ms.date: 06/17/2026
 ms.topic: how-to

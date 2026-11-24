@@ -1,8 +1,8 @@
 ---
 title: Sensitivity label inheritance upon update
 description: Learn how sensitivity labels propagate and update when Fabric items are modified, connect to new data sources, or create new lineage relationships.
-author: msmimart
-ms.author: mimart
+author: sakjai
+ms.author: sakjai
 ms.topic: concept-article
 ms.date: 07/13/2026
 ai-usage: ai-assisted

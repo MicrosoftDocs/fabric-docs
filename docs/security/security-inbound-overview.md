@@ -1,8 +1,8 @@
 ---
 title: About inbound access protection in Fabric
 description: Learn about the features in Fabric for protecting inbound access.
-author: msmimart
-ms.author: mimart
+author: teddyberco
+ms.author: tebercov
 ms.reviewer: karthikeyana
 ms.topic: how-to
 ms.date: 01/27/2026

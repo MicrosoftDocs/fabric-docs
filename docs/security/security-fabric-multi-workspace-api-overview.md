@@ -1,8 +1,8 @@
 ---
 title: Microsoft Fabric Multi-Workspace APIs
 description: "This article describes what Fabric multi-workspace APIs are and the kinds of information that they retrieve."
-author: msmimart
-ms.author: mimart
+author: teddyberco
+ms.author: tebercov
 ms.reviewer: karthikeyana
 ms.topic: overview
 ms.date: 08/13/2025

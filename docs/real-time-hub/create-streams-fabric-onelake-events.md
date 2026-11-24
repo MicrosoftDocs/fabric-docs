@@ -4,8 +4,8 @@ description: This article describes how to get OneLake events as a Fabric events
 ms.reviewer: robece
 ms.topic: how-to
 ms.date: 04/02/2026
-author: spelluru
-ms.author: spelluru
+author: galir
+ms.author: garezni
 #customer intent: I want to know how to create eventstreams for OneLake events in Fabric Real-Time hub.
 ---
 

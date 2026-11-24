@@ -1,8 +1,8 @@
 ---
 title: Secure your data
 description: Get started with securing your data in Fabric through the secure tab in the OneLake catalog.
-author: msmimart
-ms.author: mimart
+author: sakjai
+ms.author: sakjai
 ms.reviewer: eloldag, aamerril
 ms.topic: concept-article
 ms.date: 09/05/2025

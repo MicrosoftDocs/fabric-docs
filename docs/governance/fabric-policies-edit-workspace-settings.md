@@ -2,8 +2,8 @@
 title: Govern workspace settings editing across your tenant
 description: Allow workspace settings editing is a tenant-scoped policy that restricts edits to customer-managed keys and networking settings. Discover how it works.
 #customer intent: As a tenant admin, I want to understand how the Allow workspace settings editing policy interacts with tenant settings, so that I know which configuration takes precedence.
-author: msmimart
-ms.author: mimart
+author: sakjai
+ms.author: sakjai
 ms.date: 09/16/2026
 ms.topic: concept-article
 ---

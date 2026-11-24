@@ -1,8 +1,8 @@
 ---
 title: "Privacy, Security, and Responsible AI Use of Microsoft Copilot in Microsoft Fabric in the Data Warehouse Workload"
 description: Learn about privacy, security, and responsible use of Microsoft Copilot in Microsoft Fabric in the Data Warehouse workload.
-author: markingmyname
-ms.author: maghan
+author: anoopachuta-docs
+ms.author: anoopachuta
 ms.reviewer: salilkanade, sngun
 ms.date: 04/09/2025
 ms.update-cycle: 180-days

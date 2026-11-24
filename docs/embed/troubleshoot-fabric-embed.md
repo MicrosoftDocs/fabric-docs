@@ -1,8 +1,8 @@
 ---
 title: Troubleshoot Microsoft Fabric Embed (preview)
 description: Diagnose and resolve common Microsoft Fabric Embed issues, including a Real-Time Dashboard that doesn't render, authentication and token errors, permission and consent problems, and unsupported preview scenarios.
-author: billmath
-ms.author: billmath
+author: anoopachuta-docs
+ms.author: anoopachuta
 ms.topic: troubleshooting
 ms.date: 07/01/2026
 ms.service: fabric

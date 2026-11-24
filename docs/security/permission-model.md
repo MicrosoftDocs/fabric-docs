@@ -1,8 +1,8 @@
 ---
 title: Permission model
 description: Learn how permissions work in Microsoft Fabric.
-author: msmimart
-ms.author: mimart
+author: teddyberco
+ms.author: tebercov
 ms.topic: overview
 ms.date: 05/22/2025
 ---

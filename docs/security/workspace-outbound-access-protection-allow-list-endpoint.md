@@ -1,8 +1,8 @@
 ---
 title: Create an allow list using managed private endpoints
 description: "Learn how to create an allow list using managed private endpoints on Microsoft Fabric workspaces."
-author: msmimart
-ms.author: mimart
+author: teddyberco
+ms.author: tebercov
 ms.topic: how-to
 ms.date: 12/01/2025
 

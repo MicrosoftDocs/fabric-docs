@@ -2,8 +2,8 @@
 title: Get Started With Fabric Real-Time Hub
 description: Get started with Fabric Real-Time hub and explore its pages for streaming data, data sources, events, Activator rules, and registered event schemas.
 #customer intent: As a new Fabric user, I want to find and open the Real-Time hub so that I can start streaming and monitoring data.
-author: spelluru
-ms.author: spelluru
+author: galir
+ms.author: garezni
 ms.reviewer: majia
 ms.topic: concept-article
 ms.custom: doc-kit-assisted
