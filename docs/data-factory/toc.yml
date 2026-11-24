@@ -23,6 +23,8 @@
             href: pricing-copy-job.md
           - name: Pricing Apache Airflow job
             href: pricing-apache-airflow-job.md
+          - name: Pricing dbt job
+            href: dbt-job-pricing.md
           - name: Pricing examples
             items: 
               - name: Pipelines
@@ -1071,14 +1073,19 @@
                 items:
                   - name: Excel
                     href: dataflow-gen2-document-builder-excel.md
+                  - name: HTML
+                    href: dataflow-document-builder-html.md
               - name: Advanced edit for data destination queries
                 href: dataflow-gen2-advanced-edit-data-destinations.md
+              - name: HTML advanced data destination (preview)
+                href: dataflow-data-destinations-html-advanced.md
               - name: Excel advanced data destination
                 href: dataflow-gen2-data-destinations-excel-advanced.md
-              - name: Style Excel documents and add hyperlinks with navigation tables
-                href: dataflow-gen2-data-destinations-excel-styles.md
-              - name: Add conditional formatting to Excel documents with navigation tables
-                href: dataflow-gen2-data-destinations-excel-conditional-formatting.md
+                items:
+                  - name: Style Excel documents and add hyperlinks with navigation tables
+                    href: dataflow-gen2-data-destinations-excel-styles.md
+                  - name: Add conditional formatting to Excel documents with navigation tables
+                    href: dataflow-gen2-data-destinations-excel-conditional-formatting.md
           - name: Send email from Dataflow Gen2 (preview)
             href: send-email-dataflow-gen2.md
           - name: Back up query data to a lakehouse (preview)
@@ -1107,7 +1114,7 @@
                 href: dataflow-gen2-variable-library-integration.md    
               - name: Data visuals (Preview)
                 href: dataflow-gen2-data-visuals.md
-          - name: Mapping data flow transforms (Preview)
+          - name: Mapping data flow transforms
             href: dataflow-gen2-mapping-data-flows-transforms.md
           - name: Dataflow refresh
             href: dataflow-gen2-refresh.md
@@ -1173,10 +1180,14 @@
           href: dbt-job-how-to.md
         - name: Configure a dbt job
           href: dbt-job-configure.md
+        - name: Generate a dbt starter project from a Fabric warehouse or lakehouse (Preview)
+          href: generate-dbt-starter-project-from-fabric-source.md
         - name: Connect to Azure HorizonDB
           href: dbt-connect-azure-horizondb.md
         - name: Run dbt projects from GitHub
           href: dbt-run-github.md
+        - name: Run dbt projects from Azure DevOps
+          href: dbt-run-azure-devops.md
         - name: dbt job logs with OneLake
           href: dbt-job-onelake-logs.md
         - name: dbt job activity in a pipeline

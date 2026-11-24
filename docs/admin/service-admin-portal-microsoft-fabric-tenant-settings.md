@@ -59,12 +59,6 @@ This setting allows users to use statistical detection algorithms to detect anom
 
 For more information, see [Detect anomalies in Real-Time Intelligence](https://aka.ms/AD_docs).
 
-## Users can create dbt job items (preview)
-
-Users can import, author, and execute dbt projects directly within Fabric, enabling SQL-based transformation workflows without setting up a separate CLI environment.
-
-For more information, see [dbt job items in Fabric](https://aka.ms/dbtjob_docs).
-
 ## Enable operations agents
 
 Users can create operations agents that use Azure OpenAI to create operations plans and recommend actions in response to real-time data. By turning on this setting, you agree to the preview terms for this feature. This setting can be managed at both the tenant and the capacity levels.

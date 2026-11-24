@@ -142,7 +142,7 @@ In [!INCLUDE [product-name](../includes/product-name.md)], there are multiple ty
     - Name begins with `ACE-AverageColumnLength_`.
     - Contents cannot be viewed and are nonactionable by user.
 - Table-based cardinality statistics
-    - Created per table needing cardinality estimation at querytime.
+   - Created per table needing cardinality estimation at querytime, only if other rowcount metadata is not available.
     - These objects contain an estimate of the rowcount of a table.
     - Named `ACE-Cardinality`.
     - Contents cannot be viewed and are nonactionable by user.

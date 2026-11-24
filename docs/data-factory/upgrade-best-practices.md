@@ -3,7 +3,7 @@ title: Upgrade Best Practices for Azure Data Factory to Fabric Data Factory
 description: Discover best practices for ADF-to-Fabric upgrades, including inventorying assets, assessing feature parity, and choosing the right upgrade path.
 #customer intent: As an Azure Data Factory customer I want to explore best practices for upgrading to Fabric Data Factory, so I can improve my data integration strategy and ensure a smooth and efficient transition.
 ms.reviewer: makromer
-ms.date: 10/05/2026
+ms.date: 11/06/2026
 ms.topic: concept-article
 ai-usage: ai-assisted
 ---
@@ -19,7 +19,7 @@ Before upgrading, evaluate what to reuse, translate, or redesign. Follow these s
 1. Identify authentication patterns, such as managed identity or key-based authentication.
 1. Review network requirements, including private endpoints and gateways.
 1. Map scheduling and trigger semantics, and align monitoring and alerting setups.
-1. Compare ADF features with their Fabric counterparts. For pipelines containing Mapping Data Flows, assess whether they can be upgraded to MDF transforms in Dataflow Gen2 and identify any unsupported connectors, transformations, authentication methods, networking configurations, or other preview limitations. Also note gaps for capabilities such as SSIS.
+1. Compare ADF features with their Fabric counterparts. For pipelines containing Mapping Data Flows, assess whether they can be upgraded to MDF transforms in Dataflow Gen2 and identify any unsupported connectors, transformations, authentication methods, networking configurations, or other MDF transform limitations. Also note gaps for capabilities such as SSIS.
 1. Define nonfunctional targets, such as SLAs, throughput, cost limits, and observability.
 1. Build a test scenario with sample datasets and expected outputs to objectively compare ADF and Fabric runs.
 1. Plan for secrets rotation, naming conventions, and workspace taxonomy so your migration improves - not just reproduces - your current data integration strategy.
@@ -69,6 +69,9 @@ When migrating:
 - Recreate SHIRs as OPDGs.
 - Replace VNet-enabled Azure IRs with Virtual Network Data Gateways.
 
+> [!IMPORTANT]
+> This gateway migration guidance doesn't apply to MDF transforms. On-premises data gateways (OPDGs), virtual network (VNet) data gateways, and Managed VNet connectivity through managed private endpoints (MPEs) aren't supported for MDF transforms at general availability. Review the [MDF transform limitations](dataflow-gen2-mapping-data-flows-transforms.md#limitations) before upgrading Mapping Data Flows.
+
 ## Best practices for migrating ADF pipeline activities to Fabric
 
 All core activities in Azure Data Factory (ADF), such as Copy, Lookup, Stored Procedure/SQL Script, Web, and Control flow, have direct equivalents in Fabric. However, there are some differences in properties, expression syntax, and limits. When migrating, review the following:
@@ -85,9 +88,9 @@ For more information, see [Activity continuity between Azure Data Factory and Fa
 
 ## Best practices for upgrading Mapping Data Flows
 
-The built-in upgrade experience supports eligible Azure Data Factory and Azure Synapse Analytics pipelines that contain Mapping Data Flows. Supported Mapping Data Flows are upgraded to [Mapping Data Flow (MDF) transforms in Dataflow Gen2](dataflow-gen2-mapping-data-flows-transforms.md), preserving their transformation logic and Spark-based execution model. This capability is currently in preview.
+The built-in upgrade experience supports eligible Azure Data Factory and Azure Synapse Analytics pipelines that contain Mapping Data Flows. Supported Mapping Data Flows are upgraded to [Mapping Data Flow (MDF) transforms in Dataflow Gen2](dataflow-gen2-mapping-data-flows-transforms.md), preserving their transformation logic and Spark-based execution model. MDF transforms and the built-in Mapping Data Flow upgrade experience are generally available.
 
-Before upgrading, review the supported connectors, transformations, authentication methods, networking requirements, and [current limitations](dataflow-gen2-mapping-data-flows-transforms.md#limitations). Current preview limitations include flowlets, Data Flow Library, user-defined functions, Managed Virtual Network connectivity, and direct Dataflow Gen2 execution.
+Before upgrading, review the supported connectors, transformations, authentication methods, networking requirements, and [current limitations](dataflow-gen2-mapping-data-flows-transforms.md#limitations). Current limitations include flowlets, Data Flow Library, user-defined functions, Managed VNet connectivity through MPEs, on-premises and VNet data gateways, and direct Dataflow Gen2 execution.
 
 For Mapping Data Flows that use unsupported capabilities, consider redesigning the transformation by using:
 

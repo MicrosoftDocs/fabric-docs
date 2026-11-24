@@ -169,5 +169,5 @@ Fabric pipelines manage workflow dependencies, parameters, failure paths, notifi
 
 ## Related content
 
-- [dbt job in Fabric (preview)](dbt-job-overview.md)
+- [dbt job in Fabric](dbt-job-overview.md)
 - [Orchestrate a dbt job in a Fabric pipeline](dbt-job-activity.md)

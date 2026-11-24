@@ -4,7 +4,7 @@ description: Learn how workspace-level private links work with Azure, Fabric, an
 author: george-guirguis
 ms.author: geguirgu
 ms.topic: how-to
-ms.date: 08/26/2026
+ms.date: 10/13/2026
 ai-usage: ai-assisted
 
 #customer intent: As an admin, I want to understand how workspace-level private link configurations affect the consumption of Azure, Fabric, and Business events so that I can securely configure event-driven workflows while maintaining private network access.
@@ -62,7 +62,7 @@ When you configure a consumer to receive Azure Blob Storage events, an Eventstre
 For example, suppose you create an Eventstream item for Azure Blob Storage events in **Workspace A**, and an Activator rule in **Workspace B** consumes those events. Workspace A is the source workspace because it contains the Eventstream item that represents the Azure source, and Workspace B is the consumer workspace because you create the Activator rule there. If Workspace A blocks public network access, the Activator rule in Workspace B can't consume those events unless you establish a private link from Workspace B's network to Workspace A.
 
 > [!NOTE]
-> Azure events are also subject to tenant-level private link restrictions. Even if workspace-level private links allow the connection, Azure event delivery is still blocked if the **Block Public Internet Access** tenant setting is enabled. For more information, see [Tenant private links for Azure and Fabric events](private-links-real-time-events.md).
+> Azure events are also subject to tenant-level private link restrictions. Even if workspace-level private links allow the connection, Azure event delivery is blocked by default if the **Block Public Internet Access** tenant setting is enabled. If the Event Grid system topic and Fabric workspace are in the same Microsoft Entra tenant, you can allow delivery by adding the system topic to the workspace's Resource Instance Rules. For more information, see [Tenant private links for Azure and Fabric events](private-links-real-time-events.md).
 
 ## Configuration changes after consumer creation
 

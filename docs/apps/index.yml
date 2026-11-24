@@ -18,6 +18,8 @@ landingContent:
         links:
           - text: Create your first app
             url: create-app.md
+          - text: Create an app in Visual Studio Code
+            url: create-app-with-vs-code.md
           - text: Create and deploy an app with the CLI
             url: create-app-with-cli.md
           - text: Create an app connected to a semantic model
@@ -29,6 +31,10 @@ landingContent:
 
   - title: Build with agents
     linkLists:
+      - linkListType: concept
+        links:
+          - text: Develop apps with AI agents
+            url: ai-agent-development-for-apps.md
       - linkListType: quickstart
         links:
           - text: Create an app with GitHub Copilot
@@ -54,6 +60,13 @@ landingContent:
             url: read-write-data-graphql.md
           - text: Apply and verify schema changes
             url: apply-schema-changes.md
+
+  - title: Storage
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Store and manage files
+            url: storage.md
 
   - title: Functions
     linkLists:
@@ -92,6 +105,10 @@ landingContent:
 
   - title: Explore more
     linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Share a Fabric app
+            url: share-app.md
       - linkListType: reference
         links:
           - text: Rayfin CLI reference

@@ -1,8 +1,8 @@
 ---
 title: Workspace outbound access protection for data warehouse workloads
 description: "This article describes workspace outbound access protection for data warehouse workloads."
-author: msmimart
-ms.author: mimart
+author: teddyberco
+ms.author: tebercov
 ms.topic: overview
 ms.date: 05/08/2026
 

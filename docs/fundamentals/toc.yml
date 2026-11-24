@@ -43,7 +43,7 @@ items:
   - name: Find items with Fabric Home
     href: fabric-home.md
   - name: Find items with OneLake catalog
-    href: ../governance/onelake-catalog.md
+    href: ../governance/onelake-catalog-overview.md
   - name: Complete end-to-end tutorials
     href: end-to-end-tutorials.md
 
@@ -88,6 +88,8 @@ items:
     href: apply-sensitivity-labels.md
   - name: Schedule recurring jobs
     href: job-scheduler.md
+  - name: 2026 Canadian Time Zone Updates
+    href: canadian-time-zone-changes.md
   - name: Delta Lake in Microsoft Fabric overview
     href: delta-lake-overview.md
   - name: Use Delta Lake interoperability
@@ -122,6 +124,21 @@ items:
     - name: Build reports
       href: building-reports.md
       
+
+- name: Semantic views (preview)
+  items:
+  - name: Overview
+    href: semantic-views-overview.md
+  - name: Create a semantic view
+    href: semantic-views-create.md
+  - name: YAML syntax reference
+    href: semantic-views-yaml-reference.md
+  - name: Publish a semantic view
+    href: semantic-views-publish.md
+  - name: Consume semantic views
+    href: semantic-views-consume.md
+  - name: Tutorial - Build a semantic view
+    href: semantic-views-tutorial.md
 
 - name: Use Copilot and AI
   items:
@@ -168,7 +185,7 @@ items:
   - name: Use Copilot across experiences
     items:
     - name: Use Copilot for Data Factory
-      href: copilot-fabric-data-factory.md?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/breadcrumb/toc.json
+      href: ../data-factory/copilot-fabric-data-factory.md?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/breadcrumb/toc.json
     - name: Use Copilot for Data Warehouse
       href: ../data-warehouse/copilot.md?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/breadcrumb/toc.json
     - name: Use Copilot for Real-Time Intelligence

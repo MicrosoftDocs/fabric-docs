@@ -1,15 +1,17 @@
 ---
 title: Anomaly Detection in Real-Time Intelligence
 description: Learn how to set up and configure anomaly detection for your real-time data streams using Microsoft Fabric Real-Time Intelligence.
-ms.reviewer: tessarhurr, hzargari-ms
+ms.reviewer: tessarhurr, hzargari-ms, willthom
 ms.topic: how-to
 ms.subservice: rti-anomaly-detector
-ms.date: 08/12/2026
+ms.date: 11/10/2026
 ms.search.form: Anomaly Detection How To
 ai-usage: ai-assisted
 ---
 
 # Anomaly detection in Real-Time Intelligence (Preview)
+
+[!INCLUDE [anomaly-detector-deprecation-note](../includes/anomaly-detector-deprecation-note.md)]
 
 Anomaly detection in Real-Time Intelligence helps you detect unusual patterns and outliers in eventhouse tables without copying data. Use it when you need to spot unexpected behavior in streaming or historical data and respond before it affects downstream operations.
 
@@ -18,7 +20,6 @@ In this article, you enable required features, start anomaly detection from one 
 Anomaly detection also supports Eventhouse shortcut tables, so you can analyze data without first copying or moving it into a dedicated Eventhouse table. You can create anomaly detectors directly on supported shortcut tables and use the same analysis, model recommendations, and continuous monitoring experiences available for native Eventhouse data sources. This support extends anomaly detection to external and federated data sources that are already connected through Eventhouse shortcuts, so you can move from connecting data to detecting issues with less setup and duplication.
 
 
-[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
 ## Prerequisites
 

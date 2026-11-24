@@ -35,6 +35,7 @@ The `rayfin up` command performs these steps in order:
 1. Retrieves the publishable key from the remote service.
 1. Syncs runtime settings from your `rayfin.yml` to the remote service, including auth configuration and service flags.
 1. Applies the database schema generated from your TypeScript data model decorators.
+1. Applies registered storage folders and their permissions if Storage is enabled.
 1. Builds and deploys static content if `staticHosting` is enabled in `rayfin.yml`—runs your build command, packages the output folder into a ZIP, and uploads it.
 1. Persists deployment details to `rayfin.yml` and `.env.fabric-*` files for subsequent deploys.
 
@@ -83,6 +84,20 @@ npx rayfin up db apply --force
 > [!CAUTION]
 > Using `--force` can cause data loss. Review the listed operations carefully and confirm you accept the consequences before proceeding.
 
+## Apply storage changes
+
+When Storage is enabled, a full `npx rayfin up` automatically applies the registered folder declarations.
+Check the deployment output for storage warnings.
+For a retry or a storage-only configuration change to an existing deployment, run:
+
+```bash
+npx rayfin up storage apply
+```
+
+Storage requires the Data service and runs remotely, including during development.
+You don't need a separate storage apply after a successful full deployment.
+For folder declarations, permissions, file operations, and destructive removal behavior, see [Store and manage files](storage.md).
+
 ## Redeploy static content
 
 When you only changed frontend code, redeploy static content independently for a faster iteration cycle:
@@ -121,8 +136,9 @@ For targeted updates, use the subcommands:
 
 | Command | What it updates |
 | --- | --- |
-| `npx rayfin up` | Everything: settings, database, and static content. |
+| `npx rayfin up` | Settings and enabled app services, including database, storage, and static content. |
 | `npx rayfin up db apply` | Database schema only. |
+| `npx rayfin up storage apply` | Storage folder configuration only. |
 | `npx rayfin up staticapp deploy` | Static content only. |
 
 ## Troubleshoot deployment issues
@@ -165,4 +181,5 @@ For any contributors of the Fabric app, in order to deploy a Fabric app, they ne
 
 - [Create your first Fabric Apps project](create-app.md)
 - [Define data models with TypeScript decorators](data-models.md)
+- [Store and manage files](storage.md)
 - [Understand Fabric Apps project structure](project-structure.md)

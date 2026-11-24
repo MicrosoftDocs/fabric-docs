@@ -3,7 +3,8 @@ title: Refresh Materialized Lake Views in a Lakehouse
 description: Learn how to refresh a materialized lake view in a lakehouse in Microsoft Fabric.
 ms.reviewer: bsankaran, sairamyeturi, nijelsf, hgowrisankar
 ms.topic: how-to
-ms.date: 09/21/2026
+ms.date: 11/05/2026
+ai-usage: ai-assisted
 # customer intent: As a data engineer, I want to refresh materialized lake views in a lakehouse so that I can ensure that the data is up to date and optimize query performance.
 ---
 
@@ -12,6 +13,24 @@ ms.date: 09/21/2026
 Each time a scheduled refresh runs for your materialized lake views, Fabric determines the best strategy to use—no refresh, incremental, or full—based on what changed in the source data. This behavior is called *optimal refresh*, and it helps you keep your materialized lake views up to date while minimizing compute costs and refresh time.
 
 This article explains how optimal refresh works, what each strategy does, and how to switch to full refresh mode when needed.
+
+To review a saved definition with
+[Skills for Fabric](../../fundamentals/skills-for-fabric-install.md), replace
+the placeholders and use this prompt:
+
+```copilot
+Use Skills for Fabric. In workspace <workspace-name>, read
+<source-notebook-name> via the Notebook API. Find the full SQL definition for
+<schema-name>.<materialized-lake-view-name> in destination lakehouse
+<destination-lakehouse-name>, including data quality constraints. Show the
+cell and SQL; ask me to choose if several match.
+
+Resolve sources from notebook bindings and SQL references; qualify as needed.
+Check best practices, Delta format, CDF, append-only changes, and supported
+SQL. Explain blockers and suggest only changes that preserve results and data
+quality. Show revised SQL and explain edits. Flag unverified checks and when a
+full refresh is needed. Don't run the notebook or change items or settings.
+```
 
 > [!NOTE]
 > Optimal refresh isn't supported in the following scenarios:
@@ -133,7 +152,10 @@ Incremental refresh works when your materialized lake view definition uses only 
 | FROM | Supports Delta tables and materialized lake views. Subqueries and CTEs work if they use only the supported clauses. |
 | WHERE | Only deterministic built-in functions are supported. |
 | INNER JOIN | Supported. |
-| LEFT OUTER JOIN / LEFT SEMI JOIN | Supported. Incremental refresh works only if the right-side table remains unchanged during the refresh cycle. Any change to the right-side table triggers a full refresh. |
+| LEFT OUTER JOIN / LEFT SEMI JOIN / ANTI JOIN | Supported. Incremental refresh works only if the right-side table remains unchanged during the refresh cycle. Any change to the right-side table triggers a full refresh. |
+| RIGHT OUTER JOIN | Supported. Incremental refresh works only if the left-side table remains unchanged during the refresh cycle. Any change to the left-side table triggers a full refresh. |
+| CROSS JOIN | Supported. |
+| ORDER BY| Supported. |
 | GROUP BY / aggregates | Supported. Use of **Aggregates** (`AVG()`, `STDDEV()`, and others) requires that every source table is partitioned and that partition column is included in the `GROUP BY` clause of the MLV query - this requirement lets Fabric incrementally recompute only the affected partitions. <br>**`SUM()`,  `MIN()`, `MAX()`, and `COUNT()` (without DISTINCT)** are a **special case**: they support incremental refresh without the partitioning requirement. <br> Mixing other aggregate functions with `SUM()`, `COUNT()`, `MIN()`, and `MAX()` in the same query (for example, `SELECT SUM(amount), AVG(price) ...`) requires the partitioning condition for the whole query; otherwise, Fabric falls back to full refresh. `GROUP BY` columns must appear in the `SELECT` list.|
 | UNION ALL | Supported. |
 | WITH | Common table expressions (CTEs) if they use only supported clauses. |

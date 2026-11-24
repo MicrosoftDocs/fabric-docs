@@ -1,9 +1,9 @@
 ---
 title: What Is MCP in Real-Time Intelligence?
-description: Learn about Model Context Protocol (MCP) in Real-Time Intelligence. MCP enables AI agents to interact with eventhouses and Activator by using natural language.
+description: Learn how Model Context Protocol (MCP) enables AI agents to interact with eventhouses, Activator, and operations agents in Real-Time Intelligence.
 ms.reviewer: sharmaanshul
 ms.topic: overview 
-ms.date: 08/03/2026
+ms.date: 10/21/2026
 ms.search.form: MCP, RTI, AI
 ms.collection: ce-skilling-ai-copilot
 ai-usage: ai-assisted
@@ -51,6 +51,7 @@ For more information, see:
 
 - [Get started with the remote MCP server for eventhouses](mcp-remote-eventhouse.md)
 - [Get started with the remote MCP server for Activator](mcp-remote-activator.md)
+- [Get started with the remote MCP server for operations agents](mcp-remote-operations-agent.md)
 
 ## When to use local vs. remote servers
 
@@ -108,4 +109,5 @@ The MCP server might be installed with, be used with, and share data with client
 - [Get started with the local MCP server for Real-Time Intelligence](mcp-local-server.md)
 - [Get started with the remote MCP server for eventhouses](mcp-remote-eventhouse.md)
 - [Get started with the remote MCP server for Activator](mcp-remote-activator.md)
+- [Get started with the remote MCP server for operations agents](mcp-remote-operations-agent.md)
 - [Model Context Protocol (MCP) overview](https://modelcontextprotocol.io/introduction)

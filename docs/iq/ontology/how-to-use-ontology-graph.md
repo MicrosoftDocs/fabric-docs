@@ -1,7 +1,7 @@
 ---
 title: Materialize an Ontology Graph (preview)
 description: Learn how to materialize a graph from an ontology (preview) by selecting eligible entities and relationships, then explore connected data insights.
-ms.date: 09/18/2026
+ms.date: 11/09/2026
 ms.topic: how-to
 ai-usage: ai-assisted
 ---
@@ -38,44 +38,48 @@ The following video gives a quick look into how graph integrates into ontology t
 
 To use graph in your ontology, opt in to the materialized graph.
 
-1. From the top ribbon of your ontology Home screen, select **Manage graph**.
+1. From the ribbon of your ontology Home screen, select **Home > Manage > Graph**.
 
-    :::image type="content" source="media/how-to-use-ontology-graph/manage-graph.png" alt-text="Screenshot of selecting manage graph in the ontology." lightbox="media/how-to-use-ontology-graph/manage-graph.png":::
+    :::image type="content" source="media/how-to-use-ontology-graph/manage-graph.png" alt-text="Screenshot of the Graph option in the Manage menu." lightbox="media/how-to-use-ontology-graph/manage-graph.png":::
 
-1. The **Configure Graph** page shows all entities that you can project into the graph, alongside a preview of the schema graph and the selected nodes and edges to materialize. On this screen, you can decide whether the graph should include the full ontology or a focused subset of entity types, and select which entity types to project as nodes in the graph. When you expand an entity, you see the relationships going out and coming in to connect the entity with other entities.
+1. On the **Review validation** page, wait for validation to finish. Review each entity's **Status**. For an ineligible entity, select **Ineligible** to review the validation details. Select **Select entities**.
 
-    :::image type="content" source="media/how-to-use-ontology-graph/configure-graph.png" alt-text="Screenshot of selecting entity types to project to the graph." lightbox="media/how-to-use-ontology-graph/configure-graph.png":::
+1. On **Choose what to project**, select the eligible entity types and relationships that you need. Expand an entity type to review its relationships. The **Preview** pane shows the selected nodes and edges.
+
+    :::image type="content" source="media/how-to-use-ontology-graph/configure-graph.png" alt-text="Screenshot of selecting Product, Supplier, and suppliedBy for a focused graph projection." lightbox="media/how-to-use-ontology-graph/configure-graph.png":::
 
     >[!NOTE]
     >Some entities and relationships can't be selected due to graph [limitations](#limitations). The **Status** column in the **Entities** pane indicates eligibility.
 
     When you finish selecting entities, select **Continue**.
 
-1. On the **Projection Summary** page, review the entities to add in the **Preview** pane. Confirm the selections, and then select **Materialize** to begin the graph materialization process and load the data into the materialized graph. Depending on the volume of source data, the process might take several minutes to several hours to complete.
+1. On the **Projection summary** page, review the selected subgraph in the **Preview** pane. Select **Materialize** to create the graph and load its data. Depending on the volume of source data, the process might take several minutes to several hours to complete.
+
+1. Check **Materialization status**. Wait for **Graph materialized** and a **Complete** refresh status before querying the graph.
 
 ## Access the materialized graph
 
-To access the graph after it's materialized, either...
+Open the graph model from your Fabric workspace after materialization completes.
 
-* Open the queryset view inside ontology by selecting **Explore graph** from the ontology ribbon.
+1. In your workspace, open the graph model associated with your ontology.
 
-    :::image type="content" source="media/how-to-use-ontology-graph/explore-graph.png" alt-text="Screenshot of selecting explore graph in the ontology." lightbox="media/how-to-use-ontology-graph/explore-graph.png":::
+    :::image type="content" source="media/how-to-use-ontology-graph/workspace.png" alt-text="Screenshot of the graph model associated with an ontology in the workspace." lightbox="media/how-to-use-ontology-graph/workspace.png":::
 
-    On the right side of the queryset, select the puzzle piece icon to expand the **Components** pane. The Components pane shows the list of nodes and edges that are available in your graph.
+1. Select **Query > Query now** to open the graph query experience. To create a saved queryset, select **Query > Create queryset** instead.
+
+    :::image type="content" source="media/how-to-use-ontology-graph/explore-graph.png" alt-text="Screenshot of Query now and Create queryset in the graph model Query menu." lightbox="media/how-to-use-ontology-graph/explore-graph.png":::
+
+1. Expand the **Components** pane to review the nodes and edges available in your graph.
 
     :::image type="content" source="media/how-to-use-ontology-graph/components.png" alt-text="Screenshot of the Components pane." lightbox="media/how-to-use-ontology-graph/components.png":::
 
-* Open the graph model directly from your Fabric workspace.
-
-    :::image type="content" source="media/how-to-use-ontology-graph/workspace.png" alt-text="Screenshot of opening the graph model directly from the workspace." lightbox="media/how-to-use-ontology-graph/workspace.png":::
-
-    This method opens the graph as an independent graph item. For more information about exploring the graph in this view, see the [Graph in Microsoft Fabric documentation](../../graph/overview.md).
+For more information about exploring the independent graph item, see the [Graph in Microsoft Fabric documentation](../../graph/overview.md).
 
 ## Explore graph features
 
-After the graph is materialized, you can explore it inside ontology through querysets. A queryset can contain multiple queries, and you can save it as a single Fabric item to share with other users.
+After the graph is materialized, you can explore it through querysets. A queryset can contain multiple queries, and you can save it as a single Fabric item to share with other users.
 
-From the queryset view inside ontology, use the following graph features in any order to build querysets and explore your graph contents.
+From the queryset view, use the following graph features in any order to build querysets and explore your graph contents.
 
 * Select **Add a node** in the center canvas to select a starting node and start building a query. Expand it to discover connected nodes.
 
@@ -93,44 +97,48 @@ From the queryset view inside ontology, use the following graph features in any 
 
     :::image type="content" source="media/how-to-use-ontology-graph/path-query.png" alt-text="Screenshot of building a path query with a start node, direction, and end node." lightbox="media/how-to-use-ontology-graph/path-query.png":::
 
-    Select **Run** to run the query and render the result in both the query result canvas and the path results pane.
+    Select **Run query** to run the query and render the result in both the query result canvas and the path results pane.
 
     :::image type="content" source="media/how-to-use-ontology-graph/path-query-results.png" alt-text="Screenshot of the path query results." lightbox="media/how-to-use-ontology-graph/path-query-results.png":::
 
 ## Manage the materialized graph
 
-When you save new changes to the ontology, select **Manage graph** in the ontology ribbon to manage and update the projection of the materialized graph. The **Configure Graph** page opens.
+When you save changes to the ontology, select **Home** > **Manage** > **Graph** to review and update the materialized graph projection.
 
 :::image type="content" source="media/how-to-use-ontology-graph/configure-graph-update.png" alt-text="Screenshot of the Configure Graph page showing entity eligibility and usage status." lightbox="media/how-to-use-ontology-graph/configure-graph-update.png":::
 
 In the **Configure Graph** page, complete these actions in any order to update your graph as needed.
 
-* Review the **Entity usage** section, which shows the projection status with the number of entities in each category: materialized, changed since the last update, removed from the ontology, and unused.
+* Review **Materialization status**, which shows the counts of materialized, changed, removed, and unused nodes and edges.
 
-* Review the **Entities** section and check that each selected entity shows an **Eligible** status. Select or deselect entities as needed.
+* Review the **Entities** section and check that each selected entity shows an **Eligible** status.
 
-* Use **Select entities** to enable edit mode for the graph projection with entity and relationship selection.
+* Select **Select entities** to change the projected entities and relationships.
 
 >[!NOTE]
->You can only manage the entities and relationships included in the graph by accessing the graph through the **Manage graph** button in ontology. If you instead open the independent graph item from your Fabric workspace, you can view the ontology graph, but not edit it.
+>Manage the projected entities and relationships through **Home > Manage > Graph** in ontology. The independent graph model also provides **Manage in Ontology** to return to the ontology.
 
 ## Refresh the graph model
 
-This section describes how and when your bound data stays up to date in your ontology (preview) item.
+Schema updates and data refresh serve different purposes. If upstream columns change, review your ontology's data bindings and update the schema as needed. The [ontology agent](how-to-use-ontology-agent.md) can help you review schema changes.
 
-Downstream experiences automatically refresh whenever you make changes to your ontology schema. This feature ensures that whenever you add, edit, or remove any ontology element like properties, types, or relationships, the system re-ingests all currently bound data to keep your downstream experiences in sync with the latest schema adjustments.
+If source rows are added, updated, or deleted, refresh the materialized graph to load the latest data. Use the graph refresh controls rather than an agent request to trigger the refresh.
 
-However, if there are changes to the external data source that feeds your ontology (for example, if new records are added, updated, or deleted in the upstream system), the ontology doesn't know about these changes unless you explicitly inform it. In this case, graph views might display stale data until a new ingestion is triggered. You can use the [ontology agent](how-to-use-ontology-agent.md) to make sure the ontology stays up-to-date.
+### Refresh from ontology
 
-Open the **Ontology agent** from the ontology ribbon and ask the agent to update the entity type to reflect changes in the data source. For example, *The data source bound to the Refrigeration Telemetry entity type has been updated. See the latest source schema and update the entity type to reflect the changes.*
+1. Select **Home > Manage > Graph**.
 
-:::image type="content" source="media/how-to-use-ontology-graph/ontology-agent-refresh.png" alt-text="Screenshot of the instruction being sent to the ontology agent." lightbox="media/how-to-use-ontology-graph/ontology-agent-refresh.png":::
+1. In **Materialization status**, select the circular-arrow refresh icon in the **Last refresh** card.
 
-The ontology is updated automatically to incorporate the new data.
+    :::image type="content" source="media/how-to-use-ontology-graph/ontology-agent-refresh.png" alt-text="Screenshot of the Last refresh card showing Complete and the circular-arrow refresh icon." lightbox="media/how-to-use-ontology-graph/ontology-agent-refresh.png":::
 
-### Manually refresh graph
+1. In the **Refresh data** dialog, select **Continue**.
 
-Follow these steps to manually refresh the graph data.
+1. Wait for **Last refresh** to show **Complete**.
+
+### Refresh from the workspace
+
+You can also refresh the graph model from your workspace.
 
 1. Go to your Fabric workspace, and locate the graph model associated with your ontology (preview) item.
 
@@ -156,7 +164,7 @@ The following limitations apply when you project ontology entities and relations
 * **Entity type key required:** Entities must have an entity type key specified to be eligible for the projection.
 * **Unsupported property types:** Some entity property types aren't supported in graph, such as Binary and Variant. Graph projection converts those unsupported data types to String.
 * **Unsupported data sources:** Currently, only delta tables from lakehouses or mirrored databases are supported. Entities with data bound to a semantic model aren't supported.
-* **Unbound entities or relationships:** Entities and relationships without a data source binding aren't eligible for graph projection. Hover over the **Ineligible** status label to show a tooltip with the detailed reason.
+* **Unbound entities or relationships:** Entities and relationships without a data source binding aren't eligible for graph projection. Select **Ineligible** to review the validation details.
 * **Multiple backing tables:** Entities or relationships with multiple backing tables aren't eligible for graph projection.
 * **Limited time series support:** Graph projection converts a property with a time series type to the base type.
 * **Limited namespace support:** For entities and relationships that use namespaces, graph projection adds the namespace as a prefix to the label of the corresponding node or edge.

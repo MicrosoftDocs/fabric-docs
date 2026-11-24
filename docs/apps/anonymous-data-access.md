@@ -40,7 +40,7 @@ A Fabric tenant administrator must enable anonymous data access before app devel
 
 1. Sign in to the [Fabric admin portal](https://app.fabric.microsoft.com/admin-portal).
 1. Select **Tenant settings**.
-1. Under **Fabric apps (preview)**, find **Anonymous data access**.
+1. Under **Fabric apps**, find **Anonymous data access**.
 
    :::image type="content" source="./media/anonymous-data-access/admin-setting-for-anonymous-data-access.png" alt-text="Screenshot of the Anonymous data access setting in the Fabric admin portal.":::
 
@@ -64,6 +64,8 @@ Use the `@role` decorator on an entity and specify `anonymous` as the role name.
 
 The following example allows unauthenticated users to read public announcements:
 
+Add these entities to the data service configured in `rayfin/rayfin.yml`. In the default Universal App, enable Data and use `packages/data/src/`, with matching contracts in `packages/shared/src/`. A flat template can use `rayfin/data/` instead. See [Define data models](data-models.md).
+
 ```typescript
 import { entity, role, uuid, text } from '@microsoft/rayfin-core';
 
@@ -71,8 +73,8 @@ import { entity, role, uuid, text } from '@microsoft/rayfin-core';
 @role('anonymous', 'read')
 export class Announcement {
   @uuid() id!: string;
-  @text() title!: string;
-  @text() content!: string;
+  @text({ max: 200 }) title!: string;
+  @text({ max: 4000 }) content!: string;
 }
 ```
 
@@ -89,7 +91,7 @@ import { entity, role, uuid, text } from '@microsoft/rayfin-core';
 @role('anonymous', 'create')
 export class Feedback {
   @uuid() id!: string;
-  @text() comment!: string;
+  @text({ max: 2000 }) comment!: string;
 }
 ```
 
@@ -106,7 +108,7 @@ import { boolean, entity, role, text, uuid } from '@microsoft/rayfin-core';
 @role('anonymous', ['create', 'read', 'update'])
 export class SharedTodo {
   @uuid() id!: string;
-  @text() title!: string;
+  @text({ max: 200 }) title!: string;
   @boolean({ default: false }) completed!: boolean;
 }
 ```
@@ -127,9 +129,9 @@ import { entity, role, uuid, text } from '@microsoft/rayfin-core';
 })
 export class BlogPost {
   @uuid() id!: string;
-  @text() title!: string;
-  @text() content!: string;
-  @text() createdBy!: string;
+  @text({ max: 200 }) title!: string;
+  @text({ max: 4000 }) content!: string;
+  @text({ max: 255 }) createdBy!: string;
 }
 ```
 

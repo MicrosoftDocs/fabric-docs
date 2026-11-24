@@ -18,6 +18,8 @@ This article describes how to set alerts on Fabric capacity operation events in 
 
 ## Navigate to Real-Time hub
 
+[!INCLUDE [event-consumer-region-note](./includes/event-consumer-region-note.md)]
+
 [!INCLUDE [navigate-to-real-time-hub](./includes/navigate-to-real-time-hub.md)]
 
 ## Launch the Set alert page

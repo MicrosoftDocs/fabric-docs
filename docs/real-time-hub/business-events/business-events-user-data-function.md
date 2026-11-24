@@ -53,6 +53,8 @@ Review the generated function before you use it. Update the event payload and an
 > [!NOTE]
 > Workspace private links can block cross-workspace business event publishing. For Business events, the source workspace is the workspace that contains the Event Schema Set. If that workspace blocks public access, publish from a UDF in the same workspace or establish a private link from the publisher's network to the source workspace. For more information, see [Workspace private links for Azure, Fabric, and Business events](../workspace-private-links-real-time-events.md).
 
+[!INCLUDE [business-event-publisher-region-note](../includes/business-event-publisher-region-note.md)]
+
 A function publishes a business event by providing:
 
 * **type**: The business event name.

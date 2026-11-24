@@ -35,6 +35,8 @@ For more information, see [Explore Job events](explore-fabric-Job-events.md).
 
 ## Prerequisites
 
+[!INCLUDE [event-consumer-region-note](./includes/event-consumer-region-note.md)]
+
 - Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions.
 
 ## Create streams for Job events

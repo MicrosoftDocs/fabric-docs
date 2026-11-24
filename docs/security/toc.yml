@@ -18,7 +18,7 @@ items:
   - name: Authenticate with workspace identity
     href: workspace-identity-authenticate.md
   - name: Governance and compliance documentation
-    href: ../governance/index.yml  
+    href: ../admin/index.yml
   - name: Admin documentation
     href: ../admin/index.yml
   - name: Security white paper
@@ -121,7 +121,7 @@ items:
                 href: workspace-outbound-access-protection-data-engineering.md
               - name: Data Factory
                 href: workspace-outbound-access-protection-data-factory.md
-              - name: Data Science (preview)
+              - name: Data Science
                 items: 
                   - name: Models and Experiments
                     href: workspace-outbound-access-protection-data-science.md
@@ -131,26 +131,30 @@ items:
                 items:
                   - name: Graph
                     href: workspace-outbound-access-protection-graph.md
-                  - name: Operations agent
+                  - name: Operations agent (preview)
                     href: workspace-outbound-access-protection-operations-agent.md
                   - name: Data Agent (preview)
                     href: workspace-outbound-access-protection-data-agent.md
               - name: Mirrored databases
                 href: workspace-outbound-access-protection-mirrored-databases.md
-              - name: OneLake (preview)
+              - name: Mirrored catalogs and Snowflake database
+                href: workspace-outbound-access-protection-mirrored-catalogs-snowflake-database.md
+              - name: OneLake
                 href: workspace-outbound-access-protection-onelake.md
-              - name: Semantic models (preview)
+              - name: Semantic models
                 href: workspace-outbound-access-protection-semantic-models.md
-              - name: Power BI reports (preview)
+              - name: Power BI reports
                 href: workspace-outbound-access-protection-power-bi-reports.md
-              - name: Real-Time Intelligence (preview)
+              - name: Real-Time Intelligence
                 items:
                   - name: Activator
                     href: workspace-outbound-access-protection-activator.md
                   - name: Eventhouse
                     href: workspace-outbound-access-protection-eventhouse.md
-                  - name: Eventstream
+                  - name: Eventstream (preview)
                     href: workspace-outbound-access-protection-eventstream.md
+                  - name: Azure, Fabric, and Business events
+                    href: workspace-outbound-access-protection-real-time-events.md
                   - name: KQL queryset
                     href: workspace-outbound-access-protection-queryset.md
                   - name: Real-Time Dashboard

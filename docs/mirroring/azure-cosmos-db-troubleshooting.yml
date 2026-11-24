@@ -7,7 +7,7 @@ metadata:
   ms.reviewer: jmaldonado
   ms.subservice: data-warehouse
   ms.topic: faq
-  ms.date: 11/06/2025
+  ms.date: 10/21/2026
 title: |
   Troubleshoot Microsoft Fabric mirrored databases from Azure Cosmos DB
 summary: |
@@ -81,6 +81,20 @@ sections:
           Does Cosmos DB mirroring support column names with special characters?
         answer: |
           Yes, column names with white spaces or wildcard characters like `=, ;, {}, (), \n, \t` are supported.
+      - question: |
+          I changed the data type of a property in my Azure Cosmos DB container, but the mirrored column still shows the old type or `null`. How do I fix it?
+        answer: |
+          The initial replication of existing data is read from the source Azure Cosmos DB account's continuous backup, not directly from the live container. Continuous backup takes a full backup on or before every seven days, so the initial backfill can be up to seven days behind. After this one-time initial backfill, mirroring reads inserts, updates, and deletes directly from the live container in near real-time. Type changes to items that already existed before mirroring started might not be reflected until a backup that includes those changes is taken.
+
+          The continuous backup retention setting (7-day or 30-day) controls how far back PITR can restore; it doesn't change how often backups are taken or how fresh the initial backfill is.
+
+          To resolve:
+
+          1. Confirm the source items now have the desired type. Avoid mixed types for the same property across items, because the inferred column type isn't guaranteed when multiple types exist.
+          1. Wait for the next backup, then stop and restart replication to reseed the target tables from the latest backup.
+          1. If you can't wait, [open a support ticket](/power-bi/support/service-support-options) to request a manual backup of the container, and restart replication after the backup completes.
+
+          For more information about how type changes are handled, see [schema and data changes limitations](azure-cosmos-db-limitations.md#schema-and-data-changes-limitations).
 additionalContent: |
   ## Related content
 

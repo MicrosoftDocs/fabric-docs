@@ -17,7 +17,7 @@ To learn more about the isolation forest model, see the original paper by [Liu _
 
 1. Get a [Microsoft Fabric subscription](../enterprise/licenses.md). Or, sign up for a free [Microsoft Fabric trial](../fundamentals/fabric-trial.md).
 1. Attach your notebook to a lakehouse. On the left side, select **Add** to add an existing lakehouse or create a lakehouse.
-1. SynapseML is preinstalled in Fabric PySpark runtimes (Runtime 1.3 or later recommended). To use a specific version, see [Install a different version of SynapseML on Fabric](install-synapseml.md).
+1. SynapseML is preinstalled in Fabric PySpark runtimes. Use [Runtime 2.0](../data-engineering/runtime-2-0.md), the latest generally available (GA) and default runtime. To use a specific SynapseML version, see [Install a different version of SynapseML on Fabric](install-synapseml.md).
 
 ## Library imports
 

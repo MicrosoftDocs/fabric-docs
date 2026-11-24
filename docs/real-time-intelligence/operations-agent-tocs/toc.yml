@@ -2,6 +2,8 @@
 items:
 - name: Getting started with operations agents
   href: ../operations-agent.md
+- name: Remote MCP server for operations agents
+  href: ../mcp-remote-operations-agent.md
 - name: Operations agent actions
   href: ../operations-agent-actions.md
 - name: Operations agent performance dashboard

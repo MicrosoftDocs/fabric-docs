@@ -10,6 +10,8 @@ ms.custom:
   - ai-gen-title
   - ai-seo-date:08/17/2025
   - ai-gen-description
+  - msecd-doc-authoring-1030
+ai-usage: ai-assisted
 ---
 
 # Migrate from Azure Data Explorer (ADX) to Fabric Real-Time intelligence (Eventhouse)
@@ -27,6 +29,9 @@ Keep ADX for ingestion only, and move querying to Fabric by using one of these t
 - **Fabric database shortcut (follower)**
 
     Create a [database shortcut](database-shortcut.md) to an Azure Data Explorer database, and query without migrating data to Fabric. A database shortcut in the Fabric Real-Time intelligence workload is an embedded reference in a Kusto Query Language (KQL) database to a source database in Azure Data Explorer. The behavior of the database shortcut is similar to a [follower database](/azure/data-explorer/follower). It's read-only, syncs new data with a slight lag (seconds to minutes), and lets all Fabric items view and query ADX data without reingesting it.
+
+    You can include all source subitems or use table-level sharing to expose only the tables, shortcut tables, materialized views, and functions needed for the workload. For the cluster URI method, choose the subitems in **Shared entities** when creating the shortcut. For an invitation token, the data provider predefines the shared subitems. The source database and the Fabric database shortcut must be in the same tenant and region. For selection behavior and dependencies, see [Select shared entities](database-shortcut.md#select-shared-entities).
+
 - **Attach the ADX cluster as a queryable source**
 
     In Fabric, make sure you have a connection to the ADX cluster. Add an Azure Data Explorer source in KQL queryset, which lets certain Fabric items like queryset and real-time dashboards query ADX data. For more information, see [Query data in a KQL queryset - Microsoft Fabric](kusto-query-set.md).
@@ -115,4 +120,3 @@ When you're confident that all required data is available in Fabric, decommissio
 
 ## Summary
 By following the steps in this article, you migrate from ADX to Fabric with minimal disruption. You start by moving consumption layer to Fabric, which unlocks features like Copilot, Power BI, Notebooks, and Activator, and then gradually shift the backend to Fabric. Now, Fabric's real-time intelligence (Eventhouse) handles both ingestion and querying of your data, and ADX isn't in use.
-

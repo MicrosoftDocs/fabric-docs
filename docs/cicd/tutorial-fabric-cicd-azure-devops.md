@@ -1,8 +1,8 @@
 ---
 title: Tutorial - CI/CD for Microsoft Fabric Using Azure DevOps & the `fabric-cicd` Python Package
 description: This article provides a tutorial on using the Microsoft Fabric ci-cd python library with Azure DevOps.
-author: billmath
-ms.author: billmath
+author: nimrodshalit
+ms.author: nishalit
 ms.topic: tutorial
 ms.custom:
 ms.service: fabric

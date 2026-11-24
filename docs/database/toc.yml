@@ -7,6 +7,22 @@ items:
     href: hub/overview.md
   - name: Database Hub FAQ
     href: hub/faq.yml
+  - name: Database Agents (Preview)
+    items:
+    - name: What are Database Agents?
+      href: hub/database-agents.md
+    - name: Use Database Agents in VS Code
+      href: hub/database-agents-vs-code.md
+    - name: Limitations and troubleshooting
+      href: hub/database-agents-known-limitations.md
+    - name: Frequently asked questions
+      href: hub/database-agents-faq.md
+    - name: How to
+      items: 
+        - name: Enable and activate Database Agents
+          href: hub/enable-database-agents.md
+        - name: Review a performance issue
+          href: hub/review-performance-issue.md
   - name: Monitor databases in the Database Hub
     href: hub/monitor.md
     items:
@@ -17,9 +33,11 @@ items:
     - name: Monitor an Azure Database for PostgreSQL flexible server
       href: hub/monitor-postgresql.md
   - name: How to
-    items: 
+    items:
     - name: Enable performance monitoring for Microsoft SQL
       href: hub/add-sql.md
+    - name: Create Activator alerts for Microsoft SQL (preview)
+      href: hub/sql-activator-alerts.md
     - name: Query performance monitoring telemetry
       href: hub/microsoft-sql-query-performance-monitoring-telemetry.md
 
@@ -36,7 +54,7 @@ items:
   - name: "Decision guide: Choose a data movement strategy"
     href: ../data-factory/decision-guide-data-movement.md?toc=/fabric/database/toc.json&bc=/fabric/database/toc.json
   - name: Best use cases
-    items: 
+    items:
     - name: AI applications
       href: sql/use-case-ai-application.md
     - name: Operational data store
@@ -59,7 +77,7 @@ items:
       href: /sql/sql-server/ai/vectors-frequently-asked-questions?toc=/fabric/database/toc.json&bc=/fabric/breadcrumb/toc.json&view=fabric-sqldb&preserve-view=true
   - name: Copilot
     items:
-    - name: What is Copilot in Fabric SQL database? 
+    - name: What is Copilot in Fabric SQL database?
       href: sql/copilot-sql-database.md
     - name: Chat pane
       href: sql/copilot-chat-pane.md
@@ -70,7 +88,7 @@ items:
     - name: FAQ
       href: sql/copilot-faq.yml
   - name: Get started
-    items: 
+    items:
     - name: 1. Create a SQL database
       href: sql/create.md
     - name: 2. Load AdventureWorks sample Data
@@ -88,7 +106,7 @@ items:
     - name: 8. Share data
       href: sql/share-data.md
   - name: Tutorial
-    items: 
+    items:
     - name: SQL database in Fabric tutorial introduction
       href: sql/tutorial-introduction.md
     - name: 1. Create a workspace
@@ -116,7 +134,7 @@ items:
     - name: Restore
       href: sql/restore.md
   - name: Deploy
-    items: 
+    items:
     - name: Options to create a SQL database
       href: sql/create-options.md
     - name: Deploy via REST API
@@ -143,10 +161,10 @@ items:
       href: sql/sqlpackage.md
     - name: Connect App Service
       href: sql/tutorial-service-connector.md
-    - name: Connect .NET Aspire application 
+    - name: Connect .NET Aspire application
       href: sql/connect-your-dotnet-aspire-application-to-fabric-sql-database.md
   - name: Integrate with Fabric services
-    items: 
+    items:
     - name: Data virtualization
       href: sql/data-virtualization.md
     - name: Fabric User data functions
@@ -199,7 +217,7 @@ items:
       href: ./sql/usage-reporting.md
   - name: Secure
     items:
-    - name: Overview 
+    - name: Overview
       href: sql/security-overview.md
     - name: Auditing for SQL database
       href: sql/auditing.md
@@ -212,13 +230,13 @@ items:
     - name: Share your SQL database and manage item permissions
       href: sql/share-sql-manage-permission.md
     - name: Configure granular access control for a SQL database
-      href: sql/configure-sql-access-controls.md     
+      href: sql/configure-sql-access-controls.md
     - name: Protect sensitive data with Microsoft Purview protection policies
-      href: sql/protect-databases-with-protection-policies.md 
+      href: sql/protect-databases-with-protection-policies.md
     - name: Encryption-at-rest with customer-managed keys
-      href: sql/encryption.md  
+      href: sql/encryption.md
   - name: Troubleshoot
-    items: 
+    items:
     - name: Limitations
       href: sql/limitations.md
     - name: Start/stop mirroring with REST API
@@ -226,13 +244,156 @@ items:
     - name: Control compute usage
       href: sql/control-compute-usage.md
   - name: Reference
-    items: 
+    items:
     - name: T-SQL Reference for Fabric
       href: /sql/t-sql/language-reference?view=fabric-sqldb&preserve-view=true
   - name: Resources
-    items: 
+    items:
     - name: SQL database in Fabric Community
       href: https://community.fabric.microsoft.com/t5/SQL-database/bd-p/db_general_discussion
+- name: Fabric HorizonDB (preview)
+  items:
+  - name: What is Fabric HorizonDB (preview)?
+    href: horizondb/overview.md
+  - name: Best use cases
+    items:
+    - name: AI applications
+      href: horizondb/use-case-ai-application.md
+    - name: Operational data store
+      href: horizondb/use-case-operational-data-store.md
+    - name: Reverse ETL
+      href: horizondb/use-case-reverse-etl.md
+    - name: Translytical applications
+      href: horizondb/use-case-translytical-applications.md
+  - name: Get started
+    items:
+    - name: 1. Create a HorizonDB database
+      href: horizondb/create.md
+    - name: 2. Create tables
+      href: horizondb/create-table.md
+    - name: 3. Load sample data
+      href: horizondb/load-sample-data.md
+    - name: 4. Query the database
+      href: horizondb/query.md
+    - name: 5. Create reports
+      href: horizondb/create-reports.md
+    - name: 6. Share analytical data
+      href: horizondb/share-data.md
+  - name: Tutorial
+    items:
+    - name: Build an end-to-end solution with Fabric HorizonDB
+      href: horizondb/tutorial-introduction.md
+    - name: 1. Create a workspace
+      href: horizondb/tutorial-create-workspace.md
+    - name: 2. Create a HorizonDB database
+      href: horizondb/tutorial-create-database.md
+    - name: 3. Create tables and load data
+      href: horizondb/tutorial-ingest-data.md
+    - name: 4. Query and inspect the database
+      href: horizondb/tutorial-query-database.md
+    - name: 5. Use the SQL analytics endpoint
+      href: horizondb/tutorial-use-analytics-endpoint.md
+    - name: 6. Query mirrored Fabric data
+      href: horizondb/tutorial-query-fabric-data.md
+    - name: 7. Load Fabric data with a Copy job
+      href: horizondb/tutorial-load-fabric-data.md
+    - name: 8. Create Power BI visualizations
+      href: horizondb/tutorial-create-visualizations.md
+    - name: 9. Analyze mirrored data in a notebook
+      href: horizondb/tutorial-perform-data-analysis.md
+    - name: 10. Connect a PostgreSQL application
+      href: horizondb/tutorial-connect-application.md
+    - name: 11. Clean up resources
+      href: horizondb/tutorial-clean-up.md
+  - name: Deploy
+    items:
+    - name: Options to create a HorizonDB database
+      href: horizondb/create-options.md
+    - name: Manage with the REST API
+      href: horizondb/deploy-rest-api.md
+  - name: Develop
+    items:
+    - name: Connect to a HorizonDB database
+      href: horizondb/connect.md
+    - name: Connect with Python
+      href: horizondb/connect-python.md
+    - name: Connect from a Jupyter notebook
+      href: horizondb/connect-jupyter-notebook.md
+    - name: Use the SQL editor
+      href: horizondb/query-editor.md
+  - name: Federated Analytics
+    items:
+    - name: Overview
+      href: horizondb/federated-analytics-overview.md
+    - name: Database mirroring
+      items:
+      - name: Overview
+        href: horizondb/mirroring-overview.md
+      - name: Limitations
+        href: horizondb/mirroring-limitations.md
+      - name: Monitor mirroring
+        href: horizondb/mirroring-monitor.md
+      - name: Frequently asked questions
+        href: horizondb/mirroring-faq.yml
+      - name: Secure mirrored data
+        href: horizondb/mirroring-secure.md
+      - name: Troubleshoot mirroring
+        href: horizondb/mirroring-troubleshooting.md
+      - name: SQL analytics endpoint
+        href: horizondb/sql-analytics-endpoint.md
+      - name: Query the SQL analytics endpoint
+        href: horizondb/query-sql-analytics-endpoint.md
+    - name: Federated queries
+      href: horizondb/query-fabric-data.md
+      items:
+      - name: Reference
+        href: horizondb/federated-query-reference.md
+      - name: Troubleshoot federated queries
+        href: horizondb/federated-query-troubleshooting.md
+    - name: Data delivery (reverse ETL)
+      href: horizondb/load-fabric-data-copy-job.md
+  - name: Monitor
+    items:
+    - name: Monitor Fabric HorizonDB
+      href: horizondb/monitor.md
+    - name: Usage reporting
+      href: horizondb/usage-reporting.md
+    - name: Control compute usage
+      href: horizondb/control-compute-usage.md
+  - name: Secure
+    items:
+    - name: Security overview
+      href: horizondb/security-overview.md
+    - name: Authentication
+      href: horizondb/authentication.md
+    - name: Authorization
+      href: horizondb/authorization.md
+    - name: Item permissions and database access
+      href: horizondb/share-manage-permissions.md
+    - name: Validate PostgreSQL access
+      href: horizondb/configure-postgresql-access-controls.md
+    - name: Encryption
+      href: horizondb/encryption.md
+  - name: Troubleshoot
+    items:
+    - name: Troubleshoot Fabric HorizonDB
+      href: horizondb/troubleshoot.md
+  - name: Reference
+    items:
+    - name: Limitations
+      href: horizondb/limitations.md
+    - name: PostgreSQL extensions
+      href: horizondb/extensions.md
+    - name: PostgreSQL documentation
+      href: https://www.postgresql.org/docs/current/
+    - name: PostgreSQL SQL commands
+      href: https://www.postgresql.org/docs/current/sql-commands.html
+  - name: Resources
+    items:
+    - name: Frequently asked questions
+      href: horizondb/faq.yml
+    - name: Microsoft Fabric Community
+      href: https://community.fabric.microsoft.com/
 - name: Cosmos DB in Fabric
   href: cosmos-db/toc.yml
 - name: Resources
@@ -244,13 +405,13 @@ items:
     - name: Microsoft Q & A >>
       href: /answers/
     - name: Submit feedback >>
-      href: https://feedback.azure.com/    
+      href: https://feedback.azure.com/
   - name: Ideas
     href: https://ideas.fabric.microsoft.com/
   - name: Community
     href: https://community.fabric.microsoft.com/
   - name: Service updates
-    href: https://azure.microsoft.com/updates/    
+    href: https://azure.microsoft.com/updates/
   - name: Azure Status
     href: https://azure.status.microsoft/
   - name: Learn

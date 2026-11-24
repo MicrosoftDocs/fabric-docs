@@ -31,7 +31,7 @@ This tutorial covers these steps:
 * If necessary, create a Microsoft Fabric lakehouse as described in [Create a lakehouse in Microsoft Fabric](../data-engineering/create-lakehouse.md).
 
 > [!NOTE]
-> This tutorial requires **Fabric Runtime 1.3** (R 4.4.1, Apache Spark 3.5). Runtime 1.2 reached end of support on March 31, 2026. To upgrade, see [Apache Spark runtimes in Fabric](../data-engineering/runtime.md).
+> This tutorial requires **Fabric Runtime 1.3** (R 4.4.1, Apache Spark 3.5), which is in the end of support announced (EOSA) stage. This tutorial-specific requirement isn't a recommendation to upgrade to Runtime 1.3. [Runtime 2.0](../data-engineering/runtime-2-0.md) is the latest generally available (GA) and default runtime. Validate the tutorial's code and libraries before migrating to Runtime 2.0; see the [migration guide](../data-engineering/runtime-2-0-migration-guide.md).
 
 ## Follow along in a notebook
 

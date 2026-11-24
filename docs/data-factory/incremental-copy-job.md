@@ -3,7 +3,7 @@ title: Incremental copy in Copy job
 description: Learn how incremental copy works in Copy job, including supported watermark column types, how NULL watermark values are handled, and how to reset incremental copy.
 ms.reviewer: ukchrist
 ms.topic: how-to
-ms.date: 09/15/2026
+ms.date: 10/27/2026
 ms.search.form: copy-job-tutorials
 ms.custom: copy-job
 ai-usage: ai-assisted
@@ -20,7 +20,7 @@ For an overview of Copy job, see [What is Copy job in Data Factory for Microsoft
 You can choose how your data is copied from source to destination:
 
 - **Full copy**: Every time the job runs, it copies all data from your source to your destination.
-- **Incremental copy**: The first run copies everything, and subsequent runs only move new or changed data since the last run.
+- **Incremental copy**: The first run copies everything, and subsequent runs only move new or changed data since the last run. Incremental copy also allows you to add source tables for which you want to do full loads only.
 
 ## How incremental copy works
 

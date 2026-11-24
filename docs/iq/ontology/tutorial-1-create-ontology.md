@@ -1,8 +1,9 @@
 ---
 title: "Tutorial Part 1: Create an Ontology (Preview)"
 description: Create an ontology (preview) item with data from OneLake. Part 1 of the ontology (preview) tutorial.
-ms.date: 09/11/2026
+ms.date: 11/09/2026
 ms.topic: tutorial
+ai-usage: ai-assisted
 ---
 
 # Ontology (preview) tutorial part 1: Create an ontology
@@ -34,11 +35,11 @@ First, create entity types. Entity types represent types of objects in a busines
 
 ### Add base entity type (Location)
 
-1. From the top ribbon, select **+ Add entity type**.
+1. On the **Home** tab of the top ribbon, select **+ Add** > **Entity type**.
 
-    :::image type="content" source="media/tutorial-1-create-ontology/add-entity-type.png" alt-text="Screenshot of adding entity type from the top ribbon." lightbox="media/tutorial-1-create-ontology/add-entity-type.png":::
+    :::image type="content" source="media/tutorial-1-create-ontology/add-entity-type.png" alt-text="Screenshot of the Entity type option in the Home ribbon's Add menu." lightbox="media/tutorial-1-create-ontology/add-entity-type.png":::
 
-1. Enter *Location* for the entity type name and select **Add Entity Type**.
+1. Enter *Location* for the entity type name and select **Add**.
 1. The Location entity type appears on the configuration canvas.
 
     :::image type="content" source="media/tutorial-1-create-ontology/location-entity-type.png" alt-text="Screenshot of the new Location entity type." lightbox="media/tutorial-1-create-ontology/location-entity-type.png":::
@@ -49,20 +50,18 @@ First, create entity types. Entity types represent types of objects in a busines
 
     :::image type="content" source="media/tutorial-1-create-ontology/location-bind-data.png" alt-text="Screenshot of selecting Bind data for Location." lightbox="media/tutorial-1-create-ontology/location-bind-data.png":::
 
-1. Select **Add** to add a data source.
+1. Select the plus (**+**) button next to **Data sources**, and then select **OneLake catalog**.
 
-1. Find the data source in the OneLake catalog. Expand *LakeshoreStaticDataLH* > *dbo* and select the *dimlocations* table. Confirm with **Select table**.
+1. Find the data source in the OneLake catalog. Expand *LakeshoreStaticDataLH* > **Schemas** > *dbo* and select the *dimlocations* table. Confirm with **Select**.
 1. The data source loads.
 
     :::image type="content" source="media/tutorial-1-create-ontology/location-bind-data-source.png" alt-text="Screenshot of the data source after it is loaded." lightbox="media/tutorial-1-create-ontology/location-bind-data-source.png":::
 
-1. Select **Entity type properties** to see properties of the entity type. The columns from the *dimlocations* table automatically populate as proposed properties.
+1. Select **Properties** under **Entity type**. The columns from the *dimlocations* table automatically populate as proposed properties.
 
     :::image type="content" source="media/tutorial-1-create-ontology/location-bind-data-properties.png" alt-text="Screenshot of properties automatically populated on the entity type." lightbox="media/tutorial-1-create-ontology/location-bind-data-properties.png":::
 
-1. Without making any changes to the properties, select **Create** to save the data binding. You see a banner confirming that **Entity type updated successfully**.
-
-1. Select **Cancel** to close the property binding dialog.
+1. Review the proposed properties. Use `LocationName` as the property name for the `Name` source column, as shown in the following screenshot. If a property already exists, select its name from the property name dropdown menu to reuse it instead of creating a duplicate. Select **Create** to save the data binding and return to the **Configure** page.
 
 1. You see the **Configure** page of the entity type details. This page surfaces information about the entity type, including its properties and data bindings. View your configured data bindings.
 
@@ -74,17 +73,17 @@ Now the Location entity type is complete.
 
 Next, add an inherited entity type. The Store entity inherits from Location, which automatically gives it all of Location's properties.
 
-1. Select **Home** to return to the configuration canvas where you can add new entity types.
+1. Select **Home** in the breadcrumb above the **Configure** tab to return to the configuration canvas.
 
     :::image type="content" source="media/tutorial-1-create-ontology/home.png" alt-text="Screenshot of returning home to the configuration canvas." lightbox="media/tutorial-1-create-ontology/home.png":::
 
-1. From the top ribbon, select **+ Add entity type**.
-1. Enter *Store* for the **Entity type name**. Expand **Additional configuration** and set **Choose entity to inherit from** to *Location*. Select **Add Entity Type**.
+1. On the **Home** tab of the top ribbon, select **+ Add** > **Entity type**.
+1. Enter *Store* for the **Entity type name**. Expand **Additional configuration** and set **Choose entity to inherit from (optional)** to *Location*. Select **Add**.
 
     :::image type="content" source="media/tutorial-1-create-ontology/add-store.png" alt-text="Screenshot of adding the Store entity type that inherits from Location." lightbox="media/tutorial-1-create-ontology/add-store.png":::
 
 1. The Store entity type appears on the configuration canvas.
-1. Select the Store entity type and select **View Entity Type details**.
+1. Select the Store entity type and select **Entity type > Open details**.
 
     :::image type="content" source="media/tutorial-1-create-ontology/store-entity-type-details.png" alt-text="Screenshot of opening entity type details for the Store entity type." lightbox="media/tutorial-1-create-ontology/store-entity-type-details.png":::
 
@@ -94,24 +93,24 @@ Next, add an inherited entity type. The Store entity inherits from Location, whi
 
 #### Bind Store data
 
-1. Select **Manage property bindings** > **Add binding and properties**.
+1. Select **Bind data**.
 
     :::image type="content" source="media/tutorial-1-create-ontology/store-add-binding.png" alt-text="Screenshot of adding binding and properties to the Store entity type." lightbox="media/tutorial-1-create-ontology/store-add-binding.png":::
 
-    The property binding page opens.
+    The **Bind data** page opens.
 
-1. **Add** the *LakeshoreStaticDataLH* > *dbo* > *dimlocations* table as a data source.
-1. Select **Entity type properties**, verify that properties have a populated source column, and select **Create**.
+1. Select the plus (**+**) button next to **Data sources**, and then select **OneLake catalog**. Expand *LakeshoreStaticDataLH* > **Schemas** > *dbo*, select *dimlocations*, and then select **Select**.
+1. Select **Properties** under **Entity type**, and map the inherited properties to their source columns. Inherited property names and types are read-only; use the **Source column** selectors to set their bindings. Verify that `LocationName` maps to `dimlocations.Name`, and select **Create**.
 
     :::image type="content" source="media/tutorial-1-create-ontology/store-add-binding-source-column.png" alt-text="Screenshot of source columns in the data binding." lightbox="media/tutorial-1-create-ontology/store-add-binding-source-column.png":::
 
-1. Select **Cancel** to return to the **Configure** page for the entity type.
+    Saving returns you to the **Configure** page for the entity type.
 
 Now the Store entity type is complete. Continue to the next section to create the rest of the entity types in the sample scenario.
 
 ### Add other entity types
 
-Use the same steps that you used for the Location and Store entity types to create the entity types described in the following table. Add all of their source columns as properties.
+Start each entity type with **Home** > **+ Add** > **Entity type**, and follow the same steps that you used for Location and Store to create the entity types described in the following table. Add all of their source columns as properties.
 
 | Entity type name | Inherits from | Data source table | Notes |
 | --- | --- | --- | --- |
@@ -133,7 +132,7 @@ When you finish, you see all the entity types listed in the **Explorer** in the 
 
 Finally, add one more entity type: Sale. Unlike the other entity types, Sale's source data is in a semantic model and has associated DAX measures. To bind this Sale data without having to recreate it manually, use the ontology agent.
 
-1. Select **Ontology agent** from the top ribbon. The ontology agent opens in **Plan** mode.
+1. Select **Home > Ontology agent** from the ribbon. The ontology agent opens in **Plan** mode.
 
     :::image type="content" source="media/tutorial-1-create-ontology/ontology-agent.png" alt-text="Screenshot of opening the ontology agent in Plan mode." lightbox="media/tutorial-1-create-ontology/ontology-agent.png":::
 
@@ -147,7 +146,7 @@ Finally, add one more entity type: Sale. Unlike the other entity types, Sale's s
 
     :::image type="content" source="media/tutorial-1-create-ontology/ontology-agent-sale.png" alt-text="Screenshot of the ontology agent's success message and the Sale entity type added to the canvas." lightbox="media/tutorial-1-create-ontology/ontology-agent-sale.png":::
 
-1. With the new Sale entity type highlighted, select **View Entity Type details**.
+1. With the new Sale entity type highlighted, select **Entity type > Open details**.
 1. Verify that **Properties** are populated and bound to the semantic model data source.
 
     :::image type="content" source="media/tutorial-1-create-ontology/sale-details.png" alt-text="Screenshot of the Sale entity properties." lightbox="media/tutorial-1-create-ontology/sale-details.png":::
@@ -166,12 +165,12 @@ Next, create relationship types between the entity types to represent contextual
 
 1. Select the Store entity type from the **Explorer**.
 
-1. Select **Add relationship** from the menu ribbon or the Explorer, or **Add relationship type** from the entity on the configuration canvas.
+1. On the **Home** tab of the top ribbon, select **+ Add** > **Relationship type**. With **Store** selected, you can also select **Entity type** > **+ Add** > **Relationship type**, as shown in the following screenshot.
 
-    :::image type="content" source="media/tutorial-1-create-ontology/store-add-relationship.png" alt-text="Screenshot of adding a relationship type." lightbox="media/tutorial-1-create-ontology/store-add-relationship.png":::
+    :::image type="content" source="media/tutorial-1-create-ontology/store-add-relationship.png" alt-text="Screenshot of the Relationship type option in the Entity type ribbon's Add menu." lightbox="media/tutorial-1-create-ontology/store-add-relationship.png":::
 
-1. Enter the following relationship type details and select **Create**.
-    1. **Relationship type name**: *operates*
+1. Enter the following relationship type details and select **Add**.
+    1. **Name**: *operates*
     1. **Origin entity type**: *Store*
     1. **Target entity type**: *Refrigeration Unit*
 
@@ -180,15 +179,15 @@ Next, create relationship types between the entity types to represent contextual
 1. The relationship appears on the semantic canvas. Select it to open the relationship details configuration.
 1. Observe the sections of the configuration page:
 
-    * **Origin entity type**: Lists details of the origin entity type (Store)
-    * **Relationship**: Sets details of the relationship type (*operates*)
-    * **Target entity type**: Lists details of the target entity type (Refrigeration Unit)
+    * **Origin entity type**: Lists details of the origin entity type (Store).
+    * **Relationship name**: Sets the name of the relationship type (*operates*).
+    * **Target entity type**: Lists details of the target entity type (Refrigeration Unit).
 
     :::image type="content" source="media/tutorial-1-create-ontology/relationship-configuration.png" alt-text="Screenshot of the relationship type configuration." lightbox="media/tutorial-1-create-ontology/relationship-configuration.png":::
 
-1. In the **Origin entity type** section, expand **Property** and select `LocationId`.
+1. In the **Origin entity type** section, expand **Property 1** and select `LocationId`.
 
-    In the **Target entity type** section, expand **Property** and select `StoreId`. These fields indicate that the `LocationId` on a Store can be matched to the `StoreId` on a Refrigeration Unit to relate them to each other.
+    In the **Target entity type** section, expand **Property 1** and select `StoreId`. These fields indicate that the `LocationId` on a Store can be matched to the `StoreId` on a Refrigeration Unit to relate them to each other.
 
     :::image type="content" source="media/tutorial-1-create-ontology/relationship-configuration-done.png" alt-text="Screenshot of the details filled out in the relationship type configuration." lightbox="media/tutorial-1-create-ontology/relationship-configuration-done.png":::
 
@@ -202,7 +201,7 @@ Now the first relationship is complete. Continue to the next section to create t
 
 ### Add other relationship types
 
-Select **Home** to return to the configuration canvas where you can add new relationship types.
+Select **Home** in the breadcrumb to return to the configuration canvas. On the **Home** tab of the ribbon, select **+ Add** > **Relationship type** to add each relationship type.
 
 Follow the same steps that you used for the first relationship type to create the relationship types described in the following table.
 
@@ -214,7 +213,7 @@ Follow the same steps that you used for the first relationship type to create th
 | *stockedAt* | Inventory (`StoreId`) | Store (`LocationId`) |
 | *originatesAt* | Shipment (`FromLocationId`) | Distribution Center (`LocationId`) |
 | *forProduct* | Sale (`ProductId`) | Product (`ProductId`) |
-| *stockedAt* | Product (`ProductId`) | Inventory (`ProductId`) |
+| *stockedAtProduct* | Product (`ProductId`) | Inventory (`ProductId`) |
 | *suppliedBy* | Product (`SupplierId`) | Supplier (`SupplierId`) |
 | *contains* | Shipment (`ProductId`) | Product (`ProductId`) |
 | *hasTelemetryReading* | Refrigeration Unit (`UnitId`) | Refrigeration Telemetry (`UnitId`) |

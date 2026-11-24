@@ -61,6 +61,8 @@ This tutorial walks you through the end-to-end workflow of publishing business e
 
 ## Configure eventstream for publishing
 
+[!INCLUDE [business-event-publisher-region-note](../includes/business-event-publisher-region-note.md)]
+
 1. After creating the business event, go to your workspace.
 
 1. Select **+ New item** and then select **Eventstream** in the **Get data** section.
@@ -234,6 +236,8 @@ This tutorial walks you through the end-to-end workflow of publishing business e
      :::image type="content" source="media/tutorial-business-events-event-stream-user-data-function-activator/publish-user-data-function-button.png" alt-text="Screenshot of the Publish button for the user data function." lightbox="media/tutorial-business-events-event-stream-user-data-function-activator/publish-user-data-function-button.png":::
 
 ## Create an Activator trigger to consume events
+
+[!INCLUDE [business-event-consumer-region-note](../includes/business-event-consumer-region-note.md)]
 
 1. Open another tab in your web browser, and go to the Fabric portal home page.
  

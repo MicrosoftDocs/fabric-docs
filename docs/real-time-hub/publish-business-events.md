@@ -21,6 +21,8 @@ This article covers the APIs and REST endpoints that create, configure, execute,
 
 ## Prerequisites
 
+[!INCLUDE [business-event-publisher-region-note](./includes/business-event-publisher-region-note.md)]
+
 Before you publish an event:
 
 1. [Create the business event and event schema set](create-business-events-rest-api.md).

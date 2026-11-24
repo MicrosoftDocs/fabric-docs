@@ -1,11 +1,11 @@
 ---
-title: Database Hub (Preview)
+title: Database Hub
 description: Learn about the Database Hub in Microsoft Fabric.
 ms.reviewer: amapatil, jmaldonado, varundhawan, ivujic, lancewright, mjbrown
 ms.date: 10/05/2026
 ms.topic: overview
 ai-usage: ai-assisted
-ms.search.form: product-databases, Databases Overview, Database Hub
+ms.search.form: product-databases, Databases Overview, Database Hub, Database Hub Overview, Database Hub Estate, Database Hub Performance
 ---
 # What is the Database Hub?
 
@@ -22,7 +22,7 @@ Use Database Hub to:
 
 Database Hub uses your existing Microsoft Entra ID identity and Azure role-based access control permissions. It doesn't grant additional access or modify database resources simply by discovering them.
 
-In addition to the Fabric portal, you can access Database Hub data through skills for agentic observability or through integrations with tools you use every day, such as [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or the [MSSQL extension](https://aka.ms/mssql-marketplace) for [Visual Studio Code](https://code.visualstudio.com/docs).
+Beyond the Fabric portal, access Database Hub data through skills for agentic observability, or through integrations with everyday tools such as [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or the [MSSQL extension](https://aka.ms/mssql-marketplace) for [Visual Studio Code](https://code.visualstudio.com/docs). The Database Hub CLI skill, available in skills-for-fabric, lets you ask natural-language questions through GitHub Copilot CLI, VS Code Copilot, Claude Code, and Cursor.
 
 > [!TIP]
 > 💡 Agent setup for Database Hub
@@ -45,9 +45,7 @@ Sign in with your existing Microsoft account or sign up for Fabric Free. Databas
 
 You don't need to move your Azure or on-premises databases into Fabric. Your databases remain in their existing subscriptions and environments while Database Hub brings together their operational metadata, signals, and available actions.
 
-The resources, capabilities, and data you see depend on your existing permissions, tenant configuration, region, resource configuration, and preview enrollment.
-
-[!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
+The resources, capabilities, and data you see depend on your existing permissions, tenant configuration, region, and resource configuration.
 
 Bring your database estate into one operational experience and move from fragmented signals to guided action.
 
@@ -102,9 +100,9 @@ Use this route when you begin with an individual Azure resource and want to expa
 
 ## Open Database Hub from a direct URL
 
-You can also [open Database Hub directly](https://powerbi.com/workloads/fdh/databaseHub).
+[Open Database Hub directly](https://powerbi.com/workloads/fdh/databaseHub).
 
-Consider bookmarking Database Hub if it's part of your regular operational workflow. You can also use Database Hub skills with supported agent experiences to investigate your estate.
+Bookmark Database Hub if it's part of your regular operational workflow. Use Database Hub skills with supported agent experiences to investigate your estate. VS Code entry points through the Microsoft extension and MSSQL extension, and an entry point from Registered Servers in SSMS, are also available.
 
 ## 1. Understand what needs attention
 
@@ -321,7 +319,7 @@ For Azure Cosmos DB, Database Hub supports account creation. You handle containe
 
 ## Supported database services
 
-During the current preview, Database Hub can show supported resources from Azure, Fabric, and on-premises environments, including:
+Database Hub can show supported resources from Azure, Fabric, and on-premises environments, including:
 
 - Azure SQL Database
 - Azure SQL Elastic Pools
@@ -336,29 +334,28 @@ The inventory, findings, monitoring, and actions available for each resource can
 
 A database appearing in Estate doesn't necessarily mean every monitoring, investigation, agent, or action capability is available for that database type.
 
-What appears in Database Hub depends on the service, configuration, region, tenant settings, your permissions, and preview enrollment.
+What appears in Database Hub depends on the service, configuration, region, tenant settings, and your permissions.
 
 ## Limitations
 
-[!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
+Database Hub is currently generally available, while [Database Agents](database-agents.md) is in preview.
 
-- **Regional availability:** [Database Hub doesn't currently support Fabric capacities located in **North Europe** or **West Europe**](../../admin/region-availability.md).   If **My workspace** is assigned to a capacity in either region, the **Overview** page might load, but you might encounter errors when using Database Hub. To use the preview, assign **My workspace** to a Fabric capacity in a supported region. This limitation applies to the Fabric capacity hosting the experience, not the location of the database resources you want to monitor.
 - You can view resources in the Database Hub from Azure, Fabric, and on-premises, including: Azure SQL Database, SQL database in Fabric, Azure SQL Elastic pools, Azure SQL Managed Instance, SQL Server enabled by Azure Arc, SQL Server instances in Azure VMs, Azure Database for PostgreSQL flexible server, and Azure Cosmos DB. 
 - Not currently supported in the Database Hub: Cosmos DB in Fabric, mirrored databases in Fabric, Fabric Data Warehouse.   
 - Currently, for a Microsoft SQL database service to appear in the **Overview** and **Estate** pages of the Database Hub, an additional step is necessary to [register an Azure resource provider in each subscription](add-sql.md#register-the-azure-resource-provider). This resource provider might already be in place for your subscription.
 - For Azure SQL Database, an extended property must be added to your database in order to start collecting performance monitoring data, which you can then view in the Performance page of Database Hub. You can add this extended property by selecting the **Enable Performance Monitoring** option in the **Estate** page of Database Hub or by running [T-SQL scripts to add metadata to each database](add-sql.md#enable-performance-monitoring-for-azure-sql-database).
 - The following Microsoft SQL services show inventory on the **Estate** page but don't yet show on the **Performance** page: Azure SQL Elastic Pools, Azure SQL Managed Instance, and SQL database in Fabric.
 - For Azure Database for PostgreSQL flexible server, **Estate** lists flexible server resources, not the individual PostgreSQL databases hosted on each server.
-- In the current preview, monitoring for Azure Database for PostgreSQL flexible server uses existing Azure Monitor metrics and doesn't provide query-level diagnostics in Database Hub. Use the Azure portal and native PostgreSQL tools to investigate queries.
-- Supported signals, actions, agents, engines, and regions can change during preview.
+- On the **Performance** page, monitoring for Azure Database for PostgreSQL flexible server uses existing Azure Monitor metrics and doesn't provide interactive query-level diagnostics in Database Hub. Database Agents support for PostgreSQL in Database Hub is coming soon. During the limited preview, use [Database Agents in Visual Studio Code](database-agents-vs-code.md) alongside the Azure portal and native PostgreSQL tools to investigate performance issues.
+- Supported signals, actions, agents, engines, and regions can change as Database Hub evolves.
 - Supported inventory doesn't mean every monitoring or action capability is available for that service.
 - Generated findings and recommendations require operator review.
 - Existing Azure, Fabric, database, security, and change-management controls continue to apply.
 - The resources visible to each user depend on that user's permissions.
 - Sharing a custom view doesn't grant access to the underlying resources.
-- Available experiences can vary by tenant configuration, region, permissions, resource configuration, and preview enrollment.
+- Available experiences can vary by tenant configuration, region, permissions, and resource configuration.
 - Accessing Database Hub doesn't require Fabric capacity. However, services and resources opened, created, or used from Database Hub can have their own licensing, capacity, or subscription requirements.
-- Evaluate preview capabilities against your organization's production, compliance, privacy, security, and data-residency requirements before depending on them for critical operational processes.
+- Evaluate capabilities against your organization's production, compliance, privacy, security, and data-residency requirements before depending on them for critical operational processes.
 
 ## Troubleshoot
 
@@ -414,5 +411,5 @@ What appears in Database Hub depends on the service, configuration, region, tena
 
 ## Related content
 
-- [Monitor databases in the Database Hub (preview)](monitor.md)
-- [Frequently asked questions for the Database Hub in the Fabric portal](faq.yml)
+- [Monitor databases in Database Hub](monitor.md)
+- [Frequently asked questions for Database Hub in the Fabric portal](faq.yml)

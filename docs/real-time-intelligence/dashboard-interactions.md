@@ -14,6 +14,9 @@ ai-usage: ai-assisted
 
 Configure cross-filters and drillthroughs to use selections in one dashboard visual to filter related data in other visuals or on another page.
 
+> [!NOTE]
+> Fabric Maps tiles can't be the source or target of cross-filter or drillthrough interactions. These interactions pass values through dashboard parameters, which don't filter or modify Fabric Maps tiles. For more information, see [Fabric Maps limitations and considerations](map/pin-map-to-real-time-dashboard.md#limitations-and-considerations).
+
 ## Prerequisites
 
 * Completion of [Create and manage Real-Time Dashboard parameters](dashboard-parameters-manage.md).

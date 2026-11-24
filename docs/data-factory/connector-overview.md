@@ -3,7 +3,7 @@ title: Connector overview
 description: Learn about the available data connectors for Data Factory in Microsoft Fabric.
 ms.reviewer: jianleishen
 ms.topic: overview
-ms.date: 07/21/2026
+ms.date: 10/30/2026
 ms.search.form: product-data-factory
 ms.custom: connectors
 ---
@@ -39,7 +39,7 @@ Fabric supports these connectors in dataflow Gen2, pipelines, and copy jobs. Sel
 | [Amazon RDS for Oracle](connector-amazon-rds-for-oracle-overview.md) |  | ✓/− | ✓/− |
 | [Amazon RDS for SQL Server](connector-amazon-rds-for-sql-server-overview.md) |  | ✓/− | ✓/− |
 | [Amazon Redshift](connector-amazon-redshift-overview.md) | ✓/− | ✓/− |  |
-| [Amazon S3](connector-amazon-s3-overview.md) |  | ✓/✓ | ✓/✓ |
+| [Amazon S3](connector-amazon-s3-overview.md) | ✓/✓ (preview) | ✓/✓ | ✓/✓ |
 | [Amazon S3 Compatible](connector-amazon-s3-compatible-overview.md) |  | ✓/✓ | ✓/✓ |
 | [Anaplan](connector-anaplan-overview.md) | ✓/− |  |  |
 | Asana | ✓/− |  |  |
@@ -58,11 +58,12 @@ Fabric supports these connectors in dataflow Gen2, pipelines, and copy jobs. Sel
 | [Azure Data Explorer (Kusto)](connector-azure-data-explorer-overview.md) | ✓/✓ | ✓/✓ | ✓/✓ |
 | [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2-overview.md) | ✓/− | ✓/✓ | ✓/✓ |
 | [Azure Database for MySQL](connector-azure-database-for-mysql-overview.md) |  | ✓/✓ | ✓/✓ |
-| [Azure Database for PostgreSQL](connector-azure-database-for-postgresql-overview.md) |  | ✓/✓ | ✓/✓ |
+| [Azure Database for PostgreSQL](connector-azure-database-for-postgresql-overview.md) | ✓/- | ✓/✓ | ✓/✓ |
 | [Azure Databricks](connector-azure-databricks-overview.md) | ✓/− | ✓/✓ |  |
 | [Azure Files](connector-azure-files-overview.md) |  | ✓/✓ |  ✓/✓ |
 | [Azure HDInsight (HDFS)](/power-query/connectors/azure-hdinsight#connect-to-azure-hdinsight-from-power-query-online) | ✓/− |  |  |
-| Azure HDInsight Spark | ✓/− |  |  |
+| Azure HDInsight Spark | ✓/- | | |
+| [Azure HorizonDB Database](/power-query/connectors/azure-horizondb) | ✓/- | | |
 | [Azure Resource Graph](/power-query/connectors/azure-resource-graph#connect-to-azure-resource-graph-from-power-query-online) | ✓/− |  |  |
 | [Azure SQL database](connector-azure-sql-database-overview.md) | ✓/✓ | ✓/✓ | ✓/✓ |
 | [Azure SQL Managed Instance](connector-azure-sql-managed-instance-overview.md) |  | ✓/✓ | ✓/✓ |
@@ -116,7 +117,7 @@ Fabric supports these connectors in dataflow Gen2, pipelines, and copy jobs. Sel
 | [FTP](connector-ftp-overview.md) |  | ✓/− | ✓/− |
 | [Funnel](connector-funnel-overview.md) | ✓/− |  |  |
 | [Google Analytics](connector-google-analytics-overview.md) | ✓/− |  |  |
-| [Google BigQuery](connector-google-bigquery-overview.md) | ✓/− | ✓/✓ | ✓/✓ |
+| [Google BigQuery](connector-google-bigquery-overview.md) | ✓/✓ (destination in preview) | ✓/✓ | ✓/✓ |
 | [Google BigQuery (Microsoft Entra ID)](/power-query/connectors/google-bigquery-aad#connect-to-google-bigquery-microsoft-entra-id-data-from-power-query-online) | ✓/− |  |  |
 | [Google Cloud Storage](connector-google-cloud-storage-overview.md) |  | ✓/✓ | ✓/✓ |
 | [Google Sheets](connector-google-sheets-overview.md) | ✓/− |  |  |

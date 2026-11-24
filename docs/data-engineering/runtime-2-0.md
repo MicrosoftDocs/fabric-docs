@@ -4,7 +4,7 @@ description: Learn about Apache Spark-based Runtime 2.0 in Fabric, including its
 ms.reviewer: arali
 ms.topic: overview
 ms.custom:
-ms.date: 08/17/2026
+ms.date: 10/22/2026
 ai-usage: ai-assisted
 ---
 
@@ -12,7 +12,7 @@ ai-usage: ai-assisted
 
 Fabric Runtime delivers seamless integration within the Fabric ecosystem, offering a robust environment for data engineering and data science projects powered by Apache Spark.
 
-This article introduces Fabric Runtime 2.0, the latest generally available runtime designed for big data computations in Microsoft Fabric. It highlights the key features and components that make this release a significant step forward for scalable analytics and advanced workloads.
+This article introduces Fabric Runtime 2.0, the latest generally available (GA) and default runtime in Microsoft Fabric. Runtime 2.0 is the default selection for new workspaces and environment items. It provides features and components for scalable analytics and advanced workloads.
 
 Fabric Runtime 2.0 incorporates the following components and upgrades designed to enhance your data processing capabilities:
 - Apache Spark 4.1
@@ -31,7 +31,7 @@ Fabric Runtime 2.0 incorporates the following components and upgrades designed t
 
 ## Enable Runtime 2.0
 
-You can enable Runtime 2.0 at either the workspace level or the environment item level. Use the workspace setting to apply Runtime 2.0 as the default for all Spark workloads in your workspace. Alternatively, create an environment item with Runtime 2.0 to use with specific notebooks or Spark job definitions, which overrides the workspace default.
+New workspaces and environment items use Runtime 2.0 by default. If your workspace or environment uses an earlier runtime, follow these steps to select Runtime 2.0 after validating workload compatibility. An environment item's runtime selection overrides the workspace default for notebooks and Spark job definitions attached to that environment.
 
 ### Enable Runtime 2.0 in Workspace settings
 
@@ -61,7 +61,7 @@ To use Runtime 2.0 with specific notebooks or Spark job definitions:
 You can now start working with the newest improvements and functionalities introduced in Fabric Runtime 2.0 (Spark 4.1 and Delta Lake 4.2).
 
 > [!NOTE]
-> While Runtime 2.0 is generally available and ready for production use, it isn't the default runtime yet. To give customers who rely on the current default runtime extra time to validate their workloads and plan their migration, they must explicitly opt into Runtime 2.0. The plan is to make Runtime 2.0 the default runtime selection in the user experience and the default runtime for new workspaces and environment items in late September 2026. This phased approach helps customers adopt and validate Runtime 2.0 at their own pace while benefiting from a predictable transition timeline.
+> Before changing an existing workspace or environment to Runtime 2.0, validate your libraries, Spark settings, and workloads. For compatibility considerations and a staged migration process, see [Migrate from Runtime 1.3 to Runtime 2.0](./runtime-2-0-migration-guide.md).
 
 > [!TIP]
 > For up-to-date information, a detailed list of changes, and specific release notes for Fabric runtimes, check and subscribe [Spark Runtimes Releases and Updates](https://github.com/microsoft/synapse-spark-runtime).
@@ -128,6 +128,7 @@ Runtime 2.0 supports the following compute management features:
 
 ## Related content
 
+* [Migrate from Runtime 1.3 to Runtime 2.0](./runtime-2-0-migration-guide.md)
 * [Apache Spark Runtimes in Fabric - Overview, Versioning, and Multiple Runtimes Support](./runtime.md)
 * [Spark Core migration guide](https://spark.apache.org/docs/latest/core-migration-guide.html)
 * [SQL, Datasets, and DataFrame migration guides](https://spark.apache.org/docs/latest/sql-migration-guide.html)

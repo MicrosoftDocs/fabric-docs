@@ -60,6 +60,8 @@ Once you're in the Activator rule configuration, the remaining steps are the sam
 
 ## Prerequisites
 
+[!INCLUDE [business-event-publisher-region-note](../includes/business-event-publisher-region-note.md)]
+
 Before you publish business events from Activator, make sure the following items are in place:
 
 - A [business event](create-business-events.md) defined in Real-Time hub with the fields that match your use case.

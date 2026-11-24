@@ -14,24 +14,9 @@ Fabric apps helps you build and ship backend services faster by providing ready-
 
 ## Prerequisites
 
-- A Microsoft account with access to Fabric.
-- A Fabric workspace where you have contributor or admin permissions.
-- Fabric app enabled by a tenant admin in settings. See [Enable Fabric app in tenant admin settings](#enable-fabric-app-in-tenant-admin-settings).
-- [Node.js 20 or later](https://nodejs.org/).
-
-## Enable Fabric app in tenant admin settings
-
-A Fabric tenant administrator must enable the Fabric app workload before users can create Rayfin items.
-If you are not a tenant admin, contact your organization's Fabric administrator to complete this step.
-
-1. Sign in to the [Fabric admin portal](https://app.fabric.microsoft.com/admin-portal).
-1. Navigate to **Tenant settings**.
-1. Under **Fabric apps (preview)**, toggle the setting to **Enabled**.
-1. Choose whether to enable it for the entire organization or specific security groups.
-1. Select **Apply**.
-
-Changes may take a few minutes to propagate.
-After the setting is enabled, users in the allowed scope can create Fabric apps in their workspaces.
+- A Microsoft account with access to Fabric or Power BI Pro license.
+- A workspace where you have contributor or admin permissions.
+- Latest [Node.js version](https://nodejs.org/en/download)
 
 ## From nothing to a running app
 
@@ -68,16 +53,23 @@ Review the generated files and command output before you deploy the app.
 
 ## Create an app from portal
 
-Open [Fabric](https://app.fabric.microsoft.com) in your browser and sign in with your Microsoft account.
+Open the portal for your licensing option and sign in:
+
+- For the Power BI Pro experience, open the [Power BI portal](https://app.powerbi.com) with an account that has Power BI Pro.
+- For a capacity-backed app, open the [Fabric portal](https://app.fabric.microsoft.com).
 
 ### Select a workspace
 
-After signing in, select a workspace from the left navigation panel.
-If you do not have an existing workspace, create one:
+Select a workspace where you have contributor or admin permissions. Use a Pro workspace for the Power BI Pro experience, or a workspace assigned to Fabric capacity or an active Fabric trial for a capacity-backed app.
+
+If you don't have an existing workspace, create one:
 
 1. Select **Workspaces** in the left navigation.
 1. Select **New workspace**.
-1. Enter a name for the workspace and select Fabric capacity.
+1. Enter a name for the workspace.
+1. Select the workspace license mode for your deployment: **Pro** for the Power BI Pro experience, or the appropriate capacity option for a capacity-backed app.
+
+The Pro option doesn't require assigning Fabric capacity. Review the [Power BI Pro limits](licensing.md#power-bi-pro-limits) before creating the app. For either option, continue with the following app creation steps.
 
 ### Create a new Fabric app
 

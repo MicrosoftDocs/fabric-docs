@@ -10,7 +10,7 @@ ms.search.form: Enabling Fabric authentication
 
 # Configure Fabric SSO authentication for your Fabric app
 
-Set up Fabric single sign-on (SSO) for a Fabric app so users can sign in with Microsoft Entra ID through the Fabric portal. This article explains the handoff flow and shows how to enable the required configuration and SDK integration for deployed apps.
+Set up Microsoft Entra sign-in for a Fabric app through the Fabric portal, a direct delegated token exchange, or a trusted external parent portal. These authentication paths use Microsoft Entra, and they don't support arbitrary identity providers.
 
 ## Prerequisites
 
@@ -222,6 +222,123 @@ function App() {
 }
 ```
 
+## Sign in with an existing Microsoft Entra token
+
+Use `signInWithEntraToken()` when your browser or Node.js application already obtains a delegated Microsoft Entra access token. It establishes a Rayfin session on your existing `client.auth` without a popup, iframe, redirect, or handoff code.
+
+### Enable external Entra exchange
+
+Set the following options in the target app's `rayfin/rayfin.yml` file, and redeploy with `npx rayfin up`:
+
+```yaml
+services:
+  auth:
+    enabled: true
+    fabric:
+      enabled: true
+      externalEntraExchange: true
+```
+
+The target Fabric environment must support external exchange. The supplied token must:
+
+- Be a delegated user access token, not an app-only service principal token.
+- Target the Fabric or Power BI resource accepted by the deployment.
+- Include the delegated `Item.Execute.All` scope.
+- Be issued in the target item's owning tenant.
+
+The user must also have **Execute** permission on the app item. For production Power BI, request `https://analysis.windows.net/powerbi/api/Item.Execute.All` through your identity library. The SDK doesn't acquire the Entra token or handle consent.
+
+### Browser usage
+
+Use the same trusted HTTPS backend URL and publishable key as your data client:
+
+```typescript
+import { signInWithEntraToken } from '@microsoft/rayfin-auth-provider-fabric';
+import { client } from './lib/rayfin';
+
+async function signInWithDelegatedToken(entraToken: string) {
+  const session = await signInWithEntraToken(client.auth, { entraToken });
+  return session;
+}
+```
+
+Pass the raw access token without a `Bearer` prefix. The helper uses the client's backend base URL, preserving its deployment path, and appends `/api/auth/v1/brokered/token`. The base URL must be absolute HTTPS with no credentials, query, or fragment. Don't use the static-hosting URL, a relative proxy URL, or an endpoint supplied by an untrusted caller.
+
+The same client's data and function calls use the exchanged Rayfin session automatically. Browser exchange also requires the service's CORS policy to permit your origin and the authorization header.
+
+Handle rejected sign-ins in your UI and display the error before permitting actions for the requested account. A failed exchange can leave an older unexpired session in memory; don't treat it as successful authentication of the newly selected user.
+
+### Node.js usage and session isolation
+
+You can import and use the helper without `window`, `document`, or `localStorage`. For a standalone SDK integration, construct `Auth` and attach it to the API client:
+
+```typescript
+import { Auth } from '@microsoft/rayfin-auth';
+import { ApiClient } from '@microsoft/rayfin-lib';
+import { signInWithEntraToken } from '@microsoft/rayfin-auth-provider-fabric';
+
+async function authenticateUser(
+  rayfinEndpoint: string,
+  publishableKey: string,
+  entraToken: string,
+) {
+  const apiClient = new ApiClient({ baseUrl: rayfinEndpoint, publishableKey });
+  const auth = new Auth(apiClient, { storage: false });
+  auth.attachToClient(apiClient);
+
+  try {
+    const session = await signInWithEntraToken(auth, { entraToken });
+    // Perform this user's SDK operations with apiClient inside this scope.
+    return session.isAuthenticated;
+  } finally {
+    auth.destroy();
+  }
+}
+```
+
+Use a trusted configured `rayfinEndpoint`, not a caller-controlled URL. Create separate instances per user or request, keep sessions in memory, and destroy them when no longer needed. Never share a mutable signed-in client between users. With `RayfinClient`, use `authStorage: false` for the same memory-only behavior. `RayfinServerClient` doesn't expose `auth` and can't be passed directly to this helper.
+
+The SDK doesn't persist the supplied Entra token. Normal session refresh uses the Rayfin refresh token; if refresh is no longer possible, acquire a new Entra token and exchange it explicitly.
+
+## Embed in an external parent portal
+
+Use `@microsoft/rayfin-embed-host` when a portal outside Fabric embeds your app and already has a delegated Entra identity. The parent brokers authentication; the iframe receives only a single-use handoff code, not the parent's Entra token.
+
+Enable `externalEntraExchange` and satisfy the delegated token, tenant, scope, and item **Execute** prerequisites described earlier. Granting access to a parent page doesn't grant access to the Fabric app.
+
+Install the host package in the parent portal:
+
+```bash
+npm install @microsoft/rayfin-embed-host
+```
+
+Register the host **before** mounting the iframe because the iframe sends its readiness signal only once:
+
+```typescript
+import { createEmbedHost } from '@microsoft/rayfin-embed-host';
+
+function mountFabricApp(getAccessToken: () => Promise<string>) {
+  const appUrl = 'https://my-fabric-app.example.com';
+  const host = createEmbedHost({
+    allowedOrigins: [new URL(appUrl).origin],
+    getAccessToken,
+  });
+
+  const iframe = document.createElement('iframe');
+  iframe.src = appUrl;
+  document.body.append(iframe);
+
+  return () => {
+    iframe.remove();
+    host.dispose();
+  };
+}
+```
+
+Supply a token acquisition function for the current parent user. In the embedded app, call and await `initEmbeddedAuth()` before restoring a stored session or rendering authenticated content, even when `getSession()` already reports a user. The stored user might differ from the parent's current user. The host acknowledgement detects external embedding; no `fabricEmbedded` query flag is required for this path.
+
+Use exact trusted origins, including scheme, host, and port, in `allowedOrigins`. The host validates both the browser-attested iframe message origin and the requested return origin before making the authorization call. Don't accept an arbitrary caller-supplied allow list. Keep the Entra token in the parent authorization path, never send it through `postMessage`, and call `host.dispose()` when removing the embed.
+
 ## API reference
 
 ### ensureSignedInWithFabric
@@ -256,13 +373,14 @@ Steps 1 through 3 are safe to call on page load. Step 4 opens a popup and must r
 
 | Function | Description |
 | ---------- | ------------- |
-| `initEmbeddedAuth(auth, options)` | Page-load-safe embedded auth. Returns the session if running inside a Fabric iframe, or `null` otherwise. |
+| `initEmbeddedAuth(auth, options)` | Page-load-safe auth for Fabric or an acknowledged external parent host. Returns the session on success, or `null` when embedded auth isn't available. |
 | `initiateFabricLogin(auth, options)` | Low-level popup flow. Opens the Fabric portal in a popup with PKCE parameters and listens for the `postMessage` handoff. |
 | `isEmbeddedMode(options)` | Returns `true` if the app is running in embedded mode (Fabric iframe). |
+| `signInWithEntraToken(auth, { entraToken })` | Exchanges a delegated Entra token and establishes a session in a browser or Node.js. Doesn't require `FabricAuthOptions`. |
 
 ## Security features
 
-- **PKCE S256** – Every flow generates a cryptographic code verifier and challenge to prevent authorization code interception.
+- **PKCE S256** – Handoff flows generate a cryptographic code verifier and challenge to prevent authorization code interception. Direct Entra token exchange doesn't use PKCE.
 - **State nonce** – A random nonce ties the handoff response to the originating tab, preventing cross-site request forgery.
 - **`postMessage` origin validation** – The SDK validates `event.origin` on incoming messages and rejects messages from unexpected origins.
 - **Automatic cleanup** – PKCE state expires after 5 minutes and is garbage-collected on the next flow.

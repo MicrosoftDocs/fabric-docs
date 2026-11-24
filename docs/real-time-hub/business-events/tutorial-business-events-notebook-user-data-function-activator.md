@@ -54,6 +54,8 @@ This tutorial guides you through the full workflow of reacting to your own busin
 
 ## Configure notebook for publishing
 
+[!INCLUDE [business-event-publisher-region-note](../includes/business-event-publisher-region-note.md)]
+
 1. After creating the business event, go to your workspace.
 
 1. Select **+ New item** and then select **Notebook** in the **Analyze and train data** section.
@@ -244,6 +246,8 @@ This tutorial guides you through the full workflow of reacting to your own busin
      :::image type="content" source="media/tutorial-business-events-notebook-user-data-function-activator/publish-user-data-function-button.png" alt-text="Screenshot of the Publish button for the user data function." lightbox="media/tutorial-business-events-notebook-user-data-function-activator/publish-user-data-function-button.png":::
 
 ## Create an Activator trigger to consume events
+
+[!INCLUDE [business-event-consumer-region-note](../includes/business-event-consumer-region-note.md)]
 
 1. Select the Real-Time hub icon in the left navigation pane of the Fabric portal.
 

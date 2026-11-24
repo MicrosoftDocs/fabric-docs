@@ -97,8 +97,8 @@ For more information, see [branching out limitations](#branching-out-limitations
 ### How to add additional items to a workspace with selective branching
 When a Fabric developer needs to add items that were not selected during the branch‑out operation, the steps below describe how to add additional items to the workspace:
 1. Go to the required Fabric workspace, and select **Source control** at the top.
-2. On the right, select the **branch out** symbol.
-3. Use the drop-down and select **Select additional items**.
+2. On the right, select the **three dots** symbol.
+3. Use the drop-down and select **Add more items**.
 4. This action brings up a dialog to **Select items for your workspace**. The select items dialog shows **only** items from the git branch that weren't previously selected.
 5. Select the additional items you want to add to the workspace.
 6. Click **Add**. The selected items are added to the pending updates in the source control pane.

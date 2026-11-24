@@ -46,6 +46,8 @@ Apply `@role` at the class level to control which roles can perform which action
 
 Restrict authenticated users to their own data:
 
+Place these entities in your configured data package. The default Universal App uses `packages/data/src/` for entities and `packages/shared/src/` for client-facing contracts. Flat templates can use `rayfin/data/`. See [Define data models](data-models.md).
+
 ```typescript
 import { entity, role, uuid, text } from '@microsoft/rayfin-core';
 
@@ -55,9 +57,9 @@ import { entity, role, uuid, text } from '@microsoft/rayfin-core';
 })
 export class Todo {
   @uuid() id!: string;
-  @text() title!: string;
-  @text({ optional: true }) description?: string;
-  @text() userId!: string;
+  @text({ max: 200 }) title!: string;
+  @text({ optional: true, max: 2000 }) description?: string;
+  @text({ max: 255 }) userId!: string;
 }
 ```
 
@@ -123,9 +125,9 @@ Only allow the `title` field during create operations:
 })
 export class Document {
   @uuid() id!: string;
-  @text() title!: string;
-  @text({ optional: true }) content?: string;
-  @text() createdBy!: string;
+  @text({ max: 200 }) title!: string;
+  @text({ optional: true, max: 4000 }) content?: string;
+  @text({ max: 255 }) createdBy!: string;
 }
 ```
 
@@ -140,9 +142,9 @@ Hide sensitive fields from read operations:
 })
 export class User {
   @uuid() id!: string;
-  @text() email!: string;
+  @text({ max: 254 }) email!: string;
   @date({ optional: true }) lastLogin?: Date;
-  @text() passwordHash!: string;
+  @text({ max: 512 }) passwordHash!: string;
 }
 ```
 
@@ -171,10 +173,10 @@ Apply different rules per action using multiple `@role` decorators:
 })
 export class SecureDocument {
   @uuid() id!: string;
-  @text() title!: string;
-  @text({ optional: true }) content?: string;
-  @text({ optional: true }) adminNotes?: string;
-  @text() createdBy!: string;
+  @text({ max: 200 }) title!: string;
+  @text({ optional: true, max: 4000 }) content?: string;
+  @text({ optional: true, max: 2000 }) adminNotes?: string;
+  @text({ max: 255 }) createdBy!: string;
 }
 ```
 
@@ -204,8 +206,8 @@ This configuration:
 })
 export class PrivateNote {
   @uuid() id!: string;
-  @text() ownerId!: string;
-  @text() content!: string;
+  @text({ max: 255 }) ownerId!: string;
+  @text({ max: 4000 }) content!: string;
 }
 ```
 
@@ -216,8 +218,8 @@ export class PrivateNote {
 @role('authenticated', '*')
 export class BlogPost {
   @uuid() id!: string;
-  @text() title!: string;
-  @text() content!: string;
+  @text({ max: 200 }) title!: string;
+  @text({ max: 4000 }) content!: string;
 }
 ```
 
@@ -234,8 +236,8 @@ export class BlogPost {
 })
 export class ManagedResource {
   @uuid() id!: string;
-  @text() ownerId!: string;
-  @text() name!: string;
+  @text({ max: 255 }) ownerId!: string;
+  @text({ max: 200 }) name!: string;
 }
 ```
 

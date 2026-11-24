@@ -32,6 +32,7 @@ The following table lists the supported Fabric item types and their correspondin
 | DigitalOperationsOperationalInsight | UpdateLibrariesJob |
 | MLExperiment | MLExperimentRun |
 | GraphIndex | Algorithm, Load, Refresh |
+| Map | BuildTileset |
 | DigitalTwinBuilder | UpdateLibrariesJob |
 | DigitalTwinBuilderFlow | ExecuteOperations |
 | Databricks | SyncJob |

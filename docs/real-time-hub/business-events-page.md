@@ -2,8 +2,8 @@
 title: Explore the Business Events Page in Real-Time Hub
 description: Explore the Business events page in Fabric Real-Time hub to define, discover, publish, consume, and respond to business events across Fabric.
 #customer intent: As a Fabric user, I want to understand the Business events page so that I can work with business events in Real-Time hub.
-author: spelluru
-ms.author: spelluru
+author: galir
+ms.author: garezni
 ms.reviewer: majia
 ms.topic: concept-article
 ms.custom: doc-kit-assisted
@@ -32,6 +32,8 @@ You can take the following actions on the **Business events** page:
 - **Delete a business event** - Remove a business event that you no longer need. After you delete it, the event is no longer available for consumption.
 
 For step-by-step instructions, see [Create and manage business events](business-events/create-business-events.md).
+
+[!INCLUDE [business-event-consumer-region-note](./includes/business-event-consumer-region-note.md)]
 
 ## Next step
 

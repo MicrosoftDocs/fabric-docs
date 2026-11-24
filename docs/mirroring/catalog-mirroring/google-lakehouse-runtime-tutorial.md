@@ -4,7 +4,7 @@ description: Learn how to create a mirrored Google Lakehouse runtime catalog in 
 author: kgremban
 ms.author: kgremban
 ms.reviewer: mahi
-ms.date: 08/21/2026
+ms.date: 11/10/2026
 ms.topic: tutorial
 ai-usage: ai-assisted
 ---
@@ -19,7 +19,7 @@ By using [catalog mirroring for Google Lakehouse runtime catalog](google-lakehou
 
 - A Google Cloud project with billing enabled and the BigLake API enabled.
 - A Google Lakehouse runtime catalog that contains the Apache Iceberg V2 tables you want to mirror. Iceberg V1 tables aren't supported.
-- The Apache Iceberg REST catalog endpoint and the Google Cloud Storage locations that store the Iceberg data are reachable through the public internet. Firewall rules and other network restrictions aren't currently supported. See [limitations and considerations of this feature](google-lakehouse-runtime-limitations.md).
+- The Apache Iceberg REST catalog endpoint and the Google Cloud Storage locations that store the Iceberg data must be reachable over the public internet. Source firewall rules and other source-network restrictions aren't supported. Mirrored catalogs support [workspace outbound access protection in Fabric](../../security/workspace-outbound-access-protection-mirrored-catalogs-snowflake-database.md). See [limitations and considerations of this feature](google-lakehouse-runtime-limitations.md).
 - Permission to create and manage a Google Cloud Workload Identity Pool and provider and to grant Google Cloud IAM roles.
 - Your Microsoft Entra tenant ID. If you use individual identity bindings, also obtain the object ID of each Microsoft Entra identity that you want to authorize.
 - A Fabric workspace associated with a Fabric capacity (F SKU or Trial).

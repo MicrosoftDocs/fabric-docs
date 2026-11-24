@@ -1,8 +1,8 @@
 ---
 title: "Microsoft Fabric end-to-end security scenario"
 description: "Learn about Microsoft Fabric security concepts and features that can help you confidently build your own analytical solution with Fabric."
-author: msmimart
-ms.author: mimart
+author: teddyberco
+ms.author: tebercov
 ms.reviewer: vparasuraman, amasingh
 ms.date: 06/12/2026
 ms.topic: concept-article

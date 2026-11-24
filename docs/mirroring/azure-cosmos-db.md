@@ -2,7 +2,7 @@
 title: "Microsoft Fabric Mirrored Databases From Azure Cosmos DB"
 description: Learn about the mirrored databases from Azure Cosmos DB in Microsoft Fabric.
 ms.reviewer: mjbrown, jmaldonado
-ms.date: 10/06/2026
+ms.date: 10/21/2026
 ms.topic: overview
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
@@ -79,6 +79,9 @@ If you are enabling continuous backup specifically for mirroring, 7-day continuo
 > Mirroring does not use Azure Cosmos DB's analytical store or change feed as a change data capture source. You can continue to use these capabilities independently, along with mirroring.
 
 It could take a few minutes to replicate your Azure Cosmos DB Data into Fabric OneLake. Depending on your data's initial snapshot or the frequency of updates/deletes, replication could also take longer in some cases. Replication doesn't affect the request units (RUs) you allocated for your transactional workloads.
+
+> [!NOTE]
+> When you start mirroring, the initial replication of existing data reads once from the Azure Cosmos DB account's continuous backup, which is taken on or before every seven days. After this one-time initial backfill, mirroring reads inserts, updates, and deletes directly from the live container in near real-time. Type changes to items that existed before mirroring started might not be reflected until a backup that includes those changes is taken. For more information, see the [troubleshooting guide](azure-cosmos-db-troubleshooting.yml) and the [FAQ](azure-cosmos-db-faq.yml).
 
 ## What to expect from mirroring
 
@@ -160,9 +163,9 @@ The Azure Cosmos DB connector runs in the Fabric Replicator service, not on the 
 
 In Fabric, you can deploy content to data centers in regions other than the home region of the Fabric tenant. For more information, see [multi-geo support](../admin/service-admin-premium-multi-geo.md).
 
-For an Azure Cosmos DB account with a primary write region and multiple read regions, mirroring chooses the Azure Cosmos DB read region closest to the region where Fabric capacity is configured. This selection helps provide low-latency replication for mirroring.
+For an Azure Cosmos DB account with a primary write region and multiple read regions, mirroring chooses the Azure Cosmos DB write region (hub).
 
-When you switch your Azure Cosmos DB account to a recovery region, mirroring automatically selects the nearest Azure Cosmos DB region again.
+When you switch your Azure Cosmos DB account to a recovery region, mirroring continues to use the Azure Cosmos DB write region.
 
 > [!NOTE]
 > Mirroring does not support accounts with multiple write regions.

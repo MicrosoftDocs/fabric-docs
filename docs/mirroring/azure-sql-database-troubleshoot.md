@@ -2,7 +2,7 @@
 title: "Troubleshoot Fabric Mirrored Databases From Azure SQL Database"
 description: Troubleshooting mirrored databases from Azure SQL Database in Microsoft Fabric.
 ms.reviewer: nanikolic, wiassaf, atodalbagi
-ms.date: 11/25/2025
+ms.date: 10/28/2026
 ms.topic: troubleshooting
 ms.custom:
   - references_regions
@@ -24,6 +24,8 @@ Changes to the Fabric capacity or workspace can affect mirroring. For more infor
 | Workspace deleted | Mirroring stops automatically and disables the change feed in Azure SQL Database |In case mirroring is still active on the Azure SQL Database, execute the following stored procedure on your Azure SQL Database: `exec sp_change_feed_disable_db;`. |
 | Persistent errors | Mirroring is disabled for the affected database|To ensure your compute resources aren't affected and to protect your source Azure SQL Database, mirroring will be disabled on any persistent errors. Review [sys.dm_change_feed_errors](/sql/relational-databases/system-dynamic-management-views/sys-dm-change-feed-errors/?view=azuresqldb-current&preserve-view=true) and resolve the underlying errors before re-enabling the database for mirroring.|
 | "Users can access data stored in OneLake with apps external to Fabric" setting disabled | "Replicator - Tables Cannot Reach Replicating Status" |Enable the Tenant setting [Users can access data stored in OneLake with apps external to Fabric](../admin/tenant-settings-index.md#onelake-settings).|
+| A [network security perimeter](/azure/azure-sql/database/network-security-perimeter) (preview) on the Azure SQL logical server denies outbound access to OneLake | Replication stops publishing and error 22651 or 22652 is reported in `sys.dm_change_feed_errors` |For error 22651, add an outbound access rule for the OneLake destination FQDN on the perimeter profile associated with the logical server. For error 22652, associate the logical server with a perimeter, or change public network access so that it isn't `Secured by Perimeter`. For more information, see [Network security perimeter (preview)](azure-sql-database-how-to-data-security.md#network-security-perimeter-preview).|
+| A [network security perimeter](/azure/azure-sql/database/network-security-perimeter) (preview) on the Azure SQL logical server denies Fabric's inbound connection | Mirroring setup or a configuration change fails, and the Fabric portal reports an error that includes `Login failed because the network security perimeter denied inbound access.` |Add an inbound access rule for the `DataFactory`, `PowerBI`, and `PowerQueryOnline` service tags on the perimeter profile associated with the logical server. For more information, see [Network security perimeter (preview)](azure-sql-database-how-to-data-security.md#network-security-perimeter-preview).|
 
 For additional troubleshooting scenarios, see [Troubleshoot Fabric Mirrored Databases - Microsoft Fabric](/fabric/mirroring/troubleshooting).
 

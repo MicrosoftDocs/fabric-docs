@@ -4,7 +4,7 @@ description: Learn best practices for defining a Fabric data engineering agent (
   lakehouse data, selecting write patterns, and validating results.
 author: vsarad
 ms.author: vijaykris
-ms.date: 08/22/2026
+ms.date: 10/23/2026
 ms.topic: best-practice
 ms.service: fabric
 ms.subservice: data-engineering
@@ -138,9 +138,23 @@ Tell the data engineering agent how to handle data that it processed previously.
 
 For incremental tasks, ask for counts of inserted, updated, unchanged, and rejected records. Preserve source data and verified outputs unless replacement is an explicit part of the requested outcome.
 
+## Plan for shared-capacity usage
+
+Project Osmos uses both language model tokens and Spark compute to implement and validate an outcome. With capacity-based Spark billing, this work shares resources with other workloads on the capacity. High utilization can affect unrelated work through capacity throttling.
+
+1. Start with a complete, bounded outcome on representative data. Measure both language model and Spark consumption before increasing the data volume or the number of concurrent tasks.
+1. Ask your capacity administrator to review utilization and throttling in the [Fabric Capacity Metrics app](../enterprise/metrics-app-compute-page.md#capacity-utilization-and-throttling). Use [Project Osmos capacity consumption](data-engineering-agent-consumption.md#monitor-usage) to find both usage components.
+1. Stagger task submissions to avoid busy periods, and limit how many tasks you launch at once. A separate workspace on the same capacity doesn't provide compute isolation. If you need capacity isolation, work with your administrator to evaluate a separately assigned capacity.
+1. For bursty Spark work, ask your capacity administrator to evaluate [on-demand billing for Spark](autoscale-billing-for-spark-overview.md). Where supported and enabled, Spark uses separately billed serverless compute instead of the shared Fabric capacity. The administrator configures a maximum CU limit for Spark.
+
+On-demand billing changes the Spark billing model, not the language model billing model. Its maximum CU limit isn't a total task budget or a limit on Project Osmos token consumption. Review [configuration requirements and job-cancellation warnings](configure-autoscale-billing.md) before changing the setting.
+
+For more information about shared-capacity behavior, see [Fabric throttling](../enterprise/throttling.md).
+
 ## Related content
 
 - [Fabric data engineering agent (Project Osmos) overview](data-engineering-agent-overview.md)
 - [Get started with data engineering agent (Project Osmos)](data-engineering-agent-get-started.md)
+- [Fabric data engineering agent (Project Osmos) capacity consumption](data-engineering-agent-consumption.md)
 - [Fabric data engineering agent (Project Osmos) GitHub repository](https://github.com/microsoft/project-osmos)
 - [What is a lakehouse in Microsoft Fabric?](/fabric/data-engineering/lakehouse-overview)

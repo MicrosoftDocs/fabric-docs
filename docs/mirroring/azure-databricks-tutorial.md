@@ -1,8 +1,8 @@
 ---
 title: "Microsoft Fabric Mirrored Catalog From Azure Databricks Tutorial"
 description: Learn how to create a mirror from Azure Databricks in Microsoft Fabric.
-ms.reviewer: sheppardshep, mspreshah
-ms.date: 05/01/2026
+ms.reviewer: sheppardshep, shilpamenon
+ms.date: 10/27/2026
 ms.topic: tutorial
 ---
 
@@ -15,42 +15,49 @@ ms.topic: tutorial
 - A Fabric workspace.
 - Enable external data access on the metastore. For more information, see [Enable external data access on the metastore](/azure/databricks/external-access/admin#enable-external-data-access-on-the-metastore).
 - Create or use an existing Azure Databricks workspace with Unity Catalog enabled.
-- Have the `EXTERNAL USE SCHEMA` privilege on the schema in Unity Catalog that contains the tables that Fabric accesses.
+- Have the `EXTERNAL USE SCHEMA` privilege on the schema and `SELECT` privilege on the assets in Unity Catalog that Fabric accesses.
 - Use Fabric's permissions model to set access controls for catalogs, schemas, and tables in Fabric.
+- Turn on external data access to materialized views and streaming tables
+   - To enable pipeline configuration, follow the guidelines in [Enable external data access to streaming tables and materialized views](/azure/databricks/external-access/external-for-pipelines).
+   - To enable a single materialized view or streaming table, add this table property:
+      ```sql
+      TBLPROPERTIES ('pipelines.externalMetadata.enabled' = 'true')
+      ```
+   - Apply the change by running or restarting the pipeline. For standalone materialized views and streaming tables, rerun the definition with the property.
 
 ## Create a mirror from Azure Databricks Unity Catalog
 
 Follow these steps to create a new mirror from your Azure Databricks Unity Catalog.
 
 1. Go to your workspace in [Fabric](https://app.fabric.microsoft.com).
-1. Select **New item** > **Mirrored Azure Databricks catalog**.
+2. Select **New item** > **Mirrored Azure Databricks catalog**.
 
    :::image type="content" source="media/azure-databricks-tutorial/mirrored-item.png" alt-text="Screenshot from the Fabric portal of a new Azure Databricks mirrored item.":::
 
-1. Select an existing connection if you have one configured, or create a new connection.
+3. Select an existing connection if you have one configured, or create a new connection.
 
    To create a connection, you must be either a user or an admin of the Azure Databricks workspace. You can authenticate to your Azure Databricks workspace by using **Organizational account** or **Service principal** authentication.
 
    >[!NOTE]
    >The authentication choice you make here applies to Databricks authentication and Unity Catalog authorization. If you need to access Azure Data Lake Storage (ADLS) Gen2 accounts behind a firewall, follow the steps to [Enable network security access for your Azure Data Lake Storage Gen2 account](#enable-network-security-access-for-your-azure-data-lake-storage-gen2-account) later in this article. When ADLS Gen2 is behind a firewall, Fabric Workspace Identity is required for storage firewall access, regardless of the authentication method chosen for the Databricks connection.
 
-1. After you connect to an Azure Databricks workspace, on the **Choose tables from a Databricks catalog** page, select the catalog, schemas, and tables that you want to add and access from Fabric by using the inclusion or exclusion list. Pick the catalog and its related schemas and tables that you want to add to your Fabric workspace.
+4. After you connect to an Azure Databricks workspace, on the **Choose tables from a Databricks catalog** page, select the catalog, schemas, and assets (Tables, Materialized views, and Streaming tables) that you want to add and access from Fabric by using the inclusion or exclusion list. Pick the catalog and its related schemas and assets that you want to add to your Fabric workspace.
 
    You can only see the catalogs, schemas, and tables that you have access to. For more information, see [Unity Catalog privileges and securable objects](/azure/databricks/data-governance/unity-catalog/manage-privileges/privileges).
 
    By default, the **Automatically sync future catalog changes for the selected schema** option is enabled. For more information, see [Mirroring Azure Databricks > Metadata sync](azure-databricks.md#metadata-sync).
 
-1. Select **Next** to continue.
+5. Select **Next** to continue.
 
-1. On the **Review and create** page, review the details and optionally change the mirror item name, which must be unique in your workspace. By default, the name of the mirrored item is the name of the catalog.
+6. On the **Review and create** page, review the details and optionally change the mirror item name, which must be unique in your workspace. By default, the name of the mirrored item is the name of the catalog.
 
-1. Select **Create** to continue.
+7. Select **Create** to continue.
 
-1. A Databricks catalog item is created and for each table, a corresponding Databricks type shortcut is also created.
+8. A Databricks catalog item is created and for each asset, a corresponding Databricks type shortcut is also created.
 
    Schemas that don't have any tables aren't shown.
 
-1. You can also see a preview of the data when you access a shortcut by selecting the SQL analytics endpoint. Open the SQL analytics endpoint item to launch the Explorer and Query editor page. You can query your mirrored Azure Databricks Unity Catalog tables by using T-SQL in the SQL Editor.
+9. You can also see a preview of the data when you access a shortcut by selecting the SQL analytics endpoint. Open the SQL analytics endpoint item to launch the Explorer and Query editor page. You can query your mirrored Azure Databricks Unity Catalog tables by using T-SQL in the SQL Editor.
 
 ## Create Lakehouse shortcuts to the Databricks catalog item
 
@@ -58,13 +65,13 @@ You can also create shortcuts from your Lakehouse to your Databricks catalog ite
 
 1. First, create a lakehouse. If you already have a lakehouse in this workspace, you can use an existing lakehouse.
    1. Select your workspace in the navigation menu.
-   1. Select **+ New** > **Lakehouse**.
-   1. Provide a name for your lakehouse in the **Name** field, and select **Create**.
-1. In the **Explorer** view of your lakehouse, in the **Get data in your lakehouse** menu, under **Load data in your lakehouse**, select the **New shortcut** button.
-1. Select **Microsoft OneLake**. Select a catalog. This is the data item that you created in the previous steps. Then select **Next**.
-1. Select tables within the schema, and select **Next**.
-1. Select **Create**.
-1. Shortcuts are now available in your Lakehouse to use with your other Lakehouse data. You can also use Notebooks and Spark to perform data processing on the data for these catalog tables that you added from your Azure Databricks workspace.
+   2. Select **+ New** > **Lakehouse**.
+   3. Enter a name for your lakehouse in the **Name** field, and select **Create**.
+2. In the **Explorer** view of your lakehouse, in the **Get data in your lakehouse** menu, under **Load data in your lakehouse**, select the **New shortcut** button.
+3. Select **Microsoft OneLake**. Select a catalog. This catalog is the data item that you created in the previous steps. Then select **Next**.
+4. Select tables within the schema, and select **Next**.
+5. Select **Create**.
+6. Shortcuts are now available in your Lakehouse to use with your other Lakehouse data. You can also use Notebooks and Spark to perform data processing on the data for these catalog tables that you added from your Azure Databricks workspace.
 
 ## Create a semantic model
 
@@ -77,8 +84,8 @@ For the best experience, use the Microsoft Edge browser for semantic modeling ta
 After you create a new semantic model based on your mirrored item, configure the relationships between tables.
 
 1. Select **Model Layouts** from the **Explorer** in your workspace.
-1. Once you select **Model layouts**, you're presented with a graphic of the tables that are included as part of the semantic model.
-1. To create relationships between tables, drag a column name from one table to another column name of another table. A popup appears to identify the relationship and cardinality for the tables.
+2. When you select **Model layouts**, you see a graphic of the tables that are included as part of the semantic model.
+3. To create relationships between tables, drag a column name from one table to another column name of another table. A popup appears to identify the relationship and cardinality for the tables.
 
 ## Enable network security access for your Azure Data Lake Storage Gen2 account 
 
@@ -100,10 +107,10 @@ Configure network security for your Azure Data Lake Storage (ADLS) Gen2 account 
 
    :::image type="content" source="media/azure-databricks-tutorial/network-security.png" alt-text="Screenshot of the Network Security tab in Databricks.":::
 
-1. Select an **Existing connection** to the storage account if you have one configured. 
+2. Select an **Existing connection** to the storage account if you have one configured. 
 
    - If you don't have an existing ADLS connection, create a **New connection**.  
-   - The **URL** of the storage endpoint is where the selected catalog's data is stored. The endpoint should be the specific folder where the data is stored, rather than specifying the endpoint to be at the storage account level. For example, provide `https://<storage account>.dfs.core.windows.net/container1/folder1` rather than `https://<storage account>.dfs.core.windows.net/`.
+   - The **URL** of the storage endpoint is where the selected catalog's data is stored. The endpoint should be the specific folder where the data is stored, rather than specifying the endpoint at the storage account level. For example, provide `https://<storage account>.dfs.core.windows.net/container1/folder1` rather than `https://<storage account>.dfs.core.windows.net/`.
    - Provide the connection credentials. The authentication types supported are Organizational account, Service principal, and Workspace Identity (recommended).
 
    > [!NOTE]
@@ -133,8 +140,8 @@ After the connection is established, a shortcut to Unity Catalog tables is creat
 
 Map Unity Catalog (UC) policies to Microsoft OneLake security by following these steps: 
 
-1. **Sync the Entra Group and apply permissions in Unity Catalog.** In Azure Databricks, use Automatic Identity Management to sync a Microsoft Entra ID group and grant it the necessary Unity Catalog privileges (USE, BROWSE, and SELECT) on the relevant catalog and tables.
-1. **Assign a OneLake Data Access Role.** In the Fabric workspace, create a data access role for the newly mirrored data. Add the same Entra group to this role and grant it read access to the OneLake shortcuts corresponding to the Azure Databricks tables. To get started with table level security, select the **Manage OneLake security** button in the ribbon. Ensure you keep access configurations synchronized as catalog structures and permissions evolve. For more information, see the [OneLake data access control model (preview)](../onelake/security/data-access-control-model.md).
+1. **Sync the Microsoft Entra group and apply permissions in Unity Catalog.** In Azure Databricks, use Automatic Identity Management to sync a Microsoft Entra ID group and grant it the necessary Unity Catalog privileges (USE, BROWSE, and SELECT) on the relevant catalog and tables.
+2. **Assign a OneLake Data Access Role.** In the Fabric workspace, create a data access role for the newly mirrored data. Add the same Microsoft Entra group to this role and grant it read access to the OneLake shortcuts corresponding to the Azure Databricks tables. To get started with table level security, select the **Manage OneLake security** button in the ribbon. Ensure you keep access configurations synchronized as catalog structures and permissions evolve. For more information, see the [OneLake data access control model (preview)](../onelake/security/data-access-control-model.md).
 
 ## Related content
 

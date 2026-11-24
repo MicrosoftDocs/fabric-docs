@@ -2,7 +2,7 @@
 title: Add a custom stream connector to an eventstream
 description: Learn how to upload a Kafka Connect source connector as a custom stream connector, add it to an eventstream, and manage package versions.
 ms.topic: how-to
-ms.date: 09/14/2026
+ms.date: 10/16/2026
 ai-usage: ai-assisted
 ---
 
@@ -16,7 +16,7 @@ This article shows you how to prepare and upload a custom stream connector packa
 
 ## Prerequisites
 
-Before you begin, make sure you have:
+Before you begin, ensure you have:
 
 - Access to a workspace assigned to a Fabric capacity or a trial capacity.
 - Contributor or higher permissions in the workspace.
@@ -28,7 +28,7 @@ Before you begin, make sure you have:
 You can develop a Kafka Connect source connector or use one supplied by an independent software vendor or an open-source project. Fabric doesn't provide a connector development environment. Develop and test the connector in your own environment before you upload it.
 
 > [!IMPORTANT]
-> If you use a third-party connector, review its license, dependencies, configuration properties, and documentation. Confirm that it's a source connector. Your access to and use of third-party connectors and data sources are governed by the third-party provider's terms and privacy statements.
+> If you use a third-party connector, review its license, dependencies, configuration properties, and documentation. Confirm that it's a source connector. The third-party provider's terms and privacy statements govern your access to and use of third-party connectors and data sources.
 
 For information about developing a connector, see the [Kafka Connect connector development guide](https://kafka.apache.org/41/kafka-connect/connector-development-guide). Your implementation must meet these requirements:
 
@@ -76,21 +76,41 @@ On the source tile, select **More options** (**...**) to perform one of these ac
 
 ### Upload from a custom stream connector item
 
-1. In a Fabric workspace, select **New item** > **Custom stream connector**.
-1. Enter a name, and then create the item.
-1. On the custom stream connector item page, upload the connector package and icon.
-1. Enter a description, and then select **Finish + upload**.
+Use the **New item** entry point to create a custom stream connector item before you upload the package.
 
-After the upload finishes, the connector appears as a source tile in Real-Time hub.
+1. In a Fabric workspace, select **New item**.
+1. In the **New item** pane, under **Get data**, select **Custom stream connector (preview)**.
 
-## Add the connector to an eventstream
+   :::image type="content" source="./media/add-custom-stream-connector/new-item-connector-details.png" alt-text="Screenshot of the New Custom stream connector dialog showing the Name and Location fields and the Create button." lightbox="./media/add-custom-stream-connector/new-item-connector-details.png":::
 
-1. In Real-Time hub, select the custom stream connector source tile.
+1. In the **New Custom stream connector** dialog, enter a **Name**, confirm the workspace under **Location**, and then select **Create**.
+
+   :::image type="content" source="./media/add-custom-stream-connector/new-item-custom-stream-connector.png" alt-text="Screenshot of the New item pane with the Custom stream connector (preview) tile highlighted under Get data." lightbox="./media/add-custom-stream-connector/new-item-custom-stream-connector.png":::
+
+1. On the custom stream connector start page, select **Upload custom connector**.
+
+   :::image type="content" source="./media/add-custom-stream-connector/new-item-upload-package.png" alt-text="Screenshot of the custom stream connector start page with the Upload custom connector button highlighted." lightbox="./media/add-custom-stream-connector/new-item-upload-package.png":::
+
+1. Under **Connector package**, upload the ZIP file you [prepared earlier](#prepare-the-connector-package).
+1. Optionally, upload an **Icon** and enter a **Description** for the connector.
+1. Select **Finish upload**.
+
+   :::image type="content" source="./media/add-custom-stream-connector/new-item-finish-upload.png" alt-text="Screenshot of the custom connector upload page showing an uploaded ZIP package, optional Icon and Description fields, and the Finish upload button." lightbox="./media/add-custom-stream-connector/new-item-finish-upload.png":::
+
+After the upload finishes, the connector appears as a source tile in Real-Time hub. Continue to [create an eventstream with a custom stream connector](#create-an-eventstream-with-a-custom-stream-connector).
+
+## Create an eventstream with a custom stream connector
+
+After you create the custom stream connector, use it as an eventstream source to ingest data into Fabric. Follow these steps to create a new eventstream from Real-Time hub.
+
+1. In Real-Time hub, find the custom stream connector source tile. In the tile's upper-right corner, select **More options** (**...**), and then select **Connect**.
+
+   :::image type="content" source="./media/add-custom-stream-connector/select-custom-connector-connect.png" alt-text="Screenshot of Real-Time hub showing a custom stream connector source tile with the Connect menu option highlighted." lightbox="./media/add-custom-stream-connector/select-custom-connector-connect.png":::
+
 1. In the **Get events** wizard, create or select a connection to the source. Custom stream connectors support username and password authentication or API key authentication.
 1. If you have Contributor or higher permissions for the connector's workspace, select the package version under **Connect to version**. This setting isn't available with Viewer permissions.
 1. Under **ClassName**, enter the fully qualified Kafka connector class name. For example, enter `com.example.plugin.connector.MySourceConnector`.
-1. Under **Configurations**, add the connector properties as key-value pairs.
-1. Select the eventstream that you want to add the source to, and then complete the wizard.
+1. Under **Configurations**, add the connector properties as key-value pairs and then complete the wizard.
 
 :::image type="content" source="./media/add-custom-stream-connector/configure-connection-settings.png" alt-text="Screenshot of the Configure connection settings page showing the connection, system variables, package version, class name, and optional configurations." lightbox="./media/add-custom-stream-connector/configure-connection-settings.png":::
 
@@ -106,7 +126,22 @@ You can use these system variables as connector property values:
 
 For example, set a connector's `connection.password` property to `${password}`. Use system variables for credentials instead of entering secrets directly in connector properties.
 
-You can also start this procedure from the custom stream connector item. Select **Connect** on the ribbon or on a package version's menu, and then complete the **Get events** wizard.
+You can also start this setup from the custom stream connector item. Select **Connect** on the ribbon or on a package version's menu, and then complete the **Get events** wizard.
+
+:::image type="content" source="./media/add-custom-stream-connector/connect-custom-connector.png" alt-text="Screenshot of the connector configuration page showing the Connect button." lightbox="./media/add-custom-stream-connector/connect-custom-connector.png":::
+
+To add a custom stream connector to an existing eventstream, start from the eventstream editor:
+
+1. In the edit mode, select **Add source** > **Connect data sources** on the ribbon.
+   
+
+   :::image type="content" source="./media/add-custom-stream-connector/add-source-menu.png" alt-text="Screenshot of the event stream editor with the Add source menu open and Connect data sources highlighted." lightbox="./media/add-custom-stream-connector/add-source-menu.png":::
+
+1. In the **Choose a source** dialog, select **All**, and then select your custom stream connector's tile.
+
+   :::image type="content" source="./media/add-custom-stream-connector/select-custom-connector-from-all-sources.png" alt-text="Screenshot of the Choose a source dialog with All selected and a custom stream connector source tile highlighted." lightbox="./media/add-custom-stream-connector/select-custom-connector-from-all-sources.png":::
+
+1. Complete the **Get events** wizard to configure the connector and add the source to your eventstream.
 
 ## Verify the connector
 

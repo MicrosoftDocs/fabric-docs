@@ -2,7 +2,7 @@
 title: How to Create a Copy Job in Data Factory
 description: This article guides you through how to create a copy job, execute it, and view the results.
 ms.reviewer: ukchrist
-ms.date: 09/15/2026
+ms.date: 10/27/2026
 ms.topic: how-to
 ms.custom:
   - copy-job, sfi-image-nochange
@@ -57,7 +57,7 @@ Follow these steps to set up a Copy job that moves data from a database:
 1. Choose a copy mode: Full data copy or Incremental copy. In this example, we use **Incremental copy**. Choose an Incremental column for each table, to track which rows have changed. You can use the preview button to find the right column.
 
    > [!NOTE]
-   > When you choose incremental copy mode, Copy job initially performs a full load and performs incremental copies in the next runs.
+   > When you choose incremental copy mode, Copy job initially performs a full load and performs incremental copies in the next runs. However, you can also add source tables for which you want to perform full loads only by selecting **Read all data every run** from the **Incremental column** drop-down menu.
 
    :::image type="content" source="media/copy-job/copy-job-mode.png" lightbox="media/copy-job/copy-job-mode.png" alt-text="Screenshot showing where to select the Copy job mode.":::
 

@@ -132,7 +132,8 @@ OneLake security RLS and CLS in Spark inherit the [overall OneLake security limi
 * The OneLake and Fabric platform layer blocks direct path reads (`abfss://`, `DeltaTable.forPath`) against secured tables for non-privileged users.
 * The OneLake and Fabric platform layer doesn't support a user being a member of two roles where one defines RLS and the other defines CLS for the affected tables.
 * As OneLake and Fabric platform behavior, workspace **Admin**, **Member**, and **Contributor** roles bypass RLS and CLS.
-* Writes to non-secured outputs from secured sources are supported and operate on already-filtered data. Writes (INSERT/UPDATE/DELETE/MERGE) to a secured target might be unsupported for users subject to RLS or CLS; use a privileged identity for ETL writes into secured tables.
+* Writes to non-secured outputs from secured sources are supported and operate on already-filtered data. Writes (`INSERT/UPDATE/DELETE/MERGE`) to a secured target might be unsupported for users subject to RLS or CLS; use a privileged identity for ETL writes into secured tables.
+* The OneLake and Fabric platform layer doesn't support Delta time travel (`VERSION AS OF`, `TIMESTAMP AS OF`) on tables with OneLake security enabled, so users subject to RLS or CLS can query only the current version of a secured table.
 
 ## Related content
 

@@ -4,8 +4,8 @@ description: HTTP source for Real-Time hub lets you stream JSON API data in real
 #customer intent: As a data engineer, I want to add an HTTP source to my Real-Time hub so that I can stream data from an HTTP endpoint into Microsoft Fabric for real-time processing.
 ms.topic: how-to
 ms.date: 04/06/2026
-author: spelluru
-ms.author: spelluru
+author: galir
+ms.author: garezni
 ms.reviewer: spelluru
 ms.search.form: Source and Destination
 ---

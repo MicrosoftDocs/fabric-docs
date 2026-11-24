@@ -60,7 +60,7 @@ In this section, you build a P&L hierarchy from scratch using Row Model Builder,
 
     This action adds *Gross Revenue* as a child node under *Net Revenue.*
 
-    :::image type="content" source="../../media/planning-tutorial/planning/tutorial-5-row-model/net-revenue-data-source-gross-revenue.png" alt-text="Screenshot of the Gross Revenue data source row added as a child node under Net Revenue in the row model." lightbox="../../media/planning-tutorial/planning/tutorial-5-row-model/net-revenue-data-source-gross-revenue.png":::
+    :::image type="content" source="../../media/planning-tutorial/planning/tutorial-5-row-model/gross-revenue-child-node-net-revenue.png" alt-text="Screenshot of the Gross Revenue data source row added as a child node under Net Revenue in the row model." lightbox="../../media/planning-tutorial/planning/tutorial-5-row-model/gross-revenue-child-node-net-revenue.png":::
 
 1. Select *Gross Revenue*. Select **Add Sibling** > **Data Source**. Select the edit icon, and name the row *Returns and Breakage.*
 1. Select **Choose Close Period Source Row,** search for and select *Returns and Breakage* from the semantic model. Select **Apply**.
@@ -68,7 +68,18 @@ In this section, you build a P&L hierarchy from scratch using Row Model Builder,
 
     :::image type="content" source="../../media/planning-tutorial/planning/tutorial-5-row-model/insert-sibling-rows-net-revenue.png" alt-text="Screenshot of inserting sibling rows for the Gross Revenue row." lightbox="../../media/planning-tutorial/planning/tutorial-5-row-model/insert-sibling-rows-net-revenue.png":::
 
-1. Select the **Configure Formula** box on the *Net Revenue* row. Enter the following formula: `[Gross Revenue] -[Returns and Breakage] - [Distribution Allowance & Rebates] - [Federal & State Excise Taxes]` . Select **Apply**.
+1. Select the **Configure Formula** box on the *Net Revenue* row. Enter the following formula in the formula box: `[Gross Revenue] -[Returns and Breakage] - [Distribution Allowance & Rebates] - [Federal & State Excise Taxes]` .
+
+1. While typing the formula, you can select from the suggestions that appear as you start typing. To access help suggestions with examples, press **Ctrl + Space** with the cursor in the formula box. A suggestions pop-up opens with two tabs: **References** and **Functions**.
+
+    * Select the **References** tab to reference and add the row names you want in the formula.
+    * Select the **Functions** tab to view the list of supported functions. Select one to view its syntax and example and then insert it.
+
+1. For hierarchical rows, typing a row reference in the formula box inserts the full path from the root node to the referenced row, as shown in the following image. Verify the row path to ensure that you reference the correct row.
+
+    :::image type="content" source="../../media/planning-tutorial/planning/tutorial-5-row-model/hierarchical-row-formula.png" alt-text="Screenshot of the Net Revenue formula pane where row references expand to full paths like [Gross Profit].[Net Revenue].[Gross Revenue]." lightbox="../../media/planning-tutorial/planning/tutorial-5-row-model/hierarchical-row-formula.png":::
+
+1. Select **Apply**.
 
     :::image type="content" source="../../media/planning-tutorial/planning/tutorial-5-row-model/enter-net-revenue-formula.png" alt-text="Screenshot of entering the formula for net revenue." lightbox="../../media/planning-tutorial/planning/tutorial-5-row-model/enter-net-revenue-formula.png":::
 

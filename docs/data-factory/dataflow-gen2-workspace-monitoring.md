@@ -1,148 +1,182 @@
 ---
 title: Workspace Monitoring for Dataflow Gen2 in Microsoft Fabric
-description: Learn how workspace monitoring captures Dataflow Gen2 refresh logs for diagnostics and performance analysis using KQL.
+description: Learn how to query DataflowGen2Logs to monitor Dataflow Gen2 refresh and publish operations, analyze durations, and create alerts.
 ms.reviewer: jeluitwi
-ms.date: 06/26/2026
+ms.date: 10/30/2026
 ms.topic: how-to
 ai-usage: ai-assisted
 ---
 
 # Workspace monitoring for Dataflow Gen2 in Microsoft Fabric
 
-Workspace monitoring gives you log-level visibility for all items in a workspace, including Dataflow Gen2. It stores execution logs in a monitoring eventhouse so you can query and analyze them by using KQL (Kusto Query Language). Dataflow Gen2 sends a record to the standard **ItemJobEventLogs** monitoring table for each dataflow refresh and publish, so you can monitor status, duration, and failures across every dataflow in the workspace.
+Workspace monitoring collects logs from supported items in a workspace and stores them in a monitoring eventhouse. Dataflow Gen2 writes refresh and publish operation logs to the `DataflowGen2Logs` table. Use Kusto Query Language (KQL) to review reported operation outcomes, compare durations, and investigate activity across your dataflows.
+
+`DataflowGen2Logs` is different from the shared `ItemJobEventLogs` table. It uses `OperationName`, `OperationId`, and `Status`, not the job-specific columns in [item job event logs](../fundamentals/item-job-event-logs.md).
 
 > [!NOTE]
-> Workspace monitoring for Dataflow Gen2 covers dataflows that have the **CI/CD and Git integration** capability (Dataflow Gen2 with CI/CD). It captures item-level logs for refresh and publish operations.
+> Workspace monitoring for Dataflow Gen2 covers dataflows that have the CI/CD and Git integration capability (Dataflow Gen2 with CI/CD). It captures item-level refresh and publish operations, not individual query or table execution details from Power Query.
 
 ## Monitoring scenarios
 
 Use workspace monitoring for Dataflow Gen2 to:
 
-- **Track refresh health across the workspace.** See success and failure trends for every dataflow in a single eventhouse, instead of opening each dataflow's refresh history one at a time.
-- **Troubleshoot failed refreshes.** Find failed refreshes and their timing so you can investigate the root cause.
-- **Analyze refresh performance.** Compare refresh durations over time to spot regressions or long-running dataflows.
-- **Build custom reports and alerts.** Query the logs by using KQL to build real-time dashboards, Power BI reports, or KQL Queryset alerts for refresh failures.
+- **Review refresh and publish activity.** Query reported operation outcomes across dataflows in a single monitoring database.
+- **Investigate operations reported as failed.** Find the dataflow, timestamp, and correlation ID, and then use refresh history and detailed logs to investigate.
+- **Analyze operation performance.** Compare durations over time to identify long-running operations.
+- **Build custom reports and alerts.** Use KQL queries in real-time dashboards, Power BI reports, or Activator alerts.
 
 ## Enable workspace monitoring
 
-1. In your Fabric workspace, select **Workspace settings**, and then select the **Monitoring** tab.
+1. Follow [Configure workspace monitoring](../fundamentals/enable-workspace-monitoring.md) to meet the prerequisites, configure a Monitoring Item, and turn on data collection.
+1. Refresh or publish a Dataflow Gen2 item with CI/CD support. Collection doesn't backfill earlier activity, and records take time to appear after an operation.
+1. Open the monitoring KQL database, select `DataflowGen2Logs`, and select **Query data**. The table might not appear until the dataflow generates telemetry.
 
-   :::image type="content" source="media/monitor-pipeline-runs/workspace-monitoring-settings.png" alt-text="Screenshot of workspace settings showing the option to toggle on workspace monitoring.":::
+For workspace monitoring permissions, retention, and limitations, see [Workspace monitoring overview](../fundamentals/workspace-monitoring-overview.md).
 
-1. Turn on **Log workspace activity**. This action creates an eventhouse in your workspace to store logs. Fabric also creates a read-only KQL database inside the eventhouse for monitoring data.
+## Review DataflowGen2Logs
 
-   :::image type="content" source="media/monitor-pipeline-runs/monitoring-kql-database.png" alt-text="Screenshot of the items generated from workspace monitoring.":::
+The `DataflowGen2Logs` table contains Dataflow Gen2 operation events. You don't need an `ItemKind` filter to separate dataflows from other item types. Use the following `OperationName` values to distinguish the operations:
 
-1. Go to the KQL database. You can find it in the **Monitoring database** link within the monitoring settings or in your workspace.
+| OperationName | Description |
+|---|---|
+| `RunArtifact` | A dataflow refresh operation. |
+| `ApplyChangesFromArtifact` | A publish operation that applies dataflow changes. |
 
-For more details on enabling and managing workspace monitoring, see [Enable monitoring in your workspace](/fabric/fundamentals/enable-workspace-monitoring).
+Completion records use `Status` values of `Succeeded` or `Failed`. `DurationMs` contains the operation duration in milliseconds. Use `OperationId` to group records for an operation and `CorrelationId` to investigate related telemetry. Don't use this table as a live progress feed.
 
-## Review ItemJobEventLogs
+> [!IMPORTANT]
+> The `Status` column reports the operation's telemetry classification. It doesn't replace the refresh result. A `Succeeded` value can include operations classified as user errors, so it doesn't by itself confirm that the dataflow refresh succeeded. Use [refresh history](dataflows-gen2-monitor.md) to confirm the refresh result and review error details. Alerts that filter for `Status == "Failed"` don't cover every failed refresh.
 
-The **ItemJobEventLogs** table captures item-level run events for your workspace, including Dataflow Gen2 operations. Each operation captures the dataflow name, run status, start and end timestamps, duration, and the principal that ran the job. Filter the table to `ItemKind == "DataFlow"` to focus on Dataflow Gen2 events. Dataflow Gen2 emits two job types: `Refresh` for a dataflow refresh and `Publish` for a just-in-time publish of dataflow changes.
+### DataflowGen2Logs schema
 
-Each operation emits an `InProgress` record when it starts and a terminal `Completed` or `Failed` record when it finishes. Both records share the same `JobInstanceId`, so filter on the terminal status (or deduplicate by `JobInstanceId`) when you count completed or failed runs.
+The following table describes the columns in `DataflowGen2Logs`:
 
-### ItemJobEventLogs schema
-
-The following table describes the schema of `ItemJobEventLogs`:
-
-| **Column name** | **Column type** | **Description** |
+| Column name | Column type | Description |
 |----|----|----|
-| Timestamp | datetime | The timestamp (UTC) when the log entry was generated. |
-| ItemId | string | Unique ID of the item that logs the data. |
-| ItemKind | string | Type of item that logs the operation. For Dataflow Gen2, the value is `DataFlow`. |
-| ItemName | string | The name of the Fabric item that logs this operation. |
-| WorkspaceId | string | Unique identifier of the Fabric workspace that contains the item. |
-| WorkspaceName | string | The name of the workspace that contains the item. |
-| CapacityId | string | Unique identifier of the capacity that hosts the item. |
-| DurationMs | long | Amount of time in milliseconds taken by the job. |
-| ExecutingPrincipalId | string | User ID or service principal ID that runs the job. |
-| ExecutingPrincipalType | string | User or service principal that runs the job. |
-| WorkspaceMonitoringTableName | string | The name of the table where records belong. |
-| JobInstanceId | string | Unique identifier of the job instance. |
-| JobInvokeType | string | How the job was triggered, such as `Manual` (on demand) or `Scheduled`. |
-| JobType | string | Job type. For Dataflow Gen2, values are `Refresh` (a dataflow refresh) and `Publish` (a just-in-time publish of dataflow changes). |
-| JobStatus | string | Status of the job. Values include `InProgress`, `Completed`, and `Failed`. |
-| JobDefinitionObjectId | string | ID of the scheduler that triggered the job. |
-| JobScheduleTime | datetime | Scheduled job start time. |
-| JobStartTime | datetime | Actual job start time. |
-| JobEndTime | datetime | Actual job end time. |
+| `Timestamp` | datetime | UTC timestamp when the log entry was generated. |
+| `OperationName` | string | Operation name: `RunArtifact` or `ApplyChangesFromArtifact`. |
+| `ItemId` | string | Unique identifier of the dataflow item. |
+| `ItemKind` | string | Item type. For these events, the value is `Dataflow`. |
+| `ItemName` | string | Name of the dataflow item. |
+| `WorkspaceId` | string | Unique identifier of the workspace that contains the dataflow. |
+| `WorkspaceName` | string | Name of the workspace that contains the dataflow. |
+| `CapacityId` | string | Unique identifier of the capacity that hosts the workspace. |
+| `CapacityName` | string | Name of the capacity that hosts the workspace. |
+| `CorrelationId` | string | Correlation identifier for tracing the operation. |
+| `OperationId` | string | Identifier of the logged operation. Dataflow Gen2 populates it with the same value as `CorrelationId`. |
+| `Region` | string | Region associated with the event. |
+| `Identity` | dynamic | Identity information associated with the operation. |
+| `CustomerTenantId` | string | Unique identifier of the customer tenant. |
+| `WorkspaceMonitoringTableName` | string | Target monitoring table name: `DataflowGen2Logs`. |
+| `DurationMs` | long | Duration of the operation in milliseconds. |
+| `Status` | string | Reported operation outcome: `Succeeded` or `Failed`. See the status caveat earlier in this article. |
+| `Level` | string | Severity level associated with the event. |
+
+`DataflowGen2Logs` doesn't include a job trigger type, separate job start and end timestamps, or detailed error messages. Use [item job event logs](../fundamentals/item-job-event-logs.md) for scheduler-level metadata and [detailed refresh logs](dataflow-gen2-detailed-refresh-logs.md) for Power Query diagnostics.
+
+To inspect the schema in your monitoring database, run:
+
+```kql
+DataflowGen2Logs
+| getschema
+```
 
 ## Example KQL queries for Dataflow Gen2
 
-### Summarize Dataflow Gen2 refreshes by status
+The following examples use a seven-day window. Adjust it to your investigation and the database's retention period. Where an example summarizes operations, `arg_max()` keeps the latest record per workspace, dataflow, and operation instead of counting repeated records.
+
+### Summarize reported refresh operation outcomes
 
 ```kql
-ItemJobEventLogs
-| where ItemKind == "DataFlow" and JobType == "Refresh"
-| summarize count() by JobStatus
+DataflowGen2Logs
+| where Timestamp > ago(7d)
+| where OperationName == "RunArtifact" and Status in ("Succeeded", "Failed")
+| summarize arg_max(Timestamp, *) by WorkspaceId, ItemId, OperationId
+| summarize Operations = count() by Status
 ```
 
-### Identify failed Dataflow Gen2 refreshes
+### Identify refresh operations reported as failed
 
 ```kql
-ItemJobEventLogs
-| where ItemKind == "DataFlow" and JobType == "Refresh" and JobStatus == "Failed"
+DataflowGen2Logs
+| where Timestamp > ago(7d)
+| where OperationName == "RunArtifact" and Status == "Failed"
+| summarize arg_max(Timestamp, *) by WorkspaceId, ItemId, OperationId
+| project Timestamp, ItemId, ItemName, WorkspaceName, OperationId, CorrelationId, Status, DurationMs
 | order by Timestamp desc
-| project Timestamp, ItemName, WorkspaceName, JobStartTime, JobEndTime, JobStatus
 ```
 
-### Analyze Dataflow Gen2 refresh duration
+### Analyze refresh operation duration
 
 ```kql
-ItemJobEventLogs
-| where ItemKind == "DataFlow" and JobType == "Refresh" and JobStatus == "Completed"
-| project Timestamp, ItemName, JobStartTime, JobEndTime, DurationMs
+DataflowGen2Logs
+| where Timestamp > ago(7d)
+| where OperationName == "RunArtifact" and Status in ("Succeeded", "Failed")
+| summarize arg_max(Timestamp, *) by WorkspaceId, ItemId, OperationId
+| project Timestamp, ItemId, ItemName, WorkspaceName, OperationId, Status, DurationMs, DurationSeconds = DurationMs / 1000.0
 | order by DurationMs desc
 ```
 
-### View the refresh history for a specific dataflow
+### View refresh operation logs for a specific dataflow
+
+Replace `<your-dataflow-item-id>` with the dataflow's item ID. Filtering by ID avoids ambiguity when dataflows have the same name or are renamed.
 
 ```kql
-ItemJobEventLogs
-| where ItemKind == "DataFlow" and JobType == "Refresh" and ItemName == "<your-dataflow-name>"
-| project Timestamp, JobInvokeType, JobStatus, JobStartTime, JobEndTime, DurationMs
+DataflowGen2Logs
+| where Timestamp > ago(7d)
+| where OperationName == "RunArtifact" and ItemId == "<your-dataflow-item-id>"
+| project Timestamp, ItemName, OperationId, CorrelationId, Status, DurationMs
 | order by Timestamp desc
 ```
 
-### Compare scheduled versus on-demand refreshes
+### Inspect records for a correlation ID
+
+Replace `<your-correlation-id>` with a value from the logs to inspect records associated with that identifier.
 
 ```kql
-ItemJobEventLogs
-| where ItemKind == "DataFlow" and JobType == "Refresh"
-| summarize count() by JobInvokeType, JobStatus
+DataflowGen2Logs
+| where Timestamp > ago(7d)
+| where CorrelationId == "<your-correlation-id>"
+| project Timestamp, OperationName, ItemId, ItemName, WorkspaceName, OperationId, Status, DurationMs
+| order by Timestamp asc
 ```
 
-### Monitor just-in-time publish jobs
+### Monitor publish operations
 
 ```kql
-ItemJobEventLogs
-| where ItemKind == "DataFlow" and JobType == "Publish"
-| project Timestamp, ItemName, WorkspaceName, JobStatus, JobStartTime, JobEndTime, DurationMs
+DataflowGen2Logs
+| where Timestamp > ago(7d)
+| where OperationName == "ApplyChangesFromArtifact"
+| summarize arg_max(Timestamp, *) by WorkspaceId, ItemId, OperationId
+| project Timestamp, ItemName, WorkspaceName, OperationId, CorrelationId, Status, DurationMs
 | order by Timestamp desc
 ```
 
-## Create an alert for workspace-wide Dataflow Gen2 refresh failures
+## Create an alert for reported refresh operation failures
 
-Use a KQL query set to detect Dataflow Gen2 refresh failures across the workspace. The following query returns recent failures so you can configure an alert on the result:
+Use a KQL Queryset to find refresh operations reported as failed across the workspace. The following query returns failure records ingested in the last 10 minutes, including records that arrive after the operation's event timestamp:
 
 ```kql
-ItemJobEventLogs
-| extend SecondsAgo = datetime_diff('second', now(), ingestion_time())
-| where ItemKind == "DataFlow" and JobType == "Refresh" and JobStatus == "Failed"
-| where SecondsAgo <= 540
+DataflowGen2Logs
+| where ingestion_time() > ago(10m)
+| where OperationName == "RunArtifact" and Status == "Failed"
+| summarize arg_max(Timestamp, *) by WorkspaceId, ItemId, OperationId
+| project Timestamp, ItemId, ItemName, WorkspaceName, OperationId, CorrelationId, Status, DurationMs
 | order by Timestamp desc
-| project Timestamp, ItemName, WorkspaceName, JobStartTime, JobEndTime, JobStatus
 ```
+
+Follow [Create Activator alerts from a KQL Queryset](../real-time-intelligence/data-activator/activator-alert-queryset.md) to configure the alert. Set a query interval shorter than the lookback window. Overlapping windows can return the same operation more than once, so account for repeated notifications when designing the alert.
 
 ## Best practices
 
-- Use workspace monitoring for deep analysis, custom reporting, and workspace-wide alerting on refresh failures.
-- Combine workspace monitoring with the dataflow [refresh history](dataflows-gen2-monitor.md) and the monitoring hub for quick operational checks on individual dataflows.
+- Use item and operation IDs when filtering or grouping logs. Names can change.
+- Use completion records for duration comparisons. Don't sum repeated records for the same operation.
+- Combine workspace monitoring with [refresh history](dataflows-gen2-monitor.md), the monitoring hub, and [detailed refresh logs](dataflow-gen2-detailed-refresh-logs.md) to confirm refresh outcomes and investigate errors.
 
 ## Related content
 
 - [View refresh history and monitor your dataflows](dataflows-gen2-monitor.md)
-- [Enable monitoring in your workspace](/fabric/fundamentals/enable-workspace-monitoring)
-- [Workspace monitoring overview](/fabric/fundamentals/workspace-monitoring-overview)
+- [Understand Dataflow Gen2 detailed refresh logs](dataflow-gen2-detailed-refresh-logs.md)
+- [Configure workspace monitoring](../fundamentals/enable-workspace-monitoring.md)
+- [Workspace monitoring overview](../fundamentals/workspace-monitoring-overview.md)
+- [Monitor Fabric items with item job event logs](../fundamentals/item-job-event-logs.md)

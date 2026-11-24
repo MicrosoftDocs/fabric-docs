@@ -420,7 +420,7 @@ Permissions are required for the pipeline, and for the workspaces that are assig
 To deploy from one stage to another in the pipeline, you must be a pipeline admin, and either a contributor, member, or admin of the workspaces assigned to the stages involved. For example, a pipeline admin that isn't assigned a workspace role, can view the pipeline and share it with others. However, this user can't view the content of the workspace in the pipeline, or in the service, and can't perform deployments.
 
 >[!NOTE]
->Starting December 1, 2026, users without read-write permissions on **ALL** workspace items can't deploy to the workspace through deployment pipelines. Also, they can't assign this workspace to certain stages. This restriction applies only to workspaces that contain items protected by sensitivity labels with protection policies. For more information, see [Information Protection in Microsoft Fabric](../../governance/information-protection.md).
+> Starting February 28, 2027, users without read-write permissions on **ALL** workspace items can't deploy to the workspace through deployment pipelines. Also, they can't assign this workspace to certain stages. This restriction applies only to workspaces that contain items protected by sensitivity labels with protection policies. For more information, see [Information Protection in Microsoft Fabric](../../governance/information-protection.md).
 
 ### Permissions table
 
@@ -508,7 +508,7 @@ This section lists most of the limitations in deployment pipelines.
   * Native query and DirectQuery together aren't supported. This limitation includes proxy semantic models.
   * The datasource connection must be the first step in the mashup expression.
 
-* When you deploy a Direct Lake semantic model, it doesn't automatically bind to items in the target stage. For example, if a lakehouse is a source for a Direct Lake semantic model and they're both deployed to the next stage, the Direct Lake semantic model in the target stage still binds to the lakehouse in the source stage. Use datasource rules to bind it to an item in the target stage. Other types of semantic models automatically bind to the paired item in the target stage.
+* When you deploy a Direct Lake semantic model, it doesn't automatically bind to items in the target stage. For example, if a lakehouse is a source for a Direct Lake semantic model and you deploy both to the next stage, the Direct Lake semantic model in the target stage still binds to the lakehouse in the source stage. For Direct Lake on SQL, use data source rules to bind it to an item in the target stage. For Direct Lake on OneLake, use [M parameters and parameter rules](../../fundamentals/direct-lake-develop.md#use-m-parameters-with-deployment-pipelines) instead. Other types of semantic models automatically bind to the paired item in the target stage.
 * Deployment of a semantic model that uses 'Dataflow Gen 2 (CI/CD)' item as a datasource is not supported.
 
 ### Dataflow limitations

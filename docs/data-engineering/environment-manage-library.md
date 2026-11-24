@@ -13,18 +13,20 @@ ai-usage: ai-assisted
 Microsoft Fabric environments provide flexible configuration for running Spark jobs. Libraries provide reusable code for notebooks and Spark job definitions. In addition to built-in libraries that come with each Spark runtime, you can install public and custom libraries in Fabric environments.
 
 > [!NOTE]
-> Navigate to the workspace where your environment is located, select your environment and library management options are located in the left navigation pane. If you don't have an environment created, see [Create, configure, and use an environment in Fabric](create-and-use-environment.md).
+> Navigate to the workspace where your environment is located, and select your environment.
+> Library management options are located in the left navigation pane. If you don't have an environment created, see
+> [Create, configure, and use an environment in Fabric](create-and-use-environment.md).
 
 ## Built-in libraries
 
 In Fabric, each runtime version comes preloaded with a curated set of built-in libraries that are optimized for performance, compatibility, and security across Python, R, Java, and Scala. The **Built-in** libraries page in the environment lets you browse and search these preinstalled libraries based on the selected runtime.
 
-These libraries are installed by default in every environment and can't be changed. They'll be available if you run your notebook or Spark job definition in this environment.
+These libraries are installed by default in every environment and can't be changed. They're available if you run your notebook or Spark job definition in this environment.
 
 To view the list of preinstalled packages and their versions for each runtime, see [Apache Spark runtimes in Fabric](runtime.md).
 
 > [!NOTE]
-> Per-notebook approaches such as the notebook Resources folder and inline install commands (for example, `%pip install` or `%conda install` in a code cell) are manual, session-scoped or notebook-scoped, and aren't affected by environment publishing. Use them for quick, one-off library additions during interactive development.
+> Per-notebook approaches such as the notebook Resources folder and inline install commands (for example, `%pip install` or `%conda install` in a code cell) are manual, session-scoped, or notebook-scoped, and aren't affected by environment publishing. Use them for quick, one-off library additions during interactive development.
 
 > [!IMPORTANT]
 > Fabric supports different ways to manage packages. For more options and **best practices**, see [Manage Apache Spark libraries in Fabric](library-management.md).
@@ -33,7 +35,7 @@ To view the list of preinstalled packages and their versions for each runtime, s
 
 ## External repositories
 
-You can add libraries from public repositories like PyPI, Conda and Maven, or from private repositories. The source and publish mode options differ depending on the repository type. When you add a library, you select a publish mode (Full or Quick). For details on how each mode works, see [Select publish mode for libraries](#select-publish-mode-for-libraries).
+You can add libraries from public repositories like PyPI, Conda, and Maven, or from private repositories. The source and publish mode options differ depending on the repository type. When you add a library, you select a publish mode (Full or Quick). For details on how each mode works, see [Select publish mode for libraries](#select-publish-mode-for-libraries).
 
 :::image type="content" source="media\environment-library-management\environment-library-management-external-repositories-library.png" alt-text="Screenshot that shows the environment External repositories Libraries screen." lightbox="media\environment-library-management\environment-library-management-external-repositories-library.png":::
 
@@ -51,12 +53,12 @@ Public repositories let you install packages from PyPI or Conda.
 
     :::image type="content" source="media\environment-library-management\environment-library-management-external-repositories-public.png" alt-text="Screenshot that shows the process of adding a library from a public repository." lightbox="media\environment-library-management\environment-library-management-external-repositories-public.png":::
 
-   If the library name is found, you see the available versions. 
+   If the search finds the library name, you see the available versions.
 
 1. Select the version and then save and publish your environment.
 
 ### Add library from Maven
-Fabric supports installing libraries directly from Maven repositories. To do this, create a [POM file](https://maven.apache.org/guides/introduction/introduction-to-the-pom.html) that lists the Maven dependencies you want to install, and upload it to the Environment.
+Fabric supports installing libraries directly from Maven repositories. To use this feature, create a [POM file](https://maven.apache.org/guides/introduction/introduction-to-the-pom.html) that lists the Maven dependencies you want to install, and upload it to the Environment.
 
 
 1. In the **External repositories** tab, select **Import pom.xml**.
@@ -66,12 +68,12 @@ Fabric supports installing libraries directly from Maven repositories. To do thi
 > [!NOTE]
 >
 > - Importing pom.xml is supported only in Spark 4.0 and later.
-> - Importing pom.xml is supported only in Full mode. In this mode, Fabric performs dependency resolution and conflict detection for Maven packages. If any library is incompatible with the runtime, you will see an error after publishing.
-> - Importing pom.xml is not supported in workspaces with Outbound Access Protection enabled. In these workspaces, download the required libraries from Maven and upload them as custom libraries instead.
+> - Importing pom.xml is supported only in Full mode. In this mode, Fabric performs dependency resolution and conflict detection for Maven packages. If any library is incompatible with the runtime, you see an error after publishing.
+> - Importing pom.xml isn't supported in workspaces with Outbound Access Protection enabled. In these workspaces, download the required libraries from Maven and upload them as custom libraries instead.
 
 ### Add a library from a private repository
 
-Private repositories let you install packages using pip or conda. 
+Private repositories let you install packages by using pip or conda.
 
 1. In the **External repositories** tab, select **Add library**.
 
@@ -79,11 +81,11 @@ Private repositories let you install packages using pip or conda.
 
 1. Select the source (pip or conda).
 
-1. Enter the library name and version. Make sure you enter the **library name and version accurately**, because searching libraries in private repositories as you type isn't supported. Incorrect package information causes publishing to fail.
+1. Enter the library name and version. Ensure you enter the **library name and version accurately**, because searching libraries in private repositories as you type isn't supported. Incorrect package information causes publishing to fail.
 
 ### Add libraries from an Azure Artifact Feed
 
-Azure Artifact Feeds can be scoped to either a project (private) or an organization (public). Fabric supports both scopes. Regardless of the feed's visibility in Azure DevOps, Fabric always connects through an authenticated Data Factory connection, so you need to set up a connection even for public feeds.
+You can scope Azure Artifact Feeds to either a project (private) or an organization (public). Fabric supports both scopes. Regardless of the feed's visibility in Azure DevOps, Fabric always connects through an authenticated Data Factory connection, so you need to set up a connection even for public feeds.
 
 > [!NOTE]
 > Installing libraries from Azure Artifact Feed is supported in Spark 3.5. It isn't supported in workspaces with Private Link or outbound access protection enabled.
@@ -154,6 +156,12 @@ Upload the YML file directly to the environment, or switch to **YML editor view*
 
 You can install packages from a private JFrog Artifactory repository by creating a Data Factory connection and referencing its connection ID in a YML file.
 
+> [!NOTE]
+> Installing libraries from JFrog Artifactory requires Runtime 2.0 (Spark 4.1) or later.
+> It's not supported in workspaces with Private Link or outbound access protection (OAP) enabled. For alternatives, see[Manage libraries with limited network access in Fabric](environment-manage-library-with-outbound-access-protection.md).
+> Only PyPI and Conda packages are supported, and you must use **Full** publish mode.
+> Maven packages aren't supported through a JFrog Artifactory connection.
+
 #### Set up a connection for JFrog Artifactory
 
 1. Select the **Settings** gear icon in the top-right corner of the Fabric portal, and then select **Manage connections and gateways**.
@@ -167,6 +175,8 @@ You can install packages from a private JFrog Artifactory repository by creating
     ```
 
 1. For the authentication method, select the expected mechanism.
+
+   For a Conda repository, provide both a username and a token in the connection.
 
 1. Select **Allow Code-First Artifacts like Notebooks to access this connection (Preview)**.
 
@@ -185,6 +195,12 @@ dependencies:
     - wordcloud==1.9.4
     - --index-url <YOUR_CONNECTION_ID>
 ```
+
+Only the bare connection ID is supported for a JFrog Artifactory index or channel.
+Don't embed a username or token before the host in an `--index-url` URL. Fabric rejects
+custom index or channel URLs with embedded credentials with the error
+"Custom index/channel URLs must not embed credentials". Store credentials in the connection
+instead.
 
 Upload the YML file directly to the environment, or switch to **YML editor view** and paste the content. When you publish the environment, Fabric reads the packages from your repository and persists them. Republish the environment to pick up package updates.
 
@@ -213,7 +229,7 @@ To delete a library, hover over its row and select the trash icon, or select mul
 
 ## Select publish mode for libraries
 
-When you add external or custom libraries, you choose a publish mode. **Full mode** is available for all library sources and workload types. **Quick mode** is available for public repositories and most custom library formats, but only when running notebooks.
+When you add external or custom libraries, choose a publish mode. **Full mode** is available for all library sources and workload types. **Quick mode** is available for public repositories and most custom library formats, but only when running notebooks.
 
 :::image type="content" source="media\environment-library-management\environment-library-management-different-mode.png" alt-text="Screenshot that shows the different modes in the library management screen." lightbox="media\environment-library-management\environment-library-management-different-mode.png":::
 
@@ -232,10 +248,10 @@ The following table shows which publish mode each library source supports.
 
 Use dependency complexity and workload type to decide which mode fits.
 
-- **Full mode** resolves dependencies, validates compatibility, and creates a stable library snapshot during publish. That snapshot is deployed when a new session starts. Best for larger dependency sets (for example, more than 10 packages), production workloads, and pipelines. Publish typically takes 3 to 6 minutes; session startup adds 1 to 3 minutes for dependency deployment, depending on dependency size. To maintain a stable snapshot while achieving approximately 5-second session starts, use Full mode together with a [custom live pool](custom-live-pools-overview.md).
-- **Quick mode** skips dependency processing during publish and installs packages at notebook session startup instead. Best for lighter dependency sets, rapid iteration, and early-stage experimentation. Publish completes in about 5 seconds; library installation occurs at session start.
+- **Full mode** resolves dependencies, validates compatibility, and creates a stable library snapshot during publish. That snapshot deploys when a new session starts. Use it for larger dependency sets (for example, more than 10 packages), production workloads, and pipelines. Publish typically takes 3 to 6 minutes; session startup adds 1 to 3 minutes for dependency deployment, depending on dependency size. To maintain a stable snapshot while achieving approximately 5-second session starts, use Full mode together with a [custom live pool](custom-live-pools-overview.md).
+- **Quick mode** skips dependency processing during publish and installs packages at notebook session startup instead. Use it for lighter dependency sets, rapid iteration, and early-stage experimentation. Publish completes in about 5 seconds; library installation occurs at session start.
 
-You can mix modes during development. A common pattern is to iterate in quick mode, then move validated dependencies to full mode for a stable production snapshot. You can also keep an existing full mode snapshot unchanged and layer new test packages in quick mode — the full mode snapshot deploys first, then quick mode packages install on top.
+You can mix modes during development. A common pattern is to iterate in quick mode, then move validated dependencies to full mode for a stable production snapshot. You can also keep an existing full mode snapshot unchanged and layer new test packages in quick mode - the full mode snapshot deploys first, then quick mode packages install on top.
 
 ### Mode limitations and behavior
 

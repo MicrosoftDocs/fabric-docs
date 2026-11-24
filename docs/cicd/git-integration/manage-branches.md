@@ -3,7 +3,8 @@ title: Development Process in Microsoft Fabric
 description: Learn how to develop an app using Git branches to work in your own isolated workspace environment and improve collaboration with your team.
 ms.reviewer: NimrodShalit
 ms.topic: concept-article
-ms.date: 09/01/2026
+ms.date: 10/18/2026
+ai-usage: ai-assisted
 #customer intent: As a developer, I want to learn how to use Git branches in Fabric so that I can work in my own isolated environment.
 ---
 
@@ -19,6 +20,10 @@ The Fabric workspace is a *shared runtime environment* for all items, and each w
 - [Develop using branched workspace](./branched-workspace.md). Each developer has their own workspace where they connect their own separate branch, sync the content into that workspace, and then commit back to the branch.
 - [Develop using client tools](./client-tool.md), such as [Power BI Desktop](https://powerbi.microsoft.com/desktop/) for reports and semantic models, or [VS Code](https://code.visualstudio.com/) for Notebooks.
 
+The following diagram illustrates the branched-workspace development process,
+including bidirectional Git sync and a PR that merges feature changes into Dev.
+
+:::image type="content" source="../media/manage-deployment/development-process.png" alt-text="Diagram showing feature and dev workspaces with bidirectional Git sync to their branches, branch-out with an optional deployment plan, and a feature-to-dev PR." lightbox="../media/manage-deployment/development-process.png":::
 
 ## Related content
 - [Fabric deployment options](../manage-deployment.md)

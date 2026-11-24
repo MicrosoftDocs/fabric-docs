@@ -4,7 +4,7 @@ description: Learn how to buy Microsoft Fabric capacity through an Azure subscri
 author: dknappettmsft
 ms.author: daknappe
 ms.topic: how-to
-ms.date: 08/27/2026
+ms.date: 11/19/2026
 ai-usage: ai-assisted
 
 #customer intent: As an administrator or an executive, I want to learn how to buy Microsoft Fabric capacity so that I can start working in the Microsoft Fabric platform.
@@ -48,7 +48,7 @@ To buy Fabric capacity, you need:
 
 - A supported Azure region for the Fabric workloads that you plan to use. Review [Fabric region availability](../admin/region-availability.md) before you select a region.
 
-- Enough available Fabric capacity unit (CU) quota in the Azure subscription and region for the SKU that you want to buy. For example, an F64 capacity requires 64 available CUs. If the available quota is too low, request an increase before you create the capacity. For instructions, see [Microsoft Fabric capacity quotas](fabric-quotas.md).
+- Enough available Fabric capacity unit (CU) quota in the Azure subscription and region for the SKU and any configured capacity overage threshold. For quota requirements and increase requests, see [Microsoft Fabric capacity quotas](fabric-quotas.md).
 
 ## Buy an Azure capacity SKU for Fabric
 
@@ -76,9 +76,13 @@ To buy an Azure capacity SKU for Fabric in the Azure portal, follow these steps:
        * The capacity administrator must belong to the tenant where you provision the capacity.
        * Business to business (B2B) users can't be capacity administrators.
 
+1. In **Capacity overage**, which is enabled by default, review the threshold or turn off the setting to opt out. For details, see [Configure capacity overage during capacity creation](enable-capacity-overage.md#enable-and-configure-capacity-overage-during-capacity-creation). Review [overage pricing and threshold behavior](capacity-overage-overview.md) before you create the capacity.
+
 1. Select **Next: Tags** and if necessary, enter a name and a value for your capacity.
 
 1. Select **Review + create**.
+
+1. Review the capacity details and select **Create**.
 
 ## Buy through a Cloud Solution Provider (CSP)
 

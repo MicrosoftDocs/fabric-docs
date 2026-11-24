@@ -5,7 +5,7 @@ ms.author: scottpolly
 author: s-polly
 ms.topic: how-to
 ms.reviewer: scottpolly
-ms.date: 05/12/2026
+ms.date: 10/14/2026
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
 ai-usage: ai-assisted
@@ -13,6 +13,9 @@ ai-usage: ai-assisted
 ---
 
 # Consume Fabric data agent from Microsoft Foundry Services (preview)
+
+> [!IMPORTANT]
+> This integration is retiring and replaced by the Fabric IQ (OneLake Catalog) tool. Starting November 6, 2026, it won't be supported. If your Microsoft Foundry agents use the Microsoft Fabric tool to connect to a Fabric data agent, you must migrate them to Fabric IQ before that date. For steps, see [Consume Fabric data agent from Microsoft Foundry via Fabric IQ](data-agent-foundry-fabric-iq.md).
 
 Data agent in Microsoft Fabric transforms enterprise data into conversational Q&A systems. It enables users to interact with their data through chat, to uncover actionable insights. One way to consume Fabric data agent is through Foundry Agent Service, a core component of Microsoft Foundry. Through integration of Fabric data agents with Foundry, your Azure AI agents can directly tap into the rich, structured, and semantic data available in Microsoft Fabric OneLake. This integration provides immediate access to high-quality enterprise data, and it empowers your Azure AI agents to generate actionable insights and streamline analytical workflows. Organizations can then enhance data-driven decision-making with Fabric data agent as a powerful knowledge source within their Azure AI environments.
 

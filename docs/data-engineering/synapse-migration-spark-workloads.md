@@ -43,7 +43,7 @@ For workspaces where notebooks and SJDs are stored directly in Synapse (not in a
 
 1. Run the Spark Migration Assistant from your Fabric workspace (**Migrate** > **Data engineering items**). Select the source Synapse workspace and migrate all Spark items.
 
-1. Validate dependencies: ensure the same Spark version is used. If notebooks reference other notebooks via `mssparkutils.notebook.run()`, verify those were also migrated. The Migration Assistant preserves folder structure (Fabric supports up to 10 levels of nesting).
+1. Validate dependencies against your target Fabric runtime. [Runtime 2.0](./runtime-2-0.md) is the latest GA and default runtime; test Spark version differences before moving production workloads. If notebooks reference other notebooks via `mssparkutils.notebook.run()`, verify that those notebooks were also migrated. The Migration Assistant preserves folder structure (Fabric supports up to 10 levels of nesting).
 
 1. Refactor code: replace `mssparkutils` with `notebookutils`, replace linked service references with Fabric Connections, and update file paths. See the [Refactor Spark code](#refactor-spark-code) section for details.
 
@@ -261,13 +261,15 @@ For detailed steps on migrating libraries to environment items, see [Migrate Spa
 
 ### Library compatibility: Synapse vs. Fabric
 
-Fabric Runtime 1.3 (Spark 3.5) ships with 223 Python, 183 Java/Scala, and 135 R libraries built-in. Most Synapse libraries are available in Fabric, but there are gaps that can cause runtime failures if not addressed before migration.
+Use [Runtime 2.0](./runtime-2-0.md), the latest GA and default runtime, as your migration target after validating workload compatibility. Compare your dependencies against its package inventory in the [Fabric runtime releases repository](https://github.com/microsoft/synapse-spark-runtime/tree/main/Fabric).
+
+The package counts and gap tables in this section describe Runtime 1.3 (Spark 3.5), which includes 223 Python, 183 Java/Scala, and 135 R built-in libraries. They aren't a Runtime 2.0 inventory or a recommendation to migrate to Runtime 1.3. Runtime 2.0 changes package availability and versions; see [Migrate from Runtime 1.3 to Runtime 2.0](./runtime-2-0-migration-guide.md) for additional compatibility considerations.
 
 To identify which libraries your notebooks actually use, run these checks before reviewing the gap tables:
 
 - **Python notebooks:** Search for `import` and `from ... import` statements across all `.py` / `.ipynb` files.
 - **Java/Scala notebooks and SJDs:** Search for `import` statements and Maven coordinates; look for packages like `com.azure.cosmos.spark` or `com.microsoft.kusto.spark`.
-- **Export full dependency list:** Run `pip freeze` in a Synapse notebook, compare against the Fabric Runtime 1.3 manifest. Only libraries that appear in both your `pip freeze` output and the gap tables below need action.
+- **Export full dependency list:** Run `pip freeze` in a Synapse notebook and compare against the package inventory for your target Fabric runtime. Identify missing packages and incompatible versions; don't rely only on the Runtime 1.3 gap tables below.
 - **Pool-level and workspace-level custom libraries:** In Synapse Studio, go to **Manage** > **Apache Spark Pools** > select pool > **Packages** to see custom libraries that need to be reuploaded to an environment item.
 
 #### Python libraries missing from Fabric
@@ -313,7 +315,7 @@ Only one difference: Synapse includes the `lightgbm` R package (v4.6.0) which is
 > Synapse generally ships newer versions of system-level libraries (GCC, protobuf, libpq) while Fabric ships newer versions of data/ML libraries (more Python packages overall). If you need a specific version, pin it in your environment item configuration.
 
 > [!TIP]
-> Run a quick compatibility check: export your Synapse pool's library list (`pip freeze`), compare against the Fabric Runtime 1.3 manifest, and pre-install any missing libraries in your environment item before running migrated notebooks. For a line-by-line comparison of every built-in library and version between Fabric and Synapse Spark runtimes, see the [microsoft/synapse-spark-runtime GitHub repository](https://github.com/microsoft/synapse-spark-runtime).
+> Run a quick compatibility check: export your Synapse pool's library list (`pip freeze`), compare against the package inventory for your target Fabric runtime, and install compatible versions of missing libraries in your environment item before running migrated notebooks. For package inventories for Fabric and Synapse Spark runtimes, see the [microsoft/synapse-spark-runtime GitHub repository](https://github.com/microsoft/synapse-spark-runtime).
 
 ## Related content
 

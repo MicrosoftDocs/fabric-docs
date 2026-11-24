@@ -4,6 +4,7 @@ description: Learn about the key Business Events limits in Microsoft Fabric, inc
 #customer intent: As a developer, I want to understand Business Events limits so that I can design, test, and operate event-driven solutions in Fabric within those constraints.
 ms.date: 06/25/2026
 ms.topic: reference
+ai-usage: ai-assisted
 ---
 
 # Business Events limits
@@ -41,6 +42,12 @@ Preview shows up to 30 recent events from the last 24 hours for each publisher o
 ### Event types per listener: up to 25
 
 A listener can subscribe to up to 25 event types. For broader scenarios, you can distribute event types across multiple listeners.
+
+## Regional requirements
+
+[!INCLUDE [business-event-consumer-region-note](../includes/business-event-consumer-region-note.md)]
+
+[!INCLUDE [business-event-publisher-region-note](../includes/business-event-publisher-region-note.md)]
 
 ## Related content
 

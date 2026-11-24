@@ -62,6 +62,9 @@ A read session expires after 60 minutes. Retrieve every stream before the sessio
 
 1. Repeat the request for every stream identifier and combine the results according to your application's processing model.
 
+> [!IMPORTANT]
+> A `200 OK` response indicates that the stream response has started, not that all data has been received. Continue reading the response body and handle HTTP transfer errors and Arrow decoding errors. If the connection is reset or the HTTP client reports an incomplete response, treat that stream as failed, even if you already received valid record batches.
+
 Each `/readStream` response is an independent Apache Arrow IPC stream. Use the Apache Arrow library for your application language to read the record batches from each response. For more information about the stream format, see [Serialization and interprocess communication (IPC)](https://arrow.apache.org/docs/format/Columnar.html#serialization-and-interprocess-communication-ipc).
 
 The response body contains raw Apache Arrow IPC stream data, including the schema information needed to interpret the record batches. Don't rely on row order, or assume that the position of a stream in the response determines its position in the complete result.

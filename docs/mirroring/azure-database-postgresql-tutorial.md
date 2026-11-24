@@ -61,11 +61,11 @@ You can accomplish this by specifying a database role for connecting to your sou
 #### Use a PostgreSQL role
 
 1. Connect to your Azure Database for PostgreSQL flexible server using [pgAdmin](https://www.pgadmin.org/). You should connect with a principal that is a member of the role `azure_pg_admin`.
-1. Create a PostgreSQL role named `fabric_user`. You can choose any name for this role. Provide your own strong password. Grant the permissions needed for Fabric mirroring in the database. Run the following SQL script to grant the `CREATEDB`, `CREATEROLE`, `LOGIN`, `REPLICATION`, and `azure_cdc_admin` permissions to the new role named `fabric_user`.
+1. Create a PostgreSQL role named `fabric_user`. You can choose any name for this role. Provide your own strong password. Grant the permissions needed for Fabric mirroring in the database. Run the following SQL script to grant the `LOGIN`, `REPLICATION`, and `azure_cdc_admin` permissions to the new role named `fabric_user`.
 
     ```sql
     -- create a new user to connect from Fabric
-    CREATE ROLE fabric_user CREATEDB CREATEROLE LOGIN REPLICATION PASSWORD '<strong password>';
+    CREATE ROLE fabric_user LOGIN REPLICATION PASSWORD '<strong password>';
 
     -- grant role for replication management to the new user
     GRANT azure_cdc_admin TO fabric_user;

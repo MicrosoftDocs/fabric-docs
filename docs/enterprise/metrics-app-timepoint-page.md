@@ -4,7 +4,8 @@ description: Learn how to read the Microsoft Fabric Capacity Metrics app's explo
 author: dknappettmsft
 ms.author: daknappe
 ms.topic: how-to
-ms.date: 02/27/2025
+ms.date: 10/29/2026
+ai-usage: ai-assisted
 no-loc: [Copilot]
 ---
 
@@ -103,6 +104,29 @@ Start and end times can occur before or after the displayed time period, due to 
 A table showing every background operation that contributed Capacity Unit(CU) usage to the viewed timepoint. It fetches the top 100k records based on capacity units. Every background operation that completed within the last 24 hours (defined as a window of 2,880 intervals, each lasting 30 seconds) contributes a small portion of its total usage to the CU value. This means that a background operation that completed the previous day can contribute some CU activity to determine if the capacity is in overload. For more information see [the Fabric throttling policy](throttling.md).
 
 All the columns in the background operations table are similar to the ones in the [interactive operations](#interactive-operations-for-timerange) table.
+
+## Monitor in warehouse
+
+Use the **Monitor in warehouse** button to investigate the warehouse query activity behind your capacity usage.
+
+To access warehouse monitoring, you must be an admin in the workspace that contains the selected item. For more information, see [Monitor prerequisites](../data-warehouse/monitor.md#prerequisites).
+
+The button appears only when the background operations at the selected timepoint include warehouse items. It remains gray and disabled until you select an eligible query operation.
+
+1. Select a supported query operation for a warehouse item in the background operations table. The **Monitor in warehouse** button turns green when an eligible operation is selected.
+1. Select the **Monitor in warehouse** button to open warehouse monitoring for the selected item, with the time range set based on the selected operation.
+
+The following operations are supported:
+
+* **Warehouse Query** - T-SQL statements in a warehouse.
+* **Warehouse Query (Accelerated)** - T-SQL statements in a warehouse with workspace query acceleration enabled.
+* **SQL Endpoint Query** - T-SQL statements in a lakehouse's SQL analytics endpoint.
+* **SQL Endpoint Query (Accelerated)** - T-SQL statements in a lakehouse's SQL analytics endpoint with workspace query acceleration enabled.
+* **Warehouse Snapshot Query** - T-SQL statements on a warehouse snapshot.
+
+For more information, see [Data Warehouse operations](fabric-operations.md#data-warehouse).
+
+![Screenshot of the Capacity Metrics timepoint page with the Monitor in warehouse button highlighted.](media/time-point-monitor-in-warehouse.png)
 
 ## Burndown table for timerange
 

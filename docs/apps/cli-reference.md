@@ -41,7 +41,7 @@ npm create @microsoft/rayfin@latest my-app --workspace <workspace name>
 
 ## Command reference
 
-The commands and flags in this article were verified from the locally installed CLI help output.
+Commands and flags can vary by CLI version. This reference calls out version-dependent behavior; use `npx rayfin <command> --help` to check the options available in your installed version.
 
 ## Top-level commands
 
@@ -144,9 +144,14 @@ Adds a connector declaration and scaffolds its project files.
 | `--workspace-id <id>` | Fabric workspace ID. |
 | `--item-id <id>` | Fabric item ID. |
 | `--operations <ops>` | Comma-separated subset of allowed operations. |
+| `--auth <type>` | On CLI versions that expose this flag, select `application` or `delegated`, subject to the connector type's allowed modes. See the version note below. |
 | `-v, --verbose` | Enable verbose output. |
 | `-y, --yes` | Automatically accept confirmations. |
 | `--json` | Emit JSON output. |
+
+In CLI 1.36.2, SQL connector types (`fabric-sqlanalytics`, `fabric-warehouse`, and `fabric-sqldatabase`) default to `auth.type: application`. Set `auth.type: delegated` explicitly in `rayfin/rayfin.yml` for caller-based source access. Semantic models remain delegated-only.
+
+The `--auth` creation flag isn't present in CLI 1.36.2. Check `npx rayfin connector add --help` before using it; use the YAML setting on versions without the flag. Application mode requires source permissions for the app identity, currently the app item owner; delegated mode requires source permissions for each caller. See [Choose the source identity](connectors.md#choose-the-source-identity).
 
 ### `rayfin connector list`
 
@@ -242,6 +247,21 @@ Starts a local development session against a Rayfin backend.
 | `--encryption-fallback-enabled` | Permit plaintext token storage when no OS keychain is available. |
 | `--no-emit-env` | Don't regenerate the framework `.env.local` file. |
 | `-v, --verbose` | Enable verbose logging. |
+
+### `rayfin dev storage apply`
+
+Applies storage folder configuration to the active development app in Fabric.
+The full `rayfin dev` workflow applies enabled Storage declarations automatically; use this command for a retry or a storage-only change.
+Start a full `rayfin dev` session before using this command.
+
+| Option | Description |
+| --- | --- |
+| `--force` | Permit storage configuration changes that can cause data loss. |
+| `--gen-config-only` | Generate storage configuration without applying it to the server. |
+
+This command uses the active deployment and doesn't accept `--workspace` or `--workspace-id`.
+Storage has no local emulator, and applying it with the Docker provider isn't supported.
+See [Store and manage files](storage.md).
 
 ### `rayfin dev functions apply`
 
@@ -342,6 +362,7 @@ npx rayfin up --exclude-services functions
 | Subcommand | Description |
 | --- | --- |
 | `npx rayfin up db apply` | Generate and apply DAB configuration to the remote Rayfin item workload endpoint. |
+| `npx rayfin up storage apply` | Apply storage folder configuration to the active remote item. |
 | `npx rayfin up functions deploy` | Build, package, and deploy Functions to the active remote item. |
 | `npx rayfin up staticapp deploy` | Build, package, and deploy static content to the remote Rayfin item. |
 | `npx rayfin up connector apply` | Apply database configuration for declared GraphQL connectors. |
@@ -372,6 +393,24 @@ Force regeneration and capture machine-readable output:
 ```bash
 npx rayfin up db apply --force --json
 ```
+
+### `rayfin up storage apply`
+
+Generates and applies storage folder configuration to the active Fabric deployment.
+Requires Data and Storage to be enabled in `rayfin/rayfin.yml`.
+A full `rayfin up` applies registered folders automatically; use this command for a retry or a storage-only change.
+
+| Option | Description |
+| --- | --- |
+| `--force` | Permit storage configuration changes that can cause data loss, including removal of non-empty folders. |
+| `--json` | Emit JSON output. |
+
+```bash
+npx rayfin up storage apply
+```
+
+Removing a folder permanently deletes its files.
+Review the [folder removal behavior](storage.md#change-or-remove-folders) before using `--force`.
 
 ### `rayfin up functions deploy`
 

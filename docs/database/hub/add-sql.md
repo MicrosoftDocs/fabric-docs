@@ -2,20 +2,22 @@
 title: Enable performance monitoring for Microsoft SQL (preview)
 description: Learn how to enable and disable performance monitoring for Microsoft SQL services so that performance data appears in the Database Hub.
 ms.reviewer: amapatil, lancewright
-ms.date: 10/05/2026
+ms.date: 11/09/2026
 ms.topic: how-to
 ms.custom: references_regions
 ai-usage: ai-assisted
+ms.search.form: Database Hub Overview, Database Hub Estate, Database Hub Performance
 ---
 # Enable performance monitoring for Microsoft SQL (preview)
 
-This article explains how to enable and disable performance monitoring for Microsoft SQL services so that performance data appears on the **Performance** page of the [Database Hub](https://powerbi.com/workloads/fdh/databaseHub). Enabling performance monitoring doesn't incur an extra cost. You don't need to deploy or maintain monitoring agents, data stores, or other monitoring infrastructure.
+This article explains how to enable and disable performance monitoring for Microsoft SQL services. For supported resource types, performance data appears on the **Performance** page of the [Database Hub](https://powerbi.com/workloads/fdh/databaseHub). You can also query the telemetry directly with KQL. Enabling performance monitoring doesn't incur an extra cost. You don't need to deploy or maintain monitoring agents, data stores, or other monitoring infrastructure.
 
 [!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
 
 The steps to turn on performance monitoring differ by service. After you turn on monitoring, every service sends performance data to the same telemetry pipeline. The Database Hub uses this data to help identify performance issues and create dashboards. You can also query the telemetry directly with KQL. For more information, see [Query performance monitoring telemetry](microsoft-sql-query-performance-monitoring-telemetry.md). This article covers the following services:
 
 - [Azure SQL Database](#enable-performance-monitoring-for-azure-sql-database)
+- [Azure SQL Managed Instance](#enable-performance-monitoring-for-azure-sql-managed-instance)
 - [SQL Server on Azure VMs](#enable-performance-monitoring-for-sql-server-on-azure-vms)
 - [SQL Server enabled by Azure Arc](#enable-performance-monitoring-for-sql-server-enabled-by-azure-arc)
 
@@ -34,6 +36,8 @@ The following resource types are visible in the Database Hub, but the **Performa
 - Azure SQL Database elastic pools
 - Azure SQL Managed Instance
 - Performance monitoring doesn't collect data from databases in Azure SQL Database elastic pools or from secondary replicas.
+
+For Azure SQL Managed Instance, you can query performance monitoring telemetry with KQL even though the **Performance** page doesn't support managed instances yet. For more information, see [Query performance monitoring telemetry](microsoft-sql-query-performance-monitoring-telemetry.md).
 
 ## Regional availability and data handling
 
@@ -126,6 +130,40 @@ GO
 ### How to disable performance monitoring for Azure SQL Database
 
 To stop collecting performance data for a user database, change `@value = N'true'` to `@value = N'false'` in both procedure calls, and then rerun the T-SQL script on that database.
+
+## Enable performance monitoring for Azure SQL Managed Instance
+
+<!-- Draft review: Confirm with engineering that the extended property in master is the supported customer enablement method, and confirm MI public preview announcement timing before publishing. The disable procedure below hasn't been validated. -->
+
+Run the following T-SQL script in the `master` database of the managed instance. The setting applies to the whole instance, so you don't need to run it in each user database.
+
+```sql
+USE master;
+IF EXISTS (
+    SELECT 1
+    FROM sys.extended_properties
+    WHERE class = 0
+      AND name = N'MS_EnablePerformanceMonitoringPreview'
+)
+BEGIN
+    EXEC sys.sp_updateextendedproperty
+        @name = N'MS_EnablePerformanceMonitoringPreview',
+        @value = N'true';
+END
+ELSE
+BEGIN
+    EXEC sys.sp_addextendedproperty
+        @name = N'MS_EnablePerformanceMonitoringPreview',
+        @value = N'true';
+END;
+GO
+```
+
+To check for telemetry, follow the steps in [Query performance monitoring telemetry](microsoft-sql-query-performance-monitoring-telemetry.md#connect-to-the-telemetry).
+
+### How to disable performance monitoring for Azure SQL Managed Instance
+
+To stop collecting performance data, change `@value = N'true'` to `@value = N'false'` in both procedure calls, and then rerun the script in `master`.
 
 ## Enable performance monitoring for SQL Server on Azure VMs
 

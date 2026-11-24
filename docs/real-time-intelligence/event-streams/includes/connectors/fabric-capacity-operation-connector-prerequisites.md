@@ -3,6 +3,7 @@ title: Fabric capacity operation events connector - prerequisites
 description: The include file has the prerequisites for Fabric capacity operation events connector for Fabric event streams and Real-Time hub. 
 ms.reviewer: sruikar
 ms.topic: include
+ai-usage: ai-assisted
 ms.date: 08/21/2026
 ---
 
@@ -20,6 +21,8 @@ Fabric event streams support the following Fabric capacity operation events:
 
 
 ## Prerequisites
+
+[!INCLUDE [event-consumer-region-note](../../../../real-time-hub/includes/event-consumer-region-note.md)]
 
 - Access to a workspace in the Fabric capacity license mode or the Trial license mode with Contributor or higher permissions.  
 - A Fabric capacity where you have capacity admin role.

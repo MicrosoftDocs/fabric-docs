@@ -95,6 +95,14 @@ The table app is created successfully in PowerTable with the configured columns 
 
 :::image type="content" source="media/powertable-how-to-connect-semantic-model/save-table-from-model.png" alt-text="Screenshot of saving the new table app." lightbox="media/powertable-how-to-connect-semantic-model/save-table-from-model.png":::
 
+### Refresh semantic model
+
+Select **Refresh** > **Semantic Model** in the status bar to refresh and retrieve the latest data from the semantic model. Use this option when the source data changes and you want to update the data displayed in the PowerTable sheet before saving it to the destination database.
+
+Refreshing the semantic model updates the data available in the PowerTable sheet, including newly added or updated records. This action lets you work with the latest source data before saving the table to the database.
+
+:::image type="content" source="media/powertable-how-to-connect-semantic-model/refresh-semantic-model.png" alt-text="Screenshot of the PowerTable status bar with the Refresh dropdown expanded to show the Semantic Model option." lightbox="media/powertable-how-to-connect-semantic-model/refresh-semantic-model.png":::
+
 ## FAQ
 
 ### Do changes made in PowerTable update the semantic model or its underlying data source?

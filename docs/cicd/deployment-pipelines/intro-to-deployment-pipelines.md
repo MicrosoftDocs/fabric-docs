@@ -2,7 +2,7 @@
 title: Overview of Fabric deployment pipelines
 description: An introduction to deployment pipelines in the Fabric Application lifecycle management (ALM) tool. Learn which items can be deployed, the structure of a pipeline, and how to pair items.
 ms.topic: overview
-ms.date: 09/24/2026
+ms.date: 10/25/2026
 ai-usage: ai-assisted
 ms.search.form: Create deployment pipeline, View deployment pipeline, Introduction to Deployment pipelines
 #customer intent: As a developer, I want to learn about deployment pipelines in the Fabric service so that I can manage my development process efficiently.
@@ -40,6 +40,10 @@ When you deploy content from one pipeline stage to another, the copied content c
 
 >[!IMPORTANT]
 >Beginning February 12, 2026, Fabric deployment pipelines retire support for semantic models that aren't upgraded to Enhanced Metadata. For more information, see [Retirement of semantic model support for deployment pipelines](../troubleshoot-cicd.md#retirement-of-semantic-model-support-for-deployment-pipelines).
+
+* Fabric Apps items:
+
+  * [Fabric app](../../apps/source-control.md#use-with-deployment-pipelines)
 
 * Data Engineering items:
 
@@ -92,7 +96,6 @@ When you deploy content from one pipeline stage to another, the copied content c
   * Dataflow *(preview)*
   * [Org app](/power-bi/consumer/org-app-items/org-app-cicd)
   * Paginated report *(preview)*
-  * [Plan](../../iq/plan/overview.md) *(preview)*
   * Report (based on supported semantic models)
   * Semantic model (that originates from a .pbix file and isn't a PUSH dataset) *(preview)*
 

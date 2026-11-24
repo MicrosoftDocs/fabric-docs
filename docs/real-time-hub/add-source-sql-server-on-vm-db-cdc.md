@@ -4,8 +4,8 @@ description: This article describes how to add SQL Server on Virtual Machine (VM
 ms.reviewer: anboisve
 ms.topic: how-to
 ms.date: 04/03/2026
-author: spelluru
-ms.author: spelluru
+author: galir
+ms.author: garezni
 ---
 
 # Add SQL Server on VM DB (CDC) as source in Real-Time hub

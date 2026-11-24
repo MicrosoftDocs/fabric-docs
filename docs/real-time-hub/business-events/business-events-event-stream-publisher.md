@@ -2,6 +2,7 @@
 title: Use Eventstream as a Business Events Publisher
 description: This article describes how to use eventstreams to publish business events in Fabric Real-Time hub.
 ms.topic: how-to
+ai-usage: ai-assisted
 ms.date: 02/25/2026
 ---
 
@@ -36,6 +37,8 @@ Eventstream converts high-volume telemetry into a **meaningful and actionable bu
 This selective transformation allows downstream systems, such as Activator workflows and pipelines, to react to actual business conditions instead of noisy and high-frequency data.
 
 ## Connecting Eventstream to a business event
+
+[!INCLUDE [business-event-publisher-region-note](../includes/business-event-publisher-region-note.md)]
 
 Once a transformation produces a meaningful signal, Eventstream routes this output to a business events destination. This destination links the transformed data to a specific business event defined in the Real-Time hub.
 

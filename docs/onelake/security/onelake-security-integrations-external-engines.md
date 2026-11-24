@@ -37,7 +37,7 @@ Before you start integrating, make sure you have the following:
 
 - A **Microsoft Entra service principal or managed identity** that your engine uses to access OneLake. Only Microsoft Entra identities are supported.
 - **Workspace Member** (or higher) role for the engine identity in the target workspace. This grants the identity the necessary privileges to read data files and security metadata from OneLake.
-- A **Fabric item** (lakehouse, mirrored database, or mirrored catalog) with [OneLake security enabled](./get-started-security.md).
+- A **Fabric item** (Eventhouse, lakehouse, mirrored database, or mirrored catalog) with [OneLake security enabled](./get-started-security.md).
 - OneLake security roles [configured](./create-manage-roles.md) on the item with any RLS or CLS policies you want to enforce.
 - The engine identity must have **unrestricted Read access** to the tables it reads. If RLS or CLS policies apply to the engine identity itself, API calls return errors.
 

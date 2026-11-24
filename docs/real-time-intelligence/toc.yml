@@ -87,6 +87,16 @@ items:
             href: event-streams/edit-publish.md
           - name: Route events based on content
             href: event-streams/route-events-based-on-content.md
+      - name: Azure Event Hubs shortcuts (preview)
+        items:
+          - name: Overview
+            href: event-streams/event-hubs-shortcuts-overview.md
+          - name: Create a shortcut
+            href: event-streams/create-event-hubs-shortcut.md
+          - name: Approve and manage shortcuts
+            href: event-streams/manage-event-hubs-shortcuts.md
+          - name: Troubleshoot shortcuts
+            href: event-streams/troubleshoot-event-hubs-shortcuts.md
       - name: Add source connectors to eventstreams
         items:
           - name: Add and manage an event source
@@ -127,7 +137,7 @@ items:
             href: event-streams/add-source-confluent-kafka.md
           - name: Cribl
             href: event-streams/add-source-cribl.md
-          - name: Custom Stream Connector (Preview)
+          - name: Custom stream connector (preview)
             href: event-streams/add-custom-stream-connector.md
           - name: Custom endpoint
             href: event-streams/add-source-custom-app.md
@@ -589,6 +599,66 @@ items:
         href: schema-sets/event-schema-set-operation-logs.md
       - name: Known limitations
         href: schema-sets/schema-registry-limitations.md
+  - name: Events in Fabric
+    items:
+      - name: Overview
+        items:
+          - name: What are Business Events?
+            href: ../real-time-hub/business-events/business-events-overview.md?context=/fabric/context/context-rti&pivots=fabric
+          - name: What are Azure and Fabric Events?
+            href: ../real-time-hub/fabric-events-overview.md?context=/fabric/context/context-rti&pivots=fabric
+      - name: Tutorials
+        items:
+          - name: Publish business events using Notebook and react using Activator
+            href: ../real-time-hub/business-events/tutorial-business-events-notebook-user-data-function-activator.md?context=/fabric/context/context-rti&pivots=fabric
+          - name: Publish business events using User Data Function and react using Activator
+            href: ../real-time-hub/business-events/tutorial-business-events-user-data-function-activation-email.md?context=/fabric/context/context-rti&pivots=fabric
+          - name: Publish business events using eventstreams and react using Activator
+            href: ../real-time-hub/business-events/tutorial-business-events-event-stream-user-data-function-activator.md?context=/fabric/context/context-rti&pivots=fabric
+          - name: Publish and validate a sample business event
+            href: ../real-time-hub/business-events/tutorial-publish-sample-business-event.md?context=/fabric/context/context-rti&pivots=fabric
+          - name: Build event-driven pipelines with Azure and Fabric Events
+            href: ../real-time-hub/tutorial-build-event-driven-data-pipelines.md?context=/fabric/context/context-rti&pivots=fabric
+          - name: Monitor Fabric Capacity health with Capacity Overview Events
+            href: ../real-time-hub/tutorial-monitor-capacity-threshold.md?context=/fabric/context/context-rti&pivots=fabric
+          - name: Orchestrate Fabric jobs with Job events
+            href: ../real-time-hub/tutorial-orchestrate-jobs-with-job-events.md?context=/fabric/context/context-rti&pivots=fabric
+      - name: Develop
+        items:
+          - name: Overview
+            href: ../real-time-hub/automate-event-consumption-rest-api-cicd.md?context=/fabric/context/context-rti&pivots=fabric
+          - name: Create Business events and manage data access
+            href: ../real-time-hub/create-business-events-rest-api.md?context=/fabric/context/context-rti&pivots=fabric
+          - name: Publish Business events with APIs
+            href: ../real-time-hub/publish-business-events.md?context=/fabric/context/context-rti&pivots=fabric
+          - name: Consume events with Eventstream REST APIs
+            href: ../real-time-hub/consume-events-with-event-stream-rest-api.md?context=/fabric/context/context-rti&pivots=fabric
+          - name: Consume events with Activator REST APIs
+            href: ../real-time-hub/consume-events-activator-rest-api.md?context=/fabric/context/context-rti&pivots=fabric
+          - name: Filter events
+            href: ../real-time-hub/configure-event-filters-rest-api.md?context=/fabric/context/context-rti&pivots=fabric
+      - name: Secure
+        items:
+          - name: Subscribe permission for Azure and Fabric events
+            href: ../real-time-hub/fabric-events-subscribe-permission.md?context=/fabric/context/context-rti&pivots=fabric
+          - name: Tenant private links for Azure and Fabric events
+            href: ../real-time-hub/private-links-real-time-events.md?context=/fabric/context/context-rti&pivots=fabric
+          - name: Workspace private links for Azure, Fabric, and Business events
+            href: ../real-time-hub/workspace-private-links-real-time-events.md?context=/fabric/context/context-rti&pivots=fabric
+          - name: Outbound access protection for Azure, Fabric, and Business events
+            href: ../security/workspace-outbound-access-protection-real-time-events.md?context=/fabric/context/context-rti&pivots=fabric
+      - name: Monitor and troubleshoot
+        items:
+          - name: Paused event configurations
+            href: ../real-time-hub/fabric-events-paused-state.md?context=/fabric/context/context-rti&pivots=fabric
+          - name: Events capacity consumption
+            href: ../real-time-hub/fabric-events-capacity-consumption.md?context=/fabric/context/context-rti&pivots=fabric
+          - name: Events delivery guarantees
+            href: ../real-time-hub/fabric-event-delivery-guarantees.md?context=/fabric/context/context-rti&pivots=fabric
+      - name: Resources
+        items:
+          - name: Fabric Events scenarios and guides
+            href: https://microsoft.github.io/fabric-events/home/
   - name: Eventhouse
     items:
       - name: Eventhouse overview
@@ -851,14 +921,20 @@ items:
           href: dashboard-visuals-customize.md
         - name: Real-Time Dashboard-specific visuals
           href: dashboard-visuals.md
-        - name: Time series visual
-          href: dashboard-time-series.md
-        - name: Markdown visual
-          href: dashboard-markdown-visual.md
+        - name: Embed a Fabric Map
+          href: dashboard-fabric-maps-tile.md
         - name: Visuals requiring cloud connection
           href: dashboard-cloud-connection-visuals.md
         - name: Troubleshoot visual errors
           href: troubleshoot-dashboard-tile-error.md
+        - name: Visual types
+          items:
+          - name: Markdown visual
+            href: dashboard-markdown-visual.md
+          - name: Time series visual
+            href: dashboard-time-series.md
+          - name: Custom AI visual (preview)
+            href: dashboard-ai-custom-visual.md
       - name: Customize dashboard
         items:
         - name: Conditional formatting
@@ -888,6 +964,8 @@ items:
           href: dashboard-permissions.md
         - name: Configure data source access
           href: dashboard-data-source-access.md
+        - name: Display a dashboard in present or kiosk mode
+          href: dashboard-fullscreen-kiosk.md
         - name: Embed Real-Time Dashboards in other applications
           href: ../embed/quickstart-embed-fabric-item.md
       - name: Deploy and manage
@@ -1168,6 +1246,8 @@ items:
             href: map/customize-map.md
           - name: Create a tileset
             href: map/create-tile-sets.md
+          - name: Monitor Fabric Maps with workspace monitoring
+            href: map/workspace-monitoring.md
           - name: Create Activator alerts from a Fabric map
             href: map/create-activator-alerts.md
           - name: Map sharing
@@ -1182,6 +1262,8 @@ items:
             href: map/manage-map-permissions.md
           - name: Create and Configure a Fabric Map with REST APIs
             href: map/create-configure-map-using-rest-api.md
+      - name: Fabric Maps glossary
+        href: map/glossary.md
   - name: Copilot
     items:
       - name: Copilot for Real-Time Intelligence
@@ -1210,6 +1292,8 @@ items:
                 href: mcp-remote-eventhouse.md
               - name: Remote MCP for Activator
                 href: mcp-remote-activator.md
+              - name: Remote MCP for operations agents
+                href: mcp-remote-operations-agent.md
   - name: Git integration and deployment pipelines
     displayName: alm, application lifecycle management, cicd, devops
     items:

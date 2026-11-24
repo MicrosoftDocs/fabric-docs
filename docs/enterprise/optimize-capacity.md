@@ -6,7 +6,7 @@ ms.author: daknappe
 ms.reviewer: pmahoney, pvenkat, alpowers, seanmirabile, scbradl, gilherau
 ms.topic: how-to
 ms.custom: fabric-cat
-ms.date: 07/30/2024
+ms.date: 10/22/2026
 ai-usage: ai-assisted
 ---
 
@@ -16,12 +16,15 @@ This article explains how to evaluate and optimize the load on your Microsoft Fa
 
 While the Fabric capacity model simplifies setup and enables collaboration, there's a high chance of depleting the shared compute resources of a capacity. It might also be the case that you're paying for more resources than are necessary. These situations can arise when the design of some Fabric experiences doesn't follow best practices.
 
+> [!NOTE]
+> Operations in enabled on-demand billing categories don't consume shared capacity CUs. Optimization still reduces the CU-hours that those operations consume and can lower on-demand charges. Use the Capacity Metrics app [**On-demand compute** page](on-demand-billing-monitor.md) to monitor on-demand usage.
+
 It's important to reduce the risk of depleting shared resources, Fabric—as a managed service—automatically addresses such situations in two ways.
 
 - [Bursting and smoothing](https://blog.fabric.microsoft.com/blog/fabric-capacities-everything-you-need-to-know-about-whats-new-and-whats-coming?ft=All#BurstSmooth) ensures that CPU-intensive activities are completed quickly without requiring a higher SKU (and can be run at any time of the day).
 - [Throttling](throttling.md) delays or rejects operations when a capacity experiences sustained and high demand for CPU (above the SKU limit).
 
-Smoothing reduces the likelihood of throttling (although throttling can still occur). Smoothing is how usage is allocated against limits, but it's independent of the execution of jobs. Smoothing doesn't change performance, it just spreads the accounting for consumed compute over a longer period, so that a larger SKU isn't needed to handle the peak compute.
+Smoothing reduces the likelihood of throttling (although throttling can still occur). Smoothing is how shared provisioned-capacity usage is allocated against limits, but it's independent of the execution of jobs. It doesn't apply to on-demand consumption. Smoothing doesn't change performance. It just spreads the accounting for consumed compute over a longer period, so that a larger SKU isn't needed to handle the peak compute.
 
 To learn more about Fabric capacity, see [Microsoft Fabric concepts and licenses](licenses.md) and [Fabric Capacities – Everything you need to know about what's new and what's coming](https://blog.fabric.microsoft.com/blog/fabric-capacities-everything-you-need-to-know-about-whats-new-and-whats-coming).
 
@@ -80,9 +83,9 @@ The experiences and items in Fabric work differently, so you don't necessarily o
 
 ### Fabric Data Warehouse
 
-Data warehouse uses a serverless architecture and its nodes are automatically managed by the service. Capacity usage is calculated based on active per-query capacity unit seconds rather than the amount of time the frontend and backend nodes are provisioned.
+ Fabric Data Warehouse uses a serverless architecture, and the service automatically manages its nodes. The system calculates capacity usage based on active per-query capacity unit seconds rather than the amount of time the frontend and backend nodes are provisioned.
 
-All data warehouse operations are background operations, and they're [smoothed](../data-warehouse/compute-capacity-smoothing-throttling.md#smoothing) over a 24-hour period.
+All data warehouse operations are background operations. Shared capacity consumption for these operations is [smoothed](../data-warehouse/compute-capacity-smoothing-throttling.md#smoothing) over a 24-hour period; on-demand consumption isn't smoothed.
 
 The [SQL analytics endpoint](../data-engineering/lakehouse-sql-analytics-endpoint.md) aims to provide a _performance by default_ experience. To this end, there are fewer query tuning options available compared to SQL Server or Azure Synapse Analytics dedicated SQL pools.
 
@@ -102,9 +105,9 @@ Here are some points to consider to help minimize compute.
 
 The Data Engineering and Data Science experiences use Spark compute to process, analyze, and store data in a Fabric lakehouse. Spark compute is set up and measured in terms of vCores. However, Fabric uses CUs as a measure of compute consumed by various items, including Spark notebooks, Spark job definitions, and lakehouse jobs.
 
-In Spark, one CU translates to two Spark vCores of compute. For example, when a customer purchases an F64 SKU, 128 Spark vCores are available for Spark experiences.
+In Spark, one CU translates to two Spark vCores of compute. For example, when you purchase an F64 SKU, you get 128 Spark vCores for Spark experiences.
 
-All Spark operations are background operations, and they're [smoothed](../data-warehouse/compute-capacity-smoothing-throttling.md#smoothing) over a 24-hour period.
+All Spark operations are background operations. Shared capacity consumption for these operations is [smoothed](../data-warehouse/compute-capacity-smoothing-throttling.md#smoothing) over a 24-hour period; on-demand consumption isn't smoothed.
 
 For more information, see [Billing and utilization reporting in Fabric Spark](../data-engineering/billing-capacity-management-for-spark.md#how-spark-billing-works-on-fabric-capacity).
 
@@ -129,7 +132,7 @@ To allow data to become available to other Fabric engines, the KQL database sync
 
 This section is concerned with optimizations for [dataflows](../data-factory/dataflows-gen2-overview.md) and [pipelines](../data-factory/pipeline-overview.md) in Data Factory.
 
-All operations are background operations, and they're [smoothed](../data-warehouse/compute-capacity-smoothing-throttling.md#smoothing) over a 24-hour period.
+All operations run in the background. The system [smooths](../data-warehouse/compute-capacity-smoothing-throttling.md#smoothing) shared capacity consumption for these operations over a 24-hour period. On-demand consumption isn't smoothed.
 
 Here are some points to consider to help minimize compute.
 

@@ -2,7 +2,7 @@
 title: Monitoring in Fabric Data Warehouse Overview
 description: Learn about the solutions and methods to monitor query activity in your Fabric warehouse.
 ms.reviewer: rakrish75
-ms.date: 09/03/2026
+ms.date: 11/04/2026
 ms.topic: overview
 ms.search.form: Monitoring # This article's title should not change. If so, contact engineering.
 ai-usage: ai-assisted
@@ -28,6 +28,8 @@ Workspace monitoring provides workspace-level visibility across warehouses, SQL 
 The Microsoft Fabric Capacity Metrics app provides visibility into capacity usage of each warehouse allowing you to see the compute charges for all user-generated and system-generated T-SQL statements within a warehouse and SQL analytics endpoint. For more information on monitoring capacity usage, see [Billing and utilization reporting in Fabric Data Warehouse](usage-reporting.md).
 
 ## Data Warehouse Monitor
+
+From the Capacity Metrics app, select **Monitor in warehouse** for a supported query operation to open the associated item in Monitor with the relevant time range. This connects capacity usage investigation to warehouse query activity without manually locating the item and recreating the time range. You must be an admin in the workspace that contains the selected item. See [Open Monitor from the Capacity Metrics app](monitor.md#open-monitor-from-the-capacity-metrics-app).
 
 Users are provided a one-stop view of their running and completed queries in an easy-to-use interface, without having to run T-SQL. For more information, see [Monitor your running and completed T-SQL queries using Data Warehouse Monitor](monitor.md).  
 

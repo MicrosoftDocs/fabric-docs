@@ -4,8 +4,8 @@ description: Real-time weather data in Fabric Real-Time hub lets you stream live
 #customer intent: As a data engineer, I want to add a real-time weather source in Fabric Real-Time hub so that I can ingest live weather data into my event streams.
 ms.topic: how-to
 ms.date: 04/01/2026
-author: spelluru
-ms.author: spelluru
+author: galir
+ms.author: garezni
 ms.reviewer: spelluru
 ---
 

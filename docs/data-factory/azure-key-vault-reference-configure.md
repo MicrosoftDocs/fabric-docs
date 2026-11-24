@@ -126,8 +126,6 @@ When Fabric needs to establish a data connection, it dynamically retrieves the s
 
 ## Limitations and considerations
 
-- Azure Key Vault references work with cloud and on-premises data gateway connections.
-- Virtual network data gateways connections aren't yet supported.
 - Fabric lineage view isn't available for AKV references.
 - You can't create AKV references by using a connection from the **Modern Get Data** pane in Fabric items. Instead, [create connections using AKV references through the Manage Connections and Gateways settings](#use-azure-key-vault-reference-in-connections).
 - Azure Key Vault references in Fabric always get the current (latest) version of a secret. Azure Key Vault credential versioning isn't supported.

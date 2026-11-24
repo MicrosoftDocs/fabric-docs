@@ -3,7 +3,7 @@ title: Set up your SharePoint connection
 description: This article provides information about how to create a SharePoint connection in Microsoft Fabric.
 ms.reviewer: xupzhou
 ms.topic: how-to
-ms.date: 03/19/2026
+ms.date: 10/30/2026
 ms.custom:
 - template-how-to
 - connectors
@@ -120,13 +120,19 @@ Select **Edit credentials**, which displays the sign in interface. Enter your ac
 
 #### Service Principal authentication
 
-Fill in the required properties. You need to specify the tenant ID, service principal client ID, and service principal key when using this authentication.
+SharePoint Online List supports certificate-based service principal authentication in Dataflow Gen2. Before you create the connection, register an application in Microsoft Entra ID, add the public certificate to the app registration, grant the SharePoint application permission `Sites.Read.All`, and grant admin consent.
 
-:::image type="content" source="media/connector-sharepoint-online-list/authentication-service-principal.png" alt-text="Screenshot showing that service principal authentication method.":::
+> [!NOTE]
+> Certificate-based service principal authentication isn't supported for Pipeline Copy Activity or Copy Job.
 
-- **Tenant ID**: The tenant ID under which your application resides.
-- **Service principal ID**: The Application (client) ID of the application registered in Microsoft Entra ID.
-- **Service principal key**: The application's key.
+In the connection dialog, provide the following values:
+
+- **Tenant ID**: The tenant ID where your application resides.
+- **Service principal ID**: The application (client) ID of the application registered in Microsoft Entra ID.
+- **Credential type**: Select **Service principal certificate**.
+- **Azure Key Vault reference**: Select the Azure Key Vault connection that contains the certificate.
+- **Certificate**: Select the certificate.
+- **Version**: Select the certificate version, or select **Latest**.
 
 #### Workspace identity authentication
 

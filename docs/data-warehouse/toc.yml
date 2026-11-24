@@ -119,8 +119,6 @@ items:
             href: deployment-scripts.md
   - name: Develop
     items:
-      - name: AI functions
-        href: ai-functions.md
       - name: Fabric functions
         href: fabric-user-data-functions.md
       - name: Query labels
@@ -132,6 +130,20 @@ items:
       - name: Warehouse snapshots
         href: warehouse-snapshot.md
         displayName: Snapshot
+      - name: Built-in functions
+        items:
+          - name: AI functions
+            href: ai-functions.md
+          - name: Analytical functions
+            href: analytical-functions.md
+          - name: JSON functions
+            href: json-functions.md
+          - name: String functions
+            href: string-functions.md
+          - name: Regular expressions
+            href: regular-expressions.md
+          - name: String similarity comparison
+            href: string-similarity.md
       - name: How to
         items:
           - name: Create a sample warehouse
@@ -145,6 +157,8 @@ items:
             href: tutorial-identity.md
           - name: Create inline scalar UDFs
             href: how-to-inline-udf.md
+          - name: Create Fabric UDFs
+            href: ../data-engineering/user-data-functions/create-user-data-functions-portal.md
   - name: Dimensional modeling
     items:
       - name: Overview
@@ -166,11 +180,19 @@ items:
       - name: Ingest data with pipelines
         href: ingest-data-pipelines.md
       - name: Ingest data with T-SQL
-        href: ingest-data-tsql.md
+        items:
+            - name: T-SQL ingestion overview
+              href: ingest-data-tsql.md
+            - name: Ingest Delta Lake tables
+              href: ingest-delta-lake-tsql.md
+            - name: Ingest from warehouse tables and mirrored databases
+              href: ingest-data-warehouse-tables-tsql.md
+            - name: Ingest lake files with OPENROWSET
+              href: ingest-transform-lake-data-openrowset-tsql.md
+            - name: Troubleshoot ingestion errors
+              href: troubleshoot-ingestion-errors.md
       - name: Ingest data with BCP API (Preview)
         href: ingest-data-bulk-copy.md
-      - name: Troubleshoot ingestion errors
-        href: troubleshoot-ingestion-errors.md
       - name: Use dbt with data warehouse
         href: tutorial-setup-dbt.md
   - name: Create models and build Power BI reports
@@ -306,6 +328,15 @@ items:
                 href: how-to-observe-utilization.md
       - name: Warehouse capacity
         items:
+          - name: On-demand billing
+            items:
+              - name: Overview
+                href: on-demand-billing.md
+                displayName: on-demand, serverless, workspace compute ceiling
+              - name: Configure on-demand billing
+                href: configure-on-demand-billing.md
+              - name: FAQ
+                href: on-demand-billing-faq.yml
           - name: Burstable capacity
             href: burstable-capacity.md
           - name: Capacity pause and resume

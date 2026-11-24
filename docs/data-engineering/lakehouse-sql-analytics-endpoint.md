@@ -3,7 +3,7 @@ title: What is the SQL analytics endpoint for a lakehouse?
 description: Learn about the SQL analytics endpoint and how to run SQL queries directly on Fabric lakehouse tables.
 ms.reviewer: tvilutis
 ms.topic: concept-article
-ms.date: 10/01/2026
+ms.date: 11/10/2026
 ms.search.form: Lakehouse SQL Analytics Endpoint
 ---
 
@@ -88,7 +88,7 @@ The following limitations apply to SQL analytics endpoint automatic schema gener
 
 - For information and recommendations on performance of the SQL analytics endpoint, see [SQL analytics endpoint performance considerations](../data-engineering/sql-analytics-endpoint-performance.md).
 
-- Scalar UDFs are supported when inlineable. For more information, see [CREATE FUNCTION](/sql/t-sql/statements/create-function-sql-data-warehouse?view=fabric&preserve-view=true) and [Scalar UDF inlining](/sql/relational-databases/user-defined-functions/scalar-udf-inlining?view=fabric&preserve-view=true).
+- Scalar UDFs used in distributed queries over user tables must be inlineable, and the calling query must meet the applicable technique's requirements. For details, see [CREATE FUNCTION](/sql/t-sql/statements/create-function-sql-data-warehouse?view=fabric&preserve-view=true).
 
 - The **varchar(max)** data type is only supported in SQL analytics endpoints enabled with the new metadata sync.
 

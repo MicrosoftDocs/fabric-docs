@@ -5,8 +5,8 @@ description: Sample data sources in Real-Time hub let you quickly test event str
 ms.reviewer: anboisve
 ms.topic: how-to
 ms.date: 04/01/2026
-author: spelluru
-ms.author: spelluru
+author: galir
+ms.author: garezni
 ---
 
 # Get events from sample data sources into Real-Time hub

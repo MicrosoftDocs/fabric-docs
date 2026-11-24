@@ -23,7 +23,7 @@ This article shows you how to add an Azure IoT Hub source to a Microsoft Fabric 
 
 On the **Select a data source** page, search for **Azure IoT Hub**. On the **Azure IoT Hub** tile, select **Connect**.
 
-:::image type="content" source="./media/add-source-azure-iot-hub-enhanced/select-azure-iot-hub.png" alt-text="Screenshot that shows the selection of Azure IoT Hub as the source type in the wizard for getting events." lightbox="./media/add-source-azure-iot-hub-enhanced/select-azure-iot-hub.png":::
+:::image type="content" source="./media/add-source-azure-iot-hub/select-azure-iot-hub.png" alt-text="Screenshot that shows the selection of Azure IoT Hub as the source type in the wizard for getting events." lightbox="./media/add-source-azure-iot-hub/select-azure-iot-hub.png":::
 
 ## Configure an Azure IoT Hub connector
 
@@ -35,11 +35,11 @@ On the **Select a data source** page, search for **Azure IoT Hub**. On the **Azu
 
 1. Confirm that the Azure IoT Hub source is added to your eventstream on the canvas in the **Edit** mode. To implement this newly added IoT hub, select **Publish** on the ribbon.
 
-    :::image type="content" source="./media/add-source-azure-iot-hub-enhanced/publish.png" alt-text="Screenshot that shows the editor with the Publish button selected.":::
+    :::image type="content" source="./media/add-source-azure-iot-hub/publish.png" alt-text="Screenshot that shows the editor with the Publish button selected.":::
 
 1. The IoT hub is available for visualization in the **Live** view. Select the **IoT hub** tile in the diagram to display a page similar to the following example.
 
-    :::image type="content" source="./media/add-source-azure-iot-hub-enhanced/live-view.png" alt-text="Screenshot that shows the editor in the live view.":::
+    :::image type="content" source="./media/add-source-azure-iot-hub/live-view.png" alt-text="Screenshot that shows the editor in the live view.":::
 
 ## Related content
 

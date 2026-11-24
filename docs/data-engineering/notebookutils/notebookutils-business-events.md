@@ -1,7 +1,7 @@
 ---
 title: NotebookUtils business event utilities for Fabric
 description: Use NotebookUtils business event utilities to publish business events from Fabric notebooks.
-ms.reviewer: jingzh
+ms.reviewer: shuaijunye
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 09/16/2026
@@ -37,6 +37,8 @@ notebookutils.businessEvents.help("publish")
 ```
 
 ## Publish a business event
+
+[!INCLUDE [business-event-publisher-region-note](../../real-time-hub/includes/business-event-publisher-region-note.md)]
 
 Use `publish()` to send a payload that matches the schema of a business event:
 

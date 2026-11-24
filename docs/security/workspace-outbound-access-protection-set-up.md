@@ -1,10 +1,10 @@
 ---
 title: Enable workspace outbound access protection
 description: "Learn how to enable the workspace outbound access protection on Microsoft Fabric workspaces."
-author: msmimart
-ms.author: mimart
+author: teddyberco
+ms.author: tebercov
 ms.topic: how-to
-ms.date: 12/01/2025
+ms.date: 11/10/2026
 
 #customer intent: As a data platform administrator, I want to set up outbound access protection for my workspace so that I can control and secure how my workspace resources connect to external networks.
 
@@ -82,3 +82,4 @@ After outbound public access is blocked, you can create an allow list of approve
 
 - [Create an allow list with managed private endpoints](./workspace-outbound-access-protection-allow-list-endpoint.md)
 - [Create an allow list with data connection rules](./workspace-outbound-access-protection-allow-list-connector.md)
+- [Workspace outbound access protection for mirrored catalogs and Snowflake database](workspace-outbound-access-protection-mirrored-catalogs-snowflake-database.md)

@@ -4,8 +4,8 @@ description: Amazon Kinesis Data Streams can be added as an event source in Fabr
 ms.reviewer: anboisve
 ms.topic: how-to
 ms.date: 03/31/2026
-author: spelluru
-ms.author: spelluru
+author: galir
+ms.author: garezni
 ---
 
 # Add Amazon Kinesis Data Streams as source in Real-Time hub

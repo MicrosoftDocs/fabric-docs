@@ -71,7 +71,7 @@ For more troubleshooting information, see [Troubleshooting and FAQ](troubleshoot
 
 ## Monitor query performance
 
-Individual GQL query metrics aren't currently available in the Monitoring hub. Instead, use these approaches to understand and improve query performance.
+Individual GQL query metrics aren't currently available in the Monitoring hub, but metrics such as durations, statuses, and errors are available through [Workspace monitoring for graph](workspace-monitoring.md). You can also use the following approaches to understand and improve query performance.
 
 ### Observe query behavior in the Code Editor
 

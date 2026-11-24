@@ -1,8 +1,8 @@
 ---
 title: Power BI security overview
 description: Learn about security in Power BI and how Power BI protects your data so that you can safely use all the Power BI features.
-author: msmimart
-ms.author: mimart
+author: teddyberco
+ms.author: tebercov
 ms.topic: overview
 ms.date: 03/18/2024
 #customer intent: As a Power BI user, I want to understand how security works in Power BI so that I can safely use Power BI.

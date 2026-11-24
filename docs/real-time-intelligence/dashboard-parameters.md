@@ -6,13 +6,21 @@ ms.author: spelluru
 ms.reviewer: gabil
 ms.topic: how-to
 ms.subservice: rti-dashboard
-ms.date: 09/08/2026
+ms.date: 10/05/2026
 ai-usage: ai-assisted
 ---
 
 # Use parameters in Real-Time Dashboard queries
 
-Add parameters to Kusto Query Language (KQL) queries to filter the data shown in Real-Time Dashboard visuals. A query can use one or more parameters.
+Parameters are the building blocks for filters in Real-Time Dashboards. You manage them at the dashboard level and add them to queries to filter the data shown in a visual. A query can use one or more parameters.
+
+This article explains how to create and use parameters, cross-filters, and drillthroughs in dashboards. You can filter dashboard visuals either by selecting [parameter values in the filter bar](#use-parameters-in-your-query) or by using cross-filters.
+
+The query examples used in this article are based on the **StormEvents** table in the *Weather analytics* sample data available in the [samples gallery](sample-gallery.md#get-data).
+
+> [!NOTE]
+> You can manage parameters only in **Editing** mode for dashboard editors.
+> Dashboard parameters filter visuals whose queries use those parameters. Parameters don't filter or otherwise modify Fabric Maps tiles.
 
 ## Prerequisites
 

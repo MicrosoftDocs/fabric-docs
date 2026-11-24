@@ -1,8 +1,8 @@
 ---
 title: "Tutorial: End-to-end automation in Fabric"
 description: In this tutorial, you provision dev and test workspaces with Terraform, connect dev to Git, and promote content from dev to test with the fabric-cicd Python library.
-author: billmath
-ms.author: billmath
+author: nimrodshalit
+ms.author: nishalit
 ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.topic: tutorial

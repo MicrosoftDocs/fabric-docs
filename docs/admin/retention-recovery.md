@@ -6,7 +6,7 @@ ms.author: daknappe
 ms.reviewer: yuturchi, arthii
 ms.custom: admin-portal
 ms.topic: concept-article
-ms.date: 10/05/2026
+ms.date: 11/09/2026
 ai-usage: ai-assisted
 ---
 
@@ -48,7 +48,9 @@ During the retention period, you can restore a deleted workspace or permanently 
 > [!NOTE]
 > Item recovery is now enabled by default, with a retention period of three days. This default applies to tenants that never explicitly configured the **Fabric Item Recovery** setting and to newly created tenants. Fabric preserves settings that an admin explicitly configured, whether item recovery was explicitly turned on or off.
 
-Fabric supports soft-delete and recovery for individual items within workspaces. When you delete a supported item, it enters a retention period during which workspace contributors, members, and admins can recover it. This feature provides an additional layer of data protection at the item level.
+Fabric supports soft-delete and recovery for individual items within workspaces. When you delete a
+supported item, it enters a retention period during which workspace contributors, members, and
+admins can recover it. This feature provides an extra layer of data protection at the item level.
 
 You can change the retention period (from 3 to 90 days) or turn item recovery off by using the **Fabric Item Recovery** setting in **OneLake catalog** > **Govern** > **Configurations** > **Tenant settings**.
 
@@ -77,7 +79,6 @@ The following item types support soft-delete and recovery:
 - ML model
 - Notebook
 - Ontology *(preview)*
-- Operational agent *(preview)*
 - Real-Time Dashboard
 - Spark job definition
 - SQL database *(preview)*
@@ -86,7 +87,10 @@ The following item types support soft-delete and recovery:
 - Warehouse
 - Warehouse snapshot
 
-For supported item types only, when the [Item Recovery setting](item-recovery.md#set-up-the-retention-period-for-deleted-items) is on and someone deletes an item in a workspace through the Fabric UI or API, Fabric moves the item to a soft-deleted state. You can't recover unsupported item types because Fabric irreversibly deletes them.
+For supported item types, when the [Item Recovery setting](item-recovery.md#set-up-the-retention-period-for-deleted-items) is on
+and someone deletes an item in a workspace through the Fabric UI or API, Fabric moves the item to
+a soft-deleted state. You can't recover unsupported item types because Fabric irreversibly deletes
+them.
 
 Fabric plans to add support for more item types.
 
@@ -105,6 +109,21 @@ The following table shows the permissions required to recover or permanently del
 ## What is restored when an item is recovered
 
 When you recover an item, Fabric restores it to its original state before deletion. The recovery process preserves all properties, configurations, and relationships except shared item permissions.
+
+### Name conflicts
+
+If the item's name conflicts with an active item in the workspace, the behavior depends on how
+you recover the item:
+
+- **Workspace recycle bin** - The restore succeeds. Fabric automatically renames the restored item by appending an underscore and a generated numeric suffix, such as `Sales notebook_1787195281`. You can rename the item afterward.
+- **REST API** - The recovery fails with `409 Conflict` and the error code `ItemDisplayNameAlreadyInUse`. The API doesn't rename the item. Rename the conflicting active item and retry the operation, or restore the item from the recycle bin instead.
+
+Naming constraints depend on the item type. For example, recovering a notebook named `Sales`
+isn't affected by an active lakehouse named `Sales`. However, warehouse snapshot names must
+also differ from warehouse and SQL analytics endpoint names. See
+[Warehouse snapshots](../data-warehouse/warehouse-snapshot.md#manage-snapshots).
+
+For more information, see [Recover or permanently delete items](item-recovery.md#restore-a-deleted-item).
 
 ### OneLake catalog
 
@@ -156,4 +175,4 @@ To stop incurring costs for a soft-deleted item, permanently delete it before th
 - [Set up and manage workspace retention](workspace-retention.md)
 - [Recover or permanently delete items](item-recovery.md)
 - [Manage workspaces](portal-workspaces.md)
-- [Admin portal overview](admin-center.md)
+- [Fabric administration overview](admin-overview.md)

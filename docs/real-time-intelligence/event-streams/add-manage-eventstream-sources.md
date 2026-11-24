@@ -25,7 +25,7 @@ In this article, you learn about the event sources that you can add to an events
 
 Fabric eventstreams support the following sources. Each article provides details and instructions for adding specific sources.
 
-[!INCLUDE [supported-sources](./includes/supported-sources-enhanced.md)]
+[!INCLUDE [supported-sources](./includes/supported-sources.md)]
 
 [!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 

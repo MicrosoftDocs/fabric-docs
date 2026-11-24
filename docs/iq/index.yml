@@ -31,6 +31,8 @@ landingContent:
             url: ../real-time-intelligence/operations-agent.md
           - text: Power BI semantic models
             url: ../data-warehouse/semantic-models.md
+          - text: Semantic views (preview)
+            url: ../fundamentals/semantic-views-overview.md?toc=/fabric/iq/toc.json
 
   # Card
   - title: Get started with ontology (preview)

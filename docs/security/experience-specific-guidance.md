@@ -1,11 +1,11 @@
 ---
 title: Microsoft Fabric disaster recovery experience specific guidance
 description: See experience-specific guidance for recovering from a regional disaster.
-author: msmimart
-ms.author: mimart
+author: teddyberco
+ms.author: tebercov
 ms.reviewer: danzhang, wiassaf
 ms.topic: how-to
-ms.date: 10/06/2026
+ms.date: 11/11/2026
 ai-usage: ai-assisted
 ---
 
@@ -20,7 +20,7 @@ Many guidance sections in this article use the following sample scenario for pur
 Let's say you have a capacity C1 in region A that has a workspace W1. If you've [turned on disaster recovery](./disaster-recovery-guide.md#disaster-recovery-capacity-setting) for capacity C1, OneLake data is replicated to a backup in region B. If region A faces disruptions, the Fabric service in C1 fails over to region B. 
 
 > [!NOTE]
-> This recovery guidance applies only when the primary region has an Azure‑paired secondary region and Fabric is supported in the paired region.
+> This recovery guidance applies only when the primary region has an Azure‑paired secondary region and Fabric is supported in the paired region. For regions without a paired region, customers who require cross-region disaster recovery must implement and manage their own recovery solution in a supported secondary region.
 
 The following image illustrates this scenario. The box on the left shows the disrupted region. The box in the middle represents the continued availability of the data after failover, and the box on the right shows the fully covered situation after the customer acts to restore their services to full function.
 
@@ -756,7 +756,15 @@ Once configurations are restored, confirm that any referenced Eventhouse (KQL) d
 
 ## Databases
 
-This guide describes the recovery procedures for the databases experience. 
+This guide describes the recovery procedures for the databases experience.
+
+### Database Hub
+
+Database Agents must run in the same region as the database. If that region becomes unavailable, Database Agents can't recover by making cross-region calls, even if Fabric fails over to another region. You must wait until the original region recovers.
+
+For example, if the agent and database are in East US and Fabric fails over to West US during an East US outage, the agent remains unavailable until East US recovers. A failover that continues to route requests to the primary region doesn't have this cross-region restriction, provided that the primary region remains available.
+
+You don't need to reconfigure or re-enable Database Agents. After service is restored in the original region, refresh Database Hub or retry the operation. If Database Agents doesn't return, contact Microsoft Support.
 
 ### SQL database
 
@@ -773,6 +781,57 @@ The recreated database is an independent database from the original database and
 #### Failback considerations
 
 The recreated database is an independent database.  Data added to the recreated database wouldn't be reflected in the original database.  If you plan to failback to the original database when the home region becomes available, you need to consider manually reconciling data from the recreated database to the original database.
+
+### HorizonDB database
+
+To protect against a regional failure, users of HorizonDB databases can take proactive measures to periodically export their data and use the exported data to recreate the database in a new workspace when needed.
+
+Use the PostgreSQL `pg_dump` and `pg_restore` command-line tools to back up and restore the database.
+
+1. Install the [Azure CLI](/cli/azure/install-azure-cli), and sign in with a Microsoft Entra identity that has permission to read the source database. Replace `<tenant-id>` with the ID of the tenant that contains your HorizonDB database:
+
+    ```bash
+    az login --tenant <tenant-id> --allow-no-subscriptions
+    ```
+
+1. Obtain a Microsoft Entra access token for PostgreSQL and set it as the `PGPASSWORD` environment variable. The following commands use Bash:
+
+    ```bash
+    PGPASSWORD="$(az account get-access-token --resource https://ossrdbms-aad.database.windows.net --query accessToken --output tsv)"
+    export PGPASSWORD
+    ```
+
+    `pg_dump` and `pg_restore` use `PGPASSWORD` as the database password. Treat the token as a secret. Don't save it in scripts, connection strings, or dump files.
+
+1. In the same shell, use `pg_dump` to export the database to a custom-format dump file. Replace the placeholder values with the connection details for your HorizonDB database. For `<user>`, use the PostgreSQL username associated with the Microsoft Entra identity you signed in with:
+
+    ```bash
+    pg_dump "host=<source-host> port=5432 dbname=<source-database> user=<user> sslmode=require" --format=custom --file=<source-database>.dump
+    ```
+
+1. Store the dump file in a secure location that's in a different region than the database. Examples include storing the file in a lakehouse that's in a different region, using a geo-redundant Azure storage account, or using another secure off-region storage location.
+
+1. If the HorizonDB database and region are unavailable, create a HorizonDB database in a workspace in a new region—Workspace C2.W2 in Region B as described in the sample scenario. Ensure that your Microsoft Entra identity has permission to create objects and write data in the target database. Tokens expire, so obtain a fresh token before restoring:
+
+    ```bash
+    PGPASSWORD="$(az account get-access-token --resource https://ossrdbms-aad.database.windows.net --query accessToken --output tsv)"
+    export PGPASSWORD
+    pg_restore --dbname="host=<target-host> port=5432 dbname=<target-database> user=<user> sslmode=require" --no-owner <source-database>.dump
+    ```
+
+    Replace the target connection placeholders with the new database's connection details and the PostgreSQL username for your Microsoft Entra identity. If you use a different identity or tenant for the target database, repeat the sign-in step before obtaining the token.
+
+1. After each backup or restore session, remove the token from your shell environment:
+
+    ```bash
+    unset PGPASSWORD
+    ```
+
+The recreated database is independent from the original database and reflects the state of the data at the time of the `pg_dump` operation. The dump contains one database and doesn't include cluster-wide objects, such as roles. Recreate any required roles and permissions in the new region.
+
+#### Failback considerations
+
+Data added to the recreated database isn't reflected in the original database. If you plan to fail back to the original database when the home region becomes available, manually reconcile data from the recreated database with the original database.
 
 ## Platform
 
@@ -850,6 +909,9 @@ A regional disruption can cause a migration to fail in three ways:
 
     If the Migration Assistant can't retrieve migration history, it reports that migration information is no longer available. Progress saved in the current browser is preserved, and the target database isn't affected. Refresh the page to load the migration history again.
 
+### Workspace outbound access protection
+Workspace outbound access protection in Microsoft Fabric lets admins secure the outbound data connections from items in their workspaces to external resources. With this feature, admins can block all outbound connections, and then allow only approved connections to external resources through secure connections. If Fabric becomes inaccessible or inoperable in a region, you can still read the workspace level OAP rules (block outbound access settings, git integration in OAP, and data connection rules). The connection rules infrastructure fails over to a backup instance. Spark Jobs from the primary region remain unavailable to customers. 
+
 ## OneLake
 
 This section walks you through the recovery procedures for OneLake features. For more information on disaster recovery for OneLake data, see [OneLake disaster recovery](/fabric/onelake/onelake-disaster-recovery).
@@ -863,6 +925,24 @@ If Fabric becomes inaccessible or inoperable in a region, you can still read and
 ### Resource instance rules
 
 Resource instance rules help you securely control access to data in OneLake by using trusted Azure resource identities. During regional failover, the system continues to enforce existing rules for read access. However, you can't create, update, or delete resource instance rules until the workspace returns to a writable state.
+
+### Mirrored catalog
+
+Mirrored catalogs don't copy table data into OneLake. They create shortcuts to tables that remain in the source catalog's storage. Because no table data is stored in OneLake, the capacity's disaster recovery setting doesn't apply to mirrored catalog data.
+
+If the region that hosts a mirrored catalog has an outage, the original mirrored catalog item is unavailable until the region recovers. When the region is available again, metadata sync resumes automatically.
+
+To restore access before the primary region recovers, recreate the mirrored catalog in a workspace on a capacity in a different region, such as C2.W2:
+
+1. In C2.W2, create a new mirrored catalog item for your provider.
+1. Select your existing connection to the source catalog. You don't need to create a new connection.
+1. Select the tables to mirror.
+1. Update any shortcuts, semantic models, Real-Time Dashboards, or other items that referenced the original mirrored catalog, and reapply item permissions.
+
+> [!NOTE]
+> A recreated mirrored Azure Monitor item shows only data that arrives after the item is created. Earlier data isn't backfilled. For more information, see [Mirror Azure Monitor in Microsoft Fabric](../mirroring/catalog-mirroring/azure-monitor.md#considerations).
+
+After the primary region recovers, the original and the recreated mirrored catalogs both sync the same tables. Choose which item to keep, update downstream references to that item, and then delete the other item.
 
 ## Related information
 

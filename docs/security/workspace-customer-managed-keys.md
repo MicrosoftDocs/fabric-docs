@@ -1,8 +1,8 @@
 ---
 title: Customer-managed keys for Fabric workspaces
 description: Learn how to use workspace customer managed keys to encrypt data-at-rest in your Microsoft Fabric workspace.
-author: msmimart
-ms.author: mimart
+author: teddyberco
+ms.author: tebercov
 ms.topic: how-to
 ms.date: 10/15/2025
 
@@ -41,6 +41,7 @@ Customer-managed keys are currently supported for the following Fabric items:
 * Mirrored Database
 * Eventhouse (preview)
 * Graph
+* Activator
 
 This feature can't be enabled for a workspace that contains unsupported items. When customer-managed key encryption for a Fabric workspace is enabled, only supported items can be created in that workspace. To use unsupported items, create them in a different workspace that doesn't have this feature enabled.
 
@@ -168,6 +169,8 @@ Before you configure your Fabric workspace with a customer-managed key, consider
 * You can enable CMK by using the Fabric portal or APIs. Workspace administrators can use APIs Assign Workspace Encryption, Get Workspace Encryption, and Reset Workspace Encryption to turn CMK setting on or off and view the CMK status of the workspace. Tenant administrators can use List Workspaces API to get the encryption status of all the workspaces in their tenant.
 
 * CMK can be enabled and disabled for the workspace while the tenant level encryption setting is on. Once the tenant setting is turned off, you can no longer enable CMK for workspaces in that tenant or disable CMK for workspaces that already have CMK turned on in that tenant. Data in workspaces that enabled CMK before the tenant setting was turned off remains encrypted with the customer managed key. Keep the associated key active to be able to unwrap data in that workspace. Disabling CMK setting on your workspace also limits the ability to add a new BYOK key to your tenant.
+
+* Activator items in CMK-enabled workspaces support up to 2,000 events per second.
 
 ## Related content
 

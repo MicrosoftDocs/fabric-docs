@@ -3,7 +3,8 @@ metadata:
    title: Frequently Asked Questions for Mirroring Azure SQL Database in Microsoft Fabric
    description: This article answers frequently asked questions about Mirroring Azure SQL Database in Microsoft Fabric.
    ms.reviewer: nanikolic, jingwang, atodalbagi, wiassaf
-   ms.date: 09/22/2026
+   ms.date: 10/08/2026
+   ai-usage: ai-assisted
    ms.subservice: data-warehouse
    ms.topic: faq
 title: "Frequently asked questions for Mirroring Azure SQL Database in Microsoft Fabric"
@@ -125,6 +126,14 @@ sections:
           How can Azure SQL Database write mirrored data to a workspace with restricted inbound access?
         answer:
           Add the Azure resource ID of the Azure SQL server to the workspace's Resource Instance Rules. The rule allows OneLake to verify the server's identity, so you don't need to maintain firewall rules for dynamic or shared outbound IP addresses. A workspace admin must configure the rule. For more information, see [Manage inbound access to OneLake with Resource Instance Rules](../onelake/onelake-manage-inbound-access-trusted-resources.md).
+      - question: |
+          Can I use a network security perimeter with mirroring?
+        answer: |
+          Yes, in preview. Fabric connects inbound to the Azure SQL logical server to configure and monitor mirroring, and the database connects outbound to OneLake to publish data. Fabric has no perimeter of its own, so you configure every perimeter access rule on the Azure SQL Database side: an inbound rule for the `DataFactory`, `PowerBI`, and `PowerQueryOnline` service tags, and an outbound rule for the OneLake destination. For more information, see [Network security perimeter (preview)](azure-sql-database-how-to-data-security.md#network-security-perimeter-preview).
+      - question: |
+          Why did mirroring stop replicating after my logical server was associated with a network security perimeter?
+        answer: |
+          In enforced mode, a network security perimeter blocks the outbound connection that the database makes to OneLake unless an access rule allows it. Replication stops, but the mirrored database still looks healthy in the Fabric portal. Take the FQDN from the error 22651 entry in `sys.dm_change_feed_errors` and add it as an outbound access rule. The same thing happens while the perimeter is in transition mode if public network access on the logical server is set to `Secured by Perimeter`, because transition mode isn't honored in that configuration. For more information, see [Network security perimeter (preview)](azure-sql-database-how-to-data-security.md#network-security-perimeter-preview).
 
   - name: Cost Management 
     questions:
