@@ -1,8 +1,8 @@
 ---
 title: About Cross-Workspace Communication
 description: Learn how to set up cross-workspace communication.
-author: msmimart
-ms.author: mimart
+author: teddyberco
+ms.author: tebercov
 ms.reviewer: karthikeyana
 ms.topic: concept-article
 ms.date: 10/20/2025

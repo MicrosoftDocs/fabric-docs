@@ -3,8 +3,8 @@ title: Learn to monitor streaming data
 description: Monitor streaming data in Fabric Real-Time hub using the built-in tutorial card. Configure data sources, preview live data, and create alert rules step by step.
 #customer intent: As a Fabric user, I want to learn how to monitor streaming data using the tutorial card in Real-Time hub so that I can get started quickly with real-time data monitoring
 ms.date: 05/12/2026
-author: spelluru
-ms.author: spelluru
+author: galir
+ms.author: garezni
 ms.topic: tutorial
 ---
 

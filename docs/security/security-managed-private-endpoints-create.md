@@ -1,8 +1,8 @@
 ---
 title: Create and use managed private endpoints in Microsoft Fabric
 description: Learn how to create and use managed private endpoints in Microsoft Fabric.
-author: msmimart
-ms.author: mimart
+author: teddyberco
+ms.author: tebercov
 contributors:
   - cvitale
 ms.topic: how-to

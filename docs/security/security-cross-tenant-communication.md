@@ -1,8 +1,8 @@
 ---
 title: About cross-tenant communication
 description: Learn how to use workspace-level private links to set up communication between workspaces in separate tenants.
-author: msmimart
-ms.author: mimart
+author: teddyberco
+ms.author: tebercov
 ms.reviewer: karthikeyana
 ms.topic: how-to
 ms.date: 08/13/2025

@@ -6,7 +6,7 @@ ms.reviewer: Gabilehner
 ms.date: 05/31/2026
 ---
 
-# Workspace outbound access protection for KQL queryset (preview)
+# Workspace outbound access protection for KQL queryset
 
 Workspace outbound access protection (OAP) helps safeguard your data by controlling outbound connections from KQL queryset experiences in your workspace to external data sources. When you enable this setting, KQL queryset outbound connections are limited to approved patterns and configured access rules.
 
