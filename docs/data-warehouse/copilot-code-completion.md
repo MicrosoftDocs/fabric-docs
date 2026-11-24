@@ -1,8 +1,8 @@
 ---
 title: "How to Use Copilot Code Completion in the Data Warehouse Workload (Preview)"
 description: Learn more about Copilot code completion in Microsoft Fabric in Data Warehouse workload, to provide intelligent autocomplete-style code suggestions.
-author: markingmyname
-ms.author: maghan
+author: rakrish75
+ms.author: rakrish
 ms.reviewer: salilkanade, wiassaf
 ms.date: 09/02/2025
 ms.topic: how-to

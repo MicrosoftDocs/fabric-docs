@@ -1,8 +1,8 @@
 ---
 title: Resolve Logical ID Conflicts in Microsoft Fabric
 description: Learn how to resolve logical ID conflicts in Microsoft Fabric.
-author: billmath
-ms.author: billmath
+author: nimrodshalit
+ms.author: nishalit
 ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd

@@ -1,8 +1,8 @@
 ---
 title: Default label policy in Power BI and Fabric
 description: Learn how to ensure comprehensive protection and governance of sensitive data by enabling a default label policy for Power BI and Microsoft Fabric.
-author: msmimart
-ms.author: mimart
+author: sakjai
+ms.author: sakjai
 ms.service: powerbi
 ms.subservice: powerbi-eim
 ms.topic: concept-article

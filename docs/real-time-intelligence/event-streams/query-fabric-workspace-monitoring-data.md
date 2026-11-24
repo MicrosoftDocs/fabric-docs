@@ -2,8 +2,8 @@
 title: Query Eventstream Monitoring Data with KQL (preview)
 description: Query Eventstream monitoring data using KQL in your monitoring Eventhouse. Check node status, track messages, and find errors with ready-to-use query examples.
 #customer intent: As a data engineer, I want to query Eventstream monitoring data using KQL so that I can analyze the performance of my event streams
-author: spelluru
-ms.author: spelluru
+author: skommajo
+ms.author: skommajosula
 ms.reviewer: spelluru
 ms.date: 08/24/2026
 ms.topic: how-to

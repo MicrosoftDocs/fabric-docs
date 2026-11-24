@@ -2,8 +2,8 @@
 title: Eventstream Workspace Monitoring Overview (preview)
 description: Eventstream workspace monitoring lets you track health, performance, and errors in Fabric eventstreams. Learn how to query metrics and troubleshoot issues with KQL.
 #customer intent: As a Fabric workspace admin, I want to understand what Eventstream workspace monitoring is so that I can decide whether to enable it for my workspace
-author: spelluru
-ms.author: spelluru
+author: skommajo
+ms.author: skommajosula
 ms.reviewer: spelluru
 ms.date: 08/24/2026
 ms.topic: concept-article

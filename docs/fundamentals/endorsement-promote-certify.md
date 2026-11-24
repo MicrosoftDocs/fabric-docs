@@ -1,8 +1,8 @@
 ---
 title: Endorse Fabric and Power BI items
 description: Learn how to promote or certify Fabric items, or designate them as master data.
-author: msmimart
-ms.author: mimart
+author: anoopachuta-docs
+ms.author: anoopachuta
 ms.topic: how-to
 ms.date: 07/11/2024
 ---

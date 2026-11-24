@@ -1,8 +1,8 @@
 ---
 title: "Manage external data shares"
 description: "This article describes how to manage external data shares."
-author: msmimart
-ms.author: mimart
+author: sakjai
+ms.author: sakjai
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 11/19/2024

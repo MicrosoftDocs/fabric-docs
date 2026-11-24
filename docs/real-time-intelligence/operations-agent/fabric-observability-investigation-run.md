@@ -6,8 +6,8 @@ ms.service: fabric
 ms.collection: ce-skilling-ai-copilot
 ms.reviewer: ilanawaitser
 ms.date: 10/05/2026
-author: spelluru
-ms.author: spelluru
+author: oronkaiser-msft-nonemu
+ms.author: oronkaiser
 ms.custom: references_regions
 # Customer intent: As a Fabric workspace user, I want to understand what Fabric observability investigation is and how to use it so that I can find the root cause of a failed data pipeline run faster.
 ---

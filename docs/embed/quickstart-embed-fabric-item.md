@@ -1,8 +1,8 @@
 ---
 title: "Quickstart: Embed a Real-Time Dashboard with Microsoft Fabric Embed"
 description: "Microsoft Fabric Embed quickstart: Embed a Real-Time Dashboard in a web app by using delegated Microsoft Entra authentication and the Fabric Embed SDK."
-author: billmath
-ms.author: billmath
+author: anoopachuta-docs
+ms.author: anoopachuta
 ms.date: 07/01/2026
 ms.topic: quickstart
 ms.service: fabric

@@ -1,8 +1,8 @@
 ---
 title: Item details page 
 description: Learn how to understand and use the item details view of Microsoft Fabric items.
-author: msmimart
-ms.author: mimart
+author: sakjai
+ms.author: sakjai
 ms.reviewer: nadavsc
 ms.topic: overview
 ms.date: 10/08/2026

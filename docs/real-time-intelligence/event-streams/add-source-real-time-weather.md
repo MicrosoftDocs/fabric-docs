@@ -4,8 +4,8 @@ description: Real-time weather data streaming made easy. Learn how to add a real
 ms.reviewer: zhenxilin
 ms.topic: how-to
 ms.date: 04/01/2026
-author: spelluru
-ms.author: spelluru
+author: skommajo
+ms.author: skommajosula
 ms.search.form: Source and Destination
 ---
 

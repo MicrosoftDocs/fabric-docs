@@ -1,8 +1,8 @@
 ---
 title: Connect to Fabric Data Warehouse MCP Server
 description: Connect AI agents to Microsoft Fabric Data Warehouse using natural language with the remote MCP server. Learn how to configure endpoints in Visual Studio Code and run T-SQL with GitHub Copilot.
-author: markingmyname
-ms.author: maghan
+author: rakrish75
+ms.author: rakrish
 ms.reviewer: salilkanade, wiassaf
 ms.date: 06/16/2026
 ms.topic: how-to
