@@ -1,8 +1,8 @@
 ---
 title: "Monitor and manage DLP policy violations in Microsoft Fabric"
 description: "Learn how to monitor Fabric DLP policy violations in Microsoft Fabric."
-author: msmimart
-ms.author: mimart
+author: sakjai
+ms.author: sakjai
 ms.topic: how-to
 ms.date: 08/09/2024
 

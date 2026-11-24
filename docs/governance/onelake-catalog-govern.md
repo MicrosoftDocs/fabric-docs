@@ -1,8 +1,8 @@
 ---
 title: Govern and manage your Fabric data with the OneLake catalog
 description: Learn how the OneLake catalog's Govern section provides a unified experience for governing and managing your organization's Fabric data estate.
-author: msmimart
-ms.author: mimart
+author: sakjai
+ms.author: sakjai
 ms.reviewer: yaronc
 ms.topic: overview
 ms.date: 08/26/2026

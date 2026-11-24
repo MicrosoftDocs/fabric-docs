@@ -1,8 +1,8 @@
 ---
 title: Tags in Microsoft Fabric
 description: "Learn about tags in Microsoft Fabric."
-author: msmimart
-ms.author: mimart
+author: sakjai
+ms.author: sakjai
 ms.reviewer: nschachter
 ms.topic: overview
 ms.date: 03/11/2026

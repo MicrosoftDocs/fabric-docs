@@ -1,8 +1,8 @@
 ---
 title: Sensitivity labels troubleshooting
 description: Find guidance for resolving common issues related to sensitivity labels in Power BI.
-author: msmimart
-ms.author: mimart
+author: sakjai
+ms.author: sakjai
 ms.topic: troubleshooting-general
 ms.date: 07/13/2026
 LocalizationGroup: Data from files

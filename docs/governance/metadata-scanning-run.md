@@ -1,8 +1,8 @@
 ---
 title: Run metadata scanning
 description: Learn how to run metadata scanning on your organization's workspaces to get metadata about your organization's Fabric items.
-author: msmimart
-ms.author: mimart
+author: sakjai
+ms.author: sakjai
 ms.topic: how-to
 ms.date: 05/01/2024
 ---

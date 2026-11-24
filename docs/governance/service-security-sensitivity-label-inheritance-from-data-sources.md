@@ -1,8 +1,8 @@
 ---
 title: Sensitivity label inheritance from data sources in Power BI
 description: Learn how Power BI semantic models can inherit sensitivity labels from data sources
-author: msmimart
-ms.author: mimart
+author: sakjai
+ms.author: sakjai
 ms.topic: concept-article
 ms.date: 07/13/2026
 LocalizationGroup: Data from files

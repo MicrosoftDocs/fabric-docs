@@ -1,8 +1,8 @@
 ---
 title: Mandatory label policy in Fabric and Power BI
 description: Learn how organizations can require users to apply sensitivity labels to items with a mandatory label policy in Fabric and Power BI.
-author: msmimart
-ms.author: mimart
+author: sakjai
+ms.author: sakjai
 ms.topic: concept-article
 ms.date: 12/02/2025
 LocalizationGroup: Data from files
