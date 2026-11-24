@@ -152,6 +152,12 @@ When you're ready to deploy, select **Deploy**.
 
 :::image type="content" source="media/deploy-content/add-note.png" alt-text="A screenshot showing the deployment pop-up window, with the Add a note option expanded.":::
 
+#### Continue deployment when items fail
+
+By default, the **Continue deployment in case 1 or more items fail** option is selected. If an item fails to deploy, the deployment continues with the remaining items. Failed items aren't deployed, and deployments aren't rolled back. Review the [deployment history](deployment-history.md) to see which items failed, fix them, and then deploy them again.
+
+To stop the deployment when an item fails, clear the option before you select **Deploy**. Items that you already deployed stay in the target stage, and the remaining items aren't deployed.
+
 ## Deploy content from one stage to another
 
 Once you have content in a pipeline stage, you can deploy it to the next stage. Deploying content to another stage is usually done after you performed some actions in the pipeline. For example, made development changes to your content in the development stage, or tested your content in the test stage. Though you can have up to 10 different stages in the pipeline, a typical workflow for moving content is development to test stage, and then test to production. You can learn more about this process, in the [deploy content to an existing workspace](understand-the-deployment-process.md#deploy-content-from-one-stage-to-another) section.
