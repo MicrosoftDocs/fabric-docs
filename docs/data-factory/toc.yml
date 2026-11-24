@@ -1088,6 +1088,9 @@
                     href: dataflow-gen2-data-destinations-excel-conditional-formatting.md
           - name: Send email from Dataflow Gen2 (preview)
             href: send-email-dataflow-gen2.md
+            items:
+              - name: Advanced options for HTML email (preview)
+                href: send-html-email-dataflow.md
           - name: Back up query data to a lakehouse (preview)
             href: back-up-query-data-lakehouse.md
           - name: Authoring tools

@@ -1,8 +1,8 @@
 ---
 title: Microsoft Copilot in Power BI and Fabric (preview)
 description: Learn how Microsoft Copilot in Power BI and Microsoft Fabric helps users ask questions about data, incorporate Microsoft 365 context, and work across supported experiences.
-author: s-polly
-ms.author: scottpolly
+author: pm-sara
+ms.author: svredevoogd
 ms.reviewer: cnews
 ms.date: 11/13/2026
 ms.topic: overview

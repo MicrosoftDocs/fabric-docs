@@ -5,8 +5,8 @@ description: HTTP source for eventstreams lets you stream JSON API data in real 
 ms.reviewer: zhenxilin
 ms.topic: how-to
 ms.date: 04/02/2026
-author: spelluru
-ms.author: spelluru
+author: skommajo
+ms.author: skommajosula
 ms.search.form: Source and Destination
 ---
 

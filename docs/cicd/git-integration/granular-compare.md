@@ -1,8 +1,8 @@
 ---
 title: Compare and commit changes in Fabric Git integration
 description: Learn how to compare and commit changes in Fabric Git integration.
-author: billmath
-ms.author: billmath
+author: nimrodshalit
+ms.author: nishalit
 ms.reviewer: Yaron
 ms.service: fabric
 ms.subservice: cicd

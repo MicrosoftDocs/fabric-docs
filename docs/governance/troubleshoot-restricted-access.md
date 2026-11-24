@@ -1,8 +1,8 @@
 ---
 title: Troubleshoot issues with restricted access
 description: Learn how to troubleshoot issues with restricted access.
-author: msmimart
-ms.author: mimart
+author: sakjai
+ms.author: sakjai
 ms.date: 12/19/2025
 ms.topic: concept-article
 ---

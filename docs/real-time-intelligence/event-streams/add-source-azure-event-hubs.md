@@ -6,8 +6,8 @@ ms.reviewer: xujiang1
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 04/01/2026
-author: spelluru
-ms.author: spelluru
+author: skommajo
+ms.author: skommajosula
 ms.search.form: Source and Destination
 ai-usage: ai-assisted
 zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json

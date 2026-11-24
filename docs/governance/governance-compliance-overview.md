@@ -1,8 +1,8 @@
 ---
 title: Governance and compliance in Microsoft Fabric
 description: This article provides an overview of the governance and compliance in Microsoft Fabric.
-author: msmimart
-ms.author: mimart
+author: sakjai
+ms.author: sakjai
 ms.topic: overview
 ms.date: 09/01/2026
 ai-usage: ai-assisted

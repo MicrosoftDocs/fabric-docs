@@ -1,8 +1,8 @@
 ---
 title: OneLake catalog overview
 description: Learn about the Microsoft Fabric's OneLake catalog and the capabilities it offers.
-author: msmimart
-ms.author: mimart
+author: sakjai
+ms.author: sakjai
 ms.reviewer: yaronc
 ms.topic: overview
 ms.date: 08/26/2026

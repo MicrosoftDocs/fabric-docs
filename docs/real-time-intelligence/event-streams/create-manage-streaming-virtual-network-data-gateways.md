@@ -2,8 +2,8 @@
 title: Create and manage streaming virtual network data gateway
 description: Learn how to create and manage a streaming virtual network data gateway.
 ms.reviewer: spelluru
-ms.author: spelluru
-author: spelluru
+ms.author: skommajosula
+author: skommajo
 ms.topic: how-to
 ms.custom: sfi-image-nochange, sfi-ropc-nochange
 ms.date: 01/27/2026

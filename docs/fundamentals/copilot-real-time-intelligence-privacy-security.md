@@ -1,8 +1,8 @@
 ---
 title: "Privacy, security, and responsible use of Copilot for Real-Time Intelligence"
 description: Learn about privacy, security, and responsible use of Copilot for Real-Time Intelligence in Microsoft Fabric.
-author: spelluru
-ms.author: spelluru
+author: anoopachuta-docs
+ms.author: anoopachuta
 ms.reviewer: mibar
 ms.topic: concept-article
 ms.date: 10/07/2026

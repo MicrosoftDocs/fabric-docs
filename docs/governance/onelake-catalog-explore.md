@@ -1,8 +1,8 @@
 ---
 title: Discover and explore Fabric items using OneLake catalog's explore tab
 description: Learn how to discover, explore, manage, and use your organization's Fabric items in the OneLake catalog.
-author: msmimart
-ms.author: mimart
+author: sakjai
+ms.author: sakjai
 ms.reviewer: yaronc
 ms.topic: overview
 ms.date: 10/08/2026

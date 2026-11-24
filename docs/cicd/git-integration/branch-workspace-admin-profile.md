@@ -1,8 +1,8 @@
 ---
 title: Branch workspace admin profiles in Microsoft Fabric
 description: Learn how branch workspace admin profiles let workspace admins preconfigure isolated branch workspaces for Git-based development in Microsoft Fabric while preserving governance, least privilege, and CI/CD guardrails.
-author: billmath
-ms.author: billmath
+author: nimrodshalit
+ms.author: nishalit
 ms.topic: how-to
 ms.date: 09/01/2026
 ms.service: fabric

@@ -1,8 +1,8 @@
 ---
 title: Microsoft Copilot in the Data Warehouse Workload Overview
 description: Learn more about Copilot in Fabric in the Data Warehouse workload.
-author: markingmyname
-ms.author: maghan
+author: rakrish75
+ms.author: rakrish
 ms.reviewer: salilkanade, wiassaf
 ms.date: 09/02/2026
 ms.topic: overview

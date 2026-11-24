@@ -2,8 +2,8 @@
 title: Extract event metadata in Eventstream
 description: Learn how to access and use system properties and custom properties from streaming sources in Microsoft Fabric Eventstream using the SQL operator.
 ms.reviewer: xujiang1
-ms.author: spelluru
-author: spelluru
+ms.author: skommajosula
+author: skommajo
 ms.topic: how-to
 ms.date: 05/15/2026
 ---

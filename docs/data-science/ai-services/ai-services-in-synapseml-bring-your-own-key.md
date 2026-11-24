@@ -3,8 +3,8 @@ title: Foundry Tools in SynapseML with bring your own key
 description: Learn about the capabilities of Foundry Tools pretrained models for enriching your data with artificial intelligence (AI) in SynapseML.
 ms.topic: overview
 ms.custom: 
-ms.author: lagayhar
-author: lgayhardt
+ms.author: deevij
+author: der5
 ms.reviewer: scottpolly
 reviewer: s-polly
 ms.date: 01/16/2026

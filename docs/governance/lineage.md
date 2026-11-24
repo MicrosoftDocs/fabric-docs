@@ -1,8 +1,8 @@
 ---
 title: Lineage in Fabric
 description: Learn how to view the lineage of Fabric items.
-author: msmimart
-ms.author: mimart
+author: sakjai
+ms.author: sakjai
 ms.topic: how-to
 ms.date: 11/06/2023
 ---
