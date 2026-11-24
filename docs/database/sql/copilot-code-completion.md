@@ -1,8 +1,8 @@
 ---
 title: How to Use the Microsoft Copilot Code Completion in the SQL Database Workload
 description: Learn more about Microsoft Copilot Code Completion feature in Microsoft Fabric in the SQL database workload, to ask questions specific about your database.
-author: markingmyname
-ms.author: maghan
+author: sukkaur
+ms.author: sukkaur
 ms.reviewer: yoleichen, wiassaf
 ms.date: 11/18/2025
 ms.topic: how-to
