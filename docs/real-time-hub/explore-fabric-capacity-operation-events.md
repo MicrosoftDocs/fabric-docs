@@ -118,7 +118,7 @@ Operation events that use data schema version 1.1 don't include `billingMode` or
 - Check `dataschemaversion` before relying on billing attribution properties.
 - Treat a missing or unrecognized `billingMode` as unknown. Don't classify the operation as `Capacity`.
 - Allow `billingCategory` to be empty. If the value is empty, you can't attribute the operation to an on-demand overview event by using this property.
-- Don't maintain a fixed allowlist of billing category values. Fabric can add, split, or combine categories.
+- Don't maintain a fixed allow list of billing category values. Fabric can add, split, or combine categories.
 - Don't use `capacitySku` to determine the billing mode. Both F0 and paid capacities can produce on-demand billing usage.
 
 ### Correlate with on-demand overview events
@@ -128,9 +128,10 @@ A `Microsoft.Fabric.Capacity.OnDemandSummary` event reports rolling 24-hour usag
 1. Filter operation events to `billingMode` equal to `OnDemand`.
 1. Match `capacityId` to the summary event's `capacityId`.
 1. Match `billingCategory` to the summary event's `billingCategory`.
+1. Restrict the analysis to operation events from approximately 24 hours before the summary event's `time` through that time.
 1. Group the matching operation events by `workspaceId`, `itemId`, or `operationName` to identify the largest consumers.
 
-Use operation events for usage attribution and operational monitoring. Don't use them to reconcile an Azure invoice. Billing categories aren't billing meters, and event delivery can contain duplicates or gaps.
+The correlation is approximate. The summary event's `time` is its emission time, not an exact rolling-window boundary, and the events don't expose the exact boundaries of the effective rolling window. Use operation events for usage attribution and operational monitoring. Don't use them to reconcile an Azure invoice. Billing categories aren't billing meters, and event delivery can contain duplicates or gaps.
 
 For more information, see [Drill down into operation events](explore-fabric-capacity-on-demand-overview-events.md#drill-down-into-operation-events).
 
