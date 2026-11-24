@@ -1,8 +1,8 @@
 ---
 title: Create an allow list using data connection rules
 description: "Learn how to create an allow list using data connection rules on Microsoft Fabric workspaces."
-author: msmimart
-ms.author: mimart
+author: teddyberco
+ms.author: tebercov
 ms.topic: how-to
 ms.date: 11/10/2026
 ai-usage: ai-assisted

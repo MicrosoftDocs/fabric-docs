@@ -5,8 +5,8 @@ ms.reviewer: anboisve
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 04/01/2026
-author: spelluru
-ms.author: spelluru
+author: galir
+ms.author: garezni
 zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
 zone_pivot_groups: event-hubs-capabilities
 ---

@@ -1,8 +1,8 @@
 ---
 title: Workspace outbound access protection for Data Science
 description: Learn how workspace outbound access protection works with Data Science items like Machine Learning Experiments and Machine Learning Models in Microsoft Fabric.
-author: msmimart
-ms.author: mimart
+author: teddyberco
+ms.author: tebercov
 ms.topic: overview
 ms.date: 04/08/2026
 ai-usage: ai-assisted

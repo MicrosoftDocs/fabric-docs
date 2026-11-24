@@ -1,8 +1,8 @@
 ---
 title: Set Up a Virtual Network Gateway to Access a Lakehouse from Power BI
 description: Learn how to configure a virtual network gateway to securely connect Power BI to a lakehouse by using Azure Data Lake Storage Gen2.
-author: msmimart
-ms.author: mimart
+author: teddyberco
+ms.author: tebercov
 ms.reviewer: karthikeyana
 ms.topic: how-to
 ms.date: 08/13/2025

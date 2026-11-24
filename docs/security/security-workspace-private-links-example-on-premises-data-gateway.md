@@ -1,8 +1,8 @@
 ---
 title: Access a Lakehouse from a Power BI Semantic Model
 description: Learn how to configure and use workspace-level Private Link access for Power BI resources.
-author: msmimart
-ms.author: mimart
+author: teddyberco
+ms.author: tebercov
 ms.reviewer: karthikeyana
 ms.topic: how-to
 ms.date: 08/13/2025

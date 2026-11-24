@@ -2,8 +2,8 @@
 title: Explore the Add Data Page in Fabric Real-Time Hub
 description: Explore the Add data page in Fabric Real-Time hub to connect streaming sources, Azure services, diagnostic data, events, and sample scenarios.
 #customer intent: As a Fabric user, I want to understand the Add data page so that I can connect supported data sources to Real-Time hub.
-author: spelluru
-ms.author: spelluru
+author: galir
+ms.author: garezni
 ms.reviewer: majia
 ms.topic: concept-article
 ms.custom: doc-kit-assisted

@@ -4,8 +4,8 @@ description: Set up actions for Activator rules in Microsoft Fabric. Follow step
 ms.topic: how-to
 ms.search.form: Data Activator Rule Actions
 ms.date: 05/11/2026
-author: spelluru
-ms.author: spelluru
+author: galir
+ms.author: garezni
 ai-usage: ai-assisted
 #customer intent: As a new Activator user, I want learn how to configure actions for a rule so that I can receive notifications about my streaming data or trigger automated workflows.
 ---

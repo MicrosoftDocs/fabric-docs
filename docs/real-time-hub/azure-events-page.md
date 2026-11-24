@@ -2,8 +2,8 @@
 title: Explore the Azure Events Page in Real-Time Hub
 description: Explore the Azure events page in Fabric Real-Time hub to discover Azure events, create eventstreams, and configure alerts and notifications.
 #customer intent: As a Fabric user, I want to understand the Azure events page so that I can subscribe and respond to events from Azure services.
-author: spelluru
-ms.author: spelluru
+author: galir
+ms.author: garezni
 ms.reviewer: majia
 ms.topic: concept-article
 ms.custom: doc-kit-assisted

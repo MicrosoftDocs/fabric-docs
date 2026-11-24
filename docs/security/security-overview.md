@@ -1,8 +1,8 @@
 ---
 title: Security in Microsoft Fabric
 description: Learn how Microsoft Fabric security works, and what features are available.
-author: msmimart
-ms.author: mimart
+author: teddyberco
+ms.author: tebercov
 ms.topic: overview
 ms.date: 08/13/2026
 ai-usage: ai-assisted

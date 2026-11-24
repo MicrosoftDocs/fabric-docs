@@ -122,6 +122,9 @@ There are two ways to create a view:
 - **No materialized view creation** — Materialized view (MLV) creation isn't supported. Use a notebook to create materialized views.
 - **No real-time collaboration** — The query explorer doesn't support live co-authoring.
 - **No query scheduling** — For scheduled query execution, use [pipelines](../data-factory/activity-overview.md) or notebooks.
+- **Table and view names** — Schema-enabled lakehouse naming restrictions also apply
+  to tables and views created or renamed through the query explorer. Names that start
+  or end with non-ASCII characters appear as unidentified.
 
 ## Related content
 

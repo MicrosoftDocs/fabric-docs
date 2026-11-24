@@ -1,8 +1,8 @@
 ---
 title: Workspace outbound access protection for data engineering workloads
 description: "This article describes workspace outbound access protection for data engineering workloads."
-author: msmimart
-ms.author: mimart
+author: teddyberco
+ms.author: tebercov
 ms.topic: overview
 ms.date: 12/01/2025
 

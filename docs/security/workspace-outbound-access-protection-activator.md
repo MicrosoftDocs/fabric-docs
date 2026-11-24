@@ -2,8 +2,8 @@
 title: Workspace Outbound Access Protection for Activator
 description: Learn how to configure Workspace Outbound Access Protection (outbound access protection) to secure your Activator artifacts in Microsoft Fabric.
 #customer intent: As a workspace admin, I want to enable outbound access protection for my workspace so that I can secure Activator Real-Time Intelligence data connections to only approved destinations.
-author: msmimart
-ms.author: mimart
+author: teddyberco
+ms.author: tebercov
 ms.date: 05/26/2026
 ms.topic: how-to
 ---

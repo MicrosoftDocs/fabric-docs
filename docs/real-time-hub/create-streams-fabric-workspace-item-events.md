@@ -5,8 +5,8 @@ description: Fabric workspace item events let you track changes in Real-Time hub
 ms.reviewer: anboisve
 ms.topic: how-to
 ms.date: 09/01/2026
-author: spelluru
-ms.author: spelluru
+author: galir
+ms.author: garezni
 ai-usage: ai-assisted
 ---
 
