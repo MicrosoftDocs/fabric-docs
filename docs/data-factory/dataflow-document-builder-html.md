@@ -231,6 +231,8 @@ You can also [start from the Send email dialog](send-email-dataflow-gen2.md#star
 > [!NOTE]
 > The email renderer supports a subset of HTML document parts. **Chart** and **MultiStat** parts are omitted from HTML email. Use **Text** or **Table** parts for information recipients need to receive, and inspect the received message rather than relying on the structural preview.
 
+For email-specific properties, table styles, and nested values, see [Advanced options for HTML email](send-html-email-dataflow.md).
+
 ## Edit an existing document
 
 Use the document query to return to the definition stored in the dataflow:
