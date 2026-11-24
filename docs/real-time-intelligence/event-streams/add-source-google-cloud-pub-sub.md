@@ -5,8 +5,8 @@ description: Google Cloud Pub/Sub source lets you stream real-time events into a
 ms.reviewer: zhenxilin
 ms.topic: how-to
 ms.date: 04/01/2026
-author: spelluru
-ms.author: spelluru
+author: skommajo
+ms.author: skommajosula
 ms.search.form: Source and Destination
 ---
 

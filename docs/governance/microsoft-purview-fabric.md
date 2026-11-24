@@ -2,8 +2,8 @@
 title: Use Microsoft Purview with Microsoft Fabric
 description: Learn how Microsoft Purview helps protect Fabric data and supports audit, risk, and compliance scenarios.
 ms.reviewer: viseshag
-author: msmimart
-ms.author: mimart
+author: sakjai
+ms.author: sakjai
 ms.topic: overview
 ms.date: 08/26/2026
 ai-usage: ai-assisted

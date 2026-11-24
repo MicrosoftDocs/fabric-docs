@@ -1,8 +1,8 @@
 ---
 title: "External Data Sharing in Microsoft Fabric"
 description: "This article describes the external data sharing feature in Microsoft Fabric."
-author: msmimart
-ms.author: mimart
+author: sakjai
+ms.author: sakjai
 ms.topic: concept-article
 ms.date: 06/10/2025
 #customer intent: As a Fabric administrator, data creator, or data consumer, I want to learn about sharing data stored in OneLake from one tenant to another, so that data doesn't have to be copied when it is shared.

@@ -182,7 +182,7 @@ To run a PowerShell script that performs a deployment, you need the following co
 
 * The maximum number of items that can be deployed in a single deployment is 300.
 
-* The deployment pipelines APIs currently only support Power BI items.
+* The Power BI deployment pipelines APIs currently only support Power BI items. To deploy Fabric items, use the [Fabric deployment pipelines APIs](pipeline-automation-fabric.md).
 
 * Creating a customized pipeline of 2-10 stages is currently supported only through the UI.
 

@@ -5,8 +5,8 @@ description: Amazon Kinesis Data Streams source integration lets you process rea
 ms.reviewer: zhenxilin
 ms.topic: how-to
 ms.date: 03/31/2026
-author: spelluru
-ms.author: spelluru
+author: skommajo
+ms.author: skommajosula
 ms.search.form: Source and Destination
 ---
 

@@ -1,8 +1,8 @@
 ---
 title: Use Azure OpenAI with SynapseML
 description: How to use prebuilt Azure OpenAI in Fabric with SynapseML for distributed processing
-ms.author: lagayhar
-author: lgayhardt
+ms.author: deevij
+author: der5
 ms.reviewer: scottpolly
 reviewer: s-polly
 ms.topic: how-to

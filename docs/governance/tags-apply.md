@@ -1,8 +1,8 @@
 ---
 title: Apply tags to items and workspaces in Fabric
 description: Learn how to apply tags to items and workspaces in Microsoft Fabric.
-author: msmimart
-ms.author: mimart
+author: sakjai
+ms.author: sakjai
 ms.topic: how-to
 ms.date: 04/07/2026
 ai-usage: ai-assisted

@@ -1,8 +1,8 @@
 ---
 title: Microsoft Copilot in the SQL Database Workload Overview
 description: "Learn more about the Microsoft Copilot in Microsoft Fabric in the SQL database workload, an AI assistant designed to streamline your database tasks."
-author: markingmyname
-ms.author: maghan
+author: sukkaur
+ms.author: sukkaur
 ms.reviewer: yoleichen, wiassaf
 ms.date: 02/26/2026
 ms.topic: overview

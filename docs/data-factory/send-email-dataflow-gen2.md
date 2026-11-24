@@ -19,6 +19,8 @@ ai-usage: ai-assisted
 
 The send email action adds an Outlook-backed email action to a Dataflow Gen2 workflow. Start with the plain-text example to configure and verify a message, or [use an HTML document as the email body](#use-an-html-document-as-the-email-body). For HTML, choose an existing document or start a new one directly from the send email dialog.
 
+To define the HTML body in M, including styled tables, value formatting, and nested content, see [Advanced options for HTML email](send-html-email-dataflow.md).
+
 ## Prerequisites
 
 Prepare the following items before configuring the action:
@@ -187,7 +189,7 @@ The following example shows the received plain-text message body:
 
 ## Generate the body with an M query
 
-Use a named text query to read from the `SampleSales` sample query when you want to preview the message separately from the email action. Use the result as the body of the `EmailAlert` send email action query created earlier. For this plain-text example, the named query must return a text value, not a table.
+Use a named text query to read from the `SampleSales` sample query when you want to preview the message separately from the email action. Use the result as the body of the `EmailAlert` send email action query created earlier. For this plain-text example, the named query must return a text value, not a table. To send a table as part of an HTML body, use a [navigation table](send-html-email-dataflow.md#minimal-example).
 
 1. Add a **Blank query** with the following expression:
 
@@ -272,6 +274,7 @@ See [View refresh history and monitor your dataflows](dataflows-gen2-monitor.md)
 
 ## Related content
 
+- [Advanced options for HTML email](send-html-email-dataflow.md)
 - [What is Dataflow Gen2?](dataflows-gen2-overview.md)
 - [HTML document builder](dataflow-document-builder-html.md)
 - [Dataflow refresh](dataflow-gen2-refresh.md)

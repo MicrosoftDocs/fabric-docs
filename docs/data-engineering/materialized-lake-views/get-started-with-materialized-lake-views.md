@@ -16,8 +16,7 @@ In this quickstart, you create source tables in a lakehouse in Microsoft Fabric,
 
 * A [workspace](../../fundamentals/create-workspaces.md) with a Fabric-enabled
   [capacity](../../enterprise/licenses.md#capacity) and Contributor or higher access.
-* A Lakehouse with [Lakehouse schemas](../Lakehouse-schemas.md) enabled,
-  [Fabric Runtime 1.3](../runtime-1-3.md), and access to source Delta tables.
+* A Lakehouse with [Lakehouse schemas](../Lakehouse-schemas.md) enabled.
 
 ## Create your first materialized lake view
 

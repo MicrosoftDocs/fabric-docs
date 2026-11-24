@@ -1,8 +1,8 @@
 ---
 title: Manage Fabric Capacity in the OneLake Catalog
 description: Learn how to manage your Microsoft Fabric capacities from the OneLake catalog Govern experience and understand the different settings available to you.
-author: msmimart
-ms.author: mimart
+author: sakjai
+ms.author: sakjai
 ms.topic: how-to
 ms.date: 09/18/2026
 ai-usage: ai-assisted

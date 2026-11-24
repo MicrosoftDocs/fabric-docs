@@ -2,7 +2,7 @@
 title: Fabric Application lifecycle management (ALM) deployment pipelines deploy content
 description: Learn how to deploy content to an empty or to nonempty stage using the Fabric Application lifecycle management (ALM) deployment pipeline tool.
 ms.topic: concept-article
-ms.date: 09/24/2026
+ms.date: 11/24/2026
 ai-usage: ai-assisted
 #customer intent: As a developer, I want to learn how to deploy content to an empty or nonempty stage using the Fabric Application lifecycle management (ALM) deployment pipeline tool so that I can manage my content lifecycle.
 ---
@@ -144,9 +144,19 @@ For how the selected items, plan relationships, Fabric lineage, and actions dete
 
 After selecting which content to deploy, a pop-up window lists all the items you're about to deploy. You can review the list and add a note, or comment, to the deployment. Adding a note is optional, but it's highly recommended as the notes are added to the [deployment history](deployment-history.md). With a note for each deployment, reviewing the history of your pipelines becomes more meaningful.
 
-To leave a note, expand the **Add a note** option and write your note in the text box. When you're ready to deploy, select **Deploy**.
+To leave a note, expand the **Add a note** option and write your note in the text box.
+
+To continue deployment if an item fails, select **Continue deployment in case 1 or more items fail**. The deployment continues, but skips items that depend on the failed item. After deployment, review [deployment history](deployment-history.md) to check the deployment result.
+
+When you're ready to deploy, select **Deploy**.
 
 :::image type="content" source="media/deploy-content/add-note.png" alt-text="A screenshot showing the deployment pop-up window, with the Add a note option expanded.":::
+
+#### Continue deployment when items fail
+
+By default, the **Continue deployment in case 1 or more items fail** option is selected. If an item fails to deploy, the deployment continues with the remaining items. Failed items aren't deployed, and deployments aren't rolled back. Review the [deployment history](deployment-history.md) to see which items failed, fix them, and then deploy them again.
+
+To stop the deployment when an item fails, clear the option before you select **Deploy**. Items that you already deployed stay in the target stage, and the remaining items aren't deployed.
 
 ## Deploy content from one stage to another
 

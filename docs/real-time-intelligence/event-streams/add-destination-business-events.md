@@ -1,8 +1,8 @@
 ---
 title: Add Business Events Destination to Eventstream
 description: Business events destination in Fabric eventstreams enables real-time notifications and automated workflows. This article provides step-by-step instructions. 
-author: spelluru
-ms.author: spelluru
+author: skommajo
+ms.author: skommajosula
 ms.reviewer: xujiang1
 ms.date: 06/29/2026
 ms.topic: how-to

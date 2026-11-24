@@ -4,8 +4,8 @@ description: Fabric capacity overview events can be added as a source to your ev
 ms.reviewer: zhenxilin
 ms.topic: how-to
 ms.date: 04/02/2026
-author: spelluru
-ms.author: spelluru
+author: skommajo
+ms.author: skommajosula
 ms.search.form: Source and Destination
 ---
 

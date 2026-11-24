@@ -1,8 +1,8 @@
 ---
 title: "What is Microsoft Fabric Embed in Microsoft Fabric (preview)?"
 description: Learn what Microsoft Fabric Embed in Microsoft Fabric is, how preview support works for Real-Time Dashboards, and how access uses Microsoft Entra ID.
-author: billmath
-ms.author: billmath
+author: anoopachuta-docs
+ms.author: anoopachuta
 ms.topic: overview
 ms.date: 07/01/2026
 ms.service: fabric

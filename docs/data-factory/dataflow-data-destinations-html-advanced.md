@@ -22,7 +22,7 @@ Use navigation tables in Dataflow Gen2 to generate HTML report files that combin
 Start with the [minimal example](#minimal-example) to create a paragraph and a table. Use the [complete example](#complete-example) to add sections, summary cards, and a chart, or use the [quick reference](#quick-reference) to look up supported parts and properties.
 
 > [!NOTE]
-> This article describes HTML files written to a data destination, not email bodies. HTML files support `Chart` and `MultiStat` parts, but HTML email omits those parts. The file-output properties and limits in this article don't describe email output. For email configuration, see [Send email from Dataflow Gen2](send-email-dataflow-gen2.md).
+> This article describes HTML files written to a data destination, not email bodies. HTML files support `Chart` and `MultiStat` parts, but HTML email omits those parts. The file-output properties and limits in this article don't describe email output. For the email navigation-table reference, see [Advanced options for HTML email](send-html-email-dataflow.md). For connection and recipient setup, see [Send email from Dataflow Gen2](send-email-dataflow-gen2.md).
 
 ## Prerequisites
 
