@@ -152,7 +152,7 @@ To leave a note, expand the **Add a note** option and write your note in the tex
 
 By default, the **Continue deployment in case 1 or more items fail** option is selected. If an item fails to deploy, the deployment continues with the remaining items. Failed items aren't deployed, and deployments aren't rolled back. Review the [deployment history](deployment-history.md) to see which items failed, fix them, and then deploy them again.
 
-To stop the deployment when an item fails, clear the option before you select **Deploy**. Items that were already deployed stay in the target stage, and the remaining items aren't deployed.
+To stop the deployment when an item fails, clear the option before you select **Deploy**. Items that you already deployed stay in the target stage, and the remaining items aren't deployed.
 
 ## Deploy content from one stage to another
 
