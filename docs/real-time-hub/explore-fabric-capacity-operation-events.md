@@ -3,7 +3,7 @@ title: Explore Fabric capacity operation events in Fabric Real-Time hub
 description: This article shows how to explore Fabric capacity operation events in Fabric Real-Time hub.
 ms.reviewer: geguirgu
 ms.topic: how-to
-ms.date: 08/21/2026
+ms.date: 11/24/2026
 ms.search.form: Explore Fabric capacity operation events
 ms.custom: references_regions
 ---
@@ -64,7 +64,7 @@ An event has the following top-level data:
 | `time` | timestamp | Timestamp of when the occurrence happened. | `2026-08-21T05:19:40.3996099Z` |
 | `id` | string | Unique identifier for the event. | `00000000-0000-0000-0000-000000000000` |
 | `specversion` | string | The version of the Cloud Event spec. | `1.0` |
-| `dataschemaversion` | string | The version of the data schema. | `1.1` |
+| `dataschemaversion` | string | The version of the operation event data schema. Version 1.2 adds billing attribution properties. Consumers must continue to handle version 1.1 events, which don't include these properties. | `1.2` |
 
 The `data` object has the following properties for Operation events:
 
@@ -72,9 +72,6 @@ The `data` object has the following properties for Operation events:
 
 > [!NOTE]
 > The operation table contains one row per operation that consumes capacity. Unlike the summary events, operation events aren't aggregated by time window - each row represents a distinct operation with its own duration, CU consumption, and status.
-
-> [!NOTE]
-> During the public preview of on-demand billing, the capacity operation event schema doesn't distinguish between operations that use provisioned capacity and operations that use on-demand billing.
 
 | Property | Type | Description | Example |
 | -------- | ---- | ----------- | ------- |
@@ -84,6 +81,8 @@ The `data` object has the following properties for Operation events:
 | `capacityName` | string | The name of the capacity on which the operation ran. You can change the capacity name without impacting the capacity ID. | `foocapacity` |
 | `capacityFriendlyName` | string | The user-friendly display name of the capacity. | `foocapacity` |
 | `capacitySku` | string | The SKU size of the capacity on which the operation ran at that time. SKUs can be scaled up or down at any time by admins, so the SKU may change for the same capacity ID. | `F128` |
+| `billingMode` | string | Billing path used by the operation. `Capacity` identifies the provisioned capacity billing path, and `OnDemand` identifies on-demand billing. `Capacity` doesn't indicate whether the capacity was purchased as pay-as-you-go or reserved. | `OnDemand` |
+| `billingCategory` | string | Billing category attributed to the operation. Use this property with `capacityId` to correlate an on-demand operation with an on-demand overview event. The value can be empty if the producer doesn't supply a category. A billing category is a billing grouping, not a meter, invoice line, or charge. | `DataScience` |
 | `activationId` | string | Internal ID for the capacity activation instance. When a capacity is paused and restarted, it keeps the same capacity ID but gets a new `activationId`. | `00000000-0000-0000-0000-000000000000` |
 | `workspaceId` | string | The ID of the workspace where the item that produced the operation lives. | `00000000-0000-0000-0000-000000000000` |
 | `workspaceName` | string | The name of the workspace where the item that produced the operation lives. | `fooworkspace` |
@@ -96,7 +95,7 @@ The `data` object has the following properties for Operation events:
 | `operationId` | string | Unique run ID for the operation. Use this ID to correlate the event with other logs or telemetry. | `00000000-0000-0000-0000-000000000000` |
 | `status` | string | Status of the operation (for example, `Success` or `Stopped`). | `Success, Stopped` |
 | `operationStartTime` | UTC string | Timestamp when the operation began. | `2026-08-21T05:19:10.0246081Z` |
-| `releaseType` | string | Indicates whether the operation is billed or unbilled. Emitted values are `Public` or `Preview`. | `Public / Preview` |
+| `releaseType` | string | Release classification of the operation. Emitted values are `Public` and `Preview`. Use `billingMode`, not `releaseType`, to determine whether the operation used provisioned capacity or on-demand billing. | `Public` |
 | `operationName` | string | Name/type of the operation (for example, Dataflow Refresh). | `Lakehouse Operations, Notebook HC Pipeline Run, Notebook Scheduled Run, EventHouse UpTime` |
 | `utilizationType` | string | Whether the operation was interactive or background. | `Background` |
 | `windowStartTime` | UTC string | Start of the smoothed window. | `2026-08-21T05:30:00.0000000Z` |
@@ -112,6 +111,28 @@ The `data` object has the following properties for Operation events:
 | `identityType` | string | Type of identity that ran the operation (for example, UPN or Service Principal). | `FabricService` |
 | `identityValue` | string | Actual identity value (for example, user email or service principal ID). | `Fabric Service` |
 
+### Handle operation event schema versions
+
+Operation events that use data schema version 1.1 don't include `billingMode` or `billingCategory`. When processing operation events:
+
+- Check `dataschemaversion` before relying on billing attribution properties.
+- Treat a missing or unrecognized `billingMode` as unknown. Don't classify the operation as `Capacity`.
+- Allow `billingCategory` to be empty. If the value is empty, you can't attribute the operation to an on-demand overview event by using this property.
+- Don't maintain a fixed allowlist of billing category values. Fabric can add, split, or combine categories.
+- Don't use `capacitySku` to determine the billing mode. Both F0 and paid capacities can produce on-demand billing usage.
+
+### Correlate with on-demand overview events
+
+A `Microsoft.Fabric.Capacity.OnDemandSummary` event reports rolling 24-hour usage for one capacity and billing category. To identify the operations behind that usage, use operation events with data schema version 1.2:
+
+1. Filter operation events to `billingMode` equal to `OnDemand`.
+1. Match `capacityId` to the summary event's `capacityId`.
+1. Match `billingCategory` to the summary event's `billingCategory`.
+1. Group the matching operation events by `workspaceId`, `itemId`, or `operationName` to identify the largest consumers.
+
+Use operation events for usage attribution and operational monitoring. Don't use them to reconcile an Azure invoice. Billing categories aren't billing meters, and event delivery can contain duplicates or gaps.
+
+For more information, see [Drill down into operation events](explore-fabric-capacity-on-demand-overview-events.md#drill-down-into-operation-events).
 
 ## Subscribe permission
 For more information, see [subscribe permission for Fabric events](fabric-events-subscribe-permission.md).
@@ -119,4 +140,5 @@ For more information, see [subscribe permission for Fabric events](fabric-events
 ## Related content
 
 - [Explore Fabric capacity overview events](explore-fabric-capacity-overview-events.md)
+- [Explore Fabric capacity on-demand overview events](explore-fabric-capacity-on-demand-overview-events.md)
 - [Azure, Fabric, and Business events capacity consumption](fabric-events-capacity-consumption.md)
