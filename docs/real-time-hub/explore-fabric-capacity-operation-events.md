@@ -95,7 +95,7 @@ The `data` object has the following properties for Operation events:
 | `operationId` | string | Unique run ID for the operation. Use this ID to correlate the event with other logs or telemetry. | `00000000-0000-0000-0000-000000000000` |
 | `status` | string | Status of the operation (for example, `Success` or `Stopped`). | `Success, Stopped` |
 | `operationStartTime` | UTC string | Timestamp when the operation began. | `2026-08-21T05:19:10.0246081Z` |
-| `releaseType` | string | Release classification of the operation. Emitted values are `Public` and `Preview`. Use `billingMode`, not `releaseType`, to determine whether the operation used provisioned capacity or on-demand billing. | `Public` |
+| `releaseType` | string | Indicates whether the operation is billed or unbilled. Emitted values are `Public` or `Preview`. | `Public / Preview` |
 | `operationName` | string | Name/type of the operation (for example, Dataflow Refresh). | `Lakehouse Operations, Notebook HC Pipeline Run, Notebook Scheduled Run, EventHouse UpTime` |
 | `utilizationType` | string | Whether the operation was interactive or background. | `Background` |
 | `windowStartTime` | UTC string | Start of the smoothed window. | `2026-08-21T05:30:00.0000000Z` |
@@ -113,27 +113,16 @@ The `data` object has the following properties for Operation events:
 
 ### Handle operation event schema versions
 
-Operation events that use data schema version 1.1 don't include `billingMode` or `billingCategory`. When processing operation events:
+> [!NOTE]
+> Operation events that use data schema version 1.1 don't distinguish between operations that use provisioned capacity and operations that use on-demand billing because they don't include `billingMode` or `billingCategory`.
+
+When processing operation events:
 
 - Check `dataschemaversion` before relying on billing attribution properties.
 - Treat a missing or unrecognized `billingMode` as unknown. Don't classify the operation as `Capacity`.
 - Allow `billingCategory` to be empty. If the value is empty, you can't attribute the operation to an on-demand overview event by using this property.
 - Don't maintain a fixed allow list of billing category values. Fabric can add, split, or combine categories.
 - Don't use `capacitySku` to determine the billing mode. Both F0 and paid capacities can produce on-demand billing usage.
-
-### Correlate with on-demand overview events
-
-A `Microsoft.Fabric.Capacity.OnDemandSummary` event reports rolling 24-hour usage for one capacity and billing category. To identify the operations behind that usage, use operation events with data schema version 1.2:
-
-1. Filter operation events to `billingMode` equal to `OnDemand`.
-1. Match `capacityId` to the summary event's `capacityId`.
-1. Match `billingCategory` to the summary event's `billingCategory`.
-1. Restrict the analysis to operation events from approximately 24 hours before the summary event's `time` through that time.
-1. Group the matching operation events by `workspaceId`, `itemId`, or `operationName` to identify the largest consumers.
-
-The correlation is approximate. The summary event's `time` is its emission time, not an exact rolling-window boundary, and the events don't expose the exact boundaries of the effective rolling window. Use operation events for usage attribution and operational monitoring. Don't use them to reconcile an Azure invoice. Billing categories aren't billing meters, and event delivery can contain duplicates or gaps.
-
-For more information, see [Drill down into operation events](explore-fabric-capacity-on-demand-overview-events.md#drill-down-into-operation-events).
 
 ## Subscribe permission
 For more information, see [subscribe permission for Fabric events](fabric-events-subscribe-permission.md).
