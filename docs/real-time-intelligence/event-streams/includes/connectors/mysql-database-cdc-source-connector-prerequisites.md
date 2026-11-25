@@ -3,7 +3,7 @@ title: MySQL Database CDC connector - prerequisites
 description: This file has the prerequisites for using a MySQL Database Change Data Capture (CDC) connector for Fabric event streams and Real-Time hub. 
 ms.reviewer: xujiang1
 ms.topic: include
-ms.date: 04/03/2026
+ms.date: 11/25/2026
 ---
 
 
@@ -29,6 +29,9 @@ Once the MySQL Database CDC source is added to the eventstream, it captures row-
 
 ## Set up MySQL Database
 
+>[!NOTE]
+> This article contains references to the term *SLAVE*, a term that Microsoft no longer uses. When the term is removed from the software, we'll remove it from this article.
+
 The connector uses the Debezium MySQL connector to capture changes in your MySQL Database. You must define a MySQL user with appropriate privileges on all databases where the Messaging Connector can capture the changes from. You can directly use the **admin user** to connect to the database, which normally has the appropriate privileges, or you can follow these steps to create a new user:
 
 > [!NOTE]
@@ -43,7 +46,7 @@ The connector uses the Debezium MySQL connector to capture changes in your MySQL
 1. Grant the required privileges to the user:
 
    ```
-   mysql> GRANT SELECT, SHOW DATABASES, REPLICATION REPLICA, REPLICATION CLIENT ON *.* TO 'user'@'%';
+   mysql> GRANT SELECT, SHOW DATABASES, REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'user'@'%';
    ```
 
    > [!NOTE]
