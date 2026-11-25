@@ -67,7 +67,7 @@ There are two column charts in this page showing the storage trend for last 30 d
 
 ### Storage (GB) by date
 
-A column chart that shows average storage in GB by date and hours, highlighting included and chargeable Mirrored storage values.
+A column chart that shows average storage in GB by date and hours, highlighting included and chargeable mirrored storage values.
 
 ### Cumulative billable storage (GB) by date
 
