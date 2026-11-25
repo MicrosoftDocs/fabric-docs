@@ -141,10 +141,12 @@ items:
                 href: workspace-outbound-access-protection-mirrored-catalogs-snowflake-database.md
               - name: OneLake
                 href: workspace-outbound-access-protection-onelake.md
-              - name: Semantic models
-                href: workspace-outbound-access-protection-semantic-models.md
-              - name: Power BI reports
-                href: workspace-outbound-access-protection-power-bi-reports.md
+              - name: Power BI
+                items:
+                  - name: Semantic models
+                    href: workspace-outbound-access-protection-semantic-models.md
+                  - name: Power BI reports
+                    href: workspace-outbound-access-protection-power-bi-reports.md
               - name: Real-Time Intelligence
                 items:
                   - name: Activator
