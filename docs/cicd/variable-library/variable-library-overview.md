@@ -2,7 +2,7 @@
 title: Fabric Application Lifecycle Management Variable Library
 description: Learn how to use a Microsoft Fabric application lifecycle management (ALM) variable library to customize your release stages.
 ms.topic: overview
-ms.date: 09/01/2026
+ms.date: 11/25/2026
 ms.search.form: Variable library overview
 #customer intent: As a developer, I want to learn how to use a Fabric application lifecycle management (ALM) variable library to customize my release stages, so that I can manage my content lifecycle.
 ---
@@ -68,13 +68,13 @@ The following items support the variable library:
 - [Map](../../real-time-intelligence/map/about-fabric-maps.md)
 
 ## Naming conventions
-The name of variable library item itself must follow these conventions:
 
-- Isn't empty
-- Doesn't have leading or trailing spaces
-- Starts with a letter
-- Can include letters, numbers, underscores, hyphens, and spaces
-- Doesn't exceed 256 characters in length
+The name of a variable library item must follow these conventions:
+
+- Starts with an English letter (`A-Z` or `a-z`)
+- Contains only English letters, numbers, underscores, hyphens, and spaces
+- Doesn't end with a space
+- Doesn't exceed 255 characters
 
 The variable library name is *not* case sensitive.
 
