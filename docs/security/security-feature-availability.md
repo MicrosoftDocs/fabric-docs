@@ -86,13 +86,13 @@ The following table shows the support status for each Fabric item. A check mark 
 |  | Cosmos DB |  | - | - |
 |  | Snowflake database | - | - | Preview |
 | **OneLake** | Shortcut | ✓ | ✓ | ✓ |
-| **Power BI** | Power BI Report | - | - | Preview |
+| **Power BI** | Power BI Report | - | - | ✓ |
 |  | Dashboard | - | - | - |
 |  | Scorecard | - | - | - |
-|  | Semantic Model | - | - | Preview |
+|  | Semantic Model | - | - | ✓ |
 |  | Streaming dataflow | - | - | - |
 |  | Streaming dataset | - | - | - |
-|  | Paginated Report | - | - | - |
+|  | Paginated Report | - | - | Preview |
 |  | Datamart | - | - | - |
 |  | Exploration | - | - | - |
 |  | Org App | - | - | - |
@@ -105,7 +105,7 @@ The following table shows the support status for each Fabric item. A check mark 
 |  | Anomaly detector  | - | - | - |
 |  | Digital Twin Builder | - | - | - | 
 |  | Event Schema Set  | - | - | ✓ |
-|  | Map | - | - | Preview |
+|  | Map | - | - | ✓ |
 
 ## Related links
 
