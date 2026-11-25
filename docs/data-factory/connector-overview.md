@@ -52,7 +52,7 @@ Fabric supports these connectors in dataflow Gen2, pipelines, and copy jobs. Sel
 | [Azure Analysis Services](connector-azure-analysis-services-overview.md) | ✓/− |  |  |
 | [Azure Blobs](connector-azure-blob-storage-overview.md) | ✓/− | ✓/✓ | ✓/✓ |
 | [Azure Cosmos DB for MongoDB](connector-azure-cosmos-db-for-mongodb-overview.md) |  | ✓/✓ | ✓/✓ |
-| [Azure Cosmos DB for MongoDB vCore (Beta)](/power-query/connectors/azure-cosmos-db-for-mongodb-vcore#connect-to-azure-cosmos-db-for-mongodb-vcore-database-from-power-query-online) | ✓/− |  |  |
+| [Azure DocumentDB](/power-query/connectors/azure-cosmos-db-for-mongodb-vcore#connect-to-azure-cosmos-db-for-mongodb-vcore-database-from-power-query-online) (connector: Azure Cosmos DB for MongoDB vCore, Beta) | ✓/− |  |  |
 | [Azure Cosmos DB v2](connector-azure-cosmosdb-for-nosql-overview.md) | ✓/− | ✓/✓ | ✓/✓ |
 | [Azure Cost Management](/power-query/connectors/azure-cost-management) | ✓/− |  |  |
 | [Azure Data Explorer (Kusto)](connector-azure-data-explorer-overview.md) | ✓/✓ | ✓/✓ | ✓/✓ |

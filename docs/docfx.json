@@ -351,7 +351,8 @@
                 "exclude": [
                     "docs/mirroring/mysql/**/*.md",
                     "docs/mirroring/postgresql/**/*.md",
-                    "real-time-intelligence/event-streams/add-source-mysql-database-change-data-capture.md"
+                    "real-time-intelligence/event-streams/add-source-mysql-database-change-data-capture.md",
+                    "real-time-intelligence/event-streams/includes/connectors/mysql-database-cdc-source-connector-prerequisites.md"
                 ]
             },
             "sensitive-language-bl": {
