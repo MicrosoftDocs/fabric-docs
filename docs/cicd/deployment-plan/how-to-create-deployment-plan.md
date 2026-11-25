@@ -3,7 +3,7 @@ title: Create a deployment plan in Microsoft Fabric
 description: Create a deployment plan in Microsoft Fabric, order deployment groups, add pre-deploy and post-deploy actions, and commit the plan to Git.
 ms.topic: how-to
 ms.custom: doc-kit-assisted
-ms.date: 09/24/2026
+ms.date: 11/25/2026
 ms.search.form: Create deployment plan, Deployment plan
 ai-usage: ai-assisted
 #customer intent: As a developer, I want to create a deployment plan in Microsoft Fabric so that I can control item deployment order and run required notebooks or data pipelines between deployments.
@@ -51,10 +51,17 @@ After the Fabric administrator applies the setting, you can create deployment pl
 
 After a Fabric administrator enables deployment-plan creation for your organization or security group, create the deployment plan in the source workspace that contains the items you want to deploy.
 
+The name of a deployment plan must follow these conventions:
+
+- Starts with an English letter (`A-Z` or `a-z`)
+- Contains only English letters, numbers, underscores, hyphens, and spaces
+- Doesn't end with a space
+- Doesn't exceed 255 characters
+
 1. Open the source workspace.
 1. Select **New item**.
 1. Select **Deployment plan**.
-1. Enter a name for the deployment plan.
+1. Enter a name for the deployment plan that follows these naming conventions.
 1. Select **Create**.
 1. Open the deployment plan.
 

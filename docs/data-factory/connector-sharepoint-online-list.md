@@ -24,7 +24,6 @@ The SharePoint connector supports the following authentication types for copy an
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
 |Organizational account| √ | √|
-|Service Principal| n/a | √ |
 |Workspace identity| √ | √ |
 
 ## Set up your connection for Dataflow Gen2
@@ -95,7 +94,6 @@ For specific instructions to set up your connection in Manage connections and ga
 1. Under **Authentication method**, select your authentication from the drop-down list and complete the related configuration. The SharePoint connector supports the following authentication types:
 
    - [Organizational account](#organizational-account-authentication)
-   - [Service Principal](#service-principal-authentication)
    - [Workspace identity](#workspace-identity-authentication)
 
    :::image type="content" source="media/connector-sharepoint-online-list/authentication-method.png" alt-text="Screenshot showing that authentication method of SharePoint Online List.":::
@@ -109,7 +107,6 @@ For specific instructions to set up your connection in Manage connections and ga
 This section lists the instructions for each authentication type supported by the SharePoint connector:
 
 - [Organizational account](#organizational-account-authentication)
-- [Service Principal](#service-principal-authentication)
 - [Workspace identity](#workspace-identity-authentication)
 
 #### Organizational account authentication
@@ -117,22 +114,6 @@ This section lists the instructions for each authentication type supported by th
 Select **Edit credentials**, which displays the sign in interface. Enter your account and password to sign in your organizational account. After signing in, go back to the **New connection** page.
 
 :::image type="content" source="media/connector-sharepoint-online-list/organizational-account.png" alt-text="Screenshot showing that organizational account authentication method.":::
-
-#### Service Principal authentication
-
-SharePoint Online List supports certificate-based service principal authentication in Dataflow Gen2. Before you create the connection, register an application in Microsoft Entra ID, add the public certificate to the app registration, grant the SharePoint application permission `Sites.Read.All`, and grant admin consent.
-
-> [!NOTE]
-> Certificate-based service principal authentication isn't supported for Pipeline Copy Activity or Copy Job.
-
-In the connection dialog, provide the following values:
-
-- **Tenant ID**: The tenant ID where your application resides.
-- **Service principal ID**: The application (client) ID of the application registered in Microsoft Entra ID.
-- **Credential type**: Select **Service principal certificate**.
-- **Azure Key Vault reference**: Select the Azure Key Vault connection that contains the certificate.
-- **Certificate**: Select the certificate.
-- **Version**: Select the certificate version, or select **Latest**.
 
 #### Workspace identity authentication
 

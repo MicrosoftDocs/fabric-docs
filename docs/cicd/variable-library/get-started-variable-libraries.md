@@ -3,7 +3,7 @@ title: Get Started with Variable Libraries
 description: Learn how to manage Microsoft Fabric variable libraries to customize and share item configurations in a workspace.
 ms.reviewer: NimrodShalit
 ms.topic: quickstart
-ms.date: 12/15/2025
+ms.date: 11/25/2026
 ms.search.form: Create and use variable library
 #customer intent: As a developer, I want to learn how to use a Microsoft Fabric variable library to customize and share item configurations in a workspace, so that I can manage my content lifecycle.
 ---
@@ -44,13 +44,12 @@ For more information, see [Variable library permissions](./variable-library-perm
 
 ### Variable library name
 
-The name of a variable library item itself must follow these conventions:
+The name of a variable library item must follow these conventions:
 
-- Isn't empty
-- Doesn't have leading or trailing spaces
-- Starts with a letter
-- Can include letters, numbers, underscores, hyphens, and spaces
-- Doesn't exceed 256 characters in length
+- Starts with an English letter (`A-Z` or `a-z`)
+- Contains only English letters, numbers, underscores, hyphens, and spaces
+- Doesn't end with a space
+- Doesn't exceed 255 characters
 
 The variable library name is *not* case sensitive.
 
