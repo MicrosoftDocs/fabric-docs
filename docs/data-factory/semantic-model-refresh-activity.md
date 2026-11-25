@@ -4,7 +4,7 @@ description: This article describes how to use the Semantic model refresh activi
 ms.reviewer: noelleli
 ms.topic: how-to
 ms.custom: pipelines
-ms.date: 04/07/2026
+ms.date: 11/25/2026
 ---
 
 # Use the Semantic model refresh activity to refresh a Power BI Dataset
@@ -20,6 +20,7 @@ Before you start, make sure you have:
 
 - A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
 - A workspace with **Power BI Premium**, **Premium Per User**, or **Power BI Embedded capacities**.
+- If your Power BI connection uses **Workspace identity** or **Service principal** authentication, a Fabric administrator must enable the tenant setting [Service principals can call Fabric public APIs](../admin/service-admin-portal-developer.md#service-principals-can-call-fabric-public-apis). If the setting is limited to specific security groups, the identity must be a member of one of those groups. The identity also needs access to the workspace that contains the semantic model. For more information, see [Workspace identity](../security/workspace-identity.md).
 
 ## Add a Semantic model refresh activity to a pipeline with UI
 
@@ -73,6 +74,8 @@ Follow these steps to use the Semantic model refresh activity in your pipeline:
 
 You can make your semantic model refresh faster by picking only the tables and the partitions you want to refresh, instead of refreshing the whole model. You'll find these options under settings. You can also use the pipeline expression builder to set these properties with parameters.
 
+> [!NOTE]
+> The table and partition lists are read from the semantic model by using the identity of the selected connection. If you use **Workspace identity** or **Service principal** authentication and the lists stay empty, or you see an error such as `PowerBI Request Failed ... Resolving the PBI workspace`, make sure the identity is allowed to call Fabric public APIs and has access to the workspace that contains the semantic model. For details, see [Prerequisites](#prerequisites).
 :::image type="content" source="media/semantic-model-refresh-activity/semantic-model-tables.png" alt-text="Screenshot showing the option to refresh specific tables.":::
 
 :::image type="content" source="media/semantic-model-refresh-activity/semantic-model-partitions.png" alt-text="Screenshot showing the option to refresh specific partitions.":::
