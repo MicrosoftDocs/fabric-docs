@@ -82,7 +82,7 @@ The `data` object has the following properties for Operation events:
 | `capacityFriendlyName` | string | The user-friendly display name of the capacity. | `foocapacity` |
 | `capacitySku` | string | The SKU size of the capacity on which the operation ran at that time. SKUs can be scaled up or down at any time by admins, so the SKU may change for the same capacity ID. | `F128` |
 | `billingMode` | string | Billing path used by the operation. `Capacity` identifies the provisioned capacity billing path, and `OnDemand` identifies on-demand billing. `Capacity` doesn't indicate whether the capacity was purchased as pay-as-you-go or reserved. | `OnDemand` |
-| `billingCategory` | string | Billing category attributed to the operation. Use this property with `capacityId` to correlate an on-demand operation with an on-demand overview event. The value can be empty if the producer doesn't supply a category. A billing category is a billing grouping, not a meter, invoice line, or charge. | `DataScience` |
+| `billingCategory` | string | Workload that the operation is mapped to. | `DataScience` |
 | `activationId` | string | Internal ID for the capacity activation instance. When a capacity is paused and restarted, it keeps the same capacity ID but gets a new `activationId`. | `00000000-0000-0000-0000-000000000000` |
 | `workspaceId` | string | The ID of the workspace where the item that produced the operation lives. | `00000000-0000-0000-0000-000000000000` |
 | `workspaceName` | string | The name of the workspace where the item that produced the operation lives. | `fooworkspace` |
@@ -120,9 +120,10 @@ When processing operation events:
 
 - Check `dataschemaversion` before relying on billing attribution properties.
 - Treat a missing or unrecognized `billingMode` as unknown. Don't classify the operation as `Capacity`.
-- Allow `billingCategory` to be empty. If the value is empty, you can't attribute the operation to an on-demand overview event by using this property.
 - Don't maintain a fixed allow list of billing category values. Fabric can add, split, or combine categories.
-- Don't use `capacitySku` to determine the billing mode. Both F0 and paid capacities can produce on-demand billing usage.
+- Don't use `capacitySku` to determine the billing mode. Both F0 and base capacities (non-F0) can produce on-demand billing usage (hybrid consumption).
+
+The `OnDemandSummary` event reports usage by category. To find the workspaces, items, and operations behind that usage, correlate it with capacity operation events that use data schema version 1.2. Match events by `capacityId` and `billingCategory`.
 
 ## Subscribe permission
 For more information, see [subscribe permission for Fabric events](fabric-events-subscribe-permission.md).
