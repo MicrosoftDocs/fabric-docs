@@ -161,6 +161,8 @@ items:
       href: plan/intelligence-how-to-get-started-reporting.md
     - name: Share a plan item with users outside the workspace
       href: plan/sharing-plan-artifact.md
+    - name: Migration to OneLake - Native planning engine
+      href: plan/onelake-enablement-tenant-setting.md
   - name: Planning sheets
     items:
     - name: Concepts
@@ -682,7 +684,23 @@ items:
         - name: Reading and editing modes
           href: plan/intelligence-how-to-switch-reading-editing-mode.md
         - name: Plan projects with Gantt charts
-          href: plan/intelligence-how-to-create-gantt-chart.md        
+          href: plan/intelligence-how-to-create-gantt-chart.md
+  - name: Core capabilities
+    items:
+    - name: Save analysis with bookmarks
+      href: plan/planning-how-to-add-bookmark.md
+    - name: Parameters - Create interactive controls
+      href: plan/resources/best-practices/parameters/how-to-configure-parameters.md
+    - name: Parameters - Create numeric input parameters
+      href: plan/resources/best-practices/parameters/how-to-create-number-parameters.md
+    - name: Parameters - Create text parameters
+      href: plan/resources/best-practices/parameters/how-to-create-text-parameters.md
+    - name: Parameters - Create list parameters
+      href: plan/resources/best-practices/parameters/how-to-create-list-parameters.md
+    - name: Parameters - Create action parameters
+      href: plan/resources/best-practices/parameters/how-to-create-action-parameters.md      
+    - name: Parameters - Create date parameters
+      href: plan/resources/best-practices/parameters/how-to-create-date-parameters.md    
   - name: Resources
     items:
     - name: Roles
@@ -691,8 +709,6 @@ items:
       href: plan/resources/billing-fabric-plan.md
     - name: Capacity throttling
       href: plan/capacity-throttling.md
-    - name: Add bookmarks
-      href: plan/planning-how-to-add-bookmark.md
     - name: General - Fiscal year setup
       href: plan/planning-concept-fiscal-year-setup.md
     - name: General - Row-level security (RLS)
@@ -725,18 +741,6 @@ items:
         href: plan/alm-variable-library.md
       - name: Dimension ID mapping
         href: plan/resources/best-practices/how-to-create-dimension-id-mapping.md
-      - name: Parameters - Create interactive controls
-        href: plan/resources/best-practices/parameters/how-to-configure-parameters.md
-      - name: Parameters - Create numeric input parameters
-        href: plan/resources/best-practices/parameters/how-to-create-number-parameters.md
-      - name: Parameters - Create text parameters
-        href: plan/resources/best-practices/parameters/how-to-create-text-parameters.md
-      - name: Parameters - Create list parameters
-        href: plan/resources/best-practices/parameters/how-to-create-list-parameters.md
-      - name: Parameters - Create action parameters
-        href: plan/resources/best-practices/parameters/how-to-create-action-parameters.md      
-      - name: Parameters - Create date parameters
-        href: plan/resources/best-practices/parameters/how-to-create-date-parameters.md
     - name: Troubleshoot
       items:
           - name: Troubleshoot semantic model issues
