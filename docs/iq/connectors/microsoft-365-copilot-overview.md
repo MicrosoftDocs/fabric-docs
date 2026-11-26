@@ -24,7 +24,7 @@ Copilot grounds answers in your Power BI data, but the answers don't stop there.
 
 ## Prerequisites
 
-- **Microsoft 365 Copilot Premium license:** Required for all users.
+- **Microsoft 365 Copilot Premium license:** Required to use Fabric IQ in the Microsoft 365 Copilot app or web experience. Basic licenses support Fabric IQ through the [Microsoft Copilot entry points embedded in Power BI and Fabric](copilot-power-bi-fabric.md#licensing-and-available-capabilities).
 - **Power BI access:** The user must have both permission and licensed access to view the Power BI reports and semantic models they want to ask questions about. The user doesn't need access to Copilot in Fabric.
 
 ## How to ask questions about Power BI data
@@ -92,7 +92,6 @@ Three tenant settings affect this feature: one in the Microsoft 365 admin center
 - **Data freshness:** Answers reflect the data from the last refresh of the semantic model, not real-time data. Answers are only as current as the most recent successful refresh.
 - **Response latency:** The first query against a report might take longer than subsequent queries as Copilot indexes the content. Follow-up questions about the same report are typically faster.
 - **Language support:** Questions must be in a language that Copilot supports. For the current list, see [Microsoft 365 Copilot setup: language support](/microsoft-365-copilot/microsoft-365-copilot-setup#language-support).
-- **Embedded capacities:** Semantic models in workspaces that use Embedded capacities (A or EM SKUs) aren't supported. Pro, Premium Per User (PPU), Premium, and Fabric capacities are supported.
 - **Region availability:** This feature is supported in all regions with broad Fabric support. Regions where Power BI is the only available Fabric workload aren't supported. For the current list, see [Fabric region availability](/fabric/admin/region-availability).
 
 ## Share feedback
@@ -107,5 +106,6 @@ Use the thumbs-up/thumbs-down buttons in Copilot Chat to share feedback directly
 
 ## Related content
 
+- [Fabric IQ integrations overview](overview.md)
 - [Share data with your Microsoft 365 services](/fabric/admin/admin-share-power-bi-metadata-microsoft-365-services)
 - [Use a Fabric data agent in Microsoft 365 Copilot](/fabric/data-science/data-agent-microsoft-365-copilot)

@@ -781,13 +781,29 @@ items:
     href: ../fundamentals/semantic-views-tutorial.md?toc=/fabric/iq/toc.json
 - name: Integrations
   items:
-  - name: Fabric IQ MCP
-    href: connectors/fabric-iq-mcp.md
-  - name: Agent Builder
-    href: connectors/agent-builder-overview.md
-  - name: Copilot Chat
-    href: connectors/microsoft-365-copilot-overview.md
-  - name: Cowork
-    href: connectors/cowork-overview.md
-  - name: Microsoft Copilot in PowerBI and Fabric
-    href: connectors/copilot-power-bi-fabric.md
+  - name: Overview
+    href: connectors/overview.md
+  - name: In Microsoft Copilot
+    items:
+    - name: Copilot Chat
+      href: connectors/microsoft-365-copilot-overview.md
+    - name: Cowork
+      href: connectors/cowork-overview.md
+    - name: Microsoft Copilot in Power BI and Fabric (preview)
+      href: connectors/copilot-power-bi-fabric.md
+    - name: Fabric data agents in Microsoft Copilot
+      href: ../data-science/data-agent-microsoft-365-copilot.md?toc=/fabric/iq/toc.json
+  - name: Build agents
+    items:
+    - name: Agent Builder
+      href: connectors/agent-builder-overview.md
+    - name: Copilot Studio
+      href: /microsoft-copilot-studio/agents-experience/fabric-iq-connect
+    - name: Microsoft Foundry (preview)
+      href: /azure/foundry/agents/how-to/tools/fabric-iq
+  - name: Connect MCP clients and developer tools
+    items:
+    - name: Fabric IQ MCP server
+      href: connectors/fabric-iq-mcp.md
+    - name: Skills for Fabric
+      href: ../fundamentals/skills-for-fabric-overview.md?toc=/fabric/iq/toc.json
