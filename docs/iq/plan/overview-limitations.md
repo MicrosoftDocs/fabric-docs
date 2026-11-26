@@ -32,6 +32,7 @@ Workspaces that use [private links](../../security/security-private-links-overvi
 
 * For Long and Wide writeback formats, subsequent writeback replaces existing rows when all dimension columns and values match. To retain previous values as change history, use Long with Changes or Wide with Changes.
 * Deleting a row in a planning sheet doesn't delete the corresponding row from the destination Fabric SQL table. To remove data from the SQL database, you must delete it directly in the database.
+* A planning sheet can't use OneLake and SQL database in Fabric writeback destinations simultaneously.
 
 ## PowerTable limitations
 
@@ -145,4 +146,6 @@ To work with larger datasets, split the data across multiple planning sheets and
 
 ## Writeback cell limit
 
-Writeback to Fabric SQL supports up to 2.4 million cells. Writeback operations that exceed this limit aren't supported and might fail.
+Writeback to Fabric SQL supports up to 2.4 million cells.
+
+OneLake writebacks can support up to 12 million cells. To learn more about enabling the native planning engine that supports OneLake writeback, see [Migration to OneLake - Native Planning Engine in Fabric Plan](./onelake-enablement-tenant-setting.md#enable-onelake-storage-for-new-plan-items).
