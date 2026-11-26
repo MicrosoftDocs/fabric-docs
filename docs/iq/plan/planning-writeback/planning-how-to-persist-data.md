@@ -25,15 +25,44 @@ Before you begin, make sure you have the following prerequisites in place:
 
 * The planning sheet contains at least one row or column dimension.
 * Required permissions are assigned to users who perform writeback.
+* To use OneLake as the writeback destination, enable the corresponding tenant and workspace settings. To learn more about the settings, see [OneLake enablement tenant setting](../onelake-enablement-tenant-setting.md#enable-onelake-storage-for-new-plan-items). These settings apply to new plan items. For existing plan items, also [migrate the item to OneLake](../onelake-enablement-tenant-setting.md#migrate-existing-plan-items-to-onelake).
 
 ## Create a writeback destination
 
-To save data by using writeback, first configure a destination.
+Before writing back your planning data, configure a writeback destination, either OneLake or a Fabric SQL database. Hybrid configurations aren't supported.
 
-1. Go to **Writeback** > **Add Destination**.
-1. Select a database connection.
-1. Select the target database - browse and select the required database from the OneLake catalog.
-1. Enter a **Table Name**.
+1. In the **Writeback** ribbon, select **Add Destination**.
+
+1. Select the **Storage Type** - based on this selection, your data is saved to a Fabric SQL database or directly in OneLake.
+
+    > [!NOTE]
+    >
+    > * This setting is a one-time setting for a planning sheet. When you create subsequent destinations, you don't select the storage type.
+    >
+    > * To switch to OneLake (or vice versa), delete all existing destinations before adding a destination of the new type.
+
+1. Configure the Fabric SQL or OneLake destination table and schema.
+
+### Fabric SQL destination
+
+To add a Fabric SQL destination, follow these steps:
+
+1. Select an existing Fabric SQL database connection or select **+ Create Connection** to create a new one.
+
+1. Configure the database name:
+
+    * Direct Selection: Choose **Database Item** to select a specific database.
+
+    * Environment-Based: Reference a variable library to automatically adapt database names across different environments (for example, Dev, Test, Prod). To learn more about using variable libraries in writeback, see [Use variables for writeback destinations and connections](../resources/cicd-planning.md#use-variables-for-writeback-destinations-and-connections).
+
+1. Select the database from the OneLake catalog or select the configured variable. Specify the schema name and table name.
+
+### OneLake
+
+To add a OneLake destination, enter the schema name and writeback table name.
+
+For either type of destination, finish the remaining settings:
+
 1. Enter the **Decimal Precision** to specify the number of digits after the decimal point for numeric columns.
 1. Use **Text Length** to define the maximum length for string columns (for example, length of all string columns = 512) or choose **Custom**.
 1. Select **Add** to create the writeback destination.
