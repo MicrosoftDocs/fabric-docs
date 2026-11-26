@@ -53,6 +53,8 @@ For more information about data answering, see [Fabric IQ in Microsoft Copilot C
 
 ## Licensing and available capabilities
 
+For an integration comparison and the shared Power BI query billing model, see [Fabric IQ integrations overview](overview.md).
+
 You don't need Copilot (Premium) to use Fabric IQ in this integration; you don't even need Fabric. When the feature is enabled, the Microsoft Copilot entry point appears to users included in the tenant setting's scope. Available capabilities depend on each user's Microsoft Copilot license and access to Fabric content.
 
 | User | Available experience |

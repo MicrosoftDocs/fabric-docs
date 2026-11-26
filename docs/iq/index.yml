@@ -76,9 +76,13 @@ landingContent:
   # Card
   - title: Integrations
     linkLists:
+      - linkListType: overview
+        links:
+          - text: Fabric IQ integrations overview
+            url: connectors/overview.md
       - linkListType: concept
         links:
-          - text: Fabric IQ in Copilot Cowork (Frontier)
+          - text: Fabric IQ in Copilot Cowork
             url: connectors/cowork-overview.md
 
   # Card
