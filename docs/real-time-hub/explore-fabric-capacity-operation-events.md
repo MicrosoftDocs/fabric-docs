@@ -82,7 +82,7 @@ The `data` object has the following properties for Operation events:
 | `capacityFriendlyName` | string | The user-friendly display name of the capacity. | `foocapacity` |
 | `capacitySku` | string | The SKU size of the capacity on which the operation ran at that time. SKUs can be scaled up or down at any time by admins, so the SKU may change for the same capacity ID. | `F128` |
 | `billingMode` | string | Billing path used by the operation. `Capacity` identifies the provisioned capacity billing path, and `OnDemand` identifies on-demand billing. `Capacity` doesn't indicate whether the capacity was purchased as pay-as-you-go or reserved. | `OnDemand` |
-| `billingCategory` | string | Workload that the operation is mapped to. | `DataScience` |
+| `billingCategory` | string | Billing category assigned to the operation. A category can include operations from multiple workloads and represents a billing grouping, not an invoice meter or charge. Category values can change as workloads add, split, or combine categories. | `DataScience` |
 | `activationId` | string | Internal ID for the capacity activation instance. When a capacity is paused and restarted, it keeps the same capacity ID but gets a new `activationId`. | `00000000-0000-0000-0000-000000000000` |
 | `workspaceId` | string | The ID of the workspace where the item that produced the operation lives. | `00000000-0000-0000-0000-000000000000` |
 | `workspaceName` | string | The name of the workspace where the item that produced the operation lives. | `fooworkspace` |
