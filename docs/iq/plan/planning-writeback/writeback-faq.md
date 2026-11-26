@@ -48,6 +48,8 @@ Long format writes one row per data point—each combination of dimension member
 
 Yes—you can configure multiple Fabric SQL DB destinations for a single planning sheet. Each destination can have its own writeback type, column mapping, and filter settings. You can toggle each destination on or off independently from the **Destinations** tab in writeback settings.
 
+However, you can't write back to multiple types of destinations, such as OneLake and Fabric SQL, together.
+
 ## Can I write back multiple sheets to the same SQL table?
 
 Yes—you can write back multiple sheets from the same plan item to the same SQL database. You need to configure the SQL DB destination in every sheet that you want to write back.
@@ -82,4 +84,14 @@ No—writeback is additive. Deleting a row in the planning sheet doesn't remove 
 
 ## Can I write back to a destination outside of Fabric SQL—for example, to a SharePoint list or an Excel file?
 
-No. Planning in Fabric writes back exclusively to Fabric SQL databases. For downstream consumption in other tools, you can query the data in the Fabric SQL database directly or expose it via a semantic model, Power BI report, or dataflow.
+Planning in Fabric writes back either to Fabric SQL databases or to OneLake. For downstream consumption in other tools, you can query the data in the Fabric SQL database directly or expose it via a semantic model, Power BI report, or dataflow.
+
+## I don't see the OneLake option while configuring the writeback destination. How do I enable it?
+
+To start using OneLake writebacks, you need to first enable the native planning engine through the tenant and workspace settings. To learn more on enabling the native planning engine, see [Enable OneLake storage](../onelake-enablement-tenant-setting.md#enable-onelake-storage-for-new-plan-items). These settings work for new plan items and you can writeback them to OneLake.
+
+For existing items, migrate them to OneLake using the [Migration guide](../onelake-enablement-tenant-setting.md#migrate-existing-plan-items-to-onelake). Then, proceed with OneLake writeback.
+
+Note that, multiple destination types aren't supported simultaneously, so you need to delete all your existing Fabric SQL destinations before using OneLake for writebacks.
+
+Enabling the native planning engine supports OneLake so you can use it for storing the App DB and planning sheet writebacks.
