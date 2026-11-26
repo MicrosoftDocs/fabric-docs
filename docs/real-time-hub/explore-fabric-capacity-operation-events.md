@@ -123,7 +123,7 @@ When processing operation events:
 - Don't maintain a fixed allow list of billing category values. Fabric can add, split, or combine categories.
 - Don't use `capacitySku` to determine the billing mode. Both F0 and base capacities (non-F0) can produce on-demand billing usage (hybrid consumption).
 
-The `OnDemandSummary` event reports usage by category. To find the workspaces, items, and operations behind that usage, correlate it with capacity operation events that use data schema version 1.2. Match events by `capacityId` and `billingCategory`.
+The `OnDemandSummary` event reports usage by category. To find the workspaces, items, and operations behind that usage, correlate it with capacity operation events that use data schema version 1.2. Filter operation events to `billingMode` equal to `OnDemand`, and then match events by `capacityId` and `billingCategory`.
 
 ## Subscribe permission
 For more information, see [subscribe permission for Fabric events](fabric-events-subscribe-permission.md).
