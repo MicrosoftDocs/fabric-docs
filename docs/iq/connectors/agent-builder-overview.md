@@ -137,6 +137,7 @@ For more information, see [Tenant settings for Fabric IQ in Microsoft 365 Copilo
 
 ## Related content
 
+- [Fabric IQ integrations overview](overview.md)
 - [Get started with the Fabric IQ MCP server](fabric-iq-mcp.md)
 - [Fabric IQ in Microsoft 365 Copilot Chat](microsoft-365-copilot-overview.md)
 - [Fabric IQ in Microsoft 365 Copilot Cowork](cowork-overview.md)

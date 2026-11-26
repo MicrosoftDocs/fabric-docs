@@ -28,7 +28,7 @@ Find the job that matches your scenario, and then follow the entry article for t
 | Query connected data with nodes, edges, and traversals for impact and dependency analysis | Graph | [Graph in Microsoft Fabric overview](../graph/overview.md) |
 | Give users natural-language Q&A over a specific data domain | Data agent | [Fabric data agent concepts](../data-science/concept-data-agent.md) |
 | Monitor live data, detect anomalies, and take governed action | Operations agent | [Create and configure operations agents](../real-time-intelligence/operations-agent.md) |
-| Ask questions about your Power BI data inside Microsoft 365 Copilot Chat or Cowork | Integrations | [Fabric IQ in Microsoft 365 Copilot Chat](connectors/microsoft-365-copilot-overview.md) |
+| Use Power BI data in Microsoft Copilot, agents, or MCP clients | Integrations | [Fabric IQ integrations overview](connectors/overview.md) |
 
 ## Try an end-to-end tutorial
 
@@ -50,4 +50,4 @@ Some Fabric IQ capabilities require a Fabric administrator to enable tenant sett
 - [Fabric data agent concepts](../data-science/concept-data-agent.md)
 - [Create and configure operations agents](../real-time-intelligence/operations-agent.md)
 - [Power BI semantic models in Microsoft Fabric](../data-warehouse/semantic-models.md)
-- [Fabric IQ in Microsoft 365 Copilot Chat](connectors/microsoft-365-copilot-overview.md)
+- [Fabric IQ integrations overview](connectors/overview.md)
