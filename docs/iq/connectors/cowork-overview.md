@@ -137,6 +137,7 @@ Your feedback helps improve the Fabric IQ plugin. To send feedback on a specific
 
 ## Related content
 
+- [Fabric IQ integrations overview](overview.md)
 - [What is Fabric IQ (preview)?](../overview.md)
 - [Available plugins for Copilot Cowork](/microsoft-365/copilot/cowork/cowork-available-plugins)
 - [Use plugins with Copilot Cowork](/microsoft-365/copilot/cowork/cowork-plugins)

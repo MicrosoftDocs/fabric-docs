@@ -275,6 +275,7 @@ Use the same value for `initialize`, `tools/list`, and `tools/call`. Clients tha
 
 ## Related content
 
+- [Fabric IQ integrations overview](overview.md)
 - [Skills for Fabric overview](/fabric/fundamentals/skills-for-fabric-overview)
 - [Install Skills for Fabric](/fabric/fundamentals/skills-for-fabric-install)
 - [Fabric IQ skill](https://github.com/microsoft/skills-for-fabric/blob/main/skills/fabriciq/SKILL.md)
