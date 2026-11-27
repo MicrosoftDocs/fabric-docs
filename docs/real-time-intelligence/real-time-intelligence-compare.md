@@ -37,7 +37,7 @@ Real-Time Intelligence includes a broad set of integrated services and experienc
 * Power BI integration for business intelligence and reporting on real-time data.
 * [Activator](data-activator/rule-actions.md) for detecting conditions, triggering notifications, automating workflows, and launching Fabric activities such as notebooks, pipelines, Spark jobs, dataflows, functions, copy jobs, and business events.
 * [Digital Twin Builder (preview)](digital-twin-builder/overview.md) for modeling physical systems and business entities using digital twins.
-* [Schema Registry (preview)](schema-sets/schema-registry-overview.md) for defining, validating, governing, and evolving event schemas across real-time workflows.
+* [Schema Registry](schema-sets/schema-registry-overview.md) for defining, validating, governing, and evolving event schemas across real-time workflows.
 * [Fabric events and Azure events](../real-time-hub/fabric-events-overview.md) integration for reacting to platform-generated business and operational events.
 * Notebook and Spark integration for advanced stream processing, machine learning, AI functions, and developer-driven analytics workflows.
 * [Operations Agents](operations-agent.md) and [MCP](mcp-overview.md) integrations for AI-assisted operational monitoring and management scenarios.
