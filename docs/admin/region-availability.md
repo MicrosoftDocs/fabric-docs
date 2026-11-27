@@ -39,7 +39,7 @@ The following table lists all Azure regions where Power BI or Fabric is availabl
 | Americas     | US - East US         | ✅ | ✅ |Not available:  <br> [Operations agent (preview)](../real-time-intelligence/operations-agent.md) <br> [Observability in Fabric](../fundamentals/enable-workspace-monitoring.md)|
 | Americas     | US - East US 2       | ✅ | ✅ |  |
 | Americas     | US - North Central US| ✅ | ✅ |  |
-| Americas     | US - South Central US| ✅ | ✅ | Not available: <br> [Digital twin builder (preview)](../real-time-intelligence/digital-twin-builder/overview.md) <br> [Operations agent](../real-time-intelligence/operations-agent.md) <br> [Schema  Registry (preview)](../real-time-intelligence/schema-sets/schema-registry-region-availability.md)  |
+| Americas     | US - South Central US| ✅ | ✅ | Not available: <br> [Digital twin builder (preview)](../real-time-intelligence/digital-twin-builder/overview.md) <br> [Operations agent](../real-time-intelligence/operations-agent.md) |
 | Americas     | US - West US         | ✅ | ✅ |  |
 | Americas     | US - West US 2       | ✅ | ✅ |  |
 | Americas     | US - West US 3       | ✅ | ✅ |  |
