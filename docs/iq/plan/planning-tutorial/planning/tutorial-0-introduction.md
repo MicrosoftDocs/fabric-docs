@@ -37,9 +37,6 @@ Before starting this tutorial series, verify that you have:
 1. Installed Microsoft Edge or Google Chrome. Safari isn't supported for planning.
 1. Downloaded the data used in the planning sheet tutorials from the Fabric Samples GitHub repository: [Northwind_FMCG.pbix](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/iq/plan/Northwind_FMCG.pbix)
 
-> [!NOTE]
-> Plan doesn't support Microsoft Entra B2B guest accounts. Workspaces that use private links aren't supported either.
-
 ## Business context
 
 In this tutorial series, you build a complete planning environment, set and optimize a revenue target, generate a rolling forecast, build a row-based and measure-based P&L model, and connect plans across two planning teams into a single profitability view.
