@@ -249,7 +249,7 @@ A *digital twin builder* is an item that creates digital representations of real
 
 #### Event schema set
 
-An *event schema set* is an item that organizes one or more related schemas into schema sets, enabling logical grouping and centralized access control. You can manage who can view, edit, or modify schemas at the group level, making it easier to govern schema usage across teams or projects. For more information, see [Schema registry overview (preview)](../real-time-intelligence/schema-sets/schema-registry-overview.md).
+An *event schema set* is an item that organizes one or more related schemas into schema sets, enabling logical grouping and centralized access control. You can manage who can view, edit, or modify schemas at the group level, making it easier to govern schema usage across teams or projects. For more information, see [Schema registry overview](../real-time-intelligence/schema-sets/schema-registry-overview.md).
 
 #### Eventhouse
 
