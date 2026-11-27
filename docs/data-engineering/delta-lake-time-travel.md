@@ -23,9 +23,9 @@ Use time travel when you need to:
 - Compare the current table state with an older state
 - Recover data that was accidentally deleted by reading an older version before you decide whether to restore it
 
-## Use SQL syntax
+## Query an earlier version
 
-You can query historical data with Spark SQL or PySpark.
+You can query historical data with Spark SQL, PySpark, or Scala.
 
 Query a specific table version:
 
@@ -44,7 +44,7 @@ df = spark.read.format("delta").option("versionAsOf", 5).table("table_name")
 # [Scala](#tab/scala)
 
 ```scala
-val df = s  park.read.format("delta").option("versionAsOf", 5).table("table_name")
+val df = spark.read.format("delta").option("versionAsOf", 5).table("table_name")
 ```
 
 ---
@@ -138,8 +138,8 @@ For more information, see [RESTORE](delta-lake-restore.md).
 
 Time travel works in these Fabric experiences:
 
-- Fabric notebooks by using Spark SQL or PySpark
-- Spark job definitions that use Spark SQL or PySpark
+- Fabric notebooks by using Spark SQL, PySpark, or Scala
+- Spark job definitions that use Spark SQL, PySpark, or Scala
 - The SQL analytics endpoint, see [Time Travel in Fabric Warehouse](../data-warehouse/time-travel.md)
 
 Use Spark experiences when you need full Delta Lake APIs. The SQL analytics endpoint is best for supported query scenarios, not for Spark-only maintenance operations.
