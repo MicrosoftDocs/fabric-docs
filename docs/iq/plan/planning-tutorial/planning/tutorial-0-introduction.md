@@ -1,7 +1,7 @@
 ---
 title: "Fabric Planning Tutorial: Set Up Your Environment"
 description: "Fabric planning tutorial part 0: prepare your workspace, enable tenant settings, connect a semantic model, and create your first planning sheet"
-ms.date: 09/02/2026
+ms.date: 11/27/2026
 ms.topic: tutorial
 ai-usage: ai-assisted
 ---
