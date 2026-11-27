@@ -12,7 +12,9 @@ items:
   - name: Power BI security
     href: power-bi-security.md     
   - name: Permission model
-    href: permission-model.md  
+    href: permission-model.md
+  - name: Microsoft Entra Privileged Identity Management
+    href: security-privileged-identity-management.md
   - name: Workspace identity
     href: workspace-identity.md
   - name: Authenticate with workspace identity
