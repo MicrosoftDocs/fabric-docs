@@ -48,7 +48,7 @@ The KQL databases in the OneLake catalog are available as data sources in the no
 
     :::image type="content" source="media/notebooks/notebook-load-data-snippet.png" alt-text="Screenshot of the Notebook after data from the KQL database was loaded. The code snippet is highlighted.":::
 
-For more information on the notebook experience with KQL data and the data analysis options, see **xxxxxxx**.
+For more information on the notebook experience with KQL data and the data analysis options, see [Use a Notebook with Kqlmagic to Query a KQL database](notebook-kql-magic.md).
 
 ## Use Kusto snippets in a notebook
 
